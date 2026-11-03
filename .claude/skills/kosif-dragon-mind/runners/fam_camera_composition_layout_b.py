@@ -22,6 +22,15 @@ GAPS: dict = {
     "CAM-71": "measured, not registered: the card's coverage zoom need = |cos r| + q|sin r|*0.56 leaves 0.3-0.9 % black "
               "corners on a 16:9 frame at 2-6 deg roll (the exact cover is |cos r| + q|sin r|); runner kept as rotation_coverage() "
               "for the evidence but a passing check would be false",
+    "CAM-64": "needs WebGPU or a verified fallback: headless Chrome here has no navigator.gpu; three r186 TSL dof() through "
+              "WebGPURenderer's WebGL2 fallback ran but blurred the near (3 m) and far (15 m) planes alike (Laplacian 15 vs 15, "
+              "plain pass 1690 / 2933), so a focus pull cannot be shown",
+    "CAM-389": "reference-only excerpt of Kling camera-control parameters: running it needs a paid video-generation key (key:video-gen)",
+    "CAM-92": "needs network the sandbox does not have: `hyperframes add carousel-circle-1..5` aborts because its sample photos come from static.heygen.ai, which does not resolve here (ENOTFOUND); without the installed HTML there is nothing real to run",
+    "CAM-93": "needs network the sandbox does not have: `hyperframes add carousel-orbit-1..5` aborts because its sample photos come from static.heygen.ai, which does not resolve here (ENOTFOUND); without the installed HTML there is nothing real to run",
+    "CAM-94": "needs network the sandbox does not have: `hyperframes add carousel-path-1..5` aborts because its sample photos come from static.heygen.ai, which does not resolve here (ENOTFOUND); without the installed HTML there is nothing real to run",
+    "CAM-95": "needs network the sandbox does not have: `hyperframes add carousel-text-circle-1..5` aborts because its sample photos come from static.heygen.ai, which does not resolve here (ENOTFOUND); without the installed HTML there is nothing real to run",
+    "CAM-96": "needs network the sandbox does not have: `hyperframes add carousel-vision-1..5` aborts because its sample photos come from static.heygen.ai, which does not resolve here (ENOTFOUND); without the installed HTML there is nothing real to run",
 }
 
 REPO = Path(__file__).resolve().parents[4]
@@ -681,7 +690,7 @@ def single_frame_punch(task, wd):
     """Scale 1.00→1.15 in one frame at the hit, relaxing back over 350 ms easeOutExpo."""
     hit = 0.5
     fn = lambda t: 1.0 if t < hit else 1 + 0.15 * (1 - ease_out_expo((t - hit) / 0.35))
-    checks, outs, d, sm, si, _ = _push_card(wd, "punch", 320, 180, 60, fn, 75)
+    checks, outs, d, sm, si, _ = _push_card(wd, "punch", 320, 180, 60, fn, 75, d=96)  # markers stay clear of the edge at 1.15x
     h = int(hit * 60)
     checks += [check("frame before the hit at 1.00", _near(sm[h - 1], 1.0, 0.01), sm[h - 1], 1.0),
                check("hit frame jumps to 1.15 in one frame", _near(sm[h], 1.15, 0.012), sm[h], 1.15),
@@ -6819,14 +6828,21 @@ def native_vertical(task, wd):
 _HF_CLI = NODE_MODULES / "hyperframes/dist/cli.js"
 
 
+def _hf_env():
+    import os
+    env = dict(os.environ)
+    env.update(NODE_PATH=str(NODE_MODULES), PATH=str(Path(_NODE).parent) + ":" + env.get("PATH", "/usr/bin:/bin"),
+               CHROME_PATH=str(_CHROME), PUPPETEER_EXECUTABLE_PATH=str(_CHROME))
+    return env
+
+
 def hf_install(wd, item, kind="add"):
     """`hyperframes add <item>` (or `init --example`) into wd/hf; returns the installed HTML path."""
     if not (_HF_CLI.exists() and _NODE):
         raise RuntimeError("hyperframes CLI not available")
     hf = wd / "hf"
     hf.mkdir(exist_ok=True)
-    env = dict(NODE_PATH=str(NODE_MODULES), PATH="/usr/bin:/bin:" + str(Path(_NODE).parent), HOME="/tmp",
-               **{k: v for k, v in __import__("os").environ.items() if k.upper() in ("HTTPS_PROXY", "HTTP_PROXY", "NO_PROXY", "NODE_EXTRA_CA_CERTS", "SSL_CERT_FILE")})
+    env = _hf_env()
     if kind == "add":
         cmd = [_NODE, str(_HF_CLI), "add", item, "--no-clipboard", "--json", "--dir", str(hf)]
     else:
@@ -7258,3 +7274,65 @@ def hf_parallax_unzoom(task, wd):
               check("the grid is formed at the end (every card at its layout slot)", grid_ok, [(round(c["cx"]), round(c["cy"])) for c in p1], "3x3 slots"),
               check("negative control: at progress 0 the grid is not formed", not all(_near(p0[k]["cx"], p1[k]["cx"], 0.5) for k in range(9)), True, "scattered")]
     return checks, [wd / "pu_mid.png"]
+
+
+@card("CAM-91")
+def hf_rack_focus_webgl(task, wd):
+    """HyperFrames rack-focus (WebGL, real aperture bokeh): the focal plane travels near (1.2 m bulb string) to far
+    (80 m city sign). Chrome renders the shader at four times; pixel sharpness of the near bulbs and of the far LED
+    strip, and the bulbs' bokeh disc size, are measured from the screenshots."""
+    times = [0.5, 2.0, 3.5, 5.5]
+    steps = [{"js": "(() => { const c = document.getElementById('rf-canvas'); return !!(c.getContext('webgl2') || c.getContext('webgl')); })()"}]
+    steps += [{"js": "SEEK(%s)" % t, "shot": "rack_%d.png" % i} for i, t in enumerate(times)]
+    r = hf_page(wd, "rack-focus", "rack-focus", steps, name="rack_focus")
+    N = np()
+    near, far, disc = [], [], []
+    for i in range(len(times)):
+        A = load_png(wd / ("rack_%d.png" % i)).astype(float)
+        g = A.mean(axis=2)
+        near.append(sharpness(g[520:600, 260:350]))
+        far.append(sharpness(g[805:880, 630:1290]))
+        from scipy import ndimage
+        lab, _n = ndimage.label((A[..., 0] > 240) & (A[..., 1] > 240) & (A[..., 2] > 140))
+        disc.append([int((lab == lab[y, x]).sum()) if lab[y, x] else 0 for x, y in ((305, 557), (1590, 668), (1277, 688))])
+    checks = [check("WebGL context available and the shader ran", r[1] is True, r[1], True),
+              check("start: near bulbs sharp, far sign soft", near[0] > 1000 and far[0] < 1000, [near[0], far[0]], "near > 1000, far < 1000"),
+              check("end: far sign resolves into lamps, near bulbs go soft", far[-1] > 10 * far[0] and near[-1] < 0.05 * near[0], [far[0], far[-1], near[0], near[-1]], "far x10, near / 20"),
+              check("focus travels one way: far sharpness rises, then holds (never drops > 10 %)", far[0] < far[1] < far[2] and far[3] > 0.9 * far[2], far, "rise, hold"),
+              check("each defocused near bulb becomes a bokeh disc > 5x its in-focus area", all(e > 5 * max(1, b) for b, e in zip(disc[0], disc[-1])), [disc[0], disc[-1]], "> 5x"),
+              check("negative control: the start frame fails the far-focus threshold the end frame passes", far[0] < 0.1 * far[-1], [far[0], far[-1]], "start < 0.1 end")]
+    return checks, [wd / "rack_0.png", wd / ("rack_%d.png" % (len(times) - 1))]
+
+
+@card("CAM-97")
+def hf_swiss_grid_example(task, wd):
+    """HyperFrames swiss-grid example: `hyperframes init --example swiss-grid` scaffolds the project with its three
+    sub-compositions, `compositions --json` reads the 10 s master, and `hyperframes snapshot` captures real frames,
+    where the #f2f2f2 field and the 240 px major / 60 px minor grid are measured."""
+    proj = hf_install(wd, "sw", "swiss-grid")
+    N = np()
+    env = _hf_env()
+    comp = subprocess.run([_NODE, str(_HF_CLI), "compositions", "--json"], capture_output=True, text=True, timeout=60, cwd=str(proj), env=env, stdin=subprocess.DEVNULL)
+    comps = {c["id"]: c for c in json.loads(comp.stdout[comp.stdout.index("{"):])["compositions"]}
+    snaps = wd / "snaps"
+    sn = subprocess.run([_NODE, str(_HF_CLI), "snapshot", ".", "--at", "0.5,4,8", "--no-end", "--json", "-o", str(snaps)], capture_output=True, text=True, timeout=90, cwd=str(proj), env=env, stdin=subprocess.DEVNULL)
+    if sn.returncode:
+        raise RuntimeError("hyperframes snapshot failed: %s" % (sn.stdout + sn.stderr)[-300:])
+    frames = sorted(snaps.glob("frame-*.png"))
+    A = load_png(frames[1]).astype(float)
+    g = A.mean(axis=2)
+    bgfrac = float(N.all(A.astype(int) == 242, axis=2).mean())
+    px = 242 - g.mean(axis=0)
+    major = sorted({int(round(i / 240.0)) * 240 for i in range(1920) if px[i] > 20})
+    minor = sorted({int(round(i / 60.0)) * 60 for i in range(1920) if 3 < px[i] <= 20})
+    idx = (proj / "index.html").read_text(encoding="utf-8")
+    plain = N.full((1080, 1920), 242.0)
+    pneg = 242 - plain.mean(axis=0)
+    checks = [check("example scaffolded with its three sub-compositions", all((proj / "compositions" / f).exists() for f in ("intro.html", "graphics.html", "captions.html")), sorted(p.name for p in (proj / "compositions").glob("*.html")), ["captions", "graphics", "intro"]),
+              check("master composition is 10 s at 1920x1080", comps["master"]["duration"] == 10 and (comps["master"]["width"], comps["master"]["height"]) == (1920, 1080), comps["master"], "10 s"),
+              check("Helvetica on #f2f2f2 in the source", "#f2f2f2" in idx and '"Helvetica"' in idx, True, True),
+              check("snapshot: #f2f2f2 fills > 85 % of the frame", bgfrac > 0.85, bgfrac, "> 0.85"),
+              check("major grid lines every 240 px", major == list(range(240, 1920, 240)), major, "240..1680"),
+              check("minor grid lines every 60 px between the majors", len(minor) >= 20 and all(m_ % 60 == 0 and m_ % 240 != 0 for m_ in minor), minor[:8], "60 px steps"),
+              check("negative control: a flat #f2f2f2 plate has no grid lines", int((pneg > 3).sum()) == 0, int((pneg > 3).sum()), 0)]
+    return checks, [frames[1]]
