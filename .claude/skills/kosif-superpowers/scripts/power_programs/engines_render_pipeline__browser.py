@@ -1287,7 +1287,11 @@ def eng_292(work: Path):
     if R is None:
         R = importlib.util.module_from_spec(spec)      # the vendored KOSIF Studio renderer, read-only
         _sys.modules["kosif_studio_render"] = R
-        spec.loader.exec_module(R)
+        saved, _sys.dont_write_bytecode = _sys.dont_write_bytecode, True  # keep vendor/ free of __pycache__
+        try:
+            spec.loader.exec_module(R)
+        finally:
+            _sys.dont_write_bytecode = saved
     steps = [R.Step("sky", [R.fill(R.rect(0, 0, 1200, 400), "#2040a0")]),
              R.Step("box", [R.fill(R.rect(300, 200, 600, 400), "#ff0000")], order="grow", origin=(600, 400))]
     out = {}
