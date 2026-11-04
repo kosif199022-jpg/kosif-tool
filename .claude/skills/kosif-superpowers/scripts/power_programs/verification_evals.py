@@ -13,6 +13,7 @@ import codecs
 import hashlib
 import json
 import math
+import os
 import re
 import subprocess
 import sys
@@ -701,7 +702,10 @@ def classify_failure(msg):
 def check_27(work):
     r1 = subprocess.run([sys.executable, "-c", "import kosif_no_such_module_xyz"], capture_output=True, text=True).stderr.strip().splitlines()[-1]
     r2 = subprocess.run(["ffmpeg", "-hide_banner", "-kosif_no_such_flag"], capture_output=True, text=True).stderr.strip().splitlines()[-1]
-    r3 = subprocess.run(["git", "-C", str(work), "status"], capture_output=True, text=True).stderr.strip()
+    # The work folder may sit inside a git checkout (e.g. a Black Dragon job under out/), so stop
+    # git's repo search at the folder itself: the planted case must really be "outside a repo".
+    env = dict(os.environ, GIT_CEILING_DIRECTORIES=str(Path(work).resolve().parent))
+    r3 = subprocess.run(["git", "-C", str(work), "status"], capture_output=True, text=True, env=env).stderr.strip()
     got = {k: classify_failure(v)[0] for k, v in {"python": r1, "ffmpeg": r2, "git": r3, "http": "HTTP 401 Unauthorized", "x": "something odd"}.items()}
     wjson(Path(work) / "taxonomy.json", {"messages": [r1, r2, r3], "classes": got})
     return [C("13 named failures each with a smallest repair", len(TAXONOMY) == 13 and all(f for _, _, f in TAXONOMY), len(TAXONOMY)),
