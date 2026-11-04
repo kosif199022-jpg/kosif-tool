@@ -51,7 +51,6 @@ GAPS: dict = {
     "ENG-238": _EXT + " (Editly needs native headless-gl and node-canvas builds)",
     "ENG-239": _EXT + " (FFCreator needs native node-canvas + headless-gl)",
     "ENG-240": _EXT + " (fframes is a Rust crate needing a cargo build with ffmpeg dev headers)",
-    "ENG-241": _EXT + " (Manim Community needs pycairo/pangocairo system libraries, not present)",
     "ENG-242": _EXT + " (Motion Canvas needs a Vite project build and its browser renderer plugin)",
     "ENG-244": "Remotion is installed but a cold webpack bundle measured 17-23 s here, over the 15 s runner budget",
     "ENG-245": _EXT + " (Rendervid)",
@@ -3062,3 +3061,64 @@ def composition_brief(task, wd):
             check("listed sub-skills exist as installed skills", all(found.values()), found, "all True"),
             check("composition carries the copy verbatim", built == copy, built, copy),
             check("negative control: a paraphrased line fails the verbatim check", paraphrase != got["Verbatim copy"], paraphrase, "!= copy")], [b, proj / "index.html"]
+
+
+# ───────────── ENG-241: Manim Community (pip manim + cairo/pango, installed with the owner's approval) ─────────────
+_MANIM_TL = """from manim import *
+
+config.background_color = "#000000"
+
+
+class Timeline(Scene):
+    def construct(self):
+        sq = Square(side_length=1.0, color="#FF0000", fill_color="#FF0000", fill_opacity=1, stroke_width=0).move_to(LEFT * 4)
+        self.add(sq)
+        self.play(sq.animate.move_to(RIGHT * 4), run_time=1.0, rate_func=linear)
+        self.wait(0.2)
+"""
+
+
+@card("ENG-241")
+def manim_community_engine(task, wd):
+    """Manim Community as a direct code/timeline video engine: a Scene whose timeline moves a red square from x=-4 to x=+4
+    units in 1 s with a linear rate function, then holds 0.2 s; rendered with `manim -ql` at 320x180, 30 fps. The square's
+    centre is measured on every decoded frame and compared with the timeline (px = (x + w/2) * 320 / w)."""
+    import numpy as np
+    wd = Path(wd)
+    (wd / "scene.py").write_text(_MANIM_TL)
+    home = wd / "_home"
+    (home / "tmp").mkdir(parents=True, exist_ok=True)
+    env = dict(os.environ, HOME=str(home), XDG_CACHE_HOME=str(home / ".cache"), XDG_CONFIG_HOME=str(home / ".config"),
+               TMPDIR=str(home / "tmp"), PYTHONDONTWRITEBYTECODE="1")
+    done = subprocess.run(["manim", "render", "-ql", "-r", "320,180", "--fps", "30", "--media_dir", str(wd / "media"),
+                           "--disable_caching", "--progress_bar", "none", "-v", "WARNING", "scene.py", "Timeline"],
+                          capture_output=True, text=True, timeout=60, cwd=str(wd), env=env, stdin=subprocess.DEVNULL)
+    if done.returncode:
+        raise RuntimeError("manim failed: " + (done.stderr or done.stdout)[-500:])
+    vid = wd / "media/videos/scene/180p30/Timeline.mp4"
+    ver = subprocess.run(["manim", "--version"], capture_output=True, text=True, env=env).stdout.strip()
+    _, v = probe_v(vid)
+    w, h = int(v["width"]), int(v["height"])
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(vid), "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], capture_output=True,
+                         timeout=60).stdout
+    fr = np.frombuffer(raw, np.uint8).reshape(-1, h, w, 3)
+    cx = [red_cx(f) for f in fr]
+    fw = 14.0 + 2.0 / 9.0                      # manim's default frame width (8 units high, 16:9)
+    px = lambda x: (x + fw / 2) * w / fw
+    move = [c for c in cx[:30]]
+    ts = np.arange(len(move)) / 30.0
+    slope, icpt = np.polyfit(ts, move, 1)
+    resid = float(np.abs(np.polyval([slope, icpt], ts) - move).max())
+    hold = cx[30:]
+    rep = jw(wd / "timeline_report.json", {"manim": ver, "size": [w, h], "frames": len(fr), "cx": cx,
+                                           "expected_start_px": px(-4), "expected_end_px": px(4), "slope_px_s": slope,
+                                           "max_linear_residual_px": resid})
+    return [check("Manim Community rendered 320x180 at 30 fps", (w, h) == (320, 180) and v.get("r_frame_rate") == "30/1" and "Manim" in ver,
+                  [w, h, v.get("r_frame_rate"), ver]),
+            check("frame count = 1 s move + 0.2 s hold at 30 fps (36)", len(fr) == 36, len(fr), 36),
+            check("starts at x=-4 units (px)", abs(cx[0] - px(-4)) < 1.5, cx[0], px(-4)),
+            check("holds at x=+4 units after the move", all(c is not None and abs(c - px(4)) < 1.5 for c in hold), hold[:2], px(4)),
+            check("linear rate: speed = 8 units/s in px (+-2%)", abs(slope - 8 * w / fw) / (8 * w / fw) < 0.02, slope, 8 * w / fw),
+            check("linear rate: every move frame on the line (< 1.5 px)", resid < 1.5, resid, "< 1.5"),
+            check("negative control: the untreated first frame is not at the timeline's end position", abs(cx[0] - px(4)) > 100,
+                  cx[0], "!= %.1f" % px(4))], [vid, rep]
