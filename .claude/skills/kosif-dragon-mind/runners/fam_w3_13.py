@@ -1,7 +1,7 @@
 """Wave 3, chunk 13: real runners for build, media, Arabic-language, brand, character, colour, explainer, format,
 knowledge-graph, misc, UI and web-research cards.
 
-Engines used (all already installed here; nothing was pip/npm installed for this module):
+Engines used (already installed here; the later owner-approved installs are listed above the ARL-10 runner):
 - python: numpy, PIL (raqm), cv2, cryptography (Ed25519), networkx (AST knowledge graph, Louvain), sqlite3 FTS5,
   trafilatura + bs4/lxml, spacy (blank "ar"), httpx, jsonschema, zipfile, http.server (local fixtures only)
 - binaries: ffmpeg/ffprobe, tesseract (ara), pdftotext/pdftoppm, ImageMagick convert, pandoc, curl, mmdc, gcc
@@ -68,15 +68,12 @@ GAPS: dict = {
     "power:AMEDIA-04": "hosted speech-to-text API (batch/streaming/realtime): paid API key and network service",
     "power:AMEDIA-06": "local whisper transcription: no whisper model is on disk (faster-whisper is installed but the model "
                        "download from Hugging Face is a network model fetch) and no yt-dlp/streamlink live source here",
-    "power:AMEDIA-08": "PipeWire + WirePlumber + pipewire-pulse are not installed in this container; " + _INSTALL_DENIED,
     "power:AMEDIA-24": "After Effects scripting: proprietary Adobe app (macOS/Windows) not available",
     "power:AMEDIA-27": "Godot engine binary is not installed (headless export needs godot + export templates); " + _INSTALL_DENIED,
     "power:AMEDIA-29": "Houdini / ZBrush / CATIA / Fusion / Rhino / SOLIDWORKS: proprietary, mostly Windows-only DCC/CAD apps",
-    "power:ARL-10": "camel-tools is not installed and `pip install --no-deps camel-tools emoji` was refused here; " + _INSTALL_DENIED,
     "power:ARL-11": "full camel-tools needs transformers + torch (~769 MB) and downloaded data packages",
-    "power:ARL-12": "pyarabic is not installed; " + _INSTALL_DENIED,
-    "power:ARL-13": "farasapy is not installed and downloads the Farasa Java jars from its host at first use; " + _INSTALL_DENIED,
-    "power:ARL-20": "camel-tools plus `camel_data -i light` data download; camel-tools is not installed; " + _INSTALL_DENIED,
+    "power:ARL-13": "farasapy is installed but fetches farasa_bin.zip (the Farasa Java jars) at first use from farasa-api.qcri.org, which the egress proxy refuses (403 to CONNECT farasa-api.qcri.org:443, measured here); its old GitHub release URL returns 404, and the jars would be written into site-packages, outside the work folder",
+    "power:ARL-20": "camel-tools 1.6 is installed, but tokenise/lemmatise/diacritise/dialect-id need `camel_data -i light`: nine packages, about 560 MB (dialectid-model26 alone 275 MB) from github.com releases; Python requests here fails TLS on the proxy chain (CERTIFICATE_VERIFY_FAILED on raw.githubusercontent.com) and curl measured ~2.3 MB/s, so a per-run download is minutes, not 15 s, and a shared install would live outside the work folder (CAMELTOOLS_DATA); not downloaded",
     "power:ARL-22": "Argos Translate needs its package (torch/stanza stack) plus a ~100 MB ar<->en model download",
     "power:BRAND-10": "fetches official marks from theSVG.org / GitHub / domain icons: live network providers, and third-party "
                       "logos may not be used without permission",
@@ -89,14 +86,9 @@ GAPS: dict = {
     "power:COLOR-81": "the shader plates need a WebGPU-capable Chromium; headless WebGPU is not available here",
     "power:EXPL-12": "the d2 binary is not installed and its installer host is unverified; " + _INSTALL_DENIED,
     "power:EXPL-41": "PR explainer pipeline needs `gh` network fetches of a real PR plus a voice engine (Kokoro model / HeyGen key)",
-    "power:EXPL-45": "Manim (MathTex, TransformMatchingTex) is not installed (needs pip + cairo/pango + LaTeX); " + _INSTALL_DENIED,
-    "power:EXPL-X01": "the method's smoke render is `manim -ql`; Manim is not installed; " + _INSTALL_DENIED,
     "power:FMT-25": "h264_nvenc needs an NVIDIA GPU; this container has none",
     "power:FMT-40": "WhatsApp sender needs the owner's personal account linked by scanning a QR code (live service)",
     "power:FMT-69": "instruction-only owner skills (e-commerce, newsletter, SEO): no program to execute",
-    "power:GRAPH-01": "installing graphifyy into a venv (~240 MB) is the card itself; " + _INSTALL_DENIED,
-    "power:GRAPH-07": "graphify-mcp (the graphifyy[mcp] extra) is not installed; " + _INSTALL_DENIED,
-    "power:GRAPH-09": "`graphify install --project` needs the graphify CLI, which is not installed; " + _INSTALL_DENIED,
     "power:GRAPH-10": "doc/image extraction into the graph needs a model backend (subagents or a paid API key)",
     "power:GRAPH-11": "Graphify hosted service over MCP: OAuth account and live service",
     "power:GRAPH-12": "queries the Graphify hosted graph service: OAuth account and live service",
@@ -113,8 +105,6 @@ GAPS: dict = {
     "power:WEB-08": "downloads from huggingface.co through the proxy: a live third-party host, not a deterministic fixture",
     "power:WEB-09": "gh search / release / license calls query the live GitHub API",
     "power:WEB-20": "needs the host's scheduling feature (scheduled tasks / send-later) to re-run a search",
-    "power:WEB-21": "Scrapy is not installed; " + _INSTALL_DENIED,
-    "power:WEB-22": "Crawl4AI (and its playwright-python + browser setup) is not installed; " + _INSTALL_DENIED,
     "power:WEB-24": "browser-use needs an LLM API key to plan the steps (and is not installed)",
 }
 
@@ -3680,3 +3670,766 @@ def trafilatura_arabic_metadata(task, wd):
 def BeautifulSoup_text(h):
     from bs4 import BeautifulSoup
     return BeautifulSoup(h, "lxml").get_text(" ")
+
+
+# ═══════════════════════ engines installed with the owner's approval (2026-11-04) ═══════════════════════
+# pyarabic, camel-tools (utils only: no data packages), scrapy, crawl4ai, graphifyy[mcp], manim (+cairo/pango, LaTeX),
+# pipewire + wireplumber + pipewire-pulse. Every engine runs with HOME / XDG / TMPDIR pointed into the work folder.
+import site as _site
+
+_USERBASE = _site.getuserbase()          # read-only: playwright-python lives in the user site, which HOME= would hide
+
+
+def _sbx_env(wd, **extra):
+    """Environment that keeps every engine's home, cache, config and temp files inside the work folder."""
+    wd = Path(wd)
+    home = wd / "_home"
+    for d in ("", ".cache", ".config", ".local/share", ".state", "tmp"):
+        (home / d).mkdir(parents=True, exist_ok=True)
+    env = {k: v for k, v in os.environ.items() if not k.startswith(("ANTHROPIC", "OPENAI", "GRAPHIFY_"))}
+    env.update(HOME=str(home), XDG_CACHE_HOME=str(home / ".cache"), XDG_CONFIG_HOME=str(home / ".config"),
+               XDG_DATA_HOME=str(home / ".local/share"), XDG_STATE_HOME=str(home / ".state"), TMPDIR=str(home / "tmp"),
+               MPLCONFIGDIR=str(home / ".config/mpl"), PYTHONUSERBASE=_USERBASE, PYTHONDONTWRITEBYTECODE="1",
+               NO_PROXY="127.0.0.1,localhost", no_proxy="127.0.0.1,localhost")
+    env.update({k: str(v) for k, v in extra.items()})
+    return env
+
+
+def _local_get(url, timeout=5):
+    import urllib.request
+    op = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+    with op.open(url, timeout=timeout) as r:
+        return r.read()
+
+
+class _LogHandler(_Quiet):
+    """Static file handler that records every requested path (to prove what a crawler did and did not fetch)."""
+    hits: list = []
+
+    def do_GET(self):
+        type(self).hits.append(self.path)
+        return super().do_GET()
+
+
+def _serve_logged(root):
+    hits: list = []
+    root = str(root)
+
+    class H(_LogHandler):
+        def __init__(self, *a, **k):
+            super().__init__(*a, directory=root, **k)
+    H.hits = hits
+    srv, base = serve_dir(root, H)
+    return srv, base, hits
+
+
+@card("ARL-10")
+def camel_char_utils(task, wd):
+    """camel-tools character utilities without models: Buckwalter round trip (ar2bw / bw2ar, plus ar2safebw and ar2hsb),
+    dediac_ar, and alef / alef-maksura / teh-marbuta normalisation. Only camel_tools.utils is imported, so no data package and
+    no torch/transformers are touched."""
+    from camel_tools.utils.charmap import CharMapper
+    from camel_tools.utils.dediac import dediac_ar
+    from camel_tools.utils.normalize import normalize_alef_ar, normalize_alef_maksura_ar, normalize_teh_marbuta_ar
+    import camel_tools
+    s = "مُحَمَّدٌ يَقْرَأُ القُرْآنَ"
+    bw = CharMapper.builtin_mapper("ar2bw")(s)
+    back = CharMapper.builtin_mapper("bw2ar")(bw)
+    safe = CharMapper.builtin_mapper("ar2safebw")(s)
+    hsb = CharMapper.builtin_mapper("ar2hsb")(s)
+    plain = dediac_ar(s)
+    na = normalize_alef_ar("أحمد إلى آخر")
+    nm = normalize_alef_maksura_ar("على")
+    nt = normalize_teh_marbuta_ar("مدرسة")
+    marks = sum(1 for ch in s if "\u064b" <= ch <= "\u0652")
+    removed = len(s) - len(plain)
+    out = write_json(wd, "camel_utils.json", {"camel_tools": camel_tools.__version__, "input": s, "ar2bw": bw, "bw2ar": back,
+                                              "ar2safebw": safe, "ar2hsb": hsb, "dediac": plain, "alef": na,
+                                              "alef_maksura": nm, "teh_marbuta": nt})
+    return [check("ar2bw gives the card's Buckwalter string", bw == "muHama~dN yaqora>u Alquro|na", bw, "muHama~dN yaqora>u Alquro|na"),
+            check("bw2ar round trip is exact", back == s, back, s),
+            check("ar2safebw uses only safe ASCII (> -> O, | -> M)", safe == "muHama~dN yaqoraOu AlquroMna", safe),
+            check("ar2hsb gives Habash-Soudi-Buckwalter", hsb == "muHama~dũ yaq.raÂu Alqur.Āna", hsb),
+            check("dediac_ar strips every diacritic", plain == "محمد يقرأ القرآن", plain, "محمد يقرأ القرآن"),
+            check("alef, alef maksura and teh marbuta normalised", (na, nm, nt) == ("احمد الى اخر", "علي", "مدرسه"), [na, nm, nt]),
+            check("no data package or torch was loaded", not any(m.startswith(("camel_tools.data", "torch", "transformers")) for m in sys.modules)),
+            check("negative control: the untreated text has its diacritics (all of them removed by dediac) and is not ASCII",
+                  marks == removed > 0 and not s.isascii(), marks, removed)], [out]
+
+
+@card("ARL-12")
+def pyarabic_cleanup(task, wd):
+    """PyArabic (GPL, used as a tool): strip_tashkeel, strip_tatweel and tokenize, then post-split the punctuation runs that
+    tokenize glues (":«", "»،") before counting words."""
+    import importlib.metadata as md
+    import pyarabic.araby as araby
+    t1 = araby.strip_tashkeel("مُحَمَّدٌ")
+    t2 = araby.strip_tatweel("عـــربي")
+    sent = "قال: «مرحبا»، ثم ذهب."
+    toks = araby.tokenize(sent)
+    words = [t for t in toks if any(c.isalpha() for c in t)]
+    glued = [t for t in toks if len(t) > 1 and not any(c.isalpha() for c in t)]
+    out = write_json(wd, "pyarabic.json", {"pyarabic": md.version("PyArabic"), "license": "GPL (tool use only, not bundled)",
+                                           "strip_tashkeel": t1, "strip_tatweel": t2, "tokens": toks, "words": words})
+    return [check("strip_tashkeel('مُحَمَّدٌ') == 'محمد'", t1 == "محمد", t1, "محمد"),
+            check("strip_tatweel('عـــربي') == 'عربي'", t2 == "عربي", t2, "عربي"),
+            check("tokenize glues punctuation runs as the card warns", glued == [":«", "»،"], glued, [":«", "»،"]),
+            check("after post-splitting punctuation: 4 words", words == ["قال", "مرحبا", "ثم", "ذهب"], words),
+            check("negative control: untreated text keeps tashkeel/tatweel and the raw token count is not the word count",
+                  "مُحَمَّدٌ" != t1 and "ـ" in "عـــربي" and len(toks) == 7 != len(words), len(toks), 7)], [out]
+
+
+# ─────────────── Graphify (graphifyy[mcp]) ───────────────
+_GF_A = '''from pkg.b import helper
+
+
+class Renderer:
+    def draw(self):
+        return helper(2)
+
+
+def main():
+    return Renderer().draw()
+'''
+_GF_B = '''def helper(x):
+    return square(x) + 1
+
+
+def square(x):
+    return x * x
+'''
+
+
+def _gf_project(wd):
+    proj = Path(wd) / "proj"
+    (proj / "pkg").mkdir(parents=True, exist_ok=True)
+    (proj / "pkg/a.py").write_text(_GF_A)
+    (proj / "pkg/b.py").write_text(_GF_B)
+    (proj / "CLAUDE.md").write_text("# demo project\n")
+    return proj
+
+
+def _gf_env(wd):
+    """The card's clean environment: `env -i PATH=… HOME=<sandbox> GRAPHIFY_NO_TIPS=1` (no keys, no `claude` binary)."""
+    home = Path(wd) / "_gfhome"
+    home.mkdir(exist_ok=True)
+    gf = shutil.which("graphify")
+    path = ":".join(dict.fromkeys([str(Path(gf).parent) if gf else "/usr/local/bin", "/usr/bin", "/bin"]))
+    return {"PATH": path, "HOME": str(home), "GRAPHIFY_NO_TIPS": "1", "LANG": "C.UTF-8"}
+
+
+def _gf_build(wd, proj):
+    done = subprocess.run(["graphify", "update", str(proj)], capture_output=True, text=True, timeout=60, env=_gf_env(wd),
+                          stdin=subprocess.DEVNULL, cwd=str(wd))
+    if done.returncode:
+        raise RuntimeError("graphify update failed: " + (done.stderr or done.stdout)[-400:])
+    g = json.loads((proj / "graphify-out/graph.json").read_text())
+    return g, done.stdout
+
+
+def _ast_truth(proj):
+    """Independent answer from Python's ast: defined symbols and call edges of the fixture."""
+    defs, calls = set(), set()
+    for f in sorted((proj / "pkg").glob("*.py")):
+        tree = ast.parse(f.read_text())
+        defs.add(f.name)
+        for node in ast.walk(tree):
+            if isinstance(node, ast.ClassDef):
+                defs.add(node.name)
+                for m in node.body:
+                    if isinstance(m, ast.FunctionDef):
+                        defs.add("." + m.name + "()")
+            elif isinstance(node, ast.FunctionDef) and node.col_offset == 0:
+                defs.add(node.name + "()")
+        for fn in ast.walk(tree):
+            if isinstance(fn, ast.FunctionDef):
+                caller = ("." if fn.col_offset else "") + fn.name + "()"
+                for c in ast.walk(fn):
+                    if isinstance(c, ast.Call) and isinstance(c.func, ast.Name):
+                        callee = c.func.id + ("" if c.func.id[:1].isupper() else "()")
+                        calls.add((caller, callee))
+    return defs, calls
+
+
+def _gf_calls(g):
+    lab = {n["id"]: n["label"] for n in g["nodes"]}
+    return {(lab[e["source"]], lab[e["target"]]) for e in g.get("links", []) if e.get("relation") == "calls"}
+
+
+@card("GRAPH-01")
+def graphify_local_install(task, wd):
+    """Graphify installed locally (graphifyy[mcp], owner-approved system install) run the card's way: every command under
+    `env -i PATH=… HOME=<sandbox> GRAPHIFY_NO_TIPS=1`, so it cannot see cloud credentials or a `claude` binary; a code graph
+    needs no API key and no LLM. The graph of a fixture package is checked against Python's own ast."""
+    import importlib.metadata as md
+    ver = md.version("graphifyy")
+    extras = sorted({r.split(";")[0].strip() for r in (md.requires("graphifyy") or []) if "extra ==" in r and "mcp" in r})
+    proj = _gf_project(wd)
+    before = (proj / "graphify-out/graph.json").exists()
+    env = _gf_env(wd)
+    t0 = time.time()
+    g, log = _gf_build(wd, proj)
+    secs = time.time() - t0
+    labels = {n["label"] for n in g["nodes"] if n.get("file_type") == "code"}
+    defs, calls = _ast_truth(proj)
+    got_calls = _gf_calls(g)
+    conf = sorted({e.get("confidence") for e in g["links"]})
+    keyish = [k for k in env if any(x in k.upper() for x in ("KEY", "TOKEN", "ANTHROPIC", "OPENAI"))]
+    rep = write_json(wd, "graphify_install.json", {"graphifyy": ver, "mcp_extra_requires": extras, "env": env,
+                                                   "nodes": sorted(labels), "calls": sorted(got_calls), "seconds": secs})
+    return [check("graphifyy (double y) is installed with the [mcp] extra and both CLIs", bool(ver) and bool(extras)
+                  and bool(shutil.which("graphify")) and bool(shutil.which("graphify-mcp")), [ver, extras]),
+            check("clean env: no key/token variables, sandbox HOME inside the work folder",
+                  not keyish and Path(env["HOME"]).resolve().is_relative_to(Path(wd).resolve()), keyish),
+            check("graphify update reports 'no LLM needed'", "no LLM needed" in log, log[:90]),
+            check("code nodes equal the ast's symbols and files", labels == defs, sorted(labels), sorted(defs)),
+            check("call edges equal the ast's calls", got_calls == calls, sorted(got_calls), sorted(calls)),
+            check("every edge is EXTRACTED (AST, no model)", conf == ["EXTRACTED"], conf),
+            check("negative control: the untreated fixture has no graph and no call edges", not before and _gf_calls({"nodes": [], "links": []}) != calls)], \
+        [proj / "graphify-out/graph.json", proj / "graphify-out/GRAPH_REPORT.md", rep]
+
+
+class _McpStdio:
+    def __init__(self, cmd, env, cwd):
+        self.p = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
+                                  env=env, cwd=cwd)
+        self.n = 0
+
+    def call(self, method, params=None, notify=False):
+        msg = {"jsonrpc": "2.0", "method": method}
+        if params is not None:
+            msg["params"] = params
+        if not notify:
+            self.n += 1
+            msg["id"] = self.n
+        self.p.stdin.write(json.dumps(msg) + "\n")
+        self.p.stdin.flush()
+        if notify:
+            return None
+        while True:
+            line = self.p.stdout.readline()
+            if not line:
+                raise RuntimeError("MCP server closed: " + self.p.stderr.read()[-300:])
+            r = json.loads(line)
+            if r.get("id") == self.n:
+                if "error" in r:
+                    raise RuntimeError("MCP error: %s" % r["error"])
+                return r["result"]
+
+    def session(self):
+        info = self.call("initialize", {"protocolVersion": "2025-06-18", "capabilities": {},
+                                        "clientInfo": {"name": "kosif-runner", "version": "1"}})
+        self.call("notifications/initialized", notify=True)
+        return info
+
+    def tool(self, name, **args):
+        r = self.call("tools/call", {"name": name, "arguments": args})
+        return "".join(c.get("text", "") for c in r.get("content", []))
+
+    def close(self):
+        try:
+            self.p.stdin.close()
+            self.p.wait(5)
+        except Exception:
+            self.p.kill()
+
+
+@card("GRAPH-07")
+def graphify_local_mcp(task, wd):
+    """`graphify-mcp <abs>/graphify-out/graph.json` over stdio JSON-RPC: initialise, list the 10 tools and 6 resources, then
+    call graph_stats, get_neighbors and shortest_path and read graphify://stats; the answers must match the graph file."""
+    proj = _gf_project(wd)
+    g, _ = _gf_build(wd, proj)
+    gpath = (proj / "graphify-out/graph.json").resolve()
+    env = _gf_env(wd)
+    t0 = time.time()
+    m = _McpStdio(["graphify-mcp", str(gpath)], env, str(wd))
+    try:
+        info = m.session()
+        tools = [t["name"] for t in m.call("tools/list")["tools"]]
+        res = [r["uri"] for r in m.call("resources/list")["resources"]]
+        stats = m.tool("graph_stats")
+        neigh = m.tool("get_neighbors", label="helper()")
+        path = m.tool("shortest_path", source="main()", target="square()")
+        rstats = "".join(c.get("text", "") for c in m.call("resources/read", {"uri": "graphify://stats"})["contents"])
+    finally:
+        m.close()
+    secs = time.time() - t0
+    empty = Path(wd) / "empty/graph.json"
+    empty.parent.mkdir(exist_ok=True)
+    empty.write_text(json.dumps({"directed": True, "multigraph": False, "graph": {}, "nodes": [], "links": [], "hyperedges": []}))
+    m0 = _McpStdio(["graphify-mcp", str(empty.resolve())], env, str(wd))
+    try:
+        m0.session()
+        stats0 = m0.tool("graph_stats")
+    finally:
+        m0.close()
+    num = lambda txt, k: int(re.search(r"%s:\s*(\d+)" % k, txt).group(1)) if re.search(r"%s:\s*(\d+)" % k, txt) else None
+    want_tools = ["query_graph", "get_node", "get_neighbors", "get_community", "god_nodes", "graph_stats", "shortest_path",
+                  "list_prs", "get_pr_impact", "triage_prs"]
+    want_res = ["graphify://report", "graphify://stats", "graphify://god-nodes", "graphify://surprises", "graphify://audit",
+                "graphify://questions"]
+    rep = write_json(wd, "mcp_session.json", {"server": info.get("serverInfo"), "tools": tools, "resources": res, "graph_stats": stats,
+                                              "get_neighbors(helper())": neigh, "shortest_path": path, "seconds": secs,
+                                              "empty_graph_stats": stats0})
+    return [check("10 tools exposed (the card's list)", sorted(tools) == sorted(want_tools), tools),
+            check("6 resources exposed", sorted(res) == sorted(want_res), res),
+            check("graph_stats node/edge counts equal graph.json", (num(stats, "Nodes"), num(stats, "Edges")) == (len(g["nodes"]), len(g["links"])),
+                  [num(stats, "Nodes"), num(stats, "Edges")], [len(g["nodes"]), len(g["links"])]),
+            check("graphify://stats resource agrees with the tool", rstats.strip() == stats.strip()),
+            check("get_neighbors(helper()) lists square() and .draw()", "square()" in neigh and ".draw()" in neigh, neigh[:160]),
+            check("shortest_path main() -> square() found", "Shortest path" in path and "square()" in path, path[:120]),
+            check("whole MCP session under 5 s", secs < 5, secs, "< 5"),
+            check("negative control: the same graph_stats on an empty graph reports 0 nodes", num(stats0, "Nodes") == 0 != len(g["nodes"]),
+                  num(stats0, "Nodes"), 0)], [rep, gpath]
+
+
+@card("GRAPH-09")
+def graphify_claude_hooks(task, wd):
+    """`graphify install --project` in a sandbox project inside the work folder (never the user's repo: the card needs consent
+    there) writes .claude/skills/graphify/, a `## graphify` block in CLAUDE.md and PreToolUse hooks (Bash|Grep -> hook-guard
+    search, Read|Glob -> hook-guard read, timeout 10 s). The hook is then fed fake PreToolUse JSON; `graphify claude uninstall`
+    removes the block and the hooks again."""
+    proj = _gf_project(wd)
+    _gf_build(wd, proj)
+    env = _gf_env(wd)
+    md0 = (proj / "CLAUDE.md").read_text()
+    had = (proj / ".claude/settings.json").exists()
+    run = lambda *a, inp=None, cwd=proj: subprocess.run(["graphify", *a], input=inp, capture_output=True, text=True, timeout=30,
+                                                        env=env, cwd=str(cwd))
+    ins = run("install", "--project")
+    if ins.returncode:
+        raise RuntimeError("graphify install --project failed: " + ins.stderr[-300:])
+    settings = json.loads((proj / ".claude/settings.json").read_text())
+    hooks = {h["matcher"]: (h["hooks"][0]["command"], h["hooks"][0].get("timeout")) for h in settings["hooks"]["PreToolUse"]}
+    md1 = (proj / "CLAUDE.md").read_text()
+    skill = proj / ".claude/skills/graphify/SKILL.md"
+    ev = lambda tool, ti, cwd: json.dumps({"session_id": "s1", "hook_event_name": "PreToolUse", "tool_name": tool,
+                                           "tool_input": ti, "cwd": str(cwd)})
+    t0 = time.time()
+    g1 = run("hook-guard", "search", inp=ev("Grep", {"pattern": "helper"}, proj))
+    hook_s = time.time() - t0
+    r1 = run("hook-guard", "read", inp=ev("Read", {"file_path": str(proj / "pkg/b.py")}, proj))
+    ctx = json.loads(g1.stdout)["hookSpecificOutput"]["additionalContext"] if g1.stdout.strip() else ""
+    sq_line = [n.lineno for n in ast.parse(_GF_B).body if getattr(n, "name", "") == "square"][0]
+    rctx = json.loads(r1.stdout)["hookSpecificOutput"]["additionalContext"] if r1.stdout.strip() else ""
+    bare = Path(wd) / "nograph"
+    bare.mkdir(exist_ok=True)
+    g0 = run("hook-guard", "search", inp=ev("Grep", {"pattern": "helper"}, bare), cwd=bare)
+    un = run("claude", "uninstall")
+    md2 = (proj / "CLAUDE.md").read_text()
+    after = json.loads((proj / ".claude/settings.json").read_text())
+    rep = write_json(wd, "hooks_report.json", {"hooks": hooks, "grep_nudge": ctx, "read_nudge": rctx, "hook_seconds": hook_s,
+                                               "no_graph_output": g0.stdout, "uninstall": un.stdout[-300:]})
+    return [check("skill file written under .claude/skills/graphify/", skill.is_file() and skill.stat().st_size > 0),
+            check("PreToolUse hooks: Bash|Grep -> search, Read|Glob -> read, timeout 10 s",
+                  hooks == {"Bash|Grep": ("graphify hook-guard search", 10), "Read|Glob": ("graphify hook-guard read", 10)}, hooks),
+            check("CLAUDE.md got a '## graphify' block and kept its own text", "## graphify" in md1 and md1.startswith(md0.strip())),
+            check("grep nudge names `graphify explain` and the file:line hit", "graphify explain" in ctx and "pkg/b.py L1" in ctx, ctx[-120:]),
+            check("read nudge lists the symbols of the file being read, with ast line numbers", "square() (pkg/b.py L%d)" % sq_line in rctx, rctx[-80:]),
+            check("hook answers in well under its 10 s timeout", hook_s < 2, hook_s, "< 2"),
+            check("fails open: no graph -> no output, exit 0", g0.returncode == 0 and not g0.stdout.strip(), g0.stdout[:60]),
+            check("uninstall removes the block and the hooks", "## graphify" not in md2 and not after["hooks"]["PreToolUse"]),
+            check("negative control: before install there was no hook file and no graphify block", not had and "## graphify" not in md0)], \
+        [rep, proj / ".claude/settings.json", skill]
+
+
+# ─────────────── Scrapy and Crawl4AI against a local site ───────────────
+_SPIDER = '''import scrapy
+
+
+class Polite(scrapy.Spider):
+    name = "polite"
+    custom_settings = {"ROBOTSTXT_OBEY": True, "DOWNLOAD_DELAY": 0.05, "CONCURRENT_REQUESTS_PER_DOMAIN": 1,
+                       "AUTOTHROTTLE_ENABLED": False, "USER_AGENT": "kosif-polite-bot/1.0 (+local fixture)",
+                       "TELNETCONSOLE_ENABLED": False, "LOG_LEVEL": "INFO", "FEED_EXPORT_ENCODING": "utf-8"}
+
+    def __init__(self, start=None, **kw):
+        super().__init__(**kw)
+        self.start_urls = [start]
+
+    def parse(self, response):
+        yield {"url": response.url, "title": response.css("title::text").get(), "h1": response.css("h1::text").get()}
+        for href in response.css("a::attr(href)").getall():
+            yield response.follow(href, self.parse)
+'''
+
+
+def _site(wd):
+    site = Path(wd) / "site"
+    (site / "private").mkdir(parents=True, exist_ok=True)
+    (site / "robots.txt").write_text("User-agent: *\nDisallow: /private/\n")
+    page = lambda t, h, links: ('<html><head><meta charset="utf-8"><title>%s</title></head><body><h1>%s</h1>%s</body></html>'
+                                % (t, h, "".join('<a href="%s">%s</a> ' % (u, u) for u in links)))
+    (site / "index.html").write_text(page("Home", "الرئيسية", ["a.html", "b.html", "private/secret.html"]), encoding="utf-8")
+    (site / "a.html").write_text(page("Page A", "صفحة أ", ["b.html", "private/secret.html"]), encoding="utf-8")
+    (site / "b.html").write_text(page("Page B", "صفحة ب", ["index.html"]), encoding="utf-8")
+    (site / "private/secret.html").write_text(page("Secret", "secret", []), encoding="utf-8")
+    return site
+
+
+@card("WEB-21")
+def scrapy_polite_spider(task, wd):
+    """A polite Scrapy spider (ROBOTSTXT_OBEY, download delay, one request per domain, honest user agent) crawls a local
+    site whose robots.txt disallows /private/ and exports JSON. The server's own request log proves what was fetched."""
+    site = _site(wd)
+    (Path(wd) / "spider.py").write_text(_SPIDER)
+    srv, base, hits = _serve_logged(site)
+    try:
+        done = subprocess.run(["scrapy", "runspider", "spider.py", "-a", "start=%s/index.html" % base, "-O", "items.json"],
+                              capture_output=True, text=True, timeout=60, cwd=str(wd), env=_sbx_env(wd), stdin=subprocess.DEVNULL)
+    finally:
+        srv.shutdown()
+        srv.server_close()
+    if done.returncode:
+        raise RuntimeError("scrapy failed: " + done.stderr[-400:])
+    items = json.loads((Path(wd) / "items.json").read_text(encoding="utf-8"))
+    pages = {it["url"].replace(base, ""): it for it in items}
+    stat = lambda k: int(re.search(r"'%s': (\d+)" % re.escape(k), done.stderr).group(1)) if re.search(r"'%s': (\d+)" % re.escape(k), done.stderr) else 0
+    from bs4 import BeautifulSoup
+    reach, todo = set(), ["index.html"]
+    while todo:                                        # the untreated link graph: every page a non-polite crawler would hit
+        u = todo.pop()
+        if u in reach:
+            continue
+        reach.add(u)
+        todo += [a["href"] for a in BeautifulSoup((site / u).read_text(encoding="utf-8"), "lxml").find_all("a")]
+    (Path(wd) / "server_log.json").write_text(json.dumps(hits))
+    return [check("crawled exactly the permitted pages", set(pages) == {"/index.html", "/a.html", "/b.html"}, sorted(pages)),
+            check("robots.txt requested before any page", bool(hits) and hits[0] == "/robots.txt", hits[:2]),
+            check("server never received a /private/ request", not any(h.startswith("/private") for h in hits), hits),
+            check("Scrapy counted one robots.txt-forbidden request", stat("robotstxt/forbidden") == 1, stat("robotstxt/forbidden"), 1),
+            check("Arabic headings exported as UTF-8 JSON", pages.get("/a.html", {}).get("h1") == "صفحة أ" and
+                  "صفحة" in (Path(wd) / "items.json").read_text(encoding="utf-8"), pages.get("/a.html", {}).get("h1")),
+            check("negative control: the untreated link graph reaches private/secret.html", "private/secret.html" in reach, sorted(reach))], \
+        [Path(wd) / "items.json", Path(wd) / "server_log.json"]
+
+
+_JS_PAGE = '''<!doctype html><html><head><meta charset="utf-8"><title>Motion notes</title></head><body>
+<main><h1>ملاحظات الحركة</h1><p>Static intro paragraph.</p><div id="dyn"></div></main>
+<script>document.getElementById('dyn').innerHTML = '<h2>Rendered by JS</h2><ul><li>alpha easing</li><li>beta camera</li></ul>'
+ + '<a href="/next.html">next page</a>';</script></body></html>'''
+
+_C4A = r'''
+import asyncio, json, sys
+from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+from crawl4ai.markdown_generation_strategy import DefaultMarkdownGenerator
+url, raw_path, out = sys.argv[1], sys.argv[2], sys.argv[3]
+async def main():
+    bc = BrowserConfig(headless=True, verbose=False, chrome_channel="chrome", channel="chrome", extra_args=["--no-sandbox"])
+    async with AsyncWebCrawler(config=bc) as c:
+        r = await c.arun(url, config=CrawlerRunConfig(cache_mode=CacheMode.BYPASS, verbose=False))
+    raw = open(raw_path, encoding="utf-8").read()
+    md0 = DefaultMarkdownGenerator().generate_markdown(raw, base_url=url).raw_markdown
+    json.dump({"success": r.success, "error": r.error_message, "markdown": str(r.markdown.raw_markdown), "raw_markdown": md0,
+               "status": r.status_code}, open(out, "w", encoding="utf-8"), ensure_ascii=False)
+asyncio.run(main())
+'''
+
+
+@card("WEB-22")
+def crawl4ai_js_markdown(task, wd):
+    """Crawl4AI renders a JavaScript page in a real Chrome (Playwright) and converts the rendered DOM into Markdown; the same
+    Markdown generator on the raw, unrendered HTML is the negative control."""
+    site = Path(wd) / "site"
+    site.mkdir(exist_ok=True)
+    (site / "index.html").write_text(_JS_PAGE, encoding="utf-8")
+    (Path(wd) / "c4a.py").write_text(_C4A)
+    (Path(wd) / "t").mkdir(exist_ok=True)          # relative TMPDIR: Chrome's SingletonSocket path must stay < 108 bytes
+    srv, base = serve_dir(site)
+    try:
+        done = subprocess.run([sys.executable, "c4a.py", base + "/index.html", str(site / "index.html"), "c4a.json"],
+                              capture_output=True, text=True, timeout=60, cwd=str(wd),
+                              env=_sbx_env(wd, CRAWL4_AI_BASE_DIRECTORY=Path(wd) / "_home", CRAWL4AI_NO_CLOUD_NOTICE=1,
+                                           TMPDIR="t"),
+                              stdin=subprocess.DEVNULL)
+    finally:
+        srv.shutdown()
+        srv.server_close()
+    if done.returncode:
+        raise RuntimeError("crawl4ai failed: " + (done.stderr or done.stdout)[-500:])
+    r = json.loads((Path(wd) / "c4a.json").read_text(encoding="utf-8"))
+    md = r["markdown"]
+    out = Path(wd) / "page.md"
+    out.write_text(md, encoding="utf-8")
+    return [check("crawl succeeded with HTTP 200", r["success"] and r["status"] == 200, [r["success"], r["status"]]),
+            check("JS-inserted heading became a Markdown H2", "## Rendered by JS" in md, md[:160]),
+            check("JS-inserted list became Markdown bullets", "* alpha easing" in md and "* beta camera" in md),
+            check("Arabic H1 kept as UTF-8 Markdown", "# ملاحظات الحركة" in md),
+            check("link turned absolute", "[next page](%s/next.html)" % base in md),
+            check("negative control: the same generator on the unrendered HTML has no JS content",
+                  "Rendered by JS" not in r["raw_markdown"] and "alpha easing" not in r["raw_markdown"], r["raw_markdown"][:120])], [out]
+
+
+# ─────────────── PipeWire in a container ───────────────
+def _pw_wait(cond, limit=6.0):
+    t0 = time.time()
+    while time.time() - t0 < limit:
+        if cond():
+            return True
+        time.sleep(0.05)
+    return False
+
+
+@card("AMEDIA-08")
+def pipewire_container_audio(task, wd):
+    """PipeWire + WirePlumber + pipewire-pulse started inside the work folder with a private session bus: 1) start the three
+    services, 2) confirm pipewire-0 and pulse/native sockets in XDG_RUNTIME_DIR, 3) point a Pulse client (ffmpeg -f pulse,
+    PULSE_SERVER) at the socket, play a 440 Hz tone into the sink and record its monitor, 4) list nodes and sinks (pw-dump).
+    XDG_RUNTIME_DIR is relative (cwd = work folder) because absolute socket paths here exceed the 108-byte AF_UNIX limit."""
+    np = _np()
+    wd = Path(wd)
+    run_dir = wd / "r"
+    run_dir.mkdir(mode=0o700, exist_ok=True)
+    env = _sbx_env(wd, XDG_RUNTIME_DIR="r", DBUS_SESSION_BUS_ADDRESS="unix:path=r/bus", PULSE_SERVER="unix:r/pulse/native")
+    before = [p.name for p in run_dir.iterdir()]
+    procs, logs = [], []
+
+    def start(name, *cmd):
+        lf = open(wd / ("%s.log" % name), "w")
+        logs.append(lf)
+        procs.append(subprocess.Popen(list(cmd), cwd=str(wd), env=env, stdout=lf, stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL))
+
+    def rec(path, secs):
+        return subprocess.Popen(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-f", "pulse", "-i", "auto_null.monitor",
+                                 "-t", str(secs), "-ac", "1", "-ar", "48000", str(path)], cwd=str(wd), env=env,
+                                stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, stdin=subprocess.DEVNULL)
+    try:
+        start("dbus", "dbus-daemon", "--session", "--nofork", "--address=unix:path=r/bus")
+        _pw_wait(lambda: (run_dir / "bus").exists())
+        start("pipewire", "pipewire")
+        _pw_wait(lambda: (run_dir / "pipewire-0").exists())
+        start("wireplumber", "wireplumber")
+        start("pipewire-pulse", "pipewire-pulse")
+        _pw_wait(lambda: (run_dir / "pulse/native").exists())
+
+        def sinks():
+            d = subprocess.run(["pw-dump"], capture_output=True, text=True, cwd=str(wd), env=env, timeout=10).stdout
+            try:
+                objs = json.loads(d or "[]")
+            except ValueError:
+                return [], []
+            nodes = [o for o in objs if o.get("type") == "PipeWire:Interface:Node"]
+            return nodes, [n for n in nodes if (n.get("info", {}).get("props", {}).get("media.class") == "Audio/Sink")]
+        _pw_wait(lambda: bool(sinks()[1]))
+        nodes, snk = sinks()
+        sockets = sorted(str(p.relative_to(run_dir)) for p in run_dir.rglob("*") if p.is_socket())
+        wp_alive = procs[2].poll() is None
+        silent = rec(wd / "silence.wav", 0.6)
+        silent.wait(15)
+        r = rec(wd / "monitor.wav", 1.4)
+        time.sleep(0.25)
+        play = subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-re", "-f", "lavfi", "-i", "sine=f=440:d=1.4",
+                               "-f", "pulse", "-device", "auto_null", "kosif-tone"], cwd=str(wd), env=env, capture_output=True,
+                              text=True, timeout=20)
+        r.wait(15)
+    finally:
+        for p in reversed(procs):
+            p.terminate()
+        for p in procs:
+            try:
+                p.wait(3)
+            except subprocess.TimeoutExpired:
+                p.kill()
+        for lf in logs:
+            lf.close()
+    if play.returncode:
+        raise RuntimeError("pulse playback failed: " + play.stderr[-300:])
+
+    def measure(path):
+        a, rate = fx.read_wav(path)
+        a = a[:, 0]
+        seg = a[int(0.1 * rate):] if len(a) > rate // 5 else a
+        rms = float(np.sqrt((seg ** 2).mean())) if len(seg) else 0.0
+        spec = np.abs(np.fft.rfft(seg * np.hanning(len(seg)))) if len(seg) > 16 else np.zeros(2)
+        return rms, float(np.argmax(spec) * rate / max(len(seg), 1))
+    rms, f0 = measure(wd / "monitor.wav")
+    rms0, _ = measure(wd / "silence.wav")
+    names = sorted(n.get("info", {}).get("props", {}).get("node.name", "") for n in snk)
+    rep = write_json(wd, "pipewire_report.json", {"sockets": sockets, "sinks": names, "nodes": len(nodes), "wireplumber_alive": wp_alive,
+                                                  "tone_rms": rms, "tone_hz": f0, "silence_rms": rms0})
+    return [check("pipewire-0 and pulse/native sockets in XDG_RUNTIME_DIR", {"pipewire-0", "pulse/native"} <= set(sockets), sockets),
+            check("WirePlumber session manager stayed up", wp_alive),
+            check("pw-dump lists an Audio/Sink (auto_null)", "auto_null" in names, names),
+            check("tone recorded from the sink monitor at 440 Hz", abs(f0 - 440) < 3, f0, 440),
+            check("recorded level is real audio (RMS > 0.03)", rms > 0.03, rms, "> 0.03"),
+            check("negative control: no sockets before start, and the monitor is silent without a client",
+                  before == [] and rms0 < 0.002, [before, rms0], "[] and < 0.002")], [wd / "monitor.wav", rep]
+
+
+# ─────────────── Manim Community ───────────────
+def _manim(wd, script, scenes, res=(192, 108), fps=10, extra_env=None):
+    """Render scenes of a Manim script at a tiny -ql resolution; media, Tex cache and temp stay in the work folder."""
+    wd = Path(wd)
+    (wd / "scene.py").write_text(script, encoding="utf-8")
+    env = _sbx_env(wd, **(extra_env or {}))
+    done = subprocess.run(["manim", "render", "-ql", "-r", "%d,%d" % res, "--fps", str(fps), "--media_dir", str(wd / "media"),
+                           "--disable_caching", "--progress_bar", "none", "-v", "WARNING", "scene.py", *scenes],
+                          capture_output=True, text=True, timeout=60, cwd=str(wd), env=env, stdin=subprocess.DEVNULL)
+    if done.returncode:
+        raise RuntimeError("manim failed: " + (done.stderr or done.stdout)[-500:])
+    folder = wd / "media/videos/scene" / ("%dp%d" % (res[1], fps))
+    return {s: folder / ("%s.mp4" % s) for s in scenes}
+
+
+_DERIV = r'''import json, os
+from manim import *
+
+WRITE = 1.5
+DTS = [2.0, 1.0, 0.1, 0.01, 0.001]
+STEP = 2.0
+X0 = 1.0
+
+
+class Derivation(Scene):
+    def snap(self, name):
+        from PIL import Image
+        Image.fromarray(self.renderer.get_frame()).convert("RGB").save(os.path.join(os.environ["KOSIF_SNAPS"], name + ".png"))
+
+    def construct(self):
+        self.snap("s0_before")
+        l1 = MathTex(r"\frac{(x+h)^2 - x^2}{h}", font_size=44)
+        l2 = MathTex(r"\frac{", r"x^2", r"+ 2xh + h^2", r"-", r"x^2", r"}{h}", font_size=44)
+        l2[1].set_color(RED)
+        l2[4].set_color(RED)
+        l3 = MathTex(r"\frac{", r"2xh + h^2", r"}{h}", font_size=44)
+        l4 = MathTex(r"2x + h", font_size=44, color=GREEN)
+        VGroup(l1, l2, l3, l4).arrange(DOWN, buff=0.12 * config.frame_height).to_edge(LEFT)
+        label = Text("الناتج", font="DejaVu Sans", font_size=24, color=GREEN).next_to(l4, RIGHT)
+        self.play(Write(l1), run_time=WRITE)
+        self.play(TransformMatchingTex(l1.copy(), l2), run_time=WRITE)
+        self.snap("s1_cancel")
+        self.play(TransformMatchingTex(l2.copy(), l3), run_time=WRITE)
+        box = SurroundingRectangle(l3[1], buff=0.08, stroke_width=2, color=YELLOW)
+        self.play(Create(box), run_time=0.6)
+        self.snap("s2_box")
+        self.play(TransformMatchingTex(l3.copy(), l4), FadeIn(label), run_time=WRITE)
+        ax = Axes(x_range=[0, 3.5, 1], y_range=[0, 10, 2], x_length=4, y_length=3, tips=False).to_edge(RIGHT)
+        curve = ax.plot(lambda x: x * x, x_range=[0, 3.1], color=BLUE)
+        dt = ValueTracker(DTS[0])
+        slope_of = lambda: ((X0 + dt.get_value()) ** 2 - X0 ** 2) / dt.get_value()
+        secant = always_redraw(lambda: Line(ax.c2p(X0, X0 ** 2), ax.c2p(X0 + dt.get_value(), (X0 + dt.get_value()) ** 2), color=ORANGE))
+        readout = DecimalNumber(slope_of(), num_decimal_places=3, font_size=30).next_to(ax, DOWN)
+        readout.add_updater(lambda m: m.set_value(slope_of()))
+        self.add(ax, curve, secant, readout)
+        for v in DTS[1:]:
+            self.play(dt.animate.set_value(v), run_time=STEP)
+        self.snap("s3_result")
+        p, q = ax.p2c(secant.get_start()), ax.p2c(secant.get_end())
+        json.dump({"dt": dt.get_value(), "readout": readout.get_value(), "secant_slope": (q[1] - p[1]) / (q[0] - p[0]),
+                   "red": [l2[1].tex_string, l2[4].tex_string], "green": l4.get_color().to_hex(),
+                   "box_stroke": box.get_stroke_width(), "timeline": [WRITE] * 3 + [0.6, WRITE] + [STEP] * 4},
+                  open(os.environ["KOSIF_PROBE"], "w"))
+'''
+
+
+def _hue_mask(frame, rgb_target, tol=60):
+    np = _np()
+    return (np.abs(frame - np.array(rgb_target, float)).sum(axis=2) < tol)
+
+
+def _dominant(frame):
+    """Pixel counts per hue window (saturation > .45, value > .25): red, yellow, green. Hue survives the anti-aliasing of
+    thin strokes on black, where absolute RGB thresholds do not."""
+    np = _np()
+    from PIL import Image
+    hsv = np.asarray(Image.fromarray(np.clip(frame, 0, 255).astype("uint8")).convert("HSV")).astype(float)
+    h, sat, val = hsv[..., 0] * 360 / 255, hsv[..., 1] / 255, hsv[..., 2] / 255
+    ok = (sat > 0.45) & (val > 0.25)
+    return {"red": int((ok & ((h < 15) | (h > 345))).sum()), "yellow": int((ok & (h >= 30) & (h <= 70)).sum()),
+            "green": int((ok & (h >= 80) & (h <= 160)).sum())}
+
+
+@card("EXPL-45")
+def manim_derivation_limit(task, wd):
+    """Manim derivation: MathTex lines with isolated substrings, the cancelling x^2 terms red, the result green,
+    TransformMatchingTex between lines (spacing 12% of frame height, Write 1.5 s per line), a SurroundingRectangle
+    (stroke 2, buff .08) around the remaining numerator, Arabic caption via Text() (never inside MathTex), and a ValueTracker
+    dt 2 -> 1 -> 0.1 -> 0.01 -> 0.001 driving an always_redraw secant and a DecimalNumber slope readout. Colours are measured
+    on the renderer's own RGB frames at four moments (H.264 4:2:0 would wash thin coloured strokes at this tiny size)."""
+    probe = Path(wd) / "probe.json"
+    snaps = Path(wd) / "snaps"
+    snaps.mkdir(exist_ok=True)
+    vid = _manim(wd, _DERIV, ["Derivation"], res=(384, 216), extra_env={"KOSIF_PROBE": probe, "KOSIF_SNAPS": snaps})["Derivation"]
+    p = json.loads(probe.read_text())
+    meta = [s for s in fx.probe(vid)["streams"] if s["codec_type"] == "video"][0]
+    nfr = int(meta["nb_frames"])
+    expect = round(sum(p["timeline"]) * 10)
+    d = {k: _dominant(load_png(snaps / ("%s.png" % k))) for k in ("s0_before", "s1_cancel", "s2_box", "s3_result")}
+    ink0 = int((load_png(snaps / "s0_before.png").max(axis=2) > 40).sum())
+    rep = write_json(wd, "derivation_report.json", dict(p, frames=nfr, expected_frames=expect, colours=d, first_frame_ink=ink0))
+    return [check("duration equals the timeline (3 Writes, box, result, 4 dt steps) at 10 fps", abs(nfr - expect) <= 1, nfr, expect),
+            check("dt ended at 0.001", abs(p["dt"] - 0.001) < 1e-9, p["dt"], 0.001),
+            check("slope readout -> 2.001 (2x+h at x=1)", abs(p["readout"] - 2.001) < 1e-6, p["readout"], 2.001),
+            check("drawn secant's slope in axis units equals 2.001", abs(p["secant_slope"] - 2.001) < 1e-4, p["secant_slope"], 2.001),
+            check("cancelling x^2 terms isolated and red on screen", p["red"] == ["x^2", "x^2"] and d["s1_cancel"]["red"] > 20,
+                  d["s1_cancel"]["red"], "> 20 px"),
+            check("box stroke 2 and its yellow pixels on screen", p["box_stroke"] == 2 and d["s2_box"]["yellow"] > 20, d["s2_box"]["yellow"], "> 20 px"),
+            check("result (and its Arabic caption) green at the end", d["s3_result"]["green"] > 20, d["s3_result"]["green"], "> 20 px"),
+            check("negative control: the frame before any Write has no ink, red, yellow or green",
+                  ink0 == 0 and not any(d["s0_before"].values()), [ink0, d["s0_before"]], 0)], [vid, snaps / "s3_result.png", rep]
+
+
+_EXPLAINER = r'''from manim import *
+
+FONT = "DejaVu Sans"
+
+
+class S1Thesis(Scene):
+    def construct(self):
+        t = Text("مساحة المربع = الضلع²", font=FONT, font_size=34)
+        self.play(FadeIn(t), run_time=0.5)
+        self.wait(0.5)
+
+
+class S2Side(Scene):
+    def construct(self):
+        sq = Square(side_length=2, color=BLUE, fill_color=BLUE, fill_opacity=1)
+        self.play(GrowFromCenter(sq), run_time=0.5)
+        self.wait(0.5)
+
+
+class S3Double(Scene):
+    def construct(self):
+        sq = Square(side_length=2, color=BLUE, fill_color=BLUE, fill_opacity=1)
+        self.add(sq)
+        self.play(sq.animate.scale(2), run_time=0.5)
+        self.wait(0.5)
+'''
+
+
+@card("EXPL-X01")
+def manim_explainer_workflow(task, wd):
+    """Manim explainer workflow: outline first (one visual thesis, three scenes each proving one thing), smoke-render every
+    scene with `manim -ql`, then hand off to ffmpeg only to join the scenes into one 16:9 MP4, and deliver a thumbnail and the
+    storyboard. Scene 3 proves its one claim on the pixels: doubling the side quadruples the area."""
+    np = _np()
+    board = {"thesis": "مساحة المربع = الضلع²: ضاعف الضلع تتضاعف المساحة أربع مرات",
+             "scenes": [{"id": "S1Thesis", "proves": "the thesis sentence on screen"},
+                        {"id": "S2Side", "proves": "a square of side 2 units"},
+                        {"id": "S3Double", "proves": "side x2 -> area x4"}]}
+    sb = write_json(wd, "storyboard.json", board)
+    vids = _manim(wd, _EXPLAINER, [s["id"] for s in board["scenes"]])
+    lst = Path(wd) / "concat.txt"
+    lst.write_text("".join("file '%s'\n" % vids[s["id"]].resolve() for s in board["scenes"]))
+    final = Path(wd) / "explainer.mp4"
+    fx.ffmpeg("-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", "-movflags", "+faststart", final)
+    thumb = Path(wd) / "thumbnail.png"
+    fx.ffmpeg("-ss", "2.9", "-i", final, "-frames:v", "1", "-vf", "scale=1280:720:flags=lanczos", thumb)
+    st = [s for s in fx.probe(final)["streams"] if s["codec_type"] == "video"][0]
+    w, h, n = int(st["width"]), int(st["height"]), int(st.get("nb_frames", 0))
+    blue = lambda f: int(_hue_mask(f, (88, 196, 221), 80).sum())
+    s2, s3 = read_video(vids["S2Side"]), read_video(vids["S3Double"])
+    a2, a3 = blue(s2[-1]), blue(s3[-1])
+    s1 = read_video(vids["S1Thesis"])
+    ink1 = int((s1[-1].max(axis=2) > 120).sum())
+    from PIL import Image
+    tw_, th_ = Image.open(thumb).size
+    return [check("storyboard: one thesis and 3-6 scenes", bool(board["thesis"]) and 3 <= len(board["scenes"]) <= 6, len(board["scenes"])),
+            check("every scene smoke-rendered with -ql", all(v.is_file() and v.stat().st_size > 0 for v in vids.values()), [v.name for v in vids.values()]),
+            check("joined explainer is 16:9 with all 3 seconds (30 frames)", w * 9 == h * 16 and abs(n - 30) <= 1, [w, h, n], [192, 108, 30]),
+            check("scene 3 proves its claim: doubled side -> area x4 (+-10%)", 3.6 < a3 / max(a2, 1) < 4.4, round(a3 / max(a2, 1), 3), 4.0),
+            check("thesis scene shows the Arabic sentence (shaped text has ink)", ink1 > 50, ink1, "> 50 px"),
+            check("thumbnail readable at social size (1280x720)", (tw_, th_) == (1280, 720), [tw_, th_]),
+            check("negative control: the first frame of scene 2 (before GrowFromCenter) has no square", blue(s2[0]) == 0 < a2, blue(s2[0]), 0)], \
+        [final, thumb, sb]

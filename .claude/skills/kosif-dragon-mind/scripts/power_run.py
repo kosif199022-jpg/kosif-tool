@@ -52,7 +52,7 @@ def load_all() -> dict:
                 continue
             for cid in set(H.REGISTRY) - before:
                 OWNER[cid] = path.name
-            GAPS.update(getattr(mod, "GAPS", {}))
+            GAPS.update({(k.split(":", 1)[1] if k.startswith("power:") else k): v for k, v in getattr(mod, "GAPS", {}).items()})
         _LOADED = True
     return H.REGISTRY
 

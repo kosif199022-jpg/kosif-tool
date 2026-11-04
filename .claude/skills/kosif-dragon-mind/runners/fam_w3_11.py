@@ -54,7 +54,6 @@ GAPS: dict = {
     "DOC-28": "editing Google Drive files needs the Google Workspace connector and the user's account (live service)",
     "DOC-29": "Docling downloads layout/table models (a few hundred MB) and pulls torch; not installed",
     "DOC-30": "Marker needs 1-2 GB of model weights; not installed",
-    "DOC-34": "PlantUML is not installed (no apt package, the jar download was refused here)",
     "CAM-64": _SAME + ": three.js dof() needs WebGPU; the WebGL2 fallback blurred near and far planes alike",
     "CAM-71": _SAME + ": the card's zoom formula leaves black corners; the exact cover is |cos r| + q|sin r|",
     "CAM-92": _SAME + ": hyperframes add carousel-circle-* fetches sample photos from static.heygen.ai (no network)",
@@ -3872,3 +3871,85 @@ def readable_captions(task, wd):
             check("key pill centred on the ink bounds (offset < 1.5 px)", max(map(abs, off)) < 1.5, off),
             check("each word appears 0.04-0.1 s before its timestamp", all(0.04 <= x["start"] - s <= 0.1 for x, s in zip(words, shown)), shown),
             check("negative control: centring on the layout box misses the ink by > 3 px", max(map(abs, lay_off)) > 3, lay_off)], outs + [pp]
+
+
+# ───────────── DOC-34: PlantUML (apt plantuml, installed with the owner's approval) ─────────────
+_PUML = {
+    "sequence": """@startuml
+participant Client
+participant Server
+participant Database
+Client -> Server: request
+Server -> Database: query
+Database --> Server: rows
+Server --> Client: response
+@enduml
+""",
+    "class": """@startuml
+class Animal {
+  +name : String
+  +speak() : void
+}
+class Dog
+class Cat
+Animal <|-- Dog
+Animal <|-- Cat
+@enduml
+""",
+    "component": """@startuml
+[Web] --> [API] : REST
+[API] --> [DB] : SQL
+@enduml
+""",
+}
+
+
+def _svg_texts(path):
+    """(text, x, y) of every <text> element of an SVG, in document order; [] when the file is not an SVG."""
+    import xml.etree.ElementTree as ET
+    try:
+        root = ET.parse(str(path)).getroot()
+    except ET.ParseError:
+        return []
+    ns = "{http://www.w3.org/2000/svg}"
+    return [((t.text or "").strip(), float(t.get("x", 0)), float(t.get("y", 0))) for t in root.iter(ns + "text")]
+
+
+@card("DOC-34")
+def plantuml_uml(task, wd):
+    """PlantUML turns text into UML: a sequence, a class and a component diagram are rendered to SVG with the apt
+    `plantuml` (Java) and the SVGs are read back: participants, message order and return arrows, class members and the two
+    inheritance triangles, components and their labelled links."""
+    wd = Path(wd)
+    srcs = [tw(wd / ("%s.puml" % k), v) for k, v in _PUML.items()]
+    out = wd / "svg"
+    env = dict(os.environ, HOME=str(wd / "_home"), JAVA_TOOL_OPTIONS=os.environ.get("JAVA_TOOL_OPTIONS", "") + " -Djava.awt.headless=true")
+    (wd / "_home").mkdir(exist_ok=True)
+    run(["plantuml", "-tsvg", "-charset", "UTF-8", "-o", out, *srcs], env=env, cwd=wd)
+    ver = run(["plantuml", "-version"], env=env).stdout.splitlines()[0]
+    svg = {k: out / ("%s.svg" % k) for k in _PUML}
+    seq = _svg_texts(svg["sequence"])
+    names = [t for t, _, _ in seq]
+    msgs = sorted([(y, t) for t, x, y in seq if t in ("request", "query", "rows", "response")])
+    seq_src = svg["sequence"].read_text()
+    dashed_ret = seq_src.count("stroke-dasharray: 2.0,2.0")
+    lifelines = seq_src.count("stroke-dasharray: 5.0,5.0")
+    cls = [t for t, _, _ in _svg_texts(svg["class"])]
+    cls_src = svg["class"].read_text()
+    hollow = len(re.findall(r'<polygon fill="none" points="[^"]+"', cls_src))
+    comp = [t for t, _, _ in _svg_texts(svg["component"])]
+    comp_src = svg["component"].read_text()
+    rects = len(re.findall(r"<rect ", comp_src))
+    raw = _svg_texts(srcs[0])
+    rep = jw(wd / "plantuml_report.json", {"version": ver, "sequence_texts": names, "message_order": [t for _, t in msgs],
+                                           "dashed_returns": dashed_ret, "lifelines": lifelines, "class_texts": cls,
+                                           "hollow_triangles": hollow, "component_texts": comp, "component_rects": rects})
+    return [check("three SVGs rendered", all(p.is_file() and p.stat().st_size > 500 for p in svg.values()), [p.stat().st_size for p in svg.values()]),
+            check("sequence: each participant drawn twice (head and foot)", all(names.count(n) == 2 for n in ("Client", "Server", "Database")), names),
+            check("sequence: messages top-to-bottom in source order", [t for _, t in msgs] == ["request", "query", "rows", "response"], [t for _, t in msgs]),
+            check("sequence: the two --> replies are dashed and 3 lifelines", (dashed_ret, lifelines) == (2, 3), [dashed_ret, lifelines], [2, 3]),
+            check("class: Animal with its attribute and method, Dog, Cat", cls == ["Animal", "name : String", "speak() : void", "Dog", "Cat"], cls),
+            check("class: two hollow inheritance triangles (<|--)", hollow == 2, hollow, 2),
+            check("component: three components and both link labels", sorted(comp) == ["API", "DB", "REST", "SQL", "Web"], comp),
+            check("negative control: the untreated .puml text is not a diagram (no SVG text elements)", raw == [] and "<svg" not in _PUML["sequence"], len(raw), 0)], \
+        [svg["sequence"], svg["class"], svg["component"], rep]
