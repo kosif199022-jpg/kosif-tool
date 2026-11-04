@@ -2,7 +2,7 @@
  "schema": "kosif.task-history.v1",
  "id": "20261104-warehouse-count-site-v39-maison-design-system",
  "date": "2026-11-04",
- "title": "Warehouse stock-count web app v28→v48: design system v2 (Maison), multi-search, highlight, shelf groups, scan mode, award-site motion, phone bottom bar, measured gate",
+ "title": "Warehouse stock-count web app v28→v49: design system v2 (Maison), multi-search, highlight, shelf groups, scan mode, award-site motion, phone bottom bar, measured gate",
  "request": "نفذ المقترح واستخدم قدرات التنين الاسود في تطوير الخطوط والموشن جرافك وايقونات الموقع وغيرها",
  "kind": "web",
  "mode": "موافق",
@@ -17,7 +17,7 @@
   "WebSearch/WebFetch research + 3 research subagents (2 completed, 1 rate-limited)"
  ],
  "params": {
-  "artifact_versions": "28..48 (artifact version 50)",
+  "artifact_versions": "28..49 (artifact version 51)",
   "themes": [
    "light Maison ivory/charcoal/antique gold",
    "dark graphite/champagne",
@@ -154,6 +154,12 @@
    "tool": "python3 patch37.py",
    "command": "bash build.sh && node t49.js (fake room: receive → search + sheet + toast, unknown → add action, receive off, phone emits on scan) && node t48.js && node t45.js && node t38.js && node t19b.js && node t36.js && node t47.js && node gate.js",
    "manual": "the real room transport (claude.ai realtime) was not exercised here; it needs both devices signed in as members"
+  },
+  {
+   "n": 16,
+   "what": "v49 «لايف بالكاميرا يخبرني الموقع»: an overlay canvas over the viewfinder draws a box around every barcode in sight (BarcodeDetector boundingBox; ZXing result points scaled back) with a floating label «📍 المكان» + item name (green = has a location, amber = none, red = unknown code), fading 2.2 s after the last sighting; the location is also spoken in Arabic through speechSynthesis (ar voice when present, letters/digits of the location spelled out, 6 s per code, 🔊/🔇 toggle persisted in OPTS.camVoice); when the iframe's permissions policy blocks getUserMedia the overlay says so and offers «صفحة كاملة» (window.open of the page's own origin, or copies the link)",
+   "tool": "python3 patch38.py",
+   "command": "bash build.sh && node t50.js (fake camera + mocked detector with boxes + mocked speechSynthesis) && node t48.js && node t49.js && node t45.js && node t38.js && node t47.js && node gate.js"
   }
  ],
  "outputs": [
@@ -162,12 +168,12 @@
    "kind": "web",
    "deterministic": false,
    "measured": {
-    "version": 50,
-    "page_bytes": 1572219,
-    "capabilities": "db, user(profile), downloads, assets, room(scan: interact)",
+    "version": 51,
+    "page_bytes": 1578641,
     "contrast_pairs_ge_4.5": "60/63 (3 LOW rows are the tab probe artefact)",
-    "behaviour_tests_passed": "10/10",
-    "js_errors": 0
+    "behaviour_tests_passed": "11/11",
+    "js_errors": 0,
+    "live_overlay": "85k overlay pixels painted for 2 mocked boxes; spoken: item name + «مفيش موقع محفوظ» / location"
    }
   }
  ],
@@ -195,7 +201,8 @@
   "A sticky bar with backdrop-filter makes position:fixed children resolve against the bar; drop the blur before using a fixed bottom sheet inside it.",
   "A fragment forced to direction:ltr inside an RTL line puts a leading separator on its left; keep fragments in the paragraph direction (isolate only) or the dots land between the wrong items.",
   "The owner's own words decide the default: cards were a good idea for search results but they wanted the table; keep such ideas behind a switch instead of as the default.",
-  "Camera inside a claude.ai artifact: no capability to declare; getUserMedia may be blocked by the iframe policy, so the overlay degrades to a capture=environment file input, which always opens the phone camera."
+  "Camera inside a claude.ai artifact: no capability to declare; getUserMedia may be blocked by the iframe policy, so the overlay degrades to a capture=environment file input, which always opens the phone camera.",
+  "The claude.ai artifact frame host is unreachable from the container, so the iframe camera permission policy cannot be probed here; design the camera for both outcomes and tell the owner which one they hit."
  ],
  "notes": "Research reports used: Stripe/Linear/Apple HIG/Material/Polaris/Square/Odoo (dashboard patterns); Rolex/Cartier/Hermes/Dior/AP + NEOM/Aramco/Al Rajhi + W3C alreq (luxury and Arabic/RTL rules). v40 adds the creative-sites report (Lusion, Locomotive, Immersive Garden, Obys, Exo Ape, Resn, Active Theory, Studio Freight, Basement, Hello Monday, Unseen, Dogstudio, By-Kin, Iventions, Mat Voyce, aengel, Long Hoang, Linear, Vercel, Stripe, Apple, Lando Norris, Igloo)."
 }
