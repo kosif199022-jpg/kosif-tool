@@ -117,6 +117,21 @@ def mask(a, rgb, tol=40):
     return (np.abs(a - np.array(rgb)).max(axis=2) <= tol)
 
 
+def hue_mask(a, rgb, deg=14, sat=0.55, val=0.45):
+    """Pixels whose hue is within `deg` of the colour's hue and that are saturated and bright.
+    Hue survives JPEG chroma subsampling and small colour-management shifts better than an RGB box."""
+    x = np.asarray(a, float) / 255.0
+    mx, mn = x.max(axis=2), x.min(axis=2)
+    d = np.where(mx - mn == 0, 1e-9, mx - mn)
+    r, g, b = x[..., 0], x[..., 1], x[..., 2]
+    h = np.where(mx == r, ((g - b) / d) % 6, np.where(mx == g, (b - r) / d + 2, (r - g) / d + 4)) * 60
+    t = np.array(rgb, float) / 255.0
+    tmx, tmn = t.max(), t.min()
+    th = (((t[1] - t[2]) / (tmx - tmn)) % 6 if tmx == t[0] else ((t[2] - t[0]) / (tmx - tmn) + 2 if tmx == t[1] else (t[0] - t[1]) / (tmx - tmn) + 4)) * 60
+    dh = np.abs((h - th + 180) % 360 - 180)
+    return (dh <= deg) & ((mx - mn) / np.maximum(mx, 1e-9) >= sat) & (mx >= val)
+
+
 def bbox(a, rgb, tol=40):
     ys, xs = np.nonzero(mask(a, rgb, tol))
     if not len(xs):
@@ -174,8 +189,8 @@ def eng_312(work: Path):
     with_props = img(out / "still-0060.jpeg")
     default = img(out / "variant-default-props.jpeg")
     green, orange = hexrgb(props["accent"]), hexrgb("#ff7a1a")
-    g1, o1 = int(mask(with_props, green, 30).sum()), int(mask(with_props, orange, 30).sum())
-    g2, o2 = int(mask(default, green, 30).sum()), int(mask(default, orange, 30).sum())
+    g1, o1 = int(hue_mask(with_props, green).sum()), int(hue_mask(with_props, orange).sum())
+    g2, o2 = int(hue_mask(default, green).sum()), int(hue_mask(default, orange).sum())
     v = vstream(out / "film-58-62.mp4")
     return [
         ("composition 1080x1920 @30 fps, 12 s = 360 frames",
