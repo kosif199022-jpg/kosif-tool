@@ -2,7 +2,7 @@
  "schema": "kosif.task-history.v1",
  "id": "20261104-warehouse-count-site-v39-maison-design-system",
  "date": "2026-11-04",
- "title": "Warehouse stock-count web app v28→v47: design system v2 (Maison), multi-search, highlight, shelf groups, scan mode, award-site motion, phone bottom bar, measured gate",
+ "title": "Warehouse stock-count web app v28→v48: design system v2 (Maison), multi-search, highlight, shelf groups, scan mode, award-site motion, phone bottom bar, measured gate",
  "request": "نفذ المقترح واستخدم قدرات التنين الاسود في تطوير الخطوط والموشن جرافك وايقونات الموقع وغيرها",
  "kind": "web",
  "mode": "موافق",
@@ -17,7 +17,7 @@
   "WebSearch/WebFetch research + 3 research subagents (2 completed, 1 rate-limited)"
  ],
  "params": {
-  "artifact_versions": "28..47 (artifact version 49)",
+  "artifact_versions": "28..48 (artifact version 50)",
   "themes": [
    "light Maison ivory/charcoal/antique gold",
    "dark graphite/champagne",
@@ -147,6 +147,13 @@
    "tool": "python3 patch36.py",
    "command": "bash build.sh && node t48.js (fake camera + mocked detector) && node t38.js && node t19b.js && node t28.js && node t31.js && node t33.js && node t36.js && node t45.js && node t47.js && node gate.js",
    "manual": "the ZXing path (iPhone / desktop without BarcodeDetector) is code-ready and checked against the library's exported API (esm index, browser.js, MultiFormatReader.js read via WebFetch) but was not executed here: the CDN is unreachable from the container"
+  },
+  {
+   "n": 15,
+   "what": "v48: phone ↔ computer link over the artifact `room` capability (declared with topic scan at interact level): every camera or hardware-scanner read emits {code, key, name, at, dev}; the other device (receive on by default on fine pointers, send on by default on coarse pointers, both switchable in the options panel under «ربط الموبايل بالكمبيوتر») fills the search, flashes the row, opens the item sheet (switchable) and toasts; unknown codes offer «إضافة كصنف جديد»; presence {dev, send, recv} drives a green pill «📱 الموبايل متصل» on the computer and «🖥 بيتبعت للكمبيوتر» in the phone camera; a db doc live/scan is the fallback when the room is not connected",
+   "tool": "python3 patch37.py",
+   "command": "bash build.sh && node t49.js (fake room: receive → search + sheet + toast, unknown → add action, receive off, phone emits on scan) && node t48.js && node t45.js && node t38.js && node t19b.js && node t36.js && node t47.js && node gate.js",
+   "manual": "the real room transport (claude.ai realtime) was not exercised here; it needs both devices signed in as members"
   }
  ],
  "outputs": [
@@ -155,13 +162,12 @@
    "kind": "web",
    "deterministic": false,
    "measured": {
-    "version": 49,
-    "page_bytes": 1566217,
+    "version": 50,
+    "page_bytes": 1572219,
+    "capabilities": "db, user(profile), downloads, assets, room(scan: interact)",
     "contrast_pairs_ge_4.5": "60/63 (3 LOW rows are the tab probe artefact)",
-    "js_errors_in_screenshots": 0,
-    "behaviour_tests_passed": "9/9 (t48 camera flow: overlay, live card, location saved from the card, mark, open sheet above camera, photo with 2 codes, unknown code → new-item sheet, close stops the stream; phone bar add + camera)",
-    "targets_under_24px": 0,
-    "buttons_without_name": 0
+    "behaviour_tests_passed": "10/10",
+    "js_errors": 0
    }
   }
  ],
