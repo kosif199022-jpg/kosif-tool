@@ -66,6 +66,8 @@ jobs:
           set -e
           # 0 = every reviewed adapter executed (catalog entries without an adapter stay blocked,
           # see full_coverage in the report); 4 = reviewed execution incomplete; anything else is an error
+          # name every failed adapter with its ledger record, so a red run says what broke
+          python3 -c 'import json; items = json.load(open("out/black-dragon/ci-run/all_skills_ledger.json"))["items"]; [print("FAILED", k, json.dumps(v, ensure_ascii=False)[:1500]) for k, v in items.items() if v.get("status") == "failed"]' || true
           test "$code" -eq 0
           python3 - <<'PY'
           import json
