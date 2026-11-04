@@ -523,6 +523,15 @@
    ],
    "why": "real runner (fam_w3_14.py): the card's method as a program with known-answer checks"
   },
+  "power:AMEDIA-08": {
+   "script": ".claude/skills/kosif-dragon-mind/scripts/power_run.py",
+   "args": [
+    "{artifact}",
+    "AMEDIA-08",
+    "{task}"
+   ],
+   "why": "real runner (fam_w3_13.py): the card's method as a program with known-answer checks"
+  },
   "power:AMIND-19": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/power_run.py",
    "args": [
@@ -744,6 +753,15 @@
    "args": [
     "{artifact}",
     "APP-07",
+    "{task}"
+   ],
+   "why": "real runner (fam_w3_12.py): the card's method as a program with known-answer checks"
+  },
+  "power:APP-08": {
+   "script": ".claude/skills/kosif-dragon-mind/scripts/power_run.py",
+   "args": [
+    "{artifact}",
+    "APP-08",
     "{task}"
    ],
    "why": "real runner (fam_w3_12.py): the card's method as a program with known-answer checks"
@@ -1800,6 +1818,24 @@
     "{task}"
    ],
    "why": "real runner (fam_typography_arabic.py): the card's method as a program with known-answer checks"
+  },
+  "power:ARL-10": {
+   "script": ".claude/skills/kosif-dragon-mind/scripts/power_run.py",
+   "args": [
+    "{artifact}",
+    "ARL-10",
+    "{task}"
+   ],
+   "why": "real runner (fam_w3_13.py): the card's method as a program with known-answer checks"
+  },
+  "power:ARL-12": {
+   "script": ".claude/skills/kosif-dragon-mind/scripts/power_run.py",
+   "args": [
+    "{artifact}",
+    "ARL-12",
+    "{task}"
+   ],
+   "why": "real runner (fam_w3_13.py): the card's method as a program with known-answer checks"
   },
   "power:ARL-14": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/power_run.py",
@@ -10198,6 +10234,15 @@
    ],
    "why": "real runner (fam_w3_11.py): the card's method as a program with known-answer checks"
   },
+  "power:DOC-34": {
+   "script": ".claude/skills/kosif-dragon-mind/scripts/power_run.py",
+   "args": [
+    "{artifact}",
+    "DOC-34",
+    "{task}"
+   ],
+   "why": "real runner (fam_w3_11.py): the card's method as a program with known-answer checks"
+  },
   "power:DRAW-01": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/power_run.py",
    "args": [
@@ -12169,6 +12214,15 @@
    ],
    "why": "real runner (fam_w3_03.py): the card's method as a program with known-answer checks"
   },
+  "power:ENG-241": {
+   "script": ".claude/skills/kosif-dragon-mind/scripts/power_run.py",
+   "args": [
+    "{artifact}",
+    "ENG-241",
+    "{task}"
+   ],
+   "why": "real runner (fam_w3_03.py): the card's method as a program with known-answer checks"
+  },
   "power:ENG-243": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/power_run.py",
    "args": [
@@ -12799,6 +12853,15 @@
    ],
    "why": "real runner (fam_w3_13.py): the card's method as a program with known-answer checks"
   },
+  "power:EXPL-45": {
+   "script": ".claude/skills/kosif-dragon-mind/scripts/power_run.py",
+   "args": [
+    "{artifact}",
+    "EXPL-45",
+    "{task}"
+   ],
+   "why": "real runner (fam_w3_13.py): the card's method as a program with known-answer checks"
+  },
   "power:EXPL-51": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/power_run.py",
    "args": [
@@ -12813,6 +12876,15 @@
    "args": [
     "{artifact}",
     "EXPL-58",
+    "{task}"
+   ],
+   "why": "real runner (fam_w3_13.py): the card's method as a program with known-answer checks"
+  },
+  "power:EXPL-X01": {
+   "script": ".claude/skills/kosif-dragon-mind/scripts/power_run.py",
+   "args": [
+    "{artifact}",
+    "EXPL-X01",
     "{task}"
    ],
    "why": "real runner (fam_w3_13.py): the card's method as a program with known-answer checks"
@@ -13780,6 +13852,15 @@
    ],
    "why": "real runner (fam_light_glow_bloom.py): the card's method as a program with known-answer checks"
   },
+  "power:GRAPH-01": {
+   "script": ".claude/skills/kosif-dragon-mind/scripts/power_run.py",
+   "args": [
+    "{artifact}",
+    "GRAPH-01",
+    "{task}"
+   ],
+   "why": "real runner (fam_w3_13.py): the card's method as a program with known-answer checks"
+  },
   "power:GRAPH-02": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/power_run.py",
    "args": [
@@ -13825,11 +13906,29 @@
    ],
    "why": "real runner (fam_w3_13.py): the card's method as a program with known-answer checks"
   },
+  "power:GRAPH-07": {
+   "script": ".claude/skills/kosif-dragon-mind/scripts/power_run.py",
+   "args": [
+    "{artifact}",
+    "GRAPH-07",
+    "{task}"
+   ],
+   "why": "real runner (fam_w3_13.py): the card's method as a program with known-answer checks"
+  },
   "power:GRAPH-08": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/power_run.py",
    "args": [
     "{artifact}",
     "GRAPH-08",
+    "{task}"
+   ],
+   "why": "real runner (fam_w3_13.py): the card's method as a program with known-answer checks"
+  },
+  "power:GRAPH-09": {
+   "script": ".claude/skills/kosif-dragon-mind/scripts/power_run.py",
+   "args": [
+    "{artifact}",
+    "GRAPH-09",
     "{task}"
    ],
    "why": "real runner (fam_w3_13.py): the card's method as a program with known-answer checks"
@@ -16485,15 +16584,6 @@
    "args": [
     "{artifact}",
     "SELF-25",
-    "{task}"
-   ],
-   "why": "real runner (fam_w3_12.py): the card's method as a program with known-answer checks"
-  },
-  "power:SELF-26": {
-   "script": ".claude/skills/kosif-dragon-mind/scripts/power_run.py",
-   "args": [
-    "{artifact}",
-    "SELF-26",
     "{task}"
    ],
    "why": "real runner (fam_w3_12.py): the card's method as a program with known-answer checks"
@@ -23955,6 +24045,24 @@
    "args": [
     "{artifact}",
     "WEB-15",
+    "{task}"
+   ],
+   "why": "real runner (fam_w3_13.py): the card's method as a program with known-answer checks"
+  },
+  "power:WEB-21": {
+   "script": ".claude/skills/kosif-dragon-mind/scripts/power_run.py",
+   "args": [
+    "{artifact}",
+    "WEB-21",
+    "{task}"
+   ],
+   "why": "real runner (fam_w3_13.py): the card's method as a program with known-answer checks"
+  },
+  "power:WEB-22": {
+   "script": ".claude/skills/kosif-dragon-mind/scripts/power_run.py",
+   "args": [
+    "{artifact}",
+    "WEB-22",
     "{task}"
    ],
    "why": "real runner (fam_w3_13.py): the card's method as a program with known-answer checks"
