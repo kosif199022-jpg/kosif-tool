@@ -186,9 +186,12 @@ class DragonMindLinkAndApplyTests(unittest.TestCase):
         self.assertEqual(set(allad), set(self.inv))
         for k, spec in reviewed.items():
             self.assertEqual(allad[k], spec)
+        real = dm.reviewed_adapters(bd)  # reviewed + generated real runners
+        for k, spec in real.items():
+            self.assertEqual(allad[k], spec)
         for k, spec in allad.items():
             bd._safe_script(spec["script"])
-            if k not in reviewed and k != V.MIND_ADAPTER_KEY:
+            if k not in real and k != V.MIND_ADAPTER_KEY:
                 self.assertIs(spec.get("method_applier"), True, k)
 
     def test_generated_real_runners_merge_and_reviewed_wins(self):

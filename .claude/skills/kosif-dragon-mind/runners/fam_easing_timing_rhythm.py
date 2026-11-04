@@ -66,12 +66,12 @@ def chrome_bin():
     return None
 
 
-def chrome(wd, name, body_html):
+def chrome(wd, name, body_html, flags=()):
     """Load a page in headless Chrome; the page's script stores JSON in <body data-r>; return it."""
     page = Path(wd) / (name + ".html")
     page.write_text(body_html, encoding="utf-8")
     done = subprocess.run([chrome_bin(), "--headless=new", "--no-sandbox", "--disable-gpu", "--allow-file-access-from-files",
-                           "--virtual-time-budget=4000", "--dump-dom", page.as_uri()], capture_output=True, text=True,
+                           "--virtual-time-budget=4000", *flags, "--dump-dom", page.as_uri()], capture_output=True, text=True,
                           timeout=40, stdin=subprocess.DEVNULL)
     import re
     m = re.search(r'data-r="([^"]*)"', done.stdout)
@@ -1588,7 +1588,7 @@ def cut_film(path, shots, fps=10, size=(32, 18), first_change=None):
             a = np.zeros((h, w, 3), dtype=np.uint8)
             a[:] = palette[i % len(palette)]
             if first_change is not None and i == 0 and k >= first_change:
-                a[h // 4:3 * h // 4, w // 4:3 * w // 4] = 255
+                a[h // 3:2 * h // 3, w // 3:w // 2] = 255
             frames.append(a)
     return write_mp4(path, frames, fps)
 
@@ -1605,8 +1605,8 @@ def pacing_medians(task, wd):
     import statistics
     fps = 30
     shots = [1.1, 1.3, 1.46, 1.6, 2.8, 1.2, 1.46, 1.5, 1.0, 1.46, 1.7, 1.3, 2.2]  # end card 2.2 s
-    mp4 = cut_film(wd / "pacing.mp4", shots, fps, (48, 27), first_change=3)
-    cuts, n, d = detect_cuts(mp4, (48, 27))
+    mp4 = cut_film(wd / "pacing.mp4", shots, fps, (48, 28), first_change=3)
+    cuts, n, d = detect_cuts(mp4, (48, 28))
     bounds = [0] + cuts + [n]
     lens = [(b - a) / fps for a, b in zip(bounds, bounds[1:])]
     first_vis = next(i + 1 for i, v in enumerate(d) if v > 5) / fps
@@ -1617,8 +1617,8 @@ def pacing_medians(task, wd):
               check("shots inside 1.0-2.8 s band", min(lens) >= 1.0 - 1e-9 and max(lens) <= 2.8 + 1e-9, [min(lens), max(lens)], "1.0..2.8"),
               check("first visible change by 0.10 s", first_vis <= 0.10 + 1e-9, first_vis, "<=0.10"),
               check("end card ~2.2 s", abs(lens[-1] - 2.2) <= 1 / fps, lens[-1], 2.2)]
-    flat = cut_film(wd / "flat.mp4", [10.0], fps, (48, 27))
-    c2, n2, _ = detect_cuts(flat, (48, 27))
+    flat = cut_film(wd / "flat.mp4", [10.0], fps, (48, 28))
+    c2, n2, _ = detect_cuts(flat, (48, 28))
     checks.append(check("negative control: one 10 s static shot has median 10 s", (n2 / fps) > 2.8 and not c2, n2 / fps, "<=2.8"))
     return checks, [mp4, path]
 
@@ -1709,7 +1709,7 @@ def onsets(sig, rate, hop=0.005, thr=0.05):
 def beat_clock(task, wd):
     import numpy as np
     bpm, fps, T = 120, 30, 4.0
-    beats = [i * 60 / bpm for i in range(8)]
+    beats = [0.25 + i * 60 / bpm for i in range(8)]
     js = """const B=M.beats(%d); const ch=M.channels({fps:%d, frames:%d, kicks:%s, beats:%s});
 out({at4:B.at(4), len2:B.len(2), v:Array.from({length:%d},(_,f)=>ch.kick(f/%d))});""" % (bpm, fps, int(T * fps), json.dumps(beats), json.dumps(beats), int(T * fps), fps)
     r = node(wd, "beats", js)
@@ -1889,3 +1889,839 @@ def speech_pause_grammar(task, wd):
     raw_gaps = [ws[i + 1]["start"] - ws[i]["end"] for i in range(len(ws) - 1)]
     checks.append(check("negative control: the source keeps gaps > 0.7 s", max(raw_gaps) > 0.7, max(raw_gaps), "<=0.7"))
     return checks, [out, path]
+
+
+def template_page(wd, template, params, seconds, probe_js, size=(540, 960), fps=30):
+    """Fill one of the repo's motion templates (mtemplates.render_html), give it the kit + GSAP, probe it in Chrome."""
+    import importlib
+    import sys
+    sd = str(MKT.parent)
+    if sd not in sys.path:
+        sys.path.insert(0, sd)
+    mt = importlib.import_module("mtemplates")
+    src = mt.render_html(template, params, size[0], size[1], seconds, fps)
+    (wd / "assets").mkdir(exist_ok=True)
+    shutil.copy(GSAP / "dist/gsap.min.js", wd / "assets/gsap.min.js")
+    shutil.copy(KIT, wd / "assets/motion-kit.js")
+    (wd / "index.html").write_text(src, encoding="utf-8")
+    probe = src.replace("</body>", "<script>(function(){const tl=window.__timelines.root, G=(e,p)=>+gsap.getProperty(e,p);" + probe_js +
+                        "})();</script></body>")
+    return chrome(wd, "probe_" + template, probe)
+
+
+@card("EASE-73")
+def countdown_template(task, wd):
+    frm = 5
+    D = frm + 1.6
+    js = """const ns=[...document.querySelectorAll('.n')], arcs=[...document.querySelectorAll('#arcs path')], cam=document.querySelector('#cam'), fl=document.querySelector('#flash');
+const at=(t,f)=>{tl.seek(t); return f();}; const len=arcs[0].getTotalLength();
+const R={n:ns.length, dur:tl.duration(), len,
+ s0:at(0.0001,()=>[G(ns[0],'scale'),G(ns[0],'opacity')]), s1:at(0.3195,()=>[G(ns[0],'scaleX'),G(ns[0],'opacity')]),
+ ddur:+document.querySelector('#root').dataset.duration,
+ sq:at(0.33,()=>[G(ns[0],'scaleX'),G(ns[0],'scaleY')]),
+ ring0:at(0.05,()=>G(arcs[0],'strokeDashoffset')), ring1:at(0.9,()=>G(arcs[0],'strokeDashoffset')),
+ shake:Array.from({length:30},(_,i)=>at(i/60,()=>G(cam,'x'))), rest:at(0.8,()=>G(cam,'x')),
+ f1:at(%(f)s+0.06,()=>G(fl,'opacity')), f2:at(%(f)s+0.21,()=>G(fl,'opacity')), fmid:at(%(f)s+0.16,()=>G(fl,'opacity')),
+ n2:at(1.33,()=>G(ns[1],'opacity'))};
+document.body.setAttribute('data-r', JSON.stringify(R));""" % {"f": frm}
+    r = template_page(wd, "countdown", {"from": str(frm), "go": "انطلق", "accent": "#FF6B6B"}, D, js)
+    path = jw(wd / "countdown_probe.json", r)
+    amp = max(abs(x) for x in r["shake"])
+    checks = [check("one number per second (from=5)", r["n"] == 5, r["n"], 5),
+              check("film duration D = from + 1.6 s", abs(r["ddur"] - D) < 1e-9, r["ddur"], D),
+              check("number slams in from scale 1.9, invisible", abs(r["s0"][0] - 1.9) < 0.01 and r["s0"][1] < 0.05, r["s0"], [1.9, 0]),
+              check("lands at scale 1 by 0.32 s", abs(r["s1"][0] - 1) < 0.01 and r["s1"][1] > 0.98, r["s1"], [1, 1]),
+              check("then squashes on landing", r["sq"][0] > 1.0 and r["sq"][1] < 1.0, r["sq"], ">1, <1"),
+              check("ring runs down (dashoffset len -> 0)", abs(r["ring0"] - r["len"]) < 1 and abs(r["ring1"]) < 1, [r["ring0"], r["ring1"]], [r["len"], 0]),
+              check("camera shake amplitude <= 5 px and alive", 0.5 < amp <= 5.0 + 1e-6, amp, "<=5"),
+              check("double flash: peak .6 then a second .3 pulse", abs(r["f1"] - 0.6) < 0.01 and r["f2"] > 0.25 and r["fmid"] < r["f2"],
+                    [r["f1"], r["fmid"], r["f2"]], [0.6, "<", 0.3]),
+              check("next number is in a second later", r["n2"] > 0.99, r["n2"], 1),
+              check("negative control: before the slam the number is not at rest", abs(r["s0"][0] - 1) > 0.5, r["s0"][0], "!= 1")]
+    return checks, [wd / "index.html", path]
+
+
+@card("EASE-74")
+def progress_bar(task, wd):
+    import numpy as np
+    W, H, fps, D = 320, 60, 30, 5.06
+    n = int(round(D * fps))
+    imgs = []
+    for f in range(n + 1):
+        im, d = canvas(W, H, (20, 20, 30))
+        w = W if f == n else (f / fps) / D * W
+        if w >= 1:
+            d.rectangle([0, H - 3, w - 1, H - 1], fill=(0xe8, 0xbd, 0x76))
+        imgs.append(np.asarray(im))
+    mp4 = write_mp4(wd / "progress.mp4", imgs, fps)
+    fr = read_mp4(mp4, W, H)
+    widths = [int((q[H - 2, :, 0] > 150).sum()) for q in fr]
+    xs = np.arange(len(widths))[5:-5]
+    ys = np.array(widths)[5:-5]
+    slope, icpt = np.polyfit(xs, ys, 1)
+    resid = float(np.abs(ys - (slope * xs + icpt)).max())
+    path = jw(wd / "progress.json", {"widths": widths, "slope": slope})
+    checks = [check("bar grows linearly (max residual <= 1.5 px)", resid <= 1.5, resid, "<=1.5"),
+              check("slope = W / (D*fps) px per frame", abs(slope - W / (D * fps)) < 0.03, slope, W / (D * fps)),
+              check("3 px accent line at the bottom edge", int((fr[-1][:, W // 2, 0] > 150).sum()) == 3, int((fr[-1][:, W // 2, 0] > 150).sum()), 3),
+              check("snaps full on completion", widths[-1] == W, widths[-1], W),
+              check("negative control: frame 0 shows no length yet", widths[0] < 2, widths[0], 0)]
+    return checks, [mp4, path]
+
+
+def ramp_map(keys):
+    """Exact output time for input time s under piecewise-linear speed keys [[s, v], ...] (integral of ds / v)."""
+    def T(s):
+        acc = 0.0
+        for (s0, v0), (s1, v1) in zip(keys, keys[1:]):
+            if s <= s0:
+                break
+            e = min(s, s1)
+            b = (v1 - v0) / (s1 - s0)
+            v_e = v0 + b * (e - s0)
+            acc += (e - s0) / v0 if abs(b) < 1e-12 else math.log(v_e / v0) / b
+        return acc
+    return T
+
+
+def ramp_expr(keys):
+    """ffmpeg setpts expression in seconds of input time T (log integral, nested if)."""
+    T = ramp_map(keys)
+    expr = None
+    for (s0, v0), (s1, v1) in reversed(list(zip(keys, keys[1:]))):
+        b = (v1 - v0) / (s1 - s0)
+        seg = "(%.9f+log((%.9f+%.9f*(T-%.9f))/%.9f)/%.9f)" % (T(s0), v0, b, s0, v0, b) if abs(b) > 1e-12 else \
+            "(%.9f+(T-%.9f)/%.9f)" % (T(s0), s0, v0)
+        expr = seg if expr is None else "if(lt(T,%.9f),%s,%s)" % (s1, seg, expr)
+    return expr
+
+
+@card("EASE-75")
+def exact_speed_ramps(task, wd):
+    import numpy as np
+    keys = [[0, 1.0], [1.5, 0.25], [3, 1.0]]
+    T = ramp_map(keys)
+    expect = T(3.0)
+    src = wd / "src.mp4"
+    fx.ffmpeg("-f", "lavfi", "-i", "testsrc2=s=64x36:r=30:d=3", "-pix_fmt", "yuv420p", "-c:v", "libx264", src)
+    out = wd / "ramp.mp4"
+    fx.ffmpeg("-i", src, "-vf", "setpts='%s/TB',fps=30" % ramp_expr(keys).replace(",", "\\,"), "-an", "-c:v", "libx264", "-pix_fmt", "yuv420p", out)
+    dur = float(fx.probe(out)["format"]["duration"])
+    tone = fx.tone(wd / "tone.wav", 440, 2.0, 44100)
+    fast = wd / "tone_x2.wav"
+    fx.ffmpeg("-i", tone, "-filter:a", "atempo=2.0", fast)
+    a, ra = fx.read_wav(fast)
+    sp = np.abs(np.fft.rfft(a[:, 0]))
+    freq = float(np.fft.rfftfreq(len(a), 1 / ra)[int(np.argmax(sp))])
+    path = jw(wd / "ramp.json", {"keys": keys, "expected_s": expect, "rendered_s": dur, "atempo_freq": freq, "atempo_len": len(a) / ra})
+    checks = [check("time map integrates exactly: 2 x 2 ln 4 = 5.545 s", abs(expect - 4 * math.log(4)) < 1e-9, expect, 4 * math.log(4)),
+              check("rendered ramp duration = integral", abs(dur - expect) < 0.08, dur, expect),
+              check("constant 2x keeps pitch (atempo)", abs(freq - 440) < 2, freq, 440),
+              check("constant 2x halves the length", abs(len(a) / ra - 1.0) < 0.03, len(a) / ra, 1.0),
+              check("negative control: the source is 3 s, not the ramp length", abs(float(fx.probe(src)["format"]["duration"]) - expect) > 1,
+                    float(fx.probe(src)["format"]["duration"]), expect)]
+    return checks, [out, path]
+
+
+@card("EASE-76")
+def optical_flow_slowmo(task, wd):
+    import numpy as np
+    W, H = 160, 90
+    imgs = []
+    for f in range(30):
+        im, d = canvas(W, H, (0, 0, 0))
+        x = 10 + 4 * f
+        d.rectangle([x, 35, x + 16, 51], fill=(255, 255, 255))
+        imgs.append(np.asarray(im))
+    src = write_mp4(wd / "src30.mp4", imgs, 30)
+    out = wd / "slowmo.mp4"
+    fx.ffmpeg("-i", src, "-vf", "minterpolate=fps=60:mi_mode=mci:mc_mode=aobmc:vsbmc=1,setpts=2.0*PTS", "-c:v", "libx264",
+              "-pix_fmt", "yuv420p", "-r", "30", out, timeout=60)
+    dup = wd / "dup.mp4"
+    fx.ffmpeg("-i", src, "-vf", "fps=60,setpts=2.0*PTS", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-r", "30", dup)
+    fo, fd = read_mp4(out, W, H), read_mp4(dup, W, H)
+    cx = [blob_x(q)["cx"] for q in fo[4:50]]
+    steps = np.diff(cx)
+    cd = [blob_x(q)["cx"] for q in fd[4:50]]
+    dsteps = np.diff(cd)
+    dur = float(fx.probe(out)["format"]["duration"])
+    path = jw(wd / "slowmo.json", {"steps": steps.tolist(), "dup_steps": dsteps.tolist(), "dur": dur})
+    checks = [check("2x slower: 1 s becomes ~2 s", abs(dur - 2.0) < 0.15, dur, 2.0),
+              check("synthesised in-betweens: every frame moves ~2 px (half of 4)", float(np.median(np.abs(steps - 2))) < 0.5 and
+                    (np.abs(steps) > 0.5).mean() > 0.9, float(np.median(steps)), 2),
+              check("negative control: duplicate-frame slow-mo freezes every other frame", (np.abs(dsteps) < 0.5).mean() > 0.4,
+                    float((np.abs(dsteps) < 0.5).mean()), ">0.4 frozen")]
+    return checks, [out, path]
+
+
+@card("EASE-80")
+def status_micro_loops(task, wd):
+    import numpy as np
+    fps, W, H = 30, 200, 60
+
+    def frame(t):
+        im, d = canvas(W, H, (16, 16, 24))
+        p = (t % 1.2) / 1.2  # shimmer: gradient at 200 % size, position 0 -> -200 % in 1.2 s linear
+        for x in range(10, 110):
+            u = ((x - 10) / 100 / 2 + p) % 1
+            v = 60 + 60 * math.exp(-((u - 0.5) ** 2) / 0.01)
+            d.line([x, 10, x, 24], fill=(int(v),) * 3)
+        q = (t % 1.6) / 1.6  # alert pulse 1 -> .35 -> 1, ease-in-out
+        op = 1 - 0.65 * (1 - math.cos(2 * math.pi * q)) / 2
+        d.ellipse([130, 10, 144, 24], fill=(int(255 * op), 40, 40))
+        for k in range(3):  # typing dots: 1 s, delays 0 / .15 / .3, opacity .25 <-> 1, rise 3 px at 50 %
+            ph = ((t - 0.15 * k) % 1.0)
+            s = (1 - math.cos(2 * math.pi * ph)) / 2
+            o = 0.25 + 0.75 * s
+            y = 45 - 3 * s
+            d.ellipse([20 + 14 * k, y - 4, 28 + 14 * k, y + 4], fill=(int(255 * o),) * 3)
+        a = (t % 0.8) / 0.8 * 2 * math.pi  # spinner .8 s linear
+        d.pieslice([160, 30, 190, 60], math.degrees(a), math.degrees(a) + 270, fill=(120, 200, 255))
+        return np.asarray(im)
+    T = 24.0  # LCM of 1.2, 1.6, 1.0, 0.8 s: the whole set loops seamlessly every 24 s
+    fps = 60
+    mp4 = write_mp4(wd / "micro_loops.mp4", [frame(f / fps) for f in range(int(2.4 * fps))], fps)
+    fr = read_mp4(mp4, W, H)
+    seam = float(np.abs(np.asarray(frame(T), dtype=float) - np.asarray(frame(0), dtype=float)).mean())
+    alert = [float(q[17, 137, 0]) for q in fr][:96]
+    d0 = [float(q[40:50, 20:28].mean()) for q in fr]
+    d1 = [float(q[40:50, 34:42].mean()) for q in fr]
+    lag = (int(np.argmax(d1[:60])) - int(np.argmax(d0[:60]))) / fps
+    path = jw(wd / "micro_loops.json", {"alert_red": alert, "dot_lag_s": lag})
+    checks = [check("loop seam: frame(T) == frame(0)", seam < 1e-9, seam, 0),
+              check("alert dips to .35 at 0.8 s", abs(min(alert) / max(alert) - 0.35) < 0.06, min(alert) / max(alert), 0.35),
+              check("alert minimum at half period (0.8 s)", abs(int(np.argmin(alert)) / fps - 0.8) <= 0.05, int(np.argmin(alert)) / fps, 0.8),
+              check("typing dot 2 lags dot 1 by 0.15 s", abs(lag - 0.15) <= 1 / fps + 1e-9, lag, 0.15)]
+    checks.append(check("negative control: a 1.0 s loop rendered over 4.5 s has a seam",
+                       float(np.abs(np.asarray(frame(4.5 + 0.1), dtype=float) - np.asarray(frame(0.1), dtype=float)).mean()) > 0.5,
+                       float(np.abs(np.asarray(frame(4.6), dtype=float) - np.asarray(frame(0.1), dtype=float)).mean()), ">0.5"))
+    return checks, [mp4, path]
+
+
+@card("EASE-81")
+def typewriter_speeds(task, wd):
+    table = {"dramatic": 4, "natural": 10, "tech": 18, "bulk": 32}
+    text = "The quick brown fox jumps over"
+    js = """const T=%s, text=%s; const R={};
+for(const [k,cps] of Object.entries(T)){const el={textContent:'',style:{},opacity:0,visibility:'hidden'}; const tl=gsap.timeline({paused:true});
+ M.typeOn(tl, el, text, 0, {dur:text.length/cps, ease:'none', caret:false}); R[k]=[0.5,1.0,1.5].map(t=>{tl.seek(t); return el.textContent.length;});}
+const c={textContent:'',style:{},opacity:0,visibility:'hidden'}; const t2=gsap.timeline({paused:true}); M.typeOn(t2,c,'ab',0,{dur:.5,ease:'none'});
+const blink=[0.6,0.9,1.1,1.4].map(t=>{t2.seek(t); return c.textContent;}); const caretStep=gsap.parseEase('steps(1)')(0.3);
+out({R, blink, caretStep});""" % (json.dumps(table), json.dumps(text))
+    r = node(wd, "type", js)
+    arabic = "حركة لها معنى واضح"
+    words = arabic.split()
+    states = [" ".join(words[:k]) for k in range(len(words) + 1)]
+    path = jw(wd / "typewriter.json", {"counts": r["R"], "blink": r["blink"], "arabic_states": states})
+    checks = []
+    for k, cps in table.items():
+        exp = [min(len(text), round(cps * t)) for t in (0.5, 1.0, 1.5)]
+        checks.append(check("%s %d cps -> chars at .5/1/1.5 s" % (k, cps), all(abs(a - b) <= 1 for a, b in zip(r["R"][k], exp)), r["R"][k], exp))
+    checks += [check("caret blinks hard (on/off states only)", set(r["blink"]) <= {"ab", "ab|"} and len(set(r["blink"])) == 2, r["blink"], "ab|/ab"),
+               check("steps(1) is a hard step", r["caretStep"] in (0, 1), r["caretStep"], "0 or 1"),
+               check("Arabic types by whole words", all(all(w in words for w in s.split()) for s in states), len(states), len(words) + 1)]
+    cut = arabic[:7]
+    checks.append(check("negative control: per-character slicing breaks an Arabic word", not all(w in words for w in cut.split()), cut, "whole words"))
+    return checks, [path]
+
+
+@card("EASE-82")
+def drawing_time_model(task, wd):
+    import numpy as np
+    W, H = 120, 80
+    SPEEDS = {"slow": 5.0, "normal": 1.8, "fast": 0.55, "instant": 0.0}
+    sheet = np.zeros((H, W), dtype=np.uint8)
+    steps = []
+    a = sheet.copy(); a[10:70, 10:110] = 200; steps.append(("sky", a, 1.0))
+    b = a.copy(); b[40:70, 30:60] = 90; steps.append(("house", b, 0.8))
+    c = b.copy(); c[20:26, 80:86] = 255; steps.append(("sun", c, 1.2))
+    prev, plan = sheet, []
+    for name, img, wgt in steps:
+        n = int((img != prev).sum())
+        plan.append({"name": name, "changed": n, "weight": wgt, "dur": SPEEDS["normal"] * wgt * math.sqrt(n / (W * H))})
+        prev = img
+    fps = 30
+    frames, prev = [], sheet.copy()
+    order_all = []
+    for (name, img, _), p in zip(steps, plan):
+        idx = np.argwhere(img != prev)
+        nf = max(1, int(round(p["dur"] * fps)))
+        cur = prev.copy()
+        revealed = []
+        for k in range(1, nf + 1):  # pixels revealed linearly in time
+            m = int(round(len(idx) * k / nf))
+            cur[tuple(idx[:m].T)] = img[tuple(idx[:m].T)]
+            frames.append(np.stack([cur] * 3, axis=2))
+            revealed.append(m)
+        order_all.append(revealed)
+        prev = img
+    mp4 = write_mp4(wd / "drawing.mp4", frames, fps)
+    path = jw(wd / "drawing_plan.json", plan)
+    r0 = order_all[0]
+    lin = max(abs(r0[k] - len_ * (k + 1) / len(r0)) for k, len_ in [(k, r0[-1]) for k in range(len(r0))])
+    nfr = len(read_mp4(mp4, W, H))
+    exp_frames = sum(max(1, int(round(p["dur"] * fps))) for p in plan)
+    checks = [check("sky dur = 1.8 x 1.0 x sqrt(6000/9600)", abs(plan[0]["dur"] - 1.8 * math.sqrt(6000 / 9600)) < 1e-9, plan[0]["dur"], 1.8 * math.sqrt(6000 / 9600)),
+              check("house dur from its changed share", abs(plan[1]["dur"] - 1.8 * 0.8 * math.sqrt(900 / 9600)) < 1e-9, plan[1]["dur"], 1.8 * 0.8 * math.sqrt(900 / 9600)),
+              check("pixels revealed linearly", lin <= 1, lin, "<=1"),
+              check("film length = sum of step durations", nfr == exp_frames, nfr, exp_frames),
+              check("instant speed takes 0 s", SPEEDS["instant"] * 1.0 * math.sqrt(1) == 0, 0, 0),
+              check("durations follow sqrt(changed share) x weight", len({round(p["dur"], 6) for p in plan}) == 3,
+                    sorted(round(p["dur"], 3) for p in plan), "distinct")]
+    equal = [SPEEDS["normal"]] * 3
+    checks.append(check("negative control: equal step durations ignore the changed share",
+                        max(abs(e - p["dur"]) for e, p in zip(equal, plan)) > 0.3, max(abs(e - p["dur"]) for e, p in zip(equal, plan)), ">0.3"))
+    return checks, [mp4, path]
+
+
+STUDIO_MODEL = REPO / ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/model.mjs"
+
+
+@card("EASE-83")
+def press_hover_dialog(task, wd):
+    page = """<!doctype html><html><body><button id=btn style="width:44px;height:44px">x</button><div id=card style="width:80px;height:40px"></div>
+<div id=dlg style="width:44px;height:44px"></div><div id=toast style="width:44px;height:20px"></div><div id=bad style="width:44px;height:44px"></div><script>
+const spring='cubic-bezier(.34,1.35,.64,1)';
+const A={btn:[[{transform:'scale(1)'},{transform:'scale(.985)'}],{duration:180,easing:'ease-out'}],
+ card:[[{boxShadow:'0 2px 4px rgba(0,0,0,.2)'},{boxShadow:'0 12px 24px rgba(0,0,0,.35)'}],{duration:220,easing:'ease-out'}],
+ dlg:[[{transform:'translateY(8px)'},{transform:'translateY(0px)'}],{duration:300,easing:spring}],
+ toast:[[{transform:'translateY(12px) scale(.96)'},{transform:'translateY(0px) scale(1)'}],{duration:340,easing:spring}],
+ bad:[[{transform:'scale(.9)'},{transform:'scale(1)'}],{duration:300,easing:spring}]};
+const R={};
+for(const [id,[k,o]] of Object.entries(A)){const el=document.getElementById(id); const an=el.animate(k,Object.assign({fill:'both'},o)); an.pause(); R[id]=[];
+ for(let i=0;i<=30;i++){an.currentTime=o.duration*i/30; const cs=getComputedStyle(el); const r=el.getBoundingClientRect(); R[id].push([cs.transform, cs.boxShadow, r.width]);}}
+document.body.setAttribute('data-r', JSON.stringify(R));</script></body></html>"""
+    r = chrome(wd, "press_dialog", page)
+    path = jw(wd / "entrances.json", r)
+
+    def mat(m):
+        if m == "none":
+            return [1, 0, 0, 1, 0, 0]
+        return [float(x) for x in m[m.index("(") + 1:-1].split(",")]
+    dlg = [mat(x[0]) for x in r["dlg"]]
+    toast = [mat(x[0]) for x in r["toast"]]
+    btn = [mat(x[0]) for x in r["btn"]]
+    widths = [x[2] for x in r["dlg"]]
+    bad_w = [x[2] for x in r["bad"]]
+    card_tf = {x[0] for x in r["card"]}
+    checks = [check("button dips to scale .985 in 180 ms", abs(btn[-1][0] - 0.985) < 1e-4, btn[-1][0], 0.985),
+              check("card hover deepens the shadow with no movement", r["card"][0][1] != r["card"][-1][1] and card_tf == {"none"},
+                    [r["card"][0][1], r["card"][-1][1]], "shadow changes, no transform"),
+              check("dialog rises 8 px -> 0 with a slight overshoot (rise only)", dlg[0][5] == 8 and min(d[5] for d in dlg) < 0 and dlg[-1][5] == 0,
+                    [dlg[0][5], min(d[5] for d in dlg), dlg[-1][5]], [8, "<0", 0]),
+              check("dialog never scales: 44 px target stays full size", min(widths) >= 44 - 1e-6, min(widths), ">=44"),
+              check("toast slides up 12 px from scale .96", toast[0][5] == 12 and abs(toast[0][0] - 0.96) < 1e-6 and toast[-1][0] == 1,
+                    [toast[0][5], toast[0][0]], [12, 0.96]),
+              check("negative control: a scale-in dialog shrinks its target below 44 px", min(bad_w) < 44, min(bad_w), "<44")]
+    return checks, [path]
+
+
+def lint_motion_css(rules):
+    bad = []
+    for sel, decl in rules.items():
+        t = decl.get("transition", "")
+        if " all" in " " + t or t.startswith("all"):
+            bad.append((sel, "transition-all"))
+        props = [p.strip().split()[0] for p in t.split(",") if p.strip()]
+        if any(p not in ("transform", "opacity", "all") for p in props):
+            bad.append((sel, "non-compositor property"))
+        if decl.get("money") and decl.get("count-up"):
+            bad.append((sel, "money value animates"))
+    return bad
+
+
+def fix_motion_css(rules):
+    out = {}
+    for sel, decl in rules.items():
+        d = dict(decl)
+        if "transition" in d:
+            dur = [w for w in d["transition"].split() if w.endswith("ms")][:1] or ["200ms"]
+            d["transition"] = "transform %s ease-out, opacity %s ease-out" % (dur[0], dur[0])
+        if d.get("money"):
+            d.pop("count-up", None)
+        out[sel] = d
+    return out
+
+
+@card("EASE-84")
+def transform_opacity_contract(task, wd):
+    raw = {".btn": {"transition": "all 180ms ease-out"}, ".progress": {"transition": "width 300ms linear"},
+           ".tab": {"transition": "background-color 200ms, transform 200ms"}, ".price": {"money": True, "count-up": True}}
+    fixed = fix_motion_css(raw)
+    css = "\n".join("%s{transition:%s}" % (k, v["transition"]) for k, v in fixed.items() if "transition" in v)
+    (wd / "contract.css").write_text(css, encoding="utf-8")
+    page = """<!doctype html><html><head><style>%s</style></head><body><div class=btn></div><div class=progress></div><div class=tab></div><script>
+const R={}; for(const c of ['btn','progress','tab']) R[c]=getComputedStyle(document.querySelector('.'+c)).transitionProperty;
+document.body.setAttribute('data-r', JSON.stringify(R));</script></body></html>""" % css
+    r = chrome(wd, "contract", page)
+    path = jw(wd / "contract.json", {"fixed": fixed, "chrome_transition_property": r})
+    checks = [check("Chrome sees only transform, opacity on %s" % k, v == "transform, opacity", v, "transform, opacity") for k, v in r.items()]
+    checks += [check("fixed stylesheet passes the motion contract", lint_motion_css(fixed) == [], lint_motion_css(fixed), []),
+               check("money value appears final (never counted)", "count-up" not in fixed[".price"], "count-up" in fixed[".price"], False),
+               check("negative control: raw stylesheet breaks the contract", len(lint_motion_css(raw)) == 4, len(lint_motion_css(raw)), 4)]
+    return checks, [wd / "contract.css", path]
+
+
+@card("EASE-85")
+def quiet_motion(task, wd):
+    css = """:root{--motion-instant:120ms;--motion-fast:160ms;--motion-normal:260ms;--motion-slow:420ms;--motion-slower:700ms}
+@keyframes pulse{from{opacity:1}to{opacity:.4}}
+.pulse{animation:pulse 1s infinite alternate;transition:transform var(--motion-normal)}
+:root[data-motion=quiet] *{animation:none !important;transition:none !important}
+@media (prefers-reduced-motion: reduce){:root{--motion-instant:0ms;--motion-fast:100ms;--motion-normal:200ms;--motion-slow:300ms;--motion-slower:500ms}}"""
+    (wd / "quiet.css").write_text(css, encoding="utf-8")
+    page = """<!doctype html><html><head><style>%s</style></head><body><div class=pulse id=p></div><script>
+const el=document.getElementById('p'), cs=()=>getComputedStyle(el), root=getComputedStyle(document.documentElement);
+const level=(t)=>document.documentElement.dataset.motion==='quiet'?0.08:0.5+0.4*Math.sin(t*6);
+document.documentElement.dataset.motion='full'; const full=[cs().animationName, cs().transitionDuration, level(1)];
+document.documentElement.dataset.motion='quiet'; const quiet=[cs().animationName, cs().transitionDuration, level(1), level(2)];
+document.body.setAttribute('data-r', JSON.stringify({full, quiet, tokens:['--motion-instant','--motion-fast','--motion-normal','--motion-slow','--motion-slower'].map(k=>root.getPropertyValue(k).trim()),
+ reduce:matchMedia('(prefers-reduced-motion: reduce)').matches}));</script></body></html>""" % css
+    normal = chrome(wd, "quiet_normal", page)
+    reduced = chrome(wd, "quiet_reduced", page, flags=("--force-prefers-reduced-motion",))
+    path = jw(wd / "quiet.json", {"normal": normal, "reduced": reduced})
+    checks = [check("quiet toggle kills animation and transition", normal["quiet"][:2] == ["none", "0s"], normal["quiet"][:2], ["none", "0s"]),
+              check("waveform level fixed at .08 when quiet", normal["quiet"][2] == 0.08 and normal["quiet"][3] == 0.08, normal["quiet"][2:], [0.08, 0.08]),
+              check("OS reduced-motion swaps tokens to 0/100/200/300/500", reduced["reduce"] and reduced["tokens"] == ["0ms", "100ms", "200ms", "300ms", "500ms"],
+                    reduced["tokens"], ["0ms", "100ms", "200ms", "300ms", "500ms"]),
+              check("negative control: full motion keeps the animation", normal["full"][0] == "pulse" and normal["full"][1] == "0.26s",
+                    normal["full"][:2], ["pulse", "0.26s"])]
+    return checks, [wd / "quiet.css", path]
+
+
+@card("EASE-86")
+def studio_layer_envelope(task, wd):
+    import numpy as np
+    js_path = wd / "envelope.mjs"
+    js_path.write_text("import {animationProgress} from %s;\nconst o={start:0.5,duration:2.0}, s={start:0,duration:0.9};\n"
+                       "console.log(JSON.stringify({a:Array.from({length:91},(_,i)=>animationProgress(o,i/30)), b:Array.from({length:28},(_,i)=>animationProgress(s,i/30))}));\n"
+                       % json.dumps(STUDIO_MODEL.as_uri()), encoding="utf-8")
+    r = json.loads(fx.run(["node", js_path]).stdout.strip().splitlines()[-1])
+    a = r["a"]
+    ease = lambda t: 1 - (1 - min(1, max(0, (t - 0.5) / 0.65))) ** 3
+    H = 120
+    imgs = []
+    for i in range(91):
+        t = i / 30
+        im, d = canvas(120, H, (0, 0, 0))
+        y = 50 + (1 - ease(t)) * 0.07 * H
+        c = int(255 * a[i])
+        d.rectangle([40, y, 80, y + 20], fill=(c, c, c))
+        imgs.append(np.asarray(im))
+    mp4 = write_mp4(wd / "layer_rise.mp4", imgs, 30)
+    fr = read_mp4(mp4, 120, H)
+    lum = [float(q[:, :, 0].max()) / 255 for q in fr]
+    path = jw(wd / "envelope.json", {"progress": a, "short": r["b"], "lum": lum})
+    checks = [check("0 before the layer starts", a[14] == 0, a[14], 0),
+              check("ramps in over min(0.6, d/3) = 0.6 s", abs(a[15 + 9] - 0.5) < 1e-9 and a[15 + 18] == 1, [a[24], a[33]], [0.5, 1]),
+              check("ramps out over min(0.4, d/3) = 0.4 s", abs(a[75 - 6] - 0.5) < 1e-6, a[69], 0.5),
+              check("0 at and after the end", a[75] == 0 and a[90] == 0, [a[75], a[90]], [0, 0]),
+              check("short layer: each ramp capped at d/3", abs(r["b"][9] - 1.0) < 1e-9 and abs(r["b"][4] - (4 / 30) / 0.3) < 1e-9, r["b"][4], (4 / 30) / 0.3),
+              check("rendered opacity follows the envelope", max(abs(l - v) for l, v in zip(lum, a)) < 0.03, max(abs(l - v) for l, v in zip(lum, a)), "<0.03"),
+              check("rise offset 7% of height at start, 0 after 0.65 s", abs((1 - ease(0.5)) * 0.07 * H - 8.4) < 1e-9 and ease(1.15) == 1, 8.4, 8.4),
+              ]
+    none_mode = [1.0 if 0.5 <= i / 30 < 2.5 else 0.0 for i in range(91)]
+    checks.append(check("negative control: mode 'none' (full opacity) has no 0.5 at mid-ramp",
+                        abs(none_mode[24] - 0.5) > 0.4, none_mode[24], 0.5))
+    return checks, [mp4, path]
+
+
+@card("EASE-88")
+def pointer_trail(task, wd):
+    import numpy as np
+    fps = 60
+    target = lambda t: (0.5 + 0.3 * math.cos(2 * math.pi * t / 2), 0.5 + 0.3 * math.sin(2 * math.pi * t / 2))
+    head = list(target(0))
+    trail, errs, ages = [], [], []
+    for f in range(240):
+        t = f / fps
+        tx, ty = target(t)
+        head[0] += (tx - head[0]) * 0.3
+        head[1] += (ty - head[1]) * 0.3
+        if not trail or math.hypot(head[0] - trail[-1][0], head[1] - trail[-1][1]) > 0.01:
+            trail.append((head[0], head[1], t))
+        trail = [p for p in trail if t - p[2] <= 1.6][-24:]
+        ages.append(len(trail))
+    step = [0.0, 0.0]
+    e0 = 1.0
+    seq = []
+    for k in range(10):
+        step[0] += (1.0 - step[0]) * 0.3
+        seq.append(1.0 - step[0])
+    sp = [math.hypot(a[0] - b[0], a[1] - b[1]) for a, b in zip(trail, trail[1:])]
+    imgs = []
+    for f in range(0, 60):
+        im, d = canvas(160, 160)
+        for x, y, _ in trail:
+            d.ellipse([x * 160 - 2, y * 160 - 2, x * 160 + 2, y * 160 + 2], fill=(200, 200, 255))
+        imgs.append(np.asarray(im))
+    mp4 = write_mp4(wd / "trail.mp4", imgs[:2] * 15, 30)
+    path = jw(wd / "trail.json", {"trail": trail, "lengths": ages, "step_errors": seq})
+    checks = [check("head follows 0.3 per frame: error = 0.7^k", all(abs(e - 0.7 ** (k + 1)) < 1e-12 for k, e in enumerate(seq)), seq[:3], [0.7, 0.49, 0.343]),
+              check("trail never exceeds 24 points", max(ages) <= 24, max(ages), "<=24"),
+              check("points laid by distance (> 0.01 apart)", min(sp) > 0.01, min(sp), ">0.01"),
+              check("no point older than 1.6 s", all(4.0 - 1 / fps - p[2] <= 1.6 for p in trail), 1.6, "<=1.6")]
+    glued, g = [], 0.0
+    for k in range(10):
+        g = 1.0  # untreated: the head jumps to the target
+        glued.append(1.0 - g)
+    checks.append(check("negative control: a head set to the target each frame has no 0.7^k lag",
+                        not all(abs(e - 0.7 ** (k + 1)) < 1e-12 for k, e in enumerate(glued)), glued[:3], [0.7, 0.49, 0.343]))
+    return checks, [mp4, path]
+
+
+@card("EASE-91")
+def extra_timing_libraries(task, wd):
+    anime = _node_mod("animejs")
+    motion = _node_mod("motion")
+    js = wd / "libs.js"
+    js.write_text("""const a=require(%s), m=require(%s);
+const o={x:0}; const tl=a.createTimeline({autoplay:false}); tl.add(o,{x:100,duration:1000,ease:'linear'}); tl.add(o,{x:200,duration:1000,ease:'inQuad'});
+const S=[250,500,1000,1500].map(t=>{tl.seek(t); return o.x;});
+const objs=[{x:0},{x:0},{x:0},{x:0}]; const t2=a.createTimeline({autoplay:false}); t2.add(objs,{x:1,duration:100,delay:a.stagger(50),ease:'linear'});
+const st2=[]; for(let ms=0;ms<=300;ms++){t2.seek(ms); objs.forEach((q,i)=>{if(st2[i]===undefined&&q.x>0) st2[i]=ms-1;});}
+const sp=m.spring({stiffness:200,damping:10,mass:1,keyframes:[0,1]}); const SP=[50,100,200,400].map(t=>sp.next(t).value);
+console.log(JSON.stringify({S, st2, SP, av:require(%s+'/package.json').version, mv:require(%s+'/package.json').version}));""" %
+                  (json.dumps(str(anime)), json.dumps(str(motion)), json.dumps(str(anime)), json.dumps(str(motion))), encoding="utf-8")
+    r = json.loads(fx.run(["node", js]).stdout.strip().splitlines()[-1])
+    w0 = math.sqrt(200)
+    z = 10 / (2 * math.sqrt(200))
+    wdd = w0 * math.sqrt(1 - z * z)
+    ref = [1 - math.exp(-z * w0 * t) * (math.cos(wdd * t) + z * w0 / wdd * math.sin(wdd * t)) for t in (0.05, 0.1, 0.2, 0.4)]
+    path = jw(wd / "libs.json", {"anime": r["S"], "stagger": r["st2"], "motion_spring": r["SP"], "closed_form": ref,
+                                 "versions": [r["av"], r["mv"]]})
+    checks = [check("animejs %s timeline seeks (no own timers)" % r["av"], r["S"][:3] == [25, 50, 100] and abs(r["S"][3] - 125) < 1e-6,
+                    r["S"], [25, 50, 100, 125]),
+              check("animejs stagger(50) gives 0/50/100/150 ms", r["st2"] == [0, 50, 100, 150], r["st2"], [0, 50, 100, 150]),
+              check("motion %s spring == damped-oscillator closed form" % r["mv"], max(abs(a - b) for a, b in zip(r["SP"], ref)) < 2e-3,
+                    max(abs(a - b) for a, b in zip(r["SP"], ref)), "<2e-3"),
+              check("negative control: linear is not the spring", max(abs(t / 0.4 - b) for t, b in zip((0.05, 0.1, 0.2, 0.4), ref)) > 0.1,
+                    max(abs(t / 0.4 - b) for t, b in zip((0.05, 0.1, 0.2, 0.4), ref)), ">0.1")]
+    return checks, [path]
+
+
+def ae_to_css(out_influence, in_influence, out_speed=0.0, in_speed=0.0):
+    """After Effects keyframe influence (%) with zero speed -> CSS cubic-bezier."""
+    return (round(out_influence / 100, 3), out_speed, round(1 - in_influence / 100, 3), 1 - in_speed)
+
+
+def srgb_to_oklab(c):
+    def lin(u):
+        u /= 255
+        return u / 12.92 if u <= 0.04045 else ((u + 0.055) / 1.055) ** 2.4
+    r, g, b = (lin(x) for x in c)
+    l = (0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b) ** (1 / 3)
+    m = (0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b) ** (1 / 3)
+    s = (0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b) ** (1 / 3)
+    return (0.2104542553 * l + 0.7936177850 * m - 0.0040720468 * s, 1.9779984951 * l - 2.4285922050 * m + 0.4505937099 * s,
+            0.0259040371 * l + 0.7827717662 * m - 0.8086757660 * s)
+
+
+@card("EASE-X06")
+def ae_css_named_curves(task, wd):
+    table = {"needle 95/95": (ae_to_css(95, 95), (.95, 0, .05, 1)), "Easy Ease": (ae_to_css(33.3, 33.3), (.333, 0, .667, 1)),
+             "entrance width": (ae_to_css(75, 75), (.75, 0, .25, 1)), "camera push": (ae_to_css(76, 76), (.76, 0, .24, 1)),
+             "whip": (ae_to_css(83, 83), (.83, 0, .17, 1)), "soft drift": (ae_to_css(37, 37), (.37, 0, .63, 1))}
+    samples = {k: [bez(*v[0])(i / 50) for i in range(51)] for k, v in table.items()}
+    mag, lime = (255, 0, 255), (0, 255, 0)
+    rgb_mid = tuple((a + b) / 2 for a, b in zip(mag, lime))
+    la, lb = srgb_to_oklab(mag), srgb_to_oklab(lime)
+    ca, cb = math.hypot(la[1], la[2]), math.hypot(lb[1], lb[2])
+    ha, hb = math.atan2(la[2], la[1]), math.atan2(lb[2], lb[1])
+    dh = (hb - ha + math.pi) % (2 * math.pi) - math.pi
+    lch_mid_c = (ca + cb) / 2
+    rgb_mid_lab = srgb_to_oklab(rgb_mid)
+    rgb_mid_c = math.hypot(rgb_mid_lab[1], rgb_mid_lab[2])
+    path = jw(wd / "named_curves.json", {"table": {k: v[0] for k, v in table.items()}, "samples": samples,
+                                         "oklch_mid_chroma": lch_mid_c, "rgb_mid_chroma": rgb_mid_c, "hue_step": dh})
+    curves_png(wd / "named_curves.png", {k: samples[k] for k in ("needle 95/95", "Easy Ease", "whip")})
+    checks = [check("AE %s -> %s" % (k, exp), all(abs(a - b) < 1e-3 for a, b in zip(got, exp)), got, exp) for k, (got, exp) in table.items()]
+    checks += [check("needle 95/95 holds then snaps (x=0.5 -> 0.5, x=0.25 small)", abs(samples["needle 95/95"][25] - 0.5) < 1e-6 and
+                     samples["needle 95/95"][12] < 0.12, samples["needle 95/95"][12], "<0.12"),
+               check("perceptual (OKLCh) mix keeps chroma; RGB midpoint goes grey", lch_mid_c > 0.2 and rgb_mid_c < 0.05,
+                     [lch_mid_c, rgb_mid_c], [">0.2", "<0.05"]),
+               check("negative control: linear is not the needle curve", max(abs(i / 50 - v) for i, v in enumerate(samples["needle 95/95"])) > 0.2,
+                     max(abs(i / 50 - v) for i, v in enumerate(samples["needle 95/95"])), ">0.2")]
+    return checks, [path, wd / "named_curves.png"]
+
+
+X07 = {"entrance": (0.45, 0.7), "scale_from_min": 0.9, "travel_max": 70, "overshoot_max": 0.04, "stagger": (0.05, 0.08),
+       "read_min": 0.8, "appear_min": 0.2, "type_cps_max": 60}
+
+
+def lint_x07(items):
+    bad = []
+    for it in items:
+        if it["kind"] == "entrance":
+            if not X07["entrance"][0] <= it["dur"] <= X07["entrance"][1]:
+                bad.append((it["id"], "dur"))
+            if it["scale_from"] < X07["scale_from_min"]:
+                bad.append((it["id"], "scale"))
+            if it["travel"] > X07["travel_max"]:
+                bad.append((it["id"], "travel"))
+            if it.get("ease") == "back.out(1.7)":
+                bad.append((it["id"], "overshoot"))
+        if it["kind"] == "read" and it["dur"] < X07["read_min"]:
+            bad.append((it["id"], "read"))
+        if it["kind"] == "stagger" and not X07["stagger"][0] <= it["each"] <= X07["stagger"][1]:
+            bad.append((it["id"], "stagger"))
+        if it["kind"] == "type" and it["cps"] > X07["type_cps_max"]:
+            bad.append((it["id"], "type"))
+    return bad
+
+
+def fix_x07(items):
+    out = []
+    for it in items:
+        it = dict(it)
+        if it["kind"] == "entrance":
+            it["dur"] = min(max(it["dur"], 0.45), 0.7)
+            it["scale_from"] = max(it["scale_from"], 0.9)
+            it["travel"] = min(it["travel"], 70)
+            it["ease"] = "cubic-bezier(.16,1,.3,1)"
+        if it["kind"] == "read":
+            it["dur"] = max(it["dur"], 0.8)
+        if it["kind"] == "stagger":
+            it["each"] = min(max(it["each"], 0.05), 0.08)
+        if it["kind"] == "type":
+            it["cps"] = min(it["cps"], 60)
+        out.append(it)
+    return out
+
+
+@card("EASE-X07")
+def client_smoothness_numbers(task, wd):
+    raw = [{"id": "hero", "kind": "entrance", "dur": 0.3, "scale_from": 0.6, "travel": 160, "ease": "back.out(1.7)"},
+           {"id": "caption", "kind": "read", "dur": 0.5}, {"id": "cards", "kind": "stagger", "each": 0.15},
+           {"id": "code", "kind": "type", "cps": 90}]
+    fixed = fix_x07(raw)
+    path = jw(wd / "film_spec.json", fixed)
+    back = json.loads(path.read_text())
+    e = bez(.16, 1, .3, 1)
+    over = max(e(i / 1000) for i in range(1001)) - 1
+    checks = [check("fixed spec passes every client number", lint_x07(back) == [], lint_x07(back), []),
+              check("entrance curve (.16,1,.3,1) overshoots <= 2-4%", over <= 0.04, over, "<=0.04"),
+              check("back.out(1.7) replaced (it overshoots ~10%)", max(back_out(1.7)(i / 1000) for i in range(1001)) - 1 > 0.04 and
+                    back[0]["ease"] != "back.out(1.7)", back[0]["ease"], "cubic-bezier(.16,1,.3,1)"),
+              check("negative control: raw spec breaks the numbers", len(lint_x07(raw)) == 7, len(lint_x07(raw)), 7)]
+    return checks, [path]
+
+
+def read_time(words, k=1.0):
+    return max(1.0, 0.35 * words + 0.5) * k
+
+
+def stills(frames, fps, thr=0.5):
+    import numpy as np
+    runs, start = [], 0
+    for i in range(1, len(frames) + 1):
+        if i == len(frames) or float(np.abs(frames[i] - frames[i - 1]).mean()) > thr:
+            runs.append((start / fps, i / fps))
+            start = i
+    return runs
+
+
+@card("EASE-X08")
+def still_time_budget(task, wd):
+    import numpy as np
+    fps = 10
+    plan = [("move", 0.5), ("read:status", 1.0), ("move", 0.5), ("still", 2.0), ("move", 0.5), ("read:end lockup", 2.0)]
+
+    def render(p, fix):
+        imgs, x = [], 0
+        for kind, dur in p:
+            for k in range(int(round(dur * fps))):
+                if kind == "move":
+                    x += 4
+                elif kind == "still" and fix and k % 5 == 4:
+                    x += 1  # a small trigger every half second keeps an unlisted hold alive
+                a = np.zeros((18, 64, 3), dtype=np.uint8)
+                a[6:12, x % 60:x % 60 + 4] = 255
+                imgs.append(a)
+        return imgs
+    good = render(plan, True)
+    mp4 = write_mp4(wd / "budget.mp4", good, fps)
+    fr = read_mp4(mp4, 64, 18)
+    runs = stills(fr, fps)
+    listed = {"read:status": 1.0, "read:end lockup": 2.0}
+    t, allowed = 0.0, []
+    for kind, dur in plan:
+        if kind in listed:
+            allowed.append((t, t + listed[kind]))
+        t += dur
+
+    def violations(rs):
+        out = []
+        for a, b in rs:
+            if b - a > 0.6 + 1e-9 and not any(abs(a - x) < 0.15 and b - a <= y - x + 0.15 for x, y in allowed):
+                out.append((a, b))
+        return out
+    raw = [np.asarray(f, dtype=float) for f in render(plan, False)]
+    path = jw(wd / "stills.json", {"stills": runs, "allowed": allowed, "read_time_6w": read_time(6)})
+    checks = [check("read time = max(1, 0.35 w + 0.5)", abs(read_time(6) - 2.6) < 1e-9 and read_time(1) == 1.0, [read_time(1), read_time(6)], [1.0, 2.6]),
+              check("every still > 0.6 s in the rendered film is a listed read", violations(runs) == [], violations(runs), []),
+              check("listed reads hold no longer than their budget", all(b - a <= 2.0 + 0.15 for a, b in runs), max(b - a for a, b in runs), "<=2.0"),
+              check("negative control: the untriggered 2 s hold breaks the budget", len(violations(stills(raw, fps))) >= 1,
+                    violations(stills(raw, fps)), ">=1")]
+    return checks, [mp4, path]
+
+
+@card("EASE-X10")
+def layer_posterize(task, wd):
+    import numpy as np
+    fps, step, n = 30, 8, 60
+    rng = np.random.default_rng(5)
+    imgs = []
+    for f in range(n):
+        t = f / fps
+        tl = math.floor(t * step) / step  # this layer only
+        a = (rng.random((40, 160)) * 40).astype(np.uint8)  # grain at the full film rate
+        a = np.stack([a] * 3, axis=2)
+        x = int(10 + 100 * tl / 2)
+        a[15:25, x:x + 10] = 255
+        imgs.append(a)
+    mp4 = write_mp4(wd / "posterized.mp4", imgs, fps)
+    fr = read_mp4(mp4, 160, 40)
+    xs = [blob_x(q, thr=200)["x0"] for q in fr]
+    changes = sum(1 for a, b in zip(xs, xs[1:]) if a != b)
+    grain = [float(np.abs(fr[i + 1][:10] - fr[i][:10]).mean()) for i in range(n - 1)]
+    path = jw(wd / "posterize.json", {"layer_x": xs, "layer_changes": changes})
+    smooth = [int(10 + 100 * (f / fps) / 2) for f in range(n)]
+    checks = [check("layer moves 8 times per second (2 s -> 15 steps)", changes == 15, changes, 15),
+              check("grain changes every frame (film stays 30 fps)", min(grain) > 2, min(grain), ">2"),
+              check("layer holds ~3.75 frames per pose", 3 <= n / (changes + 1) <= 4.5, n / (changes + 1), 3.75),
+              check("negative control: an unquantised layer changes nearly every frame",
+                    sum(1 for a, b in zip(smooth, smooth[1:]) if a != b) > 40, sum(1 for a, b in zip(smooth, smooth[1:]) if a != b), ">40")]
+    return checks, [mp4, path]
+
+
+@card("EASE-X11")
+def main_hit(task, wd):
+    import numpy as np
+    fps = 60
+    T = 1.6
+
+    def pos(t):
+        if t < 0.4:
+            return -20 * math.sin(math.pi * t / 0.4 / 2) ** 2 * (1 if t < 0.4 else 0)  # anticipation dip
+        if t < 0.7:
+            u = (t - 0.4) / 0.3
+            return -20 + 220 * u ** 3  # accelerating push
+        return 200.0
+    hit = 0.7
+
+    def shake(t):
+        if t < hit:
+            return 0.0
+        u = t - hit
+        return 8 * math.exp(-u / 0.13) * math.sin(2 * math.pi * 11 * u)
+    imgs = []
+    flash = []
+    for f in range(int(T * fps)):
+        t = f / fps
+        im, d = canvas(320, 100)
+        x = 40 + pos(t) + shake(t)
+        fl = 1.0 if hit <= t < hit + 2 / fps else 0.0
+        flash.append(fl)
+        if fl:
+            d.rectangle([0, 0, 320, 100], fill=(255, 255, 255))
+        d.rectangle([x, 40, x + 20, 60], fill=(255, 80, 80))
+        imgs.append(np.asarray(im))
+    mp4 = write_mp4(wd / "main_hit.mp4", imgs, fps)
+    fr = read_mp4(mp4, 320, 100)
+    xs = []
+    for q in fr:
+        m = (q[:, :, 0] > 180) & (q[:, :, 1] < 150)
+        xs.append(float(np.nonzero(m)[1].mean()) if m.any() else float("nan"))
+    xs = np.array(xs)
+    post = xs[int((hit + 2 / fps) * fps) + 1:]
+    sig = post - 250.0
+    sig = sig - sig.mean()
+    spec = np.abs(np.fft.rfft(sig * np.hanning(len(sig)), n=1024))
+    freqs = np.fft.rfftfreq(1024, 1 / fps)
+    peak = float(freqs[int(np.argmax(spec[1:])) + 1])
+    env = np.abs(np.array([shake(hit + 2 / fps + (i + 1) / fps) for i in range(len(post))]))
+    a0 = float(np.abs(sig[:8]).max())
+    a1 = float(np.abs(sig[16:24]).max())
+    tau = (16 / fps) / math.log(a0 / a1) if a1 > 0 else 0
+    dip = float(np.nanmin(xs[:int(0.4 * fps)]) - xs[0])
+    flashes_per_s = sum(1 for a, b in zip(flash, flash[1:]) if b and not a) / T
+    path = jw(wd / "main_hit.json", {"x": [None if math.isnan(v) else v for v in xs.tolist()], "shake_peak_hz": peak, "tau": tau})
+    checks = [check("anticipation dip before the push", dip < -15, dip, "~-20 px"),
+              check("push accelerates (speed rises into the snap)", xs[int(0.69 * fps)] - xs[int(0.68 * fps)] > xs[int(0.5 * fps)] - xs[int(0.49 * fps)],
+                    [xs[int(0.5 * fps)] - xs[int(0.49 * fps)], xs[int(0.69 * fps)] - xs[int(0.68 * fps)]], "rising"),
+              check("shake measured at ~11 Hz", abs(peak - 11) <= 1.0, peak, 11),
+              check("shake decays with tau ~0.13 s", 0.09 <= tau <= 0.18, tau, 0.13),
+              check("at most one big flash per second, <= 2 frames", flashes_per_s <= 1 and sum(flash) <= 2, [flashes_per_s, sum(flash)], "<=1/s, <=2 f")]
+    swayf = 2.0
+    sway = [8 * math.sin(2 * math.pi * swayf * i / fps) for i in range(len(post))]
+    sp2 = np.abs(np.fft.rfft(np.array(sway) * np.hanning(len(sway)), n=1024))
+    checks.append(check("negative control: a 2 Hz sway is not the impact frequency", abs(float(freqs[int(np.argmax(sp2[1:])) + 1]) - 11) > 3,
+                        float(freqs[int(np.argmax(sp2[1:])) + 1]), 11))
+    return checks, [mp4, path]
+
+
+@card("EASE-G04")
+def relative_offsets_labels(task, wd):
+    grid = {"title": 0.5, "logo": 2.0, "cta": 4.0}
+    jw(wd / "grid.json", grid)
+    js = """const L=%s; const build=(L)=>{const tl=gsap.timeline({paused:true}); for(const [k,v] of Object.entries(L)) tl.addLabel(k,v);
+ const steps=[[.5,'title'],[.5,'+=0.2'],[.5,'-=0.15'],[.4,'<'],[.6,'logo+=0.3'],[.5,'cta']]; const objs=[];
+ for(const [d,pos] of steps){const tw=gsap.to({v:0},{v:1,duration:d,paused:false}); tl.add(tw,pos); objs.push(tw);}
+ return objs.map(c=>+c.startTime().toFixed(6));};
+const A=build(L); const L2=Object.assign({},L,{title:L.title+1}); const B=build(L2);
+const abs=gsap.timeline({paused:true}); [0.5,1.2,1.55,1.55,2.3,4.0].forEach(t=>abs.to({v:0},{v:1,duration:.4},t));
+out({A,B,abs:abs.getChildren().map(c=>c.startTime())});""" % json.dumps(grid)
+    r = node(wd, "labels", js)
+    path = jw(wd / "label_table.json", {"labels": grid, "starts": r["A"], "after_retime": r["B"]})
+    exp = [0.5, 1.2, 1.55, 1.55, 2.3, 4.0]
+    shift = [b - a for a, b in zip(r["A"], r["B"])]
+    checks = [check("relative placement: title, +=0.2, -=0.15, <, logo+=0.3, cta", r["A"] == exp, r["A"], exp),
+              check("retiming one label moves its dependents (+1 s)", [round(x, 6) for x in shift[:4]] == [1.0, 1.0, 1.0, 1.0], shift[:4], [1, 1, 1, 1]),
+              check("label table exported with the film", json.loads((wd / "grid.json").read_text()) == grid, grid, grid),
+              check("negative control: absolute times do not follow a retimed label", r["abs"][:4] == exp[:4], r["abs"][:4], "unchanged")]
+    return checks, [path, wd / "grid.json"]
+
+
+def hf_component(wd, name, variables, probe_js, size=(960, 540)):
+    """`npx hyperframes add <name>` into wd, mount the component's <template> in a host page with GSAP and
+    window.__hyperframes.getVariables, then run probe_js in headless Chrome (G(el, prop) = gsap.getProperty)."""
+    import re
+    proj = Path(wd) / "hf"
+    proj.mkdir(exist_ok=True)
+    subprocess.run(["npx", "--no-install", "hyperframes", "add", name], cwd=proj, capture_output=True, text=True, timeout=90,
+                       stdin=subprocess.DEVNULL, check=True)
+    comp = proj / ("compositions/components/%s.html" % name)
+    src = comp.read_text(encoding="utf-8")
+    m = re.search(r"<template>(.*)</template>", src, re.S)
+    inner = re.sub(r'<script src="[^"]*gsap[^"]*"></script>', "", m.group(1))
+    shutil.copy(GSAP / "dist/gsap.min.js", Path(wd) / "gsap.min.js")
+    page = """<!doctype html><html><head><meta charset=utf-8><script src="gsap.min.js"></script></head>
+<body style="margin:0"><div id="host" style="position:relative;width:%dpx;height:%dpx"></div><template id="tpl">%s</template><script>
+window.__hyperframes={getVariables:()=>(%s)};
+const host=document.getElementById('host'); const frag=document.getElementById('tpl').content.cloneNode(true);
+const scripts=[...frag.querySelectorAll('script')]; scripts.forEach(s=>s.remove()); host.appendChild(frag);
+for(const s of scripts){const n=document.createElement('script'); n.textContent=s.textContent; document.body.appendChild(n);}
+</script><script>(function(){const tl=window.__timelines[%s], G=(e,p)=>+gsap.getProperty(e,p), $=(s)=>host.querySelector(s), $$=(s)=>[...host.querySelectorAll(s)];
+%s
+})();</script></body></html>""" % (size[0], size[1], inner, json.dumps(variables), json.dumps(name), probe_js)
+    return chrome(wd, "mount_" + name, page), comp
+
+
+@card("EASE-90")
+def hyperframes_timing_component(task, wd):
+    js = """const v=$('.cu-value'); const S=[]; for(let f=0; f<=90; f++){tl.seek(f/30); S.push(v.textContent);}
+const P=[]; for(let f=0; f<=90; f++){tl.seek(f/30); P.push(G($('.cu-stage'),'scale'));}
+document.body.setAttribute('data-r', JSON.stringify({S, P, dur:tl.duration(), paused:tl.paused(), pre:$('.cu-prefix').textContent, suf:$('.cu-suffix').textContent}));"""
+    r, comp = hf_component(wd, "count-up", {"start": 0, "end": 250, "suffix": "+", "prefix": "", "accent": "green", "glow": False, "exit": "none"}, js)
+    nums = [int(x.replace(",", "")) for x in r["S"]]
+    path = jw(wd / "count_up_probe.json", r)
+    checks = [check("component installed from the registry", comp.stat().st_size > 1000, comp.stat().st_size, ">1000 B"),
+              check("registers one paused timeline (seek-driven)", r["paused"] is True, r["paused"], True),
+              check("count starts at the start value", nums[0] == 0, nums[0], 0),
+              check("lands on the exact final integer", nums[-1] == 250, nums[-1], 250),
+              check("never counts backwards", all(a <= b for a, b in zip(nums, nums[1:])), True, True),
+              check("one restrained landing pulse (<= 1.07)", 1.03 < max(r["P"]) <= 1.0701 and abs(r["P"][-1] - 1) < 1e-3, max(r["P"]), 1.07),
+              check("variables reach the component (suffix +)", r["suf"] == "+", r["suf"], "+"),
+              check("negative control: unseeked value differs from the landed one", nums[0] != nums[-1], [nums[0], nums[-1]], "differ")]
+    return checks, [comp, path]

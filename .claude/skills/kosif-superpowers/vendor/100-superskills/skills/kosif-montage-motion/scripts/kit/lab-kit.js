@@ -6,7 +6,7 @@
    Blocks: shell fur · glossy eyes · procedural characters (rabbit, lion) with named joints · schematic modes (wire,
    exploded, joint markers) · orbit walk with stops · studio sweep + rig · HUD with projected callouts and charts. */
 (function () {
-  const K3 = window.K3;
+  let K3 = window.K3;
   if (!K3 || !K3.THREE) throw new Error("lab-kit needs three-kit.bundle.js loaded first (window.K3)");
   const THREE = K3.THREE, rng = K3.rng, lerp = K3.lerp, smooth = K3.smooth, clamp01 = K3.clamp01;
   const ease = (x) => x * x * (3 - 2 * x);
@@ -289,8 +289,15 @@
 
   // drafts (film.py --draft) set window.__draftScale: the GL buffers shrink with the page so a 3D draft is really quicker
   const _makeRenderer = K3.makeRenderer;
-  K3.makeRenderer = function (canvas, W, H, o) { const r = _makeRenderer(canvas, W, H, o); const ds = window.__draftScale || 1;
+  const draftRenderer = function (canvas, W, H, o) { const r = _makeRenderer(canvas, W, H, o); const ds = window.__draftScale || 1;
     if (ds !== 1) { r.setPixelRatio(ds); r.setSize(W, H, false); } return r; };
+  // the bundle exports makeRenderer as a getter-only property, so a plain assignment is silently ignored:
+  // when it does not take, rebuild K3 as a copy (getters kept) with the draft-aware renderer as an own value
+  try { K3.makeRenderer = draftRenderer; } catch (e) { /* strict-mode TypeError on a getter-only property */ }
+  if (K3.makeRenderer !== draftRenderer) {
+    const d = Object.getOwnPropertyDescriptors(K3); d.makeRenderer = { value: draftRenderer, writable: true, enumerable: true, configurable: true };
+    K3 = Object.defineProperties({}, d); window.K3 = K3;
+  }
   Object.assign(K3, { makeFur, furAlphaTex, plushMaterial, glossMaterial, leatherMaterial, metalMaterial, makeEye, makeRabbit, makeLion,
     schematic, orbitWalk, studio, hud, labPost, idle, LAB_VERSION: 1 });
 })();

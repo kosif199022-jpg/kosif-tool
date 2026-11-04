@@ -757,8 +757,13 @@ def faces(inp, out, p):
     _, cv2 = np_cv()
     img = read(inp[0])
     model = p.get("model") or __import__("os").environ.get("KOSIF_YUNET", "")
+    casc = None
     if hasattr(cv2, "CascadeClassifier"):
-        casc = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+        xml = Path(getattr(getattr(cv2, "data", None), "haarcascades", "") or ".") / "haarcascade_frontalface_default.xml"
+        casc = cv2.CascadeClassifier(str(xml)) if xml.is_file() else None
+        if casc is not None and casc.empty():
+            casc = None   # OpenCV 5 contrib keeps the class but ships no cascade files
+    if casc is not None:
         boxes = casc.detectMultiScale(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), 1.1, 5, minSize=(30, 30))
     elif model and Path(model).is_file():
         det = cv2.FaceDetectorYN.create(model, "", (img.shape[1], img.shape[0]), float(p.get("score", 0.8)))
