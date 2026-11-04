@@ -1,147 +1,176 @@
 {
-  "schema": "kosif.task-history.v1",
-  "id": "20261104-warehouse-count-site-v39-maison-design-system",
-  "date": "2026-11-04",
-  "title": "Warehouse stock-count web app v28→v41: design system v2 (Maison), multi-search, highlight, shelf groups, scan mode, award-site motion, phone bottom bar, measured gate",
-  "request": "نفذ المقترح واستخدم قدرات التنين الاسود في تطوير الخطوط والموشن جرافك وايقونات الموقع وغيرها",
-  "kind": "web",
-  "mode": "موافق",
-  "level": "L3",
-  "plan": "B",
-  "status": "DONE_VERIFIED",
-  "agent": "Claude (claude.ai cloud session; repo not attached, repo scripts not executed: permission classifier refused external code)",
-  "tools": [
-    "python3 (patch scripts patch3..patch28 + build.sh)",
-    "node 22 + playwright (pre-installed Chromium headless)",
-    "claude.ai Artifact publish (artifact GjTX7KLvQs1dppSoAxW7Qj)",
-    "WebSearch/WebFetch research + 3 research subagents (2 completed, 1 rate-limited)"
+ "schema": "kosif.task-history.v1",
+ "id": "20261104-warehouse-count-site-v39-maison-design-system",
+ "date": "2026-11-04",
+ "title": "Warehouse stock-count web app v28→v42: design system v2 (Maison), multi-search, highlight, shelf groups, scan mode, award-site motion, phone bottom bar, measured gate",
+ "request": "نفذ المقترح واستخدم قدرات التنين الاسود في تطوير الخطوط والموشن جرافك وايقونات الموقع وغيرها",
+ "kind": "web",
+ "mode": "موافق",
+ "level": "L3",
+ "plan": "B",
+ "status": "DONE_VERIFIED",
+ "agent": "Claude (claude.ai cloud session; repo not attached, repo scripts not executed: permission classifier refused external code)",
+ "tools": [
+  "python3 (patch scripts patch3..patch28 + build.sh)",
+  "node 22 + playwright (pre-installed Chromium headless)",
+  "claude.ai Artifact publish (artifact GjTX7KLvQs1dppSoAxW7Qj)",
+  "WebSearch/WebFetch research + 3 research subagents (2 completed, 1 rate-limited)"
+ ],
+ "params": {
+  "artifact_versions": "28..42 (artifact version 44)",
+  "themes": [
+   "light Maison ivory/charcoal/antique gold",
+   "dark graphite/champagne",
+   "noir black/gold"
   ],
-  "params": {
-    "artifact_versions": "28..41",
-    "themes": [
-      "light Maison ivory/charcoal/antique gold",
-      "dark graphite/champagne",
-      "noir black/gold"
-    ],
-    "fonts": [
-      "Amiri 700 (title)",
-      "Noto Kufi Arabic 600/700 (names, numbers)",
-      "IBM Plex Sans Arabic (UI)",
-      "IBM Plex Mono (codes)"
-    ],
-    "root_font_size": "106% / 110% / 114% / 120% by breakpoint",
-    "motion": "hover 140ms std, press 80/140ms, modal 300ms expo-out, list stagger 50ms (KOSIF product-ui playbook)",
-    "icons": "24-grid, 1.7 stroke, round joins; self-drawing check; scan icon"
+  "fonts": [
+   "Amiri 700 (title)",
+   "Noto Kufi Arabic 600/700 (names, numbers)",
+   "IBM Plex Sans Arabic (UI)",
+   "IBM Plex Mono (codes)"
+  ],
+  "root_font_size": "106% / 110% / 114% / 120% by breakpoint",
+  "motion": "hover 140ms std, press 80/140ms, modal 300ms expo-out, list stagger 50ms (KOSIF product-ui playbook)",
+  "icons": "24-grid, 1.7 stroke, round joins; self-drawing check; scan icon"
+ },
+ "inputs": [
+  {
+   "name": "SMACC stock report (2,533 items) embedded as base-data JSON in the page",
+   "kind": "data"
   },
-  "inputs": [
-    {
-      "name": "SMACC stock report (2,533 items) embedded as base-data JSON in the page",
-      "kind": "data"
-    },
-    {
-      "name": "user Excel of brand/model/group per item (ref-data)",
-      "kind": "data"
-    },
-    {
-      "name": "carparts247 / oemwolf cross-reference JSON built earlier (xref, sup)",
-      "kind": "data"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/PROTOCOL.md",
-      "kind": "document"
-    },
-    {
-      "name": "kosif-tool playbooks/product-ui.md and playbooks/arabic-typography.md (read from a shallow clone)",
-      "kind": "document"
-    }
-  ],
-  "steps": [
-    {
-      "n": 1,
-      "what": "research: 3 parallel subagents (award sites, SaaS dashboards, luxury + Arabic/RTL) with WebSearch/WebFetch; two reports delivered (~100 sources/products)",
-      "tool": "Agent (general-purpose) x3",
-      "manual": "creative-sites agent stopped on a 5-hour usage limit"
-    },
-    {
-      "n": 2,
-      "what": "design system v2 stylesheet (v2.css) replacing four stacked theme layers; markup restructure (ring dashboard, toolbar, sticky column heads)",
-      "tool": "python3 patch24.py",
-      "command": "python3 patch24.py out/b21.html out/b22.html"
-    },
-    {
-      "n": 3,
-      "what": "search-term highlighting with Arabic/digit normalisation (patch25); keyboard help, location colours, top progress hairline, favicon, print CSS (patch26); shelf group headers, blind count, export scope chooser, status icons (patch27); icon grammar, kinetic title, scan mode, motion tokens (patch28)",
-      "tool": "python3",
-      "command": "bash build.sh   # chains patch3..patch28 over the base page"
-    },
-    {
-      "n": 4,
-      "what": "regression: 6 headless screenshots (3 themes x desktop/phone), multi-search + marks, highlight, groups, scan mode, export chooser",
-      "tool": "node + playwright",
-      "command": "node t24.js; node t19b.js; node t28.js; node t31.js; node t33.js; node t32.js"
-    },
-    {
-      "n": 5,
-      "what": "measured gate: 21 fg/bg pairs x 3 themes contrast (alpha-composited), basic a11y audit, RTL physical-property scan",
-      "tool": "node gate.js",
-      "command": "node gate.js > gate.txt"
-    },
-    {
-      "n": 6,
-      "what": "publish artifact versions 28..39 to the same URL",
-      "tool": "Artifact publish",
-      "needs_permission": true,
-      "manual": "published in-session as requested by the user"
-    },
-    {
-      "n": 7,
-      "what": "v40: award-site research (23 sites probed live by a subagent) applied: easing set with ease-in exits, two-tone focus ring, KPI radial glow, mobile tab-strip edge fade, spring linear() toggle, 180ms view transition on status swap; plus clear-all-filters chip, 1-5 tab keys (off in scan mode), toast pause on hover",
-      "tool": "python3 patch29.py + patch30.py",
-      "command": "bash build.sh && node t24.js && node t36.js && node t33.js && node gate.js"
-    },
-    {
-      "n": 8,
-      "what": "v41: phone bottom action bar (search/filters/scan/export) in the thumb zone, recent searches under the field, Ctrl+Z undo of the last count, export pending spinner, focused quantity kept above the phone keyboard, swipe-down to dismiss the sheet, phone KPI tiles stacked; scanner gap widened to 60 ms",
-      "tool": "python3 patch31.py",
-      "command": "bash build.sh && node t38.js && node t33.js && node t24.js && node gate.js"
-    }
-  ],
-  "outputs": [
-    {
-      "url": "https://claude.ai/artifact/GjTX7KLvQs1dppSoAxW7Qj",
-      "kind": "web",
-      "deterministic": false,
-      "measured": {
-        "version": 41,
-        "page_bytes": 1512927,
-        "contrast_pairs_ge_4.5": "63/63",
-        "js_errors_in_6_screenshots": 0,
-        "targets_under_24px": "0 (12 checkbox inputs inside 2rem labels)",
-        "buttons_without_name": 0,
-        "inputs_without_name": 0,
-        "rtl_physical_leaks_in_css": "8 (all deliberate: centred toast/pill, tab indicator, hairlines)"
-      }
-    }
-  ],
-  "reproduce": {
-    "how": "Start from the base page (out/v4.html) with the data JSON blocks, run build.sh which applies patch3..patch28 in order and writes out/index.html; run the Playwright scripts for screenshots and the gate; publish index.html to the artifact URL with capabilities db+user(profile)+downloads+assets. The patch scripts and v2.css live in the session container, not in this repository; add them under projects/warehouse-count/ to make this record replayable.",
-    "prerequisites": [
-      "python3",
-      "node 22 + playwright + Chromium",
-      "Google Fonts reachable (Amiri, Noto Kufi Arabic, IBM Plex Sans Arabic, IBM Plex Mono)"
-    ],
-    "commands": [
-      "bash build.sh",
-      "node t24.js",
-      "node gate.js"
-    ]
+  {
+   "name": "user Excel of brand/model/group per item (ref-data)",
+   "kind": "data"
   },
-  "evidence": "gate.txt (contrast table), screenshots d1-d4/m1-m2/k3/g2 in the session",
-  "lessons": [
-    "A <button> nested inside the row's <button class=r-main> was silently splitting the row DOM; use <span role=button>.",
-    "background-clip:text on a parent with animated inline-block children hides the text; clip on the children.",
-    "Line-clamp/ellipsis on mixed RTL/LTR lines mis-cuts; clip by max-height instead.",
-    "The repo's scripts cannot run from a cloud chat without attaching the repo; the classifier refuses external code."
+  {
+   "name": "carparts247 / oemwolf cross-reference JSON built earlier (xref, sup)",
+   "kind": "data"
+  },
+  {
+   "url": "https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/PROTOCOL.md",
+   "kind": "document"
+  },
+  {
+   "name": "kosif-tool playbooks/product-ui.md and playbooks/arabic-typography.md (read from a shallow clone)",
+   "kind": "document"
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "what": "research: 3 parallel subagents (award sites, SaaS dashboards, luxury + Arabic/RTL) with WebSearch/WebFetch; two reports delivered (~100 sources/products)",
+   "tool": "Agent (general-purpose) x3",
+   "manual": "creative-sites agent stopped on a 5-hour usage limit"
+  },
+  {
+   "n": 2,
+   "what": "design system v2 stylesheet (v2.css) replacing four stacked theme layers; markup restructure (ring dashboard, toolbar, sticky column heads)",
+   "tool": "python3 patch24.py",
+   "command": "python3 patch24.py out/b21.html out/b22.html"
+  },
+  {
+   "n": 3,
+   "what": "search-term highlighting with Arabic/digit normalisation (patch25); keyboard help, location colours, top progress hairline, favicon, print CSS (patch26); shelf group headers, blind count, export scope chooser, status icons (patch27); icon grammar, kinetic title, scan mode, motion tokens (patch28)",
+   "tool": "python3",
+   "command": "bash build.sh   # chains patch3..patch28 over the base page"
+  },
+  {
+   "n": 4,
+   "what": "regression: 6 headless screenshots (3 themes x desktop/phone), multi-search + marks, highlight, groups, scan mode, export chooser",
+   "tool": "node + playwright",
+   "command": "node t24.js; node t19b.js; node t28.js; node t31.js; node t33.js; node t32.js"
+  },
+  {
+   "n": 5,
+   "what": "measured gate: 21 fg/bg pairs x 3 themes contrast (alpha-composited), basic a11y audit, RTL physical-property scan",
+   "tool": "node gate.js",
+   "command": "node gate.js > gate.txt"
+  },
+  {
+   "n": 6,
+   "what": "publish artifact versions 28..39 to the same URL",
+   "tool": "Artifact publish",
+   "needs_permission": true,
+   "manual": "published in-session as requested by the user"
+  },
+  {
+   "n": 7,
+   "what": "v40: award-site research (23 sites probed live by a subagent) applied: easing set with ease-in exits, two-tone focus ring, KPI radial glow, mobile tab-strip edge fade, spring linear() toggle, 180ms view transition on status swap; plus clear-all-filters chip, 1-5 tab keys (off in scan mode), toast pause on hover",
+   "tool": "python3 patch29.py + patch30.py",
+   "command": "bash build.sh && node t24.js && node t36.js && node t33.js && node gate.js"
+  },
+  {
+   "n": 8,
+   "what": "v41: phone bottom action bar (search/filters/scan/export) in the thumb zone, recent searches under the field, Ctrl+Z undo of the last count, export pending spinner, focused quantity kept above the phone keyboard, swipe-down to dismiss the sheet, phone KPI tiles stacked; scanner gap widened to 60 ms",
+   "tool": "python3 patch31.py",
+   "command": "bash build.sh && node t38.js && node t33.js && node t24.js && node gate.js"
+  },
+  {
+   "n": 9,
+   "what": "v42 «الجدول الهادئ» after the owner called v41 crowded: zebra rows (:nth-child(even of .row)), uniform table rows, alternatives folded behind a «البدائل N» chip (auto-open on a highlighted match), all option chips moved into one popover under the sliders button (bottom sheet on phones), multi-search as a switch beside the field, marks chip beside the filters, eyebrow/double rules/wash/grain/aurora/kinetic title removed, sticky bar solid (no backdrop blur), content-visibility:auto on rows, phone board as a 4-tile strip",
+   "tool": "python3 patch32.py",
+   "command": "bash build.sh && node t42.js && node t19b.js && node t28.js && node t31.js && node t33.js && node t36.js && node t38.js && node gate.js && node perf.js"
+  },
+  {
+   "n": 10,
+   "what": "publish conflict: a parallel session had published its own «clean-v3» calm-table version (dragon-eye sigil, redrawn icons, smaller type, alternatives hidden with no toggle) at 17:20Z as version 43; v42 was published on top as version 44 (the parallel version stays in the artifact history); only its plainer theme-name wording was ported",
+   "tool": "Artifact publish",
+   "needs_permission": true,
+   "manual": "owner asked for the restructure in-session; the parallel version is one click away in version history"
+  }
+ ],
+ "outputs": [
+  {
+   "url": "https://claude.ai/artifact/GjTX7KLvQs1dppSoAxW7Qj",
+   "kind": "web",
+   "deterministic": false,
+   "measured": {
+    "version": 44,
+    "page_bytes": 1526662,
+    "contrast_pairs_ge_4.5": "60/63 (3 LOW rows are the tab probe artefact: unselected tab text measured against the selected tab's pseudo background)",
+    "js_errors_in_8_screenshots": 0,
+    "targets_under_24px": 0,
+    "buttons_without_name": 0,
+    "inputs_without_name": 0,
+    "perf_headless_no_gpu": {
+     "first_rows_ms": {
+      "v41": 984,
+      "v42": 792
+     },
+     "scroll_p95_frame_ms": {
+      "v41": 77.8,
+      "v42": 16.7
+     },
+     "long_frames_over_50ms": {
+      "v41": 14.7,
+      "v42": 0
+     }
+    }
+   }
+  }
+ ],
+ "reproduce": {
+  "how": "Start from the base page (out/v4.html) with the data JSON blocks, run build.sh which applies patch3..patch28 in order and writes out/index.html; run the Playwright scripts for screenshots and the gate; publish index.html to the artifact URL with capabilities db+user(profile)+downloads+assets. The patch scripts and v2.css live in the session container, not in this repository; add them under projects/warehouse-count/ to make this record replayable.",
+  "prerequisites": [
+   "python3",
+   "node 22 + playwright + Chromium",
+   "Google Fonts reachable (Amiri, Noto Kufi Arabic, IBM Plex Sans Arabic, IBM Plex Mono)"
   ],
-  "notes": "Research reports used: Stripe/Linear/Apple HIG/Material/Polaris/Square/Odoo (dashboard patterns); Rolex/Cartier/Hermes/Dior/AP + NEOM/Aramco/Al Rajhi + W3C alreq (luxury and Arabic/RTL rules). v40 adds the creative-sites report (Lusion, Locomotive, Immersive Garden, Obys, Exo Ape, Resn, Active Theory, Studio Freight, Basement, Hello Monday, Unseen, Dogstudio, By-Kin, Iventions, Mat Voyce, aengel, Long Hoang, Linear, Vercel, Stripe, Apple, Lando Norris, Igloo)."
+  "commands": [
+   "bash build.sh",
+   "node t24.js",
+   "node gate.js"
+  ]
+ },
+ "evidence": "gate output (60/63 ok), perf.js table, screenshots v1-v8 and L1-L7 (parallel version) in the session",
+ "lessons": [
+  "A <button> nested inside the row's <button class=r-main> was silently splitting the row DOM; use <span role=button>.",
+  "background-clip:text on a parent with animated inline-block children hides the text; clip on the children.",
+  "Line-clamp/ellipsis on mixed RTL/LTR lines mis-cuts; clip by max-height instead.",
+  "The repo's scripts cannot run from a cloud chat without attaching the repo; the classifier refuses external code.",
+  "Two sessions publishing to one artifact: the publish tool refuses a version not built on the live one and saves the live source; compare both renders before choosing a base, and say so in the report.",
+  "Zebra striping must use :nth-child(even of .row) when sticky group headers share the list; plain nth-child(even) flips parity after every header.",
+  "A sticky bar with backdrop-filter makes position:fixed children resolve against the bar; drop the blur before using a fixed bottom sheet inside it."
+ ],
+ "notes": "Research reports used: Stripe/Linear/Apple HIG/Material/Polaris/Square/Odoo (dashboard patterns); Rolex/Cartier/Hermes/Dior/AP + NEOM/Aramco/Al Rajhi + W3C alreq (luxury and Arabic/RTL rules). v40 adds the creative-sites report (Lusion, Locomotive, Immersive Garden, Obys, Exo Ape, Resn, Active Theory, Studio Freight, Basement, Hello Monday, Unseen, Dogstudio, By-Kin, Iventions, Mat Voyce, aengel, Long Hoang, Linear, Vercel, Stripe, Apple, Lando Norris, Igloo)."
 }
