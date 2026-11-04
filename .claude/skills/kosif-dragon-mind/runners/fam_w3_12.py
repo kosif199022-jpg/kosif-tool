@@ -64,8 +64,6 @@ GAPS: dict = {
                    "no spending allowed, so no picture can be produced or measured",
     "power:APP-03": "ArtifactData / ArtifactComments are deferred tools of the agent session; a subprocess runner cannot "
                     "load or call them",
-    "power:APP-08": "streamlit and gradio are not installed (each pulls a large dependency tree) and both need a running "
-                    "server; nothing static to measure here",
     "power:APP-12": "calling Claude needs ANTHROPIC_API_KEY (paid); the anthropic SDK is not installed and no key is set",
     "power:APP-14": "Higgsfield website creation and deployment spends credits and needs the connector; never without the "
                     "user's explicit request",
@@ -3642,6 +3640,160 @@ def barge_in(task, wd):
         check("after the response is done, user speech cancels nothing", r["done"]["sent"] == [] and "interrupted" not in r["done"]["events"], r["done"], "no cancel"),
         check("negative control: speech while idle sends no cancel", r["quiet"]["sent"] == [] and r["quiet"]["events"] == [], r["quiet"], "nothing"),
     ], [rep, wd / "voice.mjs"]
+
+
+# ───────────── APP-08: data apps with streamlit and gradio (installed with the owner's approval) ─────────────
+_ST_APP = """import streamlit as st
+
+NUMS = [3, 1, 4, 1, 5, 9, 2, 6]
+k = int(st.query_params.get("k", "2"))
+st.title("Moving average")
+st.slider("window", 1, 4, k, disabled=True)
+ma = [round(sum(NUMS[i:i + k]) / k, 3) for i in range(len(NUMS) - k + 1)]
+st.write("KOSIF-SUM=%d" % sum(NUMS))
+st.write("KOSIF-MA=" + ",".join(str(x) for x in ma))
+"""
+
+_GR_APP = """import sys, gradio as gr
+
+
+def stats(text, k):
+    w = text.split()
+    return {"words": len(w), "top": sorted(set(w), key=lambda x: (-w.count(x), x))[:int(k)]}
+
+
+demo = gr.Interface(fn=stats, inputs=[gr.Textbox(label="text"), gr.Number(value=2, label="k")], outputs=gr.JSON(),
+                    api_name="predict")
+demo.launch(server_name="127.0.0.1", server_port=int(sys.argv[1]), prevent_thread_lock=True, quiet=True, share=False)
+print("READY", flush=True)
+sys.stdin.read()
+"""
+
+_ST_READ = """import json, sys
+from playwright.sync_api import sync_playwright
+base, out = sys.argv[1], sys.argv[2]
+res = {}
+with sync_playwright() as p:
+    b = p.chromium.launch(channel="chrome", args=["--no-sandbox"])
+    pg = b.new_page()
+    for k in ("2", "3"):
+        pg.goto(base + "/?k=" + k)
+        pg.wait_for_selector("text=KOSIF-MA=", timeout=12000)
+        res[k] = [x.strip() for x in pg.inner_text("body").split("\\n") if "KOSIF-" in x]
+    b.close()
+json.dump(res, open(out, "w"))
+"""
+
+
+def _app_env(wd, **extra):
+    import site
+    home = Path(wd) / "_home"
+    (home / "tmp").mkdir(parents=True, exist_ok=True)
+    env = dict(os.environ, HOME=str(home), XDG_CACHE_HOME=str(home / ".cache"), XDG_CONFIG_HOME=str(home / ".config"),
+               MPLCONFIGDIR=str(home / ".mpl"), HF_HOME=str(home / ".hf"), GRADIO_TEMP_DIR=str(home / "gradio"),
+               GRADIO_ANALYTICS_ENABLED="False", STREAMLIT_BROWSER_GATHER_USAGE_STATS="false", PYTHONUSERBASE=site.getuserbase(),
+               TMPDIR="_home/tmp", NO_PROXY="127.0.0.1,localhost", no_proxy="127.0.0.1,localhost")
+    env.update({k: str(v) for k, v in extra.items()})
+    return env
+
+
+def _get(url, data=None, timeout=5):
+    import urllib.request
+    op = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+    req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"} if data else {})
+    with op.open(req, timeout=timeout) as r:
+        return r.read().decode("utf-8", "replace")
+
+
+def _wait_http(url, limit=20.0, proc=None):
+    t0 = time.time()
+    while time.time() - t0 < limit:
+        if proc is not None and proc.poll() is not None:
+            raise RuntimeError("server exited early: " + (proc.stdout.read() if proc.stdout else "")[-400:])
+        try:
+            return _get(url, timeout=1)
+        except Exception:
+            time.sleep(0.1)
+    raise RuntimeError("server did not answer in %.0f s: %s" % (limit, url))
+
+
+def _free_port():
+    s_ = socket.socket()
+    s_.bind(("127.0.0.1", 0))
+    port = s_.getsockname()[1]
+    s_.close()
+    return port
+
+
+@card("APP-08")
+def data_apps_streamlit_gradio(task, wd):
+    """Both data-app engines as running servers on 127.0.0.1, started inside the runner and stopped before it returns:
+    `streamlit run app.py` (moving average over a fixed series, window from the query string) is read in a real Chrome via
+    Playwright, and `gr.Interface(fn, inputs, outputs).launch()` (word stats) is called through its HTTP API. Answers are
+    checked against numpy; the static page without the running script is the negative control."""
+    wd = Path(wd)
+    (wd / "app.py").write_text(_ST_APP)
+    (wd / "gr_app.py").write_text(_GR_APP)
+    (wd / "st_read.py").write_text(_ST_READ)
+    env = _app_env(wd)
+    sp, gp = _free_port(), _free_port()
+    st_base, gr_base = "http://127.0.0.1:%d" % sp, "http://127.0.0.1:%d" % gp
+    try:
+        _get(gr_base + "/", timeout=0.5)
+        refused = False
+    except Exception:
+        refused = True
+    procs = []
+    try:
+        t0 = time.time()
+        gr_p = subprocess.Popen([sys.executable, "gr_app.py", str(gp)], cwd=str(wd), env=env, stdin=subprocess.PIPE,
+                                stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+        procs.append(gr_p)
+        st_p = subprocess.Popen(["streamlit", "run", "app.py", "--server.headless", "true", "--server.port", str(sp),
+                                 "--server.address", "127.0.0.1", "--browser.gatherUsageStats", "false",
+                                 "--global.developmentMode", "false"], cwd=str(wd), env=env, stdin=subprocess.DEVNULL,
+                                stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+        procs.append(st_p)
+        health = _wait_http(st_base + "/_stcore/health", proc=st_p)
+        shell = _get(st_base + "/")
+        rd = subprocess.run([sys.executable, "st_read.py", st_base, "st_dom.json"], cwd=str(wd), env=env, capture_output=True,
+                            text=True, timeout=40)
+        if rd.returncode:
+            raise RuntimeError("playwright read failed: " + rd.stderr[-400:])
+        st_seen = json.loads((wd / "st_dom.json").read_text())
+        st_up = time.time() - t0
+        _wait_http(gr_base + "/", limit=25, proc=gr_p)
+        gr_home = _get(gr_base + "/")
+        info = json.loads(_get(gr_base + "/gradio_api/info"))
+        eid = json.loads(_get(gr_base + "/gradio_api/call/predict", json.dumps({"data": ["b a c a b a", 2]}).encode()))["event_id"]
+        stream = _get(gr_base + "/gradio_api/call/predict/" + eid, timeout=10)
+        gr_up = time.time() - t0
+    finally:
+        for p in procs:
+            p.terminate()
+        for p in procs:
+            try:
+                p.wait(5)
+            except subprocess.TimeoutExpired:
+                p.kill()
+    m = re.search(r"event: complete\s*data: (.*)", stream)
+    gr_ans = json.loads(m.group(1))[0] if m else None
+    nums = np.array([3, 1, 4, 1, 5, 9, 2, 6], float)
+    ma = lambda k: ",".join(str(round(float(v), 3)) for v in np.convolve(nums, np.ones(k) / k, mode="valid"))
+    want = {k: ["KOSIF-SUM=%d" % nums.sum(), "KOSIF-MA=" + ma(int(k))] for k in ("2", "3")}
+    stopped = all(p.poll() is not None for p in procs)
+    rep = jw(wd / "apps_report.json", {"streamlit": {"health": health, "seen": st_seen, "expected": want, "seconds": st_up},
+                                       "gradio": {"endpoints": sorted(info.get("named_endpoints", {})), "answer": gr_ans,
+                                                  "seconds": gr_up}, "stopped": stopped})
+    return [check("streamlit server healthy on 127.0.0.1", health.strip() == "ok", health),
+            check("streamlit page rendered the script's numbers (k=2) in Chrome", st_seen.get("2") == want["2"], st_seen.get("2"), want["2"]),
+            check("query string re-runs the script (k=3 moving average)", st_seen.get("3") == want["3"], st_seen.get("3"), want["3"]),
+            check("gradio exposes the /predict endpoint", "/predict" in info.get("named_endpoints", {}), sorted(info.get("named_endpoints", {}))),
+            check("gradio API answer = word count 6, top-2 [a, b]", gr_ans == {"words": 6, "top": ["a", "b"]}, gr_ans),
+            check("gradio served its UI page", "<!doctype html>" in gr_home.lower()),
+            check("both servers stopped before the runner returned", stopped),
+            check("negative control: no server before launch, and the static shell has no computed numbers",
+                  refused and "KOSIF-" not in shell, [refused, "KOSIF-" in shell], [True, False])], [rep, wd / "app.py", wd / "gr_app.py"]
 
 
 GAPS = {k.split(":", 1)[1]: v for k, v in GAPS.items()}      # power_run looks gaps up by bare card ID

@@ -113,7 +113,8 @@ def registry(runners: dict | None = None) -> tuple[dict, dict]:
             counts["full"] += 1
             adapters["superpower:" + sp_id] = {
                 "script": V.SUPERPOWER_SCRIPT, "args": ["{artifact}", sp_id, "{task}"],
-                "why": "superpower chain: runs all %d member powers' real runners in order" % len(covered)}
+                "why": "superpower chain: runs all %d member powers' real runners in order" % len(covered),
+                "env_scope": "local" if any(runners[m].get("env_scope") == "local" for m in covered) else "any"}
         else:
             counts["partial" if covered else "none"] += 1
     return adapters, counts
