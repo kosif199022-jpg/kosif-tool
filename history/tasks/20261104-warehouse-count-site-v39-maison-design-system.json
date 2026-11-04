@@ -2,7 +2,7 @@
  "schema": "kosif.task-history.v1",
  "id": "20261104-warehouse-count-site-v39-maison-design-system",
  "date": "2026-11-04",
- "title": "Warehouse stock-count web app v28→v42: design system v2 (Maison), multi-search, highlight, shelf groups, scan mode, award-site motion, phone bottom bar, measured gate",
+ "title": "Warehouse stock-count web app v28→v43: design system v2 (Maison), multi-search, highlight, shelf groups, scan mode, award-site motion, phone bottom bar, measured gate",
  "request": "نفذ المقترح واستخدم قدرات التنين الاسود في تطوير الخطوط والموشن جرافك وايقونات الموقع وغيرها",
  "kind": "web",
  "mode": "موافق",
@@ -17,7 +17,7 @@
   "WebSearch/WebFetch research + 3 research subagents (2 completed, 1 rate-limited)"
  ],
  "params": {
-  "artifact_versions": "28..42 (artifact version 44)",
+  "artifact_versions": "28..43 (artifact version 45)",
   "themes": [
    "light Maison ivory/charcoal/antique gold",
    "dark graphite/champagne",
@@ -31,7 +31,12 @@
   ],
   "root_font_size": "106% / 110% / 114% / 120% by breakpoint",
   "motion": "hover 140ms std, press 80/140ms, modal 300ms expo-out, list stagger 50ms (KOSIF product-ui playbook)",
-  "icons": "24-grid, 1.7 stroke, round joins; self-drawing check; scan icon"
+  "icons": "24-grid, 1.7 stroke, round joins; self-drawing check; scan icon",
+  "identity_v4": {
+   "palette": "slate ink #111827 on #F3F4F6, working blue #1D4ED8/#3B82F6, lavender marks; dark #0B1220 / noir #000 with sky-blue accents",
+   "fonts": "Rubik (UI, names, numbers) + IBM Plex Sans Arabic fallback + IBM Plex Mono (codes)",
+   "views": "auto (cards while a search or marked-only filter is active, table otherwise) / cards / table, persisted in OPTS.view"
+  }
  },
  "inputs": [
   {
@@ -117,6 +122,12 @@
    "tool": "Artifact publish",
    "needs_permission": true,
    "manual": "owner asked for the restructure in-session; the parallel version is one click away in version history"
+  },
+  {
+   "n": 11,
+   "what": "v43 after the owner said the look was still the same and asked for search results as cards: new identity (Rubik, slate + working blue, new favicon/theme-colors), results as a responsive card grid (same .row DOM, CSS mode html.cards with grid areas main/alt/model+loc/info+in+ok/note/alts, status as a top bar, top-packed content), a three-way view switch (تلقائي/بطاقات/جدول) wired into updateMeta, field placeholders named (hidden in table mode), reference line back to flex so separators sit between items in both scripts, --ok deepened to #166534 for 4.5:1 on its soft tint",
+   "tool": "python3 patch33.py",
+   "command": "bash build.sh && node t43.js && node t19b.js && node t28.js && node t31.js && node t33.js && node t36.js && node t38.js && node gate.js && node perf.js"
   }
  ],
  "outputs": [
@@ -125,25 +136,25 @@
    "kind": "web",
    "deterministic": false,
    "measured": {
-    "version": 44,
-    "page_bytes": 1526662,
-    "contrast_pairs_ge_4.5": "60/63 (3 LOW rows are the tab probe artefact: unselected tab text measured against the selected tab's pseudo background)",
-    "js_errors_in_8_screenshots": 0,
+    "version": 45,
+    "page_bytes": 1537819,
+    "contrast_pairs_ge_4.5": "60/63 (3 LOW rows are the tab probe artefact)",
+    "js_errors_in_6_screenshots": 0,
     "targets_under_24px": 0,
     "buttons_without_name": 0,
     "inputs_without_name": 0,
     "perf_headless_no_gpu": {
      "first_rows_ms": {
-      "v41": 984,
-      "v42": 792
+      "v41": 951,
+      "v43": 840
      },
      "scroll_p95_frame_ms": {
-      "v41": 77.8,
-      "v42": 16.7
+      "v41": 66.7,
+      "v43": 16.8
      },
      "long_frames_over_50ms": {
-      "v41": 14.7,
-      "v42": 0
+      "v41": 16,
+      "v43": 0
      }
     }
    }
@@ -170,7 +181,8 @@
   "The repo's scripts cannot run from a cloud chat without attaching the repo; the classifier refuses external code.",
   "Two sessions publishing to one artifact: the publish tool refuses a version not built on the live one and saves the live source; compare both renders before choosing a base, and say so in the report.",
   "Zebra striping must use :nth-child(even of .row) when sticky group headers share the list; plain nth-child(even) flips parity after every header.",
-  "A sticky bar with backdrop-filter makes position:fixed children resolve against the bar; drop the blur before using a fixed bottom sheet inside it."
+  "A sticky bar with backdrop-filter makes position:fixed children resolve against the bar; drop the blur before using a fixed bottom sheet inside it.",
+  "A fragment forced to direction:ltr inside an RTL line puts a leading separator on its left; keep fragments in the paragraph direction (isolate only) or the dots land between the wrong items."
  ],
  "notes": "Research reports used: Stripe/Linear/Apple HIG/Material/Polaris/Square/Odoo (dashboard patterns); Rolex/Cartier/Hermes/Dior/AP + NEOM/Aramco/Al Rajhi + W3C alreq (luxury and Arabic/RTL rules). v40 adds the creative-sites report (Lusion, Locomotive, Immersive Garden, Obys, Exo Ape, Resn, Active Theory, Studio Freight, Basement, Hello Monday, Unseen, Dogstudio, By-Kin, Iventions, Mat Voyce, aengel, Long Hoang, Linear, Vercel, Stripe, Apple, Lando Norris, Igloo)."
 }
