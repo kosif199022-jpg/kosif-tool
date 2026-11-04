@@ -1143,9 +1143,46 @@ GAPS["ENG-228"] = ("the five-command lab loop does not fit 15 s here: kmotion sc
                    "one lab-kit frame takes ~9.4 s on SwiftShader (render ≈2 s/frame per the card)")
 
 
-GAPS["ENG-287"] = ("BROKEN in the repo, not runnable as claimed: lab-kit.js wraps K3.makeRenderer by assignment, but "
-                   "three-kit.bundle.js exports K3.makeRenderer as a getter-only property (esbuild namespace), so the override is "
-                   "silently ignored; measured with __draftScale=0.5 the GL buffer stays 320x180 at pixel ratio 1")
+_REPO = Path(__file__).resolve().parents[4]
+KIT_DIR = _REPO / ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/kosif-montage-motion/scripts/kit"
+LAB_REL = ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/kosif-montage-motion/scripts/kit/lab-kit.js"
+_DRAFT_PAGE = """<!doctype html><html><body style="margin:0"><canvas id="c" width="640" height="360"></canvas>
+<script src="three-kit.bundle.js"></script><script src="%s"></script><script>
+try{const K3=window.K3,T=K3.THREE,c=document.getElementById('c');const r=K3.makeRenderer(c,640,360,{});
+const sc=new T.Scene();sc.background=new T.Color(0x102030);const cam=new T.PerspectiveCamera(40,640/360,0.1,50);cam.position.set(0,0,4);
+const m=new T.Mesh(new T.BoxGeometry(1.4,1.4,1.4),new T.MeshBasicMaterial({color:0xff2020}));m.rotation.set(0.5,0.6,0);sc.add(m);
+r.render(sc,cam);const gl=r.getContext();const px=new Uint8Array(4);gl.readPixels(gl.drawingBufferWidth>>1,gl.drawingBufferHeight>>1,1,1,gl.RGBA,gl.UNSIGNED_BYTE,px);
+window.__r={ratio:r.getPixelRatio(),bw:gl.drawingBufferWidth,bh:gl.drawingBufferHeight,centre:Array.from(px),own:Object.getOwnPropertyDescriptor(K3,'makeRenderer').hasOwnProperty('value')};}
+catch(e){window.__r={err:String(e.stack||e)}}</script></body></html>"""
+
+
+@card("ENG-287")
+def draft_scale(task, wd):
+    """__draftScale (set by film.py --draft) shrinks lab-kit's GL buffers: measured in Chromium/SwiftShader on the repo's lab-kit.js.
+    Negative controls: the same page at ds=1, and the pre-fix lab-kit.js (git 8aacac0^) at ds=0.5, which kept ratio 1."""
+    for f in ("three-kit.bundle.js", "lab-kit.js"):
+        shutil.copy(KIT_DIR / f, wd / f)
+    try:
+        old = fx.run(["git", "-C", str(_REPO), "show", "8aacac0^:" + LAB_REL]).stdout
+    except Exception:  # noqa: BLE001 — no git history here: the ds=1 control still runs
+        old = ""
+    has_old = "K3.makeRenderer = function" in old
+    if has_old:
+        (wd / "lab-kit-old.js").write_text(old, encoding="utf-8")
+    init = "window.__draftScale = %s;"
+    a, _ = browser(wd, "draft", _DRAFT_PAGE % "lab-kit.js", flags=SOFTGL, size=(640, 360), init_script=init % 0.5)
+    b, _ = browser(wd, "full", _DRAFT_PAGE % "lab-kit.js", flags=SOFTGL, size=(640, 360), init_script=init % 1)
+    c = browser(wd, "old", _DRAFT_PAGE % "lab-kit-old.js", flags=SOFTGL, size=(640, 360), init_script=init % 0.5)[0] if has_old else None
+    jw(wd / "draft_scale.json", {"ds_0.5": a, "ds_1": b, "old_ds_0.5": c})
+    red = lambda r: r["centre"][0] > 200 and r["centre"][1] < 80
+    out = [check("ds=0.5: pixel ratio 0.5 and a 320x180 GL buffer for a 640x360 canvas", (a["ratio"], a["bw"], a["bh"]) == (0.5, 320, 180), [a["ratio"], a["bw"], a["bh"]], [0.5, 320, 180]),
+           check("draft buffer holds 1/4 of the full pixels", a["bw"] * a["bh"] * 4 == b["bw"] * b["bh"], [a["bw"] * a["bh"], b["bw"] * b["bh"]], "1:4"),
+           check("draft still renders the scene (red cube at the centre)", red(a), a["centre"], "red"),
+           check("K3.makeRenderer is now an own value (getter-only export replaced)", a["own"] is True, a["own"], True),
+           check("negative control: ds=1 keeps ratio 1 and 640x360", (b["ratio"], b["bw"], b["bh"]) == (1, 640, 360) and red(b), [b["ratio"], b["bw"], b["bh"]], [1, 640, 360])]
+    if has_old:
+        out.append(check("negative control: the pre-fix lab-kit.js ignores ds=0.5 (ratio 1, 640x360)", (c["ratio"], c["bw"], c["bh"]) == (1, 640, 360), [c["ratio"], c["bw"], c["bh"]], [1, 640, 360]))
+    return out, [wd / "draft_scale.json"]
 
 
 def kmm_mirror(wd):
