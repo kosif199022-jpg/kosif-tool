@@ -61,7 +61,7 @@ jobs:
           set +e
           python3 .claude/skills/kosif-superpowers/scripts/black_dragon.py run "اعمل مونتاج فيديو موشن جرافيك بصوت" \
             --job out/black-dragon/ci-run --workers 4 --probe-tools --reviewed-adapters --execute-adapters --timeout 1200 \
-            --validate-cards
+            --validate-cards --env-scope ci
           code=$?
           set -e
           # 0 = every reviewed adapter executed (catalog entries without an adapter stay blocked,
@@ -81,6 +81,9 @@ jobs:
           assert r["validation"]["counts_as_executed"] is False, r["validation"]
           lines = open("out/black-dragon/ci-run/validation.jsonl", encoding="utf-8").read().splitlines()
           assert len(lines) == r["scheduled"], len(lines)
+          # env_scope=local adapters (proven only on their build machine) are left out, not counted as run
+          assert r["adapter_env_scope"]["env_scope"] == "ci", r.get("adapter_env_scope")
+          print("env_scope_excluded", r["adapter_env_scope"]["excluded"])
           print("assigned", r["assigned"], "executed", r["executed"], "probe_passed", r["probe_passed"],
                 "blocked_why", r["blocked_why"], "validated", r["validated"], "invalid", r["validation_invalid"])
           PY
