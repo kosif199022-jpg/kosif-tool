@@ -2,7 +2,7 @@
  "schema": "kosif.task-history.v1",
  "id": "20261104-warehouse-count-site-v39-maison-design-system",
  "date": "2026-11-04",
- "title": "Warehouse stock-count web app v28→v46: design system v2 (Maison), multi-search, highlight, shelf groups, scan mode, award-site motion, phone bottom bar, measured gate",
+ "title": "Warehouse stock-count web app v28→v47: design system v2 (Maison), multi-search, highlight, shelf groups, scan mode, award-site motion, phone bottom bar, measured gate",
  "request": "نفذ المقترح واستخدم قدرات التنين الاسود في تطوير الخطوط والموشن جرافك وايقونات الموقع وغيرها",
  "kind": "web",
  "mode": "موافق",
@@ -17,7 +17,7 @@
   "WebSearch/WebFetch research + 3 research subagents (2 completed, 1 rate-limited)"
  ],
  "params": {
-  "artifact_versions": "28..46 (artifact version 48)",
+  "artifact_versions": "28..47 (artifact version 49)",
   "themes": [
    "light Maison ivory/charcoal/antique gold",
    "dark graphite/champagne",
@@ -140,6 +140,13 @@
    "what": "v46 after the owner asked for a visible separator between rows, bigger type, stronger colour steps and a compressed title bar: rows as spaced bordered strips (gap .4rem, 10px radius) with a deeper blue zebra and a blue border on even rows, root type +4% (108/110/112/116%), SMACC code chip tinted, diff badges tinted by status, flag and save buttons shown on hover/focus on fine pointers (always on touch), app bar collapsed to one 2.2rem row, summary strip and phone tiles slimmer",
    "tool": "python3 patch35.py",
    "command": "bash build.sh && node t47.js && node t19b.js && node t28.js && node t31.js && node t33.js && node t36.js && node t38.js && node t45.js && node gate.js"
+  },
+  {
+   "n": 14,
+   "what": "v47: «صنف جديد» button in the app bar and the phone bar (opens the existing unregistered-item sheet, prefilled from the search), and a live camera scanner: native BarcodeDetector where the browser has it, otherwise @zxing/library 0.21.3 loaded from jsdelivr (MultiFormatReader + HTMLCanvasElementLuminanceSource, hints CODE_128/39, EAN, UPC, ITF, CODABAR, QR, DataMatrix), frames every 220 ms, torch toggle when the track supports it, a photo fallback (file input with capture=environment; full image + 2x2 + 3x3 tiles for several labels in one shot). Each code becomes a card: item name, saved location large (or an inline field to save it), system qty, status, open/mark; unknown codes offer «إضافة كصنف جديد»; vibration on a hit; the item sheet opens above the camera",
+   "tool": "python3 patch36.py",
+   "command": "bash build.sh && node t48.js (fake camera + mocked detector) && node t38.js && node t19b.js && node t28.js && node t31.js && node t33.js && node t36.js && node t45.js && node t47.js && node gate.js",
+   "manual": "the ZXing path (iPhone / desktop without BarcodeDetector) is code-ready and checked against the library's exported API (esm index, browser.js, MultiFormatReader.js read via WebFetch) but was not executed here: the CDN is unreachable from the container"
   }
  ],
  "outputs": [
@@ -148,11 +155,11 @@
    "kind": "web",
    "deterministic": false,
    "measured": {
-    "version": 48,
-    "page_bytes": 1548104,
+    "version": 49,
+    "page_bytes": 1566217,
     "contrast_pairs_ge_4.5": "60/63 (3 LOW rows are the tab probe artefact)",
-    "js_errors_in_4_screenshots": 0,
-    "behaviour_tests_passed": "8/8",
+    "js_errors_in_screenshots": 0,
+    "behaviour_tests_passed": "9/9 (t48 camera flow: overlay, live card, location saved from the card, mark, open sheet above camera, photo with 2 codes, unknown code → new-item sheet, close stops the stream; phone bar add + camera)",
     "targets_under_24px": 0,
     "buttons_without_name": 0
    }
@@ -181,7 +188,8 @@
   "Zebra striping must use :nth-child(even of .row) when sticky group headers share the list; plain nth-child(even) flips parity after every header.",
   "A sticky bar with backdrop-filter makes position:fixed children resolve against the bar; drop the blur before using a fixed bottom sheet inside it.",
   "A fragment forced to direction:ltr inside an RTL line puts a leading separator on its left; keep fragments in the paragraph direction (isolate only) or the dots land between the wrong items.",
-  "The owner's own words decide the default: cards were a good idea for search results but they wanted the table; keep such ideas behind a switch instead of as the default."
+  "The owner's own words decide the default: cards were a good idea for search results but they wanted the table; keep such ideas behind a switch instead of as the default.",
+  "Camera inside a claude.ai artifact: no capability to declare; getUserMedia may be blocked by the iframe policy, so the overlay degrades to a capture=environment file input, which always opens the phone camera."
  ],
  "notes": "Research reports used: Stripe/Linear/Apple HIG/Material/Polaris/Square/Odoo (dashboard patterns); Rolex/Cartier/Hermes/Dior/AP + NEOM/Aramco/Al Rajhi + W3C alreq (luxury and Arabic/RTL rules). v40 adds the creative-sites report (Lusion, Locomotive, Immersive Garden, Obys, Exo Ape, Resn, Active Theory, Studio Freight, Basement, Hello Monday, Unseen, Dogstudio, By-Kin, Iventions, Mat Voyce, aengel, Long Hoang, Linear, Vercel, Stripe, Apple, Lando Norris, Igloo)."
 }
