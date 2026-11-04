@@ -8,7 +8,8 @@
     "SP-0086",
     "{task}"
    ],
-   "why": "superpower chain: runs all 8 member powers' real runners in order"
+   "why": "superpower chain: runs all 8 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0095": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -17,7 +18,8 @@
     "SP-0095",
     "{task}"
    ],
-   "why": "superpower chain: runs all 3 member powers' real runners in order"
+   "why": "superpower chain: runs all 3 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0196": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -26,7 +28,8 @@
     "SP-0196",
     "{task}"
    ],
-   "why": "superpower chain: runs all 26 member powers' real runners in order"
+   "why": "superpower chain: runs all 26 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0197": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -35,7 +38,8 @@
     "SP-0197",
     "{task}"
    ],
-   "why": "superpower chain: runs all 25 member powers' real runners in order"
+   "why": "superpower chain: runs all 25 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0198": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -44,7 +48,8 @@
     "SP-0198",
     "{task}"
    ],
-   "why": "superpower chain: runs all 22 member powers' real runners in order"
+   "why": "superpower chain: runs all 22 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0199": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -53,7 +58,8 @@
     "SP-0199",
     "{task}"
    ],
-   "why": "superpower chain: runs all 20 member powers' real runners in order"
+   "why": "superpower chain: runs all 20 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0200": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -62,7 +68,8 @@
     "SP-0200",
     "{task}"
    ],
-   "why": "superpower chain: runs all 18 member powers' real runners in order"
+   "why": "superpower chain: runs all 18 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0202": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -71,7 +78,8 @@
     "SP-0202",
     "{task}"
    ],
-   "why": "superpower chain: runs all 17 member powers' real runners in order"
+   "why": "superpower chain: runs all 17 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0203": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -80,7 +88,8 @@
     "SP-0203",
     "{task}"
    ],
-   "why": "superpower chain: runs all 17 member powers' real runners in order"
+   "why": "superpower chain: runs all 17 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0204": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -89,7 +98,8 @@
     "SP-0204",
     "{task}"
    ],
-   "why": "superpower chain: runs all 15 member powers' real runners in order"
+   "why": "superpower chain: runs all 15 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0205": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -98,7 +108,8 @@
     "SP-0205",
     "{task}"
    ],
-   "why": "superpower chain: runs all 11 member powers' real runners in order"
+   "why": "superpower chain: runs all 11 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0206": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -107,7 +118,8 @@
     "SP-0206",
     "{task}"
    ],
-   "why": "superpower chain: runs all 11 member powers' real runners in order"
+   "why": "superpower chain: runs all 11 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0208": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -116,7 +128,8 @@
     "SP-0208",
     "{task}"
    ],
-   "why": "superpower chain: runs all 10 member powers' real runners in order"
+   "why": "superpower chain: runs all 10 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0210": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -125,7 +138,8 @@
     "SP-0210",
     "{task}"
    ],
-   "why": "superpower chain: runs all 10 member powers' real runners in order"
+   "why": "superpower chain: runs all 10 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0211": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -134,7 +148,8 @@
     "SP-0211",
     "{task}"
    ],
-   "why": "superpower chain: runs all 10 member powers' real runners in order"
+   "why": "superpower chain: runs all 10 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0212": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -143,7 +158,8 @@
     "SP-0212",
     "{task}"
    ],
-   "why": "superpower chain: runs all 10 member powers' real runners in order"
+   "why": "superpower chain: runs all 10 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0213": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -152,7 +168,8 @@
     "SP-0213",
     "{task}"
    ],
-   "why": "superpower chain: runs all 9 member powers' real runners in order"
+   "why": "superpower chain: runs all 9 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0214": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -161,7 +178,8 @@
     "SP-0214",
     "{task}"
    ],
-   "why": "superpower chain: runs all 9 member powers' real runners in order"
+   "why": "superpower chain: runs all 9 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0216": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -170,7 +188,8 @@
     "SP-0216",
     "{task}"
    ],
-   "why": "superpower chain: runs all 8 member powers' real runners in order"
+   "why": "superpower chain: runs all 8 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0217": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -179,7 +198,8 @@
     "SP-0217",
     "{task}"
    ],
-   "why": "superpower chain: runs all 8 member powers' real runners in order"
+   "why": "superpower chain: runs all 8 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0218": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -188,7 +208,8 @@
     "SP-0218",
     "{task}"
    ],
-   "why": "superpower chain: runs all 8 member powers' real runners in order"
+   "why": "superpower chain: runs all 8 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0220": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -197,7 +218,8 @@
     "SP-0220",
     "{task}"
    ],
-   "why": "superpower chain: runs all 7 member powers' real runners in order"
+   "why": "superpower chain: runs all 7 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0221": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -206,7 +228,8 @@
     "SP-0221",
     "{task}"
    ],
-   "why": "superpower chain: runs all 7 member powers' real runners in order"
+   "why": "superpower chain: runs all 7 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0222": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -215,7 +238,8 @@
     "SP-0222",
     "{task}"
    ],
-   "why": "superpower chain: runs all 5 member powers' real runners in order"
+   "why": "superpower chain: runs all 5 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0223": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -224,7 +248,8 @@
     "SP-0223",
     "{task}"
    ],
-   "why": "superpower chain: runs all 4 member powers' real runners in order"
+   "why": "superpower chain: runs all 4 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0224": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -233,7 +258,8 @@
     "SP-0224",
     "{task}"
    ],
-   "why": "superpower chain: runs all 4 member powers' real runners in order"
+   "why": "superpower chain: runs all 4 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0225": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -242,7 +268,8 @@
     "SP-0225",
     "{task}"
    ],
-   "why": "superpower chain: runs all 3 member powers' real runners in order"
+   "why": "superpower chain: runs all 3 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0232": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -251,7 +278,8 @@
     "SP-0232",
     "{task}"
    ],
-   "why": "superpower chain: runs all 18 member powers' real runners in order"
+   "why": "superpower chain: runs all 18 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0233": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -260,7 +288,8 @@
     "SP-0233",
     "{task}"
    ],
-   "why": "superpower chain: runs all 12 member powers' real runners in order"
+   "why": "superpower chain: runs all 12 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0234": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -269,7 +298,8 @@
     "SP-0234",
     "{task}"
    ],
-   "why": "superpower chain: runs all 10 member powers' real runners in order"
+   "why": "superpower chain: runs all 10 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0235": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -278,7 +308,8 @@
     "SP-0235",
     "{task}"
    ],
-   "why": "superpower chain: runs all 9 member powers' real runners in order"
+   "why": "superpower chain: runs all 9 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0236": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -287,7 +318,8 @@
     "SP-0236",
     "{task}"
    ],
-   "why": "superpower chain: runs all 7 member powers' real runners in order"
+   "why": "superpower chain: runs all 7 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0238": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -296,7 +328,8 @@
     "SP-0238",
     "{task}"
    ],
-   "why": "superpower chain: runs all 5 member powers' real runners in order"
+   "why": "superpower chain: runs all 5 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0239": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -305,7 +338,8 @@
     "SP-0239",
     "{task}"
    ],
-   "why": "superpower chain: runs all 3 member powers' real runners in order"
+   "why": "superpower chain: runs all 3 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0242": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -314,7 +348,8 @@
     "SP-0242",
     "{task}"
    ],
-   "why": "superpower chain: runs all 11 member powers' real runners in order"
+   "why": "superpower chain: runs all 11 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0244": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -323,7 +358,8 @@
     "SP-0244",
     "{task}"
    ],
-   "why": "superpower chain: runs all 8 member powers' real runners in order"
+   "why": "superpower chain: runs all 8 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0245": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -332,7 +368,8 @@
     "SP-0245",
     "{task}"
    ],
-   "why": "superpower chain: runs all 6 member powers' real runners in order"
+   "why": "superpower chain: runs all 6 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0246": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -341,7 +378,8 @@
     "SP-0246",
     "{task}"
    ],
-   "why": "superpower chain: runs all 5 member powers' real runners in order"
+   "why": "superpower chain: runs all 5 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0247": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -350,7 +388,8 @@
     "SP-0247",
     "{task}"
    ],
-   "why": "superpower chain: runs all 3 member powers' real runners in order"
+   "why": "superpower chain: runs all 3 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0254": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -359,7 +398,8 @@
     "SP-0254",
     "{task}"
    ],
-   "why": "superpower chain: runs all 24 member powers' real runners in order"
+   "why": "superpower chain: runs all 24 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0259": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -368,7 +408,8 @@
     "SP-0259",
     "{task}"
    ],
-   "why": "superpower chain: runs all 10 member powers' real runners in order"
+   "why": "superpower chain: runs all 10 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0260": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -377,7 +418,8 @@
     "SP-0260",
     "{task}"
    ],
-   "why": "superpower chain: runs all 6 member powers' real runners in order"
+   "why": "superpower chain: runs all 6 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0261": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -386,7 +428,8 @@
     "SP-0261",
     "{task}"
    ],
-   "why": "superpower chain: runs all 5 member powers' real runners in order"
+   "why": "superpower chain: runs all 5 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0262": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -395,7 +438,8 @@
     "SP-0262",
     "{task}"
    ],
-   "why": "superpower chain: runs all 3 member powers' real runners in order"
+   "why": "superpower chain: runs all 3 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0308": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -404,7 +448,8 @@
     "SP-0308",
     "{task}"
    ],
-   "why": "superpower chain: runs all 9 member powers' real runners in order"
+   "why": "superpower chain: runs all 9 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0309": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -413,7 +458,8 @@
     "SP-0309",
     "{task}"
    ],
-   "why": "superpower chain: runs all 8 member powers' real runners in order"
+   "why": "superpower chain: runs all 8 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0310": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -422,7 +468,8 @@
     "SP-0310",
     "{task}"
    ],
-   "why": "superpower chain: runs all 4 member powers' real runners in order"
+   "why": "superpower chain: runs all 4 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0312": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -431,7 +478,8 @@
     "SP-0312",
     "{task}"
    ],
-   "why": "superpower chain: runs all 16 member powers' real runners in order"
+   "why": "superpower chain: runs all 16 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0313": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -440,7 +488,8 @@
     "SP-0313",
     "{task}"
    ],
-   "why": "superpower chain: runs all 14 member powers' real runners in order"
+   "why": "superpower chain: runs all 14 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0314": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -449,7 +498,8 @@
     "SP-0314",
     "{task}"
    ],
-   "why": "superpower chain: runs all 12 member powers' real runners in order"
+   "why": "superpower chain: runs all 12 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0318": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -458,7 +508,8 @@
     "SP-0318",
     "{task}"
    ],
-   "why": "superpower chain: runs all 3 member powers' real runners in order"
+   "why": "superpower chain: runs all 3 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0328": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -467,7 +518,8 @@
     "SP-0328",
     "{task}"
    ],
-   "why": "superpower chain: runs all 19 member powers' real runners in order"
+   "why": "superpower chain: runs all 19 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0329": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -476,7 +528,8 @@
     "SP-0329",
     "{task}"
    ],
-   "why": "superpower chain: runs all 17 member powers' real runners in order"
+   "why": "superpower chain: runs all 17 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0330": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -485,7 +538,8 @@
     "SP-0330",
     "{task}"
    ],
-   "why": "superpower chain: runs all 15 member powers' real runners in order"
+   "why": "superpower chain: runs all 15 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0336": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -494,7 +548,8 @@
     "SP-0336",
     "{task}"
    ],
-   "why": "superpower chain: runs all 12 member powers' real runners in order"
+   "why": "superpower chain: runs all 12 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0337": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -503,7 +558,8 @@
     "SP-0337",
     "{task}"
    ],
-   "why": "superpower chain: runs all 9 member powers' real runners in order"
+   "why": "superpower chain: runs all 9 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0338": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -512,7 +568,8 @@
     "SP-0338",
     "{task}"
    ],
-   "why": "superpower chain: runs all 8 member powers' real runners in order"
+   "why": "superpower chain: runs all 8 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0339": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -521,7 +578,8 @@
     "SP-0339",
     "{task}"
    ],
-   "why": "superpower chain: runs all 8 member powers' real runners in order"
+   "why": "superpower chain: runs all 8 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0340": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -530,7 +588,8 @@
     "SP-0340",
     "{task}"
    ],
-   "why": "superpower chain: runs all 7 member powers' real runners in order"
+   "why": "superpower chain: runs all 7 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0341": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -539,7 +598,8 @@
     "SP-0341",
     "{task}"
    ],
-   "why": "superpower chain: runs all 7 member powers' real runners in order"
+   "why": "superpower chain: runs all 7 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0342": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -548,7 +608,8 @@
     "SP-0342",
     "{task}"
    ],
-   "why": "superpower chain: runs all 7 member powers' real runners in order"
+   "why": "superpower chain: runs all 7 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0343": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -557,7 +618,8 @@
     "SP-0343",
     "{task}"
    ],
-   "why": "superpower chain: runs all 7 member powers' real runners in order"
+   "why": "superpower chain: runs all 7 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0344": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -566,7 +628,8 @@
     "SP-0344",
     "{task}"
    ],
-   "why": "superpower chain: runs all 6 member powers' real runners in order"
+   "why": "superpower chain: runs all 6 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0345": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -575,7 +638,8 @@
     "SP-0345",
     "{task}"
    ],
-   "why": "superpower chain: runs all 6 member powers' real runners in order"
+   "why": "superpower chain: runs all 6 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0346": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -584,7 +648,8 @@
     "SP-0346",
     "{task}"
    ],
-   "why": "superpower chain: runs all 5 member powers' real runners in order"
+   "why": "superpower chain: runs all 5 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0347": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -593,7 +658,8 @@
     "SP-0347",
     "{task}"
    ],
-   "why": "superpower chain: runs all 4 member powers' real runners in order"
+   "why": "superpower chain: runs all 4 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0348": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -602,7 +668,8 @@
     "SP-0348",
     "{task}"
    ],
-   "why": "superpower chain: runs all 4 member powers' real runners in order"
+   "why": "superpower chain: runs all 4 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0353": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -611,7 +678,8 @@
     "SP-0353",
     "{task}"
    ],
-   "why": "superpower chain: runs all 14 member powers' real runners in order"
+   "why": "superpower chain: runs all 14 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0355": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -620,7 +688,8 @@
     "SP-0355",
     "{task}"
    ],
-   "why": "superpower chain: runs all 13 member powers' real runners in order"
+   "why": "superpower chain: runs all 13 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0357": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -629,7 +698,8 @@
     "SP-0357",
     "{task}"
    ],
-   "why": "superpower chain: runs all 7 member powers' real runners in order"
+   "why": "superpower chain: runs all 7 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0365": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -638,7 +708,8 @@
     "SP-0365",
     "{task}"
    ],
-   "why": "superpower chain: runs all 8 member powers' real runners in order"
+   "why": "superpower chain: runs all 8 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0366": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -647,7 +718,8 @@
     "SP-0366",
     "{task}"
    ],
-   "why": "superpower chain: runs all 6 member powers' real runners in order"
+   "why": "superpower chain: runs all 6 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0398": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -656,7 +728,8 @@
     "SP-0398",
     "{task}"
    ],
-   "why": "superpower chain: runs all 34 member powers' real runners in order"
+   "why": "superpower chain: runs all 34 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0399": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -665,7 +738,8 @@
     "SP-0399",
     "{task}"
    ],
-   "why": "superpower chain: runs all 16 member powers' real runners in order"
+   "why": "superpower chain: runs all 16 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0400": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -674,7 +748,8 @@
     "SP-0400",
     "{task}"
    ],
-   "why": "superpower chain: runs all 11 member powers' real runners in order"
+   "why": "superpower chain: runs all 11 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0401": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -683,7 +758,8 @@
     "SP-0401",
     "{task}"
    ],
-   "why": "superpower chain: runs all 9 member powers' real runners in order"
+   "why": "superpower chain: runs all 9 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0402": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -692,7 +768,8 @@
     "SP-0402",
     "{task}"
    ],
-   "why": "superpower chain: runs all 7 member powers' real runners in order"
+   "why": "superpower chain: runs all 7 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0403": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -701,7 +778,8 @@
     "SP-0403",
     "{task}"
    ],
-   "why": "superpower chain: runs all 6 member powers' real runners in order"
+   "why": "superpower chain: runs all 6 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0404": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -710,7 +788,8 @@
     "SP-0404",
     "{task}"
    ],
-   "why": "superpower chain: runs all 6 member powers' real runners in order"
+   "why": "superpower chain: runs all 6 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0405": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -719,7 +798,8 @@
     "SP-0405",
     "{task}"
    ],
-   "why": "superpower chain: runs all 4 member powers' real runners in order"
+   "why": "superpower chain: runs all 4 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0406": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -728,7 +808,8 @@
     "SP-0406",
     "{task}"
    ],
-   "why": "superpower chain: runs all 4 member powers' real runners in order"
+   "why": "superpower chain: runs all 4 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0417": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -737,7 +818,8 @@
     "SP-0417",
     "{task}"
    ],
-   "why": "superpower chain: runs all 14 member powers' real runners in order"
+   "why": "superpower chain: runs all 14 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0419": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -746,7 +828,8 @@
     "SP-0419",
     "{task}"
    ],
-   "why": "superpower chain: runs all 11 member powers' real runners in order"
+   "why": "superpower chain: runs all 11 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0420": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -755,7 +838,8 @@
     "SP-0420",
     "{task}"
    ],
-   "why": "superpower chain: runs all 10 member powers' real runners in order"
+   "why": "superpower chain: runs all 10 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0422": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -764,7 +848,8 @@
     "SP-0422",
     "{task}"
    ],
-   "why": "superpower chain: runs all 49 member powers' real runners in order"
+   "why": "superpower chain: runs all 49 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0423": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -773,7 +858,8 @@
     "SP-0423",
     "{task}"
    ],
-   "why": "superpower chain: runs all 31 member powers' real runners in order"
+   "why": "superpower chain: runs all 31 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0424": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -782,7 +868,8 @@
     "SP-0424",
     "{task}"
    ],
-   "why": "superpower chain: runs all 23 member powers' real runners in order"
+   "why": "superpower chain: runs all 23 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0425": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -791,7 +878,8 @@
     "SP-0425",
     "{task}"
    ],
-   "why": "superpower chain: runs all 22 member powers' real runners in order"
+   "why": "superpower chain: runs all 22 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0426": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -800,7 +888,8 @@
     "SP-0426",
     "{task}"
    ],
-   "why": "superpower chain: runs all 22 member powers' real runners in order"
+   "why": "superpower chain: runs all 22 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0427": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -809,7 +898,8 @@
     "SP-0427",
     "{task}"
    ],
-   "why": "superpower chain: runs all 21 member powers' real runners in order"
+   "why": "superpower chain: runs all 21 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0429": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -818,7 +908,8 @@
     "SP-0429",
     "{task}"
    ],
-   "why": "superpower chain: runs all 19 member powers' real runners in order"
+   "why": "superpower chain: runs all 19 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0430": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -827,7 +918,8 @@
     "SP-0430",
     "{task}"
    ],
-   "why": "superpower chain: runs all 19 member powers' real runners in order"
+   "why": "superpower chain: runs all 19 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0432": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -836,7 +928,8 @@
     "SP-0432",
     "{task}"
    ],
-   "why": "superpower chain: runs all 18 member powers' real runners in order"
+   "why": "superpower chain: runs all 18 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0433": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -845,7 +938,8 @@
     "SP-0433",
     "{task}"
    ],
-   "why": "superpower chain: runs all 17 member powers' real runners in order"
+   "why": "superpower chain: runs all 17 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0434": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -854,7 +948,8 @@
     "SP-0434",
     "{task}"
    ],
-   "why": "superpower chain: runs all 16 member powers' real runners in order"
+   "why": "superpower chain: runs all 16 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0435": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -863,7 +958,8 @@
     "SP-0435",
     "{task}"
    ],
-   "why": "superpower chain: runs all 15 member powers' real runners in order"
+   "why": "superpower chain: runs all 15 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0436": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -872,7 +968,8 @@
     "SP-0436",
     "{task}"
    ],
-   "why": "superpower chain: runs all 15 member powers' real runners in order"
+   "why": "superpower chain: runs all 15 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0437": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -881,7 +978,8 @@
     "SP-0437",
     "{task}"
    ],
-   "why": "superpower chain: runs all 14 member powers' real runners in order"
+   "why": "superpower chain: runs all 14 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0438": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -890,7 +988,8 @@
     "SP-0438",
     "{task}"
    ],
-   "why": "superpower chain: runs all 13 member powers' real runners in order"
+   "why": "superpower chain: runs all 13 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0439": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -899,7 +998,8 @@
     "SP-0439",
     "{task}"
    ],
-   "why": "superpower chain: runs all 13 member powers' real runners in order"
+   "why": "superpower chain: runs all 13 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0440": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -908,7 +1008,8 @@
     "SP-0440",
     "{task}"
    ],
-   "why": "superpower chain: runs all 12 member powers' real runners in order"
+   "why": "superpower chain: runs all 12 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0441": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -917,7 +1018,8 @@
     "SP-0441",
     "{task}"
    ],
-   "why": "superpower chain: runs all 11 member powers' real runners in order"
+   "why": "superpower chain: runs all 11 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0442": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -926,7 +1028,8 @@
     "SP-0442",
     "{task}"
    ],
-   "why": "superpower chain: runs all 11 member powers' real runners in order"
+   "why": "superpower chain: runs all 11 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0443": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -935,7 +1038,8 @@
     "SP-0443",
     "{task}"
    ],
-   "why": "superpower chain: runs all 11 member powers' real runners in order"
+   "why": "superpower chain: runs all 11 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0444": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -944,7 +1048,8 @@
     "SP-0444",
     "{task}"
    ],
-   "why": "superpower chain: runs all 10 member powers' real runners in order"
+   "why": "superpower chain: runs all 10 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0445": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -953,7 +1058,8 @@
     "SP-0445",
     "{task}"
    ],
-   "why": "superpower chain: runs all 9 member powers' real runners in order"
+   "why": "superpower chain: runs all 9 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0446": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -962,7 +1068,8 @@
     "SP-0446",
     "{task}"
    ],
-   "why": "superpower chain: runs all 9 member powers' real runners in order"
+   "why": "superpower chain: runs all 9 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0447": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -971,7 +1078,8 @@
     "SP-0447",
     "{task}"
    ],
-   "why": "superpower chain: runs all 7 member powers' real runners in order"
+   "why": "superpower chain: runs all 7 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0448": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -980,7 +1088,8 @@
     "SP-0448",
     "{task}"
    ],
-   "why": "superpower chain: runs all 5 member powers' real runners in order"
+   "why": "superpower chain: runs all 5 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0449": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -989,7 +1098,8 @@
     "SP-0449",
     "{task}"
    ],
-   "why": "superpower chain: runs all 5 member powers' real runners in order"
+   "why": "superpower chain: runs all 5 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0450": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -998,7 +1108,8 @@
     "SP-0450",
     "{task}"
    ],
-   "why": "superpower chain: runs all 4 member powers' real runners in order"
+   "why": "superpower chain: runs all 4 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0451": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -1007,7 +1118,8 @@
     "SP-0451",
     "{task}"
    ],
-   "why": "superpower chain: runs all 3 member powers' real runners in order"
+   "why": "superpower chain: runs all 3 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0452": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -1016,7 +1128,8 @@
     "SP-0452",
     "{task}"
    ],
-   "why": "superpower chain: runs all 3 member powers' real runners in order"
+   "why": "superpower chain: runs all 3 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0453": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -1025,7 +1138,8 @@
     "SP-0453",
     "{task}"
    ],
-   "why": "superpower chain: runs all 2 member powers' real runners in order"
+   "why": "superpower chain: runs all 2 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0457": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -1034,7 +1148,8 @@
     "SP-0457",
     "{task}"
    ],
-   "why": "superpower chain: runs all 7 member powers' real runners in order"
+   "why": "superpower chain: runs all 7 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0458": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -1043,7 +1158,8 @@
     "SP-0458",
     "{task}"
    ],
-   "why": "superpower chain: runs all 6 member powers' real runners in order"
+   "why": "superpower chain: runs all 6 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0461": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -1052,7 +1168,8 @@
     "SP-0461",
     "{task}"
    ],
-   "why": "superpower chain: runs all 4 member powers' real runners in order"
+   "why": "superpower chain: runs all 4 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0463": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -1061,7 +1178,8 @@
     "SP-0463",
     "{task}"
    ],
-   "why": "superpower chain: runs all 17 member powers' real runners in order"
+   "why": "superpower chain: runs all 17 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0464": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -1070,7 +1188,8 @@
     "SP-0464",
     "{task}"
    ],
-   "why": "superpower chain: runs all 12 member powers' real runners in order"
+   "why": "superpower chain: runs all 12 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0465": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -1079,7 +1198,8 @@
     "SP-0465",
     "{task}"
    ],
-   "why": "superpower chain: runs all 10 member powers' real runners in order"
+   "why": "superpower chain: runs all 10 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0466": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -1088,7 +1208,8 @@
     "SP-0466",
     "{task}"
    ],
-   "why": "superpower chain: runs all 9 member powers' real runners in order"
+   "why": "superpower chain: runs all 9 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0467": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -1097,7 +1218,8 @@
     "SP-0467",
     "{task}"
    ],
-   "why": "superpower chain: runs all 9 member powers' real runners in order"
+   "why": "superpower chain: runs all 9 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0468": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -1106,7 +1228,8 @@
     "SP-0468",
     "{task}"
    ],
-   "why": "superpower chain: runs all 7 member powers' real runners in order"
+   "why": "superpower chain: runs all 7 member powers' real runners in order",
+   "env_scope": "local"
   },
   "superpower:SP-0469": {
    "script": ".claude/skills/kosif-dragon-mind/scripts/superpower_run.py",
@@ -1115,7 +1238,8 @@
     "SP-0469",
     "{task}"
    ],
-   "why": "superpower chain: runs all 4 member powers' real runners in order"
+   "why": "superpower chain: runs all 4 member powers' real runners in order",
+   "env_scope": "local"
   }
  }
 }
