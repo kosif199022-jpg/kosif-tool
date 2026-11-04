@@ -31,7 +31,7 @@ from power_programs import security_safety as sec  # noqa: E402
 
 FAMILIES = ["atlas-code", "code-engineering", "api-testing", "security-safety"]
 IDS = sorted(pid for fam in FAMILIES for m in pp.modules_for(fam) for pid in m.PROGRAMS)
-SKIPPED = ROOT / "out" / "power-programs" / "code-skipped.json"
+SKIPPED = ROOT / ".claude" / "skills" / "kosif-superpowers" / "data" / "power_program_records" / "code-skipped.json"
 NEVER = re.compile(r"(?!x)x")
 
 

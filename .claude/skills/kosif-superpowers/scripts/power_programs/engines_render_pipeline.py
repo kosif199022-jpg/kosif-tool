@@ -1315,7 +1315,7 @@ def eng45(work):
     wav = work / "voice.wav"
     write_wav(wav, tone(440, 1.5, 44100), 44100)
     vflags = ["-c:v", "libx264", "-profile:v", "high", "-preset", "slow", "-crf", "17", "-pix_fmt", "yuv420p",
-              "-vf", "pad=ceil(iw/2)*2:ceil(ih/2)*2", "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
+              "-vf", "pad=ceil(iw/2)*2:ceil(ih/2)*2,setparams=range=tv:color_primaries=bt709:color_trc=bt709:colorspace=bt709", "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
               "-movflags", "+faststart"]
     copy = work / "copy.mp4"
     ff("-framerate", fps, "-i", pat, "-i", mp3, *vflags, "-c:a", "copy", "-shortest", copy)
@@ -1330,7 +1330,7 @@ def eng45(work):
     vs = vstream(copy)
     adur = float(astream(aac)["duration"])
     return [("odd 63x35 padded to even 64x36", (vs["width"], vs["height"]) == (64, 36), (vs["width"], vs["height"])),
-            ("libx264 High yuv420p BT.709", (vs["profile"], vs["pix_fmt"], vs.get("color_primaries")) == ("High", "yuv420p", "bt709"), (vs["profile"], vs.get("color_primaries"))),
+            ("libx264 High yuv420p BT.709", (vs["profile"], vs["pix_fmt"], vs.get("color_primaries")) == ("High", "yuv420p", "bt709"), (vs["profile"], vs["pix_fmt"], vs.get("color_primaries"))),
             ("MP3 stream-copied byte for byte (packet prefix)", astream(copy)["codec_name"] == "mp3" and len(out_h) > 10 and out_h == src_h[:len(out_h)], (len(out_h), len(src_h))),
             ("audio cut at the last video frame", len(out_h) < len(src_h), (len(out_h), len(src_h))),
             ("WAV -> AAC, video length decides the end", astream(aac)["codec_name"] == "aac" and adur <= 1.0 + 0.05, adur)]
@@ -4684,7 +4684,10 @@ def eng380(work):
     a[1::2, 1::2] = (0, 0, 255)
     write_png(src, a)
     out = work / "big.png"
-    sh(["convert", src, "-filter", "point", "-resize", "800%", out])
+    im_cli = shutil.which("magick") or shutil.which("convert")  # IM7 ships `magick`, IM6 `convert`
+    if not im_cli:
+        raise RuntimeError("ImageMagick is not installed (neither magick nor convert on PATH)")
+    sh([im_cli, src, "-filter", "point", "-resize", "800%", out])
     b = np.asarray(Image.open(out).convert("RGB"))
     cols = {tuple(c) for c in b.reshape(-1, 3).tolist()}
     return [("8x8 -> 64x64", b.shape[:2] == (64, 64), b.shape),
@@ -5149,7 +5152,7 @@ def eng_x04(work):
     W, H, fps, n = 64, 36, 10, 10
     ff("-f", "lavfi", "-i", "sine=f=220:d=3:sample_rate=44100", work / "song.wav")
     proc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "image2pipe", "-c:v", "mjpeg", "-framerate", str(fps), "-i", "pipe:0", "-i", str(work / "song.wav"),
-                             "-c:v", "libx264", "-crf", "16", "-preset", "veryfast", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "256k", "-ar", "48000",
+                             "-c:v", "libx264", "-crf", "16", "-preset", "veryfast", "-vf", "scale=out_range=tv,format=yuv420p,setparams=range=tv", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "256k", "-ar", "48000",
                              "-shortest", "-movflags", "+faststart", str(work / "film.mp4")], stdin=subprocess.PIPE)
     for i in range(n):
         b = io.BytesIO()
@@ -5162,7 +5165,8 @@ def eng_x04(work):
     return [("MJPEG pipe -> H.264 crf 16", "crf=16.0" in x264_settings(out) and count_frames(out) == 10, ""),
             ("song as AAC 48 kHz", (a["codec_name"], a["sample_rate"]) == ("aac", "48000"), (a["codec_name"], a["sample_rate"])),
             ("-shortest: film ends with the picture (1 s)", float(probe(out)["format"]["duration"]) < 1.2, probe(out)["format"]["duration"]),
-            ("yuv420p + faststart", vstream(out)["pix_fmt"] == "yuv420p" and out.read_bytes().find(b"moov") < out.read_bytes().find(b"mdat"), "")]
+            ("yuv420p + faststart", vstream(out)["pix_fmt"] == "yuv420p" and out.read_bytes().find(b"moov") < out.read_bytes().find(b"mdat"),
+             (vstream(out)["pix_fmt"], out.read_bytes().find(b"moov"), out.read_bytes().find(b"mdat")))]
 
 
 def lottie_errors(doc, raw_bytes):

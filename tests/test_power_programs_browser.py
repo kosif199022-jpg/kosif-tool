@@ -25,7 +25,7 @@ sys.path.insert(0, str(SCRIPTS))
 import power_programs as pp  # noqa: E402
 import _black_dragon_power_program as bd  # noqa: E402
 
-OUT = ROOT / "out" / "power-programs"
+OUT = ROOT / ".claude" / "skills" / "kosif-superpowers" / "data" / "power_program_records"
 MODULES = ["engines_render_pipeline__browser", "atlas_build__browser", "documents_office__browser",
            "ai_generation__browser", "voice_tts__browser", "web_research__browser"]
 _CARDS = pp.card_index()

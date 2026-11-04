@@ -63,7 +63,15 @@ def gaussian_blur(img: np.ndarray, sigma: float) -> np.ndarray:
         return ndi.gaussian_filter(img, sigma=sigma, mode="reflect")
     dtype = img.dtype
     if img.ndim == 2:
-        return np.asarray(Image.fromarray(img.astype(np.float32), "F").filter(ImageFilter.GaussianBlur(sigma))).astype(dtype)
+        # Pure NumPy separable Gaussian (Pillow's GaussianBlur rejects mode "F" images).
+        r = max(1, int(round(sigma * 4)))
+        x = np.arange(-r, r + 1, dtype=np.float64)
+        k = np.exp(-0.5 * (x / sigma) ** 2)
+        k /= k.sum()
+        a = np.pad(img.astype(np.float64), r, mode="symmetric")
+        a = np.apply_along_axis(lambda row: np.convolve(row, k, mode="valid"), 1, a)
+        a = np.apply_along_axis(lambda col: np.convolve(col, k, mode="valid"), 0, a)
+        return a.astype(dtype)
     return np.stack([gaussian_blur(img[..., c], sigma) for c in range(img.shape[2])], -1)
 
 

@@ -2,7 +2,7 @@
 
 1) Every program in engines_render_pipeline__remotion passes through
    _black_dragon_power_program.run_program in a temp dir.
-2) out/power-programs/remotion-done.json lists exactly these cards, each was a wave-1 skip,
+2) data/power_program_records/remotion-done.json lists exactly these cards, each was a wave-1 skip,
    and no other module of the family also programs them.
 3) Planted failures: breaking the technique (Math.random instead of random(seed), an ES2021
    target, a wrong keyframe, a mock component instead of the product one, a browser picker that
@@ -53,7 +53,8 @@ class AllProgramsPass(unittest.TestCase):
             self.assertEqual(_CARDS[pid][0], FAMILY, pid)
         with ThreadPoolExecutor(max_workers=4) as ex:
             results = dict(zip(ids, ex.map(run, ids)))
-        bad = {pid: r["problems"] or r["error"][-300:] for pid, r in results.items() if not r["ok"]}
+        bad = {pid: (r["problems"] + [f"{c['name']} -> {c['observed']}" for c in r.get("checks", []) if not c["passed"]])
+                   or r["error"][-300:] for pid, r in results.items() if not r["ok"]}
         self.assertEqual(bad, {})
         for pid, r in results.items():
             self.assertTrue(r["program"].endswith(f"{MODULE}.py"), (pid, r["program"]))
@@ -63,8 +64,8 @@ class AllProgramsPass(unittest.TestCase):
 
 class Bookkeeping(unittest.TestCase):
     def test_done_file_and_no_overlap(self):
-        done = json.loads((ROOT / "out" / "power-programs" / "remotion-done.json").read_text())
-        skipped = json.loads((ROOT / "out" / "power-programs" / "engines-skipped.json").read_text())
+        done = json.loads((ROOT / ".claude" / "skills" / "kosif-superpowers" / "data" / "power_program_records" / "remotion-done.json").read_text())
+        skipped = json.loads((ROOT / ".claude" / "skills" / "kosif-superpowers" / "data" / "power_program_records" / "engines-skipped.json").read_text())
         ids = set(mod().PROGRAMS)
         self.assertEqual(set(done), ids)
         self.assertTrue(all(v == MODULE for v in done.values()))

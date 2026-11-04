@@ -20,7 +20,7 @@ jobs:
       - name: Prerequisites for the power-program and proof tests (ffmpeg, fonts, Python packages, Playwright Chromium)
         run: |
           sudo apt-get update -q
-          sudo apt-get install -y -q ffmpeg fontconfig fonts-noto-core
+          sudo apt-get install -y -q ffmpeg fontconfig fonts-noto-core imagemagick
           python3 -m pip install -q numpy openpyxl pillow opencv-python-headless \
             'fonttools[woff]' brotli scipy matplotlib shapely segno python-pptx beautifulsoup4 \
             arabic-reshaper python-bidi pyyaml

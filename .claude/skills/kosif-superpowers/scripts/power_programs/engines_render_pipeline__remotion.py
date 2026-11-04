@@ -345,6 +345,8 @@ def eng_430(work: Path):
     fpw, fshell = cloud_paths([fx / "opt/node-tools"], [fx / "opt/pw-browsers"])
     groot = subprocess.run(["npm", "root", "-g"], capture_output=True, text=True).stdout.strip()
     node_roots = ["/opt/node-tools", str(Path(groot).parent) if groot else "/nonexistent"]
+    if os.environ.get("KOSIF_PLAYWRIGHT"):  # the repo's documented override: <root>/node_modules/playwright
+        node_roots.append(str(Path(os.environ["KOSIF_PLAYWRIGHT"]).parents[1]))
     broots = [p for p in [os.environ.get("PLAYWRIGHT_BROWSERS_PATH"), "/opt/pw-browsers",
                           str(Path.home() / ".cache" / "ms-playwright")] if p]
     pw, shell = cloud_paths(node_roots, broots)

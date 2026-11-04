@@ -50,7 +50,7 @@ class AllProgramsPass(unittest.TestCase):
         self.assertGreaterEqual(total, 450)
 
     def test_skipped_and_programmed_cover_every_card(self):
-        skipped = json.loads((ROOT / "out" / "power-programs" / "mind-skipped.json").read_text())
+        skipped = json.loads((ROOT / ".claude" / "skills" / "kosif-superpowers" / "data" / "power_program_records" / "mind-skipped.json").read_text())
         fams = {m.replace("_", "-") for m in MODULES}
         cards = {pid for pid, (f, _) in _CARDS.items() if f in fams}
         programmed = {pid for m in MODULES for pid in mod(m).PROGRAMS}

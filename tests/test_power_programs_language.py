@@ -94,7 +94,7 @@ class LanguagePrograms(unittest.TestCase):
         self.assertTrue(all(c[f] >= 3 for f in FAMILIES), c)
 
     def test_skipped_and_programmed_cover_every_card(self):
-        path = ROOT / "out" / "power-programs" / "language-skipped.json"
+        path = ROOT / ".claude" / "skills" / "kosif-superpowers" / "data" / "power_program_records" / "language-skipped.json"
         if not path.exists():
             self.skipTest("skip list lives in the gitignored out/ folder")
         skipped = json.loads(path.read_text(encoding="utf-8"))

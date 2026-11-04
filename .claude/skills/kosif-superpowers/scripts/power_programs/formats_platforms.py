@@ -16,9 +16,10 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
-FONT_DIRS = ["/usr/share/fonts/truetype/noto", "/usr/share/fonts/truetype/dejavu", "/usr/share/fonts/truetype/liberation"]
-LATIN = ["NotoSans-Bold.ttf", "NotoSans-Regular.ttf", "DejaVuSans-Bold.ttf", "DejaVuSans.ttf", "LiberationSans-Bold.ttf"]
-ARABIC = ["NotoSansArabic-Bold.ttf", "NotoSansArabic-Regular.ttf", "NotoNaskhArabic-Regular.ttf", "DejaVuSans.ttf"]
+# Repo-pinned fonts first so the measured layout is the same on every machine.
+FONT_DIRS = [str(Path(__file__).resolve().parents[2] / "proofs" / "_shared" / "fonts"), "/usr/share/fonts/truetype/noto", "/usr/share/fonts/truetype/dejavu", "/usr/share/fonts/truetype/liberation"]
+LATIN = ["Poppins-Bold.ttf", "NotoSans-Bold.ttf", "NotoSans-Regular.ttf", "DejaVuSans-Bold.ttf", "DejaVuSans.ttf", "LiberationSans-Bold.ttf"]
+ARABIC = ["Tajawal-Bold.ttf", "NotoSansArabic-Bold.ttf", "NotoSansArabic-Regular.ttf", "NotoNaskhArabic-Regular.ttf", "DejaVuSans.ttf"]
 ARABIC_RE = re.compile(r"[\u0600-\u06ff]")
 
 
@@ -444,18 +445,21 @@ def fmt_18(work):
         arr = np.asarray(im)
         xs = np.nonzero(arr.max(axis=0))[0]
         res[a] = (int(xs.min()), int(xs.max()), im.width)
-    crop = np.asarray(render_ratio("16:9"))[:, 70:250]
-    cut_title = crop[:, 0].max() > 0 or crop[:, -1].max() > 0
+    W, H = RATIO["16:9"]
+    cw = round(H * 9 / 16)                      # 9:16 window of the 16:9 frame: 101 px wide
+    x0 = (W - cw) // 2
+    lo, hi, _ = res["16:9"]
+    cut_title = lo < x0 or hi >= x0 + cw        # title ink falls outside the centred window
     return [("title fully inside every ratio (no edge contact)", all(lo > 0 and hi < w - 1 for lo, hi, w in res.values()), res),
             ("four ratios rendered from one composition", len(res) == 4, list(res)),
-            ("blind centre-crop of 16:9 to 9:16 cuts the title (why we recompose)", bool(cut_title), bool(cut_title))]
+            ("blind centre-crop of 16:9 to 9:16 cuts the title (why we recompose)", bool(cut_title), (lo, hi, x0, x0 + cw))]
 
 
 # ---------------------------------------------------------------- FMT-20
 def fmt_20(work):
     out = work / "master.mp4"
     ff("-f", "lavfi", "-i", "testsrc2=size=64x36:rate=30:duration=3", "-f", "lavfi", "-i", "sine=d=3:sample_rate=48000",
-       "-c:v", "libx264", "-preset", "medium", "-crf", 18, "-g", 60, "-pix_fmt", "yuv420p",
+       "-c:v", "libx264", "-preset", "medium", "-crf", 18, "-g", 60, "-pix_fmt", "yuv420p", "-vf", "setparams=range=tv:color_primaries=bt709:color_trc=bt709:colorspace=bt709",
        "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
        "-c:a", "aac", "-b:a", "192k", "-ar", 48000, "-movflags", "+faststart", out)
     v = vstream(out)
@@ -546,7 +550,7 @@ def fmt_24(work):
     d, r = hls(work)
     master = (d / "master.m3u8").read_text() if (d / "master.m3u8").exists() else ""
     v0 = (d / "v0.m3u8").read_text() if (d / "v0.m3u8").exists() else ""
-    bw = [int(x) for x in re.findall(r"BANDWIDTH=(\d+)", master)]
+    bw = [int(x) for x in re.findall(r"(?<![-A-Z])BANDWIDTH=(\d+)", master)]  # newer ffmpeg also writes AVERAGE-BANDWIDTH
     _, bad = hls(work, per_audio=False)
     return [("ladder encodes", r.returncode == 0, r.stderr[-200:]),
             ("master.m3u8 has 3 STREAM-INF", master.count("#EXT-X-STREAM-INF") == 3, master.count("#EXT-X-STREAM-INF")),
@@ -1508,11 +1512,16 @@ def counter_at(t, events):
     return sum(1 for e in events if e <= t)
 
 
+def counter_font(size):
+    """The counter needs tabular (equal-advance) digits so it does not jitter: Cairo's figures are tabular."""
+    return ImageFont.truetype(str(Path(FONT_DIRS[0]) / "Cairo[slnt,wght].ttf"), size)
+
+
 def hook_frame(t, events, W=270, H=480):
     im = Image.new("L", (W, H), 0)
     d = ImageDraw.Draw(im)
     d.rectangle([20, int(0.12 * H), W - 20, int(0.20 * H)], fill=200)
-    d.text((W // 2, H // 2), f"{counter_at(t, events):03d}", font=font(40), fill=255, anchor="mm")
+    d.text((W // 2, H // 2), f"{counter_at(t, events):03d}", font=counter_font(40), fill=255, anchor="mm")
     if t < 3:
         d.rectangle([90, 420, 180, 440], fill=120)
     return im
@@ -1522,14 +1531,16 @@ def fmt_66(work):
     events = [0.5, 1.0, 1.7, 2.2, 4.0]
     f = np.asarray(hook_frame(2.0, events))
     Image.fromarray(f).save(work / "hook_2s.png")
-    rows = np.nonzero((f == 200).any(axis=1))[0]
-    fnt = font(40)
+    rows = np.nonzero((f == 200).sum(axis=1) > f.shape[1] // 2)[0]   # band rows, not anti-aliased digit pixels
+    fnt = counter_font(40)
     adv = {fnt.getlength(c) for c in "0123456789"}
+    prop = {font(40).getlength(c) for c in "0123456789"}
     pill_on = np.asarray(hook_frame(2.9, events))[430, 135]
     pill_off = np.asarray(hook_frame(3.0, events))[430, 135]
     return [("question band within the top 12-20%", rows.min() >= 0.12 * 480 - 1 and rows.max() <= 0.20 * 480, (int(rows.min()), int(rows.max()))),
             ("counter = events so far (3 at 2.0 s, 5 at 4.0 s)", counter_at(2.0, events) == 3 and counter_at(4.0, events) == 5, counter_at(2.0, events)),
             ("tabular digits: one advance width", len(adv) == 1, sorted(adv)),
+            ("the proportional title font would jitter (several advances)", len(prop) > 1, len(prop)),
             ("'sound on' pill gone at 3 s", pill_on == 120 and pill_off == 0, (int(pill_on), int(pill_off)))]
 
 
@@ -1576,7 +1587,7 @@ def fmt_x01(work):
     i, tp = normalise(tone, work / "music_n.wav")
     master = work / "master.mp4"
     ff("-f", "lavfi", "-i", "testsrc2=size=64x36:rate=24:duration=1", "-i", work / "music_n.wav", "-c:v", "libx264", "-profile:v", "high", "-preset", "veryfast",
-       "-b:v", "20M", "-pix_fmt", "yuv420p", "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
+       "-b:v", "20M", "-pix_fmt", "yuv420p", "-vf", "setparams=range=tv:color_primaries=bt709:color_trc=bt709:colorspace=bt709", "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
        "-c:a", "aac", "-b:a", "256k", "-shortest", master)
     nos = work / "master_nosound.mp4"
     ff("-i", master, "-c:v", "copy", "-an", nos)

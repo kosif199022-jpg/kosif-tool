@@ -298,7 +298,8 @@ def save_png(path, arr):
 
 def font_path(arabic=False):
     here = Path(__file__).resolve()
-    cands = []
+    pinned = here.parents[2] / "proofs" / "_shared" / "fonts"  # repo fonts: same layout on every machine
+    cands = [pinned / "Tajawal-Bold.ttf"] if arabic else []
     if arabic:
         cands += [here.parents[4] / "fonts" / "kosif-jumuah" / "KOSIFJumuah-Regular.ttf",
                   Path("/usr/share/fonts/truetype/noto/NotoSansArabic-Regular.ttf"),
@@ -471,7 +472,7 @@ def qa_02(work):
 @program("QA-04")
 def qa_04(work):
     work = Path(work); fr = moving_frames(60)
-    tags = ["-profile:v", "high", "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709", "-movflags", "+faststart"]
+    tags = ["-vf", "setparams=range=tv:color_primaries=bt709:color_trc=bt709:colorspace=bt709", "-profile:v", "high", "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709", "-movflags", "+faststart"]
     good = write_video(work / "good.mp4", fr, 30, audio=scale_to_lufs(stereo(tone(440, 2, 48000, .3)), 48000, -14), extra=tags, preset="veryfast")
     nofs = write_video(work / "nofaststart.mp4", fr, 30, audio=scale_to_lufs(stereo(tone(440, 2, 48000, .3)), 48000, -14), extra=tags[:-2], preset="veryfast")
     data = good.read_bytes(); trunc = work / "truncated.mp4"; trunc.write_bytes(data[: int(len(data) * 0.6)])
@@ -5426,10 +5427,11 @@ def qa_278(work):
 @program("QA-279")
 def qa_279(work):
     from PIL import ImageDraw, Image
-    size = 80; f = pil_font(size, arabic=True); im = Image.new("L", (600, 300), 0); ImageDraw.Draw(im).text((20, 100), "بِنْتٌ يَجِيءُ", fill=255, font=f)
-    ys = np.where(np.asarray(im).max(1) > 0)[0]; asc, desc = f.getmetrics(); top_line = 100; ink = (ys.min(), ys.max())
-    tight = (top_line + int(0.15 * size), top_line + asc)  # a tight cap-height mask
-    padded = (tight[0] - int(0.35 * size), tight[1] + int(0.35 * size))
+    size = 80; f = pil_font(size, arabic=True); base = 160; im = Image.new("L", (600, 320), 0)
+    ImageDraw.Draw(im).text((20, base), "بِنْتٌ يَجِيءُ", fill=255, font=f, anchor="ls")  # drawn on a known baseline
+    ys = np.where(np.asarray(im).max(1) > 0)[0]; ink = (int(ys.min()), int(ys.max()))
+    tight = (base - int(0.8 * size), base + int(0.2 * size))  # a tight 1 em mask around the line (0.8 em above, 0.2 em below)
+    padded = (tight[0] - int(0.35 * size), tight[1] + int(0.35 * size))  # the card's >= 0.35 em vertical pad
     cut_tight = ink[0] < tight[0] or ink[1] > tight[1]; cut_pad = ink[0] < padded[0] or ink[1] > padded[1]
     im.save(Path(work) / "arabic_mask_probe.png"); wjson(Path(work) / "mask.json", {"ink": [int(v) for v in ink], "tight": tight, "padded": padded})
     return [C("tight mask clips Arabic dots/harakat", cut_tight, (ink, tight)), C("0.35em vertical padding keeps every dot", not cut_pad, (ink, padded))]

@@ -23,8 +23,9 @@ import numpy as np
 import yaml
 from PIL import Image, ImageChops, ImageDraw, ImageFont
 
-FONT_DIRS = ["/usr/share/fonts/truetype/noto", "/usr/share/fonts/truetype/dejavu", "/usr/share/fonts/truetype/liberation"]
-ARABIC = ["NotoSansArabic-Regular.ttf", "NotoNaskhArabic-Regular.ttf", "DejaVuSans.ttf"]
+# Repo-pinned fonts first so the measured layout is the same on every machine.
+FONT_DIRS = [str(Path(__file__).resolve().parents[2] / "proofs" / "_shared" / "fonts"), "/usr/share/fonts/truetype/noto", "/usr/share/fonts/truetype/dejavu", "/usr/share/fonts/truetype/liberation"]
+ARABIC = ["Tajawal-Bold.ttf", "NotoSansArabic-Regular.ttf", "NotoNaskhArabic-Regular.ttf", "DejaVuSans.ttf"]
 
 
 def font(size):
@@ -1134,12 +1135,16 @@ def appx_147(work):
     b = render_scaled(lines, 720 / 1080)
     a.save(work / "t1080.png")
     b.save(work / "t720.png")
-    def rows(im):
-        r = (np.asarray(im).max(axis=1) > 0).astype(int)
-        return int(np.sum(np.diff(np.concatenate([[0], r])) == 1))
+    def rows(im, k):
+        # ink runs; a gap shorter than 0.25 em is inside one line (Arabic dots float above/below the body)
+        r = np.asarray(im).max(axis=1) > 0
+        ys = np.flatnonzero(r)
+        if not len(ys):
+            return 0
+        return 1 + int(np.sum(np.diff(ys) > 0.25 * 64 * k))
     naive = layout_lines(text, short_side=720, size_ref=64)
     return [("layout done once at short side 1080", len(lines) >= 2, lines),
-            ("same line count at k=1 and k=2/3", rows(a) == rows(b) == len(lines), (rows(a), rows(b))),
+            ("same line count at k=1 and k=2/3", rows(a, 1) == rows(b, 2 / 3) == len(lines), (rows(a, 1), rows(b, 2 / 3), len(lines))),
             ("re-laying out at 720 without scaling would break lines differently", naive != lines, (len(naive), len(lines))),
             ("k = short side / 1080", round(720 / 1080, 4) == 0.6667, 0.6667)]
 

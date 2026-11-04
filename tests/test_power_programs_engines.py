@@ -44,12 +44,13 @@ class AllProgramsPass(unittest.TestCase):
             self.assertEqual(_CARDS[pid][0], FAMILY, pid)
         with ThreadPoolExecutor(max_workers=4) as ex:
             results = dict(zip(ids, ex.map(run, ids)))
-        bad = {pid: r["problems"] for pid, r in results.items() if not r["ok"]}
+        bad = {pid: r["problems"] + [f"{c['name']} -> {c['observed']}" for c in r.get("checks", []) if not c["passed"]]
+               for pid, r in results.items() if not r["ok"]}
         self.assertEqual(bad, {})
         self.assertGreaterEqual(len(ids), 190)
 
     def test_skipped_and_programmed_cover_every_card(self):
-        skipped = json.loads((ROOT / "out" / "power-programs" / "engines-skipped.json").read_text(encoding="utf-8"))
+        skipped = json.loads((ROOT / ".claude" / "skills" / "kosif-superpowers" / "data" / "power_program_records" / "engines-skipped.json").read_text(encoding="utf-8"))
         cards = {pid for pid, (f, _) in _CARDS.items() if f == FAMILY}
         programmed = set(mod().PROGRAMS)
         self.assertEqual(programmed & set(skipped), set())

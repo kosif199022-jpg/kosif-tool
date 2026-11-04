@@ -50,12 +50,13 @@ class AllProgramsPass(unittest.TestCase):
                 pids.append(pid)
         with mock.patch.object(pp, "card_index", lambda: _CARDS), ThreadPoolExecutor(4) as ex:
             results = dict(zip(pids, ex.map(run, pids)))
-        bad = {pid: r.get("problems") for pid, r in results.items() if not r["ok"]}
+        bad = {pid: r.get("problems", []) + [f"{c['name']} -> {c['observed']}" for c in r.get("checks", []) if not c["passed"]]
+               for pid, r in results.items() if not r["ok"]}
         self.assertEqual(bad, {})
         self.assertGreaterEqual(len(pids), 318)
 
     def test_skipped_and_programmed_cover_every_card(self):
-        skipped = json.loads((ROOT / "out" / "power-programs" / "qa-skipped.json").read_text())
+        skipped = json.loads((ROOT / ".claude" / "skills" / "kosif-superpowers" / "data" / "power_program_records" / "qa-skipped.json").read_text())
         fams = {m.replace("_", "-") for m in MODULES}
         cards = {pid for pid, (f, _) in _CARDS.items() if f in fams}
         programmed = {pid for m in MODULES for pid in mod(m).PROGRAMS}
