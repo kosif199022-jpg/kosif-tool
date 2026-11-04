@@ -1,0 +1,57 @@
+name: Native Black Dragon source map
+
+on:
+  pull_request:
+    paths:
+      - '.claude/skills/kosif-black-dragon/**'
+      - '.github/workflows/black-dragon-native-map.yml'
+      - 'tests/test_black_dragon_native_fusion.py'
+      - '.claude/skills/kosif-superpowers/data/**'
+      - 'catalog/styles.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  source-map:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Quick synthetic tests
+        run: python -m unittest discover -s tests -p test_black_dragon_native_fusion.py -v
+      - name: Read and link every catalog source
+        run: python .claude/skills/kosif-black-dragon/scripts/black_dragon.py index --out out/black-dragon-native-map
+      - name: Verify every source fingerprint
+        run: python .claude/skills/kosif-black-dragon/scripts/black_dragon.py verify --out out/black-dragon-native-map
+      - name: Publish exact source-to-Black-Dragon map
+        uses: actions/upload-artifact@v4
+        with:
+          name: black-dragon-native-source-map
+          path: out/black-dragon-native-map/
+          retention-days: 30
+
+      - name: Refresh generated discovery maps in workspace
+        run: |
+          python .claude/skills/kosif-superpowers/scripts/skill_loader.py build
+          python .claude/skills/kosif-superpowers/scripts/capability_graph.py build
+      - name: Commit only generated map updates to PR branch
+        if: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository }}
+        env:
+          PR_BRANCH: ${{ github.head_ref }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- .claude/skills/kosif-superpowers/LOADER.md \
+            .claude/skills/kosif-superpowers/data/capability_graph.json \
+            .claude/skills/kosif-superpowers/references/capability-graph.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore(black-dragon): refresh generated skill and capability maps'
+            git push origin "HEAD:${PR_BRANCH}"
+          fi
