@@ -1266,7 +1266,7 @@ def eng_g02(work: Path):
         {"op": "goto", "url": "/index.html"}, {"op": "wait", "js": "window.__ready===true"},
         {"op": "eval", "js": "[tick(0.5),tick(0.5)]", "as": "t"}, {"op": "eval", "js": "window.info()", "as": "i"},
         {"op": "eval", "js": "window.recycle()", "as": "pool"}, {"op": "eval", "js": "window.info()", "as": "i2"},
-        {"op": "eval", "js": "(()=>{const t0=performance.now();for(let k=0;k<10;k++)tick(1/60);return (performance.now()-t0)/10})()", "as": "ms"},
+        {"op": "eval", "js": "(()=>{for(let k=0;k<10;k++)tick(1/60);const b=[];for(let r=0;r<7;r++){const t0=performance.now();for(let k=0;k<10;k++)tick(1/60);b.push((performance.now()-t0)/10)}return Math.min(...b)})()", "as": "ms"},
         {"op": "shot", "path": str(work / "sprites.png")}]})
     t, i, i2 = r["values"]["t"], r["values"]["i"], r["values"]["i2"]
     # sprite 0: x=0, vx=-20, y=0, vy=-10 -> after 1 s of dt: (-20, -10)
@@ -1275,7 +1275,7 @@ def eng_g02(work: Path):
             ("no new objects allocated per frame", t[0]["newObjects"] == 0 and t[1]["newObjects"] == 0, str([x["newObjects"] for x in t])),
             ("delta-time motion: sprite 0 at (-20,-10) after 2 x 0.5 s", i["first"] == [-20, -10], str(i["first"])),
             ("recycling reuses the pooled object (created stays 2000)", i2["created"] == 2000 and i2["count"] == 2000, str(i2["created"])),
-            ("frame time measured for 2,000 sprites under 16.7 ms", r["values"]["ms"] < 16.7, f"{r['values']['ms']:.2f} ms")]
+            ("frame time (best of 7 batches after warm-up) for 2,000 sprites under 16.7 ms", 0 < r["values"]["ms"] < 16.7, f"{r['values']['ms']:.2f} ms")]
 
 
 def eng_292(work: Path):

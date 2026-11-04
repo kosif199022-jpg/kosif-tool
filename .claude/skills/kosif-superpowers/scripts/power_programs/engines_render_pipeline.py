@@ -1320,7 +1320,8 @@ def eng45(work):
     copy = work / "copy.mp4"
     ff("-framerate", fps, "-i", pat, "-i", mp3, *vflags, "-c:a", "copy", "-shortest", copy)
     aac = work / "aac.mp4"
-    ff("-framerate", fps, "-i", pat, "-i", wav, *vflags, "-c:a", "aac", "-b:a", "320k", "-af", "apad", "-shortest", aac)
+    ff("-framerate", fps, "-i", pat, "-i", wav, *vflags, "-c:a", "aac", "-b:a", "320k", "-af", "apad", "-shortest",
+       "-shortest_buf_duration", "0.05", aac)  # keep -shortest from overshooting on padded audio (newer ffmpeg buffers more)
     shutil.rmtree(work / "frames")
 
     def pkt_hashes(p):
