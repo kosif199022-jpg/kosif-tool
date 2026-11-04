@@ -1320,8 +1320,10 @@ def eng45(work):
     copy = work / "copy.mp4"
     ff("-framerate", fps, "-i", pat, "-i", mp3, *vflags, "-c:a", "copy", "-shortest", copy)
     aac = work / "aac.mp4"
-    ff("-framerate", fps, "-i", pat, "-i", wav, *vflags, "-c:a", "aac", "-b:a", "320k", "-af", "apad", "-shortest",
-       "-shortest_buf_duration", "0.05", aac)  # keep -shortest from overshooting on padded audio (newer ffmpeg buffers more)
+    video_s = 25 / fps  # 25 frames written above: the picture's own length
+    # Padded audio with -shortest ends late on newer ffmpeg (0.1-0.6 s measured on CI), so the
+    # video length is passed explicitly: apad fills any gap, -t cuts at the last frame.
+    ff("-framerate", fps, "-i", pat, "-i", wav, *vflags, "-c:a", "aac", "-b:a", "320k", "-af", "apad", "-t", f"{video_s:.6f}", aac)
     shutil.rmtree(work / "frames")
 
     def pkt_hashes(p):
