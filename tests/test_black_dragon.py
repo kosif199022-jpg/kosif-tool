@@ -290,6 +290,10 @@ class FullInventoryTests(unittest.TestCase):
                 self.assertTrue(spec["script"].endswith("_black_dragon_power_program.py"), key)
                 self.assertEqual(spec["args"], [key.split(":", 1)[1], "{artifact}", "--task={task}"], key)
                 continue
+            if spec["script"].endswith(("/power_run.py", "/superpower_run.py")):  # Dragon Mind runners: {artifact} ID {task}
+                self.assertEqual([spec["args"][0], spec["args"][2:]], ["{artifact}", ["{task}"]], key)
+                self.assertIn(spec["args"][1], (key, key.split(":", 1)[1]), key)
+                continue
             tool = spec["args"][1]
             self.assertTrue((ROOT / tool).is_file(), tool)
             self.assertEqual(spec["args"][0], "{artifact}")

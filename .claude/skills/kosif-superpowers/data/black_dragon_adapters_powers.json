@@ -884,7 +884,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-61: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -898,7 +898,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-62: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -912,7 +912,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-63: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -926,7 +926,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-64: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -940,7 +940,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-65: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -954,7 +954,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-66: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -968,7 +968,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-67: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -982,7 +982,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-68: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -996,7 +996,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-69: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1010,7 +1010,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-70: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1024,7 +1024,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-71: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1038,7 +1038,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-72: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1052,7 +1052,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-73: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1066,7 +1066,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-74: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1080,7 +1080,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-75: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1094,7 +1094,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-76: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1108,7 +1108,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-77: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1122,7 +1122,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-78: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1136,7 +1136,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-79: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1150,7 +1150,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-80: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1164,7 +1164,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-81: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1178,7 +1178,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-82: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1192,7 +1192,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-83: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1206,7 +1206,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-84: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1220,7 +1220,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-85: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1234,7 +1234,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-86: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1248,7 +1248,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-87: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1262,7 +1262,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-88: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1276,7 +1276,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-89: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1290,7 +1290,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-90: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1304,7 +1304,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-91: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1318,7 +1318,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-92: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1332,7 +1332,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-93: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1346,7 +1346,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-94: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1360,7 +1360,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-95: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1374,7 +1374,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-96: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1388,7 +1388,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-97: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -1402,7 +1402,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "APPX-98: its cited proof code ran green here (test-file, tool-runner; 102 tests)"
@@ -4636,7 +4636,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        ".claude/skills/kosif-superpowers/scripts/black_dragon.py": "b8817ae17c68b9e916bff800a0a324023e220d4468fb2d8b7807bbd16e7970d5"
+        ".claude/skills/kosif-superpowers/scripts/black_dragon.py": "df340a82fc7627779a063403868bf0ecd5ce140690f9f061c08572fbb5d79d79"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "TOOL-181: its cited proof code ran green here (tool-runner; 23 tests)"
@@ -4682,6 +4682,20 @@
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "TOOL-184: its cited proof code ran green here (test-file, tool-runner; 20 tests)"
+    },
+    "power:TOOL-185": {
+      "args": [
+        "power:TOOL-185",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "power_proof": true,
+      "proof_sha256": {
+        ".claude/skills/kosif-superpowers/evals/test_suno_bridge.py": "b5e09fbde237d4e773e33b64f8e614c58e8ac691b4b16b2dfe18ae67a7e87deb",
+        ".claude/skills/kosif-superpowers/scripts/suno_bridge.py": "dbedfd6873a76f679a4a089f6b94fdb8e11f7a355c3cbdce51d587cdf955d7c3"
+      },
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
+      "why": "TOOL-185: its cited proof code ran green here (test-file, tool-runner; 24 tests)"
     },
     "power:TOOL-19": {
       "args": [
@@ -5616,7 +5630,7 @@
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_app_studio.py": "041d5399fcb48edb570000f92a48e071bcb600a1c58b6609bb6b4fb6673a07d0",
         ".claude/skills/kosif-superpowers/evals/test_app_studio_paint.py": "b0cdda535aacdd6062fb5ff0b9ba5fc0a0daf5637768e953da162c10393544b3",
-        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "5c9ad405ceb3c12d51d9a37fc07bb4bd501d15a004fb7f3373946a67e509dd61"
+        ".claude/skills/kosif-superpowers/scripts/app_studio.py": "bc9fa3e1ae54194ef1016ecc8441cb6f55ffdde51b091a4b6bd89cc54c397e5b"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "TOOL-88: its cited proof code ran green here (test-file, tool-runner; 114 tests)"
@@ -6012,9 +6026,9 @@
     }
   },
   "counts": {
-    "candidates": 512,
+    "candidates": 513,
     "excluded": 74,
-    "included": 438
+    "included": 439
   },
   "excluded": {
     "power:AGENT-37": "refused: no test file names it, no --self-test and no known-answer recipe (only --help would run)",
