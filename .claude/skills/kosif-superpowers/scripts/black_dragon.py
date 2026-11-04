@@ -145,9 +145,25 @@ def _probe(key: str, record: dict | None, job: Path) -> dict:
 def _inside(child: Path, parent: Path) -> bool:
     return child == parent or parent in child.parents
 
+def generated_adapter_files() -> list:
+    """Generated runner registries (data/black_dragon_adapters_<name>.json), loaded with the reviewed file."""
+    return sorted(REVIEWED_ADAPTERS.parent.glob(REVIEWED_ADAPTERS.stem + "_*.json"))
+
+
 def _load_adapters(path: Path | None) -> dict:
     if path is None:
         return {}
+    if path == REVIEWED_ADAPTERS:
+        # The hand-reviewed registry always wins; generated runner files only add entries it lacks.
+        merged = {}
+        for extra in generated_adapter_files():
+            merged.update(_load_one_adapter_file(extra))
+        merged.update(_load_one_adapter_file(path))
+        return merged
+    return _load_one_adapter_file(path)
+
+
+def _load_one_adapter_file(path: Path) -> dict:
     raw = json.loads(path.read_text(encoding="utf-8"))
     if isinstance(raw, dict) and isinstance(raw.get("adapters"), dict):
         raw = raw["adapters"]  # bundled file format: {"_comment": ..., "adapters": {...}}
@@ -161,6 +177,33 @@ def _load_adapters(path: Path | None) -> dict:
         if not all(isinstance(arg, str) for arg in spec["args"]):
             raise ValueError("Adapter args must be strings")
     return raw
+
+# Generated registries proven only on the machine that built them (node globals, Chrome, pip libraries):
+# an entry without its own "env_scope" takes its file's default here. "ci" means proven on the CI image.
+LOCAL_SCOPE_FILES = frozenset({"black_dragon_adapters_powers_mind.json", "black_dragon_adapters_superpowers.json"})
+
+
+def adapter_env_scopes() -> dict:
+    """Each generated adapter key -> its env scope ("local" or "ci"); the reviewed file is "ci"."""
+    scopes = {}
+    for extra in generated_adapter_files():
+        default = "local" if extra.name in LOCAL_SCOPE_FILES else "ci"
+        for key, spec in _load_one_adapter_file(extra).items():
+            scopes[key] = spec.get("env_scope") or default
+    for key in _load_one_adapter_file(REVIEWED_ADAPTERS):
+        scopes[key] = "ci"  # the reviewed file wins in the merge, so its scope wins too
+    return scopes
+
+
+def scope_adapters(adapters: dict, env_scope: str, scopes: dict) -> tuple:
+    """Keep the adapters that may run in this environment. 'ci' drops env_scope=local entries; they are
+    reported as excluded (never executed), and the catalog entries stay blocked without an adapter."""
+    if env_scope == "any":
+        return adapters, {"env_scope": "any", "excluded": 0}
+    kept = {k: v for k, v in adapters.items() if (v.get("env_scope") or scopes.get(k, "ci")) != "local"}
+    return kept, {"env_scope": env_scope, "excluded": len(adapters) - len(kept),
+                  "truth": "env_scope=local adapters were not run here; they count neither as executed nor failed"}
+
 
 def _cli_adapters(custom_path: Path | None) -> dict:
     """Load the vetted repository registry by default; never auto-execute it."""
@@ -320,7 +363,8 @@ def _attempt(key: str, spec: dict | None, task: str, job: Path,
 def run(task: str, job: Path, adapters: dict, workers: int,
         allow_execution: bool, timeout: int, entries: dict | None = None,
         probe_tools: bool = False, mode: str = "standard", media: Path | None = None,
-        validate_cards: bool = False, catalog_roots: tuple | None = None) -> dict:
+        validate_cards: bool = False, catalog_roots: tuple | None = None,
+        env_scope: dict | None = None) -> dict:
     if not task.strip():
         raise ValueError("Task is required")
     if not 1 <= workers <= MAX_WORKERS:
@@ -461,6 +505,8 @@ def run(task: str, job: Path, adapters: dict, workers: int,
               "truth": ("Every entry is assigned a part and mode with a brief line; 'probed' only means "
                         "a tool was AST-inspected without execution; only receipt-verified adapter work is 'executed'")}
     report["mode"] = mode
+    if env_scope is not None:
+        report["adapter_env_scope"] = env_scope
     if validate_cards:
         # Separate tier: structural card validation. It never touches the ledger, the executed
         # count or full_coverage.
@@ -555,6 +601,8 @@ def main(argv=None) -> int:
     p.add_argument("--reviewed-adapters", action="store_true",
                    help="explicitly select the bundled reviewed adapters (also the default)")
     p.add_argument("--execute-adapters", action="store_true")
+    p.add_argument("--env-scope", choices=("any", "ci"), default="any",
+                   help="ci: leave out adapters marked env_scope=local (proven only on their build machine)")
     p.add_argument("--mode", choices=("standard", "pro-max"), default="standard")
     p.add_argument("--workers", type=int, default=8)
     p.add_argument("--timeout", type=int, default=60)
@@ -677,11 +725,14 @@ def main(argv=None) -> int:
             return 0
         if args.adapters and args.reviewed_adapters:
             raise ValueError("Use either --adapters or --reviewed-adapters")
+        adapters, scope_note = _cli_adapters(args.adapters), None
+        if args.env_scope != "any":
+            adapters, scope_note = scope_adapters(adapters, args.env_scope, adapter_env_scopes())
         report = run(args.task, args.job,
-                     _cli_adapters(args.adapters),
+                     adapters,
                      args.workers, args.execute_adapters, args.timeout,
                      probe_tools=args.probe_tools, mode=args.mode, media=args.media,
-                     validate_cards=args.validate_cards)
+                     validate_cards=args.validate_cards, env_scope=scope_note)
         print(json.dumps(report, ensure_ascii=False, indent=2))
         return 0 if report["reviewed_execution_complete"] else 4
     except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:

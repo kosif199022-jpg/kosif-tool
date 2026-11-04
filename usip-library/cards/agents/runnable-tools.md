@@ -1,4 +1,4 @@
-# `runnable-tools` — الوكلاء والتوجيه الذكي (183 بطاقة)
+# `runnable-tools` — الوكلاء والتوجيه الذكي (184 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/runnable-tools.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/agents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -106,6 +106,7 @@
 - [`TOOL-182` معاينة الأغنية الرسمية (بديل الـDRM)](#tool-182--معاينة-الأغنية-الرسمية-بديل-الـdrm--official-song-preview-drm-fallback)
 - [`TOOL-183` محرك أفلام مسرح الظل](#tool-183--محرك-أفلام-مسرح-الظل--kosif-shadow-theatre-silhouette-film-engine)
 - [`TOOL-184` نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone)](#tool-184--نسخة-أوفلاين-من-موقع-وقراءة-نظام-تصميمه-قدرات-goclone--website-snapshot-and-design-read-out-goclone-capabilities)
+- [`TOOL-185` جسر Suno: برومبت الأغنية وبصمة الموافقة والإيصال](#tool-185--جسر-suno-برومبت-الأغنية-وبصمة-الموافقة-والإيصال--suno-mcp-bridge-song-brief-consent-digest-and-receipt)
 - [`TOOL-19` تصيير لقطات B-roll بحركة كاميرا](#tool-19--تصيير-لقطات-b-roll-بحركة-كاميرا--cinematic-b-roll-renderer)
 - [`TOOL-20` مُخطِّط قطعات اللقطات الحقيقية](#tool-20--مُخطِّط-قطعات-اللقطات-الحقيقية--footage-first-cut-planner)
 - [`TOOL-21` فاحص توقيت الفيديو المرجعي](#tool-21--فاحص-توقيت-الفيديو-المرجعي--reference-video-timing-probe)
@@ -7275,7 +7276,7 @@
 - `TOOL-181` التنين الأسود — العقل المنسق لكل القدرات / Black Dragon — All-Capability Cognitive Orchestrator (ready)
 - `TOOL-182` معاينة الأغنية الرسمية (بديل الـDRM) / Official song preview (DRM fallback) (proven)
 - `TOOL-184` نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) / Website snapshot and design read-out (goclone capabilities) (proven)
-- `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
+- `TOOL-185` جسر Suno: برومبت الأغنية وبصمة الموافقة والإيصال / Suno MCP bridge: song brief, consent digest and receipt (proven)
 
 ### `TOOL-184` — نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) / Website snapshot and design read-out (goclone capabilities)
 
@@ -7344,6 +7345,78 @@
 
 - `TOOL-182` معاينة الأغنية الرسمية (بديل الـDRM) / Official song preview (DRM fallback) (proven)
 - `TOOL-183` محرك أفلام مسرح الظل / KOSIF Shadow Theatre silhouette film engine (proven)
+- `TOOL-185` جسر Suno: برومبت الأغنية وبصمة الموافقة والإيصال / Suno MCP bridge: song brief, consent digest and receipt (proven)
+- `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
+
+### `TOOL-185` — جسر Suno: برومبت الأغنية وبصمة الموافقة والإيصال / Suno MCP bridge: song brief, consent digest and receipt
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** النص المحلي من موصّل Suno (A46). doctor بيطبع العنوان وصلاحيات OAuth من دليل الفحص وقاعدة الموافقة؛ probe فحص HTTP للقراءة بس من غير دخول (401 = سليم، بلا رصيد)؛ plan بيحوّل الطلب لبرومبت Suno (ستايل، هيكل، هيكل كلمات، مدة، لهجة، وصوت بس للدعاء والنشيد) مع بصمة approval_digest ومش بيولّد أبدًا؛ receipt بيراجع رد أداة التوليد (معرّف الأغنية والرابط والمدة وبصمة الملف) على البصمة اللي المستخدم وافق عليها ويرفض أي اختلاف. — The local half of the Suno MCP connector (A46). doctor prints the endpoint, OAuth scopes from the committed probe and the consent rule; probe makes an unauthenticated read-only HTTP check (401 = healthy, no credits); plan turns an Arabic or English request into a Suno brief (style tags, structure, lyric scaffold, duration, dialect, vocals-only for dua/nasheed) with a SHA-256 approval_digest and never generates; receipt checks the generation tool's returned JSON (song id, link, duration, optional downloaded file hash) against the digest the user approved and refuses any mismatch.
+
+**متى:** اعمل أغنية مهرجان لإعلان 30 ثانية على Suno / Prepare a Suno song brief for a 2-minute cinematic trailer
+
+**كيف:** doctor: `python3 scripts/suno_bridge.py doctor`; probe: `python3 scripts/suno_bridge.py probe`; plan: `python3 scripts/suno_bridge.py plan "أغنية مهرجان مصري لإعلان 30 ثانية صوت رجالي" --out out/suno/plan.json`; receipt: `python3 scripts/suno_bridge.py receipt --plan out/suno/plan.json --result out/suno/result.json --approved-digest <digest> --out out/suno/receipt.json`. Full card: `python3 scripts/hub.py tool suno-bridge`. Limits: It never talks to Suno with credentials and cannot generate, list tools or read the library; style detection is a keyword table, the lyric scaffold has placeholders for Claude and the user to fill, and licence terms depend on the user's Suno plan and are not checked.
+
+**المعاملات:** in: A request in Arabic or English (plan); the plan file, the Suno tool's JSON answer and the approved digest (receipt). · out: JSON on stdout and optional --out file: kosif.suno.doctor.v1, kosif.suno.probe.v1, kosif.suno.plan.v1, kosif.suno.receipt.v1.
+
+**التثبيت:** needs on PATH: python3
+
+**الوسوم:** suno-bridge · suno · song · music generation · lyrics · nasheed · jingle · credits · consent · receipt · أغنية · اغنية · سونو · موسيقى · نشيد · كلمات · لحن · إعلان
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `key:video-gen` ← حساب أو مفتاح: لا تطلب لصقه في المحادثة، واسأل قبل أي صرف
+- `key:unspecified` ← حساب أو مفتاح: لا تطلب لصقه في المحادثة، واسأل قبل أي صرف
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-185` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `permission_denied` (صلاحية مرفوضة، ميزانية 1): من رفض: نظام الملفات أم الخدمة أم المستخدم في نافذة الإذن ← اكتب في مسار مسموح (مجلد مؤقت أو مجلد العمل) · البديل: سلّم الأمر جاهزًا ليشغّله المستخدم بنفسه · تصعيد: لا تتجاوز أي رفض بحيلة؛ اشرح ما يلزم وانتظر
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_suno_bridge.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/suno_bridge.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-183` محرك أفلام مسرح الظل / KOSIF Shadow Theatre silhouette film engine (proven)
+- `TOOL-184` نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) / Website snapshot and design read-out (goclone capabilities) (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 
@@ -7412,8 +7485,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-183` محرك أفلام مسرح الظل / KOSIF Shadow Theatre silhouette film engine (proven)
 - `TOOL-184` نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) / Website snapshot and design read-out (goclone capabilities) (proven)
+- `TOOL-185` جسر Suno: برومبت الأغنية وبصمة الموافقة والإيصال / Suno MCP bridge: song brief, consent digest and receipt (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 - `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)
 
@@ -7482,7 +7555,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-184` نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) / Website snapshot and design read-out (goclone capabilities) (proven)
+- `TOOL-185` جسر Suno: برومبت الأغنية وبصمة الموافقة والإيصال / Suno MCP bridge: song brief, consent digest and receipt (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 - `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)
 - `TOOL-22` محرك إعادة بناء المونتاج المرجعي / Reference Edit Engine (proven)

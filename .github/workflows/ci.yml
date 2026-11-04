@@ -17,6 +17,19 @@ jobs:
           node-version: "22"
       - name: Python packages for the shadow-theatre renderer tests
         run: python3 -m pip install --quiet numpy pillow
+      - name: Prerequisites for the power-program and proof tests (ffmpeg, fonts, Python packages, Playwright Chromium)
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q ffmpeg fontconfig fonts-noto-core imagemagick
+          python3 -m pip install -q numpy openpyxl pillow opencv-python-headless \
+            'fonttools[woff]' brotli scipy matplotlib shapely segno python-pptx beautifulsoup4 \
+            arabic-reshaper python-bidi pyyaml
+          npm install --no-save --no-package-lock playwright@1.63.0
+          npx playwright install --with-deps chromium
+          echo "KOSIF_PLAYWRIGHT=$GITHUB_WORKSPACE/node_modules/playwright" >> "$GITHUB_ENV"
+      - name: Remotion starter dependencies for the Remotion power programs (exact lockfile)
+        working-directory: starters/remotion
+        run: npm ci --no-audit --no-fund
       - name: Validate catalog and files
         run: python3 tools/validate.py
       - name: Derived files are up to date
@@ -177,6 +190,8 @@ jobs:
           python3 .claude/skills/kosif-superpowers/scripts/task_history.py validate
       - name: Paste protocol (read first, run with consent)
         run: python3 .claude/skills/kosif-superpowers/evals/test_usip_paste.py -v
+      - name: "Suno bridge (A46: brief, consent digest, receipt; offline)"
+        run: python3 .claude/skills/kosif-superpowers/evals/test_suno_bridge.py -v
       - name: Family tools (decision math, particles, geo, prompts, diagrams, UI beats, stats, TTS, brand tokens, agent guard)
         run: for t in decision_math particles geo_plate prompt_forge diagram_layout ui_beat stats_lab tts_script brand_tokens agent_guard; do python3 .claude/skills/kosif-superpowers/evals/test_$t.py -v || exit 1; done
       - name: Story question pack (A16)

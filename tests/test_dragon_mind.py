@@ -196,7 +196,8 @@ class DragonMindLinkAndApplyTests(unittest.TestCase):
 
     def test_generated_real_runners_merge_and_reviewed_wins(self):
         bd, _ = dm._dragon()
-        reviewed = bd._load_adapters(bd.REVIEWED_ADAPTERS)
+        # The hand-reviewed file alone (black_dragon._load_adapters also merges generated registries).
+        reviewed = bd._load_one_adapter_file(bd.REVIEWED_ADAPTERS)
         some = sorted(reviewed)[0]
         power = next(k for k in sorted(self.inv) if k.startswith("power:") and k not in reviewed)
         with tempfile.TemporaryDirectory() as tmp:

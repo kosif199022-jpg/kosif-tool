@@ -277,6 +277,23 @@ class FullInventoryTests(unittest.TestCase):
                 self.assertTrue(spec["script"].endswith("_black_dragon_media.py"), key)
                 self.assertEqual(spec["args"][1:], ["{artifact}", "--media={media}"], key)
                 continue
+            if spec.get("style_render"):  # style adapters: STYLE_ID {artifact} --task={task}
+                self.assertTrue(spec["script"].endswith("_black_dragon_style.py"), key)
+                self.assertEqual(spec["args"][1:], ["{artifact}", "--task={task}"], key)
+                self.assertEqual(key, "style:" + spec["args"][0])
+                continue
+            if spec.get("power_proof"):  # power adapters: power:ID {artifact} --task={task}
+                self.assertTrue(spec["script"].endswith("_black_dragon_power.py"), key)
+                self.assertEqual(spec["args"], [key, "{artifact}", "--task={task}"], key)
+                continue
+            if spec.get("power_program"):  # power programs: ID {artifact} --task={task}
+                self.assertTrue(spec["script"].endswith("_black_dragon_power_program.py"), key)
+                self.assertEqual(spec["args"], [key.split(":", 1)[1], "{artifact}", "--task={task}"], key)
+                continue
+            if spec["script"].endswith(("/power_run.py", "/superpower_run.py")):  # Dragon Mind runners: {artifact} ID {task}
+                self.assertEqual([spec["args"][0], spec["args"][2:]], ["{artifact}", ["{task}"]], key)
+                self.assertIn(spec["args"][1], (key, key.split(":", 1)[1]), key)
+                continue
             tool = spec["args"][1]
             self.assertTrue((ROOT / tool).is_file(), tool)
             self.assertEqual(spec["args"][0], "{artifact}")
@@ -332,3 +349,22 @@ class RealExecutionTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class GeneratedRegistryMergeTests(unittest.TestCase):
+    def test_generated_files_add_entries_and_reviewed_wins(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            reviewed = Path(tmp) / "black_dragon_adapters.json"
+            reviewed.write_text(json.dumps({"adapters": {"a": {"script": "r.py", "args": []}}}))
+            (Path(tmp) / "black_dragon_adapters_powers.json").write_text(json.dumps(
+                {"adapters": {"a": {"script": "gen.py", "args": []}, "b": {"script": "gen.py", "args": []}}}))
+            old = dragon.REVIEWED_ADAPTERS
+            dragon.REVIEWED_ADAPTERS = reviewed
+            try:
+                merged = dragon._load_adapters(reviewed)
+            finally:
+                dragon.REVIEWED_ADAPTERS = old
+            self.assertEqual(merged["a"]["script"], "r.py")
+            self.assertEqual(merged["b"]["script"], "gen.py")
+            # A custom path is loaded alone, without generated files.
+            self.assertEqual(set(dragon._load_adapters(Path(tmp) / "black_dragon_adapters_powers.json")), {"a", "b"})

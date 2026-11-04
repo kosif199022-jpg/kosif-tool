@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5862
+   "count": 5863
   },
   {
    "id": "dom:motion",
@@ -1406,10 +1406,10 @@
    "label": "Runnable KOSIF tools",
    "ar": "الأدوات القابلة للتشغيل",
    "prefix": "TOOL",
-   "count": 183,
-   "proven": 152,
+   "count": 184,
+   "proven": 153,
    "status": {
-    "proven": 152,
+    "proven": 153,
     "ready": 22,
     "install": 9
    }
@@ -1913,6 +1913,21 @@
    "label": "scripts/_cinema_all_skills.py"
   },
   {
+   "id": "script:scripts/_black_dragon_power.py",
+   "kind": "script",
+   "label": "scripts/_black_dragon_power.py"
+  },
+  {
+   "id": "script:scripts/_black_dragon_tool.py",
+   "kind": "script",
+   "label": "scripts/_black_dragon_tool.py"
+  },
+  {
+   "id": "script:scripts/_black_dragon_tool_recipes.py",
+   "kind": "script",
+   "label": "scripts/_black_dragon_tool_recipes.py"
+  },
+  {
    "id": "script:scripts/_black_dragon_pro_max.py",
    "kind": "script",
    "label": "scripts/_black_dragon_pro_max.py"
@@ -1928,29 +1943,34 @@
    "label": "scripts/_black_dragon_media.py"
   },
   {
+   "id": "script:scripts/black_dragon.py",
+   "kind": "script",
+   "label": "scripts/black_dragon.py"
+  },
+  {
    "id": "script:scripts/_black_dragon_skill_links.py",
    "kind": "script",
    "label": "scripts/_black_dragon_skill_links.py"
   },
   {
-   "id": "script:scripts/_black_dragon_tool.py",
+   "id": "script:scripts/_build_black_dragon_power_adapters.py",
    "kind": "script",
-   "label": "scripts/_black_dragon_tool.py"
+   "label": "scripts/_build_black_dragon_power_adapters.py"
   },
   {
-   "id": "script:scripts/_black_dragon_tool_recipes.py",
+   "id": "script:scripts/_build_black_dragon_program_adapters.py",
    "kind": "script",
-   "label": "scripts/_black_dragon_tool_recipes.py"
+   "label": "scripts/_build_black_dragon_program_adapters.py"
+  },
+  {
+   "id": "script:scripts/_black_dragon_power_program.py",
+   "kind": "script",
+   "label": "scripts/_black_dragon_power_program.py"
   },
   {
    "id": "script:scripts/_claude_reviewed_router.py",
    "kind": "script",
    "label": "scripts/_claude_reviewed_router.py"
-  },
-  {
-   "id": "script:scripts/black_dragon.py",
-   "kind": "script",
-   "label": "scripts/black_dragon.py"
   },
   {
    "id": "script:scripts/_claude_skill_tool_factory.py",
@@ -2300,6 +2320,191 @@
    "label": "scripts/package_skill.py"
   },
   {
+   "id": "script:scripts/power_programs/3d_spatial.py",
+   "kind": "script",
+   "label": "scripts/power_programs/3d_spatial.py"
+  },
+  {
+   "id": "script:scripts/power_programs/photo_video_footage.py",
+   "kind": "script",
+   "label": "scripts/power_programs/photo_video_footage.py"
+  },
+  {
+   "id": "script:scripts/power_programs/agent_orchestration.py",
+   "kind": "script",
+   "label": "scripts/power_programs/agent_orchestration.py"
+  },
+  {
+   "id": "script:scripts/power_programs/_lang_common.py",
+   "kind": "script",
+   "label": "scripts/power_programs/_lang_common.py"
+  },
+  {
+   "id": "script:scripts/power_programs/ai_generation.py",
+   "kind": "script",
+   "label": "scripts/power_programs/ai_generation.py"
+  },
+  {
+   "id": "script:scripts/power_programs/ai_generation__browser.py",
+   "kind": "script",
+   "label": "scripts/power_programs/ai_generation__browser.py"
+  },
+  {
+   "id": "script:scripts/power_programs/_browser_common.py",
+   "kind": "script",
+   "label": "scripts/power_programs/_browser_common.py"
+  },
+  {
+   "id": "script:scripts/power_programs/arabic_language.py",
+   "kind": "script",
+   "label": "scripts/power_programs/arabic_language.py"
+  },
+  {
+   "id": "script:scripts/power_programs/atlas_build__browser.py",
+   "kind": "script",
+   "label": "scripts/power_programs/atlas_build__browser.py"
+  },
+  {
+   "id": "script:scripts/power_programs/atlas_media.py",
+   "kind": "script",
+   "label": "scripts/power_programs/atlas_media.py"
+  },
+  {
+   "id": "script:scripts/power_programs/media_image_audio.py",
+   "kind": "script",
+   "label": "scripts/power_programs/media_image_audio.py"
+  },
+  {
+   "id": "script:scripts/power_programs/atlas_mind.py",
+   "kind": "script",
+   "label": "scripts/power_programs/atlas_mind.py"
+  },
+  {
+   "id": "script:scripts/power_programs/_mind_common.py",
+   "kind": "script",
+   "label": "scripts/power_programs/_mind_common.py"
+  },
+  {
+   "id": "script:scripts/power_programs/atlas_research.py",
+   "kind": "script",
+   "label": "scripts/power_programs/atlas_research.py"
+  },
+  {
+   "id": "script:scripts/power_programs/atlas_strategy.py",
+   "kind": "script",
+   "label": "scripts/power_programs/atlas_strategy.py"
+  },
+  {
+   "id": "script:scripts/power_programs/characters_rigs.py",
+   "kind": "script",
+   "label": "scripts/power_programs/characters_rigs.py"
+  },
+  {
+   "id": "script:scripts/power_programs/creativity_engine.py",
+   "kind": "script",
+   "label": "scripts/power_programs/creativity_engine.py"
+  },
+  {
+   "id": "script:scripts/power_programs/diagrams_explainers_code.py",
+   "kind": "script",
+   "label": "scripts/power_programs/diagrams_explainers_code.py"
+  },
+  {
+   "id": "script:scripts/power_programs/documents_office__browser.py",
+   "kind": "script",
+   "label": "scripts/power_programs/documents_office__browser.py"
+  },
+  {
+   "id": "script:scripts/power_programs/engines_render_pipeline__browser.py",
+   "kind": "script",
+   "label": "scripts/power_programs/engines_render_pipeline__browser.py"
+  },
+  {
+   "id": "script:scripts/power_programs/knowledge_graph.py",
+   "kind": "script",
+   "label": "scripts/power_programs/knowledge_graph.py"
+  },
+  {
+   "id": "script:scripts/power_programs/maps_geo.py",
+   "kind": "script",
+   "label": "scripts/power_programs/maps_geo.py"
+  },
+  {
+   "id": "script:scripts/power_programs/mental_models.py",
+   "kind": "script",
+   "label": "scripts/power_programs/mental_models.py"
+  },
+  {
+   "id": "script:scripts/power_programs/planning_execution.py",
+   "kind": "script",
+   "label": "scripts/power_programs/planning_execution.py"
+  },
+  {
+   "id": "script:scripts/power_programs/prompt_craft.py",
+   "kind": "script",
+   "label": "scripts/power_programs/prompt_craft.py"
+  },
+  {
+   "id": "script:scripts/power_programs/self_discovery.py",
+   "kind": "script",
+   "label": "scripts/power_programs/self_discovery.py"
+  },
+  {
+   "id": "script:scripts/power_programs/story_direction_ideas.py",
+   "kind": "script",
+   "label": "scripts/power_programs/story_direction_ideas.py"
+  },
+  {
+   "id": "script:scripts/power_programs/strategy_finance.py",
+   "kind": "script",
+   "label": "scripts/power_programs/strategy_finance.py"
+  },
+  {
+   "id": "script:scripts/power_programs/thinking_core.py",
+   "kind": "script",
+   "label": "scripts/power_programs/thinking_core.py"
+  },
+  {
+   "id": "script:scripts/power_programs/verification_evals.py",
+   "kind": "script",
+   "label": "scripts/power_programs/verification_evals.py"
+  },
+  {
+   "id": "script:scripts/power_programs/qa_verification.py",
+   "kind": "script",
+   "label": "scripts/power_programs/qa_verification.py"
+  },
+  {
+   "id": "script:scripts/power_programs/video_download.py",
+   "kind": "script",
+   "label": "scripts/power_programs/video_download.py"
+  },
+  {
+   "id": "script:scripts/power_programs/voice_tts.py",
+   "kind": "script",
+   "label": "scripts/power_programs/voice_tts.py"
+  },
+  {
+   "id": "script:scripts/power_programs/voice_tts__browser.py",
+   "kind": "script",
+   "label": "scripts/power_programs/voice_tts__browser.py"
+  },
+  {
+   "id": "script:scripts/power_programs/web_research.py",
+   "kind": "script",
+   "label": "scripts/power_programs/web_research.py"
+  },
+  {
+   "id": "script:scripts/power_programs/web_research__browser.py",
+   "kind": "script",
+   "label": "scripts/power_programs/web_research__browser.py"
+  },
+  {
+   "id": "script:scripts/power_programs/writing_humanizer.py",
+   "kind": "script",
+   "label": "scripts/power_programs/writing_humanizer.py"
+  },
+  {
    "id": "script:scripts/prompt_pack.py",
    "kind": "script",
    "label": "scripts/prompt_pack.py"
@@ -2465,6 +2670,11 @@
    "label": "tests/test_black_dragon_media_adapters.py"
   },
   {
+   "id": "test:tests/test_black_dragon_power_adapters.py",
+   "kind": "test",
+   "label": "tests/test_black_dragon_power_adapters.py"
+  },
+  {
    "id": "test:tests/test_black_dragon_skill_adapters.py",
    "kind": "test",
    "label": "tests/test_black_dragon_skill_adapters.py"
@@ -2558,6 +2768,11 @@
    "id": "test:tests/test_black_dragon_native_fusion.py",
    "kind": "test",
    "label": "tests/test_black_dragon_native_fusion.py"
+  },
+  {
+   "id": "test:tests/test_black_dragon_style_adapters.py",
+   "kind": "test",
+   "label": "tests/test_black_dragon_style_adapters.py"
   },
   {
    "id": "test:tests/test_black_dragon_validate.py",
@@ -2773,6 +2988,46 @@
    "id": "test:tests/test_mimic.py",
    "kind": "test",
    "label": "tests/test_mimic.py"
+  },
+  {
+   "id": "test:tests/test_proof_mm_build.py",
+   "kind": "test",
+   "label": "tests/test_proof_mm_build.py"
+  },
+  {
+   "id": "test:tests/test_proof_mm_color.py",
+   "kind": "test",
+   "label": "tests/test_proof_mm_color.py"
+  },
+  {
+   "id": "test:tests/test_proof_mm_fonts.py",
+   "kind": "test",
+   "label": "tests/test_proof_mm_fonts.py"
+  },
+  {
+   "id": "test:tests/test_proof_mm_fonts_lib.py",
+   "kind": "test",
+   "label": "tests/test_proof_mm_fonts_lib.py"
+  },
+  {
+   "id": "test:tests/test_proof_mm_render_text.py",
+   "kind": "test",
+   "label": "tests/test_proof_mm_render_text.py"
+  },
+  {
+   "id": "test:tests/test_proof_mm_sheets.py",
+   "kind": "test",
+   "label": "tests/test_proof_mm_sheets.py"
+  },
+  {
+   "id": "test:tests/test_proof_mm_text.py",
+   "kind": "test",
+   "label": "tests/test_proof_mm_text.py"
+  },
+  {
+   "id": "test:tests/test_proof_mm_textfx.py",
+   "kind": "test",
+   "label": "tests/test_proof_mm_textfx.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_reel_factory.py",
@@ -5650,13 +5905,13 @@
    "from": "dom:build",
    "to": "fam:runnable-tools",
    "rel": "has",
-   "w": 183
+   "w": 184
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:python3",
    "rel": "needs",
-   "w": 144
+   "w": 145
   },
   {
    "from": "fam:runnable-tools",
@@ -5704,7 +5959,7 @@
    "from": "fam:runnable-tools",
    "to": "script:scripts/hub.py",
    "rel": "runs",
-   "w": 188
+   "w": 189
   },
   {
    "from": "fam:runnable-tools",
@@ -6889,6 +7144,18 @@
    "w": 1
   },
   {
+   "from": "script:scripts/_black_dragon_power.py",
+   "to": "script:scripts/_black_dragon_tool.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/_black_dragon_power.py",
+   "to": "script:scripts/_black_dragon_tool_recipes.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/_black_dragon_pro_max.py",
    "to": "script:scripts/_black_dragon_evidence_guard.py",
    "rel": "imports",
@@ -6907,6 +7174,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/_black_dragon_skill.py",
+   "to": "script:scripts/black_dragon.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/_black_dragon_skill_links.py",
    "to": "script:scripts/_black_dragon_brain.py",
    "rel": "imports",
@@ -6915,6 +7188,18 @@
   {
    "from": "script:scripts/_black_dragon_tool.py",
    "to": "script:scripts/_black_dragon_tool_recipes.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/_build_black_dragon_power_adapters.py",
+   "to": "script:scripts/_black_dragon_power.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/_build_black_dragon_program_adapters.py",
+   "to": "script:scripts/_black_dragon_power_program.py",
    "rel": "imports",
    "w": 1
   },
@@ -7687,6 +7972,216 @@
    "w": 1
   },
   {
+   "from": "script:scripts/power_programs/3d_spatial.py",
+   "to": "script:scripts/power_programs/photo_video_footage.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/agent_orchestration.py",
+   "to": "script:scripts/power_programs/_lang_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/ai_generation.py",
+   "to": "script:scripts/power_programs/_lang_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/ai_generation__browser.py",
+   "to": "script:scripts/power_programs/_browser_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/arabic_language.py",
+   "to": "script:scripts/power_programs/_lang_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/atlas_build__browser.py",
+   "to": "script:scripts/power_programs/_browser_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/atlas_media.py",
+   "to": "script:scripts/power_programs/media_image_audio.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/atlas_media.py",
+   "to": "script:scripts/power_programs/photo_video_footage.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/atlas_mind.py",
+   "to": "script:scripts/power_programs/_mind_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/atlas_research.py",
+   "to": "script:scripts/power_programs/_lang_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/atlas_strategy.py",
+   "to": "script:scripts/power_programs/_mind_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/characters_rigs.py",
+   "to": "script:scripts/power_programs/photo_video_footage.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/creativity_engine.py",
+   "to": "script:scripts/power_programs/_mind_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/diagrams_explainers_code.py",
+   "to": "script:scripts/power_programs/photo_video_footage.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/documents_office__browser.py",
+   "to": "script:scripts/power_programs/_browser_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/engines_render_pipeline__browser.py",
+   "to": "script:scripts/power_programs/_browser_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/knowledge_graph.py",
+   "to": "script:scripts/power_programs/_lang_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/maps_geo.py",
+   "to": "script:scripts/power_programs/photo_video_footage.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/media_image_audio.py",
+   "to": "script:scripts/power_programs/photo_video_footage.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/mental_models.py",
+   "to": "script:scripts/power_programs/_mind_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/planning_execution.py",
+   "to": "script:scripts/power_programs/_mind_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/prompt_craft.py",
+   "to": "script:scripts/power_programs/_lang_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/prompt_craft.py",
+   "to": "script:scripts/anchor_gate.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/self_discovery.py",
+   "to": "script:scripts/power_programs/_mind_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/story_direction_ideas.py",
+   "to": "script:scripts/power_programs/_mind_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/strategy_finance.py",
+   "to": "script:scripts/power_programs/_mind_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/thinking_core.py",
+   "to": "script:scripts/power_programs/_mind_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/verification_evals.py",
+   "to": "script:scripts/power_programs/qa_verification.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/video_download.py",
+   "to": "script:scripts/power_programs/photo_video_footage.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/voice_tts.py",
+   "to": "script:scripts/power_programs/_lang_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/voice_tts__browser.py",
+   "to": "script:scripts/power_programs/_browser_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/web_research.py",
+   "to": "script:scripts/power_programs/_lang_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/web_research__browser.py",
+   "to": "script:scripts/power_programs/_browser_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/writing_humanizer.py",
+   "to": "script:scripts/power_programs/_lang_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/writing_humanizer.py",
+   "to": "script:scripts/anchor_gate.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/powers.py",
    "to": "script:scripts/probe_env.py",
    "rel": "imports",
@@ -7999,6 +8494,24 @@
    "w": 1
   },
   {
+   "from": "script:scripts/_black_dragon_power.py",
+   "to": "test:tests/test_black_dragon.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/_black_dragon_power.py",
+   "to": "test:tests/test_black_dragon_power_adapters.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/_black_dragon_power_program.py",
+   "to": "test:tests/test_black_dragon.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/_black_dragon_skill.py",
    "to": "test:tests/test_black_dragon.py",
    "rel": "tested_by",
@@ -8019,6 +8532,12 @@
   {
    "from": "script:scripts/_black_dragon_tool.py",
    "to": "test:tests/test_black_dragon_tool_adapters.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/_build_black_dragon_power_adapters.py",
+   "to": "test:tests/test_black_dragon_power_adapters.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -8162,7 +8681,19 @@
   },
   {
    "from": "script:scripts/black_dragon.py",
+   "to": "test:tests/test_black_dragon_power_adapters.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/black_dragon.py",
    "to": "test:tests/test_black_dragon_skill_adapters.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/black_dragon.py",
+   "to": "test:tests/test_black_dragon_style_adapters.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -8593,8 +9124,56 @@
    "w": 1
   },
   {
+   "from": "script:scripts/mimic/mm_build.py",
+   "to": "test:tests/test_proof_mm_build.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_color.py",
+   "to": "test:tests/test_proof_mm_color.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/mimic/mm_common.py",
    "to": "test:tests/test_mimic.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_fonts.py",
+   "to": "test:tests/test_proof_mm_fonts.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_fonts_lib.py",
+   "to": "test:tests/test_proof_mm_fonts_lib.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_render_text.py",
+   "to": "test:tests/test_proof_mm_render_text.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_sheets.py",
+   "to": "test:tests/test_proof_mm_sheets.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_text.py",
+   "to": "test:tests/test_proof_mm_text.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_textfx.py",
+   "to": "test:tests/test_proof_mm_textfx.py",
    "rel": "tested_by",
    "w": 1
   },

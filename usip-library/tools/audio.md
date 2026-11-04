@@ -1,4 +1,4 @@
-# أدوات المجال `audio` (6 أداة)
+# أدوات المجال `audio` (7 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -243,6 +243,54 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:repo-words-convert --evidence <ملف>`.
+
+### `suno-bridge` — جسر Suno: برومبت الأغنية وبصمة الموافقة والإيصال / Suno MCP bridge: song brief, consent digest and receipt
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/suno_bridge.py` (جذر: skill) |
+| المجال | `audio` |
+| الدليل | `tested-here` |
+| العائلات | `music-beat-sound` |
+
+**ما تفعله:** النص المحلي من موصّل Suno (A46). doctor بيطبع العنوان وصلاحيات OAuth من دليل الفحص وقاعدة الموافقة؛ probe فحص HTTP للقراءة بس من غير دخول (401 = سليم، بلا رصيد)؛ plan بيحوّل الطلب لبرومبت Suno (ستايل، هيكل، هيكل كلمات، مدة، لهجة، وصوت بس للدعاء والنشيد) مع بصمة approval_digest ومش بيولّد أبدًا؛ receipt بيراجع رد أداة التوليد (معرّف الأغنية والرابط والمدة وبصمة الملف) على البصمة اللي المستخدم وافق عليها ويرفض أي اختلاف.
+
+**What it does:** The local half of the Suno MCP connector (A46). doctor prints the endpoint, OAuth scopes from the committed probe and the consent rule; probe makes an unauthenticated read-only HTTP check (401 = healthy, no credits); plan turns an Arabic or English request into a Suno brief (style tags, structure, lyric scaffold, duration, dialect, vocals-only for dua/nasheed) with a SHA-256 approval_digest and never generates; receipt checks the generation tool's returned JSON (song id, link, duration, optional downloaded file hash) against the digest the user approved and refuses any mismatch.
+
+#### متى تُستدعى
+
+- «اعمل أغنية مهرجان لإعلان 30 ثانية على Suno»
+- «جهّز برومبت Suno لنشيد رمضان بدون موسيقى»
+- «Prepare a Suno song brief for a 2-minute cinematic trailer»
+- «Check that the Suno song I approved is the one that was generated»
+
+#### الأوامر
+
+- **doctor**: Offline: endpoint, auth model, resource scopes parsed from references/protocol/evidence/A46-suno-mcp-probe.txt, how to add the connector, network_requests=0.
+  - `python3 scripts/suno_bridge.py doctor`
+- **probe**: GET https://api.suno.com/mcp without credentials and read the OAuth resource metadata; 401 is reported as healthy. Exit 3 when the network blocks the host.
+  - `python3 scripts/suno_bridge.py probe`
+- **plan**: Deterministic brief (kosif.suno.plan.v1) with style tags under 200 characters, structure by duration, lyric scaffold with placeholders, credits_spend=true, approval_required=true, generated=false and approval_digest over the prompt.
+  - `python3 scripts/suno_bridge.py plan "أغنية مهرجان مصري لإعلان 30 ثانية صوت رجالي" --out out/suno/plan.json`
+- **receipt**: VERIFIED only when the plan is unedited, the approved digest matches and the result has a song id plus a link or --audio file; otherwise REFUSED with reasons and exit 1.
+  - `python3 scripts/suno_bridge.py receipt --plan out/suno/plan.json --result out/suno/result.json --approved-digest <digest> --out out/suno/receipt.json`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- الأمان: read-only
+- الموافقة: Generation happens only through the Suno MCP connector and spends Suno credits (credits:spend): show the plan's style, lyrics and duration and get the user's explicit yes first. The digest is not consent.
+- الحدود: It never talks to Suno with credentials and cannot generate, list tools or read the library; style detection is a keyword table, the lyric scaffold has placeholders for Claude and the user to fill, and licence terms depend on the user's Suno plan and are not checked.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_suno_bridge.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/protocol/A46-suno-mcp.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/audio.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:suno-bridge --evidence <ملف>`.
 
 ### `tts-script` — تجهيز نص التعليق الصوتي: تقطيع آمن وتقدير المدة وSSML / TTS script prep: prosody-safe chunks, duration estimate and SSML
 

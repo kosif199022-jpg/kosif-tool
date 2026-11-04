@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5862,
+  "catalog_powers": 5863,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 208,
+  "tool_count": 209,
   "groups": [
     {
       "id": "research",
@@ -130,17 +130,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 281,
+      "count": 282,
       "status_counts": {
         "documented": 65,
         "install": 12,
         "key": 2,
-        "proven": 179,
+        "proven": 180,
         "ready": 23
       },
       "family_counts": {
         "agent-orchestration": 55,
-        "runnable-tools": 183,
+        "runnable-tools": 184,
         "self-discovery": 43
       },
       "examples": [
@@ -74478,6 +74478,26 @@
       ],
       "source": "runnable-tools.json",
       "what": "يجيب قدرات goclone (github.com/goclone-dev/goclone، ترخيص MIT) جوه المهارة ببايثون صافي: ينسخ صفحة أو أكتر بملفات CSS وJS والصور والخطوط والميديا في ترتيب goclone (css/ js/ imgs/ ومعاهم fonts/ وmedia/)، ويتتبع url() و@import في CSS وsrcset والـposter والستايل الداخلي، ويعيد ربط ك"
+    },
+    {
+      "id": "TOOL-185",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Suno MCP bridge: song brief, consent digest and receipt",
+      "name_ar": "جسر Suno: برومبت الأغنية وبصمة الموافقة والإيصال",
+      "status": "proven",
+      "requires": [
+        "python3",
+        "key:video-gen",
+        "key:unspecified"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_suno_bridge.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/suno_bridge.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "النص المحلي من موصّل Suno (A46). doctor بيطبع العنوان وصلاحيات OAuth من دليل الفحص وقاعدة الموافقة؛ probe فحص HTTP للقراءة بس من غير دخول (401 = سليم، بلا رصيد)؛ plan بيحوّل الطلب لبرومبت Suno (ستايل، هيكل، هيكل كلمات، مدة، لهجة، وصوت بس للدعاء والنشيد) مع بصمة approval_digest وم"
     },
     {
       "id": "SEC-01",

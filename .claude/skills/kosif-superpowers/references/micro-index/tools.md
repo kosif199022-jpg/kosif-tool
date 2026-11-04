@@ -42,6 +42,7 @@
 | `music-rhythm-engine` | TOOL-26 | فرضيات إيقاع الموسيقى · Music rhythm hypotheses | `python3 scripts/music_rhythm_engine.py ./out/cues.json --out ./out/rh…` | 1 |
 | `repo-transcribe-audio` | — | تفريغ الصوت بـ Gemini مع رسائل خطأ واضحة · Gemini audio transcription with readable errors | `python3 tools/transcribe_audio.py ./voice.wav --json ./out/transcript…` | 1 |
 | `repo-words-convert` | TOOL-86 | محوّل الترجمات إلى توقيت الكلمات · Subtitle to words.json converter | `python3 tools/words_convert.py ./captions.srt ./words.json` | 1 |
+| `suno-bridge` | TOOL-185 | جسر Suno: برومبت الأغنية وبصمة الموافقة والإيصال · Suno MCP bridge: song brief, consent digest and receipt | `python3 scripts/suno_bridge.py doctor` | 1 |
 | `tts-script` | TOOL-152 | تجهيز نص التعليق الصوتي: تقطيع آمن وتقدير المدة وSSML · TTS script prep: prosody-safe chunks, duration estimate and SSML | `printf 'مرحبا بكم في KOSIF Studio. هذا اختبار، قصير جدا!\n\nفقرة ثاني…` | 1 |
 
 ## discover

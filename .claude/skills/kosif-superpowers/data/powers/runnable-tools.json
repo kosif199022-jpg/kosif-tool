@@ -8199,5 +8199,52 @@
   ],
   "section": "Sources and references / المصادر والمراجع",
   "source": "data/tools.json"
+ },
+ {
+  "id": "TOOL-185",
+  "family": "runnable-tools",
+  "domain": "build",
+  "name_ar": "جسر Suno: برومبت الأغنية وبصمة الموافقة والإيصال",
+  "name_en": "Suno MCP bridge: song brief, consent digest and receipt",
+  "status": "proven",
+  "what": "النص المحلي من موصّل Suno (A46). doctor بيطبع العنوان وصلاحيات OAuth من دليل الفحص وقاعدة الموافقة؛ probe فحص HTTP للقراءة بس من غير دخول (401 = سليم، بلا رصيد)؛ plan بيحوّل الطلب لبرومبت Suno (ستايل، هيكل، هيكل كلمات، مدة، لهجة، وصوت بس للدعاء والنشيد) مع بصمة approval_digest ومش بيولّد أبدًا؛ receipt بيراجع رد أداة التوليد (معرّف الأغنية والرابط والمدة وبصمة الملف) على البصمة اللي المستخدم وافق عليها ويرفض أي اختلاف. — The local half of the Suno MCP connector (A46). doctor prints the endpoint, OAuth scopes from the committed probe and the consent rule; probe makes an unauthenticated read-only HTTP check (401 = healthy, no credits); plan turns an Arabic or English request into a Suno brief (style tags, structure, lyric scaffold, duration, dialect, vocals-only for dua/nasheed) with a SHA-256 approval_digest and never generates; receipt checks the generation tool's returned JSON (song id, link, duration, optional downloaded file hash) against the digest the user approved and refuses any mismatch.",
+  "when": "اعمل أغنية مهرجان لإعلان 30 ثانية على Suno / Prepare a Suno song brief for a 2-minute cinematic trailer",
+  "how": "doctor: `python3 scripts/suno_bridge.py doctor`; probe: `python3 scripts/suno_bridge.py probe`; plan: `python3 scripts/suno_bridge.py plan \"أغنية مهرجان مصري لإعلان 30 ثانية صوت رجالي\" --out out/suno/plan.json`; receipt: `python3 scripts/suno_bridge.py receipt --plan out/suno/plan.json --result out/suno/result.json --approved-digest <digest> --out out/suno/receipt.json`. Full card: `python3 scripts/hub.py tool suno-bridge`. Limits: It never talks to Suno with credentials and cannot generate, list tools or read the library; style detection is a keyword table, the lyric scaffold has placeholders for Claude and the user to fill, and licence terms depend on the user's Suno plan and are not checked.",
+  "params": "in: A request in Arabic or English (plan); the plan file, the Suno tool's JSON answer and the approved digest (receipt). · out: JSON on stdout and optional --out file: kosif.suno.doctor.v1, kosif.suno.probe.v1, kosif.suno.plan.v1, kosif.suno.receipt.v1.",
+  "install": "needs on PATH: python3",
+  "requires": [
+   "python3",
+   "key:video-gen",
+   "key:unspecified"
+  ],
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_suno_bridge.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/suno_bridge.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "suno-bridge",
+   "suno",
+   "song",
+   "music generation",
+   "lyrics",
+   "nasheed",
+   "jingle",
+   "credits",
+   "consent",
+   "receipt",
+   "أغنية",
+   "اغنية",
+   "سونو",
+   "موسيقى",
+   "نشيد",
+   "كلمات",
+   "لحن",
+   "إعلان"
+  ],
+  "section": "Audio and rhythm / الصوت والإيقاع",
+  "source": "data/tools.json"
  }
 ]

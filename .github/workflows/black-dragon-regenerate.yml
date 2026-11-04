@@ -32,7 +32,7 @@ jobs:
       - name: Prerequisites for the media, skill and tool adapters (ffmpeg, fonts, Python packages, Playwright Chromium)
         run: |
           sudo apt-get update -q
-          sudo apt-get install -y -q ffmpeg fontconfig fonts-noto-core \
+          sudo apt-get install -y -q ffmpeg fontconfig fonts-noto-core imagemagick \
             libx11-6 libxrender1 libxfixes3 libxi6 libxkbcommon0 libxext6 libsm6 libice6 libgl1 libegl1
           python3 -m pip install -q numpy openpyxl pillow opencv-python-headless \
             'fonttools[woff]' brotli scipy matplotlib shapely segno python-pptx beautifulsoup4 \
@@ -61,11 +61,13 @@ jobs:
           set +e
           python3 .claude/skills/kosif-superpowers/scripts/black_dragon.py run "اعمل مونتاج فيديو موشن جرافيك بصوت" \
             --job out/black-dragon/ci-run --workers 4 --probe-tools --reviewed-adapters --execute-adapters --timeout 1200 \
-            --validate-cards
+            --validate-cards --env-scope ci
           code=$?
           set -e
           # 0 = every reviewed adapter executed (catalog entries without an adapter stay blocked,
           # see full_coverage in the report); 4 = reviewed execution incomplete; anything else is an error
+          # name every failed adapter with its ledger record, so a red run says what broke
+          python3 -c 'import json; items = json.load(open("out/black-dragon/ci-run/all_skills_ledger.json"))["items"]; [print("FAILED", k, json.dumps(v, ensure_ascii=False)[:1500]) for k, v in items.items() if v.get("status") == "failed"]' || true
           test "$code" -eq 0
           python3 - <<'PY'
           import json
@@ -79,6 +81,9 @@ jobs:
           assert r["validation"]["counts_as_executed"] is False, r["validation"]
           lines = open("out/black-dragon/ci-run/validation.jsonl", encoding="utf-8").read().splitlines()
           assert len(lines) == r["scheduled"], len(lines)
+          # env_scope=local adapters (proven only on their build machine) are left out, not counted as run
+          assert r["adapter_env_scope"]["env_scope"] == "ci", r.get("adapter_env_scope")
+          print("env_scope_excluded", r["adapter_env_scope"]["excluded"])
           print("assigned", r["assigned"], "executed", r["executed"], "probe_passed", r["probe_passed"],
                 "blocked_why", r["blocked_why"], "validated", r["validated"], "invalid", r["validation_invalid"])
           PY
