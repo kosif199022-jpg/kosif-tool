@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5862
+   "count": 5863
   },
   {
    "id": "dom:motion",
@@ -1406,10 +1406,10 @@
    "label": "Runnable KOSIF tools",
    "ar": "الأدوات القابلة للتشغيل",
    "prefix": "TOOL",
-   "count": 183,
-   "proven": 152,
+   "count": 184,
+   "proven": 153,
    "status": {
-    "proven": 152,
+    "proven": 153,
     "ready": 22,
     "install": 9
    }
@@ -5905,13 +5905,13 @@
    "from": "dom:build",
    "to": "fam:runnable-tools",
    "rel": "has",
-   "w": 183
+   "w": 184
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:python3",
    "rel": "needs",
-   "w": 144
+   "w": 145
   },
   {
    "from": "fam:runnable-tools",
@@ -5959,7 +5959,7 @@
    "from": "fam:runnable-tools",
    "to": "script:scripts/hub.py",
    "rel": "runs",
-   "w": 188
+   "w": 189
   },
   {
    "from": "fam:runnable-tools",

@@ -79,7 +79,7 @@ chapter: [audio-sync-captions](../powers/audio-sync-captions.md) · card: `usip-
 
 ## music-beat-sound (motion)
 
-chapter: [music-beat-sound](../powers/music-beat-sound.md) · card: `usip-library/cards/audio/music-beat-sound.md` · tools: `audio-cue-mapper` · `music-rhythm-engine` · `song-preview`
+chapter: [music-beat-sound](../powers/music-beat-sound.md) · card: `usip-library/cards/audio/music-beat-sound.md` · tools: `audio-cue-mapper` · `music-rhythm-engine` · `song-preview` · `suno-bridge`
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

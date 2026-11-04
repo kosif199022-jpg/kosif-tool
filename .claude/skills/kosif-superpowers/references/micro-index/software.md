@@ -215,7 +215,6 @@ chapter: [atlas-build](../powers/atlas-build.md) · card: `usip-library/cards/so
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|
 | ABUILD-57 | 📄 | ملعب HTML تفاعلي في ملف واحد: أدوات تحكم ومعاينة حية وprompt جاهز للنسخ · Single-file interactive HTML playground: controls, live preview and a ready-to-copy prompt | SP-0131 Publish a private interactive page (Art… | — |
-| ABUILD-28 | 📄 | دليل الحوادث: احتواء وتشخيص واستعادة · Incident runbook: contain, diagnose, recover | SP-0134 Figma to pixel-exact code plan | — |
 | ABUILD-29 | 📄 | تصميم المراقبة: الإشارات الذهبية والتنبيهات · Observability design: golden signals and alerts | SP-0134 Figma to pixel-exact code plan | — |
 | ABUILD-30 | 📄 | استطلاع البنية وتدقيق التكلفة · Infra reconnaissance and cost audit | SP-0134 Figma to pixel-exact code plan | — |
 | ABUILD-31 | 📄 | تصميم مكوّن متاح افتراضيا · Accessible-by-default component pattern design | SP-0134 Figma to pixel-exact code plan | npm:pa11y |
@@ -231,49 +230,50 @@ chapter: [atlas-build](../powers/atlas-build.md) · card: `usip-library/cards/so
 | ABUILD-41 | 📄 | قراءة Figma عبر MCP أو REST · Figma read via MCP or REST fallback | SP-0134 Figma to pixel-exact code plan | — |
 | ABUILD-42 | 📄 | من Figma إلى كود مطابق · Figma to pixel-exact code plan | SP-0134 Figma to pixel-exact code plan | — |
 | ABUILD-43 | 📄 | تدقيق أداء الواجهة والاستجابة · Frontend performance and responsive audit | SP-0134 Figma to pixel-exact code plan | — |
-| ABUILD-44 | 📄 | اختبار الوصولية بلوحة المفاتيح مباشرة · Live keyboard accessibility test via browser | SP-0134 Figma to pixel-exact code plan | npm:axe |
 | ABUILD-45 | 📄 | صفحة هبوط فاخرة بحركة GSAP · Premium landing page with GSAP scroll motion | SP-0134 Figma to pixel-exact code plan | npm:gsap |
 | ABUILD-46 | 📄 | حلقة مقارنة لقطة الصفحة بالتصميم · Screenshot-vs-design pixel diff loop | SP-0134 Figma to pixel-exact code plan | python3 |
 | ABUILD-47 | 📄 | حلقة مقارنة لقطة الشاشة بالمرجع · Screenshot-vs-reference pixel diff loop | SP-0134 Figma to pixel-exact code plan | — |
 | ABUILD-48 | 📄 | معمارية رموز التصميم بثلاث طبقات · Three-tier design token architecture with theming | SP-0134 Figma to pixel-exact code plan | — |
 | ABUILD-49 | 📄 | تدقيق إتاحة WCAG 2.2: فحص وإصلاح وتحقق · WCAG 2.2 scan-fix-verify accessibility audit | SP-0134 Figma to pixel-exact code plan | npm:axe |
-| ABUILD-50 | 📄 | إصدار نسخة: وسم ونشر وتحقق · Cut a release: tag, GitHub release, verify | SP-0134 Figma to pixel-exact code plan | — |
-| ABUILD-52 | 📄 | فرز أعطال الاتصال حسب مجال الخطأ دون تغيير الإعدادات · Fault-domain connectivity triage without touching config | SP-0134 Figma to pixel-exact code plan | — |
+| ABUILD-55 | 📄 | اختيار أداة المستودع الأحادي من القياس: اللغات والحجم والألم والحاجة للإحكام، وقائمة ما لا نتبناه الآن · Choose monorepo tooling from measurements: language mix, scale, pain and hermeticity, plus a do-not-adopt-yet list | SP-0134 Figma to pixel-exact code plan | node |
 | ABUILD-56 | 📄 | إعداد أجهزة الشبكة: تحقق قبل التطبيق، وترجمة بين لهجات المصنعين عبر المفاهيم، وقوالب آمنة · Network device config: validate before applying, translate between vendor dialects through concepts, safe templates | SP-0134 Figma to pixel-exact code plan | — |
 | ABUILD-58 | 📄 | تحديد معمارية جهاز إلكتروني قبل أي مخطط: المتطلبات قبل القطع، ووحدة جاهزة أم لوحة مخصصة، وشجرة الطاقة، والتوافق الكهرومغناطيسي · Scope a hardware design before any schematic: requirements before parts, module vs custom PCB, the power tree, EMC posture | SP-0134 Figma to pixel-exact code plan | — |
 | ABUILD-59 | 📄 | رحلة بناء موقع أو تحسينه بترتيب ثابت: الرسالة ثم التصميم ثم التحويل، وكل إصلاح فرضية قابلة للاختبار، وملف تتبع يستأنف منه · Website creation or improvement as a fixed-order journey: message, then design, then conversion; every fix a testable hypothesis; a tracker to resume from | SP-0134 Figma to pixel-exact code plan | pip:hypothesis |
-| ABUILD-05 | 📄 | مسار توقيع وإصدار تطبيقات الجوال والمكتب · Mobile and desktop release signing pipeline | SP-0135 Throwaway prototype to answer one quest… | os:macos |
-| ABUILD-06 | 📄 | نموذج HTML تجريبي يجيب أسئلة مفتوحة · Open-question HTML prototype spike | SP-0135 Throwaway prototype to answer one quest… | — |
-| ABUILD-07 | 📄 | تنسيق بناء تطبيق كامل على مراحل · Phased full-stack app build orchestration | SP-0135 Throwaway prototype to answer one quest… | — |
-| ABUILD-08 | 📄 | تقييم النموذج مقابل معايير القبول · Prototype evaluation vs acceptance criteria | SP-0135 Throwaway prototype to answer one quest… | chromium |
-| ABUILD-09 | 📄 | توليد PWA مع service worker · PWA manifest and service worker generation | SP-0135 Throwaway prototype to answer one quest… | chromium |
-| ABUILD-10 | 📄 | هيكلة مشروع SaaS جاهز · SaaS boilerplate scaffold spec | SP-0135 Throwaway prototype to answer one quest… | npm:react |
-| ABUILD-11 | 📄 | حالة الاشتراكات وواجهة إدارة الاشتراك · Subscription store state and paywall UI | SP-0135 Throwaway prototype to answer one quest… | — |
-| ABUILD-12 | 📄 | نموذج أولي مؤقت للإجابة عن سؤال · Throwaway prototype to answer one question | SP-0135 Throwaway prototype to answer one quest… | — |
-| ABUILD-13 | 📄 | بناء موقع Wix هيدلس من وصفات SDK · Wix headless site build from SDK recipes | SP-0135 Throwaway prototype to answer one quest… | chromium, key:unspecified |
-| ABUILD-54 | 📄 | تجهيز مستودع جديد أو تحديث قديم بترتيب ثابت للخطوات: الأساس ثم هيكل اللغة ثم CI والمدققات والأسرار والإصدار · Bootstrap a new repository or refresh an old one in a fixed order: foundation, language scaffold, CI, linters, secrets, release | SP-0135 Throwaway prototype to answer one quest… | lean |
-| ABUILD-55 | 📄 | اختيار أداة المستودع الأحادي من القياس: اللغات والحجم والألم والحاجة للإحكام، وقائمة ما لا نتبناه الآن · Choose monorepo tooling from measurements: language mix, scale, pain and hermeticity, plus a do-not-adopt-yet list | SP-0135 Throwaway prototype to answer one quest… | node |
-| ABUILD-14 | 📄 | حلقة مراجع شجرة الوصولية لتحكم المتصفح · Accessibility-tree ref loop for browser agents | SP-0136 Named-session Playwright CLI with disk… | node, chromium |
-| ABUILD-15 | 📄 | استنساخ موقع بأدلة المتصفح · Browser-evidence website clone workflow | SP-0136 Named-session Playwright CLI with disk… | chromium |
-| ABUILD-16 | 📄 | تصحيح الصفحات الحية عبر Chrome DevTools MCP · Chrome DevTools MCP debugging of live pages | SP-0136 Named-session Playwright CLI with disk… | chromium |
-| ABUILD-17 | 📄 | خط لقطات Playwright داخل حاوية · Containerized Playwright screenshot pipeline | SP-0136 Named-session Playwright CLI with disk… | chromium, docker |
-| ABUILD-18 | 📄 | تشغيل متصفحات معزولة عبر بروتوكولاتها · Isolated headless Chrome/Firefox/Safari drivers over native protocols | SP-0136 Named-session Playwright CLI with disk… | chromium |
-| ABUILD-19 | 📄 | جلسات Playwright مسماة بمخرجات على القرص · Named-session Playwright CLI with disk artifacts | SP-0136 Named-session Playwright CLI with disk… | node, chromium |
-| ABUILD-20 | 📄 | كتابة اختبارات E2E مع فحص الوصولية والأداء · Playwright E2E authoring with lint, a11y and CWV scans | SP-0136 Named-session Playwright CLI with disk… | python3, chromium |
-| ABUILD-21 | 📄 | رفع ملف عبر Playwright MCP لحقل مخفي · Playwright MCP hidden file-input upload workaround | SP-0136 Named-session Playwright CLI with disk… | chromium |
-| ABUILD-22 | 📄 | إثبات السلوك المعروض بحكم نجح/فشل/معطل · Rendered-behavior proof with pass/fail/blocked verdict | SP-0136 Named-session Playwright CLI with disk… | chromium |
-| ABUILD-23 | 📄 | فحص جودة الواجهة بثلاثة عروض · Three-width responsive browser QA report | SP-0136 Named-session Playwright CLI with disk… | network |
-| ABUILD-60 | 📄 | إعداد طرق التثبيت لأداة CLI: صيغة Homebrew tap وgo install وcargo install مع كشف اللغة وGoReleaser والقيود الخاصة بالمنصة · Set up installers for a CLI: a Homebrew tap formula plus go install and cargo install support, with language, GoReleaser and platform detection | SP-0136 Named-session Playwright CLI with disk… | os:macos |
-| ABUILD-01 | 📄 | تنفيذ خارطة الطريق تلقائياً: مرحلة لكل طلب دمج · Autonomous phase-per-PR roadmap execution loop | SP-0137 Role-squad agent pipeline with stages,… | claude:tools |
-| ABUILD-02 | 📄 | مسجل قياس تشغيل بالملاحظة فقط · Observation-only run telemetry recorder | SP-0137 Role-squad agent pipeline with stages,… | — |
-| ABUILD-03 | 📄 | خط وكلاء بأدوار ومراحل وأقفال كتابة واستئناف · Role-squad agent pipeline with stages, locks and resume | SP-0137 Role-squad agent pipeline with stages,… | — |
-| ABUILD-04 | 📄 | تفكيك المواصفة إلى مهام صغيرة لوكلاء البرمجة · Spec-to-task decomposition for coding agents | SP-0137 Role-squad agent pipeline with stages,… | — |
-| ABUILD-51 | 📄 | صياغة التذاكر وأوصاف PR بهيكل ماذا/لماذا/كيف · What/Why/How ticket and PR drafting | SP-0137 Role-squad agent pipeline with stages,… | — |
-| ABUILD-53 | 📄 | الإدراك وتقدير الحالة للروبوت: مزامنة الزمن والإطارات أولًا ثم دمج حساسات تغطي أعطال بعضها · Robot perception and state estimation: time and frames first, fuse complementary sensors, fail safe | SP-0137 Role-squad agent pipeline with stages,… | — |
-| ABUILD-24 | 📄 | ضبط مجمع الاتصالات وموثوقية قاعدة البيانات · Connection pool sizing and DB reliability playbook | SP-0138 Connection pool sizing and DB reliabili… | — |
-| ABUILD-25 | 📄 | نص نسخ احتياطي لقاعدة البيانات مع الاحتفاظ والتشفير · Database backup script with retention and encryption | SP-0138 Connection pool sizing and DB reliabili… | — |
-| ABUILD-26 | 📄 | تطور مخططات الأحداث وKafka · Event schema evolution and Kafka platform playbook | SP-0138 Connection pool sizing and DB reliabili… | — |
-| ABUILD-27 | 📄 | قواعد Postgres وRedis المُدارة على المنصات · Managed Postgres and Redis on hosting platforms | SP-0138 Connection pool sizing and DB reliabili… | — |
+| ABUILD-14 | 📄 | حلقة مراجع شجرة الوصولية لتحكم المتصفح · Accessibility-tree ref loop for browser agents | SP-0135 Named-session Playwright CLI with disk… | node, chromium |
+| ABUILD-16 | 📄 | تصحيح الصفحات الحية عبر Chrome DevTools MCP · Chrome DevTools MCP debugging of live pages | SP-0135 Named-session Playwright CLI with disk… | chromium |
+| ABUILD-17 | 📄 | خط لقطات Playwright داخل حاوية · Containerized Playwright screenshot pipeline | SP-0135 Named-session Playwright CLI with disk… | chromium, docker |
+| ABUILD-18 | 📄 | تشغيل متصفحات معزولة عبر بروتوكولاتها · Isolated headless Chrome/Firefox/Safari drivers over native protocols | SP-0135 Named-session Playwright CLI with disk… | chromium |
+| ABUILD-19 | 📄 | جلسات Playwright مسماة بمخرجات على القرص · Named-session Playwright CLI with disk artifacts | SP-0135 Named-session Playwright CLI with disk… | node, chromium |
+| ABUILD-20 | 📄 | كتابة اختبارات E2E مع فحص الوصولية والأداء · Playwright E2E authoring with lint, a11y and CWV scans | SP-0135 Named-session Playwright CLI with disk… | python3, chromium |
+| ABUILD-21 | 📄 | رفع ملف عبر Playwright MCP لحقل مخفي · Playwright MCP hidden file-input upload workaround | SP-0135 Named-session Playwright CLI with disk… | chromium |
+| ABUILD-22 | 📄 | إثبات السلوك المعروض بحكم نجح/فشل/معطل · Rendered-behavior proof with pass/fail/blocked verdict | SP-0135 Named-session Playwright CLI with disk… | chromium |
+| ABUILD-23 | 📄 | فحص جودة الواجهة بثلاثة عروض · Three-width responsive browser QA report | SP-0135 Named-session Playwright CLI with disk… | network |
+| ABUILD-28 | 📄 | دليل الحوادث: احتواء وتشخيص واستعادة · Incident runbook: contain, diagnose, recover | SP-0135 Named-session Playwright CLI with disk… | — |
+| ABUILD-44 | 📄 | اختبار الوصولية بلوحة المفاتيح مباشرة · Live keyboard accessibility test via browser | SP-0135 Named-session Playwright CLI with disk… | npm:axe |
+| ABUILD-50 | 📄 | إصدار نسخة: وسم ونشر وتحقق · Cut a release: tag, GitHub release, verify | SP-0135 Named-session Playwright CLI with disk… | — |
+| ABUILD-53 | 📄 | الإدراك وتقدير الحالة للروبوت: مزامنة الزمن والإطارات أولًا ثم دمج حساسات تغطي أعطال بعضها · Robot perception and state estimation: time and frames first, fuse complementary sensors, fail safe | SP-0135 Named-session Playwright CLI with disk… | — |
+| ABUILD-05 | 📄 | مسار توقيع وإصدار تطبيقات الجوال والمكتب · Mobile and desktop release signing pipeline | SP-0136 SaaS boilerplate scaffold spec | os:macos |
+| ABUILD-06 | 📄 | نموذج HTML تجريبي يجيب أسئلة مفتوحة · Open-question HTML prototype spike | SP-0136 SaaS boilerplate scaffold spec | — |
+| ABUILD-07 | 📄 | تنسيق بناء تطبيق كامل على مراحل · Phased full-stack app build orchestration | SP-0136 SaaS boilerplate scaffold spec | — |
+| ABUILD-08 | 📄 | تقييم النموذج مقابل معايير القبول · Prototype evaluation vs acceptance criteria | SP-0136 SaaS boilerplate scaffold spec | chromium |
+| ABUILD-09 | 📄 | توليد PWA مع service worker · PWA manifest and service worker generation | SP-0136 SaaS boilerplate scaffold spec | chromium |
+| ABUILD-10 | 📄 | هيكلة مشروع SaaS جاهز · SaaS boilerplate scaffold spec | SP-0136 SaaS boilerplate scaffold spec | npm:react |
+| ABUILD-11 | 📄 | حالة الاشتراكات وواجهة إدارة الاشتراك · Subscription store state and paywall UI | SP-0136 SaaS boilerplate scaffold spec | — |
+| ABUILD-12 | 📄 | نموذج أولي مؤقت للإجابة عن سؤال · Throwaway prototype to answer one question | SP-0136 SaaS boilerplate scaffold spec | — |
+| ABUILD-13 | 📄 | بناء موقع Wix هيدلس من وصفات SDK · Wix headless site build from SDK recipes | SP-0136 SaaS boilerplate scaffold spec | chromium, key:unspecified |
+| ABUILD-51 | 📄 | صياغة التذاكر وأوصاف PR بهيكل ماذا/لماذا/كيف · What/Why/How ticket and PR drafting | SP-0136 SaaS boilerplate scaffold spec | — |
+| ABUILD-52 | 📄 | فرز أعطال الاتصال حسب مجال الخطأ دون تغيير الإعدادات · Fault-domain connectivity triage without touching config | SP-0136 SaaS boilerplate scaffold spec | — |
+| ABUILD-54 | 📄 | تجهيز مستودع جديد أو تحديث قديم بترتيب ثابت للخطوات: الأساس ثم هيكل اللغة ثم CI والمدققات والأسرار والإصدار · Bootstrap a new repository or refresh an old one in a fixed order: foundation, language scaffold, CI, linters, secrets, release | SP-0136 SaaS boilerplate scaffold spec | lean |
+| ABUILD-24 | 📄 | ضبط مجمع الاتصالات وموثوقية قاعدة البيانات · Connection pool sizing and DB reliability playbook | SP-0137 Connection pool sizing and DB reliabili… | — |
+| ABUILD-25 | 📄 | نص نسخ احتياطي لقاعدة البيانات مع الاحتفاظ والتشفير · Database backup script with retention and encryption | SP-0137 Connection pool sizing and DB reliabili… | — |
+| ABUILD-26 | 📄 | تطور مخططات الأحداث وKafka · Event schema evolution and Kafka platform playbook | SP-0137 Connection pool sizing and DB reliabili… | — |
+| ABUILD-27 | 📄 | قواعد Postgres وRedis المُدارة على المنصات · Managed Postgres and Redis on hosting platforms | SP-0137 Connection pool sizing and DB reliabili… | — |
+| ABUILD-60 | 📄 | إعداد طرق التثبيت لأداة CLI: صيغة Homebrew tap وgo install وcargo install مع كشف اللغة وGoReleaser والقيود الخاصة بالمنصة · Set up installers for a CLI: a Homebrew tap formula plus go install and cargo install support, with language, GoReleaser and platform detection | SP-0137 Connection pool sizing and DB reliabili… | os:macos |
+| ABUILD-01 | 📄 | تنفيذ خارطة الطريق تلقائياً: مرحلة لكل طلب دمج · Autonomous phase-per-PR roadmap execution loop | SP-0138 Observation-only run telemetry recorder | claude:tools |
+| ABUILD-02 | 📄 | مسجل قياس تشغيل بالملاحظة فقط · Observation-only run telemetry recorder | SP-0138 Observation-only run telemetry recorder | — |
+| ABUILD-03 | 📄 | خط وكلاء بأدوار ومراحل وأقفال كتابة واستئناف · Role-squad agent pipeline with stages, locks and resume | SP-0138 Observation-only run telemetry recorder | — |
+| ABUILD-04 | 📄 | تفكيك المواصفة إلى مهام صغيرة لوكلاء البرمجة · Spec-to-task decomposition for coding agents | SP-0138 Observation-only run telemetry recorder | — |
+| ABUILD-15 | 📄 | استنساخ موقع بأدلة المتصفح · Browser-evidence website clone workflow | SP-0148 REA CLI Bridge | chromium |
 
 ## atlas-code (code)
 

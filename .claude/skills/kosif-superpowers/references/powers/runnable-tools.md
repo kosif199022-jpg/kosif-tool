@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **183 powers follow** — ✅ 152 · 🟢 22 · 📦 9 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **184 powers follow** — ✅ 153 · 🟢 22 · 📦 9 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -17,7 +17,7 @@
 - **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-170 (17)
 - **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-183 (24)
 - **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-180 (19)
-- **Audio and rhythm / الصوت والإيقاع** — TOOL-25 … TOOL-165 (5)
+- **Audio and rhythm / الصوت والإيقاع** — TOOL-25 … TOOL-185 (6)
 - **Drawing and characters / الرسم والشخصيات** — TOOL-27 … TOOL-169 (17)
 - **Software investigation / فحص البرامج** — TOOL-32 … TOOL-162 (14)
 - **Maintain and build / الصيانة والبناء** — TOOL-33 … TOOL-154 (13)
@@ -831,6 +831,15 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_caption_lines.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/caption_lines.py`
 - **المصدر / source:** data/tools.json
 
+#### TOOL-185 · جسر Suno: برومبت الأغنية وبصمة الموافقة والإيصال · Suno MCP bridge: song brief, consent digest and receipt · ✅ مُثبت هنا / proven here
+- **ماذا / what:** النص المحلي من موصّل Suno (A46). doctor بيطبع العنوان وصلاحيات OAuth من دليل الفحص وقاعدة الموافقة؛ probe فحص HTTP للقراءة بس من غير دخول (401 = سليم، بلا رصيد)؛ plan بيحوّل الطلب لبرومبت Suno (ستايل، هيكل، هيكل كلمات، مدة، لهجة، وصوت بس للدعاء والنشيد) مع بصمة approval_digest ومش بيولّد أبدًا؛ receipt بيراجع رد أداة التوليد (معرّف الأغنية والرابط والمدة وبصمة الملف) على البصمة اللي المستخدم وافق عليها ويرفض أي اختلاف. — The local half of the Suno MCP connector (A46). doctor prints the endpoint, OAuth scopes from the committed probe and the consent rule; probe makes an unauthenticated read-only HTTP check (401 = healthy, no credits); plan turns an Arabic or English request into a Suno brief (style tags, structure, lyric scaffold, duration, dialect, vocals-only for dua/nasheed) with a SHA-256 approval_digest and never generates; receipt checks the generation tool's returned JSON (song id, link, duration, optional downloaded file hash) against the digest the user approved and refuses any mismatch.
+- **متى أستخدمها / when:** اعمل أغنية مهرجان لإعلان 30 ثانية على Suno / Prepare a Suno song brief for a 2-minute cinematic trailer
+- **كيف / how:** doctor: `python3 scripts/suno_bridge.py doctor`; probe: `python3 scripts/suno_bridge.py probe`; plan: `python3 scripts/suno_bridge.py plan "أغنية مهرجان مصري لإعلان 30 ثانية صوت رجالي" --out out/suno/plan.json`; receipt: `python3 scripts/suno_bridge.py receipt --plan out/suno/plan.json --result out/suno/result.json --approved-digest <digest> --out out/suno/receipt.json`. Full card: `python3 scripts/hub.py tool suno-bridge`. Limits: It never talks to Suno with credentials and cannot generate, list tools or read the library; style detection is a keyword table, the lyric scaffold has placeholders for Claude and the user to fill, and licence terms depend on the user's Suno plan and are not checked. **أرقام / params:** in: A request in Arabic or English (plan); the plan file, the Suno tool's JSON answer and the approved digest (receipt). · out: JSON on stdout and optional --out file: kosif.suno.doctor.v1, kosif.suno.probe.v1, kosif.suno.plan.v1, kosif.suno.receipt.v1.
+- **تثبيت / install:** `needs on PATH: python3`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`key:video-gen`](../requirements.md#req-key-video-gen) · [`key:unspecified`](../requirements.md#req-key-unspecified)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_suno_bridge.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/suno_bridge.py`
+- **المصدر / source:** data/tools.json
+
 ## Drawing and characters / الرسم والشخصيات
 
 #### TOOL-27 · تحريك الشخصية بكامل الجسم · Full-body character animator · ✅ مُثبت هنا / proven here
@@ -1638,7 +1647,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (183)
+- الرخص / licences: — (184)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

@@ -14,7 +14,7 @@
 
 | # | requirement | kind | powers unlocked | families | here now |
 |---|---|---|---|---|---|
-| 1 | [`python3`](#req-python3) | bin | 810 | runnable-tools, engines-render-pipeline, qa-verification, mental-models, music-beat-sound |  |
+| 1 | [`python3`](#req-python3) | bin | 811 | runnable-tools, engines-render-pipeline, qa-verification, mental-models, music-beat-sound |  |
 | 2 | [`ffmpeg`](#req-ffmpeg) | bin | 467 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, runnable-tools |  |
 | 3 | [`npm:hyperframes`](#req-npm-hyperframes) | npm | 461 | transitions-cuts, engines-render-pipeline, camera-composition-layout, typography-latin, qa-verification |  |
 | 4 | [`chromium`](#req-chromium) | bin | 376 | engines-render-pipeline, software-investigation, app-feature-transfer, runnable-tools, qa-verification |  |
@@ -22,7 +22,7 @@
 | 6 | [`npm:gsap`](#req-npm-gsap) | npm | 247 | transitions-cuts, engines-render-pipeline, camera-composition-layout, easing-timing-rhythm, typography-latin |  |
 | 7 | [`npm:three`](#req-npm-three) | npm | 186 | transitions-cuts, engines-render-pipeline, light-glow-bloom, texture-material, 3d-spatial |  |
 | 8 | [`node`](#req-node) | bin | 185 | qa-verification, atlas-code, runnable-tools, engines-render-pipeline, color-palette-grading |  |
-| 9 | [`key:unspecified`](#req-key-unspecified) | key | 167 | engines-render-pipeline, atlas-code, ai-generation, camera-composition-layout, qa-verification |  |
+| 9 | [`key:unspecified`](#req-key-unspecified) | key | 168 | engines-render-pipeline, atlas-code, ai-generation, camera-composition-layout, qa-verification |  |
 | 10 | [`pip:numpy`](#req-pip-numpy) | pip | 142 | app-feature-transfer, music-beat-sound, qa-verification, runnable-tools, transitions-cuts |  |
 | 11 | [`pip:pillow`](#req-pip-pillow) | pip | 142 | app-feature-transfer, runnable-tools, qa-verification, engines-render-pipeline, typography-arabic |  |
 | 12 | [`npm:remotion`](#req-npm-remotion) | npm | 119 | engines-render-pipeline, music-beat-sound, runnable-tools, typography-arabic, easing-timing-rhythm |  |
@@ -31,7 +31,7 @@
 | 15 | [`imagemagick`](#req-imagemagick) | bin | 89 | engines-render-pipeline, music-beat-sound, transitions-cuts, photo-video-footage, runnable-tools |  |
 | 16 | [`engine:ghidra`](#req-engine-ghidra) | bin | 87 | software-investigation, runnable-tools |  |
 | 17 | [`claude:tools`](#req-claude-tools) | service | 82 | agent-orchestration, thinking-core, atlas-code, atlas-mind, self-discovery |  |
-| 18 | [`key:video-gen`](#req-key-video-gen) | service | 69 | ai-generation, music-beat-sound, camera-composition-layout, atlas-strategy, prompt-craft |  |
+| 18 | [`key:video-gen`](#req-key-video-gen) | service | 70 | ai-generation, music-beat-sound, camera-composition-layout, atlas-strategy, prompt-craft |  |
 | 19 | [`npm:react`](#req-npm-react) | npm | 66 | engines-render-pipeline, atlas-code, runnable-tools, transitions-cuts, atlas-build |  |
 | 20 | [`pip:faster-whisper`](#req-pip-faster-whisper) | model | 55 | audio-sync-captions, qa-verification, runnable-tools, app-feature-transfer, engines-render-pipeline |  |
 | 21 | [`git`](#req-git) | bin | 52 | atlas-code, atlas-mind, agent-orchestration, atlas-docs, code-engineering |  |
@@ -145,9 +145,9 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y python3 python3-pip python3-venv`
-- **يفتح / unlocks:** 810 powers
-- **بالحالة / by status:** proven 310 · documented 212 · ready 169 · install 103 · key 13 · seen 3
-- **العائلات / families:** runnable-tools (144), engines-render-pipeline (97), qa-verification (79), mental-models (61), music-beat-sound (45), app-feature-transfer (27), atlas-code (24), photo-video-footage (16)
+- **يفتح / unlocks:** 811 powers
+- **بالحالة / by status:** proven 311 · documented 212 · ready 169 · install 103 · key 13 · seen 3
+- **العائلات / families:** runnable-tools (145), engines-render-pipeline (97), qa-verification (79), mental-models (61), music-beat-sound (45), app-feature-transfer (27), atlas-code (24), photo-video-footage (16)
 - **أمثلة / examples:** `ANLY-08` statsmodels OLS and time-series models · `ANLY-14` altair / Vega-Lite chart specs · `ANLY-17` Gradient boosting (XGBoost, LightGBM) · `ANLY-21` Convex optimisation with cvxpy · `ANLY-23` Graph algorithms with networkx · `APP-06` HTML to MP4 renderer (repo tool)
 
 <a id="req-ffmpeg"></a>
@@ -225,10 +225,10 @@
 
 - **النوع / kind:** key (مفتاح/حساب)
 - **التثبيت / install:** `an account, API key or connector named in the power's install/how text (ask the user; never guess a value)`
-- **يفتح / unlocks:** 167 powers
-- **بالحالة / by status:** key 114 · documented 41 · proven 8 · ready 2 · seen 1 · install 1
+- **يفتح / unlocks:** 168 powers
+- **بالحالة / by status:** key 114 · documented 41 · proven 9 · ready 2 · seen 1 · install 1
 - **العائلات / families:** engines-render-pipeline (27), atlas-code (17), ai-generation (14), camera-composition-layout (12), qa-verification (12), self-discovery (8), voice-tts (8), maps-geo (6)
-- **أمثلة / examples:** `API-06` Auth: Bearer, Basic, OAuth 2.0 and more · `ENG-24` Capability-token render jobs · `SELF-07` MCP server inventory with cost flags · `SELF-14` No GPU: plan for CPU · `SELF-17` Credentials by name only · `TOOL-65` AI for business: 9 functions, 64 workflows, Clau
+- **أمثلة / examples:** `API-06` Auth: Bearer, Basic, OAuth 2.0 and more · `ENG-24` Capability-token render jobs · `SELF-07` MCP server inventory with cost flags · `SELF-14` No GPU: plan for CPU · `SELF-17` Credentials by name only · `TOOL-185` Suno MCP bridge: song brief, consent digest and
 
 <a id="req-pip-numpy"></a>
 ### `pip:numpy` — حسابات عددية على الإطارات والصوت / numeric work on frames and audio
@@ -315,9 +315,9 @@
 
 - **النوع / kind:** service (خدمة/موصل)
 - **التثبيت / install:** `an account on the named generator (Runway, Kling, Veo, Pika, Luma…) — paid credits`
-- **يفتح / unlocks:** 69 powers
-- **بالحالة / by status:** key 32 · documented 23 · proven 8 · install 4 · ready 2
-- **العائلات / families:** ai-generation (32), music-beat-sound (12), camera-composition-layout (7), atlas-strategy (3), prompt-craft (2), qa-verification (2), atlas-code (1), atlas-media (1)
+- **يفتح / unlocks:** 70 powers
+- **بالحالة / by status:** key 32 · documented 23 · proven 9 · install 4 · ready 2
+- **العائلات / families:** ai-generation (32), music-beat-sound (12), camera-composition-layout (7), atlas-strategy (3), prompt-craft (2), qa-verification (2), runnable-tools (2), atlas-code (1)
 - **أمثلة / examples:** `ARAB-09` Real type over generated plates · `GEN-10` Prompt forge: one spec → 9 generator prompts · `GEN-11` Video-model platform DNA (Veo / Runway / Kling / · `GEN-12` Image spec schema → 6 platform builders · `GEN-13` Shot list → 7 video-platform prompts with durati · `GEN-14` kmotion aiprompts: 7-layer per-shot prompts
 
 <a id="req-npm-react"></a>
