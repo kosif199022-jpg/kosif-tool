@@ -95,8 +95,14 @@ def _key(card_id: str) -> str:
 
 
 def _build_one(card_id: str) -> dict:
-    with tempfile.TemporaryDirectory(prefix="pr-") as tmp:
+    tmp = tempfile.mkdtemp(prefix="pr-")
+    try:
         r = run_card(card_id, "اعمل فيديو موشن عربي قصير", Path(tmp) / "work")
+    except Exception as exc:  # one card must never take the whole build down
+        r = {"verdict": "failed", "reason": "%s: %s" % (type(exc).__name__, str(exc)[:200]), "runner": OWNER.get(card_id)}
+    finally:
+        # a runner's helper process may still be flushing into the folder: never fail the build on cleanup
+        shutil.rmtree(tmp, ignore_errors=True)
     return {"id": card_id, "verdict": r["verdict"], "reason": r.get("reason"), "runner": r.get("runner"),
             "seconds": r.get("seconds")}
 
