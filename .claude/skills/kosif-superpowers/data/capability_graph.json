@@ -2765,6 +2765,11 @@
    "label": "tests/test_black_dragon_media.py"
   },
   {
+   "id": "test:tests/test_black_dragon_native_fusion.py",
+   "kind": "test",
+   "label": "tests/test_black_dragon_native_fusion.py"
+  },
+  {
    "id": "test:tests/test_black_dragon_style_adapters.py",
    "kind": "test",
    "label": "tests/test_black_dragon_style_adapters.py"
@@ -8665,6 +8670,12 @@
   {
    "from": "script:scripts/black_dragon.py",
    "to": "test:tests/test_black_dragon_media_adapters.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/black_dragon.py",
+   "to": "test:tests/test_black_dragon_native_fusion.py",
    "rel": "tested_by",
    "w": 1
   },

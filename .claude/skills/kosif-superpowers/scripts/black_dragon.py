@@ -248,6 +248,7 @@ BLOCKED_WHY = {
 _VENDOR = "skill:kosif-superpowers/vendor/100-superskills/skills/"
 SKILL_PROGRAM_BLOCKERS = {
     _VENDOR + "davinci-resolve-pipeline": "needs the DaVinci Resolve app and its scripting API (not installable here)",
+    "skill:kosif-black-dragon": "new independent native reasoning skill; intentionally excluded from legacy automatic adapter execution",
 }
 
 
