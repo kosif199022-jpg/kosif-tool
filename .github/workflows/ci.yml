@@ -17,6 +17,19 @@ jobs:
           node-version: "22"
       - name: Python packages for the shadow-theatre renderer tests
         run: python3 -m pip install --quiet numpy pillow
+      - name: Prerequisites for the power-program and proof tests (ffmpeg, fonts, Python packages, Playwright Chromium)
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q ffmpeg fontconfig fonts-noto-core
+          python3 -m pip install -q numpy openpyxl pillow opencv-python-headless \
+            'fonttools[woff]' brotli scipy matplotlib shapely segno python-pptx beautifulsoup4 \
+            arabic-reshaper python-bidi pyyaml
+          npm install --no-save --no-package-lock playwright@1.63.0
+          npx playwright install --with-deps chromium
+          echo "KOSIF_PLAYWRIGHT=$GITHUB_WORKSPACE/node_modules/playwright" >> "$GITHUB_ENV"
+      - name: Remotion starter dependencies for the Remotion power programs (exact lockfile)
+        working-directory: starters/remotion
+        run: npm ci --no-audit --no-fund
       - name: Validate catalog and files
         run: python3 tools/validate.py
       - name: Derived files are up to date
