@@ -2,7 +2,7 @@
  "schema": "kosif.task-history.v1",
  "id": "20261104-warehouse-count-site-v39-maison-design-system",
  "date": "2026-11-04",
- "title": "Warehouse stock-count web app v28→v56: design system v2 (Maison), multi-search, highlight, shelf groups, scan mode, award-site motion, phone bottom bar, measured gate",
+ "title": "Warehouse stock-count web app v28→v57: design system v2 (Maison), multi-search, highlight, shelf groups, scan mode, award-site motion, phone bottom bar, measured gate",
  "request": "نفذ المقترح واستخدم قدرات التنين الاسود في تطوير الخطوط والموشن جرافك وايقونات الموقع وغيرها",
  "kind": "web",
  "mode": "موافق",
@@ -17,7 +17,7 @@
   "WebSearch/WebFetch research + 3 research subagents (2 completed, 1 rate-limited)"
  ],
  "params": {
-  "artifact_versions": "28..56 (artifact version 58)",
+  "artifact_versions": "28..57 (artifact version 59)",
   "themes": [
    "light Maison ivory/charcoal/antique gold",
    "dark graphite/champagne",
@@ -191,6 +191,19 @@
    "what": "v55 shades of blue (published, then replaced at the owner's word); v56 shades of black: near-black heads #18181B, black pill actions, grid white / #EFEFF1, light-blue marks kept distinct; item cell reading order fixed (name → #code · group · alternatives → reference line; flag/camera/save-path tools grouped at the end), codes as plain text so only the search match, the status and the stripe carry colour, «لم يُجرد» as quiet text, even 0.75rem cell padding",
    "tool": "python3 patch44.py + patch45.py",
    "command": "bash build.sh && node gate.js && node m4.js"
+  },
+  {
+   "n": 22,
+   "what": "v57: black/white base with one blue accent (#2563EB) for selected states (owner approved: green/red/orange stay status-only), Apple-style glass on containers only (board, sticky bar, menus, panel, tab bar, list surface; soft colour wash behind), taller column heads, card view repaired over the grid rules, the alternatives strip shows every number when opened, camera «✦ اسأل Claude»: the frame (or a photo) goes to the page's `sample` capability with images to read part type, brand, car and numbers as JSON, matches against the list, and «ابحث في النت عن بدائل» stages the reading + photo asset id into the viewer's chat for a web search; «صفحة كاملة» shown whenever live camera is refused",
+   "tool": "python3 patch44.py + patch46.py",
+   "command": "bash build.sh && node t53.js (mocked sample/room/camera) && node t52.js t51.js t45.js t38.js t19b.js t48.js && node gate.js",
+   "manual": "real camera permission inside the claude.ai frame and the real sample/room transports were not exercised here"
+  },
+  {
+   "n": 23,
+   "what": "alternatives refresh started: 425 core OE numbers that had no cross references (404/error/notfound) split into 5 batches and handed to 5 parallel research agents (carparts247 first, one web search fallback, source URL recorded per OE, nothing invented)",
+   "tool": "Agent x5 + xref2/add.py",
+   "manual": "in progress"
   }
  ],
  "outputs": [
@@ -199,8 +212,9 @@
    "kind": "web",
    "deterministic": false,
    "measured": {
-    "version": 58,
-    "page_bytes": 1628690,
+    "version": 59,
+    "page_bytes": 1639949,
+    "capabilities": "db, user(profile), downloads, assets, room(scan), sample(images)",
     "contrast_pairs_ge_4.5": "63/63",
     "js_errors": 0
    }
