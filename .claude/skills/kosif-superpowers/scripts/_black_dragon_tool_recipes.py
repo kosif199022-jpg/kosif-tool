@@ -335,7 +335,39 @@ def starter_remotion(c: Ctx) -> None:
             done.returncode != 0 and not bad.exists(), done.returncode)
 
 
+# --------------------------------------------------------------------------- repo-ashell-cinema
+def ashell_cinema(c: Ctx) -> None:
+    """The iPhone a-Shell app, run offline in dash with HOME inside the work folder: Photos SAFE on a planted
+    H.264 clip must be a lossless stream copy; a planted MPEG-2 .ts must NOT be copied (it is re-encoded).
+    Downloads are not exercised (they need the user's device and network)."""
+    home = c.work / "home"
+    dl = home / "Documents" / "Cinema_Downloads"
+    dl.mkdir(parents=True, exist_ok=True)
+    env = dict(c.env, HOME=str(home))
+    ff = ["ffmpeg", "-nostdin", "-loglevel", "error", "-y", "-f", "lavfi", "-i", "testsrc2=size=640x360:rate=30:duration=3",
+          "-f", "lavfi", "-i", "sine=frequency=440:duration=3", "-shortest"]
+    run(c, "planted H.264 clip", ff + ["-c:v", "libx264", "-pix_fmt", "yuv420p", "-c:a", "aac", str(dl / "clip.mp4")])
+    run(c, "planted MPEG-2 transport stream", ff + ["-c:v", "mpeg2video", "-c:a", "mp2", "-f", "mpegts", str(dl / "old.ts")])
+
+    def safe(name):
+        done = subprocess.run(["dash", str(c.script), "--safe", name], cwd=dl, env=env, text=True, capture_output=True,
+                              stdin=subprocess.DEVNULL, timeout=c.timeout, check=False)
+        c.steps.append({"step": "c --safe " + name, "exit_code": done.returncode, "stdout_tail": done.stdout[-600:]})
+        return done.stdout
+
+    out_h264 = safe("clip.mp4")
+    made = dl / "PhotosSafe_clip.mp4"
+    c.check("H.264 source: lossless stream copy", "Method: lossless copy (h264)" in out_h264, out_h264[-300:])
+    probe = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "stream=codec_name", "-of", "csv=p=0", str(made)],
+                           capture_output=True, text=True).stdout.split() if made.is_file() else []
+    c.check("Photos-safe MP4 written with h264 + aac", made.is_file() and probe[:2] == ["h264", "aac"], probe)
+    out_ts = safe("old.ts")
+    c.check("MPEG-2 source is not passed off as a lossless copy", "Method: lossless copy" not in out_ts
+            and "Photos-safe MP4 ready" in out_ts, out_ts[-300:])
+
+
 RECIPES = {
+    "repo-ashell-cinema": ashell_cinema,
     "atlas-transfer": atlas_transfer,
     "atlas-review-summary": atlas_review_summary,
     "build-chapters": build_chapters,

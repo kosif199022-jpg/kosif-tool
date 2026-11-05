@@ -1921,7 +1921,7 @@ def pulp_lp(task, wd):
     import pulp
     solver = pulp.getSolver(pulp.listSolvers(onlyAvailable=True)[0], msg=False)
     p = pulp.LpProblem("mix", pulp.LpMaximize)
-    a, b = p.add_variable("a", 0, None, cat="Integer"), p.add_variable("b", 0, None, cat="Integer")
+    a, b = p.add_variable("a", 0, 1000, cat="Integer"), p.add_variable("b", 0, 1000, cat="Integer")  # CP-SAT needs finite bounds
     p += 3 * a + 2 * b
     p += a + b <= 100
     p += a <= 60
@@ -1929,14 +1929,14 @@ def pulp_lp(task, wd):
     q = pulp.LpProblem("budget", pulp.LpMaximize)
     ch = ["reels", "shorts", "stories"]
     reach = {"reels": 5, "shorts": 4, "stories": 2}
-    x = {c: q.add_variable("x_" + c, 0, None, cat="Integer") for c in ch}
+    x = {c: q.add_variable("x_" + c, 0, 1000, cat="Integer") for c in ch}
     q += pulp.lpSum(reach[c] * x[c] for c in ch)
     q += pulp.lpSum(x.values()) <= 10
     q += x["reels"] <= 4
     q += x["stories"] >= 2
     q.solve(solver)
     p2 = pulp.LpProblem("relaxed", pulp.LpMaximize)
-    a2, b2 = p2.add_variable("a2", 0), p2.add_variable("b2", 0)
+    a2, b2 = p2.add_variable("a2", 0, 1000), p2.add_variable("b2", 0, 1000)
     p2 += 3 * a2 + 2 * b2
     p2 += a2 + b2 <= 100
     p2.solve(solver)

@@ -2392,6 +2392,16 @@
         "{task}"
       ],
       "why": "Suno song brief + consent digest for the task (A46); never generates or spends credits"
+    },
+    "tool:repo-ashell-cinema": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "repo-ashell-cinema",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "repo-ashell-cinema: the iPhone a-Shell app run offline in dash; Photos SAFE known answers (3 checks)",
+      "tool_suite": true
     }
   }
 }

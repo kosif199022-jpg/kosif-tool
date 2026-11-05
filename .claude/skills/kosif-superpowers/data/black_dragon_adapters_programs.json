@@ -7121,6 +7121,17 @@
    "power_program": true,
    "program": "app_feature_transfer.py"
   },
+  "power:APPX-13": {
+   "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
+   "args": [
+    "APPX-13",
+    "{artifact}",
+    "--task={task}"
+   ],
+   "power_program": true,
+   "program": "app_feature_transfer__local.py",
+   "env_scope": "local"
+  },
   "power:APPX-130": {
    "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
    "args": [
@@ -8991,6 +9002,16 @@
    "power_program": true,
    "program": "brand_logo_identity.py"
   },
+  "power:CAM-71": {
+   "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
+   "args": [
+    "CAM-71",
+    "{artifact}",
+    "--task={task}"
+   ],
+   "power_program": true,
+   "program": "camera_composition_layout__bd.py"
+  },
   "power:CHAR-01": {
    "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
    "args": [
@@ -9910,6 +9931,16 @@
    ],
    "power_program": true,
    "program": "code_engineering.py"
+  },
+  "power:DATA-91": {
+   "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
+   "args": [
+    "DATA-91",
+    "{artifact}",
+    "--task={task}"
+   ],
+   "power_program": true,
+   "program": "charts_data_infographic__bd.py"
   },
   "power:DL-05": {
    "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
@@ -15821,6 +15852,28 @@
    "power_program": true,
    "program": "media_image_audio.py"
   },
+  "power:MEDIA-25": {
+   "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
+   "args": [
+    "MEDIA-25",
+    "{artifact}",
+    "--task={task}"
+   ],
+   "power_program": true,
+   "program": "media_image_audio__local.py",
+   "env_scope": "local"
+  },
+  "power:MEDIA-27": {
+   "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
+   "args": [
+    "MEDIA-27",
+    "{artifact}",
+    "--task={task}"
+   ],
+   "power_program": true,
+   "program": "media_image_audio__local.py",
+   "env_scope": "local"
+  },
   "power:MEDIA-28": {
    "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
    "args": [
@@ -16860,6 +16913,17 @@
    ],
    "power_program": true,
    "program": "strategy_finance.py"
+  },
+  "power:PROD-17": {
+   "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
+   "args": [
+    "PROD-17",
+    "{artifact}",
+    "--task={task}"
+   ],
+   "power_program": true,
+   "program": "strategy_finance__local.py",
+   "env_scope": "local"
   },
   "power:PROMPT-01": {
    "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
@@ -18170,6 +18234,17 @@
    ],
    "power_program": true,
    "program": "qa_verification.py"
+  },
+  "power:QA-216": {
+   "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
+   "args": [
+    "QA-216",
+    "{artifact}",
+    "--task={task}"
+   ],
+   "power_program": true,
+   "program": "qa_verification__local.py",
+   "env_scope": "local"
   },
   "power:QA-219": {
    "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
@@ -20431,6 +20506,17 @@
    "power_program": true,
    "program": "self_discovery.py"
   },
+  "power:SELF-26": {
+   "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
+   "args": [
+    "SELF-26",
+    "{artifact}",
+    "--task={task}"
+   ],
+   "power_program": true,
+   "program": "self_discovery__local.py",
+   "env_scope": "local"
+  },
   "power:SELF-29": {
    "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
    "args": [
@@ -21461,6 +21547,50 @@
    "power_program": true,
    "program": "story_direction_ideas.py"
   },
+  "power:SYNC-07": {
+   "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
+   "args": [
+    "SYNC-07",
+    "{artifact}",
+    "--task={task}"
+   ],
+   "power_program": true,
+   "program": "audio_sync_captions__local.py",
+   "env_scope": "local"
+  },
+  "power:SYNC-08": {
+   "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
+   "args": [
+    "SYNC-08",
+    "{artifact}",
+    "--task={task}"
+   ],
+   "power_program": true,
+   "program": "audio_sync_captions__local.py",
+   "env_scope": "local"
+  },
+  "power:SYNC-09": {
+   "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
+   "args": [
+    "SYNC-09",
+    "{artifact}",
+    "--task={task}"
+   ],
+   "power_program": true,
+   "program": "audio_sync_captions__local.py",
+   "env_scope": "local"
+  },
+  "power:SYNC-48": {
+   "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
+   "args": [
+    "SYNC-48",
+    "{artifact}",
+    "--task={task}"
+   ],
+   "power_program": true,
+   "program": "audio_sync_captions__local.py",
+   "env_scope": "local"
+  },
   "power:THINK-01": {
    "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
    "args": [
@@ -21860,6 +21990,26 @@
    ],
    "power_program": true,
    "program": "thinking_core.py"
+  },
+  "power:TOOL-130": {
+   "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
+   "args": [
+    "TOOL-130",
+    "{artifact}",
+    "--task={task}"
+   ],
+   "power_program": true,
+   "program": "runnable_tools__bd.py"
+  },
+  "power:TOOL-132": {
+   "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
+   "args": [
+    "TOOL-132",
+    "{artifact}",
+    "--task={task}"
+   ],
+   "power_program": true,
+   "program": "runnable_tools__bd.py"
   },
   "power:UI-01": {
    "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
@@ -22681,6 +22831,17 @@
    "power_program": true,
    "program": "ui_product_device.py"
   },
+  "power:VOICE-01": {
+   "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
+   "args": [
+    "VOICE-01",
+    "{artifact}",
+    "--task={task}"
+   ],
+   "power_program": true,
+   "program": "voice_tts__local.py",
+   "env_scope": "local"
+  },
   "power:VOICE-12": {
    "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
    "args": [
@@ -23021,6 +23182,17 @@
    "power_program": true,
    "program": "web_research__browser.py"
   },
+  "power:WEB-08": {
+   "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
+   "args": [
+    "WEB-08",
+    "{artifact}",
+    "--task={task}"
+   ],
+   "power_program": true,
+   "program": "web_research__local.py",
+   "env_scope": "local"
+  },
   "power:WEB-10": {
    "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power_program.py",
    "args": [
@@ -23310,6 +23482,7 @@
   "ai_generation__browser": "6276c4e30409c829c946ba6a0c0f6ebef216cddf3fad53c3dfcc7d32749808da",
   "api_testing": "8af52889f7d8cc3663dfba0f5a9a2dd152993809324e376a41d454fb3e81d067",
   "app_feature_transfer": "a12937b49929e4c47926d8a0526001003d115cb425ef69812b13efa01fc91de5",
+  "app_feature_transfer__local": "7ea0e1d71ada1a6c621c894e1bfbcf76f5ae90d773922a8aef898c1885704b18",
   "apps_artifacts": "88c39385383df43a82e4ec5443f393aa7919ea34fe6195bdb4026fc5b1b546e2",
   "arabic_language": "70e24a7ec773f5bf8e694bdcb3390a553c8be585d48778aee3dcdcd14edd9221",
   "atlas_build": "55b9bf1ea00b6e7b07274047853d024666912cb8efcf85b3741188e03c7a40b9",
@@ -23322,8 +23495,11 @@
   "atlas_mind": "5c486b0c84e399d1b95b0a7d5f883ceb45f930944f838d54424f7b6154a844e3",
   "atlas_research": "e5564bd605e5f5ed23e4bf04ccd9b3478cbf26c97d2f0fbdbe0d3c12e68823fe",
   "atlas_strategy": "3f5a96ed86b7eaa82b52e7b6811524600a2529ba9d00c6959bf7c031985ce9e0",
+  "audio_sync_captions__local": "9734fcdd8aac355a8f51a25d9bd5c8a92e6bd3d7bf9aa3cab41e897ce12b81e2",
   "brand_logo_identity": "778c08815072ed90c3f4bb1c9746cdf68f9cbb06dbad5db2309509bb2b6d4cf0",
+  "camera_composition_layout__bd": "1daeddcdad2a5e58a2d4cf00d176a562220fc3908875ed29476d43858c97bb2b",
   "characters_rigs": "6edaa79379ff4e0f386f47aea8f2b58161473c4e65a2cb122078e18d88eac6f8",
+  "charts_data_infographic__bd": "0b5a5d39a4fb3da897c23809e56ec90753620da6cafc2b28766b7a3668d9369f",
   "code_engineering": "d83e8e025e314b583d0d426be884a4ebe5312d5037be7b5634d0fcc586ede514",
   "creativity_engine": "8de710d2b2499c1c87d4fceb1ed217a175ecca4cb76abb4cae565b1d648fca71",
   "data_analysis": "d25607dfed2c871512d44b46472ec531b9adbcf16dbfeb7f424a9d8258cd27c2",
@@ -23337,30 +23513,37 @@
   "knowledge_graph": "391e1ad44c67e3207c306992260c503cdbc18c4892a46c9865535e1729247d0a",
   "maps_geo": "0037f2ec7dc9ded9c155b89ae05b3442fbcbfdf78b06a00cadcf0b4e5727c9a5",
   "media_image_audio": "7a286f88f9cf2c886b681476edb116052875daa5a6e4b7c777c5032524fc7280",
+  "media_image_audio__local": "6e5808c355bda7bc426cb8c891b1c238856579499ea15db2cc21d5c00610df1b",
   "mental_models": "008924cedb3546563c36049c5d6d654f66012f4f2ed54c3fe1512d3e01e78190",
   "other": "7b92aa44d12778c44d0b15e2322741ea3466c237dceb5110806e11dc4c09aabe",
   "photo_video_footage": "231287a60133a8c842210d074b760843bc04a56971800d0de72afc4de51b5c95",
   "planning_execution": "e8db4390fd571ea3f7a68dfef172e0b3c9ff2d1f8b40b5315d34ef0a2b09335c",
   "prompt_craft": "607bcd770a5351cb431eab080acd0ae59cf2f6fd85f332e1fc3bee004e5b4b59",
   "qa_verification": "062a783bea80cb6d8de00660d9250ba141707a08598d1808ae152522926f1f36",
+  "qa_verification__local": "85a2329620d1546ab07c26b06c3abeeeeea8519d32787b7fbeff6efe727cbcd5",
+  "runnable_tools__bd": "2475518346d6e9911ca447e46f74ed51a338a0c240f4b4ae212ade12913fba5f",
   "security_safety": "6810afa8349e27564614c3953e862e9f36e3276985fa142bf85115793180fa9d",
   "self_discovery": "847249195073a44fea10584c3d966e13c3ad55dd832310fdb8a0ea457d1de21b",
+  "self_discovery__local": "b6be413ea53040ab2edf4b4a85f06af13ed71fda9ef633220428497d76b07bcc",
   "story_direction_ideas": "82a6f8154e8f71ad8f9d754c6e5df07f5e93203e62e7958bb5382d46afea5941",
   "strategy_finance": "55b25b3fbec9648362b0ec4a3a7648a73fae36ab02c28e9b6338429109af9d08",
+  "strategy_finance__local": "175338d30c15ac5b98632f8a207f196c7aa9b9fd7a112ecf4f61e38dc2dfa321",
   "thinking_core": "0de49075069937c7c0e8d26632c4102444e6c206eace01f2d398714e3da9cd64",
   "ui_product_device": "f51f151efa00f8231b31f5936933b503759dd0eafe0312ce7bc7d1eb1f810023",
   "verification_evals": "9514c7cb6c1d1226951695c089a2dfd8fe305c13ae973c28dd79aebf673e5aa6",
   "video_download": "93c6463c1125ef161d35d093087bdf70b925caadbe0d38bc9dd4db1e802789a1",
   "voice_tts": "e88637f70dfdb256ece8db33b62d36ff34312fdb040dcb569c20aae7f73677a3",
   "voice_tts__browser": "38bf22457af5018255212bb8593463e098fcb81a437f0de1431a39dbe9d7c0b8",
+  "voice_tts__local": "46f20908c678b955670192a3bc09d3b76b7901ede59597b5de7c3ea7ad81635c",
   "web_research": "55d5a763ff6b3068e90bcfc0522e61a07e25c9a64e05627f04de813d64a82fe7",
   "web_research__browser": "9ded494be5e7f44766be98071332815b1b9d43bdc133d9fdb8819fce9d085482",
+  "web_research__local": "436c26e93b900152185aaf5c94ebf4198510f53b6783527f04c6e3635d340273",
   "writing_humanizer": "65e838a9666ab8bbb7a9dc6af545eb164e96322451364e16bb48e0cebf621195"
  },
  "runner_sha256": "7e1cb205c6caf8ed0e0d0f98d5b0907cb9f163a2418bfee622893d57a6536548",
  "counts": {
-  "programs": 2330,
-  "passed": 2330,
+  "programs": 2346,
+  "passed": 2346,
   "excluded": 0
  }
 }

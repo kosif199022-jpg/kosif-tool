@@ -2355,6 +2355,16 @@
    "label": "scripts/power_programs/_browser_common.py"
   },
   {
+   "id": "script:scripts/power_programs/app_feature_transfer__local.py",
+   "kind": "script",
+   "label": "scripts/power_programs/app_feature_transfer__local.py"
+  },
+  {
+   "id": "script:scripts/power_programs/_mind_common.py",
+   "kind": "script",
+   "label": "scripts/power_programs/_mind_common.py"
+  },
+  {
    "id": "script:scripts/power_programs/arabic_language.py",
    "kind": "script",
    "label": "scripts/power_programs/arabic_language.py"
@@ -2380,11 +2390,6 @@
    "label": "scripts/power_programs/atlas_mind.py"
   },
   {
-   "id": "script:scripts/power_programs/_mind_common.py",
-   "kind": "script",
-   "label": "scripts/power_programs/_mind_common.py"
-  },
-  {
    "id": "script:scripts/power_programs/atlas_research.py",
    "kind": "script",
    "label": "scripts/power_programs/atlas_research.py"
@@ -2395,9 +2400,24 @@
    "label": "scripts/power_programs/atlas_strategy.py"
   },
   {
+   "id": "script:scripts/power_programs/audio_sync_captions__local.py",
+   "kind": "script",
+   "label": "scripts/power_programs/audio_sync_captions__local.py"
+  },
+  {
+   "id": "script:scripts/power_programs/camera_composition_layout__bd.py",
+   "kind": "script",
+   "label": "scripts/power_programs/camera_composition_layout__bd.py"
+  },
+  {
    "id": "script:scripts/power_programs/characters_rigs.py",
    "kind": "script",
    "label": "scripts/power_programs/characters_rigs.py"
+  },
+  {
+   "id": "script:scripts/power_programs/charts_data_infographic__bd.py",
+   "kind": "script",
+   "label": "scripts/power_programs/charts_data_infographic__bd.py"
   },
   {
    "id": "script:scripts/power_programs/creativity_engine.py",
@@ -2430,6 +2450,11 @@
    "label": "scripts/power_programs/maps_geo.py"
   },
   {
+   "id": "script:scripts/power_programs/media_image_audio__local.py",
+   "kind": "script",
+   "label": "scripts/power_programs/media_image_audio__local.py"
+  },
+  {
    "id": "script:scripts/power_programs/mental_models.py",
    "kind": "script",
    "label": "scripts/power_programs/mental_models.py"
@@ -2445,9 +2470,24 @@
    "label": "scripts/power_programs/prompt_craft.py"
   },
   {
+   "id": "script:scripts/power_programs/qa_verification__local.py",
+   "kind": "script",
+   "label": "scripts/power_programs/qa_verification__local.py"
+  },
+  {
+   "id": "script:scripts/power_programs/runnable_tools__bd.py",
+   "kind": "script",
+   "label": "scripts/power_programs/runnable_tools__bd.py"
+  },
+  {
    "id": "script:scripts/power_programs/self_discovery.py",
    "kind": "script",
    "label": "scripts/power_programs/self_discovery.py"
+  },
+  {
+   "id": "script:scripts/power_programs/self_discovery__local.py",
+   "kind": "script",
+   "label": "scripts/power_programs/self_discovery__local.py"
   },
   {
    "id": "script:scripts/power_programs/story_direction_ideas.py",
@@ -2458,6 +2498,11 @@
    "id": "script:scripts/power_programs/strategy_finance.py",
    "kind": "script",
    "label": "scripts/power_programs/strategy_finance.py"
+  },
+  {
+   "id": "script:scripts/power_programs/strategy_finance__local.py",
+   "kind": "script",
+   "label": "scripts/power_programs/strategy_finance__local.py"
   },
   {
    "id": "script:scripts/power_programs/thinking_core.py",
@@ -2490,6 +2535,11 @@
    "label": "scripts/power_programs/voice_tts__browser.py"
   },
   {
+   "id": "script:scripts/power_programs/voice_tts__local.py",
+   "kind": "script",
+   "label": "scripts/power_programs/voice_tts__local.py"
+  },
+  {
    "id": "script:scripts/power_programs/web_research.py",
    "kind": "script",
    "label": "scripts/power_programs/web_research.py"
@@ -2498,6 +2548,11 @@
    "id": "script:scripts/power_programs/web_research__browser.py",
    "kind": "script",
    "label": "scripts/power_programs/web_research__browser.py"
+  },
+  {
+   "id": "script:scripts/power_programs/web_research__local.py",
+   "kind": "script",
+   "label": "scripts/power_programs/web_research__local.py"
   },
   {
    "id": "script:scripts/power_programs/writing_humanizer.py",
@@ -7996,6 +8051,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/power_programs/app_feature_transfer__local.py",
+   "to": "script:scripts/power_programs/_mind_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/power_programs/arabic_language.py",
    "to": "script:scripts/power_programs/_lang_common.py",
    "rel": "imports",
@@ -8038,8 +8099,26 @@
    "w": 1
   },
   {
+   "from": "script:scripts/power_programs/audio_sync_captions__local.py",
+   "to": "script:scripts/power_programs/_mind_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/camera_composition_layout__bd.py",
+   "to": "script:scripts/power_programs/_mind_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/power_programs/characters_rigs.py",
    "to": "script:scripts/power_programs/photo_video_footage.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/charts_data_infographic__bd.py",
+   "to": "script:scripts/power_programs/_mind_common.py",
    "rel": "imports",
    "w": 1
   },
@@ -8086,6 +8165,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/power_programs/media_image_audio__local.py",
+   "to": "script:scripts/power_programs/_mind_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/power_programs/mental_models.py",
    "to": "script:scripts/power_programs/_mind_common.py",
    "rel": "imports",
@@ -8110,7 +8195,25 @@
    "w": 1
   },
   {
+   "from": "script:scripts/power_programs/qa_verification__local.py",
+   "to": "script:scripts/power_programs/_mind_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/runnable_tools__bd.py",
+   "to": "script:scripts/power_programs/_mind_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/power_programs/self_discovery.py",
+   "to": "script:scripts/power_programs/_mind_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/self_discovery__local.py",
    "to": "script:scripts/power_programs/_mind_common.py",
    "rel": "imports",
    "w": 1
@@ -8123,6 +8226,12 @@
   },
   {
    "from": "script:scripts/power_programs/strategy_finance.py",
+   "to": "script:scripts/power_programs/_mind_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/strategy_finance__local.py",
    "to": "script:scripts/power_programs/_mind_common.py",
    "rel": "imports",
    "w": 1
@@ -8158,6 +8267,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/power_programs/voice_tts__local.py",
+   "to": "script:scripts/power_programs/_mind_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/power_programs/web_research.py",
    "to": "script:scripts/power_programs/_lang_common.py",
    "rel": "imports",
@@ -8166,6 +8281,12 @@
   {
    "from": "script:scripts/power_programs/web_research__browser.py",
    "to": "script:scripts/power_programs/_browser_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/power_programs/web_research__local.py",
+   "to": "script:scripts/power_programs/_mind_common.py",
    "rel": "imports",
    "w": 1
   },

@@ -283,7 +283,6 @@ SKILL_PROGRAM_BLOCKERS = {
 TOOL_BLOCKERS = {
     "tool:rea-owned-repo-batch": "clones the owner's repositories over the network with the rea-agents CLI into private output",
     "tool:rebalance-creative-repos": "changes the owner's GitHub repositories through gh and the network",
-    "tool:repo-ashell-cinema": "an a-Shell script for the iPhone that downloads YouTube videos (needs the phone and the network)",
 }
 
 
