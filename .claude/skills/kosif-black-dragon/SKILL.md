@@ -24,7 +24,11 @@ shots → produce → qa-color → deliver`. Read `references/VIDEO_PROTOCOL.md`
 it with `scripts/video_protocol.py` (`start`, `record`, `color`, `check`). A stage can
 only be recorded after the previous one; each stage is sealed; the two color stages
 are measured from real pixels (60/30/10 palette, ONE accent on the hero, chosen by
-the contrast / emotion / neon rule). Never deliver a video until
+the contrast / emotion / neon rule). Every stage first runs its MANDATORY CORE SKILLS
+for real with `video_protocol.py core <id> --job J -- <args>` (sealed receipt, exit 0):
+Dragon Mind + tool matrix (brief), Infinite Matrices + 86-style atlas + hook scorer
+(concept), motion-graphics repos + a shot planner (shots), one renderer (produce),
+the delivery gate (qa). `video_protocol.py cores` prints the map. Never deliver a video until
 `video_protocol.py check --job <job>` exits 0. `compose` adds a `video_protocol`
 block automatically when the task mentions video.
 

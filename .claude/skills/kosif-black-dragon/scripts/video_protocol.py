@@ -11,6 +11,13 @@ Every video product the Black Dragon makes walks the same seven stages:
   6 qa-color      the same color check, measured on the real output
   7 deliver       what was executed and what was not
 
+Each stage also has MANDATORY CORE SKILLS: the Black Dragon's own tools
+(Dragon Mind, the tool matrix, Infinite Matrices, the 86-style atlas, the
+reel-hook scorer, the 25 motion-graphics repos, the renderers and the
+delivery gate). `core ID --job J -- ARGS` runs one of them for real and keeps
+a sealed receipt (command, exit code, log hash). A stage is refused until
+every required core of that stage has a receipt with exit 0.
+
 A stage can only be recorded after the one before it. `check` fails closed
 (exit 5) when any stage is missing, out of order, edited after recording,
 or when the color checks do not pass. Color stages are computed from real
@@ -36,7 +43,7 @@ import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 
-SCHEMA = "kosif.black-dragon.video-protocol.v1"
+SCHEMA = "kosif.black-dragon.video-protocol.v2"
 STAGES = ("brief", "concept", "color-design", "shots", "produce", "qa-color", "deliver")
 COMPUTED = {"color-design", "qa-color"}
 REQUIRED = {
@@ -71,6 +78,73 @@ EMOTIONS = {
 }
 NEONS = ("#39FF14", "#FF5A1F", "#B000FF", "#00E5FF", "#FF2E88", "#FFE600")
 VIDEO_EXT = {".mp4", ".mov", ".m4v", ".webm", ".mkv", ".avi"}
+
+ROOT = Path(__file__).resolve().parents[4]
+_SP = ".claude/skills/kosif-superpowers/scripts/"
+_SELF = ".claude/skills/kosif-black-dragon/scripts/video_protocol.py"
+# Core skills of the Black Dragon. Only these repo-owned programs can be run
+# by `core`; the arguments after `--` are the caller's.
+CORES = {
+    "mind-think": {"stage": "brief", "run": "python3",
+                   "script": ".claude/skills/kosif-dragon-mind/scripts/dragon_mind.py", "sub": ["think"],
+                   "ar": "عقل التنين: يفكك المهمة لـ٢٦ ملكة وست مراحل تفكير"},
+    "tool-matrix": {"stage": "brief", "run": "python3", "script": _SP + "hub.py", "sub": ["find"],
+                    "ar": "مصفوفة الأدوات: ٢١٠ أداة + كتالوج القدرات، مرتبة للمهمة ومين جاهز يشتغل"},
+    "matrices": {"stage": "concept", "run": "python3",
+                 "script": ".claude/skills/kosif-infinite-matrices/scripts/kmx.py", "sub": ["ideate"],
+                 "ar": "المصفوفات اللانهائية: أنظمة بصرية وحركية جديدة من طوب سببي من ٨٦ أسلوب"},
+    "style-atlas": {"stage": "concept", "run": "python3", "script": _SP + "style_atlas_bridge.py",
+                    "sub": [], "ar": "أطلس الأساليب الـ٨٦: بحث، أو خطة دمج ٨٥/١٥"},
+    "reel-hooks": {"stage": "concept", "run": "python3",
+                   "script": ".claude/skills/kosif-reel-hooks/scripts/reel_tools.py", "sub": [],
+                   "ar": "الهوكات: تقييم الهوكات وشيت الإيقاع المتوقت"},
+    "motion-repos": {"stage": "shots", "run": "python3", "script": _SELF, "sub": ["repos"],
+                     "ar": "مستودعات الموشن جرافيك: ٢٥ محرك + ٢٥ مصدر + مستودعاتك، مرتبة للمهمة"},
+    "web-film-plan": {"stage": "shots", "run": "python3",
+                      "script": ".claude/skills/kosif-web-film/scripts/web_film.py", "sub": ["plan"],
+                      "ar": "خطة لقطات فيلم الويب (التنين الأسود)"},
+    "montage-options": {"stage": "shots", "run": "python3", "script": _SP + "montage_pro.py",
+                        "sub": ["options"], "ar": "قائمة خيارات فريق مونتاج برو على مادة مرفوعة"},
+    "kmx-recipe": {"stage": "shots", "run": "python3",
+                   "script": ".claude/skills/kosif-infinite-matrices/scripts/kmx.py", "sub": ["recipe"],
+                   "ar": "التحقق من وصفة المصفوفات قبل التنفيذ"},
+    "shadow-check": {"stage": "shots", "run": "python3",
+                     "script": ".claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py",
+                     "sub": ["check"], "ar": "فحص مشهد مسرح الظل"},
+    "web-film-render": {"stage": "produce", "run": "node", "script": "tools/render_html.cjs", "sub": [],
+                        "ar": "رندر فيلم الويب لـ MP4 أو كادرات"},
+    "motion-director": {"stage": "produce", "run": "python3", "script": _SP + "motion_director.py",
+                        "sub": [], "ar": "Motion Director: سكريبت متوقت ← أنيميشن SVG ← MP4"},
+    "motion-runtime": {"stage": "produce", "run": "python3", "script": _SP + "motion_runtime.py",
+                       "sub": [], "ar": "Motion Runtime: فيلم SVG أصلي + رندر"},
+    "montage-build": {"stage": "produce", "run": "python3", "script": _SP + "montage_pro.py",
+                      "sub": ["build"], "ar": "مونتاج برو: بناء الخيار المختار"},
+    "cinema-run": {"stage": "produce", "run": "python3", "script": _SP + "cinematic_pro_conductor.py",
+                   "sub": ["run"], "ar": "سينما برو: من المادة للرندر بفحص مستقل"},
+    "kmx-experiment": {"stage": "produce", "run": "python3",
+                       "script": ".claude/skills/kosif-infinite-matrices/scripts/kmx.py",
+                       "sub": ["experiment"], "ar": "تجربة المصفوفات A/B/C مع رندر"},
+    "shadow-render": {"stage": "produce", "run": "python3",
+                      "script": ".claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py",
+                      "sub": ["render"], "ar": "رندر فيلم مسرح الظل"},
+    "media-verify": {"stage": "qa-color", "run": "python3", "script": _SP + "verify_video.py", "sub": [],
+                     "ar": "بوابة التسليم: كودك، مقاس، فريمات، مدة، صوت"},
+    "web-film-check": {"stage": "qa-color", "run": "python3",
+                       "script": ".claude/skills/kosif-web-film/scripts/web_film.py", "sub": ["check"],
+                       "ar": "فحص فيلم الويب: لقطات، إيقاع، seek، حتمية"},
+}
+# Per stage: every group is mandatory; inside a group any one core counts.
+REQUIRED_CORES = {
+    "brief": [("mind-think",), ("tool-matrix",)],
+    "concept": [("matrices",), ("style-atlas",), ("reel-hooks",)],
+    "color-design": [],
+    "shots": [("motion-repos",), ("web-film-plan", "montage-options", "kmx-recipe", "shadow-check")],
+    "produce": [("web-film-render", "motion-director", "motion-runtime", "montage-build",
+                 "cinema-run", "kmx-experiment", "shadow-render")],
+    "qa-color": [("media-verify", "web-film-check")],
+    "deliver": [],
+}
+CORE_TIMEOUT = 1800
 
 
 def sha(path: Path) -> str:
@@ -373,6 +447,7 @@ def record(job: Path, stage: str, data: dict) -> dict:
     _gate(state, stage)
     if stage in COMPUTED:
         raise ValueError(f"{stage} is measured from pixels; use the `color` command")
+    _require_cores(state, stage)
     if stage == "produce":
         outs = []
         for o in data.get("outputs") or []:
@@ -394,6 +469,7 @@ def color(job: Path, stage: str, image: Path, *, rule=None, accent=None, box=Non
     if stage not in COMPUTED:
         raise ValueError("color stage must be color-design or qa-color")
     _gate(state, stage)
+    _require_cores(state, stage)
     if not image.is_file():
         raise ValueError(f"image or video not found: {image}")
     emotion = state["stages"].get("concept", {}).get("emotion")
@@ -437,6 +513,106 @@ def color(job: Path, stage: str, image: Path, *, rule=None, accent=None, box=Non
             "suggestions": res["suggestions"], "next": _next(state)}
 
 
+def _receipts(state: dict, stage: str) -> list[dict]:
+    return [r for r in state.get("cores", []) if r["stage"] == stage and r["exit"] == 0]
+
+
+def missing_cores(state: dict, stage: str) -> list[tuple]:
+    done = {r["core"] for r in _receipts(state, stage)}
+    return [g for g in REQUIRED_CORES.get(stage, []) if not done & set(g)]
+
+
+def _require_cores(state: dict, stage: str) -> None:
+    miss = missing_cores(state, stage)
+    if miss:
+        need = "; ".join(" or ".join(g) for g in miss)
+        raise ValueError(f"stage {stage} needs its core skills first: {need} "
+                         f"(run: core <id> --job <job> -- <args>; list: cores)")
+
+
+def run_core(job: Path, core: str, args: list[str], *, root: Path = ROOT) -> dict:
+    """Run one core skill for real and keep a sealed receipt."""
+    state = load(job)
+    if core not in CORES:
+        raise ValueError(f"unknown core {core}; see: cores")
+    spec = CORES[core]
+    want = _next(state)
+    if spec["stage"] != want:
+        raise ValueError(f"core {core} belongs to stage {spec['stage']}; the current stage is {want}")
+    script = root / spec["script"]
+    if not script.is_file():
+        raise ValueError(f"core program missing: {spec['script']}")
+    runner = sys.executable if spec["run"] == "python3" else shutil.which(spec["run"])
+    if not runner:
+        raise ValueError(f"{spec['run']} is not installed")
+    sub = [a for a in spec["sub"] if not args or args[0] != a]
+    cmd = [runner, str(script), *sub, *args]
+    logs = job / "core"
+    logs.mkdir(exist_ok=True)
+    n = len(state.get("cores", [])) + 1
+    log = logs / f"{n:02d}-{core}.log"
+    started = now()
+    try:
+        proc = subprocess.run(cmd, cwd=root, capture_output=True, text=True, timeout=CORE_TIMEOUT)
+        code, out, err = proc.returncode, proc.stdout, proc.stderr
+    except subprocess.TimeoutExpired as exc:
+        code, out, err = 124, exc.stdout or "", f"timeout after {CORE_TIMEOUT}s"
+        out = out.decode() if isinstance(out, bytes) else out
+    log.write_text(f"$ {' '.join(cmd[1:])}\n--- stdout\n{out}\n--- stderr\n{err}", encoding="utf-8")
+    rec = {"core": core, "stage": spec["stage"], "cmd": [spec["run"], spec["script"], *sub, *args],
+           "exit": code, "started": started, "log": str(log), "log_sha256": sha(log)}
+    rec["seal"] = hashlib.sha256(canonical(rec)).hexdigest()
+    state.setdefault("cores", []).append(rec)
+    save(job, state)
+    return {"core": core, "exit": code, "log": str(log), "tail": (out or err)[-600:],
+            "stage_missing": [" or ".join(g) for g in missing_cores(state, spec["stage"])]}
+
+
+def cores_table(stage: str | None = None) -> dict:
+    out = {}
+    for st in STAGES:
+        if stage and st != stage:
+            continue
+        out[st] = {"required": [list(g) for g in REQUIRED_CORES[st]],
+                   "cores": {k: {"program": v["script"], "what": v["ar"]}
+                             for k, v in CORES.items() if v["stage"] == st}}
+    return out
+
+
+def _tokens(text: str) -> set[str]:
+    import re
+    return {w for w in re.split(r"[^\w]+", text.lower()) if len(w) > 1}
+
+
+def repos(query: str, *, root: Path = ROOT, limit: int = 8) -> dict:
+    """Rank the motion-graphics repositories for a task (engines, sources, owned)."""
+    data = root / ".claude/skills/kosif-superpowers/data"
+    items = []
+    eng = json.loads((data / "motion_engines.json").read_text(encoding="utf-8"))["engines"]
+    for e in eng:
+        items.append({"kind": "engine", "repo": e["repo"], "family": e.get("family", ""),
+                      "license": e.get("license_note", ""), "status": e.get("status", ""),
+                      "text": " ".join([e["repo"], e.get("family", ""), " ".join(e.get("capabilities", [])),
+                                        e.get("integration", ""), e.get("builtin_equivalent", "")])})
+    for m in json.loads((data / "motion_sources.json").read_text(encoding="utf-8"))["sources"]:
+        items.append({"kind": "source", "repo": m["repo"], "family": m.get("role", ""),
+                      "license": m.get("license_hint", ""), "status": m.get("runtime_state", ""),
+                      "text": " ".join([m["repo"], m.get("name", ""), m.get("role", ""), m.get("capability", "")])})
+    for r in json.loads((data / "owned_repos.json").read_text(encoding="utf-8"))["repos"]:
+        if "motion" in r.get("groups", []) or "3d" in r.get("groups", []):
+            items.append({"kind": "owned", "repo": r["repo"], "family": ",".join(r.get("groups", [])),
+                          "license": r.get("visibility", ""), "status": r.get("state", ""),
+                          "text": " ".join([r["repo"], r.get("purpose_ar", ""), r.get("purpose_en", "")])})
+    q = _tokens(query) | {"motion", "video", "animation", "render", "mp4"}
+    for it in items:
+        it["score"] = len(_tokens(it.pop("text")) & q) + (2 if it["kind"] == "owned" else 0)
+    items.sort(key=lambda x: (-x["score"], x["kind"], x["repo"]))
+    return {"query": query, "total": len(items),
+            "counts": {k: sum(1 for i in items if i["kind"] == k) for k in ("engine", "source", "owned")},
+            "top": items[:limit],
+            "note": "Licence notes are hints: check each repo's licence before reusing its code."}
+
+
 def check(job: Path) -> dict:
     state = load(job)
     problems = []
@@ -452,12 +628,23 @@ def check(job: Path) -> dict:
             problems.append(f"stage {s} did not pass: {d.get('checks')}")
         if s in COMPUTED and Path(d["source"]).is_file() and sha(Path(d["source"])) != d["source_sha256"]:
             problems.append(f"stage {s}: measured file changed after the check")
+    for r in state.get("cores", []):
+        body = {k: v for k, v in r.items() if k != "seal"}
+        if hashlib.sha256(canonical(body)).hexdigest() != r.get("seal"):
+            problems.append(f"core receipt {r['core']} was edited")
+        elif not Path(r["log"]).is_file() or sha(Path(r["log"])) != r["log_sha256"]:
+            problems.append(f"core log missing or changed: {r['log']}")
+    for st in STAGES:
+        for g in missing_cores(state, st):
+            problems.append(f"stage {st}: core skill not run: {' or '.join(g)}")
     if list(state["stages"]) != [s for s in STAGES if s in state["stages"]]:
         problems.append("stages were recorded out of order")
     for o in state["stages"].get("produce", {}).get("outputs", []):
         if not Path(o["path"]).is_file() or sha(Path(o["path"])) != o["sha256"]:
             problems.append(f"output missing or changed: {o['path']}")
+    used = sorted({r["core"] for r in state.get("cores", []) if r["exit"] == 0})
     return {"job": str(job), "task": state["task"], "passed": not problems,
+            "cores_used": used,
             "done": [s for s in STAGES if s in state["stages"]],
             "next": _next(state), "problems": problems}
 
@@ -490,6 +677,18 @@ def main(argv=None) -> int:
     k = sub.add_parser("check", help="fail closed unless all seven stages passed in order")
     k.add_argument("--job", type=Path, required=True)
     sub.add_parser("stages", help="print the mandatory stages")
+    o = sub.add_parser("core", help="run one mandatory core skill and keep a receipt")
+    o.add_argument("core", choices=sorted(CORES)); o.add_argument("--job", type=Path, required=True)
+    o.epilog = "Pass the program's own arguments after --"
+    t = sub.add_parser("cores", help="list core skills per stage")
+    t.add_argument("--stage", choices=STAGES)
+    q = sub.add_parser("repos", help="rank the motion-graphics repositories for a task")
+    q.add_argument("query"); q.add_argument("--limit", type=int, default=8)
+    argv = list(sys.argv[1:] if argv is None else argv)
+    extra: list[str] = []
+    if "--" in argv:
+        i = argv.index("--")
+        argv, extra = argv[:i], argv[i + 1:]
     args = ap.parse_args(argv)
     try:
         if args.cmd == "start":
@@ -501,12 +700,21 @@ def main(argv=None) -> int:
                         box=_box(args.hero_box))
         elif args.cmd == "analyze":
             out = analyze(args.image, box=_box(args.hero_box), emotion=args.emotion)
+        elif args.cmd == "core":
+            out = run_core(args.job, args.core, extra)
+        elif args.cmd == "cores":
+            out = cores_table(args.stage)
+        elif args.cmd == "repos":
+            out = repos(args.query, limit=args.limit)
         elif args.cmd == "stages":
             out = {"stages": list(STAGES), "required": {k: list(v) for k, v in REQUIRED.items()},
-                   "computed": sorted(COMPUTED)}
+                   "computed": sorted(COMPUTED),
+                   "required_cores": {k: [list(g) for g in v] for k, v in REQUIRED_CORES.items()}}
         else:
             out = check(args.job)
         print(json.dumps(out, ensure_ascii=False, indent=2))
+        if args.cmd == "core":
+            return 0 if out["exit"] == 0 else 6
         return 5 if args.cmd == "check" and not out["passed"] else 0
     except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError,
             subprocess.CalledProcessError) as exc:

@@ -40,7 +40,11 @@ def video_protocol(task: str) -> dict | None:
             "doc": ".claude/skills/kosif-black-dragon/references/VIDEO_PROTOCOL.md",
             "start": f'python3 {tool} start "<task>" --job out/black-dragon/<job>',
             "check": f"python3 {tool} check --job out/black-dragon/<job>",
-            "rule": "Do not deliver until `check` passes (exit 0). No stage is skipped."}
+            "cores": f"python3 {tool} cores",
+            "core": f"python3 {tool} core <core-id> --job out/black-dragon/<job> -- <args>",
+            "rule": ("Every stage first runs its mandatory core skills (Dragon Mind, tool matrix, "
+                     "Infinite Matrices, style atlas, hooks, motion repos, a renderer, the delivery "
+                     "gate) with receipts. Do not deliver until `check` passes (exit 0).")}
 
 
 def digest(data: bytes) -> str:

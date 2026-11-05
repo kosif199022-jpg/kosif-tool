@@ -4,6 +4,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from PIL import Image, ImageDraw
 
@@ -41,6 +42,19 @@ class VideoProtocolTests(unittest.TestCase):
         self.addCleanup(self.tmp.cleanup)
         self.dir = Path(self.tmp.name)
         self.job = self.dir / "job"
+        # Core skills are real programs; in unit tests a tiny stand-in exits
+        # with the code it is given, so the gate itself is what is tested.
+        self.fake = self.dir / "fake_core.py"
+        self.fake.write_text("import sys\nprint('ran', sys.argv[1:])\n"
+                             "sys.exit(int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 0)\n")
+        fake = {k: dict(v, script=str(self.fake), sub=[], run="python3") for k, v in vp.CORES.items()}
+        patcher = mock.patch.dict(vp.CORES, fake)
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
+    def cores(self, stage):
+        for group in vp.REQUIRED_CORES[stage]:
+            self.assertEqual(vp.run_core(self.job, group[0], [])["exit"], 0)
 
     def data(self, name, obj):
         p = self.dir / f"{name}.json"
@@ -54,21 +68,26 @@ class VideoProtocolTests(unittest.TestCase):
 
     def walk_to_produce(self, output):
         vp.start("ريل ١٥ ثانية", self.job)
+        self.cores("brief")
         vp.record(self.job, "brief", self.brief())
+        self.cores("concept")
         vp.record(self.job, "concept", {"idea": "heavy brand", "metaphor": "hippo + balloon",
                                         "hook": "براندك تقيل؟", "emotion": "قوة"})
         key = poster(self.dir / "key.png")
         r = vp.color(self.job, "color-design", key, rule="contrast")
         self.assertTrue(r["passed"], r)
+        self.cores("shots")
         vp.record(self.job, "shots", {"shots": [
             {"duration_s": 7, "what": "hippo floats", "accent_on": "balloon"},
             {"duration_s": 8, "what": "title", "accent_on": "key word"}]})
+        self.cores("produce")
         vp.record(self.job, "produce", {"outputs": [str(output)], "tool": "pil",
                                         "paid": False, "spend_approved": False})
         return r["accent"]
 
     def test_order_is_enforced(self):
         vp.start("ريل", self.job)
+        self.cores("brief")
         with self.assertRaisesRegex(ValueError, "out of order"):
             vp.record(self.job, "concept", {"idea": "x", "metaphor": "y", "hook": "z"})
         with self.assertRaisesRegex(ValueError, "missing hero"):
@@ -76,7 +95,9 @@ class VideoProtocolTests(unittest.TestCase):
 
     def test_color_stage_cannot_be_typed_by_hand(self):
         vp.start("ريل", self.job)
+        self.cores("brief")
         vp.record(self.job, "brief", self.brief())
+        self.cores("concept")
         vp.record(self.job, "concept", {"idea": "x", "metaphor": "y", "hook": "z"})
         with self.assertRaisesRegex(ValueError, "measured from pixels"):
             vp.record(self.job, "color-design", {"passed": True})
@@ -102,6 +123,7 @@ class VideoProtocolTests(unittest.TestCase):
         poster(out, accent=vp.hex_rgb(planned))
         vp.record(self.job, "produce", {"outputs": [str(out)], "tool": "pil",
                                         "paid": False, "spend_approved": False})
+        self.cores("qa-color")
         qa = vp.color(self.job, "qa-color", out)
         self.assertTrue(qa["passed"], qa)
         vp.record(self.job, "deliver", {"summary": "ok", "executed": ["pil render"],
@@ -111,6 +133,7 @@ class VideoProtocolTests(unittest.TestCase):
     def test_output_without_accent_fails_qa_and_check(self):
         out = poster(self.dir / "flat.png")
         self.walk_to_produce(out)
+        self.cores("qa-color")
         qa = vp.color(self.job, "qa-color", out)
         self.assertFalse(qa["passed"])
         vp.record(self.job, "deliver", {"summary": "x", "executed": ["a"], "not_executed": ["b"]})
@@ -121,6 +144,7 @@ class VideoProtocolTests(unittest.TestCase):
     def test_tampering_and_paid_without_approval_fail(self):
         out = poster(self.dir / "o.png", accent=(245, 108, 90))
         vp.start("ريل", self.job)
+        self.cores("brief")
         vp.record(self.job, "brief", self.brief())
         state = json.loads((self.job / "protocol.json").read_text(encoding="utf-8"))
         state["stages"]["brief"]["hero"] = "changed"
@@ -133,11 +157,57 @@ class VideoProtocolTests(unittest.TestCase):
 
     def test_shot_durations_must_match_brief(self):
         vp.start("ريل", self.job)
+        self.cores("brief")
         vp.record(self.job, "brief", self.brief())
+        self.cores("concept")
         vp.record(self.job, "concept", {"idea": "x", "metaphor": "y", "hook": "z"})
         vp.color(self.job, "color-design", poster(self.dir / "k.png"), rule="neon")
+        self.cores("shots")
         with self.assertRaisesRegex(ValueError, "within 20%"):
             vp.record(self.job, "shots", {"shots": [{"duration_s": 40, "what": "a", "accent_on": "b"}]})
+
+    def test_stage_refused_until_its_core_skills_ran(self):
+        vp.start("ريل", self.job)
+        with self.assertRaisesRegex(ValueError, "needs its core skills first: mind-think; tool-matrix"):
+            vp.record(self.job, "brief", self.brief())
+        # a failing core does not count
+        self.assertEqual(vp.run_core(self.job, "mind-think", ["3"])["exit"], 3)
+        self.assertEqual(vp.run_core(self.job, "tool-matrix", [])["exit"], 0)
+        with self.assertRaisesRegex(ValueError, "mind-think"):
+            vp.record(self.job, "brief", self.brief())
+        # a core of a later stage cannot run early
+        with self.assertRaisesRegex(ValueError, "belongs to stage concept"):
+            vp.run_core(self.job, "matrices", [])
+        self.assertEqual(vp.run_core(self.job, "mind-think", [])["exit"], 0)
+        vp.record(self.job, "brief", self.brief())
+
+    def test_any_one_renderer_satisfies_produce(self):
+        self.assertIn("web-film-render", vp.REQUIRED_CORES["produce"][0])
+        self.assertIn("motion-director", vp.REQUIRED_CORES["produce"][0])
+        state = {"cores": [{"core": "shadow-render", "stage": "produce", "exit": 0}]}
+        self.assertEqual(vp.missing_cores(state, "produce"), [])
+
+    def test_tampered_core_receipt_fails_check(self):
+        vp.start("ريل", self.job)
+        self.cores("brief")
+        log = Path(json.loads((self.job / "protocol.json").read_text(encoding="utf-8"))["cores"][0]["log"])
+        log.write_text("forged", encoding="utf-8")
+        self.assertTrue(any("core log missing or changed" in p for p in vp.check(self.job)["problems"]))
+
+    def test_motion_repos_ranks_the_real_registry(self):
+        res = vp.repos("kinetic typography svg")
+        self.assertEqual(res["counts"]["engine"], 25)
+        self.assertEqual(res["counts"]["source"], 25)
+        self.assertGreater(res["counts"]["owned"], 0)
+
+    def test_every_core_program_exists(self):
+        real = load("bd_video_protocol_real", "video_protocol.py")
+        for cid, spec in real.CORES.items():
+            self.assertTrue((ROOT / spec["script"]).is_file(), cid)
+        for stage, groups in real.REQUIRED_CORES.items():
+            for g in groups:
+                for cid in g:
+                    self.assertEqual(real.CORES[cid]["stage"], stage, cid)
 
     def test_compose_flags_video_tasks_only(self):
         self.assertTrue(bd.video_protocol("اعمل ريل لمنتج قهوة")["mandatory"])
