@@ -2,7 +2,7 @@
  "schema": "kosif.task-history.v1",
  "id": "20261104-warehouse-count-site-v39-maison-design-system",
  "date": "2026-11-04",
- "title": "Warehouse stock-count web app v28→v57: design system v2 (Maison), multi-search, highlight, shelf groups, scan mode, award-site motion, phone bottom bar, measured gate",
+ "title": "Warehouse stock-count web app v28→v60: design system v2 (Maison), multi-search, highlight, shelf groups, scan mode, award-site motion, phone bottom bar, measured gate",
  "request": "نفذ المقترح واستخدم قدرات التنين الاسود في تطوير الخطوط والموشن جرافك وايقونات الموقع وغيرها",
  "kind": "web",
  "mode": "موافق",
@@ -17,7 +17,7 @@
   "WebSearch/WebFetch research + 3 research subagents (2 completed, 1 rate-limited)"
  ],
  "params": {
-  "artifact_versions": "28..57 (artifact version 59)",
+  "artifact_versions": "28..60 (artifact version 62)",
   "themes": [
    "light Maison ivory/charcoal/antique gold",
    "dark graphite/champagne",
@@ -203,7 +203,13 @@
    "n": 23,
    "what": "alternatives refresh started: 425 core OE numbers that had no cross references (404/error/notfound) split into 5 batches and handed to 5 parallel research agents (carparts247 first, one web search fallback, source URL recorded per OE, nothing invented)",
    "tool": "Agent x5 + xref2/add.py",
-   "manual": "in progress"
+   "manual": "done for round 1"
+  },
+  {
+   "n": 24,
+   "what": "v58–v60: one style for all alternative numbers (OE equivalents and aftermarket alike), «اسأل Claude» always shown in the camera with a reason when the view cannot send images, camera footer wraps on phones with «صفحة كاملة» first; alternatives round 1 merged: 425 OEs re-checked by 5 agents → 6 OEs with results, 8 more items now have alternatives (1,977 → 1,985), 182 new numbers; ~200 OEs still lack the search fallback because the turn's shared 200-search budget ran out",
+   "tool": "patch46.py + Agent x5 + merge_xref.py",
+   "command": "cp xref2/out_*.jsonl xref/retry_x2_*.jsonl && bash build.sh && node gate.js && node t45.js"
   }
  ],
  "outputs": [
@@ -212,9 +218,9 @@
    "kind": "web",
    "deterministic": false,
    "measured": {
-    "version": 59,
-    "page_bytes": 1639949,
-    "capabilities": "db, user(profile), downloads, assets, room(scan), sample(images)",
+    "version": 62,
+    "page_bytes": 1644566,
+    "items_with_alternatives": "1985 / 2533",
     "contrast_pairs_ge_4.5": "63/63",
     "js_errors": 0
    }
@@ -247,7 +253,9 @@
   "Camera inside a claude.ai artifact: no capability to declare; getUserMedia may be blocked by the iframe policy, so the overlay degrades to a capture=environment file input, which always opens the phone camera.",
   "The claude.ai artifact frame host is unreachable from the container, so the iframe camera permission policy cannot be probed here; design the camera for both outcomes and tell the owner which one they hit.",
   "A sticky element clicked by Playwright scrolls the page to it; drive such clicks with element.click() when the test depends on scroll position.",
-  "border-inline-* on an <input dir=auto> follows the input's own direction (LTR when empty), not the page's; grid dividers on inputs must use physical sides."
+  "border-inline-* on an <input dir=auto> follows the input's own direction (LTR when empty), not the page's; grid dividers on inputs must use physical sides.",
+  "WebSearch has a 200-per-turn budget shared by all subagents; plan web-search fallbacks across turns, not in one fan-out.",
+  "A phone signed in to a different claude.ai account opens the artifact as «Can view»: no sample, no writes, no room — check the account before debugging features."
  ],
  "notes": "Research reports used: Stripe/Linear/Apple HIG/Material/Polaris/Square/Odoo (dashboard patterns); Rolex/Cartier/Hermes/Dior/AP + NEOM/Aramco/Al Rajhi + W3C alreq (luxury and Arabic/RTL rules). v40 adds the creative-sites report (Lusion, Locomotive, Immersive Garden, Obys, Exo Ape, Resn, Active Theory, Studio Freight, Basement, Hello Monday, Unseen, Dogstudio, By-Kin, Iventions, Mat Voyce, aengel, Long Hoang, Linear, Vercel, Stripe, Apple, Lando Norris, Igloo)."
 }
