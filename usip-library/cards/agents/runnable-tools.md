@@ -1,4 +1,4 @@
-# `runnable-tools` — الوكلاء والتوجيه الذكي (184 بطاقة)
+# `runnable-tools` — الوكلاء والتوجيه الذكي (185 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/runnable-tools.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/agents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -107,6 +107,7 @@
 - [`TOOL-183` محرك أفلام مسرح الظل](#tool-183--محرك-أفلام-مسرح-الظل--kosif-shadow-theatre-silhouette-film-engine)
 - [`TOOL-184` نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone)](#tool-184--نسخة-أوفلاين-من-موقع-وقراءة-نظام-تصميمه-قدرات-goclone--website-snapshot-and-design-read-out-goclone-capabilities)
 - [`TOOL-185` جسر Suno: برومبت الأغنية وبصمة الموافقة والإيصال](#tool-185--جسر-suno-برومبت-الأغنية-وبصمة-الموافقة-والإيصال--suno-mcp-bridge-song-brief-consent-digest-and-receipt)
+- [`TOOL-186` جسر Craft Anything: 321 أداة فحص بلغة Rust للبرامج والمواقع والتطبيقات والملفات](#tool-186--جسر-craft-anything-321-أداة-فحص-بلغة-rust-للبرامج-والمواقع-والتطبيقات-والملفات--craft-anything-bridge-321-pure-rust-inspection-tools-for-programs-websites-apps-and-files)
 - [`TOOL-19` تصيير لقطات B-roll بحركة كاميرا](#tool-19--تصيير-لقطات-b-roll-بحركة-كاميرا--cinematic-b-roll-renderer)
 - [`TOOL-20` مُخطِّط قطعات اللقطات الحقيقية](#tool-20--مُخطِّط-قطعات-اللقطات-الحقيقية--footage-first-cut-planner)
 - [`TOOL-21` فاحص توقيت الفيديو المرجعي](#tool-21--فاحص-توقيت-الفيديو-المرجعي--reference-video-timing-probe)
@@ -7346,7 +7347,7 @@
 - `TOOL-182` معاينة الأغنية الرسمية (بديل الـDRM) / Official song preview (DRM fallback) (proven)
 - `TOOL-183` محرك أفلام مسرح الظل / KOSIF Shadow Theatre silhouette film engine (proven)
 - `TOOL-185` جسر Suno: برومبت الأغنية وبصمة الموافقة والإيصال / Suno MCP bridge: song brief, consent digest and receipt (proven)
-- `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
+- `TOOL-186` جسر Craft Anything: 321 أداة فحص بلغة Rust للبرامج والمواقع والتطبيقات والملفات / Craft Anything bridge: 321 pure-Rust inspection tools for programs, websites, apps and files (proven)
 
 ### `TOOL-185` — جسر Suno: برومبت الأغنية وبصمة الموافقة والإيصال / Suno MCP bridge: song brief, consent digest and receipt
 
@@ -7417,6 +7418,83 @@
 
 - `TOOL-183` محرك أفلام مسرح الظل / KOSIF Shadow Theatre silhouette film engine (proven)
 - `TOOL-184` نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) / Website snapshot and design read-out (goclone capabilities) (proven)
+- `TOOL-186` جسر Craft Anything: 321 أداة فحص بلغة Rust للبرامج والمواقع والتطبيقات والملفات / Craft Anything bridge: 321 pure-Rust inspection tools for programs, websites, apps and files (proven)
+- `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
+
+### `TOOL-186` — جسر Craft Anything: 321 أداة فحص بلغة Rust للبرامج والمواقع والتطبيقات والملفات / Craft Anything bridge: 321 pure-Rust inspection tools for programs, websites, apps and files
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يشغّل craft-anything-cli المبني محليًا (storytold/craft-anything إصدار 0.4.0، رخصة MIT/Apache-2.0) من داخل KOSIF والتنين الأسود. doctor يلاقي البرنامج (CRAFT_ANYTHING_CLI أو PATH أو ~/.cargo/bin) ويلخّص فحصه الذاتي: النسخة والسلامة والمحركات الموجودة (Chromium وGDB وLLDB وobjdump وJava وGhidra…) واختبار خادم MCP. tools يعرض 321 أداة مقسّمة حسب المجموعة مع فلتر بالكلام. plan يطبع الأمر بالظبط من غير ما يشغّله. run وtriage يشغّلوا أداة واحدة في وضع Clean room افتراضيًا ويكتبوا الدليل JSON في ملف --output جديد ويرجّعوا sha256 والحجم وملخص المحرك. mcp-config يطبع إعداد خادم MCP عشان أي عميل يحمّل كل الأدوات مباشرة. — Drives a locally built craft-anything-cli (storytold/craft-anything v0.4.0, MIT/Apache-2.0) from KOSIF and the Black Dragon. doctor finds the binary (CRAFT_ANYTHING_CLI, PATH, ~/.cargo/bin) and summarises its own doctor: version, health, which engines are present (Chromium, GDB, LLDB, objdump, Java, Ghidra…) and the MCP server self-test. tools lists the engine's 321 tools by toolset (native, formats, browser, javascript, android, apple, adb, frida, runtime, database…) with a text filter. plan prints the exact argv without running it. run and triage run one engine tool in Clean room by default and write its JSON evidence to a new --output file, returning sha256, size and the engine's own summary. mcp-config prints the MCP server entry so a client can load all the tools directly.
+
+**متى:** استخدم craft anything في تحليل البرنامج ده / is craft-anything-cli installed and healthy here?
+
+**كيف:** doctor: `python3 scripts/craft_anything.py doctor`; tools: `python3 scripts/craft_anything.py tools screenshot --toolset browser`; plan: `python3 scripts/craft_anything.py plan core-target-open ./app.bin`; run: `python3 scripts/craft_anything.py run --output out/<job>/open.json core-target-open ./app.bin`. Full card: `python3 scripts/hub.py tool craft-anything`. Limits: Never installs or builds Craft Anything, never passes --allow-run, and refuses rebuild, chat, setup, uninstall, ai, mcp and the setup and projects toolsets (they start a coding agent or change the user's apps). Findings are the engine's own evidence records, not verified by KOSIF (verified is always false). The prebuilt binary in project files is Linux x86_64 only.
+
+**المعاملات:** in: An action. run takes an engine tool name and its arguments; run and triage take --output (a new file in an existing folder), --deep, --authorized and --timeout (default 300 s). · out: JSON on stdout. run and triage also write the engine's JSON evidence to the caller-named file (exclusive create) and report its sha256 and byte count with verified=false.
+
+**التثبيت:** needs on PATH: python3 · optional: bin:craft-anything-cli
+
+**الوسوم:** craft-anything · craft anything · storytold · artcraft · reverse engineering · هندسة عكسية · clean room · deep mode · triage · disassembly · decompiler · pseudo-C · ELF · PE · Mach-O · APK · firmware · pcap · website study · MCP · rust · فحص البرامج · تحليل · أدوات
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `engine:ghidra` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `engine:android` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `engine:frida` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `engine:rizin` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `engine:wireshark` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `engine:binwalk` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `os:macos` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-186` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_craft_anything.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/craft_anything.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-184` نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) / Website snapshot and design read-out (goclone capabilities) (proven)
+- `TOOL-185` جسر Suno: برومبت الأغنية وبصمة الموافقة والإيصال / Suno MCP bridge: song brief, consent digest and receipt (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 
@@ -7485,8 +7563,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-184` نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) / Website snapshot and design read-out (goclone capabilities) (proven)
 - `TOOL-185` جسر Suno: برومبت الأغنية وبصمة الموافقة والإيصال / Suno MCP bridge: song brief, consent digest and receipt (proven)
+- `TOOL-186` جسر Craft Anything: 321 أداة فحص بلغة Rust للبرامج والمواقع والتطبيقات والملفات / Craft Anything bridge: 321 pure-Rust inspection tools for programs, websites, apps and files (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 - `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)
 
@@ -7555,7 +7633,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-185` جسر Suno: برومبت الأغنية وبصمة الموافقة والإيصال / Suno MCP bridge: song brief, consent digest and receipt (proven)
+- `TOOL-186` جسر Craft Anything: 321 أداة فحص بلغة Rust للبرامج والمواقع والتطبيقات والملفات / Craft Anything bridge: 321 pure-Rust inspection tools for programs, websites, apps and files (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 - `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)
 - `TOOL-22` محرك إعادة بناء المونتاج المرجعي / Reference Edit Engine (proven)

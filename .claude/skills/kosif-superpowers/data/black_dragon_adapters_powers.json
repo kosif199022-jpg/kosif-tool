@@ -4668,6 +4668,20 @@
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "TOOL-185: its cited proof code ran green here (test-file, tool-runner; 24 tests)"
     },
+    "power:TOOL-186": {
+      "args": [
+        "power:TOOL-186",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "power_proof": true,
+      "proof_sha256": {
+        ".claude/skills/kosif-superpowers/evals/test_craft_anything.py": "37f96cddd7206d90f29e029bc8066748fc04aca00d0a2b714aa51911483d3fd1",
+        ".claude/skills/kosif-superpowers/scripts/craft_anything.py": "78d1646e3bc94310b45b3c08573248505e5ebfdc6faa7f554adf4876a41eda30"
+      },
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
+      "why": "TOOL-186: its cited proof code ran green here (test-file, tool-runner; 22 tests)"
+    },
     "power:TOOL-19": {
       "args": [
         "power:TOOL-19",
@@ -5997,9 +6011,9 @@
     }
   },
   "counts": {
-    "candidates": 513,
+    "candidates": 514,
     "excluded": 76,
-    "included": 437
+    "included": 438
   },
   "excluded": {
     "power:AGENT-37": "refused: no test file names it, no --self-test and no known-answer recipe (only --help would run)",

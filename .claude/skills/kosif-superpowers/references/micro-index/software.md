@@ -273,7 +273,7 @@ chapter: [atlas-build](../powers/atlas-build.md) · card: `usip-library/cards/so
 | ABUILD-02 | 📄 | مسجل قياس تشغيل بالملاحظة فقط · Observation-only run telemetry recorder | SP-0138 Observation-only run telemetry recorder | — |
 | ABUILD-03 | 📄 | خط وكلاء بأدوار ومراحل وأقفال كتابة واستئناف · Role-squad agent pipeline with stages, locks and resume | SP-0138 Observation-only run telemetry recorder | — |
 | ABUILD-04 | 📄 | تفكيك المواصفة إلى مهام صغيرة لوكلاء البرمجة · Spec-to-task decomposition for coding agents | SP-0138 Observation-only run telemetry recorder | — |
-| ABUILD-15 | 📄 | استنساخ موقع بأدلة المتصفح · Browser-evidence website clone workflow | SP-0148 REA CLI Bridge | chromium |
+| ABUILD-15 | 📄 | استنساخ موقع بأدلة المتصفح · Browser-evidence website clone workflow | SP-0147 REA CLI Bridge | chromium |
 
 ## atlas-code (code)
 

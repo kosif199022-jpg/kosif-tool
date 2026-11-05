@@ -8,13 +8,14 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:investigate:start -->
 
-**الأدوات / tools (14)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (15)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
 | `installer-triage` | Standard-library triage of Windows installers and desktop apps before REA. It identifies the installer family (NSIS, Inno, WiX Burn, Squirrel, InstallShield, MSI), UPX packing, Electron, .NET and the signature slot, and finds payloads hidden in PE resources. It also lists and fingerprints Electron asar bundles, unpacks payloads with 7-Zip or innoextract on request and maps each artifact to the matching REA command. | `python3 scripts/installer_triage.py scan ./setup.exe` | tested-here |
 | `local-project-audit` | Performs a read-only static inventory of a local folder without executing anything and returns a JSON report of file counts, extensions, routes (source review, Ghidra/REA binary candidates, archives, media), regex indicators, SHA-256 hashes and zip-safety stats. | `python3 scripts/local_project_audit.py ./my-project` | tested-here |
 | `rea-bridge` | Opt-in bridge to the REA reverse-engineering CLI that stays within what the evidence shows. It checks Node and REA readiness, lists the 241 REA power records in the catalog (153 CLI commands, 76 MCP tools, 6 prompts and 6 KOSIF installer-triage additions) and plans an inspection without running it. Only with --authorized does it run one of 14 static local REA inspectors, saving the output to a new JSON file named by the caller. | `python3 scripts/rea_bridge.py doctor` | tested-here |
+| `craft-anything` | Drives a locally built craft-anything-cli (storytold/craft-anything v0.4.0, MIT/Apache-2.0) from KOSIF and the Black Dragon. doctor finds the binary (CRAFT_ANYTHING_CLI, PATH, ~/.cargo/bin) and summarises its own doctor: version, health, which engines are present (Chromium, GDB, LLDB, objdump, Java, Ghidra…) and the MCP server self-test. tools lists the engine's 321 tools by toolset (native, formats, browser, javascript, android, apple, adb, frida, runtime, database…) with a text filter. plan prints the exact argv without running it. run and triage run one engine tool in Clean room by default and write its JSON evidence to a new --output file, returning sha256, size and the engine's own summary. mcp-config prints the MCP server entry so a client can load all the tools directly. | `python3 scripts/craft_anything.py doctor` | tested-here |
 | `web-app-study` | Studies one public web page read-only: a logged-out headless Chromium with a fresh profile and background networking off (fresh profile, deleted afterwards), then REA captures the page, page-declared WebMCP tools, a screenshot and the public scripts, with SHA-256 receipts; optional bounded static JavaScript analysis. report turns a study folder into facts only: framework and versions, canvas/editor/realtime libraries, services inferred from storage key NAMES, WebMCP tools and page metrics, each with file-and-identifier evidence and never code. Written for the MagicPath study; runs on any desktop OS. | `python3 scripts/web_app_study.py doctor` | tested-here |
 | `rea-family-router` | Read-only router that maps one target keyword from a fixed 29-word list (dotnet, apk, har, firmware, sqlite and others) to one of 16 REA capability families, giving the upstream tool name and availability status. It also reports whether rea and node are on PATH. | `python3 scripts/rea_family_router.py list` | tested-here |
 | `rea-owned-repo-batch` | Batch static REA analysis of the user's own JavaScript, TypeScript and HTML GitHub repositories. It reads a private inventory (made by rea_creative_research_atlas.py own), shallow-clones the smallest eligible repos under a size cap with git (depth 1, blob:none) and runs REA's analyze-javascript-application on each through node. Clones and evidence stay in a local private folder, and only counts are printed. | `python3 scripts/rea_owned_repo_batch.py --private-output "$HOME/kosif-private" --rea-cli ./node_modules/rea-agents/scripts/rea.mjs --max-repos 16 --max-size-kb 8000` | untested |
@@ -37,6 +38,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 4. [REA v6.7 family router](#rea-v67-family-router)
 5. [REA + Ghidra on an authorized binary (2026-10-20)](#rea--ghidra-on-an-authorized-binary-2026-10-20)
 6. [الامتحان الخفي التفاضلي / Differential hidden exam](#الامتحان-الخفي-التفاضلي--differential-hidden-exam)
+7. [Craft Anything: 321 أداة فحص بلغة Rust / Craft Anything bridge](#craft-anything-321-أداة-فحص-بلغة-rust--craft-anything-bridge)
 
 ## فحص البرامج والهندسة العكسية / REA optional integration
 
@@ -96,3 +98,15 @@ For licensed local application investigation, use REA with the Ghidra provider o
     python3 $SKILL_DIR/scripts/differential_exam.py verify-seal ./exam ./exam-seal.json
 
 كل تشغيل يُحفظ كمجلد لكل سيناريو (طلبات النموذج المسجلة، stdout، stderr، رمز الخروج، ملفات مجلد العمل). الأداة تقارن ما هو موجود فقط: تشغيل البرنامجين وخادم النموذج الوهمي عليك، داخل العزل وبإذن.
+
+## Craft Anything: 321 أداة فحص بلغة Rust / Craft Anything bridge
+
+[storytold/craft-anything](https://github.com/storytold/craft-anything) (MIT أو Apache-2.0) محرك فحص مكتوب بـ Rust بالكامل: 321 أداة للبرامج (ELF/PE/Mach-O، تفكيك وpseudo-C)، و.NET وJava وأندرويد وآبل، والمواقع (Chromium عبر CDP)، والـ firmware والـ pcap وقواعد البيانات. كل أداة أمر CLI وأداة MCP في نفس الوقت. الجسر `scripts/craft_anything.py` يشغّله من KOSIF ومن التنين الأسود (المحوّل `tool:craft-anything`).
+
+1. ابدأ بـ `python3 $SKILL_DIR/scripts/craft_anything.py doctor`. لو البرنامج مش موجود يطبع أوامر البناء (`cargo install --locked --path apps/craft-anything-cli`، محتاج Rust 1.97+ وحوالي 8 دقايق) ومش بيثبّت حاجة لوحده. حدد مكان البرنامج بـ `CRAFT_ANYTHING_CLI` لو مش على PATH.
+2. `tools <كلمة> --toolset <مجموعة>` يعرض الأدوات، و`plan <أداة> <args>` يطبع الأمر من غير تشغيل.
+3. الوضع الافتراضي Clean room: المحرك ما بيقراش كود الهدف ولا ملفاته، ويرفض الأدوات اللي بتبص جوه برسالة `feature_missing`. القراءة من جوه (Deep) لازم معاها `--deep --authorized` بعد ما المستخدم يأكد إن الهدف بتاعه أو مسموحله يفحصه. مجموعات runtime وfrida وadb وbuild وapplication بتحتاج `--authorized` دايمًا.
+4. `run --output <ملف جديد> <أداة> <args>` و`triage --output <ملف> <ملف الهدف>` بيكتبوا دليل المحرك JSON في ملف جديد (من غير كتابة فوق ملف موجود) ويرجّعوا sha256 والحجم والملخص، وverified دايمًا false.
+5. الجسر يرفض `rebuild` و`chat` و`setup` و`uninstall` و`ai` و`mcp` ومجموعتي setup وprojects: دول بيشغّلوا وكيل برمجة أو بيغيّروا إعدادات المستخدم. لو المستخدم عايز يعيد بناء موقع، شغّل `craft-anything-cli rebuild` بنفسك بعد موافقته. لتوصيل كل الأدوات لعميل MCP: `mcp-config`.
+
+Tested here on 2026-11-05: craft-anything-cli 0.4.0 built with Rust 1.97, doctor healthy (Chromium, GDB, LLDB, objdump, Java present; Ghidra, Frida, adb absent), MCP self-test answered, Deep triage of `/usr/bin/ffmpeg` returned ELF x86_64 with its ten shared libraries.

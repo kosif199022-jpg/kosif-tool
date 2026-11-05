@@ -40,6 +40,7 @@
 | `atlas-task-method-router` | موجّه مناهج الأطلس حسب المهمة | `python3 scripts/atlas_task_method_router.py --help` | untested |
 | `atlas-transfer` | نقل مناهج الأطلس المثبتة | `python3 scripts/atlas_transfer.py --help` | untested |
 | `blender-api-audit` | تدقيق واجهة بايثون في Blender | `python3 scripts/blender_api_audit.py --help` | tested-here |
+| `craft-anything` | جسر Craft Anything: 321 أداة فحص بلغة Rust للبرامج والمواقع والتطبيقات والملفات | `python3 scripts/craft_anything.py doctor` | tested-here |
 | `differential-exam` | مصحّح الامتحان الخفي التفاضلي | `python3 scripts/differential_exam.py seal ./exam --out ./exam-seal.json` | tested-here |
 | `installer-triage` | فرز المثبّتات | `python3 scripts/installer_triage.py scan ./setup.exe` | tested-here |
 | `local-project-audit` | فحص المشروع المحلي دون تشغيل | `python3 scripts/local_project_audit.py ./my-project` | tested-here |

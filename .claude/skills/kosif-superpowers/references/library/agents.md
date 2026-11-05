@@ -22,12 +22,12 @@
 
 | الحالة | العدد | المعنى |
 |---|---:|---|
-| `proven` | 180 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `proven` | 181 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 23 | 🟢 ready: runnable without setup according to the catalog |
 | `documented` | 65 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 12 | 📦 install: needs a package, binary or model first |
 | `key` | 2 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **282** | |
+| **المجموع** | **283** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -50,6 +50,7 @@
 | `charter-ingest` | إدخال قائمة الميثاق: مجلس الخبراء 500 فهرسًا للاستشارة | `python3 scripts/charter_ingest.py roster.txt --out data/experts_500.json` | tested-here |
 | `check-skill` | فحص سلامة المهارة | `python3 scripts/check_skill.py` | untested |
 | `council` | مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات | `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/council --options A,B,C` | tested-here |
+| `craft-anything` | جسر Craft Anything: 321 أداة فحص بلغة Rust للبرامج والمواقع والتطبيقات والملفات | `python3 scripts/craft_anything.py doctor` | tested-here |
 | `fusionforge` | FusionForge v2 لوصفات الـWorkflow المركبة داخل المشروع | `python3 scripts/fusionforge.py propose "مونتاج ريلز بترجمة عربية" --project demo_project --from-brief out/20261021-reel/brief.json` | tested-here |
 | `fusionforge-hub-runner` | جسر تنفيذ وصفات FusionForge عبر Hub | `python3 scripts/fusionforge_hub_runner.py --recipe out/fusionforge/demo_project/recipes/FUSE-20261030-0123456789.json --plan-file out/job/io.json --report out/job/bridge-dry.json` | tested-here |
 | `fusionforge-shared` | ذاكرة FusionForge المشتركة بوصفات مهارات معزولة | `python3 scripts/fusionforge_shared.py audit` | untested |
@@ -93,7 +94,7 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `agent-orchestration` | 55 | [agent-orchestration.md](../powers/agent-orchestration.md) |
-| `runnable-tools` | 184 | [runnable-tools.md](../powers/runnable-tools.md) |
+| `runnable-tools` | 185 | [runnable-tools.md](../powers/runnable-tools.md) |
 | `self-discovery` | 43 | [self-discovery.md](../powers/self-discovery.md) |
 
 ## كل القدرات / every power
@@ -191,6 +192,7 @@
 | `TOOL-183` | محرك أفلام مسرح الظل | KOSIF Shadow Theatre silhouette film engine | proven | ffmpeg, pip:numpy, pip:pillow |
 | `TOOL-184` | نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) | Website snapshot and design read-out (goclone capabilities) | proven | python3, chromium |
 | `TOOL-185` | جسر Suno: برومبت الأغنية وبصمة الموافقة والإيصال | Suno MCP bridge: song brief, consent digest and receipt | proven | python3, key:video-gen, key:unspecified |
+| `TOOL-186` | جسر Craft Anything: 321 أداة فحص بلغة Rust للبرامج والمواقع والتطبيقات والملفات | Craft Anything bridge: 321 pure-Rust inspection tools for programs, websites, apps and files | proven | python3, chromium, engine:ghidra, engine:android |
 | `TOOL-19` | تصيير لقطات B-roll بحركة كاميرا | Cinematic B-roll Renderer | proven | ffmpeg, python3 |
 | `TOOL-20` | مُخطِّط قطعات اللقطات الحقيقية | Footage-First Cut Planner | proven | python3 |
 | `TOOL-21` | فاحص توقيت الفيديو المرجعي | Reference Video Timing Probe | proven | ffmpeg, python3 |

@@ -12,7 +12,7 @@
 
 ## ما هذه المكتبة
 
-بطاقة بروتوكول لكل قدرة في الكتالوج (5,863) ولكل أداة قابلة للتشغيل (209)، في 78 ملفًا و439,851 سطرًا تقريبًا مع هذا الفهرس. كل بطاقة تجمع سجل القدرة نفسه (ما هي، متى، كيف، التثبيت، المتطلبات، الأدلة، الرخصة) مع قواعد البروتوكول مطبّقة عليها: خانات الاستقبال (A25)، والجاهزية والشارة الصادقة (A28)، وموضعها عقدةً منمّطة في الخطة (A26)، وبوابة التحقق لنوع مخرجها (A27)، وسلم التعافي لأخطائها المرجحة (A29). القواعد العامة تتكرر عمدًا في كل بطاقة لتُقرأ البطاقة وحدها؛ والمعرفة الفريدة في سجلات الكتالوج والملاحق. حالة الكتالوج ليست حالة الجلسة: افحص قبل أي شارة.
+بطاقة بروتوكول لكل قدرة في الكتالوج (5,864) ولكل أداة قابلة للتشغيل (210)، في 78 ملفًا و439,987 سطرًا تقريبًا مع هذا الفهرس. كل بطاقة تجمع سجل القدرة نفسه (ما هي، متى، كيف، التثبيت، المتطلبات، الأدلة، الرخصة) مع قواعد البروتوكول مطبّقة عليها: خانات الاستقبال (A25)، والجاهزية والشارة الصادقة (A28)، وموضعها عقدةً منمّطة في الخطة (A26)، وبوابة التحقق لنوع مخرجها (A27)، وسلم التعافي لأخطائها المرجحة (A29). القواعد العامة تتكرر عمدًا في كل بطاقة لتُقرأ البطاقة وحدها؛ والمعرفة الفريدة في سجلات الكتالوج والملاحق. حالة الكتالوج ليست حالة الجلسة: افحص قبل أي شارة.
 
 ## بطاقات القدرات
 
@@ -24,7 +24,7 @@
 | الثري دي والمحاكاة والرندر | `particles-fluids-physics` | 77 | 5,370 | [cards/3d/particles-fluids-physics.md](cards/3d/particles-fluids-physics.md) |
 | الثري دي والمحاكاة والرندر | `texture-material` | 96 | 6,666 | [cards/3d/texture-material.md](cards/3d/texture-material.md) |
 | الوكلاء والتوجيه الذكي | `agent-orchestration` | 55 | 3,775 | [cards/agents/agent-orchestration.md](cards/agents/agent-orchestration.md) |
-| الوكلاء والتوجيه الذكي | `runnable-tools` | 184 | 13,126 | [cards/agents/runnable-tools.md](cards/agents/runnable-tools.md) |
+| الوكلاء والتوجيه الذكي | `runnable-tools` | 185 | 13,204 | [cards/agents/runnable-tools.md](cards/agents/runnable-tools.md) |
 | الوكلاء والتوجيه الذكي | `self-discovery` | 43 | 3,070 | [cards/agents/self-discovery.md](cards/agents/self-discovery.md) |
 | الصوت والموسيقى والتعليق | `audio-sync-captions` | 61 | 4,404 | [cards/audio/audio-sync-captions.md](cards/audio/audio-sync-captions.md) |
 | الصوت والموسيقى والتعليق | `music-beat-sound` | 306 | 21,435 | [cards/audio/music-beat-sound.md](cards/audio/music-beat-sound.md) |
@@ -91,7 +91,7 @@
 | `draw` | 17 | 834 | [tools/draw.md](tools/draw.md) |
 | `edit` | 20 | 1,036 | [tools/edit.md](tools/edit.md) |
 | `image` | 12 | 639 | [tools/image.md](tools/image.md) |
-| `investigate` | 14 | 648 | [tools/investigate.md](tools/investigate.md) |
+| `investigate` | 15 | 706 | [tools/investigate.md](tools/investigate.md) |
 | `local-computer` | 3 | 157 | [tools/local-computer.md](tools/local-computer.md) |
 | `maintain` | 17 | 820 | [tools/maintain.md](tools/maintain.md) |
 | `motion` | 29 | 1,532 | [tools/motion.md](tools/motion.md) |

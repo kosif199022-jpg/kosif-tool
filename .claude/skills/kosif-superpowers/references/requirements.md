@@ -14,10 +14,10 @@
 
 | # | requirement | kind | powers unlocked | families | here now |
 |---|---|---|---|---|---|
-| 1 | [`python3`](#req-python3) | bin | 811 | runnable-tools, engines-render-pipeline, qa-verification, mental-models, music-beat-sound |  |
+| 1 | [`python3`](#req-python3) | bin | 812 | runnable-tools, engines-render-pipeline, qa-verification, mental-models, music-beat-sound |  |
 | 2 | [`ffmpeg`](#req-ffmpeg) | bin | 467 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, runnable-tools |  |
 | 3 | [`npm:hyperframes`](#req-npm-hyperframes) | npm | 461 | transitions-cuts, engines-render-pipeline, camera-composition-layout, typography-latin, qa-verification |  |
-| 4 | [`chromium`](#req-chromium) | bin | 376 | engines-render-pipeline, software-investigation, app-feature-transfer, runnable-tools, qa-verification |  |
+| 4 | [`chromium`](#req-chromium) | bin | 377 | engines-render-pipeline, software-investigation, app-feature-transfer, runnable-tools, qa-verification |  |
 | 5 | [`npm:rea`](#req-npm-rea) | npm | 280 | software-investigation, runnable-tools, app-feature-transfer, verification-evals |  |
 | 6 | [`npm:gsap`](#req-npm-gsap) | npm | 247 | transitions-cuts, engines-render-pipeline, camera-composition-layout, easing-timing-rhythm, typography-latin |  |
 | 7 | [`npm:three`](#req-npm-three) | npm | 186 | transitions-cuts, engines-render-pipeline, light-glow-bloom, texture-material, 3d-spatial |  |
@@ -29,16 +29,16 @@
 | 13 | [`pip:opencv`](#req-pip-opencv) | pip | 103 | app-feature-transfer, runnable-tools, transitions-cuts, media-image-audio, engines-render-pipeline |  |
 | 14 | [`fonts:arabic`](#req-fonts-arabic) | font | 98 | typography-arabic, typography-latin, documents-office, audio-sync-captions, runnable-tools |  |
 | 15 | [`imagemagick`](#req-imagemagick) | bin | 89 | engines-render-pipeline, music-beat-sound, transitions-cuts, photo-video-footage, runnable-tools |  |
-| 16 | [`engine:ghidra`](#req-engine-ghidra) | bin | 87 | software-investigation, runnable-tools |  |
+| 16 | [`engine:ghidra`](#req-engine-ghidra) | bin | 88 | software-investigation, runnable-tools |  |
 | 17 | [`claude:tools`](#req-claude-tools) | service | 82 | agent-orchestration, thinking-core, atlas-code, atlas-mind, self-discovery |  |
 | 18 | [`key:video-gen`](#req-key-video-gen) | service | 70 | ai-generation, music-beat-sound, camera-composition-layout, atlas-strategy, prompt-craft |  |
 | 19 | [`npm:react`](#req-npm-react) | npm | 66 | engines-render-pipeline, atlas-code, runnable-tools, transitions-cuts, atlas-build |  |
 | 20 | [`pip:faster-whisper`](#req-pip-faster-whisper) | model | 55 | audio-sync-captions, qa-verification, runnable-tools, app-feature-transfer, engines-render-pipeline |  |
 | 21 | [`git`](#req-git) | bin | 52 | atlas-code, atlas-mind, agent-orchestration, atlas-docs, code-engineering |  |
-| 22 | [`os:macos`](#req-os-macos) | os | 43 | software-investigation, atlas-code, ui-product-device, atlas-build, engines-render-pipeline |  |
+| 22 | [`os:macos`](#req-os-macos) | os | 44 | software-investigation, atlas-code, ui-product-device, atlas-build, engines-render-pipeline |  |
 | 23 | [`pip:office`](#req-pip-office) | pip | 41 | documents-office, atlas-docs, self-discovery, runnable-tools, app-feature-transfer |  |
 | 24 | [`blender`](#req-blender) | apt | 37 | runnable-tools, app-feature-transfer, engines-render-pipeline, 3d-spatial, self-discovery |  |
-| 25 | [`engine:android`](#req-engine-android) | bin | 36 | software-investigation, runnable-tools |  |
+| 25 | [`engine:android`](#req-engine-android) | bin | 37 | software-investigation, runnable-tools |  |
 | 26 | [`npm:axe`](#req-npm-axe) | npm | 28 | qa-verification, atlas-build, atlas-code, color-palette-grading, runnable-tools |  |
 | 27 | [`npm:esbuild`](#req-npm-esbuild) | npm | 26 | engines-render-pipeline, light-glow-bloom, particles-fluids-physics, atlas-code, texture-material |  |
 | 28 | [`network`](#req-network) | os | 25 | self-discovery, audio-sync-captions, web-research, app-feature-transfer, media-image-audio |  |
@@ -58,9 +58,9 @@
 | 42 | [`pip:higgsfield`](#req-pip-higgsfield) | key | 17 | ai-generation, self-discovery, apps-artifacts, camera-composition-layout, engines-render-pipeline |  |
 | 43 | [`npm:maplibre`](#req-npm-maplibre) | npm | 17 | maps-geo, camera-composition-layout, engines-render-pipeline, light-glow-bloom, particles-fluids-physics |  |
 | 44 | [`npm:p5`](#req-npm-p5) | npm | 17 | self-discovery, engines-render-pipeline, runnable-tools, atlas-data, atlas-strategy |  |
-| 45 | [`pip:hypothesis`](#req-pip-hypothesis) | pip | 17 | atlas-strategy, atlas-code, code-engineering, mental-models, agent-orchestration |  |
-| 46 | [`gh`](#req-gh) | bin | 16 | atlas-code, runnable-tools, code-engineering, self-discovery, web-research |  |
-| 47 | [`engine:rizin`](#req-engine-rizin) | bin | 16 | software-investigation |  |
+| 45 | [`engine:rizin`](#req-engine-rizin) | bin | 17 | software-investigation, runnable-tools |  |
+| 46 | [`pip:hypothesis`](#req-pip-hypothesis) | pip | 17 | atlas-strategy, atlas-code, code-engineering, mental-models, agent-orchestration |  |
+| 47 | [`gh`](#req-gh) | bin | 16 | atlas-code, runnable-tools, code-engineering, self-discovery, web-research |  |
 | 48 | [`pip:torch`](#req-pip-torch) | pip | 15 | self-discovery, arabic-language, ai-generation, media-image-audio, atlas-strategy |  |
 | 49 | [`pip:pandas`](#req-pip-pandas) | pip | 14 | self-discovery, atlas-data, data-analysis, atlas-code, atlas-strategy |  |
 | 50 | [`npm:animejs`](#req-npm-animejs) | npm | 14 | engines-render-pipeline, easing-timing-rhythm, atlas-media, qa-verification, runnable-tools |  |
@@ -68,30 +68,30 @@
 | 52 | [`pip:piper`](#req-pip-piper) | model | 12 | voice-tts, audio-sync-captions, self-discovery, creativity-engine |  |
 | 53 | [`pip:fonttools`](#req-pip-fonttools) | pip | 12 | app-feature-transfer, qa-verification, typography-arabic, brand-logo-identity, diagrams-explainers-code |  |
 | 54 | [`libreoffice`](#req-libreoffice) | bin | 11 | documents-office, self-discovery, data-analysis, media-image-audio, strategy-finance |  |
-| 55 | [`lean`](#req-lean) | bin | 10 | atlas-code, atlas-strategy, atlas-build, color-palette-grading, data-analysis |  |
-| 56 | [`pip:chromadb`](#req-pip-chromadb) | pip | 10 | atlas-code, knowledge-graph, agent-orchestration, atlas-data, atlas-research |  |
-| 57 | [`pip:arabic-reshaper`](#req-pip-arabic-reshaper) | pip | 10 | app-feature-transfer, documents-office, typography-arabic, arabic-language, data-analysis |  |
-| 58 | [`pip:onnxruntime`](#req-pip-onnxruntime) | pip | 9 | media-image-audio, engines-render-pipeline, app-feature-transfer, diagrams-explainers-code, photo-video-footage |  |
-| 59 | [`engine:frida`](#req-engine-frida) | bin | 9 | software-investigation |  |
+| 55 | [`engine:frida`](#req-engine-frida) | bin | 10 | software-investigation, runnable-tools |  |
+| 56 | [`lean`](#req-lean) | bin | 10 | atlas-code, atlas-strategy, atlas-build, color-palette-grading, data-analysis |  |
+| 57 | [`pip:chromadb`](#req-pip-chromadb) | pip | 10 | atlas-code, knowledge-graph, agent-orchestration, atlas-data, atlas-research |  |
+| 58 | [`pip:arabic-reshaper`](#req-pip-arabic-reshaper) | pip | 10 | app-feature-transfer, documents-office, typography-arabic, arabic-language, data-analysis |  |
+| 59 | [`pip:onnxruntime`](#req-pip-onnxruntime) | pip | 9 | media-image-audio, engines-render-pipeline, app-feature-transfer, diagrams-explainers-code, photo-video-footage |  |
 | 60 | [`gpu`](#req-gpu) | os | 9 | engines-render-pipeline, self-discovery, atlas-strategy, easing-timing-rhythm, formats-platforms |  |
 | 61 | [`pip:duckdb`](#req-pip-duckdb) | pip | 9 | data-analysis, maps-geo, atlas-data, creativity-engine, self-discovery |  |
 | 62 | [`pip:sympy`](#req-pip-sympy) | pip | 7 | data-analysis, strategy-finance, self-discovery |  |
 | 63 | [`pip:rembg`](#req-pip-rembg) | model | 7 | ai-generation, diagrams-explainers-code, media-image-audio, photo-video-footage, transitions-cuts |  |
 | 64 | [`latex`](#req-latex) | apt | 6 | atlas-docs, atlas-mind, atlas-strategy, data-analysis, diagrams-explainers-code |  |
 | 65 | [`pip:camel-tools`](#req-pip-camel-tools) | model | 6 | arabic-language |  |
-| 66 | [`mcp:github`](#req-mcp-github) | service | 6 | atlas-code, code-engineering, security-safety |  |
-| 67 | [`pip:kokoro`](#req-pip-kokoro) | model | 5 | voice-tts, diagrams-explainers-code, self-discovery |  |
-| 68 | [`engine:wireshark`](#req-engine-wireshark) | bin | 5 | software-investigation |  |
-| 69 | [`pip:polars`](#req-pip-polars) | pip | 5 | data-analysis, code-engineering, self-discovery, web-research |  |
-| 70 | [`pip:ortools`](#req-pip-ortools) | pip | 5 | strategy-finance, data-analysis |  |
-| 71 | [`pip:pulp`](#req-pip-pulp) | pip | 5 | data-analysis, self-discovery, strategy-finance, web-research |  |
-| 72 | [`pip:mediapipe`](#req-pip-mediapipe) | model | 5 | runnable-tools, formats-platforms, media-image-audio, photo-video-footage |  |
-| 73 | [`7zip`](#req-7zip) | bin | 5 | app-feature-transfer, runnable-tools, software-investigation |  |
-| 74 | [`pandoc`](#req-pandoc) | bin | 4 | atlas-docs, documents-office, self-discovery, web-research |  |
-| 75 | [`pip:soundfile`](#req-pip-soundfile) | pip | 4 | music-beat-sound, media-image-audio, voice-tts |  |
-| 76 | [`pip:anthropic`](#req-pip-anthropic) | pip | 4 | ai-generation, apps-artifacts, self-discovery, web-research |  |
-| 77 | [`npm:matter`](#req-npm-matter) | npm | 4 | atlas-media, camera-composition-layout, particles-fluids-physics, typography-latin |  |
-| 78 | [`engine:binwalk`](#req-engine-binwalk) | bin | 4 | software-investigation, runnable-tools |  |
+| 66 | [`engine:wireshark`](#req-engine-wireshark) | bin | 6 | software-investigation, runnable-tools |  |
+| 67 | [`mcp:github`](#req-mcp-github) | service | 6 | atlas-code, code-engineering, security-safety |  |
+| 68 | [`pip:kokoro`](#req-pip-kokoro) | model | 5 | voice-tts, diagrams-explainers-code, self-discovery |  |
+| 69 | [`engine:binwalk`](#req-engine-binwalk) | bin | 5 | software-investigation, runnable-tools |  |
+| 70 | [`pip:polars`](#req-pip-polars) | pip | 5 | data-analysis, code-engineering, self-discovery, web-research |  |
+| 71 | [`pip:ortools`](#req-pip-ortools) | pip | 5 | strategy-finance, data-analysis |  |
+| 72 | [`pip:pulp`](#req-pip-pulp) | pip | 5 | data-analysis, self-discovery, strategy-finance, web-research |  |
+| 73 | [`pip:mediapipe`](#req-pip-mediapipe) | model | 5 | runnable-tools, formats-platforms, media-image-audio, photo-video-footage |  |
+| 74 | [`7zip`](#req-7zip) | bin | 5 | app-feature-transfer, runnable-tools, software-investigation |  |
+| 75 | [`pandoc`](#req-pandoc) | bin | 4 | atlas-docs, documents-office, self-discovery, web-research |  |
+| 76 | [`pip:soundfile`](#req-pip-soundfile) | pip | 4 | music-beat-sound, media-image-audio, voice-tts |  |
+| 77 | [`pip:anthropic`](#req-pip-anthropic) | pip | 4 | ai-generation, apps-artifacts, self-discovery, web-research |  |
+| 78 | [`npm:matter`](#req-npm-matter) | npm | 4 | atlas-media, camera-composition-layout, particles-fluids-physics, typography-latin |  |
 | 79 | [`engine:jeb`](#req-engine-jeb) | service | 4 | software-investigation |  |
 | 80 | [`pip:llama-cpp`](#req-pip-llama-cpp) | model | 4 | agent-orchestration, atlas-code, engines-render-pipeline, software-investigation |  |
 | 81 | [`pip:plotly`](#req-pip-plotly) | pip | 3 | data-analysis, engines-render-pipeline, self-discovery |  |
@@ -145,9 +145,9 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y python3 python3-pip python3-venv`
-- **يفتح / unlocks:** 811 powers
-- **بالحالة / by status:** proven 311 · documented 212 · ready 169 · install 103 · key 13 · seen 3
-- **العائلات / families:** runnable-tools (145), engines-render-pipeline (97), qa-verification (79), mental-models (61), music-beat-sound (45), app-feature-transfer (27), atlas-code (24), photo-video-footage (16)
+- **يفتح / unlocks:** 812 powers
+- **بالحالة / by status:** proven 312 · documented 212 · ready 169 · install 103 · key 13 · seen 3
+- **العائلات / families:** runnable-tools (146), engines-render-pipeline (97), qa-verification (79), mental-models (61), music-beat-sound (45), app-feature-transfer (27), atlas-code (24), photo-video-footage (16)
 - **أمثلة / examples:** `ANLY-08` statsmodels OLS and time-series models · `ANLY-14` altair / Vega-Lite chart specs · `ANLY-17` Gradient boosting (XGBoost, LightGBM) · `ANLY-21` Convex optimisation with cvxpy · `ANLY-23` Graph algorithms with networkx · `APP-06` HTML to MP4 renderer (repo tool)
 
 <a id="req-ffmpeg"></a>
@@ -175,9 +175,9 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `npm i playwright && npx playwright install chromium  (cloud: pre-installed at /opt/pw-browsers)`
-- **يفتح / unlocks:** 376 powers
-- **بالحالة / by status:** proven 124 · install 113 · documented 102 · ready 28 · key 6 · idea 2 · seen 1
-- **العائلات / families:** engines-render-pipeline (59), software-investigation (56), app-feature-transfer (33), runnable-tools (26), qa-verification (24), transitions-cuts (22), camera-composition-layout (15), atlas-build (12)
+- **يفتح / unlocks:** 377 powers
+- **بالحالة / by status:** proven 125 · install 113 · documented 102 · ready 28 · key 6 · idea 2 · seen 1
+- **العائلات / families:** engines-render-pipeline (59), software-investigation (56), app-feature-transfer (33), runnable-tools (27), qa-verification (24), transitions-cuts (22), camera-composition-layout (15), atlas-build (12)
 - **أمثلة / examples:** `APP-05` Phone-viewport screenshot + overflow check · `APP-06` HTML to MP4 renderer (repo tool) · `APPX-31` Dehaze (ClearView-style) · `APPX-32` Tiered noise reduction · `APPX-33` Auto keystone / perspective · `APPX-34` Lens distortion correction
 
 <a id="req-npm-rea"></a>
@@ -295,10 +295,10 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `Ghidra 12.1 from github.com/NationalSecurityAgency/ghidra + GHIDRA_INSTALL_DIR; or Hopper (rea setup), IDA MCP, Kuna`
-- **يفتح / unlocks:** 87 powers
-- **بالحالة / by status:** documented 75 · ready 7 · proven 5
-- **العائلات / families:** software-investigation (76), runnable-tools (11)
-- **أمثلة / examples:** `REA-034` Check whether REA is ready · `TOOL-105` Atlas metadata capability miner · `TOOL-116` Smart capability index for Claude · `TOOL-119` Blender Cycles + KOSIF Cinematic compositor · `TOOL-32` Local project static audit · `REA-001` Resolve an analysis address to its original file
+- **يفتح / unlocks:** 88 powers
+- **بالحالة / by status:** documented 75 · ready 7 · proven 6
+- **العائلات / families:** software-investigation (76), runnable-tools (12)
+- **أمثلة / examples:** `REA-034` Check whether REA is ready · `TOOL-105` Atlas metadata capability miner · `TOOL-116` Smart capability index for Claude · `TOOL-119` Blender Cycles + KOSIF Cinematic compositor · `TOOL-186` Craft Anything bridge: 321 pure-Rust inspection  · `TOOL-32` Local project static audit
 
 <a id="req-claude-tools"></a>
 ### `claude:tools` — أدوات Claude Code: وكلاء، سير عمل، منشورات، ويب / Claude Code tools: agents, workflows, artifacts, web
@@ -355,10 +355,10 @@
 
 - **النوع / kind:** os (منصة)
 - **التثبيت / install:** `a macOS machine with Xcode command-line tools`
-- **يفتح / unlocks:** 43 powers
-- **بالحالة / by status:** documented 31 · install 4 · proven 3 · seen 3 · ready 2
-- **العائلات / families:** software-investigation (20), atlas-code (8), ui-product-device (5), atlas-build (2), engines-render-pipeline (2), atlas-strategy (1), formats-platforms (1), music-beat-sound (1)
-- **أمثلة / examples:** `REA-007` List provider capabilities and side effects · `REA-052` Project a selected view of completed binary-layo · `TOOL-52` REA Family Router · `ABUILD-05` Mobile and desktop release signing pipeline · `ABUILD-60` Set up installers for a CLI: a Homebrew tap form · `ACODE-111` macOS freeze/panic reconstruction from Diagnosti
+- **يفتح / unlocks:** 44 powers
+- **بالحالة / by status:** documented 31 · install 4 · proven 4 · seen 3 · ready 2
+- **العائلات / families:** software-investigation (20), atlas-code (8), ui-product-device (5), atlas-build (2), engines-render-pipeline (2), runnable-tools (2), atlas-strategy (1), formats-platforms (1)
+- **أمثلة / examples:** `REA-007` List provider capabilities and side effects · `REA-052` Project a selected view of completed binary-layo · `TOOL-186` Craft Anything bridge: 321 pure-Rust inspection  · `TOOL-52` REA Family Router · `ABUILD-05` Mobile and desktop release signing pipeline · `ABUILD-60` Set up installers for a CLI: a Homebrew tap form
 
 <a id="req-pip-office"></a>
 ### `pip:office` — إنشاء وقراءة Word وExcel وPowerPoint وPDF / create and read Word, Excel, PowerPoint and PDF
@@ -385,10 +385,10 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `Android platform-tools (adb) + jadx-headless-mcp 0.7.1 JAR + apktool; device with USB debugging authorised`
-- **يفتح / unlocks:** 36 powers
-- **بالحالة / by status:** documented 28 · proven 4 · install 4
-- **العائلات / families:** software-investigation (35), runnable-tools (1)
-- **أمثلة / examples:** `REA-034` Check whether REA is ready · `REA-047` Inspect the caller-selected adb client without c · `REA-056` Inspect the caller-selected apktool launcher wit · `TOOL-52` REA Family Router · `REA-008` Capture one screen frame as a digested PNG · `REA-014` Collect and digest one device-generated bugrepor
+- **يفتح / unlocks:** 37 powers
+- **بالحالة / by status:** documented 28 · proven 5 · install 4
+- **العائلات / families:** software-investigation (35), runnable-tools (2)
+- **أمثلة / examples:** `REA-034` Check whether REA is ready · `REA-047` Inspect the caller-selected adb client without c · `REA-056` Inspect the caller-selected apktool launcher wit · `TOOL-186` Craft Anything bridge: 321 pure-Rust inspection  · `TOOL-52` REA Family Router · `REA-008` Capture one screen frame as a digested PNG
 
 <a id="req-npm-axe"></a>
 ### `npm:axe` — فحص إمكانية الوصول / accessibility checks
@@ -580,6 +580,16 @@
 - **العائلات / families:** self-discovery (4), engines-render-pipeline (3), runnable-tools (2), atlas-data (1), atlas-strategy (1), characters-rigs (1), data-analysis (1), particles-fluids-physics (1)
 - **أمثلة / examples:** `ANLY-09` Seeded Monte Carlo risk check · `PROD-03` Risk as a distribution (Monte Carlo) · `SELF-13` Manual shell probe · `SELF-14` No GPU: plan for CPU · `SELF-19` Node globals and bundled browser · `SELF-36` Claude Code cloud session limits
 
+<a id="req-engine-rizin"></a>
+### `engine:rizin` — تنقيح وتحليل بالأدوات الحرة / free debugging and analysis tools
+
+- **النوع / kind:** bin (أداة)
+- **التثبيت / install:** `rizin / Cutter / GDB from your distro`
+- **يفتح / unlocks:** 17 powers
+- **بالحالة / by status:** documented 13 · proven 3 · install 1
+- **العائلات / families:** software-investigation (16), runnable-tools (1)
+- **أمثلة / examples:** `REA-093` Inspect a local artifact with GNU objdump and re · `REA-111` List BFD targets advertised by the installed GNU · `TOOL-186` Craft Anything bridge: 321 pure-Rust inspection  · `REA-024` Execute one Rizin command in a selected live Cut · `REA-025` Run one unrestricted GDB console command in an e · `REA-026` Run one unrestricted Rizin debugger command in a
+
 <a id="req-pip-hypothesis"></a>
 ### `pip:hypothesis` — اختبارات الخصائص / property-based tests
 
@@ -599,16 +609,6 @@
 - **بالحالة / by status:** documented 11 · key 2 · install 2 · proven 1
 - **العائلات / families:** atlas-code (11), runnable-tools (2), code-engineering (1), self-discovery (1), web-research (1)
 - **أمثلة / examples:** `SELF-23` GitHub access in cloud sessions · `ACODE-122` Bounded CI failure repair loop · `ACODE-133` GitHub Actions failure triage via gh · `ACODE-134` GitHub Actions FinOps waste audit · `ACODE-15` Parallel agent collision pre-flight checks · `ACODE-157` Verified GitHub Actions workflow authoring
-
-<a id="req-engine-rizin"></a>
-### `engine:rizin` — تنقيح وتحليل بالأدوات الحرة / free debugging and analysis tools
-
-- **النوع / kind:** bin (أداة)
-- **التثبيت / install:** `rizin / Cutter / GDB from your distro`
-- **يفتح / unlocks:** 16 powers
-- **بالحالة / by status:** documented 13 · proven 2 · install 1
-- **العائلات / families:** software-investigation (16)
-- **أمثلة / examples:** `REA-093` Inspect a local artifact with GNU objdump and re · `REA-111` List BFD targets advertised by the installed GNU · `REA-024` Execute one Rizin command in a selected live Cut · `REA-025` Run one unrestricted GDB console command in an e · `REA-026` Run one unrestricted Rizin debugger command in a · `REA-038` Execute one Rizin command against a local artifa
 
 <a id="req-pip-torch"></a>
 ### `pip:torch` — نماذج التعلم العميق محليًا / deep-learning models locally
@@ -680,6 +680,16 @@
 - **العائلات / families:** documents-office (5), self-discovery (3), data-analysis (1), media-image-audio (1), strategy-finance (1)
 - **أمثلة / examples:** `DOC-03` Recalculate XLSX formulas headless · `DOC-09` Batch Office to PDF with LibreOffice · `DOC-10` Private fontconfig for LibreOffice and pango · `DOC-11` Fit-to-page before XLSX to PDF · `DOC-23` Which engines need manual Arabic shaping · `MEDIA-02` Never double-shape Arabic
 
+<a id="req-engine-frida"></a>
+### `engine:frida` — تجهيز العمليات في وقت التشغيل / runtime instrumentation
+
+- **النوع / kind:** bin (أداة)
+- **التثبيت / install:** `pip install frida-tools (consented target process only)`
+- **يفتح / unlocks:** 10 powers
+- **بالحالة / by status:** documented 9 · proven 1
+- **العائلات / families:** software-investigation (9), runnable-tools (1)
+- **أمثلة / examples:** `TOOL-186` Craft Anything bridge: 321 pure-Rust inspection  · `REA-096` Run one Frida script against a selected process  · `REA-107` List local Frida devices and an optional remote  · `REA-108` List processes visible through a Frida device · `REA-196` REA MCP tool `start_frida_session` · `REA-197` REA MCP tool `load_frida_script`
+
 <a id="req-lean"></a>
 ### `lean` — البراهين الرياضية الصورية / formal proofs
 
@@ -719,16 +729,6 @@
 - **بالحالة / by status:** install 4 · ready 3 · key 1 · proven 1
 - **العائلات / families:** media-image-audio (3), engines-render-pipeline (2), app-feature-transfer (1), diagrams-explainers-code (1), photo-video-footage (1), voice-tts (1)
 - **أمثلة / examples:** `VOICE-01` Piper offline Arabic TTS · `APPX-76` Face detection · `ENG-184` Semantic catalog search · `ENG-202` Offline semantic catalog search · `EXPL-09` Transparent icon generation · `FOOT-27` Face & region privacy masks
-
-<a id="req-engine-frida"></a>
-### `engine:frida` — تجهيز العمليات في وقت التشغيل / runtime instrumentation
-
-- **النوع / kind:** bin (أداة)
-- **التثبيت / install:** `pip install frida-tools (consented target process only)`
-- **يفتح / unlocks:** 9 powers
-- **بالحالة / by status:** documented 9
-- **العائلات / families:** software-investigation (9)
-- **أمثلة / examples:** `REA-096` Run one Frida script against a selected process  · `REA-107` List local Frida devices and an optional remote  · `REA-108` List processes visible through a Frida device · `REA-196` REA MCP tool `start_frida_session` · `REA-197` REA MCP tool `load_frida_script` · `REA-198` REA MCP tool `resume_frida_session`
 
 <a id="req-gpu"></a>
 ### `gpu` — تسريع النماذج والرندر الثقيل / accelerate models and heavy renders
@@ -790,6 +790,16 @@
 - **العائلات / families:** arabic-language (6)
 - **أمثلة / examples:** `ARL-10` camel-tools character utilities without models · `ARL-18` Transliteration and romanization · `ARL-11` Morphology, dialect ID and NER with full camel-t · `ARL-13` Farasa segmenter via farasapy · `ARL-17` Dialect handling and register choice · `ARL-20` CAMeL Tools: Tokenise, lemmatise, diacritise and
 
+<a id="req-engine-wireshark"></a>
+### `engine:wireshark` — تحليل التقاطات الشبكة / packet capture analysis
+
+- **النوع / kind:** bin (أداة)
+- **التثبيت / install:** `apt-get install -y tshark  (Wireshark 4.x)`
+- **يفتح / unlocks:** 6 powers
+- **بالحالة / by status:** proven 4 · documented 2
+- **العائلات / families:** software-investigation (5), runnable-tools (1)
+- **أمثلة / examples:** `REA-052` Project a selected view of completed binary-layo · `REA-079` Search installed TShark protocol and field defin · `REA-081` Inspect the caller-selected tshark and capinfos  · `TOOL-186` Craft Anything bridge: 321 pure-Rust inspection  · `REA-078` Inspect an existing packet capture with caller-s · `REA-080` Inspect one pcap/pcapng capture: endpoints, DNS,
+
 <a id="req-mcp-github"></a>
 ### `mcp:github` — قراءة وكتابة GitHub / read/write GitHub
 
@@ -810,15 +820,15 @@
 - **العائلات / families:** voice-tts (3), diagrams-explainers-code (1), self-discovery (1)
 - **أمثلة / examples:** `SELF-25` Python-version compatibility check · `EXPL-41` PR-to-video & faceless explainer pipelines · `VOICE-03` Kokoro local TTS (no Arabic voice) · `VOICE-14` HeyGen Starfish TTS with word timestamps · `VOICE-16` Together AI TTS catalog
 
-<a id="req-engine-wireshark"></a>
-### `engine:wireshark` — تحليل التقاطات الشبكة / packet capture analysis
+<a id="req-engine-binwalk"></a>
+### `engine:binwalk` — تحليل الفيرموير / firmware analysis
 
 - **النوع / kind:** bin (أداة)
-- **التثبيت / install:** `apt-get install -y tshark  (Wireshark 4.x)`
+- **التثبيت / install:** `pip install binwalk (or unblob) + REA_BINWALK_COMMAND`
 - **يفتح / unlocks:** 5 powers
-- **بالحالة / by status:** proven 3 · documented 2
-- **العائلات / families:** software-investigation (5)
-- **أمثلة / examples:** `REA-052` Project a selected view of completed binary-layo · `REA-079` Search installed TShark protocol and field defin · `REA-081` Inspect the caller-selected tshark and capinfos  · `REA-078` Inspect an existing packet capture with caller-s · `REA-080` Inspect one pcap/pcapng capture: endpoints, DNS,
+- **بالحالة / by status:** documented 3 · proven 2
+- **العائلات / families:** software-investigation (3), runnable-tools (2)
+- **أمثلة / examples:** `TOOL-186` Craft Anything bridge: 321 pure-Rust inspection  · `TOOL-52` REA Family Router · `REA-041` Extract selected firmware bytes and return verif · `REA-065` Inspect firmware signature candidates without ex · `REA-246` REA MCP tool `inspect_byte_entropy`: Shannon byt
 
 <a id="req-pip-polars"></a>
 ### `pip:polars` — جداول بيانات سريعة / fast dataframes
@@ -909,16 +919,6 @@
 - **بالحالة / by status:** install 3 · documented 1
 - **العائلات / families:** atlas-media (1), camera-composition-layout (1), particles-fluids-physics (1), typography-latin (1)
 - **أمثلة / examples:** `AMEDIA-17` Kinetic inflated typography hero · `CAM-67` Obstacle-aware type layout · `PART-71` Rigid-body engines (Rapier / cannon-es / matter- · `TYPE-68` Inflated physics letterforms
-
-<a id="req-engine-binwalk"></a>
-### `engine:binwalk` — تحليل الفيرموير / firmware analysis
-
-- **النوع / kind:** bin (أداة)
-- **التثبيت / install:** `pip install binwalk (or unblob) + REA_BINWALK_COMMAND`
-- **يفتح / unlocks:** 4 powers
-- **بالحالة / by status:** documented 3 · proven 1
-- **العائلات / families:** software-investigation (3), runnable-tools (1)
-- **أمثلة / examples:** `TOOL-52` REA Family Router · `REA-041` Extract selected firmware bytes and return verif · `REA-065` Inspect firmware signature candidates without ex · `REA-246` REA MCP tool `inspect_byte_entropy`: Shannon byt
 
 <a id="req-engine-jeb"></a>
 ### `engine:jeb` — تفكيك متقدم (تجاري) / commercial decompiler
