@@ -224,6 +224,13 @@
    "what": "v61.1 (artifact version 64): iPhone camera — when the live camera is denied or blocked, the black area becomes step-by-step Safari/Chrome permission help with a retry button; «صوّر الرف» (local ZXing decode of a still photo) becomes the primary button; «اسأل Claude» hidden when image reading isn't available in the view; solid readable toasts.",
    "checks": "t57 iPhone 15 Pro emulation with getUserMedia denied: help shown, retry works, 0 page errors. Not tested on a real iPhone.",
    "status": "published"
+  },
+  {
+   "n": 27,
+   "at": "2026-11-05T09:20:00+03:00",
+   "what": "v61.2 (artifact version 65): unified 'paper & ink' light palette — 3 paper tones, warm ink in 3 weights, one indigo spot colour, earthy status colours, highlighter marks; removed cool glass/white/grey and stray bright blues; grid cells blend into rows.",
+   "checks": "computed-colour audit of every visible element: all backgrounds/text/borders inside the token set; contrast gate 0 low pairs; t56 0 errors",
+   "status": "published"
   }
  ],
  "outputs": [
