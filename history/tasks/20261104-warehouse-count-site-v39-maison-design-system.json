@@ -231,6 +231,13 @@
    "what": "v61.2 (artifact version 65): unified 'paper & ink' light palette — 3 paper tones, warm ink in 3 weights, one indigo spot colour, earthy status colours, highlighter marks; removed cool glass/white/grey and stray bright blues; grid cells blend into rows.",
    "checks": "computed-colour audit of every visible element: all backgrounds/text/borders inside the token set; contrast gate 0 low pairs; t56 0 errors",
    "status": "published"
+  },
+  {
+   "n": 28,
+   "at": "2026-11-05T09:35:00+03:00",
+   "what": "v61.3 (artifact version 66): theme studio AI brief rewritten — 9 page sections described top to bottom, 87 settings each with its current measured value; 50 new tokens (page width/padding, button/search/chip sizes, column widths, show/hide banner/counter/scope/tabs/mobile bar, sticky search, shadows, toasts) wired to CSS; 5 more editor sliders.",
+   "checks": "t58: prompt 8.5k chars / 87 vars; pasted theme changed title, button, search, columns, hidden sections, sticky; t54/t56 0 errors; contrast gate 0 low",
+   "status": "published"
   }
  ],
  "outputs": [
