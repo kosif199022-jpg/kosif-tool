@@ -155,5 +155,49 @@ class NativeFusionTests(unittest.TestCase):
         self.assertEqual(x["inspection"], "refused-unsafe-path")
 
 
+    def test_arabic_search_normalizes_diacritics_and_articles(self):
+        self.assertIn("ايقاع", native.words("وَالْإِيقَاع"))
+        self.assertIn("مونتاج", native.words("المونتاج"))
+        self.assertTrue(native.words("الإيقاع") & native.words("إيقاع"))
+        self.assertTrue(native.words("للإيقاع") & native.words("الإيقاع"))
+
+    def test_compose_refuses_altered_atlas(self):
+        out = self.root / "out/compose-tamper"
+        native.build(self.root, out)
+        atlas_path = out / "fusion_atlas.json"
+        data = native.read_json(atlas_path)
+        data["selected_source_count"] = 1
+        atlas_path.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "integrity mismatch"):
+            native.compose("Beat montage", out / "sources.jsonl")
+
+    def test_compose_refuses_altered_index(self):
+        out = self.root / "out/index-tamper"
+        native.build(self.root, out)
+        index = out / "sources.jsonl"
+        old = index.read_text(encoding="utf-8")
+        self.assertIn("Beat detector", old)
+        index.write_text(old.replace("Beat detector", "Beat detector forged"), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "integrity mismatch"):
+            native.compose("Beat montage", index)
+
+    def test_verify_refuses_symlink_to_identical_external_source(self):
+        out = self.root / "out/source-link"
+        native.build(self.root, out)
+        source = self.root / "playbooks/video.md"
+        external = tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", delete=False)
+        try:
+            external.write(source.read_text(encoding="utf-8"))
+            external.close()
+            self.addCleanup(lambda: Path(external.name).unlink(missing_ok=True))
+            source.unlink()
+            source.symlink_to(external.name)
+            result = native.verify(self.root, out)
+            self.assertFalse(result["integrity_passed"])
+            self.assertIn("playbook:video", result["changed_or_missing"])
+        finally:
+            external.close()
+
+
 if __name__ == "__main__":
     unittest.main()

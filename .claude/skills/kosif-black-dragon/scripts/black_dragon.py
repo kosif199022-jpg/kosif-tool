@@ -14,6 +14,7 @@ import importlib.util
 import json
 import re
 import sys
+import unicodedata
 from collections import Counter
 from pathlib import Path
 
@@ -33,7 +34,34 @@ def canonical(data: object) -> bytes:
 
 
 def words(text: str) -> set[str]:
-    return {w.lower() for w in re.findall(r"[\w\u0600-\u06ff]+", text) if len(w) > 2}
+    """Conservative, deterministic Arabic/English lookup tokens.
+
+    Normalize Arabic hamza forms, diacritics, tatweel and leading definite
+    articles while retaining the original token to avoid over-stemming.
+    This improves matching between e.g. "الإيقاع" and "والإيقاع".
+    """
+    value = unicodedata.normalize("NFKC", str(text)).casefold()
+    value = re.sub(r"[\u064b-\u065f\u0670\u0640]", "", value)
+    value = value.translate(str.maketrans({
+        "أ": "ا", "إ": "ا", "آ": "ا", "ٱ": "ا", "ى": "ي",
+        "ؤ": "و", "ئ": "ي",
+    }))
+    result = set()
+    for token in re.findall(r"[a-z0-9_]+|[\u0621-\u064a]+", value):
+        if len(token) <= 2:
+            continue
+        result.add(token)
+        if re.fullmatch(r"[\u0621-\u064a]+", token):
+            stem = token
+            if stem.startswith("وال") and len(stem) > 6:
+                stem = stem[1:]
+            if stem.startswith("ال") and len(stem) > 5:
+                stem = stem[2:]
+            elif stem.startswith("لل") and len(stem) > 5:
+                stem = stem[2:]
+            if len(stem) > 2:
+                result.add(stem)
+    return result
 
 
 def read_json(path: Path):
@@ -210,6 +238,59 @@ def load_index(path: Path) -> list[dict]:
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
+def _safe_source(root: Path, value: object) -> Path | None:
+    """Never follow manifest paths outside the selected root or via symlinks."""
+    if not isinstance(value, str) or not value:
+        return None
+    rel = Path(value)
+    if rel.is_absolute() or ".." in rel.parts:
+        return None
+    root = root.resolve()
+    candidate = root / rel
+    if not candidate.resolve().is_relative_to(root):
+        return None
+    if any(part.is_symlink() for part in (candidate, *candidate.parents) if part != root):
+        return None
+    return candidate if candidate.is_file() else None
+
+
+def verified_catalog_atlas(index: Path, rows: list[dict]) -> dict | None:
+    """Refuse to present stale or altered atlas data as verified knowledge.
+
+    Checksums are local integrity checks, not signatures or evidence of
+    executable features; independent execution remains unproven.
+    """
+    atlas_path = index.with_name("fusion_atlas.json")
+    if not atlas_path.is_file():
+        return None
+    summary_path = index.with_name("summary.json")
+    if not summary_path.is_file():
+        raise ValueError("fusion atlas has no summary; regenerate the index")
+    summary = read_json(summary_path)
+    atlas = read_json(atlas_path)
+    ids = [row["id"] for row in rows]
+    lineage = [row["source_id"] for row in atlas.get("affiliation", [])]
+    if not (
+        digest(index.read_bytes()) == summary.get("source_index_sha256")
+        and digest(atlas_path.read_bytes()) == summary.get("fusion_atlas_sha256")
+        and len(ids) == summary.get("total_source_linked")
+        and len(ids) == len(set(ids))
+        and atlas.get("provenance_preserved") is True
+        and atlas.get("selected_source_count") == len(ids)
+        and len(lineage) == len(ids)
+        and set(lineage) == set(ids)
+    ):
+        raise ValueError("source index or fusion atlas integrity mismatch; regenerate the index")
+    return {
+        "status": "knowledge-reconciled-not-all-capabilities-implemented",
+        "source_count": atlas["selected_source_count"],
+        "faculty_count": len(atlas["faculties"]),
+        "distinct_method_fragments": atlas["method_fusion"]["distinct_fragments"],
+        "atlas_path": str(atlas_path),
+        "integrity": "local-digests-and-source-membership-checked-not-signed",
+    }
+
+
 def native_reasoner():
     """Load only the NEW local reasoning module, never the legacy Dragon Mind."""
     path = Path(__file__).with_name("native_mind.py")
@@ -225,6 +306,8 @@ def compose(task: str, path: Path, *, legacy: bool = False, limit: int = 12) -> 
     query = words(task)
     if not query:
         raise ValueError("task cannot be empty")
+    if not 1 <= limit <= 50:
+        raise ValueError("selection limit must be between 1 and 50")
     items = load_index(path)
     ranking = []
     for x in items:
@@ -244,15 +327,7 @@ def compose(task: str, path: Path, *, legacy: bool = False, limit: int = 12) -> 
         "phases": list(PHASES),
         "source_count": len(items),
         "native_mind": synthesis,
-        "catalog_wide_fusion": (
-            (lambda atlas: {
-                "status": "knowledge-reconciled-not-all-capabilities-implemented",
-                "source_count": atlas["selected_source_count"],
-                "faculty_count": len(atlas["faculties"]),
-                "distinct_method_fragments": atlas["method_fusion"]["distinct_fragments"],
-                "atlas_path": str(path.with_name("fusion_atlas.json"))
-            })(read_json(path.with_name("fusion_atlas.json")))
-            if path.with_name("fusion_atlas.json").is_file() else None),
+        "catalog_wide_fusion": verified_catalog_atlas(path, items),
         "selected": [{"id": x["id"], "faculty": x["faculty"], "purpose": x["purpose"][:450],
                       "method": x["method"][:800], "requirements": x["requirements"],
                       "code": x["code"], "source_sha256": x["source_sha256"],
@@ -273,13 +348,14 @@ def verify(root: Path, folder: Path) -> dict:
     unique = len({r["id"] for r in rows}) == len(rows)
     changed = []
     for row in rows:
-        source = root / row["source"]
-        if not source.is_file() or digest(source.read_bytes()) != row["source_sha256"]:
+        source = _safe_source(root, row.get("source"))
+        if source is None or digest(source.read_bytes()) != row.get("source_sha256"):
             changed.append(row["id"])
         code = row.get("code", {})
-        if code.get("path") and (not (root / code["path"]).is_file()
-                                 or digest((root / code["path"]).read_bytes()) != code["sha256"]):
-            changed.append(row["id"] + ":code")
+        if code.get("path"):
+            code_file = _safe_source(root, code.get("path"))
+            if code_file is None or digest(code_file.read_bytes()) != code.get("sha256"):
+                changed.append(row["id"] + ":code")
     atlas_path = folder / "fusion_atlas.json"
     atlas_valid = False
     if atlas_path.is_file():
