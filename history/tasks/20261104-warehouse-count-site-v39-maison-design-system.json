@@ -245,6 +245,13 @@
    "what": "v61.4 (artifact version 67): theme message made complete — description box in the studio goes into the message, every setting has a measured value (no blanks), a full 90-line :root template with current values for the AI to edit, item panel/camera/multi-search/mobile described, a 'show message' view; show/hide tokens only act on none; header text stays readable.",
    "checks": "t59: 11.7k chars, 0 blanks, template 90 vars, pasting the template back reproduces the current look; t54/t56 0 errors; gate 0 low",
    "status": "published"
+  },
+  {
+   "n": 30,
+   "at": "2026-11-05T10:00:00+03:00",
+   "what": "v61.5 (artifact version 68): sticky search area made opaque (rows no longer show through while scrolling); theme message adds a 'behaviour and states' section (hover, press, focus, count/save flow, sync dot, flash, row status tints, open/marked rows, sort, highlight, disabled, toast time) with 27 new wired settings; themes accept free CSS rules after :root (sanitised: no url(, @import, @font-face, script), with a 72-entry selector map in the message.",
+   "checks": "t60: controls opaque, 20k-char message with 0 blanks, a pasted rule restyled names and head height, url()/@import stripped; t54/t56/t57/t59 0 errors; gate 0 low",
+   "status": "published"
   }
  ],
  "outputs": [
