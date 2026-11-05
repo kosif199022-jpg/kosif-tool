@@ -238,6 +238,13 @@
    "what": "v61.3 (artifact version 66): theme studio AI brief rewritten — 9 page sections described top to bottom, 87 settings each with its current measured value; 50 new tokens (page width/padding, button/search/chip sizes, column widths, show/hide banner/counter/scope/tabs/mobile bar, sticky search, shadows, toasts) wired to CSS; 5 more editor sliders.",
    "checks": "t58: prompt 8.5k chars / 87 vars; pasted theme changed title, button, search, columns, hidden sections, sticky; t54/t56 0 errors; contrast gate 0 low",
    "status": "published"
+  },
+  {
+   "n": 29,
+   "at": "2026-11-05T09:45:00+03:00",
+   "what": "v61.4 (artifact version 67): theme message made complete — description box in the studio goes into the message, every setting has a measured value (no blanks), a full 90-line :root template with current values for the AI to edit, item panel/camera/multi-search/mobile described, a 'show message' view; show/hide tokens only act on none; header text stays readable.",
+   "checks": "t59: 11.7k chars, 0 blanks, template 90 vars, pasting the template back reproduces the current look; t54/t56 0 errors; gate 0 low",
+   "status": "published"
   }
  ],
  "outputs": [
