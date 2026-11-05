@@ -2,7 +2,7 @@
  "schema": "kosif.task-history.v1",
  "id": "20261104-warehouse-count-site-v39-maison-design-system",
  "date": "2026-11-04",
- "title": "Warehouse stock-count web app v28→v52: design system v2 (Maison), multi-search, highlight, shelf groups, scan mode, award-site motion, phone bottom bar, measured gate",
+ "title": "Warehouse stock-count web app v28→v54: design system v2 (Maison), multi-search, highlight, shelf groups, scan mode, award-site motion, phone bottom bar, measured gate",
  "request": "نفذ المقترح واستخدم قدرات التنين الاسود في تطوير الخطوط والموشن جرافك وايقونات الموقع وغيرها",
  "kind": "web",
  "mode": "موافق",
@@ -17,7 +17,7 @@
   "WebSearch/WebFetch research + 3 research subagents (2 completed, 1 rate-limited)"
  ],
  "params": {
-  "artifact_versions": "28..52 (artifact version 54)",
+  "artifact_versions": "28..54 (artifact version 56)",
   "themes": [
    "light Maison ivory/charcoal/antique gold",
    "dark graphite/champagne",
@@ -179,6 +179,12 @@
    "what": "v52: column heads in deep green #14532D with white text (owner's reference: the browser frame colour); cell dividers fixed — inputs with dir=auto/ltr flipped their logical borders, so the grid now uses physical borders for input cells and stretches the diff/system cells, measured edge-to-edge against the head; the search-scope chips (اسم التقرير / SMACC / البدائل / الموديل) moved out of the options menu to a visible bar under the field (one scrolling line on phones); head joined flush to the grid",
    "tool": "python3 patch41.py",
    "command": "bash build.sh && node m1.js (head vs cell edges) && node t52.js t19b.js t28.js t36.js t38.js t45.js t51.js && node gate.js"
+  },
+  {
+   "n": 20,
+   "what": "v53: one face/size/weight for every grid cell (IBM Plex Sans Arabic .95rem 500, tabular digits). v54: clearer stripes (white / #E2EEEB, darker row rule), the save-search star always shown (explains itself when nothing is searched), flag/camera/save-path tools always visible, space under the item name, model column removed from the grid (kept in the item panel), heads and cell values centred except the item column",
+   "tool": "python3 patch42.py + patch43.py",
+   "command": "bash build.sh && node m1.js && node t52.js t45.js t38.js && node gate.js"
   }
  ],
  "outputs": [
@@ -187,10 +193,10 @@
    "kind": "web",
    "deterministic": false,
    "measured": {
-    "version": 54,
-    "page_bytes": 1621110,
+    "version": 56,
+    "page_bytes": 1624466,
     "contrast_pairs_ge_4.5": "63/63",
-    "head_vs_cell_edges": "9/9 columns equal to the pixel",
+    "head_vs_cell_edges": "8/8 columns equal",
     "js_errors": 0
    }
   }
