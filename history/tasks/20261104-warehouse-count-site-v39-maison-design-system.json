@@ -266,6 +266,13 @@
    "what": "v61.7 (artifact version 70): element picker in the theme studio (hover highlights any element with its selector, click opens a panel: text/background/border colours, size, weight, padding, margin, radius, border, height, width, letter spacing, line height, opacity, font, alignment, hide; live preview; saved as CSS rules in the theme, reset per element); the AI message adds a live map of ~100 element types with measured size, font, colours, radius, padding and text, plus the theme's current rules; C now answers inside the page (sample, complex tier): part type, cars, position, OE and aftermarket numbers as chips marked when already in the list (click to search), notes, confidence, Google/Bing image links, copy — opening claude.ai in a new tab was refused by claude.ai (ERR_BLOCKED_BY_RESPONSE).",
    "checks": "t61 picker: colour+size+padding applied live, saved, survives reload, message 29k chars with map; t62 mocked sample: 5 chips, 2 marked as in-list, chip click searches; t54/t56/t59/t60 0 errors; gate 0 low. Real Claude answer not exercised from here.",
    "status": "published"
+  },
+  {
+   "n": 33,
+   "at": "2026-11-05T16:50:00+03:00",
+   "what": "v62 (artifact version 71): owner's Excel (Spareto + AutopartsPro + inventory file, 2,533 items) merged: +37,310 brand alternatives and +3,695 OE numbers after de-duplication (2,267 items now have alternatives), searchable; item panel credits Spareto/AutopartsPro with links; 1,961 catalogue photos (223 repeated placeholders dropped) shipped as pics.json (2.35 MB, WebP) and shown in rows and the item panel; location column narrowed to 6.6rem.",
+   "checks": "t63: 56/60 visible rows show photos, an Excel-only number (4010530) finds its item, panel shows Spareto link; t56/t59/t61/t62 0 errors; gate 0 low. Photo loading on the live claude.ai page not checked from here.",
+   "status": "published"
   }
  ],
  "outputs": [
