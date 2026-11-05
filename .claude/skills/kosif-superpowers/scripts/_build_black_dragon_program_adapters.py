@@ -50,7 +50,10 @@ def build(families=None, workers=4) -> dict:
         results = list(ex.map(_one, ids))
     adapters = {f"power:{pid}": {"script": SCRIPT_REL, "args": [pid, "{artifact}", "--task={task}"],
                                   "power_program": True,
-                                  "program": progs[pid][0].name}
+                                  "program": progs[pid][0].name,
+                                  # <family>__local.py programs need a pip library, a downloaded model or the
+                                  # network: proven on the build machine only, so CI runs leave them out.
+                                  **({"env_scope": "local"} if progs[pid][0].stem.endswith("__local") else {})}
                 for pid, ok, _ in results if ok}
     excluded = {pid: why for pid, ok, why in results if not ok}
     excluded.update({pid: "not a catalog power id" for pid in unknown})

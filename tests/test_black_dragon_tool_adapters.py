@@ -121,12 +121,14 @@ class Recipes(unittest.TestCase):
 
 
 class FormerlyBlocked(unittest.TestCase):
-    """Blender and Remotion were unblocked by real engines; only the owner's GitHub/phone tools stay blocked."""
+    """Blender and Remotion were unblocked by real engines, and the iPhone a-Shell app by an offline dash recipe;
+    only the owner's GitHub tools stay blocked."""
 
     def test_only_the_owner_bound_tools_stay_blocked(self):
         adapters = dragon._load_adapters(dragon.REVIEWED_ADAPTERS)
-        self.assertEqual(sorted(dragon.TOOL_BLOCKERS), ["tool:rea-owned-repo-batch", "tool:rebalance-creative-repos",
-                                                        "tool:repo-ashell-cinema"])
+        self.assertEqual(sorted(dragon.TOOL_BLOCKERS), ["tool:rea-owned-repo-batch", "tool:rebalance-creative-repos"])
+        self.assertTrue(adapters["tool:repo-ashell-cinema"].get("tool_suite"))
+        self.assertIn("repo-ashell-cinema", tool.RECIPES)
         for key in ("tool:blender-rescue-scene", "tool:blender-cat-fur-upgrade", "tool:starter-remotion"):
             self.assertTrue(adapters[key].get("tool_suite"), key)
         self.assertIn("starter-remotion", tool.RECIPES)
