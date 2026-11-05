@@ -259,6 +259,13 @@
    "what": "v61.6 (artifact version 69): editable grid cells (الفعلي، الموقع، الملاحظة) drawn as clear boxes inside each cell (row colour around, divider lines kept, hover and focus states); search text keeps clear of the icon; C button, when the page is not beside a chat, opens a new Claude chat with the search request (photo + 2026 alternatives) prefilled, else copies it.",
    "checks": "screenshots of boxes in normal/zebra/marked/focused rows; C fallback opened claude.ai/new?q=...; t45/t52/t54/t56/t59/t60 0 errors; gate 0 low",
    "status": "published"
+  },
+  {
+   "n": 32,
+   "at": "2026-11-05T10:35:00+03:00",
+   "what": "v61.7 (artifact version 70): element picker in the theme studio (hover highlights any element with its selector, click opens a panel: text/background/border colours, size, weight, padding, margin, radius, border, height, width, letter spacing, line height, opacity, font, alignment, hide; live preview; saved as CSS rules in the theme, reset per element); the AI message adds a live map of ~100 element types with measured size, font, colours, radius, padding and text, plus the theme's current rules; C now answers inside the page (sample, complex tier): part type, cars, position, OE and aftermarket numbers as chips marked when already in the list (click to search), notes, confidence, Google/Bing image links, copy — opening claude.ai in a new tab was refused by claude.ai (ERR_BLOCKED_BY_RESPONSE).",
+   "checks": "t61 picker: colour+size+padding applied live, saved, survives reload, message 29k chars with map; t62 mocked sample: 5 chips, 2 marked as in-list, chip click searches; t54/t56/t59/t60 0 errors; gate 0 low. Real Claude answer not exercised from here.",
+   "status": "published"
   }
  ],
  "outputs": [
