@@ -1,6 +1,6 @@
 # الوكلاء والتوجيه الذكي — Agents & routing
 
-[← الفهرس الدقيق / micro index](README.md) · 282 powers
+[← الفهرس الدقيق / micro index](README.md) · 283 powers
 
 ## الفهرس / contents
 
@@ -148,22 +148,23 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 | TOOL-178 | ✅ | نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز · Quran text and timing: exact verses, measured pauses, verse and word timing for reels → `quran-text` | SP-0146 Subtitle to words.json converter | ffmpeg, pip:faster-whisper |
 | TOOL-25 | ✅ | مستخرج إشارات التوقيت من الصوت · WAV audio cue mapper → `audio-cue-mapper` | SP-0146 Subtitle to words.json converter | pip:faster-whisper |
 | TOOL-86 | ✅ | محوّل الترجمات إلى توقيت الكلمات · Subtitle to words.json converter → `repo-words-convert` | SP-0146 Subtitle to words.json converter | pip:faster-whisper |
-| TOOL-156 | ✅ | البحث في كتالوج القدرات · Power catalog search → `powers` | SP-0147 Rebalance creative repo catalog | python3, npm:mermaid |
-| TOOL-70 | ✅ | مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر · Style library — 586 visual styles by name (86 Futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated PDF catalog → `style-library` | SP-0147 Rebalance creative repo catalog | python3, chromium |
-| TOOL-74 | ✅ | بوابة حفظ الحقائق عند إعادة الصياغة · Rewrite Fact Anchor Gate → `anchor-gate` | SP-0147 Rebalance creative repo catalog | python3 |
-| TOOL-33 | 🟢 | تدقيق أدلة الكتالوج · Catalog Evidence Audit → `catalog-evidence-audit` | SP-0147 Rebalance creative repo catalog | python3 |
-| TOOL-58 | 🟢 | إعادة تصنيف نطاق الأدلة · Proof Scope Relabeler → `relabel-proofs` | SP-0147 Rebalance creative repo catalog | python3 |
-| TOOL-60 | 🟢 | مزامنة الكتالوج مع PromptsMotion · PromptsMotion catalog sync → `repo-sync-catalog` | SP-0147 Rebalance creative repo catalog | python3 |
-| TOOL-99 | 🟢 | مولّد فصول العائلات · Family Chapter Generator → `build-chapters` | SP-0147 Rebalance creative repo catalog | python3 |
-| TOOL-48 | 📦 | باني فهرس البحث الإبداعي · Creative research catalog builder → `rea-creative-research-atlas` | SP-0147 Rebalance creative repo catalog | python3, gh, npm:rea |
-| TOOL-49 | 📦 | إعادة موازنة فهرس المستودعات الإبداعية · Rebalance creative repo catalog → `rebalance-creative-repos` | SP-0147 Rebalance creative repo catalog | python3, gh, npm:rea |
-| TOOL-184 | ✅ | نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) · Website snapshot and design read-out (goclone capabilities) → `site-snapshot` | SP-0148 REA CLI Bridge | python3, chromium |
-| TOOL-32 | ✅ | فحص المشروع المحلي دون تشغيل · Local project static audit → `local-project-audit` | SP-0148 REA CLI Bridge | python3, npm:rea, engine:ghidra |
-| TOOL-45 | ✅ | مستكشف المواقع بالمتصفح · Browser scout site survey → `browser-scout` | SP-0148 REA CLI Bridge | python3, chromium |
-| TOOL-52 | ✅ | موجّه عائلات REA · REA Family Router → `rea-family-router` | SP-0148 REA CLI Bridge | python3, npm:rea, engine:android, engine:binwalk … |
-| TOOL-62 | ✅ | دراسة تطبيق ويب عام بـ REA (حقائق فقط) · Web app study (public frontend, REA, facts only) → `web-app-study` | SP-0148 REA CLI Bridge | python3, chromium, npm:rea |
-| TOOL-98 | ✅ | جسر أوامر REA · REA CLI Bridge → `rea-bridge` | SP-0148 REA CLI Bridge | python3, npm:rea |
-| TOOL-53 | 📦 | تحليل REA لمستودعات المالك دفعةً واحدة · REA Owned-Repo Batch → `rea-owned-repo-batch` | SP-0148 REA CLI Bridge | python3, git, npm:rea |
+| TOOL-184 | ✅ | نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) · Website snapshot and design read-out (goclone capabilities) → `site-snapshot` | SP-0147 REA CLI Bridge | python3, chromium |
+| TOOL-186 | ✅ | جسر Craft Anything: 321 أداة فحص بلغة Rust للبرامج والمواقع والتطبيقات والملفات · Craft Anything bridge: 321 pure-Rust inspection tools for programs, websites, apps and files → `craft-anything` | SP-0147 REA CLI Bridge | python3, chromium, engine:ghidra, engine:android … |
+| TOOL-32 | ✅ | فحص المشروع المحلي دون تشغيل · Local project static audit → `local-project-audit` | SP-0147 REA CLI Bridge | python3, npm:rea, engine:ghidra |
+| TOOL-45 | ✅ | مستكشف المواقع بالمتصفح · Browser scout site survey → `browser-scout` | SP-0147 REA CLI Bridge | python3, chromium |
+| TOOL-52 | ✅ | موجّه عائلات REA · REA Family Router → `rea-family-router` | SP-0147 REA CLI Bridge | python3, npm:rea, engine:android, engine:binwalk … |
+| TOOL-62 | ✅ | دراسة تطبيق ويب عام بـ REA (حقائق فقط) · Web app study (public frontend, REA, facts only) → `web-app-study` | SP-0147 REA CLI Bridge | python3, chromium, npm:rea |
+| TOOL-98 | ✅ | جسر أوامر REA · REA CLI Bridge → `rea-bridge` | SP-0147 REA CLI Bridge | python3, npm:rea |
+| TOOL-53 | 📦 | تحليل REA لمستودعات المالك دفعةً واحدة · REA Owned-Repo Batch → `rea-owned-repo-batch` | SP-0147 REA CLI Bridge | python3, git, npm:rea |
+| TOOL-156 | ✅ | البحث في كتالوج القدرات · Power catalog search → `powers` | SP-0148 Rebalance creative repo catalog | python3, npm:mermaid |
+| TOOL-70 | ✅ | مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر · Style library — 586 visual styles by name (86 Futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated PDF catalog → `style-library` | SP-0148 Rebalance creative repo catalog | python3, chromium |
+| TOOL-74 | ✅ | بوابة حفظ الحقائق عند إعادة الصياغة · Rewrite Fact Anchor Gate → `anchor-gate` | SP-0148 Rebalance creative repo catalog | python3 |
+| TOOL-33 | 🟢 | تدقيق أدلة الكتالوج · Catalog Evidence Audit → `catalog-evidence-audit` | SP-0148 Rebalance creative repo catalog | python3 |
+| TOOL-58 | 🟢 | إعادة تصنيف نطاق الأدلة · Proof Scope Relabeler → `relabel-proofs` | SP-0148 Rebalance creative repo catalog | python3 |
+| TOOL-60 | 🟢 | مزامنة الكتالوج مع PromptsMotion · PromptsMotion catalog sync → `repo-sync-catalog` | SP-0148 Rebalance creative repo catalog | python3 |
+| TOOL-99 | 🟢 | مولّد فصول العائلات · Family Chapter Generator → `build-chapters` | SP-0148 Rebalance creative repo catalog | python3 |
+| TOOL-48 | 📦 | باني فهرس البحث الإبداعي · Creative research catalog builder → `rea-creative-research-atlas` | SP-0148 Rebalance creative repo catalog | python3, gh, npm:rea |
+| TOOL-49 | 📦 | إعادة موازنة فهرس المستودعات الإبداعية · Rebalance creative repo catalog → `rebalance-creative-repos` | SP-0148 Rebalance creative repo catalog | python3, gh, npm:rea |
 | TOOL-10 | ✅ | مقدّر سعة الأنظمة · System Capacity Sizer → `architecture-sizer` | SP-0149 System Capacity Sizer | python3 |
 | TOOL-145 | ✅ | رياضيات القرار: نطاقات مونت كارلو ونقطة التعادل وترتيب ICE والقيمة الحالية ونقطة انقلاب القرار · Decision math: Monte Carlo ranges, break-even, ICE, NPV/IRR and flip thresholds → `decision-math` | SP-0149 System Capacity Sizer | python3, npm:p5 |
 | TOOL-159 | ✅ | مختبر البرومبت · Prompt Lab → `prompt-lab` | SP-0149 System Capacity Sizer | python3 |

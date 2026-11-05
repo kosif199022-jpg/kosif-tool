@@ -1,7 +1,7 @@
 {
 "schema": "kosif.superpowers.v1",
-"atoms": 5863,
-"distinct_methods": 5581,
+"atoms": 5864,
+"distinct_methods": 5582,
 "twin_groups": 178,
 "superpowers": 483,
 "per_target": 12,
@@ -3774,7 +3774,7 @@
 "sim": 0.128
 },
 {
-"id": "SP-0147",
+"id": "SP-0148",
 "sim": 0.12
 }
 ]
@@ -4758,7 +4758,7 @@
 "sim": 0.349
 },
 {
-"id": "SP-0147",
+"id": "SP-0148",
 "sim": 0.229
 }
 ]
@@ -5015,7 +5015,7 @@
 "sim": 0.092
 },
 {
-"id": "SP-0147",
+"id": "SP-0148",
 "sim": 0.083
 },
 {
@@ -10222,8 +10222,8 @@
 "sim": 0.331
 },
 {
-"id": "SP-0148",
-"sim": 0.311
+"id": "SP-0147",
+"sim": 0.303
 }
 ]
 },
@@ -10432,8 +10432,8 @@
 "sim": 0.242
 },
 {
-"id": "SP-0148",
-"sim": 0.135
+"id": "SP-0147",
+"sim": 0.136
 }
 ]
 },
@@ -10625,8 +10625,8 @@
 "sim": 0.245
 },
 {
-"id": "SP-0148",
-"sim": 0.143
+"id": "SP-0147",
+"sim": 0.141
 }
 ]
 },
@@ -10789,8 +10789,8 @@
 "sim": 0.203
 },
 {
-"id": "SP-0148",
-"sim": 0.121
+"id": "SP-0147",
+"sim": 0.12
 }
 ]
 },
@@ -10953,8 +10953,8 @@
 "sim": 0.328
 },
 {
-"id": "SP-0148",
-"sim": 0.178
+"id": "SP-0147",
+"sim": 0.182
 }
 ]
 },
@@ -11087,8 +11087,8 @@
 "sim": 0.312
 },
 {
-"id": "SP-0148",
-"sim": 0.258
+"id": "SP-0147",
+"sim": 0.248
 }
 ]
 },
@@ -11214,8 +11214,8 @@
 "sim": 0.312
 },
 {
-"id": "SP-0148",
-"sim": 0.238
+"id": "SP-0147",
+"sim": 0.223
 }
 ]
 },
@@ -11335,8 +11335,8 @@
 "sim": 0.214
 },
 {
-"id": "SP-0148",
-"sim": 0.182
+"id": "SP-0147",
+"sim": 0.175
 }
 ]
 },
@@ -11668,8 +11668,8 @@
 "sim": 0.189
 },
 {
-"id": "SP-0148",
-"sim": 0.163
+"id": "SP-0147",
+"sim": 0.159
 }
 ]
 },
@@ -11766,8 +11766,8 @@
 "sim": 0.213
 },
 {
-"id": "SP-0148",
-"sim": 0.163
+"id": "SP-0147",
+"sim": 0.172
 }
 ]
 },
@@ -11862,8 +11862,8 @@
 "sim": 0.242
 },
 {
-"id": "SP-0148",
-"sim": 0.188
+"id": "SP-0147",
+"sim": 0.173
 }
 ]
 },
@@ -12051,8 +12051,8 @@
 "sim": 0.195
 },
 {
-"id": "SP-0148",
-"sim": 0.182
+"id": "SP-0147",
+"sim": 0.175
 }
 ]
 },
@@ -12378,12 +12378,8 @@
 "sim": 0.158
 },
 {
-"id": "SP-0080",
-"sim": 0.147
-},
-{
-"id": "SP-0148",
-"sim": 0.13
+"id": "SP-0147",
+"sim": 0.149
 }
 ]
 },
@@ -12458,8 +12454,8 @@
 "sim": 0.182
 },
 {
-"id": "SP-0148",
-"sim": 0.087
+"id": "SP-0147",
+"sim": 0.084
 }
 ]
 },
@@ -16585,7 +16581,7 @@
 "sim": 0.116
 },
 {
-"id": "SP-0147",
+"id": "SP-0148",
 "sim": 0.104
 },
 {
@@ -17404,8 +17400,8 @@
 "sim": 0.289
 },
 {
-"id": "SP-0148",
-"sim": 0.136
+"id": "SP-0147",
+"sim": 0.138
 },
 {
 "id": "SP-0273",
@@ -17971,7 +17967,7 @@
 "sim": 0.39
 },
 {
-"id": "SP-0147",
+"id": "SP-0148",
 "sim": 0.25
 },
 {
@@ -19024,6 +19020,124 @@
 "id": "SP-0147",
 "domain": "build",
 "family": "runnable-tools",
+"name_ar": "جسر أوامر REA",
+"name_en": "REA CLI Bridge",
+"focus": [
+"rea",
+"website",
+"clone",
+"static"
+],
+"size": 9,
+"best": "proven",
+"status_mix": {
+"proven": 7,
+"install": 1,
+"documented": 1
+},
+"ready_now": 7,
+"families": {
+"runnable-tools": 8,
+"atlas-build": 1
+},
+"atlas_folded": 1,
+"requires": [
+"python3",
+"npm:rea",
+"chromium",
+"engine:android",
+"engine:binwalk",
+"os:macos",
+"engine:ghidra",
+"engine:frida"
+],
+"pipeline": [
+{
+"id": "TOOL-98",
+"status": "proven",
+"name_en": "REA CLI Bridge",
+"name_ar": "جسر أوامر REA"
+},
+{
+"id": "TOOL-52",
+"status": "proven",
+"name_en": "REA Family Router",
+"name_ar": "موجّه عائلات REA"
+},
+{
+"id": "TOOL-62",
+"status": "proven",
+"name_en": "Web app study (public frontend, REA, facts only)",
+"name_ar": "دراسة تطبيق ويب عام بـ REA (حقائق فقط)"
+},
+{
+"id": "TOOL-186",
+"status": "proven",
+"name_en": "Craft Anything bridge: 321 pure-Rust inspection tools for programs, websites, apps and files",
+"name_ar": "جسر Craft Anything: 321 أداة فحص بلغة Rust للبرامج والمواقع والتطبيقات والملفات"
+},
+{
+"id": "TOOL-32",
+"status": "proven",
+"name_en": "Local project static audit",
+"name_ar": "فحص المشروع المحلي دون تشغيل"
+},
+{
+"id": "TOOL-184",
+"status": "proven",
+"name_en": "Website snapshot and design read-out (goclone capabilities)",
+"name_ar": "نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone)"
+},
+{
+"id": "TOOL-45",
+"status": "proven",
+"name_en": "Browser scout site survey",
+"name_ar": "مستكشف المواقع بالمتصفح"
+},
+{
+"id": "TOOL-53",
+"status": "install",
+"name_en": "REA Owned-Repo Batch",
+"name_ar": "تحليل REA لمستودعات المالك دفعةً واحدة"
+},
+{
+"id": "ABUILD-15",
+"status": "documented",
+"name_en": "Browser-evidence website clone workflow",
+"name_ar": "استنساخ موقع بأدلة المتصفح"
+}
+],
+"proof": [
+"kosif-tool/.claude/skills/kosif-superpowers/evals/test_rea_bridge.py",
+"kosif-tool/.claude/skills/kosif-superpowers/scripts/rea_bridge.py",
+"kosif-tool/tests/test_rea_family_router.py",
+"kosif-tool/.claude/skills/kosif-superpowers/scripts/rea_family_router.py"
+],
+"twins": [],
+"distinct_methods": 9,
+"links": [
+{
+"id": "SP-0077",
+"sim": 0.303
+},
+{
+"id": "SP-0082",
+"sim": 0.248
+},
+{
+"id": "SP-0083",
+"sim": 0.223
+},
+{
+"id": "SP-0081",
+"sim": 0.182
+}
+]
+},
+{
+"id": "SP-0148",
+"domain": "build",
+"family": "runnable-tools",
 "name_ar": "إعادة موازنة فهرس المستودعات الإبداعية",
 "name_en": "Rebalance creative repo catalog",
 "focus": [
@@ -19131,118 +19245,6 @@
 {
 "id": "SP-0349",
 "sim": 0.185
-}
-]
-},
-{
-"id": "SP-0148",
-"domain": "build",
-"family": "runnable-tools",
-"name_ar": "جسر أوامر REA",
-"name_en": "REA CLI Bridge",
-"focus": [
-"rea",
-"website",
-"clone",
-"static"
-],
-"size": 8,
-"best": "proven",
-"status_mix": {
-"proven": 6,
-"install": 1,
-"documented": 1
-},
-"ready_now": 6,
-"families": {
-"runnable-tools": 7,
-"atlas-build": 1
-},
-"atlas_folded": 1,
-"requires": [
-"python3",
-"npm:rea",
-"chromium",
-"engine:android",
-"engine:binwalk",
-"os:macos",
-"engine:ghidra",
-"git"
-],
-"pipeline": [
-{
-"id": "TOOL-98",
-"status": "proven",
-"name_en": "REA CLI Bridge",
-"name_ar": "جسر أوامر REA"
-},
-{
-"id": "TOOL-62",
-"status": "proven",
-"name_en": "Web app study (public frontend, REA, facts only)",
-"name_ar": "دراسة تطبيق ويب عام بـ REA (حقائق فقط)"
-},
-{
-"id": "TOOL-52",
-"status": "proven",
-"name_en": "REA Family Router",
-"name_ar": "موجّه عائلات REA"
-},
-{
-"id": "TOOL-32",
-"status": "proven",
-"name_en": "Local project static audit",
-"name_ar": "فحص المشروع المحلي دون تشغيل"
-},
-{
-"id": "TOOL-184",
-"status": "proven",
-"name_en": "Website snapshot and design read-out (goclone capabilities)",
-"name_ar": "نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone)"
-},
-{
-"id": "TOOL-45",
-"status": "proven",
-"name_en": "Browser scout site survey",
-"name_ar": "مستكشف المواقع بالمتصفح"
-},
-{
-"id": "TOOL-53",
-"status": "install",
-"name_en": "REA Owned-Repo Batch",
-"name_ar": "تحليل REA لمستودعات المالك دفعةً واحدة"
-},
-{
-"id": "ABUILD-15",
-"status": "documented",
-"name_en": "Browser-evidence website clone workflow",
-"name_ar": "استنساخ موقع بأدلة المتصفح"
-}
-],
-"proof": [
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_rea_bridge.py",
-"kosif-tool/.claude/skills/kosif-superpowers/scripts/rea_bridge.py",
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_web_app_study.py",
-"kosif-tool/.claude/skills/kosif-superpowers/scripts/web_app_study.py"
-],
-"twins": [],
-"distinct_methods": 8,
-"links": [
-{
-"id": "SP-0077",
-"sim": 0.311
-},
-{
-"id": "SP-0082",
-"sim": 0.258
-},
-{
-"id": "SP-0083",
-"sim": 0.238
-},
-{
-"id": "SP-0089",
-"sim": 0.188
 }
 ]
 },
@@ -24608,8 +24610,8 @@
 "sim": 0.097
 },
 {
-"id": "SP-0148",
-"sim": 0.057
+"id": "SP-0147",
+"sim": 0.052
 }
 ]
 },
@@ -27803,7 +27805,7 @@
 "sim": 0.214
 },
 {
-"id": "SP-0147",
+"id": "SP-0148",
 "sim": 0.065
 }
 ]
@@ -38746,7 +38748,7 @@
 "distinct_methods": 5,
 "links": [
 {
-"id": "SP-0147",
+"id": "SP-0148",
 "sim": 0.317
 },
 {
@@ -45820,7 +45822,7 @@
 "sim": 0.39
 },
 {
-"id": "SP-0147",
+"id": "SP-0148",
 "sim": 0.185
 },
 {
@@ -63305,8 +63307,8 @@
 "sim": 0.088
 },
 {
-"id": "SP-0148",
-"sim": 0.075
+"id": "SP-0147",
+"sim": 0.073
 }
 ]
 },

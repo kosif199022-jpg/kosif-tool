@@ -154,6 +154,7 @@
 | `atlas-review-summary` | TOOL-110 | ملخص مراجعة الأطلس · Atlas review summary | `python3 scripts/atlas_review_summary.py --help` | 0 |
 | `atlas-reviewed-methods-v3` | TOOL-111 | مناهج الأطلس المراجَعة · Reviewed Atlas methods | `python3 scripts/atlas_reviewed_methods_v3.py --help` | 1 |
 | `atlas-transfer` | TOOL-113 | نقل مناهج الأطلس المثبتة · Atlas verified method transfer | `python3 scripts/atlas_transfer.py --help` | 0 |
+| `craft-anything` | TOOL-186 | جسر Craft Anything: 321 أداة فحص بلغة Rust للبرامج والمواقع والتطبيقات والملفات · Craft Anything bridge: 321 pure-Rust inspection tools for programs, websites, apps and files | `python3 scripts/craft_anything.py doctor` | 1 |
 | `differential-exam` | TOOL-67 | مصحّح الامتحان الخفي التفاضلي · Differential hidden-exam scorer | `python3 scripts/differential_exam.py seal ./exam --out ./exam-seal.js…` | 1 |
 | `installer-triage` | TOOL-97 | فرز المثبّتات · Installer Triage | `python3 scripts/installer_triage.py scan ./setup.exe` | 1 |
 | `local-project-audit` | TOOL-32 | فحص المشروع المحلي دون تشغيل · Local project static audit | `python3 scripts/local_project_audit.py ./my-project` | 1 |

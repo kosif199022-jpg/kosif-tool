@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **184 powers follow** — ✅ 153 · 🟢 22 · 📦 9 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **185 powers follow** — ✅ 154 · 🟢 22 · 📦 9 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -19,7 +19,7 @@
 - **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-180 (19)
 - **Audio and rhythm / الصوت والإيقاع** — TOOL-25 … TOOL-185 (6)
 - **Drawing and characters / الرسم والشخصيات** — TOOL-27 … TOOL-169 (17)
-- **Software investigation / فحص البرامج** — TOOL-32 … TOOL-162 (14)
+- **Software investigation / فحص البرامج** — TOOL-32 … TOOL-186 (15)
 - **Maintain and build / الصيانة والبناء** — TOOL-33 … TOOL-154 (13)
 - **3D / ثلاثي الأبعاد** — TOOL-36 … TOOL-121 (11)
 - **Image, design and fonts / الصور والتصميم والخطوط** — TOOL-42 … TOOL-148 (11)
@@ -1114,6 +1114,15 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_repo_map.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/repo_map.py`
 - **المصدر / source:** data/tools.json
 
+#### TOOL-186 · جسر Craft Anything: 321 أداة فحص بلغة Rust للبرامج والمواقع والتطبيقات والملفات · Craft Anything bridge: 321 pure-Rust inspection tools for programs, websites, apps and files · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يشغّل craft-anything-cli المبني محليًا (storytold/craft-anything إصدار 0.4.0، رخصة MIT/Apache-2.0) من داخل KOSIF والتنين الأسود. doctor يلاقي البرنامج (CRAFT_ANYTHING_CLI أو PATH أو ~/.cargo/bin) ويلخّص فحصه الذاتي: النسخة والسلامة والمحركات الموجودة (Chromium وGDB وLLDB وobjdump وJava وGhidra…) واختبار خادم MCP. tools يعرض 321 أداة مقسّمة حسب المجموعة مع فلتر بالكلام. plan يطبع الأمر بالظبط من غير ما يشغّله. run وtriage يشغّلوا أداة واحدة في وضع Clean room افتراضيًا ويكتبوا الدليل JSON في ملف --output جديد ويرجّعوا sha256 والحجم وملخص المحرك. mcp-config يطبع إعداد خادم MCP عشان أي عميل يحمّل كل الأدوات مباشرة. — Drives a locally built craft-anything-cli (storytold/craft-anything v0.4.0, MIT/Apache-2.0) from KOSIF and the Black Dragon. doctor finds the binary (CRAFT_ANYTHING_CLI, PATH, ~/.cargo/bin) and summarises its own doctor: version, health, which engines are present (Chromium, GDB, LLDB, objdump, Java, Ghidra…) and the MCP server self-test. tools lists the engine's 321 tools by toolset (native, formats, browser, javascript, android, apple, adb, frida, runtime, database…) with a text filter. plan prints the exact argv without running it. run and triage run one engine tool in Clean room by default and write its JSON evidence to a new --output file, returning sha256, size and the engine's own summary. mcp-config prints the MCP server entry so a client can load all the tools directly.
+- **متى أستخدمها / when:** استخدم craft anything في تحليل البرنامج ده / is craft-anything-cli installed and healthy here?
+- **كيف / how:** doctor: `python3 scripts/craft_anything.py doctor`; tools: `python3 scripts/craft_anything.py tools screenshot --toolset browser`; plan: `python3 scripts/craft_anything.py plan core-target-open ./app.bin`; run: `python3 scripts/craft_anything.py run --output out/<job>/open.json core-target-open ./app.bin`. Full card: `python3 scripts/hub.py tool craft-anything`. Limits: Never installs or builds Craft Anything, never passes --allow-run, and refuses rebuild, chat, setup, uninstall, ai, mcp and the setup and projects toolsets (they start a coding agent or change the user's apps). Findings are the engine's own evidence records, not verified by KOSIF (verified is always false). The prebuilt binary in project files is Linux x86_64 only. **أرقام / params:** in: An action. run takes an engine tool name and its arguments; run and triage take --output (a new file in an existing folder), --deep, --authorized and --timeout (default 300 s). · out: JSON on stdout. run and triage also write the engine's JSON evidence to the caller-named file (exclusive create) and report its sha256 and byte count with verified=false.
+- **تثبيت / install:** `needs on PATH: python3 · optional: bin:craft-anything-cli`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`chromium`](../requirements.md#req-chromium) · [`engine:ghidra`](../requirements.md#req-engine-ghidra) · [`engine:android`](../requirements.md#req-engine-android) · [`engine:frida`](../requirements.md#req-engine-frida) · [`engine:rizin`](../requirements.md#req-engine-rizin) · [`engine:wireshark`](../requirements.md#req-engine-wireshark) · [`engine:binwalk`](../requirements.md#req-engine-binwalk) · [`os:macos`](../requirements.md#req-os-macos)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_craft_anything.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/craft_anything.py`
+- **المصدر / source:** data/tools.json
+
 ## Maintain and build / الصيانة والبناء
 
 #### TOOL-33 · تدقيق أدلة الكتالوج · Catalog Evidence Audit · 🟢 جاهز / ready
@@ -1647,7 +1656,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (184)
+- الرخص / licences: — (185)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

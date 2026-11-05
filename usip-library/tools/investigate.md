@@ -1,4 +1,4 @@
-# أدوات المجال `investigate` (14 أداة)
+# أدوات المجال `investigate` (15 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -206,6 +206,64 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:atlas-transfer --evidence <ملف>`.
+
+### `craft-anything` — جسر Craft Anything: 321 أداة فحص بلغة Rust للبرامج والمواقع والتطبيقات والملفات / Craft Anything bridge: 321 pure-Rust inspection tools for programs, websites, apps and files
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/craft_anything.py` (جذر: skill) |
+| المجال | `investigate` |
+| الدليل | `tested-here` |
+| العائلات | `software-investigation`, `self-discovery` |
+
+**ما تفعله:** يشغّل craft-anything-cli المبني محليًا (storytold/craft-anything إصدار 0.4.0، رخصة MIT/Apache-2.0) من داخل KOSIF والتنين الأسود. doctor يلاقي البرنامج (CRAFT_ANYTHING_CLI أو PATH أو ~/.cargo/bin) ويلخّص فحصه الذاتي: النسخة والسلامة والمحركات الموجودة (Chromium وGDB وLLDB وobjdump وJava وGhidra…) واختبار خادم MCP. tools يعرض 321 أداة مقسّمة حسب المجموعة مع فلتر بالكلام. plan يطبع الأمر بالظبط من غير ما يشغّله. run وtriage يشغّلوا أداة واحدة في وضع Clean room افتراضيًا ويكتبوا الدليل JSON في ملف --output جديد ويرجّعوا sha256 والحجم وملخص المحرك. mcp-config يطبع إعداد خادم MCP عشان أي عميل يحمّل كل الأدوات مباشرة.
+
+**What it does:** Drives a locally built craft-anything-cli (storytold/craft-anything v0.4.0, MIT/Apache-2.0) from KOSIF and the Black Dragon. doctor finds the binary (CRAFT_ANYTHING_CLI, PATH, ~/.cargo/bin) and summarises its own doctor: version, health, which engines are present (Chromium, GDB, LLDB, objdump, Java, Ghidra…) and the MCP server self-test. tools lists the engine's 321 tools by toolset (native, formats, browser, javascript, android, apple, adb, frida, runtime, database…) with a text filter. plan prints the exact argv without running it. run and triage run one engine tool in Clean room by default and write its JSON evidence to a new --output file, returning sha256, size and the engine's own summary. mcp-config prints the MCP server entry so a client can load all the tools directly.
+
+#### متى تُستدعى
+
+- «استخدم craft anything في تحليل البرنامج ده»
+- «اعمل triage للملف ده وقولي هو إيه»
+- «إيه أدوات craft-anything المتاحة لتحليل تطبيق أندرويد؟»
+- «is craft-anything-cli installed and healthy here?»
+- «inspect this binary with Craft Anything in deep mode, I own it»
+- «wire Craft Anything into Claude Code as an MCP server»
+
+#### الأوامر
+
+- **doctor**: Finds craft-anything-cli and summarises its doctor: version, healthy, engines present, MCP self-test, problems. Without the binary it prints the install steps (nothing is installed).
+  - `python3 scripts/craft_anything.py doctor`
+- **tools**: Lists the engine's tools (runs `craft-anything-cli commands`, read-only) with counts per toolset and a text filter.
+  - `python3 scripts/craft_anything.py tools screenshot --toolset browser`
+- **plan**: Prints the exact argv, the tool's toolset and whether --authorized is needed. Nothing is run.
+  - `python3 scripts/craft_anything.py plan core-target-open ./app.bin`
+- **run**: Runs one engine tool (Clean room unless --deep --authorized) and writes its JSON to a new --output file; prints sha256, size and the engine's summary. Options go before the tool name.
+  - `python3 scripts/craft_anything.py run --output out/<job>/open.json core-target-open ./app.bin`
+- **triage**: First look at a file: format, architecture, libraries, packer hints, with an evidence id. Reading inside a file is Deep mode, so it needs --deep --authorized.
+  - `python3 scripts/craft_anything.py triage --deep --authorized --output out/<job>/triage.json ./app.bin`
+- **mcp-config**: Prints the mcpServers entry and the `claude mcp add` line for the binary. Nothing is run.
+  - `python3 scripts/craft_anything.py mcp-config`
+- **install**: Prints the clone and cargo install commands to show the user. Nothing is run.
+  - `python3 scripts/craft_anything.py install`
+- **self-test**: Known-answer checks against a stub CLI: doctor parsing, tool filter, refusals, authorization gate, hashed output, no overwrite.
+  - `python3 scripts/craft_anything.py --self-test`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- optional: bin:craft-anything-cli
+- الأمان: runs-external-programs
+- الموافقة: run and triage execute the third-party craft-anything-cli, which the user builds separately with approval. Deep mode (reading a target's code, files or page source) and the runtime, frida, adb, build and application toolsets need --authorized: the user owns the target or may inspect it. doctor and tools only run the binary's own read-only commands; plan, mcp-config and install run nothing.
+- الحدود: Never installs or builds Craft Anything, never passes --allow-run, and refuses rebuild, chat, setup, uninstall, ai, mcp and the setup and projects toolsets (they start a coding agent or change the user's apps). Findings are the engine's own evidence records, not verified by KOSIF (verified is always false). The prebuilt binary in project files is Linux x86_64 only.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_craft_anything.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/investigate.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:craft-anything --evidence <ملف>`.
 
 ### `differential-exam` — مصحّح الامتحان الخفي التفاضلي / Differential hidden-exam scorer
 

@@ -879,7 +879,7 @@
 "SP-0145",
 "SP-0002",
 "SP-0235",
-"SP-0147"
+"SP-0148"
 ],
 "text": "catalog snapshot: powers.py stats + repo validator لقطة الفهرس والمدقِّق snapshot baseline stats validator لقطة خط أساس إحصاءات مدقق deterministic record gate for the power catalog (mutation-tested) بوابة السجلات الحتمية validator catalog json gate mutation tested مدقق فهرس بوابة اختبار الطفرات self-evolution loop for this skill (evolve with evidence) حلقة التطوير الذاتي للمهارة self evolution improve skill changelog regression تطوير ذاتي تحسين المهارة سجل التغييرات انحدار trigger eval matrix for a skill (+ with/without a/b) مصفوفة اختبار التفعيل trigger eval skill testing routing a/b اختبار التفعيل تقييم المهارة توجيه decision ledger for repeated rollouts سجل القرارات المتكرر decision ledger rollout append-only سجل القرارات جولات إطلاق تدريجي one value registry: a source and the supporting sentence for every number سجل قيم بمصدر واقتباس لكل رقم cited numbers value registry source quote fact check أرقام موثقة سجل القيم مصدر اقتباس كل رقم ليه مصدر رقم متألف سكربت فيديو تعليمي فيديو تعليمي every number sourced consent-scoped lessons (growth log) دروس بموافقة ونطاق مشروع lessons growth log learning memory دروس سجل التعلم موافقة تعميم an explicit gaps list instead of an invented number ملف فجوات بدل اختراع رقم gaps unsourced do not invent فجوات بلا مصدر لا تخترع a conservation ledger: account for every unit دفتر حفظ: ابحث عن كل وحدة conservation energy ledger sankey efficiency حفظ الطاقة سانكي كفاءة ميزانية text refers to numbers by id and fails closed النص يشير إلى الرقم بمعرّفه ويفشل مغلقًا placeholders fail closed narration numbers single source of truth عناصر نائبة رقم من السجل تعليق صوتي"
 },
@@ -1063,7 +1063,7 @@
 "SP-0183",
 "SP-0381",
 "SP-0408",
-"SP-0147"
+"SP-0148"
 ],
 "text": "ask for any visual style by name from a 586-style library اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا style library visual style art style أسلوب أساليب ستايل استايل مكتبة الأساليب موسوعة الأساليب futurepedia ks illustrated style catalog pdf with generated swatches كتالوج أساليب مصوّر pdf بعينات مولّدة style catalog pdf كتالوج ملف بي دي اف عينات swatches contact sheet fuse two styles 70/30 in one prompt دمج أسلوبين 70/30 في برومنت واحد style fusion mix styles دمج أساليب مزج accent fusion extract a writing style into a reusable style guide استخراج أسلوب كاتب إلى دليل أسلوب قابل للتطبيق writing style voice style guide أسلوب الكتابة صوت العلامة rubric"
 },
@@ -1127,7 +1127,7 @@
 "links": [
 "SP-0479",
 "SP-0155",
-"SP-0147",
+"SP-0148",
 "SP-0038"
 ],
 "text": "dash rule on output قاعدة الشرطة الطويلة em dash dash punctuation شرطة ترقيم voice matching from the writer's sample مطابقة صوت الكاتب من عينة voice style sample brand voice أسلوبي صوت الكاتب four-step rewrite: mark, draft, check, final إعادة الصياغة في أربع خطوات rewrite humanize polish tighten إعادة صياغة تحرير linkedin social post بوست منشور sound like ai reply-first rewrite (wrong-reader pattern) الرد بالقرار أولًا reply bluf decision first email slack ابدأ بالقرار genre voice without a sample الصوت حسب نوع النص بلا عينة genre register tone نبرة نوع النص keep voice-carrying details الحفاظ على تفاصيل الصوت البشري voice details authentic تفاصيل صوت بشري self-edit of claude's own answers تحرير claude لردوده هو self edit answer quality concise ردود claude مراجعة ذاتية plain-language house style for docs أسلوب اللغة الواضحة للتوثيق plain language docs style guide توثيق لغة واضحة three output modes: pasted, file, embedded أوضاع الإخراج الثلاثة output mode file edit pr description commit message وضع الإخراج honesty guard: clarity and voice, never authorship deception الأمانة: وضوح وصوت لا خداع honesty disclosure detectors ethics أمانة إفصاح كشف الذكاء الاصطناعي لينكدان بوست routing evals for the humanizer اختبارات التوجيه للتحسين اللغوي routing triggers evals توجيه اختبارات التفعيل"
@@ -1970,7 +1970,7 @@
 "SP-0084",
 "SP-0087",
 "SP-0083",
-"SP-0148"
+"SP-0147"
 ],
 "text": "rea mcp tool `goto_address` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية goto rea mcp tool `current_procedure` rea mcp: دالة rea mcp reverse engineering هندسة عكسية current rea mcp tool `procedure_references` rea mcp: دالة rea mcp reverse engineering هندسة عكسية procedure rea mcp tool `inspect_address_context` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية inspect rea mcp tool `current_address` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية current rea mcp tool `current_document` rea mcp: المستند الحالي rea mcp reverse engineering هندسة عكسية current rea mcp tool `list_strings` rea mcp: النصوص rea mcp reverse engineering هندسة عكسية list rea mcp tool `list_unknowns` rea mcp: سرد المجهولات rea mcp reverse engineering هندسة عكسية list rea mcp tool `next_address` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية next rea mcp tool `set_address_name` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية set rea mcp tool `read_function_instructions` rea mcp: دالة rea mcp reverse engineering هندسة عكسية read rea mcp tool `list_segments` rea mcp: المقاطع rea mcp reverse engineering هندسة عكسية list rea mcp tool `binary_session` rea mcp: الثنائي rea mcp reverse engineering هندسة عكسية binary rea mcp tool `procedure_info` rea mcp: دالة rea mcp reverse engineering هندسة عكسية procedure rea mcp tool `list_procedures` rea mcp: سرد الإجراءات المستعادة rea mcp reverse engineering هندسة عكسية list rea mcp tool `build_call_path` rea mcp: الاستدعاء rea mcp reverse engineering هندسة عكسية build rea mcp tool `procedure_address` rea mcp: دالة rea mcp reverse engineering هندسة عكسية procedure rea mcp tool `open_binary` rea mcp: الثنائي rea mcp reverse engineering هندسة عكسية open rea mcp tool `address_name` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية address rea mcp tool `analyze_function` rea mcp: دالة rea mcp reverse engineering هندسة عكسية analyze rea mcp tool `procedure_assembly` rea mcp: دالة rea mcp reverse engineering هندسة عكسية procedure rea mcp tool `list_names` rea mcp: سرد الأسماء والرموز rea mcp reverse engineering هندسة عكسية list rea mcp tool `export_evidence_bundle` rea mcp: الأدلة rea mcp reverse engineering هندسة عكسية export rea mcp tool `compare_functions` rea mcp: الدوال rea mcp reverse engineering هندسة عكسية compare rea mcp tool `get_call_graph` rea mcp: الاستدعاء rea mcp reverse engineering هندسة عكسية get rea mcp tool `verify_unknown_resolution` rea mcp: المجهول rea mcp reverse engineering هندسة عكسية verify re"
 },
@@ -1995,7 +1995,7 @@
 "SP-0094",
 "SP-0081",
 "SP-0083",
-"SP-0148"
+"SP-0147"
 ],
 "text": "inspect the caller-selected adb client without contacting devices فحص عميل adb rea reverse engineering هندسة عكسية android-device inspect inspect the caller-selected apktool launcher without decoding anything فحص عميل apktool rea reverse engineering هندسة عكسية android-device inspect list the device's binder services and interfaces سرد الخدمات adb rea reverse engineering هندسة عكسية android-device list force-stop every process of one package إيقاف تطبيق adb rea reverse engineering هندسة عكسية android-device stop list installed packages on one device with base apk device paths سرد الحزم adb rea reverse engineering هندسة عكسية android-device list list the device's declared hardware and software features سرد الميزات adb rea reverse engineering هندسة عكسية android-device list pull one device file to a local copy with a sha-256 digest سحب ملف adb rea reverse engineering هندسة عكسية android-device pull inspect one device's build identity through a fixed getprop whitelist فحص جهاز adb rea reverse engineering هندسة عكسية android-device inspect inspect one installed package's version, installer, and flags through dumpsys فحص حزمة adb rea reverse engineering هندسة عكسية android-device inspect capture one screen frame as a digested png التقاط screen adb rea reverse engineering هندسة عكسية android-device capture report the display's declared size and density فحص الشاشة adb rea reverse engineering هندسة عكسية android-device inspect list one device directory with kinds, permissions, and sizes سرد مجلد adb rea reverse engineering هندسة عكسية android-device list uninstall one package and its data from the device إزالة حزمة adb rea reverse engineering هندسة عكسية android-device uninstall list running processes exactly as ps -a reports them سرد العمليات adb rea reverse engineering هندسة عكسية android-device list read a bounded dump of the device log for one buffer قراءة سجل logcat adb rea reverse engineering هندسة عكسية android-device read pull one installed package's complete apk set with sha-256 digests سحب حزمة adb rea reverse engineering هندسة عكسية android-device pull report the window manager's current focus declarations فحص النافذة adb rea reverse engineering هندسة عكسية android-device inspect find installed packages by case-insensitive name substring تحديد الحزم adb rea reverse engineering هندسة عكسية android-device resolve push one local file to the device; refuses existing targets without --overwrite دفع ملف adb rea reverse engineering هندسة عكسية android-device p"
 },
@@ -2018,7 +2018,7 @@
 "SP-0080",
 "SP-0083",
 "SP-0077",
-"SP-0148"
+"SP-0147"
 ],
 "text": "inspect native listener source locations on the first main-document css match فحص مستمعات الأحداث الأحداث ويب rea reverse engineering هندسة عكسية web-js inspect inspect retained har, native mitmproxy, fiddler saz or aioquic qlog records without fetching recorded urls فحص التقاط الشبكة ويب rea reverse engineering هندسة عكسية web-js inspect trace one captured script's native imports to urls and captured source candidates تتبّع الاستيرادات وحدة ويب rea reverse engineering هندسة عكسية web-js trace inspect one native instruction with decoded operand facts فحص تعليمة أصلية rea reverse engineering هندسة عكسية native inspect trace bounded native def-use and call dependencies تتبّع القيم أصلية rea reverse engineering هندسة عكسية native trace inspect an app overview with evidence فحص rea reverse engineering هندسة عكسية native inspect reconstruct one native function api boundary with evidence فحص واجهة برمجية أصلية rea reverse engineering هندسة عكسية native inspect resolve one static native call site تحديد الأهداف استدعاء أصلية rea reverse engineering هندسة عكسية native resolve verify loaded native bytes, source mappings, relocations and entry فحص صورة تحميل أصلية rea reverse engineering هندسة عكسية native inspect get an overview of an app تحليل rea reverse engineering هندسة عكسية native analyze read one part of an app as code تفكيك rea reverse engineering هندسة عكسية native decompile analyze one complete function with evidence تحليل دالة rea reverse engineering هندسة عكسية native function inspect one recovered database type or typed data object فحص نوع بيانات أصلية rea reverse engineering هندسة عكسية native inspect read every raw instruction without decompiling قراءة التعليمات rea reverse engineering هندسة عكسية native instructions read exact provider memory bytes at one analysis address قراءة بايتات rea reverse engineering هندسة عكسية native read list bounded references to an analyzed address المراجع المتقاطعة rea reverse engineering هندسة عكسية native xrefs edit function annotations and return refreshed analysis توصيف دالة أصلية rea reverse engineering هندسة عكسية native annotate trace a literal feature through analyzed references تتبّع rea reverse engineering هندسة عكسية native trace search every analyzed string or procedure name بحث في rea reverse engineering هندسة عكسية native search find masked byte patterns in initialized provider memory بحث في بايتات rea reverse engineering هندسة عكسية native search resolve an analysis address to its original file byte offse"
 },
@@ -2043,7 +2043,7 @@
 "SP-0079",
 "SP-0082",
 "SP-0096",
-"SP-0148"
+"SP-0147"
 ],
 "text": "project authenticated harmonyos hap, hsp, or app pack inventory evidence into an application graph إسقاط مخطط تطبيق harmonyos rea reverse engineering هندسة عكسية harmony project run inspect_macho without launching hopper فحص mach-o rea reverse engineering هندسة عكسية apple inspect run inspect_signature without launching hopper فحص التوقيع rea reverse engineering هندسة عكسية apple inspect project authenticated ipa or macos app inventory evidence into an apple application graph إسقاط مخطط تطبيق apple rea reverse engineering هندسة عكسية apple project inspect compiled apple asset catalog metadata فحص كتالوج الأصول rea reverse engineering هندسة عكسية apple inspect parse app plist metadata without launching hopper فحص plist rea reverse engineering هندسة عكسية apple inspect run list_architectures without launching hopper سرد المعماريات rea reverse engineering هندسة عكسية apple list trace dyld load-path resolution for a mach-o or every executable in an app bundle تتبّع تحليل dylib rea reverse engineering هندسة عكسية apple trace demangle swift symbols without hopper فك تشويه swift rea reverse engineering هندسة عكسية apple demangle inspect typed objective-c and swift dispatch metadata فحص بيانات وصفية الإرسال أصلية rea reverse engineering هندسة عكسية apple inspect inspect a foundation keyed archive as an object-reference graph فحص أرشيف مفاتيح rea reverse engineering هندسة عكسية apple inspect decode compiled storyboard and nib archives from an app bundle فك ترميز interface builder واجهة rea reverse engineering هندسة عكسية apple decode launch a mach-o under lldb and record entries into selected functions or objective-c methods مراقبة calls أصلية rea reverse engineering هندسة عكسية apple observe run declarative ax actions or waits in one exact native application window التقاط سيناريو الواجهة أصلية rea reverse engineering هندسة عكسية apple capture trace a compiled ui action selector to its native handler and direct callees تتبّع إجراء الواجهة أصلية rea reverse engineering هندسة عكسية apple trace apple platform design: choose the track first تصميم تطبيقات apple: اختر المسار أولاً ios swiftui آيفون apple macos تطبيق"
 },
@@ -2066,7 +2066,7 @@
 "SP-0092",
 "SP-0079",
 "SP-0080",
-"SP-0148"
+"SP-0147"
 ],
 "text": "inspect an embedded cargo-auditable rust dependency list without target execution فحص ثنائي rust rea reverse engineering هندسة عكسية evidence-core inspect inspect embedded go compiler, modules and build settings without target execution فحص ثنائي go rea reverse engineering هندسة عكسية evidence-core inspect inspect one artifact and return all available observations and next probes فحص قطعة rea reverse engineering هندسة عكسية evidence-core inspect inspect a local artifact with gnu objdump and retain its raw output as evidence فحص objdump بـ rea reverse engineering هندسة عكسية objdump inspect infer interface candidates from explicit local evm bytecode فحص واجهة evm rea reverse engineering هندسة عكسية evidence-core inspect project a selected view of completed binary-layout, javascript application, native function, artifact-inventory, wasm, mach-o, interface builder, evm, managed, android package, dart aot, web network capture or pcap evidence json فحص عرض التحليل rea reverse engineering هندسة عكسية evidence-core inspect list bfd targets advertised by the installed gnu objdump سرد المعماريات objdump rea reverse engineering هندسة عكسية objdump list inspect pe/cli identity without loading target code فحص قطعة مُدار (.net) rea reverse engineering هندسة عكسية dotnet inspect inspect complete or selected discovery metadata from a local evidence bundle فحص حزمة الأدلة rea reverse engineering هندسة عكسية evidence-core inspect inspect pe/cli pinvoke and native implementation boundary declarations without loading target code فحص الحدود أصلية مُدار (.net) rea reverse engineering هندسة عكسية dotnet inspect inspect pe/cli metadata members, signatures, cil anchors, and ldstr string literals without loading target code فحص الأعضاء مُدار (.net) rea reverse engineering هندسة عكسية dotnet inspect inspect supplied core registers/signals and optional debugger mapping evidence فحص انهيار مسجّل rea reverse engineering هندسة عكسية crash inspect inspect sqlite schema and optional ordinary-table rows from a local snapshot فحص database sqlite rea reverse engineering هندسة عكسية sqlite inspect inspect an explicit local wasm artifact with wabt فحص قطعة wasm rea reverse engineering هندسة عكسية wasm inspect inspect binary file/linked layout without executing the selected object فحص تخطيط ثنائي rea reverse engineering هندسة عكسية elf-layout inspect"
 },
@@ -2090,7 +2090,7 @@
 "SP-0086",
 "SP-0089",
 "SP-0083",
-"SP-0148"
+"SP-0147"
 ],
 "text": "trace a typed seed through authenticated application evidence json تتبّع ميزة تطبيق rea reverse engineering هندسة عكسية web-js trace trace bounded static semantic relations through authenticated application evidence تتبّع الدلالات جافاسكربت rea reverse engineering هندسة عكسية web-js trace project authenticated managed static evidence into an application graph إسقاط مخطط تطبيق مُدار (.net) rea reverse engineering هندسة عكسية dotnet project compare committed historical source with authenticated application evidence مقارنة حزمة إلى المصدر rea reverse engineering هندسة عكسية web-js compare project authenticated apk inventory evidence into an android application graph إسقاط مخطط تطبيق أندرويد rea reverse engineering هندسة عكسية evidence-core project verify managed p/invoke declarations against authenticated native evidence تحقق من الحدود أصلية مُدار (.net) rea reverse engineering هندسة عكسية dotnet verify import a source tree as historical reference only استيراد المصدر مرجعي rea reverse engineering هندسة عكسية web-js import import decompiler-produced managed reconstruction against exact static member evidence استيراد إعادة البناء مُدار (.net) rea reverse engineering هندسة عكسية dotnet import trace one retained script position through an explicitly selected local source map تتبّع موقع المصدر ويب rea reverse engineering هندسة عكسية web-js trace recover readable javascript modules with source provenance and verified files استعادة sources جافاسكربت rea reverse engineering هندسة عكسية web-js recover export retained website scripts into an absent directory for static javascript analysis تصدير السكربتات ويب rea reverse engineering هندسة عكسية web-js export run one bounded playwright browser scenario and return evidence التقاط سيناريو المتصفح rea reverse engineering هندسة عكسية web-js capture"
 },
@@ -2113,7 +2113,7 @@
 "SP-0077",
 "SP-0086",
 "SP-0082",
-"SP-0148"
+"SP-0147"
 ],
 "text": "check whether rea is ready فحص جاهزية rea rea reverse engineering هندسة عكسية evidence-core doctor list configured analysis providers المزودون المهيّأون rea reverse engineering هندسة عكسية evidence-core providers list provider capabilities and side effects قدرات المزودين rea reverse engineering هندسة عكسية evidence-core capabilities validate and import a bounded local evidence bundle استيراد حزمة أدلة rea reverse engineering هندسة عكسية evidence-core evidence validate and atomically export canonical evidence json تصدير حزمة أدلة rea reverse engineering هندسة عكسية evidence-core evidence configure agent integrations and optional analysis providers إعداد rea rea reverse engineering هندسة عكسية evidence-core setup update this rea installation and verify the installed release تحديث rea rea reverse engineering هندسة عكسية evidence-core update capture one caller-selected process scenario التقاط عملية rea reverse engineering هندسة عكسية evidence-core capture generate a deterministic evidence-backed reconstruction obligation ledger page بناء سجل الالتزامات إعادة البناء rea reverse engineering هندسة عكسية evidence-core build remove rea-owned agent configuration and skill files إزالة rea reverse engineering هندسة عكسية evidence-core uninstall evaluate inline fail-closed reconstruction coverage تقييم التغطية إعادة البناء rea reverse engineering هندسة عكسية evidence-core evaluate"
 },
@@ -2136,7 +2136,7 @@
 "SP-0091",
 "SP-0087",
 "SP-0083",
-"SP-0148"
+"SP-0147"
 ],
 "text": "rea mcp tool `frida_session_status` rea mcp: حالة جلسة frida rea mcp reverse engineering هندسة عكسية frida rea mcp tool `start_frida_session` rea mcp: بدء جلسة frida rea mcp reverse engineering هندسة عكسية start rea mcp tool `close_frida_session` rea mcp: إغلاق جلسة frida rea mcp reverse engineering هندسة عكسية close rea mcp tool `resume_frida_session` rea mcp: استئناف جلسة frida rea mcp reverse engineering هندسة عكسية resume rea mcp tool `load_frida_script` rea mcp: تحميل سكربت frida rea mcp reverse engineering هندسة عكسية load rea mcp tool `unload_frida_script` rea mcp: إزالة سكربت frida rea mcp reverse engineering هندسة عكسية unload run one frida script against a selected process and detach تجهيز frida بـ rea reverse engineering هندسة عكسية frida instrument list processes visible through a frida device سرد العمليات frida rea reverse engineering هندسة عكسية frida list list local frida devices and an optional remote endpoint سرد الأجهزة frida rea reverse engineering هندسة عكسية frida list"
 },
@@ -2207,7 +2207,7 @@
 "SP-0091",
 "SP-0084",
 "SP-0083",
-"SP-0148"
+"SP-0147"
 ],
 "text": "rea mcp tool `rizin_debug_command` rea mcp: أمر تصحيح rizin rea mcp reverse engineering هندسة عكسية rizin rea mcp tool `rizin_debug_session_status` rea mcp: حالة جلسة تصحيح rizin rea mcp reverse engineering هندسة عكسية rizin rea mcp tool `start_rizin_debug_session` rea mcp: بدء جلسة تصحيح rizin rea mcp reverse engineering هندسة عكسية start run one unrestricted rizin debugger command in an ephemeral session تنقيح rizin بـ rea reverse engineering هندسة عكسية rizin debug rea mcp tool `close_rizin_debug_session` rea mcp: إغلاق جلسة تصحيح rizin rea mcp reverse engineering هندسة عكسية close execute one rizin command against a local artifact تنفيذ command rizin rea reverse engineering هندسة عكسية rizin execute execute one rizin command in a selected live cutter instance أمر cutter command rea reverse engineering هندسة عكسية rizin cutter list live cutter instances connected through the rea python plugin bridge سرد الجلسات cutter rea reverse engineering هندسة عكسية rizin list"
 },
@@ -2229,7 +2229,7 @@
 "SP-0081",
 "SP-0094",
 "SP-0079",
-"SP-0148"
+"SP-0147"
 ],
 "text": "inspect apk declarations and decoded manifest without executing it فحص حزمة أندرويد rea reverse engineering هندسة عكسية android-static inspect identify a flutter build's dart snapshot hash and engine facts by pure apk parsing تعريف build flutter rea reverse engineering هندسة عكسية android-static identify inspect one abi's dart aot snapshot: sections, headers, and the string pool فحص aot dart rea reverse engineering هندسة عكسية android-static inspect inspect one exact apk class's member inventory فحص صنف أندرويد rea reverse engineering هندسة عكسية android-device inspect decompile one apk method with explicit overload selection فحص دالة أندرويد rea reverse engineering هندسة عكسية android-device inspect trace incoming apk using nodes for a class or selected method تتبّع المراجع أندرويد rea reverse engineering هندسة عكسية android-device trace search apk class names; empty query inventories all classes بحث في الأصناف أندرويد rea reverse engineering هندسة عكسية android-device search"
 },
@@ -2251,7 +2251,7 @@
 "SP-0085",
 "SP-0086",
 "SP-0096",
-"SP-0148"
+"SP-0147"
 ],
 "text": "capture and statically analyze a page bundle, defaulting to the selected target origin تحليل حزمة ويب rea reverse engineering هندسة عكسية web-js analyze passively inspect one page through cdp, defaulting to its current origin فحص صفحة ويب rea reverse engineering هندسة عكسية web-js inspect capture one visible page viewport within the supplied origin scope التقاط لقطة شاشة ويب rea reverse engineering هندسة عكسية web-js capture list page targets from a selected loopback cdp browser, optionally filtered by origin سرد الأهداف المتصفح rea reverse engineering هندسة عكسية web-js list statically reconstruct a local javascript/electron application تحليل تطبيق جافاسكربت rea reverse engineering هندسة عكسية web-js analyze passively discover page-declared webmcp tools اكتشاف أدوات webmcp rea reverse engineering هندسة عكسية web-js discover"
 },
@@ -2293,7 +2293,7 @@
 "SP-0084",
 "SP-0087",
 "SP-0083",
-"SP-0148"
+"SP-0147"
 ],
 "text": "rea mcp tool `gdb_session_status` rea mcp: حالة جلسة gdb rea mcp reverse engineering هندسة عكسية gdb rea mcp tool `gdb_console` rea mcp: وحدة أوامر gdb rea mcp reverse engineering هندسة عكسية gdb rea mcp tool `start_gdb_session` rea mcp: بدء جلسة gdb rea mcp reverse engineering هندسة عكسية start rea mcp tool `close_gdb_session` rea mcp: إغلاق جلسة gdb rea mcp reverse engineering هندسة عكسية close run one unrestricted gdb console command in an ephemeral mi session; provide an inferior tty so a live target can be safely detached تنقيح gdb بـ rea reverse engineering هندسة عكسية gdb debug"
 },
@@ -2378,8 +2378,7 @@
 "SP-0081",
 "SP-0083",
 "SP-0079",
-"SP-0080",
-"SP-0148"
+"SP-0147"
 ],
 "text": "extract all regular artifact contents safely استخراج قطعة rea reverse engineering هندسة عكسية evidence-core extract extract selected firmware bytes and return verified files and provenance استخراج فيرموير rea reverse engineering هندسة عكسية firmware extract inspect firmware signature candidates without extracting them فحص المناطق فيرموير rea reverse engineering هندسة عكسية firmware inspect"
 },
@@ -2402,7 +2401,7 @@
 "SP-0082",
 "SP-0080",
 "SP-0079",
-"SP-0148"
+"SP-0147"
 ],
 "text": "observe user-driven page navigation during a chosen window مراقبة جلسة ويب rea reverse engineering هندسة عكسية web-js observe observe precise page execution; resets counters and temporarily disables optimization مراقبة التنفيذ ويب rea reverse engineering هندسة عكسية web-js observe observe one already-running native application window by pid and window id مراقبة الواجهة أصلية rea reverse engineering هندسة عكسية apple observe"
 },
@@ -3139,7 +3138,7 @@
 "links": [
 "SP-0453",
 "SP-0295",
-"SP-0147",
+"SP-0148",
 "SP-0118"
 ],
 "text": "photo catalog + search فهرسة المكتبة والبحث catalog مكتبة صور search lightroom acdsee duplicate / near-duplicate finder كشف المكرر والمتشابه duplicates مكرر dhash similar exif and gps reader قراءة بيانات الصورة وgps exif gps metadata بيانات الصورة batch rename by exif date إعادة تسمية دفعة rename إعادة تسمية batch face detection كشف الوجوه faces وجوه people yunet"
@@ -3298,7 +3297,7 @@
 "ready_now": 0,
 "links": [
 "SP-0275",
-"SP-0148",
+"SP-0147",
 "SP-0273",
 "SP-0390"
 ],
@@ -3389,7 +3388,7 @@
 "ready_now": 36,
 "links": [
 "SP-0349",
-"SP-0147",
+"SP-0148",
 "SP-0027",
 "SP-0145"
 ],
@@ -3562,6 +3561,27 @@
 },
 "SP-0147": {
 "id": "SP-0147",
+"name_ar": "جسر أوامر REA",
+"name_en": "REA CLI Bridge",
+"hub": "agents",
+"stage": "understand",
+"stages": {
+"understand": 8,
+"verify": 1
+},
+"size": 9,
+"best": "proven",
+"ready_now": 7,
+"links": [
+"SP-0077",
+"SP-0082",
+"SP-0083",
+"SP-0081"
+],
+"text": "rea cli bridge جسر أوامر rea rea-bridge rea reverse engineering هندسة عكسية تحليل ساكن static analysis فحص الثنائيات javascript dotnet electron-fuses pe-resources catalog doctor جسر node evidence rea family router موجّه عائلات rea rea-family-router rea router موجّه عائلات القدرات هندسة عكسية dotnet apk har firmware capability family routing تصنيف الهدف web app study (public frontend, rea, facts only) دراسة تطبيق ويب عام بـ rea (حقائق فقط) web-app-study web app website frontend stack bundle javascript webmcp rea browser cdp screenshot reverse engineering تحليل موقع واجهة تطبيق ويب هندسة عكسية مبني بإيه magicpath tech stack detection craft anything bridge: 321 pure-rust inspection tools for programs, websites, apps and files جسر craft anything: 321 أداة فحص بلغة rust للبرامج والمواقع والتطبيقات والملفات craft-anything craft anything storytold artcraft reverse engineering هندسة عكسية clean room deep mode triage disassembly decompiler pseudo-c elf pe mach-o apk firmware pcap website study mcp rust فحص البرامج تحليل أدوات local project static audit فحص المشروع المحلي دون تشغيل local-project-audit project audit static triage folder inventory file hashes sha256 zip slip path traversal binary candidates ghidra rea فحص مشروع جرد الملفات تحليل ساكن ملفات تنفيذية بصمة الملفات أمان الأرشيف website snapshot and design read-out (goclone capabilities) نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) site-snapshot goclone clone website website copy offline copy mirror snapshot site snapshot design tokens design.md living site css fonts نسخ موقع نسخة أوفلاين استنساخ موقع نظام التصميم ألوان الموقع خطوط الموقع الموقع الحي browser scout site survey مستكشف المواقع بالمتصفح browser-scout browser playwright screenshot site survey web apps target atlas photopea autodraw read-only capture متصفح لقطة شاشة استكشاف المواقع تطبيقات الويب بحث الميزات rea owned-repo batch تحليل rea لمستودعات المالك دفعةً واحدة rea-owned-repo-batch rea batch دفعة owned repos مستودعاتي github git clone static analysis تحليل ساكن javascript typescript private evidence أدلة خاصة هندسة عكسية browser-evidence website clone workflow استنساخ موقع بأدلة المتصفح clone migration استنساخ موقع"
+},
+"SP-0148": {
+"id": "SP-0148",
 "name_ar": "إعادة موازنة فهرس المستودعات الإبداعية",
 "name_en": "Rebalance creative repo catalog",
 "hub": "agents",
@@ -3580,27 +3600,6 @@
 "SP-0349"
 ],
 "text": "power catalog search البحث في كتالوج القدرات powers power catalog search suggest mind map families domains evidence badge stats mermaid كتالوج القدرات ابحث اقترح خريطة ذهنية عائلات مجالات قدراتك style library — 586 visual styles by name (86 futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated pdf catalog مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج pdf مصوّر style-library أسلوب أساليب ستايل استايل مكتبة الأساليب كتالوج بي دي اف برومنت عينة لقطة style styles style library visual style art style prompt recipe swatch catalog pdf 586 500 futurepedia ks rewrite fact anchor gate بوابة حفظ الحقائق عند إعادة الصياغة anchor-gate fact preservation rewrite check anchors diff facts prompt optimization numbers dates names arabic digits humanizer gate حفظ الحقائق إعادة صياغة مقارنة النصوص الأرقام والتواريخ تحسين البرومبت تدقيق catalog evidence audit تدقيق أدلة الكتالوج catalog-evidence-audit catalog audit evidence coverage proof links duplicate ids integrity check powers catalog badges static audit تدقيق الكتالوج أدلة الإثبات روابط مكسورة معرفات مكررة سلامة البيانات فحص القدرات promptsmotion catalog sync مزامنة الكتالوج مع promptsmotion repo-sync-catalog catalog sync promptsmotion scraper metadata styles.json style.json offline cache weekly sync listed=false مزامنة الكتالوج تحديث الأطلس بيانات وصفية مراجع جديدة تخزين مؤقت proof scope relabeler إعادة تصنيف نطاق الأدلة relabel-proofs proof scope evidence labels proven proof paths relabel catalog maintenance verification نطاق الدليل الأدلة القدرات المثبتة إعادة التصنيف صيانة الكتالوج family chapter generator مولّد فصول العائلات build-chapters chapters generate markdown power families references/powers stale check deterministic catalog docs توليد الفصول فصول العائلات توثيق القدرات ملفات مولدة تحديث الفصول rebalance creative repo catalog إعادة موازنة فهرس المستودعات الإبداعية rebalance-creative-repos rebalance catalog creative repos image editing photo tools category quotas github search catalog maintenance موازنة الفهرس مستودعات إبداعية تحرير الصور حصص الفئات صيانة الفهرس creative research catalog builder باني فهرس البحث الإبداعي rea-creative-research-atlas creative catalog github search awesome lists discovery catalog owner inventory repo tree gh api catalog builder فهرس إبداعي بحث github جرد المستودعات اكتشاف المصادر مواقع إبداعية بناء الفهرس"
-},
-"SP-0148": {
-"id": "SP-0148",
-"name_ar": "جسر أوامر REA",
-"name_en": "REA CLI Bridge",
-"hub": "agents",
-"stage": "understand",
-"stages": {
-"understand": 7,
-"verify": 1
-},
-"size": 8,
-"best": "proven",
-"ready_now": 6,
-"links": [
-"SP-0077",
-"SP-0082",
-"SP-0083",
-"SP-0089"
-],
-"text": "rea cli bridge جسر أوامر rea rea-bridge rea reverse engineering هندسة عكسية تحليل ساكن static analysis فحص الثنائيات javascript dotnet electron-fuses pe-resources catalog doctor جسر node evidence web app study (public frontend, rea, facts only) دراسة تطبيق ويب عام بـ rea (حقائق فقط) web-app-study web app website frontend stack bundle javascript webmcp rea browser cdp screenshot reverse engineering تحليل موقع واجهة تطبيق ويب هندسة عكسية مبني بإيه magicpath tech stack detection rea family router موجّه عائلات rea rea-family-router rea router موجّه عائلات القدرات هندسة عكسية dotnet apk har firmware capability family routing تصنيف الهدف local project static audit فحص المشروع المحلي دون تشغيل local-project-audit project audit static triage folder inventory file hashes sha256 zip slip path traversal binary candidates ghidra rea فحص مشروع جرد الملفات تحليل ساكن ملفات تنفيذية بصمة الملفات أمان الأرشيف website snapshot and design read-out (goclone capabilities) نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) site-snapshot goclone clone website website copy offline copy mirror snapshot site snapshot design tokens design.md living site css fonts نسخ موقع نسخة أوفلاين استنساخ موقع نظام التصميم ألوان الموقع خطوط الموقع الموقع الحي browser scout site survey مستكشف المواقع بالمتصفح browser-scout browser playwright screenshot site survey web apps target atlas photopea autodraw read-only capture متصفح لقطة شاشة استكشاف المواقع تطبيقات الويب بحث الميزات rea owned-repo batch تحليل rea لمستودعات المالك دفعةً واحدة rea-owned-repo-batch rea batch دفعة owned repos مستودعاتي github git clone static analysis تحليل ساكن javascript typescript private evidence أدلة خاصة هندسة عكسية browser-evidence website clone workflow استنساخ موقع بأدلة المتصفح clone migration استنساخ موقع"
 },
 "SP-0149": {
 "id": "SP-0149",
@@ -4610,7 +4609,7 @@
 "SP-0470",
 "SP-0194",
 "SP-0193",
-"SP-0148"
+"SP-0147"
 ],
 "text": "site → film material (palette, fonts, ctas) من الموقع إلى مادة الفيلم استخلاص موقع site capture palette css variables oklch ألوان الموقع خطوط الموقع خطة إطلاق website launch plan brand-colour flood end frame غمر لون العلامة غمر لوني flood iris brand colour sting لون العلامة ختام ملء الشاشة end frame color fill cta end card with a cursor click ختام بنقرة مؤشر نقرة مؤشر cursor click cta button ripple زر دعوة للعمل ماوس mouse click end card release & developer end cards (version · terminal · out now) بطاقات الإصدار والمطوّرين إصدار release version terminal npm out now إطلاق تحديث جديد مطورين launch developer personal identity cards (name typed · contacts · chrome name) بطاقات الهوية الشخصية سيرة اسم personal brand cv name card handle بطاقة تعريف حسابات التواصل براند شخصي contact profile card card & badge systems (neo-brutalist, seal, pill, banner) أنظمة البطاقات والشارات بطاقات شارة neo brutalist badge seal pill banner ختم دائري كبسولة شريط عنوان live dot cards"
 },
@@ -5062,7 +5061,7 @@
 "SP-0212",
 "SP-0344",
 "SP-0411",
-"SP-0147"
+"SP-0148"
 ],
 "text": "chapter hud frame إطار hud للفصول فصول رقم الفصل خط تقدم chapter frame progress line chapter progress bar شريط فصول رقم الفصل شريط علوي تقدم الفصول chapter strip chapter number chapter ruler timeline مسطرة زمنية للفصول مسطرة زمنية مؤشر أحمر علامات الفصول playhead chapter markers chapter hud + timeline marker عناوين فصول وشريط زمني فصول مسطرة زمنية مؤشر الموضع chapter label timeline marker chaptered hud frame إطار hud بفصول مرقمة فصول مرقمة مسطرة تقدم إطار زوايا chapter counter progress ruler chapter tag system نظام وسوم الفصول ترقيم الفصول خط تقدم أقسام الفيديو chapter counter corner label numbered chapter header ترويسة فصل مرقّمة عنوان الفصل ترقيم ظهور بتمويه chapter title section heading bottom nav progress شريط تنقل سفلي شريط سفلي أقسام الفيديو فصول chapter nav section bar chapter text card bottom-left بطاقة فصل أسفل اليسار بطاقة نصية رقم الفصل تلاشي متقاطع text card crossfade editor timeline hud شريط زمني بنقاط مفاتيح تايملاين مونتاج مؤشر التشغيل playhead keyframes"
 },
@@ -6999,7 +6998,7 @@
 "best": "install",
 "ready_now": 0,
 "links": [
-"SP-0147",
+"SP-0148",
 "SP-0477",
 "SP-0349",
 "SP-0115"
@@ -8243,7 +8242,7 @@
 "ready_now": 6,
 "links": [
 "SP-0139",
-"SP-0147",
+"SP-0148",
 "SP-0295",
 "SP-0292"
 ],
@@ -11170,7 +11169,7 @@
 "SP-0407",
 "SP-0294",
 "SP-0293",
-"SP-0148"
+"SP-0147"
 ],
 "text": "kmotion brag launch film فيلم إطلاق kmotion brag إطلاق launch film brag product launch فيديو إطلاق تطبيق جديد برومو kmotion launch video press & hover with reading-direction nudges ضغط ومرور بمنطق القراءة ضغط مرور press hover rtl icons حالة الزر مرور الماوس اتجاه القراءة button states hover lift website capture → video التقاط موقع إلى فيديو التقاط موقع website to video capture launch video hyperframes فيديو من رابط رابط موقع هوية الموقع url to video site screenshots hotspot tooltip walkthrough نقطة ساخنة مع فقاعة إرشاد إرشاد تهيئة hotspot tooltip onboarding tour جولة تعريفية شرح الميزات تلميح product tour walkthrough keycap shortcut trigger ضغط اختصار لوحة المفاتيح اختصار keyboard shortcut keycaps لوحة المفاتيح أزرار الكيبورد كيبورد hotkey key press agent progress theater & tool-call checklist وكيل ينجز قائمة مهام وكيل قائمة مهام agent checklist tool calls ai تقدم المهام خطوات التنفيذ ذكاء اصطناعي task progress progress theater plain action labels in tutorials عناوين أفعال بسيطة في الشروحات شرح تعليمي tutorial action labels onboarding فيديو تعليمي شرح خطوات عناوين الخطوات captions how-to scroll tour with callouts جولة تمرير مع شروحات تمرير جولة scroll tour callouts parallax سكرول شرح الصفحة تمرير الشاشة page tour scrolling yaml-defined tutorial video فيديو تعليمي من ملف yaml تعليمي yaml tutorial docker شرح بالفيديو تعليق صوتي ترجمة tts subtitles callout leader lines خطوط شرح قائدة شرح خط قائد callout leader line annotation تعليقات توضيحية أسهم الشرح تسميات labels pointer lines intent → action → response with real latency ثلاثية النية والفعل والاستجابة زمن الاستجابة latency feedback click response توقيت النقرة رد فعل الواجهة تأخير response timing ui delay"
 },
@@ -11453,7 +11452,7 @@
 "SP-0139",
 "SP-0142",
 "SP-0022",
-"SP-0148",
+"SP-0147",
 "SP-0152",
 "SP-0023",
 "SP-0153",
@@ -11468,7 +11467,7 @@
 "SP-0145",
 "SP-0146",
 "SP-0021",
-"SP-0147",
+"SP-0148",
 "SP-0150",
 "SP-0001",
 "SP-0003",
@@ -12650,11 +12649,11 @@
 }
 ],
 "audit": {
-"atoms": 5863,
+"atoms": 5864,
 "superpowers": 483,
 "twin_groups": 178,
 "twin_members": 460,
-"distinct_methods": 5581,
+"distinct_methods": 5582,
 "tiny_absorbed": 27,
 "same_name_groups": [
 {
@@ -13687,7 +13686,7 @@
 "create": 1942,
 "refine": 896,
 "assemble": 496,
-"understand": 838,
+"understand": 839,
 "verify": 545
 }
 }

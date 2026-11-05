@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5863
+   "count": 5864
   },
   {
    "id": "dom:motion",
@@ -1406,10 +1406,10 @@
    "label": "Runnable KOSIF tools",
    "ar": "الأدوات القابلة للتشغيل",
    "prefix": "TOOL",
-   "count": 184,
-   "proven": 153,
+   "count": 185,
+   "proven": 154,
    "status": {
-    "proven": 153,
+    "proven": 154,
     "ready": 22,
     "install": 9
    }
@@ -1422,6 +1422,15 @@
    "en": "lawful software inspection (REA)",
    "install": "npm install -g rea-agents@6.7.0  (Node 22.19+/24.11+/26+)",
    "req_kind": "npm"
+  },
+  {
+   "id": "req:engine:ghidra",
+   "kind": "requirement",
+   "label": "engine:ghidra",
+   "ar": "تفكيك الثنائيات الأصلية",
+   "en": "native binary disassembly/decompilation",
+   "install": "Ghidra 12.1 from github.com/NationalSecurityAgency/ghidra + GHIDRA_INSTALL_DIR; or Hopper (rea setup), IDA MCP, Kuna",
+   "req_kind": "bin"
   },
   {
    "id": "script:scripts/hub.py",
@@ -1545,15 +1554,6 @@
     "proven": 30,
     "install": 48
    }
-  },
-  {
-   "id": "req:engine:ghidra",
-   "kind": "requirement",
-   "label": "engine:ghidra",
-   "ar": "تفكيك الثنائيات الأصلية",
-   "en": "native binary disassembly/decompilation",
-   "install": "Ghidra 12.1 from github.com/NationalSecurityAgency/ghidra + GHIDRA_INSTALL_DIR; or Hopper (rea setup), IDA MCP, Kuna",
-   "req_kind": "bin"
   },
   {
    "id": "req:engine:android",
@@ -5905,13 +5905,13 @@
    "from": "dom:build",
    "to": "fam:runnable-tools",
    "rel": "has",
-   "w": 184
+   "w": 185
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:python3",
    "rel": "needs",
-   "w": 145
+   "w": 146
   },
   {
    "from": "fam:runnable-tools",
@@ -5923,7 +5923,7 @@
    "from": "fam:runnable-tools",
    "to": "req:chromium",
    "rel": "needs",
-   "w": 26
+   "w": 27
   },
   {
    "from": "fam:runnable-tools",
@@ -5951,15 +5951,15 @@
   },
   {
    "from": "fam:runnable-tools",
-   "to": "req:pip:opencv",
+   "to": "req:engine:ghidra",
    "rel": "needs",
-   "w": 11
+   "w": 12
   },
   {
    "from": "fam:runnable-tools",
    "to": "script:scripts/hub.py",
    "rel": "runs",
-   "w": 189
+   "w": 190
   },
   {
    "from": "fam:runnable-tools",

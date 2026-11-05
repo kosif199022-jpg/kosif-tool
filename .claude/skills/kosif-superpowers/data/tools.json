@@ -8359,6 +8359,122 @@
       "power_id": "TOOL-98"
     },
     {
+      "id": "craft-anything",
+      "path": "scripts/craft_anything.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "investigate",
+      "title_en": "Craft Anything bridge: 321 pure-Rust inspection tools for programs, websites, apps and files",
+      "title_ar": "جسر Craft Anything: 321 أداة فحص بلغة Rust للبرامج والمواقع والتطبيقات والملفات",
+      "summary_en": "Drives a locally built craft-anything-cli (storytold/craft-anything v0.4.0, MIT/Apache-2.0) from KOSIF and the Black Dragon. doctor finds the binary (CRAFT_ANYTHING_CLI, PATH, ~/.cargo/bin) and summarises its own doctor: version, health, which engines are present (Chromium, GDB, LLDB, objdump, Java, Ghidra…) and the MCP server self-test. tools lists the engine's 321 tools by toolset (native, formats, browser, javascript, android, apple, adb, frida, runtime, database…) with a text filter. plan prints the exact argv without running it. run and triage run one engine tool in Clean room by default and write its JSON evidence to a new --output file, returning sha256, size and the engine's own summary. mcp-config prints the MCP server entry so a client can load all the tools directly.",
+      "summary_ar": "يشغّل craft-anything-cli المبني محليًا (storytold/craft-anything إصدار 0.4.0، رخصة MIT/Apache-2.0) من داخل KOSIF والتنين الأسود. doctor يلاقي البرنامج (CRAFT_ANYTHING_CLI أو PATH أو ~/.cargo/bin) ويلخّص فحصه الذاتي: النسخة والسلامة والمحركات الموجودة (Chromium وGDB وLLDB وobjdump وJava وGhidra…) واختبار خادم MCP. tools يعرض 321 أداة مقسّمة حسب المجموعة مع فلتر بالكلام. plan يطبع الأمر بالظبط من غير ما يشغّله. run وtriage يشغّلوا أداة واحدة في وضع Clean room افتراضيًا ويكتبوا الدليل JSON في ملف --output جديد ويرجّعوا sha256 والحجم وملخص المحرك. mcp-config يطبع إعداد خادم MCP عشان أي عميل يحمّل كل الأدوات مباشرة.",
+      "use_when": [
+        "استخدم craft anything في تحليل البرنامج ده",
+        "اعمل triage للملف ده وقولي هو إيه",
+        "إيه أدوات craft-anything المتاحة لتحليل تطبيق أندرويد؟",
+        "is craft-anything-cli installed and healthy here?",
+        "inspect this binary with Craft Anything in deep mode, I own it",
+        "wire Craft Anything into Claude Code as an MCP server"
+      ],
+      "keywords": [
+        "craft anything",
+        "craft-anything",
+        "storytold",
+        "artcraft",
+        "reverse engineering",
+        "هندسة عكسية",
+        "clean room",
+        "deep mode",
+        "triage",
+        "disassembly",
+        "decompiler",
+        "pseudo-C",
+        "ELF",
+        "PE",
+        "Mach-O",
+        "APK",
+        "firmware",
+        "pcap",
+        "website study",
+        "MCP",
+        "rust",
+        "فحص البرامج",
+        "تحليل",
+        "أدوات"
+      ],
+      "commands": [
+        {
+          "name": "doctor",
+          "example": "python3 scripts/craft_anything.py doctor",
+          "does": "Finds craft-anything-cli and summarises its doctor: version, healthy, engines present, MCP self-test, problems. Without the binary it prints the install steps (nothing is installed)."
+        },
+        {
+          "name": "tools",
+          "example": "python3 scripts/craft_anything.py tools screenshot --toolset browser",
+          "does": "Lists the engine's tools (runs `craft-anything-cli commands`, read-only) with counts per toolset and a text filter."
+        },
+        {
+          "name": "plan",
+          "example": "python3 scripts/craft_anything.py plan core-target-open ./app.bin",
+          "does": "Prints the exact argv, the tool's toolset and whether --authorized is needed. Nothing is run."
+        },
+        {
+          "name": "run",
+          "example": "python3 scripts/craft_anything.py run --output out/<job>/open.json core-target-open ./app.bin",
+          "does": "Runs one engine tool (Clean room unless --deep --authorized) and writes its JSON to a new --output file; prints sha256, size and the engine's summary. Options go before the tool name."
+        },
+        {
+          "name": "triage",
+          "example": "python3 scripts/craft_anything.py triage --deep --authorized --output out/<job>/triage.json ./app.bin",
+          "does": "First look at a file: format, architecture, libraries, packer hints, with an evidence id. Reading inside a file is Deep mode, so it needs --deep --authorized."
+        },
+        {
+          "name": "mcp-config",
+          "example": "python3 scripts/craft_anything.py mcp-config",
+          "does": "Prints the mcpServers entry and the `claude mcp add` line for the binary. Nothing is run."
+        },
+        {
+          "name": "install",
+          "example": "python3 scripts/craft_anything.py install",
+          "does": "Prints the clone and cargo install commands to show the user. Nothing is run."
+        },
+        {
+          "name": "self-test",
+          "example": "python3 scripts/craft_anything.py --self-test",
+          "does": "Known-answer checks against a stub CLI: doctor parsing, tool filter, refusals, authorization gate, hashed output, no overwrite."
+        }
+      ],
+      "inputs": "An action. run takes an engine tool name and its arguments; run and triage take --output (a new file in an existing folder), --deep, --authorized and --timeout (default 300 s).",
+      "outputs": "JSON on stdout. run and triage also write the engine's JSON evidence to the caller-named file (exclusive create) and report its sha256 and byte count with verified=false.",
+      "requires": {
+        "python": [],
+        "binaries": [
+          "python3"
+        ],
+        "node": [],
+        "optional": [
+          "bin:craft-anything-cli"
+        ],
+        "network": false
+      },
+      "safety": "runs-external-programs",
+      "consent": "run and triage execute the third-party craft-anything-cli, which the user builds separately with approval. Deep mode (reading a target's code, files or page source) and the runtime, frida, adb, build and application toolsets need --authorized: the user owns the target or may inspect it. doctor and tools only run the binary's own read-only commands; plan, mcp-config and install run nothing.",
+      "limits": "Never installs or builds Craft Anything, never passes --allow-run, and refuses rebuild, chat, setup, uninstall, ai, mcp and the setup and projects toolsets (they start a coding agent or change the user's apps). Findings are the engine's own evidence records, not verified by KOSIF (verified is always false). The prebuilt binary in project files is Linux x86_64 only.",
+      "tests": [
+        ".claude/skills/kosif-superpowers/evals/test_craft_anything.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/references/guides/investigate.md"
+      ],
+      "families": [
+        "software-investigation",
+        "self-discovery"
+      ],
+      "evidence": "tested-here",
+      "evidence_note": "evals/test_craft_anything.py: 11/11 passed on 2026-11-05 against the real craft-anything-cli 0.4.0 (built here with Rust 1.97 in 8 min): doctor healthy, 321 tools, MCP self-test answered with 30 tools, Deep triage of /usr/bin/ffmpeg returned ELF x86_64 with its 10 libraries.",
+      "power_id": "TOOL-186"
+    },
+    {
       "id": "web-app-study",
       "path": "scripts/web_app_study.py",
       "root": "skill",

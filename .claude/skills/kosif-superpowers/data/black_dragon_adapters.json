@@ -1243,6 +1243,16 @@
       "why": "council: runs its own 1 test file(s) on its real code (17 tests here)",
       "tool_suite": true
     },
+    "tool:craft-anything": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "craft-anything",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "craft-anything: runs its own 1 test file(s) on its real code (11 tests here)",
+      "tool_suite": true
+    },
     "tool:creative-paint": {
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
       "args": [

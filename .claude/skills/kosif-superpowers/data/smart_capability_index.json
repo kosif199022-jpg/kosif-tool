@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5863,
+  "catalog_powers": 5864,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 209,
+  "tool_count": 210,
   "groups": [
     {
       "id": "research",
@@ -130,17 +130,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 282,
+      "count": 283,
       "status_counts": {
         "documented": 65,
         "install": 12,
         "key": 2,
-        "proven": 180,
+        "proven": 181,
         "ready": 23
       },
       "family_counts": {
         "agent-orchestration": 55,
-        "runnable-tools": 184,
+        "runnable-tools": 185,
         "self-discovery": 43
       },
       "examples": [
@@ -74498,6 +74498,32 @@
       ],
       "source": "runnable-tools.json",
       "what": "النص المحلي من موصّل Suno (A46). doctor بيطبع العنوان وصلاحيات OAuth من دليل الفحص وقاعدة الموافقة؛ probe فحص HTTP للقراءة بس من غير دخول (401 = سليم، بلا رصيد)؛ plan بيحوّل الطلب لبرومبت Suno (ستايل، هيكل، هيكل كلمات، مدة، لهجة، وصوت بس للدعاء والنشيد) مع بصمة approval_digest وم"
+    },
+    {
+      "id": "TOOL-186",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Craft Anything bridge: 321 pure-Rust inspection tools for programs, websites, apps and files",
+      "name_ar": "جسر Craft Anything: 321 أداة فحص بلغة Rust للبرامج والمواقع والتطبيقات والملفات",
+      "status": "proven",
+      "requires": [
+        "python3",
+        "chromium",
+        "engine:ghidra",
+        "engine:android",
+        "engine:frida",
+        "engine:rizin",
+        "engine:wireshark",
+        "engine:binwalk",
+        "os:macos"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_craft_anything.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/craft_anything.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يشغّل craft-anything-cli المبني محليًا (storytold/craft-anything إصدار 0.4.0، رخصة MIT/Apache-2.0) من داخل KOSIF والتنين الأسود. doctor يلاقي البرنامج (CRAFT_ANYTHING_CLI أو PATH أو ~/.cargo/bin) ويلخّص فحصه الذاتي: النسخة والسلامة والمحركات الموجودة (Chromium وGDB وLLDB وobjdump"
     },
     {
       "id": "SEC-01",
