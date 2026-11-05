@@ -306,15 +306,15 @@ def find_accent(pixels, background):
     bh, bs, bv = colorsys.rgb_to_hsv(*(v / 255 for v in background))
     bg_bin = int(bh * 24) % 24 if bs >= 0.35 and bv >= 0.25 else None
     counts = np.bincount(bins, minlength=24).astype(float)
-    if bg_bin is not None:
-        for d in (-2, -1, 0, 1, 2):
-            counts[(bg_bin + d) % 24] = 0
+    banned = {(bg_bin + d) % 24 for d in (-2, -1, 0, 1, 2)} if bg_bin is not None else set()
+    for b in banned:
+        counts[b] = 0
     # group each bin with its neighbours, pick the strongest hue family
     fam = np.array([counts[(i - 1) % 24] + counts[i] + counts[(i + 1) % 24] for i in range(24)])
     best = int(fam.argmax())
     if fam[best] == 0:
         return None
-    members = np.isin(bins, [(best - 1) % 24, best, (best + 1) % 24])
+    members = np.isin(bins, [b for b in ((best - 1) % 24, best, (best + 1) % 24) if b not in banned])
     share = float(members.sum()) / len(px)
     if share < 0.005:
         return None
@@ -434,7 +434,9 @@ def validate(stage: str, data: dict, state: dict) -> list[str]:
         if not errs and not (0.8 * want <= total <= 1.2 * want):
             errs.append(f"shots: total {total:.1f}s is not within 20% of the brief's {want:g}s")
     if stage == "produce":
-        if data["paid"] is True and data["spend_approved"] is not True:
+        if not isinstance(data["paid"], bool) or not isinstance(data["spend_approved"], bool):
+            errs.append("produce: paid and spend_approved must be true or false")
+        elif data["paid"] and not data["spend_approved"]:
             errs.append("produce: a paid tool was used without the owner's approval")
         for o in data["outputs"]:
             if not Path(o["path"]).is_file() or sha(Path(o["path"])) != o["sha256"]:
@@ -443,6 +445,8 @@ def validate(stage: str, data: dict, state: dict) -> list[str]:
 
 
 def record(job: Path, stage: str, data: dict) -> dict:
+    if not isinstance(data, dict):
+        raise ValueError(f"{stage}: the data file must hold a JSON object")
     state = load(job)
     _gate(state, stage)
     if stage in COMPUTED:

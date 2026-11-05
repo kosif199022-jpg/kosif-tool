@@ -213,6 +213,17 @@ class VideoProtocolTests(unittest.TestCase):
         self.assertTrue(bd.video_protocol("اعمل ريل لمنتج قهوة")["mandatory"])
         self.assertTrue(bd.video_protocol("make a promo video"))
         self.assertIsNone(bd.video_protocol("اعمل جدول اكسل للمخزن"))
+        self.assertTrue(bd.video_protocol("اعمل الفيديو بتاع المنتج"))
+        self.assertTrue(bd.video_protocol("عايز فيديوهات للمتجر"))
+
+    def test_paid_must_be_a_real_boolean_and_data_an_object(self):
+        out = poster(self.dir / "p.png", accent=(245, 108, 90))
+        errs = vp.validate("produce", {"outputs": [{"path": str(out), "sha256": vp.sha(out)}],
+                                       "tool": "x", "paid": "yes", "spend_approved": False}, {})
+        self.assertTrue(any("true or false" in e for e in errs), errs)
+        vp.start("ريل", self.job)
+        with self.assertRaisesRegex(ValueError, "JSON object"):
+            vp.record(self.job, "brief", ["not", "an", "object"])
 
 
 if __name__ == "__main__":

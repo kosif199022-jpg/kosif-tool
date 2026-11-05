@@ -25,7 +25,7 @@ SCHEMA = "kosif.black-dragon.native-fusion.v1"
 PHASES = ("understand", "research", "design", "produce", "verify", "deliver")
 # Any video product walks the mandatory seven-stage protocol (see
 # references/VIDEO_PROTOCOL.md). These words switch it on in `compose`.
-VIDEO_WORDS = {"فيديو", "ريل", "ريلز", "مونتاج", "فيلم", "اعلان", "إعلان", "موشن", "انترو",
+VIDEO_WORDS = {"فيديو", "فيديوهات", "ريل", "ريلز", "ريلات", "مونتاج", "اعلانات", "إعلانات", "افلام", "فيلم", "اعلان", "إعلان", "موشن", "انترو",
                "برومو", "تيك", "شورتس", "كليب", "video", "reel", "reels", "montage", "film",
                "promo", "intro", "motion", "ad", "commercial", "shorts", "tiktok", "clip"}
 VIDEO_STAGES = ("brief", "concept", "color-design", "shots", "produce", "qa-color", "deliver")
