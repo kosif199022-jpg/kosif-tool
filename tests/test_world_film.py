@@ -123,6 +123,27 @@ class Build(unittest.TestCase):
             self.assertNotIn("Math.random", page)
             self.assertTrue((Path(d) / "fonts" / "Cairo.ttf").is_file())
 
+    def test_build_escapes_title_and_refuses_paths_outside_the_job(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = wf.example_plan()
+            p["title"] = "</title><script>x()</script>"
+            plan = Path(d) / "world.plan.json"
+            plan.write_text(json.dumps(p, ensure_ascii=False), encoding="utf-8")
+            page = wf.build(plan, Path(d) / "film.html").read_text(encoding="utf-8")
+            self.assertIn("&lt;/title&gt;&lt;script&gt;", page)
+            p["objects"].append({"id": "x", "kind": "photo", "src": "../../etc/passwd", "x": 0, "y": 0, "w": 10})
+            plan.write_text(json.dumps(p, ensure_ascii=False), encoding="utf-8")
+            with self.assertRaises(SystemExit):
+                wf.build(plan, Path(d) / "film.html")
+
+    def test_broken_beats_are_reported_not_crashed(self):
+        p = wf.example_plan()
+        del p["beats"][1]["start"]
+        p["beats"][2]["camera"] = {}
+        errs = run_check(p)[0]
+        self.assertTrue(any("start/end invalid" in e for e in errs), errs)
+        self.assertTrue(any("camera needs" in e for e in errs), errs)
+
     def test_beat_table_lists_every_beat(self):
         md = wf.beats_md(wf.example_plan())
         self.assertEqual(md.count("\n| "), 1 + 1 + 4 - 1)  # header row, divider, four beats (first row has no \n|)

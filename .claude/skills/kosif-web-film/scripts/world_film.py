@@ -17,6 +17,7 @@ It proves structure, not taste: look at the review stills and camera sequences b
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import math
 import re
@@ -122,6 +123,8 @@ def check(plan: dict, plan_path: Path | None = None, camera: dict | None = None)
         used.add(hero)
         for x in b.get("also") or []:
             used.add(x)
+        if not (isinstance(b.get("start"), (int, float)) and isinstance(b.get("end"), (int, float))):
+            continue  # already reported as invalid start/end
         cam = b.get("camera") or {}
         if not all(isinstance(cam.get(k), (int, float)) for k in ("x", "y", "zoom")) or cam.get("zoom", 0) <= 0:
             errs.append(f"beat {i}: camera needs x, y and a positive zoom")
@@ -182,10 +185,11 @@ def check(plan: dict, plan_path: Path | None = None, camera: dict | None = None)
             continue
         if o.get("id") not in used:
             errs.append(f"object {o.get('id')} ({o.get('kind')}) is never a hero, a text or a hit target: leave it out (less is more)")
-        if o.get("kind") == "text" and o.get("size", 0) * min((b["camera"]["zoom"] for b in beats if b.get("camera")), default=1) < MIN_LABEL_PX * 0.6:
-            pass  # wide shots may shrink labels; each beat that uses a text is measured above
     # camera motion
-    if camera is None and plan_path is not None:
+    sampleable = all(isinstance(b.get("start"), (int, float)) and isinstance(b.get("end"), (int, float))
+                     and all(isinstance((b.get("camera") or {}).get(k), (int, float)) for k in ("x", "y", "zoom"))
+                     and (b.get("camera") or {}).get("zoom", 0) > 0 for b in beats)
+    if camera is None and plan_path is not None and sampleable:
         try:
             camera = camera_samples(plan_path, fps)
         except (OSError, subprocess.CalledProcessError) as e:
@@ -249,6 +253,9 @@ def build(plan_path: Path, out: Path) -> Path:
     plan = load(plan_path)
     out.parent.mkdir(parents=True, exist_ok=True)
     base = plan_path.parent
+    for rel in [o["src"] for o in plan["objects"] if o.get("kind") == "photo"] + [f["src"] for f in plan.get("fonts", [])]:
+        if Path(rel).is_absolute() or ".." in Path(rel).parts:
+            raise SystemExit(f"asset path {rel!r} must stay inside the job folder (relative, no '..')")
     for o in plan["objects"]:
         if o.get("kind") == "photo":
             src = (base / o["src"]).resolve()
@@ -264,7 +271,7 @@ def build(plan_path: Path, out: Path) -> Path:
             shutil.copy2(src, dst)
     data = json.dumps(plan, ensure_ascii=False).replace("</", "<\\/")
     page = f"""<!doctype html>
-<html lang="ar"><head><meta charset="utf-8"><title>{plan.get('title', 'world film')}</title>
+<html lang="ar"><head><meta charset="utf-8"><title>{html.escape(str(plan.get('title', 'world film')))}</title>
 <style>html,body{{margin:0;background:#000;overflow:hidden}}canvas{{display:block}}</style></head>
 <body><canvas id="film"></canvas>
 <script>window.WORLD_PLAN = {data};</script>
