@@ -280,6 +280,13 @@
    "what": "v62.1 (artifact versions 72-73): photos rebuilt from the owner's original-resolution archive (2,185 JPG, 224 MB): 1,954 kept (231 repeated placeholders dropped); row thumbnails regenerated at 128px from the originals (pics.json 3.3 MB); full photos up to 1600px long side as WebP q80 in 32 packs of ~2 MB (full/p00-p31.json, 62 MB) loaded only when an item panel opens; panel shows the larger photo and a full-screen viewer with original and shown size.",
    "checks": "t64: panel swaps to the full 1457x1600 photo, lightbox fits the screen; t56/t61/t62/t63 0 errors; 34 files confirmed served. Loading on the live claude.ai page not checked from here.",
    "status": "published"
+  },
+  {
+   "n": 35,
+   "at": "2026-11-05T20:15:00+03:00",
+   "what": "v62.2 (artifact version 74): owner's alternatives file 3 merged (adds autopiter.ru: 15,666 rows); exist.ru rows skipped because their numbers are partly hidden; totals after de-duplication vs the original data: +47,498 brand numbers and +4,322 OE (about +10,188 and +627 beyond the previous upload), 2,388 items now have alternatives (was 2,267); item panel credits Autopiter with a link.",
+   "checks": "autopiter-only numbers KHZ1178PF and Z71783R find item 0010011; panel shows Autopiter link; t56/t59/t61/t62/t64 0 errors",
+   "status": "published"
   }
  ],
  "outputs": [
