@@ -29,7 +29,7 @@ from power_programs import (  # noqa: E402
 )
 
 FAMILIES = ["app-feature-transfer", "ui-product-device", "apps-artifacts", "formats-platforms", "brand-logo-identity"]
-IDS = sorted(pid for fam in FAMILIES for mod in pp.modules_for(fam) for pid in mod.PROGRAMS)
+IDS = sorted(pid for fam in FAMILIES for mod in pp.modules_for(fam, local=False) for pid in mod.PROGRAMS)
 
 
 def run(pid):
@@ -81,7 +81,7 @@ PLANTED = {
 
 class AppsPowerPrograms(unittest.TestCase):
     def test_every_family_has_programs(self):
-        counts = {fam: sum(len(m.PROGRAMS) for m in pp.modules_for(fam)) for fam in FAMILIES}
+        counts = {fam: sum(len(m.PROGRAMS) for m in pp.modules_for(fam, local=False)) for fam in FAMILIES}
         self.assertEqual(counts, {"app-feature-transfer": 43, "ui-product-device": 82, "apps-artifacts": 10,
                                   "formats-platforms": 52, "brand-logo-identity": 35})
 
