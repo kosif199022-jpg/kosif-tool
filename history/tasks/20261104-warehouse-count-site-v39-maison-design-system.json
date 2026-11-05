@@ -287,6 +287,13 @@
    "what": "v62.2 (artifact version 74): owner's alternatives file 3 merged (adds autopiter.ru: 15,666 rows); exist.ru rows skipped because their numbers are partly hidden; totals after de-duplication vs the original data: +47,498 brand numbers and +4,322 OE (about +10,188 and +627 beyond the previous upload), 2,388 items now have alternatives (was 2,267); item panel credits Autopiter with a link.",
    "checks": "autopiter-only numbers KHZ1178PF and Z71783R find item 0010011; panel shows Autopiter link; t56/t59/t61/t62/t64 0 errors",
    "status": "published"
+  },
+  {
+   "n": 36,
+   "at": "2026-11-05T20:50:00+03:00",
+   "what": "v62.3 (artifact version 75): owner's alternatives file 4 merged (autopiter.ru grew to 21,875 rows); unioned with file 3 (nothing from file 3 lost); about +3,922 brand numbers and +74 OE beyond version 74; still 2,388 items with alternatives; exist.ru still skipped (numbers partly hidden).",
+   "checks": "file-4-only number 14874008 (Cs) finds item 0012512; t56/t59/t62/t64 0 errors",
+   "status": "published"
   }
  ],
  "outputs": [
