@@ -225,7 +225,7 @@ def beats_md(plan: dict) -> str:
     rows = ["| الوقت | الكلام | البطل الوحيد | نص على الشاشة | اللحظة على الكلمة |", "|---|---|---|---|---|"]
     for b in plan["beats"]:
         h = by.get(b["hero"], {})
-        hero = h.get("label") or h.get("text") or b["hero"]
+        hero = (h.get("label") or h.get("text") or b["hero"]).replace("\n", " ")
         txt = by.get(b.get("text") or "", {}).get("text", "—").replace("\n", " · ")
         hs = b.get("hits") or ([b["hit"]] if b.get("hit") else [])
         hit = "؛ ".join(f"{x['action']} على «{x.get('word', '')}» ({x['t']:.2f})" for x in hs) or "—"
