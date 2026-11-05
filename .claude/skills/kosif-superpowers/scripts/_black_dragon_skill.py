@@ -445,8 +445,30 @@ def web_film(r, d, task, clip, selftest):
     errs = " | ".join(caught.get("errors") or [])
     r.check("check caught the planted gap and the uncovered requirement",
             "gap or overlap" in errs and "no shot covering" in errs, errs[:300])
+    # World Film mode: one world, one continuous camera; the checker enforces the storytelling,
+    # readability and camera rules, so plant three breaks and expect all three caught.
+    wt = [*PY, str(d / "world_film.py")]
+    r.call("world film: write the example plan", [*wt, "example", "--out", "world.plan.json"])
+    wrep = r.call("world film: check the example", [*wt, "check", "world.plan.json", "--json"], ok_codes=(0, 1))
+    wres = wrep.get("receipt") or {}
+    r.check("world film example passes every rule (camera included)", wres.get("ok") is True, wres.get("errors"))
+    world = _json(r.work / "world.plan.json")
+    by = {o["id"]: o for o in world["objects"]}
+    by["t_end"]["text"] = world["beats"][1]["narration"]          # typed while the narrator says it
+    by["t_place"]["size"] = 30                                     # too small to read on a phone
+    world["beats"][1]["camera"]["drift"] = 0                       # park the camera on one target
+    world["beats"][2]["camera"] = dict(world["beats"][1]["camera"])
+    (r.work / "planted.world.json").write_text(json.dumps(world, ensure_ascii=False), encoding="utf-8")
+    wbad = r.call("world film: check a plan with 3 planted breaks", [*wt, "check", "planted.world.json", "--json"],
+                  ok_codes=(1,)).get("receipt") or {}
+    werrs = " | ".join(wbad.get("errors") or [])
+    r.check("world film check caught said-and-typed text, small type and a dead camera stop",
+            "never both" in werrs and "read on a phone" in werrs and "stops dead" in werrs, werrs[:400])
+    r.call("world film: build the page", [*wt, "build", "world.plan.json", "--out", "world.html"])
+    r.output(r.work / "world.html")
     r.findings.append({"shots": len(plan["shots"]), "duration": plan.get("duration"),
-                       "note": "structure only; the page was not rendered to video here"})
+                       "world_film_camera": (wres.get("stats") or {}).get("camera"),
+                       "note": "structure only; the pages were not rendered to video here"})
 
 
 def causal_laws(r, d, task, clip, selftest):
