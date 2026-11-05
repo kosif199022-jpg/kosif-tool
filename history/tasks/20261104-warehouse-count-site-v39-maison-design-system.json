@@ -273,6 +273,13 @@
    "what": "v62 (artifact version 71): owner's Excel (Spareto + AutopartsPro + inventory file, 2,533 items) merged: +37,310 brand alternatives and +3,695 OE numbers after de-duplication (2,267 items now have alternatives), searchable; item panel credits Spareto/AutopartsPro with links; 1,961 catalogue photos (223 repeated placeholders dropped) shipped as pics.json (2.35 MB, WebP) and shown in rows and the item panel; location column narrowed to 6.6rem.",
    "checks": "t63: 56/60 visible rows show photos, an Excel-only number (4010530) finds its item, panel shows Spareto link; t56/t59/t61/t62 0 errors; gate 0 low. Photo loading on the live claude.ai page not checked from here.",
    "status": "published"
+  },
+  {
+   "n": 34,
+   "at": "2026-11-05T17:20:00+03:00",
+   "what": "v62.1 (artifact versions 72-73): photos rebuilt from the owner's original-resolution archive (2,185 JPG, 224 MB): 1,954 kept (231 repeated placeholders dropped); row thumbnails regenerated at 128px from the originals (pics.json 3.3 MB); full photos up to 1600px long side as WebP q80 in 32 packs of ~2 MB (full/p00-p31.json, 62 MB) loaded only when an item panel opens; panel shows the larger photo and a full-screen viewer with original and shown size.",
+   "checks": "t64: panel swaps to the full 1457x1600 photo, lightbox fits the screen; t56/t61/t62/t63 0 errors; 34 files confirmed served. Loading on the live claude.ai page not checked from here.",
+   "status": "published"
   }
  ],
  "outputs": [
