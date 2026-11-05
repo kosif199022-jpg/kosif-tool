@@ -217,6 +217,13 @@
    "what": "v61 (artifact version 63): book-page paper palette (warm paper + fibre texture, ink colours, navy accent); marked rows as a highlighter stroke; always-visible 'marked only' filter with a bar, marks synced to the account db (saved/marks), two-step clear; C button on every row sends the item to the Claude chat for photo + all alternatives; visual format editor (colour pickers, size sliders, font) saved by name in the theme studio.",
    "checks": "t56 new (marks filter, reload, C toast + mocked send, editor save), t52/t53/t54/t45/t38 0 page errors, contrast gate 0 low pairs in light/dark/noir",
    "status": "published"
+  },
+  {
+   "n": 26,
+   "at": "2026-11-05T09:05:00+03:00",
+   "what": "v61.1 (artifact version 64): iPhone camera — when the live camera is denied or blocked, the black area becomes step-by-step Safari/Chrome permission help with a retry button; «صوّر الرف» (local ZXing decode of a still photo) becomes the primary button; «اسأل Claude» hidden when image reading isn't available in the view; solid readable toasts.",
+   "checks": "t57 iPhone 15 Pro emulation with getUserMedia denied: help shown, retry works, 0 page errors. Not tested on a real iPhone.",
+   "status": "published"
   }
  ],
  "outputs": [
