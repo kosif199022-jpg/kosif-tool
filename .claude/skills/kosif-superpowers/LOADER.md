@@ -15,7 +15,7 @@
 | المهارة | الملف | الحجم | متى |
 |---|---|---|---|
 | `editorial-film-edit` | `.claude/skills/editorial-film-edit/SKILL.md` | 6 KB · 48 سطر | Edit footage in an archival editorial style with bundled video and photo references, kinetic text, film grain, bloom, masks and presenter splits. Use for new edits and… |
-| `kosif-black-dragon` | `.claude/skills/kosif-black-dragon/SKILL.md` | 7 KB · 91 سطر | التنين الأسود: new independent skill that studies the KOSIF catalog, links each original source to one traceable entry, and synthesizes new task-specific working… |
+| `kosif-black-dragon` | `.claude/skills/kosif-black-dragon/SKILL.md` | 7 KB · 95 سطر | التنين الأسود: new independent skill that studies the KOSIF catalog, links each original source to one traceable entry, and synthesizes new task-specific working… |
 | `kosif-dragon-mind` | `.claude/skills/kosif-dragon-mind/SKILL.md` | 10 KB · 129 سطر | The thinking brain of the Black Dragon («عقل التنين الأسود»). Use when a task should be thought through before the Black Dragon runs, when the owner asks to decompose,… |
 | `kosif-infinite-matrices` | `.claude/skills/kosif-infinite-matrices/SKILL.md` | 9 KB · 88 سطر | Invent new visual and motion systems from causal bricks (state, operation, law, time, memory, feedback) mined from the 86 reference styles; build a recipe, run an A/B/C… |
 | `kosif-instagram-discovery` | `.claude/skills/kosif-instagram-discovery/SKILL.md` | 3 KB · 34 سطر | Find public Instagram reel references by topic using generated public web search queries; index researcher-confirmed permalinks; rank Arabic/English metadata; create… |
@@ -114,12 +114,12 @@
 
 - 6–9: التنين الأسود — Black Dragon (Native Fusion)
 - 10–18: Working contract
-- 19–30: Mandatory video-product protocol (إلزامي)
-- 31–40: Commands
-- 41–57: Native reasoning absorbed from Dragon Mind
-- 58–78: Catalog-wide native fusion atlas
-- 79–85: Verified composition and Arabic matching
-- 86–90: Evidence and limits
+- 19–34: Mandatory video-product protocol (إلزامي)
+- 35–44: Commands
+- 45–61: Native reasoning absorbed from Dragon Mind
+- 62–82: Catalog-wide native fusion atlas
+- 83–89: Verified composition and Arabic matching
+- 90–94: Evidence and limits
 
 ### `.claude/skills/kosif-dragon-mind/SKILL.md`
 
