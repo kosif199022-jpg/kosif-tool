@@ -16,6 +16,18 @@ description: "التنين الأسود: new independent skill that studies the 
 5. Turn extracted insights into native executable features when practical. Only mark a feature implemented after its new code exists. Count executed only from real task evidence.
 6. Original Black Dragon / Dragon Mind / standalone tool routing is **off by default**; legacy IDs can be returned as **optional links**, without executing them.
 
+## Mandatory video-product protocol (إلزامي)
+
+Any request for a video product (reel, ad, promo, montage, motion, film, intro,
+shorts) walks ONE fixed path of seven stages: `brief → concept → color-design →
+shots → produce → qa-color → deliver`. Read `references/VIDEO_PROTOCOL.md` and drive
+it with `scripts/video_protocol.py` (`start`, `record`, `color`, `check`). A stage can
+only be recorded after the previous one; each stage is sealed; the two color stages
+are measured from real pixels (60/30/10 palette, ONE accent on the hero, chosen by
+the contrast / emotion / neon rule). Never deliver a video until
+`video_protocol.py check --job <job>` exits 0. `compose` adds a `video_protocol`
+block automatically when the task mentions video.
+
 ## Commands
 
 Run from repository root:

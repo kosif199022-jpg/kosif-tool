@@ -23,6 +23,24 @@ SKILLS = Path(".claude/skills")
 SUPER = SKILLS / "kosif-superpowers"
 SCHEMA = "kosif.black-dragon.native-fusion.v1"
 PHASES = ("understand", "research", "design", "produce", "verify", "deliver")
+# Any video product walks the mandatory seven-stage protocol (see
+# references/VIDEO_PROTOCOL.md). These words switch it on in `compose`.
+VIDEO_WORDS = {"فيديو", "ريل", "ريلز", "مونتاج", "فيلم", "اعلان", "إعلان", "موشن", "انترو",
+               "برومو", "تيك", "شورتس", "كليب", "video", "reel", "reels", "montage", "film",
+               "promo", "intro", "motion", "ad", "commercial", "shorts", "tiktok", "clip"}
+VIDEO_STAGES = ("brief", "concept", "color-design", "shots", "produce", "qa-color", "deliver")
+
+
+def video_protocol(task: str) -> dict | None:
+    """The mandatory video path, or None when the task is not a video product."""
+    if not (words(task) & {w for v in VIDEO_WORDS for w in words(v)}):
+        return None
+    tool = ".claude/skills/kosif-black-dragon/scripts/video_protocol.py"
+    return {"mandatory": True, "stages": list(VIDEO_STAGES),
+            "doc": ".claude/skills/kosif-black-dragon/references/VIDEO_PROTOCOL.md",
+            "start": f'python3 {tool} start "<task>" --job out/black-dragon/<job>',
+            "check": f"python3 {tool} check --job out/black-dragon/<job>",
+            "rule": "Do not deliver until `check` passes (exit 0). No stage is skipped."}
 
 
 def digest(data: bytes) -> str:
@@ -333,6 +351,7 @@ def compose(task: str, path: Path, *, legacy: bool = False, limit: int = 12) -> 
                       "code": x["code"], "source_sha256": x["source_sha256"],
                       **({"legacy_entry": x["id"]} if legacy else {})}
                      for x in selected],
+        **({"video_protocol": vp} if (vp := video_protocol(task)) else {}),
         "native_instruction": ("Synthesize a new coherent solution from the selected methods, "
                                "merge redundant steps, preserve unique constraints, then implement "
                                "and verify the required actual output. No legacy tool is executed."),
