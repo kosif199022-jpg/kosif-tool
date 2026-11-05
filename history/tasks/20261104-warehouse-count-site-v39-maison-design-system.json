@@ -252,6 +252,13 @@
    "what": "v61.5 (artifact version 68): sticky search area made opaque (rows no longer show through while scrolling); theme message adds a 'behaviour and states' section (hover, press, focus, count/save flow, sync dot, flash, row status tints, open/marked rows, sort, highlight, disabled, toast time) with 27 new wired settings; themes accept free CSS rules after :root (sanitised: no url(, @import, @font-face, script), with a 72-entry selector map in the message.",
    "checks": "t60: controls opaque, 20k-char message with 0 blanks, a pasted rule restyled names and head height, url()/@import stripped; t54/t56/t57/t59 0 errors; gate 0 low",
    "status": "published"
+  },
+  {
+   "n": 31,
+   "at": "2026-11-05T10:15:00+03:00",
+   "what": "v61.6 (artifact version 69): editable grid cells (الفعلي، الموقع، الملاحظة) drawn as clear boxes inside each cell (row colour around, divider lines kept, hover and focus states); search text keeps clear of the icon; C button, when the page is not beside a chat, opens a new Claude chat with the search request (photo + 2026 alternatives) prefilled, else copies it.",
+   "checks": "screenshots of boxes in normal/zebra/marked/focused rows; C fallback opened claude.ai/new?q=...; t45/t52/t54/t56/t59/t60 0 errors; gate 0 low",
+   "status": "published"
   }
  ],
  "outputs": [
