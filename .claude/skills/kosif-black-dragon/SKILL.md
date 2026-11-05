@@ -64,6 +64,13 @@ synthesis; it does not independently render video, transcribe audio, or execute 
 underlying programs. Source hashing, extraction, reasoning, implementation, and
 actual execution must continue to be reported as separate milestones.
 
+## Verified composition and Arabic matching
+
+- Task lookup now normalizes Arabic diacritics, tatweel and common Alef variants; it retains original tokens while also matching common prefixes such as `الـ`, `والـ` and `للـ`. This is deterministic lexical matching, not a semantic language model.
+- When a sibling `fusion_atlas.json` exists, `compose` checks its checksum, the source-index checksum and its full source-ID membership against `summary.json`. Modified or stale indexes and atlases fail closed; regenerate with `index` instead of presenting unverified synthesis.
+- `verify` rejects out-of-root paths and symlinked source/code references even if the referenced bytes happen to hash to the expected value.
+- These checks are **local integrity guards, not cryptographic signatures, authority validation, or runtime execution proofs**. Running the old tools remains disabled by default.
+
 ## Evidence and limits
 
 `sources.jsonl` stores one machine-extracted link per catalog entry with its source hash and code fingerprint (where a local file exists). `summary.json` stores the exact input count and index hash. `verify` detects changed or missing sources. These are fast bookkeeping checks, **not** 7,000 functional test runs.
