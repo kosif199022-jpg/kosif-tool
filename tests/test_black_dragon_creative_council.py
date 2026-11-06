@@ -127,6 +127,23 @@ class CreativeCouncilTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "unreviewed thinking IDs"):
             council.inventory(self.root)
 
+    def test_atlas_mind_82_contextual_methods_mapped_without_new_seats(self):
+        self.put(council.ATLAS_MIND, [
+            {"id": f"AMIND-{n:02d}", "name_en": f"Example thinking skill {n}",
+             "section": "سير عمل الوكلاء — Agent workflows & orchestration",
+             "status": "documented"} for n in range(1, 83)
+        ])
+        records = council.inventory(self.root)
+        atlas = [x for x in records if x["id"].startswith("atlas-mind:")]
+        self.assertEqual(len(atlas), 82)
+        self.assertEqual(len({x["id"] for x in atlas}), 82)
+        self.assertTrue(all(x["contextual_only"] for x in atlas))
+        self.assertTrue(all(x["primary"] in council.SEATS for x in atlas))
+        result = council.plan("فيديو", self.root)
+        self.assertEqual(result["core_cognitive_records"], 7)
+        self.assertEqual(result["atlas_mind_contextual_records"], 82)
+        self.assertEqual(result["total_source_records"], 89)
+
     def test_real_repository_has_no_unassigned_entries(self):
         original = council.inventory(ROOT)
         framework = json.loads((ROOT / council.DRAGON).read_text(encoding="utf-8"))["frameworks"]
@@ -136,8 +153,12 @@ class CreativeCouncilTests(unittest.TestCase):
                      for x in council.EXTRA_POWER_FILES.values())
         books = json.loads((ROOT / council.BOOK_METHODS).read_text(encoding="utf-8"))["methods"]
         modes = json.loads((ROOT / council.REASONING_MODES).read_text(encoding="utf-8"))["modes"]
-        expected = len(framework) + len(models) + len(powers) + extras + len(books) + len(modes)
-        self.assertEqual(expected, 404)
+        core = len(framework) + len(models) + len(powers) + extras + len(books) + len(modes)
+        atlas = json.loads((ROOT / council.ATLAS_MIND).read_text(encoding="utf-8"))
+        self.assertEqual(core, 404)
+        self.assertEqual(len(atlas), 82)
+        expected = core + len(atlas)
+        self.assertEqual(expected, 486)
         self.assertEqual(len(original), expected)
         self.assertEqual(len({x["id"] for x in original}), expected)
         self.assertEqual(set(x["primary"] for x in original), set(council.SEATS))
