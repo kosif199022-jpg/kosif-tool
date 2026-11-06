@@ -6,7 +6,8 @@ This is a **source-level review and deterministic routing audit**, not proof of
 404 separate intelligences, semantic equivalence, independent LLM calls, or
 successful film production. The independent Black Dragon `creative_council.py`
 now reads nine original cognitive data sources and routes **404/404 distinct
-source records to 12 primary seats**. Each entry retains its original ID,
+core cognitive source records to 12 primary seats**, plus 82 contextual Atlas Mind
+operating skills for **486/486** source records in the extended scope. Each entry retains its original ID,
 source path, source-reported maturity, and optional secondary roles.
 
 | Original source (relative to repo root) | Count |
@@ -53,6 +54,54 @@ The audience specialist has few **primary** methods but receives additional
 **secondary** lenses from story, communication and product frameworks, plus
 optional audience persona templates. A primary role count is not the quantity
 of opinions to solicit in a meeting.
+
+## Contextual Atlas Mind operating methods (82 additional records)
+
+`.claude/skills/kosif-superpowers/data/powers/atlas-mind.json` adds **82 separately
+identified, historically documented contextual skills**, primarily concerned
+with delegated work, memory, traceability, testing and planning. They are
+routed to the same 12 seats, without automatic execution, in these counts:
+
+| Seat | Core thinking | Contextual Atlas Mind | Extended total |
+|---|---:|---:|---:|
+| Chair | 15 | 20 | 35 |
+| Analyst | 68 | 7 | 75 |
+| Dramatic writer | 15 | 0 | 15 |
+| Creative director | 46 | 0 | 46 |
+| Visual director | 31 | 1 | 32 |
+| Motion/render engineer | 44 | 12 | 56 |
+| Adversarial critic | 52 | 17 | 69 |
+| Decision specialist | 55 | 2 | 57 |
+| Evidence researcher | 35 | 2 | 37 |
+| Systems thinker | 23 | 0 | 23 |
+| Audience specialist | 3 | 0 | 3 |
+| Learning specialist | 17 | 21 | 38 |
+| **Total** | **404** | **82** | **486** |
+
+These 82 entries are *contextual operating methods*, not another 82 distinct
+cinematic creative theories. Every source ID has exactly one primary assignment;
+this role map does not establish semantic deduplication or effective agent runs.
+
+There is also a `kosif-dragon-mind/data/books_thinking.json` list with **936
+book metadata records** selected by shelf tags from 10,000 book entries. The
+underlying texts were *not* read by that process, and these 936 records must
+**not** be counted as 936 executable thinking methods.
+
+### External KOSIF Atlas skill mirror — distinct scope
+
+The separate [KOSIF Atlas](https://github.com/kosif199022-jpg/kosif-atlas)
+includes third-party thinking skills such as:
+
+- `thinking-tools/dialectic`: thesis/antithesis evidence collection with
+  genuinely parallel agents *only when the required runner exists*;
+- `thinking-tools/root-cause-investigator`: Five Whys and evidence-backed diagnosis;
+- `sequential-thinking`: an MCP tool description, requires installation and runtime checks;
+- `design-thinking/design-graph`: architecture/call-graph planning with review-before-install flags;
+- `eigenthinking`: a nine-step method for capturing an expert's tacit process.
+
+These are **sampled source files**, not an exhaustive audit of the external
+Atlas index. Do not say that 486 covers the full Atlas skill universe or
+install third-party scripts solely because a source card exists.
 
 ## Duplication and quality of source claims
 
@@ -131,6 +180,6 @@ python3 .claude/skills/kosif-black-dragon/scripts/black_dragon.py council "اع�
 python3 -m unittest discover -s tests -p 'test_black_dragon_creative_council.py'
 ```
 
-The first command should report role counts for **404** entries on the current
-inputs; tests must actually run in an environment with the repository sources.
+The first command should report role counts for **486** entries on the current
+inputs (404 core plus 82 Atlas Mind contextual records); tests must actually run in an environment with the repository sources.
 Do not confuse a read-only mapping audit with those Python execution results.
