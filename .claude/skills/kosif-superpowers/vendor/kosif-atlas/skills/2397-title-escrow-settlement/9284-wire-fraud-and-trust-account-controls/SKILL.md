@@ -43,6 +43,6 @@ Every dollar in the account belongs to someone else. A shortage is a fiduciary b
 
 ## See also
 
-- Traverse the **wire-verification before disbursement** tree in [`../../knowledge/title-escrow-decision-trees.md`](../../knowledge/title-escrow-decision-trees.md).
-- Companion: [`../escrow-closing-and-disbursement/SKILL.md`](../escrow-closing-and-disbursement/SKILL.md); ALTA-pillar reference: [`../../knowledge/title-escrow-reference-2026.md`](../../knowledge/title-escrow-reference-2026.md).
-- Best practices: [`../../best-practices/verify-the-wire-before-you-send-a-dollar.md`](../../best-practices/verify-the-wire-before-you-send-a-dollar.md), [`../../best-practices/protect-the-escrow-trust-account-absolutely.md`](../../best-practices/protect-the-escrow-trust-account-absolutely.md).
+- Traverse the **wire-verification before disbursement** tree in `../../knowledge/title-escrow-decision-trees.md`.
+- Companion: `../escrow-closing-and-disbursement/SKILL.md`; ALTA-pillar reference: `../../knowledge/title-escrow-reference-2026.md`.
+- Best practices: `../../best-practices/verify-the-wire-before-you-send-a-dollar.md`, `../../best-practices/protect-the-escrow-trust-account-absolutely.md`.

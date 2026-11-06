@@ -24,7 +24,11 @@ Run from repository root:
     python3 .claude/skills/kosif-black-dragon/scripts/black_dragon.py compose "اعمل مونتاج سينمائي على الإيقاع" --index out/black-dragon-fusion-01/sources.jsonl
     python3 .claude/skills/kosif-black-dragon/scripts/black_dragon.py verify --out out/black-dragon-fusion-01
 
-To include *only optional pointers* to catalog entries, add `--legacy-links` to compose. No external process, paid model, or original adapter is invoked by these commands.
+**Use `plan` for day-to-day work** — it turns the same composition into a short readable Markdown plan (six stages with their question and success check, merged method steps with source IDs, the catalog's documented commands, requirements, input gaps). It takes ≈5 s on an existing index; build the index once (≈5 min, 7,400+ sources) and reuse it:
+
+    python3 .claude/skills/kosif-black-dragon/scripts/black_dragon.py plan "اعمل ريل مونتاج سينمائي على الإيقاع" --index out/black-dragon-fusion-01/sources.jsonl --save out/plan.md
+
+Follow the plan, run only the commands you actually need (they are listed, not executed), and report real outputs. On Windows `python3` must be a real Python (not the Microsoft Store alias). To include *only optional pointers* to catalog entries, add `--legacy-links` to compose. No external process, paid model, or original adapter is invoked by these commands.
 
 ## Native reasoning absorbed from Dragon Mind
 

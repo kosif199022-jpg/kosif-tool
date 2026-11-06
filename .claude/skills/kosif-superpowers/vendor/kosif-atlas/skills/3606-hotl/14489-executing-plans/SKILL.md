@@ -1,5 +1,5 @@
 ---
-name: executing-plans
+name: hotl-executing-plans
 description: Use when executing an implementation plan linearly with explicit human checkpoints between batches of tasks.
 ---
 

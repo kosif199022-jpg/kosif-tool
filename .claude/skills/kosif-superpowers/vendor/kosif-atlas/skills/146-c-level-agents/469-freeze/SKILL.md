@@ -1,6 +1,6 @@
 ---
 name: "freeze"
-description: "/cs:freeze <decision> <days> — Lock a strategic decision for a cooldown period to prevent impulse reversal. Mirrors gstack's safety primitives for the business layer. Use when an irreversible decision was made under pressure — e.g. a layoff plan or multi-year contract — and deserves a cooling-off lock before execution."
+description: "/cs:freeze ‹decision› ‹days› — Lock a strategic decision for a cooldown period to prevent impulse reversal. Mirrors gstack's safety primitives for the business layer. Use when an irreversible decision was made under pressure — e.g. a layoff plan or multi-year contract — and deserves a cooling-off lock before execution."
 ---
 
 # /cs:freeze — Cooldown Lock on a Decision
@@ -93,8 +93,8 @@ Founders have authority. Without an explicit lock + log, every wobble produces a
 
 ## Related
 
-- Skill: [`decision-logger`](../../../c-level-advisor/skills/decision-logger/SKILL.md)
-- Agent: [`cs-chief-of-staff`](../../agents/cs-chief-of-staff.md) — enforces freezes in routing
+- Skill: `decision-logger`
+- Agent: `cs-chief-of-staff` — enforces freezes in routing
 
 ---
 

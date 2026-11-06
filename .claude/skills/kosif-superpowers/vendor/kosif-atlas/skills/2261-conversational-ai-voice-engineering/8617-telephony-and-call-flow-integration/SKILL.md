@@ -37,8 +37,8 @@ The plumbing that connects the agent to real callers, and the harness that prove
 
 ## See also
 
-- Traverse the **channel choice** and **build-vs-platform** trees in [`../../knowledge/voice-ai-decision-trees.md`](../../knowledge/voice-ai-decision-trees.md).
-- Dated telephony/protocol landscape: [`../../knowledge/voice-ai-reference-2026.md`](../../knowledge/voice-ai-reference-2026.md).
-- Sibling skills: [`../dialog-management-and-tool-calling/SKILL.md`](../dialog-management-and-tool-calling/SKILL.md), [`../voice-agent-architecture-and-latency/SKILL.md`](../voice-agent-architecture-and-latency/SKILL.md).
-- Best practices: [`../../best-practices/handle-the-unhappy-path-first.md`](../../best-practices/handle-the-unhappy-path-first.md), [`../../best-practices/measure-task-success-not-just-word-error-rate.md`](../../best-practices/measure-task-success-not-just-word-error-rate.md).
-- Contact-center operations & CX: [`../../../customer-support-cx-operations/CLAUDE.md`](../../../customer-support-cx-operations/CLAUDE.md).
+- Traverse the **channel choice** and **build-vs-platform** trees in `../../knowledge/voice-ai-decision-trees.md`.
+- Dated telephony/protocol landscape: `../../knowledge/voice-ai-reference-2026.md`.
+- Sibling skills: `../dialog-management-and-tool-calling/SKILL.md`, `../voice-agent-architecture-and-latency/SKILL.md`.
+- Best practices: `../../best-practices/handle-the-unhappy-path-first.md`, `../../best-practices/measure-task-success-not-just-word-error-rate.md`.
+- Contact-center operations & CX: `../../../customer-support-cx-operations/CLAUDE.md`.

@@ -13,7 +13,7 @@ description: Publish a collection online, rights- and cultural-sensitivity-clear
 
 ## Procedure
 
-1. **Run the rights gate first.** Traverse [`../../knowledge/museum-operations-decision-tree.md`](../../knowledge/museum-operations-decision-tree.md) Tree D. Copyright status: **public domain** (openness is on the table), **in copyright but museum holds/clears the rights** (publish under a license), or **in copyright and NOT cleared** (thumbnail/metadata only — clear rights or wait). Never publish a full image you haven't cleared.
+1. **Run the rights gate first.** Traverse `../../knowledge/museum-operations-decision-tree.md` Tree D. Copyright status: **public domain** (openness is on the table), **in copyright but museum holds/clears the rights** (publish under a license), or **in copyright and NOT cleared** (thumbnail/metadata only — clear rights or wait). Never publish a full image you haven't cleared.
 2. **Run the cultural-sensitivity gate.** Is the material NAGPRA/culturally sensitive or community-restricted? If yes → **consult the source community**, apply traditional-knowledge (TK) labels, and restrict or contextualize per their guidance. Consent precedes publication — this gate can override "it's public domain".
 3. **Decide open access vs restricted.** Where rights and sensitivity allow, **default toward openness** — CC0 / CC-BY for public-domain and rights-cleared works expands mission reach; locking up public-domain works leaves reach on the table. Where display is rights-restricted, publish under a clear license with access terms. Apply standardized **rights statements** (rightsstatements.org / Creative Commons) so users know what they can do.
 4. **Stand up the technical stack.** **DAMS** as the source of truth for media; **IIIF** (Image API for deep-zoom + Presentation API/manifests for interoperability) served through a viewer (Mirador / Universal Viewer); the **online catalog** fed from the CMS/DAMS. Name what's already in place vs new.
@@ -37,4 +37,4 @@ description: Publish a collection online, rights- and cultural-sensitivity-clear
 - Use standardized **rights statements** (rightsstatements.org / Creative Commons) — don't invent bespoke terms.
 - **IIIF + a DAMS source of truth**, not a pile of JPEGs on a web server — interoperability and provenance of the digital asset matter.
 - A virtual exhibition extends reach; it does not replace the object or the physical experience.
-- Volatile specs (IIIF versions, rights-statement vocabularies, DAMS/viewer features) carry a **retrieval date** and are re-verified before a commitment. See [`../../knowledge/museum-operations-patterns-2026.md`](../../knowledge/museum-operations-patterns-2026.md).
+- Volatile specs (IIIF versions, rights-statement vocabularies, DAMS/viewer features) carry a **retrieval date** and are re-verified before a commitment. See `../../knowledge/museum-operations-patterns-2026.md`.

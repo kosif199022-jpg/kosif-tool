@@ -1,28 +1,16 @@
 ---
 name: codex-hook-wire-schema-from-binary
-description: |
-  Read the Codex CLI hook contract straight out of the shipped native binary
-  with `strings` instead of probing it with a live turn: the `PreToolUse`
-  payload fields, the output envelope, the `permissionDecision` values the
-  host accepts and the ones it refuses by name, the plugin environment
-  variables, and the hook-trust gate. Use when: (1) you need Codex's hook
-  stdin payload field names and `codex --help` has no `hooks` subcommand;
-  (2) you are porting a Claude Code `PreToolUse` hook to Codex and need to
-  know what differs before writing a decision; (3) a live Codex probe hangs
-  or never reaches a tool call and you need the contract anyway; (4) someone
-  reports that Codex has no native binary to inspect, having looked in
-  `@openai/codex/bin/` which holds only a JS shim; (5) a hook you installed
-  correctly appears to do nothing. Records the load-bearing finding that
-  Codex `PreToolUse` accepts `permissionDecision: deny` and refuses `allow`
-  and `ask` by name, so a hook that returns `ask` for "unsure" is rejected,
-  and that Codex sets `CLAUDE_PLUGIN_ROOT` so a Claude Code plugin hook path
-  may resolve unmodified.
+description: "Read the Codex CLI hook contract straight out of the shipped native binary with `strings` instead of probing it with a live turn: the `PreToolUse` payload fields, the output envelope, the `permissionDecision` values the host accepts and the ones it refuses by name, the plugin environment variables, and the hook-trust gate. Use when: (1) you need Codex's hook stdin payload field names and `codex --help` has no `hooks` subcommand; (2) you are porting a Claude Code `PreToolUse` hook to Codex and need to know what differs before writing a decision; (3) a live Codex probe hangs or never reaches a tool call and you need the contract anyway; (4) someone reports that Codex has no native binary to inspect, having looked in `@openai/codex/bin/` which holds only a JS shim; (5) a hook you installed correctly appears to do nothing."
 author: Claude Code
 version: 1.0.0
 date: 2026-08-28
 source: https://github.com/voitta-ai/skillz
 source_file: skills/codex-hook-wire-schema-from-binary/SKILL.md
 ---
+## About this skill
+
+Read the Codex CLI hook contract straight out of the shipped native binary with `strings` instead of probing it with a live turn: the `PreToolUse` payload fields, the output envelope, the `permissionDecision` values the host accepts and the ones it refuses by name, the plugin environment variables, and the hook-trust gate. Use when: (1) you need Codex's hook stdin payload field names and `codex --help` has no `hooks` subcommand; (2) you are porting a Claude Code `PreToolUse` hook to Codex and need to know what differs before writing a decision; (3) a live Codex probe hangs or never reaches a tool call and you need the contract anyway; (4) someone reports that Codex has no native binary to inspect, having looked in `@openai/codex/bin/` which holds only a JS shim; (5) a hook you installed correctly appears to do nothing. Records the load-bearing finding that Codex `PreToolUse` accepts `permissionDecision: deny` and refuses `allow` and `ask` by name, so a hook that returns `ask` for "unsure" is rejected, and that Codex sets `CLAUDE_PLUGIN_ROOT` so a Claude Code plugin hook path may resolve unmodified.
+
 
 > **Canonical source.** This skill lives in the repo at
 > https://github.com/voitta-ai/skillz (file:

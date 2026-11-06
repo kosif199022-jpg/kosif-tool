@@ -1,4 +1,5 @@
 ---
+name: script-the-deterministic-work
 description: "Re-anchor: deterministic sub-work (counts, diffs, transforms, arithmetic) gets a script; reason over its output. Use when: 'script the deterministic work', 'you should have scripted that', 'don't eyeball that', 'you counted that by hand', 'compute that, don't estimate', 'diff it with a tool', 'stop hand-tallying', 'run it instead of guessing', or at conversation start on count-, diff-, transform-heavy work. Fires on drift, not a work order ('script it', 'diff these files', 'count the routes')."
 user-invocable: true
 disable-model-invocation: false
@@ -15,7 +16,7 @@ A drift corrector for the discipline of offloading deterministic sub-work to
 a script instead of performing it in your head. The method, re-anchor, audit
 the work in flight, correct forward, report, and the tone that firing this is
 not an accusation, lives in
-[`${CLAUDE_PLUGIN_ROOT}/context/re-anchor-audit-correct.md`](../../context/re-anchor-audit-correct.md).
+`${CLAUDE_PLUGIN_ROOT}/context/re-anchor-audit-correct.md`.
 Read it; this file adds only what is specific to scripting deterministic work.
 
 ## The discipline this re-anchors

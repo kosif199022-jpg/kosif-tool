@@ -26,7 +26,7 @@ metadata:
 
 ## Goal
 
-Audit the automotive-specific supplemental requirements of IATF 16949:2016, including CSR compliance and the three mandatory internal audit streams. Use in conjunction with [iso-9001-internal-audit](../iso-9001-internal-audit/) for a complete IATF audit.
+Audit the automotive-specific supplemental requirements of IATF 16949:2016, including CSR compliance and the three mandatory internal audit streams. Use in conjunction with iso-9001-internal-audit for a complete IATF audit.
 
 ---
 

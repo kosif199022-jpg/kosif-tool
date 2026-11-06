@@ -1,7 +1,10 @@
 ---
 name: "cdo-review"
-description: "/cs:cdo-review <plan> — Decision-driven Chief Data Officer interrogation of any plan that touches training data, data architecture, data productization, or data team hiring. Use when validating training-data rights before model work, choosing warehouse vs lakehouse vs mesh, or valuing data assets for productization or M&A."
+description: "/cs:cdo-review ‹plan› — Decision-driven Chief Data Officer interrogation of any plan that touches training data, data architecture, data productization, or data team hiring. Use when validating training-data rights before model work, choosing warehouse vs lakehouse vs mesh, or valuing data assets for productization or M&A."
 ---
+
+> **Note (KOSIF):** the calculator scripts named below (../../../c-level-advisor/..., product-team/...) belong to the original c-level-advisor repository and are **not bundled** here. Do the same analysis directly: read the user's data, write a short Python script for the calculation if numbers are involved, show the formula, and tell the user the original tool was not available.
+
 
 # /cs:cdo-review — CDO Forcing Questions
 
@@ -117,8 +120,8 @@ python ../../../c-level-advisor/skills/chief-data-officer-advisor/scripts/data_a
 
 ## Related
 
-- Agent: [`cs-cdo-advisor`](../../agents/cs-cdo-advisor.md)
-- Skill: [`chief-data-officer-advisor`](../../../c-level-advisor/skills/chief-data-officer-advisor/SKILL.md)
+- Agent: `cs-cdo-advisor`
+- Skill: `chief-data-officer-advisor`
 - Adjacent: `../../../c-level-advisor/skills/general-counsel-advisor/` (contractual constraints), `../../../c-level-advisor/skills/cto-advisor/` (architecture capacity)
 
 ---

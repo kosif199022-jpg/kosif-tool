@@ -18,7 +18,7 @@ description: "Pick the right monorepo/build tool and package manager for a descr
    - **scale** (number of packages/projects, repo size, build wall-clock today, team size),
    - **pain signal** (slow CI? broken caching? cross-package coordination? release versioning chaos?),
    - **hermeticity need** (do you need byte-reproducible, cross-language, content-addressable builds — or is task-level caching enough?).
-2. **Traverse the decision tree** in [`../../knowledge/monorepo-tooling-decision-tree.md`](../../knowledge/monorepo-tooling-decision-tree.md) against that context: language mix → scale → hermeticity need → tool leaf.
+2. **Traverse the decision tree** in `../../knowledge/monorepo-tooling-decision-tree.md` against that context: language mix → scale → hermeticity need → tool leaf.
 3. **Name the tool, then the package manager.** For JS/TS the package-manager spine (`pnpm` default; yarn/npm with a reason) is a separate, lower-ceremony decision than the task runner (Turborepo vs Nx).
 4. **State the tradeoff, not just the pick** — config tax, lock-in, learning curve, who maintains it — against the measured pain. A tool that solves a pain you don't have is a net negative.
 5. **List what to NOT adopt yet.** The most valuable output is often "don't reach for Bazel; a `pnpm` workspace + `turbo` clears your measured pain at a fraction of the cost." Defer heavy tools until a measured reason appears.
@@ -44,4 +44,4 @@ Next: monorepo-engineer wires turbo.json + affected; devops-cicd runs `turbo run
 - Never recommend a tool without the measured context (language mix / scale / pain / hermeticity) — guessing the bottleneck is the cardinal sin (house opinion #1).
 - Don't pay Bazel/Buck2's config tax for a small single-language repo (house opinion #5).
 - Always include "what to NOT adopt yet" — deferral is a valid, often optimal, recommendation.
-- Volatile tool-positioning/version claims carry a retrieval date; re-verify before a client deliverable. See [`../../knowledge/monorepo-tooling-decision-tree.md`](../../knowledge/monorepo-tooling-decision-tree.md).
+- Volatile tool-positioning/version claims carry a retrieval date; re-verify before a client deliverable. See `../../knowledge/monorepo-tooling-decision-tree.md`.

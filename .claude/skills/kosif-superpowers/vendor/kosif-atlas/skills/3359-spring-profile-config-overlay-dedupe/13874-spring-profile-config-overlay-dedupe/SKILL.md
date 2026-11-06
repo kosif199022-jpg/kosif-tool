@@ -1,16 +1,6 @@
 ---
 name: spring-profile-config-overlay-dedupe
-description: |
-  Strip an `application-<profile>.yml` down to the values that actually differ from
-  `application.yml`, and prove the change altered nothing. Use when: (1) a Spring Boot or
-  Grails repo has profile configs that are near-copies of the base config and you cannot tell
-  which lines are real overrides, (2) you are about to change a value in the base config and
-  need to know which profiles silently inherit it, (3) a staging/production config drifted
-  because someone edited one copy of a duplicated key, (4) you want to delete config
-  duplication but cannot risk changing runtime behaviour, (5) you need to decide whether a
-  duplicated value should be deleted or deliberately kept. Covers the flatten-and-diff
-  verification, confirming profiles really are layered before trusting it, and the case where
-  keeping a duplicate is the correct call.
+description: "Strip an `application-‹profile›.yml` down to the values that actually differ from `application.yml`, and prove the change altered nothing. Use when: (1) a Spring Boot or Grails repo has profile configs that are near-copies of the base config and you cannot tell which lines are real overrides, (2) you are about to change a value in the base config and need to know which profiles silently inherit it, (3) a staging/production config drifted because someone edited one copy of a duplicated key, (4) you want to delete config duplication but cannot risk changing runtime behaviour, (5) you need to decide whether a duplicated value should be deleted or deliberately kept. Covers the flatten-and-diff verification, confirming profiles really are layered before trusting it, and the case where keeping a duplicate is the correct call."
 author: Claude Code
 version: 1.0.0
 date: 2026-08-19

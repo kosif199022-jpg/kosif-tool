@@ -288,18 +288,18 @@ Read [engineering methods](references/engineering-methods.md) when choosing trou
 reproduction, measure-verification, controlled-experimentation, or workflow-control methods.
 These methods are advisory and cannot weaken a standard gate.
 
-- Use [NCR writing](../../documentation/ncr-writing/) to document a detected nonconformance
+- Use NCR writing to document a detected nonconformance
   when the organization's quality system requires an NCR before zeroing.
-- Use [Is/Is-Not](../is-is-not-scoping/) to define the observed boundary.
-- Use [Fishbone](../fishbone-analysis/) to generate candidate causes.
-- Use separate [5-Why](../5why-root-cause/) chains for distinct causal paths.
-- Use [PFMEA](../../risk-analysis/pfmea-process/) or
-  [DFMEA](../../risk-analysis/dfmea-design/) to evaluate action risk and update prevention
-  controls, and update the [Control Plan](../../planning/control-plan/) when process controls
+- Use Is/Is-Not to define the observed boundary.
+- Use Fishbone to generate candidate causes.
+- Use separate 5-Why chains for distinct causal paths.
+- Use PFMEA or
+  DFMEA to evaluate action risk and update prevention
+  controls, and update the Control Plan when process controls
   change.
-- Use [CAR](../../documentation/car-corrective-action/) when the organization requires a
+- Use CAR when the organization requires a
   separate corrective-action record for implementation and effectiveness follow-up.
-- Use [8D](../8d-problem-solving/) when a customer or sector requires the 8D format; do not
+- Use 8D when a customer or sector requires the 8D format; do not
   claim that an 8D automatically satisfies GB/T 29076—2021 without checking every zeroing gate.
 
 Framework handoff:

@@ -1,29 +1,16 @@
 ---
 name: cmux-tmux-compat-gap-probe
-description: |
-  Decide, before installing anything, whether a tool that drives tmux from the
-  outside (workmux, tmux-based agent orchestrators, tmuxinator-style layout
-  tools, status sidebars, wait/handshake helpers) will work under cmux's tmux
-  impersonation layer (`cmux __tmux-compat`, the shim behind `cmux
-  claude-teams`). Use when: (1) you are evaluating a tmux-native tool for a
-  cmux desk and want the compat delta enumerated rather than discovered one
-  crash at a time, (2) a tmux-driving tool fails inside cmux with
-  "Unsupported tmux compatibility command: <verb>" or "Workspace target not
-  found" and you need to know how many more such failures are behind it,
-  (3) a tool's tmux format strings (`#{socket_path}`, `#{pid}`,
-  `#{client_session}`, `#{pane_current_command}`) come back empty under cmux,
-  (4) you are about to file a compat-extension issue against cmux (or an
-  option-free mode against the tool) and need the exact verb list. Procedure:
-  grep the tool's source for the tmux subcommands and `#{...}` variables it
-  emits, diff against cmux's `docs/cli-contract.md` table, then probe every
-  read-only verb live from a cmux pane. Verified on cmux 0.64.22 against
-  workmux v0.1.259.
+description: "Decide, before installing anything, whether a tool that drives tmux from the outside (workmux, tmux-based agent orchestrators, tmuxinator-style layout tools, status sidebars, wait/handshake helpers) will work under cmux's tmux impersonation layer (`cmux __tmux-compat`, the shim behind `cmux claude-teams`). Use when: (1) you are evaluating a tmux-native tool for a cmux desk and want the compat delta enumerated rather than discovered one crash at a time, (2) a tmux-driving tool fails inside cmux with \"Unsupported tmux compatibility command: ‹verb›\" or \"Workspace target not found\" and you need to know how many more such failures are behind it, (3) a tool's tmux format strings (`#{socket_path}`, `#{pid}`, `#{client_session}`, `#{pane_current_command}`) come back empty under cmux, (4) you are about to file a compat-extension issue against cmux (or an option-free mode against the tool) and need the exact verb list."
 author: Claude Code
 version: 1.0.0
 date: 2026-09-08
 source: hq#143 desk research (workmux vs cmux), 2026-09-08
 source_file: skills/cmux-tmux-compat-gap-probe/SKILL.md
 ---
+## About this skill
+
+Decide, before installing anything, whether a tool that drives tmux from the outside (workmux, tmux-based agent orchestrators, tmuxinator-style layout tools, status sidebars, wait/handshake helpers) will work under cmux's tmux impersonation layer (`cmux __tmux-compat`, the shim behind `cmux claude-teams`). Use when: (1) you are evaluating a tmux-native tool for a cmux desk and want the compat delta enumerated rather than discovered one crash at a time, (2) a tmux-driving tool fails inside cmux with "Unsupported tmux compatibility command: <verb>" or "Workspace target not found" and you need to know how many more such failures are behind it, (3) a tool's tmux format strings (`#{socket_path}`, `#{pid}`, `#{client_session}`, `#{pane_current_command}`) come back empty under cmux, (4) you are about to file a compat-extension issue against cmux (or an option-free mode against the tool) and need the exact verb list. Procedure: grep the tool's source for the tmux subcommands and `#{...}` variables it emits, diff against cmux's `docs/cli-contract.md` table, then probe every read-only verb live from a cmux pane. Verified on cmux 0.64.22 against workmux v0.1.259.
+
 
 # cmux tmux-compat gap probe
 

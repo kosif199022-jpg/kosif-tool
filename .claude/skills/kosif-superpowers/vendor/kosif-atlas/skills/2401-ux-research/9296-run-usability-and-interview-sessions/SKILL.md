@@ -13,13 +13,13 @@ description: "Design and run the study without contaminating it — protocol & t
 
 ## Procedure
 
-1. **Anchor to the plan's question and method.** Read the research-lead's plan ([`../../templates/research-plan.md`](../../templates/research-plan.md)) — the instrument must execute *that* question at *that* rigor, not a new one. Traverse [`../../knowledge/ux-research-decision-tree.md`](../../knowledge/ux-research-decision-tree.md) for the method's craft rules.
+1. **Anchor to the plan's question and method.** Read the research-lead's plan (`../../templates/research-plan.md`) — the instrument must execute *that* question at *that* rigor, not a new one. Traverse `../../knowledge/ux-research-decision-tree.md` for the method's craft rules.
 2. **Design tasks goal-based, not instruction-based.** "Buy a size-M blue jacket and get it shipped to your home" (goal) — never "click Add to Cart, then click Checkout" (which tests reading, not usability). Order tasks realistically; avoid tasks that leak the answer.
 3. **Write a think-aloud + non-leading moderation script.** Open the session with warm-up + consent confirmation; prompt think-aloud ("say what you're thinking as you go"); use neutral probes ("tell me more", "what were you expecting there?", silence). Ban the leading forms: "was that easy?", "you liked that, right?", "most people click here — did you?". A leading question manufactures the finding it "discovers".
 4. **Instrument usability for signal.** Define **task success** up front (binary pass/fail, or graded with partial), and a consistent **severity scale** (e.g. 0 cosmetic → 4 catastrophic/blocker). Capture time/errors/paths as behavior; capture verbatims separately as self-report.
 5. **Design or audit surveys against the four quiet killers.** Leading items ("How much did you enjoy our excellent new design?"), double-barreled items ("Was the app fast and easy?" — two questions), social-desirability loading, and sampling bias (who is and isn't in the frame). Rewrite each to neutral, single-barreled; state the sample's limits.
 6. **Capture clean data.** Keep **observation and self-report on separate lines** from the moment of capture — "P3 clicked back twice" (did) vs "P3 said it felt slow" (said). Timestamp, tag to participant ID (de-identified), and store per the plan's retention limit.
-7. **Hand off to synthesis and name the seams.** Feed the capture to [`synthesize-research-into-insight`](../synthesize-research-into-insight/SKILL.md). Significance-at-scale → `experimentation-growth-engineering`; advanced modeling → `data-science-research`.
+7. **Hand off to synthesis and name the seams.** Feed the capture to `synthesize-research-into-insight`. Significance-at-scale → `experimentation-growth-engineering`; advanced modeling → `data-science-research`.
 
 ## Worked example
 
@@ -40,4 +40,4 @@ description: "Design and run the study without contaminating it — protocol & t
 - **Observation and self-report are captured on separate lines** — what they DID is not what they SAID.
 - **Success and severity are defined before the session**, not rationalized after.
 - **Data capture respects the plan's consent + retention limit** — de-identified participant IDs, no over-collection.
-- **Significance-at-scale and advanced modeling leave this layer** → `experimentation-growth-engineering` / `data-science-research`. Method/tool facts carry a **retrieval date**. See [`../../knowledge/ux-research-patterns-2026.md`](../../knowledge/ux-research-patterns-2026.md).
+- **Significance-at-scale and advanced modeling leave this layer** → `experimentation-growth-engineering` / `data-science-research`. Method/tool facts carry a **retrieval date**. See `../../knowledge/ux-research-patterns-2026.md`.

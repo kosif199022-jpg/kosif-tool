@@ -1,29 +1,16 @@
 ---
 name: us-federal-open-data-claim-verification
-description: |
-  Check a quantitative public claim about US federal grants, awards or
-  revenue against the government's own open-data APIs, instead of against
-  news coverage of those numbers. Use when: (1) a claim asserts a trend
-  ("funding fewer grants than last year", "revenue is down"), (2) a claim
-  asserts a UNIVERSAL ("in every area", "across the board", "no exceptions")
-  and you need to find the counter-example or establish there is none,
-  (3) a claim cites a dollar figure you want to reconcile against the
-  primary series, (4) a news article's own cited figure and the claim's
-  figure differ and you need both stated precisely, (5) you are auditing
-  or fact-checking and need unrounded numbers with a reproducible query.
-  Covers the count-vs-dollars trap (grant COUNTS and grant DOLLARS
-  routinely move in opposite directions, so the claim's verb decides which
-  series is the right test), how to test a universal at subunit
-  granularity (NIH institute, NSF directorate via CFDA), and working
-  request shapes for NIH RePORTER, USAspending, Treasury FiscalData and
-  NSF. Includes the `curl` bracket-parameter exit-3 gotcha on
-  `page[size]` URLs and why the NSF awards API cannot count.
+description: "Check a quantitative public claim about US federal grants, awards or revenue against the government's own open-data APIs, instead of against news coverage of those numbers. Use when: (1) a claim asserts a trend (\"funding fewer grants than last year\", \"revenue is down\"), (2) a claim asserts a UNIVERSAL (\"in every area\", \"across the board\", \"no exceptions\") and you need to find the counter-example or establish there is none, (3) a claim cites a dollar figure you want to reconcile against the primary series, (4) a news article's own cited figure and the claim's figure differ and you need both stated precisely, (5) you are auditing or fact-checking and need unrounded numbers with a reproducible query."
 author: Claude Code
 version: 1.0.0
 date: 2026-08-11
 source: https://github.com/voitta-ai/skillz
 source_file: skills/us-federal-open-data-claim-verification/SKILL.md
 ---
+## About this skill
+
+Check a quantitative public claim about US federal grants, awards or revenue against the government's own open-data APIs, instead of against news coverage of those numbers. Use when: (1) a claim asserts a trend ("funding fewer grants than last year", "revenue is down"), (2) a claim asserts a UNIVERSAL ("in every area", "across the board", "no exceptions") and you need to find the counter-example or establish there is none, (3) a claim cites a dollar figure you want to reconcile against the primary series, (4) a news article's own cited figure and the claim's figure differ and you need both stated precisely, (5) you are auditing or fact-checking and need unrounded numbers with a reproducible query. Covers the count-vs-dollars trap (grant COUNTS and grant DOLLARS routinely move in opposite directions, so the claim's verb decides which series is the right test), how to test a universal at subunit granularity (NIH institute, NSF directorate via CFDA), and working request shapes for NIH RePORTER, USAspending, Treasury FiscalData and NSF. Includes the `curl` bracket-parameter exit-3 gotcha on `page[size]` URLs and why the NSF awards API cannot count.
+
 
 # Verifying Quantitative Claims Against US Federal Open Data
 

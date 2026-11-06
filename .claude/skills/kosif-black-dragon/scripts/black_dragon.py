@@ -341,6 +341,56 @@ def compose(task: str, path: Path, *, legacy: bool = False, limit: int = 12) -> 
     }
 
 
+def plan_markdown(result: dict, limit_methods: int = 4) -> str:
+    """Readable action plan from a compose result: stages, steps, runnable commands, gaps.
+
+    The commands are the catalog's own documented examples; listing them is not running them.
+    """
+    mind = result["native_mind"]
+    lines = [f"# خطة التنين الأسود — {result['task']}", "",
+             f"*مصادر مطابقة: {len(result['selected'])} من {result['source_count']} · "
+             "خطة تفكير، ليست تنفيذًا — نفّذ ثم تحقّق.*", ""]
+    by_stage = {}
+    for fac in mind["faculties"]:
+        by_stage.setdefault(fac["stage"], []).append(fac)
+    for i, stage in enumerate(mind["cognitive_cycle"], 1):
+        lines.append(f"## {i}. {stage['name_ar']} ({stage['stage']}) — {stage['reasoning_method']}")
+        lines.append(f"- سؤال: {stage['question']}")
+        lines.append(f"- معيار النجاح: {stage['check']}")
+        for fac in by_stage.get(stage["stage"], []):
+            if not fac["merged_methods"]:
+                continue
+            lines.append(f"- **{fac['name_ar']}** ({fac['faculty']}):")
+            for m in fac["merged_methods"][:limit_methods]:
+                text = re.sub(r"\s+", " ", m["method"]).strip()
+                if len(text) > 220:
+                    text = text[:220].rsplit(" ", 1)[0] + "…"
+                lines.append(f"  - {text}  `[{', '.join(m['source_ids'][:2])}]`")
+        lines.append("")
+    cmds = [(s["id"], s["method"]) for s in result["selected"]
+            if s["id"].startswith("tool:") and s["method"].strip()]
+    if cmds:
+        lines.append("## أوامر جاهزة من الكتالوج (راجعها قبل التشغيل)")
+        for sid, cmd in cmds[:8]:
+            for c in [x.strip() for x in cmd.split(";") if x.strip()][:2]:
+                lines.append(f"- `{c}`  ← {sid}")
+        lines.append("")
+    reqs = sorted({str(r) for s in result["selected"] for r in (s.get("requirements") or [])})
+    if reqs:
+        lines.append("## المتطلبات")
+        lines.append("- " + ", ".join(reqs[:20]))
+        lines.append("")
+    gaps = [g for g in mind["critic"] if g.get("kind") != "execution-not-proven"]
+    lines.append("## فجوات يجب حلها")
+    lines += [f"- {g['faculty']}: يحتاج مدخلًا من نوع {', '.join(g['requires_any'])}" for g in gaps] or ["- لا فجوات في المدخلات."]
+    lines += ["- التنفيذ لم يُثبت بعد: شغّل الخطوات وتحقق من الناتج الفعلي قبل إعلان النجاح.", ""]
+    lines.append("## المصادر المختارة")
+    for s in result["selected"]:
+        purpose = re.sub(r"\s+", " ", s["purpose"])[:140]
+        lines.append(f"- `{s['id']}` — {purpose}")
+    return "\n".join(lines) + "\n"
+
+
 def verify(root: Path, folder: Path) -> dict:
     summary = read_json(folder / "summary.json")
     path = folder / "sources.jsonl"
@@ -388,8 +438,21 @@ def main(argv=None) -> int:
     m.add_argument("--legacy-links", action="store_true", help="only return optional legacy entry IDs")
     v = cmd.add_parser("verify", help="Verify the catalog-source fingerprints")
     v.add_argument("--out", type=Path, required=True)
+    pl = cmd.add_parser("plan", help="Readable Markdown action plan (stages, steps, catalog commands, gaps)")
+    pl.add_argument("task")
+    pl.add_argument("--index", type=Path, required=True)
+    pl.add_argument("--limit", type=int, default=12)
+    pl.add_argument("--save", type=Path, help="also write the plan to this .md file")
     args = ap.parse_args(argv)
     try:
+        if args.command == "plan":
+            text = plan_markdown(compose(args.task, args.index, limit=args.limit))
+            if args.save:
+                args.save.parent.mkdir(parents=True, exist_ok=True)
+                args.save.write_text(text, encoding="utf-8")
+            sys.stdout.reconfigure(encoding="utf-8")
+            print(text)
+            return 0
         if args.command == "index":
             result = build(args.root, args.out)
         elif args.command == "compose":

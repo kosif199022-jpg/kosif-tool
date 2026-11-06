@@ -1,6 +1,6 @@
 ---
 name: "execute"
-description: "/cs:execute <decision> — Generate a 90-day execution plan with weekly milestones, DRIs, and check-in cadence from an approved decision. Use when a logged decision needs to become an operating plan — e.g. turning an approved market-entry call into weekly milestones with DRIs."
+description: "/cs:execute ‹decision› — Generate a 90-day execution plan with weekly milestones, DRIs, and check-in cadence from an approved decision. Use when a logged decision needs to become an operating plan — e.g. turning an approved market-entry call into weekly milestones with DRIs."
 ---
 
 # /cs:execute — 90-Day Execution Plan
@@ -91,8 +91,8 @@ Saved to `~/.claude/execution/YYYY-MM-DD-<slug>.md`:
 
 ## Related
 
-- Skills: [`coo-advisor`](../../../c-level-advisor/skills/coo-advisor/SKILL.md), [`strategic-alignment`](../../../c-level-advisor/skills/strategic-alignment/SKILL.md), [`change-management`](../../../c-level-advisor/skills/change-management/SKILL.md)
-- Agent: [`cs-coo-advisor`](../../agents/cs-coo-advisor.md)
+- Skills: `coo-advisor`, `strategic-alignment`, `change-management`
+- Agent: `cs-coo-advisor`
 
 ---
 

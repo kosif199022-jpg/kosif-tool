@@ -1,7 +1,10 @@
 ---
 name: "vpe-review"
-description: "/cs:vpe-review <plan> — Throughput-first VP of Engineering interrogation of any plan that touches delivery, eng hiring, team structure, or production discipline. Use when cycle time balloons, DORA metrics slide, or before committing to an eng hiring wave or a reorg."
+description: "/cs:vpe-review ‹plan› — Throughput-first VP of Engineering interrogation of any plan that touches delivery, eng hiring, team structure, or production discipline. Use when cycle time balloons, DORA metrics slide, or before committing to an eng hiring wave or a reorg."
 ---
+
+> **Note (KOSIF):** the calculator scripts named below (../../../c-level-advisor/..., product-team/...) belong to the original c-level-advisor repository and are **not bundled** here. Do the same analysis directly: read the user's data, write a short Python script for the calculation if numbers are involved, show the formula, and tell the user the original tool was not available.
+
 
 # /cs:vpe-review — VPE Forcing Questions
 
@@ -120,8 +123,8 @@ python ../../../c-level-advisor/skills/vpe-advisor/scripts/eng_team_structure_de
 
 ## Related
 
-- Agent: [`cs-vpe-advisor`](../../agents/cs-vpe-advisor.md)
-- Skill: [`vpe-advisor`](../../../c-level-advisor/skills/vpe-advisor/SKILL.md)
+- Agent: `cs-vpe-advisor`
+- Skill: `vpe-advisor`
 - Adjacent: `../../../engineering/slo-architect/`, `../../../engineering/feature-flags-architect/`, `../../../engineering/chaos-engineering/`
 
 ---

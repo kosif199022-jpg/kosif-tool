@@ -1,29 +1,16 @@
 ---
 name: metrics-zero-provenance-audit
-description: |
-  Audit a multi-source metrics / telemetry / scoring client before
-  believing its zeros, then split the findings into PR-able and
-  issue-only. Use when: (1) a scanner, agent, or SDK collects the same
-  named fields from several sources (Claude Code / Codex / Cursor,
-  iOS / Android / web, multiple agents into one schema) and your
-  report shows a field as `0` or `{}`, (2) a score or grade looks
-  wrong and you're about to conclude you're doing something wrong,
-  (3) you want to contribute a fix upstream but can't tell which part
-  is the client and which part is the closed server, (4) you're
-  reviewing a rubric-style tool that grades behavior from named tool
-  or event invocations. The core trap: in a shared schema, a `0` far
-  more often means "this source never populates this field" than "the
-  user didn't do it" — and the two are indistinguishable on the wire.
-  Covers the grep-the-incrementer check, the three meanings of zero,
-  the proxy-vs-outcome distinction, the PR-vs-issue split, and how to
-  neutralize a pre-existing broken test that taxes every PR you send
-  (skip at method granularity, never class or setUpClass).
+description: "Audit a multi-source metrics / telemetry / scoring client before believing its zeros, then split the findings into PR-able and issue-only. Use when: (1) a scanner, agent, or SDK collects the same named fields from several sources (Claude Code / Codex / Cursor, iOS / Android / web, multiple agents into one schema) and your report shows a field as `0` or `{}`, (2) a score or grade looks wrong and you're about to conclude you're doing something wrong, (3) you want to contribute a fix upstream but can't tell which part is the client and which part is the closed server, (4) you're reviewing a rubric-style tool that grades behavior from named tool or event invocations. The core trap: in a shared schema, a `0` far more often means \"this source never populates this field\" than \"the user didn't do it\" — and the two are indistinguishable on the wire."
 author: Claude Code
 version: 1.1.0
 date: 2026-08-08
 source: https://github.com/aiqrank/plugin
 source_file: skills/metrics-zero-provenance-audit/SKILL.md
 ---
+## About this skill
+
+Audit a multi-source metrics / telemetry / scoring client before believing its zeros, then split the findings into PR-able and issue-only. Use when: (1) a scanner, agent, or SDK collects the same named fields from several sources (Claude Code / Codex / Cursor, iOS / Android / web, multiple agents into one schema) and your report shows a field as `0` or `{}`, (2) a score or grade looks wrong and you're about to conclude you're doing something wrong, (3) you want to contribute a fix upstream but can't tell which part is the client and which part is the closed server, (4) you're reviewing a rubric-style tool that grades behavior from named tool or event invocations. The core trap: in a shared schema, a `0` far more often means "this source never populates this field" than "the user didn't do it" — and the two are indistinguishable on the wire. Covers the grep-the-incrementer check, the three meanings of zero, the proxy-vs-outcome distinction, the PR-vs-issue split, and how to neutralize a pre-existing broken test that taxes every PR you send (skip at method granularity, never class or setUpClass).
+
 
 > **Canonical source.** This skill lives in the repo at
 > https://github.com/voitta-ai/skillz (file:

@@ -1,24 +1,14 @@
 ---
 name: consumed-gate-major-upgrade
-description: |
-  Decide whether a new major of a security gate you consume is safe to adopt,
-  when your product depends on a distinction the gate's own host does not.
-  Use when: (1) you embed a classifier, policy engine, linter or permission
-  hook that another product also ships (voitta-yolt, OPA, semgrep, a CI policy
-  bundle), (2) the vendor reports an improvement -- fewer prompts, fewer rules,
-  a smaller ask rate -- and you need to know what it costs *you*, (3) a
-  dependency's release notes say "no behavior change" and you cannot tell
-  whether that was measured in your semantics or theirs, (4) you are writing
-  the startup check that decides whether a dependency is usable at all. The
-  failure this prevents: a vendor's honest "zero drift" measurement being true
-  for their host and catastrophic for yours, because you consume a distinction
-  they collapsed. Covers verifying in your own semantics, the delegated-versus-
-  unreadable collapse, choosing a startup probe that can actually fail, and
-  asking the vendor to report what the verdict depended on.
+description: "Decide whether a new major of a security gate you consume is safe to adopt, when your product depends on a distinction the gate's own host does not. Use when: (1) you embed a classifier, policy engine, linter or permission hook that another product also ships (voitta-yolt, OPA, semgrep, a CI policy bundle), (2) the vendor reports an improvement -- fewer prompts, fewer rules, a smaller ask rate -- and you need to know what it costs *you*, (3) a dependency's release notes say \"no behavior change\" and you cannot tell whether that was measured in your semantics or theirs, (4) you are writing the startup check that decides whether a dependency is usable at all. The failure this prevents: a vendor's honest \"zero drift\" measurement being true for their host and catastrophic for yours, because you consume a distinction they collapsed."
 author: Claude Code
 version: 1.0.0
 date: 2026-09-15
 ---
+## About this skill
+
+Decide whether a new major of a security gate you consume is safe to adopt, when your product depends on a distinction the gate's own host does not. Use when: (1) you embed a classifier, policy engine, linter or permission hook that another product also ships (voitta-yolt, OPA, semgrep, a CI policy bundle), (2) the vendor reports an improvement -- fewer prompts, fewer rules, a smaller ask rate -- and you need to know what it costs *you*, (3) a dependency's release notes say "no behavior change" and you cannot tell whether that was measured in your semantics or theirs, (4) you are writing the startup check that decides whether a dependency is usable at all. The failure this prevents: a vendor's honest "zero drift" measurement being true for their host and catastrophic for yours, because you consume a distinction they collapsed. Covers verifying in your own semantics, the delegated-versus- unreadable collapse, choosing a startup probe that can actually fail, and asking the vendor to report what the verdict depended on.
+
 
 # Adopting a new major of a gate you consume
 

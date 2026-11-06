@@ -1,5 +1,5 @@
 ---
-name: brainstorming
+name: hotl-brainstorming
 description: "Use before any feature work — explores intent, requirements, and design. Produces HOTL contracts (intent, verification, governance) before implementation."
 ---
 

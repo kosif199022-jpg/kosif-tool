@@ -19,7 +19,7 @@ description: Turn product and business questions into an event tracking plan —
 4. **Design the identity model — before any event is finalized.** Decide: how `anonymousId` is generated, the `userId` you stitch to, the `alias`/merge rule on the anonymous→known transition, and where the identity graph lives. This is the hardest part and it goes first; retrofitting identity onto collected anonymous data is the classic un-fixable mess.
 5. **Tag consent + PII per event.** Assign each event a consent category and flag any PII properties (with the lawful basis). The `instrumentation-engineer` gates collection on these; no PII property ships without a basis.
 6. **Assign an owner + destinations per event.** Who owns the event's correctness, and where it routes (warehouse, ad platforms, tools). Ownerless events rot.
-7. **Capture it in the templates.** Write the plan to [`../../templates/tracking-plan.md`](../../templates/tracking-plan.md) and any complex event to [`../../templates/event-schema-spec.md`](../../templates/event-schema-spec.md). This is the contract instrumentation builds to.
+7. **Capture it in the templates.** Write the plan to `../../templates/tracking-plan.md` and any complex event to `../../templates/event-schema-spec.md`. This is the contract instrumentation builds to.
 
 ## Worked example
 
@@ -37,5 +37,5 @@ description: Turn product and business questions into an event tracking plan —
 - Enforce object-action naming + one case + a controlled verb set **before** the first event is written; sprawl is the #1 killer of analytics trust.
 - Fewer well-propertied events; a new event per variant is a smell — model the object, vary the properties.
 - **Design the identity model before finalizing the plan.** No plan ships without anonymous→known stitching decided.
-- Consent category + PII flags are part of the schema, not an afterthought — see [`../../knowledge/event-instrumentation-patterns-2026.md`](../../knowledge/event-instrumentation-patterns-2026.md).
+- Consent category + PII flags are part of the schema, not an afterthought — see `../../knowledge/event-instrumentation-patterns-2026.md`.
 - The plan is the contract: if instrumentation wants an off-plan event, the plan changes here first — not an ad-hoc `track()`.

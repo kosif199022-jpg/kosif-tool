@@ -64,6 +64,6 @@ For each entry in `permissions`:
    matches.
 
 Each finding states the corrected manifest entry and its store-review-risk
-rationale. Pair with [`store-submission-readiness`](../store-submission-readiness/SKILL.md)
-before submitting. See [`../../knowledge/manifest-v3-architecture.md`](../../knowledge/manifest-v3-architecture.md)
+rationale. Pair with `store-submission-readiness`
+before submitting. See `../../knowledge/manifest-v3-architecture.md`
 for the permissions-minimization decision tree.

@@ -1,31 +1,16 @@
 ---
 name: launchd-env-sync-session-leak
-description: |
-  Diagnose and undo a login-environment -> launchd sync that was run from
-  inside a terminal multiplexer pane or an AI-agent session, so the session's
-  own identity (PROMPT_COMMAND, CMUX_*, CLAUDECODE, CLAUDE_CODE_*, NODE_OPTIONS,
-  GHOSTTY_*, TERMINFO) became the user-domain environment of every
-  Spotlight-launched app and every launchd service bootstrapped afterwards.
-  Use when: (1) a plain Terminal.app window prints
-  `-bash: _cmux_prompt_command: command not found` (or any `command not found`
-  naming a prompt hook) at every prompt while the same shell is fine inside
-  the multiplexer; (2) `launchctl getenv PROMPT_COMMAND` or `launchctl print
-  gui/$(id -u)` shows `CMUX_*`, `CLAUDE_CODE_*`, `CLAUDECODE` or a
-  `NODE_OPTIONS=--require=<$TMPDIR path>`; (3) a launchd service's
-  `inherited environment` carries a dead agent messaging socket or an agent
-  session id; (4) `node` under a launchd service dies with `Cannot find
-  module` on a `$TMPDIR` path it never asked for; (5) you maintain a sync
-  script built on `compgen -e` / `env` and want the denylist that keeps it
-  from ever doing this. Encodes the detection signature, the exact split
-  between who is immune (multiplexer panes) and who is not (Spotlight apps,
-  services), the purge, the reload order that actually clears a service, and
-  the `bootout` race that leaves it DOWN.
+description: "Diagnose and undo a login-environment -> launchd sync that was run from inside a terminal multiplexer pane or an AI-agent session, so the session's own identity (PROMPT_COMMAND, CMUX_*, CLAUDECODE, CLAUDE_CODE_*, NODE_OPTIONS, GHOSTTY_*, TERMINFO) became the user-domain environment of every Spotlight-launched app and every launchd service bootstrapped afterwards. Use when: (1) a plain Terminal.app window prints `-bash: _cmux_prompt_command: command not found` (or any `command not found` naming a prompt hook) at every prompt while the same shell is fine inside the multiplexer; (2) `launchctl getenv PROMPT_COMMAND` or `launchctl print gui/$(id -u)` shows `CMUX_*`, `CLAUDE_CODE_*`, `CLAUDECODE` or a `NODE_OPTIONS=--require=<$TMPDIR path>`; (3) a launchd service's `inherited environment` carries a dead agent messaging socket or an agent session id; (4) `node` under a launchd service dies with `Cannot find module` on a `$TMPDIR` path it never asked for; (5) you maintain a sync script built on `compgen -e` / `env`…"
 author: Claude Code
 version: 1.2.0
 date: 2026-08-28
 source: https://github.com/voitta-ai/skillz
 source_file: skills/launchd-env-sync-session-leak/SKILL.md
 ---
+## About this skill
+
+Diagnose and undo a login-environment -> launchd sync that was run from inside a terminal multiplexer pane or an AI-agent session, so the session's own identity (PROMPT_COMMAND, CMUX_*, CLAUDECODE, CLAUDE_CODE_*, NODE_OPTIONS, GHOSTTY_*, TERMINFO) became the user-domain environment of every Spotlight-launched app and every launchd service bootstrapped afterwards. Use when: (1) a plain Terminal.app window prints `-bash: _cmux_prompt_command: command not found` (or any `command not found` naming a prompt hook) at every prompt while the same shell is fine inside the multiplexer; (2) `launchctl getenv PROMPT_COMMAND` or `launchctl print gui/$(id -u)` shows `CMUX_*`, `CLAUDE_CODE_*`, `CLAUDECODE` or a `NODE_OPTIONS=--require=<$TMPDIR path>`; (3) a launchd service's `inherited environment` carries a dead agent messaging socket or an agent session id; (4) `node` under a launchd service dies with `Cannot find module` on a `$TMPDIR` path it never asked for; (5) you maintain a sync script built on `compgen -e` / `env` and want the denylist that keeps it from ever doing this. Encodes the detection signature, the exact split between who is immune (multiplexer panes) and who is not (Spotlight apps, services), the purge, the reload order that actually clears a service, and the `bootout` race that leaves it DOWN.
+
 
 # launchd-env-sync-session-leak
 

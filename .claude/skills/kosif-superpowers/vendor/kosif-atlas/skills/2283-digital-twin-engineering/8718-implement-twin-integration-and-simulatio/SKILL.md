@@ -13,12 +13,12 @@ description: Build a digital twin end to end — ingest the telemetry (MQTT / OP
 
 ## Procedure
 
-1. **Confirm the data + sync model is captured.** Use [`design-twin-data-and-sync-model`](../design-twin-data-and-sync-model/SKILL.md) + [`../../knowledge/digital-twin-patterns-2026.md`](../../knowledge/digital-twin-patterns-2026.md): the signal list, sampling rates, transport, edge-vs-cloud split, and the DTDL/AAS bindings. Don't wire ingestion without it.
+1. **Confirm the data + sync model is captured.** Use `design-twin-data-and-sync-model` + `../../knowledge/digital-twin-patterns-2026.md`: the signal list, sampling rates, transport, edge-vs-cloud split, and the DTDL/AAS bindings. Don't wire ingestion without it.
 2. **Ingest telemetry and bind to the model.** Stand up the MQTT/OPC-UA/Kafka path per the design, pre-aggregate at the edge where specified, and bind each signal to its **DTDL property / AAS submodel element**. Verify the twin's live state reflects the asset before going further.
 3. **Wire the model per the chosen approach.** Physics/first-principles, reduced-order/surrogate, or hybrid — instantiate it so it consumes the bound properties. For a hybrid, keep clear which parameters are physics and which are calibrated from data.
 4. **Run simulation & what-if from live twin state.** Drive the decision's scenarios ("throughput if we add a station?", "temperature if this fan fails?") starting from the *current* twin state — a simulation off stale or disconnected inputs is a model, not a twin. Surface results the decision can consume.
 5. **Stand up visualization at the level the decision needs.** A 3D scene (Omniverse / Unity / Unreal) for spatial/operator-facing decisions; a dashboard or graph view for most predictive-maintenance signals. **Don't build a photoreal scene a gauge would answer.**
-6. **VALIDATE fidelity against the real asset — not optional.** Follow [`../../templates/twin-fidelity-validation-report.md`](../../templates/twin-fidelity-validation-report.md): choose predicted-vs-actual SLIs on the decision-relevant outputs, compute **error bounds** (MAE/RMSE/% + a confidence interval on a hold-out or live window), **calibrate** to close the gap, and give a **fit-for-decision** verdict within the stated tolerance.
+6. **VALIDATE fidelity against the real asset — not optional.** Follow `../../templates/twin-fidelity-validation-report.md`: choose predicted-vs-actual SLIs on the decision-relevant outputs, compute **error bounds** (MAE/RMSE/% + a confidence interval on a hold-out or live window), **calibrate** to close the gap, and give a **fit-for-decision** verdict within the stated tolerance.
 7. **Stand up a drift monitor and close the loop.** Monitor the predicted-vs-actual error; on drift, root-cause to **sensor / model / asset** before recalibrating, re-fit, and record it. Every validation + drift event yields a durable artifact (bounds, calibration, the monitor that catches the next divergence earlier).
 
 ## Worked example
@@ -40,4 +40,4 @@ description: Build a digital twin end to end — ingest the telemetry (MQTT / OP
 - **Never call a twin done without validating it against the real asset** with stated error bounds and a fit-for-decision verdict — an un-validated twin is a confident guess.
 - On drift, root-cause to **sensor / model / asset** before recalibrating — "recalibrate and move on" is symptom-chasing.
 - Every twin ships with a drift monitor; an un-monitored twin diverges silently as the asset wears.
-- Robot control loops / real-time autonomy off a bidirectional twin leave this layer for `robotics-autonomous-systems-engineering`; volatile platform/SDK/spec facts carry a retrieval date — see [`../../knowledge/digital-twin-patterns-2026.md`](../../knowledge/digital-twin-patterns-2026.md).
+- Robot control loops / real-time autonomy off a bidirectional twin leave this layer for `robotics-autonomous-systems-engineering`; volatile platform/SDK/spec facts carry a retrieval date — see `../../knowledge/digital-twin-patterns-2026.md`.

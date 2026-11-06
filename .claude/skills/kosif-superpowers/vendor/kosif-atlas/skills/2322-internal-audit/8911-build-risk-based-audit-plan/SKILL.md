@@ -16,7 +16,7 @@ description: "Build a risk-based internal-audit universe and annual plan by trav
 1. **Restate the situation in the tree's terms.** Capture: the **organization** (size, sector, structure, regulatory load), the **risk landscape** (strategic, operational, financial, compliance, IT/cyber, fraud), the **function's resources** (auditor FTEs, hours, skills, co-source/guest-auditor options), any **mandated coverage** (SOX ICFR, regulatory), and the **maturity** of first- and second-line risk management.
 2. **Build the audit universe.** Enumerate the **auditable entities** — processes, business units, systems, key risks, or a hybrid. Keep the grain consistent and the universe complete enough that nothing material is invisible, but coarse enough to be plannable (dozens, not thousands).
 3. **Score each entity for risk.** Rate **inherent risk** = impact × likelihood, adjusted for **velocity** (how fast the risk bites) and **fraud exposure**; then factor **control maturity** to get **residual risk**. Use a documented, consistent scale (e.g. 1–5) so the ranking is defensible to the audit committee. Higher residual risk → higher priority.
-4. **Traverse the decision tree** in [`../../knowledge/internal-audit-decision-tree.md`](../../knowledge/internal-audit-decision-tree.md) against those inputs:
+4. **Traverse the decision tree** in `../../knowledge/internal-audit-decision-tree.md` against those inputs:
    - each candidate engagement → **assurance** (independent opinion on control) vs **advisory** (input without owning the decision) — and confirm advisory work never crosses into owning a control,
    - rank the universe by **residual risk**; allocate the finite hours to the top of the stack; give the rest a **defensible cycle** (e.g. high-risk annual, medium every 2 years, low every 3–5),
    - reserve capacity for **mandated** work (SOX/regulatory), **management-requested** advisory, and an **unplanned/emerging-risk** buffer,
@@ -44,4 +44,4 @@ description: "Build a risk-based internal-audit universe and annual plan by trav
 - Keep IA in the **third line**: assurance and non-owning advisory only. An advisory engagement that ends with IA owning the control is a defect.
 - The plan is **board-approved and revisited** as risks move — it's a hypothesis, not a fixed calendar.
 - Security-control depth is **not** this skill — route to `cybersecurity-grc`; AML/financial-reg depth → `regulatory-compliance`; ESG assurance → `esg-sustainability-reporting`.
-- Volatile claims (IIA Standard versions/effective dates, regulatory triggers, EQA cadence) carry a **retrieval date** and are re-verified before a board commitment. See [`../../knowledge/internal-audit-patterns-2026.md`](../../knowledge/internal-audit-patterns-2026.md).
+- Volatile claims (IIA Standard versions/effective dates, regulatory triggers, EQA cadence) carry a **retrieval date** and are re-verified before a board commitment. See `../../knowledge/internal-audit-patterns-2026.md`.

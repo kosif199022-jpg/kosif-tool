@@ -37,8 +37,8 @@ The first and most expensive voice-AI decision: what pipeline shape you build, o
 
 ## See also
 
-- Traverse the **cascade vs speech-to-speech**, **build-vs-platform**, and **channel choice** trees in [`../../knowledge/voice-ai-decision-trees.md`](../../knowledge/voice-ai-decision-trees.md).
-- Dated landscape: [`../../knowledge/voice-ai-reference-2026.md`](../../knowledge/voice-ai-reference-2026.md).
-- Sibling skills: [`../speech-recognition-and-synthesis/SKILL.md`](../speech-recognition-and-synthesis/SKILL.md), [`../telephony-and-call-flow-integration/SKILL.md`](../telephony-and-call-flow-integration/SKILL.md).
-- Best practices: [`../../best-practices/latency-is-the-product-budget-every-hop.md`](../../best-practices/latency-is-the-product-budget-every-hop.md), [`../../best-practices/design-for-barge-in-and-interruption.md`](../../best-practices/design-for-barge-in-and-interruption.md).
-- Template: [`../../templates/voice-agent-architecture.md`](../../templates/voice-agent-architecture.md).
+- Traverse the **cascade vs speech-to-speech**, **build-vs-platform**, and **channel choice** trees in `../../knowledge/voice-ai-decision-trees.md`.
+- Dated landscape: `../../knowledge/voice-ai-reference-2026.md`.
+- Sibling skills: `../speech-recognition-and-synthesis/SKILL.md`, `../telephony-and-call-flow-integration/SKILL.md`.
+- Best practices: `../../best-practices/latency-is-the-product-budget-every-hop.md`, `../../best-practices/design-for-barge-in-and-interruption.md`.
+- Template: `../../templates/voice-agent-architecture.md`.
