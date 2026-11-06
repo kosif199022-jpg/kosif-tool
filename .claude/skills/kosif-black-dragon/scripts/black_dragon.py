@@ -376,6 +376,29 @@ def verify(root: Path, folder: Path) -> dict:
             "native_implemented": summary["native_implemented"]}
 
 
+def creative_council_engine():
+    """Load the new local council; never execute legacy or external agents."""
+    path = Path(__file__).with_name("creative_council.py")
+    spec = importlib.util.spec_from_file_location("_kosif_dragon_creative_council", path)
+    if spec is None or spec.loader is None:
+        raise ValueError("independent creative council unavailable")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+
+def judgment_guard_engine():
+    """Load independently authored, book-informed review prompts (no agents run)."""
+    path = Path(__file__).with_name("judgment_guard.py")
+    spec = importlib.util.spec_from_file_location("_kosif_dragon_judgment_guard", path)
+    if spec is None or spec.loader is None:
+        raise ValueError("judgment guard module unavailable")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--root", type=Path, default=ROOT)
@@ -386,6 +409,14 @@ def main(argv=None) -> int:
     m.add_argument("task")
     m.add_argument("--index", type=Path, required=True)
     m.add_argument("--legacy-links", action="store_true", help="only return optional legacy entry IDs")
+    c = cmd.add_parser("council", help="Build source-traceable 12-seat film council, no agents run")
+    c.add_argument("task")
+    c.add_argument("--out", type=Path, help="Optional JSON plan output")
+    c.add_argument("--options", default="licensed-footage,code-motion,hybrid",
+                   help="2-8 distinct routes separated by commas")
+    j = cmd.add_parser("think-review", help="Book-informed fast/slow judgment check; no expert agents executed")
+    j.add_argument("--input", type=Path, required=True, help="Structured JSON decision brief")
+    j.add_argument("--out", type=Path, help="Optional JSON review output")
     v = cmd.add_parser("verify", help="Verify the catalog-source fingerprints")
     v.add_argument("--out", type=Path, required=True)
     args = ap.parse_args(argv)
@@ -394,6 +425,17 @@ def main(argv=None) -> int:
             result = build(args.root, args.out)
         elif args.command == "compose":
             result = compose(args.task, args.index, legacy=args.legacy_links)
+        elif args.command == "council":
+            engine = creative_council_engine()
+            result = engine.plan(args.task, args.root.resolve(), args.options.split(","))
+            if args.out:
+                engine._save(args.out, result)
+        elif args.command == "think-review":
+            engine = judgment_guard_engine()
+            result = engine.review(read_json(args.input))
+            if args.out:
+                args.out.parent.mkdir(parents=True, exist_ok=True)
+                args.out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         else:
             result = verify(args.root.resolve(), args.out)
         print(json.dumps(result, ensure_ascii=False, indent=2))
