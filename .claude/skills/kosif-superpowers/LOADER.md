@@ -10,7 +10,7 @@
 
 **التحميل الخفيف:** اقرأ هذا الملف وحده أولًا. لا تقرأ ملفات المهارات الكبيرة كاملة؛ افتح الملف أو نطاق الأسطر الذي يطابق الطلب فقط (`sed -n START,ENDp <path>`)، أو اسأل السكربت: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py need "<الطلب>"`. كل مهارة وكل ملحق ممثَّل هنا بسطر، فلا توجد مهارة خارج الوصول. في الوضع الكامل: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py full`.
 
-## المهارات (15) / skills
+## المهارات (16) / skills
 
 | المهارة | الملف | الحجم | متى |
 |---|---|---|---|
@@ -29,6 +29,7 @@
 | `kosif-voice-studio` | `.claude/skills/kosif-voice-studio/SKILL.md` | 6 KB · 108 سطر | Voice-over, voice cloning, voice design and transcription in Egyptian Arabic, MSA, English and 600+ languages - text to speech with word timings (words.json) for… |
 | `kosif-web-film` | `.claude/skills/kosif-web-film/SKILL.md` | 4 KB · 71 سطر | Direct and render a motion-design video built as a webpage (codename «التنين الأسود» / Black Dragon). Use when the user asks for a video, promo, intro, explainer or… |
 | `living-site` | `.claude/skills/living-site/SKILL.md` | 13 KB · 193 سطر | Build a living website in three levels. Level 1 live 3D (Spline), Level 2 generated images and a scroll film (Higgsfield), Level 3 living motion graphics drawn in code… |
+| `saas-animation` | `.claude/skills/saas-animation/SKILL.md` | 9 KB · 118 سطر | Make short, high-end SaaS, app, product and brand animations (about 8–20s) with Claude, built as code and rendered to 4K video, without any AI video or image generator.… |
 
 ## المجموعات (15) / capability groups
 
@@ -284,6 +285,17 @@
 - 143–173: Stage 4. Level 3: living Claude motion graphics
 - 174–186: Stage 5. Copy, check, show
 - 187–192: Guardrails
+
+### `.claude/skills/saas-animation/SKILL.md`
+
+- 6–10: SaaS animation
+- 11–22: Pick a level
+- 23–54: The workflow
+- 55–76: The rules that make it look good
+- 77–89: Keep it above board
+- 90–101: Where to read more
+- 102–108: Setup
+- 109–117: Scripts
 
 
 ## مكتبة 100 Super Skills (114) / vendored skills
