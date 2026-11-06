@@ -21,6 +21,17 @@ ROOT = Path(__file__).resolve().parents[4]
 DRAGON = ".claude/skills/kosif-dragon-mind/data/frameworks.json"
 MODELS = ".claude/skills/kosif-superpowers/data/mental_models.json"
 POWERS = ".claude/skills/kosif-superpowers/data/powers/thinking-core.json"
+EXTRA_POWER_FILES = {
+    "creativity-engine": ".claude/skills/kosif-superpowers/data/powers/creativity-engine.json",
+    "planning-execution": ".claude/skills/kosif-superpowers/data/powers/planning-execution.json",
+    "prompt-craft": ".claude/skills/kosif-superpowers/data/powers/prompt-craft.json",
+    "strategy-finance": ".claude/skills/kosif-superpowers/data/powers/strategy-finance.json",
+}
+BOOK_METHODS = ".claude/skills/kosif-superpowers/data/thinking_books.json"
+REASONING_MODES = ".claude/skills/kosif-superpowers/data/reasoning_modes.json"
+# The 63 'mental-models' power entries mirror the 63 standalone models.
+# Preserve the original IDs separately and never double count the mirrors.
+MODEL_POWER_MIRROR = ".claude/skills/kosif-superpowers/data/powers/mental-models.json"
 SCHEMA = "kosif.black-dragon.creative-council.v1"
 
 # Twelve expert seats. The chair facilitates; no member has a hard veto.
@@ -64,6 +75,65 @@ POWER_SECTION = {
     "الأنماط المضادة — Anti-patterns": "critic",
     "أكبر مستودعات GitHub — Top GitHub repositories (2026-10-23)": "research",
 }
+# Additional original-source thinking powers, assigned by the method rather than file name.
+CREATIVITY_ROLE = {
+    **{f"IDEA-{n:02d}": "creative" for n in range(6, 15)},
+    **{f"IDEA-{n:02d}": "creative" for n in (1, 16, 17, 26, 27)},
+    "IDEA-02": "analyst", "IDEA-03": "critic", "IDEA-04": "critic",
+    "IDEA-05": "research", "IDEA-15": "decision", "IDEA-18": "visual",
+    "IDEA-19": "critic", "IDEA-20": "systems", "IDEA-21": "story",
+    "IDEA-22": "visual", "IDEA-23": "research", "IDEA-24": "engineer",
+    "IDEA-25": "decision", "IDEA-28": "critic", "IDEA-29": "engineer",
+}
+PLANNING_ROLE = {
+    "PLAN-01": "chair", "PLAN-02": "engineer", "PLAN-03": "engineer",
+    "PLAN-04": "systems", "PLAN-05": "engineer", "PLAN-06": "engineer",
+    "PLAN-07": "critic", "PLAN-08": "decision", "PLAN-09": "systems",
+    "PLAN-10": "chair", "PLAN-11": "critic", "PLAN-12": "learning",
+    "PLAN-13": "engineer", "PLAN-14": "chair",
+}
+PROMPT_ROLE = {
+    **{f"PROMPT-{n:02d}": "analyst" for n in (1, 3, 4, 5, 7, 12, 19, 22, 26, 28, 32)},
+    **{f"PROMPT-{n:02d}": "research" for n in (2, 16, 21)},
+    **{f"PROMPT-{n:02d}": "engineer" for n in (6, 9, 27, 30, 33, 36, 40)},
+    **{f"PROMPT-{n:02d}": "chair" for n in (8, 20)},
+    **{f"PROMPT-{n:02d}": "visual" for n in (10, 11, 23, 24, 25, 35)},
+    **{f"PROMPT-{n:02d}": "critic" for n in (13, 14, 15, 17, 34, 39)},
+    **{f"PROMPT-{n:02d}": "story" for n in (18, 37)},
+    "PROMPT-29": "decision", "PROMPT-31": "learning", "PROMPT-38": "creative",
+    "PROMPT-41": "decision",
+}
+STRATEGY_ROLE = {
+    "PROD-01": "decision", "PROD-02": "decision", "PROD-03": "research",
+    "PROD-04": "critic", "PROD-05": "chair", "PROD-06": "learning",
+    "PROD-07": "engineer", "PROD-08": "engineer", "PROD-09": "audience",
+    "PROD-10": "decision", "PROD-11": "research", "PROD-12": "research",
+    "PROD-13": "critic", "PROD-14": "research", "PROD-15": "research",
+    "PROD-16": "engineer", "PROD-17": "engineer", "PROD-18": "engineer",
+}
+EXTRA_POWER_ROLES = {
+    "creativity-engine": CREATIVITY_ROLE,
+    "planning-execution": PLANNING_ROLE,
+    "prompt-craft": PROMPT_ROLE,
+    "strategy-finance": STRATEGY_ROLE,
+}
+BOOK_STAGE_ROLE = {
+    "frame": "analyst", "diverge": "creative", "converge": "decision",
+    "decide": "decision", "forecast": "research", "verify": "critic",
+    "communicate": "story", "learn": "learning", "execute": "engineer",
+}
+MODE_ROLE = {
+    "deductive": "analyst", "inductive": "analyst", "abductive": "research",
+    "analogical": "creative", "causal": "systems", "systems": "systems",
+    "lateral": "creative", "bayesian": "research",
+}
+# Context-specific operational and finance entries are indexed, not activated
+# automatically in film tasks.
+CONTEXTUAL_IDS = {
+    "PROD-10", "PROD-11", "PROD-12", "PROD-13", "PROD-14",
+    "PROD-15", "PROD-16", "PROD-17", "PROD-18",
+}
+
 REVIEW_FIELDS = {
     "1": ("proposal", "reasoning", "evidence"),
     "2": ("target_member", "objection", "steelman"),
@@ -92,6 +162,17 @@ def _record(kind: str, row: dict, role: str, source: str) -> dict:
         text = " ".join([name, row.get("name_en", ""), " ".join(row.get("triggers", [])),
                          row.get("question", "")])
         maturity = "documented-model-not-executed"
+    elif kind == "book-method":
+        name = row.get("name_ar") or row.get("name_en") or row["id"]
+        text = " ".join([name, row.get("name_en", ""), row.get("use_when", ""),
+                         " ".join(row.get("triggers", [])), " ".join(row.get("steps", []))])
+        maturity = "documented-book-derived-method-not-executed"
+    elif kind == "reasoning-mode":
+        name = row.get("ar") or row.get("en") or row["id"]
+        text = " ".join([name, row.get("en", ""), row.get("use_when", ""),
+                         " ".join(row.get("keywords", [])),
+                         " ".join(row.get("procedure", []))])
+        maturity = "documented-reasoning-mode-not-executed"
     else:
         name = row.get("name_ar") or row.get("name_en") or row["id"]
         text = " ".join([name, row.get("name_en", ""), row.get("what", ""), row.get("when", ""),
@@ -108,6 +189,7 @@ def _record(kind: str, row: dict, role: str, source: str) -> dict:
         secondary.add("audience")
     return {"id": kind + ":" + row["id"], "name": name, "primary": role,
             "secondary": sorted(secondary), "source": source, "maturity": maturity,
+            "contextual_only": row["id"] in CONTEXTUAL_IDS,
             "search_text": text[:1200]}
 
 
@@ -135,6 +217,28 @@ def inventory(root: Path = ROOT) -> list[dict]:
         if section not in POWER_SECTION:
             raise ValueError("unknown thinking-core section: " + str(section))
         rows.append(_record("power", x, POWER_SECTION[section], POWERS))
+    for family, rel in EXTRA_POWER_FILES.items():
+        file = root / rel
+        if not file.is_file():
+            continue  # slim, synthetic test fixtures can omit extra families
+        mapping = EXTRA_POWER_ROLES[family]
+        source_rows = _read(file)
+        if not isinstance(source_rows, list) or set(x.get("id") for x in source_rows) != set(mapping):
+            raise ValueError("missing, duplicate or unreviewed thinking IDs in " + family)
+        for x in source_rows:
+            rows.append(_record("power", x, mapping[x["id"]], rel))
+    if (root / BOOK_METHODS).is_file():
+        book_rows = _read(root / BOOK_METHODS).get("methods", [])
+        for x in book_rows:
+            if x.get("stage") not in BOOK_STAGE_ROLE:
+                raise ValueError("unreviewed book method stage " + str(x.get("stage")))
+            rows.append(_record("book-method", x, BOOK_STAGE_ROLE[x["stage"]], BOOK_METHODS))
+    if (root / REASONING_MODES).is_file():
+        modes = _read(root / REASONING_MODES).get("modes", [])
+        if set(x.get("id") for x in modes) != set(MODE_ROLE):
+            raise ValueError("missing or unreviewed reasoning mode")
+        for x in modes:
+            rows.append(_record("reasoning-mode", x, MODE_ROLE[x["id"]], REASONING_MODES))
     ids = [r["id"] for r in rows]
     if len(ids) != len(set(ids)):
         raise ValueError("duplicate thinking entry ID")
@@ -181,6 +285,8 @@ def plan(task: str, root: Path = ROOT, options=DEFAULT_OPTIONS) -> dict:
         "independence": "requires genuine independent runs; one-model roleplay must be labelled SIMULATED",
         "execution": "no assets fetched, models invoked, tools executed or video rendered",
         "total_source_records": len(entries),
+        "contextual_only": sum(x["contextual_only"] for x in entries),
+        "duplicate_handling": "related models and mirror power cards are not double counted; exact/semantic similarities still require a reviewer",
         "source_counts": dict(sorted(Counter(x["id"].split(":", 1)[0] for x in entries).items())),
         "primary_assigned": sum(s["primary_count"] for s in seats),
         "roles": seats,
