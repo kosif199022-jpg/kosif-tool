@@ -1,9 +1,9 @@
 ---
 name: pm-blueoctopusai-dd17bd
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 2 min 48 s low-poly 3D explainer of the broadcast yellow first-down line: a stadium cutaway with cables, a tripod camera with labelled sensors, the crowned field under a teal mesh, lens calibration, grass colour samples, a projection formula, the line keyed under players and the paint removed, each chapter headed by a white condensed title top-left. Use to make a new video in this look (3D); address it by ID pm-blueoctopusai-dd17bd.
 ---
 
-# KOSIF TOOL — First & 10 yellow line explainer
+# KOSIF TOOL — First & 10 yellow line explainer / شرح ثلاثي الأبعاد لخط الياردات الأصفر في بث كرة القدم الأمريكية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/blueoctopusai-dd17bd
@@ -17,13 +17,20 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شرح ثلاثي الأبعاد مدته نحو دقيقتين و48 ثانية لتقنية خط الياردات الأصفر المرسوم في البث التلفزيوني: ملعب ولاعبون منخفضو المضلعات، ثم ملعب رمادي يُقطع لإظهار الكابلات، كاميرا على حامل بحساسات مُعلَّمة، الملعب المقوَّس بشبكة فيروزية، معايرة العدسة، عينات ألوان العشب في دوائر، معادلة الإسقاط، الخط الذي يمر تحت اللاعبين، ثم إزالة الطلاء، مع عناوين فصول بيضاء مكثفة أعلى اليسار ولوحات بيانات صغيرة.
+
+A 2 min 48 s low-poly 3D explainer of the broadcast yellow first-down line: a stadium cutaway with cables, a tripod camera with labelled sensors, the crowned field under a teal mesh, lens calibration, grass colour samples, a projection formula, the line keyed under players and the paint removed, each chapter headed by a white condensed title top-left.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, React, Remotion, Web Audio), suggested duration (168 s), aspect 16:9, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Diagrams / مخططات.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: 3D / ثلاثي الأبعاد, Diagrams / مخططات.
+- [playbooks/3d.md](../../playbooks/3d.md)
 - [playbooks/diagrams.md](../../playbooks/diagrams.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 * Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
 
 ## Original creative direction (التوجيه الإبداعي)

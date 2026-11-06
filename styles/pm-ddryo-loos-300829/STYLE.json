@@ -1,11 +1,13 @@
 {
   "id": "pm-ddryo-loos-300829",
   "name": "Lism CSS 1.0 release video",
-  "name_ar": null,
+  "name_ar": "فيديو إصدار مكتبة CSS بفصول مرقمة على خلفية بيضاء",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts"
+    "code",
+    "product-ui",
+    "diagrams"
   ],
   "creator": "@ddryo_loos",
   "creator_url": "https://x.com/ddryo_loos/status/2105824736072925621",
@@ -28,6 +30,36 @@
   "listed": true,
   "skill": "styles/pm-ddryo-loos-300829/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
-  ]
+    "playbooks/code.md",
+    "playbooks/product-ui.md",
+    "playbooks/diagrams.md"
+  ],
+  "summary_ar": "فيديو إصدار مدته نحو 56 ثانية لمكتبة CSS، على خلفية بيضاء نظيفة بفصول مرقمة لكل منها عنوان صغير أعلى اليسار: مربعات فيبوناتشي بنفسجية تكبر على منحنى، سلّم أحجام خط، أسطر بإرشادات تباعد فيروزية، بطاقة انتقال برتقالية، شبكات تخطيط برتقالية، خصائص كود تتلون، أعمدة زرقاء تتجاوب مع نقاط كسر، طبقات زرقاء مكدسة، مكونات واجهة، قوالب صفحات، وكيل ذكاء يكتب كوداً، ثم الشعار.",
+  "summary_en": "A ~56-second CSS framework release video on clean white with numbered chapters: violet Fibonacci squares growing along a curve, a type-scale ladder, cyan spacing guides, an orange title card, orange layout grids, highlighted code props, blue boxes reflowing across breakpoints, stacked blue cascade layers, UI components, page templates, an AI agent writing code, then the logo.",
+  "keywords": [
+    "release video",
+    "css framework",
+    "design tokens",
+    "type scale",
+    "layout primitives",
+    "responsive props",
+    "cascade layers",
+    "documentation motion",
+    "code highlight",
+    "فيديو إصدار",
+    "مكتبة CSS",
+    "رموز التصميم",
+    "شرح تقني",
+    "تخطيط متجاوب",
+    "كود متحرك"
+  ],
+  "difficulty": 4,
+  "duration_s": 56,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "SVG"
+  ],
+  "brief": "styles/pm-ddryo-loos-300829/BRIEF.md"
 }

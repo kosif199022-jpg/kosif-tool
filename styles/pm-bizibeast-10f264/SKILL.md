@@ -1,9 +1,9 @@
 ---
 name: pm-bizibeast-10f264
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 40-second product video for an all-in-one creator platform: an 'eight tools' headline with scattered priced subscription cards, which merge into a colourful blue/yellow/red bento grid at one price, a highlighter-pill headline on blue, a phone showing the link page, an auto-DM flow on red, a posting calendar, yellow product cards, a navy AI-agent chat, an analytics count-up and a logo end card. Use to make a new video in this look (Product UI); address it by ID pm-bizibeast-10f264.
 ---
 
-# KOSIF TOOL — Bento.surf product video
+# KOSIF TOOL — Bento.surf product video / فيديو منتج لمنصة صناع المحتوى بأسلوب بلوكات البينتو
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/bizibeast-10f264
@@ -17,16 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو منتج مدته 40 ثانية لمنصة تجمع أدوات صانع المحتوى في مكان واحد: يبدأ بعنوان «ثماني أدوات» وبطاقات اشتراكات متناثرة بأسعارها، ثم تتجمع في شبكة بلوكات ملونة (أزرق وأصفر وأحمر) بسعر واحد، وعنوان على خلفية زرقاء بأشرطة تظليل، وهاتف يعرض صفحة الرابط، وسلسلة رد آلي على الخلفية الحمراء، وتقويم نشر، وبطاقات منتجات صفراء، ومحادثة وكيل ذكي على الكحلي، ولوحة إحصاءات، ثم الشعار.
+
+A 40-second product video for an all-in-one creator platform: an 'eight tools' headline with scattered priced subscription cards, which merge into a colourful blue/yellow/red bento grid at one price, a highlighter-pill headline on blue, a phone showing the link page, an auto-DM flow on red, a posting calendar, yellow product cards, a navy AI-agent chat, an analytics count-up and a logo end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (40 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+Categories: Product UI / واجهات المنتج, Phone / هاتف, Kinetic type / تايبوغرافي متحرك, Charts / رسوم بيانية.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/phone.md](../../playbooks/phone.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

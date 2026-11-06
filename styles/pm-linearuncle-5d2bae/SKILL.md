@@ -1,9 +1,9 @@
 ---
 name: pm-linearuncle-5d2bae
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 7.5-minute Manim-style maths lesson on dark navy: a car and speedometer, an s=t² curve where an orange secant shrinks into a yellow tangent beside a table converging on 2, the colour-boxed limit definition, the derivative plotted beside the original, a magnifier that straightens the curve, and a recap; yellow titles top-left, subtitles at the bottom. Use to make a new video in this look (Diagrams); address it by ID pm-linearuncle-5d2bae.
 ---
 
-# KOSIF TOOL — Derivative concept explainer
+# KOSIF TOOL — Derivative concept explainer / شرح رياضي هادئ لمفهوم المشتقة على خلفية كحلية بأسلوب مانيم
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/linearuncle-5d2bae
@@ -18,12 +18,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+درس رياضيات أفقي طويل (نحو 7 دقائق و37 ثانية) على خلفية كحلية داكنة بأسلوب مانيم: سيارة صغيرة وعداد سرعة، ثم منحنى s=t² تُرسم عليه قاطعة برتقالية تضيق حتى تصير مماساً أصفر، وجدول قيم يقترب من 2، ثم صيغة التعريف بإطارات ملونة، ودالة المشتقة بجانب الأصلية، وعدسة مكبرة تُظهر استقامة المنحنى، وملخص وأسئلة. العناوين صفراء أعلى اليسار والترجمة بالصينية أسفل الشاشة.
+
+A 7.5-minute Manim-style maths lesson on dark navy: a car and speedometer, an s=t² curve where an orange secant shrinks into a yellow tangent beside a table converging on 2, the colour-boxed limit definition, the derivative plotted beside the original, a magnifier that straightens the curve, and a recap; yellow titles top-left, subtitles at the bottom.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (SVG, Remotion, React), suggested duration (457 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Diagrams / مخططات.
+Categories: Diagrams / مخططات, Charts / رسوم بيانية.
 - [playbooks/diagrams.md](../../playbooks/diagrams.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
 * Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,12 +1,13 @@
 {
   "id": "pm-shneural-2abdfa",
   "name": "Bold kinetic type showreel",
-  "name_ar": null,
+  "name_ar": "شوريل تايبوغرافي جريء: نسختان بألوان أحمر وأزرق ثم ليموني وكروم",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "kinetic-type",
+    "3d",
+    "shapes"
   ],
   "creator": "@shneural",
   "creator_url": "https://x.com/shneural/status/2103151003272962130",
@@ -27,7 +28,38 @@
   "listed": true,
   "skill": "styles/pm-shneural-2abdfa/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/3d.md",
+    "playbooks/shapes.md"
+  ],
+  "summary_ar": "مقطع 16:9 مدته نحو 32 ثانية يعرض نسختين متتاليتين من شوريل مصمم حركة مدة كل منهما 15 ثانية بعد بطاقة عنوان سوداء: الأولى على الأسود بالأحمر البرتقالي والأزرق (كرة ترتد، شبكة رموز تتموّج، مدينة مكعبات ثلاثية الأبعاد، شرائط كلمة MOTION متكررة، دوامة جسيمات، شعار ختامي)، والثانية بالأسود والأخضر الليموني والكروم (عناوين ضخمة مكدّسة بجانب أشكال كروم ملتوية، شاشة إيقاع بموجة صوتية، وكلمات تتكرر كالصدى).",
+  "summary_en": "A 32 s 16:9 piece playing two 15 s motion-designer showreels after black title cards: one on black in red-orange and blue (bouncing ball, rippling symbol grid, 3D block city, repeating MOTION type bands, particle swirl), the other in black, acid lime and chrome (huge stacked headlines beside twisting chrome shapes, a waveform beat screen, echoing words).",
+  "keywords": [
+    "showreel",
+    "kinetic typography",
+    "bold type",
+    "chrome 3d",
+    "acid lime",
+    "bouncing ball",
+    "symbol grid",
+    "type bands",
+    "particles",
+    "model comparison",
+    "شوريل",
+    "تايبوغرافي متحرك",
+    "خط عريض",
+    "كروم",
+    "ليموني",
+    "مصمم حركة"
+  ],
+  "difficulty": 4,
+  "duration_s": 32,
+  "stack": [
+    "Remotion",
+    "React",
+    "Three.js",
+    "WebGL",
+    "CSS"
+  ],
+  "brief": "styles/pm-shneural-2abdfa/BRIEF.md"
 }

@@ -1,12 +1,14 @@
 {
   "id": "pm-rendesr-86be44",
   "name": "Claude motion design showreel",
-  "name_ar": null,
+  "name_ar": "شوريل موشن ديزاين بفصول مرقمة: توقيت وخطوط وأشكال وجسيمات وشخصية",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "characters"
   ],
   "creator": "@rendesr",
   "creator_url": "https://x.com/rendesr/status/2103395846578676116",
@@ -27,7 +29,38 @@
   "listed": true,
   "skill": "styles/pm-rendesr-86be44/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/characters.md"
+  ],
+  "summary_ar": "شوريل مدته 15 ثانية بإطار واجهة دقيق وعداد فصول: كرة حمراء ترتد على مسطرة توقيت على الأسود، عنوان أسود عريض على أحمر يُكتب ويتفكك بسحب حركي، شكل أزرق يتحول من مربع إلى مثلث تشغيل أحمر ثم نجمة وسط شبكة نقاط متجاوبة، حقل شرطات يتدفق ويشكل كلمة بالليموني، جسيمات ثلاثية الأبعاد تتحول إلى طوق، كرة ليمونية تصبح وجهاً يغمز على الأزرق، ثم انفجار قطعات سريعة بين أساليب، وختام بالاسم ونقطة حمراء.",
+  "summary_en": "A 15-second showreel in a chapter HUD: a red ball bouncing on a timing ruler, a heavy black headline on red shredding with smear, a blue shape morphing amid a reactive dot grid, a dash flow field spelling a lime word, 3D particles forming a torus, a lime blob becoming a winking face on blue, a burst of rapid style cuts, and a wordmark end card.",
+  "keywords": [
+    "showreel",
+    "motion designer reel",
+    "chapter HUD",
+    "bouncing ball",
+    "shape morphing",
+    "flow field",
+    "3D particles",
+    "character blob",
+    "rapid cuts",
+    "شوريل",
+    "مصمم موشن",
+    "تحول أشكال",
+    "جسيمات",
+    "قطعات سريعة",
+    "شخصية كرتونية"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "HTML Canvas",
+    "Three.js"
+  ],
+  "brief": "styles/pm-rendesr-86be44/BRIEF.md"
 }

@@ -1,11 +1,12 @@
 {
   "id": "pm-kamstudiolabs-c9bb28",
   "name": "Animated short about a bug",
-  "name_ar": null,
+  "name_ar": "فيلم قصير عن حشرة مضيئة تختبئ داخل الكود",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "characters"
+    "characters",
+    "code"
   ],
   "creator": "@KamStudioLabs",
   "creator_url": "https://x.com/KamStudioLabs/status/2102903173161877996",
@@ -26,6 +27,35 @@
   "listed": true,
   "skill": "styles/pm-kamstudiolabs-c9bb28/SKILL.md",
   "playbooks": [
-    "playbooks/characters.md"
-  ]
+    "playbooks/characters.md",
+    "playbooks/code.md"
+  ],
+  "summary_ar": "فيلم رسوم قصير مدته دقيقة ونصف في غرفة ليلية كحلية: مبرمج في صورة ظلية أمام شاشة، ثم تقترب الكاميرا إلى داخل الكود حيث الأسطر كتل ملونة مستديرة (فيروزي وبنفسجي ووردي)، وتعيش بينها حشرة مضيئة صغيرة بعينين كبيرتين تهرب من مؤشر الفأرة العملاق والتحديد وخطوط الخطأ الحمراء المتعرجة وتمييز السطر الأحمر، حتى ينطفئ الضوء وتعود اللقطة للغرفة وتنتهي بعنوان ساخر بخط عريض.",
+  "summary_en": "A 90-second animated short in a navy night room: the camera pushes from a silhouetted programmer into the code, where lines are rounded teal, lavender and pink bars and a tiny glowing firefly-like bug dodges a giant mouse cursor, selections, red squiggles and a red line highlight, before the room dims and a wry bold title card ends it.",
+  "keywords": [
+    "animated short",
+    "cute bug",
+    "firefly",
+    "code as landscape",
+    "mouse cursor",
+    "night room",
+    "character animation",
+    "programmer humour",
+    "camera moves",
+    "فيلم رسوم قصير",
+    "حشرة مضيئة",
+    "خطأ برمجي",
+    "كود ملون",
+    "مؤشر الفأرة",
+    "فكاهة المبرمجين"
+  ],
+  "difficulty": 4,
+  "duration_s": 90,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "HTML Canvas"
+  ],
+  "brief": "styles/pm-kamstudiolabs-c9bb28/BRIEF.md"
 }

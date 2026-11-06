@@ -1,9 +1,9 @@
 ---
 name: pm-hoyoyoda-3a5c08
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 12-second looping pixel-art harvest-moon night: a huge yellow moon with a rabbit pounding rice cakes, a violet starry sky, traditional houses with lit windows and lantern strings, tiny hanbok figures, a table filling with rice cakes, pixel rainbows from 4 s, a Korean and English greeting typing in, and a coloured stripe wipe that resets the loop. Use to make a new video in this look (Characters); address it by ID pm-hoyoyoda-3a5c08.
 ---
 
-# KOSIF TOOL — Chuseok pixel night scene
+# KOSIF TOOL — Chuseok pixel night scene / ليلة تشوسوك بالبكسل: قمر الأرنب ومهرجان الفوانيس
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/hoyoyoda-3a5c08
@@ -17,12 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+لوحة بكسل آرت متحركة مدتها 12 ثانية لليلة عيد الحصاد الكوري: قمر بدر أصفر ضخم في الوسط يدق فيه أرنب كعك الأرز، سماء بنفسجية بنجوم متلألئة وغيوم، صف من البيوت التقليدية بنوافذ مضيئة وأحبال فوانيس ملونة، شخصيات صغيرة بالهانبوك، طاولة يتراكم عليها الكعك، أقواس قزح من خطوط بكسل تظهر عند الثانية 4، ثم عنوان بالكورية والإنجليزية وستارة أشرطة ملونة تغلق الحلقة.
+
+A 12-second looping pixel-art harvest-moon night: a huge yellow moon with a rabbit pounding rice cakes, a violet starry sky, traditional houses with lit windows and lantern strings, tiny hanbok figures, a table filling with rice cakes, pixel rainbows from 4 s, a Korean and English greeting typing in, and a coloured stripe wipe that resets the loop.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, React, Remotion), suggested duration (12 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: creative motion.
-- (no category playbook yet)
+Categories: Characters / شخصيات, Particles / جسيمات, Kinetic type / تايبوغرافي متحرك.
+- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
-* Develop original choreography from the reference; verify imagery before claiming a match.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

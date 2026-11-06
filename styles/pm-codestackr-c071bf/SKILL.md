@@ -1,9 +1,9 @@
 ---
 name: pm-codestackr-c071bf
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second studio-style motion reel: a pulsing orange dot on black, then huge heavy words filling the frame on backgrounds flipping between cream, orange and electric blue, a frame counter, a rippling dot grid, a blue particle sphere that morphs into a helix with orbiting letters, easing-curve plots driving bars, and a name end card with an available-for-hire pill. Use to make a new video in this look (Kinetic type); address it by ID pm-codestackr-c071bf.
 ---
 
-# KOSIF TOOL — Claude motion reel
+# KOSIF TOOL — Claude motion reel / ريل موشن بتايبوغرافي ضخم وشبكة نقاط وكرة جسيمات
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/codestackr-c071bf
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+ريل موشن مدته 15 ثانية بأسلوب استوديو: نقطة برتقالية تنبض على الأسود، ثم كلمات ضخمة ثقيلة تملأ الشاشة على خلفيات تتبدل بين الكريمي والبرتقالي والأزرق الكهربائي، عدّاد إطارات، شبكة نقاط تتموج، كرة جسيمات زرقاء تتحول إلى لولب مع حروف تدور حولها، منحنيات تسارع مع أشرطة تتحرك، وختام بالاسم وشارة «متاح للعمل».
+
+A 15-second studio-style motion reel: a pulsing orange dot on black, then huge heavy words filling the frame on backgrounds flipping between cream, orange and electric blue, a frame counter, a rippling dot grid, a blue particle sphere that morphs into a helix with orbiting letters, easing-curve plots driving bars, and a name end card with an available-for-hire pill.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, HTML Canvas, Three.js), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Particles / جسيمات, Charts / رسوم بيانية.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

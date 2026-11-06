@@ -1,6 +1,6 @@
 ---
 name: pm-tolgayhickiran-e90799
-description: A 15-second HUD-framed reel: a circle with orbiting dots and radial ticks while 'HELLO, I_' types, scan lines, a glitched RGB-split MOTION, a grid of coloured shapes, a circle morphing to a star on lime, a spiral particle galaxy, orange pixel blocks, RHYTHM over equaliser bars, a wireframe torus and a CLAUDE signature inside a ring.
+description: A 15-second HUD-framed reel: a circle with orbiting dots and radial ticks while 'HELLO, I_' types, scan lines, a glitched RGB-split MOTION, a grid of coloured shapes, a circle morphing to a star on lime, a spiral particle galaxy, orange pixel blocks, RHYTHM over equaliser bars, a wireframe torus and a CLAUDE signature inside a ring. Use to make a new video in this look (Charts); address it by ID pm-tolgayhickiran-e90799.
 ---
 
 # KOSIF TOOL — Motion design principles reel / ريل موشن داكن بإطار HUD: عروض تقنية متتابعة

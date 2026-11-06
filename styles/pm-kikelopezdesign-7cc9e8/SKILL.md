@@ -1,9 +1,9 @@
 ---
 name: pm-kikelopezdesign-7cc9e8
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A silent 20 s 16:9 portfolio on a light grey dotted design canvas: a black square becomes a letter logo, the camera pulls back over every project frame, then flies into one after another, each outlined in orange-red beside an inspector panel whose big impact number counts up, with a named cursor and comment pop-ups, ending on logo, name and link. Use to make a new video in this look (Product UI); address it by ID pm-kikelopezdesign-7cc9e8.
 ---
 
-# KOSIF TOOL — Design portfolio video reel
+# KOSIF TOOL — Design portfolio video reel / بورتفوليو مصمم منتجات كلوحة تصميم لا نهائية تقترب الكاميرا من مشاريعها
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/kikelopezdesign-7cc9e8
@@ -17,12 +17,19 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+بورتفوليو 16:9 مدته 20 ثانية بلا صوت على لوحة تصميم رمادية فاتحة منقّطة: مربع أسود يتحول إلى شعار حرف، ثم تبتعد الكاميرا لتكشف كل المشاريع كإطارات على لوحة لا نهائية، وتقترب من إطار تلو الآخر محدّد بالأحمر بجانب لوحة جانبية تعرض رقم الأثر الكبير (نسب ومضاعفات وملايين) يتصاعد، ومؤشرات بأسماء تتحرك وتعليقات منبثقة، وتنتهي بالشعار والاسم ورابط.
+
+A silent 20 s 16:9 portfolio on a light grey dotted design canvas: a black square becomes a letter logo, the camera pulls back over every project frame, then flies into one after another, each outlined in orange-red beside an inspector panel whose big impact number counts up, with a named cursor and comment pop-ups, ending on logo, name and link.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG), suggested duration (20 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: creative motion.
-- (no category playbook yet)
+Categories: Product UI / واجهات المنتج.
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:
-* Develop original choreography from the reference; verify imagery before claiming a match.
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

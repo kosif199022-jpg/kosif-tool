@@ -1,10 +1,12 @@
 {
   "id": "pm-jazzen-chen-4542ae",
   "name": "AgentHud project motion video",
-  "name_ar": null,
+  "name_ar": "إطلاق تطبيق نوتش متوهج: جزيرة ديناميكية لحصص وكلاء الذكاء الاصطناعي",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
+    "product-ui",
+    "kinetic-type",
     "charts"
   ],
   "creator": "@Jazzen_Chen",
@@ -26,6 +28,36 @@
   "listed": true,
   "skill": "styles/pm-jazzen-chen-4542ae/SKILL.md",
   "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/kinetic-type.md",
     "playbooks/charts.md"
-  ]
+  ],
+  "summary_ar": "فيديو إطلاق منتج مدته 30 ثانية على خلفية كحلية شبه سوداء يدور كله حول نوتش شاشة لابتوب: شرارتان تنزلقان على حوافه فتشعلان حدّاً متوهجاً متدرجاً من الأخضر إلى الأصفر إلى الأحمر، ثم وسوم الحصص تتفرع منه، وجملة بخط أحادي المسافة تُكتب حرفاً حرفاً، ثم أنماط ASCII وثنائية ملونة تنساب حوله، ثم يتمدد النوتش إلى بطاقات حالة وتحذير وإحصاءات وموافقة بنقرة، ثم لقطة لابتوب واسعة وبطاقة اسم المنتج.",
+  "summary_en": "A 30 s app-launch film on near-black navy built entirely around a laptop notch: two sparks trace its edges and ignite a green-to-amber-to-red glowing rim, quota labels branch out of it, a monospace line types itself, ASCII and binary character flows pour around it, then the notch expands into status, warning, statistics and approval cards before a wide laptop shot and a product name card.",
+  "keywords": [
+    "app launch",
+    "dynamic island",
+    "notch",
+    "glow rim",
+    "quota tracker",
+    "ASCII effect",
+    "monospace typing",
+    "product UI",
+    "إطلاق تطبيق",
+    "نوتش",
+    "جزيرة ديناميكية",
+    "توهج",
+    "واجهة منتج",
+    "حصص الاستخدام"
+  ],
+  "difficulty": 4,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "SVG",
+    "HTML Canvas"
+  ],
+  "brief": "styles/pm-jazzen-chen-4542ae/BRIEF.md"
 }

@@ -1,9 +1,9 @@
 ---
 name: chart-race
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A ranked horizontal bar chart race: bars grow and swap positions with smooth slides as the years tick by, a huge year counter sits in the corner, icons or flags ride the bar ends, values count live, and brief pauses highlight the key overtakes before the final ranking holds. Use to make a new video in this look (Charts); address it by ID chart-race.
 ---
 
-# KOSIF TOOL — سباق رسوم
+# KOSIF TOOL — سباق رسوم / سباق أعمدة بيانات عبر الزمن
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+سباق أعمدة أفقية مرتبة: الأعمدة تطول وتتبادل المراكز بانزلاق ناعم مع مرور السنوات، عداد سنة ضخم في الزاوية، أعلام أو شعارات على رؤوس الأعمدة، قيم تعدّ حيًّا، ولحظات تثبيت تبرز التجاوزات المهمة.
+
+A ranked horizontal bar chart race: bars grow and swap positions with smooth slides as the years tick by, a huge year counter sits in the corner, icons or flags ride the bar ends, values count live, and brief pauses highlight the key overtakes before the final ranking holds.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (40 s), aspect 9:16, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية.

@@ -1,6 +1,6 @@
 ---
 name: pm-ror-fly-9950f1
-description: A 30-second square explainer that builds a Negroni ingredient by ingredient, with measurements appearing as each pour fills the glass.
+description: A 30-second square explainer that builds a Negroni ingredient by ingredient, with measurements appearing as each pour fills the glass. Use to make a new video in this look (Charts); address it by ID pm-ror-fly-9950f1.
 ---
 
 # KOSIF TOOL — Negroni recipe animation / وصفة نيغروني متحركة من الكأس الفارغة إلى الكوكتيل

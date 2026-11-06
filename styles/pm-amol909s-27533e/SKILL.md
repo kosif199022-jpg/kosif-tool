@@ -1,9 +1,9 @@
 ---
 name: pm-amol909s-27533e
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 20-second app showreel on warm soft-lit paper: a square logo builds, a grid of coding-agent chat windows runs at once under black caption pills, one window zooms in to approve a command, a phone shows the same workspace, a navy scene routes a prompt to one of two models, four feature tiles animate, and the logo returns. Use to make a new video in this look (Product UI); address it by ID pm-amol909s-27533e.
 ---
 
-# KOSIF TOOL — Commotion app showreel
+# KOSIF TOOL — Commotion app showreel / عرض تطبيق لإدارة عدة جلسات برمجة بالذكاء الاصطناعي
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/amol909s-27533e
@@ -17,15 +17,22 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+عرض تطبيق مدته 20 ثانية على ورق دافئ بخطوط ناعمة: شعار من مربعات رمادية يُبنى، ثم شبكة من نوافذ محادثات برمجة متعددة تعمل معاً مع وسم أسود «كل الخيوط أمامك»، تكبير على نافذة واحدة والموافقة على أمر، هاتف يعرض نفس مساحة العمل، مشهد كحلي يوجّه فيه عقدة متوهجة الطلب إلى أحد نموذجين عبر منحنى ومؤشر تعقيد، أربع بطاقات ميزات (لوحة مهام، ملاحظات المتصفح، لوحة أوامر، تنبيه الانتهاء)، ثم الشعار والشعار اللفظي.
+
+A 20-second app showreel on warm soft-lit paper: a square logo builds, a grid of coding-agent chat windows runs at once under black caption pills, one window zooms in to approve a command, a phone shows the same workspace, a navy scene routes a prompt to one of two models, four feature tiles animate, and the logo returns.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG), suggested duration (20 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+Categories: Product UI / واجهات المنتج, Phone / هاتف, Kinetic type / تايبوغرافي متحرك.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/phone.md](../../playbooks/phone.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)

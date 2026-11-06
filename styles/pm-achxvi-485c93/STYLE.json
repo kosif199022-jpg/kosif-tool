@@ -1,7 +1,7 @@
 {
   "id": "pm-achxvi-485c93",
   "name": "Character-led Pocketsflow product explainer",
-  "name_ar": null,
+  "name_ar": "شخصية نقطية ترشد مشاهدها في متجر رقمي للمبدعين",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -35,5 +35,33 @@
     "playbooks/diagrams.md",
     "playbooks/kinetic-type.md",
     "playbooks/characters.md"
-  ]
+  ],
+  "summary_ar": "فيديو منتج مدته 15 ثانية على أرضية بيضاء وزرقاء وسوداء، تقوده شخصية ثلاثية الأبعاد بشعر مجعد مرسومة بنقاط طباعة سوداء (هافتون): تهمس للمشاهد، ثم تظهر بطاقات المنتجات الرقمية على خلفية زرقاء، وهاتف يعرض المتجر، وشبكة لوحات دفع واشتراكات وضرائب وأرباح تنتهي بختم «تم» أزرق، ثم شاشة سوداء بكلمات متتابعة وشعار ختامي بخط سيريف.",
+  "summary_en": "A 15-second product explainer led by a curly-haired 3D mascot rendered in black halftone dots, cutting between white, electric-blue and black grounds: he whispers to camera, digital-product cards pop in, a phone shows the store, a dashboard grid of checkout, subscription, tax and payout panels fills and gets a blue handwritten stamp, then a black text beat and a serif wordmark end card.",
+  "keywords": [
+    "product explainer",
+    "mascot",
+    "halftone",
+    "dithered 3D",
+    "creator store",
+    "payments dashboard",
+    "script accent",
+    "electric blue",
+    "UI panels",
+    "فيديو منتج",
+    "شخصية مرشدة",
+    "نقاط طباعة",
+    "لوحة تحكم",
+    "متجر رقمي",
+    "أزرق كهربائي"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "SVG"
+  ],
+  "brief": "styles/pm-achxvi-485c93/BRIEF.md"
 }

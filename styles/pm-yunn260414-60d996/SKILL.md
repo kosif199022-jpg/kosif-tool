@@ -1,9 +1,9 @@
 ---
 name: pm-yunn260414-60d996
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 6 min 48 s beginner Git explainer in Chinese on a navy gradient: duplicate file copies, a game-save analogy, Git facts, a distributed network, the three areas as coloured frames, a terminal typing each command beside an explainer card, branch lines splitting and merging, remote sync, and a cheat-sheet ending, with a caption under every scene. Use to make a new video in this look (Diagrams); address it by ID pm-yunn260414-60d996.
 ---
 
-# KOSIF TOOL — What is Git explainer
+# KOSIF TOOL — What is Git explainer / شرح مبسط لـ Git بثمانية فصول ومخططات وطرفية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/yunn260414-60d996
@@ -17,14 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو شرح طويل (نحو 6 دقائق و48 ثانية) يعرّف المبتدئين بـ Git بالصينية على خلفية كحلية متدرجة: مجلد يمتلئ بنسخ ملف مكررة، تعارض بين شخصين، تشبيه حفظ الألعاب، بطاقة تعريف بـ Git، شبكة حواسيب موزعة، Git مقابل GitHub كالكاميرا والألبوم، المناطق الثلاث كصورة جماعية بإطارات ملونة، طرفية تكتب الأوامر بجوار بطاقة شرح لكل أمر، خطوط فروع تتشعب وتندمج، مزامنة حاسوب مع مستودع بعيد، ثم جدول أوامر سريع وبطاقة ختام، وترجمة أسفل كل مشهد.
+
+A 6 min 48 s beginner Git explainer in Chinese on a navy gradient: duplicate file copies, a game-save analogy, Git facts, a distributed network, the three areas as coloured frames, a terminal typing each command beside an explainer card, branch lines splitting and merging, remote sync, and a cheat-sheet ending, with a caption under every scene.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Web Audio), suggested duration (408 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Diagrams / مخططات, Music / موسيقى.
+Categories: Diagrams / مخططات, Code / كود.
 - [playbooks/diagrams.md](../../playbooks/diagrams.md)
-- [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
 * Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
+* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

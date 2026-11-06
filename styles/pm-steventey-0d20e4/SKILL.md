@@ -1,6 +1,6 @@
 ---
 name: pm-steventey-0d20e4
-description: A 15-second SaaS launch film that squeezes a long URL into a short link, then unfolds its click analytics as a living product UI.
+description: A 15-second SaaS launch film that squeezes a long URL into a short link, then unfolds its click analytics as a living product UI. Use to make a new video in this look (Product UI); address it by ID pm-steventey-0d20e4.
 ---
 
 # KOSIF TOOL — Dub promo video / فيلم إطلاق منصة اختصار الروابط وتحليلاتها

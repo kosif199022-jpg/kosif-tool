@@ -1,12 +1,12 @@
 {
   "id": "pm-sab8a-364a5a",
   "name": "Talking-head clip edit",
-  "name_ar": null,
+  "name_ar": "مقطع متحدثة أمام الكاميرا يتنقل بين تسعة أنماط لصور مصغّرة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "music"
+    "photos",
+    "kinetic-type"
   ],
   "creator": "@sab8a",
   "creator_url": "https://x.com/sab8a/status/2103144778481475686",
@@ -27,7 +27,36 @@
   "listed": true,
   "skill": "styles/pm-sab8a-364a5a/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/music.md"
-  ]
+    "playbooks/photos.md",
+    "playbooks/kinetic-type.md"
+  ],
+  "summary_ar": "مقطع 16:9 مدته نحو 37 ثانية لمتحدثة أمام ستارة كهرمانية دافئة، تُقصّ صورتها كل بضع ثوانٍ وتُوضع داخل عالم مصغّرة مختلف (كرتوني مشمس بثلاثي أبعاد، رسوم قديمة بالأبيض والبني، كاواي وردي، مانغا بالأبيض والأسود، بطاقة هولوغرامية نادرة، انفجار ناري، بوب آرت منقّط) مع كلمات ترجمة عريضة تظهر كلمة بكلمة وعدّاد قلوب، وتنتهي بشبكة للتسعة أفكار مرقّمة تطلب التصويت.",
+  "summary_en": "A 37 s 16:9 talking-head edit before a warm amber curtain where the speaker is cut out every few seconds and dropped into a new thumbnail world (sunny 3D cartoon, sepia rubber-hose, pink kawaii, manga, holographic card, explosion, pop art), with bold word-by-word captions and a heart counter, ending on a numbered grid of all nine ideas for a vote.",
+  "keywords": [
+    "talking head",
+    "thumbnail ideas",
+    "cutout sticker",
+    "style switching",
+    "word-by-word captions",
+    "manga",
+    "kawaii",
+    "holographic card",
+    "pop art",
+    "rubber hose",
+    "متحدث أمام الكاميرا",
+    "صورة مصغرة",
+    "قص الشخص",
+    "ترجمة كلمة بكلمة",
+    "تبديل الأساليب",
+    "مونتاج يوتيوب"
+  ],
+  "difficulty": 4,
+  "duration_s": 37,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "SVG"
+  ],
+  "brief": "styles/pm-sab8a-364a5a/BRIEF.md"
 }

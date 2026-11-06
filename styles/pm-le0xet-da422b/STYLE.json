@@ -1,11 +1,13 @@
 {
   "id": "pm-le0xet-da422b",
   "name": "Animated short from a single laptop",
-  "name_ar": null,
+  "name_ar": "قصة قصيرة ثلاثية الأبعاد على لوحة مفاتيح داخل لوحة استوديو",
   "origin": "PromptsMotion",
   "type": "Skill",
   "category": [
-    "characters"
+    "3d",
+    "characters",
+    "code"
   ],
   "creator": "unknown",
   "creator_url": "https://x.com/le0xet/status/2113998990081409165",
@@ -28,6 +30,35 @@
   "listed": true,
   "skill": "styles/pm-le0xet-da422b/SKILL.md",
   "playbooks": [
-    "playbooks/characters.md"
-  ]
+    "playbooks/3d.md",
+    "playbooks/characters.md",
+    "playbooks/code.md"
+  ],
+  "summary_ar": "مقطع عمودي 4:5 مدته نحو 16 ثانية بتصميم لوحة معلومات كريمية: عنوان أعلى الشاشة، ونافذة عرض كبيرة فيها فيلم قصير ثلاثي الأبعاد لشخصية فوكسل حمراء مربعة وحشرة روبوت خضراء صغيرة يتنقلان فوق لوحة مفاتيح بجانب كوب زجاجي، وتحتها صف بطاقات أدوات يضيء بالتسلسل، وتميمة بكسلية تقول جملاً قصيرة، وطرفية داكنة تكتب أوامر كل مرحلة من التخطيط حتى التصدير.",
+  "summary_en": "A 4:5 vertical clip of about 16 s laid out as a cream dashboard: a headline at top, a large viewport playing a short 3D film of a red voxel block character and a tiny green robot bug wandering over a keyboard beside a glass jar, a row of tool cards below that light up in sequence, a pixel mascot speaking short lines, and a dark terminal typing the commands for each stage from planning to export.",
+  "keywords": [
+    "3D short",
+    "voxel character",
+    "keyboard world",
+    "making of",
+    "pipeline dashboard",
+    "terminal",
+    "Blender",
+    "cute story",
+    "فيلم قصير ثلاثي الأبعاد",
+    "شخصية فوكسل",
+    "كواليس الصناعة",
+    "لوحة معلومات",
+    "طرفية",
+    "قصة لطيفة"
+  ],
+  "difficulty": 5,
+  "duration_s": 16,
+  "stack": [
+    "Remotion",
+    "React",
+    "Three.js",
+    "CSS"
+  ],
+  "brief": "styles/pm-le0xet-da422b/BRIEF.md"
 }

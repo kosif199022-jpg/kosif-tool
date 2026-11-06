@@ -1,9 +1,9 @@
 ---
 name: pm-thegreatest-sv-f33d62
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A ~25-second sci-fi 'top secret' dashboard in cool white packed with small panels (brain views, cortical layers, neural map, eye, brain stem, signal flow, code), with a glowing blue cyborg brain wrapped in cables at the centre that swaps viewing angle about every second, while zoom windows pop out of the grid to enlarge one panel and then return. Use to make a new video in this look (Diagrams); address it by ID pm-thegreatest-sv-f33d62.
 ---
 
-# KOSIF TOOL — HyperFrames motion setup for Claude Code
+# KOSIF TOOL — HyperFrames motion setup for Claude Code / لوحة واجهة سرية لدماغ آلي: صور متوهجة ونوافذ تقريب منبثقة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/thegreatest-sv-f33d62
@@ -18,14 +18,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+مقطع مدته نحو 25 ثانية لواجهة معلومات علمية خيالية بلون أبيض بارد مليئة بلوحات صغيرة (مناظر الدماغ، طبقات القشرة، خريطة الشبكة العصبية، العين، جذع الدماغ، التدفق العصبي، الكود)، وفي وسطها دماغ آلي متوهج بالأزرق مع كابلات يتبدل منظره كل ثانية تقريباً، بينما تنبثق من الشبكة نوافذ تقريب تكبّر لوحة ما ثم تعود إلى مكانها.
+
+A ~25-second sci-fi 'top secret' dashboard in cool white packed with small panels (brain views, cortical layers, neural map, eye, brain stem, signal flow, code), with a glowing blue cyborg brain wrapped in cables at the centre that swaps viewing angle about every second, while zoom windows pop out of the grid to enlarge one panel and then return.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, CSS, GSAP, React), suggested duration (25 s), aspect 720x1020, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Code / كود.
+Categories: Diagrams / مخططات, Photos / صور, Product UI / واجهات المنتج.
+- [playbooks/diagrams.md](../../playbooks/diagrams.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
+* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
+* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,7 +1,7 @@
 {
   "id": "scroll-world",
   "name": "عالم تمرير",
-  "name_ar": "عالم تمرير",
+  "name_ar": "عالم متصل يتكشف مع التمرير",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,31 @@
   "playbooks": [
     "playbooks/3d.md",
     "playbooks/product-ui.md"
-  ]
+  ],
+  "summary_ar": "فيديو يحاكي التمرير في موقع تفاعلي فاخر: الكاميرا تنزل أو تتقدم داخل عالم واحد متصل، مقاطع تثبت ثم تتحول، عناصر ثلاثية الأبعاد تدور مع تقدم التمرير، ونصوص تظهر في أقسام، مع شريط تقدم ومؤشر تمرير صغير.",
+  "summary_en": "A video that mimics scrolling through an award-style interactive website: the camera descends or advances through one continuous world, sections pin then transform, 3D objects rotate in step with scroll progress, text blocks reveal per section, with a slim progress bar and scroll hint.",
+  "keywords": [
+    "scroll world",
+    "scrollytelling",
+    "scroll driven",
+    "pinned sections",
+    "website showcase",
+    "3d web",
+    "one shot",
+    "عالم تمرير",
+    "تمرير",
+    "موقع تفاعلي",
+    "استعراض موقع",
+    "لقطة واحدة",
+    "أقسام مثبتة"
+  ],
+  "difficulty": 4,
+  "duration_s": 32,
+  "stack": [
+    "Remotion",
+    "React",
+    "Three.js",
+    "GSAP"
+  ],
+  "brief": "styles/scroll-world/BRIEF.md"
 }

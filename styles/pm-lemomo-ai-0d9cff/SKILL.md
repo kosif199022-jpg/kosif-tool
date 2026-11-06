@@ -1,9 +1,9 @@
 ---
 name: pm-lemomo-ai-0d9cff
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A ~71-second whiteboard tutorial on one large canvas: a visible marker hand-writes the title and draws boxes, arrows and a timeline while the camera pans and zooms across pasted screenshots of a style gallery site, a terminal and an AI chat, with a small orange pixel mascot, red-circled step numbers and bilingual subtitles, ending on a zoom-out that reveals the whole board as a map. Use to make a new video in this look (Hand-drawn); address it by ID pm-lemomo-ai-0d9cff.
 ---
 
-# KOSIF TOOL — Whiteboard skill tutorial
+# KOSIF TOOL — Whiteboard skill tutorial / شرح سبورة بيضاء لطريقة استخدام أداة صنع الأفلام مع لقطات شاشة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/lemomo-ai-0d9cff
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو تعليمي مدته نحو 71 ثانية بأسلوب سبورة بيضاء ممتدة: قلم ظاهر يكتب العنوان بخط يد ويرسم مربعات وأسهماً وخط زمن، بينما تجول الكاميرا فوق لوحة واحدة كبيرة ملصق عليها لقطات شاشة لموقع معرض الأساليب ونافذة الطرفية ومحادثة الذكاء الاصطناعي، مع تميمة بكسلية برتقالية صغيرة، وخطوات مرقمة داخل دوائر حمراء، وترجمة ثنائية اللغة أسفل الشاشة، وتنتهي بابتعاد يكشف اللوحة كلها كخريطة.
+
+A ~71-second whiteboard tutorial on one large canvas: a visible marker hand-writes the title and draws boxes, arrows and a timeline while the camera pans and zooms across pasted screenshots of a style gallery site, a terminal and an AI chat, with a small orange pixel mascot, red-circled step numbers and bilingual subtitles, ending on a zoom-out that reveals the whole board as a map.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (71 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Diagrams / مخططات, Characters / شخصيات.
+Categories: Hand-drawn / رسم يدوي, Diagrams / مخططات, Product UI / واجهات المنتج.
+- [playbooks/hand-drawn.md](../../playbooks/hand-drawn.md)
 - [playbooks/diagrams.md](../../playbooks/diagrams.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:
+* Order stroke draw-on like a human hand would; keep imperfection deliberate; pace reveals to narration.
 * Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

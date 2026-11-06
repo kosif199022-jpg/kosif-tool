@@ -1,9 +1,9 @@
 ---
 name: kinetic-arabic
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A vertical reel filled only with Arabic type: large words in contrasting weights and sizes enter, rotate, stack and swap with each spoken word, the key word swells in an accent colour, and the composition rebuilds every sentence on a single bold background colour. Use to make a new video in this look (Kinetic type); address it by ID kinetic-arabic.
 ---
 
-# KOSIF TOOL — تايبوغرافي عربي
+# KOSIF TOOL — تايبوغرافي عربي / تايبوغرافي عربي متحرك: كلمات كبيرة تتشكل وتتحرك مع الصوت
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي يملؤه النص العربي وحده: كلمات كبيرة بأوزان وأحجام متباينة تدخل وتدور وتتكدس وتتبدل مع كل كلمة منطوقة، الكلمة المهمة تتضخم بلون مميز، والتكوين يتغير كل جملة على خلفية بلون واحد صريح.
+
+A vertical reel filled only with Arabic type: large words in contrasting weights and sizes enter, rotate, stack and swap with each spoken word, the key word swells in an accent colour, and the composition rebuilds every sentence on a single bold background colour.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, GSAP), suggested duration (32 s), aspect 9:16, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Kinetic type / تايبوغرافي متحرك.

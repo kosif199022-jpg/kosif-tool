@@ -1,9 +1,9 @@
 ---
 name: pm-yarad-ai-8a2c4c
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 20 s 4:5 dark developer-UI piece: a fixed white-and-violet headline, a big frame counter ticking 0 to 600, a five-step checklist ticking green, a tunnel of nested violet rectangles where UI moments appear (export, click, done) and then a loop of stages, a terminal typing commands below, ending on a green 600/600. Use to make a new video in this look (Diagrams); address it by ID pm-yarad-ai-8a2c4c.
 ---
 
-# KOSIF TOOL — Remotion workflow with precise timing
+# KOSIF TOOL — Remotion workflow with precise timing / نفق إطارات يشرح التحريك بالأرقام الدقيقة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/yarad-ai-8a2c4c
@@ -17,6 +17,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #226
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+فيديو عمودي 4:5 مدته 20 ثانية بأسلوب واجهة مطور داكنة: عنوان أبيض وبنفسجي ثابت في الأعلى، عداد إطارات ضخم يعد من 0 إلى 600، قائمة خطوات تُعلَّم بالأخضر واحدة تلو الأخرى، ونفق من مستطيلات بنفسجية متداخلة في الوسط تظهر داخله لقطات واجهة (زر تصدير، نقرة، اكتمال) ثم دورة مراحل، وطرفية أسفل تكتب الأوامر؛ وينتهي بـ600/600 أخضر ومعادلة الثواني بالإطارات.
+
+A 20 s 4:5 dark developer-UI piece: a fixed white-and-violet headline, a big frame counter ticking 0 to 600, a five-step checklist ticking green, a tunnel of nested violet rectangles where UI moments appear (export, click, done) and then a loop of stages, a terminal typing commands below, ending on a green 600/600.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (20 s), aspect 4:5, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك, Code / كود.

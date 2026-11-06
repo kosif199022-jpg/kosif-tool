@@ -1,9 +1,9 @@
 ---
 name: pm-ercankeskinx-ec2568
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 30-second screen capture of one web page scrolling through five sections, each with its own look: an architecture project index where the photo swaps as each name highlights, a product page for a recorder with live cards (battery count, waveform), a night-train route map drawing across a dark plum panel, a fanned deck of paint swatches that rotates, and a deep green footer with a giant wordmark. Use to make a new video in this look (Product UI); address it by ID pm-ercankeskinx-ec2568.
 ---
 
-# KOSIF TOOL — Five scroll-based sections
+# KOSIF TOOL — Five scroll-based sections / خمسة أقسام ويب تتحرك مع التمرير: عرض تصميم تفاعلي
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/ercankeskinx-ec2568
@@ -17,12 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+تسجيل شاشة مدته 30 ثانية لصفحة ويب واحدة تمر عبر خمسة أقسام بأسلوب مختلف لكل منها: فهرس مشاريع معمارية تتبدل صورته مع تمييز كل اسم، صفحة منتج لجهاز تسجيل ببطاقات حية (بطارية، موجة صوتية)، خريطة رحلة قطار ليلي تُرسم على خلفية برقوقية داكنة، مروحة عينات ألوان دهان تدور، ثم تذييل أخضر داكن بكلمة علامة ضخمة.
+
+A 30-second screen capture of one web page scrolling through five sections, each with its own look: an architecture project index where the photo swaps as each name highlights, a product page for a recorder with live cards (battery count, waveform), a night-train route map drawing across a dark plum panel, a fanned deck of paint swatches that rotates, and a deep green footer with a giant wordmark.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (React, CSS, GSAP, SVG), suggested duration (30 s), aspect 1920x972, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك.
+Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك, Photos / صور.
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
 
 Category tactics:
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

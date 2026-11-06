@@ -1,12 +1,14 @@
 {
   "id": "pm-robj3d3-b18fad",
   "name": "SuperX feature release teaser",
-  "name_ar": null,
+  "name_ar": "تيزر ميزة جديدة: حرف X متوهج وسؤال ماذا يعني",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
-    "charts"
+    "kinetic-type",
+    "particles",
+    "ads"
   ],
   "creator": "@robj3d3",
   "creator_url": "https://x.com/robj3d3/status/2107040421989994822",
@@ -28,6 +30,38 @@
   "skill": "styles/pm-robj3d3-b18fad/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/particles.md",
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "تيزر داكن مدته 15 ثانية: ضوء أحمر نحاسي يمسح حواف حرف X ضخم في العتمة، ثم يظهر الحرف صغيراً متوهجاً مع «X = اسم المنصة القديم» وسطر صغير، تُشطب الكلمة بخط أحمر وتتبدل معانٍ أخرى بسرعة حتى تبقى علامة استفهام مائلة، بطاقة منشور واحدة تتضاعف إلى جدار من البطاقات، جسيمات على شكل X تتصل بخطوط، ثم شعار بلهب وجملة ختام و«قريباً» بخط مائل.",
+  "summary_en": "A dark 15-second teaser: copper-red light sweeps the edges of a giant X, then 'X = Twitter' appears, the word is struck through and swapped until an italic question mark remains, one post card multiplies into a wall of cards, X-shaped particles link into a constellation, and it ends on a flame logo, a one-line claim and an italic 'Soon.'",
+  "keywords": [
+    "teaser",
+    "feature release",
+    "dark cinematic",
+    "rim light",
+    "strike-through",
+    "word swap",
+    "card wall",
+    "particle constellation",
+    "coming soon",
+    "تيزر",
+    "إطلاق ميزة",
+    "إضاءة حواف",
+    "شطب الكلمة",
+    "جدار بطاقات",
+    "قريباً",
+    "سينمائي داكن"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "Three.js",
+    "WebGL",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-robj3d3-b18fad/BRIEF.md"
 }

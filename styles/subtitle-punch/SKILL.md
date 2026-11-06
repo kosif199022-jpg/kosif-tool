@@ -1,9 +1,9 @@
 ---
 name: subtitle-punch
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 9:16 reel over talking-head footage where Arabic captions appear one or two words at a time, centred in the lower third in bold white with a thick black outline; each word pops with a small scale punch the moment it is spoken, and key words turn yellow and punch bigger with an emoji or a slight zoom on the footage. Use to make a new video in this look (Kinetic type); address it by ID subtitle-punch.
 ---
 
-# KOSIF TOOL — كلمات متحركة
+# KOSIF TOOL — كلمات متحركة / كلمات متحركة — ترجمة كلمة بكلمة تضرب مع الصوت
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -13,14 +13,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+ريل عمودي 9:16 فوق فيديو متحدث، تظهر فيه الترجمة العربية كلمة أو كلمتين في كل مرة في منتصف الثلث السفلي بخط عريض أبيض بحد أسود سميك، كل كلمة تقفز بضربة تكبير صغيرة لحظة نطقها، والكلمة المهمة تتلون بالأصفر وتكبر أكثر مع إيموجي أو زوم خفيف على الفيديو.
+
+A 9:16 reel over talking-head footage where Arabic captions appear one or two words at a time, centred in the lower third in bold white with a thick black outline; each word pops with a small scale punch the moment it is spoken, and key words turn yellow and punch bigger with an emoji or a slight zoom on the footage.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, Web Audio), suggested duration (30 s), aspect 9:16, difficulty 2/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك, Music / موسيقى.
+Categories: Kinetic type / تايبوغرافي متحرك, Photos / صور.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
 
 Category tactics:
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
+* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

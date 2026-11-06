@@ -1,7 +1,7 @@
 {
   "id": "pm-gabrielbuzziv-4ff0c6",
   "name": "Enxovaly baby app promo",
-  "name_ar": null,
+  "name_ar": "إعلان تطبيق تجهيز مستلزمات المولود بلمسة بنفسجية ناعمة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -31,5 +31,32 @@
     "playbooks/product-ui.md",
     "playbooks/charts.md",
     "playbooks/kinetic-type.md"
-  ]
+  ],
+  "summary_ar": "إعلان تطبيق مدته 15 ثانية لتجهيز مستلزمات المولود: حائط أيقونات ملابس وأدوات أطفال بنفسجية يميل في منظور ثلاثي الأبعاد تحت عناوين بخط سيريف مائل، ثم شرائح أيقونات بيضاء وهاتف يعرض نسبة التجهيز، صورة ملابس تُمسح وتُوزَّع على بطاقات أعمار، غرفة طفل أيزومترية تمتلئ بالأثاث مع عدّاد من 0% إلى 100%، وتنتهي بشعار التطبيق على خلفية لافندر.",
+  "summary_en": "A 15-second baby-checklist app promo: a tilted 3D wall of purple baby-item icon tiles under serif-italic headlines, then white icon chips and a phone showing progress, a clothing photo scanned and sorted into age cards, an isometric nursery filling with furniture as a ring counter climbs 0-100%, and a logo end card on soft lavender.",
+  "keywords": [
+    "app promo",
+    "baby app",
+    "icon wall",
+    "serif italic headline",
+    "phone mockup",
+    "isometric room",
+    "progress ring",
+    "lavender",
+    "إعلان تطبيق",
+    "مستلزمات المولود",
+    "غرفة أيزومترية",
+    "خط سيريف مائل",
+    "بنفسجي",
+    "واجهة تطبيق"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "Three.js"
+  ],
+  "brief": "styles/pm-gabrielbuzziv-4ff0c6/BRIEF.md"
 }

@@ -1,9 +1,9 @@
 ---
 name: pm-twoclipping-6dd14e
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 20-second product promo: black words type in on a warm cream gradient and a product link is pasted into a white app window, then it flips to black for a grid of creator selfies under a counter, a scored hooks list, a curved 3D carousel of vertical ad cards, a phone beside a launch panel, huge white result numbers, an orange payoff word and the logo. Use to make a new video in this look (Product UI); address it by ID pm-twoclipping-6dd14e.
 ---
 
-# KOSIF TOOL — UGC ad generator promo
+# KOSIF TOOL — UGC ad generator promo / إعلان أداة توليد إعلانات UGC: من رابط منتج إلى حملة منطلقة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/twoclipping-6dd14e
@@ -18,26 +18,29 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان منتج مدته 20 ثانية يبدأ بكلمات سوداء تُكتب كلمة بكلمة على خلفية كريمية دافئة ثم نافذة تطبيق بيضاء يُلصق فيها رابط منتج، وبعدها يتحول كل شيء إلى أسود: شبكة صور سيلفي لصانعي محتوى مع عدّاد تحليل، قائمة «هوكات» بدرجات، شريط دوّار ثلاثي الأبعاد من بطاقات فيديو عمودية، هاتف بجانب لوحة إطلاق حملة، أرقام نتائج ضخمة بالأبيض، ثم كلمة برتقالية وشعار التطبيق.
+
+A 20-second product promo: black words type in on a warm cream gradient and a product link is pasted into a white app window, then it flips to black for a grid of creator selfies under a counter, a scored hooks list, a curved 3D carousel of vertical ad cards, a phone beside a launch panel, huge white result numbers, an orange payoff word and the logo.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, Three.js, Web Audio), suggested duration (20 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Phone / هاتف, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, Photos / صور, Music / موسيقى, Code / كود.
+Categories: Product UI / واجهات المنتج, Phone / هاتف, Kinetic type / تايبوغرافي متحرك, Photos / صور, 3D / ثلاثي الأبعاد, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/phone.md](../../playbooks/phone.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/shapes.md](../../playbooks/shapes.md)
-- [playbooks/particles.md](../../playbooks/particles.md)
 - [playbooks/photos.md](../../playbooks/photos.md)
-- [playbooks/music.md](../../playbooks/music.md)
-- [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 * Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

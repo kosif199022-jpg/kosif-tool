@@ -1,9 +1,9 @@
 ---
 name: pm-sachaarbonel-8f14f4
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 59-second calm launch video on a blurred cream, peach and lavender gradient: navy serif headlines with italic second lines beside gently tilted white UI cards for each feature (one-line request, plan, a navy night clock as jobs finish, morning summary, sources, permissions, pricing, history), ending on a waitlist card. Use to make a new video in this look (Product UI); address it by ID pm-sachaarbonel-8f14f4.
 ---
 
-# KOSIF TOOL — Norilu product launch video
+# KOSIF TOOL — Norilu product launch video / فيديو إطلاق هادئ لمساعد أتمتة بخط سيريف وتدرجات باستيل
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/sachaarbonel-8f14f4
@@ -17,14 +17,19 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو إطلاق مدته نحو 59 ثانية على تدرج باستيل ضبابي (كريمي وخوخي ولافندر): عناوين سيريف كحلية بسطر ثانٍ مائل، تبدأ بمشكلة التقارير المتكررة ثم الشعار، ثم بطاقات واجهة بيضاء عائمة بميل خفيف لكل ميزة: كتابة طلب بجملة، خطة العمل، ساعة ليلية داكنة تعدّ والمهام تكتمل، ملخص الصباح بسؤال واحد، تقرير بمصادر، صلاحيات، مشاركة الفريق، التسعير، سجل الإصدارات، وبطاقة ختام بزر قائمة الانتظار.
+
+A 59-second calm launch video on a blurred cream, peach and lavender gradient: navy serif headlines with italic second lines beside gently tilted white UI cards for each feature (one-line request, plan, a navy night clock as jobs finish, morning summary, sources, permissions, pricing, history), ending on a waitlist card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (59 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية.
+Categories: Product UI / واجهات المنتج.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

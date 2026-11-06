@@ -1,9 +1,9 @@
 ---
 name: pm-twoclipping-5cba86
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 14-second square loop on warm light grey: one rounded black element morphs without cuts from a Generate button into a spinner, a music-player card with a gradient cover, a volume bar, a toggle, a Day/Week/Month switch, a white chart card, a command palette that types, a toast, and back to the button, a cursor clicking each change. Use to make a new video in this look (Product UI); address it by ID pm-twoclipping-5cba86.
 ---
 
-# KOSIF TOOL — Shape morphing through UI states
+# KOSIF TOOL — Shape morphing through UI states / شكل واحد يتحول عبر حالات الواجهة: من زر إلى مشغل إلى رسم بياني
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/twoclipping-5cba86
@@ -18,28 +18,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+حلقة مربعة مدتها 14 ثانية على رمادي فاتح دافئ: عنصر أسود واحد مستدير يتحول بلا قطع من زر «توليد» إلى مؤشر تحميل دائري ثم كبسولة ثم بطاقة مشغل موسيقى بغلاف متدرج، ثم شريط صوت، ثم مفتاح تبديل، ثم مبدّل أيام وأسابيع وأشهر، ثم بطاقة رسم بياني بيضاء بعداد ومنحنى، ثم لوحة أوامر يُكتب فيها، ثم إشعار، ويعود زراً كما بدأ، ومؤشر فأرة يقود كل تحول بنقرة.
+
+A 14-second square loop on warm light grey: one rounded black element morphs without cuts from a Generate button into a spinner, a music-player card with a gradient cover, a volume bar, a toggle, a Day/Week/Month switch, a white chart card, a command palette that types, a toast, and back to the button, a cursor clicking each change.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (React, CSS, HTML Canvas, Remotion), suggested duration (14 s), aspect 1:1, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, Characters / شخصيات, Photos / صور, Music / موسيقى, Code / كود.
+Categories: Product UI / واجهات المنتج, Shapes / أشكال, Charts / رسوم بيانية.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 - [playbooks/shapes.md](../../playbooks/shapes.md)
-- [playbooks/particles.md](../../playbooks/particles.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/photos.md](../../playbooks/photos.md)
-- [playbooks/music.md](../../playbooks/music.md)
-- [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,12 +1,13 @@
 {
   "id": "pm-levabashidze-2d713a",
   "name": "Swiss-style motion showreel",
-  "name_ar": null,
+  "name_ar": "شوريل موشن بالأسلوب السويسري: من التوقيت إلى التصيير",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "kinetic-type",
+    "shapes",
+    "3d"
   ],
   "creator": "@levabashidze",
   "creator_url": "https://x.com/levabashidze/status/2103786742520184909",
@@ -27,7 +28,35 @@
   "listed": true,
   "skill": "styles/pm-levabashidze-2d713a/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/3d.md"
+  ],
+  "summary_ar": "شوريل موشن مدته 15 ثانية بطابع سويسري تقني داخل إطار بعلامات زوايا ونصوص صغيرة أحادية العرض: كرة برتقالية ترتد فوق مسطرة زمنية على الأسود، «EASE IN / EASE OUT / never LINEAR» على البرتقالي مع منحنيات توقيت، أشكال تتحول من دائرة إلى نجمة إلى سداسي على الكريمي، شبكة مكعبات متساوية القياس تتموج، نمط منحنيات أسود متشابك، جدار كلمات «تصميم يتحرك»، شاشة تصيير زرقاء بنسبة مئوية، ثم بطاقة الاسم.",
+  "summary_en": "A 15-second Swiss-technical motion showreel in a corner-marked frame with tiny monospace labels: an orange ball bouncing on a ruler timeline, 'ease in / ease out / never linear' on orange with curve editors, a circle-to-star-to-hexagon morph, a rippling isometric cube grid, a curve-tile pattern, a scrolling word wall, a blue render counter and a name card.",
+  "keywords": [
+    "showreel",
+    "swiss design",
+    "motion principles",
+    "easing curves",
+    "bouncing ball",
+    "isometric grid",
+    "truchet pattern",
+    "type wall",
+    "render counter",
+    "شوريل",
+    "تصميم سويسري",
+    "مبادئ الحركة",
+    "منحنيات التيسير",
+    "تايبوغرافي متحرك"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "Three.js"
+  ],
+  "brief": "styles/pm-levabashidze-2d713a/BRIEF.md"
 }

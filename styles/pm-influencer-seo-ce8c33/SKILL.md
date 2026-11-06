@@ -1,6 +1,6 @@
 ---
 name: pm-influencer-seo-ce8c33
-description: A 15-second violet-on-black showreel for a generative media platform: a code terminal types a generate call over a dot grid, a cut to a generated macro of violet petals with water drops, then giant words VIDEO, AUDIO and 3D whose letters are filled with generated footage, with index numbers, model names and a waveform, a tilted wall of generated thumbnails, a counter rolling to 1,000+, a huge number over a portrait, a prompt card with a generate button, and the logo on white.
+description: A 15-second violet-on-black showreel for a generative media platform: a code terminal types a generate call over a dot grid, a cut to a generated macro of violet petals with water drops, then giant words VIDEO, AUDIO and 3D whose letters are filled with generated footage, with index numbers, model names and a waveform, a tilted wall of generated thumbnails, a counter rolling to 1,000+, a huge number over a portrait, a prompt card with a generate button, and the logo on white. Use to make a new video in this look (Charts); address it by ID pm-influencer-seo-ce8c33.
 ---
 
 # KOSIF TOOL — fal motion design showreel / ريل استعراضي لمنصة fal في 15 ثانية

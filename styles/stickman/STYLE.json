@@ -1,7 +1,7 @@
 {
   "id": "stickman",
   "name": "شخصيات عصوية",
-  "name_ar": "شخصيات عصوية",
+  "name_ar": "شخصيات عصوية بسيطة تمثل القصة بحركات معبرة على خلفية بيضاء",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,30 @@
   "playbooks": [
     "playbooks/characters.md",
     "playbooks/hand-drawn.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي بشخصيات عصوية سوداء بسيطة (رأس دائري وخطوط للأطراف) تمثل مواقف القصة على خلفية بيضاء: تمشي وتقفز وتتفاجأ، مع أشياء قليلة مرسومة بخط واحد ولون مميز واحد، وتعليق نصي عربي قصير.",
+  "summary_en": "A vertical reel with simple black stick figures (round head, line limbs) acting out the story on a white background: they walk, jump and react, with a few props drawn in a single line weight, one accent colour, and short Arabic text captions.",
+  "keywords": [
+    "stickman",
+    "stick figure",
+    "character animation",
+    "rig",
+    "explainer",
+    "comedy",
+    "شخصيات عصوية",
+    "رسوم بسيطة",
+    "تحريك شخصيات",
+    "قصة",
+    "كوميدي",
+    "رسم يدوي"
+  ],
+  "difficulty": 3,
+  "duration_s": 30,
+  "stack": [
+    "SVG",
+    "React",
+    "Remotion",
+    "GSAP"
+  ],
+  "brief": "styles/stickman/BRIEF.md"
 }

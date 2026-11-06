@@ -1,9 +1,9 @@
 ---
 name: pm-davidmarcus-a28a60
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 23-second vertical social promo in quiet Swiss style: large black sans headlines on an off-white faint grid with a fixed page header and an underlined section tab, flipping at times to charcoal pages; giant currency codes swap above a country counter, a settlement line fills between two currencies, a product list stacks and dims, a terminal types a payment call, and it ends on logo and URL. Use to make a new video in this look (Kinetic type); address it by ID pm-davidmarcus-a28a60.
 ---
 
-# KOSIF TOOL — Lightspark social promo video
+# KOSIF TOOL — Lightspark social promo video / ترويج سويسري بسيط لبنية دفع عالمية بالطول
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/davidmarcus-a28a60
@@ -17,14 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+ترويج اجتماعي عمودي مدته 23 ثانية بأسلوب سويسري هادئ: عناوين سوداء كبيرة بخط بلا زوائد على خلفية أوف وايت بشبكة باهتة، مع رأس صفحة ثابت وتبويب قسم مسطّر، تتبدل أحياناً إلى صفحات فحمية؛ رموز عملات ضخمة تتبدل مع عداد دول، خط تسوية بين عملتين يمتلئ، قائمة منتجات تتكدس وتخفت، طرفية كود تكتب أمر دفع، وختام بالشعار والرابط.
+
+A 23-second vertical social promo in quiet Swiss style: large black sans headlines on an off-white faint grid with a fixed page header and an underlined section tab, flipping at times to charcoal pages; giant currency codes swap above a country counter, a settlement line fills between two currencies, a product list stacks and dims, a terminal types a payment call, and it ends on logo and URL.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (23 s), aspect 9:16, difficulty 2/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Particles / جسيمات, Music / موسيقى.
-- [playbooks/particles.md](../../playbooks/particles.md)
-- [playbooks/music.md](../../playbooks/music.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Product UI / واجهات المنتج.
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

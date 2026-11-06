@@ -1,7 +1,7 @@
 {
   "id": "pm-anthonyriera-9b1b2a",
   "name": "Reddit marketing tool launch video",
-  "name_ar": null,
+  "name_ar": "إطلاق أداة تسويق على ريديت بتميمة شائكة حمراء",
   "origin": "PromptsMotion",
   "type": "Skill",
   "category": [
@@ -37,5 +37,33 @@
     "playbooks/characters.md",
     "playbooks/music.md",
     "playbooks/code.md"
-  ]
+  ],
+  "summary_ar": "فيديو إطلاق مدته 53 ثانية على خلفية سوداء لأداة تسويق عبر ريديت، تقوده تميمة حمراء شائكة مثل القنفذ: تظهر وتُعرّف بنفسها، تتصل بخمسة حسابات بصور ملونة، أشرطة سمعة تمتلئ، شعار بكسل ضخم، منشورات وردود مكتوبة مع قائمة تحقق، تحوّل متوهج من «مساعد» إلى «طيار آلي»، متصفح يُنفّذ المهام وحده، نتائج بحث ومحادثة ذكاء اصطناعي، وختام نصي بالشعار.",
+  "summary_en": "A 53-second launch video on black for a Reddit marketing tool, led by a spiky red hedgehog-like mascot: it appears and introduces itself, links to five colourful avatar accounts, karma bars fill, a giant pixel logo, drafted posts and replies with a checklist, a glowing copilot-to-autopilot flip, a browser that runs tasks on its own, search and chatbot results, and a text-and-logo finale.",
+  "keywords": [
+    "launch video",
+    "mascot",
+    "reddit marketing",
+    "browser automation",
+    "karma bars",
+    "pixel logo",
+    "checklist",
+    "saas promo",
+    "dark ui",
+    "فيديو إطلاق",
+    "تميمة",
+    "تسويق",
+    "أتمتة المتصفح",
+    "واجهة داكنة",
+    "شخصية متحركة"
+  ],
+  "difficulty": 3,
+  "duration_s": 53,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/pm-anthonyriera-9b1b2a/BRIEF.md"
 }

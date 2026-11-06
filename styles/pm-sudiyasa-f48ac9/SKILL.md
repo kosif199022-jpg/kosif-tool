@@ -1,9 +1,9 @@
 ---
 name: pm-sudiyasa-f48ac9
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A fast 15 s thank-you reel for an app reaching 100 users, cutting between gold, black, cream and hot-pink grounds: a heavy '100', the number in italic serif, a dot-matrix '100' in a pink halftone ring, an isometric block grid sprouting pink columns, a spiral particle galaxy, then one thank-you word per colour and a logo card. Use to make a new video in this look (Kinetic type); address it by ID pm-sudiyasa-f48ac9.
 ---
 
-# KOSIF TOOL — EyezOn 100 users thank-you
+# KOSIF TOOL — EyezOn 100 users thank-you / فيديو شكر لأول 100 مستخدم بأرقام نقطية ومكعبات إيزومترية ومجرة جسيمات
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/sudiyasa-f48ac9
@@ -17,14 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو شكر سريع (15 ثانية) لتطبيق وصل إلى 100 مستخدم، يتنقل بين خلفيات ذهبية وسوداء وكريمية ووردية: منحنى إيزنج بنقطة متوهجة، رقم 100 عريض ثم بخط مائل، مربع يتحول لعين، رقم 100 من نقاط داخل حلقة نصف تونية وردية، شبكة مكعبات إيزومترية 10×10 ترتفع منها أعمدة وردية، مجرة جسيمات لولبية، ثم كلمات الشكر كل كلمة على لون ونهاية بالشعار.
+
+A fast 15 s thank-you reel for an app reaching 100 users, cutting between gold, black, cream and hot-pink grounds: a heavy '100', the number in italic serif, a dot-matrix '100' in a pink halftone ring, an isometric block grid sprouting pink columns, a spiral particle galaxy, then one thank-you word per colour and a logo card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas, Three.js), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Charts / رسوم بيانية, Particles / جسيمات, Shapes / أشكال.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,11 +1,12 @@
 {
   "id": "pm-linearuncle-5d2bae",
   "name": "Derivative concept explainer",
-  "name_ar": null,
+  "name_ar": "شرح رياضي هادئ لمفهوم المشتقة على خلفية كحلية بأسلوب مانيم",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "diagrams"
+    "diagrams",
+    "charts"
   ],
   "creator": "@LinearUncle",
   "creator_url": "https://x.com/LinearUncle/status/2103128559174971663",
@@ -28,6 +29,33 @@
   "listed": true,
   "skill": "styles/pm-linearuncle-5d2bae/SKILL.md",
   "playbooks": [
-    "playbooks/diagrams.md"
-  ]
+    "playbooks/diagrams.md",
+    "playbooks/charts.md"
+  ],
+  "summary_ar": "درس رياضيات أفقي طويل (نحو 7 دقائق و37 ثانية) على خلفية كحلية داكنة بأسلوب مانيم: سيارة صغيرة وعداد سرعة، ثم منحنى s=t² تُرسم عليه قاطعة برتقالية تضيق حتى تصير مماساً أصفر، وجدول قيم يقترب من 2، ثم صيغة التعريف بإطارات ملونة، ودالة المشتقة بجانب الأصلية، وعدسة مكبرة تُظهر استقامة المنحنى، وملخص وأسئلة. العناوين صفراء أعلى اليسار والترجمة بالصينية أسفل الشاشة.",
+  "summary_en": "A 7.5-minute Manim-style maths lesson on dark navy: a car and speedometer, an s=t² curve where an orange secant shrinks into a yellow tangent beside a table converging on 2, the colour-boxed limit definition, the derivative plotted beside the original, a magnifier that straightens the curve, and a recap; yellow titles top-left, subtitles at the bottom.",
+  "keywords": [
+    "manim style",
+    "math explainer",
+    "derivative",
+    "calculus",
+    "tangent line",
+    "secant",
+    "limit",
+    "dark navy",
+    "subtitles",
+    "مشتقة",
+    "تفاضل",
+    "شرح رياضيات",
+    "مماس",
+    "درس تعليمي"
+  ],
+  "difficulty": 4,
+  "duration_s": 457,
+  "stack": [
+    "SVG",
+    "Remotion",
+    "React"
+  ],
+  "brief": "styles/pm-linearuncle-5d2bae/BRIEF.md"
 }

@@ -1,9 +1,9 @@
 ---
 name: pm-gavinpurcell-e6cd81
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A ~5 min photoreal documentary on superintelligence: a camel-coated presenter on a night riverside and in a brass-lit pub, cut with symbolic B-roll (falling dominoes, tape machines, a blue data-centre aisle, a gorilla, paper clips, a church sinking in sand), thin serif chapter cards, typed dictionary definitions and a typewriter quote, ending on a title over the river. Use to make a new video in this look (Photos); address it by ID pm-gavinpurcell-e6cd81.
 ---
 
-# KOSIF TOOL — A documentary about superintelligence
+# KOSIF TOOL — A documentary about superintelligence / وثائقي سينمائي عن الذكاء الفائق بمقدّمة على الشاشة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/gavinpurcell-e6cd81
@@ -17,12 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+وثائقي سينمائي واقعي مدته نحو 5 دقائق و15 ثانية عن الذكاء الفائق: مقدّمة على ضفة نهر ليلية ثم في حانة دافئة بمصابيح نحاسية، تتخللها لقطات رمزية (أحجار دومينو تتساقط، أشرطة بكرات قديمة، ممر مركز بيانات أزرق، غوريلا، كومة مشابك ورق، كنيسة تغرق في رمل)، مع عناوين فصول وتعريفات قاموسية بخط سريفي رفيع واقتباس على آلة كاتبة، وينتهي بشارة العنوان فوق النهر ليلاً.
+
+A ~5 min photoreal documentary on superintelligence: a camel-coated presenter on a night riverside and in a brass-lit pub, cut with symbolic B-roll (falling dominoes, tape machines, a blue data-centre aisle, a gorilla, paper clips, a church sinking in sand), thin serif chapter cards, typed dictionary definitions and a typewriter quote, ending on a title over the river.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Web Audio), suggested duration (315 s), aspect 16:9, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: creative motion.
-- (no category playbook yet)
+Categories: Photos / صور, Characters / شخصيات, Kinetic type / تايبوغرافي متحرك.
+- [playbooks/photos.md](../../playbooks/photos.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
-* Develop original choreography from the reference; verify imagery before claiming a match.
+* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

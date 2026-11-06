@@ -1,9 +1,9 @@
 ---
 name: pm-le0xet-da422b
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 4:5 vertical clip of about 16 s laid out as a cream dashboard: a headline at top, a large viewport playing a short 3D film of a red voxel block character and a tiny green robot bug wandering over a keyboard beside a glass jar, a row of tool cards below that light up in sequence, a pixel mascot speaking short lines, and a dark terminal typing the commands for each stage from planning to export. Use to make a new video in this look (3D); address it by ID pm-le0xet-da422b.
 ---
 
-# KOSIF TOOL — Animated short from a single laptop
+# KOSIF TOOL — Animated short from a single laptop / قصة قصيرة ثلاثية الأبعاد على لوحة مفاتيح داخل لوحة استوديو
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/le0xet-da422b
@@ -18,12 +18,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+مقطع عمودي 4:5 مدته نحو 16 ثانية بتصميم لوحة معلومات كريمية: عنوان أعلى الشاشة، ونافذة عرض كبيرة فيها فيلم قصير ثلاثي الأبعاد لشخصية فوكسل حمراء مربعة وحشرة روبوت خضراء صغيرة يتنقلان فوق لوحة مفاتيح بجانب كوب زجاجي، وتحتها صف بطاقات أدوات يضيء بالتسلسل، وتميمة بكسلية تقول جملاً قصيرة، وطرفية داكنة تكتب أوامر كل مرحلة من التخطيط حتى التصدير.
+
+A 4:5 vertical clip of about 16 s laid out as a cream dashboard: a headline at top, a large viewport playing a short 3D film of a red voxel block character and a tiny green robot bug wandering over a keyboard beside a glass jar, a row of tool cards below that light up in sequence, a pixel mascot speaking short lines, and a dark terminal typing the commands for each stage from planning to export.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, CSS), suggested duration (16 s), aspect 4:5, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Characters / شخصيات.
+Categories: 3D / ثلاثي الأبعاد, Characters / شخصيات, Code / كود.
+- [playbooks/3d.md](../../playbooks/3d.md)
 - [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 * Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

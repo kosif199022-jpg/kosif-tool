@@ -1,9 +1,9 @@
 ---
 name: pm-lexnlin-6161a6
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 30-second launch film on light grey-white for a motion tool: a line types with a blue caret as code-style effect chips tumble below, then a huge blue-shadowed headline, splitting cards, a slot reel of techniques, a waveform timeline, a carousel of sample films over a ruler playhead, a terminal install and a logo end card with a command pill. Use to make a new video in this look (Product UI); address it by ID pm-lexnlin-6161a6.
 ---
 
-# KOSIF TOOL — Cinetic skill launch film
+# KOSIF TOOL — Cinetic skill launch film / فيلم إطلاق أداة موشن بمؤشر كتابة يتحول إلى مخرج
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/lexnlin-6161a6
@@ -17,15 +17,22 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيلم إطلاق مدته 30 ثانية على أبيض رمادي فاتح لأداة تصنع أفلام موشن: جملة تُكتب بمؤشر أزرق وتحتها تتساقط شارات أسماء مؤثرات بخط الكود، ثم عنوان ضخم بظل أزرق مزاح، بطاقات تنقسم، قائمة تقنيات تدور كالبكرة، شريط زمني بموجة، ثم شريط عرض أفقي لأمثلة (شاشة بناء حمراء بعداد، تطبيق فواتير، شعار، تطبيق هاتف) وطرفية تثبّت الأداة وبطاقة ختام بالشعار والأمر.
+
+A 30-second launch film on light grey-white for a motion tool: a line types with a blue caret as code-style effect chips tumble below, then a huge blue-shadowed headline, splitting cards, a slot reel of techniques, a waveform timeline, a carousel of sample films over a ruler playhead, a terminal install and a logo end card with a command pill.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (30 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Characters / شخصيات, Code / كود.
+Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك, Code / كود.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 - [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)

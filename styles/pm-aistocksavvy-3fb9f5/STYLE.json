@@ -1,7 +1,7 @@
 {
   "id": "pm-aistocksavvy-3fb9f5",
   "name": "Stock analysis app promo",
-  "name_ar": null,
+  "name_ar": "عرض تطبيق تحليل أسهم بشريط أسعار وبطاقات واجهة عائمة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -29,5 +29,32 @@
   "playbooks": [
     "playbooks/product-ui.md",
     "playbooks/charts.md"
-  ]
+  ],
+  "summary_ar": "إعلان تطبيق أسهم مدته 15 ثانية على خلفية كحلية بنفسجية متوهجة: شعار يلتف داخل حلقة، ثم عنوان ضخم بثلاث كلمات مع تشويش لوني بين شريطي أسعار مائلين، ثم خمسة أقسام مرقمة (أخبار، أرباح، تقويم، تقييمات محللين، قائمة متابعة) كل منها عنوان بلونين بجانب بطاقة واجهة بيضاء تتحرك، وجدار من الشاشات المائلة، وشعار ختامي.",
+  "summary_en": "A 15-second stock-app promo on a glowing navy-violet ground: a logo mark spins in a ring, a three-word punch headline with RGB-split glitch sits between two slanted ticker tapes, then five numbered sections (news, earnings, calendar, analyst targets, watchlist) each pair a two-tone headline with a floating white UI card, before a tilted wall of app screens and a wordmark end card.",
+  "keywords": [
+    "stock app",
+    "fintech promo",
+    "ticker tape",
+    "UI cards",
+    "earnings",
+    "price target",
+    "watchlist",
+    "violet glow",
+    "glitch headline",
+    "تطبيق أسهم",
+    "إعلان تطبيق",
+    "شريط أسعار",
+    "بطاقات واجهة",
+    "أرباح الشركات",
+    "تحليل السوق"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-aistocksavvy-3fb9f5/BRIEF.md"
 }

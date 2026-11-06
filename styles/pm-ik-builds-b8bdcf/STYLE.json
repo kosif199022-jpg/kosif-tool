@@ -1,19 +1,16 @@
 {
   "id": "pm-ik-builds-b8bdcf",
   "name": "Paper-style product launch film",
-  "name_ar": null,
+  "name_ar": "فيلم إطلاق بأسلوب الورق: كرة فيروزية تقود القصة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
     "charts",
-    "diagrams",
     "kinetic-type",
     "shapes",
-    "particles",
-    "characters",
-    "music",
-    "code"
+    "hand-drawn",
+    "ads"
   ],
   "creator": "@ik_builds",
   "creator_url": "https://x.com/ik_builds/status/2103890476885585923",
@@ -39,12 +36,39 @@
   "playbooks": [
     "playbooks/product-ui.md",
     "playbooks/charts.md",
-    "playbooks/diagrams.md",
     "playbooks/kinetic-type.md",
     "playbooks/shapes.md",
-    "playbooks/particles.md",
-    "playbooks/characters.md",
-    "playbooks/music.md",
-    "playbooks/code.md"
-  ]
+    "playbooks/hand-drawn.md",
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "فيلم إطلاق منتج مدته 15 ثانية تقوده كرة فيروزية لامعة: ترتد على خط مرسوم فوق ورق أبيض تاركة آثاراً منقطة وملاحظات بخط اليد، تحيط بها أوراق ووثائق بشرائط لاصقة، ثم ينقلب المشهد إلى سبورة داكنة تتوهج فيها الكرة وتمتص الأوراق، عنوان ضخم بأحرف كتلية ثلاثية الأبعاد يتبعثر، رسم بياني بمنحنى صاعد، ثم عودة إلى الورق والشعار.",
+  "summary_en": "A 15-second launch film led by a glossy teal ball: it bounces on a drawn line over off-white paper leaving dotted ghost trails and red handwritten notes beside taped documents, then on a dark board it glows and absorbs them, a huge extruded block-letter headline tumbles, a chart draws a rising S-curve, and it returns to paper for the logo.",
+  "keywords": [
+    "product launch",
+    "paper style",
+    "bouncing ball",
+    "motion trail",
+    "handwritten notes",
+    "chalkboard",
+    "3d block letters",
+    "s-curve chart",
+    "hero object",
+    "إطلاق منتج",
+    "أسلوب الورق",
+    "كرة مرتدة",
+    "ملاحظات يدوية",
+    "سبورة داكنة",
+    "منحنى صاعد",
+    "شخصية رمزية"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "HTML Canvas",
+    "GSAP",
+    "SVG",
+    "Remotion",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-ik-builds-b8bdcf/BRIEF.md"
 }

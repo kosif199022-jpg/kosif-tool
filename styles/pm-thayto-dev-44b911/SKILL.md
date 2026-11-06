@@ -1,6 +1,6 @@
 ---
 name: pm-thayto-dev-44b911
-description: A calm 15-second promo for a CV-tailoring tool's Pro plan: a serif question about how many applications it takes beside a fanning stack of job cards that counts up, a per-job price list against a fixed Pro card, a feature grid, a dark cost-per-day slide, a payment card and a logo end on royal blue.
+description: A calm 15-second promo for a CV-tailoring tool's Pro plan: a serif question about how many applications it takes beside a fanning stack of job cards that counts up, a per-job price list against a fixed Pro card, a feature grid, a dark cost-per-day slide, a payment card and a logo end on royal blue. Use to make a new video in this look (Charts); address it by ID pm-thayto-dev-44b911.
 ---
 
 # KOSIF TOOL — AjustaCV Pro pricing promo / ترويج خطة Pro لأداة ملاءمة السيرة الذاتية

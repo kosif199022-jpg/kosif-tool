@@ -1,7 +1,7 @@
 {
   "id": "neon-tech",
   "name": "نيون تقني",
-  "name_ar": "نيون تقني",
+  "name_ar": "نيون تقني بواجهات HUD وجسيمات",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,33 @@
   "playbooks": [
     "playbooks/ads.md",
     "playbooks/particles.md"
-  ]
+  ],
+  "summary_ar": "عالم تقني داكن بتوهج نيون سماوي وأرجواني: خطوط دوائر كهربائية تجري نبضات ضوء، واجهات HUD بحلقات وعدادات، جسيمات تتجمع لتكوّن الأيقونات والكلمات، ووميض رقمي خفيف، بإيقاع سريع لإعلانات التقنية.",
+  "summary_en": "A dark tech world in cyan and magenta neon glow: circuit traces carry light pulses, HUD rings and counters spin around the subject, particles swarm to form icons and words, and short digital glitches punctuate a fast rhythm built for tech ads and AI explainers.",
+  "keywords": [
+    "neon",
+    "tech ad",
+    "HUD",
+    "particles",
+    "circuit",
+    "glow",
+    "AI explainer",
+    "futuristic",
+    "نيون",
+    "تقني",
+    "جسيمات",
+    "واجهة HUD",
+    "توهج",
+    "إعلان تقنية",
+    "ذكاء اصطناعي"
+  ],
+  "difficulty": 4,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "Three.js",
+    "WebGL"
+  ],
+  "brief": "styles/neon-tech/BRIEF.md"
 }

@@ -1,9 +1,9 @@
 ---
 name: cinematic-3d
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A vertical reel of realistically lit 3D scenes: a dark environment pierced by volumetric light and haze, a slow crane-like camera with shallow depth of field, physical materials and a teal-and-orange film grade, with sparse Arabic titles like a movie trailer. Use to make a new video in this look (3D); address it by ID cinematic-3d.
 ---
 
-# KOSIF TOOL — مشاهد 3D سينمائية
+# KOSIF TOOL — مشاهد 3D سينمائية / مشاهد ثلاثية الأبعاد سينمائية بإضاءة درامية وعدسة واقعية
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي بمشاهد ثلاثية الأبعاد واقعية الإضاءة: بيئة مظلمة يخترقها ضوء حجمي وضباب، كاميرا تتحرك ببطء كرافعة سينمائية مع عمق ميدان، مواد واقعية ولون سينمائي برتقالي وأزرق، وعناوين عربية قليلة كترويسة فيلم.
+
+A vertical reel of realistically lit 3D scenes: a dark environment pierced by volumetric light and haze, a slow crane-like camera with shallow depth of field, physical materials and a teal-and-orange film grade, with sparse Arabic titles like a movie trailer.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, React, Remotion), suggested duration (35 s), aspect 9:16, difficulty 5/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: 3D / ثلاثي الأبعاد.

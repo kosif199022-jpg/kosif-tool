@@ -1,7 +1,7 @@
 {
   "id": "anime-action",
   "name": "أنمي أكشن",
-  "name_ar": "أنمي أكشن",
+  "name_ar": "أنمي أكشن: لقطات قتال بخطوط سرعة ووميض وتأطير ديناميكي",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -24,5 +24,31 @@
   "skill": "styles/anime-action/SKILL.md",
   "playbooks": [
     "playbooks/characters.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي بأسلوب الأنمي الياباني في مشاهد الحركة: شخصيات بتظليل حاد على درجتين، خطوط سرعة وتجميد لحظة الضربة بوميض أبيض، لقطات مائلة وقريبة على العيون، وخلفيات مرسومة بسماء درامية، وعناوين عربية تضرب الشاشة مع الضربات.",
+  "summary_en": "A vertical reel in Japanese anime action style: characters with hard two-tone cel shading, speed lines and a white-flash impact freeze on each hit, dutch-angle shots and extreme eye close-ups, painted backgrounds with dramatic skies, and Arabic titles that slam in with the hits.",
+  "keywords": [
+    "anime",
+    "action",
+    "cel shading",
+    "speed lines",
+    "impact frame",
+    "fight scene",
+    "japanese animation",
+    "أنمي",
+    "أكشن",
+    "قتال",
+    "خطوط سرعة",
+    "شخصيات",
+    "مانجا"
+  ],
+  "difficulty": 5,
+  "duration_s": 26,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "HTML Canvas"
+  ],
+  "brief": "styles/anime-action/BRIEF.md"
 }

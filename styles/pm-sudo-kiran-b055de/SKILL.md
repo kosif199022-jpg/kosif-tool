@@ -1,9 +1,9 @@
 ---
 name: pm-sudo-kiran-b055de
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 30-second ad for a study-summary tool: two papers in dark space multiply into a storm of thousands of pages with a counter, then a text vortex around a three-bar neon logo, a glowing concept map of photosynthesis, books and links pulled into the logo that output illustrations and explainer videos, a leaf diagram on light paper with its equation, fast kinetic words and a logo end card. Use to make a new video in this look (Product UI); address it by ID pm-sudo-kiran-b055de.
 ---
 
-# KOSIF TOOL — DistilBook motion explainer
+# KOSIF TOOL — DistilBook motion explainer / إعلان تطبيق يحوّل الكتب والأوراق إلى خرائط مفاهيم ورسوم متحركة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/sudo-kiran-b055de
@@ -17,16 +17,27 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان مدته 30 ثانية لأداة تلخيص تعليمية: يبدأ بورقتين في الفراغ الداكن تتكاثران إلى عاصفة من آلاف الصفحات مع عدّاد، ثم دوامة نصية حول شعار من ثلاثة أعمدة نيون، خريطة مفاهيم متوهجة لعملية البناء الضوئي، كتب وروابط تُسحب إلى الشعار وتخرج رسوماً ومقاطع شرح، ورقة شجر مرسومة على خلفية فاتحة مع معادلتها، ثم كلمات حركية سريعة وبطاقة الشعار.
+
+A 30-second ad for a study-summary tool: two papers in dark space multiply into a storm of thousands of pages with a counter, then a text vortex around a three-bar neon logo, a glowing concept map of photosynthesis, books and links pulled into the logo that output illustrations and explainer videos, a leaf diagram on light paper with its equation, fast kinetic words and a logo end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, SVG, WebGL), suggested duration (30 s), aspect 16:9, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Diagrams / مخططات.
+Categories: Product UI / واجهات المنتج, Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك, Particles / جسيمات, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/diagrams.md](../../playbooks/diagrams.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

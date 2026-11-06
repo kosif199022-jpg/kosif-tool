@@ -1,9 +1,9 @@
 ---
 name: pm-anilraok-eff262
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A ~42-second vertical 3D story: wooden letter tiles with glossy eyes and eyebrows hop into place on a paper mini-crossword on a dark table while the Q tile is left alone and worried in bokeh-lit close-ups, until it finds its corner slot, confetti bursts, and it ends on a top-down view of the solved grid with a serif headline and an app name card. Use to make a new video in this look (Characters); address it by ID pm-anilraok-eff262.
 ---
 
-# KOSIF TOOL — Scrabble tile character story
+# KOSIF TOOL — Scrabble tile character story / قصة بلاطات حروف خشبية بعيون: الحرف Q يبحث عن مكانه
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/anilraok-eff262
@@ -18,16 +18,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+قصة قصيرة طولية مدتها نحو 42 ثانية بأسلوب ثلاثي الأبعاد واقعي: بلاطات حروف خشبية بعيون لامعة وحواجب تقفز وتصطف على شبكة كلمات متقاطعة ورقية فوق طاولة داكنة، بينما يبقى الحرف Q وحيداً ومحتاراً بلقطات قريبة وأضواء بوكيه، حتى يجد مكانه في الزاوية فتنفجر قصاصات احتفالية، وتنتهي بلقطة علوية للشبكة المكتملة وعنوان بخط مذيّل وبطاقة اسم التطبيق.
+
+A ~42-second vertical 3D story: wooden letter tiles with glossy eyes and eyebrows hop into place on a paper mini-crossword on a dark table while the Q tile is left alone and worried in bokeh-lit close-ups, until it finds its corner slot, confetti bursts, and it ends on a top-down view of the solved grid with a serif headline and an app name card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, React, Remotion), suggested duration (42 s), aspect 9:16, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Characters / شخصيات, Code / كود.
-- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+Categories: Characters / شخصيات, 3D / ثلاثي الأبعاد, Ads / إعلانات.
 - [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
-* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,12 +1,13 @@
 {
   "id": "pm-chatgptastra-0d95c7",
   "name": "Motion principles showreel",
-  "name_ar": null,
+  "name_ar": "شوريل مبادئ الحركة بتعليقات مكتوبة باليد",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "kinetic-type",
+    "diagrams",
+    "shapes"
   ],
   "creator": "@ChatGptAstra",
   "creator_url": "https://x.com/ChatGptAstra/status/2103834787647807540",
@@ -27,7 +28,34 @@
   "listed": true,
   "skill": "styles/pm-chatgptastra-0d95c7/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/diagrams.md",
+    "playbooks/shapes.md"
+  ],
+  "summary_ar": "شوريل مدته 15 ثانية يشرح مبادئ الحركة وهو يطبقها: كرة زرقاء ترتد مع آثار تباعد وتعليقات زرقاء وحمراء بخط اليد (ابطأ في البداية والنهاية، انضغاط، تمدد)، عنوان ضخم مكثف يتجمع حرفاً حرفاً، كلمات حركة على الأسود كل منها تؤدي معناها، منحنى موضع-زمن خطي يُشطب ليصير ناعماً، ذيل جسيمات للمتابعة، حلقة تحميل للتوقع، ثم توقيع.",
+  "summary_en": "A 15 s showreel that performs the motion principles it names: a blue ball bouncing with spacing ghosts and handwritten notes (slow in/out, squash, stretch), a condensed headline assembling, motion words on black that do what they say, a linear curve crossed out for an ease, a dot trail for follow-through, a loading ring for anticipation, then a signature.",
+  "keywords": [
+    "motion principles",
+    "squash and stretch",
+    "easing curve",
+    "follow-through",
+    "anticipation",
+    "handwritten annotations",
+    "kinetic type",
+    "showreel",
+    "مبادئ الحركة",
+    "انضغاط وتمدد",
+    "منحنى التباطؤ",
+    "تعليقات بخط اليد",
+    "تايبوغرافي متحرك",
+    "شوريل"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-chatgptastra-0d95c7/BRIEF.md"
 }

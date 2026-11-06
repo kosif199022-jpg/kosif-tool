@@ -1,9 +1,9 @@
 ---
 name: pm-thismacapital-dfba20
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second French-language visa promo in sky blue and white: a headline beside a boarding pass that gets stamped, a paper plane looping a typed line, a dark suitcase under a checklist pill that ticks through six procedures, a slanted wipe into destination photos with huge names, three destination cards, and a logo end card. Use to make a new video in this look (Ads); address it by ID pm-thismacapital-dfba20.
 ---
 
-# KOSIF TOOL — Travel visa service promo
+# KOSIF TOOL — Travel visa service promo / إعلان خدمة تأشيرات وإقامة: تذكرة وحقيبة وقائمة إجراءات تكتمل
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/thismacapital-dfba20
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان مدته 15 ثانية باللغة الفرنسية بالأزرق السماوي والأبيض: عنوان ثقيل بجانب بطاقة صعود طائرة يُختم عليها «محجوز»، ثم أرضية زرقاء كاملة ومسار طائرة ورقية منقط يدور حول جملة تُكتب، وحقيبة سفر داكنة يتبدل فوقها شريط إجراءات (إقامة، شركة، بنك، تأمين، سكن، تأشيرات) مع عداد نقاط حتى «كل شيء جاهز»، ثم مسحة مائلة إلى صور وجهات بأسمائها الضخمة، وثلاث بطاقات وجهات معاً، وختام بالشعار.
+
+A 15-second French-language visa promo in sky blue and white: a headline beside a boarding pass that gets stamped, a paper plane looping a typed line, a dark suitcase under a checklist pill that ticks through six procedures, a slanted wipe into destination photos with huge names, three destination cards, and a logo end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG, Web Audio), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Ads / إعلانات, Kinetic type / تايبوغرافي متحرك, Photos / صور.
+- [playbooks/ads.md](../../playbooks/ads.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

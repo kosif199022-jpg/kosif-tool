@@ -1,13 +1,14 @@
 {
   "id": "pm-reyzostyle-b55864",
   "name": "Chunku product promo",
-  "name_ar": null,
+  "name_ar": "إعلان أداة محتوى داكن: عناوين خاطفة وشبكة صور مصغرة ونص يُكتب",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
+    "kinetic-type",
     "charts",
-    "kinetic-type"
+    "ads"
   ],
   "creator": "@reyzostyle",
   "creator_url": "https://x.com/reyzostyle/status/2105421514665542114",
@@ -29,7 +30,36 @@
   "skill": "styles/pm-reyzostyle-b55864/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
+    "playbooks/kinetic-type.md",
     "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "إعلان منتج مدته 10 ثوانٍ على خلفية فحمية بزوايا إطار رفيعة: كلمات ضخمة تومض واحدة تلو الأخرى، عدّاد مشاهدات رمادي يُشطب، شبكة من ثلاثة صفوف لصور مصغرة لمقاطع قصيرة يمسحها خط ضوئي فتبرز القوية منها، بطاقة «12x ثم 31x» بشريط تقدم، لوحة تحول عنوان مقطع إلى نسختك، نص سيناريو يُكتب حرفاً حرفاً، ثم شعار زهرة واسم المنتج وزر.",
+  "summary_en": "A 10-second dark product spot in thin corner-bracket framing: huge single words flash, a grey view counter is struck through, a scan line sweeps a wall of short-video thumbnails and lifts the outliers, a multiplier counts 12x to 31x, a borrowed title scrambles into your own version, a hook line types on, and it ends on a flower logo and button.",
+  "keywords": [
+    "product promo",
+    "dark UI",
+    "creator tool",
+    "thumbnail wall",
+    "scan line",
+    "outlier",
+    "multiplier counter",
+    "text scramble",
+    "typing script",
+    "إعلان منتج",
+    "واجهة داكنة",
+    "صور مصغرة",
+    "عدّاد",
+    "كتابة نص",
+    "صانع محتوى"
+  ],
+  "difficulty": 3,
+  "duration_s": 10,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-reyzostyle-b55864/BRIEF.md"
 }

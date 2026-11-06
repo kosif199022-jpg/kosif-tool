@@ -1,12 +1,13 @@
 {
   "id": "pm-eyishazyer-af035b",
   "name": "Motion designer showreel",
-  "name_ar": null,
+  "name_ar": "شوريل مصمم موشن: فصول الإيقاع والبُعد والتدفق ومبادئ الحركة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "kinetic-type",
+    "shapes",
+    "charts"
   ],
   "creator": "@eyishazyer",
   "creator_url": "https://x.com/eyishazyer/status/2103816865852129686",
@@ -27,7 +28,36 @@
   "listed": true,
   "skill": "styles/pm-eyishazyer-af035b/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/charts.md"
+  ],
+  "summary_ar": "شوريل شخصي لمصمم موشن مدته 15 ثانية، يغيّر لون الخلفية مع كل فصل: كرة برتقالية ترتد وتنضغط أمام عد تنازلي، ثم انفجار قصاصات ملونة يكشف اسماً ضخماً بظل مزدوج بنفسجي وأحمر وختم دائري، ثم شبكة مربعات تتحول دوائر بموجة لونية «إيقاع»، ثم عقدة أنبوبية نيون وردية زرقاء تدور «بُعد»، ثم خطوط جبلية متموجة على البرتقالي «تدفق»، ثم لوحة أرقام ومخططات «أنظمة»، ثم كلمات مبادئ الحركة على خلفيات صارخة تتبدل بسرعة، وختام بالشعار.",
+  "summary_en": "A 15-second motion-designer showreel with a new loud ground colour per chapter: a squash-and-stretch ball before a countdown, a confetti burst revealing a huge double-shadowed name, a square-to-circle grid wave, a spinning neon tube knot, ridge lines on orange, a stats panel, then EASE, SPACING and OVERLAP flashing fast and a logo end.",
+  "keywords": [
+    "motion designer reel",
+    "showreel",
+    "principles of motion",
+    "squash and stretch",
+    "generative grid",
+    "torus knot",
+    "ridge lines",
+    "color blocking",
+    "شوريل",
+    "مصمم موشن",
+    "مبادئ الحركة",
+    "كرة مرتدة",
+    "تايبوغرافي عريض",
+    "ألوان صارخة"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "HTML Canvas",
+    "Three.js",
+    "SVG"
+  ],
+  "brief": "styles/pm-eyishazyer-af035b/BRIEF.md"
 }

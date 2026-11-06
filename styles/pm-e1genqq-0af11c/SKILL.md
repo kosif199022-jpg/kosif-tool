@@ -1,9 +1,9 @@
 ---
 name: pm-e1genqq-0af11c
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A two-minute dark browser screen recording demoing a motion-film plugin, from a typed chat request and a streamed shot plan to the repo's style gallery, install and render docs, then a calm cream product film with a bold two-line headline and three task cards that tick one by one until the last turns deep green. Use to make a new video in this look (Product UI); address it by ID pm-e1genqq-0af11c.
 ---
 
-# KOSIF TOOL — Lemo Opuscar motion film plugin
+# KOSIF TOOL — Lemo Opuscar motion film plugin / عرض شاشة لإضافة أفلام موشن: من الطلب إلى فيلم منتج هادئ بلون أخضر
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/e1genqq-0af11c
@@ -17,18 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+تسجيل شاشة مدته نحو دقيقتين لمتصفح بوضع داكن يعرض أداة إضافة لصنع أفلام الموشن: طلب يُكتب في محادثة ثم خطة مكتوبة طويلة بلقطات وتوقيتات، ثم صفحة المستودع بمعرض أساليب مصغرة وتعليمات التثبيت وجدول أوامر التصيير، ثم ثلاثة إطارات مفتاحية وأخيراً فيلم منتج بسيط على خلفية كريمية: عنوان عريض من سطرين يساراً وثلاث بطاقات مهام يميناً تُعلَّم واحدة تلو الأخرى حتى يتحول الزر الأخير إلى أخضر غامق ويظهر زر دعوة للفعل.
+
+A two-minute dark browser screen recording demoing a motion-film plugin, from a typed chat request and a streamed shot plan to the repo's style gallery, install and render docs, then a calm cream product film with a bold two-line headline and three task cards that tick one by one until the last turns deep green.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (119 s), aspect 16:9, difficulty 2/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Characters / شخصيات, Code / كود.
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/shapes.md](../../playbooks/shapes.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
+Categories: Product UI / واجهات المنتج, Code / كود, Ads / إعلانات.
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

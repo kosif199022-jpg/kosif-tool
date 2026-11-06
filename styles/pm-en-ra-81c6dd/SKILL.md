@@ -1,9 +1,9 @@
 ---
 name: pm-en-ra-81c6dd
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 16-second square product promo in white cards and red-orange: a cursor pastes a URL, a black 'Reading' pill fills, a product card, community match bars get ticked, a scan finds opportunities, a reply with three versions is approved and scheduled at peak, a posted card climbs in upvotes with a clicks chart, and an orange mascot logo closes. Use to make a new video in this look (Product UI); address it by ID pm-en-ra-81c6dd.
 ---
 
-# KOSIF TOOL — Website analyzer product promo
+# KOSIF TOOL — Website analyzer product promo / إعلان منتج يحلل الموقع ويجد فرص النشر
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/en-ra-81c6dd
@@ -17,16 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان مربع مدته 16 ثانية بواجهة بيضاء دافئة وبرتقالي أحمر: مؤشر يلصق رابط منتج ويضغط «Analyze»، شريط «Reading…» أسود يمتلئ، بطاقة المنتج بالوسوم، قائمة مجتمعات بنسب تطابق تُختار، حبة «Scanning» ثم «3 opportunities found»، بطاقة منشور بحلقة درجة، ردّ بثلاث نسخ يُعتمد، منزلق موعد النشر عند الذروة، بطاقة «Posted» تتصاعد أصواتها مع رسم نقرات، ثم شعار شخصية برتقالية مبتسمة.
+
+A 16-second square product promo in white cards and red-orange: a cursor pastes a URL, a black 'Reading' pill fills, a product card, community match bars get ticked, a scan finds opportunities, a reply with three versions is approved and scheduled at peak, a posted card climbs in upvotes with a clicks chart, and an orange mascot logo closes.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (React, CSS, Remotion, SVG), suggested duration (16 s), aspect 1:1, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+Categories: Product UI / واجهات المنتج, Ads / إعلانات, Charts / رسوم بيانية.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 - [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.
