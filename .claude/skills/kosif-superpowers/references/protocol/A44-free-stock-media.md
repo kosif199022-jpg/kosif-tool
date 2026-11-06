@@ -49,6 +49,17 @@
 
 المفاتيح مجانية من صفحات المطورين (pexels.com/api، pixabay.com/api/docs، unsplash.com/developers) وتوضع في متغيرات بيئة الجلسة، **ولا تُلصق في المحادثة أبدًا**. بدونها تعمل المصادر المجانية بلا مفتاح.
 
+**القائمة الكاملة (129 موقعًا، 6-11-2026):** `data/free_media_catalog.json` عبر `scripts/free_media_catalog.py`. فيها المئة موقع التي أرسلها المالك (فيديو، أقسام مجانية في مواقع مدفوعة، مؤثرات VFX، أرشيفات وجهات حكومية، صور، متاحف، فضاء، خامات وHDRI) و29 إضافة: موسيقى ومؤثرات صوتية (Freesound، YouTube Audio Library، Pixabay Music، Incompetech، Sonniss...)، رسوم وLottie وخطوط عربية، متاحف فيها آثار مصرية (بروكلين، والترز، اللوفر، المتحف المصري بتورينو، المتحف البريطاني غير تجاري)، صور أقمار صناعية (Copernicus، NASA Earth Observatory) وطبيعة 4K. لكل موقع: الترخيص، التجاري، النسب، وأي أداة عندنا تبحث فيه.
+
+| تريد | الأمر |
+|---|---|
+| طبيعة بدقة عالية تجاري بلا نسب | `free_media_catalog.py list --topic nature-4k --commercial --no-credit` |
+| صور وفيديو عن مصر | `free_media_catalog.py list --topic egypt` ثم `links "cairo" --topic egypt` |
+| موسيقى ومؤثرات صوتية | `free_media_catalog.py list --section audio` |
+| الأفضل للمونتاج (⭐) | `free_media_catalog.py list --star` |
+
+القائمة تسرد ولا تحمّل: البحث والتحميل مع الترخيص يبقى بـ `free_footage.py` و`free_photos.py`.
+
 ## 3. قواعد الترخيص (إلزامية)
 
 1. **الأداة تسجّل الترخيص ولا تمنحه.** ما في الـ sidecar هو ما يعلنه الموقع؛ في عمل مدفوع افتح `page_url` وتأكد.

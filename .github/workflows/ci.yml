@@ -220,6 +220,8 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_free_footage.py' -v
       - name: Free photos search and download (offline; synthetic API answers, key gating, licence filters, sidecars)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_free_photos.py' -v
+      - name: Free media catalog, the montage source list (offline; validation, the 100-site list, filters, search links)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_free_media_catalog.py' -v
       - name: Site snapshot, goclone capabilities (offline; local fixture server, link rewriting, CSS chains, design read-out, rights/robots/private/size refusals)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_site_snapshot.py' -v
       - name: Install PyAV for the real decode test (numpy comes with opencv-python-headless above)
