@@ -76,3 +76,27 @@ actual execution must continue to be reported as separate milestones.
 `sources.jsonl` stores one machine-extracted link per catalog entry with its source hash and code fingerprint (where a local file exists). `summary.json` stores the exact input count and index hash. `verify` detects changed or missing sources. These are fast bookkeeping checks, **not** 7,000 functional test runs.
 
 The current implementation covers full-catalog extraction, exact linking, catalog-wide method grouping and lineage, task-specific native composition, and integrity checking. It **does not** claim that every catalog method has been rewritten into one runtime program, or that every original feature has been manually reviewed. Those milestones require actual further code and cannot be inferred from a generated index.
+
+## Creative Council — no artistic gatekeepers
+
+The new independent creative council has **12 expert roles** (not a rights officer): chair, analyst, dramatic writer, creative director, visual director, motion/render engineer, adversarial critic, decision specialist, researcher, systems thinker, audience advocate, and learning specialist.
+
+It reads the original **120 Dragon Mind frameworks**, **63 Superpowers mental models**, and **47 thinking-core power records**, assigns every record to exactly one primary expert and may share nonexclusive secondary lenses. Counts are source records, not independent agents, live tools, or unique methods after semantic deduplication. The independent native Black Dragon's existing media boundary remains unchanged.
+
+From the repository root:
+
+```bash
+python3 .claude/skills/kosif-black-dragon/scripts/creative_council.py roster
+python3 .claude/skills/kosif-black-dragon/scripts/black_dragon.py council "اعمل مونتاج درامي من صوت" --out out/creative-council.json
+python3 .claude/skills/kosif-black-dragon/scripts/creative_council.py verdict --plan out/creative-council.json --submissions submissions.json --out out/verdict.json
+```
+
+There is **no compulsory member quorum, debate-round count, artistic rights seat, rights veto, or forced final vote**. The optional rounds are proposals, cross-examination, and scoring, and may be supplied partly or not at all. Unscored or incomplete opinions stay advisory, without invented winners or evidence. The optional weighted scoring uses only provided criteria and never proves aesthetic merit. A claim of independent expert runs needs corresponding distinct run IDs; simulated or unverified opinions are clearly labelled.
+
+**Safety and action boundary:** no hard artistic censorship or veto seat, but council planning cannot itself pay for tools, upload media or publish anything. Those actions still require the appropriate authorization and actual licence/rights checks at the execution stage. Do not claim a video, preview, independent council debate, or completed media QA from a planning receipt.
+
+Run the quick tests with:
+
+```bash
+python3 -m unittest discover -s tests -p test_black_dragon_creative_council.py
+```
