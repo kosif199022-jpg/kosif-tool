@@ -90,14 +90,43 @@ class CreativeCouncilTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "unrecognized council member"):
             council.verdict(report, {"rounds": {"1": {"rights": {"proposal": "veto"}}}})
 
+    def test_extra_sources_are_read_with_no_omitted_role(self):
+        self.put(council.EXTRA_POWER_FILES["creativity-engine"],
+                 [{"id": x, "name_en": x, "status": "documented"} for x in council.CREATIVITY_ROLE])
+        self.put(council.BOOK_METHODS, {"methods": [
+            {"id": "TB01-1", "stage": "forecast", "name_en": "Forecast"}, 
+            {"id": "TB02-1", "stage": "verify", "name_en": "Verify"}]})
+        self.put(council.REASONING_MODES, {"modes": [
+            {"id": k, "en": k} for k in council.MODE_ROLE]})
+        rows = council.inventory(self.root)
+        self.assertEqual(len(rows), 7 + len(council.CREATIVITY_ROLE) + 2 + len(council.MODE_ROLE))
+        self.assertEqual({x["primary"] for x in rows if x["id"].startswith("reasoning-mode:")},
+                         {"analyst", "research", "creative", "systems"})
+        self.assertTrue(all(x["primary"] in council.SEATS for x in rows))
+
+    def test_extra_family_change_fails_closed(self):
+        self.put(council.EXTRA_POWER_FILES["creativity-engine"],
+                 [{"id": "IDEA-01", "name_en": "Only first one"}])
+        with self.assertRaisesRegex(ValueError, "unreviewed thinking IDs"):
+            council.inventory(self.root)
+
     def test_real_repository_has_no_unassigned_entries(self):
         original = council.inventory(ROOT)
         framework = json.loads((ROOT / council.DRAGON).read_text(encoding="utf-8"))["frameworks"]
         models = json.loads((ROOT / council.MODELS).read_text(encoding="utf-8"))
         powers = json.loads((ROOT / council.POWERS).read_text(encoding="utf-8"))
-        self.assertEqual(len(original), len(framework) + len(models) + len(powers))
+        extras = sum(len(json.loads((ROOT / x).read_text(encoding="utf-8")))
+                     for x in council.EXTRA_POWER_FILES.values())
+        books = json.loads((ROOT / council.BOOK_METHODS).read_text(encoding="utf-8"))["methods"]
+        modes = json.loads((ROOT / council.REASONING_MODES).read_text(encoding="utf-8"))["modes"]
+        expected = len(framework) + len(models) + len(powers) + extras + len(books) + len(modes)
+        self.assertEqual(expected, 404)
+        self.assertEqual(len(original), expected)
+        self.assertEqual(len({x["id"] for x in original}), expected)
         self.assertEqual(set(x["primary"] for x in original), set(council.SEATS))
         self.assertTrue(all(x["source"] for x in original))
+        self.assertEqual(len(json.loads((ROOT / council.MODEL_POWER_MIRROR).read_text(encoding="utf-8"))),
+                         len(models))
 
 
 if __name__ == "__main__":
