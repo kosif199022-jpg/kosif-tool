@@ -126,3 +126,34 @@ a new independent AI reasoner. It does not assert that any video has been
 rendered, any audience response measured, or any cognitive bias solved.
 See docs/BLACK_DRAGON_KAHNEMAN_THINKING_UPGRADE_20261106.md for source page
 numbers, sample inputs, testing and limitations.
+
+
+## Source-linked external Atlas candidate bridge (2026-11-06)
+
+The **existing 486** core/contextual source records remain separately counted and uniquely
+assigned to the 12 council seats. A new **non-executing candidate bridge** reads
+`docs/atlas_thinking_candidates_20261106.json`, pinned to Atlas commit
+`99bb108dff169880dd531359f474a01b73c4b233`, and routes its **26 inspected
+source paths** to those same seats, recording an exact byte-duplicate pair. It
+does **not** count the sample as complete Atlas coverage.
+
+`scripts/atlas_council_bridge.py` provides **23 locally adapted, source-linked
+planning procedures** (nine cognitive-operation labels + fourteen reasoning-pattern
+labels) with a primary seat, optional supporting seats, a question, expected evidence,
+and a source trace. These are candidate *procedures*, not 23 proven novel mental
+models or runnable external agents. They are returned under `external_atlas`
+when using `black_dragon.py council`, and appear in each relevant council seat.
+They do not inflate `total_source_records=486`, do not fetch third-party code,
+and cannot perform autonomous research, execution, or media rendering.
+
+Test the integration from repository root with:
+
+~~~bash
+python3 -m unittest discover -s tests -p 'test_black_dragon_atlas_council_bridge.py' -v
+python3 .claude/skills/kosif-black-dragon/scripts/black_dragon.py council "فكر في سبب مشكلة البرنامج واختر خطة إصلاح" --out out/council-with-atlas.json
+~~~
+
+The bridge validates source paths, roles, pinned source commit, and the known
+duplicate reference before planning. Title/keyword relevance is only lexical;
+semantic de-duplication of all external Atlas skills and end-to-end agent execution
+remain separate, uncompleted work. CI must pass before merging to `main`.
