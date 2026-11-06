@@ -81,7 +81,7 @@ The current implementation covers full-catalog extraction, exact linking, catalo
 
 The new independent creative council has **12 expert roles** (not a rights officer): chair, analyst, dramatic writer, creative director, visual director, motion/render engineer, adversarial critic, decision specialist, researcher, systems thinker, audience advocate, and learning specialist.
 
-It reads **404 core cognition records across nine datasets, plus 82 contextual Atlas Mind operating records (486 total)**: 120 Dragon Mind frameworks, 63 Superpowers mental models, 47 thinking-core powers, 29 creativity powers, 14 planning powers, 41 prompt-design powers, 18 strategy powers, 64 book-derived methods and eight reasoning modes, as well as 82 Atlas Mind workflow/memory/verification methods. It assigns every record to one primary expert, with nonexclusive secondary lenses. The 63 mirror cards in `data/powers/mental-models.json` are not double-counted. An independent set of 100 persona profiles is consulted only as optional specialist prompts. Counts are not independent agents, live tools, or semantically unique methods. See [the reviewed source audit](../../../docs/BLACK_DRAGON_THINKING_REVIEW_20261106.md).
+It reads **443 core cognition records across nine datasets, plus 82 contextual Atlas Mind operating records (525 total)**: 159 Dragon Mind frameworks, 63 Superpowers mental models, 47 thinking-core powers, 29 creativity powers, 14 planning powers, 41 prompt-design powers, 18 strategy powers, 64 book-derived methods and eight reasoning modes, as well as 82 Atlas Mind workflow/memory/verification methods. It assigns every record to one primary expert, with nonexclusive secondary lenses. The 63 mirror cards in `data/powers/mental-models.json` are not double-counted. An independent set of 100 persona profiles is consulted only as optional specialist prompts. Counts are not independent agents, live tools, or semantically unique methods. See [the reviewed source audit](../../../docs/BLACK_DRAGON_THINKING_REVIEW_20261106.md).
 
 From the repository root:
 
@@ -130,7 +130,7 @@ numbers, sample inputs, testing and limitations.
 
 ## Source-linked external Atlas candidate bridge (2026-11-06)
 
-The **existing 486** core/contextual source records remain separately counted and uniquely
+The **current 525** core/contextual source records remain separately counted and uniquely
 assigned to the 12 council seats. A new **non-executing candidate bridge** reads
 `docs/atlas_thinking_candidates_20261106.json`, pinned to Atlas commit
 `99bb108dff169880dd531359f474a01b73c4b233`, and routes its **26 inspected
@@ -143,7 +143,7 @@ labels) with a primary seat, optional supporting seats, a question, expected evi
 and a source trace. These are candidate *procedures*, not 23 proven novel mental
 models or runnable external agents. They are returned under `external_atlas`
 when using `black_dragon.py council`, and appear in each relevant council seat.
-They do not inflate `total_source_records=486`, do not fetch third-party code,
+They do not inflate `total_source_records=525`, do not fetch third-party code,
 and cannot perform autonomous research, execution, or media rendering.
 
 Test the integration from repository root with:
@@ -157,3 +157,26 @@ The bridge validates source paths, roles, pinned source commit, and the known
 duplicate reference before planning. Title/keyword relevance is only lexical;
 semantic de-duplication of all external Atlas skills and end-to-end agent execution
 remain separate, uncompleted work. CI must pass before merging to `main`.
+
+## Combined book-to-council thinking integration (PR #238 + PR #233)
+
+The Dragon Mind's **39** new `tfs-*` frameworks from *Thinking, Fast and Slow* are
+counted once within the 525 native source records, alongside the 82 existing
+contextual Atlas Mind records. The updated book record reports 468 PDF pages
+with 584 page-cited insights; the PDF is not committed. Three older frameworks
+were also enriched with book references and are not counted again.
+
+The council calls the **existing** `dragon_mind.py scan_traps` function during
+planning, rather than approximating its logic. It routes task-linked
+questions, correction moves and PDF page citations to each trap's primary
+expert and the critic seat, without adding a compulsory quorum or a
+rights-only member. The complete summary is returned as
+`kahneman_review`; each seat receives `kahneman_review_questions`.
+The always-checked WYSIATI, substitution and overconfidence questions are
+precautionary **hypotheses**, not proof that a real person or model has a bias.
+
+Together, the external Atlas candidate procedures and book guards are
+advisory reasoning scaffolds. They do not claim independently run experts,
+actual tool execution or superior results without measured comparisons.
+Verify tests on the combined PR head before merging into `main`.
+
