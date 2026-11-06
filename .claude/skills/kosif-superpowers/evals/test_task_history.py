@@ -174,6 +174,9 @@ class Gate(Base):
     def test_a_short_country_iban_is_still_refused(self):
         self.assertRefused(entry(notes="NO93 8601 1117 947"), "IBAN")
 
+    def test_an_iban_after_a_long_decoy_token_is_still_refused(self):
+        self.assertRefused(entry(notes="ab12 cdefghijklmnopqrstuv NO93 8601 1117 947"), "IBAN")
+
     def test_bank_privacy_gate_avoids_normal_developer_text(self):
         rec = entry(notes="2026-10-23; 18:09; 1080x1920; https://github.com/kosif199022-jpg/kosif-tool")
         self.assertEqual(self.add(rec)[0], 0)

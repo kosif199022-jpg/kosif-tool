@@ -70,10 +70,20 @@ IBAN_RE = re.compile(
 )
 
 
+WORD_START_RE = re.compile(r"(?<![A-Za-z0-9])[A-Za-z]{2}")
+
+
 def looks_like_iban(text: str) -> bool:
     """IBAN_RE plus a digit count: every IBAN carries at least 12 digits, so prose such as
-    "at 128px from the originals" (which the loose pattern also matches) is not refused."""
-    return any(sum(c.isdigit() for c in m.group(0)) >= 12 for m in IBAN_RE.finditer(text))
+    "at 128px from the originals" (which the loose pattern also matches) is not refused.
+
+    A match is tried from every word start, not only where finditer resumes: otherwise a long
+    decoy token in front of a real IBAN can take the match and stop before the IBAN's digits."""
+    for start in WORD_START_RE.finditer(text):
+        m = IBAN_RE.match(text, start.start())
+        if m and sum(c.isdigit() for c in m.group(0)) >= 12:
+            return True
+    return False
 
 
 PLACEHOLDER_RE = re.compile(r"^<[^<>]* [^<>]*>$")

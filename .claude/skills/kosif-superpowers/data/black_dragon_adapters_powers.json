@@ -4439,11 +4439,11 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        ".claude/skills/kosif-superpowers/evals/test_task_history.py": "ea157b83f1ac91a5f9672a99e5ff981f20a1e24ae5d7294f4a56ddda49638430",
-        ".claude/skills/kosif-superpowers/scripts/task_history.py": "e1c2ff983aabc83a27047b204746ba6c1c4cc7e8d13e95d63bd0d1ecf22fb3ac"
+        ".claude/skills/kosif-superpowers/evals/test_task_history.py": "ac4fd1695161c830ef7825bcca05850d1ffe8cb1f9108bd2e6a17655ebe6b1aa",
+        ".claude/skills/kosif-superpowers/scripts/task_history.py": "53c8fb328d2b25ad4be54118d58ba7925dc8f53838974856f0960c706072071d"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
-      "why": "TOOL-170: its cited proof code ran green here (test-file, tool-runner; 54 tests)"
+      "why": "TOOL-170: its cited proof code ran green here (test-file, tool-runner; 56 tests)"
     },
     "power:TOOL-171": {
       "args": [
