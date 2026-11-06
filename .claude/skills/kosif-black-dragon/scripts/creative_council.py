@@ -34,6 +34,8 @@ REASONING_MODES = ".claude/skills/kosif-superpowers/data/reasoning_modes.json"
 # Preserve the original IDs separately and never double count the mirrors.
 MODEL_POWER_MIRROR = ".claude/skills/kosif-superpowers/data/powers/mental-models.json"
 ATLAS_MIND = ".claude/skills/kosif-superpowers/data/powers/atlas-mind.json"
+KAHNEMAN_BOOK = ".claude/skills/kosif-dragon-mind/data/book_thinking_fast_slow.json"
+DRAGON_MIND_RUNNER = ".claude/skills/kosif-dragon-mind/scripts/dragon_mind.py"
 PERSONA_FILE = ".claude/skills/kosif-superpowers/data/council_100.json"
 PERSONA_LANES = {
     "cross_domain": "creative", "verification": "critic",
@@ -371,7 +373,7 @@ def specialist_personas(task: str, root: Path) -> dict:
 def external_atlas_plan(task: str, root: Path) -> dict:
     """Load authored prompts from the pinned external Atlas candidate manifest.
 
-    Keep externally catalogued sources separate from the original 486 entries;
+    Keep externally catalogued sources separate from the core inventory;
     third-party scripts and agent runtimes never execute in council planning.
     """
     file = Path(__file__).with_name("atlas_council_bridge.py")
@@ -383,6 +385,55 @@ def external_atlas_plan(task: str, root: Path) -> dict:
     return bridge.plan(task, root, SEATS)
 
 
+def kahneman_review(task: str, root: Path) -> dict:
+    """Reuse Dragon Mind's actual trap scanner, not a second approximation.
+
+    These are lexical risk *questions*, never evidence of actual cognitive
+    mistakes. Synthetic fixture roots without the book return a clear absence.
+    """
+    book_file = root / KAHNEMAN_BOOK
+    if not book_file.is_file():
+        return {"status": "BOOK_NOT_PRESENT", "review_gates": [],
+                "book_frameworks": 0, "book_page_count": 0,
+                "limits": "No book data at this root"}
+    script = root / DRAGON_MIND_RUNNER
+    if not script.is_file():
+        raise ValueError("book source exists but Dragon Mind trap scanner is missing")
+    book = _read(book_file)
+    if book.get("pages_total") != 468 or book.get("pages_read") != 468:
+        raise ValueError("Kahneman book source coverage changed; review before use")
+    fw = _read(root / DRAGON)["frameworks"]
+    book_frameworks = [f for f in fw if f.get("full_text_read") == "thinking_fast_slow"]
+    spec = importlib.util.spec_from_file_location("_kosif_dragon_mind_book", script)
+    if spec is None or spec.loader is None:
+        raise ValueError("cannot load Dragon Mind trap scanner")
+    mind = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mind)
+    gates = mind.scan_traps(task, deep=True)
+    by_id = {f["id"]: f for f in book_frameworks}
+    routed = []
+    for g in gates:
+        source = by_id.get(g["id"])
+        if not source or not source.get("trap"):
+            raise ValueError("unmapped book trap: " + g["id"])
+        primary = FRAMEWORK_FAMILY[source["family"]]
+        if not all(isinstance(p, int) and 1 <= p <= 468 for p in g["pages"]):
+            raise ValueError("invalid book evidence page")
+        routed.append({**g, "primary": primary,
+                       "reviewers": sorted({primary, "critic"}),
+                       "source_id": "framework:" + g["id"],
+                       "status": "LEXICAL_TRAP_HYPOTHESIS_NOT_A_PROVEN_ERROR"})
+    return {"status": "REVIEW_QUESTIONS_ONLY_NOT_EXECUTED",
+            "book_page_count": book["pages_total"],
+            "page_gists": len(book.get("pages", [])),
+            "insights": book.get("insights_total"),
+            "book_frameworks": len(book_frameworks),
+            "traps_catalogued": sum(bool(f.get("trap")) for f in book_frameworks),
+            "review_gates": routed,
+            "source_book": KAHNEMAN_BOOK,
+            "limits": "Lexical checks only; no proven bias or independent reviewer execution"}
+
+
 def plan(task: str, root: Path = ROOT, options=DEFAULT_OPTIONS) -> dict:
     if not task or not task.strip():
         raise ValueError("task is required")
@@ -391,6 +442,7 @@ def plan(task: str, root: Path = ROOT, options=DEFAULT_OPTIONS) -> dict:
         raise ValueError("provide unique nonempty implementation routes")
     entries = inventory(root)
     external_atlas = external_atlas_plan(task, root)
+    book_judgment = kahneman_review(task, root)
     words = tokens(task)
     seats = []
     for sid, (name, mission) in SEATS.items():
@@ -418,9 +470,14 @@ def plan(task: str, root: Path = ROOT, options=DEFAULT_OPTIONS) -> dict:
         seats.append({"id": sid, "name_ar": name, "mission": mission,
                       "primary_count": len(primary), "secondary_count": len(secondary),
                       "focus": list(focus.values())})
-    # Candidate paths are assigned to seats but NOT added to 486 native records.
+    # Candidate Atlas paths are advisory and NOT added to the core inventory.
     for seat in seats:
         sid = seat["id"]
+        seat["kahneman_review_questions"] = [
+            {"source_id": x["source_id"], "question_ar": x["question_ar"],
+             "debias_ar": x["debias_ar"], "book_pages": x["pages"],
+             "status": x["status"]}
+            for x in book_judgment["review_gates"] if sid in x["reviewers"]]
         seat["external_atlas_candidate_count"] = sum(
             r["primary"] == sid for r in external_atlas["source_assignments"])
         seat["external_atlas_candidate_actions"] = [
@@ -452,6 +509,7 @@ def plan(task: str, root: Path = ROOT, options=DEFAULT_OPTIONS) -> dict:
         "source_counts": dict(sorted(Counter(x["id"].split(":", 1)[0] for x in entries).items())),
         "optional_specialists": specialist_personas(task, root),
         "external_atlas": external_atlas,
+        "kahneman_review": book_judgment,
         "primary_assigned": sum(s["primary_count"] for s in seats),
         "roles": seats,
         "assignments": [{k: v for k, v in x.items() if k != "search_text"} for x in entries],
