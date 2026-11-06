@@ -1413,6 +1413,16 @@
       "why": "free-footage: runs its own 1 test file(s) on its real code (120 tests here)",
       "tool_suite": true
     },
+    "tool:skills-lint": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "skills-lint",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "skills-lint: runs its own 1 test file(s) on its real code (4 tests here)",
+      "tool_suite": true
+    },
     "tool:free-media-catalog": {
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
       "args": [
