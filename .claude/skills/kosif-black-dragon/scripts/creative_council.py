@@ -191,6 +191,18 @@ def _read(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def title_key(row: dict) -> str:
+    """Conservative title match only: does not infer method equivalence."""
+    title = str(row.get("name_en") or row.get("en") or row.get("name") or
+                row.get("name_ar") or row.get("ar") or row.get("id", ""))
+    title = unicodedata.normalize("NFKC", title).casefold()
+    title = re.sub(r"[^\\w\\u0621-\\u064a]+", " ", title).strip()
+    aliases = {"first principles thinking": "first principles",
+               "pre mortem": "premortem", "pre mortem analysis": "premortem",
+               "premortem": "premortem", "first principles": "first principles"}
+    return aliases.get(title, title)
+
+
 def _record(kind: str, row: dict, role: str, source: str) -> dict:
     if role not in SEATS:
         raise ValueError("unassigned cognitive role for " + str(row.get("id")))
@@ -229,7 +241,8 @@ def _record(kind: str, row: dict, role: str, source: str) -> dict:
         secondary.add("visual")
     if role == "story":
         secondary.add("audience")
-    return {"id": kind + ":" + row["id"], "name": name, "primary": role,
+    return {"id": kind + ":" + row["id"], "name": name,
+            "title_key": title_key(row), "primary": role,
             "secondary": sorted(secondary), "source": source, "maturity": maturity,
             "contextual_only": kind == "atlas-mind" or row["id"] in CONTEXTUAL_IDS,
             "search_text": text[:1200]}
@@ -366,14 +379,32 @@ def plan(task: str, root: Path = ROOT, options=DEFAULT_OPTIONS) -> dict:
     for sid, (name, mission) in SEATS.items():
         primary = [x for x in entries if x["primary"] == sid]
         secondary = [x for x in entries if sid in x["secondary"]]
-        chosen = sorted(primary + secondary, key=lambda x:
-                        (-len(words & tokens(x["search_text"])),
-                         x["primary"] != sid, x["id"]))[:5]
+        ordered = sorted(primary + secondary, key=lambda x:
+                         (-len(words & tokens(x["search_text"])),
+                          x["primary"] != sid, x["id"]))
+        focus = {}
+        for r in ordered:
+            key = r["title_key"]
+            if key not in focus and len(focus) >= 5:
+                continue
+            if key not in focus:
+                focus[key] = {
+                    "id": r["id"], "title_key": key,
+                    "role": "primary" if r["primary"] == sid else "secondary",
+                    "source": r["source"], "maturity": r["maturity"],
+                    "source_ids": [], "sources": [],
+                    "equivalence": "same-normalized-title-only-not-semantic-proof",
+                }
+            focus[key]["source_ids"].append(r["id"])
+            if r["source"] not in focus[key]["sources"]:
+                focus[key]["sources"].append(r["source"])
         seats.append({"id": sid, "name_ar": name, "mission": mission,
                       "primary_count": len(primary), "secondary_count": len(secondary),
-                      "focus": [{"id": r["id"], "role": "primary" if r["primary"] == sid else "secondary",
-                                 "source": r["source"], "maturity": r["maturity"]}
-                                for r in chosen]})
+                      "focus": list(focus.values())})
+    repeated = {}
+    for entry in entries:
+        repeated.setdefault(entry["title_key"], []).append(entry["id"])
+    repeated = {k: v for k, v in repeated.items() if k and len(v) > 1}
     record = {
         "schema": SCHEMA + ".plan", "task": task, "status": "PLANNED_NOT_DEBATED",
         "independence": "requires genuine independent runs; one-model roleplay must be labelled SIMULATED",
@@ -382,7 +413,10 @@ def plan(task: str, root: Path = ROOT, options=DEFAULT_OPTIONS) -> dict:
         "core_cognitive_records": sum(x["id"].split(":", 1)[0] != "atlas-mind" for x in entries),
         "atlas_mind_contextual_records": sum(x["id"].split(":", 1)[0] == "atlas-mind" for x in entries),
         "contextual_only": sum(x["contextual_only"] for x in entries),
-        "duplicate_handling": "related models and mirror power cards are not double counted; exact/semantic similarities still require a reviewer",
+        "duplicate_handling": "normalized-title groups are co-presented with all original source IDs; semantic equivalence requires review",
+        "repeated_title_group_count": len(repeated),
+        "repeated_title_record_count": sum(len(v) for v in repeated.values()),
+        "repeated_title_groups": dict(sorted(repeated.items())),
         "source_counts": dict(sorted(Counter(x["id"].split(":", 1)[0] for x in entries).items())),
         "optional_specialists": specialist_personas(task, root),
         "primary_assigned": sum(s["primary_count"] for s in seats),
