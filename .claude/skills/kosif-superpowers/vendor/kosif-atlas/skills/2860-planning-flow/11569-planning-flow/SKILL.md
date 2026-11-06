@@ -1,6 +1,6 @@
 ---
 name: planning-flow
-description: "Use when the user asks for a plan for a coding change — \"plan this\", \"how would we build\", \"write me a plan for\", \"/planning-flow ‹ask›\" — before any code is written, especially when the change needs research across a codebase, has open questions only the user can answer, or will be handed to an implementation step afterwards. Also use when a user complains that a previous plan read like a change-log of its own revisions."
+description: Use when the user asks for a plan for a coding change — "plan this", "how would we build", "write me a plan for", "/planning-flow <ask>" — before any code is written, especially when the change needs research across a codebase, has open questions only the user can answer, or will be handed to an implementation step afterwards. Also use when a user complains that a previous plan read like a change-log of its own revisions.
 ---
 
 # Planning Flow

@@ -1,5 +1,4 @@
 ---
-name: reason-dont-recite
 description: "Re-anchor: inherited content is evidence of what is, never self-justifying authority; re-derive decisions coasting on precedent. Use when: 'reason don't recite', 'why is it this way', 'challenge that convention', 'you're deferring to precedent', \"that's just how it's done\", 'question the inherited design', 'stop reciting the docs', 'is this actually right', or at conversation start on legacy or inherited code. To RECOVER past reasoning from history, use '/discovery:trace-intent' if installed."
 user-invocable: true
 disable-model-invocation: false

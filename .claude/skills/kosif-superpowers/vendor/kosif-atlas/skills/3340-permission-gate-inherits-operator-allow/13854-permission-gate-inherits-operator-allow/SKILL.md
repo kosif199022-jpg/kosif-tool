@@ -1,14 +1,25 @@
 ---
 name: permission-gate-inherits-operator-allow-list
-description: "Audit what a service actually auto-runs when it reuses a permission gate built for an interactive terminal. Use when: (1) an agent, bot or daemon classifies shell commands through a tool whose \"allowed\" set comes from a human's editor settings (voitta-yolt's `grammar_classifier.py` reading `~/.claude/settings.json` and `‹cwd›/.claude/settings*.json`; any hook, linter or policy engine with the same discovery), (2) a command you expect to need approval runs without one, or a reason string says \"matches user allow pattern\", (3) you are wiring such a gate into a service and need to decide whose permissions it should read, (4) a test suite's verdicts change depending on whose machine it runs on. The failure is a confused deputy: the service acts with the union of one human's personal permissions while being driven by other people's input, and nothing in the logs says so."
+description: |
+  Audit what a service actually auto-runs when it reuses a permission gate
+  built for an interactive terminal. Use when: (1) an agent, bot or daemon
+  classifies shell commands through a tool whose "allowed" set comes from a
+  human's editor settings (voitta-yolt's `grammar_classifier.py` reading
+  `~/.claude/settings.json` and `<cwd>/.claude/settings*.json`; any hook,
+  linter or policy engine with the same discovery), (2) a command you expect
+  to need approval runs without one, or a reason string says "matches user
+  allow pattern", (3) you are wiring such a gate into a service and need to
+  decide whose permissions it should read, (4) a test suite's verdicts change
+  depending on whose machine it runs on. The failure is a confused deputy: the
+  service acts with the union of one human's personal permissions while being
+  driven by other people's input, and nothing in the logs says so. Covers
+  measuring the inherited set, proving the exposure with the gate's own
+  verdicts, cutting the inheritance off, and asserting at boot that it stayed
+  cut.
 author: Claude Code
 version: 1.1.0
 date: 2026-09-14
 ---
-## About this skill
-
-Audit what a service actually auto-runs when it reuses a permission gate built for an interactive terminal. Use when: (1) an agent, bot or daemon classifies shell commands through a tool whose "allowed" set comes from a human's editor settings (voitta-yolt's `grammar_classifier.py` reading `~/.claude/settings.json` and `<cwd>/.claude/settings*.json`; any hook, linter or policy engine with the same discovery), (2) a command you expect to need approval runs without one, or a reason string says "matches user allow pattern", (3) you are wiring such a gate into a service and need to decide whose permissions it should read, (4) a test suite's verdicts change depending on whose machine it runs on. The failure is a confused deputy: the service acts with the union of one human's personal permissions while being driven by other people's input, and nothing in the logs says so. Covers measuring the inherited set, proving the exposure with the gate's own verdicts, cutting the inheritance off, and asserting at boot that it stayed cut.
-
 
 # A permission gate reused by a service inherits the operator's allow-list
 

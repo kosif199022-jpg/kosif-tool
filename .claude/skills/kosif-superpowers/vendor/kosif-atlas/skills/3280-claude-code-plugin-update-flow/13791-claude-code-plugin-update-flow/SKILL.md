@@ -1,14 +1,30 @@
 ---
 name: claude-code-plugin-update-flow
-description: "Get an installed Claude Code plugin to actually run new code, and — as a plugin author — make sure your merges reach installs at all. Use when: (1) `claude plugin update ‹plugin›@‹marketplace›` reports \"up to date\" but the plugin still behaves like an old build, (2) `claude plugin marketplace update ‹name›` succeeds yet the running session's hooks / commands / skills are unchanged, (3) you merged commits to the plugin repo and no user, including you, ever sees them, (4) `/plugin update ‹plugin›@‹marketplace›` opens the plugin-discovery picker instead of updating (older builds), (5) you're unsure whether `plugin update`, `/reload-plugins`, or a restart is what's needed, (6) you are updating every installed plugin at once: there is no `plugin update --all`, one plugin can be installed at several scopes, and some \"up to date\" answers are wrong."
+description: |
+  Get an installed Claude Code plugin to actually run new code, and — as
+  a plugin author — make sure your merges reach installs at all. Use when:
+  (1) `claude plugin update <plugin>@<marketplace>` reports "up to date"
+  but the plugin still behaves like an old build, (2) `claude plugin
+  marketplace update <name>` succeeds yet the running session's hooks /
+  commands / skills are unchanged, (3) you merged commits to the plugin
+  repo and no user, including you, ever sees them, (4) `/plugin update
+  <plugin>@<marketplace>` opens the plugin-discovery picker instead of
+  updating (older builds), (5) you're unsure whether `plugin update`,
+  `/reload-plugins`, or a restart is what's needed, (6) you are updating
+  every installed plugin at once: there is no `plugin update --all`, one
+  plugin can be installed at several scopes, and some "up to date"
+  answers are wrong. Root cause for the
+  "up to date" case: the installed copy lives at
+  `~/.claude/plugins/cache/<marketplace>/<plugin>/<version>/`, keyed on
+  `.claude-plugin/plugin.json#version`, so an unchanged version means
+  nothing re-extracts. Also covers why checking the marketplace clone is
+  NOT valid verification, diffing clone against cache to find
+  same-version drift, forcing a re-extract with `uninstall --keep-data`
+  + `install`, and the release-tagging order for squash-merge repos.
 author: Claude Code
 version: 1.5.0
 date: 2026-09-28
 ---
-## About this skill
-
-Get an installed Claude Code plugin to actually run new code, and — as a plugin author — make sure your merges reach installs at all. Use when: (1) `claude plugin update <plugin>@<marketplace>` reports "up to date" but the plugin still behaves like an old build, (2) `claude plugin marketplace update <name>` succeeds yet the running session's hooks / commands / skills are unchanged, (3) you merged commits to the plugin repo and no user, including you, ever sees them, (4) `/plugin update <plugin>@<marketplace>` opens the plugin-discovery picker instead of updating (older builds), (5) you're unsure whether `plugin update`, `/reload-plugins`, or a restart is what's needed, (6) you are updating every installed plugin at once: there is no `plugin update --all`, one plugin can be installed at several scopes, and some "up to date" answers are wrong. Root cause for the "up to date" case: the installed copy lives at `~/.claude/plugins/cache/<marketplace>/<plugin>/<version>/`, keyed on `.claude-plugin/plugin.json#version`, so an unchanged version means nothing re-extracts. Also covers why checking the marketplace clone is NOT valid verification, diffing clone against cache to find same-version drift, forcing a re-extract with `uninstall --keep-data` + `install`, and the release-tagging order for squash-merge repos.
-
 
 # Claude Code: Updating an Installed Plugin
 

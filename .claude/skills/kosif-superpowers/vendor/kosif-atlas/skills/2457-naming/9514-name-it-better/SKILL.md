@@ -1,5 +1,4 @@
 ---
-name: name-it-better
 description: "Generate and evaluate fresh name candidates for anything: a variable, function, file, module, skill, repo, or domain term. Then let the human pick. Use when the target name is still UNDECIDED, whether the ask is a fresh name ('suggest names', 'what should I call this') or a retry on one just rejected ('name it better', 'that name is wrong', 'help me rename this to something better'). Not for an already-decided rename ('rename X to Y', 'I renamed X'). That routes to the rename-references sweep. Spawns blind fresh-context generators from distinct lenses; never auto-locks a name. Optional 'tournament' arg for high-stakes, hard-to-refactor names."
 argument-hint: "[tournament]"
 user-invocable: true

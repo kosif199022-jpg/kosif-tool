@@ -1,16 +1,39 @@
 ---
 name: litellm-custom-provider-dispatch-order
-description: "Fix a LiteLLM `CustomLLM` provider that is registered correctly and still never runs — the call silently goes to a built-in provider instead, billed to whatever API key that provider finds in the environment. Use when: (1) you registered a handler via `litellm.custom_provider_map` and your `completion()` override is never entered (no logs, no breakpoint hit), (2) a call to `myprovider/‹model›` returns an error naming a DIFFERENT vendor — `Incorrect API key provided: sk-...`, `invalid_api_key`, or an auth failure for a service you never configured, (3) `litellm.get_llm_provider(\"myprovider/‹model›\")` correctly returns your provider, and the call STILL goes somewhere else, (4) a `Router` refuses the deployment at construction time with `LLM Provider NOT provided. Pass in the LLM provider you are trying to call`, before any completion is attempted, (5) you are bridging a subscription/OAuth backend (ChatGPT-Codex, a gateway, an internal proxy) into a waterfall and reusing the upstream's real model ids."
+description: |
+  Fix a LiteLLM `CustomLLM` provider that is registered correctly and still
+  never runs — the call silently goes to a built-in provider instead, billed
+  to whatever API key that provider finds in the environment. Use when:
+  (1) you registered a handler via `litellm.custom_provider_map` and your
+  `completion()` override is never entered (no logs, no breakpoint hit),
+  (2) a call to `myprovider/<model>` returns an error naming a DIFFERENT
+  vendor — `Incorrect API key provided: sk-...`, `invalid_api_key`,
+  or an auth failure for a service you never configured,
+  (3) `litellm.get_llm_provider("myprovider/<model>")` correctly returns
+  your provider, and the call STILL goes somewhere else,
+  (4) a `Router` refuses the deployment at construction time with
+  `LLM Provider NOT provided. Pass in the LLM provider you are trying to
+  call`, before any completion is attempted,
+  (5) you are bridging a subscription/OAuth backend (ChatGPT-Codex, a
+  gateway, an internal proxy) into a waterfall and reusing the upstream's
+  real model ids.
+  Root cause: `litellm.completion()` dispatches through one long if/elif
+  chain, and SEVEN branches that match on the BARE MODEL NAME
+  (`model in litellm.open_ai_chat_completion_models`, `.replicate_models`,
+  `.together_ai_models`, `.petals_models`, `.snowflake_models`,
+  `.ovhcloud_models`, `.clarifai_models`) come BEFORE the
+  `custom_llm_provider in litellm._custom_providers` branch. LiteLLM strips
+  your prefix first, so a custom row reusing a known upstream model id is
+  captured by an earlier branch and never reaches your handler.
+  Covers the two-line registration (map + `custom_llm_setup()`), the
+  namespaced-model fix, the collision check, and the assertion that proves
+  the handler actually ran.
 author: Claude Code
 version: 1.0.0
 date: 2026-08-20
 source: https://github.com/voitta-ai/skillz
 source_file: skills/litellm-custom-provider-dispatch-order/SKILL.md
 ---
-## About this skill
-
-Fix a LiteLLM `CustomLLM` provider that is registered correctly and still never runs — the call silently goes to a built-in provider instead, billed to whatever API key that provider finds in the environment. Use when: (1) you registered a handler via `litellm.custom_provider_map` and your `completion()` override is never entered (no logs, no breakpoint hit), (2) a call to `myprovider/<model>` returns an error naming a DIFFERENT vendor — `Incorrect API key provided: sk-...`, `invalid_api_key`, or an auth failure for a service you never configured, (3) `litellm.get_llm_provider("myprovider/<model>")` correctly returns your provider, and the call STILL goes somewhere else, (4) a `Router` refuses the deployment at construction time with `LLM Provider NOT provided. Pass in the LLM provider you are trying to call`, before any completion is attempted, (5) you are bridging a subscription/OAuth backend (ChatGPT-Codex, a gateway, an internal proxy) into a waterfall and reusing the upstream's real model ids. Root cause: `litellm.completion()` dispatches through one long if/elif chain, and SEVEN branches that match on the BARE MODEL NAME (`model in litellm.open_ai_chat_completion_models`, `.replicate_models`, `.together_ai_models`, `.petals_models`, `.snowflake_models`, `.ovhcloud_models`, `.clarifai_models`) come BEFORE the `custom_llm_provider in litellm._custom_providers` branch. LiteLLM strips your prefix first, so a custom row reusing a known upstream model id is captured by an earlier branch and never reaches your handler. Covers the two-line registration (map + `custom_llm_setup()`), the namespaced-model fix, the collision check, and the assertion that proves the handler actually ran.
-
 
 # LiteLLM dispatches on the model name before your custom provider
 

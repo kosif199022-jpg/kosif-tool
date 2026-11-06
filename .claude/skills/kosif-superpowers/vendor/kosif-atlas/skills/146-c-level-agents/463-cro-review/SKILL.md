@@ -1,6 +1,6 @@
 ---
 name: "cro-review"
-description: "/cs:cro-review ‹plan› — Pipeline-paranoid interrogation of revenue, win rate, NRR, and ramp time. Use when the forecast misses pipeline coverage, win rates drop, or before scaling the sales team."
+description: "/cs:cro-review <plan> — Pipeline-paranoid interrogation of revenue, win rate, NRR, and ramp time. Use when the forecast misses pipeline coverage, win rates drop, or before scaling the sales team."
 ---
 
 > **Note (KOSIF):** the calculator scripts named below (../../../c-level-advisor/..., product-team/...) belong to the original c-level-advisor repository and are **not bundled** here. Do the same analysis directly: read the user's data, write a short Python script for the calculation if numbers are involved, show the formula, and tell the user the original tool was not available.

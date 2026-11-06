@@ -1,6 +1,6 @@
 ---
 name: "ciso-review"
-description: "/cs:ciso-review ‹plan› — Risk-paranoid interrogation of any plan that touches data, compliance, or production access. Use when launching features that handle customer data, before a SOC 2 / ISO audit, or after any incident or near-miss."
+description: "/cs:ciso-review <plan> — Risk-paranoid interrogation of any plan that touches data, compliance, or production access. Use when launching features that handle customer data, before a SOC 2 / ISO audit, or after any incident or near-miss."
 ---
 
 > **Note (KOSIF):** the calculator scripts named below (../../../c-level-advisor/..., product-team/...) belong to the original c-level-advisor repository and are **not bundled** here. Do the same analysis directly: read the user's data, write a short Python script for the calculation if numbers are involved, show the formula, and tell the user the original tool was not available.

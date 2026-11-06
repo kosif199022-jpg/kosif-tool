@@ -1,5 +1,4 @@
 ---
-name: pick-for-the-problem
 description: "Re-anchor choosing a tool, library, framework, language, or approach to fit the problem, not habit, incumbency, or preconception; re-derive the choice. Use when: 'pick for the problem', 'right tool for the job', 'which library should we use', 'what framework', 'should we build this or use X', 'is this the right approach', 'you defaulted to X', 'we always reach for X', 'evaluate the options', 'choose a dependency', or at conversation start on a build-vs-buy or technology-selection decision."
 user-invocable: true
 disable-model-invocation: false

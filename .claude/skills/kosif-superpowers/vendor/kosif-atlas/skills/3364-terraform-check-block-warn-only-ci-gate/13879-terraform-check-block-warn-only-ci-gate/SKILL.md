@@ -1,16 +1,27 @@
 ---
 name: terraform-check-block-warn-only-ci-gate
-description: "Make Terraform `check` blocks actually fail CI. Use when: (1) you wrote a check block to guard an invariant (e.g. a set of secret values must be pairwise distinct) and discovered `terraform plan` prints the failure as a Warning and exits 0, so the CI plan step stays green, (2) you are reviewing a PR that encodes a safety guard as a check block and need to know whether anything enforces it, (3) you need a guard over sensitive values whose failure message must name the offending items without leaking them. Core facts: check blocks are advisory by design - failed assertions never affect plan/apply exit status, so a guard written as one is silent by construction; the working CI gate is `set -o pipefail` + `tee` the plan output + grep for \"Check block assertion failed\" and exit 1; write the error_message to name offenders via nonsensitive() applied to KEYS only, never values."
+description: |
+  Make Terraform `check` blocks actually fail CI. Use when: (1) you wrote a
+  check block to guard an invariant (e.g. a set of secret values must be
+  pairwise distinct) and discovered `terraform plan` prints the failure as a
+  Warning and exits 0, so the CI plan step stays green, (2) you are
+  reviewing a PR that encodes a safety guard as a check block and need to
+  know whether anything enforces it, (3) you need a guard over sensitive
+  values whose failure message must name the offending items without
+  leaking them. Core facts: check blocks are advisory by design - failed
+  assertions never affect plan/apply exit status, so a guard written as one
+  is silent by construction; the working CI gate is `set -o pipefail` +
+  `tee` the plan output + grep for "Check block assertion failed" and exit
+  1; write the error_message to name offenders via nonsensitive() applied
+  to KEYS only, never values. Proven end to end: a forced collision exits 1
+  and names the colliding pair with no values leaked; the passing path
+  leaves plan behavior unchanged.
 author: Claude Code
 version: 1.0.0
 date: 2026-08-27
 source: https://github.com/voitta-ai/skillz
 source_file: skills/terraform-check-block-warn-only-ci-gate/SKILL.md
 ---
-## About this skill
-
-Make Terraform `check` blocks actually fail CI. Use when: (1) you wrote a check block to guard an invariant (e.g. a set of secret values must be pairwise distinct) and discovered `terraform plan` prints the failure as a Warning and exits 0, so the CI plan step stays green, (2) you are reviewing a PR that encodes a safety guard as a check block and need to know whether anything enforces it, (3) you need a guard over sensitive values whose failure message must name the offending items without leaking them. Core facts: check blocks are advisory by design - failed assertions never affect plan/apply exit status, so a guard written as one is silent by construction; the working CI gate is `set -o pipefail` + `tee` the plan output + grep for "Check block assertion failed" and exit 1; write the error_message to name offenders via nonsensitive() applied to KEYS only, never values. Proven end to end: a forced collision exits 1 and names the colliding pair with no values leaked; the passing path leaves plan behavior unchanged.
-
 
 > **Canonical source.** This skill lives in the repo at
 > https://github.com/voitta-ai/skillz (file:

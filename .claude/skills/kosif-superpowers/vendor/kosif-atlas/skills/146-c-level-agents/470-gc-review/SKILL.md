@@ -1,6 +1,6 @@
 ---
 name: "gc-review"
-description: "/cs:gc-review ‹plan› — General Counsel interrogation of contracts, IP, regulatory, term sheets, and employment-law surface. Use when reviewing a term sheet before signing, redlining a customer MSA, or checking IP assignment and regulatory exposure on a new product."
+description: "/cs:gc-review <plan> — General Counsel interrogation of contracts, IP, regulatory, term sheets, and employment-law surface. Use when reviewing a term sheet before signing, redlining a customer MSA, or checking IP assignment and regulatory exposure on a new product."
 ---
 
 > **Note (KOSIF):** the calculator scripts named below (../../../c-level-advisor/..., product-team/...) belong to the original c-level-advisor repository and are **not bundled** here. Do the same analysis directly: read the user's data, write a short Python script for the calculation if numbers are involved, show the formula, and tell the user the original tool was not available.

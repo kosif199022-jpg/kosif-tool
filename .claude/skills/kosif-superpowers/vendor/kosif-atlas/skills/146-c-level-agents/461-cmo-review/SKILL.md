@@ -1,6 +1,6 @@
 ---
 name: "cmo-review"
-description: "/cs:cmo-review ‹plan› — Narrative-first interrogation of positioning, ICP, message house, and channel mix. Use when launching a campaign or repositioning, or when CAC is rising and the one-sentence positioning test fails."
+description: "/cs:cmo-review <plan> — Narrative-first interrogation of positioning, ICP, message house, and channel mix. Use when launching a campaign or repositioning, or when CAC is rising and the one-sentence positioning test fails."
 ---
 
 > **Note (KOSIF):** the calculator scripts named below (../../../c-level-advisor/..., product-team/...) belong to the original c-level-advisor repository and are **not bundled** here. Do the same analysis directly: read the user's data, write a short Python script for the calculation if numbers are involved, show the formula, and tell the user the original tool was not available.
