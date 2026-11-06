@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import importlib.util
 import json
 import re
 import sys
@@ -367,6 +368,21 @@ def specialist_personas(task: str, root: Path) -> dict:
     }
 
 
+def external_atlas_plan(task: str, root: Path) -> dict:
+    """Load authored prompts from the pinned external Atlas candidate manifest.
+
+    Keep externally catalogued sources separate from the original 486 entries;
+    third-party scripts and agent runtimes never execute in council planning.
+    """
+    file = Path(__file__).with_name("atlas_council_bridge.py")
+    spec = importlib.util.spec_from_file_location("_kosif_atlas_council_bridge", file)
+    if spec is None or spec.loader is None:
+        raise ValueError("external Atlas bridge unavailable")
+    bridge = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(bridge)
+    return bridge.plan(task, root, SEATS)
+
+
 def plan(task: str, root: Path = ROOT, options=DEFAULT_OPTIONS) -> dict:
     if not task or not task.strip():
         raise ValueError("task is required")
@@ -374,6 +390,7 @@ def plan(task: str, root: Path = ROOT, options=DEFAULT_OPTIONS) -> dict:
     if not options or len(set(options)) != len(options) or not all(isinstance(o, str) and o.strip() for o in options):
         raise ValueError("provide unique nonempty implementation routes")
     entries = inventory(root)
+    external_atlas = external_atlas_plan(task, root)
     words = tokens(task)
     seats = []
     for sid, (name, mission) in SEATS.items():
@@ -401,6 +418,16 @@ def plan(task: str, root: Path = ROOT, options=DEFAULT_OPTIONS) -> dict:
         seats.append({"id": sid, "name_ar": name, "mission": mission,
                       "primary_count": len(primary), "secondary_count": len(secondary),
                       "focus": list(focus.values())})
+    # Candidate paths are assigned to seats but NOT added to 486 native records.
+    for seat in seats:
+        sid = seat["id"]
+        seat["external_atlas_candidate_count"] = sum(
+            r["primary"] == sid for r in external_atlas["source_assignments"])
+        seat["external_atlas_selected_procedures"] = [
+            {"id": p["id"], "question": p["question"], "output_check": p["output_check"],
+             "source_id": p["source_id"], "status": p["status"]}
+            for p in external_atlas["selected_procedures"]
+            if p["primary"] == sid or sid in p["secondary"]]
     repeated = {}
     for entry in entries:
         repeated.setdefault(entry["title_key"], []).append(entry["id"])
@@ -419,6 +446,7 @@ def plan(task: str, root: Path = ROOT, options=DEFAULT_OPTIONS) -> dict:
         "repeated_title_groups": dict(sorted(repeated.items())),
         "source_counts": dict(sorted(Counter(x["id"].split(":", 1)[0] for x in entries).items())),
         "optional_specialists": specialist_personas(task, root),
+        "external_atlas": external_atlas,
         "primary_assigned": sum(s["primary_count"] for s in seats),
         "roles": seats,
         "assignments": [{k: v for k, v in x.items() if k != "search_text"} for x in entries],
