@@ -81,7 +81,7 @@ The current implementation covers full-catalog extraction, exact linking, catalo
 
 The new independent creative council has **12 expert roles** (not a rights officer): chair, analyst, dramatic writer, creative director, visual director, motion/render engineer, adversarial critic, decision specialist, researcher, systems thinker, audience advocate, and learning specialist.
 
-It reads the original **120 Dragon Mind frameworks**, **63 Superpowers mental models**, and **47 thinking-core power records**, assigns every record to exactly one primary expert and may share nonexclusive secondary lenses. Counts are source records, not independent agents, live tools, or unique methods after semantic deduplication. The independent native Black Dragon's existing media boundary remains unchanged.
+It reads **404 source records across nine original cognition datasets**: 120 Dragon Mind frameworks, 63 Superpowers mental models, 47 thinking-core powers, 29 creativity powers, 14 planning powers, 41 prompt-design powers, 18 strategy powers, 64 book-derived methods and eight reasoning modes. It assigns every record to one primary expert, with nonexclusive secondary lenses. The 63 mirror cards in `data/powers/mental-models.json` are not double-counted. An independent set of 100 persona profiles is consulted only as optional specialist prompts. Counts are not independent agents, live tools, or semantically unique methods. See [the reviewed source audit](../../../docs/BLACK_DRAGON_THINKING_REVIEW_20261106.md).
 
 From the repository root:
 
