@@ -79,6 +79,7 @@
 | `skill-intelligence` | محرك بروتوكول ذكاء المهارات الشامل | `python3 scripts/skill_intelligence.py brief "مونتاج ريلز على الإيقاع بترجمة عربية"` | tested-here |
 | `skill-layout` | خريطة ترتيب المهارة | `python3 scripts/skill_layout.py build` | tested-here |
 | `skill-loader` | خريطة التحميل الخفيف للمهارات | `python3 scripts/skill_loader.py build --check` | tested-here |
+| `skills-lint` | فاحص كل المهارات في المستودع | `python3 scripts/skills_lint.py` | tested-here |
 | `smart-capabilities` | فهرس ذكي للقدرات من أجل Claude | `python3 scripts/smart_capabilities.py groups` | tested-here |
 | `superpower-fusion` | دمج القدرات في قدرات خارقة مترابطة | `python3 scripts/superpower_fusion.py build` | tested-here |
 | `superpowers` | خريطة المستودعات الخارجية | `python3 scripts/superpowers.py list --capability voice --json` | tested-here |
