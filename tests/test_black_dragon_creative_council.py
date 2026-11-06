@@ -172,11 +172,25 @@ class CreativeCouncilTests(unittest.TestCase):
         modes = json.loads((ROOT / council.REASONING_MODES).read_text(encoding="utf-8"))["modes"]
         core = len(framework) + len(models) + len(powers) + extras + len(books) + len(modes)
         atlas = json.loads((ROOT / council.ATLAS_MIND).read_text(encoding="utf-8"))
-        self.assertEqual(core, 404)
+        self.assertEqual(core, 443)  # 404 prior records + 39 book-derived framework operators
         self.assertEqual(len(atlas), 82)
         expected = core + len(atlas)
-        self.assertEqual(expected, 486)
+        self.assertEqual(expected, 525)
         self.assertEqual(len(original), expected)
+        self.assertEqual(sum(x["id"].startswith("framework:tfs-") for x in original), 39)
+        gate_report = council.kahneman_review("احسب خطة إطلاق المنتج من آخر سعر", ROOT)
+        self.assertEqual(gate_report["book_frameworks"], 42)  # 39 new plus three existing methods updated
+        self.assertEqual(gate_report["traps_catalogued"], 31)
+        self.assertEqual(gate_report["book_page_count"], 468)
+        self.assertTrue(gate_report["review_gates"])
+        self.assertTrue(all(x["source_id"].startswith("framework:tfs-") for x in gate_report["review_gates"]))
+        self.assertTrue(all(x["primary"] in council.SEATS and "critic" in x["reviewers"] for x in gate_report["review_gates"]))
+        combined = council.plan("احسب خطة إطلاق المنتج من آخر سعر", ROOT)
+        self.assertEqual(combined["total_source_records"], 525)
+        self.assertEqual(sum(s["primary_count"] for s in combined["roles"]), 525)
+        self.assertEqual(combined["kahneman_review"]["book_frameworks"], 42)
+        self.assertEqual(sum(len(s["kahneman_review_questions"]) for s in combined["roles"]),
+                         sum(len(x["reviewers"]) for x in combined["kahneman_review"]["review_gates"]))
         self.assertEqual(len({x["id"] for x in original}), expected)
         self.assertEqual(set(x["primary"] for x in original), set(council.SEATS))
         self.assertTrue(all(x["source"] for x in original))
