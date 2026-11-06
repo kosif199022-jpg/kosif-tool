@@ -4607,7 +4607,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        ".claude/skills/kosif-superpowers/scripts/black_dragon.py": "22138c94bda544c7127e003cab8a9103e8b3f8b0b264f049f1282891ac4bb6ad"
+        ".claude/skills/kosif-superpowers/scripts/black_dragon.py": "d9754b1e6444b6670e4f29595277280e611e8757b7d8a5f9a932098a9c8b24c3"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "TOOL-181: its cited proof code ran green here (tool-runner; 23 tests)"
