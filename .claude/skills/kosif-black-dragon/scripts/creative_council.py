@@ -32,6 +32,7 @@ REASONING_MODES = ".claude/skills/kosif-superpowers/data/reasoning_modes.json"
 # The 63 'mental-models' power entries mirror the 63 standalone models.
 # Preserve the original IDs separately and never double count the mirrors.
 MODEL_POWER_MIRROR = ".claude/skills/kosif-superpowers/data/powers/mental-models.json"
+ATLAS_MIND = ".claude/skills/kosif-superpowers/data/powers/atlas-mind.json"
 PERSONA_FILE = ".claude/skills/kosif-superpowers/data/council_100.json"
 PERSONA_LANES = {
     "cross_domain": "creative", "verification": "critic",
@@ -132,6 +133,42 @@ MODE_ROLE = {
     "analogical": "creative", "causal": "systems", "systems": "systems",
     "lateral": "creative", "bayesian": "research",
 }
+# Atlas Mind is a contextual operating layer for planning, memory, delegation,
+# error analysis and evaluation, rather than evidence of cinematic judgment.
+ATLAS_SECTION_ROLE = {
+    "سير عمل الوكلاء — Agent workflows & orchestration": "chair",
+    "التصحيح — Debugging & diagnosis": "critic",
+    "DevOps والسحابة — DevOps, CI/CD, cloud & infrastructure": "engineer",
+    "المخططات — Diagrams & visual documentation": "visual",
+    "سير عمل تطوير عام — General development workflow": "engineer",
+    "التعليم والتعلم — Teaching, learning & study": "learning",
+    "المراجعة والتحقق — Review, verification & quality gates": "critic",
+    "التخطيط والمواصفات — Planning, specs & decisions": "decision",
+    "أدوات MCP والتكاملات — MCP servers, tools & integrations": "engineer",
+    "هندسة البرومبت والمهارات — Prompt, skill & plugin engineering": "analyst",
+}
+ATLAS_ROLE_SPECIALISMS = {
+    "learning": {1, 3, 6, 8, 10, 23, 26, 27, 28, 29, 30, 35, 36,
+                 61, 62, 64, 65, 66, 67, 80, 82},
+    "critic": {15, 16, 22, 39, 42, 44, 45, 51, 52, 55, 57, 58, 59, 60,
+               73, 74, 78},
+    "analyst": {17, 46, 47, 54, 63, 75, 76},
+    "research": {50, 56},
+    "chair": {7, 9, 11, 12, 13, 14, 18, 19, 20, 21, 24, 25, 32, 33,
+              34, 37, 38, 48, 70, 77},
+    "engineer": {2, 4, 5, 31, 40, 49, 53, 68, 69, 71, 72, 79},
+    "visual": {41},
+    "decision": {43, 81},
+}
+# Duplicate role assignments are a bug, not a second specialist.
+ATLAS_ROLE_BY_ID = {}
+for _role, _indices in ATLAS_ROLE_SPECIALISMS.items():
+    for _number in _indices:
+        _id = f"AMIND-{_number:02d}"
+        if _id in ATLAS_ROLE_BY_ID:
+            raise ValueError("Atlas Mind role conflict: " + _id)
+        ATLAS_ROLE_BY_ID[_id] = _role
+
 # Context-specific operational and finance entries are indexed, not activated
 # automatically in film tasks.
 CONTEXTUAL_IDS = {
@@ -194,7 +231,7 @@ def _record(kind: str, row: dict, role: str, source: str) -> dict:
         secondary.add("audience")
     return {"id": kind + ":" + row["id"], "name": name, "primary": role,
             "secondary": sorted(secondary), "source": source, "maturity": maturity,
-            "contextual_only": row["id"] in CONTEXTUAL_IDS,
+            "contextual_only": kind == "atlas-mind" or row["id"] in CONTEXTUAL_IDS,
             "search_text": text[:1200]}
 
 
@@ -244,6 +281,18 @@ def inventory(root: Path = ROOT) -> list[dict]:
             raise ValueError("missing or unreviewed reasoning mode")
         for x in modes:
             rows.append(_record("reasoning-mode", x, MODE_ROLE[x["id"]], REASONING_MODES))
+    atlas_file = root / ATLAS_MIND
+    if atlas_file.is_file():
+        records = _read(atlas_file)
+        expected = {f"AMIND-{n:02d}" for n in range(1, 83)}
+        if not isinstance(records, list) or len(records) != 82 or {x.get("id") for x in records} != expected:
+            raise ValueError("Atlas Mind source IDs changed; review new inventory before routing")
+        for x in records:
+            section = x.get("section")
+            if section not in ATLAS_SECTION_ROLE:
+                raise ValueError("unreviewed Atlas Mind section: " + str(section))
+            role = ATLAS_ROLE_BY_ID.get(x["id"], ATLAS_SECTION_ROLE[section])
+            rows.append(_record("atlas-mind", x, role, ATLAS_MIND))
     ids = [r["id"] for r in rows]
     if len(ids) != len(set(ids)):
         raise ValueError("duplicate thinking entry ID")
@@ -330,6 +379,8 @@ def plan(task: str, root: Path = ROOT, options=DEFAULT_OPTIONS) -> dict:
         "independence": "requires genuine independent runs; one-model roleplay must be labelled SIMULATED",
         "execution": "no assets fetched, models invoked, tools executed or video rendered",
         "total_source_records": len(entries),
+        "core_cognitive_records": sum(x["id"].split(":", 1)[0] != "atlas-mind" for x in entries),
+        "atlas_mind_contextual_records": sum(x["id"].split(":", 1)[0] == "atlas-mind" for x in entries),
         "contextual_only": sum(x["contextual_only"] for x in entries),
         "duplicate_handling": "related models and mirror power cards are not double counted; exact/semantic similarities still require a reviewer",
         "source_counts": dict(sorted(Counter(x["id"].split(":", 1)[0] for x in entries).items())),
