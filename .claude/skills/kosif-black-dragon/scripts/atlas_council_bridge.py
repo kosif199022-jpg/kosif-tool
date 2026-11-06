@@ -49,6 +49,27 @@ PROCEDURES = (
 )
 
 
+# All 26 inspected paths get a council-specific *advisory* action, not a tool adapter.
+# The source's actual procedures must be checked before treating these as equivalent.
+SOURCE_ACTIONS = {
+ 'large_inventory_candidate': ('Select a relevant family of models before choosing any model.', 'Record selected source labels and compare with internal models.'),
+ 'orchestration_candidate': ('Prepare a for/against evidence matrix.', 'Do not report independent debate unless run receipts exist.'),
+ 'external_dependency': ('Check the declared external runtime, authorization and credentials.', 'Mark unavailable unless a real runner is verified.'),
+ 'creative_workflow_candidate': ('Generate several genuinely different candidate concepts.', 'Require a storyboard or viewer test before ranking.'),
+ 'knowledge_capture_candidate': ('Record the expert workflow as explicit inputs, steps and checks.', 'Keep original source and separate inference from observed expertise.'),
+ 'engineering_protocol_candidate': ('Draw dependencies and failure boundaries before implementation.', 'Check against actual code and tests.'),
+ 'orchestration_overlap': ('Compare the proposed council protocol with current debate rules.', 'Retain only distinct steps and do not add phantom agents.'),
+ 'verification_enhancement': ('Link each requirement to evidence, claim and counterexample.', 'Flag missing or contradicted evidence.'),
+ 'probable_method_overlap': ('Compare full method steps with the existing named lens.', 'Record semantic review needed; preserve both source IDs.'),
+ 'dialogue_enhancement': ('Elicit the real task, stakeholder and missing constraints.', 'Mark assumptions if no user answer was supplied.'),
+ 'method_collection': ('Select source-labelled procedures relevant to the task.', 'Do not treat labels as novel runnable tools.'),
+ 'exact_duplicate': ('Keep the mirror as a provenance-only pointer.', 'Do not count or activate the same bytes twice.'),
+ 'scientific_verification_candidate': ('Separate correlation, mechanism and alternative causes.', 'Request underlying study evidence before confidence claims.'),
+ 'bias_check_candidate': ('Name a possible judgment bias and a disconfirming check.', 'Do not infer a user psychological trait.'),
+ 'probable_workflow_overlap': ('Compare brainstorming stages with existing creative workflow.', 'Retain distinct instructions; avoid duplicate capability counts.'),
+ 'reference_only': ('Store source metadata without activating an uninspected tool.', 'No executable claim is permitted.'),
+}
+
 def _tokens(text: str) -> set[str]:
     text = unicodedata.normalize('NFKC', text).casefold()
     text = re.sub(r'[\u064b-\u065f\u0670\u0640]', '', text)
@@ -87,7 +108,11 @@ def plan(task: str, root: Path, roles=ROLES) -> dict:
         if not isinstance(item.get('classification'), str) or not item['classification']:
             raise ValueError('external Atlas source needs classification')
         seen.add(path)
-        records.append({'source_id':'atlas:'+path, 'name':item.get('name',path),
+        if item['classification'] not in SOURCE_ACTIONS:
+            raise ValueError('unreviewed external Atlas source classification')
+        action, evidence = SOURCE_ACTIONS[item['classification']]
+        records.append({'advisory_action':action, 'evidence_gate':evidence,
+                        'source_id':'atlas:'+path, 'name':item.get('name',path),
                         'primary':roles_for[0], 'secondary':roles_for[1:],
                         'classification':item['classification'], 'source_path':path,
                         'source_commit':commit, 'status':'CATALOGUED_NOT_EXECUTED'})
