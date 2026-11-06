@@ -121,7 +121,7 @@
 - 74–79: Evidence and limits
 - 80–104: Creative Council — no artistic gatekeepers
 - 105–130: Book-informed judgment guard (Thinking, Fast and Slow)
-- 131–160: Source-linked external Atlas candidate bridge (2026-11-06)
+- 131–159: Source-linked external Atlas candidate bridge (2026-11-06)
 
 ### `.claude/skills/kosif-dragon-mind/SKILL.md`
 

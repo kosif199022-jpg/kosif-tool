@@ -2945,6 +2945,11 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_v58_mastery.py"
   },
   {
+   "id": "test:tests/test_black_dragon_atlas_council_bridge.py",
+   "kind": "test",
+   "label": "tests/test_black_dragon_atlas_council_bridge.py"
+  },
+  {
    "id": "test:tests/test_black_dragon_creative_council.py",
    "kind": "test",
    "label": "tests/test_black_dragon_creative_council.py"
@@ -9012,6 +9017,12 @@
   {
    "from": "script:scripts/council.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_v58_mastery.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/council.py",
+   "to": "test:tests/test_black_dragon_atlas_council_bridge.py",
    "rel": "tested_by",
    "w": 1
   },
