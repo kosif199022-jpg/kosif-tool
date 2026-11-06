@@ -423,6 +423,11 @@ def plan(task: str, root: Path = ROOT, options=DEFAULT_OPTIONS) -> dict:
         sid = seat["id"]
         seat["external_atlas_candidate_count"] = sum(
             r["primary"] == sid for r in external_atlas["source_assignments"])
+        seat["external_atlas_candidate_actions"] = [
+            {"source_id": r["source_id"], "name": r["name"],
+             "classification": r["classification"],
+             "advisory_action": r["advisory_action"], "evidence_gate": r["evidence_gate"]}
+            for r in external_atlas["source_assignments"] if r["primary"] == sid]
         seat["external_atlas_selected_procedures"] = [
             {"id": p["id"], "question": p["question"], "output_check": p["output_check"],
              "source_id": p["source_id"], "status": p["status"]}
