@@ -18114,6 +18114,120 @@
       "power_id": "TOOL-179"
     },
     {
+      "id": "free-media-catalog",
+      "path": "scripts/free_media_catalog.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "sources",
+      "title_en": "Free media catalog: the montage source list with licence, commercial use and credit per site",
+      "title_ar": "قائمة المواقع المجانية للمونتاج: فيديو وصور ومؤثرات وصوت، وترخيص كل موقع",
+      "summary_en": "One checked list of 129 free and open-licence sites the montage work draws from: the owner's 100-site list (stock video, free sections of paid sites, VFX, archives and agencies, photos, museums, space, textures and HDRI) plus 29 additions (music and sound effects, Lottie and illustration, fonts, Egyptian-collection museums, satellite imagery, 4K nature footage). Each record gives the licence and its link, whether commercial use is allowed (yes, per-item, limited, no), whether credit is required, tier (free, freemium, free section of a paid site, aggregator), topics (egypt, nature-4k, space, vertical), reachability measured from the cloud, and which existing tool (free_footage, free_photos, media_sources) already searches or downloads it. list filters by section, topic, commercial, no-credit and star; links fills ready search URLs on 24 sites; check validates ids, urls, enums and tool references; probe re-measures reachability.",
+      "summary_ar": "قائمة واحدة مفحوصة بـ129 موقع مجاني نستعين بمحتواها في المونتاج: المئة موقع اللي بعتها صاحب المشروع (فيديو، أقسام مجانية في مواقع مدفوعة، مؤثرات، أرشيفات، صور، متاحف، فضاء، خامات) و29 إضافة (موسيقى ومؤثرات صوتية، رسوم وLottie وخطوط، متاحف فيها آثار مصرية، صور أقمار صناعية، طبيعة 4K). لكل موقع: الترخيص ورابطه، هل التجاري مسموح، هل النسب لازم، وهل الموقع بيرد من السحابة، وأنهي أداة عندنا بتبحث فيه. أمر list بيفلتر بالنوع والموضوع (مصر، طبيعة 4K) والتجاري، وlinks بيطلع روابط بحث جاهزة.",
+      "use_when": [
+        "هات لي مواقع فيديو طبيعة 4K مجانية مسموح استخدامها تجاري",
+        "فين ألاقي صور وفيديوهات عن مصر من غير حقوق",
+        "أي مواقع موسيقى ومؤثرات صوتية مجانية للمونتاج",
+        "Which free stock sites need no credit for commercial use?",
+        "List free museum and archive sources with Egyptian collections"
+      ],
+      "keywords": [
+        "free media",
+        "free stock sites",
+        "stock footage sites",
+        "montage sources",
+        "licence",
+        "credit",
+        "commercial use",
+        "royalty free",
+        "sound effects",
+        "free music",
+        "hdri",
+        "textures",
+        "museums",
+        "open access",
+        "egypt",
+        "nature 4k",
+        "مواقع مجانية",
+        "مصادر المونتاج",
+        "فيديو بدون حقوق",
+        "صور مصر",
+        "طبيعة 4K",
+        "موسيقى مجانية",
+        "مؤثرات صوتية",
+        "ترخيص",
+        "ذكر المصدر"
+      ],
+      "commands": [
+        {
+          "name": "sections",
+          "example": "python3 scripts/free_media_catalog.py sections",
+          "does": "Offline: sections and topics with their counts."
+        },
+        {
+          "name": "list",
+          "example": "python3 scripts/free_media_catalog.py list --topic nature-4k --commercial --no-credit",
+          "does": "Offline: sites grouped by section with commercial use, credit rule and url; --section, --topic, --commercial (only 'yes'), --no-credit (not required or only requested), --star, --origin, --reachable, --json."
+        },
+        {
+          "name": "find",
+          "example": "python3 scripts/free_media_catalog.py find CC0 museum",
+          "does": "Offline: every site whose name, url, note, licence, section or topic contains all the words; exit 1 when none."
+        },
+        {
+          "name": "show",
+          "example": "python3 scripts/free_media_catalog.py show polyhaven",
+          "does": "Offline: one record as JSON."
+        },
+        {
+          "name": "links",
+          "example": "python3 scripts/free_media_catalog.py links \"cairo\" --topic egypt --commercial",
+          "does": "Offline: ready search links for the query on the matching sites that have a search URL."
+        },
+        {
+          "name": "check",
+          "example": "python3 scripts/free_media_catalog.py check",
+          "does": "Offline: validates the catalog (unique ids and urls ignoring www and trailing slash, https, enums, sections, topics, search templates, free_footage and free_photos references, counts); exit 1 on any problem."
+        },
+        {
+          "name": "probe",
+          "example": "python3 scripts/free_media_catalog.py probe --ids polyhaven,pexels",
+          "does": "Network: one GET per site and the reachability next to the stored one; prints only, never writes."
+        }
+      ],
+      "safe_commands": [
+        "sections",
+        "list",
+        "find",
+        "show",
+        "links",
+        "check"
+      ],
+      "inputs": "Filters (--section, --topic, --commercial, --no-credit, --star, --origin, --reachable), search words, a site id, or a query for links.",
+      "outputs": "Text tables or JSON on stdout; the data lives in data/free_media_catalog.json (kosif.free-media-catalog.v1).",
+      "requires": {
+        "python": [],
+        "binaries": [],
+        "node": [],
+        "optional": [],
+        "network": false
+      },
+      "safety": "read-only",
+      "consent": "Only probe touches the network (one GET per listed site); the rest reads the local catalog.",
+      "limits": "The licence, commercial and credit fields summarise each site's published terms as of 2026-11-06 from the existing checked databases and known terms; they were not re-read per file and free tiers change, so per-item and paid work still need the file's own page. Reachability is from a claude.ai cloud sandbox: 43 sites answered with bot walls (403/429) that a home browser usually passes, stokpic.com and wedistill.io did not resolve, and three timed out. It lists sites; searching and downloading with a licence sidecar stays in free_footage.py and free_photos.py.",
+      "evidence": "tested-here",
+      "evidence_note": "evals/test_free_media_catalog.py (14 tests) passed here on 2026-11-06, offline: the shipped catalog validates, all 100 user-list sites and their nine stars are present, known licence facts (Pexels, Pixabay, Unsplash, Poly Haven commercial without credit; Freepik, Vecteezy, ESO, ESA/Hubble, Dareful, Incompetech credit required; British Museum and BBC Sound Effects non-commercial), egypt and nature-4k topics, filters, URL-quoted search links, duplicate-url detection ignoring www and trailing slash, bad enums and tool references, and the CLI. Live on 2026-11-06: one GET to each of the 129 urls from the cloud sandbox gave 81 ok, 43 bot walls, 3 timeouts and 2 unresolved domains, stored as reach.",
+      "tests": [
+        ".claude/skills/kosif-superpowers/evals/test_free_media_catalog.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/references/guides/sources.md"
+      ],
+      "families": [
+        "photo-video-footage",
+        "web-research"
+      ]
+    },
+    {
       "id": "quran-text",
       "path": "scripts/quran_text.py",
       "root": "skill",

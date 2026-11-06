@@ -48,6 +48,7 @@
 | `fetch-reference` | جلب المرجع المسموح وقياسه | `python3 scripts/fetch_reference.py https://example.com/page --list --json` | tested-here |
 | `fetch-video` | تنزيل الفيديو من الروابط للمونتاج | `python3 scripts/fetch_video.py --doctor` | tested-here |
 | `free-footage` | لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب | `python3 scripts/free_footage.py sources --searchable` | tested-here |
+| `free-media-catalog` | قائمة المواقع المجانية للمونتاج: فيديو وصور ومؤثرات وصوت، وترخيص كل موقع | `python3 scripts/free_media_catalog.py sections` | tested-here |
 | `free-photos` | صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب | `python3 scripts/free_photos.py sources` | tested-here |
 | `image-local-ai` | ذكاء الصور المحلي: إزالة الخلفية والملء الذكي بنموذج ONNX تختاره | `python3 scripts/image_local_ai.py models --json` | tested-here |
 | `instagram-finder` | البحث عن فيديوهات إنستجرام لمنتج وتحميلها | `python3 scripts/instagram_finder.py accounts` | tested-here |
