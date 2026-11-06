@@ -57,6 +57,23 @@ class CreativeCouncilTests(unittest.TestCase):
         self.assertEqual(report["source_counts"], {"framework": 3, "model": 2, "power": 2})
         self.assertEqual(report["fingerprint"], council.plan("صمّم فيديو حزين", self.root, options=["hybrid"])["fingerprint"])
 
+    def test_same_title_records_share_one_focus_with_both_sources(self):
+        self.put(council.DRAGON, {"frameworks": [
+            {"id": "inversion", "family": "frame", "name_en": "Inversion"},
+            {"id": "scamper", "family": "diverge", "name_en": "SCAMPER"}]})
+        self.put(council.MODELS, [
+            {"id": "MODEL-01", "discipline": "reasoning", "name_en": "Inversion"}])
+        draft = council.plan("Inversion of a cinematic story", self.root)
+        self.assertEqual(draft["repeated_title_group_count"], 1)
+        self.assertEqual(draft["repeated_title_groups"]["inversion"],
+                         ["framework:inversion", "model:MODEL-01"])
+        analyst = next(x for x in draft["roles"] if x["id"] == "analyst")
+        methods = [x for x in analyst["focus"] if x["title_key"] == "inversion"]
+        self.assertEqual(len(methods), 1)
+        self.assertEqual(set(methods[0]["source_ids"]),
+                         {"framework:inversion", "model:MODEL-01"})
+        self.assertEqual(draft["primary_assigned"], len(council.inventory(self.root)))
+
     def test_one_round_is_advisory_not_falsely_debated(self):
         report = council.plan("مونتاج", self.root)
         outcome = council.verdict(report, {"rounds": {"1": {
