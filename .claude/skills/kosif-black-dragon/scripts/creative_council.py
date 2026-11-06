@@ -196,7 +196,7 @@ def title_key(row: dict) -> str:
     title = str(row.get("name_en") or row.get("en") or row.get("name") or
                 row.get("name_ar") or row.get("ar") or row.get("id", ""))
     title = unicodedata.normalize("NFKC", title).casefold()
-    title = re.sub(r"[^\\w\\u0621-\\u064a]+", " ", title).strip()
+    title = re.sub(r"[^\w\u0621-\u064a]+", " ", title).strip()
     aliases = {"first principles thinking": "first principles",
                "pre mortem": "premortem", "pre mortem analysis": "premortem",
                "premortem": "premortem", "first principles": "first principles"}
