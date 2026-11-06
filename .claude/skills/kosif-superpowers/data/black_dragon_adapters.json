@@ -2412,6 +2412,16 @@
       ],
       "why": "repo-ashell-cinema: the iPhone a-Shell app run offline in dash; Photos SAFE known answers (3 checks)",
       "tool_suite": true
+    },
+    "skill:saas-animation": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "saas-animation",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "saas-animation: tiles known-colour stills into a contact sheet in time order, splits a cut-out into a layer and draws a coordinate grid, each checked by pixel (no Chrome render)",
+      "skill_program": true
     }
   }
 }
