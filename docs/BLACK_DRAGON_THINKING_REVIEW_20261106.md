@@ -1,5 +1,42 @@
 # Black Dragon — cognition inventory review (2026-11-06)
 
+> **Combined-head update:** The current PR #233 branch also incorporates the
+> separately authored PR #238 (Kahneman's *Thinking, Fast and Slow* page-indexed
+> reasoning data). The inventory is now **443 core cognition records + 82
+> contextual Atlas Mind records = 525 assigned records**, still **12 seats**.
+> Earlier 404/486 figures below describe the pre-#238 audit, not the latest
+> combined branch. The 26 sampled external Atlas paths and their 23 advisory
+> thinking procedures are separate candidates, not 49 additional unique skills.
+> CI and measured task-quality improvements remain to be verified.
+
+## Unified Kahneman book and Council integration (PR #238 + PR #233)
+
+The book branch provides a declared 468-page reading dataset containing 584
+page-cited insights, adds 39 new `tfs-*` frameworks (31 explicitly marked
+lexical trap hypotheses), and enriches three older frameworks with page
+references. The combined council inventory includes the 39 only once, via the
+same Dragon Mind frameworks source. The book itself is not committed.
+
+The combined `creative_council.py plan` now calls Dragon Mind's own
+`scan_traps(task, deep=True)`. Every resulting question carries the
+source `framework:tfs-*` ID, referenced PDF pages, and an actionable
+`debias_ar` check; it is routed to its primary expert plus the critic
+seat. The three always-on checks (WYSIATI, question substitution and
+overconfidence) are included when the book scanner returns them.
+
+These are **lexical possible error prompts**, not proven biases and not
+independent agent outputs. No review is compulsory and no new rights
+member is introduced. The original 11-lens `judgment_guard.py` continues
+to provide a separate structured review mode.
+
+Integration test contracts: 159 frameworks (120+39), 525 total
+records (443+82), 42 book-linked frameworks (39+3), 31 trap-labelled
+new frameworks, 12 seats, unchanged 26 sampled Atlas candidate
+paths, unchanged 23 Atlas planning procedure labels, exact source
+references and no double-counting. A complete passing CI run on the
+combined head is required before PR #233 may be merged into `main`.
+
+
 ## Result and exact scope
 
 This is a **source-level review and deterministic routing audit**, not proof of
