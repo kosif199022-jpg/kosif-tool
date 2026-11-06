@@ -22,6 +22,13 @@
  *        [--stills <t1,t2,...> [--stills-dir <dir>]] [--report <file.json>]
  *        [--crf 17] [--scale 1] [--seed <n>] [--offline] [--keep-frames]
  *        [--timeout <ms>] [--settle <ms>] [--no-space-check] [--clean-stale]
+ *        [--max-frames-per-page <n>] [--blank-retries <n>] [--black-check warn|fail|off]
+ *
+ * Blank-frame guard (seek mode): a capture that comes back uniform or pure black is retaken in a
+ * fresh browser at the same t (--blank-retries times); the recovered frame indices are logged and
+ * reported. --max-frames-per-page N also starts a fresh browser every N frames. After encoding,
+ * ffmpeg signalstats looks for runs of more than 2 fully black frames (Y=16 everywhere) and warns
+ * (--black-check fail turns that into exit 3).
  *
  * Stills: --stills seeks the page to each film time, writes still_<t>.png and one labelled grid
  * (stills_grid.png, times printed on every tile) plus stills.json, and encodes no video.
@@ -45,6 +52,7 @@
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
+const zlib = require('zlib');
 const { spawnSync } = require('child_process');
 const { pathToFileURL } = require('url');
 
@@ -108,6 +116,21 @@ const SIGNAL_EXIT = { SIGINT: 130, SIGTERM: 143, SIGHUP: 129 };
 // --stills: at most this many times per run (each is a full-size PNG; the grid stays a sane size).
 const MAX_STILLS = 64;
 
+// Blank-frame guard (seek mode). Canvas pages that drawImage many full-size JPEGs per seek can, after
+// some hundreds of frames in one page, start returning pure black captures (Y=16 after encode, no
+// watermark, no grain) that come back on every retry in the same page. A fresh browser draws them fine.
+// A capture is only decoded when its PNG is this small per pixel (a black 1080x1920 PNG is about
+// 38 KB, a frame with grain about 2 MB), so normal frames cost nothing extra.
+const BLANK_SUSPECT_BYTES_PER_PIXEL = 0.05;
+const BLANK_SUSPECT_MIN_BYTES = 4096;   // tiny frames: header overhead alone can pass the per-pixel limit
+const BLANK_DARK_LEVEL = 2;          // every RGB channel at or below this = black
+const DEFAULT_BLANK_RETRIES = 2;     // fresh-browser recaptures per blank frame before it is kept
+const BLANK_RECHECK_FRAMES = 30;     // inside a kept (intended) blank run, retry again after this many frames
+// Post-encode check: frames whose luma never rises above this (limited range: black is 16) are fully
+// black; a run longer than BLACK_RUN_MAX frames is reported. Intended fades still carry grain or overlays.
+const BLACK_YMAX = 17;
+const BLACK_RUN_MAX = 2;
+
 // ---------------------------------------------------------------- CLI parsing
 
 class UsageError extends Error {}
@@ -158,6 +181,14 @@ Options
                       above 1 needs seek mode (in virtual mode set --width/--height to the output size)
   --seed <n>          replace Math.random inside the page with a seeded PRNG
   --offline           abort every http(s) request (system fonts only, fully reproducible)
+  --max-frames-per-page <n>
+                      seek mode: start a fresh browser (and reload the page) every n frames; for heavy canvas
+                      pages whose captures turn black after many frames in one page (default: never)
+  --blank-retries <n> seek mode: when a capture is uniform or pure black, start a fresh browser, seek to the
+                      same t and capture again, up to n times; recovered frames are logged (default ${DEFAULT_BLANK_RETRIES};
+                      0 turns the guard off). A frame still blank after that is kept as intended black
+  --black-check <m>   after encoding, find runs of more than ${BLACK_RUN_MAX} fully black frames (luma <= ${BLACK_YMAX} everywhere):
+                      warn (default) prints them, fail also exits ${EXIT_VERIFY}, off skips the check
   --timeout <ms>      page load timeout                   (default ${DEFAULTS.timeout})
   --settle <ms>       extra wall-clock wait after the page is ready (default ${DEFAULTS.settle})
   --help, -h          this text
@@ -172,7 +203,7 @@ ${EXIT_VERIFY} ffprobe disagrees with the request, ${SIGNAL_EXIT.SIGINT}/${SIGNA
 // Every option the CLI understands. Anything else is reported as a usage error,
 // so a typo such as --fsp 24 never renders silently with the default.
 const VALUE_OPTIONS = new Set(['in', 'out', 'aspect', 'width', 'height', 'fps', 'duration', 'start',
-  'audio', 'mode', 'frames-dir', 'crf', 'scale', 'seed', 'timeout', 'settle', 'stills', 'stills-dir', 'report']);
+  'audio', 'mode', 'frames-dir', 'crf', 'scale', 'seed', 'timeout', 'settle', 'stills', 'stills-dir', 'report', 'max-frames-per-page', 'blank-retries', 'black-check']);
 const FLAG_OPTIONS = new Set(['preview', 'offline', 'keep-frames', 'no-space-check', 'clean-stale', 'help']);
 
 function parseArgs(argv) {
@@ -556,7 +587,7 @@ async function openBrowser(playwright, opts) {
     await context.route(/^https?:\/\//i, (route) => route.abort('blockedbyclient'));
   }
   const page = await context.newPage();
-  const errors = [];
+  const errors = opts.errors || []; // a relaunched browser keeps adding to the same list
   page.on('pageerror', (e) => errors.push(String(e.message || e)));
   page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
 
@@ -603,17 +634,137 @@ async function loadPage(page, url, { timeout, settle }) {
   });
 }
 
+// ------------------------------------------------------------ blank frames
+
+// Decodes an 8-bit, non-interlaced PNG (what Chromium writes) row by row and says whether it is blank:
+// { kind: 'black', rgb } when every pixel is black (each channel <= BLANK_DARK_LEVEL), { kind: 'uniform',
+// rgb } when every pixel has one colour, else null. Stops at the first row that shows content. Anything
+// it cannot read (other bit depths, palettes, interlacing, a broken file) counts as not blank.
+function pngBlankness(buf) {
+  try {
+    if (buf.length < 33 || buf.readUInt32BE(0) !== 0x89504e47) return null;
+    let off = 8, w = 0, h = 0, depth = 0, ctype = 0, interlace = 0;
+    const idat = [];
+    while (off + 8 <= buf.length) {
+      const len = buf.readUInt32BE(off);
+      const type = buf.toString('latin1', off + 4, off + 8);
+      const body = buf.subarray(off + 8, off + 8 + len);
+      if (type === 'IHDR') {
+        w = body.readUInt32BE(0); h = body.readUInt32BE(4); depth = body[8]; ctype = body[9]; interlace = body[12];
+      } else if (type === 'IDAT') idat.push(body);
+      else if (type === 'IEND') break;
+      off += 12 + len;
+    }
+    const channels = { 0: 1, 2: 3, 4: 2, 6: 4 }[ctype];
+    if (!w || !h || depth !== 8 || !channels || interlace !== 0 || !idat.length) return null;
+    const raw = zlib.inflateSync(Buffer.concat(idat));
+    const bpp = channels, stride = w * bpp;
+    if (raw.length < h * (stride + 1)) return null;
+    const colour = ctype === 0 || ctype === 4 ? 1 : 3; // grey or RGB channels (alpha ignored)
+    let prev = Buffer.alloc(stride), cur = Buffer.alloc(stride);
+    let first = null, uniform = true, dark = true;
+    for (let y = 0; y < h; y++) {
+      const base = y * (stride + 1), f = raw[base];
+      for (let x = 0; x < stride; x++) {
+        const v = raw[base + 1 + x];
+        const a = x >= bpp ? cur[x - bpp] : 0, b = prev[x], c = x >= bpp ? prev[x - bpp] : 0;
+        let p;
+        switch (f) {
+          case 0: p = 0; break;
+          case 1: p = a; break;
+          case 2: p = b; break;
+          case 3: p = (a + b) >> 1; break;
+          case 4: { const q = a + b - c, pa = Math.abs(q - a), pb = Math.abs(q - b), pc = Math.abs(q - c);
+            p = pa <= pb && pa <= pc ? a : pb <= pc ? b : c; break; }
+          default: return null;
+        }
+        cur[x] = (v + p) & 0xff;
+      }
+      if (!first) first = Array.from(cur.subarray(0, colour));
+      for (let x = 0; x < stride && (uniform || dark); x += bpp) {
+        for (let k = 0; k < colour; k++) {
+          const v = cur[x + k];
+          if (v !== first[k]) uniform = false;
+          if (v > BLANK_DARK_LEVEL) dark = false;
+        }
+      }
+      if (!uniform && !dark) return null;
+      [prev, cur] = [cur, prev];
+    }
+    const rgb = colour === 1 ? [first[0], first[0], first[0]] : first;
+    return { kind: dark ? 'black' : 'uniform', rgb };
+  } catch (e) {
+    return null;
+  }
+}
+
+// Only small PNGs can be blank (see BLANK_SUSPECT_BYTES_PER_PIXEL); everything else is not decoded.
+function captureBlankness(buf, width, height) {
+  if (buf.length >= Math.max(BLANK_SUSPECT_MIN_BYTES, width * height * BLANK_SUSPECT_BYTES_PER_PIXEL)) return null;
+  return pngBlankness(buf);
+}
+
+// "lavfi.signalstats.YMAX=16" lines printed by ffmpeg's metadata filter -> one YMAX per frame, in order.
+function parseSignalstatsYmax(text) {
+  const out = [];
+  for (const line of String(text).split(/\r?\n/)) {
+    const m = line.match(/lavfi\.signalstats\.YMAX=(\d+(?:\.\d+)?)/);
+    if (m) out.push(Number(m[1]));
+  }
+  return out;
+}
+
+// Runs of fully black frames (YMAX <= maxY) longer than maxRun: [{ first, last, frames }] (frame indices).
+function blackRuns(ymax, { maxY = BLACK_YMAX, maxRun = BLACK_RUN_MAX } = {}) {
+  const runs = [];
+  let begin = -1;
+  for (let i = 0; i <= ymax.length; i++) {
+    const black = i < ymax.length && ymax[i] <= maxY;
+    if (black && begin < 0) begin = i;
+    if (!black && begin >= 0) {
+      if (i - begin > maxRun) runs.push({ first: begin, last: i - 1, frames: i - begin });
+      begin = -1;
+    }
+  }
+  return runs;
+}
+
+// Decodes the encoded video once and returns { ok, runs, frames } or { ok: null, reason } when it could not.
+function checkBlackFrames(file, { maxY = BLACK_YMAX, maxRun = BLACK_RUN_MAX } = {}) {
+  if (!ffmpegHasFilter('signalstats')) return { ok: null, reason: 'this ffmpeg has no signalstats filter' };
+  const r = runTool('ffmpeg', ['-hide_banner', '-nostats', '-v', 'error', '-i', file, '-map', '0:v:0',
+    '-vf', 'signalstats,metadata=mode=print:key=lavfi.signalstats.YMAX:file=-', '-f', 'null', '-']);
+  if (r.status !== 0) return { ok: null, reason: `ffmpeg signalstats failed: ${String(r.stderr || '').trim().split('\n').pop()}` };
+  const ymax = parseSignalstatsYmax(r.stdout);
+  if (!ymax.length) return { ok: null, reason: 'ffmpeg signalstats printed no frames' };
+  const runs = blackRuns(ymax, { maxY, maxRun });
+  return { ok: runs.length === 0, runs, frames: ymax.length };
+}
+
+function blackRunsText(runs, { fps, start = 0 }) {
+  return runs.map((r) => `frames ${r.first}-${r.last} (${r.frames}, t=${fmtTime(start + r.first / fps)}-${fmtTime(start + r.last / fps)})`).join(', ');
+}
+
 // ------------------------------------------------------------------ drivers
 
 // seek driver: the page draws the frame for time t when seek(t) is called,
-// then a normal screenshot is taken.
+// then a normal screenshot is taken. shoot() adds the blank-frame guard: a uniform or black capture
+// is retaken in a fresh browser (reopen() returns the new { page, cdp }), and with maxFramesPerPage
+// the browser is replaced every N frames before it gets there.
 class SeekDriver {
-  constructor(page, cdp, { width, height, scale }) {
+  constructor(page, cdp, { width, height, scale, reopen = null, blankRetries = 0, maxFramesPerPage = 0 }) {
     this.page = page; this.cdp = cdp; this.name = 'seek';
     // Page.captureScreenshot without a clip returns CSS pixels in headless Chromium and
     // ignores deviceScaleFactor, so --scale 2 gave 1080x1920. An explicit clip with
     // scale captures at device pixels (same pixels as Playwright's own page.screenshot).
     this.clip = { x: 0, y: 0, width, height, scale };
+    this.capWidth = Math.round(width * scale); this.capHeight = Math.round(height * scale);
+    this.reopenFn = reopen;
+    this.blankRetries = reopen ? blankRetries : 0;
+    this.maxFramesPerPage = reopen ? maxFramesPerPage : 0;
+    this.framesThisPage = 0;
+    this.keptBlank = 0;       // frames kept blank since the last retry cycle (an intended black run)
+    this.stats = { reopens: 0, scheduled_reopens: 0, recovered: [], kept: [] };
   }
   async goTo(t) {
     await this.page.evaluate((time) => window.__kosif.seek(time), t);
@@ -624,7 +775,50 @@ class SeekDriver {
       optimizeForSpeed: true, // still lossless PNG, faster zlib level (~6x quicker capture)
       clip: this.clip,
     });
-    fs.writeFileSync(file, Buffer.from(data, 'base64'));
+    const buf = Buffer.from(data, 'base64');
+    fs.writeFileSync(file, buf);
+    return buf;
+  }
+  async reopen() {
+    const s = await this.reopenFn();
+    this.page = s.page; this.cdp = s.cdp;
+    this.framesThisPage = 0;
+    this.stats.reopens += 1;
+  }
+  // Captures the frame at t into file. index labels the frame in logs and in stats.
+  async shoot(t, file, index = null) {
+    if (this.maxFramesPerPage > 0 && this.framesThisPage >= this.maxFramesPerPage) {
+      await this.reopen();
+      this.stats.scheduled_reopens += 1;
+    }
+    await this.goTo(t);
+    let blank = captureBlankness(await this.capture(file), this.capWidth, this.capHeight);
+    this.framesThisPage += 1;
+    if (!blank) { this.keptBlank = 0; return null; }
+    const label = `${index === null ? 'capture' : `frame ${index}`} (t=${fmtTime(t)})`;
+    const what = (b) => `${b.kind} rgb(${b.rgb.join(',')})`;
+    if (this.blankRetries < 1) return blank;
+    // Same blank run as a frame that stayed blank after every retry: keep it, but look again now and then
+    // in case the page broke inside an intended black stretch.
+    if (this.keptBlank > 0 && this.keptBlank < BLANK_RECHECK_FRAMES) {
+      this.keptBlank += 1; this.stats.kept.push(index); return blank;
+    }
+    warn(`blank capture at ${label}: ${what(blank)}; recapturing in a fresh browser`);
+    for (let attempt = 1; attempt <= this.blankRetries; attempt++) {
+      await this.reopen();
+      await this.goTo(t);
+      blank = captureBlankness(await this.capture(file), this.capWidth, this.capHeight);
+      this.framesThisPage += 1;
+      if (!blank) {
+        this.stats.recovered.push(index);
+        log(`blank-guard: recovered ${label} on attempt ${attempt}`);
+        return null;
+      }
+    }
+    this.keptBlank = 1;
+    this.stats.kept.push(index);
+    warn(`blank-guard: ${label} is still ${what(blank)} after ${this.blankRetries} fresh browser(s); kept as intended`);
+    return blank;
   }
 }
 
@@ -684,6 +878,10 @@ class VirtualDriver {
       throw new Error('BeginFrame produced no screenshot');
     }
     this.lastFile = file;
+  }  async shoot(t, file) {
+    await this.goTo(t);
+    await this.capture(file);
+    return null;
   }
 }
 
@@ -1063,8 +1261,7 @@ async function capturePicks(driver, picks, { capWidth, capHeight, describe }) {
     if (prev && driver.name === 'virtual' && driver.frameIndex(p.t) === driver.frameIndex(prev.t)) {
       fs.copyFileSync(prev.file, p.file);
     } else {
-      await driver.goTo(p.t);
-      await driver.capture(p.file);
+      await driver.shoot(p.t, p.file);
       if (k === 0) checkFrameSize(p.file, capWidth, capHeight);
     }
     log(describe(p, k, picks.length));
@@ -1138,6 +1335,10 @@ async function main() {
   if (audio && (preview || stills)) warn(`--audio is ignored in --${preview ? 'preview' : 'stills'} mode`);
   if (stills && args.start !== undefined) warn('--start is ignored with --stills: the --stills times are film times');
   const reportPath = args.report ? path.resolve(String(args.report)) : null;
+  const maxFramesPerPage = numberOpt(args, 'max-frames-per-page', 0, { integer: true, min: 1 });
+  const blankRetries = numberOpt(args, 'blank-retries', DEFAULT_BLANK_RETRIES, { integer: true, min: 0 });
+  const blackCheck = args['black-check'] === undefined ? 'warn' : String(args['black-check']);
+  if (!['warn', 'fail', 'off'].includes(blackCheck)) throw new UsageError('--black-check must be warn, fail or off');
 
   const outPath = args.out ? path.resolve(String(args.out)) : null;
   const stillsDir = !stills ? null : args['stills-dir'] !== undefined ? path.resolve(String(args['stills-dir']))
@@ -1209,7 +1410,8 @@ async function main() {
     }
   };
 
-  const browserOpts = { isFile, width, height, scale: capScale, offline, seed, virtual: mode === 'virtual' };
+  const pageErrors = [];
+  const browserOpts = { isFile, width, height, scale: capScale, offline, seed, virtual: mode === 'virtual', errors: pageErrors };
   let session = null;
   let exitCode = 0;
   try {
@@ -1241,8 +1443,24 @@ async function main() {
     }
     checkSpace(total);
     let driver;
-    if (useVirtual) { driver = new VirtualDriver(page, cdp, fps); await driver.start(); }
-    else driver = new SeekDriver(page, cdp, { width, height, scale: capScale });
+    if (useVirtual) {
+      driver = new VirtualDriver(page, cdp, fps); await driver.start();
+      if (maxFramesPerPage) warn('--max-frames-per-page only applies in seek mode; ignored');
+    } else {
+      // A fresh browser for the blank-frame guard and --max-frames-per-page: same options, same page.
+      const reopen = async () => {
+        await session.browser.close().catch(() => {});
+        session = null;
+        session = await openBrowser(playwright, { ...browserOpts, virtual: false });
+        const again = await loadPage(session.page, url, { timeout, settle });
+        if (!again) throw new Error('page lost window.__kosif.seek after a fresh browser start');
+        return session;
+      };
+      driver = new SeekDriver(page, cdp, { width, height, scale: capScale, reopen, blankRetries, maxFramesPerPage });
+      log(`blank-guard: ${blankRetries ? `on (${blankRetries} fresh-browser retr${blankRetries === 1 ? 'y' : 'ies'} per blank frame)` : 'off'}` +
+        (maxFramesPerPage ? ` | fresh browser every ${maxFramesPerPage} frames` : ''));
+    }
+    const guardStats = () => (driver.stats ? { ...driver.stats } : null);
 
     if (stills) {
       log(`mode: ${driver.name} | ${width}x${height} css px, capture ${capWidth}x${capHeight} | ${stills.length} still${stills.length === 1 ? '' : 's'} -> ${stillsDir}` +
@@ -1303,9 +1521,8 @@ async function main() {
         const t0 = Date.now();
         for (let i = 0; i < total; i++) {
           const t = timeOf(i);
-          await driver.goTo(t);
           const file = path.join(framesDir, frameName(i));
-          await driver.capture(file);
+          await driver.shoot(t, file, i);
           if (i === 0) checkFrameSize(file, capWidth, capHeight);
           if ((i + 1) % 30 === 0 || i + 1 === total) {
             const elapsed = (Date.now() - t0) / 1000;
@@ -1319,6 +1536,21 @@ async function main() {
         const problems = verifyProbe(probe, want);
         const proof = proveAudio({ audioInfo: enc.audio, source: audio, output: outPath });
         const audioMd5 = audioMd5Token(proof);
+        const guard = guardStats();
+        if (guard && (guard.recovered.length || guard.kept.length || guard.reopens)) {
+          log(`blank-guard: ${guard.reopens} fresh browser(s) (${guard.scheduled_reopens} scheduled); ` +
+            `recovered frames [${guard.recovered.join(', ')}]; kept blank [${guard.kept.join(', ')}]`);
+        }
+        let black = null;
+        if (blackCheck !== 'off') {
+          black = checkBlackFrames(outPath);
+          if (black.ok === null) warn(`black-frame check skipped: ${black.reason}`);
+          else if (!black.ok) {
+            const text = `${black.runs.length} run(s) of more than ${BLACK_RUN_MAX} fully black frames: ${blackRunsText(black.runs, { fps, start })}`;
+            if (blackCheck === 'fail') problems.push(text);
+            else warn(`black frames: ${text} (an intended fade carries grain or overlays; re-render with --max-frames-per-page or check the page)`);
+          } else log(`black-frame check: no run of more than ${BLACK_RUN_MAX} fully black frames in ${black.frames} frames`);
+        }
         const line = verifyLine({ problems, probe, audioMd5, out: outPath });
         log(line);
         if (problems.length) {
@@ -1338,6 +1570,8 @@ async function main() {
               width: probe.width, height: probe.height, audio: probe.audio ? probe.audioCodec : null,
             },
             audio_md5: audioMd5,
+            blank_guard: guard,
+            black_frames: black,
             audio: audio ? { source: audio, handling: enc.audio.handling, codec: enc.audio.codec, proof } : null,
             verify_line: line,
             page_errors: errors.slice(0, 10),
@@ -1384,6 +1618,9 @@ if (require.main === module) {
     realPath, pathsOverlap, notOwnTempReason, prepareUserFramesDir,
     FRAMES_PREFIX, RENDER_MARKER, USER_FRAMES_MARKER, PNG_BYTES_PER_PIXEL, SPACE_MARGIN, STALE_AGE_HOURS, SIGNAL_EXIT, DiskSpaceError,
     // --stills and the preview grid
+    // blank-frame guard and the post-encode black check
+    pngBlankness, captureBlankness, parseSignalstatsYmax, blackRuns, checkBlackFrames, blackRunsText, SeekDriver,
+    BLANK_SUSPECT_BYTES_PER_PIXEL, BLANK_SUSPECT_MIN_BYTES, BLANK_DARK_LEVEL, DEFAULT_BLANK_RETRIES, BLANK_RECHECK_FRAMES, BLACK_YMAX, BLACK_RUN_MAX,
     parseStillTimes, stillName, planStills, gridLayout, bitmapLabelFilters, labelFilters, composeGrid, BITMAP_FONT, MAX_STILLS,
     // audio proof (needs ffmpeg only for audioPacketHashes/proveAudio/encodeVideo)
     audioHashArgs, parseMd5, parseFrameMd5, packetsEndSeconds, compareAudioPackets, audioMd5Token, audioProofWarning,
