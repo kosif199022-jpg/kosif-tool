@@ -397,7 +397,7 @@ def main(argv=None) -> int:
     m.add_argument("task")
     m.add_argument("--index", type=Path, required=True)
     m.add_argument("--legacy-links", action="store_true", help="only return optional legacy entry IDs")
-    c = cmd.add_parser("council", help="Build source-traceable 13-seat film council, no agents run")
+    c = cmd.add_parser("council", help="Build source-traceable 12-seat film council, no agents run")
     c.add_argument("task")
     c.add_argument("--out", type=Path, help="Optional JSON plan output")
     c.add_argument("--options", default="licensed-footage,code-motion,hybrid",
