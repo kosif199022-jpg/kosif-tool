@@ -4,7 +4,7 @@
 Builds a task-fitted council from the original Dragon Mind / Superpowers thinking
 sources. Planning does not invoke an LLM, hold a debate, download assets or render
 video. A verdict requires external, explicitly labelled submissions from every
-member across three rounds; it never treats persona prompts as independent agents.
+member across optional discussion rounds; it never treats persona prompts as independent agents.
 """
 from __future__ import annotations
 
@@ -23,7 +23,7 @@ MODELS = ".claude/skills/kosif-superpowers/data/mental_models.json"
 POWERS = ".claude/skills/kosif-superpowers/data/powers/thinking-core.json"
 SCHEMA = "kosif.black-dragon.creative-council.v1"
 
-# Thirteen expert seats. The chairman facilitates, never overrides a rights veto.
+# Twelve expert seats. The chair facilitates; no member has a hard veto.
 SEATS = {
     "chair": ("رئيس المجلس ومنسق الجلسات", "Ensures all voices, dissent and evidence are recorded"),
     "analyst": ("محلل المعنى والمبادئ", "Separates facts, assumptions, audience and objective"),
@@ -37,7 +37,6 @@ SEATS = {
     "systems": ("خبير الأنظمة والترابط", "Checks dependencies, handoffs and second-order effects"),
     "audience": ("ممثل الجمهور والمنصة", "Tests readability, audience intent and accessibility"),
     "learning": ("خبير التجارب والتعلم", "Records tested outcomes and lessons, not assumptions"),
-    "rights": ("حارس الحقوق والموافقات", "Checks assets, licences, privacy and paid actions"),
 }
 FRAMEWORK_FAMILY = {
     "frame": "analyst", "diverge": "creative", "converge": "decision",
@@ -45,8 +44,6 @@ FRAMEWORK_FAMILY = {
     "product": "visual", "learn": "learning", "communicate": "story",
     "execute": "engineer",
 }
-# Some risk operators are best owned by the independent rights/guardrails seat.
-RIGHTS_FRAMEWORKS = {"margin-of-safety", "via-negativa", "swiss-cheese-model", "normal-accidents"}
 MODEL_DISCIPLINE = {
     "decision": "decision", "planning": "engineer", "systems": "systems",
     "epistemics": "research", "creativity": "creative", "biases": "critic",
@@ -73,9 +70,9 @@ REVIEW_FIELDS = {
     "3": ("revised_proposal", "remaining_objection", "scores"),
 }
 DEFAULT_OPTIONS = ("licensed-footage", "code-motion", "hybrid")
-CRITERIA = ("meaning", "drama", "feasibility", "visual-cohesion", "rights", "audience", "editability")
+CRITERIA = ("meaning", "drama", "feasibility", "visual-cohesion", "audience", "editability")
 WEIGHTS = {"meaning": 3, "drama": 3, "feasibility": 2, "visual-cohesion": 2,
-           "rights": 3, "audience": 2, "editability": 1}
+           "audience": 2, "editability": 1}
 
 
 def _read(path: Path):
@@ -105,8 +102,6 @@ def _record(kind: str, row: dict, role: str, source: str) -> dict:
         secondary.add("audience")
     if kind == "framework" and row.get("family") == "communicate":
         secondary.add("audience")
-    if kind == "framework" and row.get("family") == "risk" and role != "rights":
-        secondary.add("rights")
     if role == "creative":
         secondary.add("visual")
     if role == "story":
@@ -128,7 +123,7 @@ def inventory(root: Path = ROOT) -> list[dict]:
         family = x.get("family")
         if family not in FRAMEWORK_FAMILY:
             raise ValueError("unknown framework family: " + str(family))
-        role = "rights" if x["id"] in RIGHTS_FRAMEWORKS else FRAMEWORK_FAMILY[family]
+        role = FRAMEWORK_FAMILY[family]
         rows.append(_record("framework", x, role, DRAGON))
     for x in models:
         discipline = x.get("discipline")
@@ -165,8 +160,8 @@ def plan(task: str, root: Path = ROOT, options=DEFAULT_OPTIONS) -> dict:
     if not task or not task.strip():
         raise ValueError("task is required")
     options = list(options)
-    if len(options) < 2 or len(options) > 8 or len(set(options)) != len(options):
-        raise ValueError("provide 2-8 unique candidate routes")
+    if not options or len(set(options)) != len(options) or not all(isinstance(o, str) and o.strip() for o in options):
+        raise ValueError("provide unique nonempty implementation routes")
     entries = inventory(root)
     words = tokens(task)
     seats = []
@@ -193,12 +188,13 @@ def plan(task: str, root: Path = ROOT, options=DEFAULT_OPTIONS) -> dict:
         "options": options,
         "rubric": WEIGHTS,
         "rounds": {
-            "1": "Independent proposal; keep other members' submissions hidden. Cite real evidence.",
-            "2": "Cross-examine a different member; state their strongest case fairly and one objection.",
-            "3": "Revise position; keep dissent visible; score each route 1-5 with reasons.",
+            "1": "Optional: gather independent proposals.",
+            "2": "Optional: cross-examine ideas and record strong counterarguments.",
+            "3": "Optional: revise and score candidate routes.",
         },
-        "rights_gate": "licensed assets and explicit approval for paid services, external upload or publishing",
-        "preview_gate": "story -> real preview -> actual final media verification; plan is not an MP4",
+        "creative_policy": "No fixed debate rounds, fixed quorum, artistic vetoes or compulsory weights.",
+        "external_action_boundary": "Plans are free; paid actions, external uploads and publication still require explicit authorization.",
+        "preview_gate": "Only claim real preview or MP4 after inspecting the actual media file.",
         "limits": "lexical relevance ranking only; source counts are not independent intelligences or executions",
     }
     record["fingerprint"] = hashlib.sha256(json.dumps(record["assignments"], sort_keys=True,
@@ -207,63 +203,73 @@ def plan(task: str, root: Path = ROOT, options=DEFAULT_OPTIONS) -> dict:
 
 
 def verdict(council: dict, submissions: dict) -> dict:
-    """Reject incomplete or unlabelled debates instead of faking experts' reasoning."""
+    """Optional advisory review; never fabricate independent runs or completed media."""
     if council.get("schema") != SCHEMA + ".plan":
         raise ValueError("not a creative council plan")
     options = council["options"]
     seat_ids = {s["id"] for s in council["roles"]}
+    mode = submissions.get("mode", "UNVERIFIED")
+    if mode not in ("INDEPENDENT", "SIMULATED", "UNVERIFIED"):
+        raise ValueError("mode must be INDEPENDENT, SIMULATED or UNVERIFIED")
     rounds = submissions.get("rounds") or {}
-    mode = submissions.get("mode")
-    if mode not in ("INDEPENDENT", "SIMULATED"):
-        raise ValueError("mode must be INDEPENDENT or SIMULATED")
-    for phase, fields in REVIEW_FIELDS.items():
-        reports = rounds.get(phase) or {}
-        if set(reports) != seat_ids:
-            raise ValueError("round " + phase + " requires all council seats")
+    if not isinstance(rounds, dict) or any(k not in REVIEW_FIELDS for k in rounds):
+        raise ValueError("unknown round; allowed rounds are 1, 2 and 3")
+    participating = set()
+    for phase, reports in rounds.items():
+        if not isinstance(reports, dict) or not set(reports).issubset(seat_ids):
+            raise ValueError("unrecognized council member in round " + phase)
+        participating.update(reports)
         for seat, entry in reports.items():
-            for field in fields:
-                if field not in entry or not entry[field]:
-                    raise ValueError("round %s: %s missing %s" % (phase, seat, field))
-            if phase == "2" and entry["target_member"] == seat:
-                raise ValueError("member cannot cross-examine itself")
-            if phase == "2" and entry["target_member"] not in seat_ids:
-                raise ValueError("cross-examination target is not a council member")
-            if phase == "3":
-                if set(entry["scores"]) != set(options):
-                    raise ValueError("every option needs an explicit score")
-                for opt in options:
-                    grades = entry["scores"][opt]
-                    if not isinstance(grades, dict) or set(grades) != set(WEIGHTS):
-                        raise ValueError("each route needs every weighted criterion")
-                    if any(type(v) is not int or not 1 <= v <= 5 for v in grades.values()):
+            if not isinstance(entry, dict):
+                raise ValueError("each report must be an object")
+            if phase == "2" and entry.get("target_member") is not None:
+                if entry["target_member"] not in seat_ids or entry["target_member"] == seat:
+                    raise ValueError("cross-examination target must be another council seat")
+            if phase == "3" and "scores" in entry:
+                if not isinstance(entry["scores"], dict):
+                    raise ValueError("option scores must be a mapping")
+                for option, criteria in entry["scores"].items():
+                    if option not in options or not isinstance(criteria, dict):
+                        raise ValueError("unknown option or invalid score format")
+                    if not criteria or not set(criteria).issubset(WEIGHTS):
+                        raise ValueError("unknown or absent scoring criteria")
+                    if any(type(v) is not int or not 1 <= v <= 5 for v in criteria.values()):
                         raise ValueError("criterion scores must be integers from 1 to 5")
-    if not submissions.get("evidence_attested"):
-        raise ValueError("evidence must be independently checked before scoring")
-    if not submissions.get("rights_checked"):
-        raise ValueError("rights gate has not been checked")
     if mode == "INDEPENDENT":
-        receipts = submissions.get("independent_run_ids") or {}
-        if set(receipts) != seat_ids or len(set(receipts.values())) != len(seat_ids) or not all(receipts.values()):
-            raise ValueError("independent mode requires a distinct run ID for every seat")
-    vetoed = submissions.get("rights_vetoes") or []
-    if not isinstance(vetoed, list) or any(o not in options for o in vetoed):
-        raise ValueError("rights vetoes must name declared options only")
-    scores = {opt: sum(sum(rounds["3"][sid]["scores"][opt][criterion] * weight
-                            for criterion, weight in WEIGHTS.items()) for sid in sorted(seat_ids))
-              for opt in options}
-    eligible = [o for o in options if o not in vetoed]
-    ranked = sorted(eligible, key=lambda x: (-scores[x], x))
-    tied = [o for o in ranked if ranked and scores[o] == scores[ranked[0]]]
+        run_ids = submissions.get("independent_run_ids") or {}
+        if not participating or not participating.issubset(run_ids):
+            raise ValueError("independent claims require real run IDs for participating seats")
+        used = [run_ids[s] for s in participating]
+        if len(set(used)) != len(used) or not all(isinstance(x, str) and x.strip() for x in used):
+            raise ValueError("independent run IDs must be distinct and nonempty")
+    aggregates = {option: [] for option in options}
+    for entry in (rounds.get("3") or {}).values():
+        for option, metrics in (entry.get("scores") or {}).items():
+            total_weight = sum(WEIGHTS[k] for k in metrics)
+            aggregates[option].append(round(sum(metrics[k] * WEIGHTS[k]
+                                                 for k in metrics) / total_weight, 4))
+    averages = {option: (round(sum(scores) / len(scores), 4) if scores else None)
+                for option, scores in aggregates.items()}
+    comparable = [o for o in options if averages[o] is not None]
+    ranked = sorted(comparable, key=lambda o: (-averages[o], o))
+    tied = [o for o in ranked if averages[o] == averages[ranked[0]]] if ranked else []
+    if mode == "INDEPENDENT" and participating and set(rounds) == set(REVIEW_FIELDS) and all(
+            set(rounds[phase]) == seat_ids for phase in REVIEW_FIELDS):
+        status = "DELIBERATED_NOT_EXECUTED"
+    else:
+        status = ("SIMULATED_NOT_EXECUTED" if mode == "SIMULATED"
+                  else "ADVISORY_INCOMPLETE_NOT_EXECUTED")
     return {
-        "schema": SCHEMA + ".verdict",
-        "status": "DELIBERATED_NOT_EXECUTED" if mode == "INDEPENDENT" else "SIMULATED_NOT_EXECUTED",
-        "mode": mode, "winning_route": ranked[0] if len(tied) == 1 else None,
+        "schema": SCHEMA + ".verdict", "status": status, "mode": mode,
+        "participating_seats": sorted(participating), "reported_rounds": sorted(rounds),
+        "winning_route": ranked[0] if len(tied) == 1 else None,
         "ties_need_human_decision": tied if len(tied) > 1 else [],
-        "rights_vetoed": vetoed, "no_eligible_route": not eligible,
-        "weighted_votes": scores, "evidence_attested_by_caller": True,
-        "rights_checked_by_caller": True,
-        "dissent": {sid: rounds["3"][sid]["remaining_objection"] for sid in sorted(seat_ids)},
-        "warning": "scores are participant judgments, not proof of artistic merit, media execution or licence",
+        "average_weighted_scores": averages,
+        "dissent": {s: (rounds.get("3", {}).get(s, {}).get("remaining_objection") or "")
+                    for s in sorted(participating)},
+        "evidence_attested_by_caller": bool(submissions.get("evidence_attested")),
+        "external_action_authorized": bool(submissions.get("external_action_authorized")),
+        "warning": "Advice only. No participant, model, media, rights or external action is verified by these scores.",
     }
 
 
@@ -281,8 +287,8 @@ def main(argv=None) -> int:
     draft.add_argument("task")
     draft.add_argument("--out", type=Path)
     draft.add_argument("--options", default=",".join(DEFAULT_OPTIONS),
-                       help="2-8 comma-separated implementation routes")
-    judge = cmd.add_parser("verdict", help="Validate three real rounds; do not simulate them")
+                       help="Comma-separated implementation routes (no fixed maximum)")
+    judge = cmd.add_parser("verdict", help="Review whichever genuine discussion rounds were supplied")
     judge.add_argument("--plan", type=Path, required=True)
     judge.add_argument("--submissions", type=Path, required=True)
     judge.add_argument("--out", type=Path)
