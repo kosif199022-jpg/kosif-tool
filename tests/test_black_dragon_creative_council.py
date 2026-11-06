@@ -104,6 +104,23 @@ class CreativeCouncilTests(unittest.TestCase):
                          {"analyst", "research", "creative", "systems"})
         self.assertTrue(all(x["primary"] in council.SEATS for x in rows))
 
+    def test_optional_personas_are_roles_not_ghost_agents(self):
+        self.put(council.PERSONA_FILE, {"personas": [
+            {"id": "P001", "lane": "cross_domain", "title_ar": "مخرجة بصرية"},
+            {"id": "P002", "lane": "audience", "title_ar": "ممثل الجمهور"},
+            {"id": "P003", "lane": "guardrails", "title_ar": "ناقد إجراءات"},
+        ]})
+        report = council.plan("فيديو بصري", self.root)
+        specialists = report["optional_specialists"]
+        self.assertEqual(specialists["profile_count"], 3)
+        self.assertEqual(specialists["assigned"], 3)
+        self.assertEqual(specialists["by_role"]["visual"], 1)
+        self.assertEqual(specialists["by_role"]["audience"], 1)
+        self.assertEqual(specialists["by_role"]["critic"], 1)
+        self.assertNotIn("rights", specialists["by_role"])
+        self.assertTrue(all(row["profile_not_agent"] for entries in specialists["suggested"].values()
+                            for row in entries))
+
     def test_extra_family_change_fails_closed(self):
         self.put(council.EXTRA_POWER_FILES["creativity-engine"],
                  [{"id": "IDEA-01", "name_en": "Only first one"}])
