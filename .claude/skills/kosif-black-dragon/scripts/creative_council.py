@@ -231,22 +231,36 @@ def verdict(council: dict, submissions: dict) -> dict:
             if phase == "3":
                 if set(entry["scores"]) != set(options):
                     raise ValueError("every option needs an explicit score")
-                if any(type(v) is not int or not 1 <= v <= 5 for v in entry["scores"].values()):
-                    raise ValueError("scores must be integers from 1 to 5")
+                for opt in options:
+                    grades = entry["scores"][opt]
+                    if not isinstance(grades, dict) or set(grades) != set(WEIGHTS):
+                        raise ValueError("each route needs every weighted criterion")
+                    if any(type(v) is not int or not 1 <= v <= 5 for v in grades.values()):
+                        raise ValueError("criterion scores must be integers from 1 to 5")
     if not submissions.get("evidence_attested"):
         raise ValueError("evidence must be independently checked before scoring")
     if not submissions.get("rights_checked"):
         raise ValueError("rights gate has not been checked")
-    scores = {opt: sum(rounds["3"][sid]["scores"][opt] for sid in sorted(seat_ids))
+    if mode == "INDEPENDENT":
+        receipts = submissions.get("independent_run_ids") or {}
+        if set(receipts) != seat_ids or len(set(receipts.values())) != len(seat_ids) or not all(receipts.values()):
+            raise ValueError("independent mode requires a distinct run ID for every seat")
+    vetoed = submissions.get("rights_vetoes") or []
+    if not isinstance(vetoed, list) or any(o not in options for o in vetoed):
+        raise ValueError("rights vetoes must name declared options only")
+    scores = {opt: sum(sum(rounds["3"][sid]["scores"][opt][criterion] * weight
+                            for criterion, weight in WEIGHTS.items()) for sid in sorted(seat_ids))
               for opt in options}
-    ranked = sorted(options, key=lambda x: (-scores[x], x))
-    tied = [o for o in ranked if scores[o] == scores[ranked[0]]]
+    eligible = [o for o in options if o not in vetoed]
+    ranked = sorted(eligible, key=lambda x: (-scores[x], x))
+    tied = [o for o in ranked if ranked and scores[o] == scores[ranked[0]]]
     return {
         "schema": SCHEMA + ".verdict",
         "status": "DELIBERATED_NOT_EXECUTED" if mode == "INDEPENDENT" else "SIMULATED_NOT_EXECUTED",
         "mode": mode, "winning_route": ranked[0] if len(tied) == 1 else None,
         "ties_need_human_decision": tied if len(tied) > 1 else [],
-        "votes": scores, "evidence_attested_by_caller": True,
+        "rights_vetoed": vetoed, "no_eligible_route": not eligible,
+        "weighted_votes": scores, "evidence_attested_by_caller": True,
         "rights_checked_by_caller": True,
         "dissent": {sid: rounds["3"][sid]["remaining_objection"] for sid in sorted(seat_ids)},
         "warning": "scores are participant judgments, not proof of artistic merit, media execution or licence",
