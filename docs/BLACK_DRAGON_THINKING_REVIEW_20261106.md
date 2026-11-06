@@ -183,3 +183,10 @@ python3 -m unittest discover -s tests -p 'test_black_dragon_creative_council.py'
 The first command should report role counts for **486** entries on the current
 inputs (404 core plus 82 Atlas Mind contextual records); tests must actually run in an environment with the repository sources.
 Do not confuse a read-only mapping audit with those Python execution results.
+
+## November 6 PR base synchronization and CI regeneration
+
+- Synced the latest `main` changes into the feature branch without merging PR #233 into `main`.
+- Rebuilt the deterministic smart capability index using the repository's `smart_capabilities.py build` and `verify` commands after the merged manifest introduced the 211th tool (the older feature branch indexed 210).
+- The single-use GitHub Actions rebuild workflow removed itself after generating and committing the index. The separate pull-request CI checks still need a fresh complete green run, and the PR remains a draft until then.
+- The 486 thinking records are source-mapped and advisory; none of these regeneration steps establish independent model execution or a verified end-to-end media pipeline.
