@@ -68,6 +68,14 @@ IBAN_RE = re.compile(
     r"(?<![A-Za-z0-9])(?:[A-Z]{2}(?:[ \t-]?[0-9]){2}(?:[ \t-]?[A-Z0-9]){11,30})(?![A-Za-z0-9])",
     re.IGNORECASE,
 )
+
+
+def looks_like_iban(text: str) -> bool:
+    """IBAN_RE plus a digit count: every IBAN carries at least 12 digits, so prose such as
+    "at 128px from the originals" (which the loose pattern also matches) is not refused."""
+    return any(sum(c.isdigit() for c in m.group(0)) >= 12 for m in IBAN_RE.finditer(text))
+
+
 PLACEHOLDER_RE = re.compile(r"^<[^<>]* [^<>]*>$")
 ABS_RE = re.compile(r"(?<![\w.:])(?:/home/|/Users/|/mnt/|/tmp/|[A-Za-z]:\\)")
 
@@ -140,7 +148,7 @@ def privacy_problems(rec) -> tuple:
             errors.append(f"{where}: an e-mail address (personal data on a public branch)")
         if PHONE_RE.search(s):
             errors.append(f"{where}: a phone number (personal data on a public branch)")
-        if IBAN_RE.search(s):
+        if looks_like_iban(s):
             errors.append(f"{where}: an IBAN/bank account number (financial data on a public branch)")
         if not PHONE_RE.search(s) and ABS_RE.search(s):
             warnings.append(f"{where}: an absolute local path; another machine cannot reproduce it, prefer a repo path")

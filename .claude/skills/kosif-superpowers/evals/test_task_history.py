@@ -167,6 +167,13 @@ class Gate(Base):
         self.assertRefused(entry(params={"bank_ref": "sa-03-8000-0000-0000-1234-5678"}), "IBAN")
         self.assertRefused(entry(notes="DE89 3704 0044 0532 0130 00"), "IBAN")
 
+    def test_prose_with_a_short_number_is_not_an_iban(self):
+        rec = entry(notes="thumbnails regenerated at 128px from the originals; full photos up to 1600px")
+        self.assertEqual(self.add(rec)[0], 0)
+
+    def test_a_short_country_iban_is_still_refused(self):
+        self.assertRefused(entry(notes="NO93 8601 1117 947"), "IBAN")
+
     def test_bank_privacy_gate_avoids_normal_developer_text(self):
         rec = entry(notes="2026-10-23; 18:09; 1080x1920; https://github.com/kosif199022-jpg/kosif-tool")
         self.assertEqual(self.add(rec)[0], 0)
