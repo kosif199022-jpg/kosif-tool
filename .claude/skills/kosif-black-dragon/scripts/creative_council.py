@@ -32,6 +32,11 @@ REASONING_MODES = ".claude/skills/kosif-superpowers/data/reasoning_modes.json"
 # The 63 'mental-models' power entries mirror the 63 standalone models.
 # Preserve the original IDs separately and never double count the mirrors.
 MODEL_POWER_MIRROR = ".claude/skills/kosif-superpowers/data/powers/mental-models.json"
+PERSONA_FILE = ".claude/skills/kosif-superpowers/data/council_100.json"
+PERSONA_LANES = {
+    "cross_domain": "creative", "verification": "critic",
+    "feasibility": "engineer", "audience": "audience", "guardrails": "critic",
+}
 SCHEMA = "kosif.black-dragon.creative-council.v1"
 
 # Twelve expert seats. The chair facilitates; no member has a hard veto.
@@ -260,6 +265,46 @@ def tokens(text: str) -> set[str]:
     return result
 
 
+def specialist_personas(task: str, root: Path) -> dict:
+    """Read, but do not instantiate, the older council's persona profiles.
+
+    These are optional prompts/specialist templates, never independent agents.
+    'guardrails' specialists become critic advisors, not a restored rights seat.
+    """
+    file = root / PERSONA_FILE
+    if not file.is_file():
+        return {"profile_count": 0, "assigned": 0, "by_role": {}, "suggested": {}}
+    profiles = _read(file).get("personas", [])
+    if not isinstance(profiles, list) or len({p.get("id") for p in profiles}) != len(profiles):
+        raise ValueError("invalid or duplicate specialist persona IDs")
+    grouped = {sid: [] for sid in SEATS}
+    task_words = tokens(task)
+    for p in profiles:
+        lane = p.get("lane")
+        if lane not in PERSONA_LANES:
+            raise ValueError("unknown persona evidence lane: " + str(lane))
+        title = " ".join([p.get("title_ar", ""), p.get("title_en", "")])
+        role = PERSONA_LANES[lane]
+        if lane == "cross_domain":
+            if any(w in title.lower() for w in ("درام", "story", "script", "حكّا", "سرد")):
+                role = "story"
+            elif any(w in title.lower() for w in ("كاميرا", "بصر", "لون", "ألوان", "خط", "visual", "camera", "color")):
+                role = "visual"
+            elif any(w in title.lower() for w in ("نظام", "systems", "أنظمة")):
+                role = "systems"
+        score = len(task_words & tokens(title + " " + str(p.get("lens_en", ""))))
+        grouped[role].append({"id": p["id"], "title": title, "lane": lane, "relevance_score": score,
+                              "profile_not_agent": True})
+    return {
+        "profile_count": len(profiles),
+        "assigned": sum(len(v) for v in grouped.values()),
+        "by_role": {sid: len(v) for sid, v in grouped.items()},
+        "suggested": {sid: sorted(v, key=lambda x: (-x["relevance_score"], x["id"]))[:3]
+                      for sid, v in grouped.items() if v},
+        "limit": "profiles provide optional prompts, not expert opinions or executed agents",
+    }
+
+
 def plan(task: str, root: Path = ROOT, options=DEFAULT_OPTIONS) -> dict:
     if not task or not task.strip():
         raise ValueError("task is required")
@@ -288,6 +333,7 @@ def plan(task: str, root: Path = ROOT, options=DEFAULT_OPTIONS) -> dict:
         "contextual_only": sum(x["contextual_only"] for x in entries),
         "duplicate_handling": "related models and mirror power cards are not double counted; exact/semantic similarities still require a reviewer",
         "source_counts": dict(sorted(Counter(x["id"].split(":", 1)[0] for x in entries).items())),
+        "optional_specialists": specialist_personas(task, root),
         "primary_assigned": sum(s["primary_count"] for s in seats),
         "roles": seats,
         "assignments": [{k: v for k, v in x.items() if k != "search_text"} for x in entries],
