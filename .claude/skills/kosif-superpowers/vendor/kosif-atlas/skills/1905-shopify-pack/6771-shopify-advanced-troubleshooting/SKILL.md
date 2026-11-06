@@ -22,6 +22,9 @@ tags:
 - shopify
 compatibility: Designed for Claude Code
 ---
+
+> **KOSIF safety note:** `curl -v` prints the `X-Shopify-Access-Token` header. Do not save that output to a file (the `tee /tmp/shopify-debug.txt` below would write the token to disk); grep the request id from the live output instead, or strip the header first.
+
 # Shopify Advanced Troubleshooting
 
 ## Overview
