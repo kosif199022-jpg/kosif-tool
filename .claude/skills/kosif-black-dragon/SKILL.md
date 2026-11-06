@@ -100,3 +100,29 @@ Run the quick tests with:
 ```bash
 python3 -m unittest discover -s tests -p test_black_dragon_creative_council.py
 ```
+
+
+## Book-informed judgment guard (Thinking, Fast and Slow)
+
+A new optional cognitive review is implemented at
+scripts/judgment_guard.py and exposed through the Black Dragon CLI:
+
+~~~bash
+python3 .claude/skills/kosif-black-dragon/scripts/black_dragon.py think-review \
+  --input video_brief.json --out out/judgment-review.json
+
+python3 -m unittest discover -s tests -p test_black_dragon_judgment_guard.py
+~~~
+
+It uses eleven documented lenses from the 468-page user-supplied edition
+of *Thinking, Fast and Slow*: two-system workflow metaphor, hard-question
+substitution, missing evidence / WYSIATI, base rates, anchoring, availability,
+expert intuition, outside view, premortem, framing and remembering versus
+experiencing the edit. It assigns review questions to existing council seats,
+without reinstating a rights seat or mandatory debate cycles.
+
+**Important:** This is deterministic, adaptive review planning rather than
+a new independent AI reasoner. It does not assert that any video has been
+rendered, any audience response measured, or any cognitive bias solved.
+See docs/BLACK_DRAGON_KAHNEMAN_THINKING_UPGRADE_20261106.md for source page
+numbers, sample inputs, testing and limitations.
