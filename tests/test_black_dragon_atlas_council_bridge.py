@@ -46,6 +46,7 @@ class AtlasBridgeTests(unittest.TestCase):
         self.assertEqual(p['candidate_procedure_count'], 23)
         self.assertEqual(len(p['source_assignments']), 26)
         self.assertTrue(p['primary_assigned_once'])
+        self.assertTrue(all(r['advisory_action'] and r['evidence_gate'] for r in p['source_assignments']))
         self.assertEqual(len({m['id'] for m in p['candidate_procedures']}), 23)
         self.assertTrue(all(m['primary'] in bridge.ROLES for m in p['candidate_procedures']))
         self.assertTrue(all(m['status']=='LOCAL_PLANNING_PROCEDURE_NOT_AGENT' for m in p['candidate_procedures']))
@@ -98,6 +99,7 @@ class AtlasBridgeTests(unittest.TestCase):
         self.assertEqual(report['total_source_records'],486)
         self.assertEqual(report['external_atlas']['catalogued_paths'],26)
         self.assertEqual(sum(s['external_atlas_candidate_count'] for s in report['roles']),26)
+        self.assertEqual(sum(len(s['external_atlas_candidate_actions']) for s in report['roles']),26)
         self.assertEqual(len(report['roles']),12)
 
 
