@@ -56,6 +56,7 @@ SCRIPT = {
     "kling-director": SKILLS / "kosif-kling-director" / "scripts",
     "dragon-mind": SKILLS / "kosif-dragon-mind" / "scripts",
     "saas-animation": SKILLS / "saas-animation" / "scripts",
+    "creative-council": SKILLS / "kosif-black-dragon" / "scripts",
     "cartoon-short": SKILLS / "cartoon-audio-short" / "kit" / "tools",
 }
 RECIPES = tuple(SCRIPT)
@@ -720,8 +721,90 @@ def dragon_mind(r, d, task, clip, selftest):
     other = r.call("think a different task", [*tool, "think", "Write a pitch deck about solar panels", "--out", "other"])
     r.check("a different task gives a different digest", _json(r.work / "other" / "mind_trace.json")["digest"] != t["digest"],
             other.get("exit_code"))
+    # Thinking, Fast and Slow: the trap scanner and the page-level book record are part of the mind.
+    r.check("the plan carries the book's always-on System 2 gates",
+            {"tfs-wysiati", "tfs-substitution", "tfs-optimism-overconfidence"} <= {x["id"] for x in t.get("traps", [])},
+            [x["id"] for x in t.get("traps", [])])
+    r.call("scan a task with a planted anchor",
+           [*tool, "traps", "anchor the price estimate from the first number the client said"])
+    planted = r.steps[-1].get("receipt") or []
+    planted = planted if isinstance(planted, list) else planted.get("traps", [])
+    hit = next((x for x in planted if x["id"] == "tfs-anchoring"), None)
+    r.check("the planted anchor is caught with a debiasing move and book pages",
+            bool(hit and hit["score"] > 0 and hit.get("debias_en") and hit.get("pages")),
+            hit and [hit["score"], hit.get("pages")])
+    r.call("read page 69 of the book record", [*tool, "book", "--page", "69"])
+    page = r.steps[-1].get("receipt") or {}
+    r.check("the book record covers all 468 pages and returns the page gist",
+            page.get("pages_total") == 468 and page.get("pages_read") == 468 and (page.get("page") or {}).get("page") == 69,
+            [page.get("pages_total"), page.get("pages_read")])
     r.findings.append({"faculties_needed": t["faculties_needed"], "critic": t["critic"][:5], "tiers": t["tiers"],
+                       "traps": [x["id"] for x in t.get("traps", [])],
                        "note": "a planner: nothing in the catalog was executed by this step"})
+
+
+def creative_council(r, d, task, clip, selftest):
+    """The 12-seat creative council with its 525 thinking records, the Kahneman trap gates and the Atlas
+    procedures, then the judgment review and the advisory verdict. It plans and scores; it renders nothing."""
+    bd = [*PY_SIBLINGS, str(d / "black_dragon.py")]
+    cc = [*PY_SIBLINGS, str(d / "creative_council.py")]
+    r.call("convene the council on the task", [*bd, "council", task, "--out", "council.json"])
+    r.call("convene it again (same task)", [*bd, "council", task, "--out", "again.json"])
+    r.output(r.work / "council.json")
+    c, c2 = _json(r.work / "council.json"), _json(r.work / "again.json")
+    seats = [x["id"] for x in c["roles"]]
+    r.check("12 distinct seats", len(seats) == 12 == len(set(seats)), seats)
+    ids = [a["id"] for a in c["assignments"]]
+    r.check("every thinking record has exactly one primary seat",
+            c["total_source_records"] == c["primary_assigned"] == len(ids) == len(set(ids)) and len(ids) >= 525,
+            [c["total_source_records"], c["primary_assigned"], len(ids)])
+    r.check("every record's seat is a council seat", all(a["primary"] in seats for a in c["assignments"]))
+    r.check("same task gives the same fingerprint", c["fingerprint"] == c2["fingerprint"], c["fingerprint"][:12])
+    k = c["kahneman_review"]
+    gates = {g["id"] for g in k["review_gates"]}
+    r.check("the book's 31 traps are loaded and the three System 2 gates are on",
+            k["traps_catalogued"] >= 31 and {"tfs-wysiati", "tfs-substitution", "tfs-optimism-overconfidence"} <= gates,
+            [k["traps_catalogued"], sorted(gates)])
+    r.check("every trap gate goes to the critic and to a primary seat",
+            all("critic" in g["reviewers"] and g["primary"] in seats for g in k["review_gates"]))
+    r.check("the trap questions reach the seats",
+            sum(len(x.get("kahneman_review_questions", [])) for x in c["roles"]) >= len(k["review_gates"]))
+    ea = c["external_atlas"]
+    r.check("Atlas procedures are loaded and each routed to a seat",
+            ea["candidate_procedure_count"] >= 23 and all(p["primary"] in seats for p in ea["candidate_procedures"]),
+            ea["candidate_procedure_count"])
+    # Judgment review: the 11 book lenses plus the full trap scan, on a brief built from the task.
+    brief = r.work / "brief.json"
+    brief.write_text(json.dumps({"goal": task, "options": c["options"], "stakes": "high", "reversible": True,
+                                 "anchor": 5000}, ensure_ascii=False), encoding="utf-8")
+    r.call("judgment review of the brief", [*bd, "think-review", "--input", str(brief), "--out", "review.json"])
+    rv = _json(r.work / "review.json")
+    r.output(r.work / "review.json")
+    r.check("review covers the 11 book lenses", len(rv["review_checks"]) == 11, len(rv["review_checks"]))
+    r.check("review also runs the full trap scan", rv["book_trap_scan"]["traps_catalogued"] >= 31
+            and len(rv["book_trap_scan"]["gates"]) >= 3, len(rv["book_trap_scan"]["gates"]))
+    # Decision: known-answer scores pick a winner; an unbacked INDEPENDENT claim is refused.
+    a, b = c["options"][0], c["options"][1]
+    sub = {"mode": "SIMULATED", "rounds": {"3": {
+        "critic": {"scores": {a: {"meaning": 5, "feasibility": 5}, b: {"meaning": 2, "feasibility": 2}}},
+        "decision": {"scores": {a: {"meaning": 4, "feasibility": 5}, b: {"meaning": 3, "feasibility": 2}}}}}}
+    (r.work / "sub.json").write_text(json.dumps(sub), encoding="utf-8")
+    r.call("score two routes", [*cc, "verdict", "--plan", "council.json", "--submissions", "sub.json",
+                                "--out", "verdict.json"])
+    v = _json(r.work / "verdict.json")
+    r.output(r.work / "verdict.json")
+    r.check("the clearly better route wins, labelled simulated",
+            v["winning_route"] == a and v["status"] == "SIMULATED_NOT_EXECUTED", [v["winning_route"], v["status"]])
+    sub["mode"] = "INDEPENDENT"
+    (r.work / "fake.json").write_text(json.dumps(sub), encoding="utf-8")
+    fake = r.call("claim independent runs with no run IDs (planted)",
+                  [*cc, "verdict", "--plan", "council.json", "--submissions", "fake.json", "--out", "fake-v.json"],
+                  ok_codes=(0, 1, 2))
+    r.check("the planted independent claim is refused", fake["exit_code"] != 0, fake["exit_code"])
+    r.findings.append({"seats": seats, "records": c["total_source_records"],
+                       "trap_gates": sorted(gates), "atlas_procedures": ea["candidate_procedure_count"],
+                       "winning_route": v["winning_route"],
+                       "note": "planning and scoring only; no agent, model, media or paid tool was run"})
 
 
 def saas_animation(r, d, task, clip, selftest):
@@ -966,7 +1049,7 @@ RUNNERS = {"prompt-master": prompt_master, "prompt-architect": prompt_architect,
            "hyperframes-beats": hyperframes_beats, "montage-tools": montage_tools,
            "mimic-analyze": mimic_analyze, "pixel-painter": pixel_painter,
            "kling-director": kling_director, "dragon-mind": dragon_mind, "saas-animation": saas_animation,
-           "cartoon-short": cartoon_short}
+           "creative-council": creative_council, "cartoon-short": cartoon_short}
 
 
 def main(argv: list[str]) -> int:
