@@ -56,6 +56,7 @@ SCRIPT = {
     "kling-director": SKILLS / "kosif-kling-director" / "scripts",
     "dragon-mind": SKILLS / "kosif-dragon-mind" / "scripts",
     "saas-animation": SKILLS / "saas-animation" / "scripts",
+    "stickman-studio": SKILLS / "kosif-stickman-studio" / "scripts",
     "creative-council": SKILLS / "kosif-black-dragon" / "scripts",
     "cartoon-short": SKILLS / "cartoon-audio-short" / "kit" / "tools",
     "talking-head-reels": SKILLS / "talking-head-reels" / "scripts",
@@ -873,6 +874,21 @@ def saas_animation(r, d, task, clip, selftest):
                                "and the sound and Blender scripts need scipy and Blender"})
 
 
+def stickman_studio(r, d, task, clip, selftest):
+    """The GrowKaz kit itself is not in the repo (no licence); this runs KOSIF's installer on a synthetic plugin."""
+    out = r.work / "selftest"
+    r.call("stickman_kit.py: known-answer install self-test", [*PY, str(d / "stickman_kit.py"), "self-test", "--out", str(out)])
+    res = _json(out / "selftest.json")
+    r.output(out / "selftest.json")
+    names = {c["name"]: c["passed"] for c in res["checks"]}
+    r.check("all 13 self-test checks pass", res["passed"] and len(names) == 13, names)
+    r.check("parent path and symlink are refused", names.get("parent path refused") and names.get("symlink refused"), None)
+    r.check("the owner's projects/ folder survives an install", names.get("user's projects/ kept"), None)
+    r.check("nothing is written outside the destination", names.get("nothing escaped dest"), None)
+    r.findings.append({"note": "installer only; the GrowKaz renderer needs the owner's plugin, Node, Chromium and ffmpeg "
+                               "and is not run by the Dragon"})
+
+
 def cartoon_short(r, d, task, clip, selftest):
     import re
     import wave
@@ -1275,7 +1291,7 @@ RUNNERS = {"prompt-master": prompt_master, "prompt-architect": prompt_architect,
            "mimic-analyze": mimic_analyze, "pixel-painter": pixel_painter,
            "kling-director": kling_director, "dragon-mind": dragon_mind, "saas-animation": saas_animation,
            "creative-council": creative_council, "cartoon-short": cartoon_short, "talking-head-reels": talking_head_reels,
-           "arena": arena}
+           "arena": arena, "stickman-studio": stickman_studio}
 
 
 def main(argv: list[str]) -> int:

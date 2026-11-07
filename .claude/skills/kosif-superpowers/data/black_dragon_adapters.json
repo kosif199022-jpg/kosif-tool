@@ -2423,6 +2423,16 @@
       "why": "saas-animation: tiles known-colour stills into a contact sheet in time order, splits a cut-out into a layer and draws a coordinate grid, each checked by pixel (no Chrome render)",
       "skill_program": true
     },
+    "skill:kosif-stickman-studio": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "stickman-studio",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "kosif-stickman-studio: installs a synthetic GrowKaz-shaped plugin with a path escape, a symlink and a hook, and checks refusals, flags and that projects/ survives (the GrowKaz kit itself is not in the repo)",
+      "skill_program": true
+    },
     "skill:kosif-black-dragon": {
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
       "args": [
