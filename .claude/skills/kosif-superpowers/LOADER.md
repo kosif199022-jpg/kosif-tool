@@ -10,13 +10,14 @@
 
 **التحميل الخفيف:** اقرأ هذا الملف وحده أولًا. لا تقرأ ملفات المهارات الكبيرة كاملة؛ افتح الملف أو نطاق الأسطر الذي يطابق الطلب فقط (`sed -n START,ENDp <path>`)، أو اسأل السكربت: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py need "<الطلب>"`. كل مهارة وكل ملحق ممثَّل هنا بسطر، فلا توجد مهارة خارج الوصول. في الوضع الكامل: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py full`.
 
-## المهارات (16) / skills
+## المهارات (17) / skills
 
 | المهارة | الملف | الحجم | متى |
 |---|---|---|---|
 | `editorial-film-edit` | `.claude/skills/editorial-film-edit/SKILL.md` | 6 KB · 48 سطر | Edit footage in an archival editorial style with bundled video and photo references, kinetic text, film grain, bloom, masks and presenter splits. Use for new edits and… |
 | `kosif-black-dragon` | `.claude/skills/kosif-black-dragon/SKILL.md` | 14 KB · 211 سطر | التنين الأسود: new independent skill that studies the KOSIF catalog, links each original source to one traceable entry, and synthesizes new task-specific working… |
 | `kosif-dragon-mind` | `.claude/skills/kosif-dragon-mind/SKILL.md` | 12 KB · 153 سطر | The thinking brain of the Black Dragon («عقل التنين الأسود»). Use when a task should be thought through before the Black Dragon runs, when the owner asks to decompose,… |
+| `kosif-dragon-montage` | `.claude/skills/kosif-dragon-montage/SKILL.md` | 5 KB · 71 سطر | Black Dragon montage protocol («التنين الأسود، مونتاج»). Use when the owner gives one or more videos (and optionally music or a reference video) and asks the Black… |
 | `kosif-infinite-matrices` | `.claude/skills/kosif-infinite-matrices/SKILL.md` | 9 KB · 88 سطر | Invent new visual and motion systems from causal bricks (state, operation, law, time, memory, feedback) mined from the 86 reference styles; build a recipe, run an A/B/C… |
 | `kosif-instagram-discovery` | `.claude/skills/kosif-instagram-discovery/SKILL.md` | 3 KB · 34 سطر | Find public Instagram reel references by topic using generated public web search queries; index researcher-confirmed permalinks; rank Arabic/English metadata; create… |
 | `kosif-instagram-video-research` | `.claude/skills/kosif-instagram-video-research/SKILL.md` | 6 KB · 85 سطر | Search public Instagram Reel references by content/topic and known creator, expand Arabic-to-English queries, optionally ingest public search index via Brave Search… |
@@ -51,7 +52,7 @@
 | `reverse` | التحليل العكسي وفحص البرامج — Reverse engineering | `python3 scripts/rea_bridge.py doctor` |
 | `misc` | قدرات مساندة غير مصنفة — Other supporting capabilities | `python3 scripts/powers.py family other` |
 
-## ملاحق البروتوكول (45) / protocol appendices
+## ملاحق البروتوكول (46) / protocol appendices
 
 | الملحق | افتحه عندما |
 |---|---|
@@ -100,6 +101,7 @@
 | [A47 الجيتواي](references/protocol/A47-v62-media-gateway.md) | يوتيوب (على جهاز المستخدم)، `kosif-send` |
 | [A48 التنين](references/protocol/A48-v64-black-dragon.md) | «استدعِ التنين الأسود»، L3، «بأقصى قوة» |
 | [A49 في المسار](references/protocol/A49-v65-dragon-in-pipeline.md) | «استدعِ التنين الأسود»، L3، «بأقصى قوة» |
+| [A50 مونتاج التنين](references/protocol/A50-v66-dragon-montage.md) | «التنين الأسود، مونتاج» |
 
 ## أقسام كل SKILL.md بأرقام الأسطر / section line ranges
 
@@ -138,6 +140,15 @@
 - 108–119: Running the mind inside the dragon
 - 120–145: Every entry usable: the method applier
 - 146–152: Rules
+
+### `.claude/skills/kosif-dragon-montage/SKILL.md`
+
+- 6–25: Dragon Montage — بروتوكول مونتاج التنين الأسود
+- 26–41: The eight stations
+- 42–52: Claude's part (the creative eye)
+- 53–60: Rules
+- 61–67: Required tools
+- 68–70: Tests
 
 ### `.claude/skills/kosif-infinite-matrices/SKILL.md`
 
