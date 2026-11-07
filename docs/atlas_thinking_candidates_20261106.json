@@ -1,0 +1,380 @@
+{
+  "title": "Black Dragon external Atlas thinking candidates (inspected sample)",
+  "as_of": "2026-11-06",
+  "atlas_repository": "kosif199022-jpg/kosif-atlas",
+  "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
+  "inspection": "Each source file fetched; headings/introductions and stated procedures reviewed, NOT a line-by-line security or semantic audit",
+  "scope": "26 source paths, with 1 pair known byte-identical; source inventory not fully accessible due main index size",
+  "council_internal_existing_records": 486,
+  "council_external_added_to_executable_inventory": 0,
+  "source_items": [
+    {
+      "name": "Cognitive Stack",
+      "path": "skills/1122-cognitive-stack-code/2701-cognitive-stack-code/instructions.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/1122-cognitive-stack-code/2701-cognitive-stack-code/instructions.md",
+      "proposed_roles": [
+        "analyst",
+        "decision",
+        "systems",
+        "learning"
+      ],
+      "classification": "large_inventory_candidate",
+      "note": "Problem-intent router; bundled encyclopedia claims 2,375 models; model entries not separately enumerated or counted.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Dialectic",
+      "path": "skills/3233-thinking-tools/13649-dialectic/SKILL.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/3233-thinking-tools/13649-dialectic/SKILL.md",
+      "proposed_roles": [
+        "critic",
+        "research",
+        "chair"
+      ],
+      "classification": "orchestration_candidate",
+      "note": "Opposing evidence arguments; true parallel agents require runner proof.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Cross-model Peer Review",
+      "path": "skills/76-peer-review/140-review-workflow/SKILL.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/76-peer-review/140-review-workflow/SKILL.md",
+      "proposed_roles": [
+        "critic",
+        "research",
+        "chair"
+      ],
+      "classification": "external_dependency",
+      "note": "Independent challenger and evidence ledger; requires service and user permission for external calls.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Sakana Writing Team",
+      "path": "skills/1120-ambient-library/2584-sakana-writing-team/architecture.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/1120-ambient-library/2584-sakana-writing-team/architecture.md",
+      "proposed_roles": [
+        "creative",
+        "story",
+        "audience"
+      ],
+      "classification": "creative_workflow_candidate",
+      "note": "Evolutionary selection and quality-diversity for writing; film adaptation not tested.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Eigenthinking",
+      "path": "skills/1145-eigenthinking/2726-eigenthinking/SKILL.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/1145-eigenthinking/2726-eigenthinking/SKILL.md",
+      "proposed_roles": [
+        "analyst",
+        "learning",
+        "chair"
+      ],
+      "classification": "knowledge_capture_candidate",
+      "note": "Nine-step capture of expert tacit process.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Design Method",
+      "path": "skills/3411-design-thinking/13967-design-method/SKILL.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/3411-design-thinking/13967-design-method/SKILL.md",
+      "proposed_roles": [
+        "systems",
+        "engineer",
+        "chair"
+      ],
+      "classification": "engineering_protocol_candidate",
+      "note": "Call graphs, boundaries, effects and test layers; not storyboarding.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Epic Council",
+      "path": "skills/1374-epic/3194-council/SKILL.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/1374-epic/3194-council/SKILL.md",
+      "proposed_roles": [
+        "chair",
+        "decision",
+        "critic"
+      ],
+      "classification": "orchestration_overlap",
+      "note": "Four independent voices; anti-anchoring valuable without four new seats.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Reasoning Verifier",
+      "path": "skills/2215-majestic-reasoning/8357-reasoning-verifier/SKILL.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/2215-majestic-reasoning/8357-reasoning-verifier/SKILL.md",
+      "proposed_roles": [
+        "critic",
+        "research"
+      ],
+      "classification": "verification_enhancement",
+      "note": "Requirements-to-evidence trace matrix and assumption/sensitivity review.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Devil's Advocate",
+      "path": "skills/2215-majestic-reasoning/8355-devils-advocate/SKILL.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/2215-majestic-reasoning/8355-devils-advocate/SKILL.md",
+      "proposed_roles": [
+        "critic",
+        "decision"
+      ],
+      "classification": "probable_method_overlap",
+      "note": "Steel-man the opposition to a preferred choice.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Premortem",
+      "path": "skills/2215-majestic-reasoning/8356-premortem/SKILL.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/2215-majestic-reasoning/8356-premortem/SKILL.md",
+      "proposed_roles": [
+        "critic"
+      ],
+      "classification": "probable_method_overlap",
+      "note": "Failure-story analysis; overlaps existing pre-mortem.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Root Cause Investigator",
+      "path": "skills/3233-thinking-tools/13650-root-cause-investigator/SKILL.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/3233-thinking-tools/13650-root-cause-investigator/SKILL.md",
+      "proposed_roles": [
+        "analyst",
+        "research"
+      ],
+      "classification": "probable_method_overlap",
+      "note": "Evidence-based Five Whys troubleshooting.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Thought Partner",
+      "path": "skills/1812-pm-ai-partner/4858-thought-partner/SKILL.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/1812-pm-ai-partner/4858-thought-partner/SKILL.md",
+      "proposed_roles": [
+        "analyst",
+        "audience",
+        "decision"
+      ],
+      "classification": "dialogue_enhancement",
+      "note": "Explores ambiguity, assumptions and stakeholder choices.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Ultrathink",
+      "path": "skills/1272-ultrathink/2950-ultrathink/SKILL.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/1272-ultrathink/2950-ultrathink/SKILL.md",
+      "proposed_roles": [
+        "analyst",
+        "chair"
+      ],
+      "classification": "external_dependency",
+      "note": "Wrapper around Sequential Thinking MCP tool; requires installed runtime.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Cognitive Operations (canonical copy)",
+      "path": "skills/1134-cognitive-operations/2713-cognitive-operations/references/operations.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/1134-cognitive-operations/2713-cognitive-operations/references/operations.md",
+      "proposed_roles": [
+        "analyst",
+        "critic",
+        "systems",
+        "decision"
+      ],
+      "classification": "method_collection",
+      "note": "9 labeled operations: first principles, falsification, analogy, abduction, counterfactual, dialectical synthesis, systems, Bayesian update, perspective simulation.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Cognitive Operations (byte-identical mirror)",
+      "path": "skills/1120-ambient-library/2604-cognitive-operations/references/operations.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/1120-ambient-library/2604-cognitive-operations/references/operations.md",
+      "proposed_roles": [
+        "analyst",
+        "critic",
+        "systems",
+        "decision"
+      ],
+      "classification": "exact_duplicate",
+      "note": "Same Git blob SHA c642621b3e4b959d99e32e2546043a06ca02295f as canonical copy; do not count twice.",
+      "execution_verified": false,
+      "semantic_dedup_verified": true
+    },
+    {
+      "name": "Scientific Critical Thinking",
+      "path": "skills/3199-evidence-lab-core/13560-scientific-critical-thinking/SKILL.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/3199-evidence-lab-core/13560-scientific-critical-thinking/SKILL.md",
+      "proposed_roles": [
+        "critic",
+        "research"
+      ],
+      "classification": "scientific_verification_candidate",
+      "note": "Appraise study claims, confounding, causality and evidence strength.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Ejentum Reasoning",
+      "path": "skills/1642-ejentum-reasoning/4628-reasoning/SKILL.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/1642-ejentum-reasoning/4628-reasoning/SKILL.md",
+      "proposed_roles": [
+        "analyst",
+        "decision"
+      ],
+      "classification": "external_dependency",
+      "note": "Calls ejentum MCP and API credentials for cognitive scaffold; not natively runnable.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Cognitive Bias Canon",
+      "path": "skills/209-reflect/656-reflect/references/cognitive_bias_canon.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/209-reflect/656-reflect/references/cognitive_bias_canon.md",
+      "proposed_roles": [
+        "critic",
+        "learning"
+      ],
+      "classification": "bias_check_candidate",
+      "note": "Five conversation-bias recognition cues with counter-moves.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Brainstorming Ideas",
+      "path": "skills/114-discovery/293-brainstorming-ideas/SKILL.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/114-discovery/293-brainstorming-ideas/SKILL.md",
+      "proposed_roles": [
+        "creative",
+        "decision"
+      ],
+      "classification": "probable_workflow_overlap",
+      "note": "Idea, plan, grill, debate modes; stress-tests plans.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Aegis Brainstorming",
+      "path": "skills/1457-aegis/3560-brainstorming/SKILL.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/1457-aegis/3560-brainstorming/SKILL.md",
+      "proposed_roles": [
+        "creative",
+        "chair",
+        "decision"
+      ],
+      "classification": "probable_workflow_overlap",
+      "note": "Explicit activation gates and scope-dependent design discussion.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Superpowers Brainstorming",
+      "path": "skills/2679-superpowers/10254-brainstorming/SKILL.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/2679-superpowers/10254-brainstorming/SKILL.md",
+      "proposed_roles": [
+        "creative",
+        "chair",
+        "decision"
+      ],
+      "classification": "probable_workflow_overlap",
+      "note": "Design dialogue and approval workflow, not a new independent thought faculty.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "PDForge Brainstorming",
+      "path": "skills/3599-pdforge/14434-brainstorming/SKILL.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/3599-pdforge/14434-brainstorming/SKILL.md",
+      "proposed_roles": [
+        "creative",
+        "chair",
+        "decision"
+      ],
+      "classification": "probable_workflow_overlap",
+      "note": "Explore-converge-write process with Chinese documentation.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Cognitive Fingerprint",
+      "path": "skills/1123-aimm-commands/2702-aimm-commands/commands/cognitive-fingerprint.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/1123-aimm-commands/2702-aimm-commands/commands/cognitive-fingerprint.md",
+      "proposed_roles": [
+        "learning",
+        "analyst"
+      ],
+      "classification": "knowledge_capture_candidate",
+      "note": "Extract recurring personal reasoning strategies from conversation, context/consent needed.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Cognitive Capture",
+      "path": "skills/1123-aimm-commands/2702-aimm-commands/commands/cognitive-capture.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/1123-aimm-commands/2702-aimm-commands/commands/cognitive-capture.md",
+      "proposed_roles": [
+        "learning",
+        "chair"
+      ],
+      "classification": "knowledge_capture_candidate",
+      "note": "Preserve operational and cognitive knowledge after a session.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Reasoning Patterns",
+      "path": "skills/15-ai-tooling/24-prompt-engineering/references/reasoning-patterns.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/15-ai-tooling/24-prompt-engineering/references/reasoning-patterns.md",
+      "proposed_roles": [
+        "analyst",
+        "learning",
+        "decision"
+      ],
+      "classification": "method_collection",
+      "note": "14 prompting/reasoning pattern descriptions; overlap with current 8 reasoning modes not yet mapped semantically.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    },
+    {
+      "name": "Cognitive Mirror source note",
+      "path": "skills/1133-cognitive-mirror/SOURCE.md",
+      "url": "https://github.com/kosif199022-jpg/kosif-atlas/blob/99bb108dff169880dd531359f474a01b73c4b233/skills/1133-cognitive-mirror/SOURCE.md",
+      "proposed_roles": [
+        "learning",
+        "analyst"
+      ],
+      "classification": "reference_only",
+      "note": "Descriptive source metadata; executable tool and privacy handling not inspected.",
+      "execution_verified": false,
+      "semantic_dedup_verified": false
+    }
+  ],
+  "known_byte_duplicate": {
+    "paths": [
+      "skills/1134-cognitive-operations/2713-cognitive-operations/references/operations.md",
+      "skills/1120-ambient-library/2604-cognitive-operations/references/operations.md"
+    ],
+    "sha": "c642621b3e4b959d99e32e2546043a06ca02295f"
+  },
+  "notes": [
+    "9 cognitive operations and 14 reasoning patterns are subitems of two source files, not proven novel methods",
+    "Method overlap with council's 486 has not been resolved item-by-item",
+    "Full Atlas main index was not retrieved; exhaustive coverage cannot be claimed",
+    "Third-party scripts not executed",
+    "No new council role introduced; no automatic merge to main"
+  ]
+}

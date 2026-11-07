@@ -15,8 +15,8 @@
 | المهارة | الملف | الحجم | متى |
 |---|---|---|---|
 | `editorial-film-edit` | `.claude/skills/editorial-film-edit/SKILL.md` | 6 KB · 48 سطر | Edit footage in an archival editorial style with bundled video and photo references, kinetic text, film grain, bloom, masks and presenter splits. Use for new edits and… |
-| `kosif-black-dragon` | `.claude/skills/kosif-black-dragon/SKILL.md` | 6 KB · 79 سطر | التنين الأسود: new independent skill that studies the KOSIF catalog, links each original source to one traceable entry, and synthesizes new task-specific working… |
-| `kosif-dragon-mind` | `.claude/skills/kosif-dragon-mind/SKILL.md` | 10 KB · 129 سطر | The thinking brain of the Black Dragon («عقل التنين الأسود»). Use when a task should be thought through before the Black Dragon runs, when the owner asks to decompose,… |
+| `kosif-black-dragon` | `.claude/skills/kosif-black-dragon/SKILL.md` | 13 KB · 183 سطر | التنين الأسود: new independent skill that studies the KOSIF catalog, links each original source to one traceable entry, and synthesizes new task-specific working… |
+| `kosif-dragon-mind` | `.claude/skills/kosif-dragon-mind/SKILL.md` | 12 KB · 153 سطر | The thinking brain of the Black Dragon («عقل التنين الأسود»). Use when a task should be thought through before the Black Dragon runs, when the owner asks to decompose,… |
 | `kosif-infinite-matrices` | `.claude/skills/kosif-infinite-matrices/SKILL.md` | 9 KB · 88 سطر | Invent new visual and motion systems from causal bricks (state, operation, law, time, memory, feedback) mined from the 86 reference styles; build a recipe, run an A/B/C… |
 | `kosif-instagram-discovery` | `.claude/skills/kosif-instagram-discovery/SKILL.md` | 3 KB · 34 سطر | Find public Instagram reel references by topic using generated public web search queries; index researcher-confirmed permalinks; rank Arabic/English metadata; create… |
 | `kosif-instagram-video-research` | `.claude/skills/kosif-instagram-video-research/SKILL.md` | 6 KB · 85 سطر | Search public Instagram Reel references by content/topic and known creator, expand Arabic-to-English queries, optionally ingest public search index via Brave Search… |
@@ -118,20 +118,24 @@
 - 29–45: Native reasoning absorbed from Dragon Mind
 - 46–66: Catalog-wide native fusion atlas
 - 67–73: Verified composition and Arabic matching
-- 74–78: Evidence and limits
+- 74–79: Evidence and limits
+- 80–104: Creative Council — no artistic gatekeepers
+- 105–130: Book-informed judgment guard (Thinking, Fast and Slow)
+- 131–160: Source-linked external Atlas candidate bridge (2026-11-06)
+- 161–182: Combined book-to-council thinking integration (PR #238 + PR #233)
 
 ### `.claude/skills/kosif-dragon-mind/SKILL.md`
 
 - 6–11: KOSIF Dragon Mind — عقل التنين الأسود
-- 12–22: الفهرس / contents
-- 23–40: What it does
-- 41–49: Commands
-- 50–59: Readiness tiers
-- 60–70: The thinking cycle
-- 71–83: Research data and its limits
-- 84–95: Running the mind inside the dragon
-- 96–121: Every entry usable: the method applier
-- 122–128: Rules
+- 12–23: الفهرس / contents
+- 24–43: What it does
+- 44–52: Commands
+- 53–62: Readiness tiers
+- 63–73: The thinking cycle
+- 74–107: Research data and its limits
+- 108–119: Running the mind inside the dragon
+- 120–145: Every entry usable: the method applier
+- 146–152: Rules
 
 ### `.claude/skills/kosif-infinite-matrices/SKILL.md`
 

@@ -4599,19 +4599,6 @@
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "TOOL-180: its cited proof code ran green here (tool-runner; 8 tests)"
     },
-    "power:TOOL-181": {
-      "args": [
-        "power:TOOL-181",
-        "{artifact}",
-        "--task={task}"
-      ],
-      "power_proof": true,
-      "proof_sha256": {
-        ".claude/skills/kosif-superpowers/scripts/black_dragon.py": "22138c94bda544c7127e003cab8a9103e8b3f8b0b264f049f1282891ac4bb6ad"
-      },
-      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
-      "why": "TOOL-181: its cited proof code ran green here (tool-runner; 23 tests)"
-    },
     "power:TOOL-182": {
       "args": [
         "power:TOOL-182",
@@ -6012,8 +5999,8 @@
   },
   "counts": {
     "candidates": 514,
-    "excluded": 76,
-    "included": 438
+    "excluded": 77,
+    "included": 437
   },
   "excluded": {
     "power:AGENT-37": "refused: no test file names it, no --self-test and no known-answer recipe (only --help would run)",
@@ -6064,6 +6051,7 @@
     "power:TOOL-125": "slow: its proof units take over 120s here",
     "power:TOOL-130": "slow: its proof units take over 120s here",
     "power:TOOL-132": "slow: its proof units take over 120s here",
+    "power:TOOL-181": "not exercised: black_dragon.py proof changed after previous verification; rerun power adapter proof builder to restore",
     "power:TOOL-51": "refused: its only code proofs are shell scripts (not run by this adapter)",
     "power:TOOL-85": "failed: tests/test_mimic.py (test-file): finished within 300s",
     "power:TRANS-01": "slow: its proof units take over 120s here",
