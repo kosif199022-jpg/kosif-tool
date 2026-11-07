@@ -336,6 +336,13 @@
    "what": "v65.1 (artifact version 82): Apple presets rebuilt from the owner's REA measurements (apple-style-tokens.css + analysis): weight 600 for headings, motion 240/320ms on cubic-bezier(.4,0,.6,1), pill buttons 980px with #0071E3 primary (#0077ED hover, #006EDB active), cards 18px, fields 12px, focus ring 4px rgba(0,113,227,.18), glass search bar rgba(250,250,252,.8) with saturate(180%) blur(20px), dark variant; choosing a preset again upgrades an older saved copy; app-wide prefers-reduced-motion and prefers-contrast: more support. No Apple code, fonts, logo or assets used; no letter-spacing on Arabic.",
    "checks": "preset applied: export button rgb(0,113,227), button radius 980px, glass bar saturate(1.8) blur(20px), h1/name weight 600, search 12px; reduced motion -> 0.01ms; t56/t59/t65/t66/t67 0 page errors; contrast gate 0 low",
    "status": "published"
+  },
+  {
+   "n": 43,
+   "at": "2026-11-07T12:20:00+03:00",
+   "what": "v66 (artifact version 83): search with conditions — new 'بحث بشروط' button opens 3 boxes joined by 'و' where a result must match every filled box (name words, codes, SMACC, alternatives); a switch in the multi-search box flips between 'all conditions together' and 'any of them' (the old multi search); box count still adjustable; mode remembered on the device.",
+   "checks": "t68: مقص 416 results, + 8K0 -> 7, + يمين -> 0; switching to 'any of them' -> 473; t56/t59/t66/t67 0 page errors",
+   "status": "published"
   }
  ],
  "outputs": [
