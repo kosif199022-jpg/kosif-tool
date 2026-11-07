@@ -29,7 +29,13 @@ from power_programs import (  # noqa: E402
 )
 
 FAMILIES = ["app-feature-transfer", "ui-product-device", "apps-artifacts", "formats-platforms", "brand-logo-identity"]
-IDS = sorted(pid for fam in FAMILIES for mod in pp.modules_for(fam) for pid in mod.PROGRAMS)
+def offline_modules(fam):
+    """The family's modules without the `__local` wave, whose programs need downloaded models (faster-whisper,
+    piper) and are tested where their engine exists by test_power_programs_bd_wave (env_scope=local)."""
+    return [m for m in pp.modules_for(fam) if not m.__name__.endswith("__local")]
+
+
+IDS = sorted(pid for fam in FAMILIES for mod in offline_modules(fam) for pid in mod.PROGRAMS)
 
 
 def run(pid):
@@ -81,7 +87,7 @@ PLANTED = {
 
 class AppsPowerPrograms(unittest.TestCase):
     def test_every_family_has_programs(self):
-        counts = {fam: sum(len(m.PROGRAMS) for m in pp.modules_for(fam)) for fam in FAMILIES}
+        counts = {fam: sum(len(m.PROGRAMS) for m in offline_modules(fam)) for fam in FAMILIES}
         self.assertEqual(counts, {"app-feature-transfer": 43, "ui-product-device": 82, "apps-artifacts": 10,
                                   "formats-platforms": 52, "brand-logo-identity": 35})
 
