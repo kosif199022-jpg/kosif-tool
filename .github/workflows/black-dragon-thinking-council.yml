@@ -30,7 +30,7 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_black_dragon_creative_council.py' -v
           python3 -m unittest discover -s tests -p 'test_black_dragon_atlas_council_bridge.py' -v
           python3 -m unittest discover -s tests -p 'test_black_dragon_judgment_guard.py' -v
-      - name: Verify plan uses all 525 records and book trap checks
+      - name: Verify plan uses all 549 records and book trap checks
         run: |
           python3 .claude/skills/kosif-black-dragon/scripts/creative_council.py plan \
             "إطلاق منتج جديد بميزانية محددة وموعد تسليم، تحقق من التحيز" \
@@ -39,10 +39,10 @@ jobs:
           import json
           from pathlib import Path
           r = json.loads(Path('/tmp/combined-council.json').read_text(encoding='utf-8'))
-          assert r['total_source_records'] == 525, r['total_source_records']
+          assert r['total_source_records'] == 549, r['total_source_records']
           assert r['core_cognitive_records'] == 443
-          assert r['atlas_mind_contextual_records'] == 82
-          assert r['primary_assigned'] == 525
+          assert r['atlas_mind_contextual_records'] == 106
+          assert r['primary_assigned'] == 549
           assert len(r['roles']) == 12
           assert r['external_atlas']['catalogued_paths'] == 26
           assert r['external_atlas']['candidate_procedure_count'] == 23
