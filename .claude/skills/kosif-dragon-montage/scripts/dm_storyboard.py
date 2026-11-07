@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -125,6 +126,13 @@ def sheet(job: Path, plan: dict, cols: int) -> Path | None:
     return out
 
 
+def arabic_reason(reason: str) -> str:
+    """Reasons are "en | ar; en | ar": keep every Arabic part (the shot's reason and the transition's)."""
+    parts = [p.strip() for chunk in reason.split("|") for p in chunk.split(";")]
+    ar = [p for p in parts if re.search(r"[\u0600-\u06FF]", p)]
+    return ("؛ ".join(ar) or reason).replace("|", "/")[:160]
+
+
 def plan_md(job: Path, plan: dict, board: Path | None) -> str:
     concepts = C.read(job, "concepts")
     chosen = concepts["decision"]["chosen"]
@@ -152,8 +160,7 @@ def plan_md(job: Path, plan: dict, board: Path | None) -> str:
           "| # | الوقت | من فين | الدور | حركة الكاميرا | الانتقال | الكلام | ليه |",
           "|---|---|---|---|---|---|---|---|"]
     for i, r in enumerate(plan["rows"], 1):
-        why = r["reason"].split("|")[-1].strip() or r["reason"]
-        why = why.replace("|", "/")[:120]
+        why = arabic_reason(r["reason"])
         L.append(f"| {i} | {r['rec_in']:.1f}–{r['rec_out']:.1f} | {r['src']} {r['src_in']:.1f}–{r['src_out']:.1f} "
                  f"| {ROLE_AR.get(r['role'], r['role'])} | {r['camera']} | {r['transition']} "
                  f"| {r['words'].replace('|', '/') or '—'} | {why} |")
