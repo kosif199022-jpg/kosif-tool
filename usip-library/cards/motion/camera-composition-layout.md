@@ -29259,13 +29259,13 @@
 
 **متى:** عند سرد قصة بالتمرير مع صورة مثبتة تتغير بجانب خطوات النص / for scrollytelling with a pinned visual that swaps frames as text steps scroll by
 
-**كيف:** ScrollTrigger per step start 'top 58%' end 'bottom 42%' calling show(index); pin visual from 'top top+=96'; frames autoAlpha with slight scale. Default CSS shows all steps stacked (fallback).
+**كيف:** ScrollTrigger per step start 'top 58%' end 'bottom 42%' calling show(index); pin visual from 'top top+=96'; frames autoAlpha with slight scale. Default CSS shows all steps stacked (fallback). Atlas upgrade 2026-11-07: Accessibility for scroll stories: separate what the imagery shows from what the data or claim proves, and state the claim in text; keep native scroll and keyboard behaviour; with reduced motion, acts become a stacked sequence of key frames (same story, no scrub); WebGL/particle meaning is described in text with a static fallback that keeps direction and emphasis; nothing essential depends on hover, colour alone or pointer precision; shared URLs/back navigation restore the same step.
 
 **المعاملات:** frame scale 0.985->1; step trigger top 58% / bottom 42%; pin offset 96px
 
 **التثبيت:** see arsenal-libraries.md
 
-**الوسوم:** قصة تفاعلية · سرد بالتمرير · صورة مثبتة · scrollytelling · pinned graphic
+**الوسوم:** قصة تفاعلية · سرد بالتمرير · صورة مثبتة · scrollytelling · pinned graphic · scrollytelling accessibility · key-frame fallback · reduced motion
 
 #### 1. الاستقبال (A25)
 
@@ -29279,6 +29279,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
+- `npm:three` ← npm ls three أو وجود node_modules/three
 - `npm:gsap` ← npm ls gsap أو وجود node_modules/gsap
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 

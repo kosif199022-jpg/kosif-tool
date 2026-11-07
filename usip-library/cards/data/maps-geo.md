@@ -716,13 +716,13 @@
 
 **متى:** عند تصميم حركة أي لقطة خريطة متجهية / when choreographing any vector map shot.
 
-**كيف:** Two lanes: vector (D3 + TopoJSON) or baked basemap (MapLibre, MAP-15). Signatures: country fill stagger 40–80 ms; pin drop + one pulse ring; arc `stroke-dashoffset` draw-on with a flyer riding the head; choropleth reveal; viewBox zoom. Rules: offset labels from their dots; filter far overseas territories out of the frame; no decorative glows, particles or lens flares; never use `tl.call()` for stateful updates (seek breaks) — tween a proxy value instead. Hand-author geo-highlight / geo-flow / flag-borders when the catalog lacks them.
+**كيف:** Two lanes: vector (D3 + TopoJSON) or baked basemap (MapLibre, MAP-15). Signatures: country fill stagger 40–80 ms; pin drop + one pulse ring; arc `stroke-dashoffset` draw-on with a flyer riding the head; choropleth reveal; viewBox zoom. Rules: offset labels from their dots; filter far overseas territories out of the frame; no decorative glows, particles or lens flares; never use `tl.call()` for stateful updates (seek breaks) — tween a proxy value instead. Hand-author geo-highlight / geo-flow / flag-borders when the catalog lacks them. Atlas upgrade 2026-11-07: For animated flow or particle maps state what each moving mark represents and whether emission rate encodes volume or only direction, and make the same claim readable in a static frame. For globes or custom projections, record longitude origin and wrap policy and spot-check 3+ known places across basemap/texture, markers, labels and camera focus before animating; move the camera along the shortest path. Decide per layer whether it scales in map space (shapes, areas, routes) or stays screen-stable (pins, badges, labels, borders). Sensitive maps (conflict, disaster, displacement) carry a date per map state and visibly distinguish measured, estimated and schematic geometry.
 
 **المعاملات:** stagger 40–80 ms; dashoffset arcs; no tl.call
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** signatures · pin drop · stagger · restraint · توقيعات حركة · دبوس
+**الوسوم:** signatures · pin drop · stagger · restraint · توقيعات حركة · دبوس · particle map meaning · globe alignment check · screen-stable labels · خريطة متحركة صادقة
 
 #### 1. الاستقبال (A25)
 

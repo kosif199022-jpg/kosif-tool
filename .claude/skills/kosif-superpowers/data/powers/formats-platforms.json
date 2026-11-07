@@ -313,7 +313,7 @@
   "name_en": "Social canvas + text-safe margin table",
   "status": "documented",
   "what": "مقاسات الصور الثابتة والأغلفة مع الهامش الآمن لكل سطح. / Still/cover sizes with text-safe margins per surface.",
-  "how": "LinkedIn post 1200×627 (100 px) · X card 1200×675 (80 px) · IG square 1080×1080 (108 px = 10%) · IG landscape 1080×566 (80 px) · FB post 1200×630 (100 px) · YouTube thumbnail 1280×720 (72 px) · channel art 2560×1440 (safe 1546×423 centred) · LinkedIn cover 1584×396 · X header 1500×500 · GitHub preview 1280×640 ≤1 MB · display 300×250, 728×90, 160×600. Keep key content 10–15% from edges.",
+  "how": "LinkedIn post 1200×627 (100 px) · X card 1200×675 (80 px) · IG square 1080×1080 (108 px = 10%) · IG landscape 1080×566 (80 px) · FB post 1200×630 (100 px) · YouTube thumbnail 1280×720 (72 px) · channel art 2560×1440 (safe 1546×423 centred) · LinkedIn cover 1584×396 · X header 1500×500 · GitHub preview 1280×640 ≤1 MB · display 300×250, 728×90, 160×600. Keep key content 10–15% from edges. Atlas upgrade 2026-11-07: Gates before export: one message per asset (two messages → two assets); a stranger gets it in 3 seconds; headline still legible when the asset is shrunk to ~150 px wide; paid statics keep text area roughly ≤20% of the canvas (logo excluded); text contrast ≥4.5:1 (3:1 for large type); colours only from brand tokens; no lorem ipsum — missing copy is flagged, not faked; each ratio is redesigned from its own constraints rather than transposed from landscape. Stories/Reel covers: keep ~250 px clear at top and ~250-400 px at bottom for UI.",
   "params": "see table; general 10–15% margin",
   "install": "",
   "requires": [],
@@ -338,9 +338,34 @@
    "صورة الهيدر",
    "social image size",
    "header",
-   "linkedin"
+   "linkedin",
+   "150px test",
+   "3-second test",
+   "one message",
+   "text 20%",
+   "اختبار المصغر"
   ],
-  "when": "حين يحتاج المستخدم مقاس منشور أو غلاف أو بانر لمنصة معينة مع هامش آمن للنص / when the user needs the size of a social post, cover, header or banner with its text-safe margin"
+  "when": "حين يحتاج المستخدم مقاس منشور أو غلاف أو بانر لمنصة معينة مع هامش آمن للنص / when the user needs the size of a social post, cover, header or banner with its text-safe margin",
+  "atlas": {
+   "ids": [
+    "4428"
+   ],
+   "examples": [
+    {
+     "id": "4428",
+     "plugin": "tonone",
+     "skill": "form-social",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4428-form-social"
+    }
+   ],
+   "theme": "marketing-seo",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-marketing.json",
+   "skill_md_sha256": {
+    "4428": "b4027ab67f05f2018d06408b24d5dba6f5e02241a363e9dba82666f210c3a84f"
+   }
+  }
  },
  {
   "id": "FMT-10",
@@ -1205,7 +1230,7 @@
   "name_en": "Post pack + linter per platform",
   "status": "proven",
   "what": "يكتب الكابشن والوسوم وعنوان يوتيوب ووصفه والدعوة وأول تعليق ونص الغلاف والنص البديل، ثم يفحصها بحدود كل منصة وملاءمة الفيديو. لا ينشر. / Writes caption, hashtags, YouTube title/description, CTA, first comment, cover text and alt text, then lints them against each platform and the video fit. Never posts.",
-  "how": "`python3 social.py pack FILM.mp4 --platforms tiktok,reels,shorts --topic \"…\" --out X.post.json` then `social.py check X.post.json` (exit 0 = ready). Lints: X weighted length (emoji 2, URL 23), YT title ≤100 (warn >70), hashtag caps (IG 5, YT >60 voids all, Threads 1), Arabic-normalised duplicate tags, hook before \"more\", dead links, CTA, alt text. Verified here: pack + check ran on a TikTok file (it flagged items as not ready — a draft to fill, not a final caption). Basma has the in-app version (5 Arabic hook titles ≤6 words, postPack JSON, POST_LIMITS) — needs its key-backed agent.",
+  "how": "`python3 social.py pack FILM.mp4 --platforms tiktok,reels,shorts --topic \"…\" --out X.post.json` then `social.py check X.post.json` (exit 0 = ready). Lints: X weighted length (emoji 2, URL 23), YT title ≤100 (warn >70), hashtag caps (IG 5, YT >60 voids all, Threads 1), Arabic-normalised duplicate tags, hook before \"more\", dead links, CTA, alt text. Verified here: pack + check ran on a TikTok file (it flagged items as not ready — a draft to fill, not a final caption). Basma has the in-app version (5 Arabic hook titles ≤6 words, postPack JSON, POST_LIMITS) — needs its key-backed agent. Atlas upgrade 2026-11-07: Channel re-fit rules: load the target channel spec (format, length, structure, do/avoid) before drafting; never ship over-limit copy — trim or split per spec; unknown channel → ask, do not guess a format; after transcreation re-check length because Arabic and English expand/contract differently; one file per channel named after the channel ID so packs are diffable.",
   "params": "X 280 weighted · YT title ≤100 · IG 5 tags · Threads 1",
   "install": "",
   "requires": [
@@ -1232,9 +1257,33 @@
    "تجهيز النشر",
    "social copy",
    "youtube description",
-   "alt text"
+   "alt text",
+   "channel formats",
+   "re-fit",
+   "character limits",
+   "حدود المنصة"
   ],
-  "when": "عند كتابة الكابشن والوسوم وعنوان يوتيوب ووصفه وفحصها بحدود كل منصة قبل النشر / when writing captions, hashtags and a YouTube title and description and checking them against each platform"
+  "when": "عند كتابة الكابشن والوسوم وعنوان يوتيوب ووصفه وفحصها بحدود كل منصة قبل النشر / when writing captions, hashtags and a YouTube title and description and checking them against each platform",
+  "atlas": {
+   "ids": [
+    "4838"
+   ],
+   "examples": [
+    {
+     "id": "4838",
+     "plugin": "content-multiplier",
+     "skill": "channel-formats",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1802-content-multiplier/4838-channel-formats"
+    }
+   ],
+   "theme": "marketing-seo",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-marketing.json",
+   "skill_md_sha256": {
+    "4838": "6cb892209d4594302fc2a8678390ea99145c5b001fc7c55c6c9f9c3079cd27c8"
+   }
+  }
  },
  {
   "id": "FMT-34",
@@ -1721,7 +1770,7 @@
   "name_en": "Thumbnail brief: 3 concepts + A/B",
   "status": "documented",
   "what": "ثلاثة مفاهيم (تخطيط، تعبير، موضع النص، اللون، عناصر العلامة) مع توصية وخطة اختبار. / Three concepts with a recommendation, background-only image prompts, shooting notes and an A/B plan.",
-  "how": "Shooting notes: slightly below eye level, medium close-up, one off-axis key light. Generate backgrounds without text (prompt template: subject with exaggerated emotion, high contrast, bold rim light, clean background, space on the right for title, 16:9) and composite the real face and the Arabic title as layers. A/B: vary one element, judge after 48 h by CTR vs channel average.",
+  "how": "Shooting notes: slightly below eye level, medium close-up, one off-axis key light. Generate backgrounds without text (prompt template: subject with exaggerated emotion, high contrast, bold rim light, clean background, space on the right for title, 16:9) and composite the real face and the Arabic title as layers. A/B: vary one element, judge after 48 h by CTR vs channel average. Atlas upgrade 2026-11-07: Read A/B results with discipline: write the expected lift before the swap, change one element only, wait for enough impressions (≥1,000 per variant as a floor) and the 48 h window, record HELD / PARTIAL / NO without rounding up, and only turn a pattern into a thumbnail rule after ≥3 results point the same way.",
   "params": "3 concepts · 1280×720 · 48 h test",
   "install": "",
   "requires": [],
@@ -1743,9 +1792,40 @@
    "أفكار الغلاف",
    "youtube thumbnail",
    "click-through",
-   "thumbnail concepts"
+   "thumbnail concepts",
+   "thumbnail test",
+   "calibration",
+   "اختبار الصورة المصغرة"
   ],
-  "when": "عند تصميم صورة مصغرة ليوتيوب وتجربة أكثر من فكرة لمعرفة الأعلى نقرًا / when designing a YouTube thumbnail with several concepts and an A/B test to see which gets more clicks"
+  "when": "عند تصميم صورة مصغرة ليوتيوب وتجربة أكثر من فكرة لمعرفة الأعلى نقرًا / when designing a YouTube thumbnail with several concepts and an A/B test to see which gets more clicks",
+  "atlas": {
+   "ids": [
+    "11472",
+    "3484"
+   ],
+   "examples": [
+    {
+     "id": "11472",
+     "plugin": "google-ads-strategist",
+     "skill": "hypothesis-journaling",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2824-google-ads-strategist/11472-hypothesis-journaling"
+    },
+    {
+     "id": "3484",
+     "plugin": "marketing-skills",
+     "skill": "ad-creative",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3484-ad-creative"
+    }
+   ],
+   "theme": "marketing-seo",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-marketing.json",
+   "skill_md_sha256": {
+    "11472": "31c4d5564b28aad5158c84026525876634ddb5b92090a69caf3c220c942b63c6",
+    "3484": "e874d7bde2f55a5f0687c938ea9d3c1f210a73ff948d58ba3ee0e08631587702"
+   }
+  }
  },
  {
   "id": "FMT-48",
@@ -1823,7 +1903,7 @@
   "name_en": "Identity export set: favicon, PWA, OG",
   "status": "ready",
   "what": "أقل مجموعة تصدير للهوية: favicon.svg وico، أيقونات التثبيت، وصور OG وX. / Minimum identity export: favicon.svg/ico, install icons, OG and X cards.",
-  "how": "favicon.svg (dark via media query), favicon.ico 16/32/48, apple-touch 180×180, PWA 192/512, OG 1200×630, X 1200×675; render with headless Chromium or Pillow. Owner examples: earth tools/brand/make_marks.py renders icons from the SVG mark with theme_color #1d1814 (identity_unity test); audit-studio Arabic RTL manifest (lang ar, dir rtl, standalone, SVG any/maskable icons, theme #24113f).",
+  "how": "favicon.svg (dark via media query), favicon.ico 16/32/48, apple-touch 180×180, PWA 192/512, OG 1200×630, X 1200×675; render with headless Chromium or Pillow. Owner examples: earth tools/brand/make_marks.py renders icons from the SVG mark with theme_color #1d1814 (identity_unity test); audit-studio Arabic RTL manifest (lang ar, dir rtl, standalone, SVG any/maskable icons, theme #24113f). Atlas upgrade 2026-11-07: Banner and listing sizes to add: YouTube channel art 2560x1440 (safe centre 1546x423), LinkedIn personal cover 1584x396, X header 1500x500 (lower-left covered by the avatar), Product Hunt gallery 1270x760, Google Play feature graphic 1024x500, GitHub social preview 1280x640; keep critical content centred, text minimal, check at real display size. Generated web images ship with: descriptive alt text (no keyword stuffing), filename keyword-description-WxH.webp, WebP around quality 80-85 with JPEG fallback, size budget under ~200 KB for heroes and ~100 KB for thumbnails, explicit width/height to avoid layout shift, lazy loading below the fold, og:image + og:image:width/height + og:image:alt and twitter:card summary_large_image. Draft at low resolution (512-1K) to lock composition, render the final at 2K; product UI in mockups is a real screenshot, never generated.",
   "params": "16/32/48 · 180 · 192/512 · 1200×630 · 1200×675",
   "install": "",
   "requires": [
@@ -1851,9 +1931,50 @@
    "فافيكون",
    "app icons",
    "apple touch icon",
-   "web app"
+   "web app",
+   "channel banner sizes",
+   "og image checklist",
+   "image web delivery",
+   "مقاسات البانر",
+   "صورة المشاركة"
   ],
-  "when": "حين يحتاج موقع أو تطبيق ويب أيقونة المتصفح وأيقونات التثبيت وصور المشاركة / when a site or web app needs its favicon, install icons and share cards"
+  "when": "حين يحتاج موقع أو تطبيق ويب أيقونة المتصفح وأيقونات التثبيت وصور المشاركة / when a site or web app needs its favicon, install icons and share cards",
+  "atlas": {
+   "ids": [
+    "3504",
+    "1261",
+    "1954"
+   ],
+   "examples": [
+    {
+     "id": "3504",
+     "plugin": "marketing-skills",
+     "skill": "image",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3504-image"
+    },
+    {
+     "id": "1261",
+     "plugin": "legends-seo-dungeon",
+     "skill": "seo-image-gen",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/347-legends-seo-dungeon/1261-seo-image-gen"
+    },
+    {
+     "id": "1954",
+     "plugin": "codex-seo",
+     "skill": "seo-image-gen",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/881-codex-seo/1954-seo-image-gen"
+    }
+   ],
+   "theme": "image-design-media",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-image.json",
+   "skill_md_sha256": {
+    "3504": "c34b67e249e558410ee960043d0de3c1d188dc3b6ba36d7714c16ec6f1fad46e",
+    "1261": "fbfe38171737d063abe5669928e801ea27df623ce02041b187fee8533ea2beae",
+    "1954": "b112ab754814f03770ccc5b3015e610e48b65427cf61f4cd36e0cc7721a36ca1"
+   }
+  }
  },
  {
   "id": "FMT-51",
@@ -2077,7 +2198,7 @@
   "name_en": "Content atomisation map",
   "status": "documented",
   "what": "مصدر طويل واحد ← فيديو كامل + 3–5 مقاطع قصيرة + نسخ أصلية لكل منصة، بإصدار متدرج. / One long source → full video + 3–5 shorts + platform-native variants, released staggered.",
-  "how": "Blog→video: H2s → chapters, stats/quotes → pull-quote overlays on B-roll, steps → tutorial segments, conclusion → short. Every derivative passes the standalone test (own hook and payoff, no \"as discussed…\"); list what was cut and why; channel specs: short video = 80–150 spoken words for 20–45 s, 3–5 beats each with an on-screen text cue, one CTA; YouTube description 200–500 words, first ~100 chars above the fold.",
+  "how": "Blog→video: H2s → chapters, stats/quotes → pull-quote overlays on B-roll, steps → tutorial segments, conclusion → short. Every derivative passes the standalone test (own hook and payoff, no \"as discussed…\"); list what was cut and why; channel specs: short video = 80–150 spoken words for 20–45 s, 3–5 beats each with an on-screen text cue, one CTA; YouTube description 200–500 words, first ~100 chars above the fold. Atlas upgrade 2026-11-07: Atom types to harvest from podcasts/long videos: quotable line (15-60 s), complete mini-story (60-90 s), tactical tip (30-60 s), contrarian take, surprising number, behind-the-scenes moment. Per episode aim for 3-5 vertical clips, 1-2 text posts, 1 thread, 1 carousel, 1 newsletter section, spread over 1-2 weeks. Each clip gets a standalone caption and burned subtitles. If the source is too thin for a channel, draft what it supports and flag the gap instead of inventing facts. Atlas upgrade 2026-11-07: Extract 3–7 standalone insights (one sentence + supporting example + who it serves); rank by 'worth it if this were the only post they saw'; top one is the anchor. Match insight type to format: steps → carousel/slides, counter-intuitive claim → single post or reel hook, story with lesson → narrative reel, number → stat post, framework → one element per slide, memorable line → quote card. Voice stays, register changes per channel. Rebuild the hook per platform (source hook rarely survives); strip source-platform artifacts ('link in bio', hashtag walls, 'as I posted'). Rank derivatives by reach over production effort; never publish all on one day.",
   "params": "3–5 clips per long piece · 80–150 words / 20–45 s",
   "install": "",
   "requires": [],
@@ -2099,9 +2220,68 @@
    "توزيع المحتوى",
    "blog to video",
    "content repurposing",
-   "shorts"
+   "shorts",
+   "content atoms",
+   "podcast clips",
+   "clip mining",
+   "تقطيع البودكاست",
+   "standalone insight",
+   "native derivatives",
+   "إعادة تدوير المحتوى"
   ],
-  "when": "عند تحويل مقال أو فيديو طويل إلى مقاطع قصيرة ونسخ مخصصة لكل منصة / when turning a blog post or long video into short clips and platform-native versions"
+  "when": "عند تحويل مقال أو فيديو طويل إلى مقاطع قصيرة ونسخ مخصصة لكل منصة / when turning a blog post or long video into short clips and platform-native versions",
+  "atlas": {
+   "ids": [
+    "3530",
+    "4838",
+    "13227",
+    "12450",
+    "13060"
+   ],
+   "examples": [
+    {
+     "id": "3530",
+     "plugin": "marketing-skills",
+     "skill": "social",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3530-social"
+    },
+    {
+     "id": "4838",
+     "plugin": "content-multiplier",
+     "skill": "channel-formats",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1802-content-multiplier/4838-channel-formats"
+    },
+    {
+     "id": "13227",
+     "plugin": "youtube",
+     "skill": "creator-seo-agent",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3067-youtube/13227-creator-seo-agent"
+    },
+    {
+     "id": "12450",
+     "plugin": "pwdev-copy",
+     "skill": "copy-repurpose",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2964-pwdev-copy/12450-copy-repurpose"
+    },
+    {
+     "id": "13060",
+     "plugin": "linkedin-skills",
+     "skill": "linkedin-repurposer",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3034-linkedin-skills/13060-linkedin-repurposer"
+    }
+   ],
+   "theme": "marketing-seo",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-marketing.json",
+   "skill_md_sha256": {
+    "3530": "8cc93d9b361622cdb640e87969747b85603bed2d268e923179f8dfb4799ec8c7",
+    "4838": "6cb892209d4594302fc2a8678390ea99145c5b001fc7c55c6c9f9c3079cd27c8",
+    "13227": "80e4232b2c535608de0bd0bbbc08e8374241b7413640ad5cee5b1fedb1ab36d2",
+    "12450": "6a6503dab237545e12a9d8c46427b8a83951e7591b9fdac69593384ddbb33acb",
+    "13060": "8b5e1861d17ebfbc6a7cfcb8714ced0f59cd002cb22b5fdbadabb5746f726e19"
+   }
+  }
  },
  {
   "id": "FMT-58",

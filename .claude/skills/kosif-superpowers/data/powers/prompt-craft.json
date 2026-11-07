@@ -211,7 +211,7 @@
   "status": "documented",
   "what": "اكتب التكليف لزميل قدير بلا سياق: الهدف وسببه، المسارات، النمط المتبع، ما لا يُمس، الفحص المطلوب، ماذا يفعل إن تعطل، وشكل التسليم وطوله. — Write the brief for a capable colleague with zero context.",
   "when": "عند التفويض إلى وكيل فرعي أو مهمة مجدولة أو جلسة متوازية أو خطوة سير عمل. / Delegating to a subagent, a scheduled task, a parallel session or a workflow step.",
-  "how": "Goal + why; exact paths, symbols, URLs; the pattern file to copy; do-not-touch list; ask before destructive or external actions; the command to run and what \"done\" means; \"if blocked, stop and report, do not work around it\"; return format and size (e.g. at most 10 bullets with file:line). Research subagents: tight scope, condensed findings with sources. Reviewers: report only correctness and requirement gaps. Explore → plan → implement → verify for multi-file work; skip the plan when the diff fits in one sentence. Template in §8.3.",
+  "how": "Goal + why; exact paths, symbols, URLs; the pattern file to copy; do-not-touch list; ask before destructive or external actions; the command to run and what \"done\" means; \"if blocked, stop and report, do not work around it\"; return format and size (e.g. at most 10 bullets with file:line). Research subagents: tight scope, condensed findings with sources. Reviewers: report only correctness and requirement gaps. Explore → plan → implement → verify for multi-file work; skip the plan when the diff fits in one sentence. Template in §8.3. Atlas upgrade 2026-11-07: Autonomous goal prompt for a fresh session (150–350 words, prose): desire + real stakes (never invented), quality bar (vivid adjectives for creative work, behaviours for functional), verified tool inventory (ls the paths, check the tool list — name only 2–4 load-bearing resources) plus a discovery mandate, explicit creative freedom and decision authority, a verification loop in the medium's own terms (render and watch the video, load and click the page) with ≥3 passes, exact delivery destination, and a closing goal line + autonomy directive with nothing after it. Ask all gap questions in one batch or none; list 2–4 assumptions after the prompt. If the user wants it built now, build instead of writing a prompt.",
   "params": "",
   "install": "",
   "requires": [
@@ -229,10 +229,34 @@
    "brief",
    "claude code",
    "تكليف",
-   "وكيل فرعي"
+   "وكيل فرعي",
+   "goal prompt",
+   "autonomous",
+   "fresh session",
+   "برومبت الهدف"
   ],
   "section": "محوّلات الأهداف — Target adapters",
-  "source": "https://code.claude.com/docs/en/best-practices (paraphrased); references/prompt-optimizer.md §7.3"
+  "source": "https://code.claude.com/docs/en/best-practices (paraphrased); references/prompt-optimizer.md §7.3",
+  "atlas": {
+   "ids": [
+    "654"
+   ],
+   "examples": [
+    {
+     "id": "654",
+     "plugin": "fable-goal",
+     "skill": "fable-goal",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/207-fable-goal/654-fable-goal"
+    }
+   ],
+   "theme": "prompt-skill-engineering",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-skillcraft.json",
+   "skill_md_sha256": {
+    "654": "3764113250bad205848a2b68f15c6d577b249eb3a7a491b365acf362b8e4df48"
+   }
+  }
  },
  {
   "id": "PROMPT-09",
@@ -272,7 +296,7 @@
   "status": "documented",
   "what": "فقرة واحدة بترتيب الخانات: الموضوع، الفعل، المكان، اللقطة والعدسة، الضوء ومصدره واتجاهه، اللوحة والأسلوب والخامات، المقاس؛ عدسة واحدة وضوء رئيسي واحد. — One paragraph in slot order with one lens idea and one key light.",
   "when": "عند أي طلب توليد صورة ثابتة، أو حين يستدعي Claude أداة صور. / Any still-image generation request, or Claude calling an image tool.",
-  "how": "Subject → action → environment → shot and lens → light source and direction → palette, style, materials → aspect. On-image text in quotes with placement (keep Arabic text exact). Locks repeated word for word across a series. Style by visible properties, not living-artist imitation. No hype tokens (8k, masterpiece, ultra-detailed, trending). Negatives in the platform's negative field or as positive replacements (\"empty room\"). Variants change one dimension. Platform syntax and tested forges: GEN-06, GEN-10, GEN-12.",
+  "how": "Subject → action → environment → shot and lens → light source and direction → palette, style, materials → aspect. On-image text in quotes with placement (keep Arabic text exact). Locks repeated word for word across a series. Style by visible properties, not living-artist imitation. No hype tokens (8k, masterpiece, ultra-detailed, trending). Negatives in the platform's negative field or as positive replacements (\"empty room\"). Variants change one dimension. Platform syntax and tested forges: GEN-06, GEN-10, GEN-12. Atlas upgrade 2026-11-07: Iteration budget: first round 2 variations, not 8; diagnose which axis failed (subject, composition, light, style, palette) and change one axis per round; the moment a result is approved record seed + model + version in the manifest, then generate volume. Put the essentials first (generators weight the start). Aspect ratio both in the prompt and the parameter.",
   "params": "",
   "install": "",
   "requires": [
@@ -289,10 +313,34 @@
    "midjourney",
    "text to image",
    "برومبت صور",
-   "توليد صور"
+   "توليد صور",
+   "iteration",
+   "seed",
+   "one axis",
+   "تكرار التوليد"
   ],
   "section": "محوّلات الأهداف — Target adapters",
-  "source": "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-prompt-architecture (owner) (VISUAL_PROMPT_CORE); references/powers/ai-generation.md GEN-01…GEN-06"
+  "source": "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-prompt-architecture (owner) (VISUAL_PROMPT_CORE); references/powers/ai-generation.md GEN-01…GEN-06",
+  "atlas": {
+   "ids": [
+    "12590"
+   ],
+   "examples": [
+    {
+     "id": "12590",
+     "plugin": "pwdev-social-media",
+     "skill": "prompt-craft",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2976-pwdev-social-media/12590-prompt-craft"
+    }
+   ],
+   "theme": "prompt-skill-engineering",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-skillcraft.json",
+   "skill_md_sha256": {
+    "12590": "03249cc42c171bb8bdccedea6be386fec8199ff8e1b22cd6463724cf0277f64f"
+   }
+  }
  },
  {
   "id": "PROMPT-11",
@@ -416,7 +464,7 @@
   "status": "documented",
   "what": "لا تقل \"أفضل\" بلا اختبار: 5 إلى 20 مدخلًا ممثلًا، القديم مقابل الجديد، تصحيح بالكود أولًا ثم حكم نموذج بمعيار مكتوب. — No \"better\" without a test: 5–20 representative inputs, old vs new, code graders first, then an LLM grader with a rubric.",
   "when": "عند برومبتات النظام والمهارات وخطوط الأنابيب وإعدادات المولّدات المسبقة التي ستُعاد استخدامها. / System prompts, skills, pipelines and generator presets that will be reused.",
-  "how": "Include edge cases (missing input, very long input, harmful input, disputed cases). Grade by exact match, schema or tests where possible; otherwise an LLM grader with a written rubric and fixed labels; humans last. Keep the new prompt only if it wins without regressions. One-off generator prompts: cheap draft (low resolution, short clip) before the expensive run. Not every failure is a prompt problem (latency and cost may be a model choice).",
+  "how": "Include edge cases (missing input, very long input, harmful input, disputed cases). Grade by exact match, schema or tests where possible; otherwise an LLM grader with a written rubric and fixed labels; humans last. Keep the new prompt only if it wins without regressions. One-off generator prompts: cheap draft (low resolution, short clip) before the expensive run. Not every failure is a prompt problem (latency and cost may be a model choice). Atlas upgrade 2026-11-07: Decision chain for A vs B: quality first (pairwise judge with position randomized per case, results remapped), then tokens, then time, each with a noise threshold (≈15% win-rate spread, 10% tokens, 15% latency) — otherwise NEUTRAL. Each run in a fresh independent session; a failed run removes that case's judge instead of counting it. Fewer than 3 cases = warn low confidence. For very large prompts judge the diff against each input instead of running them. Never change prompt and model in the same comparison; include must-not-contain checks; promote only if violations stay at zero.",
   "params": "5–20 cases; prefer volume over hand-graded quality",
   "install": "",
   "requires": [],
@@ -428,10 +476,41 @@
    "eval",
    "a/b test",
    "regression",
-   "تقييم البرومبت"
+   "تقييم البرومبت",
+   "tiebreak",
+   "noise threshold",
+   "pairwise"
   ],
   "section": "الفحص والإثبات — Check and prove",
-  "source": "https://platform.claude.com/docs/en/test-and-evaluate/develop-tests (paraphrased); owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-prompt-architecture (owner) (eval gate)"
+  "source": "https://platform.claude.com/docs/en/test-and-evaluate/develop-tests (paraphrased); owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-prompt-architecture (owner) (eval gate)",
+  "atlas": {
+   "ids": [
+    "13940",
+    "605"
+   ],
+   "examples": [
+    {
+     "id": "13940",
+     "plugin": "skill-craft",
+     "skill": "compare-prompts",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3406-skill-craft/13940-compare-prompts"
+    },
+    {
+     "id": "605",
+     "plugin": "marketing-skills",
+     "skill": "prompt-engineer-toolkit",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/605-prompt-engineer-toolkit"
+    }
+   ],
+   "theme": "prompt-skill-engineering",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-skillcraft.json",
+   "skill_md_sha256": {
+    "13940": "9ac71a61fbc9c9fa3cd17e372ca86d1c7bd1693e13c3615c293d5745d5021633",
+    "605": "619516d20520a7a84b54aaad8f35d35d42317a1b633e173bb2595f575b2ac4df"
+   }
+  }
  },
  {
   "id": "PROMPT-16",
@@ -612,7 +691,7 @@
   "status": "documented",
   "what": "الوصف وحده يبقى في السياق دائمًا، فاجعله محددًا بكلمات التفعيل وضع القواعد الحاسمة في أول الملف. — Only the description is always in context, so make it specific and put must-hold rules at the top of the file.",
   "when": "عند كتابة أو تعديل مهارة أو أمر شرطة مائلة أو مدخل في CLAUDE.md. / Writing or editing a skill, a slash command or a CLAUDE.md entry.",
-  "how": "A skill body loads only when invoked; there is no \"run on every prompt\" mode for skills (use CLAUDE.md or a hook for that). Specific trigger words in the description in every language the user writes; negative triggers stated. Must-hold rules near the top, because after compaction only the start of a re-attached skill is kept (5,000 tokens per the Claude Code docs read 2026-10-16). Progressive disclosure: one-level-deep references with a table of contents. Portable frontmatter if the skill may be uploaded outside Claude Code. Build evals first.",
+  "how": "A skill body loads only when invoked; there is no \"run on every prompt\" mode for skills (use CLAUDE.md or a hook for that). Specific trigger words in the description in every language the user writes; negative triggers stated. Must-hold rules near the top, because after compaction only the start of a re-attached skill is kept (5,000 tokens per the Claude Code docs read 2026-10-16). Progressive disclosure: one-level-deep references with a table of contents. Portable frontmatter if the skill may be uploaded outside Claude Code. Build evals first. Atlas upgrade 2026-11-07: Description optimization loop: 20 realistic queries (8–10 should-trigger in varied phrasing incl. ones not naming the skill; 8–10 near-miss should-not-trigger sharing keywords), split 60% train / 40% held-out, run each query 3 times, propose a better description from train failures, pick the winner by held-out score to avoid overfitting. Trivial one-step queries never trigger skills regardless of wording, so they are bad test cases. Claude tends to undertrigger: slightly 'pushy' or directive wording ('use whenever… even if the user doesn't say X') raises activation, but measure collisions with neighbours before keeping it. Lifecycle positioning ('required before…', 'first') raises invocation; 'helps with…' kills it. Remember only descriptions are always-loaded cost; body tokens load on trigger.",
   "params": "",
   "install": "",
   "requires": [],
@@ -625,10 +704,58 @@
    "description",
    "triggers",
    "claude code",
-   "كتابة مهارة"
+   "كتابة مهارة",
+   "description optimization",
+   "held-out",
+   "trigger rate",
+   "تحسين الوصف"
   ],
   "section": "الفحص والإثبات — Check and prove",
-  "source": "https://code.claude.com/docs/en/skills (paraphrased); https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices (paraphrased)"
+  "source": "https://code.claude.com/docs/en/skills (paraphrased); https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices (paraphrased)",
+  "atlas": {
+   "ids": [
+    "924",
+    "13382",
+    "11089",
+    "4655"
+   ],
+   "examples": [
+    {
+     "id": "924",
+     "plugin": "skill-creator",
+     "skill": "skill-creator",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/311-skill-creator/924-skill-creator"
+    },
+    {
+     "id": "13382",
+     "plugin": "batterie",
+     "skill": "skill-forge",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3121-batterie/13382-skill-forge"
+    },
+    {
+     "id": "11089",
+     "plugin": "instructions",
+     "skill": "agent-prompt-standards",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2784-instructions/11089-agent-prompt-standards"
+    },
+    {
+     "id": "4655",
+     "plugin": "skills-janitor",
+     "skill": "janitor-value",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1653-skills-janitor/4655-janitor-value"
+    }
+   ],
+   "theme": "prompt-skill-engineering",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-skillcraft.json",
+   "skill_md_sha256": {
+    "924": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf",
+    "13382": "b3d6008c43527d7bb6ff06c316a40a158ca588023d5291fd6193a7570dc36a49",
+    "11089": "7b156d71999c524a7a3986444a481ae0da1807cf370ca9c737664da9f7ca956f",
+    "4655": "093109acca93038b67d329948a3ee119a5b2e7c44284cb34eb5af3772766f179"
+   }
+  }
  },
  {
   "id": "PROMPT-23",
@@ -1124,7 +1251,7 @@
   "status": "documented",
   "what": "اطلب من النموذج اقتراح عدة صيغ للتعليمات، ثم قيّمها كلها على نفس الحالات، ولا تشحن صيغة لم تُختبر. — Ask the model for several candidate instructions, score them all on the same cases, and never ship an untested one.",
   "when": "لا تعرف أفضل صياغة لمهمة متكررة / you do not know the best wording for a recurring task",
-  "how": "Give the model the task, 5 input/output pairs and the failure you see; ask for 5 distinct instructions (different strategies, not paraphrases). Generate outputs for each on the eval set, score with `prompt_lab.py eval`, keep the best only if it beats the current prompt with no regression (PROMPT-15). Record the losing variants too, so they are not retried.",
+  "how": "Give the model the task, 5 input/output pairs and the failure you see; ask for 5 distinct instructions (different strategies, not paraphrases). Generate outputs for each on the eval set, score with `prompt_lab.py eval`, keep the best only if it beats the current prompt with no regression (PROMPT-15). Record the losing variants too, so they are not retried. Atlas upgrade 2026-11-07: Use five fixed framings as the candidate set (APE): rule-based, example-based, definition-based, question-based, chain-of-thought; each commits fully, no blending. Score each on 3–5 real test cases (source from real prior inputs; never fabricate or adjust expected outcomes). Tie-break by framing precedence rule → example → definition → question → CoT. Critique only the winner with a 4-item checklist (rules unambiguous, handles out-of-scope input with an explicit fallback, format rules compatible, no two-way readings) and revise only failing items.",
   "params": "",
   "install": "",
   "requires": [
@@ -1140,10 +1267,33 @@
    "ape",
    "candidates",
    "برومبت يكتب برومبت",
-   "توليد صيغ"
+   "توليد صيغ",
+   "APE",
+   "framings",
+   "instruction optimization"
   ],
   "section": "أكبر مستودعات GitHub — Top GitHub repositories (2026-10-23)",
-  "source": "https://github.com/dair-ai/Prompt-Engineering-Guide (MIT; meta prompting, automatic prompt engineer) — restated in our own words"
+  "source": "https://github.com/dair-ai/Prompt-Engineering-Guide (MIT; meta prompting, automatic prompt engineer) — restated in our own words",
+  "atlas": {
+   "ids": [
+    "859"
+   ],
+   "examples": [
+    {
+     "id": "859",
+     "plugin": "zirkel",
+     "skill": "zirkel-optimize-instruction",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/256-zirkel/859-zirkel-optimize-instruction"
+    }
+   ],
+   "theme": "prompt-skill-engineering",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-skillcraft.json",
+   "skill_md_sha256": {
+    "859": "a0db00a5344d6eae5efeb5dbdd0af07d1d00126cccc92f25143e602ccd354d22"
+   }
+  }
  },
  {
   "id": "PROMPT-39",

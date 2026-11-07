@@ -721,13 +721,13 @@
 
 **متى:** حين يحتاج المستخدم مقاس منشور أو غلاف أو بانر لمنصة معينة مع هامش آمن للنص / when the user needs the size of a social post, cover, header or banner with its text-safe margin
 
-**كيف:** LinkedIn post 1200×627 (100 px) · X card 1200×675 (80 px) · IG square 1080×1080 (108 px = 10%) · IG landscape 1080×566 (80 px) · FB post 1200×630 (100 px) · YouTube thumbnail 1280×720 (72 px) · channel art 2560×1440 (safe 1546×423 centred) · LinkedIn cover 1584×396 · X header 1500×500 · GitHub preview 1280×640 ≤1 MB · display 300×250, 728×90, 160×600. Keep key content 10–15% from edges.
+**كيف:** LinkedIn post 1200×627 (100 px) · X card 1200×675 (80 px) · IG square 1080×1080 (108 px = 10%) · IG landscape 1080×566 (80 px) · FB post 1200×630 (100 px) · YouTube thumbnail 1280×720 (72 px) · channel art 2560×1440 (safe 1546×423 centred) · LinkedIn cover 1584×396 · X header 1500×500 · GitHub preview 1280×640 ≤1 MB · display 300×250, 728×90, 160×600. Keep key content 10–15% from edges. Atlas upgrade 2026-11-07: Gates before export: one message per asset (two messages → two assets); a stranger gets it in 3 seconds; headline still legible when the asset is shrunk to ~150 px wide; paid statics keep text area roughly ≤20% of the canvas (logo excluded); text contrast ≥4.5:1 (3:1 for large type); colours only from brand tokens; no lorem ipsum — missing copy is flagged, not faked; each ratio is redesigned from its own constraints rather than transposed from landscape. Stories/Reel covers: keep ~250 px clear at top and ~250-400 px at bottom for UI.
 
 **المعاملات:** see table; general 10–15% margin
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** هوامش · غلاف · بانر · og · thumbnail size · banner · safe margin · مقاس البوست · مقاسات السوشيال · صورة الهيدر · social image size · header · linkedin
+**الوسوم:** هوامش · غلاف · بانر · og · thumbnail size · banner · safe margin · مقاس البوست · مقاسات السوشيال · صورة الهيدر · social image size · header · linkedin · 150px test · 3-second test · one message · text 20% · اختبار المصغر
 
 #### 1. الاستقبال (A25)
 
@@ -2606,13 +2606,13 @@
 
 **متى:** عند كتابة الكابشن والوسوم وعنوان يوتيوب ووصفه وفحصها بحدود كل منصة قبل النشر / when writing captions, hashtags and a YouTube title and description and checking them against each platform
 
-**كيف:** `python3 social.py pack FILM.mp4 --platforms tiktok,reels,shorts --topic "…" --out X.post.json` then `social.py check X.post.json` (exit 0 = ready). Lints: X weighted length (emoji 2, URL 23), YT title ≤100 (warn >70), hashtag caps (IG 5, YT >60 voids all, Threads 1), Arabic-normalised duplicate tags, hook before "more", dead links, CTA, alt text. Verified here: pack + check ran on a TikTok file (it flagged items as not ready — a draft to fill, not a final caption). Basma has the in-app version (5 Arabic hook titles ≤6 words, postPack JSON, POST_LIMITS) — needs its key-backed agent.
+**كيف:** `python3 social.py pack FILM.mp4 --platforms tiktok,reels,shorts --topic "…" --out X.post.json` then `social.py check X.post.json` (exit 0 = ready). Lints: X weighted length (emoji 2, URL 23), YT title ≤100 (warn >70), hashtag caps (IG 5, YT >60 voids all, Threads 1), Arabic-normalised duplicate tags, hook before "more", dead links, CTA, alt text. Verified here: pack + check ran on a TikTok file (it flagged items as not ready — a draft to fill, not a final caption). Basma has the in-app version (5 Arabic hook titles ≤6 words, postPack JSON, POST_LIMITS) — needs its key-backed agent. Atlas upgrade 2026-11-07: Channel re-fit rules: load the target channel spec (format, length, structure, do/avoid) before drafting; never ship over-limit copy — trim or split per spec; unknown channel → ask, do not guess a format; after transcreation re-check length because Arabic and English expand/contract differently; one file per channel named after the channel ID so packs are diffable.
 
 **المعاملات:** X 280 weighted · YT title ≤100 · IG 5 tags · Threads 1
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** حزمة نشر · كابشن · هاشتاج · post pack · caption · hashtags · lint · وصف الفيديو · عنوان يوتيوب · تجهيز النشر · social copy · youtube description · alt text
+**الوسوم:** حزمة نشر · كابشن · هاشتاج · post pack · caption · hashtags · lint · وصف الفيديو · عنوان يوتيوب · تجهيز النشر · social copy · youtube description · alt text · channel formats · re-fit · character limits · حدود المنصة
 
 #### 1. الاستقبال (A25)
 
@@ -3699,13 +3699,13 @@
 
 **متى:** عند تصميم صورة مصغرة ليوتيوب وتجربة أكثر من فكرة لمعرفة الأعلى نقرًا / when designing a YouTube thumbnail with several concepts and an A/B test to see which gets more clicks
 
-**كيف:** Shooting notes: slightly below eye level, medium close-up, one off-axis key light. Generate backgrounds without text (prompt template: subject with exaggerated emotion, high contrast, bold rim light, clean background, space on the right for title, 16:9) and composite the real face and the Arabic title as layers. A/B: vary one element, judge after 48 h by CTR vs channel average.
+**كيف:** Shooting notes: slightly below eye level, medium close-up, one off-axis key light. Generate backgrounds without text (prompt template: subject with exaggerated emotion, high contrast, bold rim light, clean background, space on the right for title, 16:9) and composite the real face and the Arabic title as layers. A/B: vary one element, judge after 48 h by CTR vs channel average. Atlas upgrade 2026-11-07: Read A/B results with discipline: write the expected lift before the swap, change one element only, wait for enough impressions (≥1,000 per variant as a floor) and the 48 h window, record HELD / PARTIAL / NO without rounding up, and only turn a pattern into a thumbnail rule after ≥3 results point the same way.
 
 **المعاملات:** 3 concepts · 1280×720 · 48 h test
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** بريف · صورة مصغرة · thumbnail brief · a/b test · ctr · ثمبنيل يوتيوب · نسبة النقر · أفكار الغلاف · youtube thumbnail · click-through · thumbnail concepts
+**الوسوم:** بريف · صورة مصغرة · thumbnail brief · a/b test · ctr · ثمبنيل يوتيوب · نسبة النقر · أفكار الغلاف · youtube thumbnail · click-through · thumbnail concepts · thumbnail test · calibration · اختبار الصورة المصغرة
 
 #### 1. الاستقبال (A25)
 
@@ -3929,13 +3929,13 @@
 
 **متى:** حين يحتاج موقع أو تطبيق ويب أيقونة المتصفح وأيقونات التثبيت وصور المشاركة / when a site or web app needs its favicon, install icons and share cards
 
-**كيف:** favicon.svg (dark via media query), favicon.ico 16/32/48, apple-touch 180×180, PWA 192/512, OG 1200×630, X 1200×675; render with headless Chromium or Pillow. Owner examples: earth tools/brand/make_marks.py renders icons from the SVG mark with theme_color #1d1814 (identity_unity test); audit-studio Arabic RTL manifest (lang ar, dir rtl, standalone, SVG any/maskable icons, theme #24113f).
+**كيف:** favicon.svg (dark via media query), favicon.ico 16/32/48, apple-touch 180×180, PWA 192/512, OG 1200×630, X 1200×675; render with headless Chromium or Pillow. Owner examples: earth tools/brand/make_marks.py renders icons from the SVG mark with theme_color #1d1814 (identity_unity test); audit-studio Arabic RTL manifest (lang ar, dir rtl, standalone, SVG any/maskable icons, theme #24113f). Atlas upgrade 2026-11-07: Banner and listing sizes to add: YouTube channel art 2560x1440 (safe centre 1546x423), LinkedIn personal cover 1584x396, X header 1500x500 (lower-left covered by the avatar), Product Hunt gallery 1270x760, Google Play feature graphic 1024x500, GitHub social preview 1280x640; keep critical content centred, text minimal, check at real display size. Generated web images ship with: descriptive alt text (no keyword stuffing), filename keyword-description-WxH.webp, WebP around quality 80-85 with JPEG fallback, size budget under ~200 KB for heroes and ~100 KB for thumbnails, explicit width/height to avoid layout shift, lazy loading below the fold, og:image + og:image:width/height + og:image:alt and twitter:card summary_large_image. Draft at low resolution (512-1K) to lock composition, render the final at 2K; product UI in mockups is a real screenshot, never generated.
 
 **المعاملات:** 16/32/48 · 180 · 192/512 · 1200×630 · 1200×675
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** favicon · pwa · أيقونة · og · manifest · identity assets · أيقونة الموقع · أيقونات التطبيق · فافيكون · app icons · apple touch icon · web app
+**الوسوم:** favicon · pwa · أيقونة · og · manifest · identity assets · أيقونة الموقع · أيقونات التطبيق · فافيكون · app icons · apple touch icon · web app · channel banner sizes · og image checklist · image web delivery · مقاسات البانر · صورة المشاركة
 
 #### 1. الاستقبال (A25)
 
@@ -4475,13 +4475,13 @@
 
 **متى:** عند تحويل مقال أو فيديو طويل إلى مقاطع قصيرة ونسخ مخصصة لكل منصة / when turning a blog post or long video into short clips and platform-native versions
 
-**كيف:** Blog→video: H2s → chapters, stats/quotes → pull-quote overlays on B-roll, steps → tutorial segments, conclusion → short. Every derivative passes the standalone test (own hook and payoff, no "as discussed…"); list what was cut and why; channel specs: short video = 80–150 spoken words for 20–45 s, 3–5 beats each with an on-screen text cue, one CTA; YouTube description 200–500 words, first ~100 chars above the fold.
+**كيف:** Blog→video: H2s → chapters, stats/quotes → pull-quote overlays on B-roll, steps → tutorial segments, conclusion → short. Every derivative passes the standalone test (own hook and payoff, no "as discussed…"); list what was cut and why; channel specs: short video = 80–150 spoken words for 20–45 s, 3–5 beats each with an on-screen text cue, one CTA; YouTube description 200–500 words, first ~100 chars above the fold. Atlas upgrade 2026-11-07: Atom types to harvest from podcasts/long videos: quotable line (15-60 s), complete mini-story (60-90 s), tactical tip (30-60 s), contrarian take, surprising number, behind-the-scenes moment. Per episode aim for 3-5 vertical clips, 1-2 text posts, 1 thread, 1 carousel, 1 newsletter section, spread over 1-2 weeks. Each clip gets a standalone caption and burned subtitles. If the source is too thin for a channel, draft what it supports and flag the gap instead of inventing facts. Atlas upgrade 2026-11-07: Extract 3–7 standalone insights (one sentence + supporting example + who it serves); rank by 'worth it if this were the only post they saw'; top one is the anchor. Match insight type to format: steps → carousel/slides, counter-intuitive claim → single post or reel hook, story with lesson → narrative reel, number → stat post, framework → one element per slide, memorable line → quote card. Voice stays, register changes per channel. Rebuild the hook per platform (source hook rarely survives); strip source-platform artifacts ('link in bio', hashtag walls, 'as I posted'). Rank derivatives by reach over production effort; never publish all on one day.
 
 **المعاملات:** 3–5 clips per long piece · 80–150 words / 20–45 s
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** تفتيت · إعادة استخدام · repurpose · atomization · clips · مقاطع قصيرة · مقال إلى فيديو · توزيع المحتوى · blog to video · content repurposing · shorts
+**الوسوم:** تفتيت · إعادة استخدام · repurpose · atomization · clips · مقاطع قصيرة · مقال إلى فيديو · توزيع المحتوى · blog to video · content repurposing · shorts · content atoms · podcast clips · clip mining · تقطيع البودكاست · standalone insight · native derivatives · إعادة تدوير المحتوى
 
 #### 1. الاستقبال (A25)
 

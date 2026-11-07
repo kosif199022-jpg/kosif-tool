@@ -716,13 +716,13 @@
 
 **متى:** عند كل تحديث للتقدم وفي التقرير النهائي. / Every progress update and final report.
 
-**كيف:** Code: inspected · changed locally · verified locally (which command) · committed · pushed · blocked (reason + next step). Motion: CODE_WRITTEN ≠ PREVIEWED ≠ VIDEO_RENDERED ≠ QA_PASS. Documents: drafted · exported · opened and checked. Never merge stages ('done') when only the first happened.
+**كيف:** Code: inspected · changed locally · verified locally (which command) · committed · pushed · blocked (reason + next step). Motion: CODE_WRITTEN ≠ PREVIEWED ≠ VIDEO_RENDERED ≠ QA_PASS. Documents: drafted · exported · opened and checked. Never merge stages ('done') when only the first happened. Atlas upgrade 2026-11-07: Before writing any 'done / fixed / passes / verified / reproduced' sentence: name the observation that would prove it false, run it this turn, and put its literal output next to the claim; if it could not run, write 'not verified: X' in the same sentence, not in a footer. Banned substitutes: 'should work', 'looks correct', 'presumably', bare 'verified' with no output. Closing slots: check performed, result, covered scope, uncovered scope, residual risk, confidence grade A (target + regression, no meaningful unknown) / B (target evidence, bounded risk) / C (partial — no completion claim).
 
 **المعاملات:** 6 code words · 4 motion stages
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** status words · reporting · stages · honesty · كلمات الحالة · مراحل · تقرير · صدق
+**الوسوم:** status words · reporting · stages · honesty · كلمات الحالة · مراحل · تقرير · صدق · verify before claim · confidence grade · residual risk · التحقق قبل الادعاء
 
 #### 1. الاستقبال (A25)
 
@@ -787,13 +787,13 @@
 
 **متى:** عند الميزات الجديدة وتغييرات الموجّهات أو المهارات وأي عمل «حسّنه». / New features, prompt or skill changes, any 'make it better' work.
 
-**كيف:** Capability eval: checklist criteria for the new behaviour. Regression eval: baseline commit + X/Y cases passing. Graders: code (grep, test, build → PASS/FAIL) first; model (1–5 rubric: solves the problem, structure, edge cases, errors) for what code cannot check; human for risk LOW/MED/HIGH. Start with ≈20 real queries; an LLM judge giving 0–1 per criterion plus pass/fail in one call matched human judgement best in Anthropic's research eval.
+**كيف:** Capability eval: checklist criteria for the new behaviour. Regression eval: baseline commit + X/Y cases passing. Graders: code (grep, test, build → PASS/FAIL) first; model (1–5 rubric: solves the problem, structure, edge cases, errors) for what code cannot check; human for risk LOW/MED/HIGH. Start with ≈20 real queries; an LLM judge giving 0–1 per criterion plus pass/fail in one call matched human judgement best in Anthropic's research eval. Atlas upgrade 2026-11-07: Eval ladder: build tiers bottom-up from observed failures (read 20–100 real outputs, note the FIRST thing wrong in each, cluster into 4–8 modes, one narrow binary check per mode). Rungs cheapest first: structural → mutated-baseline corpus → code assertion → LLM judge → trajectory → outcome/world-state diff → end-to-end → human demo. For each tier answer: what defect it catches, what it structurally CANNOT prove (publish beside the green), is the grader validated (judge TPR and TNR measured separately against human labels), does the metric fit (pass@k capability, pass^k for anything irreversible), and how would it go red + a must-not-fire control. Run the harness and compare reported vs contained check counts; never write 'fully tested'. Trigger cases for a skill run on fresh unprimed subagents; quality cases judged PASS/FAIL against prose criteria, no invented scores.
 
 **المعاملات:** ≈20 real cases to start · code graders before model graders
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** evals · regression · graders · benchmark · تقييم · انحدار · مقيّم · اختبارات
+**الوسوم:** evals · regression · graders · benchmark · تقييم · انحدار · مقيّم · اختبارات · eval ladder · judge alignment · TPR TNR · blind spot · سلم التقييم
 
 #### 1. الاستقبال (A25)
 
@@ -805,7 +805,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `claude:tools` ← افحص وجوده بأمر واحد قبل كتابة الشارة
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
@@ -828,6 +828,7 @@
 
 #### 5. التعافي (A29)
 
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
 - `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
 - `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
 
@@ -1501,13 +1502,13 @@
 
 **متى:** قبل تعديل وصف مهارة أو SKILL.md أو التوجيه وبعده؛ وحين تبدو مهارة تُفعَّل أكثر أو أقل من اللازم. / Before and after editing a skill's description, SKILL.md or routing; when a skill seems to over- or under-trigger.
 
-**كيف:** Cases (examples): trivial 'احسب 37+15' → answer directly, load nothing · 'اعمل ريلز من الصوت ده' + audio → audio-sync + Arabic type, render + verify · 'what can you do?' → capability summary with badges, flag ✅ items not present now · missing library → install in venv then verify, never 'can't' · paid voice → name the key 🔑 and offer a keyless option · a ✅ binary missing here → re-probe and downgrade for this answer · 'احسب ضريبة القيمة المضافة على 1000' → compute in code. Deterministic cases get a runner script; judged cases run with and without the change in a fresh subagent against a rubric written before the run. Record dated results per version. Keyword triggers are recall hints: a naive substring router reproduced only 15/24 expectations of an owner eval set.
+**كيف:** Cases (examples): trivial 'احسب 37+15' → answer directly, load nothing · 'اعمل ريلز من الصوت ده' + audio → audio-sync + Arabic type, render + verify · 'what can you do?' → capability summary with badges, flag ✅ items not present now · missing library → install in venv then verify, never 'can't' · paid voice → name the key 🔑 and offer a keyless option · a ✅ binary missing here → re-probe and downgrade for this answer · 'احسب ضريبة القيمة المضافة على 1000' → compute in code. Deterministic cases get a runner script; judged cases run with and without the change in a fresh subagent against a rubric written before the run. Record dated results per version. Keyword triggers are recall hints: a naive substring router reproduced only 15/24 expectations of an owner eval set. Atlas upgrade 2026-11-07: Clean-room baseline: a subagent inherits CLAUDE.md, skills and plugins, so it is not a 'without skill' control; use a fresh process per cell (claude -p with a temp HOME/empty cwd, or explicit plugin dirs) and run a sentinel asking the model to list its skills to prove the arm is clean. Grid = cases × models × with/without × repeats. Two ablations answer different questions: isolated (does the description fire at all) vs installed (does it win against the real neighbours) — fails installed but passes isolated = routing loss, not a description gap. A cell that could not be measured (auth, crash) is UNMEASURED and leaves every denominator; never quote a pass rate without the unmeasured count. Repeats that disagree = UNSTABLE, a finding that the prompt is underdetermined, not a retry. Always include an abstention case (impossible/out-of-scope task) whose correct result is refusal, so a skill that fabricates under pressure does not score like an honest one. Grader is never the agent that produced the transcript; deterministic checks grade first. Analyst pass: drop assertions that pass in both arms (non-discriminating), flag high-variance evals.
 
 **المعاملات:** 6 case types · deterministic vs judged · dated results
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** trigger eval · skill testing · routing · a/b · اختبار التفعيل · تقييم المهارة · توجيه
+**الوسوم:** trigger eval · skill testing · routing · a/b · اختبار التفعيل · تقييم المهارة · توجيه · clean-room eval · ablation · UNMEASURED · abstention control · تقييم معزول
 
 #### 1. الاستقبال (A25)
 
@@ -1719,13 +1720,13 @@
 
 **متى:** عند أي طلب لتحسين kosif-superpowers (أو أي مهارة) أو توسيعها أو إصلاحها؛ وبعد جلسة تكشف قدرة ناقصة أو شارة خاطئة. / Any request to improve, extend or fix kosif-superpowers (or any skill); after a session reveals a missing power or a wrong badge.
 
-**كيف:** 1 Snapshot (CHECK-22). 2 Hypothesis: 'Claude forgets X; after the change, case Y routes to Z'. 3 Smallest reversible change on a branch: extend an existing family before adding one; never renumber IDs; new IDs append. 4 Rebuild generated files (chapters from JSON via scripts/build_chapters.py). 5 Eval matrix (CHECK-21): deterministic record gate (CHECK-23) + judged with/without cases. 6 Hard-fails (CHECK-13): validator fails, badge upgraded without proof, a passing case regresses, secret-like string, third-party text without a compatible licence, model names in skill files, SKILL.md description loses Arabic or English triggers. 7 Decide on evidence only. 8 Commit when asked, then read back the changed files from disk (a skill edited mid-session may not reload — read the file, do not republish blindly). 9 Changelog: date, hypothesis, change, cases run, expected vs actual, what is still unverified.
+**كيف:** 1 Snapshot (CHECK-22). 2 Hypothesis: 'Claude forgets X; after the change, case Y routes to Z'. 3 Smallest reversible change on a branch: extend an existing family before adding one; never renumber IDs; new IDs append. 4 Rebuild generated files (chapters from JSON via scripts/build_chapters.py). 5 Eval matrix (CHECK-21): deterministic record gate (CHECK-23) + judged with/without cases. 6 Hard-fails (CHECK-13): validator fails, badge upgraded without proof, a passing case regresses, secret-like string, third-party text without a compatible licence, model names in skill files, SKILL.md description loses Arabic or English triggers. 7 Decide on evidence only. 8 Commit when asked, then read back the changed files from disk (a skill edited mid-session may not reload — read the file, do not republish blindly). 9 Changelog: date, hypothesis, change, cases run, expected vs actual, what is still unverified. Atlas upgrade 2026-11-07: Critic before accepting an evolved skill: falsify the change's predicted impact against observed per-dimension deltas (not the aggregate); reject when the score rose while output quality fell (metric gaming), warn when the claimed fix shows no change in the component it targets, and scan for non-local effects — overlapping triggers or contradicting rules in other skills.
 
 **المعاملات:** 9 steps · 7 hard-fails
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** self evolution · improve skill · changelog · regression · تطوير ذاتي · تحسين المهارة · سجل التغييرات · انحدار
+**الوسوم:** self evolution · improve skill · changelog · regression · تطوير ذاتي · تحسين المهارة · سجل التغييرات · انحدار · reward hacking · critic · non-local effects
 
 #### 1. الاستقبال (A25)
 
@@ -2221,11 +2222,11 @@
 
 **متى:** إعادة بناء أداة أو استنساخ سلوك أو أي ادعاء «مطابق للأصل» / rebuilding a tool, cloning behaviour, any 'matches the original' claim
 
-**كيف:** python3 scripts/differential_exam.py seal EXAM --out seal.json before the work; verify-seal EXAM seal.json at grading time (exit 1 if any file changed, vanished or appeared). Keep the seal outside the exam folder. Card HX-01.
+**كيف:** python3 scripts/differential_exam.py seal EXAM --out seal.json before the work; verify-seal EXAM seal.json at grading time (exit 1 if any file changed, vanished or appeared). Keep the seal outside the exam folder. Card HX-01. Atlas upgrade 2026-11-07: Pinned-contract grading (red-gate style): hash the criteria file and the check script when ratified; refuse to grade an unratified run; on grading re-hash both and report drift distinctly from an ordinary failure; the grader runs the pinned check itself, never reads the build transcript, and accepts a PASS only if its evidence file was written during THIS run. Mutation control: revert the core change and re-run — a criterion that stays green is WITNESS, not proven. Assert on behaviour (exit code on an otherwise passing fixture), not on a message string that fires either way. Criteria already green before the work belong in the regression tier.
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** hidden test · sealed exam · sha256 · امتحان خفي · ختم · بصمة
+**الوسوم:** hidden test · sealed exam · sha256 · امتحان خفي · ختم · بصمة · pinned contract · drift · mutation control · WITNESS · عقد مختوم
 
 #### 1. الاستقبال (A25)
 

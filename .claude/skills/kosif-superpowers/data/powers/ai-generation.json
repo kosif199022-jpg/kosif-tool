@@ -966,7 +966,7 @@
   "status": "documented",
   "what": "تحليل عربي من 11 عنوانًا ينتهي ببرومبت إنجليزي لإعادة الإنشاء، وتحويل صورة مرجعية إلى طبقات سبع. / An 11-heading Arabic analysis ending in an English recreation prompt; turn a reference image into the seven layers.",
   "when": "عندما يرسل المستخدم صورة ويقول «زيها» / when the user sends an image and says 'like this'",
-  "how": "Measure first, then: الخلاصة، التكوين، الكاميرا، الإضاءة، الألوان، العناصر، الجودة التقنية، مؤشرات التوليد، الدرجات /10، الإصلاحات، برومبت إعادة الإنشاء (lint it). Commands /compare, /ocr (Arabic RTL, [؟] for unreadable), /critique, /reverse, /score. No face identification. Automated captioners (Florence-2 PromptGen, WD14, BLIP) need ComfyUI; Ideogram describe returns a structured JSON prompt. Only on images the user owns or may use.",
+  "how": "Measure first, then: الخلاصة، التكوين، الكاميرا، الإضاءة، الألوان، العناصر، الجودة التقنية، مؤشرات التوليد، الدرجات /10، الإصلاحات، برومبت إعادة الإنشاء (lint it). Commands /compare, /ocr (Arabic RTL, [؟] for unreadable), /critique, /reverse, /score. No face identification. Automated captioners (Florence-2 PromptGen, WD14, BLIP) need ComfyUI; Ideogram describe returns a structured JSON prompt. Only on images the user owns or may use. Atlas upgrade 2026-11-07: Observation before interpretation: inspect the actual pixels (never infer from a filename; for SVG, render it or say only the markup was read); list visible/cropped/obscured scope; transcribe visible text, counts and identifiers before describing; 'not visible' never means 'does not exist'. Per type: charts - title, axes, units, legend, readable points, and estimated readings marked as estimates, no extrapolation; diagrams - only labelled connections and directions; photos - no identity, relationship, intent or emotion inferred from appearance; code/terminal screenshots - verbatim, note truncation, never run what is shown. Keep three confidences apart: image clarity, interpretation, and the truth of claims printed inside the image. When editing or measuring an image, keep the original untouched and log every crop, contrast change, filter or resample with its parameters.",
   "params": "",
   "install": "",
   "requires": [
@@ -985,8 +985,41 @@
    "برومبت عكسي",
    "reverse prompt",
    "critique",
-   "OCR"
-  ]
+   "OCR",
+   "image description",
+   "observation vs interpretation",
+   "screenshot reading",
+   "وصف الصورة",
+   "ملاحظة قبل التفسير"
+  ],
+  "atlas": {
+   "ids": [
+    "4300",
+    "13580"
+   ],
+   "examples": [
+    {
+     "id": "4300",
+     "plugin": "summarizer",
+     "skill": "image-summarization",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1549-summarizer/4300-image-summarization"
+    },
+    {
+     "id": "13580",
+     "plugin": "research-images",
+     "skill": "research-image-analysis",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3210-research-images/13580-research-image-analysis"
+    }
+   ],
+   "theme": "image-design-media",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-image.json",
+   "skill_md_sha256": {
+    "4300": "46fbc76f6f8be223b588e9e91183da170de166e5f4138601569f9109789ba6e6",
+    "13580": "9a47aea1773343e00024e6b98470cff20b44534d1119f865fddeba1a135ea18c"
+   }
+  }
  },
  {
   "id": "GEN-33",
@@ -1497,7 +1530,7 @@
   "status": "documented",
   "what": "اختر مولد الفيديو بما يهم: صوت متزامن، سعر الثانية، ثبات الشخصية، أوزان مفتوحة، أو صورة→فيديو؛ وارسم بالرخيص وأنهِ بالغالي مرة واحدة. / Pick the video model by what matters — synced audio, cost/second, character consistency, open weights, or image-to-video — and draft cheap, finish premium once.",
   "when": "قبل أي توليد فيديو / before any video generation",
-  "how": "Quality + audio: Veo 3, Sora 2. Cheap volume: Kling, Seedance. Character consistency: Hailuo/MiniMax, Seedance R2V with references. Self-hosted: Wan 2.x, HunyuanVideo, LTX. Storyboard-to-video: Runway, LTX Studio. Spoken multi-segment UGC: Seedance 2.0 R2V. Drafts: Flux Schnell / Gemini Flash 512 stills, Kling standard, Seedance 480p; finals: Veo/Runway, Kling professional, 1080p. Image-to-video from an approved frame saves credits.",
+  "how": "Quality + audio: Veo 3, Sora 2. Cheap volume: Kling, Seedance. Character consistency: Hailuo/MiniMax, Seedance R2V with references. Self-hosted: Wan 2.x, HunyuanVideo, LTX. Storyboard-to-video: Runway, LTX Studio. Spoken multi-segment UGC: Seedance 2.0 R2V. Drafts: Flux Schnell / Gemini Flash 512 stills, Kling standard, Seedance 480p; finals: Veo/Runway, Kling professional, 1080p. Image-to-video from an approved frame saves credits. Atlas upgrade 2026-11-07: Model-selection record before committing a campaign to one video model: translate the request into capability needs (T2V/I2V, duration, aspect, audio), eliminate candidates from a dated docs snapshot (unknown capability = unknown, not assumed from the model name), run the smallest draft-mode canary per remaining candidate under a credit ceiling, compare quality/latency/credits, pin the chosen model ID and name a fallback.",
   "params": "",
   "install": "",
   "requires": [
@@ -1516,8 +1549,31 @@
    "routing",
    "draft",
    "final",
-   "اختيار نموذج الفيديو"
-  ]
+   "اختيار نموذج الفيديو",
+   "canary",
+   "model selection",
+   "pinned fallback"
+  ],
+  "atlas": {
+   "ids": [
+    "6079"
+   ],
+   "examples": [
+    {
+     "id": "6079",
+     "plugin": "klingai-pack",
+     "skill": "klingai-model-catalog",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1874-klingai-pack/6079-klingai-model-catalog"
+    }
+   ],
+   "theme": "ai-llm-engineering",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-skillcraft.json",
+   "skill_md_sha256": {
+    "6079": "86a389fcfb598895dfb8926d91c3dd9131352f50a72005bac4b4dca77545406d"
+   }
+  }
  },
  {
   "id": "GEN-50",
@@ -2599,7 +2655,7 @@
   "status": "documented",
   "what": "النماذج تشوّه الحروف (خصوصًا العربية)؛ كل نص طبقة حية بتشكيل سليم، والهوية بالهيكس الدقيق فوق اللقطة. / Models garble letters (especially Arabic); every text is a live, correctly shaped layer, and the brand's exact hex sits on top of the plate.",
   "when": "كل صورة أو مقطع مولد / every generated still or clip",
-  "how": "Generate textless plates ('clean, text-free surfaces'); set Arabic in the HTML/Remotion layer with proper shaping (ARAB family); brand-conditioning = 3–10 on-brand reference images + post-overlay of exact hex and real type, not a pinned seed.",
+  "how": "Generate textless plates ('clean, text-free surfaces'); set Arabic in the HTML/Remotion layer with proper shaping (ARAB family); brand-conditioning = 3–10 on-brand reference images + post-overlay of exact hex and real type, not a pinned seed. Atlas upgrade 2026-11-07: Text ladder instead of a blanket ban, for models that render text well: model-rendered only for panel letters, titles (≤8 words) and short labels (≤4 words) passed verbatim with role and placement; dense labels, leader lines and anything that must stay editable → SVG/HTML overlay; numerals with units, equations and anything read exactly → vector/code layer. Refuse items that break the ladder. QA reads back every requested verbatim string. Multi-panel sets: generate the first panel alone, then the rest with it attached as a style reference. Iterate: N candidates, QA each, pick best, one targeted edit, re-QA, stop at ship or 3 iterations.",
   "params": "3–10 refs",
   "install": "",
   "requires": [
@@ -2616,8 +2672,32 @@
    "overlay text",
    "Arabic",
    "brand",
-   "النص فوق"
-  ]
+   "النص فوق",
+   "text ladder",
+   "verbatim text",
+   "first-panel reference",
+   "سلم النص"
+  ],
+  "atlas": {
+   "ids": [
+    "10108"
+   ],
+   "examples": [
+    {
+     "id": "10108",
+     "plugin": "figures",
+     "skill": "ai-full-figure",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2657-figures/10108-ai-full-figure"
+    }
+   ],
+   "theme": "ai-llm-engineering",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-skillcraft.json",
+   "skill_md_sha256": {
+    "10108": "267c537b9693263da965869920c8080379c35e7d6b00811fdd68437ba5b0d49a"
+   }
+  }
  },
  {
   "id": "GEN-85",
@@ -2657,7 +2737,7 @@
   "status": "ready",
   "what": "كل توليد مدفوع مُسعَّر ومسقوف ومُجرَّب جافًا ومرسل مرة واحدة ومُوصَّل عند القبول وقابل للاستئناف فلا يُدفع مرتين. / Every paid generation is priced, capped, dry-run, sent once, receipted at acceptance and resumable, so nothing is paid twice.",
   "when": "قبل كل استدعاء يكلف مالًا / before every call that costs money",
-  "how": "Quote → user-approved cap → dry run → single call with --yes → receipt line → on re-run poll the stored request id. Riskiest shot first as a pilot. 2 variations in round 1; change one axis per round (subject, composition, light, style or palette); yield <30 % = weak prompt; >3 rounds on one asset = switch to composition. Estimate in calls with user-supplied unit prices, never invented currency; a budget log exits non-zero over the cap.",
+  "how": "Quote → user-approved cap → dry run → single call with --yes → receipt line → on re-run poll the stored request id. Riskiest shot first as a pilot. 2 variations in round 1; change one axis per round (subject, composition, light, style or palette); yield <30 % = weak prompt; >3 rounds on one asset = switch to composition. Estimate in calls with user-supplied unit prices, never invented currency; a budget log exits non-zero over the cap. Atlas upgrade 2026-11-07: Record the seed, model and prompt of the APPROVED output in a manifest line (an unrecorded seed makes the piece unreproducible); generation scripts refuse to run without an explicit confirm flag as a second barrier after the chat; when no key is available deliver the prompt with a prominent 'NOT GENERATED' label and never describe the image as if it exists; never overwrite a source when editing or upscaling. Ethical floor before spending: no real person's face, no imitation of an identifiable living artist, no simulated real event or testimonial published as a record; public-sector pieces use generated imagery only for abstract graphics, textures and backgrounds. Atlas upgrade 2026-11-07: Generated-footage traps: write the full cast and where each person stands into every shot prompt and check every face on every re-roll (takes silently recast people); generate at the framing you need — a punch-in beyond ~1.3x on a 1080p base goes soft; 480p/720p bases are enough under a draw-over; redo an off-style keyframe before spending on its clip (an image is cents, a clip dollars); never use frame interpolation to smooth captured footage (it invents frames) — recapture; for real UI inside a generated screen, paint the screen flat green, key it, track its four corners and warp a frame-exact UI render onto it; label generated vs captured shots honestly.",
   "params": "2 variations; <30 % yield; >3 rounds alarm",
   "install": "",
   "requires": [],
@@ -2674,8 +2754,54 @@
    "budget",
    "ميزانية",
    "receipt",
-   "cap"
-  ]
+   "cap",
+   "approved seed log",
+   "confirm flag",
+   "not generated label",
+   "سجل البذرة المعتمدة",
+   "continuity",
+   "recast",
+   "punch-in limit",
+   "green screen UI",
+   "استمرارية",
+   "توليد فيديو"
+  ],
+  "atlas": {
+   "ids": [
+    "12588",
+    "3903",
+    "12594"
+   ],
+   "examples": [
+    {
+     "id": "12588",
+     "plugin": "pwdev-social-media",
+     "skill": "image-gen",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2976-pwdev-social-media/12588-image-gen"
+    },
+    {
+     "id": "3903",
+     "plugin": "homie",
+     "skill": "video",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1511-homie/3903-video"
+    },
+    {
+     "id": "12594",
+     "plugin": "pwdev-social-media",
+     "skill": "video-gen",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2976-pwdev-social-media/12594-video-gen"
+    }
+   ],
+   "theme": "image-design-media",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-image.json",
+   "skill_md_sha256": {
+    "12588": "24d478e2387eb6913f366a6514b6c080f13475e2a2570693a211f9c087007067",
+    "3903": "164d02a1237785e7f37fbdd0164b9d6d346bd60a6d75263ad09555c45fc5ebac",
+    "12594": "f568209a623b3146ac7c681fba095a72ce9edb9733cdfb88007f1f4411aac48d"
+   }
+  }
  },
  {
   "id": "GEN-87",

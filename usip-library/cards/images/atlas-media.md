@@ -1,4 +1,4 @@
-# `atlas-media` — الصور والتحرير والتوليد (30 بطاقة)
+# `atlas-media` — الصور والتحرير والتوليد (32 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/atlas-media.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/images.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -34,6 +34,8 @@
 - [`AMEDIA-28` توليد خط زمني لـFinal Cut Pro برمجيًا عبر FCPXML وتصدير دفعي بـCompressor](#amedia-28--توليد-خط-زمني-لـfinal-cut-pro-برمجيًا-عبر-fcpxml-وتصدير-دفعي-بـcompressor--programmatic-final-cut-pro-timelines-via-fcpxml-and-batch-export-with-compressor)
 - [`AMEDIA-29` أتمتة برامج ثلاثية الأبعاد والتصميم الهندسي دون واجهة: خبز المحاكاة، تقليل المضلعات، واستخراج الخصائص](#amedia-29--أتمتة-برامج-ثلاثية-الأبعاد-والتصميم-الهندسي-دون-واجهة-خبز-المحاكاة-تقليل-المضلعات-واستخراج-الخصائص--headless-automation-of-3d-and-cad-apps-simulation-baking-batch-decimation-property-extraction)
 - [`AMEDIA-30` ربط الوكيل الصوتي بالهاتف وتقييمه: SIP وDTMF والتحويل الدافئ ونجاح المهمة كمقياس أول](#amedia-30--ربط-الوكيل-الصوتي-بالهاتف-وتقييمه-sip-وdtmf-والتحويل-الدافئ-ونجاح-المهمة-كمقياس-أول--telephony-and-call-flow-integration-for-a-voice-agent-sip-dtmf-warm-transfer-and-task-success-as-the-primary-metric)
+- [`AMEDIA-31` تحرير دفعة صور بلوك واحد متماسك وتنقيح البورتريه: نفس القيم لكل صورة، وبوابة معاينة على صورة مصغرة، ولا تعديل توليدي على البشر](#amedia-31--تحرير-دفعة-صور-بلوك-واحد-متماسك-وتنقيح-البورتريه-نفس-القيم-لكل-صورة-وبوابة-معاينة-على-صورة-مصغرة-ولا-تعديل-توليدي-على-البشر--cohesive-batch-photo-look-and-portrait-retouch-same-values-on-every-image-a-downscaled-preview-gate-no-generative-edits-on-people)
+- [`AMEDIA-32` مخطط فيديو يوتيوب تعليمي طويل مع قائمة تجهيز العروض الحية](#amedia-32--مخطط-فيديو-يوتيوب-تعليمي-طويل-مع-قائمة-تجهيز-العروض-الحية--long-form-tutorial-outline-with-demo-prep-checklist)
 
 ## البطاقات / cards
 
@@ -1720,13 +1722,13 @@
 
 **متى:** عنوان يوتيوب، صورة مصغرة، ثمبنيل / YouTube title, thumbnail text, video packaging
 
-**كيف:** 1) Tag intent: search (front-load the query phrase), browse (more intrigue, the thumbnail breaks the pattern), or both (package for search, thumbnail does browse). 2) Reject any pair where a thumbnail word repeats in the title. 3) Title ≤60 characters where possible; thumbnail text 1-3 words (4 is a caption). 4) Clarity beats curiosity; never promise more than the video delivers. 5) Thumbnail: one accent colour, high contrast, a real face with a readable expression when the format calls for it, nothing that does not earn its place. 6) Always give at least three pairs or three fixes.
+**كيف:** 1) Tag intent: search (front-load the query phrase), browse (more intrigue, the thumbnail breaks the pattern), or both (package for search, thumbnail does browse). 2) Reject any pair where a thumbnail word repeats in the title. 3) Title ≤60 characters where possible; thumbnail text 1-3 words (4 is a caption). 4) Clarity beats curiosity; never promise more than the video delivers. 5) Thumbnail: one accent colour, high contrast, a real face with a readable expression when the format calls for it, nothing that does not earn its place. 6) Always give at least three pairs or three fixes. Atlas upgrade 2026-11-07: Full YouTube metadata package: 5 title variants each run through tests (completes 'I want ___', instantly clear, positive energy, the audience's own words, memorable) and labelled destination-led vs journey-led; description = hook restated as outcome in 2-3 sentences, 3-5 'you will…' outcomes, timestamps, resources, sign-off; chapter names phrased as outcomes not topics ('Why this changes your edit' not 'Background'), estimated if no markers; 20-30 tags mixing broad, specific, brand and long-tail (no hype tags); thumbnail text 2-4 words with a one-line brief to the designer; pick the single best 30-60 s standalone moment for Shorts with why it hooks and why it works alone. Optimise for the right viewer: low-CTR/high-retention from the target audience beats broad clicks.
 
 **المعاملات:** title ≤60 chars; thumb 1-3 words
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** thumbnail · ثمبنيل · YouTube · يوتيوب · title · عنوان
+**الوسوم:** thumbnail · ثمبنيل · YouTube · يوتيوب · title · عنوان · YouTube SEO · metadata package · chapters · tags · Shorts pick · وصف يوتيوب · وسوم
 
 #### 1. الاستقبال (A25)
 
@@ -2054,6 +2056,7 @@
 - `AMEDIA-27` Godot 4: سكربت مُنمّط وفيزياء وتصدير بلا واجهة / Godot 4: typed GDScript, physics timing, headless export (documented)
 - `AMEDIA-28` توليد خط زمني لـFinal Cut Pro برمجيًا عبر FCPXML وتصدير دفعي بـCompressor / Programmatic Final Cut Pro timelines via FCPXML and batch export with Compressor (documented)
 - `AMEDIA-30` ربط الوكيل الصوتي بالهاتف وتقييمه: SIP وDTMF والتحويل الدافئ ونجاح المهمة كمقياس أول / Telephony and call-flow integration for a voice agent: SIP, DTMF, warm transfer, and task success as the primary metric (documented)
+- `AMEDIA-31` تحرير دفعة صور بلوك واحد متماسك وتنقيح البورتريه: نفس القيم لكل صورة، وبوابة معاينة على صورة مصغرة، ولا تعديل توليدي على البشر / Cohesive batch photo look and portrait retouch: same values on every image, a downscaled preview gate, no generative edits on people (documented)
 
 ### `AMEDIA-30` — ربط الوكيل الصوتي بالهاتف وتقييمه: SIP وDTMF والتحويل الدافئ ونجاح المهمة كمقياس أول / Telephony and call-flow integration for a voice agent: SIP, DTMF, warm transfer, and task success as the primary metric
 
@@ -2121,4 +2124,146 @@
 
 - `AMEDIA-28` توليد خط زمني لـFinal Cut Pro برمجيًا عبر FCPXML وتصدير دفعي بـCompressor / Programmatic Final Cut Pro timelines via FCPXML and batch export with Compressor (documented)
 - `AMEDIA-29` أتمتة برامج ثلاثية الأبعاد والتصميم الهندسي دون واجهة: خبز المحاكاة، تقليل المضلعات، واستخراج الخصائص / Headless automation of 3D and CAD apps: simulation baking, batch decimation, property extraction (documented)
+- `AMEDIA-31` تحرير دفعة صور بلوك واحد متماسك وتنقيح البورتريه: نفس القيم لكل صورة، وبوابة معاينة على صورة مصغرة، ولا تعديل توليدي على البشر / Cohesive batch photo look and portrait retouch: same values on every image, a downscaled preview gate, no generative edits on people (documented)
+- `AMEDIA-32` مخطط فيديو يوتيوب تعليمي طويل مع قائمة تجهيز العروض الحية / Long-form tutorial outline with demo-prep checklist (documented)
+
+### `AMEDIA-31` — تحرير دفعة صور بلوك واحد متماسك وتنقيح البورتريه: نفس القيم لكل صورة، وبوابة معاينة على صورة مصغرة، ولا تعديل توليدي على البشر / Cohesive batch photo look and portrait retouch: same values on every image, a downscaled preview gate, no generative edits on people
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-media` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-media.md)) |
+| المجموعة | الصور والتحرير والتوليد (`images`) |
+| نوع المخرج (A25، A27) | صور وتصميم وشعار (`image`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (Apache-2.0); nothing copied |
+
+**ما هي:** جعل مجموعة صور (سفر، فعالية، منتج، لقطات مونتاج) تبدو كأنها حُررت معًا: لوك واحد بقيم ثابتة على الكل، وترتيب ثابت للخطوات، ومعاينة قبل/بعد على أول صورة مصغرة قبل تشغيل الدفعة، وقواعد بورتريه تحمي البشرة والهوية. — Make a photo set read as one intentional edit, with a fixed step order, a preview gate and portrait-safe rules.
+
+**متى:** وحّد لون صوري، نفس الستايل لكل الصور، صور جوال بإضاءات مختلطة، صور مونتاج من مصادر متعددة، تنقيح بورتريهات بالجملة / make my photos cohesive, batch edit, same look for all, retouch a folder of portraits
+
+**كيف:** 1) Goal = cohesion of the set, not the best possible single image: apply the SAME look parameter values to every image; per-image variation is allowed only where an element is actually detected (sky, person, background) and only for that element. 2) Fixed per-image order: straighten -> auto-tone/exposure normalise -> look adjustments in ONE pass (temperature/tint + vibrance/saturation + brightness/contrast) -> look preset or LUT -> optional element-aware tweaks -> the user's fine-tune deltas applied on top of the look output (never summed into the look numbers) -> background blur -> crop. If a step fails, continue from the previous step's output and log it; never drop an image silently. 3) Starting look recipes (relative deltas, tune per source): Warm & golden = warm shift + vibrance +15; Bright & airy = slight warm, saturation -10, vibrance +10, brightness +15; Moody & cinematic = cool shift, saturation -20, contrast +25; Cool & fresh = blue shift, vibrance +10; Vibrant = vibrance +30, saturation +15, contrast +10; Muted film = saturation -35, vibrance -10, contrast +10. Looks defined as neutral must not receive any temperature change. 4) Preview gate (mandatory): downscale image 1 to a 1200 px long edge, run the whole chain, show before/after, wait for an explicit yes; any settings change repeats the preview; the final batch runs on the full-resolution originals and never reuses the preview file. 5) Portrait rules: boost with vibrance, not saturation (vibrance spares skin tones); diagnostic ranges instead of fixed numbers: highlights -40 (mildly blown) to -70 (clipped), shadows +30 to +50, contrast +15 (slight pop) to +30 (very flat only). Crops frame on the face, fall back to the subject; with no ratio given use 4:3 for landscape sources and 3:4 for portrait. 6) Never change a person generatively (hair, age, face, body). Generative fill is allowed only to remove dust, sensor spots or scratches on non-human background areas, and only if the fix is invisible at normal viewing size. 7) Never overwrite sources; write suffixed copies and a one-line summary of the look actually applied plus any per-image failures. 8) Local route here: one .cube/LUT or one ImageMagick/Pillow chain with identical arguments for all files (COLOR-04, FOOT-30), then a contact sheet of every output side by side (MEDIA-14): one outlier -> fix that image; three or more -> change the look, not the images. 9) Failure modes: per-image auto-tone after the look (destroys cohesion), stacking the user's tweak onto the look value twice, cropping before the look (preset results shift with framing), previewing on a different image than the batch's first. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/103-adobe-for-creativity/230-adobe-batch-edit-photos, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/103-adobe-for-creativity/239-adobe-retouch-portraits.
+
+**المعاملات:** look name, fine-tune deltas, crop ratio + focus (face/subject/centre), preview long edge 1200 px
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** batch photo edit · photo cohesion · consistent look · portrait retouch · vibrance vs saturation · preview gate · تحرير صور بالجملة · توحيد لون الصور · تنقيح بورتريه · لوك موحد · معاينة قبل التنفيذ
+
+#### 1. الاستقبال (A25)
+
+- المقاس والاستخدام: افتراض مكتوب ← مقاس منصة الاستخدام المذكورة
+- الهوية والألوان والخطوط: افتراض مكتوب ← لوحة ألوان مقترحة بتباين WCAG AA
+- صيغة قابلة للتعديل: افتراض مكتوب ← SVG أو مصدر قابل للتعديل مع PNG
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `imagemagick` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `pip:pillow` ← python3 -c "import pillow" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:AMEDIA-31` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: مقروء بمقاس صغير (اختبار التصغير) ← تصغير إلى 15%
+- إلزامي: تباين النص ≥ 4.5:1 ← حساب نسبة التباين
+- إلزامي: رخصة كل خط مؤكدة من مصدره ← ملف الرخصة
+- إلزامي: أصالة بلا نسخ لعمل آخر ← مقارنة بالمراجع
+- إلزامي: تشكيل الحروف العربية واتصالها صحيح ← رندر فعلي ونظرة
+- أمر الحكم في الوضع 1: `think.py qa image --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/103-adobe-for-creativity/230-adobe-batch-edit-photos`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/103-adobe-for-creativity/239-adobe-retouch-portraits`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMEDIA-29` أتمتة برامج ثلاثية الأبعاد والتصميم الهندسي دون واجهة: خبز المحاكاة، تقليل المضلعات، واستخراج الخصائص / Headless automation of 3D and CAD apps: simulation baking, batch decimation, property extraction (documented)
+- `AMEDIA-30` ربط الوكيل الصوتي بالهاتف وتقييمه: SIP وDTMF والتحويل الدافئ ونجاح المهمة كمقياس أول / Telephony and call-flow integration for a voice agent: SIP, DTMF, warm transfer, and task success as the primary metric (documented)
+- `AMEDIA-32` مخطط فيديو يوتيوب تعليمي طويل مع قائمة تجهيز العروض الحية / Long-form tutorial outline with demo-prep checklist (documented)
+
+### `AMEDIA-32` — مخطط فيديو يوتيوب تعليمي طويل مع قائمة تجهيز العروض الحية / Long-form tutorial outline with demo-prep checklist
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-media` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-media.md)) |
+| المجموعة | الصور والتحرير والتوليد (`images`) |
+| نوع المخرج (A25، A27) | صور وتصميم وشعار (`image`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied |
+
+**ما هي:** تحويل فكرة مقيَّمة إلى مخطط إنتاج لفيديو يوتيوب طويل: هيكل حسب النوع، وما يُقال وما يظهر لكل قسم، ومجموع زمني صادق، وقائمة تجهيز لكل عرض حي مع خطة بديلة. — Turn a scored idea into a production outline for a long YouTube tutorial: structure by type, say/show per section, an honest running total and a per-demo prep checklist with a fallback.
+
+**متى:** فيديو شرح طويل، تحديث أداة، حالة استخدام، دورة كاملة / long tutorial, update video, use-case build, full course, before filming a screen demo
+
+**كيف:** 1) Ideas first: generate 15–20, tag each with type, one-line angle, evergreen vs timely; drop any the target viewer can't use or that can't be demonstrated; score survivors on demand vs existing competition and pick 1–3. 2) Pick the skeleton by type: feature tutorial = hook 30–60 s (what they can do by the end) → context 1–2 min → core demo → power tips → CTA; update = what changed → overview → per-feature walkthrough → impact; use-case = impressive outcome first → manual process it replaces → build → real results; full course adds roadmap + setup + summary. 3) Verify every step against the current product before writing; note prerequisites and the shortest path to the first 'wow'. 4) Per section write: key message (bullets, not script), transition in, exact on-screen actions (click/type/navigate), expected visible result, target minutes and a running total. 5) If the outline's total exceeds the target length, cut or restructure — never trust optimistic durations. 6) Demo-prep checklist per demo: logged-in accounts, sample data, clean workspace, notifications off, readable font size, and a fallback if the live call fails (pre-recorded take or cached result). 7) Videos > ~8 min get chapters (see FMT-59); say the primary keyword in the first 30 s. 8) Failure modes: filler like 'in this section we'll cover', talking-head stretches with nothing on screen, invented results; every claim must be visible on screen. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1817-youtube-strategy/4867-yt-outline, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1817-youtube-strategy/4866-yt-ideation, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/617-video-content-strategist, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/195-video-content-strategist/620-video-content-strategist.
+
+**المعاملات:** type, target minutes, demos[]
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** youtube · tutorial · outline · demo prep · running total · long-form · شرح · يوتيوب · مخطط · تجهيز العرض · فيديو تعليمي
+
+#### 1. الاستقبال (A25)
+
+- المقاس والاستخدام: افتراض مكتوب ← مقاس منصة الاستخدام المذكورة
+- الهوية والألوان والخطوط: افتراض مكتوب ← لوحة ألوان مقترحة بتباين WCAG AA
+- صيغة قابلة للتعديل: افتراض مكتوب ← SVG أو مصدر قابل للتعديل مع PNG
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:AMEDIA-32` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: مقروء بمقاس صغير (اختبار التصغير) ← تصغير إلى 15%
+- إلزامي: تباين النص ≥ 4.5:1 ← حساب نسبة التباين
+- إلزامي: رخصة كل خط مؤكدة من مصدره ← ملف الرخصة
+- إلزامي: أصالة بلا نسخ لعمل آخر ← مقارنة بالمراجع
+- إلزامي: تشكيل الحروف العربية واتصالها صحيح ← رندر فعلي ونظرة
+- أمر الحكم في الوضع 1: `think.py qa image --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1817-youtube-strategy/4867-yt-outline`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1817-youtube-strategy/4866-yt-ideation`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/617-video-content-strategist`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/195-video-content-strategist/620-video-content-strategist`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMEDIA-30` ربط الوكيل الصوتي بالهاتف وتقييمه: SIP وDTMF والتحويل الدافئ ونجاح المهمة كمقياس أول / Telephony and call-flow integration for a voice agent: SIP, DTMF, warm transfer, and task success as the primary metric (documented)
+- `AMEDIA-31` تحرير دفعة صور بلوك واحد متماسك وتنقيح البورتريه: نفس القيم لكل صورة، وبوابة معاينة على صورة مصغرة، ولا تعديل توليدي على البشر / Cohesive batch photo look and portrait retouch: same values on every image, a downscaled preview gate, no generative edits on people (documented)
 

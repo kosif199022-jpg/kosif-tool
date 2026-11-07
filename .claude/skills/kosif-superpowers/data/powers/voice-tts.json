@@ -758,10 +758,12 @@
   "name_en": "Scene narration writing rules",
   "status": "documented",
   "what": "فكرة واحدة لكل مشهد، ابدأ بالفعل، لا مصطلحات، تباين بعبارات قصيرة، وصف الحدث قبل ظهوره بلحظة. / One idea per scene, lead with the verb, no jargon, short contrast counts, describe an on-screen action just before it happens.",
-  "how": "If a sentence needs 'and' (و) it is two scenes. Contrast in counts: '24 تبويبًا. نقرة واحدة. 5 مجموعات.' Narrate an action ~0.3–0.5 s before it appears so the eye arrives with the ear. Strong first line (hook within 2 s). Each scene's narration in its own text file feeding TTS and caption timing. The script complements the visuals; it never reads the on-screen text aloud.",
+  "how": "If a sentence needs 'and' (و) it is two scenes. Contrast in counts: '24 تبويبًا. نقرة واحدة. 5 مجموعات.' Narrate an action ~0.3–0.5 s before it appears so the eye arrives with the ear. Strong first line (hook within 2 s). Each scene's narration in its own text file feeding TTS and caption timing. The script complements the visuals; it never reads the on-screen text aloud. Atlas upgrade 2026-11-07: Long-form audio (podcast/explainer VO) — write for the ear: listeners can't see segment boundaries, so open every segment with a verbal transition and vary them (subject lead, framing hook, topic shift, bridge, time marker); introduce any named person with one clause of who they are; describe any visual that matters; give major items 4–6 sentences and minor ones 3–4; never more than two long sentences in a row. Assembly: TTS per segment, insert ≥300 ms silence between segments and ≥500 ms at major shifts, concat by re-encoding (not stream copy), loudnorm after the concat, and compute chapter start times from cumulative measured segment+silence durations. Approve a one-line-per-chapter outline before writing the full script.",
   "params": "1 idea / scene; action narrated 0.3–0.5 s early; hook ≤ 2 s",
   "install": "",
-  "requires": [],
+  "requires": [
+   "ffmpeg"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/166-demo-video/535-demo-video/SKILL.md",
@@ -782,9 +784,35 @@
    "سكريبت",
    "خطاف",
    "hook",
-   "voiceover script"
+   "voiceover script",
+   "write for the ear",
+   "podcast",
+   "segment transitions",
+   "chapters from durations",
+   "بودكاست",
+   "الكتابة للأذن"
   ],
-  "when": "حين تكتب نص التعليق لمشاهد فيديو وتريده قصيرًا واضحًا يسبق الحدث على الشاشة بلحظة / when writing scene narration that is short, clear and lands just before the on-screen action"
+  "when": "حين تكتب نص التعليق لمشاهد فيديو وتريده قصيرًا واضحًا يسبق الحدث على الشاشة بلحظة / when writing scene narration that is short, clear and lands just before the on-screen action",
+  "atlas": {
+   "ids": [
+    "13432"
+   ],
+   "examples": [
+    {
+     "id": "13432",
+     "plugin": "save-to-spotify",
+     "skill": "save-to-spotify",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3131-save-to-spotify/13432-save-to-spotify"
+    }
+   ],
+   "theme": "audio-voice",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-video.json",
+   "skill_md_sha256": {
+    "13432": "f90aeaf4b732c5e7e513621bc796b14711a6165878d22e4c3c28466c7c761976"
+   }
+  }
  },
  {
   "id": "VOICE-22",

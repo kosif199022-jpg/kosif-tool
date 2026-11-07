@@ -1109,11 +1109,11 @@
 
 **متى:** عند اللمسة الأخيرة لأي واجهة أو حركة عرض واجهة / final polish of any UI or UI-demo animation
 
-**كيف:** outer radius = inner radius + padding; optical (not geometric) centring for play/arrow icons; text-wrap: balance for headings; tabular-nums for counters; enter = opacity + small translateY, exit about 150 ms; press scale(0.96); never `transition: all`; animate only transform/opacity; honour prefers-reduced-motion.
+**كيف:** outer radius = inner radius + padding; optical (not geometric) centring for play/arrow icons; text-wrap: balance for headings; tabular-nums for counters; enter = opacity + small translateY, exit about 150 ms; press scale(0.96); never `transition: all`; animate only transform/opacity; honour prefers-reduced-motion. Atlas upgrade 2026-11-07: Decide whether to animate by frequency: actions seen 100+ times a day (shortcuts, palette toggles) get no animation; tens of times a day get little; occasional (modals, toasts) standard; rare/first-time (onboarding, celebration) may delight. Every animation names its purpose in one sentence (spatial consistency, state, explanation, feedback, avoiding a jarring jump). Use ease-in only for exits; entrances and responses ease out. Spend disproportionate polish on the first interaction and the first loading state, since they set the quality halo for everything after; show a skeleton within ~100 ms instead of a blank wait.
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** ui polish · micro-interactions · accessibility · تفاصيل الواجهة
+**الوسوم:** ui polish · micro-interactions · accessibility · تفاصيل الواجهة · animation frequency · purpose test · first interaction · halo · تكرار الحركة
 
 #### 1. الاستقبال (A25)
 
@@ -1178,11 +1178,11 @@
 
 **متى:** حين يعطي المستخدم إرشادًا قليلًا عن الأسلوب؛ العروض ولوحات المعلومات وصفحات الهبوط / the user gave little style guidance; decks, landing pages, dashboards
 
-**كيف:** Each preview is under 100 lines with one screen or slide, and each differs in layout, type and colour (not three shades of the same idea). Then build the chosen one fully.
+**كيف:** Each preview is under 100 lines with one screen or slide, and each differs in layout, type and colour (not three shades of the same idea). Then build the chosen one fully. Atlas upgrade 2026-11-07: Specimen-ladder variant for fine choices: one order = one axis = one ladder = one decision. Move a single property (e.g. blur 4/8/12/16/24, radius, shadow, spacing) and hold every settled value fixed; letter specimens A·B·C and restart letters per decision; put the value, cost (token unchanged / shared token edited in N places / new token) and what to look at beside each specimen, and end each section with one recommended letter. Verify before showing: every referenced class or var exists (a wrong name fails silently), read the computed style off each rung and confirm the rungs actually differ, then screenshot and look. A clear pick in chat is the apply order: record axis → value in a memo, check blast radius, apply, re-verify. For open briefs, run a small tournament of 2-3 divergent renders of the same direction and fork the winner.
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** previews · options · creativity · خيارات
+**الوسوم:** previews · options · creativity · خيارات · specimen ladder · one axis · side by side · A/B/C · مقارنة بصرية · سلم العينات
 
 #### 1. الاستقبال (A25)
 

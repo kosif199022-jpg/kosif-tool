@@ -5661,13 +5661,13 @@
 
 **متى:** عند تصميم أيقونة أو مراجعتها لتبقى واضحة في الأحجام الصغيرة على شبكة 24 / when designing or checking an icon so it reads clearly at small sizes on a 24 px grid
 
-**كيف:** Test at 16/24/48/192 px; draw-on works especially well with closure because the eye completes the form early.
+**كيف:** Test at 16/24/48/192 px; draw-on works especially well with closure because the eye completes the form early. Atlas upgrade 2026-11-07: Closure calibration: familiar forms (house, arrow, person, circle) can be reduced to very few strokes; specialised or high-stakes forms (delete, warning) must stay explicit. Gaps must be small enough that the form does not fragment; aligned terminations and proximity help the eye close it. A hidden negative-space shape must be noticeable in normal viewing or it is just decoration. Containers can be implied by tint, soft shadow or consistent padding instead of full borders. Skeleton loaders are closure in time. Always test at the real rendering size: a reduction that reads at 32 px can break at 16 px.
 
 **المعاملات:** 24 px / 2 px; test 8–16 px
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** أيقونة · icon grid · closure · rules · تصميم أيقونة · شبكة · حجم صغير · stroke · small size
+**الوسوم:** أيقونة · icon grid · closure · rules · تصميم أيقونة · شبكة · حجم صغير · stroke · small size · negative space · implied shape · icon reduction · الإغلاق البصري
 
 #### 1. الاستقبال (A25)
 

@@ -1517,13 +1517,13 @@
 
 **متى:** قبل برمجة تأثير أو محلل أو محوّل أو مهارة أو تكامل يدويًا. / Before hand-coding an effect, a parser, a converter, a skill or an integration.
 
-**كيف:** Step 0: check which search channels work (rg, pip, npm, `gh auth status`, skills list, ToolSearch) and say which were skipped. Search order: this repo → installed skills / deferred tools → package indexes (`pip index versions X`, `npm view X version`) → GitHub (`gh search repos <kw> --sort stars --limit 10`) → web. Score function fit, maintenance, community, docs, licence, dependencies. Decide: exact, maintained, MIT/Apache match → Adopt; partial → Extend with a thin wrapper; several weak → Compose 2–3; none → Build, informed by the research. Read README and LICENSE of the top 1–3; never auto-run third-party installers or hooks.
+**كيف:** Step 0: check which search channels work (rg, pip, npm, `gh auth status`, skills list, ToolSearch) and say which were skipped. Search order: this repo → installed skills / deferred tools → package indexes (`pip index versions X`, `npm view X version`) → GitHub (`gh search repos <kw> --sort stars --limit 10`) → web. Score function fit, maintenance, community, docs, licence, dependencies. Decide: exact, maintained, MIT/Apache match → Adopt; partial → Extend with a thin wrapper; several weak → Compose 2–3; none → Build, informed by the research. Read README and LICENSE of the top 1–3; never auto-run third-party installers or hooks. Atlas upgrade 2026-11-07: Smallest-change ladder before building anything: does it need to exist at all (is deletion or not-doing the fix)? already in this project? in the standard library? a native feature or one config flag? an already-adopted dependency? one line? only then the minimum new work. Anything beyond the literal request (new dependency, new abstraction, extra files) → ask first; a deliberate shortcut is logged as a trade-off, not a silent TODO.
 
 **المعاملات:** shortlist 5–12 · read top 1–3 · 4 decisions
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** search first · reuse · libraries · adopt · ابحث أولًا · إعادة استخدام · مكتبات · لا تعد اختراع العجلة
+**الوسوم:** search first · reuse · libraries · adopt · ابحث أولًا · إعادة استخدام · مكتبات · لا تعد اختراع العجلة · smallest change · reuse ladder · YAGNI · أصغر تغيير
 
 #### 1. الاستقبال (A25)
 
@@ -1728,13 +1728,13 @@
 
 **متى:** عند أي غموض في الطلب. / Any ambiguity in a request.
 
-**كيف:** Look first: inspect the repo, docs and files before asking anything you could find. Proceed with a stated assumption when a wrong guess is cheap; show a draft instead of a questionnaire. Ask 1–3 questions, batched, once, only for: material security exposure, data loss, irreversible migration, API breakage, meaningful cost or credits, destructive or public actions. Always confirm deleting, publishing, pushing and paid generation.
+**كيف:** Look first: inspect the repo, docs and files before asking anything you could find. Proceed with a stated assumption when a wrong guess is cheap; show a draft instead of a questionnaire. Ask 1–3 questions, batched, once, only for: material security exposure, data loss, irreversible migration, API breakage, meaningful cost or credits, destructive or public actions. Always confirm deleting, publishing, pushing and paid generation. Atlas upgrade 2026-11-07: Expected-value-of-question gate: ask only when the value of the question (how much the answer would change × risk if wrong ÷ friction) beats answering now, answering with a stated assumption, or comparing the top two interpretations. Before asking, simulate the replies — expected, contrary, minority-rescue, 'not sure'; drop the question if no reply would change the plan; prefer world-splitting questions over detail-tuning ones. Keep facts with confidence; anything under ~90% is marked, any interpretation fork under ~70% is surfaced, and you pause only when a flagged fork is blocking the deliverable — never silently adopt a default for a flagged item. Keep ruled-out readings as tombstones with a resurrection condition. Stop asking when one plan clearly dominates, top readings lead to the same answer, the owner says proceed, or friction exceeds the gain. Final pattern: 'I'll assume X; if Y instead, the main change would be Z.'
 
 **المعاملات:** ≤1–3 questions, batched · 6 blocking reasons
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** ambiguity · clarifying questions · assumptions · over-asking · غموض · أسئلة توضيحية · افتراض · إفراط في السؤال
+**الوسوم:** ambiguity · clarifying questions · assumptions · over-asking · غموض · أسئلة توضيحية · افتراض · إفراط في السؤال · EVQ · clarification · tombstone · flagged uncertainty · متى أسأل
 
 #### 1. الاستقبال (A25)
 
@@ -1933,13 +1933,13 @@
 
 **متى:** عند القرارات الغامضة قليلة الإرشاد (اتجاه الأسلوب، المعمارية، الاستراتيجية). ليس للحقائق ولا مراجعة الشيفرة. / Ambiguous decisions with little guidance (style direction, architecture, strategy). Not for facts or code review.
 
-**كيف:** Reduce to one question (what is decided, constraints, success). Write your own position + 3 reasons + main risk before reading anyone else. Launch 3 fresh subagents in parallel with only the question and compact context: Skeptic (challenge the premise, simplify), Pragmatist (speed, user impact), Critic (failure modes). You hold the Architect voice (correctness, long-term). Synthesise: decision first, then the strongest dissent and what would change the decision.
+**كيف:** Reduce to one question (what is decided, constraints, success). Write your own position + 3 reasons + main risk before reading anyone else. Launch 3 fresh subagents in parallel with only the question and compact context: Skeptic (challenge the premise, simplify), Pragmatist (speed, user impact), Critic (failure modes). You hold the Architect voice (correctness, long-term). Synthesise: decision first, then the strongest dissent and what would change the decision. Atlas upgrade 2026-11-07: Two-voice adversarial variant: an advocate drafts the plan/requirements; a skeptic challenges each point with concrete evidence from the files or the material, severity-ranked; the advocate answers each challenge accepted / partly accepted (with the trade-off) / rejected (with counter-evidence); two rounds maximum, then the lead decides and records why. The lead manages, never debates. Each surviving challenge becomes a risk note in the final document (risk, severity, mitigation, source round). Challenges without evidence are closed.
 
 **المعاملات:** 4 voices · 3 fresh subagents · own view written first
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** council · decision · debate · anchoring · مجلس · قرار · آراء · تحيز الإرساء
+**الوسوم:** council · decision · debate · anchoring · مجلس · قرار · آراء · تحيز الإرساء · advocate vs skeptic · adversarial review · battle-tested · مدافع ومشكك
 
 #### 1. الاستقبال (A25)
 

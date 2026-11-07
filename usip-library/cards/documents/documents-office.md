@@ -402,11 +402,11 @@
 
 **متى:** حين تستخدم الصفحة رسومًا بـ JS أو CSS حديثًا لا يدعمه weasyprint / the page uses JS charts or modern CSS that weasyprint does not support
 
-**كيف:** Playwright: page.goto(file URL); await document.fonts.ready; page.pdf({path, format:'A4', printBackground:true}). Proof snap.cjs printed the RTL dashboard; pdffonts shows Tajawal-Bold embedded.
+**كيف:** Playwright: page.goto(file URL); await document.fonts.ready; page.pdf({path, format:'A4', printBackground:true}). Proof snap.cjs printed the RTL dashboard; pdffonts shows Tajawal-Bold embedded. Atlas upgrade 2026-11-07: For HTML reports and one-pagers turned into PDF: pick a shape first (explainer = question then answer then reasoning; one-pager; report = findings first, method after; dashboard = KPI row then charts; comparison = matrix with the recommendation marked). One dominant element per view; vary rhythm instead of repeating one card grid; no orphaned last card. Charts read colours from CSS variables and must have animation turned off before export so the PDF never catches a half-drawn chart; give canvases role=img and an aria-label. Print block: hide the menu, keep cards unsplit across pages, keep backgrounds, build bookmarks from headings. Check both themes, 768 and 375 px, body ≥14 px. State what the PDF loses (toggles, filters). Never fabricate figures.
 
 **التثبيت:** npm i playwright && npx playwright install chromium (bundled at /opt/pw-browsers in the cloud image)
 
-**الوسوم:** chromium · playwright · pdf · print · طباعة
+**الوسوم:** chromium · playwright · pdf · print · طباعة · html report · one-pager · print css · chart animation off · تقرير HTML
 
 #### 1. الاستقبال (A25)
 

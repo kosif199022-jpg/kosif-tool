@@ -24,12 +24,12 @@
 |---|---:|---|
 | `proven` | 115 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 17 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 503 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 505 | 📄 documented: a described method; needs building or wiring before it runs |
 | `seen` | 16 | 👁 seen: observed in a reference or demo, not executed here |
 | `install` | 32 | 📦 install: needs a package, binary or model first |
 | `key` | 7 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 2 | 💡 idea: not built |
-| **المجموع** | **692** | |
+| **المجموع** | **694** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -67,7 +67,7 @@
 |---|---:|---|
 | `app-feature-transfer` | 155 | [app-feature-transfer.md](../powers/app-feature-transfer.md) |
 | `apps-artifacts` | 27 | [apps-artifacts.md](../powers/apps-artifacts.md) |
-| `atlas-build` | 60 | [atlas-build.md](../powers/atlas-build.md) |
+| `atlas-build` | 62 | [atlas-build.md](../powers/atlas-build.md) |
 | `atlas-code` | 331 | [atlas-code.md](../powers/atlas-code.md) |
 | `code-engineering` | 26 | [code-engineering.md](../powers/code-engineering.md) |
 | `ui-product-device` | 93 | [ui-product-device.md](../powers/ui-product-device.md) |
@@ -332,6 +332,8 @@
 | `ABUILD-58` | تحديد معمارية جهاز إلكتروني قبل أي مخطط: المتطلبات قبل القطع، ووحدة جاهزة أم لوحة مخصصة، وشجرة الطاقة، والتوافق الكهرومغناطيسي | Scope a hardware design before any schematic: requirements before parts, module vs custom PCB, the power tree, EMC posture | documented |  |
 | `ABUILD-59` | رحلة بناء موقع أو تحسينه بترتيب ثابت: الرسالة ثم التصميم ثم التحويل، وكل إصلاح فرضية قابلة للاختبار، وملف تتبع يستأنف منه | Website creation or improvement as a fixed-order journey: message, then design, then conversion; every fix a testable hypothesis; a tracker to resume from | documented | pip:hypothesis |
 | `ABUILD-60` | إعداد طرق التثبيت لأداة CLI: صيغة Homebrew tap وgo install وcargo install مع كشف اللغة وGoReleaser والقيود الخاصة بالمنصة | Set up installers for a CLI: a Homebrew tap formula plus go install and cargo install support, with language, GoReleaser and platform detection | documented | os:macos |
+| `ABUILD-61` | لغة حركة واحدة للصفحة مع محظورات ملزمة | One motion language per page, with binding bans | documented |  |
+| `ABUILD-62` | بطاقة تقييم حِرفية الموقع من 10 ولحظة التوقيع أولاً | Weighted 10-point site craft scorecard, signature moment first | documented |  |
 | `ACODE-01` | اختبار حدود الحقن وتسليم القرار للبشر | Agent injection boundary and human-handoff tests | documented |  |
 | `ACODE-02` | فحص أمان مسبق للوكيل بإيصال أخضر/أصفر/أحمر | Agent safety preflight with Green/Yellow/Red receipt | documented |  |
 | `ACODE-03` | تدقيق سجلات جلسات الوكلاء بحثًا عن أسرار مسرّبة | Audit agent transcripts for leaked credentials | documented |  |

@@ -2365,11 +2365,11 @@
 
 **متى:** عندما يرسل المستخدم صورة ويقول «زيها» / when the user sends an image and says 'like this'
 
-**كيف:** Measure first, then: الخلاصة، التكوين، الكاميرا، الإضاءة، الألوان، العناصر، الجودة التقنية، مؤشرات التوليد، الدرجات /10، الإصلاحات، برومبت إعادة الإنشاء (lint it). Commands /compare, /ocr (Arabic RTL, [؟] for unreadable), /critique, /reverse, /score. No face identification. Automated captioners (Florence-2 PromptGen, WD14, BLIP) need ComfyUI; Ideogram describe returns a structured JSON prompt. Only on images the user owns or may use.
+**كيف:** Measure first, then: الخلاصة، التكوين، الكاميرا، الإضاءة، الألوان، العناصر، الجودة التقنية، مؤشرات التوليد، الدرجات /10، الإصلاحات، برومبت إعادة الإنشاء (lint it). Commands /compare, /ocr (Arabic RTL, [؟] for unreadable), /critique, /reverse, /score. No face identification. Automated captioners (Florence-2 PromptGen, WD14, BLIP) need ComfyUI; Ideogram describe returns a structured JSON prompt. Only on images the user owns or may use. Atlas upgrade 2026-11-07: Observation before interpretation: inspect the actual pixels (never infer from a filename; for SVG, render it or say only the markup was read); list visible/cropped/obscured scope; transcribe visible text, counts and identifiers before describing; 'not visible' never means 'does not exist'. Per type: charts - title, axes, units, legend, readable points, and estimated readings marked as estimates, no extrapolation; diagrams - only labelled connections and directions; photos - no identity, relationship, intent or emotion inferred from appearance; code/terminal screenshots - verbatim, note truncation, never run what is shown. Keep three confidences apart: image clarity, interpretation, and the truth of claims printed inside the image. When editing or measuring an image, keep the original untouched and log every crop, contrast change, filter or resample with its parameters.
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** برومبت عكسي · reverse prompt · critique · OCR
+**الوسوم:** برومبت عكسي · reverse prompt · critique · OCR · image description · observation vs interpretation · screenshot reading · وصف الصورة · ملاحظة قبل التفسير
 
 #### 1. الاستقبال (A25)
 
@@ -3602,11 +3602,11 @@
 
 **متى:** قبل أي توليد فيديو / before any video generation
 
-**كيف:** Quality + audio: Veo 3, Sora 2. Cheap volume: Kling, Seedance. Character consistency: Hailuo/MiniMax, Seedance R2V with references. Self-hosted: Wan 2.x, HunyuanVideo, LTX. Storyboard-to-video: Runway, LTX Studio. Spoken multi-segment UGC: Seedance 2.0 R2V. Drafts: Flux Schnell / Gemini Flash 512 stills, Kling standard, Seedance 480p; finals: Veo/Runway, Kling professional, 1080p. Image-to-video from an approved frame saves credits.
+**كيف:** Quality + audio: Veo 3, Sora 2. Cheap volume: Kling, Seedance. Character consistency: Hailuo/MiniMax, Seedance R2V with references. Self-hosted: Wan 2.x, HunyuanVideo, LTX. Storyboard-to-video: Runway, LTX Studio. Spoken multi-segment UGC: Seedance 2.0 R2V. Drafts: Flux Schnell / Gemini Flash 512 stills, Kling standard, Seedance 480p; finals: Veo/Runway, Kling professional, 1080p. Image-to-video from an approved frame saves credits. Atlas upgrade 2026-11-07: Model-selection record before committing a campaign to one video model: translate the request into capability needs (T2V/I2V, duration, aspect, audio), eliminate candidates from a dated docs snapshot (unknown capability = unknown, not assumed from the model name), run the smallest draft-mode canary per remaining candidate under a credit ceiling, compare quality/latency/credits, pin the chosen model ID and name a fallback.
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** routing · draft · final · اختيار نموذج الفيديو
+**الوسوم:** routing · draft · final · اختيار نموذج الفيديو · canary · model selection · pinned fallback
 
 #### 1. الاستقبال (A25)
 
@@ -6151,13 +6151,13 @@
 
 **متى:** كل صورة أو مقطع مولد / every generated still or clip
 
-**كيف:** Generate textless plates ('clean, text-free surfaces'); set Arabic in the HTML/Remotion layer with proper shaping (ARAB family); brand-conditioning = 3–10 on-brand reference images + post-overlay of exact hex and real type, not a pinned seed.
+**كيف:** Generate textless plates ('clean, text-free surfaces'); set Arabic in the HTML/Remotion layer with proper shaping (ARAB family); brand-conditioning = 3–10 on-brand reference images + post-overlay of exact hex and real type, not a pinned seed. Atlas upgrade 2026-11-07: Text ladder instead of a blanket ban, for models that render text well: model-rendered only for panel letters, titles (≤8 words) and short labels (≤4 words) passed verbatim with role and placement; dense labels, leader lines and anything that must stay editable → SVG/HTML overlay; numerals with units, equations and anything read exactly → vector/code layer. Refuse items that break the ladder. QA reads back every requested verbatim string. Multi-panel sets: generate the first panel alone, then the rest with it attached as a style reference. Iterate: N candidates, QA each, pick best, one targeted edit, re-QA, stop at ship or 3 iterations.
 
 **المعاملات:** 3–10 refs
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** overlay text · Arabic · brand · النص فوق
+**الوسوم:** overlay text · Arabic · brand · النص فوق · text ladder · verbatim text · first-panel reference · سلم النص
 
 #### 1. الاستقبال (A25)
 
@@ -6294,13 +6294,13 @@
 
 **متى:** قبل كل استدعاء يكلف مالًا / before every call that costs money
 
-**كيف:** Quote → user-approved cap → dry run → single call with --yes → receipt line → on re-run poll the stored request id. Riskiest shot first as a pilot. 2 variations in round 1; change one axis per round (subject, composition, light, style or palette); yield <30 % = weak prompt; >3 rounds on one asset = switch to composition. Estimate in calls with user-supplied unit prices, never invented currency; a budget log exits non-zero over the cap.
+**كيف:** Quote → user-approved cap → dry run → single call with --yes → receipt line → on re-run poll the stored request id. Riskiest shot first as a pilot. 2 variations in round 1; change one axis per round (subject, composition, light, style or palette); yield <30 % = weak prompt; >3 rounds on one asset = switch to composition. Estimate in calls with user-supplied unit prices, never invented currency; a budget log exits non-zero over the cap. Atlas upgrade 2026-11-07: Record the seed, model and prompt of the APPROVED output in a manifest line (an unrecorded seed makes the piece unreproducible); generation scripts refuse to run without an explicit confirm flag as a second barrier after the chat; when no key is available deliver the prompt with a prominent 'NOT GENERATED' label and never describe the image as if it exists; never overwrite a source when editing or upscaling. Ethical floor before spending: no real person's face, no imitation of an identifiable living artist, no simulated real event or testimonial published as a record; public-sector pieces use generated imagery only for abstract graphics, textures and backgrounds. Atlas upgrade 2026-11-07: Generated-footage traps: write the full cast and where each person stands into every shot prompt and check every face on every re-roll (takes silently recast people); generate at the framing you need — a punch-in beyond ~1.3x on a 1080p base goes soft; 480p/720p bases are enough under a draw-over; redo an off-style keyframe before spending on its clip (an image is cents, a clip dollars); never use frame interpolation to smooth captured footage (it invents frames) — recapture; for real UI inside a generated screen, paint the screen flat green, key it, track its four corners and warp a frame-exact UI render onto it; label generated vs captured shots honestly.
 
 **المعاملات:** 2 variations; <30 % yield; >3 rounds alarm
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** budget · ميزانية · receipt · cap
+**الوسوم:** budget · ميزانية · receipt · cap · approved seed log · confirm flag · not generated label · سجل البذرة المعتمدة · continuity · recast · punch-in limit · green screen UI · استمرارية · توليد فيديو
 
 #### 1. الاستقبال (A25)
 
