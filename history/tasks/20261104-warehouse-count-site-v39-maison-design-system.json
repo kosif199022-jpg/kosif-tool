@@ -378,6 +378,13 @@
       "what": "New separate artifact 'جرد بضاعة جديدة' built from the count site: 334 items (261 BMW invoice lines IV262792014 + 73 LEMFOERDER proforma lines PRF-17688) in two invoice groups, invoice line data and price on each item, SMACC codes matched (exact 98, via alternative 43, none 193), alternatives on 127 items; SAR unit prices seeded into its database (261).",
       "checks": "334 items, OE and LEMF number searches find their lines, Latin names render LTR, 0 page errors",
       "status": "published"
+    },
+    {
+      "n": 49,
+      "at": "2026-11-07T16:05:00+03:00",
+      "what": "New-goods site v2: proforma lines removed at the owner's request, only the BMW Excel invoice remains: 261 items, SMACC exact 62, via alternative 23, none 176, alternatives on 54. Proforma delivered separately as an Excel file (73 lines, totals match the PDF).",
+      "checks": "261 items, one group, 0 page errors; xlsx recalc 76 formulas 0 errors",
+      "status": "published"
     }
   ],
   "outputs": [
