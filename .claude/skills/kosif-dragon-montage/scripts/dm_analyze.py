@@ -354,7 +354,12 @@ def face_detector():
         _FACE["d"], _FACE["name"] = None, None
         try:
             sys.path.insert(0, str(dm.KMM))
-            import faces as kmm_faces  # noqa: E402
+            # vendored files must stay free of __pycache__ (test_superskills checks it)
+            _dwb, sys.dont_write_bytecode = sys.dont_write_bytecode, True
+            try:
+                import faces as kmm_faces  # noqa: E402
+            finally:
+                sys.dont_write_bytecode = _dwb
             try:
                 import dm_doctor
                 mp = dm_doctor.model_path("yunet-face-model")
