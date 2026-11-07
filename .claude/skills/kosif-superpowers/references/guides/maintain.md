@@ -8,7 +8,7 @@ Commands are typed from the skill folder (`.claude/skills/kosif-superpowers/`) u
 
 <!-- hub:area:maintain:start -->
 
-**الأدوات / tools (17)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (18)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -29,6 +29,7 @@ Commands are typed from the skill folder (`.claude/skills/kosif-superpowers/`) u
 | `validate-receipt` | Appendix A43 gate: checks that an execution receipt is coherent before anyone says 'done'. VERIFIED needs an existing artifact file and every check PASS with evidence; PASS without evidence, a VERIFIED with NOT_RUN or FAIL checks, a malformed SHA-256 or remote_deployment=true without remote_evidence are rejected. Stdlib only, no network. | `python3 scripts/validate_receipt.py out/<job>/receipt.json` | tested-here |
 | `protocol-lint` | Consistency gate for a portable USIP release folder: version in every title line, no stale links to old compact files, contents lists that match headings, quick-card numbering 1..N, annex range A1…An, README file list, project-folder paths, and the compact paste file under 40 KB. Reads only; exit 1 on any failure. | `python3 scripts/validate_receipt.py out/<job>/receipt.json` | tested-here |
 | `collect-links` | Appendix A42 browser ladder step 3: opens one or more pages in headless Chromium (Playwright, no login) and prints every link, optionally filtered by a word or kept to the same site; --json for a receipt. Exit 1 when a page fails to open or yields zero links. | `python3 scripts/validate_receipt.py out/<job>/receipt.json` | untested |
+| `skills-lint` | Checks every SKILL.md in the repository (top-level skills, vendored Atlas, 100 superskills and obra sets, and the video styles) for missing frontmatter, names or descriptions, descriptions over 1024 characters, broken relative links, shared descriptions and duplicate names. | `python3 scripts/skills_lint.py` | tested-here |
 
 <!-- hub:area:maintain:end -->
 

@@ -18946,6 +18946,76 @@
         "music-beat-sound"
       ],
       "power_id": "TOOL-185"
+    },
+    {
+      "id": "skills-lint",
+      "path": "scripts/skills_lint.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "maintain",
+      "title_en": "Repo-wide skill lint",
+      "title_ar": "فاحص كل المهارات في المستودع",
+      "summary_en": "Checks every SKILL.md in the repository (top-level skills, vendored Atlas, 100 superskills and obra sets, and the video styles) for missing frontmatter, names or descriptions, descriptions over 1024 characters, broken relative links, shared descriptions and duplicate names.",
+      "summary_ar": "يفحص كل ملفات SKILL.md في المستودع (المهارات الرئيسية، وأطلس، والسوبر سكيلز، وobra، والستايلات) ويبيّن الواجهة الناقصة والاسم أو الوصف المفقود والوصف الأطول من 1024 حرفًا والروابط المكسورة والأوصاف المكررة والأسماء المتكررة.",
+      "use_when": [
+        "افحص كل المهارات اللي في المستودع",
+        "فيه روابط مكسورة في المهارات؟",
+        "Lint every SKILL.md in the repo before a release",
+        "Which skills have descriptions over 1024 characters?"
+      ],
+      "keywords": [
+        "skill lint",
+        "SKILL.md",
+        "broken links",
+        "frontmatter",
+        "description",
+        "فحص المهارات",
+        "روابط مكسورة",
+        "وصف المهارة"
+      ],
+      "commands": [
+        {
+          "name": "summary",
+          "example": "python3 scripts/skills_lint.py",
+          "does": "Prints errors and warnings per group and exits 1 if any error is found."
+        },
+        {
+          "name": "list",
+          "example": "python3 scripts/skills_lint.py --list errors",
+          "does": "Prints one line per error (or warning, or all) with the SKILL.md path."
+        },
+        {
+          "name": "json",
+          "example": "python3 scripts/skills_lint.py --json --group styles",
+          "does": "Prints the full report as JSON, optionally for one group."
+        }
+      ],
+      "inputs": "The repository's SKILL.md files under .claude/skills/ and styles/.",
+      "outputs": "A text summary or JSON on stdout.",
+      "requires": {
+        "python": [],
+        "binaries": [
+          "python3"
+        ],
+        "node": [],
+        "optional": [],
+        "network": false
+      },
+      "safety": "read-only",
+      "consent": "none: it only reads files.",
+      "limits": "Checks structure and links only. It does not judge whether a skill's method is good; links inside code blocks and inline code are not checked.",
+      "evidence": "tested-here",
+      "evidence_note": "evals/test_skills_lint.py: 4 tests, including no new errors against data/skills_lint_known.json",
+      "tests": [
+        ".claude/skills/kosif-superpowers/evals/test_skills_lint.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/references/guides/maintain.md"
+      ],
+      "families": [
+        "self-discovery"
+      ],
+      "power_id": null
     }
   ]
 }
