@@ -27,7 +27,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import dm_common as C  # noqa: E402
 
 STATION = "review"
-ACTIONS = ("trim", "drop", "swap", "retime", "regrade")
+ACTIONS = ("trim", "drop", "swap", "retime", "regrade", "extend", "add")
 MAX_ROUNDS = 3
 
 # thresholds (seconds unless noted)
@@ -50,10 +50,71 @@ CRITICAL = {"hook-in-3s", "dead-air", "black-frames", "technical"}
 # pacing (seconds per shot) when the brief has no explicit range
 PACING = {"high": (0.8, 2.5), "mid": (1.2, 4.0), "low": (2.0, 7.0)}
 
-SAFE = {  # fraction of height kept free of platform UI at the bottom / top
+SAFE = {  # fraction of height kept free of platform UI at the bottom / top (caption_styles.json safe_area wins)
     "9:16": {"bottom": 0.20, "top": 0.10}, "4:5": {"bottom": 0.12, "top": 0.08},
     "1:1": {"bottom": 0.10, "top": 0.06}, "16:9": {"bottom": 0.08, "top": 0.05},
 }
+DATA = Path(__file__).resolve().parent.parent / "data"
+DEFAULT_HOOK_ROLES = ("hook", "problem", "question", "cold-open", "tease")
+SPEECH_PACING = (1.5, 9.0)      # a spoken phrase is judged as a phrase, not as a b-roll beat
+
+
+def _data(name: str) -> dict:
+    try:
+        return json.loads((DATA / name).read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
+def hook_roles() -> set:
+    """Roles that count as the hook — the same list dm_think and dm_direct read (editor_mind.hook_roles)."""
+    return set((_data("editor_mind.json").get("hook_roles") or {}).get("roles") or DEFAULT_HOOK_ROLES)
+
+
+def speech_pacing() -> tuple[float, float]:
+    sp = ((_data("editor_mind.json").get("pacing_by_kind") or {}).get("speech") or {}).get("shot_s")
+    return (float(sp[0]), float(sp[1])) if sp and len(sp) == 2 else SPEECH_PACING
+
+
+def safe_area(aspect: str) -> dict:
+    """Caption safe band per aspect: caption_styles.json `safe_area` (shared with dm_render) over the defaults."""
+    sa = (_data("caption_styles.json").get("safe_area") or {}).get(aspect) or {}
+    base = dict(SAFE.get(aspect, {"bottom": 0.1, "top": 0.05}))
+    base.update({k: float(v) for k, v in sa.items() if k in ("bottom", "top") and v is not None})
+    return base
+
+
+def qscore(shot: dict | None) -> float:
+    """Shot quality; null/missing (OpenCV not installed) is neutral 0.5."""
+    v = ((shot or {}).get("quality") or {}).get("score")
+    try:
+        return float(v) if v is not None else 0.5
+    except (TypeError, ValueError):
+        return 0.5
+
+
+def voiced_spans(edl: dict, analysis: dict) -> list[tuple[float, float]]:
+    """Output spans where silence would be dead air: speech events with real, unmuted audio. Muted b-roll,
+    clips without audio and b-roll with no music under it are allowed to be quiet."""
+    out = []
+    for ev in edl["events"]:
+        clip = clip_of(analysis, ev["clip"])
+        if ev.get("mute") or clip.get("has_audio") is False or not is_speech_event(ev, analysis):
+            continue
+        out.append(out_span(ev))
+    return out
+
+
+def is_speech_event(ev: dict, analysis: dict) -> bool:
+    if ev.get("kind"):
+        return ev["kind"] == "speech"
+    a, b = float(ev["src_in"]), float(ev["src_out"])
+    ws = [w for w in clip_of(analysis, ev["clip"]).get("words", []) if a <= (w["start"] + w["end"]) / 2 < b]
+    return len(ws) >= 2
+
+
+def has_speech(analysis: dict) -> bool:
+    return any(len(c.get("words") or []) >= 5 for c in analysis.get("clips", []))
 
 
 def r3(x: float) -> float:
@@ -200,6 +261,7 @@ class Review:
         self.ids = {e["id"] for e in edl["events"]}
         self.checks: list[dict] = []
         self.fixes: list[dict] = []
+        self.capped: list[dict] = []
 
     def check(self, cid: str, ok: bool, evidence: str, **extra) -> dict:
         c = {"id": cid, "pass": bool(ok), "evidence": evidence, **extra}
@@ -270,7 +332,8 @@ def run_checks(job: Path, rv: Review, m: dict, analysis: dict, brief: dict, look
     first = events[0] if events else None
     if first:
         role = str(first.get("role") or first.get("reason", "")).lower()
-        is_hook = role.startswith("hook") or "hook" in role.split(":")[0] or "هوك" in role
+        head = role.split(":")[0].strip()
+        is_hook = bool(first.get("hook")) or head in hook_roles() or "hook" in head or "هوك" in role
         speech0 = next((w["start"] for w in words), None)
         tl = (m.get("motion") or {}).get("timeline", [])
         motion0 = tl[0]["energy"] if tl else None
@@ -285,9 +348,15 @@ def run_checks(job: Path, rv: Review, m: dict, analysis: dict, brief: dict, look
                   f"{'; opens on silence' if silent0 else ''}")
         rv.check("hook-in-3s", ok, ev_txt, at=[[0.0, r3(min(HOOK_WINDOW, e))]])
         if not is_hook:
-            best = hook_candidate(analysis, events)
-            rv.fix(first["id"], "swap", "first event is not the hook: open on the strongest hook shot"
-                   + (f" ({best})" if best else ""), "hook-in-3s", **({"with_shot": best} if best else {}))
+            if has_speech(analysis):
+                # talking content: the hook is a spoken line, never a b-roll shot
+                rv.fix(first["id"], "swap", "first event is not the hook: open on the strongest spoken hook line",
+                       "hook-in-3s", role="hook", kind="speech")
+            else:
+                best = hook_candidate(analysis, events)
+                rv.fix(first["id"], "swap", "first event is not the hook: open on the strongest hook shot"
+                       + (f" ({best})" if best else ""), "hook-in-3s", role="hook", kind="broll",
+                       **({"with_shot": best} if best else {}))
         elif not starts:
             lead = None
             if speech0 is not None and speech0 < s + (e - s):
@@ -301,9 +370,14 @@ def run_checks(job: Path, rv: Review, m: dict, analysis: dict, brief: dict, look
 
     # dead air -----------------------------------------------------------------------------------
     gaps = []
+    voiced = voiced_spans(edl, analysis)
     for sl in m["silences"]:
-        if sl["to"] - sl["from"] >= DEAD_AIR_SILENCE and sl["from"] < dur - 0.3:
-            gaps.append({"from": sl["from"], "to": sl["to"], "kind": "silence"})
+        if sl["from"] >= dur - 0.3:
+            continue
+        for a, b in voiced:                       # only silence where someone should be talking counts
+            fa, fb = max(a, sl["from"]), min(b, sl["to"])
+            if fb - fa >= DEAD_AIR_SILENCE:
+                gaps.append({"from": r3(fa), "to": r3(fb), "kind": "silence"})
     for fz in (m.get("motion") or {}).get("frozen", []):
         if fz["to"] - fz["from"] >= DEAD_AIR_FLAT:
             gaps.append({"from": fz["from"], "to": fz["to"], "kind": "flat-motion"})
@@ -334,23 +408,36 @@ def run_checks(job: Path, rv: Review, m: dict, analysis: dict, brief: dict, look
         rv.check("cuts-on-beat", True, "no music beats in analysis — not applicable", skipped=True)
 
     # shot length vs pacing ---------------------------------------------------------------------
+    # speech is judged by phrase pacing (whole phrases, never cut mid-word); b-roll by the look/feeling pace
     lo, hi = pacing_range(brief)
-    lens = [(ev, out_span(ev)[1] - out_span(ev)[0]) for ev in events]
-    off = [(ev, L) for ev, L in lens if L < lo - 0.05 or L > hi + 0.05]
+    slo, shi = speech_pacing()
+    lens = []
+    for ev in events:
+        sp_ev = is_speech_event(ev, analysis)
+        rng = (slo, shi) if sp_ev else (lo, hi)
+        lens.append((ev, out_span(ev)[1] - out_span(ev)[0], sp_ev, rng))
+    off = [(ev, L, sp_ev, rng) for ev, L, sp_ev, rng in lens if L < rng[0] - 0.05 or L > rng[1] + 0.05]
     share = 1 - len(off) / max(1, len(lens))
     rv.check("shot-length", share >= 0.75,
-             f"{len(lens) - len(off)}/{len(lens)} shots inside {lo}–{hi}s (energy {brief.get('energy')})"
-             + ("; off: " + ", ".join(f"{ev['id']}={r3(L)}s" for ev, L in off) if off else ""),
-             range=[lo, hi], at=[list(map(r3, out_span(ev))) for ev, _ in off])
+             f"{len(lens) - len(off)}/{len(lens)} shots inside their pace (speech {slo}–{shi}s phrase-led, "
+             f"b-roll {lo}–{hi}s at energy {brief.get('energy')})"
+             + ("; off: " + ", ".join(f"{ev['id']}={r3(L)}s" for ev, L, _, _ in off) if off else ""),
+             range=[lo, hi], speech_range=[slo, shi], at=[list(map(r3, out_span(ev))) for ev, *_ in off])
     if share < 0.75:
-        for ev, L in off:
-            if L > hi:
-                sp = float(ev.get("speed") or 1.0)
-                rv.fix(ev["id"], "trim", f"{r3(L)}s is long for this pace: trim to ≤{hi}s",
-                       "shot-length", src_in=r3(float(ev["src_in"])), src_out=r3(float(ev["src_in"]) + hi * sp))
-            else:
-                rv.fix(ev["id"], "retime", f"{r3(L)}s flashes by: hold it to ≥{lo}s or merge with its neighbour",
-                       "shot-length")
+        for ev, L, sp_ev, (rlo, rhi) in off:
+            spd = float(ev.get("speed") or 1.0)
+            if L > rhi:
+                cut = float(ev["src_in"]) + rhi * spd
+                if sp_ev:
+                    cut = phrase_cut(clip_of(analysis, ev["clip"]), float(ev["src_in"]), cut)
+                    if cut is None:
+                        continue
+                rv.fix(ev["id"], "trim", f"{r3(L)}s is long for {'a spoken phrase' if sp_ev else 'this pace'}: "
+                       f"trim to ≤{rhi}s{' at a word gap' if sp_ev else ''}", "shot-length",
+                       src_in=r3(float(ev["src_in"])), src_out=r3(cut))
+            elif not sp_ev:
+                rv.fix(ev["id"], "extend", f"{r3(L)}s flashes by: hold it to ≥{rlo}s (inside its shot) or merge",
+                       "shot-length", seconds=r3(rlo - L))
 
     # caption coverage ------------------------------------------------------------------------
     cues = srt_cues(rel(job, render.get("captions")))
@@ -373,7 +460,9 @@ def run_checks(job: Path, rv: Review, m: dict, analysis: dict, brief: dict, look
     seen, reps = [], []
     for ev in events:
         for prev in seen:
-            same_shot = ev.get("shot") and ev.get("shot") == prev.get("shot")
+            # a talking head is often ONE long shot: two different lines from it are not a repeat
+            same_shot = ev.get("shot") and ev.get("shot") == prev.get("shot") and \
+                not is_speech_event(ev, analysis) and not is_speech_event(prev, analysis)
             overlap = ev["clip"] == prev["clip"] and min(float(ev["src_out"]), float(prev["src_out"])) - \
                 max(float(ev["src_in"]), float(prev["src_in"])) > 0.25
             if same_shot or overlap:
@@ -395,25 +484,27 @@ def run_checks(job: Path, rv: Review, m: dict, analysis: dict, brief: dict, look
     if abs(dur - tgt) > tol and events:
         if dur > tgt:
             need = dur - tgt
-            for ev in sorted(events[1:], key=lambda e: shot_of(analysis, e).get("quality", {}).get("score", 0.5)):
+            for ev in sorted(events[1:], key=lambda e: qscore(shot_of(analysis, e))):
                 L = out_span(ev)[1] - out_span(ev)[0]
                 rv.fix(ev["id"], "drop", f"{r3(dur - tgt)}s over target: drop weakest shot ({r3(L)}s)", "duration")
                 need -= L
                 if need <= 0:
                     break
         else:
-            rv.fix(events[-1]["id"], "trim", f"{r3(tgt - dur)}s under target: extend the payoff/outro or add a shot",
-                   "duration")
+            rv.fix("*", "add", f"{r3(tgt - dur)}s under target: add the best unused lines/shots back toward "
+                   f"{tgt}s", "duration", target="timeline", seconds=r3(tgt - dur))
 
     # aspect + safe area -------------------------------------------------------------------------
     want = C.ASPECTS.get(brief.get("aspect", ""))
     w, h = m["width"], m["height"]
     aspect_ok = not want or abs(w / max(1, h) - want[0] / want[1]) < 0.01
     pos = ((look or {}).get("captions") or {}).get("position") or edl.get("captions", {}).get("position", "lower")
-    safe = SAFE.get(brief.get("aspect", ""), {"bottom": 0.1, "top": 0.05})
-    margin = ass_margin(job, render, h)
+    safe = safe_area(brief.get("aspect", ""))
+    margin, align = ass_margin(job, render, h)
     cap_y = None
-    if margin is not None:
+    if align in ("4", "5", "6", "7", "8", "9"):
+        pos = "center" if align in ("4", "5", "6") else "top"     # the burned file decides, not the intent
+    elif margin is not None:
         cap_y = margin / max(1, h)
     # without an .ass style the margin is unknown: do not guess, leave it to the vision pass
     safe_ok = not cap_on or not words or pos == "center" or cap_y is None or cap_y >= safe["bottom"]
@@ -427,7 +518,8 @@ def run_checks(job: Path, rv: Review, m: dict, analysis: dict, brief: dict, look
                "safe-area", target="encode")
     if not safe_ok:
         rv.fix("*", "regrade", f"raise captions to ≥{int(safe['bottom'] * 100)}% from the bottom "
-               "(platform UI covers the lower band) or use position=center", "safe-area", target="captions")
+               "(platform UI covers the lower band) or use position=center", "safe-area", target="captions",
+               min_bottom=r3(safe["bottom"] + 0.02))
 
     # black frames -------------------------------------------------------------------------------
     blk = [b for b in m["black"] if b["to"] - b["from"] >= BLACK_MIN]
@@ -449,6 +541,61 @@ def run_checks(job: Path, rv: Review, m: dict, analysis: dict, brief: dict, look
     else:
         rv.check("audio-clipping", True, "no audio stream", skipped=True)
 
+    cap_fixes(rv, analysis, tgt, tol, dur)
+
+
+CAP_ORDER = ("shot-length", "repetition", "duration", "dead-air", "black-frames", "hook-in-3s")
+
+
+def projected(rv: Review, dur: float) -> float:
+    """Output length if every event fix were applied (drops and narrowing trims; extends add)."""
+    by = {e["id"]: e for e in rv.edl["events"]}
+    lost, dropped, seen = 0.0, set(), {}
+    for f in rv.fixes:
+        ev = by.get(f["event"])
+        if ev is None:
+            continue
+        s, e = out_span(ev)
+        if f["action"] == "drop" and ev["id"] not in dropped:
+            dropped.add(ev["id"])
+            lost += (e - s) - seen.pop(ev["id"], 0.0)
+        elif f["action"] == "trim" and ev["id"] not in dropped and f.get("src_out") is not None:
+            sp = float(ev.get("speed") or 1.0) or 1.0
+            keep = (min(float(f["src_out"]), float(ev["src_out"])) - max(float(f.get("src_in", ev["src_in"])),
+                                                                          float(ev["src_in"]))) / sp
+            cut = max(0.0, (e - s) - keep)
+            if cut > seen.get(ev["id"], 0.0):
+                lost += cut - seen.get(ev["id"], 0.0)
+                seen[ev["id"]] = cut
+        elif f["action"] == "extend":
+            lost -= float(f.get("seconds") or 0)
+    return dur - lost
+
+
+def cap_fixes(rv: Review, analysis: dict, tgt: float, tol: float, dur: float) -> None:
+    """A fix set must not push the cut outside the target tolerance: shed the least critical shrinking fixes
+    (pacing first, then repetition…) and ask the director to re-fill the rest with an `add` fix."""
+    floor = tgt - tol
+    if projected(rv, dur) >= floor:
+        return
+    rank = {c: i for i, c in enumerate(CAP_ORDER)}
+    shrink = sorted([f for f in rv.fixes if f["action"] in ("drop", "trim") and f["check"] != "duration"],
+                    key=lambda f: rank.get(f["check"], 0))
+    shed = []
+    for f in shrink:
+        if projected(rv, dur) >= floor or f["check"] in ("dead-air", "black-frames", "hook-in-3s"):
+            break                                  # critical defects are fixed anyway; re-fill covers the length
+        rv.fixes.remove(f)
+        shed.append(f)
+    after = projected(rv, dur)
+    if after < tgt - 0.5:
+        rv.fixes = [f for f in rv.fixes if not (f["event"] == "*" and f["action"] == "add")]
+        rv.fixes.append({"event": "*", "action": "add", "check": "duration", "by": "auto", "target": "timeline",
+                         "seconds": r3(tgt - after),
+                         "detail": f"fixes would leave {r3(after)}s of {tgt}s: re-fill {r3(tgt - after)}s from unused material"})
+    if shed:
+        rv.capped = [{"event": f["event"], "action": f["action"], "check": f["check"]} for f in shed]
+
 
 def hook_candidate(analysis: dict, events: list[dict]) -> str | None:
     used = {e.get("shot") for e in events}
@@ -458,9 +605,25 @@ def hook_candidate(analysis: dict, events: list[dict]) -> str | None:
             if s["id"] in used:
                 continue
             talk = any(s["start"] <= w["start"] < s["end"] for w in c.get("words", []))
-            sc = s.get("quality", {}).get("score", 0.5) + 0.2 * talk + 0.3 * s.get("motion_energy", 0) + 0.1 * bool(s.get("faces"))
+            sc = qscore(s) + 0.2 * talk + 0.3 * s.get("motion_energy", 0) + 0.1 * bool(s.get("faces"))
             if sc > score:
                 best, score = s["id"], sc
+    return best
+
+
+def phrase_cut(clip: dict, src_in: float, limit: float) -> float | None:
+    """Latest cut ≤ limit that sits in a gap between words (after ≥2 words), or None."""
+    ws = sorted((w for w in clip.get("words", []) if float(w["start"]) >= src_in - 0.05),
+                key=lambda w: float(w["start"]))
+    best = None
+    for i, w in enumerate(ws):
+        end = float(w["end"])
+        nxt = float(ws[i + 1]["start"]) if i + 1 < len(ws) else end + 0.3
+        cut = min(end + 0.12, (end + nxt) / 2)
+        if cut > limit:
+            break
+        if i >= 1:
+            best = cut
     return best
 
 
@@ -483,24 +646,45 @@ def srt_cues(path: Path | None) -> list[tuple[float, float]]:
                                                   path.read_text(encoding="utf-8", errors="replace"))]
 
 
-def ass_margin(job: Path, render: dict, h: int) -> float | None:
-    """Bottom MarginV in pixels from an .ass caption file, scaled to the video height."""
+def ass_margin(job: Path, render: dict, h: int) -> tuple[float | None, str | None]:
+    """(bottom margin in output pixels, Alignment) read from the burned .ass caption file.
+
+    Uses render.json captions_ass first. The smallest effective margin wins: the style MarginV, any non-zero
+    per-Dialogue MarginV override, and any \\pos(x,y) on a bottom-aligned line (margin = PlayResY - y)."""
     cands = [rel(job, x) for x in [render.get("captions_ass"), *(render.get("extra") or [])] if x]
     cands += sorted((job / "render").glob("*.ass")) if (job / "render").exists() else []
     for p in cands:
-        if p and p.suffix == ".ass" and p.exists():
-            txt = p.read_text(encoding="utf-8", errors="replace")
-            ph = re.search(r"PlayResY:\s*(\d+)", txt)
-            fmt = re.search(r"^Format:\s*(Name.*)$", txt, re.M)
-            sty = re.search(r"^Style:\s*(.*)$", txt, re.M)
-            if fmt and sty:
-                keys = [k.strip() for k in fmt.group(1).split(",")]
-                vals = [v.strip() for v in sty.group(1).split(",")]
-                d = dict(zip(keys, vals))
-                if "MarginV" in d and d.get("Alignment", "2") in ("1", "2", "3"):
-                    scale = h / int(ph.group(1)) if ph else 1.0
-                    return float(d["MarginV"]) * scale
-    return None
+        if not (p and p.suffix == ".ass" and p.exists()):
+            continue
+        txt = p.read_text(encoding="utf-8", errors="replace")
+        ph = re.search(r"PlayResY:\s*(\d+)", txt)
+        play_h = int(ph.group(1)) if ph else h
+        fmt = re.search(r"^Format:\s*(Name.*)$", txt, re.M)
+        styles = re.findall(r"^Style:\s*(.*)$", txt, re.M)
+        if not (fmt and styles):
+            continue
+        keys = [k.strip() for k in fmt.group(1).split(",")]
+        d = dict(zip(keys, [v.strip() for v in styles[0].split(",")]))
+        align = d.get("Alignment", "2")
+        an = re.search(r"\\an(\d)", txt)
+        if an:
+            align = an.group(1)
+        if align not in ("1", "2", "3") or "MarginV" not in d:
+            return None, align
+        margins = [float(d["MarginV"])]
+        ef = re.search(r"^Format:\s*(Layer.*)$", txt, re.M)
+        if ef:
+            ek = [k.strip() for k in ef.group(1).split(",")]
+            if "MarginV" in ek:
+                iv = ek.index("MarginV")
+                for line in re.findall(r"^Dialogue:\s*(.*)$", txt, re.M):
+                    parts = line.split(",", len(ek) - 1)
+                    if len(parts) > iv and parts[iv].strip().isdigit() and int(parts[iv]) > 0:
+                        margins.append(float(parts[iv]))
+        for y in re.findall(r"\\pos\(\s*[-\d.]+\s*,\s*([-\d.]+)\s*\)", txt):
+            margins.append(max(0.0, play_h - float(y)))
+        return min(margins) * h / play_h, align
+    return None, None
 
 
 # ----------------------------------------------------------------- creative critique
@@ -602,10 +786,12 @@ def vision_prompt(job: Path, rnd: int, frames: list[dict], checks: list[dict], c
         f"python3 .claude/skills/kosif-dragon-montage/scripts/dm_review.py review --job {job} \\",
         "  --add-note \"الهوك ضعيف: الوش صغير ومفيش حركة في أول ثانية\" \\",
         "  --fix e001:swap:\"open on c02-s003 (close-up, starts talking at 0.1s)\" \\",
-        "  --fix e004:trim:\"cut the dead 1s before the line\"",
+        "  --fix e004:trim:\"cut the dead 1s before the line seconds=1 side=head\"",
         "```",
         "",
         f"Fix format: `EVENT:ACTION:DETAIL` — ACTION ∈ {', '.join(ACTIONS)}; EVENT is an edl id (e001…) or `*` for global.",
+        "Numbers go in as key=value inside DETAIL (seconds=, side=head|tail, src_in=, src_out=, speed=, rec_at=, "
+        "with_shot=, target=) — the director never reads numbers out of prose.",
         "Any --fix turns the verdict into `fix`; the director applies them with `dm_direct.py --apply-review`.",
         "",
     ]
@@ -655,7 +841,7 @@ def cmd_review(job: Path, rnd: int | None) -> dict:
     vp = vision_prompt(job, rnd, frames, rv.checks, crit, brief)
     review = C.new("review", round=rnd, checks=rv.checks, fixes=rv.fixes,
                    frames=[f["path"] for f in frames], frame_index=frames,
-                   verdict=verdict, score=score, critique=crit, notes=[],
+                   verdict=verdict, score=score, critique=crit, notes=[], capped_fixes=rv.capped,
                    rounds_left=max(0, MAX_ROUNDS - rnd), final=str(video.relative_to(job)) if video.is_relative_to(job) else str(video),
                    vision_prompt=str(vp.relative_to(job)), missing=m["missing"],
                    measured={"duration": r3(m["duration"]), "width": m["width"], "height": m["height"],
@@ -676,7 +862,14 @@ def parse_fix(spec: str, ids: set[str]) -> dict:
         raise SystemExit(f"--fix action must be one of {ACTIONS}, got {act!r}")
     if ev != "*" and ev not in ids:
         raise SystemExit(f"--fix event {ev!r} is not in edl.json ({', '.join(sorted(ids))})")
-    return {"event": ev, "action": act, "detail": detail or f"{act} (claude vision)", "check": "vision", "by": "claude"}
+    fx = {"event": ev, "action": act, "detail": detail or f"{act} (claude vision)", "check": "vision", "by": "claude"}
+    # structured fields ride in the detail as key=value (seconds=0.6 side=head src_in=.. src_out=.. speed=1.2
+    # rec_at=.. with_shot=.. target=captions); prose is never parsed for numbers
+    for k, v in re.findall(r"\b(seconds|src_in|src_out|speed|rec_at|lufs|min_bottom)=(-?\d+(?:\.\d+)?)", detail):
+        fx[k] = float(v)
+    for k, v in re.findall(r"\b(side|with_shot|target|grade|role|kind)=([\w.-]+)", detail):
+        fx[k] = v
+    return fx
 
 
 def cmd_add(job: Path, notes: list[str], fixes: list[str]) -> dict:
@@ -697,6 +890,7 @@ def cmd_add(job: Path, notes: list[str], fixes: list[str]) -> dict:
 
 
 def main(argv=None) -> int:
+    C.utf8_stdio()
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     r = sub.add_parser("review", help="watch final.mp4 and write review.json")

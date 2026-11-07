@@ -14,7 +14,7 @@ MANIFEST = SKILL / "data" / "required_tools.json"
 DOCTOR = SCRIPTS / "dm_doctor.py"
 STATIONS = {"analyze", "think", "taste", "direct", "render", "review", "generate"}
 TIERS = {"required", "recommended", "optional"}
-CHECK_KINDS = {"bin", "py", "node", "browser", "font", "python"}
+CHECK_KINDS = {"bin", "py", "node", "browser", "font", "python", "file"}
 
 sys.path.insert(0, str(SCRIPTS))
 import dm_doctor  # noqa: E402
@@ -53,7 +53,7 @@ class ManifestSchema(unittest.TestCase):
                     self.assertIn(dep, ids)
                 ins = t["install"]
                 self.assertTrue(set(ins) <= {"pip", "npm", "linux", "macos", "windows", "ashell", "post"})
-                has_any = ins.get("pip") or ins.get("npm") or ins.get("post") or any(
+                has_any = t.get("download") or ins.get("pip") or ins.get("npm") or ins.get("post") or any(
                     ins.get(o) for o in ("linux", "macos", "windows"))
                 self.assertTrue(has_any, "no install route")
 
@@ -159,6 +159,56 @@ class InstallPlan(unittest.TestCase):
     def test_install_sh_syntax(self):
         r = subprocess.run(["bash", "-n", str(SCRIPTS / "install_tools.sh")], capture_output=True, text=True)
         self.assertEqual(r.returncode, 0, r.stderr)
+
+
+class ModelsAndFonts(unittest.TestCase):
+    def setUp(self):
+        self.m = json.loads(MANIFEST.read_text(encoding="utf-8"))
+
+    def test_yunet_entry(self):
+        t = next(x for x in self.m["tools"] if x["id"] == "yunet-face-model")
+        self.assertEqual(t["tier"], "recommended")
+        dl = t["download"]
+        self.assertRegex(dl["sha256"], r"^[0-9a-f]{64}$")
+        self.assertTrue(dl["url"].startswith("https://"))
+        self.assertIn("MIT", dl["license"])
+        self.assertIn("analyze", t["stations"])
+        self.assertTrue((SKILL / "models" / ".gitignore").is_file())
+
+    def test_install_plan_fetches_models(self):
+        for os_name in ("linux", "windows"):
+            lines = dm_doctor.install_plan(os_name, "recommended", everything=True)
+            self.assertTrue(any(l.endswith("fetch yunet-face-model") for l in lines), os_name)
+
+    def test_fetch_verifies_sha256(self):
+        import hashlib
+        import tempfile
+        with tempfile.TemporaryDirectory() as td:
+            src = Path(td) / "m.onnx"
+            src.write_bytes(b"x" * 4096)
+            good = hashlib.sha256(src.read_bytes()).hexdigest()
+            m = {"tools": [{"id": "m", "download": {"url": src.as_uri(), "sha256": good, "dest": str(Path(td) / "o" / "m.onnx")}}]}
+            self.assertTrue(dm_doctor.fetch("m", manifest=m).is_file())
+            m["tools"][0]["download"].update(sha256="0" * 64, dest=str(Path(td) / "bad.onnx"))
+            with self.assertRaises(RuntimeError):
+                dm_doctor.fetch("m", manifest=m)
+            self.assertFalse((Path(td) / "bad.onnx").exists())
+
+    def test_file_check_ignores_lfs_pointer(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as td:
+            (Path(td) / "m.onnx").write_text("version https://git-lfs.github.com/spec/v1\n")
+            self.assertEqual(dm_doctor.check_one({"kind": "file", "name": "m.onnx", "dirs": [td]})[0], False)
+
+    def test_repo_font_satisfies_arabic_font(self):
+        if not dm_doctor.repo_font("Cairo"):
+            self.skipTest("no Cairo in the repo font folders")
+        from unittest import mock
+        with mock.patch.object(dm_doctor, "_font_families", return_value=""):
+            t = next(x for x in self.m["tools"] if x["id"] == "arabic-font")
+            r = dm_doctor.check_tool(t)
+        self.assertTrue(r["present"])
+        self.assertIn("repo", r["where"])
 
 
 if __name__ == "__main__":

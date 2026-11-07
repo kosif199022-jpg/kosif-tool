@@ -286,7 +286,8 @@ class ReviewTests(unittest.TestCase):
         drop_id, swap_ev = broll[0]["id"], broll[1]
         dm.write(job, "review", dm.new("review", round=1, checks=[], verdict="fix", score=0.6, fixes=[
             {"event": drop_id, "action": "drop", "detail": "weak shot"},
-            {"event": speech["id"], "action": "trim", "detail": "tail 0.6", "check": "dead-air"},
+            {"event": speech["id"], "action": "trim", "detail": "tail 0.6", "seconds": 0.6, "side": "tail",
+             "check": "dead-air"},
             {"event": swap_ev["id"], "action": "swap", "detail": "repeats colour"},
             {"event": "*", "action": "regrade", "target": "grade", "grade": "warm", "detail": "too cold"}]))
         res = subprocess.run([sys.executable, str(DM / "dm_direct.py"), "direct", "--job", str(job), "--apply-review"],
@@ -297,7 +298,12 @@ class ReviewTests(unittest.TestCase):
         self.assertEqual(new["revision"], 1)
         ids = [e["id"] for e in new["events"]]
         self.assertNotIn(drop_id, ids)
-        self.assertEqual(len(new["events"]), len(evs) - 1)
+        kept = [e for e in new["events"] if e["id"] in {x["id"] for x in evs}]
+        self.assertEqual(len(kept), len(evs) - 1)
+        dropped = next(e for e in evs if e["id"] == drop_id)
+        for e in new["events"]:                       # a re-fill never brings back what the review dropped
+            if e["clip"] == dropped["clip"]:
+                self.assertFalse(e["src_in"] < dropped["src_out"] and e["src_out"] > dropped["src_in"], e)
         t = next(e for e in new["events"] if e["id"] == speech["id"])
         self.assertLess(t["src_out"], speech["src_out"])
         words = analysis["clips"][0]["words"]
@@ -307,7 +313,200 @@ class ReviewTests(unittest.TestCase):
         self.assertNotEqual(s["shot"], swap_ev["shot"])
         self.assertEqual(new["grade"]["id"], "warm")
         self.assertEqual(dm_edl.check(new), [])
-        self.assertLess(new["duration"], edl["duration"])
+        # fixes never shrink the cut far below the brief: drops/trims are re-filled toward target_seconds
+        self.assertLessEqual(abs(new["duration"] - 45) / 45, 0.15, new["duration"])
+
+
+DEBATE = ("السؤال الحقيقي هنا مين اللي بيقرر مستقبل التعليم في مصر النهارده؟ "
+          "أنا شايف إن المدرسة لازم تتغير من الأساس مش بس المناهج. "
+          "الطالب العربي بيتعلم يحفظ ومش بيتعلم يفكر وده أخطر حاجة. "
+          "إمتداد لما تعلمه في مدرسته؟ لأ ده لازم يبقى أكبر من كده بكتير. "
+          "الحقيقة إن الرياضيات والقراءة هما الأساس اللي أي حاجة تتبني عليه. "
+          "لو عايزين نغير لازم نبدأ بالمدرس قبل الكتاب. ").split()
+
+
+def debate_fixture(job, target=40):
+    """Shaped like the real e2e debate: ONE 150 s talking-head shot with ~264 words + a 20 s, 7-shot b-roll clip."""
+    media = job / "media"
+    media.mkdir(parents=True)
+    words, silences, t, k = [], [], 0.6, 0
+    while len(words) < 264 and t < 148:
+        w = DEBATE[k % len(DEBATE)]
+        cyc = k // len(DEBATE)
+        if cyc:                                       # a debate never repeats itself word for word
+            w = w.rstrip(".؟") + "ابتثجحخدذرزسشصضطظعغفقكلمنهوي"[cyc % 28] + w[len(w.rstrip(".؟")):]
+        d = 0.22 + 0.035 * len(w)
+        words.append({"w": w, "start": round(t, 3), "end": round(t + d, 3), "conf": 0.9})
+        t += d + (0.75 if w.endswith((".", "؟")) and k % 5 == 0 else 0.09)
+        if w.endswith((".", "؟")) and k % 5 == 0:
+            silences.append({"start": round(t - 0.75, 3), "end": round(t, 3)})
+        k += 1
+    talk = {"id": "c01", "path": str(media / "talk.mp4"), "duration": 150.066, "width": 720, "height": 1280,
+            "fps": 30, "has_audio": True, "loudness_lufs": -16,
+            "shots": [{"id": "c01-s001", "start": 0.0, "end": 150.066, "faces": 1, "motion_energy": 0.15,
+                       "quality": {"score": 0.7, "shake": 0.05}, "color": {"saturation": 0.3}}],
+            "words": words, "silences": silences, "energy": [{"t": float(i), "rms": 0.2} for i in range(150)]}
+    cuts = [0.0, 4.767, 7.433, 10.933, 14.567, 17.267, 19.4, 20.04]
+    broll = {"id": "c02", "path": str(media / "broll.mp4"), "duration": 20.04, "width": 720, "height": 1280,
+             "fps": 30, "has_audio": False, "words": [], "silences": [], "energy": [],
+             "shots": [{"id": f"c02-s{i + 1:03d}", "start": a, "end": b, "faces": 0, "motion_energy": 0.5 + 0.1 * (i % 3),
+                        "quality": {"score": 0.6, "shake": 0.4 if i < 4 else 0.1}, "color": {"saturation": 0.5}}
+                       for i, (a, b) in enumerate(zip(cuts, cuts[1:]))]}
+    for c in (talk, broll):
+        Path(c["path"]).write_bytes(b"\0" * 64)
+    dm.write(job, "analysis", dm.new("analysis", clips=[talk, broll], music={"path": None, "beats": [], "downbeats": []},
+                                     contact_sheet=None, tools_used=["fixture"], missing=[]))
+    dm.write(job, "brief", dm.new("brief", task="اعمل ريل 40 ثانية من المناظرة دي بهوك قوي", one_truth="التعليم",
+                                  audience="سكرول", platform="reel", aspect="9:16", target_seconds=target,
+                                  feeling="epic", energy=0.72, language="ar-eg", content_type="talking-head",
+                                  must_keep=[], avoid=[], frameworks=[]))
+    dm.write(job, "concepts", dm.new("concepts", concepts=[
+        {"id": "B", "title": "PAS", "arc": ["problem", "build", "payoff", "cta"], "rhythm": "on-beat",
+         "hook": {"text": "السؤال الحقيقي هنا مين اللي بيقرر مستقبل التعليم", "first_seconds": 3}}],
+        decision={"chosen": "B", "matrix": [], "why": "fixture"}, premortem=[]))
+    dm.write(job, "look", dm.new("look", style_id="x", style_source="catalog", grade={"id": "cinematic"},
+                                 transitions=[{"id": "cut"}], camera=[{"id": "punch-in", "scale": 1.08}],
+                                 captions={"style": "karaoke", "font": "Cairo", "position": "lower"}, why="fixture"))
+
+
+class DebateRegressionTests(unittest.TestCase):
+    """Real-footage bug: the review loop shrank a 41 s debate cut to 4.8 s (b-roll pacing applied to speech,
+    one-shot talking head counted as 'repetition', duration-under produced a trim, hook swap picked b-roll)."""
+
+    def test_three_review_rounds_keep_duration_and_speech_hook(self):
+        review = _load("dm_review")
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        job = Path(tmp.name) / "job"
+        debate_fixture(job)
+        edl = direct.direct(job)
+        analysis, brief = dm.read(job, "analysis"), dm.read(job, "brief")
+        self.assertEqual(edl["events"][0]["kind"], "speech")
+        self.assertTrue(edl["events"][0].get("hook"))
+        self.assertIn(edl["events"][0]["role"], direct.hook_roles())
+        durations = [edl["duration"]]
+        for rnd in (1, 2, 3):
+            edl = dm.read(job, "edl")
+            m = {"duration": edl["duration"], "width": 1080, "height": 1920, "has_audio": True, "silences": [],
+                 "black": [], "motion": None, "verify": None, "true_peak": -1.5, "lufs": -14.0, "missing": []}
+            rv = review.Review(edl)
+            review.run_checks(job, rv, m, analysis, brief, None, {})
+            checks = {c["id"]: c for c in rv.checks}
+            self.assertTrue(checks["repetition"]["pass"], checks["repetition"]["evidence"])
+            for f in rv.fixes:                       # speech is never trimmed to b-roll length
+                ev = next((e for e in edl["events"] if e["id"] == f["event"]), None)
+                if ev and ev["kind"] == "speech" and f["action"] == "trim" and f.get("src_out") is not None:
+                    self.assertGreaterEqual(f["src_out"] - f["src_in"], 1.4, f)
+            # plus the destructive fixes the real run produced: a hook swap and two drops
+            fixes = list(rv.fixes)
+            fixes.append({"event": edl["events"][0]["id"], "action": "swap", "check": "hook-in-3s",
+                          "detail": "first event is not the hook", "with_shot": "c02-s001"})
+            for e in edl["events"][1:3]:
+                fixes.append({"event": e["id"], "action": "drop", "check": "repetition", "detail": "fake"})
+            if rnd == 2:
+                fixes.append({"event": "*", "action": "add", "check": "duration", "target": "timeline",
+                              "seconds": 10, "detail": "10s under target"})
+            dm.write(job, "review", dm.new("review", round=rnd, checks=rv.checks, fixes=fixes, verdict="fix",
+                                           score=0.5))
+            edl = direct.apply_review(job)
+            durations.append(edl["duration"])
+            self.assertEqual(dm_edl.check(edl), [])
+            first = edl["events"][0]
+            self.assertEqual(first["kind"], "speech", first)
+            self.assertTrue(first.get("hook") or first["role"] in direct.hook_roles(), first)
+        for d in durations:
+            self.assertLessEqual(abs(d - 40) / 40, 0.15, durations)
+
+    def test_review_judges_speech_by_phrase_pacing(self):
+        review = _load("dm_review")
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        job = Path(tmp.name) / "job"
+        debate_fixture(job)
+        edl = direct.direct(job)
+        rv = review.Review(edl)
+        m = {"duration": edl["duration"], "width": 1080, "height": 1920, "has_audio": False, "silences": [],
+             "black": [], "motion": None, "verify": None, "true_peak": None, "lufs": None, "missing": []}
+        review.run_checks(job, rv, m, dm.read(job, "analysis"), dm.read(job, "brief"), None, {})
+        sl = next(c for c in rv.checks if c["id"] == "shot-length")
+        self.assertEqual(sl["speech_range"], [1.5, 9.0])
+        hk = next(c for c in rv.checks if c["id"] == "hook-in-3s")
+        self.assertTrue(hk["pass"], hk)
+        self.assertFalse([f for f in rv.fixes if f["check"] == "repetition"])
+
+    def _m(self, edl, **kw):
+        m = {"duration": edl["duration"], "width": 1080, "height": 1920, "has_audio": True, "silences": [],
+             "black": [], "motion": None, "verify": None, "true_peak": -2.0, "lufs": -14.0, "missing": []}
+        m.update(kw)
+        return m
+
+    def test_silence_under_broll_is_not_dead_air(self):
+        review = _load("dm_review")
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        job = Path(tmp.name) / "job"
+        debate_fixture(job)
+        edl = direct.direct(job)
+        br = next(e for e in edl["events"] if e["kind"] == "broll")
+        sp = next(e for e in edl["events"][1:] if e["kind"] == "speech")
+        a, b = review.out_span(br)
+        rv = review.Review(edl)
+        review.run_checks(job, rv, self._m(edl, silences=[{"from": a, "to": b}]), dm.read(job, "analysis"),
+                          dm.read(job, "brief"), None, {})
+        self.assertTrue(next(c for c in rv.checks if c["id"] == "dead-air")["pass"])
+        s0, _ = review.out_span(sp)
+        rv = review.Review(edl)
+        review.run_checks(job, rv, self._m(edl, silences=[{"from": s0 + 0.5, "to": s0 + 1.4}]),
+                          dm.read(job, "analysis"), dm.read(job, "brief"), None, {})
+        self.assertFalse(next(c for c in rv.checks if c["id"] == "dead-air")["pass"])
+
+    def test_fix_set_is_capped_to_target_tolerance(self):
+        review = _load("dm_review")
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        job = Path(tmp.name) / "job"
+        debate_fixture(job)
+        edl = direct.direct(job)
+        rv = review.Review(edl)
+        for e in edl["events"][1:]:                       # everything flagged as a pacing problem
+            rv.fix(e["id"], "drop", "fake", "shot-length")
+        review.cap_fixes(rv, dm.read(job, "analysis"), 40.0, 6.0, edl["duration"])
+        self.assertGreaterEqual(review.projected(rv, edl["duration"]), 34.0)
+        self.assertTrue(rv.capped)
+
+    def test_apply_review_never_parses_prose_and_null_quality(self):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        job = Path(tmp.name) / "job"
+        debate_fixture(job)
+        an = dm.read(job, "analysis")
+        for c in an["clips"]:
+            for sh in c["shots"]:
+                sh["quality"] = {"score": None, "shake": None}   # OpenCV missing
+        dm.write(job, "analysis", an)
+        edl = direct.direct(job)
+        br = next(e for e in edl["events"] if e["kind"] == "broll")
+        sp = next(e for e in edl["events"][1:] if e["kind"] == "speech")
+        dm.write(job, "review", dm.new("review", round=1, checks=[], verdict="fix", score=0.5, fixes=[
+            {"event": br["id"], "action": "retime", "check": "shot-length", "detail": "0.404s flashes by: hold it"},
+            {"event": sp["id"], "action": "trim", "check": "vision", "detail": "7.533s too long"}]))
+        new = direct.apply_review(job)
+        h = new["history"][-1]
+        self.assertEqual({x["action"] for x in h["skipped"]}, {"retime", "trim"})
+        nb = next(e for e in new["events"] if e["id"] == br["id"])
+        self.assertEqual(nb.get("speed", 1.0), 1.0)
+        ns = next(e for e in new["events"] if e["id"] == sp["id"])
+        self.assertEqual((ns["src_in"], ns["src_out"]), (sp["src_in"], sp["src_out"]))
+
+    def test_concept_arcs_open_with_hook_role(self):
+        think = _load("dm_think")
+        em = think.editor_mind()
+        for arc_id, arc in em["arcs"].items():
+            fixed = think.ensure_hook_opening(arc, em)
+            self.assertIn(fixed["beats"][0]["role"], direct.hook_roles(), arc_id)
+        self.assertEqual(think.hook_roles(em), direct.hook_roles())
+        odd = {"beats": [{"id": "x", "role": "build", "share": 1.0, "purpose_ar": "x"}]}
+        self.assertEqual(think.ensure_hook_opening(odd, em)["beats"][0]["role"], "hook")
 
 
 def _load_sp(name):

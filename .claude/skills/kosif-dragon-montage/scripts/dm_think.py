@@ -47,6 +47,25 @@ def editor_mind() -> dict:
     return _json(DATA / "editor_mind.json")
 
 
+DEFAULT_HOOK_ROLES = ("hook", "problem", "question", "cold-open", "tease")
+
+
+def hook_roles(em: dict | None = None) -> set:
+    """Roles that may open a cut and count as the hook (editor_mind.hook_roles — shared with direct + review)."""
+    em = em if em is not None else editor_mind()
+    return set((em.get("hook_roles") or {}).get("roles") or DEFAULT_HOOK_ROLES)
+
+
+def ensure_hook_opening(arc: dict, em: dict) -> dict:
+    """Every concept must open with a hook-capable role in its first 3 s; prepend a hook beat when it does not."""
+    beats = list(arc.get("beats") or [])
+    if beats and beats[0].get("role") in hook_roles(em):
+        return arc
+    hook = {"id": "hook", "role": "hook", "share": 0.08,
+            "purpose_ar": "أقوى جملة أو لقطة في أول 3 ثواني قبل ما القوس يبدأ"}
+    return {**arc, "beats": [hook] + beats}
+
+
 def registry() -> dict:
     f = DATA / "mind_registry.json"
     if not f.exists():
@@ -702,7 +721,7 @@ def build_concepts(job: Path) -> dict:
     used_hooks, used_fw, concepts, consulted = set(), set(), [], 0
     for i, (arc_id, rhythm) in enumerate(combos):
         cid = "ABC"[i]
-        arc, rh = em["arcs"][arc_id], em["rhythms"][rhythm]
+        arc, rh = ensure_hook_opening(em["arcs"][arc_id], em), em["rhythms"][rhythm]
         hook = make_hook(arc_id, i, sents, used_hooks, topic, em, hooks, f)
         beats = beats_for(arc, target, float(hook["first_seconds"]))
         c = {"id": cid, "title": f"{arc['name_ar'].split(':')[0]} × {rh['name_ar']}",
@@ -789,6 +808,7 @@ def build_concepts(job: Path) -> dict:
 
 # ------------------------------------------------------------------------------------------- cli
 def main(argv=None) -> int:
+    C.utf8_stdio()
     ap = argparse.ArgumentParser(description="Dragon Montage stations 2+3: brief and concepts")
     sub = ap.add_subparsers(dest="cmd", required=True)
     b = sub.add_parser("brief", help="«يفهم المطلوب» -> brief.json")

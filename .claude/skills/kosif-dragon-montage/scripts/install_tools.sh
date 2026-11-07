@@ -5,6 +5,8 @@
 #
 #   bash .claude/skills/kosif-dragon-montage/scripts/install_tools.sh [--tier required|recommended|all] [--yes] [--dry-run]
 #
+# Model files (e.g. the YuNet face model) come as `dm_doctor.py fetch <id>` lines in the plan
+# (sha256-checked, saved to the skill's git-ignored models/ folder).
 # Python libraries go into <repo>/.venv (created if absent). Run the montage with
 # <repo>/.venv/bin/python afterwards.
 set -euo pipefail
@@ -15,7 +17,7 @@ while [ $# -gt 0 ]; do
     --tier) TIER="$2"; shift 2 ;;
     --yes|-y) YES=1; shift ;;
     --dry-run) DRY=1; shift ;;
-    -h|--help) sed -n 2,10p "$0"; exit 0 ;;
+    -h|--help) sed -n 2,12p "$0"; exit 0 ;;
     *) echo "unknown option: $1" >&2; exit 2 ;;
   esac
 done

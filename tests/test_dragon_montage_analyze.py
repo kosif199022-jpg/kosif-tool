@@ -145,5 +145,93 @@ class AnalyzeSilenceAndMissing(unittest.TestCase):
             self.assertEqual(d["music"], {"path": None, "bpm": None, "beats": [], "downbeats": []})
 
 
+class FaceModel(unittest.TestCase):
+    def test_largest_face_normalised(self):
+        import dm_analyze as A
+        lf = A.largest_face([(10, 10, 20, 20, 0.9), (100, 50, 60, 80, 0.8)], 200, 400)
+        self.assertAlmostEqual(lf[0], 0.65)
+        self.assertAlmostEqual(lf[1], 0.225)
+        self.assertEqual(A.largest_face([], 10, 10), None)
+
+    def test_shot_has_face_center_field(self):
+        import numpy as np
+        import dm_analyze as A
+        ctx = A.Ctx(Path(tempfile.mkdtemp(prefix="dm_face_")))
+        m = A.shot_metrics(ctx, [np.zeros((90, 160, 3), np.uint8)] * 3)
+        self.assertIn("face_center", m)
+        self.assertIn("faces_box", m)
+
+    def test_yunet_used_when_doctor_finds_model(self):
+        import dm_doctor
+        if not dm_doctor.model_path("yunet-face-model"):
+            self.skipTest("YuNet model not downloaded (dm_doctor.py fetch yunet-face-model)")
+        import dm_analyze as A
+        A._FACE.clear()
+        self.assertIsNotNone(A.face_detector())
+        self.assertEqual(A._FACE["name"], "yunet")
+
+
+@unittest.skipUnless(dm.have("ffmpeg") and dm.have_module("cv2") and dm.have_module("numpy"), "ffmpeg/opencv missing")
+class StreamingAndWindowsSafety(unittest.TestCase):
+    """Frames are streamed per shot (no whole-clip frame list), jpgs go through imencode (non-ASCII
+    paths on Windows), and a timed-out ffmpeg pass degrades into `missing` instead of crashing."""
+
+    def test_streamed_metrics_match_collected(self):
+        import dm_analyze as A
+        with tempfile.TemporaryDirectory(prefix="dm_stream_") as td:
+            clip = dm.make_test_clip(Path(td) / "c.mp4", 4.0, size="320x180")
+            ctx = A.Ctx(Path(td))
+            info = A.probe_clip(ctx, clip)
+            times, frames = A.sample_frames(ctx, clip, info)
+            self.assertTrue(frames)
+            bounds = [(0.0, 2.0), (2.0, info["duration"])]
+            for s, e in bounds:
+                sel = [f for t, f in zip(times, frames) if s <= t < e]
+                self.assertEqual(len(sel), A.expected_samples(s, e))
+                acc = A.ShotAcc(A.expected_samples(s, e))
+                for t, f in A.iter_frames(ctx, clip, info):
+                    if s <= t < e:
+                        acc.add(f)
+                self.assertEqual(acc.finish(ctx)["quality"], A.shot_metrics(ctx, sel)["quality"])
+                self.assertLessEqual(len(acc.kept), 5)
+
+    def test_station_writes_thumbs_under_arabic_path(self):
+        with tempfile.TemporaryDirectory(prefix="dm_ar_") as td:
+            job = Path(td) / "مونتاج التنين"
+            clip = dm.make_test_clip(Path(td) / "فيديو.mp4", 4.0, size="320x180")
+            import os
+            env = {**os.environ, "PYTHONIOENCODING": "cp1252"}
+            r = subprocess.run([sys.executable, str(ANALYZE), "--job", str(job), "--clip", str(clip),
+                                "--no-transcribe"], capture_output=True, timeout=300, env=env)
+            self.assertEqual(r.returncode, 0, r.stderr.decode("utf-8", "replace"))
+            d = dm.read(job, "analysis")
+            thumbs = [s["thumb"] for s in d["clips"][0]["shots"]]
+            self.assertTrue(thumbs and all(thumbs), thumbs)
+            self.assertTrue(all((job / t).stat().st_size > 500 for t in thumbs))
+            self.assertTrue((job / d["contact_sheet"]).is_file())
+
+    def test_write_jpg_roundtrip(self):
+        import numpy as np
+        import dm_analyze as A
+        with tempfile.TemporaryDirectory() as td:
+            f = Path(td) / "صورة.jpg"
+            self.assertTrue(A.write_jpg(f, np.full((20, 30, 3), 200, np.uint8)))
+            self.assertEqual(A.read_img(f).shape, (20, 30, 3))
+
+    def test_timeout_degrades_to_missing(self):
+        import dm_analyze as A
+        with tempfile.TemporaryDirectory() as td:
+            clip = dm.make_test_clip(Path(td) / "c.mp4", 2.0, size="160x90")
+            ctx = A.Ctx(Path(td))
+            old = A.LONG_TIMEOUT
+            A.LONG_TIMEOUT = 0.001
+            try:
+                self.assertIsNone(A.shots_scdet(ctx, clip))
+                self.assertIsNone(A.loudness(ctx, clip))
+            finally:
+                A.LONG_TIMEOUT = old
+            self.assertTrue(any("timeout" in m for m in ctx.missing), ctx.missing)
+
+
 if __name__ == "__main__":
     unittest.main()

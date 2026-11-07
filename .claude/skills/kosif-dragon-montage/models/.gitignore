@@ -1,0 +1,2 @@
+# downloaded by install_tools.sh / install_tools.ps1 (see data/required_tools.json → yunet-face-model)
+*.onnx

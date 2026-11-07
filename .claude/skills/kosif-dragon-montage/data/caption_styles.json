@@ -1,12 +1,35 @@
 {
  "schema": "kosif.dm.captions.v1",
- "note": "ASS V4+ style fields (PlayRes 1080 on the short side; scale Fontsize/Outline/Shadow/MarginV by short_side/1080 and MarginV by H/1920). Encoding -1 lets libass detect the paragraph direction so an Arabic line split by a highlight override keeps RTL word order (montage.py rule). Never reshape Arabic yourself — libass+HarfBuzz does it. Fontname falls back through font_fallback if Cairo/Tajawal are not installed (fc-list). montage_style = the equivalent kosif-montage-motion montage.py STYLES key for burning.",
+ "note": "ASS V4+ style fields (PlayRes 1080 on the short side; scale Fontsize/Outline/Shadow/MarginV by short_side/1080 and MarginV by H/1920). Encoding -1 lets libass detect the paragraph direction so an Arabic line split by a highlight override keeps RTL word order (montage.py rule). Never reshape Arabic yourself — libass+HarfBuzz does it. Fontname falls back through font_fallback if Cairo/Tajawal are not installed (fc-list). montage_style = the equivalent kosif-montage-motion montage.py STYLES key for burning. Lower captions never sit below safe_area[aspect].bottom (9:16 ≥ 0.22·H, 16:9 ≥ 0.08·H).",
  "font_fallback": [
   "Cairo",
   "Tajawal",
   "Noto Kufi Arabic",
   "Noto Sans Arabic"
  ],
+ "safe_area": {
+  "note": "Fractions of the frame height that platform UI covers (TikTok/Reels/Shorts caption, buttons, progress bar at the bottom; account/search at the top). dm_render puts lower captions at MarginV = max(style MarginV·H/1920, bottom·H, edl.captions.min_bottom_frac·H) and dm_review checks the burned .ass against the same numbers. Aspect picked by the nearest W/H.",
+  "9:16": {
+   "bottom": 0.22,
+   "top": 0.1,
+   "side": 0.06
+  },
+  "4:5": {
+   "bottom": 0.14,
+   "top": 0.08,
+   "side": 0.05
+  },
+  "1:1": {
+   "bottom": 0.1,
+   "top": 0.06,
+   "side": 0.05
+  },
+  "16:9": {
+   "bottom": 0.08,
+   "top": 0.06,
+   "side": 0.05
+  }
+ },
  "styles": [
   {
    "id": "karaoke",

@@ -122,11 +122,34 @@ def have_module(name: str) -> bool:
     return importlib.util.find_spec(name) is not None
 
 
+def utf8_stdio() -> None:
+    """Make print() safe for Arabic text and paths on any console (Windows cp1252/cp1256, pipes).
+    Every station's main() calls this first."""
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, ValueError, OSError):
+            pass
+
+
+# Text mode for every child process: ffmpeg/ffprobe print UTF-8 (paths, metadata); the Windows default
+# (cp1252 / cp1256) would raise UnicodeDecodeError in the reader thread or mangle the output.
+TEXT = {"text": True, "encoding": "utf-8", "errors": "replace"}
+
+
 def run(job: Path, station: str, tool: str, argv: list[str], *, out: str | Path | None = None,
-        timeout: int = 900, owner_media: bool = True, check: bool = True) -> subprocess.CompletedProcess:
-    """Run a command and append a receipt line to receipts.jsonl."""
+        timeout: int = 900, owner_media: bool = True, check: bool = True,
+        cwd: str | Path | None = None) -> subprocess.CompletedProcess:
+    """Run a command and append a receipt line to receipts.jsonl. A timeout is not raised: it comes back
+    as rc=124 with a stderr note (callers degrade into `missing`, check=True turns it into RuntimeError)."""
     t0 = time.time()
-    res = subprocess.run([str(a) for a in argv], capture_output=True, text=True, timeout=timeout)
+    args = [str(a) for a in argv]
+    try:
+        res = subprocess.run(args, capture_output=True, timeout=timeout, cwd=str(cwd) if cwd else None, **TEXT)
+    except subprocess.TimeoutExpired as exc:
+        def _s(x):
+            return x.decode("utf-8", "replace") if isinstance(x, bytes) else (x or "")
+        res = subprocess.CompletedProcess(args, 124, _s(exc.stdout), _s(exc.stderr) + f"\n[timeout after {timeout}s]")
     rec = {
         "station": station, "tool": tool, "argv": [str(a) for a in argv][:40], "rc": res.returncode,
         "seconds": round(time.time() - t0, 3), "owner_media": owner_media,
@@ -153,7 +176,7 @@ def receipts(job: Path) -> list[dict]:
 
 def probe(path: str | Path) -> dict:
     res = subprocess.run(["ffprobe", "-v", "error", "-show_streams", "-show_format", "-of", "json", str(path)],
-                         capture_output=True, text=True, timeout=60, check=True)
+                         capture_output=True, timeout=60, check=True, **TEXT)
     return json.loads(res.stdout)
 
 

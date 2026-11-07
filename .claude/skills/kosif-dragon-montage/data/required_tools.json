@@ -366,6 +366,53 @@
    }
   },
   {
+   "id": "yunet-face-model",
+   "name": "YuNet face model (OpenCV Zoo, 2023mar)",
+   "tier": "recommended",
+   "purpose": {
+    "ar": "موديل كشف الوشوش: يعدّ الوشوش في كل لقطة ويحدد مكان الوش عشان القص الرأسي (9:16) يفضل على الوش",
+    "en": "Face detector: counts faces per shot and gives face_center so the 9:16 crop follows the face"
+   },
+   "stations": [
+    "analyze",
+    "render"
+   ],
+   "features": [
+    "faces",
+    "face-aware-crop"
+   ],
+   "check": [
+    {
+     "kind": "file",
+     "name": "face_detection_yunet_2023mar.onnx",
+     "env": "KOSIF_YUNET",
+     "dirs": [
+      "{skill}/models",
+      "~/.cache/kosif/models",
+      "{kmm}/kit/models"
+     ]
+    }
+   ],
+   "download": {
+    "url": "https://media.githubusercontent.com/media/opencv/opencv_zoo/main/models/face_detection_yunet/face_detection_yunet_2023mar.onnx",
+    "mirrors": [
+     "https://huggingface.co/opencv/face_detection_yunet/resolve/main/face_detection_yunet_2023mar.onnx"
+    ],
+    "sha256": "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4",
+    "bytes": 232589,
+    "dest": "{skill}/models/face_detection_yunet_2023mar.onnx",
+    "license": "MIT (Copyright (c) 2020 Shiqi Yu) — opencv_zoo/models/face_detection_yunet/LICENSE",
+    "license_url": "https://github.com/opencv/opencv_zoo/blob/main/models/face_detection_yunet/LICENSE"
+   },
+   "needs": [
+    "opencv"
+   ],
+   "breaks_without": "faces بتطلع null والقص الرأسي بيقص من النص حتى لو الوش على الجنب",
+   "size": "~230 KB",
+   "install": {},
+   "notes": "OpenCV 5 مفيهوش Haar CascadeClassifier، فـ YuNet هو الكاشف الوحيد. بيتنزل في models/ جوه السكِل (git-ignored) بأمر: python3 .claude/skills/kosif-dragon-montage/scripts/dm_doctor.py fetch yunet-face-model — والـ sha256 لازم يطابق."
+  },
+  {
    "id": "librosa",
    "name": "librosa",
    "tier": "recommended",
@@ -627,6 +674,10 @@
     {
      "kind": "font",
      "name": "Amiri"
+    },
+    {
+     "kind": "font",
+     "name": "Tajawal"
     }
    ],
    "breaks_without": "الحروف العربية بتطلع مربعات أو مقطعة",
@@ -649,7 +700,7 @@
      ]
     }
    },
-   "notes": "خط KOSIF Jumuah في fonts/ للعناوين بس، مش للترجمة."
+   "notes": "الخطوط اللي جوه الريبو بتحسب: Cairo/Tajawal/Amiri/Noto Naskh في kosif-superpowers/proofs/_shared/fonts و kosif-mimic/assets/fonts — dm_render بيديها لـ libass كـ fontsdir فمش لازم تثبيت على الجهاز. خط KOSIF Jumuah في fonts/ للعناوين بس، مش للترجمة."
   },
   {
    "id": "opentimelineio",

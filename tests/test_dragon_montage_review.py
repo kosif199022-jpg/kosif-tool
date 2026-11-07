@@ -60,7 +60,10 @@ def make_job(root: Path) -> Path:
                    {"w": "النهارده", "start": 1.2, "end": 1.8, "conf": 0.9}],
          "silences": [], "energy": []},
         {"id": "c02", "path": str(clips[1]), "duration": 6.0, "width": 320, "height": 180, "fps": 30, "has_audio": True,
-         "shots": [shot("c02", 1, 0, 3, 0.5), shot("c02", 2, 3, 6, 0.9)], "words": [], "silences": [], "energy": []},
+         "shots": [shot("c02", 1, 0, 3, 0.5), shot("c02", 2, 3, 6, 0.9)],
+         # a second talking camera: silence under it is dead air (silence under wordless b-roll is not)
+         "words": [{"w": "وده", "start": 0.6, "end": 0.9, "conf": 0.9}, {"w": "المهم", "start": 1.0, "end": 1.4, "conf": 0.9}],
+         "silences": [], "energy": []},
         {"id": "c03", "path": str(clips[2]), "duration": 6.0, "width": 320, "height": 180, "fps": 30, "has_audio": True,
          "shots": [shot("c03", 1, 0, 3, 0.7), shot("c03", 2, 3, 6, 0.7)], "words": [], "silences": [], "energy": []},
     ], music={"path": None, "bpm": None, "beats": [], "downbeats": []}, tools_used=["test"], missing=[])
@@ -81,7 +84,7 @@ def make_job(root: Path) -> Path:
                      decision={"chosen": "A"},
                      premortem=["الفيديو يبقى ممل في النص (dead air)", "the colour feels off", "too long for a reel"])
     (job / "render" / "captions.srt").write_text(
-        "1\n00:00:00,050 --> 00:00:01,000\nاهلا بيكم\n\n2\n00:00:01,100 --> 00:00:01,900\nالنهارده\n", encoding="utf-8")
+        "1\n00:00:00,050 --> 00:00:01,000\nاهلا بيكم\n\n2\n00:00:01,100 --> 00:00:01,900\nالنهارده\n\n3\n00:00:03,050 --> 00:00:03,950\nوده المهم\n", encoding="utf-8")
     render = C.new("render", final="render/final.mp4", captions="render/captions.srt", verify={"pass": True})
     for kind, data in (("analysis", analysis), ("edl", edl), ("brief", brief), ("concepts", concepts), ("render", render)):
         C.write(job, kind, data)
@@ -146,7 +149,7 @@ class DragonMontageReviewTests(unittest.TestCase):
         ids = {"e001", "e002", "e003", "e004"}
         self.assertTrue(self.review["fixes"])
         for f in self.review["fixes"]:
-            self.assertIn(f["action"], ("trim", "drop", "swap", "retime", "regrade"))
+            self.assertIn(f["action"], ("trim", "drop", "swap", "retime", "regrade", "extend", "add"))
             self.assertTrue(f["event"] in ids or f["event"] == "*", f)
             self.assertTrue(f["detail"])
         by = {(f["event"], f["check"]): f for f in self.review["fixes"]}
@@ -198,3 +201,40 @@ class DragonMontageReviewTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class SafeAreaMarginTests(unittest.TestCase):
+    """The review reads the margin actually burned into the .ass, and the threshold from caption_styles.json."""
+
+    def _ass(self, root: Path, margin_v: int, align: int = 2, extra: str = "") -> dict:
+        (root / "render").mkdir(parents=True, exist_ok=True)
+        (root / "render" / "captions.ass").write_text(
+            "[Script Info]\nPlayResX: 1080\nPlayResY: 1920\n\n[V4+ Styles]\n"
+            "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, "
+            "Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, "
+            "MarginR, MarginV, Encoding\n"
+            f"Style: Cap,Cairo,74,&H00FFFFFF,&H0059DEFF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,6,3,{align},76,76,{margin_v},-1\n\n"
+            "[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n"
+            f"Dialogue: 0,0:00:00.00,0:00:01.00,Cap,,0,0,0,,{extra}اهلا\n", encoding="utf-8")
+        return {"captions_ass": "render/captions.ass"}
+
+    def test_margin_scaled_and_overrides(self):
+        import dm_review as R
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            m, a = R.ass_margin(root, self._ass(root, 300), 1920)
+            self.assertAlmostEqual(m / 1920, 0.15625, places=4)
+            m, _ = R.ass_margin(root, self._ass(root, 423), 960)          # PlayRes 1920 scaled to a 960 render
+            self.assertAlmostEqual(m / 960, 423 / 1920, places=4)
+            m, _ = R.ass_margin(root, self._ass(root, 423, extra="{\\pos(540,1800)}"), 1920)
+            self.assertEqual(m, 120)                                     # \pos pulls the line down
+            m, a = R.ass_margin(root, self._ass(root, 0, align=5), 1920)
+            self.assertIsNone(m)
+            self.assertEqual(a, "5")
+
+    def test_threshold_from_caption_styles(self):
+        import dm_review as R
+        styles = json.loads((SCRIPTS.parent / "data" / "caption_styles.json").read_text(encoding="utf-8"))
+        want = ((styles.get("safe_area") or {}).get("9:16") or {}).get("bottom", 0.20)
+        self.assertEqual(R.safe_area("9:16")["bottom"], float(want))
+        self.assertGreaterEqual(R.safe_area("9:16")["bottom"], 0.2)

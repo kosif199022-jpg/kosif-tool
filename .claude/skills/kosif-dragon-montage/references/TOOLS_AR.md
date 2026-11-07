@@ -44,13 +44,18 @@ python3 .claude/skills/kosif-dragon-montage/scripts/dm_doctor.py install-plan --
 | **faster-whisper** | تفريغ الكلام العربي بتوقيت كل كلمة: ترجمة كاريوكي وقص على الكلام | مفيش ترجمة ولا قص على الجمل؛ الإيقاع بيعتمد على السكوت بس | ~100 MB + موديل small ~480 MB أول تشغيل | `py -m pip install "faster-whisper>=1.0"` |
 | **PySceneDetect** | يلاقي القطعات (حدود اللقطات) بدقة | بيرجع لفلتر scene في ffmpeg وهو أقل دقة | ~5 MB | `py -m pip install "scenedetect>=0.6.4"` |
 | **OpenCV (headless)** | قراءة الفريمات: الحدة والاهتزاز والوشوش والحركة وإعادة التأطير 9:16 | مفيش عدّ وشوش ولا قياس اهتزاز؛ والـ reframe بيبقى في النص بس | ~60 MB | `py -m pip install "opencv-python-headless>=4.9"` |
+| **YuNet face model (OpenCV Zoo)** | ملف موديل كشف الوشوش: يعدّ الوشوش في كل لقطة ويكتب `face_center` عشان القص الرأسي 9:16 يتسنتر على الوش (OpenCV 5 مفيهوش Haar) | `faces` بتطلع null والقص بيبقى في النص | ~230 KB | `py .claude\skills\kosif-dragon-montage\scripts\dm_doctor.py fetch yunet-face-model` |
 | **librosa** | يحسب BPM والبيتات عشان القطع يبقى على الإيقاع | القص على البيت مش متاح وفحص cuts-on-beat بيتخطى | ~60 MB (مع scipy/numba) | `py -m pip install "librosa>=0.10"` |
 | **soundfile** | قراءة ملفات الصوت WAV لـ librosa و faster-whisper | librosa ممكن يفشل في قراءة الصوت | ~3 MB | `py -m pip install "soundfile>=0.12"` |
 | **yt-dlp** | ينزل الفيديو من لينك تيك توك/إنستجرام/يوتيوب | لازم تدي الملف نفسه، مش لينك | ~15 MB | winget `yt-dlp.yt-dlp`, `py -m pip install yt-dlp` |
 | **Node.js 18+** | يشغّل رندر HTML (العناوين والجرافيك) و Remotion و HyperFrames | مفيش عناوين متحركة/جرافيك HTML؛ الرندر بيبقى ffmpeg بس | ~90 MB | winget `OpenJS.NodeJS.LTS` |
 | **Playwright** | يفتح صفحة HTML ويصوّرها فريم فريم | مفيش رندر لمشاهد HTML | ~10 MB | `npm i playwright@1.64.1` |
 | **Chromium (Playwright browser)** | المتصفح اللي Playwright بيرندر بيه | Playwright موجود بس مش لاقي متصفح | ~170 MB | `node .kosif-node/node_modules/playwright/cli.js install chromium` |
-| **Arabic font (Cairo / Noto Sans Arabic / Amiri)** | خط عربي سليم للترجمة المحروقة | الحروف العربية بتطلع مربعات أو مقطعة | ~1-30 MB | يدوي — شوف install-plan |
+| **Arabic font (Cairo / Noto Sans Arabic / Amiri)** | خط عربي سليم للترجمة المحروقة | الحروف العربية بتطلع مربعات أو مقطعة | ~1-30 MB | **موجود في الريبو** (Cairo/Tajawal/Amiri في `kosif-mimic/assets/fonts` و `proofs/_shared/fonts`) والـ doctor بيحسبه؛ تثبيته على الجهاز اختياري |
+
+### ملفات الموديلات
+
+الموديلات الصغيرة (زي YuNet) مش pip ولا winget: الـ doctor بينزّلها بأمر `dm_doctor.py fetch <id>` من اللينك اللي في `required_tools.json` (ولو وقع بيجرب mirror)، ويرفض الملف لو الـ sha256 مش مطابق. بتتحط في `.claude/skills/kosif-dragon-montage/models/` (متجاهلة من git)، والـ doctor بيدوّر كمان في `~/.cache/kosif/models/` و `KMM/kit/models/` أو المسار في `KOSIF_YUNET`. سكربتات `install_tools.sh/.ps1` بتعمل الـ fetch لوحدها. رخصة YuNet: MIT (Shiqi Yu، opencv_zoo).
 
 ## ٣) إضافات — بتفتح مزايا زيادة (ثبّت اللي محتاجه بس)
 

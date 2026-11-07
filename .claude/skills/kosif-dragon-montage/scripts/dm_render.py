@@ -9,10 +9,13 @@ Writes render/final.mp4 (or render/preview.mp4 with --preview), render/captions.
        in render/nle/), extra ratio renders render/final_1x1.mp4 …, and render.json.
 
 Pipeline (every ffmpeg call goes through dm_common.run → receipts.jsonl):
-  pass A  one filter_complex: per event trim → speed → smart cover crop to W×H (face hook) →
+  timing  dm_edl.reflow is the single source of truth; events snap to whole frames (render.json.events_out);
+          src ranges past the media end are clamped (warning) instead of freeze-padded.
+  pass A  one filter_complex, one `-ss/-t -i` input per event (any source order, nothing extra decoded),
+          ffmpeg runs in render/ so filter options only name relative files: per event trim → speed → smart cover crop to W×H (face hook) →
           camera move (punch-in / slow-push / ken-burns) → join (concat on cuts, xfade with exact
-          offsets on transitions) → grade → burned ASS captions (karaoke / punchy / clean, RTL via
-          libass+fribidi).  Audio: per event atrim/atempo with de-click fades at cuts, acrossfade on
+          offsets on transitions) → grade (ev.grade overrides per event) → burned ASS captions (karaoke / punchy / clean, RTL via
+          libass+fribidi).  Audio: per event (silence when ev.mute) atrim/atempo with de-click fades at cuts, acrossfade on
           transitions, optional music bed ducked under speech with sidechaincompress.
   pass B  loudnorm measure (EBU R128) → pass C loudnorm linear apply to target_lufs, video copied.
   verify  kosif-superpowers/scripts/verify_video.py → render.json.verify
@@ -133,8 +136,8 @@ def xfade_names() -> set[str]:
         _XF = set(XFADE_NAMES)
         try:
             import subprocess
-            h = subprocess.run(["ffmpeg", "-hide_banner", "-h", "filter=xfade"], capture_output=True, text=True,
-                               timeout=20).stdout
+            h = subprocess.run(["ffmpeg", "-hide_banner", "-h", "filter=xfade"], capture_output=True, timeout=20,
+                               **dm.TEXT).stdout
             seg = h[h.find("transition"):h.find("duration")]
             found = {ln.split()[0] for ln in seg.splitlines()[1:] if ln.strip()}
             if "fade" in found:
@@ -229,12 +232,42 @@ FONT_DIRS = [dm.SKILL / "assets" / "fonts", dm.VENDOR_SS / "kosif-mimic" / "asse
              dm.SKILLS / "kosif-superpowers" / "proofs" / "_shared" / "fonts", dm.ROOT / "assets" / "fonts"]
 
 
+SAFE_AREA = {"9:16": {"bottom": 0.22, "top": 0.10}, "4:5": {"bottom": 0.14, "top": 0.08},
+             "1:1": {"bottom": 0.10, "top": 0.06}, "16:9": {"bottom": 0.08, "top": 0.06}}
+
+
+def safe_area(W: int, H: int) -> tuple[str, dict]:
+    """(aspect key, {bottom, top, …}) from caption_styles.json safe_area, nearest W/H wins."""
+    table = {k: v for k, v in ((_data("caption_styles.json") or {}).get("safe_area") or SAFE_AREA).items()
+             if isinstance(v, dict)} or SAFE_AREA
+
+    def ratio(k):
+        a, b = k.split(":")
+        return float(a) / float(b)
+    key = min(table, key=lambda k: abs(math.log(ratio(k)) - math.log(W / max(1, H))))
+    return key, table[key]
+
+
+def caption_margin_v(st: dict, W: int, H: int, min_bottom_frac: float | None = None) -> int:
+    """MarginV in output pixels. Bottom-aligned captions (Alignment 1-3) are lifted out of the platform
+    UI band: never below safe_area.bottom·H, nor below edl.captions.min_bottom_frac·H (review fix)."""
+    a = st["ass"]
+    mv = float(a.get("MarginV", 0)) * H / 1920.0
+    al = int(a.get("Alignment", 2))
+    _, sa = safe_area(W, H)
+    if al in (1, 2, 3):
+        mv = max(mv, float(sa.get("bottom", 0)) * H, float(min_bottom_frac or 0) * H)
+    elif al in (7, 8, 9):
+        mv = max(mv, float(sa.get("top", 0)) * H)
+    return int(math.ceil(mv))
+
+
 def find_font(families: list[str]) -> tuple[str, Path | None]:
     """First family found in the repo font folders (→ fontsdir for libass) or installed (fc-list)."""
     import subprocess
     installed = ""
     if shutil.which("fc-list"):
-        installed = subprocess.run(["fc-list", ":", "family"], capture_output=True, text=True).stdout.lower()
+        installed = subprocess.run(["fc-list", ":", "family"], capture_output=True, timeout=30, **dm.TEXT).stdout.lower()
     for fam in families:
         key = fam.lower().replace(" ", "")
         for d in FONT_DIRS:
@@ -245,16 +278,29 @@ def find_font(families: list[str]) -> tuple[str, Path | None]:
     return "DejaVu Sans", None
 
 
-def ff_path(path: Path) -> str:
-    """Quote a path for a filtergraph option. Paths with quote/colon/backslash characters are first
-    copied to a safe temp location (two levels of ffmpeg escaping are error-prone)."""
-    s = str(path)
-    if any(c in s for c in "'\\:;,[]"):
-        import tempfile
-        safe = Path(tempfile.mkdtemp(prefix="dm_render_")) / path.name
-        (shutil.copytree if path.is_dir() else shutil.copyfile)(path, safe)
-        s = str(safe)
-    return "'" + s + "'"
+def ff_quote(rel: str) -> str:
+    """Quote a *relative* filename for a filtergraph option. ffmpeg runs with cwd=render/, so filter
+    options never carry an absolute path: on Windows `C:\\…` breaks the filtergraph parser (':' and '\\'
+    are option/escape characters)."""
+    return "'" + str(rel).replace("\\", "/").replace("'", "") + "'"
+
+
+def stage_fonts(font_dir: Path | None, family: str, rdir: Path) -> str | None:
+    """Copy the caption family's font files next to the render (render/_fonts) so libass gets a relative
+    fontsdir. Returns the relative folder name, or None when the family is installed system-wide."""
+    if not font_dir or not Path(font_dir).is_dir():
+        return None
+    key = family.lower().replace(" ", "")
+    files = [p for p in Path(font_dir).glob("*.[ot]tf") if p.name.lower().replace(" ", "").startswith(key)]
+    if not files:
+        return None
+    dst = rdir / "_fonts"
+    dst.mkdir(parents=True, exist_ok=True)
+    for f in files:
+        t = dst / f.name
+        if not t.exists() or t.stat().st_size != f.stat().st_size:
+            shutil.copyfile(f, t)
+    return "_fonts"
 
 
 def ratio_size(ratio: str, base_w: int, base_h: int) -> tuple[int, int]:
@@ -305,23 +351,72 @@ def face_center(ev: dict, clip: dict) -> tuple[float, float]:
 
 # ----------------------------------------------------------------------------- plan
 def plan_timeline(edl: dict, fps: float) -> list[dict]:
-    """Snap every event to whole frames and compute its place on the output timeline."""
-    plan, L = [], 0.0
-    for i, ev in enumerate(edl["events"]):
+    """Place every event on the output timeline in whole frames. Timing comes from dm_edl.reflow (the one
+    source of truth that direct and review also use): each event starts on the frame nearest its reflowed
+    rec_in and lasts round((rec_in + seconds)·fps) − round(rec_in·fps) frames; a transition overlaps by the
+    frames between the previous end and that start. Cuts are made contiguous, so frame drift never builds up."""
+    import copy
+    import dm_edl
+    e2 = dm_edl.reflow(copy.deepcopy(edl))
+    plan, prev_end = [], 0
+    for i, ev in enumerate(e2["events"]):
         speed = float(ev.get("speed") or 1.0)
-        n = max(2, round((float(ev["src_out"]) - float(ev["src_in"])) / speed * fps))
-        dur = n / fps
-        tname, td = transition_name(ev.get("transition_in")) if i else ("cut", 0.0)
-        if tname != "cut":
-            td = max(1 / fps, min(td, dur - 1 / fps, plan[-1]["dur"] - 1 / fps, 2.0))
-            td = round(td * fps) / fps
-            if td <= 0:
-                tname, td = "cut", 0.0
-        start = L - td
-        plan.append({"ev": ev, "i": i, "speed": speed, "frames": n, "dur": dur, "start": round(start, 6),
-                     "trans": tname, "td": td})
-        L = start + dur
+        rec_in = float(ev["rec_in"])
+        a_f = round(rec_in * fps)
+        n = max(2, round((rec_in + dm_edl.event_seconds(ev)) * fps) - a_f)
+        tname, td_f = "cut", 0
+        if i and dm_edl.overlap(ev) > 0:
+            td_f = min(prev_end - a_f, n - 1, plan[-1]["frames"] - 1)
+            if td_f >= 1:
+                tname = transition_name(ev.get("transition_in"))[0]
+                if tname == "cut":
+                    tname = "fade"
+            else:
+                td_f = 0
+        start_f = prev_end - td_f
+        plan.append({"ev": ev, "i": i, "speed": speed, "frames": n, "dur": n / fps, "start": start_f / fps,
+                     "start_f": start_f, "end_f": start_f + n, "trans": tname, "td": td_f / fps, "td_f": td_f})
+        prev_end = start_f + n
     return plan
+
+
+def clamp_to_media(job: Path, edl: dict, clips: dict) -> tuple[dict, list[str]]:
+    """Copy of edl whose src ranges stay inside each clip's real duration (analysis, else ffprobe).
+    Asking for frames past the end used to freeze-pad silently; now the range is clamped (or the event
+    dropped when nothing is left) and render.json says so."""
+    import copy
+    edl = copy.deepcopy(edl)
+    fps = float(edl.get("fps") or 30)
+    warnings, keep, durs = [], [], {}
+    for ev in edl["events"]:
+        cid = ev["clip"]
+        if cid not in durs:
+            d = (clips.get(cid) or {}).get("duration")
+            src = resolve_media(job, ev.get("path") or (clips.get(cid) or {}).get("path"))
+            if not d and src and src.is_file():
+                try:
+                    d = float(dm.probe(src).get("format", {}).get("duration") or 0) or None
+                except Exception:  # noqa: BLE001
+                    d = None
+            durs[cid] = float(d) if d else None
+        d = durs[cid]
+        if d and float(ev["src_out"]) > d + 1e-3:
+            if float(ev["src_in"]) >= d - 2 / fps:
+                warnings.append(f"{ev['id']}: src {ev['src_in']}–{ev['src_out']}s is past the end of {cid} "
+                                f"({d:.3f}s): event dropped")
+                continue
+            warnings.append(f"{ev['id']}: src_out {ev['src_out']}s > {cid} duration {d:.3f}s: clamped to {d:.3f}s")
+            ev["src_out"] = round(d, 3)
+        keep.append(ev)
+    if not keep:
+        raise RuntimeError("no event left inside its media after clamping src ranges to clip durations")
+    edl["events"] = keep
+    return edl, warnings
+
+
+def event_grade(ev: dict) -> str | None:
+    g = ev.get("grade")
+    return (g.get("id") if isinstance(g, dict) else g) or None
 
 
 def remap_words(plan: list[dict], clips: dict) -> list[dict]:
@@ -329,6 +424,8 @@ def remap_words(plan: list[dict], clips: dict) -> list[dict]:
     out = []
     for p in plan:
         ev, clip = p["ev"], clips.get(p["ev"]["clip"]) or {}
+        if ev.get("mute"):                     # muted b-roll: its natural sound is not heard, so no captions
+            continue
         a, b, s = float(ev["src_in"]), float(ev["src_out"]), p["speed"]
         lo = p["start"] + (p["td"] / 2 if p["td"] else 0)
         hi = p["start"] + p["dur"]
@@ -398,11 +495,11 @@ def write_ass(path: Path, words: list[dict], st: dict, W: int, H: int) -> int:
     recoloured (+ a small pop). No \\k sweep (it runs left-to-right and breaks on Arabic), no manual
     reshaping: Encoding -1 lets libass (fribidi + HarfBuzz) find the RTL paragraph direction."""
     a = st["ass"]
-    k_short, k_h = min(W, H) / 1080.0, H / 1920.0
+    k_short = min(W, H) / 1080.0
     size = max(14, round(float(a["Fontsize"]) * k_short))
     outline = round(float(a.get("Outline", 4)) * k_short, 1)
     shadow = round(float(a.get("Shadow", 0)) * k_short, 1)
-    marg_v = round(float(a.get("MarginV", 0)) * k_h)
+    marg_v = caption_margin_v(st, W, H, st.get("min_bottom_frac"))
     marg_lr = round(W * 0.07)
     head = (
         "[Script Info]\nScriptType: v4.00+\nWrapStyle: 0\nScaledBorderAndShadow: yes\n"
@@ -439,72 +536,88 @@ def write_ass(path: Path, words: list[dict], st: dict, W: int, H: int) -> int:
 
 # ----------------------------------------------------------------------------- graph
 def build_graph(job: Path, edl: dict, plan: list[dict], clips: dict, W: int, H: int, fps: float,
-                grade: str | None, ass: Path | None, font_dir: Path | None, music: dict | None) -> tuple[list, str, float, list]:
-    inputs, idx, warnings = [], {}, []
+                grade: str | None, ass: str | None, font_dir: str | None, music: dict | None,
+                global_grade_id: str | None = None) -> tuple[list, str, float, list]:
+    """inputs + filtergraph. Every event is its own input, opened with `-ss in -t len` (fast seek, then
+    exact): events from one source in any order never share a decoder (a shared [0:a] fed to two atrims
+    starves acrossfade when the later one needs earlier source time → silent output), nothing past the
+    event is decoded, and no frames are queued for later events. `ass`/`font_dir` are names relative to
+    render/ (ffmpeg runs there). A per-event grade (ev.grade, set by a review regrade) replaces the
+    global grade for that event; muted events (ev.mute) contribute silence."""
+    inputs, warnings, has_audio = [], [], {}
+    n_in = 0
+    ev_in = []
     for p in plan:
-        cid = p["ev"]["clip"]
-        if cid not in idx:
-            src = resolve_media(job, p["ev"].get("path") or (clips.get(cid) or {}).get("path"))
-            if not src or not src.is_file():
-                raise FileNotFoundError(f"event {p['ev']['id']}: media for clip {cid} not found ({src})")
-            idx[cid] = len(inputs) // 2
-            inputs += ["-i", str(src)]
-    has_audio = {}
-    for cid in idx:
-        c = clips.get(cid) or {}
-        if "has_audio" in c:
-            has_audio[cid] = bool(c["has_audio"])
-        else:
-            pr = dm.probe(inputs[idx[cid] * 2 + 1])
-            has_audio[cid] = any(s.get("codec_type") == "audio" for s in pr.get("streams", []))
+        ev = p["ev"]
+        cid = ev["clip"]
+        src = resolve_media(job, ev.get("path") or (clips.get(cid) or {}).get("path"))
+        if not src or not src.is_file():
+            raise FileNotFoundError(f"event {ev['id']}: media for clip {cid} not found ({src})")
+        if cid not in has_audio:
+            c = clips.get(cid) or {}
+            if "has_audio" in c:
+                has_audio[cid] = bool(c["has_audio"])
+            else:
+                pr = dm.probe(src)
+                has_audio[cid] = any(s.get("codec_type") == "audio" for s in pr.get("streams", []))
+        a, b = float(ev["src_in"]), float(ev["src_out"])
+        inputs += ["-ss", f"{a:.4f}", "-t", f"{b - a + 0.25:.4f}", "-i", str(src.resolve())]
+        ev_in.append(n_in)
+        n_in += 1
+    per_event_grade = any(event_grade(p["ev"]) for p in plan)
     F = f"{fps:g}"
     g = []
-    for p in plan:
-        ev, k, i = p["ev"], p["i"], idx[p["ev"]["clip"]]
+    for p, i in zip(plan, ev_in):
+        ev, k = p["ev"], p["i"]
         a, b, s = float(ev["src_in"]), float(ev["src_out"]), p["speed"]
         cx, cy = face_center(ev, clips.get(ev["clip"]) or {})
         cx, cy = min(max(cx, 0.0), 1.0), min(max(cy, 0.0), 1.0)
-        vf = [f"trim=start={a:.4f}:end={b:.4f}", f"setpts=(PTS-STARTPTS)/{s:.6f}",
+        gf = None
+        if per_event_grade:
+            gid = event_grade(ev) or global_grade_id
+            gf = grade_filter(gid) if gid else grade
+        vf = ["setpts=PTS-STARTPTS", f"trim=end={b - a:.4f}", f"setpts=(PTS-STARTPTS)/{s:.6f}",
               f"scale={W}:{H}:force_original_aspect_ratio=increase:flags=bicubic",
-              f"crop={W}:{H}:x='(iw-{W})*{cx:.4f}':y='(ih-{H})*{cy:.4f}'", "setsar=1",
+              f"crop={W}:{H}:x='clip(iw*{cx:.4f}-{W / 2:g},0,iw-{W})':y='clip(ih*{cy:.4f}-{H / 2:g},0,ih-{H})'", "setsar=1",
               f"fps={F}", "tpad=stop_mode=clone:stop_duration=2", f"trim=end_frame={p['frames']}",
               "setpts=PTS-STARTPTS",
               *camera_filters(ev.get("camera"), W, H, fps, p["dur"])[1],
+              *([gf] if gf else []),
               f"fps={F}", "setsar=1", "format=yuv420p", "settb=AVTB"]
         g.append(f"[{i}:v]" + ",".join(vf) + f"[v{k}]")
         d = f"{p['dur']:.6f}"
         fades = [f"afade=t=in:d={CUT_DECLICK}", f"afade=t=out:st={p['dur'] - CUT_DECLICK:.6f}:d={CUT_DECLICK}"]
-        if has_audio[ev["clip"]]:
-            af = [f"atrim=start={a:.4f}:end={b:.4f}", "asetpts=PTS-STARTPTS", *atempo_chain(s),
+        if has_audio[ev["clip"]] and not ev.get("mute"):
+            af = ["asetpts=PTS-STARTPTS", f"atrim=end={b - a:.4f}", "asetpts=PTS-STARTPTS", *atempo_chain(s),
                   "aresample=48000", "aformat=sample_fmts=fltp:channel_layouts=stereo",
                   "apad", f"atrim=end={d}", "asetpts=PTS-STARTPTS", *fades]
             g.append(f"[{i}:a]" + ",".join(af) + f"[a{k}]")
         else:
             g.append(f"anullsrc=r=48000:cl=stereo,atrim=end={d},aformat=sample_fmts=fltp[a{k}]")
     # join
-    vacc, aacc, L = "v0", "a0", plan[0]["dur"]
+    vacc, aacc = "v0", "a0"
     for p in plan[1:]:
         k = p["i"]
         if p["trans"] == "cut":
             g.append(f"[{vacc}][v{k}]concat=n=2:v=1:a=0[vj{k}]")
             g.append(f"[{aacc}][a{k}]concat=n=2:v=0:a=1[aj{k}]")
         else:
-            g.append(f"[{vacc}][v{k}]xfade=transition={p['trans']}:duration={p['td']:.6f}:offset={L - p['td']:.6f}[vj{k}]")
+            g.append(f"[{vacc}][v{k}]xfade=transition={p['trans']}:duration={p['td']:.6f}:offset={p['start']:.6f}[vj{k}]")
             g.append(f"[{aacc}][a{k}]acrossfade=d={p['td']:.6f}:c1=tri:c2=tri[aj{k}]")
-        L = L - p["td"] + p["dur"]
         vacc, aacc = f"vj{k}", f"aj{k}"
+    L = plan[-1]["end_f"] / fps
     post = []
-    if grade:
+    if grade and not per_event_grade:
         post.append(grade)
     if ass:
-        post.append(f"ass=filename={ff_path(ass)}" + (f":fontsdir={ff_path(font_dir)}" if font_dir else ""))
+        post.append(f"ass=filename={ff_quote(ass)}" + (f":fontsdir={ff_quote(font_dir)}" if font_dir else ""))
     post += ["format=yuv420p"]
     g.append(f"[{vacc}]" + ",".join(post) + "[vout]")
     voice = f"[{aacc}]"
-    any_voice = any(has_audio[c] for c in has_audio)
+    any_voice = any(has_audio[p["ev"]["clip"]] and not p["ev"].get("mute") for p in plan)
     if music:
-        mi = len(inputs) // 2
-        inputs = inputs + ["-stream_loop", "-1", "-i", str(music["path"])]
+        mi = n_in
+        inputs = inputs + ["-stream_loop", "-1", "-i", str(Path(music["path"]).resolve())]
         gain = float(music.get("gain_db", -18))
         duck = abs(float(music.get("duck_under_speech_db", -10)))
         g.append(f"[{mi}:a]aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo,"
@@ -525,23 +638,70 @@ def build_graph(job: Path, edl: dict, plan: list[dict], clips: dict, W: int, H: 
 
 
 # ----------------------------------------------------------------------------- loudnorm
-def loudnorm(job: Path, master: Path, out: Path, target: float, tp: float, owner_media: bool) -> dict:
+TP_CEILING = -1.0      # dBTP the delivered file must stay under (verify_video / dm_review audio-clipping)
+TP_INTERNAL = -1.5     # loudnorm TP target; the true-peak limiter below sits under it (AAC adds overshoot)
+
+
+def measure_true_peak(job: Path, media: Path, owner_media: bool = True) -> float | None:
+    """True peak (dBTP, 4x oversampled ebur128) of the delivered file's audio."""
+    res = dm.run(job, STATION, "ffmpeg.ebur128-truepeak", ["ffmpeg", "-hide_banner", "-nostats", "-i", media,
+                 "-map", "0:a:0", "-af", "ebur128=peak=true", "-f", "null", "-"], owner_media=owner_media, check=False)
+    m = re.findall(r"Peak:\s+(-?[\d.]+|-inf)\s+dBFS", res.stderr)
+    if not m:
+        return None
+    return float("-inf") if m[-1] == "-inf" else float(m[-1])
+
+
+def loudnorm(job: Path, master: Path, out: Path, target: float, tp: float, owner_media: bool,
+             limiter_tp: float | None = None) -> dict:
+    """Two-pass loudnorm, then a 4x-oversampled limiter at `limiter_tp` (edl.audio.limiter_tp, lowered by
+    dm_direct --apply-review after an audio-clipping fail). The AAC file is measured; if it still peaks above
+    min(TP_CEILING, limiter_tp) it is re-encoded once with the excess (+0.3 dB) taken off."""
     lra = 11
+    ceiling = min(TP_CEILING, float(limiter_tp)) if limiter_tp is not None else TP_CEILING
+    tp = min(tp, ceiling - 0.5)
+    lim_db = ceiling - 0.8                     # head-room for AAC inter-sample overshoot
     res = dm.run(job, STATION, "ffmpeg.loudnorm-measure",
                  ["ffmpeg", "-hide_banner", "-nostats", "-i", master, "-map", "0:a:0",
                   "-af", f"loudnorm=I={target}:TP={tp}:LRA={lra}:print_format=json", "-f", "null", "-"],
                  owner_media=owner_media)
     m = re.search(r"\{[^{}]*\"input_i\"[^{}]*\}", res.stderr, re.S)
     meas = json.loads(m.group(0)) if m else {}
-    af = f"loudnorm=I={target}:TP={tp}:LRA={lra}"
+    norm = f"loudnorm=I={target}:TP={tp}:LRA={lra}"
     if meas and all(math.isfinite(float(meas.get(k, "nan"))) for k in ("input_i", "input_tp", "input_lra", "input_thresh")):
-        af += (f":measured_I={meas['input_i']}:measured_TP={meas['input_tp']}:measured_LRA={meas['input_lra']}"
-               f":measured_thresh={meas['input_thresh']}:offset={meas.get('target_offset', 0)}:linear=true")
-    af += ",aresample=48000"
-    dm.run(job, STATION, "ffmpeg.loudnorm-apply",
-           ["ffmpeg", "-y", "-hide_banner", "-v", "error", "-i", master, "-map", "0:v:0", "-map", "0:a:0",
-            "-c:v", "copy", "-af", af, "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
-            "-movflags", "+faststart", out], out=out, owner_media=owner_media)
+        norm += (f":measured_I={meas['input_i']}:measured_TP={meas['input_tp']}:measured_LRA={meas['input_lra']}"
+                 f":measured_thresh={meas['input_thresh']}:offset={meas.get('target_offset', 0)}:linear=true")
+
+    try:   # keep the audio exactly as long as the picture (resampling/AAC priming can add a few frames)
+        def _sdur(st):   # mp4 has stream duration; mkv keeps it in tags.DURATION (HH:MM:SS.ns)
+            if st.get("duration"):
+                return float(st["duration"])
+            h, m_, sec = (st.get("tags") or {}).get("DURATION", "").split(":")
+            return int(h) * 3600 + int(m_) * 60 + float(sec)
+        vdur = next(_sdur(st) for st in dm.probe(master)["streams"] if st.get("codec_type") == "video")
+    except Exception:
+        vdur = None
+
+    def apply(extra_db: float = 0.0):
+        chain = [norm, "aresample=192000",
+                 f"alimiter=limit={10 ** (lim_db / 20):.5f}:attack=1:release=60:level=disabled",
+                 "aresample=48000"]
+        if extra_db:
+            chain.insert(1, f"volume={extra_db:.2f}dB")
+        dm.run(job, STATION, "ffmpeg.loudnorm-apply",
+               ["ffmpeg", "-y", "-hide_banner", "-v", "error", "-i", master, "-map", "0:v:0", "-map", "0:a:0",
+                "-c:v", "copy", "-af", ",".join(chain + ([f"atrim=end={max(0.0, vdur - 1024 / 48000):.6f}"] if vdur else [])),
+                "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart", out], out=out, owner_media=owner_media)
+        return measure_true_peak(job, out, owner_media)
+
+    peak = apply()
+    passes = 1
+    if peak is not None and math.isfinite(peak) and peak > ceiling - 0.1:
+        peak = apply(-(peak - ceiling + 0.4))
+        passes = 2
+    meas = dict(meas)
+    meas["limiter"] = {"ceiling_dbtp": ceiling, "limit_db": round(lim_db, 2), "loudnorm_tp": tp,
+                       "output_true_peak": peak, "passes": passes}
     return meas
 
 
@@ -557,10 +717,19 @@ def render_one(job: Path, edl: dict, analysis: dict, look: dict | None, W: int, 
     style_id = cap.get("style") or ((look or {}).get("captions") or {}).get("style") or "karaoke"
     st = caption_style(style_id, look) if cap.get("enabled", True) else None
     ass, font_dir, n_cues = None, None, 0
+    if st:
+        st["min_bottom_frac"] = cap.get("min_bottom_frac")   # set by dm_direct --apply-review on a safe-area fail
     if st and words:
         st["font"], font_dir = find_font(st["fallback"])   # DejaVu Sans has Arabic glyphs as last resort
         ass = rdir / f"captions{tag}.ass"
         n_cues = write_ass(ass, words, st, W, H)
+    fonts_rel = stage_fonts(font_dir, st["font"], rdir) if (st and ass) else None
+    safe = None
+    if st:
+        akey, sa = safe_area(W, H)
+        mv = caption_margin_v(st, W, H, st.get("min_bottom_frac"))
+        safe = {"aspect": akey, "bottom_frac": sa.get("bottom"), "alignment": int(st["ass"].get("Alignment", 2)),
+                "margin_v": mv, "margin_v_frac": round(mv / H, 4)}
     gid = (edl.get("grade") or {}).get("id") or ((look or {}).get("grade") or {}).get("id")
     gf = grade_filter(gid)
     mus = (edl.get("audio") or {}).get("music") or {}
@@ -569,7 +738,8 @@ def render_one(job: Path, edl: dict, analysis: dict, look: dict | None, W: int, 
         mp = resolve_media(job, mus["path"])
         if mp and mp.is_file():
             music = {**mus, "path": mp}
-    inputs, graph, L, warnings = build_graph(job, edl, plan, clips, W, H, fps, gf, ass, font_dir, music)
+    inputs, graph, L, warnings = build_graph(job, edl, plan, clips, W, H, fps, gf, ass.name if ass else None,
+                                             fonts_rel, music, gid)
     if mus.get("path") and not music:
         warnings.append(f"music bed not found: {mus['path']}")
     gfile = rdir / f"graph{tag}.txt"
@@ -577,17 +747,18 @@ def render_one(job: Path, edl: dict, analysis: dict, look: dict | None, W: int, 
     master = rdir / f"_master{tag}.mkv"
     venc = (["-c:v", "libx264", "-preset", "ultrafast", "-crf", "30"] if preview else
             ["-c:v", "libx264", "-preset", "veryfast" if fast else "medium", "-crf", "20" if fast else "18"])
+    # cwd=render/: the filtergraph names captions*.ass and _fonts relatively (Windows drive paths break it)
     dm.run(job, STATION, "ffmpeg.render", ["ffmpeg", "-y", "-hide_banner", "-v", "error", *inputs,
-           "-filter_complex_script", gfile, "-map", "[vout]", "-map", "[aout]", *venc,
-           "-pix_fmt", "yuv420p", "-r", f"{fps:g}", "-c:a", "pcm_s16le", "-ar", "48000", master],
-           out=master, timeout=3600)
+           "-filter_complex_script", gfile.name, "-map", "[vout]", "-map", "[aout]", *venc,
+           "-pix_fmt", "yuv420p", "-r", f"{fps:g}", "-c:a", "pcm_s16le", "-ar", "48000", master.name],
+           out=master, timeout=3600, cwd=rdir)
     target = float((edl.get("audio") or {}).get("target_lufs", -14))
-    meas = loudnorm(job, master, out, target, -1.5, True)
+    meas = loudnorm(job, master, out, target, TP_INTERNAL, True, (edl.get("audio") or {}).get("limiter_tp"))
     master.unlink(missing_ok=True)
     return {"out": out, "duration": round(L, 3), "words": words, "ass": ass, "cues": n_cues,
             "font_dir": str(font_dir) if font_dir else None, "font": st["font"] if st else None,
             "grade": gid, "grade_filter": gf, "music": bool(music), "loudnorm_measured": meas,
-            "plan": plan, "warnings": warnings, "fps": fps}
+            "plan": plan, "warnings": warnings, "fps": fps, "safe": safe}
 
 
 # ----------------------------------------------------------------------------- verify + export
@@ -603,7 +774,7 @@ def verify(job: Path, video: Path, W: int, H: int, fps: float, duration: float, 
     return {"tool": "verify_video", "pass": res.returncode == 0, "rc": res.returncode,
             "lufs": lu.get("integrated_lufs"), "true_peak": lu.get("true_peak_dbfs"),
             "duration": rep.get("duration_s"), "width": rep.get("width"), "height": rep.get("height"),
-            "failed": [c["check"] for c in rep.get("checks", []) if c.get("status") == "FAIL"],
+            "failed": [c["check"] for c in rep.get("checks", []) if c.get("pass") is False or c.get("status") == "FAIL"],
             "report": str(vj.relative_to(job))}
 
 
@@ -702,8 +873,10 @@ def render(job: Path, extra_ratios: list[str], preview: bool = False, fast: bool
     if preview:
         W, H = max(2, W // 3 // 2 * 2), max(2, H // 3 // 2 * 2)
     main = rdir / ("preview.mp4" if preview else "final.mp4")
+    edl_in = edl
+    edl, clamp_warn = clamp_to_media(job, edl, {c["id"]: c for c in (analysis or {}).get("clips", [])})
     r = render_one(job, edl, analysis, look, W, H, main, preview, fast)
-    fps, warnings = r["fps"], list(r["warnings"])
+    fps, warnings = r["fps"], clamp_warn + list(r["warnings"])
     wfile = rdir / "words.json"
     wfile.write_text(json.dumps({"words": r["words"]}, ensure_ascii=False, indent=1), encoding="utf-8")
     srt = rdir / "captions.srt"
@@ -711,9 +884,10 @@ def render(job: Path, extra_ratios: list[str], preview: bool = False, fast: bool
     if not r["words"]:
         srt.write_text("", encoding="utf-8")
         warnings.append("no words in analysis: captions.srt is empty and nothing was burned")
-    if abs(r["duration"] - float(edl["duration"])) > 0.3:
-        warnings.append(f"timeline is {r['duration']}s but edl.duration says {edl['duration']}s "
-                        "(rec_in/duration do not account for transitions)")
+    if abs(r["duration"] - float(edl_in["duration"])) > 0.3:
+        warnings.append(f"timeline is {r['duration']}s but edl.duration says {edl_in['duration']}s "
+                        + ("(src ranges clamped to the media)" if clamp_warn else
+                           "(edl.json was not reflowed: run dm_edl.reflow)"))
     target = float((edl.get("audio") or {}).get("target_lufs", -14))
     extra = []
     for ratio in [x.strip() for x in extra_ratios if x.strip()]:
@@ -735,21 +909,30 @@ def render(job: Path, extra_ratios: list[str], preview: bool = False, fast: bool
     doc = dm.new("render", final=str(main.relative_to(job)), extra=[e["path"] for e in extra],
                  extra_detail=extra, preview=preview,
                  captions=str(srt.relative_to(job)), captions_ass=str(r["ass"].relative_to(job)) if r["ass"] else None,
-                 caption_cues=n_srt, caption_font=r["font"], font_dir=r["font_dir"],
+                 caption_cues=n_srt, caption_font=r["font"], font_dir=r["font_dir"], caption_safe_area=r["safe"],
                  project=proj.get("fcpxml"), project_files=proj.get("files", []), project_converter=proj.get("converter"),
-                 width=W, height=H, fps=fps, duration=r["duration"], edl_duration=edl["duration"],
-                 grade={"id": r["grade"], "filter": r["grade_filter"]}, music=r["music"],
-                 loudness={"target_lufs": target, "true_peak_ceiling": -1.0, "internal_tp": -1.5,
+                 width=W, height=H, fps=fps, duration=r["duration"], edl_duration=edl_in["duration"],
+                 grade={"id": r["grade"], "filter": r["grade_filter"],
+                        "per_event": {p["ev"]["id"]: event_grade(p["ev"]) for p in r["plan"] if event_grade(p["ev"])}},
+                 music=r["music"], muted=[p["ev"]["id"] for p in r["plan"] if p["ev"].get("mute")],
+                 loudness={"target_lufs": target, "true_peak_ceiling": (r["loudnorm_measured"].get("limiter") or {}).get("ceiling_dbtp", TP_CEILING),
+                           "internal_tp": (r["loudnorm_measured"].get("limiter") or {}).get("loudnorm_tp", TP_INTERNAL),
+                           "limiter_tp": (edl.get("audio") or {}).get("limiter_tp"),
                            "measured_before": r["loudnorm_measured"]},
                  events=[{"id": p["ev"]["id"], "start": round(p["start"], 3), "dur": round(p["dur"], 3),
                           "transition": p["trans"], "td": round(p["td"], 3),
                           "camera": camera_filters(p["ev"].get("camera"), W, H, fps, p["dur"])[0]} for p in r["plan"]],
+                 # exact output span of every event in final.mp4 (seconds; frame-snapped, xfade overlaps
+                 # included): review maps a time on the video to an event with these, nothing else.
+                 events_out=[{"id": p["ev"]["id"], "out_in": round(p["start_f"] / fps, 3),
+                              "out_out": round(p["end_f"] / fps, 3)} for p in r["plan"]],
                  verify=v, warnings=warnings, graph="render/graph.txt")
     dm.write(job, "render", doc)
     return doc
 
 
 def main(argv=None) -> int:
+    dm.utf8_stdio()
     ap = argparse.ArgumentParser(prog="dm_render.py", description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)

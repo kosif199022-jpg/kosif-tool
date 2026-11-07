@@ -6,13 +6,17 @@ and checks this machine. Never installs anything.
 
   python3 dm_doctor.py doctor [--json] [--tier required|recommended|all]
   python3 dm_doctor.py install-plan --os linux|macos|windows|ashell [--tier ...] [--all]
+  python3 dm_doctor.py fetch <tool-id> [--force]     # model files (kind "file"): download + sha256 check
 
 doctor exits 0 when every *required* tool is present, 1 otherwise.
 install-plan prints the exact commands for what is missing (or for everything
 with --all); run them yourself, or use install_tools.sh / install_tools.ps1.
+fetch downloads a manifest entry with a "download" block (e.g. the YuNet face
+model) to its destination and refuses it unless the sha256 matches; the install
+plan emits a fetch line for each such missing tool, so the install scripts get it.
 
 Library use (other stations / dragon_montage.py):
-  from dm_doctor import check_all, station_verdicts
+  from dm_doctor import check_all, station_verdicts, model_path, repo_font
 """
 from __future__ import annotations
 
@@ -31,6 +35,12 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 SKILL = HERE.parent
 ROOT = SKILL.parents[2]
+SKILLS = ROOT / ".claude" / "skills"
+VENDOR_SS = SKILLS / "kosif-superpowers" / "vendor" / "100-superskills" / "skills"
+KMM = VENDOR_SS / "kosif-montage-motion" / "scripts"
+# Arabic fonts that ship inside the repo (same folders dm_render.find_font hands to libass as fontsdir).
+REPO_FONT_DIRS = (SKILL / "assets" / "fonts", VENDOR_SS / "kosif-mimic" / "assets" / "fonts",
+                  SKILLS / "kosif-superpowers" / "proofs" / "_shared" / "fonts", ROOT / "assets" / "fonts")
 MANIFEST = SKILL / "data" / "required_tools.json"
 TIERS = ("required", "recommended", "optional")
 OSES = ("linux", "macos", "windows", "ashell")
@@ -72,7 +82,7 @@ def _node_roots() -> tuple[Path, ...]:
     npm = shutil.which("npm")
     if npm:
         try:
-            r = subprocess.run([npm, "root", "-g"], capture_output=True, text=True, timeout=10)
+            r = subprocess.run([npm, "root", "-g"], capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=10)
             if r.returncode == 0 and r.stdout.strip():
                 roots.append(Path(r.stdout.strip()))
         except (OSError, subprocess.SubprocessError):
@@ -97,7 +107,7 @@ def _font_families() -> str:
     parts = []
     if shutil.which("fc-list"):
         try:
-            r = subprocess.run(["fc-list", ":", "family"], capture_output=True, text=True, timeout=20)
+            r = subprocess.run(["fc-list", ":", "family"], capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=20)
             parts.append(r.stdout)
         except (OSError, subprocess.SubprocessError):
             pass
@@ -114,6 +124,94 @@ def _font_families() -> str:
                 if f.suffix.lower() in (".ttf", ".otf", ".ttc"):
                     parts.append(f.stem)
     return "\n".join(parts).lower().replace(" ", "").replace("-", "").replace("_", "")
+
+
+def _fkey(s: str) -> str:
+    return s.lower().replace(" ", "").replace("-", "").replace("_", "")
+
+
+def repo_font(name: str) -> Path | None:
+    """A .ttf/.otf of family `name` bundled in the repo (libass uses it through fontsdir, so it
+    satisfies the caption font even when nothing is installed system-wide)."""
+    key = _fkey(name)
+    for d in REPO_FONT_DIRS:
+        if d.is_dir():
+            for f in sorted(d.iterdir()):
+                if f.suffix.lower() in (".ttf", ".otf", ".ttc") and _fkey(f.stem).startswith(key):
+                    return f
+    return None
+
+
+def expand(p: str) -> Path:
+    """Manifest path placeholders: {skill} {root} {kmm} and ~."""
+    return Path(p.replace("{skill}", str(SKILL)).replace("{root}", str(ROOT)).replace("{kmm}", str(KMM))).expanduser()
+
+
+def _file_check(c: dict) -> Path | None:
+    env = c.get("env")
+    if env and os.environ.get(env) and Path(os.environ[env]).expanduser().is_file():
+        return Path(os.environ[env]).expanduser()
+    for d in c.get("dirs", []):
+        f = expand(d) / c["name"]
+        if f.is_file() and f.stat().st_size > 1024:   # a git-lfs pointer is ~130 bytes
+            return f
+    return None
+
+
+def model_path(tool_id: str = "yunet-face-model", manifest: dict | None = None) -> Path | None:
+    """Where a doctor-managed model file is on this machine, or None."""
+    m = manifest or load()
+    for t in m["tools"]:
+        if t["id"] == tool_id:
+            for c in t["check"]:
+                if c.get("kind") == "file":
+                    f = _file_check(c)
+                    if f:
+                        return f
+    return None
+
+
+def _sha256(path: Path) -> str:
+    import hashlib
+    h = hashlib.sha256()
+    with open(path, "rb") as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def fetch(tool_id: str, force: bool = False, manifest: dict | None = None, dest: Path | None = None) -> Path:
+    """Download a tool's "download" file (url, then mirrors) and keep it only if sha256 matches."""
+    import tempfile
+    import urllib.request
+    m = manifest or load()
+    t = next((x for x in m["tools"] if x["id"] == tool_id), None)
+    if not t or not t.get("download"):
+        raise ValueError(f"{tool_id}: no download block in the manifest")
+    dl = t["download"]
+    dest = Path(dest) if dest else expand(dl["dest"])
+    if dest.is_file() and not force and _sha256(dest) == dl["sha256"]:
+        return dest
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    errors = []
+    for url in [dl["url"], *dl.get("mirrors", [])]:
+        fd, tmp = tempfile.mkstemp(prefix=".dl_", dir=dest.parent)
+        os.close(fd)
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "kosif-dm-doctor"})
+            with urllib.request.urlopen(req, timeout=120) as r, open(tmp, "wb") as out:
+                shutil.copyfileobj(r, out)
+            got = _sha256(Path(tmp))
+            if got != dl["sha256"]:
+                raise ValueError(f"sha256 {got} != {dl['sha256']}")
+            os.replace(tmp, dest)
+            return dest
+        except Exception as e:  # noqa: BLE001 — try the next mirror
+            errors.append(f"{url}: {e}")
+        finally:
+            if os.path.exists(tmp):
+                os.unlink(tmp)
+    raise RuntimeError("download failed:\n  " + "\n  ".join(errors))
 
 
 def check_one(c: dict) -> tuple[bool, str]:
@@ -148,7 +246,13 @@ def check_one(c: dict) -> tuple[bool, str]:
         return False, ""
     if kind == "font":
         key = name.lower().replace(" ", "")
-        return (key in _font_families()), (f"font {name}" if key in _font_families() else "")
+        if key in _font_families():
+            return True, f"font {name}"
+        f = repo_font(name)
+        return (True, f"font {name} (repo: {f.relative_to(ROOT)})") if f else (False, "")
+    if kind == "file":
+        f = _file_check(c)
+        return (True, str(f)) if f else (False, "")
     return False, f"unknown check kind {kind!r}"
 
 
@@ -248,11 +352,17 @@ def install_plan(os_name: str, tier: str = "recommended", everything: bool = Fal
     if python and os_name != "ashell":
         pip_cmd = (f'& "{python}"' if os_name == "windows" else f'"{python}"') + " -m pip install"
     sysp: dict[str, list[str]] = {"apt": [], "brew": [], "cask": [], "winget": [], "choco": []}
-    pips, npms, pre, post, notes = [], [], [], [], []
+    pips, npms, pre, post, notes, fetches = [], [], [], [], [], []
+    py_cmd = {"linux": "python3", "macos": "python3", "windows": "py", "ashell": "python3"}[os_name]
+    if python and os_name != "ashell":
+        py_cmd = f'& "{python}"' if os_name == "windows" else f'"{python}"'
+    doctor_rel = os.path.join(".claude", "skills", SKILL.name, "scripts", "dm_doctor.py")
     for i in ids:
         t = by[i]
         ins = t.get("install", {})
         osd = ins.get(os_name, {})
+        if t.get("download"):
+            fetches.append(f"{py_cmd} {doctor_rel} fetch {t['id']}")
         if os_name == "ashell":
             if osd.get("builtin"):
                 notes.append(f"# {t['name']}: موجود في a-Shell")
@@ -293,6 +403,7 @@ def install_plan(os_name: str, tier: str = "recommended", everything: bool = Fal
     if npms:
         lines.append("npm install --prefix .kosif-node " + " ".join(npms))
     lines += post
+    lines += fetches
     lines += notes
     return lines
 
@@ -339,8 +450,8 @@ def print_report(rep: dict) -> None:
 def main(argv: list[str] | None = None) -> int:
     for stream in (sys.stdout, sys.stderr):
         try:
-            stream.reconfigure(encoding="utf-8")
-        except (AttributeError, ValueError):
+            stream.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, ValueError, OSError):
             pass
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -354,8 +465,20 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--all", action="store_true", help="include tools already installed")
     p.add_argument("--python", help="interpreter for the pip lines (default python3 / py)")
     p.add_argument("--manifest", type=Path, default=MANIFEST)
+    f = sub.add_parser("fetch", help="download a model file listed with a download block (sha256-checked)")
+    f.add_argument("tool_id")
+    f.add_argument("--force", action="store_true")
+    f.add_argument("--manifest", type=Path, default=MANIFEST)
     a = ap.parse_args(argv)
     m = load(a.manifest)
+    if a.cmd == "fetch":
+        try:
+            path = fetch(a.tool_id, a.force, m)
+        except (ValueError, RuntimeError) as e:
+            print(f"❌ {e}", file=sys.stderr)
+            return 1
+        print(f"✅ {a.tool_id} → {path}")
+        return 0
     if a.cmd == "doctor":
         rep = check_all(a.tier, m)
         if a.json:

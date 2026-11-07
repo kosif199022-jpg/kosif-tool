@@ -629,6 +629,37 @@
    "reels-factory"
   ]
  },
+ "hook_roles": {
+  "roles": [
+   "hook",
+   "problem",
+   "question",
+   "cold-open",
+   "tease"
+  ],
+  "note_ar": "الأدوار اللي ينفع تفتح الفيديو وتتحسب هوك في أول 3 ثواني. dm_think بيضمن إن كل قوس يبدأ بواحد منهم (ولو لأ بيحط hook قبله)، dm_direct بيختار أول لقطة في الدور ده بمعايير الهوك، وdm_review بيعدّيها في فحص hook-in-3s. المصدر واحد عشان التلاتة يتفقوا.",
+  "used_by": [
+   "dm_think.build_concepts",
+   "dm_direct.direct_plan",
+   "dm_review.hook-in-3s"
+  ]
+ },
+ "pacing_by_kind": {
+  "speech": {
+   "shot_s": [
+    1.5,
+    9.0
+   ],
+   "rule_ar": "الكلام بيتقاس بالجملة مش بالبيت: من 1.5 لـ 9 ثواني، والقطع على فاصل بين كلمتين أبدًا مش في نص كلمة. لو الجملة أطول نقصّها عند فاصل كلمة."
+  },
+  "broll": {
+   "rule_ar": "اللقطات من غير كلام بتتقاس بإيقاع الإحساس/الطاقة (feeling × energy) زي PACING في dm_direct/dm_review."
+  },
+  "used_by": [
+   "dm_review.shot-length",
+   "dm_direct.apply_review"
+  ]
+ },
  "content_types": {
   "talking-head": {
    "name_ar": "حد بيتكلم للكاميرا",

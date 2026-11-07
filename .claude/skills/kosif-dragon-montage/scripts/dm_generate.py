@@ -442,6 +442,7 @@ def cmd_attach(a) -> int:
 
 
 def main(argv=None) -> int:
+    C.utf8_stdio()
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="cmd", required=True)
     g = sub.add_parser("gaps", help="find gaps and write consent-gated proposals")

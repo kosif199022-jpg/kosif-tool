@@ -98,8 +98,14 @@ Every event has a `reason`. Converters to/from `kosif.timeline.v1`,
 ```json
 {"schema":"kosif.dm.render.v1","final":"render/final.mp4","extra":["render/final_1x1.mp4"],
  "captions":"render/captions.srt","project":"render/project.fcpxml",
- "verify":{"tool":"verify_video","pass":true,"lufs":-14.1,"true_peak":-1.2}}
+ "verify":{"tool":"verify_video","pass":true,"lufs":-14.1,"true_peak":-1.2},
+ "events_out":[{"id":"e001","out_in":0.0,"out_out":2.5}],"muted":["e004"],"warnings":["…"]}
 ```
+Timing has one source of truth: `dm_edl.reflow`. The render snaps each event to whole frames around its
+reflowed `rec_in`, and `events_out` gives the exact span of each event in final.mp4, in seconds. A crossfade
+makes neighbouring spans overlap. Review maps video times to events with this field. A `src_out` past the
+clip's end is clamped, or the event is dropped, and a line is added to `warnings`. Per event, `mute` gives
+silence and `grade` replaces the global grade. `audio.limiter_tp` sets the true-peak ceiling.
 
 ## kosif.dm.review.v1
 ```json
@@ -111,6 +117,14 @@ Every event has a `reason`. Converters to/from `kosif.timeline.v1`,
  "frames":["review/r1_f01.jpg"],"verdict":"ship|fix","score":0.0-1.0}
 ```
 `fixes` are applied by `dm_direct.py --apply-review` then re-rendered (max 3 rounds).
+Actions: `trim|drop|swap|retime|regrade|extend|add`. `extend` grows one event (`seconds`; b-roll inside its
+shot, speech to the next word gap); `add` is global (`"event":"*"`, `"target":"timeline"`, `seconds`) and
+re-fills the cut toward `brief.target_seconds` — a duration-under-target fix is never a trim. After every
+apply-review the director re-fills to within 8% under target from unused candidates (never what a review
+dropped: `edl.meta.dropped_ranges`). Speech events are judged by phrase pacing
+(`editor_mind.pacing_by_kind.speech`, 1.5–9 s, cut only between words), b-roll by the feeling/energy pace.
+Hook-capable opening roles live in `editor_mind.hook_roles` (think, direct and review read the same list);
+a hook swap on talking content picks a spoken line. Caption safe band: `caption_styles.json → safe_area`.
 
 ## Honest counting
 Report three numbers: `consulted` (cards/frameworks read), `ran_on_your_video`

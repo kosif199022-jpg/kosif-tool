@@ -374,6 +374,7 @@ def pick(job: Path, style: str | None = None, do_invent: bool = False, seed: int
 # ---------------------------------------------------------------- CLI
 
 def main(argv: list[str] | None = None) -> int:
+    C.utf8_stdio()
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     p = sub.add_parser("pick")

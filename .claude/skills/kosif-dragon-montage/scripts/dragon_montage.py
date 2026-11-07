@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import subprocess
 import sys
 import time
@@ -59,13 +60,32 @@ def station(name: str, args: list[str], *, log: list[dict]) -> subprocess.Comple
     script, sub = STATIONS[name]
     argv = [sys.executable, str(HERE / script), *sub, *args]
     t0 = time.time()
-    res = subprocess.run(argv, capture_output=True, text=True)
+    env = {**os.environ, "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8"}
+    res = subprocess.run(argv, capture_output=True, text=True, encoding="utf-8", errors="replace", env=env)
     log.append({"station": name, "rc": res.returncode, "seconds": round(time.time() - t0, 2),
                 "stderr_tail": res.stderr[-500:] if res.returncode else ""})
     sys.stderr.write(f"[{name}] {ARABIC.get(name, name)}: {'✓' if res.returncode == 0 else '✗'}\n")
     if res.returncode != 0:
         raise SystemExit(f"station {name} failed:\n{res.stderr[-2000:]}\n{res.stdout[-1000:]}")
     return res
+
+
+SNAP = (("render/final.mp4", "render/round{n}.mp4"), ("edl.json", "edl.round{n}.json"),
+        ("review.json", "review.round{n}.json"), ("render.json", "render.round{n}.json"))
+
+
+def snapshot(job: Path, n: int) -> None:
+    import shutil
+    for src, dst in SNAP:
+        if (job / src).exists():
+            shutil.copy2(job / src, job / dst.format(n=n))
+
+
+def restore(job: Path, n: int) -> None:
+    import shutil
+    for src, dst in SNAP:
+        if (job / dst.format(n=n)).exists():
+            shutil.copy2(job / dst.format(n=n), job / src)
 
 
 def job_status(job: Path, log: list[dict], extra: dict) -> None:
@@ -99,6 +119,9 @@ def cmd_edit(a) -> int:
     station("brief", br, log=log)
     station("concepts", J, log=log)
 
+    for stale in ("look_override.json", "reference_rhythm.json"):
+        if not a.reference and (job / stale).exists():
+            (job / stale).unlink()            # left over from an earlier --reference run
     if a.reference:
         station("mimic", [*J, "--reference", a.reference], log=log)
     tp = [*J]
@@ -113,13 +136,21 @@ def cmd_edit(a) -> int:
     rr = [*J] + (["--preview"] if a.preview else [])
     rounds = max(1, min(3, a.rounds))
     review = None
+    scores: dict[int, float] = {}
     for n in range(1, rounds + 1):
         station("render", rr, log=log)
         station("review", [*J, "--round", str(n)], log=log)
         review = C.read(job, "review")
+        snapshot(job, n)
+        scores[n] = float(review.get("score") or 0.0)
         if review["verdict"] == "ship" or not review["fixes"] or n == rounds:
             break
         station("direct", [*J, "--apply-review"], log=log)
+    best = max(scores, key=lambda k: (scores[k], k))
+    if best != max(scores):
+        restore(job, best)                    # a fix round made it worse: keep the better cut
+        review = C.read(job, "review")
+    meta["rounds"] = {"scores": scores, "kept": best}
 
     job_status(job, log, meta)
     write_report(job, log, review)
@@ -145,7 +176,8 @@ def write_report(job: Path, log: list[dict], review: dict | None) -> None:
         f"**المهمة:** {brief['task']}", "",
         f"**الفيديو النهائي:** `{render['final']}` · المدة {edl['duration']:.1f} ثانية · {edl['width']}×{edl['height']}", "",
         f"**الفكرة المختارة:** {chosen.get('title', '—')} — {chosen.get('logline', '')}",
-        f"**الهوك:** {chosen.get('hook', {}).get('text', '—')}",
+        f"**الهوك المقترح في الفكرة:** {chosen.get('hook', {}).get('text', '—')}",
+        f"**أول لقطة فعلاً في المونتاج:** {edl['events'][0]['reason'] if edl['events'] else '—'}",
         f"**ليه الفكرة دي:** {concepts['decision'].get('why', '')}", "",
         f"**اللوك:** {look['style_id']} · لون {look['grade'].get('id')} · كابشن {look['captions'].get('style')}",
         f"**ليه:** {look.get('why', '')}", "",
@@ -155,7 +187,7 @@ def write_report(job: Path, log: list[dict], review: dict | None) -> None:
         f"- أدوات ناقصة: {', '.join(analysis.get('missing', [])) or 'مفيش'}",
         f"- قطعات في المونتاج: {len(edl['events'])}",
         f"- فحص الجودة التقني: {'عدّى' if render['verify'].get('pass') else 'ما عدّاش'}",
-        f"- لفات النقد والتصليح: {review['round'] if review else 0} · الحكم: {review['verdict'] if review else '—'}", "",
+        f"- لفات النقد والتصليح: {review['round'] if review else 0} · الحكم: {review['verdict'] if review else '—'} · الدرجة: {review.get('score', '—') if review else '—'}", "",
         "## كل قطعة وسببها",
     ]
     for ev in edl["events"]:
@@ -175,6 +207,11 @@ def write_report(job: Path, log: list[dict], review: dict | None) -> None:
 
 
 def main(argv=None) -> int:
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, ValueError):
+            pass
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="cmd", required=True)
     e = sub.add_parser("edit", help="full protocol: footage → edited video")
@@ -190,12 +227,13 @@ def main(argv=None) -> int:
     e.add_argument("--rounds", type=int, default=3)
     e.add_argument("--preview", action="store_true")
     e.add_argument("--no-transcribe", action="store_true")
-    d = sub.add_parser("doctor")
-    d.add_argument("rest", nargs=argparse.REMAINDER)
+    sub.add_parser("doctor", help="which tools are installed / missing (passes extra flags to dm_doctor)")
     s = sub.add_parser("station", help="run one station")
     s.add_argument("name", choices=sorted(STATIONS))
-    s.add_argument("rest", nargs=argparse.REMAINDER)
-    a = p.parse_args(argv)
+    a, rest = p.parse_known_args(argv)
+    if a.cmd == "edit" and rest:
+        p.error(f"unrecognized arguments: {' '.join(rest)}")
+    a.rest = rest
     if a.cmd == "edit":
         return cmd_edit(a)
     if a.cmd == "doctor":

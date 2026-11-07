@@ -56,6 +56,26 @@ ROLE_AR = {"hook": "خطّاف", "setup": "تمهيد", "context": "سياق", "
            "outro": "خاتمة"}
 SPEECH_SHARE = {"speech-led": 0.75, "slow-burn": 0.5, "on-beat": 0.35}
 SNAP_TOL = 0.15
+SPEECH_CONTENT = {"talking-head", "interview", "podcast", "debate", "explainer"}
+DEFAULT_HOOK_ROLES = ("hook", "problem", "question", "cold-open", "tease")
+REFILL_TOL = 0.08          # --apply-review re-fills until the cut is within 8% under brief.target_seconds
+
+
+def _mind() -> dict:
+    try:
+        return json.loads((dm.SKILL / "data" / "editor_mind.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
+def hook_roles() -> set:
+    """Roles that may open the cut and count as the hook — editor_mind.hook_roles, shared with think + review."""
+    return set((_mind().get("hook_roles") or {}).get("roles") or DEFAULT_HOOK_ROLES)
+
+
+def speech_first(brief: dict, concept: dict) -> bool:
+    """Talking content opens on a spoken line, never on b-roll."""
+    return brief.get("content_type") in SPEECH_CONTENT or concept.get("rhythm") == "speech-led"
 
 
 def norm(tok: str) -> str:
@@ -175,7 +195,7 @@ def speech_candidate(clip: dict, ws: list[dict], all_words: list[dict], idx_of: 
     text = " ".join(dm_edl.word_text(w) for w in ws)
     toks = tokens(text)
     shot = shot_at(clip, (s + e) / 2) or {}
-    q = float((shot.get("quality") or {}).get("score", 0.5))
+    q = qscore(shot)
     emph = [dm_edl.word_text(w) for w in ws if norm(dm_edl.word_text(w)) in EMPHASIS or w.get("emphasis")
             or re.search(r"\d|!", dm_edl.word_text(w))]
     return {"kind": "speech", "clip": clip["id"], "shot": shot.get("id"), "src_in": r3(src_in), "src_out": r3(src_out),
@@ -190,6 +210,15 @@ def speech_candidate(clip: dict, ws: list[dict], all_words: list[dict], idx_of: 
             "pad_lo": prev_end + 0.02, "pad_hi": next_start - 0.02}
 
 
+def qscore(shot: dict | None) -> float:
+    """Shot quality score; null/missing (e.g. OpenCV not installed) counts as neutral 0.5."""
+    v = ((shot or {}).get("quality") or {}).get("score")
+    try:
+        return float(v) if v is not None else 0.5
+    except (TypeError, ValueError):
+        return 0.5
+
+
 def broll_candidates(clip: dict, lo: float, hi: float, avoid_shots: set) -> list[dict]:
     out = []
     for s in clip.get("shots") or []:
@@ -201,11 +230,11 @@ def broll_candidates(clip: dict, lo: float, hi: float, avoid_shots: set) -> list
         L = min(hi, length * 0.85) if length > lo else length
         slack = length - L
         start = float(s["start"]) + slack * 0.35              # skip the settle-in, keep the steady middle
-        q = float((s.get("quality") or {}).get("score", 0.5))
+        q = qscore(s)
         out.append({"kind": "broll", "clip": clip["id"], "shot": s["id"], "src_in": r3(start), "src_out": r3(start + L),
                     "dur": L, "shot_start": float(s["start"]), "shot_end": float(s["end"]), "text": "",
                     "quality": q, "faces": int(s.get("faces", 0) or 0), "motion": float(s.get("motion_energy", 0) or 0),
-                    "shake": float((s.get("quality") or {}).get("shake", 0) or 0),
+                    "shake": float((s.get("quality") or {}).get("shake") or 0),
                     "saturation": float((s.get("color") or {}).get("saturation", 0.4) or 0.4),
                     "pos": float(s["start"]) / max(1.0, float(clip.get("duration") or s["end"])),
                     "estimated": bool((s.get("quality") or {}).get("estimated")),
@@ -352,6 +381,8 @@ def direct_plan(inp: dict) -> tuple[list[dict], dict, list[dict]]:
     share = SPEECH_SHARE.get(concept.get("rhythm", ""), 0.5) if has_speech and has_broll else (1.0 if has_speech else 0.0)
     hook_first = float((concept.get("hook") or {}).get("first_seconds") or 3)
     bud = budgets(arc, target, hook_first)
+    opener = arc[0] if arc and arc[0] in hook_roles() else None
+    talk_first = has_speech and speech_first(brief, concept)
     used: list[dict] = []
     used_shots_broll: set = set()
     shot_uses: dict = {}
@@ -359,11 +390,12 @@ def direct_plan(inp: dict) -> tuple[list[dict], dict, list[dict]]:
     plan: list[dict] = []
     totals = {"speech": 0.0, "broll": 0.0}
     carry = 0.0
-    for role in arc:
+    for ri, role in enumerate(arc):
         budget = bud[role] + carry
         filled = 0.0
         picks = []
         for _ in range(40):
+            opening = ri == 0 and opener is not None and not picks     # the first 3 s: judged as a hook
             remaining = budget - filled
             if remaining < max(0.4, lo * 0.5):
                 break
@@ -371,9 +403,11 @@ def direct_plan(inp: dict) -> tuple[list[dict], dict, list[dict]]:
             for c in cands:
                 if ranges_overlap(c, used) or (c["kind"] == "broll" and c["shot"] in used_shots_broll):
                     continue
+                if opening and talk_first and c["kind"] != "speech":
+                    continue
                 if c["kind"] == "speech":
                     cc = c
-                    slack = 1.6 if role == "hook" else 1.25
+                    slack = 1.6 if role == "hook" or opening else 1.25
                     if c["dur"] > remaining * slack + 0.5:
                         cc = trim_speech(c, remaining * slack + 0.3)
                         if cc is None:
@@ -382,8 +416,8 @@ def direct_plan(inp: dict) -> tuple[list[dict], dict, list[dict]]:
                     if remaining < lo * 0.6:
                         continue
                     cc = fit_broll(c, remaining if remaining < hi else hi, lo, hi)
-                s, en, ar = score(cc, role, bud.get("hook", 3.0))
-                if role != "hook" and 0 < share < 1:
+                s, en, ar = score(cc, "hook" if opening else role, bud.get("hook", 3.0))
+                if role != "hook" and not opening and 0 < share < 1:
                     done = totals["speech"] + totals["broll"]
                     cur = totals["speech"] / done if done else share
                     want_speech = cur < share
@@ -405,6 +439,8 @@ def direct_plan(inp: dict) -> tuple[list[dict], dict, list[dict]]:
                 break
             _, cc, en, ar, s = best
             cc = dict(cc, role=role, why_en=en, why_ar=ar, score=round(s, 3))
+            if opening:
+                cc["hook"] = True
             used.append(cc)
             picks.append(cc)
             if cc["kind"] == "broll":
@@ -418,11 +454,15 @@ def direct_plan(inp: dict) -> tuple[list[dict], dict, list[dict]]:
             if role == "hook":
                 break
         carry = budget - filled
-        plan += order_role(picks, role)
+        if picks and picks[0].get("hook"):
+            plan += picks[:1] + order_role(picks[1:], role)
+        else:
+            plan += order_role(picks, role)
     meta = {"concept": concept.get("id"), "arc": arc, "target_seconds": target, "pacing": [lo, hi], "pacing_why": pace_why,
             "speech_share_target": share, "budgets": {k: round(v, 2) for k, v in bud.items()},
             "candidates": len(cands), "candidates_speech": sum(c["kind"] == "speech" for c in cands),
-            "candidates_broll": sum(c["kind"] == "broll" for c in cands)}
+            "candidates_broll": sum(c["kind"] == "broll" for c in cands), "opener": opener,
+            "hook_roles": sorted(hook_roles())}
     return plan, meta, cands
 
 
@@ -568,6 +608,8 @@ def to_events(plan: list[dict]) -> list[dict]:
               "role": p["role"], "kind": p["kind"], "shot": p.get("shot"), "score": p["score"]}
         if p["kind"] == "speech":
             ev["text"] = p["text"]
+        if p.get("hook"):
+            ev["hook"] = True
         evs.append(ev)
     return evs
 
@@ -629,11 +671,6 @@ def direct(job: Path) -> dict:
 
 
 # ---------------------------------------------------------------------------- --apply-review
-def _num(detail: str, default: float) -> float:
-    m = re.search(r"(-?\d+(?:\.\d+)?)", detail or "")
-    return float(m.group(1)) if m else default
-
-
 def _word_safe(clip: dict, t: float, *, side: str) -> float:
     """Move t out of any word: to the gap before (side='in') or after (side='out')."""
     for w in clip.get("words") or []:
@@ -643,37 +680,110 @@ def _word_safe(clip: dict, t: float, *, side: str) -> float:
     return r3(t)
 
 
+FIX_ORDER = {"drop": 0, "swap": 1, "trim": 2, "retime": 3, "extend": 4, "regrade": 5, "add": 6}
+MIN_KEEP = {"speech": 0.8, "broll": 0.3}
+
+
+
+def _shot_bounds(clip: dict, ev: dict) -> tuple[float, float]:
+    for sh in clip.get("shots") or []:
+        if sh.get("id") == ev.get("shot"):
+            return float(sh["start"]), float(sh["end"])
+    mid = (float(ev["src_in"]) + float(ev["src_out"])) / 2
+    sh = shot_at(clip, mid)
+    return (float(sh["start"]), float(sh["end"])) if sh else (0.0, float(clip.get("duration") or ev["src_out"]))
+
+
+def _neighbour_limits(ev: dict, events: list[dict]) -> tuple[float, float]:
+    """Source range this event may grow into without overlapping another event from the same clip."""
+    lo, hi = 0.0, float("inf")
+    for o in events:
+        if o is ev or o["clip"] != ev["clip"]:
+            continue
+        if o["src_out"] <= ev["src_in"] + 1e-6:
+            lo = max(lo, float(o["src_out"]))
+        elif o["src_in"] >= ev["src_out"] - 1e-6:
+            hi = min(hi, float(o["src_in"]))
+    return lo, hi
+
+
+def extend_event(ev: dict, clip: dict, events: list[dict], secs: float) -> float:
+    """Grow an event by ~secs: b-roll inside its shot (tail first, then head), speech to the next word gap."""
+    n_lo, n_hi = _neighbour_limits(ev, events)
+    dur = float(clip.get("duration") or ev["src_out"])
+    a0, b0 = float(ev["src_in"]), float(ev["src_out"])
+    if ev.get("kind") == "speech":
+        words = sorted(clip.get("words") or [], key=lambda w: float(w["start"]))
+        nxt = [w for w in words if float(w["start"]) >= b0 - 0.02]
+        b = b0
+        for i, w in enumerate(nxt):
+            if is_filler(w) or float(w["end"]) > min(n_hi - 0.02, dur):
+                break
+            follow = float(nxt[i + 1]["start"]) if i + 1 < len(nxt) else dur
+            b = min(float(w["end"]) + 0.12, (float(w["end"]) + follow) / 2, n_hi - 0.02, dur)
+            if b - b0 >= secs:
+                break
+        ev["src_out"] = r3(max(b, b0))
+    else:
+        s_lo, s_hi = _shot_bounds(clip, ev)
+        b = min(b0 + secs, s_hi, n_hi, dur)
+        a = max(a0 - max(0.0, secs - (b - b0)), s_lo, n_lo, 0.0)
+        ev["src_in"], ev["src_out"] = r3(a), r3(b)
+    return (float(ev["src_out"]) - float(ev["src_in"])) - (b0 - a0)
+
+
 def apply_review(job: Path) -> dict:
     inp = load_inputs(job)
-    analysis = inp["analysis"]
+    analysis, brief = inp["analysis"], inp["brief"]
     review = dm.read(job, "review")
     edl = dm.read(job, "edl")
     rev = int(edl.get("revision", 0))
     (job / f"edl.r{rev}.json").write_text(json.dumps(edl, ensure_ascii=False, indent=2), encoding="utf-8")
     edl = copy.deepcopy(edl)
+    meta = edl.setdefault("meta", {})
+    dropped = meta.setdefault("dropped_ranges", [])       # never re-add what a review threw out
     clips = dm_edl.clip_index(analysis)
     by_id = {e["id"]: e for e in edl["events"]}
     applied, skipped = [], []
     rnd = review.get("round", rev + 1)
     tag_en, tag_ar = f"review r{rnd}", f"مراجعة {rnd}"
-    for fx in review.get("fixes") or []:
+    fixes = sorted(review.get("fixes") or [], key=lambda f: FIX_ORDER.get(f.get("action"), 9))
+    drop_ids = {f.get("event") for f in fixes if f.get("action") == "drop"}
+    for fx in fixes:
         act, eid, detail = fx.get("action"), fx.get("event"), str(fx.get("detail", ""))
         if eid in (None, "*"):
             if act == "regrade":
                 tgt = fx.get("target", "grade")
                 if tgt == "audio":
                     edl["audio"]["target_lufs"] = float(fx.get("lufs", edl["audio"].get("target_lufs", -14)))
-                    edl["audio"].setdefault("limiter_tp", -1.0)
+                    # each failed round lowers the ceiling a little more, so a repeated fix is not a no-op
+                    tp = float(edl["audio"].get("limiter_tp", -1.0))
+                    edl["audio"]["limiter_tp"] = max(-3.0, round(tp - 0.5, 2)) if fx.get("check") == "audio-clipping" else tp
+                elif tgt == "captions":
+                    cap = edl.setdefault("captions", {})
+                    if fx.get("min_bottom") is not None or fx.get("check") == "safe-area":
+                        cap["min_bottom_frac"] = max(float(cap.get("min_bottom_frac") or 0),
+                                                     float(fx.get("min_bottom") or 0.24))
+                    if fx.get("check") == "caption-coverage":
+                        cap["enabled"] = True
+                    cap["note"] = detail
+                elif tgt == "encode":
+                    edl.setdefault("render_hints", {})["encode"] = detail
                 else:
                     edl["grade"] = {**edl.get("grade", {}), **({"id": fx["grade"]} if fx.get("grade") else {}),
                                     "note": detail}
                 applied.append({**fx, "result": f"global {tgt}"})
+            elif act == "add":
+                applied.append({**fx, "result": "re-fill toward target (below)"})
             else:
-                skipped.append({**fx, "why": "global fix without an event only supports regrade"})
+                skipped.append({**fx, "why": "global fix without an event only supports regrade/add"})
             continue
         ev = by_id.get(eid)
         if ev is None:
-            skipped.append({**fx, "why": "unknown event"})
+            skipped.append({**fx, "why": "unknown or already dropped event"})
+            continue
+        if act != "drop" and eid in drop_ids:
+            skipped.append({**fx, "why": "event is dropped in this round"})
             continue
         clip = clips.get(ev["clip"], {})
         speech = ev.get("kind") == "speech"
@@ -681,26 +791,44 @@ def apply_review(job: Path) -> dict:
         if act == "drop":
             edl["events"].remove(ev)
             by_id.pop(eid)
+            dropped.append({"clip": ev["clip"], "src_in": ev["src_in"], "src_out": ev["src_out"],
+                            "check": fx.get("check"), "round": rnd})
             applied.append({**fx, "result": "dropped"})
             continue
         if act == "trim":
             if "src_in" in fx or "src_out" in fx:
                 a = float(fx.get("src_in", ev["src_in"]))
                 b = float(fx.get("src_out", ev["src_out"]))
-            else:
-                secs = _num(detail, 0.5)
-                head = bool(re.search(r"head|start|أول|بداية|البداية", detail))
+            elif fx.get("seconds") is not None:
+                secs = float(fx["seconds"])
+                head = fx.get("side") in ("head", "in", "start")
                 a, b = (ev["src_in"] + secs, ev["src_out"]) if head else (ev["src_in"], ev["src_out"] - secs)
+            else:   # never guess a number out of the prose `detail`
+                skipped.append({**fx, "why": "trim without structured src_in/src_out/seconds"})
+                continue
+            # several trims on one event narrow it together; they never widen it back
+            a, b = max(a, float(ev["src_in"])), min(b, float(ev["src_out"]))
             if speech:
                 a, b = _word_safe(clip, a, side="in"), _word_safe(clip, b, side="out")
-            if b - a < 0.3:
-                skipped.append({**fx, "why": "trim would leave < 0.3 s"})
+            if b - a < MIN_KEEP["speech" if speech else "broll"]:
+                skipped.append({**fx, "why": f"trim would leave < {MIN_KEEP['speech' if speech else 'broll']} s"})
                 continue
             ev["src_in"], ev["src_out"] = r3(a), r3(b)
             note = f"trimmed to {a:.2f}-{b:.2f}"
+        elif act == "extend":
+            if fx.get("seconds") is None:
+                skipped.append({**fx, "why": "extend without structured seconds"})
+                continue
+            secs = float(fx["seconds"])
+            got = extend_event(ev, clip, edl["events"], max(0.1, secs))
+            if got < 0.05:
+                skipped.append({**fx, "why": "no room to extend inside the shot/next word"})
+                continue
+            note = f"extended +{got:.2f}s to {ev['src_in']:.2f}-{ev['src_out']:.2f}"
         elif act == "retime":
-            if "speed" in fx:
-                ev["speed"] = max(0.5, min(2.0, float(fx["speed"])))
+            spd = fx.get("speed")
+            if spd is not None:
+                ev["speed"] = max(0.5, min(2.0, float(spd)))
                 note = f"speed {ev['speed']}"
             elif "rec_at" in fx:
                 # move this event's out-cut to output time rec_at by changing its src_out
@@ -716,28 +844,41 @@ def apply_review(job: Path) -> dict:
                 ev["src_out"] = r3(b)
                 note = f"cut moved to {float(fx['rec_at']):.2f}s"
             else:
-                ev["speed"] = max(0.5, min(2.0, _num(detail, 1.0)))
-                note = f"speed {ev['speed']}"
+                skipped.append({**fx, "why": "retime without an explicit speed or rec_at"})
+                continue
         elif act == "regrade":
             ev["grade"] = {"id": fx.get("grade") or detail or "neutral"}
             note = f"grade {ev['grade']['id']}"
         elif act == "swap":
-            new = swap_source(ev, edl, inp, fx.get("with_shot") or fx.get("with"))
+            if fx.get("role") == "hook" or fx.get("check") == "hook-in-3s":
+                new = hook_swap(ev, edl, inp, fx.get("kind"), dropped)
+            else:
+                new = swap_source(ev, edl, inp, fx.get("with_shot") or fx.get("with"), dropped)
             if new is None:
                 skipped.append({**fx, "why": "no unused replacement"})
                 continue
             ev.update(new)
-            note = f"swapped to {ev['shot']}"
+            if new.get("hook"):
+                edl["events"].remove(ev)
+                edl["events"].insert(0, ev)
+            note = f"swapped to {ev['shot']} {ev['src_in']:.2f}-{ev['src_out']:.2f}"
         else:
             skipped.append({**fx, "why": f"unknown action {act}"})
             continue
         ev["reason"] += f"; {tag_en}: {act} ({fx.get('check', detail)[:60]}) {note} | {tag_ar}: {act}"
         applied.append({**fx, "result": note})
     dm_edl.reflow(edl)
+    target = float(brief.get("target_seconds") or meta.get("target_seconds") or edl["duration"])
+    for ev in refill(edl, inp, target, dropped):
+        applied.append({"event": ev["id"], "action": "add", "check": "duration", "by": "direct",
+                        "detail": f"re-fill toward {target:.0f}s", "result": f"added {ev['kind']} {ev['clip']} "
+                        f"{ev['src_in']:.2f}-{ev['src_out']:.2f} as {ev['role']}"})
     edl["revision"] = rev + 1
+    meta["deviation_pct"] = round(100 * (edl["duration"] - target) / max(0.1, target), 1)
+    meta["events"] = len(edl["events"])
     hist = edl.setdefault("history", [])
     hist.append({"revision": rev + 1, "from": f"edl.r{rev}.json", "review_round": rnd,
-                 "applied": applied, "skipped": skipped})
+                 "applied": applied, "skipped": skipped, "duration": edl["duration"]})
     problems = dm_edl.check(edl)
     if problems:
         raise SystemExit("edl check failed after review: " + "; ".join(problems))
@@ -745,7 +886,132 @@ def apply_review(job: Path) -> dict:
     return edl
 
 
-def swap_source(ev: dict, edl: dict, inp: dict, with_shot: str | None) -> dict | None:
+def _plan_for(c: dict, role: str, en: str, ar: str, s: float, **extra) -> dict:
+    return dict(c, role=role, why_en=en, why_ar=ar, score=round(s, 3), **extra)
+
+
+def hook_swap(ev: dict, edl: dict, inp: dict, kind: str | None, dropped: list[dict]) -> dict | None:
+    """Replace the opening event with the best hook candidate. Talking content -> a spoken line, never b-roll."""
+    brief, concept = inp["brief"], chosen_concept(inp["concepts"])
+    lo, hi, _ = pacing_range(brief, concept, inp["reference"])
+    cands = build_candidates(inp["analysis"], brief, concept, lo, hi)
+    others = [e for e in edl["events"] if e is not ev]
+    has_sp = any(c["kind"] == "speech" for c in cands)
+    want = kind or ("speech" if has_sp else "broll")
+    used_texts = [tokens(e.get("text", "")) for e in others if e.get("kind") == "speech"]
+    used_shots = {e.get("shot") for e in others if e.get("kind") == "broll"}
+    best = None
+    for c in cands:
+        if c["kind"] != want or ranges_overlap(c, others) or ranges_overlap(c, dropped):
+            continue
+        if c["kind"] == "broll" and c["shot"] in used_shots:
+            continue
+        cc = c
+        if c["kind"] == "speech":
+            if c["dur"] > 6.0:
+                cc = trim_speech(c, 5.5)
+                if cc is None:
+                    continue
+            toks = tokens(cc["text"])
+            if any(len(toks & u) / max(1, len(toks | u)) >= 0.6 for u in used_texts):
+                continue
+        else:
+            cc = fit_broll(c, min(3.0, hi), lo, hi)
+        s, en, ar = score(cc, "hook", 3.0)
+        if cc.get("cta"):
+            s -= 0.6
+        key = (round(s, 6), -cc["order"], -cc["src_in"])
+        if best is None or key > best[0]:
+            best = (key, cc, en, ar)
+    if best is None:
+        return None
+    _, c, en, ar = best
+    role = ev.get("role") if ev.get("role") in hook_roles() else "hook"
+    out = {"clip": c["clip"], "shot": c["shot"], "src_in": c["src_in"], "src_out": c["src_out"], "kind": c["kind"],
+           "role": role, "hook": True, "speed": 1.0,
+           "reason": f"{role}: {en} (hook swap) | {ROLE_AR.get(role, role)}: {ar} (استبدال للهوك)"}
+    if c["kind"] == "speech":
+        out["text"] = c["text"]
+    else:
+        ev.pop("text", None)
+    return out
+
+
+def refill(edl: dict, inp: dict, target: float, dropped: list[dict]) -> list[dict]:
+    """After drops/trims, add the best unused candidates back until the cut is near brief.target_seconds.
+
+    Fixes must never shrink the edit far below the target: each pick is scored for the middle arc roles, the
+    speech/b-roll mix of the concept is kept, nothing the review dropped comes back, and the hook stays first."""
+    brief, concept = inp["brief"], chosen_concept(inp["concepts"])
+    arc = list(concept.get("arc") or ["hook", "setup", "turn", "payoff", "cta"])
+    lo, hi, _ = pacing_range(brief, concept, inp["reference"])
+    cands = build_candidates(inp["analysis"], brief, concept, lo, hi)
+    has_sp = any(c["kind"] == "speech" for c in cands)
+    has_br = any(c["kind"] == "broll" for c in cands)
+    share = SPEECH_SHARE.get(concept.get("rhythm", ""), 0.5) if has_sp and has_br else (1.0 if has_sp else 0.0)
+    hr = hook_roles()
+    roles = [r for r in arc if r not in hr and r not in ("cta", "outro")] or [r for r in arc if r not in hr] or arc
+    rank = {r: i for i, r in enumerate(arc)}
+    added: list[dict] = []
+    dm_edl.reflow(edl)
+    next_id = max([int(e["id"][1:]) for e in edl["events"] if re.fullmatch(r"e\d+", e["id"])] + [0]) + 1
+    for _ in range(40):
+        gap = target - edl["duration"]
+        if gap <= target * REFILL_TOL or gap < 0.5:
+            break
+        evs = edl["events"]
+        used_texts = [tokens(e.get("text", "")) for e in evs if e.get("kind") == "speech"]
+        used_shots = {e.get("shot") for e in evs if e.get("kind") == "broll"}
+        sp_s = sum(dm_edl.event_seconds(e) for e in evs if e.get("kind") == "speech")
+        tot = sum(dm_edl.event_seconds(e) for e in evs) or 1.0
+        want_speech = (sp_s / tot) < share
+        best = None
+        for c in cands:
+            if ranges_overlap(c, evs) or ranges_overlap(c, dropped):
+                continue
+            if c["kind"] == "speech":
+                cc = c
+                if c["dur"] > gap * 1.25 + 0.5:
+                    cc = trim_speech(c, gap * 1.25 + 0.3)
+                    if cc is None:
+                        continue
+                toks = tokens(cc["text"])
+                if any(len(toks & u) / max(1, len(toks | u)) >= 0.6 for u in used_texts):
+                    continue
+            else:
+                if c["shot"] in used_shots or gap < lo * 0.6:
+                    continue
+                cc = fit_broll(c, min(gap, hi), lo, hi)
+            role, s, en, ar = max(((r, *score(cc, r, 3.0)) for r in roles), key=lambda x: x[1])
+            if 0 < share < 1:
+                s += 0.4 if (cc["kind"] == "speech") == want_speech else -0.15
+            if cc.get("trimmed"):
+                s -= 0.15
+            if cc.get("cta"):
+                s -= 0.6
+            key = (round(s, 6), -cc["order"], -cc["src_in"])
+            if best is None or key > best[0]:
+                best = (key, cc, role, en, ar, s)
+        if best is None:
+            break
+        _, cc, role, en, ar, s = best
+        ev = to_events([_plan_for(cc, role, en, ar, s)])[0]
+        ev["id"] = f"e{next_id:03d}"
+        next_id += 1
+        ev["reason"] += " (re-filled after review | اتضافت بعد المراجعة عشان المدة)"
+        # place it at the end of its arc section; index 0 (the hook) never moves
+        pos = 1
+        for i, e in enumerate(evs):
+            if i and rank.get(e.get("role"), 0) <= rank.get(role, 0):
+                pos = i + 1
+        evs.insert(max(1, min(pos, len(evs))), ev)
+        dm_edl.reflow(edl)
+        added.append(ev)
+    return added
+
+
+def swap_source(ev: dict, edl: dict, inp: dict, with_shot: str | None,
+                dropped: list[dict] | None = None) -> dict | None:
     brief = inp["brief"]
     concept = chosen_concept(inp["concepts"])
     lo, hi, _ = pacing_range(brief, concept, inp["reference"])
@@ -755,7 +1021,7 @@ def swap_source(ev: dict, edl: dict, inp: dict, with_shot: str | None) -> dict |
     want = dm_edl.event_seconds(ev)
     pool = []
     for c in cands:
-        if ranges_overlap(c, others) or c["kind"] != ev.get("kind", c["kind"]):
+        if ranges_overlap(c, others) or ranges_overlap(c, dropped or []) or c["kind"] != ev.get("kind", c["kind"]):
             continue
         if with_shot and c.get("shot") != with_shot:
             continue
@@ -774,6 +1040,7 @@ def swap_source(ev: dict, edl: dict, inp: dict, with_shot: str | None) -> dict |
 
 # ---------------------------------------------------------------------------- cli
 def main(argv=None) -> int:
+    dm.utf8_stdio()
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     d = sub.add_parser("direct")

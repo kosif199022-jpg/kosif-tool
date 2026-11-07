@@ -42,23 +42,53 @@ def r3(x: float) -> float:
 
 
 # --------------------------------------------------------------------------- core helpers
+_TRANSITIONS = None
+
+
+def _transition_table() -> dict:
+    """data/transitions.json (shared vocabulary): normalised id/alias -> {xfade, seconds}."""
+    global _TRANSITIONS
+    if _TRANSITIONS is None:
+        _TRANSITIONS = {}
+        try:
+            doc = json.loads((dm.SKILL / "data" / "transitions.json").read_text(encoding="utf-8"))
+            items = doc if isinstance(doc, list) else next(
+                (v for v in doc.values() if isinstance(v, list) and v and isinstance(v[0], dict)), [])
+            for it in items:
+                if not isinstance(it, dict) or not it.get("id"):
+                    continue
+                for k in [it["id"], *(it.get("aliases") or [])]:
+                    _TRANSITIONS.setdefault(str(k).strip().lower().replace("_", "-"), it)
+        except (OSError, ValueError, StopIteration):
+            pass
+    return _TRANSITIONS
+
+
 def xfade_name(tr: dict | None) -> str | None:
-    """'xfade-fade' / 'fade' / {'xfade':'wipeleft'} -> ffmpeg xfade name, or None for a hard cut."""
+    """'xfade-fade' / 'fade' / {'xfade':'wipeleft'} / a data/transitions.json id or alias ('whip-pan')
+    -> ffmpeg xfade name, or None for a hard cut. The render station uses the same answer."""
     if not tr:
         return None
-    name = tr.get("xfade") or tr.get("type") or tr.get("id") or "cut"
-    name = str(name)
-    if name.startswith("xfade-"):
-        name = name[len("xfade-"):]
-    return name if name in XFADE else None
+    raw = str(tr.get("xfade") or tr.get("type") or tr.get("id") or "cut")
+    name = raw[len("xfade-"):] if raw.startswith("xfade-") else raw
+    if name in XFADE:
+        return name
+    ent = _transition_table().get(raw.strip().lower().replace("_", "-"))
+    xf = (ent or {}).get("xfade")
+    return str(xf) if xf and xf != "cut" else None
 
 
 def overlap(ev: dict) -> float:
-    """Seconds this event overlaps the previous one (xfade), 0 for a cut."""
+    """Seconds this event overlaps the previous one (xfade), 0 for a cut. Without explicit seconds the
+    transitions.json default for that transition is used, else 0.25."""
     tr = ev.get("transition_in") or {}
     if xfade_name(tr) is None:
         return 0.0
-    return float(tr.get("seconds", tr.get("duration", 0.25)))
+    secs = tr.get("seconds", tr.get("duration"))
+    if secs is None:
+        ent = _transition_table().get(str(tr.get("id") or "").strip().lower().replace("_", "-")) or {}
+        secs = ent.get("seconds") or 0.25
+    return float(secs)
 
 
 def event_seconds(ev: dict) -> float:
@@ -324,6 +354,7 @@ def to_nle(edl: dict, analysis: dict, out_dir: str | Path, *, name: str = "drago
 
 # --------------------------------------------------------------------------- cli
 def main(argv=None) -> int:
+    dm.utf8_stdio()
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     cv = sub.add_parser("convert")
