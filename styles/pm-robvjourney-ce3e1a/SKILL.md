@@ -1,6 +1,6 @@
 ---
 name: pm-robvjourney-ce3e1a
-description: A 15-second brand promo on black with lime accents for a studio building companies run by AI agents: a terminal prompt, lime scan lines, a headline beside a pixel-dot hand, a dot-matrix 95% that bursts into particles, an inverted white card with a tilted ticker tape, an agent runtime log switching to running with counters, a row of four portfolio cards, a particle vortex and the logo end card.
+description: A 15-second brand promo on black with lime accents for a studio building companies run by AI agents: a terminal prompt, lime scan lines, a headline beside a pixel-dot hand, a dot-matrix 95% that bursts into particles, an inverted white card with a tilted ticker tape, an agent runtime log switching to running with counters, a row of four portfolio cards, a particle vortex and the logo end card. Use to make a new video in this look (Charts); address it by ID pm-robvjourney-ce3e1a.
 ---
 
 # KOSIF TOOL — Nohandslabs brand promo / برومو Nohandslabs: العمل يمضي بلا أيدٍ

@@ -1,10 +1,14 @@
 {
   "id": "pm-slvdev-64c45a",
   "name": "Claude self-promo spot",
-  "name_ar": null,
+  "name_ar": "إعلان مرح بألوان صريحة: ماذا تريد أن تصنع؟ تطبيق، قصة، لعبة",
   "origin": "PromptsMotion",
   "type": "Prompt",
-  "category": [],
+  "category": [
+    "kinetic-type",
+    "shapes",
+    "ads"
+  ],
   "creator": "@slvDev",
   "creator_url": "https://x.com/slvDev/status/2103569170075975986",
   "page": "https://www.promptsmotion.com/slvdev-64c45a",
@@ -23,5 +27,37 @@
   "source_prompt_words": 5,
   "listed": true,
   "skill": "styles/pm-slvdev-64c45a/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "إعلان مدته 18 ثانية بألوان أساسية جريئة: سؤال بخط أسود عريض وكلمته الأخيرة على كبسولة حمراء بين أشكال هندسية طافية، ثم مشهد لكل نوع من الأشياء بلون خلفية خاص (تطبيق على هاتف أزرق، قصة على أصفر، خطة عمل بأعمدة على أخضر، لعبة على برتقالي، موقع على وردي، إصلاح كود على أسود)، ثم سيل كلمات، ثم «فقط اطلب»، فبطاقة تتراجع لتكشف كل المشاهد وتنتهي بالاسم وزر.",
+  "summary_en": "An 18-second playful spot in bold primary colours: a heavy black question with its last word on a red pill among floating shapes, then one colour world per idea (an app on a blue phone, a story on yellow, a bar chart on green, a block game on orange, a website on pink, a code fix on black), a word burst, 'just ask', and a name card with a button.",
+  "keywords": [
+    "brand ad",
+    "playful",
+    "colour wipes",
+    "primary colours",
+    "floating shapes",
+    "spring motion",
+    "what can you make",
+    "word burst",
+    "end card",
+    "إعلان علامة",
+    "مرح",
+    "مسحات لونية",
+    "ألوان أساسية",
+    "أشكال طافية",
+    "حركة نابضة"
+  ],
+  "difficulty": 3,
+  "duration_s": 18,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/pm-slvdev-64c45a/BRIEF.md"
 }

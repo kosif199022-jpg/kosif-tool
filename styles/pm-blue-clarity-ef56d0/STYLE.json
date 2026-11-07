@@ -1,14 +1,14 @@
 {
   "id": "pm-blue-clarity-ef56d0",
   "name": "Particle sphere motion reel",
-  "name_ar": null,
+  "name_ar": "شوريل موشن 15 ثانية: كرة ترتد، تايبو ضخم، أشكال تتحول، وجسيمات كرة وحلقة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type",
     "shapes",
-    "particles"
+    "particles",
+    "kinetic-type",
+    "3d"
   ],
   "creator": "@blue_clarity",
   "creator_url": "https://x.com/blue_clarity/status/2103564589065449603",
@@ -29,9 +29,37 @@
   "listed": true,
   "skill": "styles/pm-blue-clarity-ef56d0/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md",
     "playbooks/shapes.md",
-    "playbooks/particles.md"
-  ]
+    "playbooks/particles.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/3d.md"
+  ],
+  "summary_ar": "شوريل موشن ديزاين سريع (15 ثانية) بألوان برتقالي وأزرق كهربائي وكحلي وأصفر: كرة برتقالية ترتد على محاور قياس بظلال حركتها، شعار تايبو ضخم بثلاثة أسطر على شرائط ألوان، مربع يتحول لمثلث ثم نجمة ثم زهرة بحلقات ملونة، عاصفة جسيمات تكوّن كلمة، كرة نقاط ثلاثية الأبعاد تتحول لحلقة، شبكة تسع بطاقات حركة صغيرة، ثم بطاقة اسم بخط ملون متعدد الأجزاء.",
+  "summary_en": "A fast 15 s motion-design showreel in orange, electric blue, navy and yellow: a bouncing ball with onion-skin ghosts, a three-line poster headline, a square morphing through triangle, star and flower, particles assembling a word, a 3D point sphere morphing into a torus, a nine-tile grid of micro animations and a name card.",
+  "keywords": [
+    "motion showreel",
+    "bouncing ball",
+    "squash and stretch",
+    "shape morph",
+    "particle text",
+    "point sphere",
+    "micro animations",
+    "easing curve",
+    "شوريل",
+    "كرة ترتد",
+    "تحول الأشكال",
+    "جسيمات",
+    "تايبو ضخم",
+    "أساسيات الحركة"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "HTML Canvas",
+    "Three.js"
+  ],
+  "brief": "styles/pm-blue-clarity-ef56d0/BRIEF.md"
 }

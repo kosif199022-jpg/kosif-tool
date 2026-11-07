@@ -1,9 +1,9 @@
 ---
 name: scroll-world
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A video that mimics scrolling through an award-style interactive website: the camera descends or advances through one continuous world, sections pin then transform, 3D objects rotate in step with scroll progress, text blocks reveal per section, with a slim progress bar and scroll hint. Use to make a new video in this look (3D); address it by ID scroll-world.
 ---
 
-# KOSIF TOOL — عالم تمرير
+# KOSIF TOOL — عالم تمرير / عالم متصل يتكشف مع التمرير
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+فيديو يحاكي التمرير في موقع تفاعلي فاخر: الكاميرا تنزل أو تتقدم داخل عالم واحد متصل، مقاطع تثبت ثم تتحول، عناصر ثلاثية الأبعاد تدور مع تقدم التمرير، ونصوص تظهر في أقسام، مع شريط تقدم ومؤشر تمرير صغير.
+
+A video that mimics scrolling through an award-style interactive website: the camera descends or advances through one continuous world, sections pin then transform, 3D objects rotate in step with scroll progress, text blocks reveal per section, with a slim progress bar and scroll hint.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, GSAP), suggested duration (32 s), aspect 9:16, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: 3D / ثلاثي الأبعاد, Product UI / واجهات المنتج.

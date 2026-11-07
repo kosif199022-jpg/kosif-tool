@@ -1,9 +1,9 @@
 ---
 name: pm-madhav-xo-f97f20
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 10-second personal intro on near-black blue: a terminal compiles and runs a file, then achievements flash every half second as glowing particle forms (neural net, planes, padlock, data, tournament bracket, servers) above condensed white captions, before a light streak becomes a huge chrome name with a role line and italic tagline. Use to make a new video in this look (Particles); address it by ID pm-madhav-xo-f97f20.
 ---
 
-# KOSIF TOOL — Personal research intro reel
+# KOSIF TOOL — Personal research intro reel / مقدمة شخصية بأسلوب طرفية وجسيمات ثلاثية الأبعاد
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/madhav-xo-f97f20
@@ -17,12 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+مقدمة شخصية مدتها 10 ثوانٍ على أزرق ليلي شبه أسود: سطر أوامر طرفية يترجم ملفاً ويشغّله، ثم سلسلة إنجازات سريعة كل نحو نصف ثانية، كل منها شكل من جسيمات متوهجة (شبكة عصبية، طبقات متراصة، سحابة، قفل، أعمدة بيانات، قرص، شجرة بطولة، ورقة تتحول إلى خوادم) فوق عنوان أبيض مكثف، ثم خط ضوئي يتحول إلى اسم ضخم بتدرج معدني وسطر وصف وشعار مائل.
+
+A 10-second personal intro on near-black blue: a terminal compiles and runs a file, then achievements flash every half second as glowing particle forms (neural net, planes, padlock, data, tournament bracket, servers) above condensed white captions, before a light streak becomes a huge chrome name with a role line and italic tagline.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, React, Remotion), suggested duration (10 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Characters / شخصيات.
-- [playbooks/characters.md](../../playbooks/characters.md)
+Categories: Particles / جسيمات, Kinetic type / تايبوغرافي متحرك, Code / كود.
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,9 +1,9 @@
 ---
 name: pm-wozu-co-242285
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 14 s 16:9 product launch on a near-white grey background where short lines resolve word by word out of blur, message notifications float around a red app icon, the camera pushes into a dark desktop app where a pricing card's number updates, then simple icon vignettes (a bowl, an orange folder, a line linking three icons) explain each benefit before the logo end card. Use to make a new video in this look (Product UI); address it by ID pm-wozu-co-242285.
 ---
 
-# KOSIF TOOL — Supasito launch video
+# KOSIF TOOL — Supasito launch video / فيديو إطلاق منتج نظيف بفقرات قصيرة وعناوين تتضح من الضبابية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/wozu-co-242285
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #43
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+فيديو إطلاق 16:9 مدته نحو 14 ثانية على خلفية رمادية فاتحة جداً، تتضح فيه جمل قصيرة كلمة بكلمة من ضبابية، ثم تتطاير إشعارات رسائل حول أيقونة التطبيق الحمراء، وتقترب الكاميرا من نافذة تطبيق داكنة يتغيّر فيها سعر في بطاقة التسعير، ثم أيقونات بسيطة لكل ميزة (وعاء، مجلد برتقالي، خط يربط ثلاث أيقونات) وتنتهي بالشعار.
+
+A 14 s 16:9 product launch on a near-white grey background where short lines resolve word by word out of blur, message notifications float around a red app icon, the camera pushes into a dark desktop app where a pricing card's number updates, then simple icon vignettes (a bowl, an orange folder, a line linking three icons) explain each benefit before the logo end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG), suggested duration (14 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج.

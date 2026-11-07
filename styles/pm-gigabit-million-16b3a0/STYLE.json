@@ -1,11 +1,13 @@
 {
   "id": "pm-gigabit-million-16b3a0",
   "name": "Steam new releases news recap",
-  "name_ar": null,
+  "name_ar": "ملخص إخباري لإصدارات ألعاب جديدة ببطاقات داكنة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts"
+    "product-ui",
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@gigabit_million",
   "creator_url": "https://x.com/gigabit_million/status/2104068536041959719",
@@ -26,6 +28,34 @@
   "listed": true,
   "skill": "styles/pm-gigabit-million-16b3a0/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
-  ]
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
+  ],
+  "summary_ar": "ملخص إخباري مدته دقيقة واحدة لست ألعاب جديدة صدرت في يومين، بنص ياباني على خلفية كحلية داكنة: بطاقة عنوان بأرقام الألعاب الست، ثم لكل لعبة نحو 7 ثوانٍ تخطيط ثابت (العنوان والوصف والنقاط المهمة يساراً، ورسم توضيحي متحرك داخل إطار بزوايا مضيئة يميناً، وشريط سعر وتقييم أسفل) بلون مميز لكل لعبة، ثم جدول ملخص من ست خانات وسطر توصية.",
+  "summary_en": "A one-minute news recap of six new game releases, in Japanese on dark navy: a title card with six numbered chips, then about 7 s per game in one fixed layout (title, tagline and bullets left, an animated illustration in a corner-bracket frame right, a fact strip below) with its own accent colour, then a summary table.",
+  "keywords": [
+    "news recap",
+    "game releases",
+    "weekly roundup",
+    "card template",
+    "dark UI",
+    "bullet reveal",
+    "summary table",
+    "Japanese",
+    "ملخص إخباري",
+    "إصدارات ألعاب",
+    "نشرة أسبوعية",
+    "قالب بطاقات",
+    "واجهة داكنة"
+  ],
+  "difficulty": 3,
+  "duration_s": 60,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/pm-gigabit-million-16b3a0/BRIEF.md"
 }

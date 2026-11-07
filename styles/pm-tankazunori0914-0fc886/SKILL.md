@@ -1,9 +1,9 @@
 ---
 name: pm-tankazunori0914-0fc886
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 30-second beat-synced type film on charcoal with an orange glow and HUD frame: a Japanese 'what day is it?' types on, an orange box hops across seven day tiles until it locks on Friday, a giant FRIDAY slams in with RGB glitch over a text marquee, then a date/week/day-of-year data panel and a big orange Japanese answer. Use to make a new video in this look (Kinetic type); address it by ID pm-tankazunori0914-0fc886.
 ---
 
-# KOSIF TOOL — What day is it
+# KOSIF TOOL — What day is it / ما يوم اليوم؟ تقويم يبحث على الإيقاع حتى الجمعة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/tankazunori0914-0fc886
@@ -17,13 +17,20 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيلم تايبوغرافي مدته 30 ثانية على خلفية فحمية بوهج برتقالي وإطار واجهة تقنية بأرقام صغيرة: سؤال ياباني يُكتب بمؤشر برتقالي، ثم صف من سبع خانات أيام يقفز فيه إطار تحديد برتقالي يميناً ويساراً حتى يستقر على الجمعة، فتنفجر كلمة FRIDAY ضخمة بتشويش لوني وشريط نص متكرر في الخلفية، ثم لوحة بيانات (التاريخ، رقم الأسبوع، يوم السنة بشريط تقدم) وختام بالجواب الياباني الكبير.
+
+A 30-second beat-synced type film on charcoal with an orange glow and HUD frame: a Japanese 'what day is it?' types on, an orange box hops across seven day tiles until it locks on Friday, a giant FRIDAY slams in with RGB glitch over a text marquee, then a date/week/day-of-year data panel and a big orange Japanese answer.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, Web Audio), suggested duration (30 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Music / موسيقى.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Music / موسيقى.
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 - [playbooks/music.md](../../playbooks/music.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
 
 ## Original creative direction (التوجيه الإبداعي)

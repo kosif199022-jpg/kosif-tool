@@ -1,6 +1,6 @@
 ---
 name: pm-quickdesignio-dd93d0
-description: A 15-second promo for an AI ad generator: a typed question, a lime-glow URL input, a wall of twelve product ads, a before/after product shot, a UGC phone video, rapid cuts of toolkit words, a growth line chart drawing on, a lime tile-grid wipe and a pixel-logo typing lockup.
+description: A 15-second promo for an AI ad generator: a typed question, a lime-glow URL input, a wall of twelve product ads, a before/after product shot, a UGC phone video, rapid cuts of toolkit words, a growth line chart drawing on, a lime tile-grid wipe and a pixel-logo typing lockup. Use to make a new video in this look (Charts); address it by ID pm-quickdesignio-dd93d0.
 ---
 
 # KOSIF TOOL — QuickDesign brand promo / ترويج علامة QuickDesign: السرعة كحجّة بصرية

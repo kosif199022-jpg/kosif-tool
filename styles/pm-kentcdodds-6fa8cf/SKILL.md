@@ -1,9 +1,9 @@
 ---
 name: pm-kentcdodds-6fa8cf
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A short dark AI-tool promo (10 s clip available): huge 're-' words swap colour every beat beside tilted chat windows from different assistants, a three-line sentence cycles assistant names and lands on green 'every agent', then a 3D koala mascot appears on golden light rays beside an intro headline. Use to make a new video in this look (Kinetic type); address it by ID pm-kentcdodds-6fa8cf.
 ---
 
-# KOSIF TOOL — 30-second motion promo for Kody
+# KOSIF TOOL — 30-second motion promo for Kody / إعلان مساعد يحفظ سياقك: «إعادة» متكررة ثم الشخصية بطلاً
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/kentcdodds-6fa8cf
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+مقطع داكن قصير (المتاح منه 10 ثوانٍ) لإعلان أداة ذكاء اصطناعي: كلمات ضخمة تبدأ ببادئة «إعادة» تتبدل كل ثلث ثانية بلون مختلف (مرجاني، بنفسجي، أزرق، أبيض) بجانب نوافذ دردشة مائلة لمساعدين مختلفين، ثم جملة من ثلاثة أسطر يتبدل آخرها بين أسماء المساعدين وينتهي بالأخضر، ثم دمية كوالا ثلاثية الأبعاد بأشعة ذهبية بجانب عنوان التعريف.
+
+A short dark AI-tool promo (10 s clip available): huge 're-' words swap colour every beat beside tilted chat windows from different assistants, a three-line sentence cycles assistant names and lands on green 'every agent', then a 3D koala mascot appears on golden light rays beside an intro headline.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (30 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Product UI / واجهات المنتج, Characters / شخصيات.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

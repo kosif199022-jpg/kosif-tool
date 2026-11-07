@@ -1,9 +1,9 @@
 ---
 name: pm-francoxavier33-d2dfd2
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 28-second vertical app ad on a cream-to-peach gradient: big serif headlines type in with a caret and an orange italic word on a brush highlight, a phone agenda rises in, task and 'done while you slept' cards pop, helper cards stack, helpers join a group thread one by one, a grocery list ticks off under food photos, a benefits list, then the app icon. Use to make a new video in this look (Product UI); address it by ID pm-francoxavier33-d2dfd2.
 ---
 
-# KOSIF TOOL — Parenting app hype video
+# KOSIF TOOL — Parenting app hype video / إعلان تطبيق للأهل: مساعدون أذكياء بعناوين سيريف دافئة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/francoxavier33-d2dfd2
@@ -17,12 +17,27 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان عمودي مدته 28 ثانية لتطبيق مساعدين للأهل على خلفية كريمية بتدرج خوخي: عناوين سيريف كبيرة تُكتب بمؤشر وكلمة مائلة برتقالية مسطرة بفرشاة، هاتف بشاشة يوم الجمعة يدخل من الأسفل، إشعار «تم» وشارة «أنجزت وأنت نائم»، بطاقات مساعدين تتراص، محادثة جماعية ينضم إليها المساعدون واحداً تلو الآخر، قائمة تسوق تُشطب بنودها وصور طعام، قائمة فوائد، ثم أيقونة التطبيق.
+
+A 28-second vertical app ad on a cream-to-peach gradient: big serif headlines type in with a caret and an orange italic word on a brush highlight, a phone agenda rises in, task and 'done while you slept' cards pop, helper cards stack, helpers join a group thread one by one, a grocery list ticks off under food photos, a benefits list, then the app icon.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, Web Audio), suggested duration (28 s), aspect 886x1920, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج.
+Categories: Product UI / واجهات المنتج, Phone / هاتف, Kinetic type / تايبوغرافي متحرك, Photos / صور, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/phone.md](../../playbooks/phone.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

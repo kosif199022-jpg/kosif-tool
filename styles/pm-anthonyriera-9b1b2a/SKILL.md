@@ -1,9 +1,9 @@
 ---
 name: pm-anthonyriera-9b1b2a
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 53-second launch video on black for a Reddit marketing tool, led by a spiky red hedgehog-like mascot: it appears and introduces itself, links to five colourful avatar accounts, karma bars fill, a giant pixel logo, drafted posts and replies with a checklist, a glowing copilot-to-autopilot flip, a browser that runs tasks on its own, search and chatbot results, and a text-and-logo finale. Use to make a new video in this look (Product UI); address it by ID pm-anthonyriera-9b1b2a.
 ---
 
-# KOSIF TOOL — Reddit marketing tool launch video
+# KOSIF TOOL — Reddit marketing tool launch video / إطلاق أداة تسويق على ريديت بتميمة شائكة حمراء
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/anthonyriera-9b1b2a
@@ -17,6 +17,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #180
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+فيديو إطلاق مدته 53 ثانية على خلفية سوداء لأداة تسويق عبر ريديت، تقوده تميمة حمراء شائكة مثل القنفذ: تظهر وتُعرّف بنفسها، تتصل بخمسة حسابات بصور ملونة، أشرطة سمعة تمتلئ، شعار بكسل ضخم، منشورات وردود مكتوبة مع قائمة تحقق، تحوّل متوهج من «مساعد» إلى «طيار آلي»، متصفح يُنفّذ المهام وحده، نتائج بحث ومحادثة ذكاء اصطناعي، وختام نصي بالشعار.
+
+A 53-second launch video on black for a Reddit marketing tool, led by a spiky red hedgehog-like mascot: it appears and introduces itself, links to five colourful avatar accounts, karma bars fill, a giant pixel logo, drafted posts and replies with a checklist, a glowing copilot-to-autopilot flip, a browser that runs tasks on its own, search and chatbot results, and a text-and-logo finale.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (53 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Diagrams / مخططات, Characters / شخصيات, Music / موسيقى, Code / كود.

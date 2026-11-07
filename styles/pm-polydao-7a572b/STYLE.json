@@ -1,13 +1,14 @@
 {
   "id": "pm-polydao-7a572b",
   "name": "Jev engineering showreel",
-  "name_ar": null,
+  "name_ar": "عرض هندسي بطابع بروتاليست وردي وأزرق ونقاط هافتون",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
     "kinetic-type",
-    "music"
+    "charts",
+    "diagrams",
+    "ads"
   ],
   "creator": "@polydao",
   "creator_url": "https://x.com/polydao/status/2103783134206566862",
@@ -28,8 +29,37 @@
   "listed": true,
   "skill": "styles/pm-polydao-7a572b/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
     "playbooks/kinetic-type.md",
-    "playbooks/music.md"
-  ]
+    "playbooks/charts.md",
+    "playbooks/diagrams.md",
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "فيديو شرح تقني مدته 24 ثانية على خلفية كريمية بنقاط هافتون وردية وزرقاء: نافذة طرفية يُكتب فيها سؤال وجواب طويل، جدار من النوافذ يتكاثر مع عداد قرارات وعنوان بأشرطة سوداء ووردية، شعار ضخم بخط ثقيل، ثلاث بطاقات بإطارات وظلال صلبة، أشرطة احتمالات ومقاييس، شلال قرارات من أربع طبقات، مقارنة زمن وسعر، رقم ضخم مهتز، ثم بطاقة ختام وردية كاملة.",
+  "summary_en": "A 24-second neo-brutalist tech explainer on cream with pink and blue halftone blobs: a terminal typing a long answer, a multiplying window wall with a decision counter under slab headlines, a huge heavy wordmark, hard-shadow cards, probability bars and gauges, a four-layer cascade, a time-and-cost race, a blurred giant multiplier and a magenta end card.",
+  "keywords": [
+    "neo-brutalist",
+    "halftone",
+    "developer explainer",
+    "terminal typing",
+    "probability bars",
+    "decision cascade",
+    "cost comparison",
+    "big numbers",
+    "slab headline",
+    "نيو بروتاليست",
+    "هافتون",
+    "شرح تقني",
+    "أرقام كبيرة",
+    "مقارنة التكلفة",
+    "عناوين عريضة"
+  ],
+  "difficulty": 3,
+  "duration_s": 24,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/pm-polydao-7a572b/BRIEF.md"
 }

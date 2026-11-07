@@ -1,7 +1,7 @@
 {
   "id": "glass-ui",
   "name": "واجهة زجاجية",
-  "name_ar": "واجهة زجاجية",
+  "name_ar": "واجهات زجاجية شفافة فوق تدرجات لونية",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,29 @@
   "playbooks": [
     "playbooks/product-ui.md",
     "playbooks/shapes.md"
-  ]
+  ],
+  "summary_ar": "بطاقات واجهة من زجاج مصنفر شفاف تطفو فوق كتل لونية متدرجة تتحرك ببطء: حدود لامعة رفيعة، ضبابية خلفية، أيقونات ومؤشرات تنبثق داخل البطاقات، انعكاس ضوء ينزلق على الزجاج، وحركة ناعمة هادئة لعرض التطبيقات والمزايا.",
+  "summary_en": "Frosted glass UI cards float over slowly drifting colour gradient blobs: thin glossy borders, background blur, icons and stats popping inside the cards, a light reflection gliding over the glass and calm, smooth easing for presenting apps and features.",
+  "keywords": [
+    "glassmorphism",
+    "glass ui",
+    "frosted glass",
+    "gradient blobs",
+    "app ad",
+    "ui cards",
+    "واجهة زجاجية",
+    "زجاج مصنفر",
+    "بطاقات واجهة",
+    "إعلان تطبيق",
+    "تدرجات لونية",
+    "واجهات"
+  ],
+  "difficulty": 3,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/glass-ui/BRIEF.md"
 }

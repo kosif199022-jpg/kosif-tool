@@ -1,9 +1,9 @@
 ---
 name: pm-crazyalphaaa-bc7e75
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second motion-designer showreel on grainy dark viewfinder frames: an orange ball drops and squashes, giant principle words slam over flat orange, blue and lime fields, a square grid ripples, an easing curve races three balls, a polygon tunnel dissolves into particles, pink liquid blobs split, and the ball becomes the logo dot beside the name. Use to make a new video in this look (Kinetic type); address it by ID pm-crazyalphaaa-bc7e75.
 ---
 
-# KOSIF TOOL — Claude motion designer showreel
+# KOSIF TOOL — Claude motion designer showreel / شوريل مصمم موشن: كرة ساقطة، كلمات المبادئ، وشعار يولد من نقطة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/crazyalphaaa-bc7e75
@@ -17,14 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شوريل مدته 15 ثانية لـ«مصمم موشن» على شاشة داكنة محببة بإطار عدسة وأرقام وقت: كرة برتقالية تسقط وتنضغط على خط، ثم عناوين ضخمة على ألوان مسطحة متبدلة (برتقالي، أزرق، ليموني) لكلمات المبادئ، شبكة مربعات تتموج كموجة، منحنى تخفيف بثلاث كرات تتسابق، نفق مضلعات ملونة يتحول إلى سحابة جسيمات، كتل سائلة وردية تنفصل، ثم تتحول الكرة إلى شعار بجانب الاسم.
+
+A 15-second motion-designer showreel on grainy dark viewfinder frames: an orange ball drops and squashes, giant principle words slam over flat orange, blue and lime fields, a square grid ripples, an easing curve races three balls, a polygon tunnel dissolves into particles, pink liquid blobs split, and the ball becomes the logo dot beside the name.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas, Three.js), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, 3D / ثلاثي الأبعاد.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

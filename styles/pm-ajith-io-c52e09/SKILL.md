@@ -1,9 +1,9 @@
 ---
 name: pm-ajith-io-c52e09
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 40-second product video on warm white: a handwritten opener, a book-spine logo, three steps under a tri-colour progress bar (drop a file, edit a narration script, watch a hand-drawn plant illustration build with word-highlighted captions), then a pulled-back wall of thumbnails, a phone frame, a huge language count and a logo end card. Use to make a new video in this look (Product UI); address it by ID pm-ajith-io-c52e09.
 ---
 
-# KOSIF TOOL — Distilbook product video
+# KOSIF TOOL — Distilbook product video / فيديو منتج يحوّل الملفات إلى شرح مرسوم باليد بثلاث خطوات
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/ajith-io-c52e09
@@ -17,15 +17,22 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو منتج مدته 40 ثانية على خلفية بيضاء دافئة: سطر افتتاحي بخط يدوي، شعار بأشرطة كتب ملونة، ثم ثلاث خطوات بشريط تقدم ثلاثي الألوان أعلى الشاشة (رفع ملف بسحبه إلى منطقة الإسقاط، مراجعة نص التعليق وتعديل كلمة، ومشاهدة رسم يدوي ملون لنبتة يُبنى مع ترجمة تُبرز الكلمات)، ثم شطب نصي، وجدار مصغرات يتراجع بالكاميرا، وإطار هاتف عمودي، وعدد ضخم للغات، وختام بالشعار وزر رابط.
+
+A 40-second product video on warm white: a handwritten opener, a book-spine logo, three steps under a tri-colour progress bar (drop a file, edit a narration script, watch a hand-drawn plant illustration build with word-highlighted captions), then a pulled-back wall of thumbnails, a phone frame, a huge language count and a logo end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (40 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+Categories: Product UI / واجهات المنتج, Hand-drawn / رسم يدوي, Kinetic type / تايبوغرافي متحرك.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/hand-drawn.md](../../playbooks/hand-drawn.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Order stroke draw-on like a human hand would; keep imperfection deliberate; pace reveals to narration.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)

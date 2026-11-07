@@ -1,9 +1,9 @@
 ---
 name: pm-marklaunches-3b9492
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 44 s 4:5 vertical app ad on deep black with glowing neon lime: a pulsing dot and dawn clock, a huge wide step counter climbing as footprints walk up, a five-lane race with countdown and racer icons nearing a checkered finish until the win, then a flat dusk mountain the team climbs along a lime path, ending on a walking-figure logo and download button. Use to make a new video in this look (Product UI); address it by ID pm-marklaunches-3b9492.
 ---
 
-# KOSIF TOOL — Step race app promo
+# KOSIF TOOL — Step race app promo / إعلان تطبيق خطوات بنيون ليموني: سباق مع الأصدقاء ثم تسلّق جبل معاً
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/marklaunches-3b9492
@@ -17,12 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان عمودي 4:5 مدته نحو 44 ثانية على أسود عميق بنيون ليموني متوهج: نقطة تنبض ووقت الفجر، عدّاد خطوات ضخم بخط عريض ممدود يتصاعد مع آثار أقدام، ثم سباق بخمسة مسارات وعدّاد تنازلي وأيقونات متسابقين تتقدم نحو خط النهاية المربّع حتى الفوز، ثم مشهد جبل مسطح عند الغروب يصعده الفريق بخط ليموني حتى القمة، وينتهي بشعار رجل يمشي وزر تحميل.
+
+A 44 s 4:5 vertical app ad on deep black with glowing neon lime: a pulsing dot and dawn clock, a huge wide step counter climbing as footprints walk up, a five-lane race with countdown and racer icons nearing a checkered finish until the win, then a flat dusk mountain the team climbs along a lime path, ending on a walking-figure logo and download button.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (44 s), aspect 4:5, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج.
+Categories: Product UI / واجهات المنتج, Ads / إعلانات, Phone / هاتف.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
+- [playbooks/phone.md](../../playbooks/phone.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
+* Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,12 +1,14 @@
 {
   "id": "pm-blushpetal795-0c85c2",
   "name": "Recruiter self-intro reel",
-  "name_ar": null,
+  "name_ar": "تعريف ذاتي سريع بالأرقام بالأسود والبرتقالي",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "charts",
-    "kinetic-type"
+    "kinetic-type",
+    "photos",
+    "particles"
   ],
   "creator": "@blushpetal795",
   "creator_url": "https://x.com/blushpetal795/status/2103744870041170220",
@@ -28,6 +30,35 @@
   "skill": "styles/pm-blushpetal795-0c85c2/SKILL.md",
   "playbooks": [
     "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/photos.md",
+    "playbooks/particles.md"
+  ],
+  "summary_ar": "فيديو تعريف ذاتي مدته 15 ثانية بالأسود والبرتقالي الناري: خط برتقالي يرسم ثم اسم ضخم يحل فيه دائرة برتقالية محل حرف، صورة شخصية في حلقة مع نص دائري يدور، ثم أرقام إنجاز عملاقة تتوالى كل نصف ثانية تقريباً مع رسم صغير لكل منها (شبكة نقاط، أعمدة، حلقة تقدم، أيقونات أشخاص)، خريطة جسيمات لمدن، بطاقات مهارات متطايرة، وبطاقة تواصل برتقالية.",
+  "summary_en": "A 15-second self-intro reel in black and fiery orange: an orange line draws, then a huge name where an orange dot replaces a letter, a portrait in a ring with rotating circular text, then giant achievement numbers firing about every half second each with a mini graphic (dot grid, bars, progress ring, people icons), a particle city map, tossed skill cards and an orange contact card.",
+  "keywords": [
+    "self intro",
+    "personal brand",
+    "resume reel",
+    "stats",
+    "big numbers",
+    "black and orange",
+    "progress ring",
+    "particle map",
+    "skill cards",
+    "تعريف ذاتي",
+    "سيرة ذاتية",
+    "أرقام إنجاز",
+    "أسود وبرتقالي",
+    "علامة شخصية"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "HTML Canvas"
+  ],
+  "brief": "styles/pm-blushpetal795-0c85c2/BRIEF.md"
 }

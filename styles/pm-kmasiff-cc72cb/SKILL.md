@@ -1,9 +1,9 @@
 ---
 name: pm-kmasiff-cc72cb
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 20-second landscape SaaS ad alternating glowing dark violet and pale lavender grounds: a headline with a red-struck word, an email input card that types an address and steps through checks to an 85/100 score, six tinted glass result tiles, then a pill tab bar flipping through list upload, signup form, API, agent chat, integrations and terminal, ending on the logo and URL. Use to make a new video in this look (Product UI); address it by ID pm-kmasiff-cc72cb.
 ---
 
-# KOSIF TOOL — Email verification tool promo
+# KOSIF TOOL — Email verification tool promo / إعلان أداة تحقق من البريد بواجهات بيضاء نظيفة وخلفيات بنفسجية داكنة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/kmasiff-cc72cb
@@ -17,16 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان منتج أفقي (20 ثانية) يتبادل بين خلفية بنفسجية داكنة متوهجة وأخرى لافندر فاتحة: عنوان بكلمة مشطوبة بالأحمر، بطاقة إدخال بريد تُكتب فيها عنوان وخطوات فحص تتقدم ثم نتيجة 85/100، ست بطاقات زجاجية ملونة لأنواع النتائج، ثم شريط تبويبات يقلب بين رفع ملف وحماية نموذج تسجيل وطلب برمجي ومحادثة وكيل ومخطط تكاملات وطرفية، ويختم بثلاث مزايا والشعار والرابط.
+
+A 20-second landscape SaaS ad alternating glowing dark violet and pale lavender grounds: a headline with a red-struck word, an email input card that types an address and steps through checks to an 85/100 score, six tinted glass result tiles, then a pill tab bar flipping through list upload, signup form, API, agent chat, integrations and terminal, ending on the logo and URL.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (20 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Characters / شخصيات.
+Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

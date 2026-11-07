@@ -1,9 +1,9 @@
 ---
 name: pm-gizakdag-cf4ae6
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second vertical reel in a camcorder HUD: one yellow dot on navy, then neon rings and a spinning wireframe orbited by italic doubt phrases, a saturated surreal collage under a huge drop-shadowed title, dreamy illustrated scenes with typewriter caption strips, a glitchy repeated-word blowout, and a calm black 'breathe.' end card. Use to make a new video in this look (Kinetic type); address it by ID pm-gizakdag-cf4ae6.
 ---
 
-# KOSIF TOOL — Overthinking motion study
+# KOSIF TOOL — Overthinking motion study / دراسة حركة عن الإفراط في التفكير: كولاج سريالي ملون بإطار كاميرا
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/gizakdag-cf4ae6
@@ -17,14 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+ريل عمودي مدته 15 ثانية بإطار كاميرا تسجيل وتايم كود وعدّاد أفكار: نقطة صفراء واحدة على الكحلي تصبح «فكرة واحدة»، ثم دوامة دوائر نيون وشبكة برتقالية تدور حولها عبارات التردد بخط مائل، فكولاج سريالي مشبع (تمثال بعينين زرقاوين وزهور وأشعة) تحت عنوان ضخم ثلاثي الظلال، ومشاهد لوحات حالمة مع شرائط نصية بخط آلة كاتبة، وانفجار تكرار للكلمة بتشويش ألوان، وختام هادئ على الأسود بدائرة وكلمة «تنفّس».
+
+A 15-second vertical reel in a camcorder HUD: one yellow dot on navy, then neon rings and a spinning wireframe orbited by italic doubt phrases, a saturated surreal collage under a huge drop-shadowed title, dreamy illustrated scenes with typewriter caption strips, a glitchy repeated-word blowout, and a calm black 'breathe.' end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG, HTML Canvas, Web Audio), suggested duration (15 s), aspect 9:16, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Photos / صور.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

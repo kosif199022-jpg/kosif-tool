@@ -1,11 +1,15 @@
 {
   "id": "pm-sudo-kiran-49176d",
   "name": "Claude motion design showreel",
-  "name_ar": null,
+  "name_ar": "شوريل موشن ملون في 15 ثانية: مدارات، نقاط، سائل، جسيمات وواجهة بنتو",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type"
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "product-ui",
+    "charts"
   ],
   "creator": "@sudo_kiran",
   "creator_url": "https://x.com/sudo_kiran/status/2103463886372696074",
@@ -26,6 +30,40 @@
   "listed": true,
   "skill": "styles/pm-sudo-kiran-49176d/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/product-ui.md",
+    "playbooks/charts.md"
+  ],
+  "summary_ar": "شوريل مدته 15 ثانية بإطار كاميرا تسجيل (زوايا وتوقيت ونقطة REC) وألوان زاهية جريئة (أحمر مرجاني وأخضر ليموني وبنفسجي وأزرق على أسود حبري أو ورق فاتح): نقطة تنفجر في مدارات ملونة، ثم جملة كلمة بكلمة بخط عريض جداً على خلفيات تتبدل، ثم شبكة نقاط هافتون تتموج بالألوان، ثم كتلة سائلة متدرجة خلف كلمة مفرغة، ثم سحب نقاط ثلاثية الأبعاد بخطوط تعليق، ثم لوحة واجهة بنتو بأرقام ومخططات تتحرك، وتنتهي ببطاقة اسم بشعار تسجيل.",
+  "summary_en": "A 15 s colourful showreel in a camera-viewfinder HUD using coral, lime, violet and blue on ink black or warm paper: a dot bursting into orbit rings, ultra-bold words on switching backgrounds, a rippling halftone dot grid, a gradient fluid blob behind a knockout word, morphing 3D point clouds, a counting bento UI, and a name card.",
+  "keywords": [
+    "showreel",
+    "motion design reel",
+    "halftone dots",
+    "fluid blob",
+    "point cloud",
+    "bento UI",
+    "viewfinder HUD",
+    "colourful",
+    "شوريل",
+    "تايب حركي",
+    "نقاط هافتون",
+    "كتلة سائلة",
+    "جسيمات",
+    "واجهة بنتو",
+    "ألوان زاهية"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "Three.js",
+    "SVG",
+    "HTML Canvas",
+    "CSS"
+  ],
+  "brief": "styles/pm-sudo-kiran-49176d/BRIEF.md"
 }

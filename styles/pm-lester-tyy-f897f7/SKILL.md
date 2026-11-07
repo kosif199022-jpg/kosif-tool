@@ -1,9 +1,9 @@
 ---
 name: pm-lester-tyy-f897f7
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 76-second search demo in clean white UI: a query types into a rounded bar with a pink-violet glow, dozens of event posters cascade up from the bottom, one zooms into a detail card with fanned photos and buttons, then a black title card, a run of everyday queries each bringing new posters, and a 'Try now?' end card. Use to make a new video in this look (Product UI); address it by ID pm-lester-tyy-f897f7.
 ---
 
-# KOSIF TOOL — CloudJoi search showcase
+# KOSIF TOOL — CloudJoi search showcase / عرض محرك بحث الفعاليات: شريط بحث وملصقات تتدفق كشلال
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/lester-tyy-f897f7
@@ -17,6 +17,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #150
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+عرض منتج مدته 76 ثانية بأسلوب واجهة بيضاء نظيفة: شعار فوق شريط بحث مستدير بحافة متدرجة وردية بنفسجية، يُكتب فيه سؤال عن الخروج في المدينة فتنهمر عشرات ملصقات الفعاليات من الأسفل وتصطف شريطاً، ثم يتكبر ملصق واحد إلى بطاقة تفاصيل تتبدل حولها الصور مع أزرار إعادة ومعلومات وإعجاب، ثم بطاقة عنوان سوداء ووابل من استعلامات جديدة يُكتب كل منها وتتدفق تحته ملصقات مختلفة، وينتهي بسؤال «جرّب الآن؟» والرابط.
+
+A 76-second search demo in clean white UI: a query types into a rounded bar with a pink-violet glow, dozens of event posters cascade up from the bottom, one zooms into a detail card with fanned photos and buttons, then a black title card, a run of everyday queries each bringing new posters, and a 'Try now?' end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, Web Audio), suggested duration (76 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج.

@@ -1,6 +1,6 @@
 ---
 name: pm-ceowinkz-7c776b
-description: A 15-second B2B pitch from an Amazon wholesale company to brands, on a navy ground with a HUD frame and floating dust: a W logo inside a cyan ring drawing on, a red problem act (too many sellers, price sliding) with a Buy Box card whose price counts down, then a cyan solution act: price protected, a $10,000 paid-upfront order, a before/after listing rebuild, one product branching to three marketplaces, and a growth line whose arrow flies into the final logo.
+description: A 15-second B2B pitch from an Amazon wholesale company to brands, on a navy ground with a HUD frame and floating dust: a W logo inside a cyan ring drawing on, a red problem act (too many sellers, price sliding) with a Buy Box card whose price counts down, then a cyan solution act: price protected, a $10,000 paid-upfront order, a before/after listing rebuild, one product branching to three marketplaces, and a growth line whose arrow flies into the final logo. Use to make a new video in this look (Charts); address it by ID pm-ceowinkz-7c776b.
 ---
 
 # KOSIF TOOL — Amazon wholesale pitch video / عرض Winkz: لماذا نبيع منتجاتكم على أمازون

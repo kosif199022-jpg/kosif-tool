@@ -1,9 +1,9 @@
 ---
 name: pm-ho-ba-f3f0e9
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 30-second markdown-editor intro on warm cream: '# Wri' types in mono and morphs into a big serif headline with a terracotta italic word, floating chips, a symbol burst into the logo, an editor typing beside its live preview, numbered feature cards, then a dark-mode wipe to an icon grid with 'Fast.' and 'Free.' and a logo end card. Use to make a new video in this look (Product UI); address it by ID pm-ho-ba-f3f0e9.
 ---
 
-# KOSIF TOOL — mdfor.dev product intro video
+# KOSIF TOOL — mdfor.dev product intro video / فيديو تعريفي دافئ لمحرر ماركداون بخط سيريف مائل
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/ho-ba-f3f0e9
@@ -17,18 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو تعريفي مدته 30 ثانية لمحرر ماركداون على خلفية كريمية دافئة: «# Wri» تُكتب بخط أحادي ثم تتحول إلى عنوان سيريف كبير مع كلمة مائلة بلون الطين، شارات صغيرة تطفو حوله، انفجار رموز إلى الشعار، ثم نافذة المحرر تُكتب وتُعاين جنباً إلى جنب، وأربع بطاقات ميزات بعناوين مرقمة، ونصف الفيديو الأخير يغطس في وضع داكن وشبكة أيقونات بكلمتي «Fast.» و«Free.» قبل بطاقة ختام.
+
+A 30-second markdown-editor intro on warm cream: '# Wri' types in mono and morphs into a big serif headline with a terracotta italic word, floating chips, a symbol burst into the logo, an editor typing beside its live preview, numbered feature cards, then a dark-mode wipe to an icon grid with 'Fast.' and 'Free.' and a logo end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG), suggested duration (30 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Music / موسيقى.
+Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/music.md](../../playbooks/music.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

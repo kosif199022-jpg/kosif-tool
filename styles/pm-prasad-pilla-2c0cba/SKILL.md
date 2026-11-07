@@ -1,9 +1,9 @@
 ---
 name: pm-prasad-pilla-2c0cba
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second product promo on soft off-white: a black word-by-word headline with a lime-highlighted word over a dashed line jamming at an hourglass, a logo, four linked step cards lighting up in turn, a full lime wipe, a memory hub beside agent task bars, a verification loop beside a before/after strip, and a logo end card with underlined tagline. Use to make a new video in this look (Product UI); address it by ID pm-prasad-pilla-2c0cba.
 ---
 
-# KOSIF TOOL — Alan agent platform promo
+# KOSIF TOOL — Alan agent platform promo / إعلان منصة وكلاء برمجة بواجهة بيضاء هادئة ولمسات ليمونية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/prasad-pilla-2c0cba
@@ -17,12 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان منتج مدته 15 ثانية على خلفية بيضاء رمادية ناعمة: عنوان أسود يكشف كلماته تدريجياً مع كلمة مظللة بالليموني فوق خط متقطع يختنق عند ساعة رملية، ثم شعار، ثم أربع بطاقات خطوات متصلة (تخطيط، بناء، تحقق، شحن) تضيء بالتتابع، ومسح ليموني كامل، ولوحتان جنباً إلى جنب لعقدة ذاكرة وقائمة مهام بأشرطة تقدم، وحلقة تحقق مقابل مقارنة قبل وبعد، وختام بالشعار وعنوان مسطّر ورابط.
+
+A 15-second product promo on soft off-white: a black word-by-word headline with a lime-highlighted word over a dashed line jamming at an hourglass, a logo, four linked step cards lighting up in turn, a full lime wipe, a memory hub beside agent task bars, a verification loop beside a before/after strip, and a logo end card with underlined tagline.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Product UI / واجهات المنتج, Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك.
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/diagrams.md](../../playbooks/diagrams.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

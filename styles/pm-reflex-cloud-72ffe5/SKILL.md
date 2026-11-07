@@ -1,6 +1,6 @@
 ---
 name: pm-reflex-cloud-72ffe5
-description: A 15-second tech brand reel cut to the beat: a halftone macro eye with a HUD tag, a giant typewriter-style 'act', a squiggle path from see to act, a frame counter climbing beside a spinning blurred film strip, frequency waves on red then cyan with a spectrum bar, an extruded 3D 'f' on violet and a mono logo lockup.
+description: A 15-second tech brand reel cut to the beat: a halftone macro eye with a HUD tag, a giant typewriter-style 'act', a squiggle path from see to act, a frame counter climbing beside a spinning blurred film strip, frequency waves on red then cyan with a spectrum bar, an extruded 3D 'f' on violet and a mono logo lockup. Use to make a new video in this look (Charts); address it by ID pm-reflex-cloud-72ffe5.
 ---
 
 # KOSIF TOOL — Reflex brand motion reel / ريفلكس: ريل رد الفعل في خمس عشرة ثانية

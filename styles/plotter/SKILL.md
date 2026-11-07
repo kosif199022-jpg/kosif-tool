@@ -1,9 +1,9 @@
 ---
 name: plotter
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: Technical black-and-orange motion graphics drawn as if by a pen plotter: thin white lines plotted on a dark grid, white Arabic headlines with one orange word, easing curves, timeline diagrams and code typing, wireframe 3D shapes, and interludes on off-white paper styled like official forms with typewriter text and a red strike-through. Use to make a new video in this look (Hand-drawn); address it by ID plotter.
 ---
 
-# KOSIF TOOL — قلم البلوتر
+# KOSIF TOOL — قلم البلوتر / قلم البلوتر: موشن تقني أسود وبرتقالي
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/plotter
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+موشن جرافيك تقني بالأسود والبرتقالي كأنه مرسوم بقلم بلوتر: خطوط رفيعة بيضاء تُرسم على شبكة داكنة، عناوين عربية بيضاء بكلمة برتقالية، منحنيات تسهيل ومخططات زمنية وكود يُكتب، أشكال سلكية ثلاثية، وفواصل ورقية بيضاء كاستمارات رسمية بخط آلة كاتبة وخط أحمر يشطب.
+
+Technical black-and-orange motion graphics drawn as if by a pen plotter: thin white lines plotted on a dark grid, white Arabic headlines with one orange word, easing curves, timeline diagrams and code typing, wireframe 3D shapes, and interludes on off-white paper styled like official forms with typewriter text and a red strike-through.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Three.js), suggested duration (120 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Hand-drawn / رسم يدوي, Shapes / أشكال.

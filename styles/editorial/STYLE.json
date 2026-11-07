@@ -1,7 +1,7 @@
 {
   "id": "editorial",
   "name": "مونتاج تحريري",
-  "name_ar": "مونتاج تحريري",
+  "name_ar": "مونتاج تحريري بطابع المجلات: صور مقصوصة وعناوين كبيرة وشبكة",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,31 @@
   "playbooks": [
     "playbooks/kinetic-type.md",
     "playbooks/photos.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي بطابع صفحات المجلات الراقية: صور بالأبيض والأسود أو بألوان هادئة داخل أقنعة مستطيلة تنكشف، عناوين عربية كبيرة بخط نسخ أنيق، أرقام صفحات وتعليقات صغيرة على شبكة أعمدة دقيقة، وخلفية ورقية فاتحة.",
+  "summary_en": "A vertical reel styled like an upscale magazine spread: black-and-white or muted photos revealed inside rectangular masks, large Arabic headlines in an elegant Naskh face, small captions and folio numbers on a precise column grid, over a light paper background.",
+  "keywords": [
+    "editorial",
+    "magazine",
+    "layout",
+    "grid",
+    "photo essay",
+    "typography",
+    "mask reveal",
+    "تحريري",
+    "مجلة",
+    "مونتاج",
+    "تصميم صفحات",
+    "صور",
+    "عناوين",
+    "شبكة"
+  ],
+  "difficulty": 2,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/editorial/BRIEF.md"
 }

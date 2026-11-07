@@ -1,9 +1,9 @@
 ---
 name: pm-tequilafunks-97f6c9
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A fast 15 s motion-designer showreel in an editor-style HUD, locked to orange, electric blue and cream on black: a graph-editor curve easing into an S, heavy wide words resolving with blur, spinning quarter-circle tiles, an isometric voxel ring, particle streaks forming a sphere, verbs that act out their meaning, and a name card. Use to make a new video in this look (Kinetic type); address it by ID pm-tequilafunks-97f6c9.
 ---
 
-# KOSIF TOOL — Claude motion design reel
+# KOSIF TOOL — Claude motion design reel / شوريل مصمم موشن في 15 ثانية: منحنى، تايب، بلاطات، فوكسل، جسيمات
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/tequilafunks-97f6c9
@@ -17,14 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شوريل سريع مدته 15 ثانية بإطار واجهة برنامج مونتاج (توقيت وأرقام فصول وزوايا محددة) وثلاثة ألوان فقط (برتقالي وأزرق كهربائي وكريمي على أسود): منحنى تسارع في محرر الرسوم يتحول من خط مستقيم إلى منحنى S، ثم كلمات عريضة ضخمة تتشكل بتمويه حركي فوق خلفية برتقالية وأخرى سوداء بنص متكرر، ثم بلاطات أرباع دوائر تدور، ثم مدينة فوكسل متساوية القياس، ثم خيوط جسيمات تلتف إلى كرة، ثم كلمات حركة، وتنتهي ببطاقة اسم بسيطة.
+
+A fast 15 s motion-designer showreel in an editor-style HUD, locked to orange, electric blue and cream on black: a graph-editor curve easing into an S, heavy wide words resolving with blur, spinning quarter-circle tiles, an isometric voxel ring, particle streaks forming a sphere, verbs that act out their meaning, and a name card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, SVG, HTML Canvas), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, 3D / ثلاثي الأبعاد.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

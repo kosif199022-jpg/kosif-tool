@@ -1,12 +1,12 @@
 {
   "id": "pm-loicrambo-ad6830",
   "name": "Cycle of life animation",
-  "name_ar": null,
+  "name_ar": "دورة الحياة في عشرين ثانية على خط نبض واحد",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "characters",
+    "shapes"
   ],
   "creator": "@loicRambo",
   "creator_url": "https://x.com/loicRambo/status/2103428454355980558",
@@ -27,7 +27,34 @@
   "listed": true,
   "skill": "styles/pm-loicrambo-ad6830/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/characters.md",
+    "playbooks/shapes.md"
+  ],
+  "summary_ar": "رسوم مسطحة مدتها 20 ثانية تحكي عمر إنسان على خط أرض واحد يبدأ وينتهي كخط نبض: رضيع ثم طفل في حديقة مشمسة، مراهق بلوح تزلج في مشهد ريترو بنفسجي، موظف يركض داخل عجلة هامستر أمام مدينة رمادية وشبكة أيام متكررة، قلب حب، عائلة أمام بيت عند الغروب، زوجان مسنّان في الخريف ثم الليل، ويتحولان إلى خطوط بيضاء ويستوي النبض. عدّاد العمر يساراً ونبض القلب يميناً.",
+  "summary_en": "A 20 s flat-vector life story on one ground line that starts and ends as an ECG trace: a baby, a kid in a sunny park, a skating teen in a purple retro scene, a commuter in a hamster wheel before a grey city, a heart, a family at sunset, an elderly couple into night who fade to white outlines as the pulse flatlines; age counter top-left, BPM top-right.",
+  "keywords": [
+    "cycle of life",
+    "flat vector",
+    "character animation",
+    "ECG line",
+    "heartbeat",
+    "life stages",
+    "hamster wheel",
+    "retro sunset",
+    "storytelling",
+    "دورة الحياة",
+    "رسوم مسطحة",
+    "شخصيات",
+    "نبض القلب",
+    "مراحل العمر",
+    "قصة بلا كلام"
+  ],
+  "difficulty": 4,
+  "duration_s": 20,
+  "stack": [
+    "SVG",
+    "GSAP",
+    "Remotion"
+  ],
+  "brief": "styles/pm-loicrambo-ad6830/BRIEF.md"
 }

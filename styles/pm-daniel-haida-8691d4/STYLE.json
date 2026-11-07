@@ -1,20 +1,13 @@
 {
   "id": "pm-daniel-haida-8691d4",
   "name": "Taxtello bookkeeping app film",
-  "name_ar": null,
+  "name_ar": "فيلم تطبيق محاسبة بلوحات داكنة مائلة ولمسات ذهبية",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
     "charts",
-    "diagrams",
-    "kinetic-type",
-    "shapes",
-    "particles",
-    "characters",
-    "photos",
-    "music",
-    "code"
+    "ads"
   ],
   "creator": "@daniel_haida",
   "creator_url": "https://x.com/daniel_haida/status/2104139720829636937",
@@ -43,13 +36,35 @@
   "playbooks": [
     "playbooks/product-ui.md",
     "playbooks/charts.md",
-    "playbooks/diagrams.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/particles.md",
-    "playbooks/characters.md",
-    "playbooks/photos.md",
-    "playbooks/music.md",
-    "playbooks/code.md"
-  ]
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "فيلم منتج مدته 14 ثانية لتطبيق محاسبة: أيقونة ذهبية تنقسم، ثم لوحة أرباح كحلية مائلة في فضاء ثلاثي الأبعاد برقم ضخم ومنحنى ذهبي يُرسم، وإيصال ورقي يطفو ويُربط بقائمة الحركات بشارات خضراء، ثم حالة الفاتورة تتحول إلى «مدفوعة» وشريط تقدم أصفر، وحلقة نتيجة تمتلئ حتى 94، وينتهي بالشعار الذهبي وسطر وسم.",
+  "summary_en": "A 14-second product film for a bookkeeping app: a gold app icon splits apart, then tilted navy dashboard cards float in dark 3D space with a huge profit figure and a gold line chart drawing on, a paper receipt that docks into a transactions list with green linked badges, an invoice flipping to paid with a yellow progress bar, a health ring filling to 94, and a gold wordmark end card.",
+  "keywords": [
+    "product film",
+    "bookkeeping app",
+    "fintech",
+    "dashboard",
+    "3D tilted UI",
+    "gold accent",
+    "receipt",
+    "line chart",
+    "health score",
+    "فيلم منتج",
+    "تطبيق محاسبة",
+    "لوحة تحكم",
+    "واجهة مائلة",
+    "فواتير",
+    "مالية"
+  ],
+  "difficulty": 4,
+  "duration_s": 14,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "CSS",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-daniel-haida-8691d4/BRIEF.md"
 }

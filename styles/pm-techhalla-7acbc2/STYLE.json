@@ -1,19 +1,11 @@
 {
   "id": "pm-techhalla-7acbc2",
   "name": "20-second kinetic identity bumper for TechHalla",
-  "name_ar": null,
+  "name_ar": "فاصل هوية حركي بخطوط عريضة ضخمة وتشويش رموز على الأسود",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "product-ui",
-    "charts",
-    "diagrams",
     "kinetic-type",
-    "shapes",
-    "particles",
-    "characters",
-    "photos",
-    "music",
     "code"
   ],
   "creator": "@techhalla",
@@ -39,15 +31,33 @@
   "listed": true,
   "skill": "styles/pm-techhalla-7acbc2/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md",
-    "playbooks/charts.md",
-    "playbooks/diagrams.md",
     "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/particles.md",
-    "playbooks/characters.md",
-    "playbooks/photos.md",
-    "playbooks/music.md",
     "playbooks/code.md"
-  ]
+  ],
+  "summary_ar": "فاصل هوية مربع مدته 20 ثانية على أسود شبه كامل بإطار واجهة دقيق: كلمات عريضة ثقيلة بيضاء تملأ العرض وتُكتب حرفاً حرفاً بحروف تقفز وتستقر، كلمات ليمونية تبدأ رموزاً عشوائية ثم تنحلّ إلى معناها مع خط سفلي، شارات صغيرة وردية تظهر في الأعلى، صندوق كود يُكتب فيه سطر JSON بين وسوم مؤطرة، وختام باسم الحساب مع شريط وردي وخط ليموني ونص نسخ يُكتب.",
+  "summary_en": "A 20-second square identity bumper on near-black with a fine HUD frame: huge heavy white words type on letter by letter with popping letters, lime words scramble as random glyphs before resolving with an underline, magenta-dot tags pile up, a code box types a JSON line, and it ends on the handle with a magenta bar and a typed copy line.",
+  "keywords": [
+    "identity bumper",
+    "kinetic type",
+    "extended typeface",
+    "glyph scramble",
+    "typewriter",
+    "HUD frame",
+    "lime and magenta",
+    "JSON code box",
+    "فاصل هوية",
+    "تايبوغرافي حركي",
+    "تشويش حروف",
+    "خط عريض",
+    "كتابة حرف حرف",
+    "إطار واجهة"
+  ],
+  "difficulty": 3,
+  "duration_s": 20,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-techhalla-7acbc2/BRIEF.md"
 }

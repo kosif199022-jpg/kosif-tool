@@ -1,9 +1,9 @@
 ---
 name: pm-anas0ra-e57aea
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second soft clay-like 3D promo: a white shop with a dark teal roof and striped awning sits on a round floating island, a glossy white speech-bubble mascot wakes as the shop closes, the camera pushes in while a customer question and an instant reply bubble appear, then night falls, the camera pulls back and an end card with logo, tagline and URL pill fades over the dimmed scene. Use to make a new video in this look (Characters); address it by ID pm-anas0ra-e57aea.
 ---
 
-# KOSIF TOOL — Shop chatbot mascot promo
+# KOSIF TOOL — Shop chatbot mascot promo / تميمة دردشة لطيفة أمام متجر صغير على جزيرة عائمة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/anas0ra-e57aea
@@ -17,12 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان قصير مدته 15 ثانية بأسلوب ثلاثي الأبعاد ناعم يشبه الصلصال: متجر أبيض بسقف أخضر داكن ومظلة مخططة على جزيرة دائرية عائمة، وتميمة على شكل فقاعة كلام بيضاء لامعة تستيقظ مع إغلاق المتجر، فتقترب الكاميرا وتظهر فقاعتا محادثة (سؤال زبون ورد فوري)، ثم يحل الليل وتبتعد الكاميرا لتنتهي ببطاقة الشعار والرابط فوق المشهد المعتم.
+
+A 15-second soft clay-like 3D promo: a white shop with a dark teal roof and striped awning sits on a round floating island, a glossy white speech-bubble mascot wakes as the shop closes, the camera pushes in while a customer question and an instant reply bubble appear, then night falls, the camera pulls back and an end card with logo, tagline and URL pill fades over the dimmed scene.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, React, Remotion), suggested duration (15 s), aspect 4:5, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: creative motion.
-- (no category playbook yet)
+Categories: Characters / شخصيات, 3D / ثلاثي الأبعاد, Ads / إعلانات.
+- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
-* Develop original choreography from the reference; verify imagery before claiming a match.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

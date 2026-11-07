@@ -1,10 +1,12 @@
 {
   "id": "pm-sayan-shanky-f850d8",
   "name": "AI data centre 3D tour",
-  "name_ar": null,
+  "name_ar": "جولة ثلاثية الأبعاد داخل مركز بيانات للذكاء الاصطناعي",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
+    "3d",
+    "diagrams",
     "charts"
   ],
   "creator": "@Sayan_shanky",
@@ -26,6 +28,35 @@
   "listed": true,
   "skill": "styles/pm-sayan-shanky-f850d8/SKILL.md",
   "playbooks": [
+    "playbooks/3d.md",
+    "playbooks/diagrams.md",
     "playbooks/charts.md"
-  ]
+  ],
+  "summary_ar": "تسجيل شاشة مدته نحو 98 ثانية لصفحة شرح تفاعلية ثلاثية الأبعاد بدرجات الرمادي الفاتح: الكاميرا تطير من مبنى المركز وسط أشجار منخفضة الأضلاع إلى خطوط الكهرباء والمحطة الفرعية، ثم قاعة الخوادم والرف الواحد، ثم صينية الحوسبة والشريحة المفككة طبقة طبقة، ثم الشبكة بين الرفوف، ثم أنابيب التبريد إلى أبراج التبريد، مع تدفقات متحركة ملونة (أصفر للطاقة، أزرق للبيانات، أحمر وفيروزي للحرارة) وعنوان فصل ووصف أسفل اليسار وشريط تحكم أسفل الشاشة.",
+  "summary_en": "A ~98-second capture of an interactive 3D explainer in pale greys: the camera flies from a data-centre building to power lines, the server hall, one rack, a compute tray and an exploded chip, the network between racks and the cooling pipes, with colour-coded animated flows (yellow power, blue data, red/teal heat) and chapter captions bottom-left.",
+  "keywords": [
+    "data centre",
+    "3D explainer",
+    "scrollytelling",
+    "fly-through",
+    "exploded view",
+    "server rack",
+    "gpu",
+    "cooling flow",
+    "infographic",
+    "مركز بيانات",
+    "شرح ثلاثي الأبعاد",
+    "جولة كاميرا",
+    "منظر مفكك",
+    "تبريد",
+    "بنية تحتية"
+  ],
+  "difficulty": 5,
+  "duration_s": 98,
+  "stack": [
+    "Three.js",
+    "React",
+    "WebGL"
+  ],
+  "brief": "styles/pm-sayan-shanky-f850d8/BRIEF.md"
 }

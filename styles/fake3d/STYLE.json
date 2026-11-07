@@ -1,7 +1,7 @@
 {
   "id": "fake3d",
   "name": "عمق 2.5D",
-  "name_ar": "عمق 2.5D",
+  "name_ar": "عمق 2.5D لقصة رمزية بالمفتاح والباب",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,31 @@
   "playbooks": [
     "playbooks/3d.md",
     "playbooks/photos.md"
-  ]
+  ],
+  "summary_ar": "رسم مسطح يتحرك كأنه ثلاثي الأبعاد: مفتاح ذهبي يُرسم بخط ثم يمتلئ ويطفو بتوهج فوق خلفية نعناعية، ثم يدور بسماكة حقيقية في سماء غروب بنفسجية، يطير إلى باب أخضر في غرفة بنفسجية، يدور في القفل فيُفتح الباب على ضوء ذهبي يغمر الكادر، وينتهي ببطاقة صورة وجملة.",
+  "summary_en": "Flat illustration that moves as if 3D: a gold key draws as an outline, fills and floats with a glow over mint, then turns with real thickness against a violet sunset sky, flies to a teal door in a purple room, turns in the lock and the door opens onto golden light that floods the frame, ending on a framed picture beside a short line.",
+  "keywords": [
+    "2.5d",
+    "fake 3d",
+    "extrusion",
+    "symbolic story",
+    "key and door",
+    "match cut",
+    "light rays",
+    "عمق مزيف",
+    "ثنائي ونصف الأبعاد",
+    "قصة رمزية",
+    "مفتاح وباب",
+    "ضوء ذهبي",
+    "تحريك أجسام"
+  ],
+  "difficulty": 3,
+  "duration_s": 18,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/fake3d/BRIEF.md"
 }

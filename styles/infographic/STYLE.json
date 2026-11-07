@@ -1,7 +1,7 @@
 {
   "id": "infographic",
   "name": "إنفوجرافيك",
-  "name_ar": "إنفوجرافيك",
+  "name_ar": "إنفوجرافيك متحرك: أيقونات وأرقام ومخططات مسطحة تشرح معلومة",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,30 @@
   "playbooks": [
     "playbooks/charts.md",
     "playbooks/diagrams.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي بأسلوب الإنفوجرافيك المسطح: أيقونات بسيطة بألوان محدودة، أرقام كبيرة تعد صعوداً، أشرطة ودوائر نسب تمتلئ، أسهم تربط بين الخطوات، وعنوان لكل قسم على خلفية فاتحة منظمة.",
+  "summary_en": "A vertical flat-design infographic reel: simple icons in a limited palette, large numbers counting up, bars and percentage rings filling, arrows linking steps, and a header for each section on a tidy light background.",
+  "keywords": [
+    "infographic",
+    "data explainer",
+    "icons",
+    "statistics",
+    "flat design",
+    "bar chart",
+    "donut chart",
+    "إنفوجرافيك",
+    "معلومات",
+    "إحصائيات",
+    "أيقونات",
+    "رسوم بيانية",
+    "شرح"
+  ],
+  "difficulty": 2,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/infographic/BRIEF.md"
 }

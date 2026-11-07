@@ -2840,6 +2840,11 @@
    "label": "tests/test_black_dragon_validate.py"
   },
   {
+   "id": "test:tests/test_black_dragon_video_protocol.py",
+   "kind": "test",
+   "label": "tests/test_black_dragon_video_protocol.py"
+  },
+  {
    "id": "test:tests/test_dragon_montage_e2e.py",
    "kind": "test",
    "label": "tests/test_dragon_montage_e2e.py"
@@ -8858,6 +8863,12 @@
   {
    "from": "script:scripts/black_dragon.py",
    "to": "test:tests/test_black_dragon_validate.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/black_dragon.py",
+   "to": "test:tests/test_black_dragon_video_protocol.py",
    "rel": "tested_by",
    "w": 1
   },

@@ -1,7 +1,7 @@
 {
   "id": "comics-panels",
   "name": "لوحات كوميكس",
-  "name_ar": "لوحات كوميكس",
+  "name_ar": "لوحات كوميكس بحبر وتظليل نقطي وفقاعات حوار عربية",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,31 @@
   "playbooks": [
     "playbooks/characters.md",
     "playbooks/hand-drawn.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي يُروى عبر صفحة كوميكس: إطارات بحدود حبر سوداء سميكة على ورق كريمي، تظليل نقطي بألوان CMYK باهتة، فقاعات حوار عربية تنفتح بالكلام، والكاميرا تنتقل من لوحة إلى أخرى داخل الصفحة نفسها.",
+  "summary_en": "A vertical reel told across a comic-book page: thick black-ink panel borders on cream paper, faded CMYK halftone shading, Arabic speech balloons that pop open with each line, and a camera that glides panel to panel across the same page.",
+  "keywords": [
+    "comics",
+    "comic panels",
+    "halftone",
+    "speech balloon",
+    "sound effect",
+    "page layout",
+    "graphic novel",
+    "كوميكس",
+    "قصص مصورة",
+    "فقاعة حوار",
+    "تظليل نقطي",
+    "لوحات",
+    "رسم بالحبر"
+  ],
+  "difficulty": 3,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/comics-panels/BRIEF.md"
 }

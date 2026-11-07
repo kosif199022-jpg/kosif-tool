@@ -1,9 +1,9 @@
 ---
 name: pm-ddryo-loos-300829
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A ~56-second CSS framework release video on clean white with numbered chapters: violet Fibonacci squares growing along a curve, a type-scale ladder, cyan spacing guides, an orange title card, orange layout grids, highlighted code props, blue boxes reflowing across breakpoints, stacked blue cascade layers, UI components, page templates, an AI agent writing code, then the logo. Use to make a new video in this look (Code); address it by ID pm-ddryo-loos-300829.
 ---
 
-# KOSIF TOOL — Lism CSS 1.0 release video
+# KOSIF TOOL — Lism CSS 1.0 release video / فيديو إصدار مكتبة CSS بفصول مرقمة على خلفية بيضاء
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/ddryo-loos-300829
@@ -18,12 +18,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو إصدار مدته نحو 56 ثانية لمكتبة CSS، على خلفية بيضاء نظيفة بفصول مرقمة لكل منها عنوان صغير أعلى اليسار: مربعات فيبوناتشي بنفسجية تكبر على منحنى، سلّم أحجام خط، أسطر بإرشادات تباعد فيروزية، بطاقة انتقال برتقالية، شبكات تخطيط برتقالية، خصائص كود تتلون، أعمدة زرقاء تتجاوب مع نقاط كسر، طبقات زرقاء مكدسة، مكونات واجهة، قوالب صفحات، وكيل ذكاء يكتب كوداً، ثم الشعار.
+
+A ~56-second CSS framework release video on clean white with numbered chapters: violet Fibonacci squares growing along a curve, a type-scale ladder, cyan spacing guides, an orange title card, orange layout grids, highlighted code props, blue boxes reflowing across breakpoints, stacked blue cascade layers, UI components, page templates, an AI agent writing code, then the logo.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG), suggested duration (56 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Code / كود, Product UI / واجهات المنتج, Diagrams / مخططات.
+- [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/diagrams.md](../../playbooks/diagrams.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

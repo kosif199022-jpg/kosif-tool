@@ -1,10 +1,12 @@
 {
   "id": "pm-kikelopezdesign-7cc9e8",
   "name": "Design portfolio video reel",
-  "name_ar": null,
+  "name_ar": "بورتفوليو مصمم منتجات كلوحة تصميم لا نهائية تقترب الكاميرا من مشاريعها",
   "origin": "PromptsMotion",
   "type": "Prompt",
-  "category": [],
+  "category": [
+    "product-ui"
+  ],
   "creator": "@kikelopezdesign",
   "creator_url": "https://x.com/kikelopezdesign/status/2103527289619173471",
   "page": "https://www.promptsmotion.com/kikelopezdesign-7cc9e8",
@@ -23,5 +25,36 @@
   "source_prompt_words": 16,
   "listed": true,
   "skill": "styles/pm-kikelopezdesign-7cc9e8/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/product-ui.md"
+  ],
+  "summary_ar": "بورتفوليو 16:9 مدته 20 ثانية بلا صوت على لوحة تصميم رمادية فاتحة منقّطة: مربع أسود يتحول إلى شعار حرف، ثم تبتعد الكاميرا لتكشف كل المشاريع كإطارات على لوحة لا نهائية، وتقترب من إطار تلو الآخر محدّد بالأحمر بجانب لوحة جانبية تعرض رقم الأثر الكبير (نسب ومضاعفات وملايين) يتصاعد، ومؤشرات بأسماء تتحرك وتعليقات منبثقة، وتنتهي بالشعار والاسم ورابط.",
+  "summary_en": "A silent 20 s 16:9 portfolio on a light grey dotted design canvas: a black square becomes a letter logo, the camera pulls back over every project frame, then flies into one after another, each outlined in orange-red beside an inspector panel whose big impact number counts up, with a named cursor and comment pop-ups, ending on logo, name and link.",
+  "keywords": [
+    "portfolio",
+    "design canvas",
+    "infinite canvas",
+    "camera fly-through",
+    "figma style",
+    "impact numbers",
+    "inspector panel",
+    "named cursor",
+    "product designer",
+    "case studies",
+    "بورتفوليو",
+    "لوحة تصميم",
+    "تقريب الكاميرا",
+    "مصمم منتجات",
+    "أرقام الأثر",
+    "معرض أعمال"
+  ],
+  "difficulty": 3,
+  "duration_s": 20,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "SVG"
+  ],
+  "brief": "styles/pm-kikelopezdesign-7cc9e8/BRIEF.md"
 }

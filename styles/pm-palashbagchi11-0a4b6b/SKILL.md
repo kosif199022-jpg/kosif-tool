@@ -1,9 +1,9 @@
 ---
 name: pm-palashbagchi11-0a4b6b
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 30-second editorial data ad: a big question (you paid for 173 backlinks, what did you actually get?) on black then white, a red percentage climbing 0% to 81% beside a dot matrix turning red, '36' beside a decaying dot histogram, '0% dofollow, 4 already dead' with a table, a real-value counter rolling to $1,980, a line struck through in red, and a logo end card with a CTA button. Use to make a new video in this look (Charts); address it by ID pm-palashbagchi11-0a4b6b.
 ---
 
-# KOSIF TOOL — Backlink audit data promo
+# KOSIF TOOL — Backlink audit data promo / إعلان تدقيق روابط خلفية بأرقام صادمة ومصفوفات نقاط
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/palashbagchi11-0a4b6b
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان بيانات مدته 30 ثانية بأسلوب تحريري بسيط: سؤال كبير «دفعت مقابل 173 رابطاً، فماذا حصلت؟» على الأسود ثم الأبيض، نسبة حمراء تقفز من 0% إلى 81% بجانب مصفوفة نقاط تتلون، رقم 36 مع مدرج نقاط متناقص، «0% روابط متابعة، 4 ميتة» مع جدول، قيمة حقيقية تعدّ من 0 إلى 1,980 دولاراً، عبارة يُشطب نصفها بالأحمر، وختام بشعار وزر.
+
+A 30-second editorial data ad: a big question (you paid for 173 backlinks, what did you actually get?) on black then white, a red percentage climbing 0% to 81% beside a dot matrix turning red, '36' beside a decaying dot histogram, '0% dofollow, 4 already dead' with a table, a real-value counter rolling to $1,980, a line struck through in red, and a logo end card with a CTA button.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (30 s), aspect 16:9, difficulty 2/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Music / موسيقى.
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Ads / إعلانات.
 - [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

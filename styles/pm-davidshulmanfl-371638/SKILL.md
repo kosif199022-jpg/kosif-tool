@@ -1,6 +1,6 @@
 ---
 name: pm-davidshulmanfl-371638
-description: A 60-second music video with a claymation look (its shots appear to be AI-generated footage): a suited clay man sings among drones, toy cars and cotton clouds, split-screen grids, googly-eyed objects, a rollercoaster around a globe, a cardboard city and a stage finale.
+description: A 60-second music video with a claymation look (its shots appear to be AI-generated footage): a suited clay man sings among drones, toy cars and cotton clouds, split-screen grids, googly-eyed objects, a rollercoaster around a globe, a cardboard city and a stage finale. Use to make a new video in this look (Music); address it by ID pm-davidshulmanfl-371638.
 ---
 
 # KOSIF TOOL — Clay-style music video / فيديو موسيقي بأسلوب الصلصال المتحرّك بمراجع معاصرة

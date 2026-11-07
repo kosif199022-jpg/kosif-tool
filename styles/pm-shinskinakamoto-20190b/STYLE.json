@@ -1,13 +1,13 @@
 {
   "id": "pm-shinskinakamoto-20190b",
   "name": "Kinetic shapes showreel",
-  "name_ar": null,
+  "name_ar": "شوريل أشكال متحركة بألوان الليموني والبنفسجي والمرجاني",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
+    "shapes",
     "kinetic-type",
-    "shapes"
+    "particles"
   ],
   "creator": "@Shinskinakamoto",
   "creator_url": "https://x.com/Shinskinakamoto/status/2103580532852589043",
@@ -28,8 +28,38 @@
   "listed": true,
   "skill": "styles/pm-shinskinakamoto-20190b/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
+    "playbooks/shapes.md",
     "playbooks/kinetic-type.md",
-    "playbooks/shapes.md"
-  ]
+    "playbooks/particles.md"
+  ],
+  "summary_ar": "شوريل مدته 15 ثانية بألوان صريحة: نقطة مرجانية على الأسود تتسع حلقات، ثم تحية بخط ثلاثي الأبعاد بظل منزاح، وكلمات ضخمة سوداء على الليموني بنسخ محيطية متكررة، وشريط وردي متعرج، وشبكة نقاط على البنفسجي تتحول دوائر ومربعات ومثلثات حول شكل مرجاني كبير، ثم جسيمات ملونة تتجمع في كلمة، وكرة وطارة ومكعب سلكي، وبطاقات واجهة ببيانات، وخطوط موجية بأسلوب الجبال، وأشرطة ألوان، وشعار.",
+  "summary_en": "A 15-second showreel in loud flat colour: a coral dot opening into rings, an extruded greeting, huge black words on lime with outline echoes, a violet dot grid morphing through circles, squares and triangles, coloured particles swarming into a word, dotted 3D wireframes, light UI data cards, ridge-line waves and a logo end card.",
+  "keywords": [
+    "showreel",
+    "kinetic shapes",
+    "shape morph",
+    "dot grid",
+    "particles",
+    "wireframe",
+    "UI cards",
+    "ridge lines",
+    "lime violet",
+    "شوريل",
+    "أشكال متحركة",
+    "تحول الأشكال",
+    "جسيمات",
+    "تايبوغرافي",
+    "ألوان صريحة"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "HTML Canvas",
+    "Three.js",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-shinskinakamoto-20190b/BRIEF.md"
 }

@@ -1,19 +1,12 @@
 {
   "id": "pm-notdwd-c2037d",
   "name": "Launch video remake comparison",
-  "name_ar": null,
+  "name_ar": "مقارنة جنباً إلى جنب: فيديو إطلاق أصلي ونسخته المعاد بناؤها إطاراً بإطار",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
-    "charts",
-    "kinetic-type",
-    "shapes",
-    "particles",
-    "characters",
-    "photos",
-    "music",
-    "code"
+    "ads"
   ],
   "creator": "@notdwd",
   "creator_url": "https://x.com/notdwd/status/2104401208958230764",
@@ -39,13 +32,33 @@
   "skill": "styles/pm-notdwd-c2037d/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/particles.md",
-    "playbooks/characters.md",
-    "playbooks/photos.md",
-    "playbooks/music.md",
-    "playbooks/code.md"
-  ]
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "فيديو مقارنة مدته 12 ثانية بشاشة مقسومة إلى نصفين متطابقين التوقيت: إعلان إطلاق تطبيق مساعد بالذكاء الاصطناعي على اليسار ونسخة معاد بناؤها لمنتج آخر على اليمين، بالأسلوب نفسه: شارة اسم مستديرة على تدرج سماوي فاتح، تطبيق يكبر مع نقرة مؤشر، أيقونة تحيط بها مربعات ملونة تدور، شريط قوائم سطح مكتب بحقل كتابة زجاجي، صفحة مقالة تتحول إلى بطاقات بصور وعناوين، ثم شعار يتنفس وينتهي باسم متوهج على أسود.",
+  "summary_en": "A 12 s time-locked split screen comparing an AI helper app launch film (left) with its frame-matched remake for another product (right): pill name badge on pale sky gradient, app window push-in with cursor click, icon orbited by coloured squares, frosted menu-bar prompt, article morphing into image cards, glowing wordmark on black.",
+  "keywords": [
+    "side by side",
+    "launch video remake",
+    "frame by frame",
+    "split screen",
+    "app launch",
+    "frosted glass",
+    "cursor click",
+    "product UI",
+    "مقارنة",
+    "إعادة إنتاج",
+    "شاشة مقسومة",
+    "إعلان تطبيق",
+    "واجهة منتج",
+    "زجاج مموه"
+  ],
+  "difficulty": 3,
+  "duration_s": 12,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "SVG"
+  ],
+  "brief": "styles/pm-notdwd-c2037d/BRIEF.md"
 }

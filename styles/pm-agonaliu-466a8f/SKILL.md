@@ -1,9 +1,9 @@
 ---
 name: pm-agonaliu-466a8f
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second app film in six numbered chapters inside a camera-style HUD: headlines over drifting tabs and sticky notes on navy, 'Save anything' in heavy sans plus blue italic serif with keycaps and popping cards, a typing search bar, a card web, a padlock vault with a scrambling password, and a keyhole reveal into the logo. Use to make a new video in this look (Product UI); address it by ID pm-agonaliu-466a8f.
 ---
 
-# KOSIF TOOL — Trezio app motion reel
+# KOSIF TOOL — Trezio app motion reel / فيلم تطبيق ذاكرة الإنترنت: من فوضى التبويبات إلى خزنة مرتبة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/agonaliu-466a8f
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #31
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+فيلم منتج مدته 15 ثانية في ستة فصول مرقمة بإطار كاميرا وتايم كود: عنوان أبيض فوق بطاقات وتبويبات وملاحظات لاصقة تطفو بعمق ضبابي على كحلي، ثم «احفظ أي شيء» بخط عريض وآخر مائل أزرق مع مفاتيح اختصار وبطاقات تنبثق، شريط بحث يُكتب فيه ويظهر نتيجة، بطاقة مركزية تتشعب إلى شبكة عناصر مرتبطة، قفل خزنة بكلمة مرور تتشفر، فكشف ثقب مفتاح أبيض يقود إلى الشعار وزر الدعوة.
+
+A 15-second app film in six numbered chapters inside a camera-style HUD: headlines over drifting tabs and sticky notes on navy, 'Save anything' in heavy sans plus blue italic serif with keycaps and popping cards, a typing search bar, a card web, a padlock vault with a scrambling password, and a keyhole reveal into the logo.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG, Web Audio), suggested duration (15 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.

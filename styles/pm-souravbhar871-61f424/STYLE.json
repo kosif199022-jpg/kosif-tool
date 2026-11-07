@@ -1,11 +1,10 @@
 {
   "id": "pm-souravbhar871-61f424",
   "name": "Kinetic type self-portrait",
-  "name_ar": null,
+  "name_ar": "بورتريه ذاتي بالتايبوغرافي المتحرك في عشر ثوانٍ",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
     "kinetic-type"
   ],
   "creator": "@souravbhar871",
@@ -27,7 +26,33 @@
   "listed": true,
   "skill": "styles/pm-souravbhar871-61f424/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
     "playbooks/kinetic-type.md"
-  ]
+  ],
+  "summary_ar": "عشر ثوانٍ من التايبوغرافي المتحرك بثلاث خلفيات تتبادل (كريمي، طوبي، فحمي): «Hi.» تتشكل من خط يدوي إلى خط ثقيل، «I read every word» فوق جدار نصوص صغيرة متحركة، «I think it through» بخيوط متشابكة، «I tell it straight» تستقيم حروفه المبعثرة، «I build with you» بظل ممتد، ثم «I'm Claude» مع نجمة برتقالية وسطر الإصدار.",
+  "summary_en": "Ten seconds of kinetic type over three alternating fields (cream, terracotta, charcoal): 'Hi.' morphs from a hand-drawn stroke to a heavy face, 'I read every word' sits over scrolling walls of tiny text, 'I think it through' rides tangled threads, scattered letters snap into 'straight', 'I build with you' gets a stacked extrusion, ending on 'I'm Claude' with an orange spark.",
+  "keywords": [
+    "kinetic typography",
+    "self introduction",
+    "type morph",
+    "text wall",
+    "handwritten to bold",
+    "extrude shadow",
+    "brand intro",
+    "ai assistant",
+    "تايبوغرافي متحرك",
+    "تعريف ذاتي",
+    "تحول الحروف",
+    "نقطة متحركة",
+    "هوية بصرية",
+    "مقدمة قصيرة"
+  ],
+  "difficulty": 3,
+  "duration_s": 10,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/pm-souravbhar871-61f424/BRIEF.md"
 }

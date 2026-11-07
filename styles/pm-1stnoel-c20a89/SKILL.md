@@ -1,9 +1,9 @@
 ---
 name: pm-1stnoel-c20a89
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 60-second explainer for a graded-reader language app in a calm paper look on cream: a serif question beside a page of word-bars filling in, an '80 / 100' figure, a French passage with peach-highlighted hard words and a simplified version, then a phone tour of the steps (language, level, tap a word, listen, talk to a tutor) and a logo end card. Use to make a new video in this look (Product UI); address it by ID pm-1stnoel-c20a89.
 ---
 
-# KOSIF TOOL — Sotto reading app explainer
+# KOSIF TOOL — Sotto reading app explainer / شرح تطبيق قراءة متدرجة بأسلوب ورقي هادئ
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/1stnoel-c20a89
@@ -17,16 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شرح تطبيق مدته 60 ثانية لتطبيق قراءة متدرجة لتعلّم اللغات بأسلوب ورقي هادئ على خلفية كريمية: سؤال بخط مذيّل أنيق بجانب صفحة كلمات تُظلّل تدريجياً، رقم «80 من 100»، فقرة فرنسية أصلية تُبرز كلماتها الصعبة بتظليل خوخي ثم نسخة مبسطة لمستواك، ثم هاتف يعرض الخطوات (اختيار اللغة والمستوى، اضغط أي كلمة، استمع، تحدّث مع معلم)، قائمة مزايا، وختام بالشعار والرابط.
+
+A 60-second explainer for a graded-reader language app in a calm paper look on cream: a serif question beside a page of word-bars filling in, an '80 / 100' figure, a French passage with peach-highlighted hard words and a simplified version, then a phone tour of the steps (language, level, tap a word, listen, talk to a tutor) and a logo end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (60 s), aspect 16:9, difficulty 2/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Diagrams / مخططات, Characters / شخصيات.
+Categories: Product UI / واجهات المنتج, Phone / هاتف, Kinetic type / تايبوغرافي متحرك.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/diagrams.md](../../playbooks/diagrams.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/phone.md](../../playbooks/phone.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

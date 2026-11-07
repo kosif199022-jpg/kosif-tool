@@ -1,12 +1,14 @@
 {
   "id": "pm-tequilafunks-97f6c9",
   "name": "Claude motion design reel",
-  "name_ar": null,
+  "name_ar": "شوريل مصمم موشن في 15 ثانية: منحنى، تايب، بلاطات، فوكسل، جسيمات",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "3d"
   ],
   "creator": "@tequilafunks",
   "creator_url": "https://x.com/tequilafunks/status/2103528644828127728",
@@ -27,7 +29,37 @@
   "listed": true,
   "skill": "styles/pm-tequilafunks-97f6c9/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/3d.md"
+  ],
+  "summary_ar": "شوريل سريع مدته 15 ثانية بإطار واجهة برنامج مونتاج (توقيت وأرقام فصول وزوايا محددة) وثلاثة ألوان فقط (برتقالي وأزرق كهربائي وكريمي على أسود): منحنى تسارع في محرر الرسوم يتحول من خط مستقيم إلى منحنى S، ثم كلمات عريضة ضخمة تتشكل بتمويه حركي فوق خلفية برتقالية وأخرى سوداء بنص متكرر، ثم بلاطات أرباع دوائر تدور، ثم مدينة فوكسل متساوية القياس، ثم خيوط جسيمات تلتف إلى كرة، ثم كلمات حركة، وتنتهي ببطاقة اسم بسيطة.",
+  "summary_en": "A fast 15 s motion-designer showreel in an editor-style HUD, locked to orange, electric blue and cream on black: a graph-editor curve easing into an S, heavy wide words resolving with blur, spinning quarter-circle tiles, an isometric voxel ring, particle streaks forming a sphere, verbs that act out their meaning, and a name card.",
+  "keywords": [
+    "showreel",
+    "motion designer",
+    "graph editor",
+    "easing curve",
+    "voxel isometric",
+    "particle flow",
+    "quarter-circle tiles",
+    "kinetic type",
+    "شوريل",
+    "مصمم موشن",
+    "منحنى تسارع",
+    "فوكسل",
+    "جسيمات",
+    "بطاقة اسم"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "Three.js",
+    "SVG",
+    "HTML Canvas"
+  ],
+  "brief": "styles/pm-tequilafunks-97f6c9/BRIEF.md"
 }

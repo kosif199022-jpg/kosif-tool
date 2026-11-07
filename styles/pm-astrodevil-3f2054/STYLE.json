@@ -1,7 +1,7 @@
 {
   "id": "pm-astrodevil-3f2054",
   "name": "Studio1 intro showreel",
-  "name_ar": null,
+  "name_ar": "عرض وكالة بأرقام ضخمة ووهج برتقالي على الأسود",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -31,5 +31,33 @@
     "playbooks/product-ui.md",
     "playbooks/charts.md",
     "playbooks/kinetic-type.md"
-  ]
+  ],
+  "summary_ar": "عرض تعريفي لوكالة محتوى مدته 15 ثانية على أسود دافئ بوهج أحمر برتقالي: يبدأ بأمر في طرفية، ثم عنوان أبيض ثقيل تكتمل جملته بالبرتقالي، ثم أرقام إنجاز عملاقة تعدّ بجانب منحنى ونجمة وشبكة مساهمات، ولقطات قلب إلى أرضية برتقالية، وكلمات خدمات بملء الشاشة، وجدار أسماء عملاء يتحرك، وشعار ختامي يُكتب حرفاً حرفاً.",
+  "summary_en": "A 15-second agency intro on warm black with a red-orange glow: it opens on a terminal command, then a heavy white headline completes in orange, giant proof numbers count up beside a growth curve, a star and a contribution grid, a few beats flip to a full orange ground, full-width service words slam in, a scrolling wall of client names passes, and the wordmark types itself out.",
+  "keywords": [
+    "agency intro",
+    "showreel",
+    "stat counters",
+    "terminal",
+    "devtools",
+    "orange glow",
+    "dark cinematic",
+    "client logo wall",
+    "giant numbers",
+    "عرض وكالة",
+    "أرقام ضخمة",
+    "طرفية",
+    "وهج برتقالي",
+    "تايبوغرافي ثقيل",
+    "شعار ختامي"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/pm-astrodevil-3f2054/BRIEF.md"
 }

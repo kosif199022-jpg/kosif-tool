@@ -1,9 +1,9 @@
 ---
 name: pm-notdwd-7de38a
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A short square product-launch spot (about 12 s) for a video-course platform where a soft camera glides over blurred white-and-blue glass UI cards: a product header with a cursor, a logo orbited by four coloured tiles, an OS menu bar opening a prompt box that types itself, a lesson page, module cards with giant faded titles, and finally a glowing wordmark on black. Use to make a new video in this look (Product UI); address it by ID pm-notdwd-7de38a.
 ---
 
-# KOSIF TOOL — Frame by Frame launch video
+# KOSIF TOOL — Frame by Frame launch video / فيديو إطلاق منتج كورسات بواجهات زجاجية زرقاء وكاميرا ناعمة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/notdwd-7de38a
@@ -18,28 +18,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان إطلاق مربع قصير (نحو 12 ثانية) لمنصة دروس فيديو، يمر بالكاميرا فوق بطاقات واجهة بيضاء وزرقاء ضبابية: هيدر المنتج مع مؤشر ماوس، شعار يدور حوله أربعة مربعات ملونة، شريط قوائم نظام تشغيل يفتح منه صندوق كتابة طلب، صفحة درس، بطاقات وحدات بعناوين ضخمة، ثم شعار متوهج على خلفية سوداء.
+
+A short square product-launch spot (about 12 s) for a video-course platform where a soft camera glides over blurred white-and-blue glass UI cards: a product header with a cursor, a logo orbited by four coloured tiles, an OS menu bar opening a prompt box that types itself, a lesson page, module cards with giant faded titles, and finally a glowing wordmark on black.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (12 s), aspect 1:1, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, Characters / شخصيات, Photos / صور, Music / موسيقى, Code / كود.
+Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/shapes.md](../../playbooks/shapes.md)
-- [playbooks/particles.md](../../playbooks/particles.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/photos.md](../../playbooks/photos.md)
-- [playbooks/music.md](../../playbooks/music.md)
-- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,10 +1,14 @@
 {
   "id": "pm-hoyoyoda-3a5c08",
   "name": "Chuseok pixel night scene",
-  "name_ar": null,
+  "name_ar": "ليلة تشوسوك بالبكسل: قمر الأرنب ومهرجان الفوانيس",
   "origin": "PromptsMotion",
   "type": "Prompt",
-  "category": [],
+  "category": [
+    "characters",
+    "particles",
+    "kinetic-type"
+  ],
   "creator": "@hoyoyoda",
   "creator_url": "https://x.com/hoyoyoda/status/2103400046922543147",
   "page": "https://www.promptsmotion.com/hoyoyoda-3a5c08",
@@ -23,5 +27,37 @@
   "source_prompt_words": 13,
   "listed": true,
   "skill": "styles/pm-hoyoyoda-3a5c08/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/characters.md",
+    "playbooks/particles.md",
+    "playbooks/kinetic-type.md"
+  ],
+  "summary_ar": "لوحة بكسل آرت متحركة مدتها 12 ثانية لليلة عيد الحصاد الكوري: قمر بدر أصفر ضخم في الوسط يدق فيه أرنب كعك الأرز، سماء بنفسجية بنجوم متلألئة وغيوم، صف من البيوت التقليدية بنوافذ مضيئة وأحبال فوانيس ملونة، شخصيات صغيرة بالهانبوك، طاولة يتراكم عليها الكعك، أقواس قزح من خطوط بكسل تظهر عند الثانية 4، ثم عنوان بالكورية والإنجليزية وستارة أشرطة ملونة تغلق الحلقة.",
+  "summary_en": "A 12-second looping pixel-art harvest-moon night: a huge yellow moon with a rabbit pounding rice cakes, a violet starry sky, traditional houses with lit windows and lantern strings, tiny hanbok figures, a table filling with rice cakes, pixel rainbows from 4 s, a Korean and English greeting typing in, and a coloured stripe wipe that resets the loop.",
+  "keywords": [
+    "pixel art",
+    "chuseok",
+    "harvest moon",
+    "moon rabbit",
+    "seamless loop",
+    "festival greeting",
+    "16-bit",
+    "korean holiday",
+    "lanterns",
+    "بكسل آرت",
+    "تهنئة عيد",
+    "قمر بدر",
+    "أرنب القمر",
+    "حلقة متكررة",
+    "فوانيس",
+    "مشهد ليلي"
+  ],
+  "difficulty": 3,
+  "duration_s": 12,
+  "stack": [
+    "HTML Canvas",
+    "React",
+    "Remotion"
+  ],
+  "brief": "styles/pm-hoyoyoda-3a5c08/BRIEF.md"
 }

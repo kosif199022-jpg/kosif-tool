@@ -1,9 +1,9 @@
 ---
 name: pm-fractadev-149adc
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A roughly 48-second SaaS launch on clean white: an incoming call turns into a missed call with notifications stacking, a black headline with one red word, the voice agent answering in chat bubbles with a waveform and a green booked badge, a calendar booking, a lead form filling, dashboards with a grey area chart, a self-booking page, then the logo and URL. Use to make a new video in this look (Product UI); address it by ID pm-fractadev-149adc.
 ---
 
-# KOSIF TOOL — Voice agent SaaS launch
+# KOSIF TOOL — Voice agent SaaS launch / إطلاق منصة وكيل صوتي: مكالمة فائتة ثم حجز تلقائي ولوحة تحكم
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/fractadev-149adc
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيلم إطلاق مدته نحو 48 ثانية على خلفية بيضاء نظيفة: بطاقة مكالمة واردة تتحول إلى فائتة وتتكدس تحتها إشعارات، عنوان أسود بكلمة حمراء، ثم الوكيل يرد بفقاعات حوار وموجة صوت وشارة «تم الحجز» خضراء، تقويم أسبوعي يُضاف إليه موعد بإطار أخضر، استمارة بيانات عميل تمتلئ، لوحة عملاء محتملين وتحليلات بمنحنى رمادي، صفحة حجز ذاتي، ثم شعار المنتج وزر الرابط.
+
+A roughly 48-second SaaS launch on clean white: an incoming call turns into a missed call with notifications stacking, a black headline with one red word, the voice agent answering in chat bubbles with a waveform and a green booked badge, a calendar booking, a lead form filling, dashboards with a grey area chart, a self-booking page, then the logo and URL.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, Web Audio), suggested duration (48 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية.
+Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

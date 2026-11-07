@@ -1,12 +1,15 @@
 {
   "id": "pm-rammanq-f5a90f",
   "name": "AllInvestView product promo",
-  "name_ar": null,
+  "name_ar": "ترويج تطبيق استثمار: اثنا عشر فصلاً من الرسوم البيانية الحية",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
-    "charts"
+    "charts",
+    "kinetic-type",
+    "phone",
+    "ads"
   ],
   "creator": "@rammanq",
   "creator_url": "https://x.com/rammanq/status/2103788796022034553",
@@ -28,6 +31,38 @@
   "skill": "styles/pm-rammanq-f5a90f/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md"
-  ]
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/phone.md",
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "ترويج مربع مدته 42 ثانية لتطبيق متابعة الاستثمارات، مقسم إلى فصول مرقمة بعناوين ضخمة بلونين (أسود وأزرق): شعارات شركات تطفو حول كلمة واحدة، منحنى محفظة صاعد بشعارات على نقاطه، دائرة توزيع تتلون، أعمدة مقتنيات، تقويم أرباح على خلفية زرقاء، مقارنة بالسوق، اختبار أزمة 2008 على الأسود، محاكاة مونت كارلو، حد الكفاءة، خيارات وسندات، تقارير ضرائب بأعلام الدول، هاتف ومساعد ذكي، ثم الشعار.",
+  "summary_en": "A 42-second square investment-app promo in twelve numbered chapters, each with a huge black-and-blue headline over a chart that builds live: floating logos, a rising portfolio line, sector donut, holdings bars, dividend calendar on blue, a 2008 crash test and Monte Carlo fan on navy, efficient frontier, tax-form flags, a phone with an AI answer, then the logo.",
+  "keywords": [
+    "fintech promo",
+    "investment app",
+    "animated charts",
+    "data storytelling",
+    "donut chart",
+    "monte carlo",
+    "dividend calendar",
+    "numbered chapters",
+    "square video",
+    "ترويج تطبيق",
+    "تطبيق استثمار",
+    "رسوم بيانية متحركة",
+    "بيانات مالية",
+    "فصول مرقمة",
+    "محفظة أسهم",
+    "فيديو مربع"
+  ],
+  "difficulty": 4,
+  "duration_s": 42,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-rammanq-f5a90f/BRIEF.md"
 }

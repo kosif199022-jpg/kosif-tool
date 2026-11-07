@@ -1,12 +1,13 @@
 {
   "id": "pm-raphaelaubryy-4b137e",
   "name": "Motion designer résumé reel",
-  "name_ar": null,
+  "name_ar": "بكرة سيرة ذاتية لمصمم موشن بالأشكال والشبكات",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "shapes",
+    "kinetic-type",
+    "particles"
   ],
   "creator": "@RaphaelAubryy",
   "creator_url": "https://x.com/RaphaelAubryy/status/2103416909857190360",
@@ -27,7 +28,37 @@
   "listed": true,
   "skill": "styles/pm-raphaelaubryy-4b137e/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/shapes.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/particles.md"
+  ],
+  "summary_ar": "بكرة مدتها 15 ثانية بلوحة كريمي وأسود وتيراكوتا: خط يرسم ويكشف «SHOW REEL» بغروتسك أسود، دائرة تيراكوتا تتحول إلى مربع ومثلث داخل حلقات رفيعة، شبكة خلايا كريمية تمتلئ لتشكّل «5.5» بالبكسل، سحابة جسيمات تتجمع في «OPUS»، فقاعات سائلة كريمية على تيراكوتا تلتحم وتنفصل، جدار كلمات متحرك يقطعه شريط عنوان، مكعب ثلاثي الأبعاد يدور بأسماء المهارات، ثم بطاقة ختام.",
+  "summary_en": "A 15-second showreel in cream, black and terracotta: 'SHOW REEL' revealed off a ruled line, a circle morphing to square and triangle, a cell grid spelling a pixel '5.5', particles forming 'OPUS', cream metaballs on terracotta, a scrolling word wall cut by a title band, a tumbling 3D cube of skill names, and an end card.",
+  "keywords": [
+    "showreel",
+    "motion resume",
+    "shape morph",
+    "pixel grid",
+    "particles",
+    "metaballs",
+    "word wall",
+    "3D cube",
+    "terracotta",
+    "بكرة أعمال",
+    "سيرة ذاتية",
+    "تحول الأشكال",
+    "شبكة بكسل",
+    "كرات سائلة",
+    "مكعب ثلاثي الأبعاد"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "React",
+    "SVG",
+    "HTML Canvas",
+    "Three.js",
+    "Remotion"
+  ],
+  "brief": "styles/pm-raphaelaubryy-4b137e/BRIEF.md"
 }

@@ -1,7 +1,7 @@
 {
   "id": "ui-micro",
   "name": "واجهات دقيقة",
-  "name_ar": "واجهات دقيقة",
+  "name_ar": "تفاعلات واجهة دقيقة: أزرار ومفاتيح وإشعارات بحركة متقنة",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -24,5 +24,32 @@
   "skill": "styles/ui-micro/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي مقرّب جداً على عناصر واجهة تطبيق: زر يُضغط ويتحول إلى مؤشر تحميل ثم علامة صح، مفتاح تبديل ينزلق، إشعار ينزل بنابض، وأيقونة قلب تنفجر بجسيمات، على خلفية فاتحة نظيفة بظلال ناعمة.",
+  "summary_en": "A vertical reel zoomed in close on app interface elements: a button presses, turns into a spinner and then a check mark, a toggle slides, a notification drops in on a spring, and a heart icon bursts into particles, all on a clean light background with soft shadows.",
+  "keywords": [
+    "micro interactions",
+    "ui animation",
+    "button",
+    "toggle",
+    "notification",
+    "spring",
+    "app ui",
+    "تفاعلات دقيقة",
+    "واجهة تطبيق",
+    "زر",
+    "إشعار",
+    "تحريك الواجهة",
+    "تصميم منتجات"
+  ],
+  "difficulty": 2,
+  "duration_s": 25,
+  "stack": [
+    "React",
+    "Remotion",
+    "CSS",
+    "SVG",
+    "Lottie"
+  ],
+  "brief": "styles/ui-micro/BRIEF.md"
 }

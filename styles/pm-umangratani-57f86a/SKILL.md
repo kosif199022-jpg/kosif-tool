@@ -1,9 +1,9 @@
 ---
 name: pm-umangratani-57f86a
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15 s showreel inside an editor HUD (corners, frame counter, 128 BPM): a red dot multiplies into a ring, a heavy headline builds on a red slate, shapes morph in a transform box, a cream dot grid ripples, particles form a sphere, torus and wire cube on blue, a striped ribbon ties a knot on yellow, words spiral, then a serif signature. Use to make a new video in this look (Shapes); address it by ID pm-umangratani-57f86a.
 ---
 
-# KOSIF TOOL — Shape and dot motion showreel
+# KOSIF TOOL — Shape and dot motion showreel / شوريل أشكال ونقاط بإيقاع 128 نبضة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/umangratani-57f86a
@@ -17,16 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شوريل موشن مدته 15 ثانية بإطار واجهة محرر (زوايا، عدّاد إطارات، شريط إيقاع 128 BPM): نقطة حمراء واحدة تتكاثر إلى حلقة، شاشة حمراء بعنوان ثقيل يُبنى كلمة كلمة بين أقواس، أشكال تتحول داخل صندوق تحديد (دائرة، مربع أزرق، زهرة)، شبكة نقاط على كريمي تنبعج بموجات، كرة جسيمات وحلقة وتكعيب سلكي على الأزرق، شريط مخطط ينعقد على الأصفر، دوامة كلمات، ثم توقيع بخط سيريف.
+
+A 15 s showreel inside an editor HUD (corners, frame counter, 128 BPM): a red dot multiplies into a ring, a heavy headline builds on a red slate, shapes morph in a transform box, a cream dot grid ripples, particles form a sphere, torus and wire cube on blue, a striped ribbon ties a knot on yellow, words spiral, then a serif signature.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Three.js), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال.
-- [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+Categories: Shapes / أشكال, Kinetic type / تايبوغرافي متحرك, Particles / جسيمات.
 - [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

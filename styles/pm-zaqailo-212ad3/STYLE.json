@@ -1,12 +1,14 @@
 {
   "id": "pm-zaqailo-212ad3",
   "name": "Motion designer showreel",
-  "name_ar": null,
+  "name_ar": "ريل أفقي لمصمم موشن: تايبوغرافي وفسيفساء باوهاوس وجسيمات وكرات معدنية سائلة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "3d"
   ],
   "creator": "@zaqailo",
   "creator_url": "https://x.com/zaqailo/status/2103768009017835623",
@@ -27,7 +29,39 @@
   "listed": true,
   "skill": "styles/pm-zaqailo-212ad3/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/3d.md"
+  ],
+  "summary_ar": "ريل أفقي سريع (15 ثانية) لمصمم موشن داخل إطار واجهة بتوقيت ونبض إيقاع: نقطة حمراء تمتد خطاً على شبكة، كلمة عريضة على خلفية كريمية تتحول بإضافة حرف أحمر وتتكرر صفوفاً مفرغة، فسيفساء باوهاوس بالأحمر والأزرق والأصفر، جسيمات ذهبية تصير حلقة وشريطاً وكرة، كرة منخفضة المضلعات تتشظى، كتل سائلة بتدرج برتقالي أزرق، كلمات فصول على خلفيات ملونة، ثم الاسم مع نقطة حمراء.",
+  "summary_en": "A fast 15-second landscape motion-designer reel in a HUD with timecode and BPM: a red dot stretches into a line, a bold word on cream gains a red letter and repeats in outlined rows, a red-blue-yellow Bauhaus mosaic, golden particles forming a ring and sphere, a shattering low-poly sphere, orange-to-blue metaballs, then the name with a red full stop.",
+  "keywords": [
+    "showreel",
+    "motion designer",
+    "bauhaus pattern",
+    "kinetic type",
+    "particles",
+    "low poly",
+    "metaballs",
+    "beat sync",
+    "HUD",
+    "ريل",
+    "مصمم موشن",
+    "باوهاوس",
+    "جسيمات",
+    "ثلاثي الأبعاد",
+    "متزامن مع الإيقاع"
+  ],
+  "difficulty": 5,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "Three.js",
+    "WebGL",
+    "HTML Canvas",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-zaqailo-212ad3/BRIEF.md"
 }

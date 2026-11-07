@@ -1,10 +1,13 @@
 {
   "id": "pm-buildfastwithai-ed9447",
   "name": "Three.js Skyraider aircraft model",
-  "name_ar": null,
+  "name_ar": "طائرة مروحية ثلاثية الأبعاد قابلة للطيران في ملف HTML واحد",
   "origin": "PromptsMotion",
   "type": "Prompt",
-  "category": [],
+  "category": [
+    "3d",
+    "product-ui"
+  ],
   "creator": "@BuildFastWithAI",
   "creator_url": "https://x.com/BuildFastWithAI/status/2103152898708582551",
   "page": "https://www.promptsmotion.com/buildfastwithai-ed9447",
@@ -25,5 +28,35 @@
   "source_prompt_words": 7,
   "listed": true,
   "skill": "styles/pm-buildfastwithai-ed9447/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/3d.md",
+    "playbooks/product-ui.md"
+  ],
+  "summary_ar": "عرض مدته 39 ثانية لطائرة هجوم مروحية من الحرب الباردة مبنية بالكود في Three.js: تقف على أرضية رملية مبلطة بجانب لوحة تحكم بيضاء، والكاميرا تدور حولها بينما تتحرك أجزاؤها (المروحة، الغطاء، القلابات، الأجنحة المطوية) ويتبدل طلاؤها وحمولتها، ثم تقلع فوق غابة إجرائية خضراء وتنتهي ببطاقة ختام بخط مكثف داكن.",
+  "summary_en": "A 39-second showcase of a code-built Cold War propeller attack plane in Three.js: it sits on a tiled sand apron beside a white control panel while the camera orbits and its parts move (prop, canopy, flaps, folding wings) and its paint and stores swap, then it flies over a procedural green patchwork and ends on a dark condensed-type end card.",
+  "keywords": [
+    "three.js",
+    "procedural 3d",
+    "aircraft",
+    "warbird",
+    "configurator",
+    "orbit camera",
+    "wing fold",
+    "flight sim",
+    "tech demo",
+    "طائرة",
+    "نموذج ثلاثي الأبعاد",
+    "هندسة إجرائية",
+    "عرض تقني",
+    "محاكاة طيران"
+  ],
+  "difficulty": 5,
+  "duration_s": 39,
+  "stack": [
+    "Three.js",
+    "WebGL",
+    "HTML Canvas",
+    "CSS"
+  ],
+  "brief": "styles/pm-buildfastwithai-ed9447/BRIEF.md"
 }

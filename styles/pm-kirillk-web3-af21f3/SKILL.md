@@ -1,9 +1,9 @@
 ---
 name: pm-kirillk-web3-af21f3
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 26-second zoomed screen walkthrough of a code-hosting repository page on white: the camera pushes in to highlight the repo name, slides to the star count, pulls back to the whole page, then scrolls the README past an editorial cover, a diagram-type gallery, a comparison table and install commands, with a handle badge bottom-right. Use to make a new video in this look (Product UI); address it by ID pm-kirillk-web3-af21f3.
 ---
 
-# KOSIF TOOL — Diagram Design: 44 kinds of diagrams
+# KOSIF TOOL — Diagram Design: 44 kinds of diagrams / جولة مقربة في صفحة مستودع كود تعرض مهارة لرسم المخططات
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/kirillk-web3-af21f3
@@ -18,19 +18,22 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+تسجيل شاشة مكبّر مدته 26 ثانية لصفحة مستودع على منصة كود بخلفية بيضاء: الكاميرا تقترب من اسم المستودع وتظلله، تنزلق إلى عدد النجوم، تبتعد لتعرض الصفحة كاملة، ثم تنزل إلى ملف التعريف بغلاف تحريري ومعرض لأنواع المخططات وجدول مقارنة وأوامر تثبيت، مع ضبابية حركة في التمرير وشارة اسم الناشر أسفل اليمين طوال الوقت.
+
+A 26-second zoomed screen walkthrough of a code-hosting repository page on white: the camera pushes in to highlight the repo name, slides to the star count, pulls back to the whole page, then scrolls the README past an editorial cover, a diagram-type gallery, a comparison table and install commands, with a handle badge bottom-right.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (26 s), aspect 16:9, difficulty 2/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Diagrams / مخططات, Characters / شخصيات, Code / كود.
+Categories: Product UI / واجهات المنتج, Diagrams / مخططات, Code / كود.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/diagrams.md](../../playbooks/diagrams.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
 - [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
 * Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)

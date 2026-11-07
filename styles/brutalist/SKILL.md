@@ -1,9 +1,9 @@
 ---
 name: brutalist
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: Raw brutalist type: huge heavy black words fill the frame on white or signal yellow, visible grid lines, index numbers and arrows, hard cuts with no easing on every beat, red bars, rubber-stamp labels and high-contrast black-and-white photos slammed in and out. Use to make a new video in this look (Kinetic type); address it by ID brutalist.
 ---
 
-# KOSIF TOOL — بروتالي
+# KOSIF TOOL — بروتالي / تايبوغرافي بروتالي خام بقطعات حادة
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+تصميم بروتالي خام: كلمات ضخمة سوداء ثقيلة تملأ الكادر على خلفية بيضاء أو صفراء، شبكة ظاهرة وأرقام وأسهم، قطع حاد بلا تسهيل على كل نبضة، أشرطة حمراء وأختام وصور أبيض وأسود عالية التباين.
+
+Raw brutalist type: huge heavy black words fill the frame on white or signal yellow, visible grid lines, index numbers and arrows, hard cuts with no easing on every beat, red bars, rubber-stamp labels and high-contrast black-and-white photos slammed in and out.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (28 s), aspect 9:16, difficulty 2/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Kinetic type / تايبوغرافي متحرك.

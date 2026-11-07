@@ -1,9 +1,9 @@
 ---
 name: pm-3xtihor-0f6911
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second showreel with viewfinder corners and timecode: a red ball drops with onion-skin ghosts, giant words smear across an orange field, a cream square morphs on blue with bezier handles, grids breathe, a 3D cylinder of motion terms spins, a five-tile bento board shows skills, and a particle vortex condenses into the name with a red-dot end card. Use to make a new video in this look (Kinetic type); address it by ID pm-3xtihor-0f6911.
 ---
 
-# KOSIF TOOL — Claude motion designer showreel
+# KOSIF TOOL — Claude motion designer showreel / شوريل مصمم موشن: حلقة نصوص ثلاثية الأبعاد وألواح مهارات
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/3xtihor-0f6911
@@ -17,14 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شوريل مدته 15 ثانية بإطار عدسة ورقم وقت وعلامة إيقاع: كرة حمراء تسقط بآثار متكررة على خط بمقياس، ثم كلمتان ضخمتان على حقل برتقالي (الثانية تتمدد ضبابياً)، مربع كريمي يتحول إلى مثلث وزهرة على أزرق بمقابض بيزيه، شبكة مربعات ثم نقاط تتنفس، حلقة أسطوانية دوارة من نصوص الموشن بالليموني والأحمر والوردي، لوحة شبكية من خمس بطاقات مهارات، دوامة جسيمات تتجمع في اسم، وختام بالاسم ونقطة حمراء.
+
+A 15-second showreel with viewfinder corners and timecode: a red ball drops with onion-skin ghosts, giant words smear across an orange field, a cream square morphs on blue with bezier handles, grids breathe, a 3D cylinder of motion terms spins, a five-tile bento board shows skills, and a particle vortex condenses into the name with a red-dot end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Three.js, HTML Canvas), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, 3D / ثلاثي الأبعاد.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

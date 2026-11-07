@@ -1,9 +1,9 @@
 ---
 name: pm-kloss-xyz-b9b3f6
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 10-second cold open on near-black: a tiny orange dot pulses with a glow like a heartbeat, a small white uppercase line reveals word by word and an orange line answers it, everything dims, then a grey flash with a typing cursor, and a huge condensed two-line title (white over orange) rises letter by letter from a hidden baseline, with a tiny tracked subtitle and a date range beneath. Use to make a new video in this look (Kinetic type); address it by ID pm-kloss-xyz-b9b3f6.
 ---
 
-# KOSIF TOOL — History of AI animated timeline video
+# KOSIF TOOL — History of AI animated timeline video / افتتاحية سينمائية لتاريخ الذكاء الاصطناعي: نقطة تنبض ثم عنوان ضخم
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/kloss-xyz-b9b3f6
@@ -17,12 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+افتتاحية مدتها 10 ثوانٍ على أسود شبه كامل: نقطة برتقالية صغيرة تنبض بتوهج كنبض قلب، ثم سطر أبيض صغير بأحرف كبيرة يُكشف كلمة كلمة ويتبعه سطر برتقالي يرد عليه، يخفت كل شيء، ثم وميض رمادي ومؤشر كتابة، ويصعد عنوان مكثف ضخم من سطرين (الأول أبيض والثاني برتقالي) حرفاً حرفاً من خط خفي، مع سطر فرعي صغير متباعد وتواريخ أسفله.
+
+A 10-second cold open on near-black: a tiny orange dot pulses with a glow like a heartbeat, a small white uppercase line reveals word by word and an orange line answers it, everything dims, then a grey flash with a typing cursor, and a huge condensed two-line title (white over orange) rises letter by letter from a hidden baseline, with a tiny tracked subtitle and a date range beneath.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, HTML Canvas), suggested duration (10 s), aspect 16:9, difficulty 2/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: creative motion.
-- (no category playbook yet)
+Categories: Kinetic type / تايبوغرافي متحرك, Particles / جسيمات.
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
 
 Category tactics:
-* Develop original choreography from the reference; verify imagery before claiming a match.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

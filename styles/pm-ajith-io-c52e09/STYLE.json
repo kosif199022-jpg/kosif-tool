@@ -1,12 +1,12 @@
 {
   "id": "pm-ajith-io-c52e09",
   "name": "Distilbook product video",
-  "name_ar": null,
+  "name_ar": "فيديو منتج يحوّل الملفات إلى شرح مرسوم باليد بثلاث خطوات",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
-    "charts",
+    "hand-drawn",
     "kinetic-type"
   ],
   "creator": "@ajith_io",
@@ -29,7 +29,34 @@
   "skill": "styles/pm-ajith-io-c52e09/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md",
+    "playbooks/hand-drawn.md",
     "playbooks/kinetic-type.md"
-  ]
+  ],
+  "summary_ar": "فيديو منتج مدته 40 ثانية على خلفية بيضاء دافئة: سطر افتتاحي بخط يدوي، شعار بأشرطة كتب ملونة، ثم ثلاث خطوات بشريط تقدم ثلاثي الألوان أعلى الشاشة (رفع ملف بسحبه إلى منطقة الإسقاط، مراجعة نص التعليق وتعديل كلمة، ومشاهدة رسم يدوي ملون لنبتة يُبنى مع ترجمة تُبرز الكلمات)، ثم شطب نصي، وجدار مصغرات يتراجع بالكاميرا، وإطار هاتف عمودي، وعدد ضخم للغات، وختام بالشعار وزر رابط.",
+  "summary_en": "A 40-second product video on warm white: a handwritten opener, a book-spine logo, three steps under a tri-colour progress bar (drop a file, edit a narration script, watch a hand-drawn plant illustration build with word-highlighted captions), then a pulled-back wall of thumbnails, a phone frame, a huge language count and a logo end card.",
+  "keywords": [
+    "product video",
+    "three steps",
+    "upload UI",
+    "narration script",
+    "hand-drawn illustration",
+    "word highlight captions",
+    "progress bar",
+    "thumbnail wall",
+    "فيديو منتج",
+    "ثلاث خطوات",
+    "رسم يدوي",
+    "ترجمة متزامنة",
+    "واجهة رفع ملف",
+    "شرح تعليمي"
+  ],
+  "difficulty": 4,
+  "duration_s": 40,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/pm-ajith-io-c52e09/BRIEF.md"
 }

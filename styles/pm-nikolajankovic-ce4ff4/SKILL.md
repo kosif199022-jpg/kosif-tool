@@ -1,9 +1,9 @@
 ---
 name: pm-nikolajankovic-ce4ff4
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A calm 58 s explainer at about 3:2 and 12 fps in pencil on light grey paper: a blue-underlined title, branching boxes, a loan card, a thermometer gauge with blue and red thresholds, a price chart crashing at night beside a sleeping figure, then sun and coffee in the morning, with first-person subtitles typed onto a taped paper strip at the bottom. Use to make a new video in this look (Hand-drawn); address it by ID pm-nikolajankovic-ce4ff4.
 ---
 
-# KOSIF TOOL — DeFi Saver stop-motion explainer
+# KOSIF TOOL — DeFi Saver stop-motion explainer / شرح بأسلوب رسم بالقلم الرصاص بإيقاع إيقاف الحركة لأداة حماية القروض
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/nikolajankovic-ce4ff4
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شرح هادئ مدته 58 ثانية بنسبة قريبة من 3:2 وبإيقاع 12 إطاراً في الثانية، على ورق رمادي فاتح يُرسم عليه بالقلم: عنوان مسطّر بالأزرق، صناديق وأشجار ربط، بطاقة قرض، مقياس حرارة يمثّل نسبة الأمان مع خطّين أزرق وأحمر، مخطط سعر ينهار ليلاً بجانب سرير نائم وقمر، ثم شمس وكوب قهوة صباحاً، مع شريط ترجمة على ورقة ملصقة بشريط لاصق أسفل الإطار وراوٍ يتكلم بصيغة المتكلم.
+
+A calm 58 s explainer at about 3:2 and 12 fps in pencil on light grey paper: a blue-underlined title, branching boxes, a loan card, a thermometer gauge with blue and red thresholds, a price chart crashing at night beside a sleeping figure, then sun and coffee in the morning, with first-person subtitles typed onto a taped paper strip at the bottom.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (58 s), aspect 1280x848, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Diagrams / مخططات, Characters / شخصيات.
+Categories: Hand-drawn / رسم يدوي, Diagrams / مخططات, Charts / رسوم بيانية.
+- [playbooks/hand-drawn.md](../../playbooks/hand-drawn.md)
 - [playbooks/diagrams.md](../../playbooks/diagrams.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
+* Order stroke draw-on like a human hand would; keep imperfection deliberate; pace reveals to narration.
 * Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.
