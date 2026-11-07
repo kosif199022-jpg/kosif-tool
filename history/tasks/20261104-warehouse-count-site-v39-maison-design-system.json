@@ -308,6 +308,13 @@
    "what": "v63.1 (artifact version 78): invoice opens as a full page (desktop and phone) instead of a side panel; part location (الموقع) shown in search results, as its own column on screen and on the printed invoice, and stored with saved invoices.",
    "checks": "location B10 typed in the grid appears in search result, invoice column and print; sheet covers 1900x900 and 390x844 and closes cleanly; 0 page errors",
    "status": "published"
+  },
+  {
+   "n": 39,
+   "at": "2026-11-07T09:25:00+03:00",
+   "what": "v63.2 (artifact version 79): invoice picker shows the warehouse items straight away (the current filtered list, 40 at a time, scrollable) and searches all 2,533 items with the same word-by-word matching as the main search (name words, code, SMACC, alternative numbers); results show stock and location, items already on the invoice are marked and add +1; the typed search stays after adding.",
+   "checks": "empty picker 40 items; مقص 40+, لي ماء 40+, KHZ1178PF 3, 06E121045 9, nonsense 0; add keeps query and marks the item; t65 totals 908.50; 0 page errors",
+   "status": "published"
   }
  ],
  "outputs": [
