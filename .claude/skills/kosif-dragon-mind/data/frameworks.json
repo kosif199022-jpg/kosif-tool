@@ -2200,7 +2200,25 @@
      "title": "Thinking, Fast and Slow",
      "ratings": 136950
     }
-   ]
+   ],
+   "trap": false,
+   "summary_en": "Instead of forecasting from the specifics of your own plan, first find a class of similar past efforts and their outcome distribution, use it as the baseline, and only then adjust for case-specific factors. It counters overoptimism, while a separate risk policy counters overcaution.",
+   "summary_ar": "بدلا من التنبؤ انطلاقا من تفاصيل خطتك، ابحث اولا عن فئة من المحاولات السابقة المشابهة وتوزيع نتائجها، واتخذها خط اساس، ثم عدل وفق خصائص الحالة. هذا يعالج التفاؤل المفرط، بينما تعالج سياسة مخاطر منفصلة الحذر المفرط.",
+   "debias_en": "Write the base rate from similar cases before any detail of your own plan, anchor on it, and move only as far as concrete evidence about your case warrants.",
+   "debias_ar": "اكتب المعدل الاساسي من الحالات المشابهة قبل اي تفصيل من خطتك، وارتكز عليه، ولا تبتعد عنه الا بقدر ما يسمح به دليل ملموس عن حالتك.",
+   "page_refs": [
+    207,
+    208,
+    209,
+    211,
+    212,
+    287
+   ],
+   "book_examples": [
+    "curriculum textbook team",
+    "Flyvbjerg transport projects"
+   ],
+   "full_text_read": "thinking_fast_slow"
   },
   {
    "id": "system-1-system-2",
@@ -2252,7 +2270,32 @@
      "title": "Thinking, Fast and Slow",
      "ratings": 136950
     }
-   ]
+   ],
+   "trap": false,
+   "summary_en": "Most judgments come from an automatic, effortless System 1 whose output a lazy, effortful System 2 usually just endorses; System 1 cannot be switched off, so the practical move is to recognize situations where its impressions are known to mislead and call in deliberate checking there.",
+   "summary_ar": "تصدر معظم الاحكام عن نظام اول تلقائي لا يكلف جهدا، ويكتفي النظام الثاني المتأني الكسول عادة بالمصادقة عليها. ولا يمكن ايقاف النظام الاول، لذا فالخطوة العملية هي تمييز المواقف التي يُعرف ان انطباعاته تضلل فيها واستدعاء التحقق المتأني هناك.",
+   "debias_en": "Write down the first answer that came to mind as a hypothesis, name the illusion pattern it might fit, and run one deliberate test before committing whenever the stakes are high.",
+   "debias_ar": "دوّن الجواب الاول الذي خطر لك بوصفه فرضية، وسمّ نمط الوهم الذي قد ينطبق عليه، ونفّذ اختبارا متأنيا واحدا قبل الالتزام كلما كانت المخاطر عالية.",
+   "page_refs": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    28,
+    35,
+    57,
+    351,
+    352
+   ],
+   "book_examples": [
+    "17 x 24 vs angry face",
+    "Müller-Lyer illusion",
+    "Cognitive Reflection Test"
+   ],
+   "full_text_read": "thinking_fast_slow"
   },
   {
    "id": "wrap-process",
@@ -2723,7 +2766,21 @@
      "title": "Thinking, Fast and Slow",
      "ratings": 136950
     }
-   ]
+   ],
+   "trap": false,
+   "summary_en": "Just before committing, imagine the plan was carried out and failed badly a year later, then write a short account of how it failed. This legitimizes doubts that group momentum suppresses and turns imagination toward threats that a single success story hides.",
+   "summary_ar": "قبل الالتزام مباشرة، تخيل ان الخطة نفذت وفشلت فشلا ذريعا بعد سنة، ثم اكتب قصة مختصرة عن كيفية فشلها. هذا يمنح الشرعية للشكوك التي يكبتها اندفاع المجموعة، ويوجه الخيال نحو التهديدات التي تخفيها قصة النجاح الواحدة.",
+   "debias_en": "Schedule the premortem right before final approval, require concrete failure narratives rather than risk labels, and feed each one back into a plan change.",
+   "debias_ar": "اجعل التشريح المسبق قبيل الاعتماد النهائي مباشرة، واطلب روايات فشل ملموسة لا مجرد تسميات للمخاطر، واجعل كل رواية تنعكس تعديلا في الخطة.",
+   "page_refs": [
+    222,
+    223
+   ],
+   "book_examples": [
+    "Gary Klein's premortem",
+    "Davos CEO anecdote"
+   ],
+   "full_text_read": "thinking_fast_slow"
   },
   {
    "id": "red-team",
@@ -5756,7 +5813,3091 @@
    "anti_pattern": "drawing a board without WIP limits, which makes it just a to-do list",
    "cost": "low",
    "book_evidence": []
+  },
+  {
+   "id": "tfs-lazy-controller",
+   "name_en": "The Lazy Controller",
+   "name_ar": "المراقب الكسول",
+   "family": "decide",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "easy",
+    "multitask",
+    "obvious",
+    "parallel",
+    "rush",
+    "shortcut",
+    "simple",
+    "tired"
+   ],
+   "triggers_ar": [
+    "اختصار",
+    "بسيط",
+    "تعدد",
+    "سهل",
+    "متزامن",
+    "متعب",
+    "مستعجل",
+    "واضح"
+   ],
+   "questions_en": [
+    "Did I accept this answer because I verified it, or because it was plausible and came easily?",
+    "Am I juggling several demanding tasks or working tired, so that I am defaulting to the standard template instead of thinking?",
+    "Which single number, logic step or claim in my output would a 60-second recheck most likely overturn?"
+   ],
+   "questions_ar": [
+    "هل قبلت هذا الجواب لانني تحققت منه، ام لانه بدا معقولا وجاء بسهولة؟",
+    "هل اوزع جهدي على عدة مهام صعبة او اعمل متعبا، فاعود الى القالب المعتاد بدل التفكير؟",
+    "ما الرقم او خطوة الاستدلال او الادعاء الوحيد في مخرجاتي الذي يرجح ان تنقضه مراجعة مدتها دقيقة؟"
+   ],
+   "output": "A recheck log of the plan's quick answers: each one recomputed or re-derived, with the result marked confirmed or overturned.",
+   "check": "At least 3 quick answers (numbers, logic steps or key claims) are recomputed independently, and every overturned one is fixed before build.",
+   "anti_pattern": "Rechecking only the parts that already felt hard while skipping the ones that felt obvious, or performing a ritual review that just rereads the answer instead of recomputing it.",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "System 2 has a limited effort budget and follows a law of least effort, so it endorses plausible intuitive answers that a few seconds of checking would reject. Load, multitasking, fatigue and depletion make it fall back on defaults and the tempting option.",
+   "summary_ar": "للنظام الثاني ميزانية جهد محدودة ويتبع قانون الجهد الادنى، فيصادق على اجوبة حدسية معقولة الظاهر كان يكفي فحص ثوان لرفضها. ويدفعه الحمل الذهني وتعدد المهام والتعب والاستنزاف الى الاحتماء بالخيارات الافتراضية والاغراء الاسهل.",
+   "debias_en": "Target the checks at the answers that felt easiest, recompute them from scratch, and do this when not overloaded, splitting demanding work into sequential rather than parallel steps.",
+   "debias_ar": "وجّه الفحص الى الاجوبة التي بدت اسهل، واعد حسابها من الصفر، وافعل ذلك في غير اوقات الحمل الزائد، مقسما العمل الشاق الى خطوات متتابعة لا متوازية.",
+   "page_refs": [
+    30,
+    33,
+    35,
+    37,
+    38,
+    40,
+    41,
+    42,
+    44,
+    140,
+    141,
+    166
+   ],
+   "book_examples": [
+    "bat-and-ball",
+    "flowers syllogism",
+    "cake under digit load"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-priming",
+   "name_en": "Priming and Associative Activation",
+   "name_ar": "التهيئة والتنشيط الترابطي",
+   "family": "frame",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "context",
+    "example",
+    "framing",
+    "inspiration",
+    "keyword",
+    "phrasing",
+    "reference",
+    "wording"
+   ],
+   "triggers_ar": [
+    "الهام",
+    "تاطير",
+    "سياق",
+    "صياغة",
+    "عبارة",
+    "كلمة",
+    "مثال",
+    "مرجع"
+   ],
+   "questions_en": [
+    "Which words, examples or reference pieces in the brief are pulling my ideas toward them rather than toward the goal?",
+    "Would my output change if the same request were phrased neutrally or the reference examples were removed?",
+    "Am I finding exactly what I was primed to look for (flaws, success, a trend) because I was told to expect it?"
+   ],
+   "questions_ar": [
+    "ما الكلمات او الامثلة او المراجع في الطلب التي تجذب افكاري نحوها بدلا من الهدف؟",
+    "هل ستتغير مخرجاتي لو صيغ الطلب نفسه بصياغة محايدة او حُذفت الامثلة المرجعية؟",
+    "هل اجد بالضبط ما هُيئت للبحث عنه (عيوبا او نجاحا او اتجاها) لانه قيل لي ان اتوقعه؟"
+   ],
+   "output": "A prime audit: the brief rewritten in neutral wording, the priming cues listed, and a comparison of ideas generated with and without them.",
+   "check": "At least 3 priming cues in the brief are identified, and at least 2 of the final options were generated from the neutral rewrite without reference examples.",
+   "anti_pattern": "Assuming you are immune because you do not feel influenced, or stripping all context so the work loses the brief's real constraints.",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "An evoked word, image or setting silently spreads activation through associative memory, shifting later judgments and choices without awareness. Anchors work the same way, so the brief's wording and examples can steer the outcome more than the actual goal does.",
+   "summary_ar": "تنشر كلمة او صورة او بيئة مستحضرة تنشيطا صامتا عبر الذاكرة الترابطية، فتغيّر الاحكام والاختيارات اللاحقة دون وعي. وتعمل الارقام المرجعية بالطريقة نفسها، لذا قد توجّه صياغة الطلب وامثلته النتيجة اكثر مما يوجهها الهدف الفعلي.",
+   "debias_en": "Restate the goal in neutral terms, generate options before looking at reference examples, and compare both sets; deliberately pick the cues you want your audience to receive.",
+   "debias_ar": "اعد صياغة الهدف بعبارات محايدة، وولّد الخيارات قبل الاطلاع على الامثلة المرجعية ثم قارن المجموعتين، واختر عمدا الاشارات التي تريد ان يتلقاها جمهورك.",
+   "page_refs": [
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    70,
+    105,
+    106,
+    109
+   ],
+   "book_examples": [
+    "Florida effect",
+    "money priming",
+    "honesty box eyes"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-cognitive-ease",
+   "name_en": "Cognitive Ease and Fluency Illusions",
+   "name_ar": "السهولة المعرفية واوهام الطلاقة",
+   "family": "risk",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "catchy",
+    "familiar",
+    "famous",
+    "polished",
+    "popular",
+    "repeated",
+    "slogan",
+    "trending"
+   ],
+   "triggers_ar": [
+    "ترند",
+    "جذاب",
+    "شائع",
+    "شعار",
+    "مالوف",
+    "متكرر",
+    "مشهور",
+    "مقنع"
+   ],
+   "questions_en": [
+    "Do I believe this claim, source or idea because it is well-supported, or because I have seen it often and it reads smoothly?",
+    "Am I dismissing an option only because it is unfamiliar or awkwardly presented?",
+    "Which claims in my output would I still accept if they were written plainly, with no slogan, rhyme or polish?"
+   ],
+   "questions_ar": [
+    "هل اصدّق هذا الادعاء او المصدر او الفكرة لانه مدعوم جيدا، ام لانني رايته كثيرا وتسهل قراءته؟",
+    "هل استبعد خيارا لمجرد انه غير مالوف او معروض بطريقة ركيكة؟",
+    "ما الادعاءات في مخرجاتي التي سأظل اقبلها لو كُتبت بصياغة عادية بلا شعار او سجع او تلميع؟"
+   ],
+   "output": "A fluency-stripped claims table: each key claim restated plainly with its evidence, separated from presentation choices that are used on purpose for the audience.",
+   "check": "At least 5 key claims are restated plainly with a named source each, and 0 claims rely only on 'everyone knows' or repetition.",
+   "anti_pattern": "Concluding that fluent content is always false, or making the deliverable deliberately hard to read; fluency is a legitimate tool for the audience, not for the planner's own judgment.",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "Repetition, clear fonts, simple wording, rhyme and familiarity all create one feeling of ease, and that feeling is mistaken for truth, liking and credibility. Strain does the reverse: it makes people more vigilant and analytic.",
+   "summary_ar": "يولّد التكرار والخط الواضح والعبارة البسيطة والسجع والالفة شعورا واحدا بالسهولة، ويُخلط هذا الشعور بالصدق والاعجاب والمصداقية. اما الاجهاد المعرفي فيفعل العكس، اذ يجعل الناس اكثر يقظة وتحليلا.",
+   "debias_en": "Judge claims in plain, unpolished form and by their evidence; then use clarity, repetition and familiarity deliberately in the final audience-facing work.",
+   "debias_ar": "احكم على الادعاءات في صيغتها البسيطة غير المصقولة وبحسب ادلتها، ثم استخدم الوضوح والتكرار والالفة عمدا في المنتج النهائي الموجه للجمهور.",
+   "page_refs": [
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    114,
+    117
+   ],
+   "book_examples": [
+    "body temperature of a chicken",
+    "rhyming aphorisms",
+    "mere exposure words"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-norms-surprise-causes",
+   "name_en": "Norms, Surprises and Causal Stories",
+   "name_ar": "المعايير والمفاجآت والقصص السببية",
+   "family": "systems",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "anomaly",
+    "because",
+    "cause",
+    "drop",
+    "pattern",
+    "spike",
+    "viral",
+    "why"
+   ],
+   "triggers_ar": [
+    "ارتفاع",
+    "انخفاض",
+    "بسبب",
+    "تراجع",
+    "سبب",
+    "شذوذ",
+    "لماذا",
+    "نمط"
+   ],
+   "questions_en": [
+    "Am I explaining a spike, drop or success with a cause just because a salient event happened near it?",
+    "Could this pattern be ordinary random variation, and what would it look like if it were?",
+    "Is one recent striking incident making me treat it as the new normal for this plan?"
+   ],
+   "questions_ar": [
+    "هل افسر ارتفاعا او انخفاضا او نجاحا بسبب ما لمجرد ان حدثا بارزا وقع قريبا منه؟",
+    "هل يمكن ان يكون هذا النمط تقلبا عشوائيا عاديا، وكيف سيبدو لو كان كذلك؟",
+    "هل تجعلني حادثة لافتة واحدة حديثة اعاملها كانها الوضع الطبيعي الجديد في هذه الخطة؟"
+   ],
+   "output": "A cause register: each causal explanation in the task listed with at least one rival explanation including chance, plus the baseline variation it is compared against.",
+   "check": "Every causal claim has at least 2 rival explanations (one of them chance), and at least 1 claim is compared against a baseline of at least 5 prior periods or cases.",
+   "anti_pattern": "Refusing to infer any cause at all, or adding a token 'could be random' line without actually checking baseline variation.",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "System 1 keeps a running model of what is normal; a single striking event resets it, and surprises get stitched into causal stories automatically. As a result, people see causes in chance variation and credit whatever salient event is at hand.",
+   "summary_ar": "يحتفظ النظام الاول بنموذج متجدد لما هو طبيعي، ويكفي حدث لافت واحد لاعادة ضبطه، ثم تُحاك المفاجآت تلقائيا في قصص سببية. لذا يرى الناس اسبابا في التقلبات العشوائية وينسبون النتيجة الى اي حدث بارز قريب.",
+   "debias_en": "Before accepting a cause, compare the event with the normal range from past data and write out the chance explanation alongside the story.",
+   "debias_ar": "قبل قبول اي سبب، قارن الحدث بالنطاق الطبيعي في البيانات السابقة، واكتب تفسير الصدفة الى جانب القصة.",
+   "page_refs": [
+    63,
+    64,
+    65,
+    66,
+    67,
+    98,
+    99,
+    100,
+    116,
+    423
+   ],
+   "book_examples": [
+    "Moses illusion",
+    "Saddam capture headlines",
+    "London V-bomb clusters"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-wysiati",
+   "name_en": "What You See Is All There Is (WYSIATI)",
+   "name_ar": "ما تراه هو كل ما هناك",
+   "family": "frame",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "assume",
+    "certain",
+    "clearly",
+    "confident",
+    "enough",
+    "report",
+    "story",
+    "sure"
+   ],
+   "triggers_ar": [
+    "افتراض",
+    "تقرير",
+    "قصة",
+    "كاف",
+    "مؤكد",
+    "متاكد",
+    "واثق",
+    "واضح"
+   ],
+   "questions_en": [
+    "What information would I need to make this judgment well, and which of it is missing from what I have?",
+    "How reliable is the one source this plan rests on, and would the story change if the other side spoke?",
+    "What unknowns, competitors or delays am I leaving out because they are not in front of me?"
+   ],
+   "questions_ar": [
+    "ما المعلومات التي احتاجها لاصدار هذا الحكم جيدا، وما الغائب منها عما لدي؟",
+    "ما مدى موثوقية المصدر الوحيد الذي تقوم عليه هذه الخطة، وهل ستتغير القصة لو تكلم الطرف الاخر؟",
+    "ما المجهولات او المنافسون او التأخيرات التي اغفلها لانها ليست امامي؟"
+   ],
+   "output": "A missing-information list: the evidence the plan uses, the evidence it lacks, a reliability rating per source, and an explicit buffer for unknowns.",
+   "check": "At least 5 missing pieces of information are listed, every source has a reliability rating, and the plan includes at least 1 buffer (time or budget) for unforeseen problems.",
+   "anti_pattern": "Endlessly gathering information to avoid deciding, or listing unknowns and then planning exactly as before.",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "System 1 builds the most coherent story it can from whatever information is active and ignores what is missing, so confidence tracks coherence rather than the amount or quality of evidence. Less information often makes the story feel stronger, which feeds overconfidence and the planning fallacy.",
+   "summary_ar": "يبني النظام الاول اكثر القصص تماسكا مما يتوفر من معلومات ويتجاهل ما هو غائب، فتتبع الثقة تماسك القصة لا كمية الادلة ولا جودتها. وكثيرا ما تجعل قلة المعلومات القصة اقوى في الشعور، مما يغذي الثقة المفرطة ومغالطة التخطيط.",
+   "debias_en": "Ask explicitly what you would need to know and do not, seek the other side's case, discount weak sources, and run a premortem on the plan.",
+   "debias_ar": "اسأل صراحة عما تحتاج معرفته ولا تعرفه، واطلب حجة الطرف الاخر، وخفّض وزن المصادر الضعيفة، واجر تحليل ما قبل الفشل على الخطة.",
+   "page_refs": [
+    69,
+    70,
+    73,
+    74,
+    75,
+    76,
+    84,
+    131,
+    179,
+    208,
+    218,
+    222
+   ],
+   "book_examples": [
+    "Mindik leader question",
+    "one-sided lawyer case",
+    "Tom W"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-confirmation",
+   "name_en": "Confirmation Bias and Positive Testing",
+   "name_ar": "الانحياز التأكيدي والاختبار الايجابي",
+   "family": "risk",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "assume",
+    "confirm",
+    "hypothesis",
+    "prove",
+    "support",
+    "test",
+    "theory",
+    "validate"
+   ],
+   "triggers_ar": [
+    "اثبات",
+    "اختبار",
+    "افتراض",
+    "تاكيد",
+    "تحقق",
+    "دعم",
+    "فرضية",
+    "نظرية"
+   ],
+   "questions_en": [
+    "Is my test designed so that it could actually show my idea is wrong?",
+    "Did I phrase my research question in a way that retrieves supporting cases (is it good?) rather than disconfirming ones (is it bad?)?",
+    "What result would make me drop this plan, and have I looked for it?"
+   ],
+   "questions_ar": [
+    "هل صُمم اختباري بحيث يمكن ان يُظهر فعلا ان فكرتي خاطئة؟",
+    "هل صغت سؤال البحث بطريقة تستدعي الحالات الداعمة (هل هو جيد؟) بدل الحالات النافية (هل هو سيئ؟)؟",
+    "ما النتيجة التي ستجعلني اتخلى عن هذه الخطة، وهل بحثت عنها؟"
+   ],
+   "output": "A falsification plan: the core hypothesis, the disconfirming evidence that would refute it, and the tests or searches run to find that evidence.",
+   "check": "At least 2 tests or searches aimed at refuting the main hypothesis are run, at least 1 kill criterion is written before results arrive, and every disconfirming finding is recorded.",
+   "anti_pattern": "Running 'validation' that can only pass, or explaining away each contrary result as noise while counting each supportive one as proof.",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "Understanding a claim begins with believing it, and both memory and deliberate testing then search for evidence that fits the current hypothesis instead of trying to refute it. Established beliefs survive disconfirming results, especially when System 2 is busy.",
+   "summary_ar": "يبدأ فهم اي ادعاء بتصديقه، ثم تبحث الذاكرة والاختبار المتعمد كلاهما عن ادلة توافق الفرضية القائمة بدل محاولة دحضها. وتصمد المعتقدات الراسخة امام النتائج المخالفة، لا سيما حين يكون النظام الثاني منشغلا.",
+   "debias_en": "Ask the opposite question as well, write the kill criterion before testing, and seek out the strongest contrary evidence on purpose.",
+   "debias_ar": "اطرح السؤال المعاكس ايضا، واكتب معيار الالغاء قبل الاختبار، وابحث عمدا عن اقوى دليل مخالف.",
+   "page_refs": [
+    70,
+    71,
+    300,
+    418
+   ],
+   "book_examples": [
+    "Is Sam friendly?",
+    "Gilbert's dinca statements",
+    "Grether and Plott preference reversals"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-halo",
+   "name_en": "Halo effect and independent judgments",
+   "name_ar": "تاثير الهالة والاحكام المستقلة",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "consensus",
+    "evaluate",
+    "impression",
+    "impressive",
+    "polished",
+    "reputation",
+    "review",
+    "team"
+   ],
+   "triggers_ar": [
+    "اجتماع",
+    "اجماع",
+    "انطباع",
+    "تقييم",
+    "سمعة",
+    "فريق",
+    "مبهر",
+    "مراجعة"
+   ],
+   "questions_en": [
+    "Am I scoring this option's substance higher because of its presentation, brand, or the confidence of whoever proposed it?",
+    "Which attributes am I assuming are good or bad without any direct evidence, only because the overall impression is strong?",
+    "Did each reviewer or criterion get judged independently before we compared notes, or did the first opinion set the tone?"
+   ],
+   "questions_ar": [
+    "هل اعطي جوهر هذا الخيار درجة اعلى بسبب طريقة عرضه او اسم صاحبه او ثقة من اقترحه؟",
+    "ما الصفات التي افترض انها جيدة او سيئة دون دليل مباشر لمجرد ان الانطباع العام قوي؟",
+    "هل قيم كل مراجع او كل معيار بشكل مستقل قبل مقارنة الاراء، ام ان الراي الاول حدد الاتجاه؟"
+   ],
+   "output": "An independent scorecard: options rated per criterion, one criterion at a time (across all options), each score with its own evidence, plus private estimates collected before discussion.",
+   "check": "At least 3 criteria scored separately per option; 0 scores without cited evidence (otherwise marked 'unknown'); at least 2 independent judgments recorded before any group discussion.",
+   "anti_pattern": "Giving one global 'gut' grade and back-filling criterion scores to match it, or letting the most senior or most confident voice speak first.",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "One liked or disliked trait, a polished presentation, or the first item seen spreads to every other judgment and builds a picture more coherent than the evidence. The book's fix is to break the evaluation into separate dimensions and collect independent judgments before any discussion.",
+   "summary_ar": "صفة واحدة نحبها او نكرهها، او عرض مصقول، او اول معلومة نراها، تمتد الى كل حكم اخر وتصنع صورة متماسكة اكثر مما يسنده الدليل. والعلاج في الكتاب تقسيم التقييم الى ابعاد منفصلة وجمع احكام مستقلة قبل اي نقاش.",
+   "debias_en": "Score one dimension at a time across all options, hide source and presentation where possible, and have everyone write estimates privately before discussion.",
+   "debias_ar": "قيم بعدا واحدا في كل مرة عبر جميع الخيارات، واخف المصدر وطريقة العرض قدر الامكان، واطلب من كل فرد كتابة تقديره منفردا قبل النقاش.",
+   "page_refs": [
+    8,
+    71,
+    72,
+    73,
+    76,
+    176,
+    195,
+    196,
+    197,
+    207,
+    222
+   ],
+   "book_examples": [
+    "exam grading one question at a time",
+    "Asch's Alan vs Ben",
+    "pennies-in-jar averaging"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-substitution",
+   "name_en": "Substitution: answering an easier question",
+   "name_ar": "الاستبدال: الاجابة عن سؤال اسهل",
+   "family": "frame",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "assess",
+    "estimate",
+    "gut",
+    "likely",
+    "overall",
+    "predict",
+    "seems",
+    "worth"
+   ],
+   "triggers_ar": [
+    "انطباع",
+    "تقدير",
+    "تقييم",
+    "توقع",
+    "حدس",
+    "قيمة",
+    "يبدو",
+    "يستحق"
+   ],
+   "questions_en": [
+    "What is the exact target question of this task, and is the answer I am forming actually answering that question or an easier neighbour?",
+    "Is my answer really driven by how much I like it, how fluent or familiar it feels, or how it looks?",
+    "What evidence would answer the hard question directly, and do I have it?"
+   ],
+   "questions_ar": [
+    "ما السؤال المستهدف بدقة في هذه المهمة، وهل الجواب الذي اكونه يجيب عنه فعلا ام عن سؤال مجاور اسهل؟",
+    "هل جوابي مدفوع في الحقيقة بمدى اعجابي بالفكرة او سهولة فهمها او شكلها؟",
+    "ما الدليل الذي يجيب مباشرة عن السؤال الصعب، وهل هو متوفر لدي؟"
+   ],
+   "output": "A question ledger: the target question written verbatim, the heuristic question the gut is answering, and the evidence needed for the target.",
+   "check": "Target question written in 1 sentence; at least 1 likely substitute question named; at least 2 pieces of evidence listed that bear on the target question rather than the substitute.",
+   "anti_pattern": "Reframing the question until it matches the answer you already like, or calling a feeling of liking a forecast of value.",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "When the real question is hard, the fast mind quietly answers a related easy one, often 'how do I feel about it?' or 'does it look right?', and treats that as the answer. The person usually does not notice the swap.",
+   "summary_ar": "حين يكون السؤال الحقيقي صعبا يجيب العقل السريع بهدوء عن سؤال قريب واسهل، مثل كيف اشعر تجاهه او هل يبدو صحيحا، ثم يعامل ذلك على انه الجواب. وفي الغالب لا يلاحظ الشخص هذا التبديل.",
+   "debias_en": "Write the hard question down explicitly, name the easy question your intuition is answering, and require evidence that addresses the original before accepting the answer.",
+   "debias_ar": "اكتب السؤال الصعب صراحة، وسم السؤال السهل الذي يجيب عنه حدسك، واشترط دليلا يعالج السؤال الاصلي قبل قبول الجواب.",
+   "page_refs": [
+    15,
+    77,
+    84,
+    85,
+    86,
+    88,
+    90,
+    129,
+    160,
+    163,
+    337,
+    351
+   ],
+   "book_examples": [
+    "Ford stock vs liking Ford cars",
+    "dying dolphins donation",
+    "dime on the copier"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-intensity-matching",
+   "name_en": "Intensity matching and the mental shotgun",
+   "name_ar": "مطابقة الشدة والبندقية الذهنية",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "bundle",
+    "forecast",
+    "package",
+    "predict",
+    "projection",
+    "promising",
+    "score",
+    "total"
+   ],
+   "triggers_ar": [
+    "باقة",
+    "تقدير",
+    "تنبؤ",
+    "توقع",
+    "درجة",
+    "مجموع",
+    "مجموعة",
+    "واعد"
+   ],
+   "questions_en": [
+    "Is my numeric estimate just the strength of my impression mapped onto a scale, rather than something derived from a base rate?",
+    "If the quantity or scope were 10x larger or smaller, would my number change accordingly?",
+    "Am I judging a set or bundle by its average quality when the question is about its total?"
+   ],
+   "questions_ar": [
+    "هل تقديري الرقمي مجرد قوة انطباعي منقولة الى مقياس، بدل ان يكون مشتقا من معدل اساسي؟",
+    "لو كبر الحجم او النطاق عشر مرات او صغر، هل سيتغير رقمي بما يتناسب؟",
+    "هل احكم على مجموعة او باقة بمتوسط جودتها بينما السؤال عن مجموعها؟"
+   ],
+   "output": "A regressed estimate: the baseline, the intuitive estimate, and the final number moved toward the baseline in proportion to the evidence's reliability, plus a scope-sensitivity line.",
+   "check": "1 baseline value stated; final estimate placed between baseline and intuition; at least 1 scope test (e.g., x10) showing the number scales; for bundles, totals computed for at least 2 alternatives.",
+   "anti_pattern": "Issuing a forecast as extreme as the excitement, or adding a weak item to a strong package and assuming it raises the value.",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "The fast mind translates the strength of an impression onto any numeric scale, money, grades, size, forecasts, and computes more than asked, averaging instead of summing. Predictions come out as extreme as the impression and insensitive to scope.",
+   "summary_ar": "يترجم العقل السريع قوة الانطباع الى اي مقياس رقمي كالمال والدرجات والحجم والتوقعات، ويحسب اكثر مما طلب منه فيقيس المتوسط بدل المجموع. فتخرج التنبؤات متطرفة بقدر الانطباع وغير حساسة للحجم.",
+   "debias_en": "Start from the baseline average, estimate how well the evidence predicts the outcome, move from baseline toward intuition only that far, and check sums rather than averages.",
+   "debias_ar": "ابدا من المتوسط الاساسي، وقدر مدى قدرة الدليل على التنبؤ بالنتيجة، وتحرك من الاساس نحو الحدس بهذا القدر فقط، وتحقق من المجموع لا المتوسط.",
+   "page_refs": [
+    77,
+    79,
+    80,
+    81,
+    83,
+    86,
+    138,
+    139,
+    161,
+    163,
+    166,
+    168
+   ],
+   "book_examples": [
+    "Julie read at four",
+    "Exxon Valdez birds",
+    "Hsee dinnerware sets"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-affect-heuristic",
+   "name_en": "Affect heuristic",
+   "name_ar": "استدلال العاطفة",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "exciting",
+    "favorite",
+    "fear",
+    "love",
+    "passion",
+    "prefer",
+    "regret",
+    "risky"
+   ],
+   "triggers_ar": [
+    "احب",
+    "خوف",
+    "رائع",
+    "شغف",
+    "مثير",
+    "مخاطرة",
+    "مفضل",
+    "ندم"
+   ],
+   "questions_en": [
+    "Would I rate the risks the same if I disliked this idea, brand or person?",
+    "Have I listed real downsides of the option I love and real benefits of the one I dislike?",
+    "Is fear of regret or excitement about the concept driving this choice more than expected outcomes?"
+   ],
+   "questions_ar": [
+    "هل كنت ساقيم المخاطر بالطريقة نفسها لو كنت لا احب هذه الفكرة او العلامة او الشخص؟",
+    "هل كتبت عيوبا حقيقية للخيار الذي احبه وفوائد حقيقية للخيار الذي لا احبه؟",
+    "هل الخوف من الندم او الحماس للفكرة يقود هذا الاختيار اكثر من النتائج المتوقعة؟"
+   ],
+   "output": "A split risk-benefit sheet: risks and benefits assessed in separate passes, with the evaluator's feeling about the option stated up front.",
+   "check": "At least 3 risks listed for the favored option and at least 3 benefits for the disfavored one; risks and benefits scored in 2 separate passes; 0 items justified only by 'I like it' or 'it feels wrong'.",
+   "anti_pattern": "Treating enthusiasm as evidence of low risk, or rejecting a sound option because it feels unpleasant.",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "Liking or disliking something sets judgments of its risks and benefits together: what we like seems low-risk and high-benefit, and the reverse. Emotion steers the decision, then the reasoning is built to justify it.",
+   "summary_ar": "الاعجاب بشيء او النفور منه يحدد احكامنا على مخاطره وفوائده معا: ما نحبه يبدو قليل الخطر كثير النفع، والعكس صحيح. فتقود العاطفة القرار ثم تبنى الحجج لتبريره.",
+   "debias_en": "Name your feeling first, then evaluate risks and benefits independently with external data, deliberately arguing the opposite case for the option you prefer.",
+   "debias_ar": "سم شعورك اولا، ثم قيم المخاطر والفوائد كل على حدة ببيانات خارجية، وجادل عمدا ضد الخيار الذي تفضله.",
+   "page_refs": [
+    15,
+    89,
+    90,
+    120,
+    121,
+    124,
+    125,
+    200,
+    292,
+    307,
+    340,
+    342
+   ],
+   "book_examples": [
+    "Ford cars at auto show",
+    "Slovic benefit-risk arguments",
+    "hitchhiker regret"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-small-numbers",
+   "name_en": "Law of small numbers",
+   "name_ar": "قانون الاعداد الصغيرة",
+   "family": "learn",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "pilot",
+    "results",
+    "sample",
+    "streak",
+    "survey",
+    "test",
+    "trend",
+    "trial"
+   ],
+   "triggers_ar": [
+    "اتجاه",
+    "اختبار",
+    "استطلاع",
+    "تجربة",
+    "عينة",
+    "معدل",
+    "نتايج",
+    "نسبة"
+   ],
+   "questions_en": [
+    "How many cases is this conclusion based on, and would a result this extreme be surprising by chance at that size?",
+    "Are the best and worst performers both small units, which would point to sample noise rather than a cause?",
+    "Would I bet on this finding replicating in a fresh, larger sample?"
+   ],
+   "questions_ar": [
+    "على كم حالة تقوم هذه النتيجة، وهل يكون تطرف كهذا مفاجئا بالصدفة عند هذا الحجم؟",
+    "هل الافضل والاسوا اداء كلاهما وحدات صغيرة، مما يشير الى ضجيج العينة لا الى سبب؟",
+    "هل اراهن على ان هذه النتيجة ستتكرر في عينة جديدة اكبر؟"
+   ],
+   "output": "A sample-adequacy note: n for each claim, the plausible chance range, and a replication or larger-sample plan before acting.",
+   "check": "Sample size stated for 100% of quantitative claims; any claim from n under 30 flagged; at least 1 replication or holdout check planned before scaling.",
+   "anti_pattern": "Scaling a strategy after one viral post, one pilot, or a handful of reviews, and explaining the outlier with a causal story.",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "People, experts included, trust small samples as if they mirror the population, so extremes and streaks from tiny samples get causal stories. Small samples produce extreme results more often by chance alone.",
+   "summary_ar": "يثق الناس، ومنهم الخبراء، بالعينات الصغيرة كانها صورة طبق الاصل عن المجتمع، فتنسج قصص سببية حول النتائج المتطرفة والسلاسل في عينات ضئيلة. والعينات الصغيرة تنتج نتائج متطرفة اكثر بمحض الصدفة.",
+   "debias_en": "Report n with every result, compare extremes against sample size, prefer sources with many observations, and replicate before believing.",
+   "debias_ar": "اذكر حجم العينة مع كل نتيجة، وقارن التطرف بحجم العينة، وفضل المصادر ذات الملاحظات الكثيرة، وكرر التجربة قبل التصديق.",
+   "page_refs": [
+    94,
+    95,
+    96,
+    97,
+    98,
+    100,
+    101,
+    168,
+    356,
+    357,
+    358,
+    362
+   ],
+   "book_examples": [
+    "kidney cancer rural counties",
+    "Gates small schools",
+    "hospital births problem"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-anchoring",
+   "name_en": "Anchoring",
+   "name_ar": "الارتكاز",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "baseline",
+    "budget",
+    "estimate",
+    "negotiate",
+    "offer",
+    "price",
+    "quote",
+    "target"
+   ],
+   "triggers_ar": [
+    "تفاوض",
+    "تقدير",
+    "سعر",
+    "سقف",
+    "عرض",
+    "مبدئي",
+    "ميزانية",
+    "هدف"
+   ],
+   "questions_en": [
+    "What number did I see first in this task, and how far is my estimate from it?",
+    "What would my estimate be if I built it bottom-up without that number?",
+    "Have I generated arguments for why the anchor could be badly wrong in the other direction?"
+   ],
+   "questions_ar": [
+    "ما اول رقم رايته في هذه المهمة، وكم يبعد تقديري عنه؟",
+    "كم سيكون تقديري لو بنيته من الاسفل الى الاعلى دون ذلك الرقم؟",
+    "هل ولدت حججا تبين ان المرسى قد يكون خاطئا جدا في الاتجاه المعاكس؟"
+   ],
+   "output": "An anchor log: each number encountered first, an independent bottom-up or reference-class estimate, and the final figure with reasons for any gap.",
+   "check": "Every initial number given in the task logged (target 100%); at least 1 independently built estimate; at least 2 arguments against the anchor recorded.",
+   "anti_pattern": "Adjusting a little from the client's or competitor's figure and calling it an estimate, or using a 'limit' or list price as neutral information.",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "Any number seen before an estimate, even an obviously random one, pulls the estimate toward it, through insufficient adjustment and through priming. Prices, budgets, first offers and default targets act as anchors.",
+   "summary_ar": "اي رقم يظهر قبل التقدير، ولو كان عشوائيا بوضوح، يجذب التقدير نحوه عبر تعديل غير كاف وعبر التهيئة. والاسعار والميزانيات والعروض الاولى والاهداف الافتراضية كلها تعمل كمراسي.",
+   "debias_en": "Make an independent estimate before seeing others' numbers, and when an anchor is present, deliberately think of reasons it is wrong in the opposite direction.",
+   "debias_ar": "ضع تقديرا مستقلا قبل رؤية ارقام الاخرين، وحين يوجد مرسى فكر عمدا في اسباب كونه خاطئا في الاتجاه المعاكس.",
+   "page_refs": [
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    299,
+    304,
+    363,
+    364
+   ],
+   "book_examples": [
+    "wheel of fortune UN estimate",
+    "redwood height anchors",
+    "Sioux City soup limit"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-availability",
+   "name_en": "Availability heuristic and cascades",
+   "name_ar": "استدلال الاتاحة وتتاليها",
+   "family": "diverge",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "common",
+    "everyone",
+    "headlines",
+    "popular",
+    "recent",
+    "trending",
+    "viral",
+    "vivid"
+   ],
+   "triggers_ar": [
+    "الجميع",
+    "حادثة",
+    "رائج",
+    "شائع",
+    "عناوين",
+    "مؤخرا",
+    "متكرر",
+    "منتشر"
+   ],
+   "questions_en": [
+    "Am I treating something as common or important because examples are vivid, recent or widely shared rather than because of actual counts?",
+    "What relevant cases are under-reported and therefore missing from my list?",
+    "What do base-rate data say about frequency, compared with my recall?"
+   ],
+   "questions_ar": [
+    "هل اعامل شيئا على انه شائع او مهم لان امثلته حية او حديثة او منتشرة لا لان الارقام تقول ذلك؟",
+    "ما الحالات ذات الصلة التي لا يغطيها احد فغابت عن قائمتي؟",
+    "ماذا تقول بيانات المعدل الاساسي عن التكرار مقارنة بما اتذكره؟"
+   ],
+   "output": "A frequency check table: each recalled example or trend, its source of salience, and the actual base-rate figure, plus under-reported alternatives.",
+   "check": "At least 3 recalled claims checked against data; at least 2 under-reported or 'boring' alternatives added; 0 claims of 'everyone is doing X' without a count.",
+   "anti_pattern": "Building strategy on the last few trending posts or a dramatic anecdote, or brainstorming only the examples that come to mind first.",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "We judge how common or likely something is by how easily examples come to mind, so vivid, recent, personal or heavily covered cases are overweighted. Media and public reaction can feed on each other into an availability cascade.",
+   "summary_ar": "نحكم على شيوع الشيء او احتماله بسهولة استحضار امثلته، فتعطى الحالات الحية والحديثة والشخصية وكثيرة التغطية وزنا زائدا. وقد يغذي الاعلام ورد فعل الجمهور احدهما الاخر حتى يتشكل تتال للاتاحة.",
+   "debias_en": "Replace ease of recall with counts: look up base rates, actively list quiet or uncovered cases, and ask whether coverage reflects frequency.",
+   "debias_ar": "استبدل سهولة التذكر بالاعداد: ابحث عن المعدلات الاساسية، واذكر عمدا الحالات الهادئة غير المغطاة، واسال هل التغطية تعكس التكرار فعلا.",
+   "page_refs": [
+    11,
+    12,
+    112,
+    113,
+    117,
+    118,
+    119,
+    120,
+    122,
+    123,
+    124,
+    360
+   ],
+   "book_examples": [
+    "letter K position",
+    "plane crashes and train switching",
+    "Alar apple scare"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-representativeness",
+   "name_en": "Representativeness and base-rate neglect",
+   "name_ar": "التمثيلية وإهمال معدلات الأساس",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "audience",
+    "looks",
+    "persona",
+    "profile",
+    "resembles",
+    "seems",
+    "stereotype",
+    "typical"
+   ],
+   "triggers_ar": [
+    "جمهور",
+    "شخصيه",
+    "فئه",
+    "ملف",
+    "نمطي",
+    "نموذجي",
+    "يبدو",
+    "يشبه"
+   ],
+   "questions_en": [
+    "What is the base rate for this kind of outcome (how often do similar products, reels or campaigns actually succeed) before I look at how promising this one seems?",
+    "Am I choosing an audience, persona or option because it fits a vivid picture, while a larger and less glamorous category produces more of the cases I actually want?",
+    "How diagnostic is the specific evidence here, and have I moved away from the base rate only as far as that evidence deserves?"
+   ],
+   "questions_ar": [
+    "ما معدل الاساس لهذا النوع من النتائج، اي كم مرة تنجح منتجات او مقاطع او حملات مشابهة فعلا، قبل ان انظر الى مدى ما تبدو عليه هذه الحالة من وعد؟",
+    "هل اختار جمهورا او شخصية او خيارا لانه يطابق صورة حية، بينما توجد فئة اكبر واقل بريقا تنتج عددا اكبر من الحالات التي اريدها؟",
+    "ما مدى دلالة الدليل الخاص هنا، وهل ابتعدت عن معدل الاساس بقدر ما يستحقه هذا الدليل فقط؟"
+   ],
+   "output": "A base-rate sheet: for each key prediction, the reference-class base rate, the case-specific evidence with a reliability rating, and an adjusted estimate that sits between the two.",
+   "check": "At least 2 key predictions each carry an explicit base rate with a named source or reference class, and every estimate that departs from its base rate by more than 20 points cites at least 1 piece of evidence rated diagnostic.",
+   "anti_pattern": "Picking a target audience or idea because it fits a vivid profile or a successful example, with no figure for how common success is in that category; also dropping a known base rate when only bland, non-diagnostic detail is available.",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "People judge how likely something is by how closely it resembles a stereotype, and they ignore how common each category actually is and how reliable the description is. Even trained statisticians do this unless someone explicitly asks them for the base rate.",
+   "summary_ar": "يحكم الناس على احتمال الشيء بمدى شبهه بصورة نمطية، ويتجاهلون مدى شيوع كل فئة فعلا ومدى موثوقية الوصف. حتى المتمرسون في الاحصاء يقعون في ذلك ما لم يُطلب منهم معدل الاساس صراحة.",
+   "debias_en": "Anchor first on the base rate of the reference class, then ask how diagnostic the specific evidence is and adjust only part of the way, in the spirit of Bayes' rule in odds form.",
+   "debias_ar": "ابدأ بمعدل الاساس للفئة المرجعية، ثم اسال عن مدى دلالة الدليل الخاص وعدّل جزءا من المسافة فقط، على منوال قاعدة بايز بصيغة النسب.",
+   "page_refs": [
+    128,
+    129,
+    130,
+    131,
+    133,
+    143,
+    144,
+    146,
+    148,
+    355,
+    356,
+    407
+   ],
+   "book_examples": [
+    "Tom W",
+    "Steve the librarian",
+    "cab problem"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-conjunction",
+   "name_en": "Conjunction fallacy (less is more)",
+   "name_ar": "مغالطة الاقتران (الأقل أكثر)",
+   "family": "risk",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "assumptions",
+    "bundle",
+    "detailed",
+    "forecast",
+    "package",
+    "plausible",
+    "roadmap",
+    "scenario"
+   ],
+   "triggers_ar": [
+    "احتمال",
+    "افتراضات",
+    "باقه",
+    "حزمه",
+    "خطه",
+    "سيناريو",
+    "معقول",
+    "مفصل"
+   ],
+   "questions_en": [
+    "Does my plan's success depend on several conditions all coming true, and what probability do I get when I multiply them instead of judging the whole story?",
+    "Have I rated a detailed, vivid scenario as more likely than the simpler one that contains it?",
+    "If I add a weaker item to this offer, bundle or portfolio, does it dilute the average impression the audience will form?"
+   ],
+   "questions_ar": [
+    "هل يعتمد نجاح خطتي على تحقق عدة شروط معا، وما الاحتمال الذي احصل عليه حين اضربها بدلا من الحكم على القصة كلها؟",
+    "هل قدّرت سيناريو مفصلا وحيا على انه ارجح من السيناريو الابسط الذي يتضمنه؟",
+    "اذا اضفت عنصرا اضعف الى هذا العرض او الحزمة او المعرض، فهل يخفف ذلك متوسط الانطباع الذي سيكوّنه الجمهور؟"
+   ],
+   "output": "A conjunction breakdown: the plan's main scenario split into its required conditions, each with a probability, the multiplied joint probability, and a set of alternative scenarios whose probabilities add up to 100%.",
+   "check": "The main scenario is split into at least 3 named conditions with individual probabilities; the joint probability is no higher than the lowest single one; at least 3 alternative scenarios are listed and their probabilities sum to 100% (plus or minus 5).",
+   "anti_pattern": "Making a forecast more persuasive by piling on specific, story-like details and then treating that persuasiveness as higher likelihood; or padding an offer with filler items that drag down its perceived value.",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "Each detail added to a scenario makes it more coherent and convincing but can only lower its probability, yet people rank the richer story as more likely. In single evaluation, adding a low-value item can also lower how the whole bundle is judged, because people judge by the average.",
+   "summary_ar": "كل تفصيل يضاف الى سيناريو يزيده تماسكا واقناعا لكنه لا يمكن الا ان يخفض احتماله، ومع ذلك يرى الناس القصة الاغنى اكثر ترجيحا. وعند تقييم الحزمة منفردة قد يخفض عنصر ضعيف القيمة تقديرها كلها لان الحكم يكون على المتوسط.",
+   "debias_en": "Restate probabilities as frequencies ('how many out of 100'), multiply the required conditions, and lay out alternatives that must add to 100%; judge bundles side by side, not alone.",
+   "debias_ar": "اعد صياغة الاحتمالات كتكرارات (كم من كل مئة)، واضرب الشروط اللازمة، واعرض بدائل يجب ان يكون مجموعها مئة بالمئة، وقيّم الحزم جنبا الى جنب لا منفردة.",
+   "page_refs": [
+    134,
+    135,
+    136,
+    139,
+    140,
+    141,
+    142,
+    277,
+    278,
+    280
+   ],
+   "book_examples": [
+    "Linda problem",
+    "Hsee dinnerware sets",
+    "Borg tennis scenario"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-causes-trump-statistics",
+   "name_en": "Causes trump statistics",
+   "name_ar": "الأسباب تغلب الإحصاءات",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "anecdote",
+    "because",
+    "blame",
+    "cause",
+    "exception",
+    "statistics",
+    "unlike",
+    "why"
+   ],
+   "triggers_ar": [
+    "احصاءات",
+    "استثناء",
+    "بسبب",
+    "بيانات",
+    "سبب",
+    "لماذا",
+    "لوم",
+    "مختلف"
+   ],
+   "questions_en": [
+    "Which statistics about tasks like mine (failure rates, average views, typical conversion) have I accepted on paper but quietly decided do not apply to me?",
+    "Am I explaining a pattern or result with a causal story when a purely statistical account (chance, sample size, mix) explains it just as well?",
+    "Can I find 1 or 2 concrete, surprising cases from the statistic that make it feel relevant to my own plan?"
+   ],
+   "questions_ar": [
+    "ما الاحصاءات المتعلقة بمهام مثل مهمتي، كنسب الفشل ومتوسط المشاهدات والتحويل المعتاد، التي قبلتها نظريا لكني قررت بصمت انها لا تنطبق علي؟",
+    "هل افسر نمطا او نتيجة بقصة سببية بينما يفسرها تفسير احصائي بحت، كالصدفة او حجم العينة او التركيب، بالقدر نفسه؟",
+    "هل استطيع ان اجد حالة او حالتين ملموستين ومفاجئتين من هذا الاحصاء تجعلانه يبدو متصلا بخطتي انا؟"
+   ],
+   "output": "A statistic-to-case note: each relevant statistic, the causal story competing with it, and a decision on how the statistic changes the plan, illustrated by at least one concrete case.",
+   "check": "At least 2 relevant statistics are listed and each one either changes at least 1 plan parameter or carries a written reason why it does not apply; every causal explanation of a pattern is paired with at least 1 non-causal alternative.",
+   "anti_pattern": "Citing industry numbers in the brief and then planning as if the project were the exception; or inventing a cause (sabotage, a lucky trend, the algorithm) for a result that chance and sample size already explain.",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "People readily use base rates that tell a causal story, but they neglect purely statistical facts and quietly exempt themselves from surprising findings. A few surprising concrete cases change beliefs more than a general statistic does.",
+   "summary_ar": "يستخدم الناس بسهولة معدلات الاساس التي تحكي قصة سببية، لكنهم يهملون الحقائق الاحصائية البحتة ويستثنون انفسهم بهدوء من النتائج المفاجئة. وبضع حالات ملموسة مفاجئة تغير القناعات اكثر من اي احصاء عام.",
+   "debias_en": "Turn the statistic into a causal or concrete form (a vivid individual case or a propensity) so that System 1 accepts it, and require it to change at least one number in the plan.",
+   "debias_ar": "حوّل الاحصاء الى صورة سببية او ملموسة، كحالة فردية حية او نزعة، حتى يتقبله التفكير السريع، واشترط ان يغير رقما واحدا على الاقل في الخطة.",
+   "page_refs": [
+    67,
+    68,
+    94,
+    95,
+    147,
+    148,
+    149,
+    150
+   ],
+   "book_examples": [
+    "helping experiment",
+    "cab problem (causal version)",
+    "rural cancer rates"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-regression",
+   "name_en": "Regression to the mean",
+   "name_ar": "الارتداد إلى المتوسط",
+   "family": "learn",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "best",
+    "declined",
+    "improved",
+    "intervention",
+    "rebound",
+    "slump",
+    "viral",
+    "worst"
+   ],
+   "triggers_ar": [
+    "ارتفاع",
+    "اسوا",
+    "افضل",
+    "انتشار",
+    "تحسن",
+    "تدخل",
+    "تراجع",
+    "هبوط"
+   ],
+   "questions_en": [
+    "Was this video, campaign or metric picked because its result was extreme, and how much of the next result will drift back toward the average anyway?",
+    "Before I credit a change (new hook, new thumbnail, a redesign) for an improvement, would the same improvement have happened without it?",
+    "Is my forecast for the next item pulled toward the average, more strongly the more extreme and luck-driven the last result was?"
+   ],
+   "questions_ar": [
+    "هل اخترنا هذا المقطع او الحملة او المؤشر لان نتيجته كانت متطرفة، وكم من النتيجة القادمة ستعود نحو المتوسط على اي حال؟",
+    "قبل ان انسب التحسن الى تغيير ما، كخطاف جديد او صورة مصغرة جديدة او اعادة تصميم، هل كان التحسن نفسه سيحدث بدونه؟",
+    "هل توقعي للعنصر القادم مسحوب نحو المتوسط، وبقوة اكبر كلما كانت النتيجة السابقة اكثر تطرفا واعتمادا على الحظ؟"
+   ],
+   "output": "A regression audit of every before/after claim: whether the units were selected for extreme scores, the baseline mean, the comparison group or expected regression, and the excess effect left after regression.",
+   "check": "For 100% of before/after claims about selected top or bottom performers, at least 1 control or non-selected comparison group, or a written regression estimate, is recorded; forecasts for at least 2 extreme items sit closer to the mean than their last result.",
+   "anti_pattern": "Declaring that a fix worked because the worst-performing reel or page improved afterwards, or that a hit 'lost momentum' because the next one did worse, when both are what regression predicts.",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "When results depend partly on luck, extreme results are followed by results closer to average whatever anyone does. People invent causes such as praise, punishment, a new tactic or pressure for changes that are only regression, so any before/after claim about an extreme group needs a comparison group.",
+   "summary_ar": "حين تعتمد النتائج جزئيا على الحظ، تتبع النتائج المتطرفة نتائج اقرب الى المتوسط مهما فعلنا. ويخترع الناس اسبابا كالمديح او العقاب او اسلوب جديد او الضغط لتغيرات ليست سوى ارتداد، لذا يحتاج كل ادعاء قبل وبعد عن مجموعة متطرفة الى مجموعة مقارنة.",
+   "debias_en": "Always compare against an untreated group or the expected regression, and shrink forecasts toward the mean in proportion to how weakly the past result predicts the next.",
+   "debias_ar": "قارن دائما بمجموعة لم تخضع للتدخل او بالارتداد المتوقع، واسحب التوقعات نحو المتوسط بقدر ضعف دلالة النتيجة السابقة على اللاحقة.",
+   "page_refs": [
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    165,
+    177,
+    408
+   ],
+   "book_examples": [
+    "flight instructors",
+    "Sports Illustrated jinx",
+    "golf day-1 / day-2"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-taming-prediction",
+   "name_en": "Taming intuitive predictions",
+   "name_ar": "ترويض التنبؤات الحدسية",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "estimate",
+    "expected",
+    "forecast",
+    "indicator",
+    "predict",
+    "projection",
+    "promising",
+    "target"
+   ],
+   "triggers_ar": [
+    "تقدير",
+    "تنبؤ",
+    "توقع",
+    "مؤشر",
+    "متوقع",
+    "مستهدف",
+    "هدف",
+    "واعد"
+   ],
+   "questions_en": [
+    "What is the average outcome for this category (views, sales, signups), and is that where my forecast starts?",
+    "How strongly does the early signal I am relying on (a test result, a first-week spike, a pitch reaction) really correlate with the final outcome?",
+    "Have I moved from the average toward my intuitive number only by the share that correlation justifies, and is any lean toward one side justified by unequal error costs rather than by optimism?"
+   ],
+   "questions_ar": [
+    "ما متوسط النتيجة في هذه الفئة، من مشاهدات او مبيعات او تسجيلات، وهل يبدا تقديري منه؟",
+    "ما قوة ارتباط الاشارة المبكرة التي اعتمد عليها، كنتيجة اختبار او قفزة الاسبوع الاول او ردة فعل على العرض، بالنتيجة النهائية فعلا؟",
+    "هل تحركت من المتوسط نحو رقمي الحدسي بالنسبة التي يبررها هذا الارتباط فقط، وهل اي ميل الى جهة ما تبرره كلفة الخطا غير المتساوية لا التفاؤل؟"
+   ],
+   "output": "A corrected forecast table: for each key number, the baseline average, the intuitive matched value, the estimated correlation, the regressed forecast, and a note on any asymmetric error costs.",
+   "check": "At least 3 key forecasts each list 4 values (baseline, intuitive value, correlation from 0 to 1, final value), and every final value lies between the baseline and the intuitive value.",
+   "anti_pattern": "Setting targets equal to the most exciting early signal, or regressing so mechanically that a genuinely strong, well-validated signal is ignored; also shading the probability itself instead of the decision to reflect error costs.",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": false,
+   "summary_en": "Intuition predicts by matching: it chooses an outcome as extreme as the evidence and ignores how weakly that evidence predicts. The fix is to start from the average or base rate, form the intuitive estimate, estimate the correlation, and move only that fraction of the way.",
+   "summary_ar": "يتنبأ الحدس بالمطابقة، فيختار نتيجة بتطرف الدليل نفسه ويتجاهل ضعف قدرة هذا الدليل على التنبؤ. والعلاج ان تبدا من المتوسط او معدل الاساس، ثم تكوّن التقدير الحدسي، وتقدّر الارتباط، وتتحرك بنسبته فقط.",
+   "debias_en": "Use the four-step correction: baseline, intuitive match, correlation estimate, then a move of only that fraction; regress harder when the evidence is thin or comes from a small sample.",
+   "debias_ar": "طبّق التصحيح ذا الخطوات الاربع: خط الاساس، ثم المطابقة الحدسية، ثم تقدير الارتباط، ثم التحرك بتلك النسبة فقط، واسحب اكثر حين يكون الدليل ضعيفا او من عينة صغيرة.",
+   "page_refs": [
+    161,
+    165,
+    166,
+    167,
+    175,
+    187,
+    188,
+    357,
+    358,
+    359
+   ],
+   "book_examples": [
+    "Julie's GPA",
+    "Kim vs Jane hiring",
+    "CEO-firm correlation"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-narrative-fallacy",
+   "name_en": "Narrative fallacy and the illusion of understanding",
+   "name_ar": "مغالطة السرد ووهم الفهم",
+   "family": "learn",
+   "stage": "learn",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "case",
+    "lessons",
+    "recipe",
+    "secret",
+    "story",
+    "success",
+    "viral",
+    "winner"
+   ],
+   "triggers_ar": [
+    "تجربه",
+    "دروس",
+    "سر",
+    "فائز",
+    "قصه",
+    "ملهم",
+    "نجاح",
+    "وصفه"
+   ],
+   "questions_en": [
+    "Which parts of the success story I am copying (a viral creator, a winning brand) could have gone the other way by luck, and what did the failures that used the same recipe look like?",
+    "Is the pattern I found consistent over time and across many cases, or does it come from a few tidy examples?",
+    "Does my plan assume that understanding why something worked before lets me control whether it works again?"
+   ],
+   "questions_ar": [
+    "اي اجزاء من قصة النجاح التي انسخها، كصانع محتوى انتشر او علامة فائزة، كان يمكن ان تنقلب بالحظ، وكيف بدت حالات الفشل التي استخدمت الوصفة نفسها؟",
+    "هل النمط الذي وجدته ثابت عبر الزمن وعبر حالات كثيرة، ام انه ياتي من امثلة قليلة مرتبة؟",
+    "هل تفترض خطتي ان فهم سبب نجاح شيء سابقا يسمح لي بالتحكم في نجاحه مرة اخرى؟"
+   ],
+   "output": "A luck-versus-skill ledger for each borrowed lesson or success case: the claimed cause, the role of luck, counter-cases that failed with the same approach, and evidence of persistence across repeated trials.",
+   "check": "Every borrowed lesson lists at least 1 failed counter-case or a stated luck factor; at least 1 lesson is backed by 5 or more independent cases or by results consistent across 2 or more periods.",
+   "anti_pattern": "Building the plan around a 'secret' reverse-engineered from a few viral winners or famous companies, and treating the coherence of the story as proof that the recipe works.",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "We tell simple, causal stories about success and failure that over-credit talent and intentions, under-credit luck, and leave out what failed to happen. Tidy stories create an illusion that the past was understood and the future can be controlled, so 'success recipes' learned from winners mostly encode luck.",
+   "summary_ar": "نروي قصصا بسيطة وسببية عن النجاح والفشل تبالغ في نسبة الفضل الى الموهبة والنوايا، وتقلل من دور الحظ، وتتجاهل ما لم يحدث. والقصص المرتبة توهمنا بان الماضي مفهوم وان المستقبل يمكن التحكم فيه، لذلك فان وصفات النجاح المستخلصة من الفائزين تحمل الحظ في معظمها.",
+   "debias_en": "Treat great success as a blend of skill and luck, look for the failed cases that followed the same recipe, and accept a lesson only if results persist across many repeated trials.",
+   "debias_ar": "اعتبر النجاح الكبير مزيجا من المهارة والحظ، وابحث عن الحالات الفاشلة التي اتبعت الوصفة نفسها، ولا تقبل الدرس الا اذا ثبتت النتائج عبر محاولات متكررة كثيرة.",
+   "page_refs": [
+    13,
+    152,
+    171,
+    172,
+    175,
+    176,
+    177,
+    182,
+    183,
+    184,
+    185,
+    327
+   ],
+   "book_examples": [
+    "Google success story",
+    "Built to Last",
+    "wealth advisers' rank correlation"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-hindsight",
+   "name_en": "Hindsight and outcome bias",
+   "name_ar": "تحيز الإدراك المتأخر والنتيجة",
+   "family": "learn",
+   "stage": "learn",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "blame",
+    "failed",
+    "mistake",
+    "obvious",
+    "outcome",
+    "postmortem",
+    "retrospective",
+    "review"
+   ],
+   "triggers_ar": [
+    "تقييم",
+    "خطا",
+    "فشل",
+    "لوم",
+    "متوقع",
+    "مراجعه",
+    "نتيجه",
+    "واضح"
+   ],
+   "questions_en": [
+    "What did we actually know and believe when this decision was made, written down before the result, rather than reconstructed after it?",
+    "Am I judging this decision as good or bad mainly because of how it turned out, and would I judge the same process the same way had the result been the opposite?",
+    "Which lessons from this review would still hold if luck had gone the other way?"
+   ],
+   "questions_ar": [
+    "ما الذي كنا نعرفه ونعتقده فعلا عند اتخاذ هذا القرار، مكتوبا قبل ظهور النتيجة لا معادا بناؤه بعدها؟",
+    "هل احكم على هذا القرار بالجودة او الرداءة اساسا بسبب ما انتهى اليه، وهل كنت ساحكم على الاجراء نفسه بالطريقة نفسها لو جاءت النتيجة معاكسة؟",
+    "اي الدروس من هذه المراجعة ستبقى صحيحة لو انقلب الحظ في الاتجاه الاخر؟"
+   ],
+   "output": "A decision log written before the outcome (options, information, predicted probabilities), plus a post-outcome review that rates process quality separately from result quality.",
+   "check": "At least 1 pre-decision record dated before the result exists for each major decision; the review scores process and outcome on 2 separate scales; at least 2 lessons are stated that do not depend on the observed outcome.",
+   "anti_pattern": "Running a retrospective that calls the failure 'obvious' and blames people for missing it, or praising a reckless bet because it happened to pay off.",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "Once we know how things turned out, we cannot recall what we believed before, so the outcome seems to have been predictable all along. Decisions then get graded by their results instead of by what was knowable and sensible at the time, which inflates blame and gives a false sense of having learned.",
+   "summary_ar": "حين نعرف كيف انتهت الامور لا نستطيع استرجاع ما كنا نعتقده قبلها، فتبدو النتيجة وكانها كانت متوقعة منذ البداية. فيُحكم على القرارات بنتائجها لا بما كان معروفا ومعقولا وقت اتخاذها، وهذا يضخم اللوم ويمنح شعورا زائفا بالتعلم.",
+   "debias_en": "Record predictions and reasons before outcomes arrive, and in reviews judge the decision by the information and process available at the time, not by its result.",
+   "debias_ar": "سجّل التوقعات والاسباب قبل ظهور النتائج، وفي المراجعات احكم على القرار بالمعلومات والاجراءات المتاحة وقتها لا بنتيجته.",
+   "page_refs": [
+    16,
+    173,
+    174,
+    177,
+    409,
+    413
+   ],
+   "book_examples": [
+    "Nixon trip predictions",
+    "Duluth bridge monitor",
+    "Cassar and Craig entrepreneurs"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-illusion-of-validity",
+   "name_en": "Illusion of Validity and Skill",
+   "name_ar": "وهم الصلاحية والمهارة",
+   "family": "risk",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "assess",
+    "certain",
+    "confident",
+    "forecast",
+    "obviously",
+    "potential",
+    "predict",
+    "viral"
+   ],
+   "triggers_ar": [
+    "امكانات",
+    "انتشار",
+    "تقييم",
+    "تنبؤ",
+    "توقع",
+    "حتما",
+    "مؤكد",
+    "واثق"
+   ],
+   "questions_en": [
+    "Is my confidence in this prediction coming from a coherent story, or from a measured track record of similar predictions?",
+    "What is the actual hit rate of this kind of judgment (mine or the field's) compared with a naive baseline such as 'same as last time'?",
+    "If my inputs are redundant or all point the same way, am I counting one piece of evidence several times?"
+   ],
+   "questions_ar": [
+    "هل ثقتي في هذا التوقع نابعة من قصة متماسكة ام من سجل مقاس لتوقعات مشابهة؟",
+    "ما نسبة الاصابة الفعلية لهذا النوع من الاحكام، مني او من المجال، مقارنة بخط اساس ساذج مثل تكرار النتيجة السابقة؟",
+    "اذا كانت مدخلاتي متكررة او تشير كلها الى الاتجاه نفسه، فهل احسب الدليل الواحد عدة مرات؟"
+   ],
+   "output": "A prediction-validity note: each key forecast in the plan tagged with its evidence base (track record or story only), a naive baseline, and a confidence downgrade where validity is unknown.",
+   "check": "At least 3 key predictions are listed, each with a named baseline or past hit rate; any prediction with no track record is marked 'story-only' and gets a range or fallback rather than a point claim.",
+   "anti_pattern": "Treating a vivid, internally consistent narrative (or loud expert certainty) as proof the forecast is reliable, or calling hindsight 'we knew it'.",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "A coherent, vivid story about a case makes a prediction feel valid, and that feeling survives even when the track record shows such predictions are near chance. Confidence measures how well the story hangs together, not how accurate it is, and pundits and stock pickers in unpredictable domains lose to simple baselines.",
+   "summary_ar": "القصة المتماسكة والحية عن حالة ما تجعل التنبؤ يبدو صحيحا، ويبقى هذا الشعور حتى حين يثبت السجل ان هذه التنبؤات لا تكاد تتفوق على الصدفة. الثقة تقيس تماسك القصة لا دقتها، والخبراء في المجالات غير القابلة للتنبؤ يخسرون امام خطوط اساس بسيطة.",
+   "debias_en": "Separate the feeling of confidence from the evidence: write down the base hit rate of this kind of forecast and compare against a simple baseline before trusting a specific case.",
+   "debias_ar": "افصل شعور الثقة عن الدليل: اكتب نسبة الاصابة الاساسية لهذا النوع من التوقعات وقارنها بخط اساس بسيط قبل الوثوق بحالة بعينها.",
+   "page_refs": [
+    172,
+    180,
+    181,
+    185,
+    186,
+    187,
+    188,
+    193,
+    202,
+    203,
+    205,
+    359
+   ],
+   "book_examples": [
+    "leaderless group challenge",
+    "Tetlock's pundits",
+    "stock-picking illusion"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-formulas-over-intuition",
+   "name_en": "Formulas over Intuition (Structured Scoring)",
+   "name_ar": "المعادلات قبل الحدس (التقييم المنظم)",
+   "family": "converge",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "choose",
+    "compare",
+    "hire",
+    "options",
+    "rank",
+    "select",
+    "shortlist",
+    "vendor"
+   ],
+   "triggers_ar": [
+    "اختيار",
+    "افضل",
+    "ترتيب",
+    "توظيف",
+    "خيارات",
+    "مفاضلة",
+    "مقارنة",
+    "مورد"
+   ],
+   "questions_en": [
+    "What 3-6 independent criteria actually predict success here, and have I fixed them and their weights before looking at the options?",
+    "Am I scoring each criterion separately on a fixed scale, or forming one overall impression and rationalizing it?",
+    "Is my urge to override the top-scored option based on rare, decisive information, or just on liking another option more?"
+   ],
+   "questions_ar": [
+    "ما المعايير المستقلة من 3 الى 6 التي تتنبا فعلا بالنجاح هنا، وهل ثبتها مع اوزانها قبل النظر في الخيارات؟",
+    "هل اقيم كل معيار منفردا على مقياس ثابت، ام اكون انطباعا عاما ثم ابرره؟",
+    "هل رغبتي في تجاوز الخيار الاعلى تقييما مبنية على معلومة نادرة وحاسمة، ام فقط لانني افضل خيارا اخر؟"
+   ],
+   "output": "A scoring matrix: predefined criteria with equal (or pre-set) weights, each option scored per criterion on a fixed scale, a computed total, and a logged reason for any override.",
+   "check": "At least 3 and at most 6 criteria are defined before scoring, every option has a score on every criterion, and overrides of the top total number 0 or each cites 1 specific decisive fact.",
+   "anti_pattern": "Building a scorecard and then choosing the favorite anyway with invented special-case reasons, or adding many tangled, weighted features to look sophisticated.",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": false,
+   "summary_en": "In noisy, low-validity settings, a simple rule that combines a few independently scored criteria with equal weights matches or beats holistic expert judgment, because humans are inconsistent and try to be clever. Intuition helps only after the disciplined scoring is done, and overrides need rare, decisive information.",
+   "summary_ar": "في البيئات المشوشة منخفضة الصلاحية، تضاهي قاعدة بسيطة تجمع بضعة معايير مقيمة بشكل مستقل وباوزان متساوية حكم الخبير الشامل او تتفوق عليه، لان البشر غير متسقين ويحاولون التذاكي. الحدس يفيد فقط بعد اكتمال التقييم المنضبط، والتجاوز يحتاج معلومة نادرة وحاسمة.",
+   "debias_en": "Write criteria and weights first, score options trait by trait, let the total decide, and only then allow a closing intuition check that must justify any override in writing.",
+   "debias_ar": "اكتب المعايير والاوزان اولا، وقيم الخيارات معيارا معيارا، ودع المجموع يقرر، ثم اسمح بفحص حدسي ختامي يجب ان يبرر اي تجاوز كتابيا.",
+   "page_refs": [
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    203,
+    411,
+    430
+   ],
+   "book_examples": [
+    "Meehl's clinical vs statistical prediction",
+    "Apgar score",
+    "army interview procedure"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-expert-intuition",
+   "name_en": "When to Trust Expert Intuition",
+   "name_ar": "متى نثق بحدس الخبير",
+   "family": "learn",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "consultant",
+    "experience",
+    "expert",
+    "feedback",
+    "gut",
+    "hunch",
+    "instinct",
+    "intuition"
+   ],
+   "triggers_ar": [
+    "احساس",
+    "انطباع",
+    "تجربة",
+    "حدس",
+    "خبرة",
+    "خبير",
+    "غريزة",
+    "مستشار"
+   ],
+   "questions_en": [
+    "Is this domain regular enough that patterns repeat, or is it largely driven by luck and unpredictable events?",
+    "Has the person (or I) received quick, unambiguous feedback on many past judgments of exactly this type?",
+    "Is this judgment inside the specific task the expertise was built on, or an extension to a longer-term or adjacent question?"
+   ],
+   "questions_ar": [
+    "هل هذا المجال منتظم بحيث تتكرر الانماط، ام تحكمه الصدفة والاحداث غير المتوقعة الى حد كبير؟",
+    "هل تلقى الشخص او انا تغذية راجعة سريعة وواضحة على احكام كثيرة سابقة من هذا النوع تحديدا؟",
+    "هل يقع هذا الحكم داخل المهمة المحددة التي بنيت عليها الخبرة، ام هو امتداد لسؤال طويل المدى او مجاور؟"
+   ],
+   "output": "An intuition-trust verdict for each gut-based judgment in the plan: environment regularity, feedback quality, task match, and a resulting trust / verify / replace-with-data label.",
+   "check": "Each intuitive call in the plan is rated on 3 criteria (regularity, feedback, task match); any call failing 1 or more is labeled 'verify' and paired with at least 1 data source or test.",
+   "anti_pattern": "Trusting someone because they sound certain or are famous, or extending a short-term skill (e.g. editing a hook) to long-term forecasts (e.g. a channel's growth in two years).",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": false,
+   "summary_en": "Intuition is recognition: a cue retrieves patterns stored through long practice. It deserves trust only when the environment is regular enough to be predictable and the judge has had extensive practice with fast, clear feedback; felt confidence is no guide, and experts overextend beyond the tasks they actually learned.",
+   "summary_ar": "الحدس هو تعرف: اشارة تستدعي انماطا خزنت عبر ممارسة طويلة. يستحق الثقة فقط حين تكون البيئة منتظمة بما يكفي للتنبؤ وحين يمارس الحاكم طويلا مع تغذية راجعة سريعة وواضحة، والشعور بالثقة ليس دليلا، والخبراء يتجاوزون حدود المهام التي تعلموها فعلا.",
+   "debias_en": "Before accepting a hunch, ask whether the environment is regular and whether feedback was fast and clear; if either fails, treat the hunch as a hypothesis to test.",
+   "debias_ar": "قبل قبول اي حدس، اسال هل البيئة منتظمة وهل كانت التغذية الراجعة سريعة وواضحة؛ اذا فشل احدهما فتعامل مع الحدس كفرضية تحتاج اختبارا.",
+   "page_refs": [
+    14,
+    15,
+    22,
+    180,
+    199,
+    200,
+    202,
+    203,
+    204,
+    205,
+    206
+   ],
+   "book_examples": [
+    "firefighter commander",
+    "chess master",
+    "therapist long-term predictions"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-planning-fallacy",
+   "name_en": "Planning Fallacy and Sunk-Cost Persistence",
+   "name_ar": "مغالطة التخطيط والتمسك بالتكاليف الغارقة",
+   "family": "risk",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "budget",
+    "deadline",
+    "invested",
+    "launch",
+    "milestone",
+    "roadmap",
+    "schedule",
+    "timeline"
+   ],
+   "triggers_ar": [
+    "استثمرنا",
+    "اطلاق",
+    "تسليم",
+    "جدول",
+    "مدة",
+    "مراحل",
+    "موعد",
+    "ميزانية"
+   ],
+   "questions_en": [
+    "Is my time and cost estimate a best-case scenario, and what did similar efforts actually take?",
+    "How many steps must all succeed, and what is the combined probability if each one has, say, a 90% chance?",
+    "If I were starting fresh today, ignoring what is already spent, would I still choose to continue this plan?"
+   ],
+   "questions_ar": [
+    "هل تقديري للوقت والتكلفة يمثل افضل سيناريو، وكم استغرقت المحاولات المشابهة فعلا؟",
+    "كم خطوة يجب ان تنجح جميعها، وما الاحتمال المجمع اذا كانت فرصة كل خطوة 90 بالمئة مثلا؟",
+    "لو بدات اليوم من الصفر متجاهلا ما انفق، هل كنت ساختار مواصلة هذه الخطة؟"
+   ],
+   "output": "A realistic schedule/budget: best-case vs baseline-adjusted estimates, the list of dependent steps with a combined success estimate, an explicit buffer, and a continue/kill checkpoint judged on future value only.",
+   "check": "The plan shows at least 2 estimates (best-case and reference-adjusted), lists every step with dependencies (at least 3 steps when applicable), includes a buffer of at least 20% or a justified alternative, and has at least 1 dated go/no-go checkpoint.",
+   "anti_pattern": "Padding a best-case plan by a token margin and calling it realistic, or continuing a failing effort because 'we already spent so much'.",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "Plans cluster near best-case scenarios, ignoring how similar efforts actually went, and multi-step plans look likelier than they are because each step seems probable. Once effort is invested, people keep going without a fresh forecast to avoid admitting loss, even when only future consequences should matter.",
+   "summary_ar": "تتجمع الخطط قرب افضل السيناريوهات متجاهلة كيف سارت المحاولات المشابهة فعلا، وتبدو الخطط متعددة الخطوات اكثر احتمالا مما هي لان كل خطوة تبدو محتملة. وبعد استثمار الجهد يواصل الناس دون توقع جديد تجنبا للاعتراف بالخسارة، مع ان العواقب المستقبلية وحدها هي المهمة.",
+   "debias_en": "Start from the outside-view baseline, multiply step probabilities for chained plans, add an explicit buffer, and set a review point that ignores sunk costs.",
+   "debias_ar": "ابدا من خط الاساس للنظرة الخارجية، واضرب احتمالات الخطوات في الخطط المتسلسلة، واضف هامشا صريحا، وحدد نقطة مراجعة تتجاهل التكاليف الغارقة.",
+   "page_refs": [
+    208,
+    210,
+    211,
+    213,
+    214,
+    216,
+    217,
+    274,
+    291,
+    292,
+    364,
+    365
+   ],
+   "book_examples": [
+    "curriculum textbook project",
+    "Scottish Parliament building",
+    "sunk-cost $50M project"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-optimism-overconfidence",
+   "name_en": "Optimism Bias and Overconfidence",
+   "name_ar": "انحياز التفاؤل والثقة المفرطة",
+   "family": "risk",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "competitors",
+    "dominate",
+    "guaranteed",
+    "launch",
+    "market",
+    "startup",
+    "succeed",
+    "sure"
+   ],
+   "triggers_ar": [
+    "اطلاق",
+    "اكيد",
+    "ريادة",
+    "سوق",
+    "مشروع",
+    "مضمون",
+    "منافسين",
+    "نجاح"
+   ],
+   "questions_en": [
+    "What will competitors and others do in response, and have I included them in the plan at all?",
+    "Is my estimate range wide enough that I would be surprised only about 1 time in 10?",
+    "What share of similar launches actually succeed, and what part of the outcome depends on luck I cannot control?"
+   ],
+   "questions_ar": [
+    "ماذا سيفعل المنافسون والاخرون ردا على ذلك، وهل ادرجتهم في الخطة اصلا؟",
+    "هل نطاق تقديري واسع بما يكفي بحيث لا افاجا الا مرة واحدة من كل 10؟",
+    "ما نسبة ما ينجح فعلا من الاطلاقات المشابهة، واي جزء من النتيجة يعتمد على حظ لا اتحكم فيه؟"
+   ],
+   "output": "A calibrated outlook: key estimates as wide ranges (low/likely/high), a competitor-response section, the base success rate for similar ventures, and named factors outside the team's control.",
+   "check": "At least 3 key numbers are given as ranges rather than points, at least 2 competitor or external reactions are listed, and at least 1 base success rate for similar ventures is stated.",
+   "anti_pattern": "Quoting point estimates with certainty words ('guaranteed', 'will dominate'), planning only around own skills, or treating optimism-as-motivation as a forecasting method.",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "People overrate their understanding and control, underweight luck, and launch risky ventures because they overestimate benefits and ignore what competitors will do. Their estimate ranges are far too narrow, and markets reward sounding sure, so overconfidence spreads and rarely corrects itself.",
+   "summary_ar": "يبالغ الناس في تقدير فهمهم وسيطرتهم ويقللون من دور الحظ، ويطلقون مشاريع محفوفة بالمخاطر لانهم يبالغون في تقدير الفوائد ويتجاهلون ما سيفعله المنافسون. نطاقات تقديرهم ضيقة جدا، والاسواق تكافئ من يبدو واثقا، فتنتشر الثقة المفرطة ونادرا ما تصحح.",
+   "debias_en": "Widen every estimate into a range, add an explicit section on competitors and luck, and compare the plan's success odds with the base rate for similar ventures.",
+   "debias_ar": "وسع كل تقدير الى نطاق، واضف قسما صريحا عن المنافسين والحظ، وقارن احتمالات نجاح الخطة بالمعدل الاساسي للمشاريع المشابهة.",
+   "page_refs": [
+    16,
+    213,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    223,
+    367,
+    414
+   ],
+   "book_examples": [
+    "small business survival rates",
+    "Duke CFO forecasts",
+    "competition neglect"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-reference-dependence",
+   "name_en": "Reference points and Bernoulli's error",
+   "name_ar": "نقاط المرجع وخطا برنولي",
+   "family": "frame",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "baseline",
+    "benchmark",
+    "compared",
+    "expectations",
+    "goal",
+    "improvement",
+    "satisfaction",
+    "target"
+   ],
+   "triggers_ar": [
+    "افتراض",
+    "تحسين",
+    "توقعات",
+    "رضا",
+    "مرجع",
+    "معيار",
+    "مقارنه",
+    "هدف"
+   ],
+   "questions_en": [
+    "What reference point (current state, expectation, competitor, or goal) will each stakeholder use to judge this outcome as a gain or a loss?",
+    "Would the same final result look like a win to one audience and a loss to another, and have I planned for both readings?",
+    "Which model or framework am I relying on that may tacitly ignore the reference point, and what observation would contradict it?"
+   ],
+   "questions_ar": [
+    "ما نقطة المرجع (الوضع الحالي او التوقع او المنافس او الهدف) التي سيستخدمها كل طرف ليحكم على النتيجة كمكسب او خسارة؟",
+    "هل تبدو النتيجة النهائية نفسها مكسبا لجمهور وخسارة لاخر، وهل خططت للقراءتين؟",
+    "على اي نموذج او اطار اعتمد قد يتجاهل نقطة المرجع ضمنيا، وما الملاحظة التي قد تنقضه؟"
+   ],
+   "output": "Reference-point map: for each key stakeholder, their baseline/expectation and whether the planned outcome reads as gain or loss relative to it.",
+   "check": "At least 3 stakeholders listed, each with an explicit reference point and a gain/loss label; at least 1 assumption of the working model named as possibly wrong.",
+   "anti_pattern": "Judging success by absolute numbers (views, revenue, features) while ignoring what the audience expected or had before, then being surprised by disappointment.",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "People judge outcomes as gains or losses against a reference point (status quo, expectation, goal), not as absolute states, so the same result can delight one audience and disappoint another. Theories and models that silently drop the reference point keep making wrong predictions, and once adopted their flaws become hard to see.",
+   "summary_ar": "يقيم الناس النتائج كمكاسب او خسائر قياسا الى نقطة مرجعية (الوضع الحالي او التوقع او الهدف) لا كحالات مطلقة، فقد تسعد النتيجة نفسها جمهورا وتخيب اخر. والنماذج التي تتجاهل نقطة المرجع تخطئ باستمرار، ويصعب رؤية عيوبها بعد تبنيها.",
+   "debias_en": "Before evaluating any outcome, write down the reference point explicitly and restate the result as a change from it; then ask an outsider to question the model's tacit assumptions.",
+   "debias_ar": "قبل تقييم اي نتيجة، اكتب نقطة المرجع صراحة واعد صياغة النتيجة كتغير عنها، ثم اطلب من شخص من خارج المجال مساءلة افتراضات النموذج الضمنية.",
+   "page_refs": [
+    230,
+    231,
+    232,
+    234,
+    235,
+    236,
+    237,
+    242,
+    245,
+    255,
+    256,
+    316
+   ],
+   "book_examples": [
+    "Jack and Jill",
+    "Anthony and Betty",
+    "goals as reference points"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-loss-aversion",
+   "name_en": "Loss aversion",
+   "name_ar": "النفور من الخسارة",
+   "family": "risk",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "cut",
+    "downside",
+    "fee",
+    "loss",
+    "negotiate",
+    "price",
+    "recover",
+    "salvage"
+   ],
+   "triggers_ar": [
+    "استرداد",
+    "انقاذ",
+    "تخفيض",
+    "تعويض",
+    "تفاوض",
+    "خسارة",
+    "رسوم",
+    "سعر"
+   ],
+   "questions_en": [
+    "Am I rejecting an option with positive expected value only because its possible loss feels about twice as heavy as its gain?",
+    "Is this plan a desperate gamble to recover an existing loss rather than a fresh bet I would take from zero?",
+    "Which part of this change (price, feature removal, concession) will the audience code as a loss, and how strongly will they resist it?"
+   ],
+   "questions_ar": [
+    "هل ارفض خيارا قيمته المتوقعة موجبة فقط لان خسارته المحتملة تبدو اثقل من مكسبه بنحو الضعف؟",
+    "هل هذه الخطة مقامرة يائسة لاسترداد خسارة قائمة بدلا من رهان جديد كنت ساقبله من الصفر؟",
+    "اي جزء من هذا التغيير (سعر او حذف ميزة او تنازل) سيعده الجمهور خسارة، وما مدى مقاومتهم له؟"
+   ],
+   "output": "Gain/loss ledger for the decision: each option's possible gains and losses with probabilities, expected value, a ruin flag, and the audience-perceived losses of any change.",
+   "check": "Every option has at least 1 gain and 1 loss quantified; expected value computed for each; losses weighted x2 when predicting audience reaction; any ruinous outcome flagged (0 unflagged).",
+   "anti_pattern": "Treating every risk as unacceptable and freezing, or throwing good money after bad to avoid admitting a sunk loss.",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "Losses weigh roughly twice as much as equal gains, so people reject favorable mixed bets, fight harder against losing than for winning, and resist price increases or concessions. When every option is a loss, the same people turn risk seeking and gamble to avoid a sure loss.",
+   "summary_ar": "تزن الخسائر نحو ضعف المكاسب المساوية لها، فيرفض الناس رهانات مختلطة مواتية، ويقاومون الخسارة اكثر مما يسعون للربح، ويرفضون رفع الاسعار او التنازلات. وعندما تكون كل الخيارات خسائر يصبحون ميالين للمخاطرة هربا من خسارة مؤكدة.",
+   "debias_en": "Think like a trader: judge the option as one of many, compute expected value, accept it unless a loss is ruinous; frame changes as foregone gains or costs rather than losses.",
+   "debias_ar": "فكر كمتداول: قيم الخيار كواحد من خيارات كثيرة، واحسب القيمة المتوقعة، واقبله ما لم تكن الخسارة مدمرة، واعرض التغييرات كمكاسب فائتة او تكاليف لا كخسائر.",
+   "page_refs": [
+    231,
+    237,
+    238,
+    239,
+    245,
+    249,
+    250,
+    254,
+    256,
+    259,
+    260,
+    268
+   ],
+   "book_examples": [
+    "coin toss lose $100 win $150",
+    "think like a trader",
+    "fairness and price increases"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-endowment-status-quo",
+   "name_en": "Endowment effect and status-quo bias",
+   "name_ar": "تاثير التملك والانحياز للوضع القائم",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "default",
+    "existing",
+    "keep",
+    "legacy",
+    "migrate",
+    "redesign",
+    "replace",
+    "switch"
+   ],
+   "triggers_ar": [
+    "استبدال",
+    "اشتراك",
+    "افتراضي",
+    "الحالي",
+    "تبديل",
+    "ترحيل",
+    "قديم",
+    "موجود"
+   ],
+   "questions_en": [
+    "If I had none of the existing assets (old design, current tool, past content), would I choose them today over the alternatives?",
+    "Am I keeping this option only because it is the default or because I already built it?",
+    "What default will users face, and does it lead them to the outcome they would pick on reflection?"
+   ],
+   "questions_ar": [
+    "لو لم املك الاصول الحالية (التصميم القديم او الاداة الحالية او المحتوى السابق)، هل كنت ساختارها اليوم على البدائل؟",
+    "هل احتفظ بهذا الخيار فقط لانه الافتراضي او لانني بنيته مسبقا؟",
+    "ما الخيار الافتراضي الذي سيواجهه المستخدمون، وهل يقودهم الى ما كانوا سيختارونه بعد تفكير؟"
+   ],
+   "output": "Chooser-frame comparison: existing option and at least two alternatives evaluated as a fresh choice, plus an explicit decision on which default users get.",
+   "check": "At least 2 alternatives scored against the incumbent on the same criteria; the incumbent's value estimated from a buyer's (not owner's) view; 1 default choice documented with rationale.",
+   "anti_pattern": "Defending a legacy asset or current workflow because it is ours, or changing everything just to look bold without comparing on equal terms.",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "What we already own or currently do gets valued well above what we would pay to acquire it, so giving it up feels like a loss and we cling to defaults, legacy assets and existing designs. Defaults (opt-in vs opt-out) therefore steer outcomes strongly, and incumbents resist reforms that would benefit the whole.",
+   "summary_ar": "نقدر ما نملكه او نفعله حاليا باعلى بكثير مما ندفعه لاقتنائه، فيبدو التخلي عنه خسارة ونتمسك بالافتراضي والقديم والتصميم الموجود. لذلك توجه الخيارات الافتراضية النتائج بقوة، ويقاوم اصحاب الوضع القائم اصلاحات تنفع الجميع.",
+   "debias_en": "Reframe 'give up X' as a neutral choice between X and Y as if starting from zero, price the incumbent as a buyer would, and design defaults deliberately.",
+   "debias_ar": "اعد صياغة التخلي عن الشيء كاختيار محايد بين بديلين كانك تبدا من الصفر، وسعر الوضع القائم كما يسعره مشتر، وصمم الخيارات الافتراضية عن قصد.",
+   "page_refs": [
+    39,
+    247,
+    249,
+    250,
+    251,
+    252,
+    256,
+    257,
+    293,
+    294,
+    315,
+    316
+   ],
+   "book_examples": [
+    "mugs experiment",
+    "Professor R's wine",
+    "organ donation opt-out"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-prospect-theory",
+   "name_en": "Prospect theory value function",
+   "name_ar": "دالة القيمة في نظرية الاحتمالات",
+   "family": "risk",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "behind",
+    "gamble",
+    "odds",
+    "options",
+    "outcome",
+    "overrun",
+    "scenarios",
+    "worth"
+   ],
+   "triggers_ar": [
+    "احتمالات",
+    "تجاوز",
+    "خيارات",
+    "سيناريو",
+    "متاخر",
+    "مقامره",
+    "نتيجه",
+    "يستحق"
+   ],
+   "questions_en": [
+    "For each option, what is the reference point, and which outcomes fall on the gain side versus the loss side?",
+    "Am I treating a further loss as small only because I am already far behind (diminishing sensitivity)?",
+    "Have I translated each probability into an explicit expected value instead of relying on how strong the chance feels?"
+   ],
+   "questions_ar": [
+    "ما نقطة المرجع لكل خيار، واي النتائج تقع في جانب المكاسب واي منها في جانب الخسائر؟",
+    "هل اعامل خسارة اضافية كانها صغيرة فقط لانني متاخر كثيرا (تناقص الحساسية)؟",
+    "هل حولت كل احتمال الى قيمة متوقعة صريحة بدلا من الاعتماد على شعوري بقوة الفرصة؟"
+   ],
+   "output": "Prospect table: options x outcomes, each outcome coded as gain/loss from a stated reference point, with probability, expected value, and a note where felt weight diverges from probability.",
+   "check": "1 reference point stated; at least 2 options with at least 2 outcomes each coded gain/loss; expected value computed for 100% of options.",
+   "anti_pattern": "Using the value-function vocabulary to justify a gut choice after the fact instead of laying out outcomes and probabilities explicitly.",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": false,
+   "summary_en": "Value is defined on changes from a reference point, is steeper for losses than gains, and shows diminishing sensitivity: the same step matters less far from the reference point. Decision weights also respond weakly to probability, so a 90% chance is felt as far less than nine times a 10% chance.",
+   "summary_ar": "تقاس القيمة على التغيرات من نقطة مرجعية، وتكون اشد انحدارا في الخسائر منها في المكاسب، وتضعف الحساسية كلما ابتعدنا عن المرجع. كما تستجيب اوزان القرار بضعف للاحتمال، فلا يشعر بفرصة 90% كتسعة اضعاف فرصة 10%.",
+   "debias_en": "Lay out outcomes as changes from a stated reference point, compute expected values, and compare the gut ranking with the computed one before deciding.",
+   "debias_ar": "اعرض النتائج كتغيرات من نقطة مرجعية معلنة، واحسب القيم المتوقعة، وقارن ترتيبك الحدسي بالترتيب المحسوب قبل القرار.",
+   "page_refs": [
+    237,
+    238,
+    240,
+    274,
+    275
+   ],
+   "book_examples": [
+    "lose $900 sure vs 90% lose $1,000",
+    "light in dark vs bright room",
+    "decision weights 71 vs 19"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-fourfold-pattern",
+   "name_en": "Fourfold pattern and decision weights",
+   "name_ar": "النمط الرباعي واوزان القرار",
+   "family": "risk",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "certain",
+    "chance",
+    "guaranteed",
+    "insurance",
+    "jackpot",
+    "lottery",
+    "settlement",
+    "unlikely"
+   ],
+   "triggers_ar": [
+    "احتمال",
+    "تامين",
+    "تسوية",
+    "جائزة",
+    "مؤكد",
+    "مستبعد",
+    "مضمون",
+    "يانصيب"
+   ],
+   "questions_en": [
+    "Which cell of the fourfold pattern (likely/unlikely x gain/loss) is this decision in, and what bias does that cell predict?",
+    "Am I paying a premium to turn a high probability into certainty, or a small risk into exactly zero, beyond what the expected value justifies?",
+    "Am I chasing a long-shot jackpot (viral hit, big launch) or gambling to avoid a likely loss, against expected value?"
+   ],
+   "questions_ar": [
+    "في اي خانة من النمط الرباعي (مرجح او مستبعد × مكسب او خسارة) يقع هذا القرار، وما الانحياز الذي تتنباه تلك الخانة؟",
+    "هل ادفع علاوة لتحويل احتمال مرتفع الى يقين او خطر صغير الى صفر بما يتجاوز ما تبرره القيمة المتوقعة؟",
+    "هل الاحق جائزة بعيدة الاحتمال (انتشار واسع او اطلاق ضخم) او اقامر لتجنب خسارة مرجحة بعكس القيمة المتوقعة؟"
+   ],
+   "output": "Fourfold classification of each risky option with its cell, predicted bias, expected value, and the premium being paid for certainty or possibility.",
+   "check": "100% of risky options placed in 1 of 4 cells; expected value computed for each; at least 1 consistency check (add a common outcome to both options, e.g. Allais restatement) performed.",
+   "anti_pattern": "Buying peace of mind or a dream at any price, e.g. overspending to eliminate a tiny risk or betting the budget on a long-shot viral outcome.",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "Small probabilities get too much weight (possibility effect) and near-certainties too little (certainty effect), so risk attitude flips across four cells: averse for likely gains and unlikely losses, seeking for unlikely gains and likely losses. People overpay to make a risk exactly zero or a gain fully guaranteed.",
+   "summary_ar": "تعطى الاحتمالات الصغيرة وزنا زائدا (تاثير الامكان) والشبه مؤكدة وزنا ناقصا (تاثير اليقين)، فينقلب الموقف من المخاطرة عبر اربع خانات: تجنب للمكاسب المرجحة والخسائر المستبعدة، وميل للمخاطرة في المكاسب المستبعدة والخسائر المرجحة. ويدفع الناس كثيرا لجعل الخطر صفرا او المكسب مضمونا.",
+   "debias_en": "Name the cell, compute expected value, and test consistency by restating the choice with a common outcome added; pay for certainty only when the downside is ruinous.",
+   "debias_ar": "سم الخانة، واحسب القيمة المتوقعة، واختبر الاتساق باعادة صياغة الخيار مع اضافة نتيجة مشتركة، ولا تدفع ثمن اليقين الا اذا كانت الخسارة مدمرة.",
+   "page_refs": [
+    262,
+    263,
+    264,
+    265,
+    266,
+    267,
+    268,
+    269,
+    270,
+    372,
+    379,
+    381
+   ],
+   "book_examples": [
+    "Allais paradox",
+    "insecticide risk elimination",
+    "lotteries and insurance"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-rare-events",
+   "name_en": "Rare events: overweighting and neglect",
+   "name_ar": "الاحداث النادرة: المبالغة والاهمال",
+   "family": "risk",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "backup",
+    "disaster",
+    "fear",
+    "odds",
+    "outage",
+    "rare",
+    "viral",
+    "worst"
+   ],
+   "triggers_ar": [
+    "احتمال",
+    "احتياط",
+    "اسوا",
+    "انقطاع",
+    "خوف",
+    "قلق",
+    "كارثه",
+    "نادر"
+   ],
+   "questions_en": [
+    "What is the actual rate of this feared or dismissed event, stated as a numerator over the same denominator for every option?",
+    "Is my safeguard sized only to the worst case I have seen or can vividly imagine, rather than to a base rate?",
+    "Have I left the alternatives vague so the focal outcome looks more likely, and do my probabilities across all outcomes sum to 100%?"
+   ],
+   "questions_ar": [
+    "ما المعدل الفعلي لهذا الحدث المخوف او المهمل، معبرا عنه كبسط على المقام نفسه لكل خيار؟",
+    "هل حجم احتياطي مبني فقط على اسوا حالة رايتها او تخيلتها بوضوح بدلا من معدل اساسي؟",
+    "هل تركت البدائل مبهمة فبدت النتيجة البارزة ارجح، وهل يبلغ مجموع احتمالاتي لكل النتائج 100%؟"
+   ],
+   "output": "Rare-risk register: each low-probability risk with base rate in a common denominator format, vividness flag, mitigation cost vs expected loss, and a probability set that sums to 100%.",
+   "check": "At least 3 rare risks listed, each with a numeric rate in the same denominator; probabilities over mutually exclusive outcomes sum to 100% (±5); mitigation cost compared with expected loss for each.",
+   "anti_pattern": "Either spending heavily on a vivid nightmare scenario or dismissing tail risks because nothing bad has happened yet.",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "Rare events are either ignored or overweighted, depending on whether they are vivid, described explicitly, or recently experienced; judged probability follows how easily a scenario comes to mind. Denominator neglect and vague alternatives inflate focal risks, while choices from experience and fading memory underweight them.",
+   "summary_ar": "تهمل الاحداث النادرة او يبالغ في وزنها بحسب حيويتها او وصفها صراحة او حدوثها مؤخرا، ويتبع الاحتمال المقدر سهولة تخيل السيناريو. ويضخم اهمال المقام والبدائل المبهمة المخاطر البارزة، بينما يقلل التعلم من التجربة وتلاشي الذاكرة من وزنها.",
+   "debias_en": "Convert every rare risk to a rate over a common denominator, make the alternatives equally specific, and size protection by base rates rather than vividness or recent experience.",
+   "debias_ar": "حول كل خطر نادر الى معدل على مقام مشترك، واجعل البدائل محددة بالقدر نفسه، وحدد حجم الحماية بالمعدلات الاساسية لا بالحيوية او التجربة الاخيرة.",
+   "page_refs": [
+    119,
+    124,
+    272,
+    273,
+    274,
+    276,
+    277,
+    278,
+    279,
+    280,
+    281,
+    421
+   ],
+   "book_examples": [
+    "denominator neglect urns",
+    "NBA playoff probabilities sum to 240%",
+    "disaster-complacency cycle"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-broad-framing",
+   "name_en": "Broad framing and risk policies",
+   "name_ar": "التاطير الواسع وسياسات المخاطرة",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "bets",
+    "campaigns",
+    "experiment",
+    "policy",
+    "portfolio",
+    "recurring",
+    "series",
+    "weekly"
+   ],
+   "triggers_ar": [
+    "اسبوعي",
+    "تجربة",
+    "حملات",
+    "رهانات",
+    "سلسلة",
+    "سياسة",
+    "متكرر",
+    "محفظة"
+   ],
+   "questions_en": [
+    "Is this decision one of a series (posts, ads, experiments, features), and would judging them together change my choice?",
+    "What standing risk policy (e.g. accept small favorable bets below a set budget) should govern this class of decisions?",
+    "Am I evaluating each bet's short-term result separately, when the portfolio's combined outcome is what matters?"
+   ],
+   "questions_ar": [
+    "هل هذا القرار جزء من سلسلة (منشورات او اعلانات او تجارب او ميزات)، وهل يغير الحكم عليها معا اختياري؟",
+    "ما سياسة المخاطرة الثابتة (مثل قبول الرهانات الصغيرة المواتية تحت ميزانية محددة) التي يجب ان تحكم هذه الفئة من القرارات؟",
+    "هل اقيم النتيجة القصيرة لكل رهان على حدة، بينما المهم هو المحصلة المجمعة للمحفظة؟"
+   ],
+   "output": "Portfolio view plus a written risk policy: the set of related bets, their combined distribution of outcomes, and a rule for accepting/rejecting future bets of this class.",
+   "check": "At least 3 related decisions grouped and evaluated jointly; 1 written risk policy with a numeric stake threshold; review cadence set to no more often than 1 per batch/period, not per bet.",
+   "anti_pattern": "Using 'it's a portfolio' to justify bets with negative expected value or bets whose loss would be ruinous, or checking results after every single bet.",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": false,
+   "summary_en": "Deciding each risky choice in isolation lets loss aversion reject small favorable bets and can produce combinations dominated by others. Viewing related decisions together as a portfolio, and applying a standing risk policy to repeated choices, sharply lowers the chance of overall loss and removes systematic deviations from expected value.",
+   "summary_ar": "اتخاذ كل قرار محفوف بالمخاطرة منفردا يجعل النفور من الخسارة يرفض رهانات صغيرة مواتية وقد ينتج تركيبات اسوا من غيرها. والنظر الى القرارات المترابطة معا كمحفظة وتطبيق سياسة مخاطرة ثابتة على القرارات المتكررة يقلل احتمال الخسارة الاجمالية ويزيل الانحرافات المنهجية عن القيمة المتوقعة.",
+   "debias_en": "Bundle similar choices and evaluate their aggregate outcome, adopt a policy of accepting small positive-EV bets, and review results at the portfolio level at fixed intervals.",
+   "debias_ar": "اجمع الخيارات المتشابهة وقيم محصلتها الاجمالية، وتبن سياسة قبول الرهانات الصغيرة ذات القيمة المتوقعة الموجبة، وراجع النتائج على مستوى المحفظة على فترات ثابتة.",
+   "page_refs": [
+    16,
+    91,
+    269,
+    270,
+    282,
+    283,
+    284,
+    285,
+    286,
+    287,
+    288,
+    377
+   ],
+   "book_examples": [
+    "Samuelson's 100 coin tosses",
+    "you are not on your deathbed",
+    "decisions i and ii (A+D vs B+C)"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-mental-accounting",
+   "name_en": "Keeping score: mental accounts, sunk cost, regret",
+   "name_ar": "حفظ النتيجة: الحسابات الذهنية والتكلفة الغارقة والندم",
+   "family": "decide",
+   "stage": "learn",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "abandon",
+    "budget",
+    "continue",
+    "cut",
+    "discount",
+    "invested",
+    "regret",
+    "sunk"
+   ],
+   "triggers_ar": [
+    "استثمار",
+    "استمرار",
+    "الغاء",
+    "ايقاف",
+    "خسارة",
+    "خصم",
+    "ميزانية",
+    "ندم"
+   ],
+   "questions_en": [
+    "Am I continuing this effort because of what is already spent, rather than because of its expected future return compared with the best alternative use of the same resources?",
+    "Which narrow account (this campaign, this feature, this budget line) am I judging inside, and does the choice change when I look at the whole portfolio or total budget?",
+    "Am I picking the safe, conventional option mainly to avoid blame or regret, and have I written down beforehand what I might regret?"
+   ],
+   "questions_ar": [
+    "هل استمر في هذا الجهد بسبب ما انفق عليه، لا بسبب عائده المتوقع مقارنة بافضل استخدام بديل للموارد نفسها؟",
+    "داخل اي حساب ضيق احكم (هذه الحملة، هذه الميزة، هذا البند)، وهل يتغير القرار عندما انظر الى المحفظة او الميزانية الكاملة؟",
+    "هل اختار الخيار التقليدي الامن خوفا من اللوم او الندم فقط، وهل كتبت مسبقا ما قد اندم عليه؟"
+   ],
+   "output": "A continue/kill/reallocate table for each ongoing item. It is judged on forward-looking cost and value only, with sunk costs listed separately and marked as ignored, and each decision is re-scored in the comprehensive account (whole budget or portfolio).",
+   "check": "Every item in the table has 1 forward-looking justification that does not mention money or time already spent. At least 1 item is re-scored in the whole-budget account. At least 2 anticipated regrets are written before the decision, with the count of options chosen only for being conventional reported (target 0).",
+   "anti_pattern": "Pouring more into a failing video series or product because 'we already spent so much', keeping a losing initiative open to avoid admitting a loss, or using 'we'll regret it' as the deciding argument.",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "People keep separate emotional accounts for each project, budget or bet. They refuse to close an account at a loss, sell winners and keep losers, and fear regret, so they lean toward conventional choices and over-pay for zero risk. A small saving also looks big or small depending on which account it is posted to.",
+   "summary_ar": "يحتفظ الناس بحسابات عاطفية منفصلة لكل مشروع او ميزانية او رهان، فيرفضون اغلاق حساب على خسارة، ويبيعون الرابح ويبقون الخاسر. والخوف من الندم يدفعهم الى الخيار التقليدي والى دفع ثمن باهظ للخطر الصفري. ويبدو التوفير نفسه كبيرا او صغيرا بحسب الحساب الذي يسجل فيه.",
+   "debias_en": "Reframe the decision as a fresh choice: if starting today with this budget, would I fund this? Then evaluate it in the comprehensive account, and either be very thorough or deliberately quick so hindsight has nothing to hang on.",
+   "debias_ar": "اعد صياغة القرار كاختيار جديد: لو بدات اليوم بهذه الميزانية هل سامول هذا؟ ثم قيمه في الحساب الشامل، وكن اما شاملا جدا او سريعا عمدا حتى لا يجد الادراك المتاخر ما يتعلق به.",
+   "page_refs": [
+    242,
+    289,
+    290,
+    291,
+    294,
+    295,
+    296,
+    297,
+    346,
+    382,
+    383,
+    384
+   ],
+   "book_examples": [
+    "disposition effect (Blueberry vs Tiffany)",
+    "calculator $5 saving",
+    "insecticide taboo tradeoff"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-joint-evaluation",
+   "name_en": "Reversals: joint vs single evaluation",
+   "name_ar": "الانعكاسات: التقييم المشترك مقابل المنفرد",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "alternatives",
+    "benchmark",
+    "compare",
+    "options",
+    "rank",
+    "shortlist",
+    "specs",
+    "versus"
+   ],
+   "triggers_ar": [
+    "بدائل",
+    "ترتيب",
+    "خيارات",
+    "معيار",
+    "مفاضلة",
+    "مقابل",
+    "مقارنة",
+    "مواصفات"
+   ],
+   "questions_en": [
+    "Did I judge each concept, vendor or design on its own, and would the ranking change if I put them all in one side-by-side table?",
+    "Which attributes (numbers, specs, metrics) mean nothing on their own and only become evaluable next to a comparison or benchmark?",
+    "Will the end user or audience see these options alone or together, and am I evaluating in the same mode they will?"
+   ],
+   "questions_ar": [
+    "هل حكمت على كل فكرة او مورد او تصميم منفردا، وهل يتغير الترتيب لو وضعتها كلها في جدول واحد جنبا الى جنب؟",
+    "ما السمات (ارقام، مواصفات، مقاييس) التي لا معنى لها منفردة ولا تصبح قابلة للتقييم الا بجانب مقارنة او معيار؟",
+    "هل سيرى المستخدم او الجمهور هذه الخيارات منفردة ام معا، وهل اقيمها بالطريقة نفسها التي سيراها بها؟"
+   ],
+   "output": "A single side-by-side comparison matrix of all options on the same attributes, together with each option's earlier standalone score and a note on every rank reversal.",
+   "check": "At least 2 options and at least 4 shared attributes are in one table. Every numeric attribute has 1 reference value or benchmark. Count the rank reversals between standalone and joint scores, and give each one a one-line explanation.",
+   "anti_pattern": "Approving the first concept that 'feels great' in isolation, or treating joint evaluation as infallible when the real audience will meet the option alone.",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": false,
+   "summary_en": "Options judged one at a time are scored by emotion and by whatever attributes are easy to evaluate alone. Side by side, hard-to-evaluate attributes such as bare numbers become meaningful and principles take over, so rankings can flip between the two modes. Joint evaluation usually helps but does not guarantee logic.",
+   "summary_ar": "عند تقييم الخيارات كلا على حدة تحكم العاطفة والسمات التي يسهل تقييمها منفردة. اما عند وضعها جنبا الى جنب فتصبح السمات الصعبة مثل الارقام المجردة ذات معنى وتتقدم المبادئ، فقد ينقلب الترتيب بين الطريقتين. والتقييم المشترك يساعد غالبا لكنه لا يضمن المنطق.",
+   "debias_en": "Before choosing, line all options up side by side on the same attributes and give each bare number a reference point. Then deliberately decide which mode, single or joint, matches how the choice will really be experienced.",
+   "debias_ar": "قبل الاختيار ضع كل الخيارات جنبا الى جنب على السمات نفسها، واعط كل رقم مجرد نقطة مرجعية، ثم قرر عمدا اي طريقة، منفردة ام مشتركة، تطابق الطريقة التي سيعاش بها الاختيار فعلا.",
+   "page_refs": [
+    136,
+    138,
+    139,
+    141,
+    142,
+    298,
+    299,
+    300,
+    303,
+    304,
+    305,
+    424
+   ],
+   "book_examples": [
+    "Hsee dictionaries",
+    "dolphins vs farmworkers",
+    "dinnerware sets"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-framing",
+   "name_en": "Framing effects",
+   "name_ar": "تأثيرات التأطير",
+   "family": "frame",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "efficiency",
+    "headline",
+    "loss",
+    "message",
+    "percent",
+    "pitch",
+    "save",
+    "wording"
+   ],
+   "triggers_ar": [
+    "توفير",
+    "خسارة",
+    "رسالة",
+    "صياغة",
+    "عرض",
+    "عنوان",
+    "كفاءة",
+    "نسبة"
+   ],
+   "questions_en": [
+    "If I restate this brief, metric or option the other way (gain vs loss, percent vs count, rate vs amount consumed), does my preferred choice change?",
+    "Was this problem handed to me in a frame chosen by someone else (client, vendor, stakeholder), and what does it look like in a neutral, canonical frame?",
+    "Where my copy or pitch frames outcomes for the audience, is the frame honest, and have I shown the complementary frame where it matters?"
+   ],
+   "questions_ar": [
+    "لو اعدت صياغة هذا الطلب او المقياس او الخيار بالعكس (ربح مقابل خسارة، نسبة مقابل عدد، معدل مقابل كمية مستهلكة)، هل يتغير اختياري المفضل؟",
+    "هل وصلتني المشكلة باطار اختاره غيري (عميل، مورد، صاحب مصلحة)، وكيف تبدو في اطار محايد موحد؟",
+    "حيث يؤطر نصي او عرضي النتائج للجمهور، هل الاطار صادق، وهل عرضت الاطار المكمل حيث يهم؟"
+   ],
+   "output": "A frame-robustness note: each key option or claim written in at least two equivalent frames plus one canonical frame (total states or actual quantities), with the preference recorded under each.",
+   "check": "At least 3 key options or metrics are restated in 2 or more frames. Count the preferences that flip across frames (each flip must be resolved by frame-independent facts). Every ratio metric is converted at least once to the absolute quantity.",
+   "anti_pattern": "Accepting the brief's wording as given, or exploiting a misleading frame such as '90% success' while hiding the 10% failure, and calling it persuasion.",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "Human preferences attach to descriptions, not to states of the world. The same facts stated as gains or losses, survival or mortality, or keep or lose reverse choices, even for experts. The defense is to restate options in a common frame and check that the preference survives. Framing can also be used deliberately to steer others.",
+   "summary_ar": "تتعلق تفضيلات البشر بالوصف لا بحالة العالم، فالحقائق نفسها اذا صيغت ربحا او خسارة، بقاء او وفاة، احتفاظا او فقدانا، تقلب الاختيارات حتى عند الخبراء. والعلاج اعادة صياغة الخيارات في اطار مشترك والتاكد من ان التفضيل يصمد. ويمكن ايضا استخدام التاطير عمدا لتوجيه الاخرين.",
+   "debias_en": "Translate every option into one common, reality-based frame, such as final states, absolute amounts or the trader's 'compared with what else could I get'. Then decide on the substance and treat any leftover frame-driven feeling as noise to examine.",
+   "debias_ar": "ترجم كل خيار الى اطار مشترك واحد مرتبط بالواقع، مثل الحالات النهائية او الكميات المطلقة او سؤال التاجر 'مقارنة بما يمكنني الحصول عليه بدلا منه'. ثم قرر على اساس المضمون وعامل اي شعور متبق ناتج عن الاطار كضجيج يجب فحصه.",
+   "page_refs": [
+    75,
+    307,
+    308,
+    309,
+    310,
+    311,
+    312,
+    314,
+    315,
+    375,
+    378,
+    381
+   ],
+   "book_examples": [
+    "Asian disease problem",
+    "survival vs mortality",
+    "MPG illusion"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-two-selves",
+   "name_en": "Experiencing vs remembering self (peak-end, duration neglect)",
+   "name_ar": "الذات المجربة والذات المتذكرة (الذروة والنهاية واهمال المدة)",
+   "family": "learn",
+   "stage": "learn",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "ending",
+    "event",
+    "experience",
+    "journey",
+    "memorable",
+    "onboarding",
+    "retrospective",
+    "satisfaction"
+   ],
+   "triggers_ar": [
+    "انطباع",
+    "تجربة",
+    "ذكرى",
+    "رحلة",
+    "رضا",
+    "فعالية",
+    "مراجعة",
+    "نهاية"
+   ],
+   "questions_en": [
+    "Am I designing or judging this experience (video, event, onboarding, product use) by its peak and ending, while ignoring how the long middle actually felt?",
+    "Is my retrospective or lessons-learned based on remembered summaries, and do moment-by-moment data (logs, drop-off, live ratings) tell a different story?",
+    "If the ending is improved, does the total experienced time really get better, or only the memory of it?"
+   ],
+   "questions_ar": [
+    "هل اصمم هذه التجربة او احكم عليها (فيديو، فعالية، تهيئة، استخدام منتج) بذروتها ونهايتها متجاهلا كيف كان الجزء الاوسط الطويل فعلا؟",
+    "هل تعتمد مراجعتي او دروسي المستفادة على ملخصات متذكرة، وهل تروي البيانات اللحظية (سجلات، انسحاب، تقييمات مباشرة) قصة مختلفة؟",
+    "اذا حسنت النهاية، هل يتحسن الزمن المعاش كله فعلا ام الذكرى فقط؟"
+   ],
+   "output": "A two-track evaluation of the experience: a duration-weighted moment profile (segments × length × rating) next to the peak-end remembered score, with the gap between them and a design note for both the ending and the long middle.",
+   "check": "The experience is split into at least 4 timed segments, each with a rating. Both a duration-weighted score and a peak-end score are reported. At least 1 change targets the longest segment, not only the peak or ending.",
+   "anti_pattern": "Gaming memory with a flashy ending while leaving a long, painful middle, or trusting a single end-of-project satisfaction survey as the truth of what happened.",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "The remembering self, which makes decisions, scores an episode by the average of its peak and its end and almost ignores how long it lasted. So a longer, worse experience with a better ending is remembered more fondly and chosen again. Retrospective feedback and lessons learned therefore misrepresent the experience as it was lived.",
+   "summary_ar": "الذات المتذكرة، وهي التي تتخذ القرار، تقيم التجربة بمتوسط ذروتها ونهايتها وتكاد تتجاهل مدتها. فالتجربة الاطول والاسوا ذات النهاية الافضل تتذكر بشكل اجمل ويعاد اختيارها. لذلك تشوه الملاحظات اللاحقة والدروس المستفادة التجربة كما عيشت فعلا.",
+   "debias_en": "Measure the experience over time as well as by recall, weight each moment by its duration, and decide explicitly whether you are serving the experiencing self or the remembering self before you optimize peaks and endings.",
+   "debias_ar": "قس التجربة عبر الزمن لا بالتذكر فقط، وزن كل لحظة بمدتها، وقرر صراحة هل تخدم الذات المجربة ام الذات المتذكرة قبل ان تحسن الذروات والنهايات.",
+   "page_refs": [
+    321,
+    322,
+    323,
+    324,
+    325,
+    328,
+    329,
+    340,
+    343,
+    345,
+    346,
+    426
+   ],
+   "book_examples": [
+    "colonoscopy patients A and B",
+    "cold-hand experiment",
+    "spring-break study"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-experienced-wellbeing",
+   "name_en": "Experienced well-being and the U-index",
+   "name_ar": "الرفاه المعاش ومؤشر U",
+   "family": "learn",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "engagement",
+    "friction",
+    "happiness",
+    "nps",
+    "satisfaction",
+    "survey",
+    "wait",
+    "wellbeing"
+   ],
+   "triggers_ar": [
+    "ازعاج",
+    "استبيان",
+    "انتظار",
+    "تفاعل",
+    "رضا",
+    "رفاه",
+    "سعادة",
+    "مقياس"
+   ],
+   "questions_en": [
+    "Is my success metric a global rating (NPS, stars, satisfaction) when the goal is how users actually feel while using it, and which time-based measure would capture that?",
+    "What share of the user's time in this flow or product is spent in an unpleasant state (waiting, confusion, friction), and which episodes contribute most to it?",
+    "Is the upbeat, positive mood around this project making me less skeptical, and have I run a deliberate critical pass?"
+   ],
+   "questions_ar": [
+    "هل مقياس نجاحي تقييم عام (NPS، نجوم، رضا) بينما الهدف هو شعور المستخدم الفعلي اثناء الاستخدام، واي مقياس زمني يلتقط ذلك؟",
+    "ما نسبة وقت المستخدم في هذا المسار او المنتج التي يقضيها في حالة مزعجة (انتظار، ارتباك، احتكاك)، واي الحلقات تساهم فيها اكثر؟",
+    "هل يجعلني الجو المتفائل حول هذا المشروع اقل تشككا، وهل اجريت مراجعة نقدية متعمدة؟"
+   ],
+   "output": "An episode-level experience log for the flow or audience (episode, duration, dominant feeling). It yields a U-index (percent of time unpleasant), which is reported next to, not instead of, any global satisfaction score.",
+   "check": "At least 5 episodes are listed, each with a duration and a dominant feeling. The U-index is computed as a percentage. The top 2 episodes by unpleasant minutes each get 1 fix. Global and episodic measures are reported separately (2 numbers, not 1 blended score).",
+   "anti_pattern": "Treating a high satisfaction score or excited stakeholder feedback as proof that the lived experience is good, or blending life-evaluation and feeling measures into one number.",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": false,
+   "summary_en": "Life or global satisfaction ratings ask the error-prone remembering self. Experienced well-being can instead be measured episode by episode, weighted by duration, for example with day reconstruction and the U-index, the share of time spent in an unpleasant state. Mood follows the current situation and attention more than status or income, and satisfaction scores and lived feelings can diverge.",
+   "summary_ar": "تقييمات الرضا العام تسال الذات المتذكرة المعرضة للخطا. ويمكن بدلا من ذلك قياس الرفاه المعاش حلقة بحلقة موزونا بالمدة، كما في اعادة بناء اليوم ومؤشر U، وهو نسبة الوقت في حالة مزعجة. ويتبع المزاج الموقف الحالي والانتباه اكثر من المكانة او الدخل، وقد تختلف درجات الرضا عن المشاعر المعاشة.",
+   "debias_en": "Replace or complement global ratings with a duration-weighted, episode-by-episode measure, and attack the largest blocks of unpleasant time. Change where attention goes rather than chasing status features or more money.",
+   "debias_ar": "استبدل التقييمات العامة او اكملها بمقياس حلقة بحلقة موزون بالمدة، واستهدف اكبر كتل الوقت المزعج، وغير مواضع الانتباه بدلا من مطاردة ميزات المكانة او زيادة المال.",
+   "page_refs": [
+    60,
+    330,
+    331,
+    332,
+    333,
+    334,
+    335,
+    346,
+    400,
+    426,
+    428
+   ],
+   "book_examples": [
+    "Day Reconstruction Method",
+    "U-index by activity",
+    "income satiation ~$75k"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-focusing-illusion",
+   "name_en": "Focusing illusion and affective forecasting",
+   "name_ar": "وهم التركيز والتنبؤ العاطفي",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "feature",
+    "happier",
+    "luxury",
+    "premium",
+    "rebrand",
+    "relocate",
+    "switch",
+    "upgrade"
+   ],
+   "triggers_ar": [
+    "اسعد",
+    "افضل",
+    "انتقال",
+    "تبديل",
+    "تحسين",
+    "ترقية",
+    "فاخر",
+    "ميزة"
+   ],
+   "questions_en": [
+    "Am I overweighting the one feature I am focused on (new look, premium tier, hero feature), and what are all the other factors that drive the outcome?",
+    "How often will users actually attend to this feature during ordinary use, after the novelty fades and they adapt?",
+    "Is my forecast of impact ('this will change everything') based on the moment of change rather than on the long state that follows?"
+   ],
+   "questions_ar": [
+    "هل ابالغ في وزن الميزة الوحيدة التي اركز عليها (شكل جديد، فئة مميزة، ميزة رئيسية)، وما كل العوامل الاخرى التي تحدد النتيجة؟",
+    "كم مرة سينتبه المستخدمون فعلا الى هذه الميزة اثناء الاستخدام العادي بعد ان تزول الجدة ويتكيفوا؟",
+    "هل يعتمد توقعي للاثر ('هذا سيغير كل شيء') على لحظة التغيير بدل الحالة الطويلة التي تليها؟"
+   ],
+   "output": "A weighted determinants list for the decision, in which the salient feature is placed among all other drivers, with an attention-time estimate (how often and how long it will be noticed after adaptation).",
+   "check": "At least 5 determinants besides the salient feature are listed, each with a numeric weight. The salient feature's weight is backed by at least 1 piece of evidence. An after-adaptation estimate of attention per week or per session is stated as a number.",
+   "anti_pattern": "Betting a launch, rebrand or purchase on one shiny feature because it dominates the conversation, or forecasting lasting delight from a change people will stop noticing.",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": true,
+   "summary_en": "Whatever you are thinking about right now seems far more important to the outcome or to happiness than it really is. People adapt to most new conditions by attending to them less, so a salient feature, upgrade or move predicts stated enjoyment but barely affects everyday experience.",
+   "summary_ar": "كل ما تفكر فيه الان يبدو اهم بكثير للنتيجة او للسعادة مما هو فعلا. ويتكيف الناس مع معظم الظروف الجديدة بقلة الانتباه اليها، فالميزة البارزة او الترقية او الانتقال تتنبا بالمتعة المعلنة لكنها بالكاد تؤثر في التجربة اليومية.",
+   "debias_en": "Ask when, not whether, the feature will give value. Estimate the time it will actually hold attention after adaptation, and weigh it against the full list of factors that shape everyday experience.",
+   "debias_ar": "اسال متى، لا هل، ستعطي الميزة قيمة. قدر الوقت الذي ستشغل فيه الانتباه فعلا بعد التكيف، وزنها مقابل القائمة الكاملة للعوامل التي تشكل التجربة اليومية.",
+   "page_refs": [
+    339,
+    340,
+    341,
+    342,
+    343,
+    428,
+    429
+   ],
+   "book_examples": [
+    "California vs Midwest climate",
+    "paraplegic adaptation",
+    "car Blue Book value"
+   ],
+   "full_text_read": "thinking_fast_slow"
+  },
+  {
+   "id": "tfs-econs-humans-nudge",
+   "name_en": "Econs vs humans and choice architecture",
+   "name_ar": "الاقتصادي العقلاني مقابل البشر وهندسة الاختيار",
+   "family": "systems",
+   "stage": "build",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "checkout",
+    "default",
+    "disclosure",
+    "form",
+    "onboarding",
+    "pricing",
+    "signup",
+    "terms"
+   ],
+   "triggers_ar": [
+    "اشتراك",
+    "افتراضي",
+    "افصاح",
+    "تسجيل",
+    "تسعير",
+    "دفع",
+    "شروط",
+    "نموذج"
+   ],
+   "questions_en": [
+    "Does my design assume users will read, compare and calculate like Econs, and what will a hurried Human actually do on this screen, page or form?",
+    "What are the defaults, order and salience of options in what I am building, and do they make the choice that serves the user the easiest one?",
+    "Where I disclose numbers or terms, are they short, plain and shown in balanced frames (for example both '90% success' and '10% failure')?"
+   ],
+   "questions_ar": [
+    "هل يفترض تصميمي ان المستخدمين سيقراون ويقارنون ويحسبون كالعقلانيين المثاليين، وماذا سيفعل الانسان المستعجل فعلا في هذه الشاشة او الصفحة او النموذج؟",
+    "ما الافتراضيات وترتيب الخيارات وبروزها في ما ابنيه، وهل تجعل الخيار الذي يخدم المستخدم هو الاسهل؟",
+    "حيث افصح عن ارقام او شروط، هل هي قصيرة وواضحة ومعروضة باطارين متوازنين (مثل '90% نجاح' و'10% فشل' معا)؟"
+   ],
+   "output": "A choice-architecture spec for the artifact being built: the defaults, option order, the one-line plain summary of key terms, and the balanced frames, plus a short list of named biases the design guards against.",
+   "check": "Every decision point in the flow has 1 stated default with a reason. Key terms fit in 3 plain-language lines or fewer. Each headline statistic appears in 2 balanced frames. At least 2 named biases are listed, each with 1 concrete mitigation.",
+   "anti_pattern": "Burying important terms in fine print and calling it transparency, or using defaults and frames to steer users against their own interest (dark patterns).",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ],
+   "trap": false,
+   "summary_en": "Real users are not rational Econs. They skip fine print, follow defaults, accept the given frame and rationalize gut feelings. Good design therefore makes the right choice simple, salient and frame-balanced instead of just disclosing information. Organizations improve by naming biases precisely and by judging decisions on process, with checks at the framing, information and review stages.",
+   "summary_ar": "المستخدمون الحقيقيون ليسوا عقلانيين مثاليين: يتجاوزون التفاصيل الدقيقة، ويتبعون الافتراضيات، ويقبلون الاطار المعطى، ويبررون مشاعرهم الحدسية. لذا يجعل التصميم الجيد الخيار الصحيح بسيطا وبارزا ومتوازن الاطار بدل الاكتفاء بالافصاح. وتتحسن المؤسسات بتسمية الانحيازات بدقة والحكم على القرارات بطريقتها، مع فحوص في مراحل التاطير والمعلومات والمراجعة.",
+   "debias_en": "Design for Humans: set defaults that serve the user, simplify and make key information salient, show both frames of any statistic, and review the design's decisions by process with precise bias labels rather than by outcome alone.",
+   "debias_ar": "صمم للبشر: اضبط افتراضيات تخدم المستخدم، وبسط المعلومات الاساسية واجعلها بارزة، واعرض الاطارين لاي احصائية، وراجع قرارات التصميم بطريقتها وبتسميات دقيقة للانحيازات لا بالنتيجة وحدها.",
+   "page_refs": [
+    8,
+    9,
+    166,
+    167,
+    226,
+    287,
+    288,
+    349,
+    350,
+    352,
+    375,
+    376
+   ],
+   "book_examples": [
+    "Thaler's Econs and Humans",
+    "90% fat-free labeling rule",
+    "25 division heads bet"
+   ],
+   "full_text_read": "thinking_fast_slow"
   }
  ],
- "book_matched": 28
+ "book_matched": 28,
+ "full_text_books": [
+  "thinking_fast_slow"
+ ]
 }

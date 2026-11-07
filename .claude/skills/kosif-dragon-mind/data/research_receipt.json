@@ -15,8 +15,24 @@
   }
  },
  "frameworks": {
-  "count": 120,
-  "with_book_evidence": 28
+  "count": 159,
+  "with_book_evidence": 67,
+  "with_page_refs": 42
  },
- "honesty": "counts are measured from the files hashed here; README/book analysis is lexical metadata analysis"
+ "honesty": "counts are measured from the files hashed here; README/book analysis is lexical metadata analysis",
+ "full_text_books": [
+  {
+   "slug": "thinking_fast_slow",
+   "title": "Thinking, Fast and Slow",
+   "pdf_sha256": "83926ba2051ce10c222fdc38bc79c5efc710d8e35ac1d6d2a22864648e462486",
+   "pages_total": 468,
+   "pages_read": 468,
+   "readers": 100,
+   "insights": 584,
+   "operators_added": 39,
+   "operators_merged": 3,
+   "file": "book_thinking_fast_slow.json",
+   "file_sha256": "b1353bd737d3baec4ccb7ef797a334bd1c8f1333f44824b543c3b0b063080e6e"
+  }
+ ]
 }
