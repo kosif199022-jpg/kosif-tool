@@ -56,14 +56,18 @@ SCRIPT = {
     "kling-director": SKILLS / "kosif-kling-director" / "scripts",
     "dragon-mind": SKILLS / "kosif-dragon-mind" / "scripts",
     "saas-animation": SKILLS / "saas-animation" / "scripts",
+    "stickman-studio": SKILLS / "kosif-stickman-studio" / "scripts",
+    "creative-council": SKILLS / "kosif-black-dragon" / "scripts",
+    "cartoon-short": SKILLS / "cartoon-audio-short" / "kit" / "tools",
+    "talking-head-reels": SKILLS / "talking-head-reels" / "scripts",
 }
 RECIPES = tuple(SCRIPT)
 NEEDS_MEDIA = {"social", "video-editor", "motion-energy", "captions-audio", "shadow-theatre", "voice-check",
-               "animation-qa", "hyperframes-beats", "montage-tools", "mimic-analyze"}
+               "animation-qa", "hyperframes-beats", "montage-tools", "mimic-analyze", "talking-head-reels"}
 NEEDS_MODULE = {"excel-lambdas": "openpyxl", "motion-energy": "PIL", "excel-model": "openpyxl",
                 "excel-check": "openpyxl", "captions-audio": "numpy", "shadow-theatre": "numpy",
                 "animation-qa": "PIL", "hyperframes-beats": "numpy", "mimic-analyze": "cv2", "pixel-painter": "cv2",
-                "saas-animation": "PIL"}
+                "saas-animation": "PIL", "cartoon-short": "scipy", "talking-head-reels": "numpy"}
 # Scripts that import their sibling modules: run without -I (which drops the script's folder from
 # sys.path) but still with -E -s, so no environment variable or user site-packages leaks in.
 PY_SIBLINGS = [sys.executable, "-E", "-s", "-B"]  # Python packages a recipe's script imports
@@ -719,8 +723,90 @@ def dragon_mind(r, d, task, clip, selftest):
     other = r.call("think a different task", [*tool, "think", "Write a pitch deck about solar panels", "--out", "other"])
     r.check("a different task gives a different digest", _json(r.work / "other" / "mind_trace.json")["digest"] != t["digest"],
             other.get("exit_code"))
+    # Thinking, Fast and Slow: the trap scanner and the page-level book record are part of the mind.
+    r.check("the plan carries the book's always-on System 2 gates",
+            {"tfs-wysiati", "tfs-substitution", "tfs-optimism-overconfidence"} <= {x["id"] for x in t.get("traps", [])},
+            [x["id"] for x in t.get("traps", [])])
+    r.call("scan a task with a planted anchor",
+           [*tool, "traps", "anchor the price estimate from the first number the client said"])
+    planted = r.steps[-1].get("receipt") or []
+    planted = planted if isinstance(planted, list) else planted.get("traps", [])
+    hit = next((x for x in planted if x["id"] == "tfs-anchoring"), None)
+    r.check("the planted anchor is caught with a debiasing move and book pages",
+            bool(hit and hit["score"] > 0 and hit.get("debias_en") and hit.get("pages")),
+            hit and [hit["score"], hit.get("pages")])
+    r.call("read page 69 of the book record", [*tool, "book", "--page", "69"])
+    page = r.steps[-1].get("receipt") or {}
+    r.check("the book record covers all 468 pages and returns the page gist",
+            page.get("pages_total") == 468 and page.get("pages_read") == 468 and (page.get("page") or {}).get("page") == 69,
+            [page.get("pages_total"), page.get("pages_read")])
     r.findings.append({"faculties_needed": t["faculties_needed"], "critic": t["critic"][:5], "tiers": t["tiers"],
+                       "traps": [x["id"] for x in t.get("traps", [])],
                        "note": "a planner: nothing in the catalog was executed by this step"})
+
+
+def creative_council(r, d, task, clip, selftest):
+    """The 12-seat creative council with its 525 thinking records, the Kahneman trap gates and the Atlas
+    procedures, then the judgment review and the advisory verdict. It plans and scores; it renders nothing."""
+    bd = [*PY_SIBLINGS, str(d / "black_dragon.py")]
+    cc = [*PY_SIBLINGS, str(d / "creative_council.py")]
+    r.call("convene the council on the task", [*bd, "council", task, "--out", "council.json"])
+    r.call("convene it again (same task)", [*bd, "council", task, "--out", "again.json"])
+    r.output(r.work / "council.json")
+    c, c2 = _json(r.work / "council.json"), _json(r.work / "again.json")
+    seats = [x["id"] for x in c["roles"]]
+    r.check("12 distinct seats", len(seats) == 12 == len(set(seats)), seats)
+    ids = [a["id"] for a in c["assignments"]]
+    r.check("every thinking record has exactly one primary seat",
+            c["total_source_records"] == c["primary_assigned"] == len(ids) == len(set(ids)) and len(ids) >= 525,
+            [c["total_source_records"], c["primary_assigned"], len(ids)])
+    r.check("every record's seat is a council seat", all(a["primary"] in seats for a in c["assignments"]))
+    r.check("same task gives the same fingerprint", c["fingerprint"] == c2["fingerprint"], c["fingerprint"][:12])
+    k = c["kahneman_review"]
+    gates = {g["id"] for g in k["review_gates"]}
+    r.check("the book's 31 traps are loaded and the three System 2 gates are on",
+            k["traps_catalogued"] >= 31 and {"tfs-wysiati", "tfs-substitution", "tfs-optimism-overconfidence"} <= gates,
+            [k["traps_catalogued"], sorted(gates)])
+    r.check("every trap gate goes to the critic and to a primary seat",
+            all("critic" in g["reviewers"] and g["primary"] in seats for g in k["review_gates"]))
+    r.check("the trap questions reach the seats",
+            sum(len(x.get("kahneman_review_questions", [])) for x in c["roles"]) >= len(k["review_gates"]))
+    ea = c["external_atlas"]
+    r.check("Atlas procedures are loaded and each routed to a seat",
+            ea["candidate_procedure_count"] >= 23 and all(p["primary"] in seats for p in ea["candidate_procedures"]),
+            ea["candidate_procedure_count"])
+    # Judgment review: the 11 book lenses plus the full trap scan, on a brief built from the task.
+    brief = r.work / "brief.json"
+    brief.write_text(json.dumps({"goal": task, "options": c["options"], "stakes": "high", "reversible": True,
+                                 "anchor": 5000}, ensure_ascii=False), encoding="utf-8")
+    r.call("judgment review of the brief", [*bd, "think-review", "--input", str(brief), "--out", "review.json"])
+    rv = _json(r.work / "review.json")
+    r.output(r.work / "review.json")
+    r.check("review covers the 11 book lenses", len(rv["review_checks"]) == 11, len(rv["review_checks"]))
+    r.check("review also runs the full trap scan", rv["book_trap_scan"]["traps_catalogued"] >= 31
+            and len(rv["book_trap_scan"]["gates"]) >= 3, len(rv["book_trap_scan"]["gates"]))
+    # Decision: known-answer scores pick a winner; an unbacked INDEPENDENT claim is refused.
+    a, b = c["options"][0], c["options"][1]
+    sub = {"mode": "SIMULATED", "rounds": {"3": {
+        "critic": {"scores": {a: {"meaning": 5, "feasibility": 5}, b: {"meaning": 2, "feasibility": 2}}},
+        "decision": {"scores": {a: {"meaning": 4, "feasibility": 5}, b: {"meaning": 3, "feasibility": 2}}}}}}
+    (r.work / "sub.json").write_text(json.dumps(sub), encoding="utf-8")
+    r.call("score two routes", [*cc, "verdict", "--plan", "council.json", "--submissions", "sub.json",
+                                "--out", "verdict.json"])
+    v = _json(r.work / "verdict.json")
+    r.output(r.work / "verdict.json")
+    r.check("the clearly better route wins, labelled simulated",
+            v["winning_route"] == a and v["status"] == "SIMULATED_NOT_EXECUTED", [v["winning_route"], v["status"]])
+    sub["mode"] = "INDEPENDENT"
+    (r.work / "fake.json").write_text(json.dumps(sub), encoding="utf-8")
+    fake = r.call("claim independent runs with no run IDs (planted)",
+                  [*cc, "verdict", "--plan", "council.json", "--submissions", "fake.json", "--out", "fake-v.json"],
+                  ok_codes=(0, 1, 2))
+    r.check("the planted independent claim is refused", fake["exit_code"] != 0, fake["exit_code"])
+    r.findings.append({"seats": seats, "records": c["total_source_records"],
+                       "trap_gates": sorted(gates), "atlas_procedures": ea["candidate_procedure_count"],
+                       "winning_route": v["winning_route"],
+                       "note": "planning and scoring only; no agent, model, media or paid tool was run"})
 
 
 def saas_animation(r, d, task, clip, selftest):
@@ -765,6 +851,301 @@ def saas_animation(r, d, task, clip, selftest):
                                "and the sound and Blender scripts need scipy and Blender"})
 
 
+def stickman_studio(r, d, task, clip, selftest):
+    """The GrowKaz kit itself is not in the repo (no licence); this runs KOSIF's installer on a synthetic plugin."""
+    out = r.work / "selftest"
+    r.call("stickman_kit.py: known-answer install self-test", [*PY, str(d / "stickman_kit.py"), "self-test", "--out", str(out)])
+    res = _json(out / "selftest.json")
+    r.output(out / "selftest.json")
+    names = {c["name"]: c["passed"] for c in res["checks"]}
+    r.check("all 13 self-test checks pass", res["passed"] and len(names) == 13, names)
+    r.check("parent path and symlink are refused", names.get("parent path refused") and names.get("symlink refused"), None)
+    r.check("the owner's projects/ folder survives an install", names.get("user's projects/ kept"), None)
+    r.check("nothing is written outside the destination", names.get("nothing escaped dest"), None)
+    r.findings.append({"note": "installer only; the GrowKaz renderer needs the owner's plugin, Node, Chromium and ffmpeg "
+                               "and is not run by the Dragon"})
+
+
+def cartoon_short(r, d, task, clip, selftest):
+    import re
+    import wave
+    import numpy as np
+    from PIL import Image
+    if not shutil.which("ffmpeg") or not shutil.which("ffprobe"):
+        raise RuntimeError("ffmpeg and ffprobe are required")
+    sr = 48000
+
+    def write(path, x):
+        with wave.open(str(path), "wb") as w:
+            w.setnchannels(1)
+            w.setsampwidth(2)
+            w.setframerate(sr)
+            w.writeframes((np.clip(x, -1, 1) * 32767).astype(np.int16).tobytes())
+
+    # Known-answer voice: three spoken spans (1.0 s, 2.0 s, 1.0 s) with silences between them.
+    spans = [(0.30, 1.30), (1.90, 3.90), (4.50, 5.50)]
+    total = 5.80
+    t = np.arange(int(total * sr)) / sr
+    voice = np.zeros_like(t)
+    for a, b in spans:
+        on = (t >= a) & (t < b)
+        voice[on] = 0.5 * np.sin(2 * np.pi * 220 * t[on]) * (0.8 + 0.2 * np.sin(2 * np.pi * 4 * t[on]))
+    voice_wav = r.work / "voice.wav"
+    write(voice_wav, voice)
+    # The script as pasted into a voice generator: an audio tag and tashkeel, which timing.py must strip.
+    script = r.work / "script.txt"
+    script.write_text("[serious] جُنْدِيٌّ وَاحِدٌ بَقِيَ. ظل يحرس الجسر القديم ثلاثين سنة كاملة بعد الحرب، "
+                      "ولم يخبره أحد أنها انتهت. والسبب؟", encoding="utf-8")
+    out = r.work / "timing"
+    r.call("timing.py: align the Arabic script to the voice by silences",
+           [*PY, str(d / "timing.py"), str(voice_wav), str(script), "--out", str(out)])
+    r.output(out / "phrases.json")
+    r.output(out / "words.json")
+    ph = json.loads((out / "phrases.json").read_text(encoding="utf-8"))
+    starts = [p["s"] for p in ph["phrases"]]
+    r.check("three phrases, one per spoken span", len(starts) == 3, [p["text"] for p in ph["phrases"]])
+    r.check("each phrase starts within 0.1 s of its span",
+            len(starts) == 3 and all(abs(s - a) <= 0.1 for s, (a, _) in zip(starts, spans)), starts)
+    text = " ".join(p["text"] for p in ph["phrases"])
+    r.check("tag and tashkeel removed, Arabic detected",
+            ph["language"] == "ar" and "[" not in text and not re.search("[\u064b-\u0652]", text), text)
+    r.check("frame count is duration x 30", ph["frames30"] == round(ph["duration"] * 30), ph["frames30"])
+    # Word times in kosif-voice-studio's words.json format, with one misheard word: the script's own word must win.
+    asr = [{"word": w, "start": s, "end": e} for w, s, e in [("جندي", .3, .6), ("واحد", .6, 1.0), ("بقى", 1.0, 1.3)]]
+    asr_file = r.work / "asr.json"
+    asr_file.write_text(json.dumps(asr, ensure_ascii=False), encoding="utf-8")
+    script2 = r.work / "script2.txt"
+    script2.write_text("جندي واحد بقي.", encoding="utf-8")
+    out2 = r.work / "timing-asr"
+    r.call("timing.py: map the script onto recognised word times",
+           [*PY, str(d / "timing.py"), str(voice_wav), str(script2), "--out", str(out2), "--asr-words", str(asr_file)])
+    w2 = json.loads((out2 / "words.json").read_text(encoding="utf-8"))
+    r.output(out2 / "words.json")
+    r.check("script words kept over misheard ones, with the recognised times",
+            [w["w"] for w in w2] == ["جندي", "واحد", "بقي."] and w2[2]["s"] == 1.0, w2)
+    # Mix: a loud music bed and a 2 ms click in a silence. At 50 % RMS the click would peak far above
+    # the voice, so the 0.7x peak cap has to act.
+    music = 0.6 * np.sin(2 * np.pi * 110 * t)
+    sfx = np.zeros_like(t)
+    sfx[(t >= 1.50) & (t < 1.502)] = 0.95
+    hit = (t >= 1.45) & (t < 1.65)
+    write(r.work / "music.wav", music)
+    write(r.work / "sfx.wav", sfx)
+    step = r.call("mix.py: lock music and SFX under the voice",
+                  [*PY, str(d / "mix.py"), str(voice_wav), str(r.work / "music.wav"), str(r.work / "sfx.wav")])
+    mixed = r.work / "mix_raw.wav"
+    r.output(mixed)
+    with wave.open(str(mixed)) as w:
+        m = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(np.float64) / 32767
+    r.check("mix is exactly as long as the voice", len(m) == len(voice), [len(m), len(voice)])
+    h = int(.05 * sr)
+    blocks = np.sqrt((voice[:len(voice) // h * h].reshape(-1, h) ** 2).mean(1))
+    vr = float(np.sqrt((blocks[blocks > blocks.max() * 0.01] ** 2).mean()))
+    lead = m[int(.05 * sr):int(.25 * sr)]  # before the voice and the hit: music alone
+    music_db = 20 * np.log10(np.sqrt((lead ** 2).mean()) / vr)
+    r.check("music sits 16 dB under the voice (measured in the mix)", abs(music_db + 16) <= 0.3, round(music_db, 2))
+    # In the gap the mix is music + click; the music's own peak is known from its level.
+    click = np.abs(m[hit]).max() - 10 ** (-16 / 20) * vr * np.sqrt(2)
+    r.check("SFX click capped at 0.7x the voice peak (measured in the mix)",
+            click <= 0.7 * np.abs(voice).max() + 0.01, round(float(click), 4))
+    said = re.search(r"music ([-+\d.]+) dB.*sfx ([-+\d.]+) dB.*sfx peak ([-+\d.]+) dB", step.get("stdout_tail", ""))
+    r.check("script reports music -16.0 dB, SFX at or under -6 dB and the peak cap at -3.1 dB",
+            bool(said) and float(said[1]) == -16.0 and float(said[2]) <= -6.0 and float(said[3]) == -3.1,
+            step.get("stdout_tail"))
+    # Contact sheet of vertical stills, in frame order.
+    stills = r.work / "stills"
+    stills.mkdir()
+    colours = [(200, 30, 30), (30, 200, 30), (30, 30, 200)]
+    for i, c in enumerate(colours):
+        Image.new("RGB", (1080, 1920), c).save(stills / f"f{i * 40:04d}.jpg", quality=95)
+    sheet = r.work / "sheet.jpg"
+    r.call("sheet.py: tile the stills", [*PY, str(d / "sheet.py"), str(stills), str(sheet)])
+    r.output(sheet)
+    im = Image.open(sheet).convert("RGB")
+    got = [im.getpixel((x * 270 + 135, 240)) for x in range(3)]
+    r.check("sheet is 3 vertical 270x480 tiles in frame order", im.size == (810, 480) and
+            all(all(abs(a - b) <= 24 for a, b in zip(g, c)) for g, c in zip(got, colours)), [im.size, got])
+    r.findings.append({"note": "kit: timing, mix and contact sheet only; render.mjs needs Chromium with WebGL and "
+                               "finish.sh needs rendered frames, so neither ran here"})
+    animated_shorts_upstream(r, d.parents[1] / "upstream" / "claude-animated-shorts" / "templates")
+
+
+# Library code has no CLI: this small driver imports the upstream dsp/sfx_gen modules and prints JSON.
+ANIMATED_SHORTS_DRIVER = r"""
+import json, sys
+sys.path.insert(0, sys.argv[1])
+import numpy as np
+import dsp, sfx_gen
+out = sys.argv[2]
+t = dsp.tt(4.0)
+tone = 0.5 * np.sin(dsp.TAU * 1000 * t)
+dsp.write_wav(out + "/tone.wav", np.vstack([tone, tone]))
+# A sine at SR/4 with a 45 degree phase: every sample sits at 0.707 of the real (inter-sample) peak.
+q = np.sin(dsp.TAU * (dsp.SR / 4) * dsp.tt(0.5) + np.pi / 4)
+r = dsp.rng(7)
+made = {}
+for name, x in (("whoosh", sfx_gen.whoosh(0.8, r)), ("hammer_hit", sfx_gen.hammer_hit(r)), ("applause", sfx_gen.applause(1.5, r))):
+    x = np.asarray(x, float)
+    dsp.write_wav(out + "/" + name + ".wav", x)
+    # Synths come out unscaled; norm_to sets each event's loudest 400 ms to a target, as sfx.py does.
+    made[name] = {"seconds": round(x.shape[-1] / dsp.SR, 3), "peak": float(np.abs(x).max()),
+                  "finite": bool(np.isfinite(x).all()),
+                  "normed_lufs": round(float(dsp.momentary_max(dsp.norm_to(x, -20.0))), 2)}
+print(json.dumps({"tone_lufs": round(float(dsp.integrated(np.vstack([tone, tone]))), 2),
+                  "sample_peak_db": round(float(20 * np.log10(np.abs(q).max())), 2),
+                  "true_peak_db": round(float(dsp.true_peak(q)), 2), "sfx": made}))
+"""
+
+
+def animated_shorts_upstream(r, d):
+    """The vendored claude-animated-shorts templates (d): its audio library and QA scripts."""
+    import re
+    from PIL import Image
+    driver = r.work / "driver.py"
+    driver.write_text(ANIMATED_SHORTS_DRIVER, encoding="utf-8")
+    step = r.call("dsp.py + sfx_gen.py: loudness, true peak and three SFX synths",
+                  [*PY, str(driver), str(d / "audio"), str(r.work)])
+    got = step.get("receipt") or {}
+    for name in ("tone.wav", "whoosh.wav", "hammer_hit.wav", "applause.wav"):
+        r.output(r.work / name)
+    ff = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(r.work / "tone.wav"), "-af", "ebur128",
+                         "-f", "null", "-"], capture_output=True, text=True).stderr
+    ref = re.findall(r"I:\s+(-?[\d.]+) LUFS", ff)
+    r.check("BS.1770 integrated loudness matches ffmpeg ebur128 within 0.2 LU",
+            bool(ref) and "tone_lufs" in got and abs(got["tone_lufs"] - float(ref[-1])) <= 0.2,
+            [got.get("tone_lufs"), ref[-1:] or None])
+    r.check("true peak finds the inter-sample peak (0 dBTP) where samples show -3 dB",
+            abs(got.get("true_peak_db", 9) - 0.0) <= 0.2 and abs(got.get("sample_peak_db", 9) + 3.01) <= 0.05,
+            [got.get("sample_peak_db"), got.get("true_peak_db")])
+    sfx = got.get("sfx", {})
+    r.check("three SFX synths render finite, audible sound that norm_to sets to -20 LUFS momentary",
+            len(sfx) == 3 and all(v["finite"] and v["peak"] > 0.01 and v["seconds"] > 0.05
+                                  and abs(v["normed_lufs"] + 20) <= 0.05 for v in sfx.values()), sfx)
+    # A short with a planted 1 s black span (frames 60-89) after 2 s of moving picture, plus a tone.
+    vid = r.work / "short.mp4"
+    r.call("ffmpeg: build the test short", [
+        "ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "testsrc2=s=180x320:r=30:d=2",
+        "-f", "lavfi", "-i", "color=c=black:s=180x320:r=30:d=1", "-f", "lavfi", "-i", "sine=frequency=440:duration=3",
+        "-filter_complex", "[0:v][1:v]concat=n=2:v=1:a=0[v]", "-map", "[v]", "-map", "2:a",
+        "-c:v", "libx264", "-pix_fmt", "yuv420p", "-c:a", "aac", "-shortest", str(vid)])
+    qa = r.work / "qa"
+    r.call("short_qa.py: frame-by-frame QA", [*PY, str(d / "scripts" / "short_qa.py"), str(vid), str(qa)])
+    rep = qa / "report.md"
+    r.output(rep)
+    text = rep.read_text(encoding="utf-8") if rep.is_file() else ""
+    black = re.search(r"black \[([^\]]*)\]", text)
+    frames = [int(x) for x in re.findall(r"\d+", black[1])] if black else []
+    r.check("QA finds the planted black span and no black in the moving part",
+            bool(frames) and min(frames) >= 59 and 60 in frames, frames[:20])
+    r.check("QA reports specs and loudness", "SPECS 180x320" in text and "LOUDNESS" in text, text[:300])
+    # Side-by-side sheet: two of ours over one reference, all scaled to 200 px high.
+    ims = []
+    for name, size, c in (("a", (100, 200), (200, 30, 30)), ("b", (100, 200), (30, 200, 30)), ("ref", (200, 400), (30, 30, 200))):
+        path = r.work / f"{name}.jpg"
+        Image.new("RGB", size, c).save(path, quality=95)
+        ims.append(str(path))
+    sheet = r.work / "sbs.jpg"
+    r.call("sbs_sheet.py: ours over the reference",
+           [*PY, str(d / "scripts" / "sbs_sheet.py"), str(sheet), "--ours", *ims[:2], "--ref", ims[2], "--h", "200"])
+    r.output(sheet)
+    im = Image.open(sheet).convert("RGB")
+    r.check("sheet is 2 rows of 200 px with ours on top, reference below",
+            im.size == (208, 416) and im.getpixel((50, 100))[0] > 150 and im.getpixel((50, 316))[2] > 150,
+            [im.size, im.getpixel((50, 100)), im.getpixel((50, 316))])
+    r.findings.append({"note": "upstream: audio library and QA scripts only; the Remotion bridge template, music.py "
+                               "and mix.py are story-specific and need the bridge project, so they did not run here"})
+
+
+def talking_head_reels(r, d, task, clip, selftest):
+    """Known-answer reel: a 7 s 'talk' with speech at 0.3-1.3, 2.8-3.8 and 5.3-6.3 s, cut, mastered, planned,
+    validated and rendered by the skill's own scripts; Arabic text must reveal word by word."""
+    from PIL import Image, ImageStat
+    tool = lambda name, *a: [*PY_SIBLINGS, str(d / name), *a]
+    jumuah = SKILLS.parents[1] / "fonts" / "kosif-jumuah" / "KOSIFJumuah-Bold.ttf"
+    if not jumuah.is_file():
+        raise RuntimeError(f"Arabic font missing: {jumuah}")
+    os.environ["REEL_FONT_FILES"] = str(jumuah)
+    talk = r.work / "talk.mp4"
+    speech = "+".join(f"between(t\\,{a}\\,{b})" for a, b in ((0.3, 1.3), (2.8, 3.8), (5.3, 6.3)))
+    r.call("make the known-answer talk (ffmpeg)", [
+        "ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "testsrc2=size=1280x720:rate=25:duration=7",
+        "-f", "lavfi", "-i", f"aevalsrc='0.3*sin(2*PI*220*t)*({speech})+0.001*sin(2*PI*50*t)':s=48000:d=7",
+        "-c:v", "libx264", "-preset", "veryfast", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "256k", "-shortest", str(talk)])
+    P = r.work / "P"
+    r.call("prepare_project.py", tool("prepare_project.py", str(talk), "--project", str(P)))
+    cfg = _json(P / "project.json")
+    r.check("project reads the 7 s source", abs(cfg["src_dur"] - 7.0) <= 0.1, cfg["src_dur"])
+    words = [{"word": "أهلاً", "start": 0.3, "end": 0.8}, {"word": "بيكم.", "start": 0.8, "end": 1.3},
+             {"word": "ده", "start": 2.8, "end": 3.8}, {"word": "شغال", "start": 5.3, "end": 5.8},
+             {"word": "دلوقتي", "start": 5.8, "end": 6.3}]
+    (r.work / "words.json").write_text(json.dumps(words, ensure_ascii=False), encoding="utf-8")
+    r.call("words_to_asr.py (voice-studio words.json)", tool("words_to_asr.py", str(P), "words.json", "--language", "ar"))
+    asr = _json(P / "analysis" / "asr.json")
+    r.check("transcript splits after the full stop and the long silence", len(asr) == 3, [s["text"] for s in asr])
+    cut = r.call("cut_pauses.py", tool("cut_pauses.py", str(P)))
+    cfg = _json(P / "project.json")
+    prog = cfg.get("program_dur") or 0
+    r.check("pauses tightened: 3 speech segments kept, more than 2.5 s of air removed",
+            "segments 3" in (cut.get("stdout_tail") or "") and 3.0 <= prog <= 7.0 - 2.5, prog)
+    pw = _json(P / "analysis" / "program_words.json")
+    r.check("every word re-timed onto the program", len(pw) == len(words) and all(w["s"] < prog for w in pw), len(pw))
+    r.call("master_audio.py", tool("master_audio.py", str(P)))
+    master = P / "audio" / "program_master.wav"
+    loud = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(master), "-af", "ebur128", "-f", "null", "-"],
+                          capture_output=True, text=True, stdin=subprocess.DEVNULL, timeout=120).stderr
+    lufs = [float(l.split("I:")[1].split("LUFS")[0]) for l in loud.splitlines() if l.strip().startswith("I:")]
+    r.check("voice mastered to -14 LUFS (±0.7), measured by ffmpeg ebur128", bool(lufs) and abs(lufs[-1] + 14) <= 0.7, lufs[-1:])
+    t1, t2 = pw[2]["s"], pw[3]["s"]
+    edl = {"name": "selftest", "W": 1080, "H": 1920, "accent": "#ED3B22",
+           "fonts": {"serif": "Anton-Regular", "didot": "Anton-Regular", "sub": "Anton-Regular", "ar": "KOSIFJumuah-Bold"},
+           "zoom": [[0.0, t1, "tight"], [t1, prog, "wide"]],
+           "inserts": [{"id": "num", "t0": t1, "t1": t2, "kind": "number", "label": "SAVED", "from": 0, "to": 42,
+                        "suffix": "%", "count": [0.1, 0.6], "trans": "zoom"}],
+           "text": [{"font": "anton", "text": (task.split() or ["REEL"])[0][:12].upper(), "t0": 0, "t1": t1, "x": 540, "y": 1100, "size": 150},
+                    {"font": "ar", "text": "ده شغال دلوقتي", "t0": t2, "t1": prog, "x": 540, "y": 1100, "size": 120,
+                     "color": "#ED3B22", "anim": "build"}]}
+    (P / "edl.json").write_text(json.dumps(edl, ensure_ascii=False, indent=1), encoding="utf-8")
+    ok = r.call("validate_edl.py", tool("validate_edl.py", str(P / "edl.json")))
+    out = ok.get("stdout_tail") or ""
+    r.check("EDL passes with 0 errors", " 0 error(s)" in out, out[-200:])
+    r.check("validator flags Arabic 'build' (rendered word by word)", "Arabic text cannot build" in out, None)
+    bad = json.loads(json.dumps(edl))
+    bad["inserts"].append(dict(bad["inserts"][0], id="clash", t0=t1 + 0.2))
+    bad["text"][0]["font"] = "comic"
+    (P / "planted.json").write_text(json.dumps(bad, ensure_ascii=False), encoding="utf-8")
+    caught = r.call("validate a plan with 2 planted flaws", tool("validate_edl.py", str(P / "planted.json")), ok_codes=(1,))
+    msg = caught.get("stdout_tail") or ""
+    r.check("validator caught the overlapping insert and the unknown font", "overlaps num" in msg and "font must be" in msg, msg[-300:])
+    times = [round(t1 / 2, 2), round((t1 + t2) / 2, 2), round(t2 + 0.06, 2), round(prog - 0.25, 2)]
+    r.call("render_reel.py --stills", tool("render_reel.py", str(P / "edl.json"), "--stills", *map(str, times),
+                                           "--out-dir", str(P / "qa" / "stills")), timeout=900)
+    pngs = sorted((P / "qa" / "stills").glob("f_*.png"))
+    for png in pngs:
+        r.output(png)
+    r.output(P / "qa" / "stills" / "sheet.jpg")
+    sizes = {Image.open(p).size for p in pngs}
+    r.check("one 1080x1920 still per asked moment", len(pngs) == len(times) and sizes == {(1080, 1920)}, [len(pngs), sorted(sizes)])
+    spread = [round(ImageStat.Stat(Image.open(p).convert("L")).stddev[0], 1) for p in pngs]
+    r.check("every still has a picture", bool(spread) and min(spread) > 5, spread)
+    def red_width(p):
+        im = Image.open(p).convert("RGB").crop((0, 980, 1080, 1220))
+        xs = [x for x in range(0, 1080, 2) for y in range(0, 240, 4) if (lambda c: c[0] > 180 and c[1] < 110 and c[2] < 90)(im.getpixel((x, y)))]
+        return (max(xs) - min(xs)) if xs else 0
+    early, late = red_width(pngs[2]), red_width(pngs[3])
+    r.check("Arabic line reveals word by word (first word narrower than the full line)", 0 < early < late * 0.6, [early, late])
+    film = P / "render" / "selftest_v1.mp4"
+    r.call("render_reel.py full render", tool("render_reel.py", str(P / "edl.json"), "--out", str(film)), timeout=1800)
+    row = r.output(film, video=True)
+    facts = row.get("probe") or {}
+    v = facts.get("video") or {}
+    r.check("reel is 1080x1920 with sound", (v.get("width"), v.get("height")) == (1080, 1920) and "audio" in facts, facts)
+    r.check(f"reel lasts the program's {prog} s (±0.15)", abs((facts.get("duration") or 0) - prog) <= 0.15, facts.get("duration"))
+    if clip is not None and not selftest:
+        r.call("prepare_project.py on your media", tool("prepare_project.py", str(clip), "--project", str(r.work / "yours")), ok_codes=(0, 1))
+    r.findings.append({"program_seconds": prog, "lufs": lufs[-1:], "stills_contrast": spread, "arabic_reveal_px": [early, late],
+                       "note": "Apple Vision mattes (macOS) and faster-whisper were not used; words came from a voice-studio words.json"})
+
+
 RUNNERS = {"prompt-master": prompt_master, "prompt-architect": prompt_architect, "reel-hooks": reel_hooks,
            "excel-lambdas": excel_lambdas, "social": social, "video-editor": video_editor,
            "motion-energy": motion_energy, "image-prompts": image_prompts, "video-prompts": video_prompts,
@@ -774,7 +1155,9 @@ RUNNERS = {"prompt-master": prompt_master, "prompt-architect": prompt_architect,
            "reel-research": reel_research, "voice-check": voice_check, "animation-qa": animation_qa,
            "hyperframes-beats": hyperframes_beats, "montage-tools": montage_tools,
            "mimic-analyze": mimic_analyze, "pixel-painter": pixel_painter,
-           "kling-director": kling_director, "dragon-mind": dragon_mind, "saas-animation": saas_animation}
+           "kling-director": kling_director, "dragon-mind": dragon_mind, "saas-animation": saas_animation,
+           "creative-council": creative_council, "cartoon-short": cartoon_short, "talking-head-reels": talking_head_reels,
+           "stickman-studio": stickman_studio}
 
 
 def main(argv: list[str]) -> int:

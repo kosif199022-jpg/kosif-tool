@@ -254,3 +254,32 @@ python3 -m unittest discover -s tests -p test_black_dragon_motion_styles.py
   names and times, not audio, and exits 3 when a rule fails.
 - **Limits:** briefs are `STYLE_BRIEF_NOT_A_RENDER`. `kosif-web-film` and
   `tools/render_html.cjs` stay the renderers.
+
+
+## Wired into the Black Dragon engine (2026-11-07)
+
+The council is now a registered program of the main engine
+(`kosif-superpowers/scripts/black_dragon.py`), not just a file in the repo:
+
+- **Adapter `skill:kosif-black-dragon`** (recipe `creative-council` in
+  `_black_dragon_skill.py`). `black_dragon.py run ... --execute-adapters` convenes the
+  council on the task twice and checks: 12 distinct seats, all 525 records with one
+  primary seat each, a stable fingerprint, 31 Kahneman traps loaded with the three
+  System 2 gates routed to the critic, 23 Atlas procedures routed to seats, the
+  11-lens `think-review`, and a known-answer verdict (the clearly better route must
+  win; a fake `INDEPENDENT` claim without run IDs must be refused).
+- **`compose`** now returns `thinking_guards`: Dragon Mind's real `scan_traps` on the
+  task, with question, debiasing move, book pages and reviewing seats.
+- **`think-review`** now adds `book_trap_scan` (the full 31-trap scanner) next to the
+  11 fixed lenses.
+- The **`dragon-mind`** adapter now also checks the book: the always-on gates are in
+  the plan, a planted anchor is caught with pages 103–108, and page 69 is served
+  from the 468-page record.
+
+Try it:
+
+~~~bash
+python3 .claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py creative-council out/cc.json --task="اختار أفضل خطة مونتاج"
+~~~
+
+These are still planning and scoring steps: no agent, model, media or paid tool runs.

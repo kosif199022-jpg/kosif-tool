@@ -327,6 +327,8 @@ def compose(task: str, path: Path, *, legacy: bool = False, limit: int = 12) -> 
         "phases": list(PHASES),
         "source_count": len(items),
         "native_mind": synthesis,
+        # Book guard: Dragon Mind's real scan_traps (31 Kahneman traps) on this task.
+        "thinking_guards": thinking_guards(task),
         "catalog_wide_fusion": verified_catalog_atlas(path, items),
         "selected": [{"id": x["id"], "faculty": x["faculty"], "purpose": x["purpose"][:450],
                       "method": x["method"][:800], "requirements": x["requirements"],
@@ -339,6 +341,21 @@ def compose(task: str, path: Path, *, legacy: bool = False, limit: int = 12) -> 
         "legacy_compatibility": "links-only-opt-in" if legacy else "disabled",
         "proof": "A ranked knowledge blueprint is not a software execution receipt."
     }
+
+
+def thinking_guards(task: str, root: Path = ROOT) -> dict:
+    """Run Dragon Mind's own trap scanner on the task, routed to council seats.
+
+    Lexical review questions only; a listed trap is not a proven error.
+    """
+    review = creative_council_engine().kahneman_review(task, root)
+    return {"status": review["status"], "traps_catalogued": review.get("traps_catalogued", 0),
+            "book_frameworks": review.get("book_frameworks", 0),
+            "gates": [{"id": g["id"], "name_en": g.get("name_en"), "why": g["why"],
+                       "question_ar": g.get("question_ar"), "debias_ar": g.get("debias_ar"),
+                       "pages": g.get("pages", []), "reviewers": g.get("reviewers", [])}
+                      for g in review.get("review_gates", [])],
+            "limits": review.get("limits")}
 
 
 def verify(root: Path, folder: Path) -> dict:
@@ -454,7 +471,12 @@ def main(argv=None) -> int:
                 engine._save(args.out, result)
         elif args.command == "think-review":
             engine = judgment_guard_engine()
-            result = engine.review(read_json(args.input))
+            brief = read_json(args.input)
+            result = engine.review(brief)
+            # Add the book's full 31-trap scanner (Dragon Mind) to the 11 fixed lenses.
+            text = " ".join([str(brief.get("goal", "")), *[str(x) for x in brief.get("options") or []],
+                             str(brief.get("target_question", ""))])
+            result["book_trap_scan"] = thinking_guards(text, args.root.resolve())
             if args.out:
                 args.out.parent.mkdir(parents=True, exist_ok=True)
                 args.out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
