@@ -1,0 +1,437 @@
+{
+ "schema": "kosif.dm.grades.v1",
+ "note": "One grade vocabulary: 11 look_pipeline presets (numeric, parity-checked) + 10 montage.py ffmpeg grades. `ffmpeg` is a -vf chain usable as-is; append ',format=yuv420p' before encoding. Ids are kebab-case; aliases include the original underscore names and Arabic names. 'none' is an alias of 'natural' (null filter).",
+ "default": "cinematic",
+ "grades": [
+  {
+   "id": "natural",
+   "name_ar": "الأصلي",
+   "name_en": "untouched",
+   "engine": "look_pipeline",
+   "source": "kosif-superpowers/scripts/look_pipeline.py PRESETS['natural']",
+   "aliases": [
+    "none",
+    "original",
+    "الأصلي",
+    "طبيعي"
+   ],
+   "feelings": [
+    "calm"
+   ],
+   "content_fit": "any",
+   "params": {},
+   "ffmpeg": "null"
+  },
+  {
+   "id": "vivid",
+   "name_ar": "حيوي",
+   "name_en": "punchy colour",
+   "engine": "look_pipeline",
+   "source": "kosif-superpowers/scripts/look_pipeline.py PRESETS['vivid']",
+   "aliases": [
+    "حيوي",
+    "punchy-colour",
+    "saturated"
+   ],
+   "feelings": [
+    "playful",
+    "funny",
+    "inspiring"
+   ],
+   "content_fit": "any",
+   "params": {
+    "saturation": 0.32,
+    "contrast": 0.1
+   },
+   "ffmpeg": "format=rgb24,lutrgb=r='clip(val*1.1+-0.05*255,0,255)':g='clip(val*1.1+-0.05*255,0,255)':b='clip(val*1.1+-0.05*255,0,255)',colorchannelmixer=rr=1.251968:rg=-0.228864:rb=-0.023104:gr=-0.068032:gg=1.091136:gb=-0.023104:br=-0.068032:bg=-0.228864:bb=1.296896"
+  },
+  {
+   "id": "bright",
+   "name_ar": "مشرق",
+   "name_en": "airy daylight",
+   "engine": "look_pipeline",
+   "source": "kosif-superpowers/scripts/look_pipeline.py PRESETS['bright']",
+   "aliases": [
+    "مشرق",
+    "airy",
+    "daylight"
+   ],
+   "feelings": [
+    "inspiring",
+    "playful",
+    "calm"
+   ],
+   "content_fit": "travel",
+   "params": {
+    "brightness": 0.15,
+    "saturation": 0.1,
+    "contrast": 0.05
+   },
+   "ffmpeg": "format=rgb24,lutrgb=r='clip(val*1.113+-0.025*255,0,255)':g='clip(val*1.113+-0.025*255,0,255)':b='clip(val*1.113+-0.025*255,0,255)',colorchannelmixer=rr=1.07874:rg=-0.07152:rb=-0.00722:gr=-0.02126:gg=1.02848:gb=-0.00722:br=-0.02126:bg=-0.07152:bb=1.09278"
+  },
+  {
+   "id": "warm",
+   "name_ar": "دافئ",
+   "name_en": "golden hour",
+   "engine": "look_pipeline",
+   "source": "kosif-superpowers/scripts/look_pipeline.py PRESETS['warm']",
+   "aliases": [
+    "دافئ",
+    "golden"
+   ],
+   "feelings": [
+    "warm",
+    "inspiring"
+   ],
+   "content_fit": "any",
+   "params": {
+    "temperature": 0.45,
+    "saturation": 0.06
+   },
+   "ffmpeg": "format=rgb24,lutrgb=r='clip(val*1.054+0.0*255,0,255)':g='clip(val*1.009+0.0*255,0,255)':b='clip(val*0.946+0.0*255,0,255)',colorchannelmixer=rr=1.047244:rg=-0.042912:rb=-0.004332:gr=-0.012756:gg=1.017088:gb=-0.004332:br=-0.012756:bg=-0.042912:bb=1.055668"
+  },
+  {
+   "id": "cool",
+   "name_ar": "بارد",
+   "name_en": "clean blue",
+   "engine": "look_pipeline",
+   "source": "kosif-superpowers/scripts/look_pipeline.py PRESETS['cool']",
+   "aliases": [
+    "بارد",
+    "clean-blue"
+   ],
+   "feelings": [
+    "calm",
+    "tense"
+   ],
+   "content_fit": "any",
+   "params": {
+    "temperature": -0.45,
+    "saturation": 0.04
+   },
+   "ffmpeg": "format=rgb24,lutrgb=r='clip(val*0.946+0.0*255,0,255)':g='clip(val*0.991+0.0*255,0,255)':b='clip(val*1.054+0.0*255,0,255)',colorchannelmixer=rr=1.031496:rg=-0.028608:rb=-0.002888:gr=-0.008504:gg=1.011392:gb=-0.002888:br=-0.008504:bg=-0.028608:bb=1.037112"
+  },
+  {
+   "id": "cinematic",
+   "name_ar": "سينمائي",
+   "name_en": "teal shadows, firm contrast",
+   "engine": "look_pipeline",
+   "source": "kosif-superpowers/scripts/look_pipeline.py PRESETS['cinematic']",
+   "aliases": [
+    "سينمائي",
+    "film",
+    "teal"
+   ],
+   "feelings": [
+    "epic",
+    "tense"
+   ],
+   "content_fit": "any",
+   "params": {
+    "teal": 0.75,
+    "contrast": 0.14,
+    "saturation": -0.08,
+    "vignette": 0.3
+   },
+   "ffmpeg": "format=rgb24,lutrgb=r='clip(val*1.14+-0.07*255,0,255)':g='clip(val*1.14+-0.07*255,0,255)':b='clip(val*1.14+-0.07*255,0,255)',colorchannelmixer=rr=0.985308:rg=0.036516:rb=-0.021824:gr=0.003208:gg=0.997916:gb=-0.001124:br=-0.045092:bg=0.077916:bb=0.967176,vignette=angle=0.33"
+  },
+  {
+   "id": "vintage",
+   "name_ar": "كلاسيكي",
+   "name_en": "warm print, lifted blacks",
+   "engine": "look_pipeline",
+   "source": "kosif-superpowers/scripts/look_pipeline.py PRESETS['vintage']",
+   "aliases": [
+    "كلاسيكي",
+    "retro",
+    "sepia"
+   ],
+   "feelings": [
+    "warm",
+    "sad"
+   ],
+   "content_fit": "any",
+   "params": {
+    "sepia": 0.5,
+    "fade": 0.35,
+    "contrast": -0.05
+   },
+   "ffmpeg": "format=rgb24,lutrgb=r='clip(val*0.8835+0.05125*255,0,255)':g='clip(val*0.8835+0.05125*255,0,255)':b='clip(val*0.8835+0.05125*255,0,255)',colorchannelmixer=rr=0.6965:rg=0.3845:rb=0.0945:gr=0.1745:gg=0.843:gb=0.084:br=0.136:bg=0.267:bb=0.5655"
+  },
+  {
+   "id": "faded",
+   "name_ar": "باهت",
+   "name_en": "matte, low colour",
+   "engine": "look_pipeline",
+   "source": "kosif-superpowers/scripts/look_pipeline.py PRESETS['faded']",
+   "aliases": [
+    "باهت",
+    "matte"
+   ],
+   "feelings": [
+    "sad",
+    "calm"
+   ],
+   "content_fit": "any",
+   "params": {
+    "fade": 0.65,
+    "saturation": -0.22,
+    "contrast": -0.06
+   },
+   "ffmpeg": "format=rgb24,lutrgb=r='clip(val*0.8178+0.0781*255,0,255)':g='clip(val*0.8178+0.0781*255,0,255)':b='clip(val*0.8178+0.0781*255,0,255)',colorchannelmixer=rr=0.826772:rg=0.157344:rb=0.015884:gr=0.046772:gg=0.937344:gb=0.015884:br=0.046772:bg=0.157344:bb=0.795884"
+  },
+  {
+   "id": "dramatic",
+   "name_ar": "درامي",
+   "name_en": "hard contrast, muted colour",
+   "engine": "look_pipeline",
+   "source": "kosif-superpowers/scripts/look_pipeline.py PRESETS['dramatic']",
+   "aliases": [
+    "درامي",
+    "hard-contrast"
+   ],
+   "feelings": [
+    "tense",
+    "epic"
+   ],
+   "content_fit": "any",
+   "params": {
+    "contrast": 0.32,
+    "saturation": -0.32,
+    "brightness": -0.05,
+    "vignette": 0.45
+   },
+   "ffmpeg": "format=rgb24,lutrgb=r='clip(val*1.2936+-0.16*255,0,255)':g='clip(val*1.2936+-0.16*255,0,255)':b='clip(val*1.2936+-0.16*255,0,255)',colorchannelmixer=rr=0.748032:rg=0.228864:rb=0.023104:gr=0.068032:gg=0.908864:gb=0.023104:br=0.068032:bg=0.228864:bb=0.703104,vignette=angle=0.495"
+  },
+  {
+   "id": "mono",
+   "name_ar": "أبيض وأسود",
+   "name_en": "black and white",
+   "engine": "look_pipeline",
+   "source": "kosif-superpowers/scripts/look_pipeline.py PRESETS['mono']",
+   "aliases": [
+    "أبيض وأسود",
+    "bw",
+    "black-and-white",
+    "noir"
+   ],
+   "feelings": [
+    "sad",
+    "tense"
+   ],
+   "content_fit": "any",
+   "params": {
+    "saturation": -1.0,
+    "contrast": 0.16
+   },
+   "ffmpeg": "format=rgb24,lutrgb=r='clip(val*1.16+-0.08*255,0,255)':g='clip(val*1.16+-0.08*255,0,255)':b='clip(val*1.16+-0.08*255,0,255)',colorchannelmixer=rr=0.2126:rg=0.7152:rb=0.0722:gr=0.2126:gg=0.7152:gb=0.0722:br=0.2126:bg=0.7152:bb=0.0722"
+  },
+  {
+   "id": "night-dua",
+   "name_ar": "ليلي هادئ",
+   "name_en": "dim, cool and soft (dua and night reels)",
+   "engine": "look_pipeline",
+   "source": "kosif-superpowers/scripts/look_pipeline.py PRESETS['night-dua']",
+   "aliases": [
+    "ليلي هادئ",
+    "night",
+    "dua"
+   ],
+   "feelings": [
+    "calm",
+    "sad"
+   ],
+   "content_fit": "talking-head",
+   "params": {
+    "brightness": -0.08,
+    "temperature": -0.3,
+    "saturation": -0.18,
+    "fade": 0.2,
+    "vignette": 0.5
+   },
+   "ffmpeg": "format=rgb24,lutrgb=r='clip(val*0.895826+0.016*255,0,255)':g='clip(val*0.923704+0.016*255,0,255)':b='clip(val*0.962734+0.016*255,0,255)',colorchannelmixer=rr=0.858268:rg=0.128736:rb=0.012996:gr=0.038268:gg=0.948736:gb=0.012996:br=0.038268:bg=0.128736:bb=0.832996,vignette=angle=0.55"
+  },
+  {
+   "id": "teal-orange",
+   "name_ar": "تيل وبرتقالي",
+   "name_en": "teal orange",
+   "engine": "montage",
+   "source": "kosif-montage-motion/scripts/montage.py GRADES['teal_orange']",
+   "aliases": [
+    "teal_orange",
+    "تيل وبرتقالي",
+    "blockbuster"
+   ],
+   "feelings": [
+    "epic",
+    "inspiring"
+   ],
+   "content_fit": "travel",
+   "ffmpeg": "curves=r='0/0 0.2/0.1 0.7/0.8 1/1':b='0/0.05 0.3/0.38 0.7/0.65 1/0.95',colorbalance=rs=0.08:gs=-0.02:bs=-0.08:rh=-0.04:gh=0.02:bh=0.08"
+  },
+  {
+   "id": "golden-hour",
+   "name_ar": "الساعة الذهبية",
+   "name_en": "golden hour",
+   "engine": "montage",
+   "source": "kosif-montage-motion/scripts/montage.py GRADES['golden_hour']",
+   "aliases": [
+    "golden_hour",
+    "الساعة الذهبية",
+    "sunset"
+   ],
+   "feelings": [
+    "warm",
+    "inspiring"
+   ],
+   "content_fit": "travel",
+   "ffmpeg": "curves=r='0/0 0.5/0.58 1/1':b='0/0 0.5/0.42 1/0.92',eq=saturation=1.25:contrast=1.08:brightness=0.02"
+  },
+  {
+   "id": "cyberpunk",
+   "name_ar": "سايبر بانك",
+   "name_en": "cyberpunk",
+   "engine": "montage",
+   "source": "kosif-montage-motion/scripts/montage.py GRADES['cyberpunk']",
+   "aliases": [
+    "cyberpunk",
+    "سايبر بانك",
+    "neon"
+   ],
+   "feelings": [
+    "tense",
+    "epic",
+    "playful"
+   ],
+   "content_fit": "event",
+   "ffmpeg": "curves=r='0/0.05 0.5/0.45 1/1':b='0/0.08 0.5/0.62 1/1',colorbalance=rs=-0.1:gs=-0.05:bs=0.15:rh=0.12:gh=-0.05:bh=0.08,eq=saturation=1.35:contrast=1.2"
+  },
+  {
+   "id": "vintage-film",
+   "name_ar": "فيلم قديم",
+   "name_en": "vintage film",
+   "engine": "montage",
+   "source": "kosif-montage-motion/scripts/montage.py GRADES['vintage_film']",
+   "aliases": [
+    "vintage_film",
+    "فيلم قديم",
+    "film-grain",
+    "16mm"
+   ],
+   "feelings": [
+    "sad",
+    "warm"
+   ],
+   "content_fit": "montage",
+   "ffmpeg": "curves=all='0/0.06 0.5/0.5 1/0.94':r='0/0 0.5/0.52 1/1':b='0/0.04 0.5/0.48 1/0.96',noise=alls=10:allf=t+u:all_seed=7,eq=contrast=1.05:saturation=0.9"
+  },
+  {
+   "id": "matrix-tech",
+   "name_ar": "ماتريكس",
+   "name_en": "matrix tech",
+   "engine": "montage",
+   "source": "kosif-montage-motion/scripts/montage.py GRADES['matrix_tech']",
+   "aliases": [
+    "matrix_tech",
+    "ماتريكس",
+    "tech-green",
+    "terminal"
+   ],
+   "feelings": [
+    "tense"
+   ],
+   "content_fit": "product",
+   "ffmpeg": "curves=g='0/0.04 0.5/0.54 1/1':b='0/0 0.5/0.46 1/0.92',colorbalance=rs=-0.08:gs=0.1:bs=-0.05,eq=contrast=1.15:saturation=0.85"
+  },
+  {
+   "id": "clean-commercial",
+   "name_ar": "إعلاني نظيف",
+   "name_en": "clean commercial",
+   "engine": "montage",
+   "source": "kosif-montage-motion/scripts/montage.py GRADES['clean_commercial']",
+   "aliases": [
+    "clean_commercial",
+    "إعلاني نظيف",
+    "commercial",
+    "crisp"
+   ],
+   "feelings": [
+    "playful",
+    "inspiring"
+   ],
+   "content_fit": "product",
+   "ffmpeg": "eq=contrast=1.12:saturation=1.18:brightness=0.01,unsharp=5:5:0.8:5:5:0.0"
+  },
+  {
+   "id": "blue-hour",
+   "name_ar": "الساعة الزرقاء",
+   "name_en": "blue hour",
+   "engine": "montage",
+   "source": "kosif-montage-motion/scripts/montage.py GRADES['blue_hour']",
+   "aliases": [
+    "blue_hour",
+    "الساعة الزرقاء",
+    "tungsten-night"
+   ],
+   "feelings": [
+    "calm",
+    "sad"
+   ],
+   "content_fit": "travel",
+   "ffmpeg": "colortemperature=temperature=4300:mix=0.85,curves=b='0/0.06 0.5/0.56 1/1':r='0/0 0.5/0.47 1/1',eq=saturation=1.08:contrast=1.06"
+  },
+  {
+   "id": "sodium-night",
+   "name_ar": "ليل الصوديوم",
+   "name_en": "sodium night",
+   "engine": "montage",
+   "source": "kosif-montage-motion/scripts/montage.py GRADES['sodium_night']",
+   "aliases": [
+    "sodium_night",
+    "ليل الصوديوم",
+    "street-night"
+   ],
+   "feelings": [
+    "tense"
+   ],
+   "content_fit": "event",
+   "ffmpeg": "curves=r='0/0 0.4/0.46 1/1':g='0/0 0.5/0.47 1/0.96':b='0/0.05 0.3/0.3 1/0.86',colorbalance=bs=0.10:gs=0.02:rh=0.06:bh=-0.08,eq=contrast=1.12"
+  },
+  {
+   "id": "restore",
+   "name_ar": "ترميم",
+   "name_en": "restore",
+   "engine": "montage",
+   "source": "kosif-montage-motion/scripts/montage.py GRADES['restore']",
+   "aliases": [
+    "restore",
+    "ترميم",
+    "repair",
+    "old-footage"
+   ],
+   "feelings": [
+    "calm"
+   ],
+   "content_fit": "any",
+   "ffmpeg": "hqdn3d=1.2:1.2:3:3,eq=contrast=1.12:brightness=-0.015:saturation=1.07:gamma=0.97,curves=all='0/0 0.06/0.035 0.25/0.22 0.5/0.5 0.8/0.82 0.94/0.93 1/0.97',colorbalance=rs=0.012:bs=-0.01:rm=0.025:gm=0.005:bm=-0.02,cas=0.3"
+  },
+  {
+   "id": "magma-night",
+   "name_ar": "ليل الحمم",
+   "name_en": "magma night",
+   "engine": "montage",
+   "source": "kosif-montage-motion/scripts/montage.py GRADES['magma_night']",
+   "aliases": [
+    "magma_night",
+    "ليل الحمم",
+    "ember"
+   ],
+   "feelings": [
+    "tense",
+    "epic"
+   ],
+   "content_fit": "event",
+   "ffmpeg": "curves=r='0/0.02 0.5/0.56 1/1':g='0/0 0.5/0.44 1/0.95':b='0/0.05 0.5/0.42 1/0.88',eq=contrast=1.1:saturation=1.1"
+  }
+ ]
+}

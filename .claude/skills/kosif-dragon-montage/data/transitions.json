@@ -1,0 +1,569 @@
+{
+ "schema": "kosif.dm.transitions.v1",
+ "note": "Executable transitions. When xfade is null the transition is a cut (cut/jump-cut/match-cut differ in how the EDL chooses the shots, not in rendering). Otherwise: [a][b]xfade=transition=<xfade>:duration=<seconds>:offset=<len(a)-seconds>. The two inputs must share size, fps, pixel format and timebase. matrix_atoms are kosif-infinite-matrices ids (197_mechanism_atoms.json, axis transition) whose mechanism the xfade approximates; usip_cards point to usip-library/cards/motion/transitions-cuts.md.",
+ "template": "xfade=transition={xfade}:duration={seconds}:offset={offset}",
+ "transitions": [
+  {
+   "id": "cut",
+   "xfade": null,
+   "seconds": 0.0,
+   "energy": 0.5,
+   "feelings": [
+    "tense",
+    "funny",
+    "playful",
+    "epic",
+    "calm",
+    "warm",
+    "inspiring",
+    "sad"
+   ],
+   "name_ar": "قطع مباشر",
+   "aliases": [
+    "hard-cut",
+    "قطع"
+   ],
+   "matrix_atoms": [],
+   "usip_cards": [
+    "TRANS-104"
+   ]
+  },
+  {
+   "id": "jump-cut",
+   "xfade": null,
+   "seconds": 0.0,
+   "energy": 0.85,
+   "feelings": [
+    "funny",
+    "playful",
+    "tense"
+   ],
+   "name_ar": "جمب كت",
+   "aliases": [
+    "jumpcut"
+   ],
+   "matrix_atoms": [],
+   "usip_cards": [
+    "TRANS-05"
+   ],
+   "note": "semantic: rendered as a cut; the EDL drops the gap inside one shot (same framing) — usually with a punch-in"
+  },
+  {
+   "id": "match-cut",
+   "xfade": null,
+   "seconds": 0.0,
+   "energy": 0.6,
+   "feelings": [
+    "epic",
+    "inspiring",
+    "playful"
+   ],
+   "name_ar": "قطع مطابق",
+   "aliases": [
+    "matchcut",
+    "graphic-match"
+   ],
+   "matrix_atoms": [
+    "MX-TRANSITION-12"
+   ],
+   "usip_cards": [
+    "TRANS-127",
+    "TRANS-133",
+    "TRANS-09"
+   ],
+   "note": "semantic: rendered as a cut; dm_direct pairs shots whose shape/motion/colour continues across the cut"
+  },
+  {
+   "id": "xfade-fade",
+   "xfade": "fade",
+   "seconds": 0.35,
+   "energy": 0.25,
+   "feelings": [
+    "calm",
+    "warm",
+    "sad",
+    "inspiring"
+   ],
+   "name_ar": "تلاشي متداخل",
+   "aliases": [
+    "crossfade",
+    "fade",
+    "mix"
+   ],
+   "matrix_atoms": [],
+   "usip_cards": [
+    "TRANS-13"
+   ]
+  },
+  {
+   "id": "xfade-dissolve",
+   "xfade": "dissolve",
+   "seconds": 0.5,
+   "energy": 0.2,
+   "feelings": [
+    "calm",
+    "sad",
+    "warm"
+   ],
+   "name_ar": "ذوبان حبيبي",
+   "aliases": [
+    "dissolve"
+   ],
+   "matrix_atoms": [
+    "MX-TRANSITION-05"
+   ],
+   "usip_cards": [
+    "TRANS-13"
+   ]
+  },
+  {
+   "id": "xfade-fadeblack",
+   "xfade": "fadeblack",
+   "seconds": 0.4,
+   "energy": 0.3,
+   "feelings": [
+    "sad",
+    "tense",
+    "epic",
+    "calm"
+   ],
+   "name_ar": "غمس للأسود",
+   "aliases": [
+    "dip-black",
+    "dip-to-black"
+   ],
+   "matrix_atoms": [
+    "MX-TRANSITION-10"
+   ],
+   "usip_cards": [
+    "TRANS-01",
+    "TRANS-11"
+   ]
+  },
+  {
+   "id": "xfade-fadewhite",
+   "xfade": "fadewhite",
+   "seconds": 0.3,
+   "energy": 0.55,
+   "feelings": [
+    "inspiring",
+    "epic",
+    "warm"
+   ],
+   "name_ar": "فلاش أبيض",
+   "aliases": [
+    "flash-white",
+    "dip-white",
+    "flash"
+   ],
+   "matrix_atoms": [
+    "MX-TRANSITION-14"
+   ],
+   "usip_cards": [
+    "TRANS-02",
+    "TRANS-03",
+    "TRANS-109"
+   ]
+  },
+  {
+   "id": "xfade-fadegrays",
+   "xfade": "fadegrays",
+   "seconds": 0.5,
+   "energy": 0.25,
+   "feelings": [
+    "sad",
+    "calm"
+   ],
+   "name_ar": "تلاشي عبر الرمادي",
+   "aliases": [
+    "memory-fade"
+   ],
+   "matrix_atoms": [
+    "MX-TRANSITION-01"
+   ],
+   "usip_cards": []
+  },
+  {
+   "id": "xfade-wipeleft",
+   "xfade": "wipeleft",
+   "seconds": 0.3,
+   "energy": 0.55,
+   "feelings": [
+    "playful",
+    "inspiring"
+   ],
+   "name_ar": "مسح لليسار",
+   "aliases": [
+    "wipe",
+    "wipe-left"
+   ],
+   "matrix_atoms": [
+    "MX-TRANSITION-14"
+   ],
+   "usip_cards": [
+    "TRANS-14",
+    "TRANS-122"
+   ]
+  },
+  {
+   "id": "xfade-wiperight",
+   "xfade": "wiperight",
+   "seconds": 0.3,
+   "energy": 0.55,
+   "feelings": [
+    "playful",
+    "inspiring"
+   ],
+   "name_ar": "مسح لليمين (اتجاه القراءة العربية)",
+   "aliases": [
+    "wipe-right",
+    "rtl-wipe"
+   ],
+   "matrix_atoms": [],
+   "usip_cards": [
+    "TRANS-14"
+   ]
+  },
+  {
+   "id": "xfade-slideleft",
+   "xfade": "slideleft",
+   "seconds": 0.25,
+   "energy": 0.7,
+   "feelings": [
+    "playful",
+    "funny",
+    "inspiring"
+   ],
+   "name_ar": "انزلاق لليسار",
+   "aliases": [
+    "slide",
+    "push-left"
+   ],
+   "matrix_atoms": [],
+   "usip_cards": [
+    "TRANS-129"
+   ]
+  },
+  {
+   "id": "xfade-slideright",
+   "xfade": "slideright",
+   "seconds": 0.25,
+   "energy": 0.7,
+   "feelings": [
+    "playful",
+    "funny"
+   ],
+   "name_ar": "انزلاق لليمين",
+   "aliases": [
+    "push-right"
+   ],
+   "matrix_atoms": [],
+   "usip_cards": [
+    "TRANS-129"
+   ]
+  },
+  {
+   "id": "xfade-slideup",
+   "xfade": "slideup",
+   "seconds": 0.25,
+   "energy": 0.75,
+   "feelings": [
+    "playful",
+    "funny",
+    "epic"
+   ],
+   "name_ar": "انزلاق لأعلى (ستوري)",
+   "aliases": [
+    "swipe-up",
+    "push-up"
+   ],
+   "matrix_atoms": [],
+   "usip_cards": [
+    "TRANS-131"
+   ]
+  },
+  {
+   "id": "xfade-smoothleft",
+   "xfade": "smoothleft",
+   "seconds": 0.35,
+   "energy": 0.5,
+   "feelings": [
+    "inspiring",
+    "warm",
+    "calm"
+   ],
+   "name_ar": "انسياب ناعم",
+   "aliases": [
+    "smooth-wipe"
+   ],
+   "matrix_atoms": [
+    "MX-TRANSITION-13"
+   ],
+   "usip_cards": []
+  },
+  {
+   "id": "xfade-circleopen",
+   "xfade": "circleopen",
+   "seconds": 0.4,
+   "energy": 0.55,
+   "feelings": [
+    "playful",
+    "inspiring",
+    "epic"
+   ],
+   "name_ar": "كشف دائري (قزحية)",
+   "aliases": [
+    "iris",
+    "iris-open"
+   ],
+   "matrix_atoms": [
+    "MX-TRANSITION-04"
+   ],
+   "usip_cards": [
+    "TRANS-126",
+    "TRANS-115"
+   ]
+  },
+  {
+   "id": "xfade-circleclose",
+   "xfade": "circleclose",
+   "seconds": 0.4,
+   "energy": 0.5,
+   "feelings": [
+    "funny",
+    "sad"
+   ],
+   "name_ar": "إغلاق دائري",
+   "aliases": [
+    "iris-close",
+    "iris-out"
+   ],
+   "matrix_atoms": [],
+   "usip_cards": [
+    "TRANS-126"
+   ]
+  },
+  {
+   "id": "xfade-radial",
+   "xfade": "radial",
+   "seconds": 0.4,
+   "energy": 0.6,
+   "feelings": [
+    "epic",
+    "playful"
+   ],
+   "name_ar": "مسح شعاعي (عقرب)",
+   "aliases": [
+    "clock-wipe"
+   ],
+   "matrix_atoms": [
+    "MX-TRANSITION-15"
+   ],
+   "usip_cards": []
+  },
+  {
+   "id": "xfade-zoomin",
+   "xfade": "zoomin",
+   "seconds": 0.3,
+   "energy": 0.85,
+   "feelings": [
+    "epic",
+    "tense",
+    "inspiring"
+   ],
+   "name_ar": "انتقال عبر التكبير",
+   "aliases": [
+    "zoom-through",
+    "zoom-transition"
+   ],
+   "matrix_atoms": [
+    "MX-TRANSITION-13",
+    "MX-TRANSITION-17"
+   ],
+   "usip_cards": [
+    "TRANS-136",
+    "TRANS-106"
+   ]
+  },
+  {
+   "id": "xfade-pixelize",
+   "xfade": "pixelize",
+   "seconds": 0.35,
+   "energy": 0.8,
+   "feelings": [
+    "tense",
+    "playful",
+    "funny"
+   ],
+   "name_ar": "بكسلة / جليتش",
+   "aliases": [
+    "glitch",
+    "pixelate"
+   ],
+   "matrix_atoms": [
+    "MX-TRANSITION-08"
+   ],
+   "usip_cards": [
+    "TRANS-124",
+    "TRANS-103"
+   ]
+  },
+  {
+   "id": "xfade-hlslice",
+   "xfade": "hlslice",
+   "seconds": 0.3,
+   "energy": 0.85,
+   "feelings": [
+    "tense",
+    "epic"
+   ],
+   "name_ar": "شرائح أفقية",
+   "aliases": [
+    "slice",
+    "slice-glitch"
+   ],
+   "matrix_atoms": [
+    "MX-TRANSITION-16"
+   ],
+   "usip_cards": [
+    "TRANS-103"
+   ]
+  },
+  {
+   "id": "xfade-hblur",
+   "xfade": "hblur",
+   "seconds": 0.25,
+   "energy": 0.9,
+   "feelings": [
+    "tense",
+    "epic",
+    "playful"
+   ],
+   "name_ar": "سوط أفقي (ويب بان)",
+   "aliases": [
+    "whip",
+    "whip-pan",
+    "motion-blur"
+   ],
+   "matrix_atoms": [
+    "MX-TRANSITION-13"
+   ],
+   "usip_cards": [
+    "TRANS-135",
+    "TRANS-118"
+   ]
+  },
+  {
+   "id": "xfade-vertopen",
+   "xfade": "vertopen",
+   "seconds": 0.4,
+   "energy": 0.5,
+   "feelings": [
+    "epic",
+    "inspiring"
+   ],
+   "name_ar": "ستارة عمودية تنفتح",
+   "aliases": [
+    "curtain",
+    "curtain-open"
+   ],
+   "matrix_atoms": [
+    "MX-TRANSITION-10"
+   ],
+   "usip_cards": [
+    "TRANS-120"
+   ]
+  },
+  {
+   "id": "xfade-diagtl",
+   "xfade": "diagtl",
+   "seconds": 0.35,
+   "energy": 0.55,
+   "feelings": [
+    "playful"
+   ],
+   "name_ar": "قطري",
+   "aliases": [
+    "diagonal"
+   ],
+   "matrix_atoms": [
+    "MX-TRANSITION-03"
+   ],
+   "usip_cards": []
+  },
+  {
+   "id": "xfade-coverup",
+   "xfade": "coverup",
+   "seconds": 0.3,
+   "energy": 0.7,
+   "feelings": [
+    "playful",
+    "inspiring"
+   ],
+   "name_ar": "غطاء لأعلى",
+   "aliases": [
+    "cover-up"
+   ],
+   "matrix_atoms": [
+    "MX-TRANSITION-03"
+   ],
+   "usip_cards": []
+  },
+  {
+   "id": "xfade-revealleft",
+   "xfade": "revealleft",
+   "seconds": 0.3,
+   "energy": 0.6,
+   "feelings": [
+    "inspiring",
+    "warm"
+   ],
+   "name_ar": "كشف لليسار",
+   "aliases": [
+    "reveal"
+   ],
+   "matrix_atoms": [
+    "MX-TRANSITION-11"
+   ],
+   "usip_cards": []
+  },
+  {
+   "id": "xfade-distance",
+   "xfade": "distance",
+   "seconds": 0.45,
+   "energy": 0.4,
+   "feelings": [
+    "calm",
+    "sad",
+    "warm"
+   ],
+   "name_ar": "ذوبان بالمسافة اللونية",
+   "aliases": [
+    "ink",
+    "ink-flood"
+   ],
+   "matrix_atoms": [
+    "MX-TRANSITION-02"
+   ],
+   "usip_cards": []
+  },
+  {
+   "id": "xfade-squeezeh",
+   "xfade": "squeezeh",
+   "seconds": 0.3,
+   "energy": 0.7,
+   "feelings": [
+    "funny",
+    "playful"
+   ],
+   "name_ar": "ضغط أفقي",
+   "aliases": [
+    "squeeze"
+   ],
+   "matrix_atoms": [
+    "MX-TRANSITION-09"
+   ],
+   "usip_cards": []
+  }
+ ]
+}

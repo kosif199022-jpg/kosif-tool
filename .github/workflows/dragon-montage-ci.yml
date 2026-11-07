@@ -1,0 +1,34 @@
+name: Dragon Montage CI
+on:
+  push:
+    paths:
+      - '.claude/skills/kosif-dragon-montage/**'
+      - 'tests/test_dragon_montage_*.py'
+      - '.github/workflows/dragon-montage-ci.yml'
+  pull_request:
+    paths:
+      - '.claude/skills/kosif-dragon-montage/**'
+      - '.claude/skills/kosif-superpowers/scripts/black_dragon.py'
+      - 'tests/test_dragon_montage_*.py'
+      - '.github/workflows/dragon-montage-ci.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install media tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-noto-core
+          python -m pip install -q numpy pillow opencv-python-headless scenedetect librosa soundfile
+      - name: Doctor
+        run: python .claude/skills/kosif-dragon-montage/scripts/dm_doctor.py doctor
+      - name: Tests
+        run: python -m unittest discover -s tests -p "test_dragon_montage_*.py" -v
