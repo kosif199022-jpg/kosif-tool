@@ -1,0 +1,138 @@
+{
+ "schema": "kosif.dm.captions.v1",
+ "note": "ASS V4+ style fields (PlayRes 1080 on the short side; scale Fontsize/Outline/Shadow/MarginV by short_side/1080 and MarginV by H/1920). Encoding -1 lets libass detect the paragraph direction so an Arabic line split by a highlight override keeps RTL word order (montage.py rule). Never reshape Arabic yourself — libass+HarfBuzz does it. Fontname falls back through font_fallback if Cairo/Tajawal are not installed (fc-list). montage_style = the equivalent kosif-montage-motion montage.py STYLES key for burning.",
+ "font_fallback": [
+  "Cairo",
+  "Tajawal",
+  "Noto Kufi Arabic",
+  "Noto Sans Arabic"
+ ],
+ "styles": [
+  {
+   "id": "karaoke",
+   "name_ar": "كاريوكي: الكلمة المنطوقة تنور",
+   "montage_style": "reels",
+   "ass": {
+    "Fontname": "Cairo",
+    "Fontsize": 74,
+    "PrimaryColour": "&H00FFFFFF",
+    "SecondaryColour": "&H0059DEFF",
+    "OutlineColour": "&H00000000",
+    "BackColour": "&H80000000",
+    "Bold": -1,
+    "BorderStyle": 1,
+    "Outline": 6,
+    "Shadow": 3,
+    "Alignment": 2,
+    "MarginV": 300,
+    "Encoding": -1
+   },
+   "max_words": 5,
+   "pop": 112,
+   "pop_ms": 120,
+   "highlight": "spoken-word",
+   "position": "lower",
+   "feelings": [
+    "warm",
+    "inspiring",
+    "playful",
+    "funny"
+   ],
+   "content_fit": [
+    "talking-head",
+    "interview"
+   ]
+  },
+  {
+   "id": "punchy",
+   "name_ar": "قوي: كلمة أو اتنين، كوفي عريض",
+   "montage_style": "tiktok",
+   "ass": {
+    "Fontname": "Cairo",
+    "Fontsize": 88,
+    "PrimaryColour": "&H00FFFFFF",
+    "SecondaryColour": "&H004DE0FF",
+    "OutlineColour": "&H00000000",
+    "BackColour": "&H00000000",
+    "Bold": -1,
+    "BorderStyle": 1,
+    "Outline": 9,
+    "Shadow": 0,
+    "Alignment": 5,
+    "MarginV": 0,
+    "Encoding": -1
+   },
+   "max_words": 2,
+   "pop": 120,
+   "pop_ms": 90,
+   "highlight": "spoken-word",
+   "position": "center",
+   "feelings": [
+    "tense",
+    "funny",
+    "epic",
+    "playful"
+   ],
+   "content_fit": [
+    "montage",
+    "event",
+    "product",
+    "talking-head"
+   ]
+  },
+  {
+   "id": "clean",
+   "name_ar": "نظيف: سطر هادي بدون نبض",
+   "montage_style": "minimal",
+   "ass": {
+    "Fontname": "Tajawal",
+    "Fontsize": 54,
+    "PrimaryColour": "&H00F2F2F2",
+    "SecondaryColour": "&H00F2F2F2",
+    "OutlineColour": "&H00000000",
+    "BackColour": "&H66000000",
+    "Bold": 0,
+    "BorderStyle": 1,
+    "Outline": 2,
+    "Shadow": 1,
+    "Alignment": 2,
+    "MarginV": 220,
+    "Encoding": -1
+   },
+   "max_words": 7,
+   "pop": 100,
+   "pop_ms": 0,
+   "highlight": "none",
+   "position": "lower",
+   "feelings": [
+    "calm",
+    "sad",
+    "warm",
+    "epic"
+   ],
+   "content_fit": [
+    "interview",
+    "travel",
+    "talking-head"
+   ]
+  },
+  {
+   "id": "none",
+   "name_ar": "بدون ترجمة",
+   "montage_style": null,
+   "ass": null,
+   "max_words": 0,
+   "position": null,
+   "feelings": [
+    "calm",
+    "epic",
+    "sad"
+   ],
+   "content_fit": [
+    "travel",
+    "montage",
+    "event"
+   ]
+  }
+ ]
+}

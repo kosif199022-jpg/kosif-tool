@@ -1,0 +1,1490 @@
+{
+ "schema": "kosif.dm.required_tools.v1",
+ "updated": "2026-11-07",
+ "tiers": {
+  "required": "لازم — من غيرها المحطة متشتغلش",
+  "recommended": "مهمة — من غيرها الجودة بتقل واضح",
+  "optional": "إضافات — بتفتح مزايا زيادة"
+ },
+ "stations": {
+  "analyze": {
+   "ar": "العين الأولى",
+   "en": "Analyse footage"
+  },
+  "think": {
+   "ar": "يفهم المطلوب ويفكر بإبداع",
+   "en": "Brief + creative concepts"
+  },
+  "taste": {
+   "ar": "يختار الذوق",
+   "en": "Pick a look"
+  },
+  "direct": {
+   "ar": "يكتب المونتاج",
+   "en": "Write the EDL"
+  },
+  "render": {
+   "ar": "يرندر",
+   "en": "Render"
+  },
+  "review": {
+   "ar": "يتفرج وينقد",
+   "en": "Review and fix"
+  },
+  "generate": {
+   "ar": "يولّد الناقص",
+   "en": "Generate missing shots/music/voice"
+  }
+ },
+ "tools": [
+  {
+   "id": "python",
+   "name": "Python 3.10+",
+   "tier": "required",
+   "purpose": {
+    "ar": "اللغة اللي كل محطات المونتاج مكتوبة بيها",
+    "en": "Runs every Dragon Montage station script"
+   },
+   "stations": [
+    "analyze",
+    "think",
+    "taste",
+    "direct",
+    "render",
+    "review",
+    "generate"
+   ],
+   "features": [
+    "all"
+   ],
+   "check": [
+    {
+     "kind": "python",
+     "min": "3.10"
+    }
+   ],
+   "breaks_without": "مفيش ولا محطة تشتغل",
+   "size": "~100 MB",
+   "install": {
+    "linux": {
+     "apt": [
+      "python3",
+      "python3-venv",
+      "python3-pip"
+     ]
+    },
+    "macos": {
+     "brew": [
+      "python@3.13"
+     ]
+    },
+    "windows": {
+     "winget": [
+      "Python.Python.3.13"
+     ],
+     "choco": [
+      "python313"
+     ]
+    },
+    "ashell": {
+     "builtin": true,
+     "note": "a-Shell فيه python3 جاهز"
+    }
+   }
+  },
+  {
+   "id": "ffmpeg",
+   "name": "FFmpeg",
+   "tier": "required",
+   "purpose": {
+    "ar": "القص والتركيب والتلوين والانتقالات والصوت والترجمة المحروقة والتصدير",
+    "en": "Cuts, xfade transitions, grading, loudness, burned captions, final encode"
+   },
+   "stations": [
+    "analyze",
+    "render",
+    "review",
+    "generate"
+   ],
+   "features": [
+    "cut",
+    "xfade",
+    "look_pipeline",
+    "loudnorm",
+    "subtitles",
+    "contact_sheet"
+   ],
+   "check": [
+    {
+     "kind": "bin",
+     "name": "ffmpeg"
+    }
+   ],
+   "breaks_without": "مفيش رندر خالص؛ مفيش استخراج صوت ولا صور للفحص",
+   "size": "~80-150 MB",
+   "install": {
+    "linux": {
+     "apt": [
+      "ffmpeg"
+     ]
+    },
+    "macos": {
+     "brew": [
+      "ffmpeg"
+     ]
+    },
+    "windows": {
+     "winget": [
+      "Gyan.FFmpeg"
+     ],
+     "choco": [
+      "ffmpeg"
+     ]
+    },
+    "ashell": {
+     "builtin": true,
+     "note": "a-Shell بييجي معاه ffmpeg و ffprobe جاهزين"
+    }
+   },
+   "notes": "Windows: بعد winget افتح ترمينال جديد عشان PATH يتحدث."
+  },
+  {
+   "id": "ffprobe",
+   "name": "FFprobe",
+   "tier": "required",
+   "purpose": {
+    "ar": "يقيس الفيديو: المدة والأبعاد والفريمات ووجود الصوت",
+    "en": "Measures media: duration, size, fps, audio streams; verify_video uses it"
+   },
+   "stations": [
+    "analyze",
+    "render",
+    "review",
+    "generate"
+   ],
+   "features": [
+    "probe",
+    "verify_video"
+   ],
+   "check": [
+    {
+     "kind": "bin",
+     "name": "ffprobe"
+    }
+   ],
+   "breaks_without": "المحطة الأولى متقدرش تقرا الفيديو؛ والتحقق من الرندر يقع",
+   "size": "بييجي مع ffmpeg",
+   "install": {
+    "linux": {
+     "apt": [
+      "ffmpeg"
+     ]
+    },
+    "macos": {
+     "brew": [
+      "ffmpeg"
+     ]
+    },
+    "windows": {
+     "winget": [
+      "Gyan.FFmpeg"
+     ],
+     "choco": [
+      "ffmpeg"
+     ]
+    },
+    "ashell": {
+     "builtin": true,
+     "note": "a-Shell بييجي معاه ffmpeg و ffprobe جاهزين"
+    }
+   }
+  },
+  {
+   "id": "numpy",
+   "name": "NumPy",
+   "tier": "required",
+   "purpose": {
+    "ar": "حسابات الجودة (حدة/إضاءة/اهتزاز) وطاقة الصوت",
+    "en": "Shot quality metrics, audio energy, colour stats"
+   },
+   "stations": [
+    "analyze",
+    "review",
+    "taste"
+   ],
+   "features": [
+    "shot_quality",
+    "energy",
+    "color"
+   ],
+   "check": [
+    {
+     "kind": "py",
+     "name": "numpy"
+    }
+   ],
+   "breaks_without": "مفيش تقييم للقطات، فاختيار أحسن لقطة بيبقى عشوائي",
+   "size": "~40 MB",
+   "install": {
+    "pip": [
+     "numpy>=1.26"
+    ],
+    "ashell": {
+     "note": "جرّب python3 -c 'import numpy' — غالبًا موجودة في a-Shell"
+    }
+   }
+  },
+  {
+   "id": "pillow",
+   "name": "Pillow",
+   "tier": "required",
+   "purpose": {
+    "ar": "صور مصغرة للقطات وورقة المعاينة وفريمات المراجعة",
+    "en": "Thumbnails, contact sheet, review frames"
+   },
+   "stations": [
+    "analyze",
+    "review"
+   ],
+   "features": [
+    "thumbs",
+    "contact_sheet",
+    "review_frames"
+   ],
+   "check": [
+    {
+     "kind": "py",
+     "name": "PIL"
+    }
+   ],
+   "breaks_without": "مفيش contact sheet ولا فريمات للنقد",
+   "size": "~10 MB",
+   "install": {
+    "pip": [
+     "pillow>=10"
+    ],
+    "ashell": {
+     "note": "جرّب python3 -c 'import PIL'"
+    }
+   }
+  },
+  {
+   "id": "faster-whisper",
+   "name": "faster-whisper",
+   "tier": "recommended",
+   "purpose": {
+    "ar": "تفريغ الكلام العربي بتوقيت كل كلمة: ترجمة كاريوكي وقص على الكلام",
+    "en": "Arabic speech-to-text with word timestamps (captions, speech-led cuts)"
+   },
+   "stations": [
+    "analyze",
+    "render",
+    "review"
+   ],
+   "features": [
+    "words",
+    "captions",
+    "hook-in-3s"
+   ],
+   "check": [
+    {
+     "kind": "py",
+     "name": "faster_whisper"
+    }
+   ],
+   "breaks_without": "مفيش ترجمة ولا قص على الجمل؛ الإيقاع بيعتمد على السكوت بس",
+   "size": "~100 MB + موديل small ~480 MB أول تشغيل",
+   "install": {
+    "pip": [
+     "faster-whisper>=1.0"
+    ]
+   },
+   "notes": "الموديل بيتحمل من Hugging Face أول مرة. بديل سحابي: tools/transcribe_audio.py بمفتاح GEMINI_API_KEY."
+  },
+  {
+   "id": "scenedetect",
+   "name": "PySceneDetect",
+   "tier": "recommended",
+   "purpose": {
+    "ar": "يلاقي القطعات (حدود اللقطات) بدقة",
+    "en": "Accurate shot-boundary detection"
+   },
+   "stations": [
+    "analyze"
+   ],
+   "features": [
+    "shots"
+   ],
+   "check": [
+    {
+     "kind": "py",
+     "name": "scenedetect"
+    }
+   ],
+   "breaks_without": "بيرجع لفلتر scene في ffmpeg وهو أقل دقة",
+   "size": "~5 MB",
+   "install": {
+    "pip": [
+     "scenedetect>=0.6.4"
+    ]
+   },
+   "needs": [
+    "opencv"
+   ]
+  },
+  {
+   "id": "opencv",
+   "name": "OpenCV (headless)",
+   "tier": "recommended",
+   "purpose": {
+    "ar": "قراءة الفريمات: الحدة والاهتزاز والوشوش والحركة وإعادة التأطير 9:16",
+    "en": "Frame analysis: sharpness, shake, faces, motion, smart 9:16 reframe"
+   },
+   "stations": [
+    "analyze",
+    "review",
+    "render"
+   ],
+   "features": [
+    "faces",
+    "shake",
+    "motion_energy",
+    "reframe"
+   ],
+   "check": [
+    {
+     "kind": "py",
+     "name": "cv2"
+    }
+   ],
+   "breaks_without": "مفيش عدّ وشوش ولا قياس اهتزاز؛ والـ reframe بيبقى في النص بس",
+   "size": "~60 MB",
+   "install": {
+    "pip": [
+     "opencv-python-headless>=4.9"
+    ]
+   }
+  },
+  {
+   "id": "librosa",
+   "name": "librosa",
+   "tier": "recommended",
+   "purpose": {
+    "ar": "يحسب BPM والبيتات عشان القطع يبقى على الإيقاع",
+    "en": "Music BPM, beats, downbeats for on-beat cutting"
+   },
+   "stations": [
+    "analyze",
+    "direct",
+    "review"
+   ],
+   "features": [
+    "beats",
+    "bpm",
+    "cuts-on-beat"
+   ],
+   "check": [
+    {
+     "kind": "py",
+     "name": "librosa"
+    }
+   ],
+   "breaks_without": "القص على البيت مش متاح وفحص cuts-on-beat بيتخطى",
+   "size": "~60 MB (مع scipy/numba)",
+   "install": {
+    "pip": [
+     "librosa>=0.10"
+    ]
+   },
+   "needs": [
+    "soundfile"
+   ]
+  },
+  {
+   "id": "soundfile",
+   "name": "soundfile",
+   "tier": "recommended",
+   "purpose": {
+    "ar": "قراءة ملفات الصوت WAV لـ librosa و faster-whisper",
+    "en": "WAV reading for librosa and faster-whisper"
+   },
+   "stations": [
+    "analyze"
+   ],
+   "features": [],
+   "check": [
+    {
+     "kind": "py",
+     "name": "soundfile"
+    }
+   ],
+   "breaks_without": "librosa ممكن يفشل في قراءة الصوت",
+   "size": "~3 MB",
+   "install": {
+    "pip": [
+     "soundfile>=0.12"
+    ]
+   }
+  },
+  {
+   "id": "yt-dlp",
+   "name": "yt-dlp",
+   "tier": "recommended",
+   "purpose": {
+    "ar": "ينزل الفيديو من لينك تيك توك/إنستجرام/يوتيوب",
+    "en": "Fetches the owner's footage from TikTok/Instagram/YouTube links"
+   },
+   "stations": [
+    "analyze"
+   ],
+   "features": [
+    "intake_from_link"
+   ],
+   "check": [
+    {
+     "kind": "bin",
+     "name": "yt-dlp"
+    },
+    {
+     "kind": "py",
+     "name": "yt_dlp"
+    }
+   ],
+   "breaks_without": "لازم تدي الملف نفسه، مش لينك",
+   "size": "~15 MB",
+   "install": {
+    "pip": [
+     "yt-dlp"
+    ],
+    "linux": {},
+    "macos": {
+     "brew": [
+      "yt-dlp"
+     ]
+    },
+    "windows": {
+     "winget": [
+      "yt-dlp.yt-dlp"
+     ],
+     "choco": [
+      "yt-dlp"
+     ]
+    },
+    "ashell": {
+     "cmd": [
+      "pip install --upgrade yt-dlp"
+     ]
+    }
+   },
+   "notes": "حدّثه كل فترة (pip install -U yt-dlp)؛ المواقع بتغيّر طرقها."
+  },
+  {
+   "id": "node",
+   "name": "Node.js 18+",
+   "tier": "recommended",
+   "purpose": {
+    "ar": "يشغّل رندر HTML (العناوين والجرافيك) و Remotion و HyperFrames",
+    "en": "Runs HTML-frame rendering (tools/render_html.cjs), Remotion, HyperFrames"
+   },
+   "stations": [
+    "render",
+    "generate"
+   ],
+   "features": [
+    "html_titles",
+    "motion_graphics"
+   ],
+   "check": [
+    {
+     "kind": "bin",
+     "name": "node"
+    }
+   ],
+   "breaks_without": "مفيش عناوين متحركة/جرافيك HTML؛ الرندر بيبقى ffmpeg بس",
+   "size": "~90 MB",
+   "install": {
+    "linux": {
+     "apt": [
+      "nodejs",
+      "npm"
+     ]
+    },
+    "macos": {
+     "brew": [
+      "node"
+     ]
+    },
+    "windows": {
+     "winget": [
+      "OpenJS.NodeJS.LTS"
+     ],
+     "choco": [
+      "nodejs-lts"
+     ]
+    }
+   },
+   "notes": "apt على أوبونتو القديم ممكن يدي نسخة قديمة؛ لازم 18 أو أحدث."
+  },
+  {
+   "id": "playwright",
+   "name": "Playwright",
+   "tier": "recommended",
+   "purpose": {
+    "ar": "يفتح صفحة HTML ويصوّرها فريم فريم",
+    "en": "Drives Chromium to render HTML scenes frame by frame"
+   },
+   "stations": [
+    "render"
+   ],
+   "features": [
+    "html_titles"
+   ],
+   "check": [
+    {
+     "kind": "node",
+     "name": "playwright"
+    },
+    {
+     "kind": "py",
+     "name": "playwright"
+    }
+   ],
+   "breaks_without": "مفيش رندر لمشاهد HTML",
+   "size": "~10 MB",
+   "install": {
+    "npm": [
+     "playwright@1.64.1"
+    ]
+   },
+   "needs": [
+    "node"
+   ]
+  },
+  {
+   "id": "chromium",
+   "name": "Chromium (Playwright browser)",
+   "tier": "recommended",
+   "purpose": {
+    "ar": "المتصفح اللي Playwright بيرندر بيه",
+    "en": "The browser Playwright renders with"
+   },
+   "stations": [
+    "render"
+   ],
+   "features": [],
+   "check": [
+    {
+     "kind": "browser",
+     "name": "chromium"
+    }
+   ],
+   "breaks_without": "Playwright موجود بس مش لاقي متصفح",
+   "size": "~170 MB",
+   "install": {
+    "post": {
+     "linux": [
+      "node .kosif-node/node_modules/playwright/cli.js install --with-deps chromium"
+     ],
+     "macos": [
+      "node .kosif-node/node_modules/playwright/cli.js install chromium"
+     ],
+     "windows": [
+      "node .kosif-node/node_modules/playwright/cli.js install chromium"
+     ]
+    }
+   },
+   "needs": [
+    "playwright"
+   ]
+  },
+  {
+   "id": "arabic-font",
+   "name": "Arabic font (Cairo / Noto Sans Arabic / Amiri)",
+   "tier": "recommended",
+   "purpose": {
+    "ar": "خط عربي سليم للترجمة المحروقة",
+    "en": "A proper Arabic font for burned captions"
+   },
+   "stations": [
+    "render"
+   ],
+   "features": [
+    "captions"
+   ],
+   "check": [
+    {
+     "kind": "font",
+     "name": "Cairo"
+    },
+    {
+     "kind": "font",
+     "name": "Noto Sans Arabic"
+    },
+    {
+     "kind": "font",
+     "name": "Noto Naskh Arabic"
+    },
+    {
+     "kind": "font",
+     "name": "Amiri"
+    }
+   ],
+   "breaks_without": "الحروف العربية بتطلع مربعات أو مقطعة",
+   "size": "~1-30 MB",
+   "install": {
+    "linux": {
+     "apt": [
+      "fonts-noto-core",
+      "fonts-noto-ui-core"
+     ]
+    },
+    "macos": {
+     "cask": [
+      "font-cairo"
+     ]
+    },
+    "windows": {
+     "cmd": [
+      "start https://fonts.google.com/specimen/Cairo  # نزّله واضغط Install for all users"
+     ]
+    }
+   },
+   "notes": "خط KOSIF Jumuah في fonts/ للعناوين بس، مش للترجمة."
+  },
+  {
+   "id": "opentimelineio",
+   "name": "OpenTimelineIO",
+   "tier": "optional",
+   "purpose": {
+    "ar": "يصدّر المونتاج لبريمير/ريزولف/فاينل كت كمشروع يتعدل",
+    "en": "Exports/reads back the cut as .otio for Premiere/Resolve/FCP"
+   },
+   "stations": [
+    "render"
+   ],
+   "features": [
+    "nle_export"
+   ],
+   "check": [
+    {
+     "kind": "py",
+     "name": "opentimelineio"
+    }
+   ],
+   "breaks_without": "التصدير بيبقى FCPXML/EDL بس من غير قراءة تأكيد",
+   "size": "~5 MB",
+   "install": {
+    "pip": [
+     "opentimelineio>=0.17"
+    ]
+   }
+  },
+  {
+   "id": "mediapipe",
+   "name": "MediaPipe",
+   "tier": "optional",
+   "purpose": {
+    "ar": "تتبع ملامح الوش عشان القص الرأسي يفضل على الشخص",
+    "en": "Face landmarks for subject-tracking vertical reframe"
+   },
+   "stations": [
+    "analyze",
+    "render"
+   ],
+   "features": [],
+   "check": [
+    {
+     "kind": "py",
+     "name": "mediapipe"
+    }
+   ],
+   "breaks_without": "الـ reframe بيعتمد على OpenCV بس",
+   "size": "~50 MB",
+   "install": {
+    "pip": [
+     "mediapipe"
+    ]
+   },
+   "notes": "ممكن ميبقاش ليه wheel لأحدث نسخة بايثون؛ لو فشل استخدم Python 3.12."
+  },
+  {
+   "id": "pyloudnorm",
+   "name": "pyloudnorm",
+   "tier": "optional",
+   "purpose": {
+    "ar": "تأكيد ثاني لعلو الصوت LUFS",
+    "en": "Second-opinion LUFS measurement"
+   },
+   "stations": [
+    "review"
+   ],
+   "features": [],
+   "check": [
+    {
+     "kind": "py",
+     "name": "pyloudnorm"
+    }
+   ],
+   "breaks_without": "بيكتفي بقياس ffmpeg ebur128",
+   "size": "~1 MB",
+   "install": {
+    "pip": [
+     "pyloudnorm"
+    ]
+   }
+  },
+  {
+   "id": "pedalboard",
+   "name": "pedalboard",
+   "tier": "optional",
+   "purpose": {
+    "ar": "تلميع الصوت: كومبريسور وإيكو وفلاتر",
+    "en": "Audio polish: compressor, reverb, EQ"
+   },
+   "stations": [
+    "render"
+   ],
+   "features": [],
+   "check": [
+    {
+     "kind": "py",
+     "name": "pedalboard"
+    }
+   ],
+   "breaks_without": "التلميع بيبقى فلاتر ffmpeg بس",
+   "size": "~20 MB",
+   "install": {
+    "pip": [
+     "pedalboard"
+    ]
+   }
+  },
+  {
+   "id": "imageio-ffmpeg",
+   "name": "imageio-ffmpeg",
+   "tier": "optional",
+   "purpose": {
+    "ar": "نسخة ffmpeg احتياطي من pip لو مفيش ffmpeg على الجهاز",
+    "en": "Pip-installed fallback ffmpeg binary"
+   },
+   "stations": [
+    "render"
+   ],
+   "features": [],
+   "check": [
+    {
+     "kind": "py",
+     "name": "imageio_ffmpeg"
+    }
+   ],
+   "breaks_without": "—",
+   "size": "~30 MB",
+   "install": {
+    "pip": [
+     "imageio-ffmpeg"
+    ]
+   }
+  },
+  {
+   "id": "torch",
+   "name": "PyTorch (CPU)",
+   "tier": "optional",
+   "purpose": {
+    "ar": "المحرك اللي Demucs و WhisperX و EasyOCR محتاجينه",
+    "en": "Engine needed by Demucs, WhisperX, EasyOCR"
+   },
+   "stations": [
+    "analyze"
+   ],
+   "features": [],
+   "check": [
+    {
+     "kind": "py",
+     "name": "torch"
+    }
+   ],
+   "breaks_without": "Demucs/WhisperX/EasyOCR ميشتغلوش",
+   "size": "~700 MB (CPU)",
+   "install": {
+    "linux": {
+     "cmd": [
+      "python3 -m pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu"
+     ]
+    },
+    "macos": {
+     "cmd": [
+      "python3 -m pip install torch torchaudio"
+     ]
+    },
+    "windows": {
+     "cmd": [
+      "py -m pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu"
+     ]
+    }
+   },
+   "notes": "من غير كارت NVIDIA ركّب نسخة CPU بس (النسخة العادية بتسحب 4 GB مكتبات CUDA). يفضّل في venv منفصل .venv-ml."
+  },
+  {
+   "id": "demucs",
+   "name": "Demucs",
+   "tier": "optional",
+   "purpose": {
+    "ar": "يفصل الصوت عن المزيكا (stems)",
+    "en": "Separates voice from music (stems)"
+   },
+   "stations": [
+    "analyze",
+    "render"
+   ],
+   "features": [
+    "stems"
+   ],
+   "check": [
+    {
+     "kind": "py",
+     "name": "demucs"
+    }
+   ],
+   "breaks_without": "مفيش فصل صوت؛ الـ ducking بيبقى على الميكس كله",
+   "size": "~80 MB موديل + torch",
+   "install": {
+    "pip": [
+     "demucs"
+    ]
+   },
+   "needs": [
+    "torch"
+   ]
+  },
+  {
+   "id": "whisperx",
+   "name": "WhisperX",
+   "tier": "optional",
+   "purpose": {
+    "ar": "محاذاة دقيقة جدًا لكل كلمة (كاريوكي مظبوط)",
+    "en": "Forced word alignment for frame-accurate karaoke"
+   },
+   "stations": [
+    "analyze"
+   ],
+   "features": [],
+   "check": [
+    {
+     "kind": "py",
+     "name": "whisperx"
+    }
+   ],
+   "breaks_without": "توقيتات faster-whisper كفاية في أغلب الحالات",
+   "size": "~1.2 GB موديل عربي + torch",
+   "install": {
+    "pip": [
+     "whisperx"
+    ]
+   },
+   "needs": [
+    "torch"
+   ]
+  },
+  {
+   "id": "easyocr",
+   "name": "EasyOCR",
+   "tier": "optional",
+   "purpose": {
+    "ar": "يقرا الكلام المكتوب على الفيديو (عربي)",
+    "en": "Reads on-screen Arabic text"
+   },
+   "stations": [
+    "analyze",
+    "review"
+   ],
+   "features": [],
+   "check": [
+    {
+     "kind": "py",
+     "name": "easyocr"
+    }
+   ],
+   "breaks_without": "مش هيعرف إن فيه كلام محروق فممكن الترجمة تركب عليه",
+   "size": "~100 MB موديلات + torch",
+   "install": {
+    "pip": [
+     "easyocr"
+    ]
+   },
+   "needs": [
+    "torch"
+   ]
+  },
+  {
+   "id": "tesseract",
+   "name": "Tesseract OCR (+ara)",
+   "tier": "optional",
+   "purpose": {
+    "ar": "OCR خفيف للنصوص الواضحة",
+    "en": "Lightweight OCR for clean text"
+   },
+   "stations": [
+    "analyze"
+   ],
+   "features": [],
+   "check": [
+    {
+     "kind": "bin",
+     "name": "tesseract"
+    }
+   ],
+   "breaks_without": "—؛ ضعيف مع الخطوط المزخرفة",
+   "size": "~40 MB",
+   "install": {
+    "pip": [
+     "pytesseract"
+    ],
+    "linux": {
+     "apt": [
+      "tesseract-ocr",
+      "tesseract-ocr-ara"
+     ]
+    },
+    "macos": {
+     "brew": [
+      "tesseract",
+      "tesseract-lang"
+     ]
+    },
+    "windows": {
+     "winget": [
+      "UB-Mannheim.TesseractOCR"
+     ],
+     "choco": [
+      "tesseract"
+     ]
+    }
+   }
+  },
+  {
+   "id": "remotion",
+   "name": "Remotion (starters/remotion)",
+   "tier": "optional",
+   "purpose": {
+    "ar": "جرافيك React متحرك (عناوين، لوجو، intro/outro)",
+    "en": "React motion graphics: titles, logo, intro/outro"
+   },
+   "stations": [
+    "render",
+    "generate"
+   ],
+   "features": [],
+   "check": [
+    {
+     "kind": "node",
+     "name": "@remotion/cli"
+    }
+   ],
+   "breaks_without": "العناوين بتبقى HTML/ffmpeg بس",
+   "size": "~300 MB node_modules",
+   "install": {
+    "post": {
+     "linux": [
+      "npm ci --prefix starters/remotion"
+     ],
+     "macos": [
+      "npm ci --prefix starters/remotion"
+     ],
+     "windows": [
+      "npm ci --prefix starters/remotion"
+     ]
+    }
+   },
+   "needs": [
+    "node"
+   ],
+   "license": "مجاني للأفراد والشركات لحد 3 أشخاص؛ أكبر من كده محتاج رخصة شركة"
+  },
+  {
+   "id": "hyperframes",
+   "name": "HyperFrames",
+   "tier": "optional",
+   "purpose": {
+    "ar": "يحوّل تكوينات HTML لفيديو",
+    "en": "HTML compositions to video (CLI)"
+   },
+   "stations": [
+    "render",
+    "generate"
+   ],
+   "features": [],
+   "check": [
+    {
+     "kind": "node",
+     "name": "hyperframes"
+    }
+   ],
+   "breaks_without": "—",
+   "size": "~50 MB",
+   "install": {
+    "npm": [
+     "hyperframes@0.8.164"
+    ]
+   },
+   "needs": [
+    "node"
+   ],
+   "license": "راجع الرخصة قبل الاستخدام التجاري"
+  },
+  {
+   "id": "manim",
+   "name": "Manim",
+   "tier": "optional",
+   "purpose": {
+    "ar": "أنيميشن شرح ورسوم بيانية متحركة",
+    "en": "Explainer/maths animations"
+   },
+   "stations": [
+    "generate"
+   ],
+   "features": [],
+   "check": [
+    {
+     "kind": "py",
+     "name": "manim"
+    }
+   ],
+   "breaks_without": "—",
+   "size": "~100 MB",
+   "install": {
+    "pip": [
+     "manim"
+    ],
+    "linux": {
+     "apt": [
+      "libpango1.0-dev",
+      "libcairo2-dev",
+      "pkg-config"
+     ]
+    },
+    "macos": {
+     "brew": [
+      "pango",
+      "cairo",
+      "pkg-config"
+     ]
+    }
+   },
+   "notes": "على لينكس لازم مكتبات pango/cairo قبل pip."
+  },
+  {
+   "id": "blender",
+   "name": "Blender",
+   "tier": "optional",
+   "purpose": {
+    "ar": "لقطات 3D (blender_cinema.py)",
+    "en": "3D shots via blender_cinema.py"
+   },
+   "stations": [
+    "generate"
+   ],
+   "features": [],
+   "check": [
+    {
+     "kind": "bin",
+     "name": "blender"
+    }
+   ],
+   "breaks_without": "مفيش لقطات 3D محلية",
+   "size": "~1 GB",
+   "install": {
+    "linux": {
+     "apt": [
+      "blender"
+     ]
+    },
+    "macos": {
+     "cask": [
+      "blender"
+     ]
+    },
+    "windows": {
+     "winget": [
+      "BlenderFoundation.Blender"
+     ],
+     "choco": [
+      "blender"
+     ]
+    }
+   }
+  },
+  {
+   "id": "imagemagick",
+   "name": "ImageMagick",
+   "tier": "optional",
+   "purpose": {
+    "ar": "أوراق معاينة وتركيب صور سريع",
+    "en": "Fast contact sheets and image compositing"
+   },
+   "stations": [
+    "review"
+   ],
+   "features": [],
+   "check": [
+    {
+     "kind": "bin",
+     "name": "magick"
+    },
+    {
+     "kind": "bin",
+     "name": "convert"
+    }
+   ],
+   "breaks_without": "Pillow بيعمل نفس الشغل أبطأ شوية",
+   "size": "~30 MB",
+   "install": {
+    "linux": {
+     "apt": [
+      "imagemagick"
+     ]
+    },
+    "macos": {
+     "brew": [
+      "imagemagick"
+     ]
+    },
+    "windows": {
+     "winget": [
+      "ImageMagick.ImageMagick"
+     ],
+     "choco": [
+      "imagemagick"
+     ]
+    }
+   }
+  },
+  {
+   "id": "exiftool",
+   "name": "ExifTool",
+   "tier": "optional",
+   "purpose": {
+    "ar": "يقرا دوران وتاريخ فيديوهات الآيفون ويشيل الـ GPS",
+    "en": "Reads iPhone rotation/date metadata, strips GPS"
+   },
+   "stations": [
+    "analyze"
+   ],
+   "features": [],
+   "check": [
+    {
+     "kind": "bin",
+     "name": "exiftool"
+    }
+   ],
+   "breaks_without": "—",
+   "size": "~10 MB",
+   "install": {
+    "linux": {
+     "apt": [
+      "libimage-exiftool-perl"
+     ]
+    },
+    "macos": {
+     "brew": [
+      "exiftool"
+     ]
+    },
+    "windows": {
+     "winget": [
+      "OliverBetz.ExifTool"
+     ],
+     "choco": [
+      "exiftool"
+     ]
+    }
+   }
+  },
+  {
+   "id": "aria2c",
+   "name": "aria2",
+   "tier": "optional",
+   "purpose": {
+    "ar": "تحميل أسرع بعدة اتصالات لـ yt-dlp",
+    "en": "Multi-connection downloads for yt-dlp"
+   },
+   "stations": [
+    "analyze"
+   ],
+   "features": [],
+   "check": [
+    {
+     "kind": "bin",
+     "name": "aria2c"
+    }
+   ],
+   "breaks_without": "—",
+   "size": "~5 MB",
+   "install": {
+    "linux": {
+     "apt": [
+      "aria2"
+     ]
+    },
+    "macos": {
+     "brew": [
+      "aria2"
+     ]
+    },
+    "windows": {
+     "winget": [
+      "aria2.aria2"
+     ],
+     "choco": [
+      "aria2"
+     ]
+    }
+   }
+  },
+  {
+   "id": "deno",
+   "name": "Deno",
+   "tier": "optional",
+   "purpose": {
+    "ar": "yt-dlp محتاجه عشان يحل تحديات يوتيوب",
+    "en": "JS runtime yt-dlp uses for YouTube challenges"
+   },
+   "stations": [
+    "analyze"
+   ],
+   "features": [],
+   "check": [
+    {
+     "kind": "bin",
+     "name": "deno"
+    }
+   ],
+   "breaks_without": "بعض لينكات يوتيوب تفشل",
+   "size": "~100 MB",
+   "install": {
+    "linux": {
+     "cmd": [
+      "curl -fsSL https://deno.land/install.sh | sh"
+     ]
+    },
+    "macos": {
+     "brew": [
+      "deno"
+     ]
+    },
+    "windows": {
+     "winget": [
+      "DenoLand.Deno"
+     ],
+     "choco": [
+      "deno"
+     ]
+    }
+   }
+  },
+  {
+   "id": "edge-tts",
+   "name": "edge-tts",
+   "tier": "optional",
+   "purpose": {
+    "ar": "تعليق صوتي عربي مجاني (أونلاين)",
+    "en": "Free Arabic voice-over (needs internet)"
+   },
+   "stations": [
+    "generate"
+   ],
+   "features": [],
+   "check": [
+    {
+     "kind": "py",
+     "name": "edge_tts"
+    }
+   ],
+   "breaks_without": "—",
+   "size": "~1 MB",
+   "install": {
+    "pip": [
+     "edge-tts"
+    ]
+   }
+  },
+  {
+   "id": "piper-tts",
+   "name": "Piper TTS",
+   "tier": "optional",
+   "purpose": {
+    "ar": "تعليق صوتي عربي أوفلاين",
+    "en": "Offline Arabic TTS"
+   },
+   "stations": [
+    "generate"
+   ],
+   "features": [],
+   "check": [
+    {
+     "kind": "py",
+     "name": "piper"
+    }
+   ],
+   "breaks_without": "—",
+   "size": "~20 MB + صوت ~60 MB",
+   "install": {
+    "pip": [
+     "piper-tts"
+    ]
+   }
+  },
+  {
+   "id": "rembg",
+   "name": "rembg",
+   "tier": "optional",
+   "purpose": {
+    "ar": "يشيل الخلفية من صورة/فريم",
+    "en": "Background removal for cut-outs"
+   },
+   "stations": [
+    "generate"
+   ],
+   "features": [],
+   "check": [
+    {
+     "kind": "py",
+     "name": "rembg"
+    }
+   ],
+   "breaks_without": "—",
+   "size": "~170 MB موديل",
+   "install": {
+    "pip": [
+     "rembg"
+    ]
+   }
+  }
+ ],
+ "services": [
+  {
+   "id": "anthropic",
+   "name": "Claude API",
+   "env": [
+    "ANTHROPIC_API_KEY"
+   ],
+   "stations": [
+    "think"
+   ],
+   "purpose": {
+    "ar": "المجلس الإبداعي لو اشتغل برّه Claude Code",
+    "en": "Creative council when run outside Claude Code"
+   },
+   "paid": true,
+   "notes": "جوه Claude Code مش محتاجه."
+  },
+  {
+   "id": "gemini",
+   "name": "Google Gemini",
+   "env": [
+    "GEMINI_API_KEY",
+    "GOOGLE_API_KEY"
+   ],
+   "stations": [
+    "analyze"
+   ],
+   "purpose": {
+    "ar": "تفريغ سحابي بديل (tools/transcribe_audio.py)",
+    "en": "Cloud transcription fallback (tools/transcribe_audio.py)"
+   },
+   "paid": true
+  },
+  {
+   "id": "kling",
+   "name": "Kling AI",
+   "env": [
+    "KLING_ACCESS_KEY",
+    "KLING_SECRET_KEY"
+   ],
+   "env_all": true,
+   "stations": [
+    "generate"
+   ],
+   "purpose": {
+    "ar": "توليد لقطات B-roll ناقصة بالذكاء الاصطناعي",
+    "en": "AI-generated missing B-roll shots"
+   },
+   "paid": true
+  },
+  {
+   "id": "higgsfield",
+   "name": "Higgsfield",
+   "env": [
+    "HF_KEY",
+    "HIGGSFIELD_API_KEY"
+   ],
+   "connector": "Higgsfield MCP",
+   "stations": [
+    "generate"
+   ],
+   "purpose": {
+    "ar": "توليد/تكبير فيديو وصور وإعادة تأطير",
+    "en": "AI video/image generation, upscale, reframe"
+   },
+   "paid": true,
+   "notes": "HF_KEY بالشكل key-id:key-secret، أو وصّل Higgsfield connector."
+  },
+  {
+   "id": "suno",
+   "name": "Suno",
+   "env": [],
+   "connector": "Suno MCP",
+   "stations": [
+    "generate"
+   ],
+   "purpose": {
+    "ar": "توليد مزيكا أصلية للمونتاج",
+    "en": "Original music for the edit"
+   },
+   "paid": true,
+   "notes": "مفيش متغير بيئة في الريبو؛ بيشتغل من خلال Suno connector بس."
+  },
+  {
+   "id": "elevenlabs",
+   "name": "ElevenLabs",
+   "env": [
+    "ELEVENLABS_API_KEY"
+   ],
+   "stations": [
+    "generate"
+   ],
+   "purpose": {
+    "ar": "تعليق صوتي احترافي",
+    "en": "Premium voice-over"
+   },
+   "paid": true
+  },
+  {
+   "id": "stock",
+   "name": "Pexels / Pixabay",
+   "env": [
+    "PEXELS_API_KEY",
+    "PIXABAY_API_KEY"
+   ],
+   "stations": [
+    "generate"
+   ],
+   "purpose": {
+    "ar": "لقطات مجانية مرخصة لو ناقص B-roll",
+    "en": "Free licensed stock B-roll"
+   },
+   "paid": false,
+   "notes": "المفاتيح مجانية."
+  }
+ ],
+ "sources": [
+  "requirements/*.txt",
+  "KOSIF_SUPERPOWERS_ENVIRONMENT_REPORT.md",
+  "montage_pro.py doctor",
+  "black_dragon_media.py doctor",
+  "cinema_lab.py",
+  "tools/transcribe_audio.py",
+  "tools/a-shell/Cinema_C_V34_Studio_iPhone.sh",
+  "starters/remotion",
+  "kosif-montage-motion/requirements.txt"
+ ]
+}

@@ -589,6 +589,9 @@ def main(argv=None) -> int:
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("inventory", help="Count every skill, power and tool")
     sub.add_parser("doctor", help="Diagnose reviewed adapters and distinguish tools from knowledge")
+    montage_parser = sub.add_parser("montage", help="Dragon Montage protocol: footage -> edited video (edit|doctor|station)")
+    montage_parser.add_argument("montage_arguments", nargs=argparse.REMAINDER,
+                                help="see .claude/skills/kosif-dragon-montage/SKILL.md")
     media_parser = sub.add_parser("media", help="Process a real audio/video asset with evidence (opt-in)")
     media_parser.add_argument("media_arguments", nargs=argparse.REMAINDER,
                               help="run|doctor|verify and arguments; see media doctor")
@@ -628,6 +631,9 @@ def main(argv=None) -> int:
     q.add_argument("--mode", choices=("standard", "pro-max"), default="standard")
     args = parser.parse_args(argv)
     try:
+        if args.command == "montage":
+            montage = REPO / ".claude" / "skills" / "kosif-dragon-montage" / "scripts" / "dragon_montage.py"
+            return subprocess.call([sys.executable, str(montage), *args.montage_arguments])
         if args.command == "media":
             import black_dragon_media as real_media
             return real_media.main(args.media_arguments)
