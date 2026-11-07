@@ -1,0 +1,58 @@
+name: Black Dragon thinking council integration
+on:
+  pull_request:
+    paths:
+      - '.claude/skills/kosif-black-dragon/**'
+      - '.claude/skills/kosif-dragon-mind/**'
+      - 'docs/atlas_thinking_candidates_20261106.json'
+      - 'tests/test_black_dragon_creative_council.py'
+      - 'tests/test_black_dragon_atlas_council_bridge.py'
+      - 'tests/test_black_dragon_judgment_guard.py'
+      - 'tests/test_dragon_mind_book.py'
+      - 'tests/test_black_dragon_engine_wiring.py'
+      - '.github/workflows/black-dragon-thinking-council.yml'
+  push:
+    branches: [feat/black-dragon-creative-council-20261106]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  independent-thinking-regressions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check both source systems and their council bridge
+        run: |
+          python3 -m unittest discover -s tests -p 'test_dragon_mind_book.py' -v
+          python3 -m unittest discover -s tests -p 'test_black_dragon_creative_council.py' -v
+          python3 -m unittest discover -s tests -p 'test_black_dragon_atlas_council_bridge.py' -v
+          python3 -m unittest discover -s tests -p 'test_black_dragon_engine_wiring.py' -v
+          python3 -m unittest discover -s tests -p 'test_black_dragon_judgment_guard.py' -v
+      - name: Verify plan uses all 525 records and book trap checks
+        run: |
+          python3 .claude/skills/kosif-black-dragon/scripts/creative_council.py plan \
+            "إطلاق منتج جديد بميزانية محددة وموعد تسليم، تحقق من التحيز" \
+            --out /tmp/combined-council.json >/tmp/combined-council.log
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          r = json.loads(Path('/tmp/combined-council.json').read_text(encoding='utf-8'))
+          assert r['total_source_records'] == 525, r['total_source_records']
+          assert r['core_cognitive_records'] == 443
+          assert r['atlas_mind_contextual_records'] == 82
+          assert r['primary_assigned'] == 525
+          assert len(r['roles']) == 12
+          assert r['external_atlas']['catalogued_paths'] == 26
+          assert r['external_atlas']['candidate_procedure_count'] == 23
+          assert r['kahneman_review']['book_frameworks'] == 42
+          assert r['kahneman_review']['traps_catalogued'] == 31
+          assert r['kahneman_review']['review_gates']
+          assert sum(len(s['kahneman_review_questions']) for s in r['roles']) > 0
+          assert all(g['status'] == 'LEXICAL_TRAP_HYPOTHESIS_NOT_A_PROVEN_ERROR'
+                     for g in r['kahneman_review']['review_gates'])
+          print('Kahneman + Atlas + 12-seat council integration verified')
+          PY
