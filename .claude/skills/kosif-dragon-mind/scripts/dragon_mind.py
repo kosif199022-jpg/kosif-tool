@@ -42,7 +42,7 @@ import _mind_vocab as V  # noqa: E402
 
 SCHEMA = "kosif.dragon-mind.v1"
 CHAMPIONS = 8
-MIN_TRIGGER = 0.34  # one trigger shared by at most three frameworks
+MIN_TRIGGER = 0.333  # one trigger shared by at most three frameworks (1/3 rounds to 0.333)
 ALWAYS = ("reason-plan", "verify-qa", "safety-rights", "deliver-publish", "memory-learn")
 STAGE_DEFAULTS = {"frame": "first-principles", "explore": "scamper", "decide": "expected-value",
                   "build": "mvp", "verify": "pre-mortem", "learn": "after-action-review"}
@@ -277,18 +277,36 @@ def _stem_in(stem: str, low: str) -> bool:
     return stem in low
 
 
-def pick_frameworks(task: str, deep: bool) -> list:
-    lib = _json("frameworks.json", {}).get("frameworks", [])
-    words = _tokens(task)
-    low = task.lower()
-    trig_of = {fw["id"]: sorted({t.lower() for t in fw.get("triggers_en", []) + fw.get("triggers_ar", [])})
+_AR_FOLD = str.maketrans({"\u0623": "\u0627", "\u0625": "\u0627", "\u0622": "\u0627", "\u0671": "\u0627",
+                          "\u0649": "\u064a", "\u0629": "\u0647"})
+_AR_MARKS = re.compile(r"[\u064b-\u0652\u0640]")
+
+
+def ar_fold(text: str) -> str:
+    """One spelling for Arabic matching: no diacritics or tatweel, hamza-alef to alef, ى to ي, ة to ه."""
+    return _AR_MARKS.sub("", text).translate(_AR_FOLD).lower()
+
+
+def _score_lib(task: str, lib: list) -> list:
+    """(score, book evidence, framework, hit words) for every framework; rare triggers weigh more."""
+    low = ar_fold(task)
+    words = _tokens(task) | _tokens(low)
+    trig_of = {fw["id"]: sorted({ar_fold(t) for t in fw.get("triggers_en", []) + fw.get("triggers_ar", [])})
                for fw in lib}
     df = Counter(t for ts in trig_of.values() for t in ts)  # generic triggers ("new") weigh less
-    per_stage = defaultdict(list)
+    rows = []
     for fw in lib:
         hits = [t for t in trig_of[fw["id"]] if t in words or (len(t) > 3 and _stem_in(t, low))]
         score = round(sum(1.0 / df[t] for t in hits), 3)
-        evidence = len(fw.get("book_evidence", []))
+        evidence = len(fw.get("book_evidence", [])) + (1 if fw.get("page_refs") else 0)
+        rows.append((score, evidence, fw, hits))
+    return rows
+
+
+def pick_frameworks(task: str, deep: bool) -> list:
+    lib = _json("frameworks.json", {}).get("frameworks", [])
+    per_stage = defaultdict(list)
+    for score, evidence, fw, hits in _score_lib(task, lib):
         per_stage[fw["stage"]].append((score if score >= MIN_TRIGGER else 0, evidence, fw, hits))
     picked = []
     cap = 2 if deep else 1
@@ -305,8 +323,68 @@ def pick_frameworks(task: str, deep: bool) -> list:
                            "questions_ar": fw.get("questions_ar", [])[:3], "output": fw.get("output"),
                            "check": fw.get("check"), "anti_pattern": fw.get("anti_pattern"),
                            "books": [b.get("title") for b in fw.get("source_books", [])],
-                           "book_evidence": fw.get("book_evidence", [])[:2]})
+                           "book_evidence": fw.get("book_evidence", [])[:2],
+                           "page_refs": fw.get("page_refs", [])[:6]})
     return picked
+
+
+# System 2 gate: the three traps the book says hit almost every judgement, checked on every task.
+TRAP_GATE = ("tfs-wysiati", "tfs-substitution", "tfs-optimism-overconfidence")
+TRAP_LIMIT = {False: 4, True: 7}
+
+
+def scan_traps(task: str, deep: bool = False) -> list:
+    """Fast-thinking (System 1) traps this task invites, each with its debiasing move and book pages.
+
+    Detected traps come from trigger words; the gate traps are always added so a plan never skips
+    the slow check. Lexical detection: a listed trap is a question to answer, not a proven error.
+    """
+    lib = [fw for fw in _json("frameworks.json", {}).get("frameworks", []) if fw.get("trap")]
+    if not lib:
+        return []
+    rows = sorted(_score_lib(task, lib), key=lambda r: (-r[0], -r[1], r[2]["id"]))
+    out = []
+
+    def add(fw, why, score):
+        out.append({"id": fw["id"], "name_ar": fw.get("name_ar"), "name_en": fw.get("name_en"),
+                    "stage": fw["stage"], "why": why, "score": score,
+                    "question_ar": (fw.get("questions_ar") or [""])[0],
+                    "debias_ar": fw.get("debias_ar"), "debias_en": fw.get("debias_en"),
+                    "check": fw.get("check"), "pages": fw.get("page_refs", [])[:6],
+                    "book": next((b.get("title") for b in fw.get("source_books", [])), None)})
+    for score, _, fw, hits in rows:
+        if score >= MIN_TRIGGER and len(out) < TRAP_LIMIT[deep]:
+            add(fw, "matches: %s" % ", ".join(hits), score)
+    seen = {t["id"] for t in out}
+    by_id = {fw["id"]: fw for fw in lib}
+    for tid in TRAP_GATE:
+        if tid in by_id and tid not in seen:
+            add(by_id[tid], "System 2 gate (always on)", 0)
+    return out
+
+
+def book_lookup(slug: str = "thinking_fast_slow", page: int | None = None, query: str | None = None,
+                limit: int = 12) -> dict:
+    """Page gist and the insights read on a page, or the insights whose concept/claim match a query."""
+    book = _json("book_%s.json" % slug, {})
+    if not book:
+        raise ValueError("no book record data/book_%s.json" % slug)
+    head = {k: book[k] for k in ("title", "author", "pages_total", "pages_read", "readers", "insights_total")}
+    if page is not None:
+        gist = next((p for p in book["pages"] if p["page"] == page), None)
+        if gist is None:
+            raise ValueError("page %d is outside 1..%d" % (page, book["pages_total"]))
+        return {**head, "page": gist, "insights": [i for i in book["insights"] if page in i["pages"]]}
+    q = ar_fold(query or "")
+    words = [w for w in q.split() if len(w) > 2]
+    scored = []
+    for i in book["insights"]:
+        text = ar_fold(i["concept"] + " " + i["claim"] + " " + (i["operator"] or ""))
+        n = sum(1 for w in words if w in text)
+        if n:
+            scored.append((-n, i["pages"][:1], i))
+    scored.sort(key=lambda t: (t[0], t[1]))
+    return {**head, "query": query, "matches": len(scored), "insights": [t[2] for t in scored[:limit]]}
 
 
 def pick_patterns(needed: list, consent: bool) -> list:
@@ -420,12 +498,17 @@ def think(task: str, deep: bool = False, mind: dict | None = None) -> dict:
         issues.append({"node": "-", "kind": "consent",
                        "detail": "task mentions spending/publishing: that step waits for the owner's explicit yes"})
     frameworks = pick_frameworks(task, deep)
+    traps = scan_traps(task, deep)
+    for t in traps:
+        if t["score"]:
+            issues.append({"node": "-", "kind": "bias",
+                           "detail": "%s: %s (pp. %s)" % (t["name_en"], t["debias_en"], ", ".join(map(str, t["pages"])))})
     patterns = pick_patterns(list(need), consent)
     plan_ids = [c["id"] for n in nodes for c in n["champions"]]
     trace = {"schema": SCHEMA + ".trace", "task": task, "depth": "deep" if deep else "standard",
              "inventory_total": len(inventory), "inventory_fingerprint": fingerprint(inventory),
              "tiers": dict(sorted(rd["tiers"].items())),
-             "cycle": V.CYCLE, "frameworks": frameworks, "patterns": patterns,
+             "cycle": V.CYCLE, "frameworks": frameworks, "traps": traps, "patterns": patterns,
              "faculties_needed": list(need), "graph": {"nodes": nodes, "edges": edges},
              "critic": issues, "consent_required": consent,
              "handoff": {"focus_ids": plan_ids,
@@ -461,7 +544,16 @@ def report_md(trace: dict) -> str:
     L += ["", "## 4. الناقد", ""]
     L += ["- [%s] %s: %s" % (i["kind"], i["node"], i["detail"]) for i in trace["critic"]] or ["- لا ملاحظات"]
     L += ["", "## 5. التسليم للتنين الأسود", ""] + ["```", *trace["handoff"]["commands"], "```", "",
-          "> " + trace["evidence_rule"], "", "digest: `%s`" % trace["digest"], ""]
+          "> " + trace["evidence_rule"], ""]
+    if trace.get("traps"):
+        L += ["## 6. فخاخ التفكير السريع (بوابة النظام 2)", "",
+              "| الفخ | المرحلة | لماذا | سؤال الإبطاء | العلاج | صفحات الكتاب |", "|---|---|---|---|---|---|"]
+        for t in trace["traps"]:
+            L.append("| %s | %s | %s | %s | %s | %s |" % (
+                t["name_ar"], t["stage"], t["why"], t["question_ar"], t["debias_ar"],
+                ", ".join(map(str, t["pages"]))))
+        L += ["", "> فخ مذكور = سؤال لازم يتجاوب، مش خطأ مثبت. المصدر: %s" % (trace["traps"][0]["book"] or "-"), ""]
+    L += ["digest: `%s`" % trace["digest"], ""]
     return "\n".join(L)
 
 
@@ -670,6 +762,16 @@ def doctor() -> dict:
     checks = []
     fw = _json("frameworks.json", {}).get("frameworks", [])
     checks.append(("frameworks", len(fw) >= 100 and len({f["id"] for f in fw}) == len(fw), "%d frameworks" % len(fw)))
+    books = _json("frameworks.json", {}).get("full_text_books", [])
+    for slug in books:
+        bk_read = _json("book_%s.json" % slug, {})
+        total = bk_read.get("pages_total", 0)
+        refs_ok = all(1 <= p <= total for f in fw if f.get("full_text_read") == slug for p in f.get("page_refs", []))
+        checks.append(("book_" + slug, bool(total) and bk_read.get("pages_read") == total and refs_ok,
+                       "%s/%s pages read by %s readers, %s insights" % (
+                           bk_read.get("pages_read"), total, bk_read.get("readers"), bk_read.get("insights_total"))))
+    checks.append(("traps", sum(1 for f in fw if f.get("trap")) >= 20 or not books,
+                   "%d fast-thinking traps" % sum(1 for f in fw if f.get("trap"))))
     gp = _json("github_patterns.json", {})
     checks.append(("github_patterns", bool(gp.get("patterns")), "%s repos measured" % gp.get("repos_measured")))
     bk = _json("books_thinking.json", {})
@@ -714,6 +816,13 @@ def main(argv=None) -> int:
     t.add_argument("task")
     t.add_argument("--deep", action="store_true", help="two frameworks per stage instead of one")
     t.add_argument("--out", type=Path, help="work dir for mind_trace.json and mind_report.md")
+    tp = sub.add_parser("traps", help="fast-thinking traps a task invites, with debiasing moves and book pages")
+    tp.add_argument("task")
+    tp.add_argument("--deep", action="store_true")
+    bkp = sub.add_parser("book", help="look up the full-text reading: a page's gist and insights, or a concept")
+    bkp.add_argument("--slug", default="thinking_fast_slow")
+    bkp.add_argument("--page", type=int)
+    bkp.add_argument("--query")
     sub.add_parser("doctor", help="read-only health check")
     lk = sub.add_parser("link", help="link every entry to peers, next/prev stages, owner skill and faculty hub")
     lk.add_argument("--write", action="store_true", help="write data/mind_links.json")
@@ -773,6 +882,20 @@ def main(argv=None) -> int:
             print("wrote %s/mind_trace.json and mind_report.md (digest %s)" % (a.out, tr["digest"][:12]))
         else:
             sys.stdout.write(report_md(tr))
+        return 0
+    if a.cmd == "traps":
+        if not a.task.strip():
+            raise SystemExit("task cannot be empty")
+        _dump({"task": a.task, "traps": scan_traps(a.task, a.deep)}, None)
+        return 0
+    if a.cmd == "book":
+        if a.page is None and not a.query:
+            raise SystemExit("give --page N or --query WORDS")
+        try:
+            _dump(book_lookup(a.slug, a.page, a.query), None)
+        except ValueError as exc:
+            print(str(exc), file=sys.stderr)
+            return 1
         return 0
     if a.cmd == "link":
         g = build_links()

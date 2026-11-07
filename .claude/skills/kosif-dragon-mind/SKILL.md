@@ -1,6 +1,6 @@
 ---
 name: kosif-dragon-mind
-description: The thinking brain of the Black Dragon («عقل التنين الأسود»). Use when a task should be thought through before the Black Dragon runs, when the owner asks to decompose, rank or fuse all capabilities, to check which ones the dragon can really use, or says «عقل التنين», «فكّر بالتنين», «فكك القدرات», «Dragon Mind». It decomposes every catalog entry into 26 faculties, measures a usability tier for each, folds them into super-faculties, and runs a six-step thinking cycle with book-derived frameworks and GitHub-measured architecture patterns, then hands focused IDs to black_dragon.py.
+description: The thinking brain of the Black Dragon («عقل التنين الأسود»). Use when a task should be thought through before the Black Dragon runs, when the owner asks to decompose, rank or fuse all capabilities, to check which ones the dragon can really use, or says «عقل التنين», «فكّر بالتنين», «فكك القدرات», «Dragon Mind», «فخاخ التفكير», «التفكير السريع والبطيء». It decomposes every catalog entry into 26 faculties, measures a usability tier for each, folds them into super-faculties, and runs a six-step thinking cycle with book-derived frameworks (including a full page-by-page reading of Kahneman's Thinking, Fast and Slow and its System 1 trap scan) and GitHub-measured architecture patterns, then hands focused IDs to black_dragon.py.
 ---
 
 # KOSIF Dragon Mind — عقل التنين الأسود
@@ -16,6 +16,7 @@ use it*, and *which ones lead this task*. It never executes catalog tools, never
 3. [Readiness tiers](#readiness-tiers)
 4. [The thinking cycle](#the-thinking-cycle)
 5. [Research data and its limits](#research-data-and-its-limits)
+   - [Full-text book: Thinking, Fast and Slow](#full-text-book-thinking-fast-and-slow)
 6. [Running the mind inside the dragon](#running-the-mind-inside-the-dragon)
 7. [Every entry usable: the method applier](#every-entry-usable-the-method-applier)
 8. [Rules](#rules)
@@ -28,6 +29,8 @@ use it*, and *which ones lead this task*. It never executes catalog tools, never
 | قدرة الاستخدام / readiness | `dragon_mind.py readiness [--probe JOB]` | every entry → a tier T4…T0 with the reason; `--probe` runs the dragon's own `--help` probe on CLI tools |
 | صهر / fuse | `dragon_mind.py fuse [--write\|--check]` | 26 super-faculties: members, tier mix, executors, champions, honest gaps and consent-gated external routes |
 | تفكير / think | `dragon_mind.py think "<task>" [--deep] --out out/<work dir>` | `mind_trace.json` + `mind_report.md`: frameworks per stage, patterns, typed faculty graph, critic, hand-off commands |
+| فخاخ / traps | `dragon_mind.py traps "<task>" [--deep]` | the fast-thinking (System 1) traps the task invites, each with a slow-down question, a debiasing move and the book pages; `think` adds them as section 6 and as `bias` critic issues |
+| كتاب / book | `dragon_mind.py book --page N` · `--query WORDS` | the full-text reading of *Thinking, Fast and Slow*: a page's gist and the insights read on it, or the insights on a concept |
 | صحة / doctor | `dragon_mind.py doctor` | data files present, inventory reachable, snapshot fresh |
 | محوّل / adapters | `dragon_mind.py adapters [--all] --out out/<job>/adapters.json` | reviewed adapters + the mind's own adapter; `--all` gives every other entry the method applier |
 | ربط / link | `dragon_mind.py link [--write\|--check]` | `data/mind_links.json`: every entry linked to peers, next/prev stage, owner skill, specialist hint and faculty hub; exit 4 unless one connected network |
@@ -77,9 +80,30 @@ runs a critic: missing executor, broken handoff, no runnable verifier, consent n
 | `data/github_patterns.json` | GitHub search API metadata + README text of the most-starred repos | how many repos name each of 20 architecture patterns, with exemplars |
 | `data/research_receipt.json` | — | the exact counts and the SHA-256 of every raw file |
 
-Book analysis is **metadata analysis** (titles, authors, shelf tags, ratings), not reading the full text.
+Book analysis in `books_thinking.json` is **metadata analysis** (titles, authors, shelf tags, ratings), not reading the full text.
 GitHub analysis is **lexical** (the repo's own description, topics and README name a pattern), not a code audit.
 Rebuild with `scripts/_mind_research.py` from the raw files; never claim larger numbers than the receipt.
+
+### Full-text book: Thinking, Fast and Slow
+
+One book was read in full, page by page: Daniel Kahneman, *Thinking, Fast and Slow* (2011), 468 PDF pages,
+split across 100 readers (4-5 pages each). The reading lives in `data/book_thinking_fast_slow.json`:
+one gist per page, every page-cited insight (concept, kind, pages, claim, the book's example, the operator it
+feeds) and the PDF's SHA-256. The PDF itself is not in the repository; gists and claims are paraphrases.
+
+From it, `frameworks.json` gained 39 new `tfs-*` operators and three existing ones (`system-1-system-2`,
+`outside-view`, `pre-mortem`) gained page references. Each has `page_refs`, `summary_*`, `debias_*`,
+`book_examples`, and `trap: true` when it is a System 1 error to catch (anchoring, WYSIATI, substitution,
+planning fallacy, loss aversion, framing, regression to the mean, ...). `trap: false` entries are procedures
+(outside view, taming intuitive predictions, formulas over intuition, broad framing, premortem, ...).
+
+The trap scan runs inside every `think`: up to 4 detected traps (7 with `--deep`) plus the always-on
+System 2 gate (`tfs-wysiati`, `tfs-substitution`, `tfs-optimism-overconfidence`). Matching folds Arabic
+spelling (hamza-alef, ى, ة, diacritics), and the same folding now applies to framework triggers.
+A listed trap is a question the plan must answer, not a proven error.
+
+Rebuild with `scripts/_book_ingest.py` (`--pdf --reads --groups --operators --merge ...`); `doctor` checks
+that every page was read and every page reference is inside the book.
 
 ## Running the mind inside the dragon
 
