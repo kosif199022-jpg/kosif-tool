@@ -364,6 +364,13 @@
    "what": "v67.2 (artifact version 86): 'يبحث في' chips (اسم التقرير، اسم SMACC، البدائل، الموديل والملاحظات) back in view as a compact row directly above the search, instead of inside the options panel.",
    "checks": "chips in .controls, row 35px, toggling SMACC works; 0 page errors",
    "status": "published"
+  },
+  {
+   "n": 47,
+   "at": "2026-11-07T13:03:00+03:00",
+   "what": "v67.3 (artifact version 87): the 'بحث سابق' strip of previous searches no longer shows (saved searches via ★ stay).",
+   "checks": "#recent display none after a search and focusing the empty field; 0 page errors",
+   "status": "published"
   }
  ],
  "outputs": [
