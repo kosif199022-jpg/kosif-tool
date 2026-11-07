@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "note": "No reference media are bundled in this copy of the skill. Add files under references/photos, references/videos or references/frames and list them here.",
+  "fields": ["path", "kind", "source", "licence", "sha256"],
+  "media": []
+}

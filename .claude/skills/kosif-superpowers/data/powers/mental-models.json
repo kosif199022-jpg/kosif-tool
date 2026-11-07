@@ -768,7 +768,7 @@
   "status": "documented",
   "what": "It failed six months from now — why? — اسأل: التشريح المسبق. Output: failure causes with mitigations and signals.",
   "when": "plan; project; launch; risk; خطة; مشروع",
-  "how": "Imagine the failure vividly → Write the top causes → Turn each into a mitigation or an early warning signal. Pitfall: generic risks with no signal. Ranked for a problem by `think.py models \"<problem>\"`.",
+  "how": "Imagine the failure vividly → Write the top causes → Turn each into a mitigation or an early warning signal. Pitfall: generic risks with no signal. Ranked for a problem by `think.py models \"<problem>\"`. Atlas upgrade 2026-11-07: Assumption-map variant: 1) Extract what must be true per area (audience/market, execution capacity, competitor response, money/timing, dependencies on partners and tools). 2) Rate each: confidence H/M/L/unknown × impact if wrong critical/high/medium/low; vulnerability = low confidence + high impact — these are bets, make them consciously. 3) Map the dependency chain and name the weakest link (what else breaks if it fails). 4) Reversibility: if it proves wrong at month 3, can you cut scope or pivot, or is money/commitment already spent? 5) Kill switches: what must be true at 30/60/90 days to continue vs stop. 6) Hardening actions: one validation, one alternative, one contingency. 7) Ask the skipped questions: bear case not base case; would it work run by a team we do not trust; what are we not saying because it is uncomfortable; who benefits from making it sound better. Excitement and one-sided positive feedback are signals to scrutinise harder.",
   "params": "discipline: planning",
   "install": "",
   "requires": [
@@ -787,10 +787,51 @@
    "plan",
    "project",
    "launch",
-   "risk"
+   "risk",
+   "assumption map",
+   "vulnerability",
+   "kill switch",
+   "weakest link",
+   "خريطة الافتراضات"
   ],
   "section": "planning",
-  "source": "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  "source": "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md",
+  "atlas": {
+   "ids": [
+    "400",
+    "11645",
+    "1087"
+   ],
+   "examples": [
+    {
+     "id": "400",
+     "plugin": "c-level-skills",
+     "skill": "challenge",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/138-c-level-skills/400-challenge"
+    },
+    {
+     "id": "11645",
+     "plugin": "pm-product-discovery",
+     "skill": "identify-assumptions-new",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2882-pm-product-discovery/11645-identify-assumptions-new"
+    },
+    {
+     "id": "1087",
+     "plugin": "product-management",
+     "skill": "product-brainstorming",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/332-product-management/1087-product-brainstorming"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-thinking.json",
+   "skill_md_sha256": {
+    "400": "eb04f1e49bae8a81681ad5b84c262a15798637b67aeff686f3a6da5a98f86904",
+    "11645": "962b1e0c01e45ceb930e4d806c0ffb05e36cf25dcfef5497e7828d89d6ae474b",
+    "1087": "53ee71b6863b277aba87002d8a5bb58bd2a4172d7cfeb2e282a0161958edc8e7"
+   }
+  }
  },
  {
   "id": "MODEL-25",

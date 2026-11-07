@@ -1377,13 +1377,13 @@
 
 **متى:** حين تحتاج عدة صيغ افتتاح مختلفة لنفس الفيديو للاختيار بينها: سؤال، رقم صادم، قبل/بعد، اعتراف / when you need several labelled opener variants — question, shocking stat, before/after, confession — to pick from
 
-**كيف:** Generate 5–7 variants in different patterns (never five of one kind), label each, recommend one; use verbatim audience language. Viral-opener classifier: 11 shapes (flat contrarian one-liner, odd-precision number, build-in-public confession, quote reframe, mini-list, relatable cold open, listicle promise, story at the tension…). PR/launch extras: concept announcement, before/after teaser, stakes. Ship three distinct 3 s hooks per script as alternate first scenes of the same composition (props switch) for A/B without re-editing the body.
+**كيف:** Generate 5–7 variants in different patterns (never five of one kind), label each, recommend one; use verbatim audience language. Viral-opener classifier: 11 shapes (flat contrarian one-liner, odd-precision number, build-in-public confession, quote reframe, mini-list, relatable cold open, listicle promise, story at the tension…). PR/launch extras: concept announcement, before/after teaser, stakes. Ship three distinct 3 s hooks per script as alternate first scenes of the same composition (props switch) for A/B without re-editing the body. Atlas upgrade 2026-11-07: Short-form specifics: land three hooks at once in the first second — visual (motion or payoff frame), spoken line and on-screen text; build the body as problem → agitate → solution → CTA (15-30 s), list with an item every 5-8 s (30-60 s), or tutorial showing the end result first. Captions max 2 lines of 3-5 words with key words highlighted. Common killers: slow build-up, no text overlay, poor audio, longer than needed, no CTA, ignoring first-hour comments. Atlas upgrade 2026-11-07: Pick the hook by goal first: comments → confession with a dated fact, contrarian, controlled comparison; shares → contrarian, named tribute; saves → mini-list, odd-precision number ledger, explain-simply; likes → emotional cold open. Channel space: Reel = first 1–3 s spoken AND on screen plus caption line 1 (~125 chars). Self-test: would you stop for it if you hadn't written it; does it open a question the body answers; is it too specific to fit anyone else's post. Weak 2026 vendor data: question-as-first-line underperforms, odd-precision number with a named referent outperforms — treat as priors, trust his retention data. Test: same piece, change only the first lines, compare rates not counts, log which named pattern won. Reverse-engineering a viral reference: label the formula, extract a slot template, list its AI tells so they are not copied. Never invent the statistic that makes a hook work — leave [املأ: مصدر الرقم].
 
 **المعاملات:** 5–7 variants · 3 hooks × 3 s · 11 formulas
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** خطافات · hook patterns · opener · a/b hooks · curiosity gap · جملة افتتاحية · سؤال افتتاحي · قبل وبعد · viral opener · hook ideas
+**الوسوم:** خطافات · hook patterns · opener · a/b hooks · curiosity gap · جملة افتتاحية · سؤال افتتاحي · قبل وبعد · viral opener · hook ideas · three-layer hook · short-form structure · هوك ثلاثي · hook by goal · hook test · saves · shares · reverse engineer hook
 
 #### 1. الاستقبال (A25)
 
@@ -3663,11 +3663,11 @@
 
 **متى:** حين يطلب المستخدم نتيجة «واقعية» أو أرقامًا أو تلخيص مستند وتحتاج توضيح الحدود دون اختراع / when the user asks for 'realistic' output, figures or a document summary and you must state limits without inventing
 
-**كيف:** State limits up front (code from a description never matches a photo; exact match only via image code or exact mode). Facts only from the cue: scene headline is the number the cue said, else its longest word — never a demo value (audio2motion.head, tested). Document → film: summarise faithfully, never invent facts; image-only PDFs are rejected with an OCR hint. Label fictional data.
+**كيف:** State limits up front (code from a description never matches a photo; exact match only via image code or exact mode). Facts only from the cue: scene headline is the number the cue said, else its longest word — never a demo value (audio2motion.head, tested). Document → film: summarise faithfully, never invent facts; image-only PDFs are rejected with an OCR hint. Label fictional data. Atlas upgrade 2026-11-07: Proof inventory for ad/reel claims: table of claim → supplied evidence → status (verified/qualified/unsupported/prohibited) → allowed wording; size every claim to its evidence; trace feature → functional change → practical consequence → viewer value and stop where evidence stops; urgency/scarcity only when true; testimonials stay verbatim.
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** صدق · لا اختراع · honesty · no invented numbers · limits · أمانة · حدود · واقعي · accuracy · fact check
+**الوسوم:** صدق · لا اختراع · honesty · no invented numbers · limits · أمانة · حدود · واقعي · accuracy · fact check · proof inventory · claims · ادعاءات
 
 #### 1. الاستقبال (A25)
 
@@ -6570,13 +6570,13 @@
 
 **متى:** حين يريد المستخدم خطة نشر على السوشيال ميديا بأعمدة محتوى موزعة على المنصات والأيام في تقويم / when the user wants a social posting plan with weighted content pillars spread across platforms and days
 
-**كيف:** `python3 social.py calendar plan.json --out DIR` → calendar.csv/.xlsx/.md/.ics (ran here on the example plan). Promotion above ~20% reduces reach; 3–5 pillars each tied to a metric; plan one motion template series per pillar so cost per post drops.
+**كيف:** `python3 social.py calendar plan.json --out DIR` → calendar.csv/.xlsx/.md/.ics (ran here on the example plan). Promotion above ~20% reduces reach; 3–5 pillars each tied to a metric; plan one motion template series per pillar so cost per post drops. Atlas upgrade 2026-11-07: Calendar construction: start from fixed dates (launches, Ramadan/Eid, events) and work backward with real lead times; tag every row with pillar, funnel stage, format, platform, owner and evergreen-vs-timely; attach a repurposing chain to each core piece (long video → 3-5 clips → carousel → newsletter); keep ~20% of slots open for reactive posts; validate the calendar against capacity (one batching day + 15 min daily engagement) and flag any plan above ~20% promotional or above a cadence the team can hold for a year.
 
 **المعاملات:** 30/25/25/15/5 % · CSV/XLSX/MD/ICS
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** أعمدة المحتوى · تقويم · pillars · calendar · ics · series · خطة محتوى · جدول نشر · سوشيال ميديا · content plan · social media
+**الوسوم:** أعمدة المحتوى · تقويم · pillars · calendar · ics · series · خطة محتوى · جدول نشر · سوشيال ميديا · content plan · social media · editorial calendar · تقويم المحتوى · repurposing chain
 
 #### 1. الاستقبال (A25)
 

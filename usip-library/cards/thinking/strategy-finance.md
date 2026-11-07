@@ -372,11 +372,11 @@
 
 **متى:** عند المشاريع الطويلة، والتجارب المتكررة، وأي شيء قد تعود إليه / long projects, repeated trials, anything you may revisit
 
-**كيف:** Append JSONL {date, decision, options, evidence, mark, review_if}. Repeating confidence is not approval; default to a dry run for risky moves. Lead every summary with the decision.
+**كيف:** Append JSONL {date, decision, options, evidence, mark, review_if}. Repeating confidence is not approval; default to a dry run for risky moves. Lead every summary with the decision. Atlas upgrade 2026-11-07: Revisit loop: every logged decision gets a revisit date, a falsifier (what to observe, when, threshold), assumed invariants and pre-mortem scenarios. At the revisit ask one at a time: actual outcome; was the original confidence under/over/well calibrated; did the falsifier trip; are invariants still true; did a pre-mortem path happen; was the decision reasonable with the information at the time (separate decision quality from outcome quality — a bad result from a sound decision is calibration data, not a failure; guard against hindsight re-grading); supersede, affirm or defer. If an invariant broke, queue every child decision for revisit. Flag revisits overdue by 30+ days instead of skipping them. Optionally track a running Brier score of stated confidences.
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** decision log · ledger · jsonl · سجل القرارات
+**الوسوم:** decision log · ledger · jsonl · سجل القرارات · decision revisit · decision quality · falsifier · Brier · مراجعة القرار
 
 #### 1. الاستقبال (A25)
 

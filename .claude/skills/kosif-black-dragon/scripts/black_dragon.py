@@ -366,6 +366,56 @@ def compose(task: str, path: Path, *, legacy: bool = False, limit: int = 12) -> 
     }
 
 
+def plan_markdown(result: dict, limit_methods: int = 4) -> str:
+    """Readable action plan from a compose result: stages, steps, runnable commands, gaps.
+
+    The commands are the catalog's own documented examples; listing them is not running them.
+    """
+    mind = result["native_mind"]
+    lines = [f"# خطة التنين الأسود — {result['task']}", "",
+             f"*مصادر مطابقة: {len(result['selected'])} من {result['source_count']} · "
+             "خطة تفكير، ليست تنفيذًا — نفّذ ثم تحقّق.*", ""]
+    by_stage = {}
+    for fac in mind["faculties"]:
+        by_stage.setdefault(fac["stage"], []).append(fac)
+    for i, stage in enumerate(mind["cognitive_cycle"], 1):
+        lines.append(f"## {i}. {stage['name_ar']} ({stage['stage']}) — {stage['reasoning_method']}")
+        lines.append(f"- سؤال: {stage['question']}")
+        lines.append(f"- معيار النجاح: {stage['check']}")
+        for fac in by_stage.get(stage["stage"], []):
+            if not fac["merged_methods"]:
+                continue
+            lines.append(f"- **{fac['name_ar']}** ({fac['faculty']}):")
+            for m in fac["merged_methods"][:limit_methods]:
+                text = re.sub(r"\s+", " ", m["method"]).strip()
+                if len(text) > 220:
+                    text = text[:220].rsplit(" ", 1)[0] + "…"
+                lines.append(f"  - {text}  `[{', '.join(m['source_ids'][:2])}]`")
+        lines.append("")
+    cmds = [(s["id"], s["method"]) for s in result["selected"]
+            if s["id"].startswith("tool:") and s["method"].strip()]
+    if cmds:
+        lines.append("## أوامر جاهزة من الكتالوج (راجعها قبل التشغيل)")
+        for sid, cmd in cmds[:8]:
+            for c in [x.strip() for x in cmd.split(";") if x.strip()][:2]:
+                lines.append(f"- `{c}`  ← {sid}")
+        lines.append("")
+    reqs = sorted({str(r) for s in result["selected"] for r in (s.get("requirements") or [])})
+    if reqs:
+        lines.append("## المتطلبات")
+        lines.append("- " + ", ".join(reqs[:20]))
+        lines.append("")
+    gaps = [g for g in mind["critic"] if g.get("kind") != "execution-not-proven"]
+    lines.append("## فجوات يجب حلها")
+    lines += [f"- {g['faculty']}: يحتاج مدخلًا من نوع {', '.join(g['requires_any'])}" for g in gaps] or ["- لا فجوات في المدخلات."]
+    lines += ["- التنفيذ لم يُثبت بعد: شغّل الخطوات وتحقق من الناتج الفعلي قبل إعلان النجاح.", ""]
+    lines.append("## المصادر المختارة")
+    for s in result["selected"]:
+        purpose = re.sub(r"\s+", " ", s["purpose"])[:140]
+        lines.append(f"- `{s['id']}` — {purpose}")
+    return "\n".join(lines) + "\n"
+
+
 def thinking_guards(task: str, root: Path = ROOT) -> dict:
     """Run Dragon Mind's own trap scanner on the task, routed to council seats.
 
@@ -439,7 +489,27 @@ def judgment_guard_engine():
     return module
 
 
+def build_studio_engine():
+    """Load the native 3D build studio (Blender/Unreal planning; nothing is launched)."""
+    path = Path(__file__).with_name("build_studio.py")
+    spec = importlib.util.spec_from_file_location("_kosif_dragon_build_studio", path)
+    if spec is None or spec.loader is None:
+        raise ValueError("3D build studio unavailable")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
 def main(argv=None) -> int:
+    argv = list(sys.argv[1:] if argv is None else argv)
+    if argv[:1] == ["build3d"]:
+        return build_studio_engine().main(argv[1:])
+    if argv[:1] == ["motion"]:
+        path = Path(__file__).with_name("motion_styles.py")
+        spec = importlib.util.spec_from_file_location("_kosif_dragon_motion_styles", path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        return module.main(argv[1:])
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--root", type=Path, default=ROOT)
     cmd = ap.add_subparsers(dest="command", required=True)
@@ -457,10 +527,26 @@ def main(argv=None) -> int:
     j = cmd.add_parser("think-review", help="Book-informed fast/slow judgment check; no expert agents executed")
     j.add_argument("--input", type=Path, required=True, help="Structured JSON decision brief")
     j.add_argument("--out", type=Path, help="Optional JSON review output")
+    cmd.add_parser("build3d", help="3D build studio: list|principles|kit|match|brief|lint (planning only)")
+    cmd.add_parser("motion", help="Code-motion styles: list|principles|match|brief|clone-plan|vo-timeline|cue-check")
     v = cmd.add_parser("verify", help="Verify the catalog-source fingerprints")
     v.add_argument("--out", type=Path, required=True)
+    pl = cmd.add_parser("plan", help="Readable Markdown action plan (stages, steps, catalog commands, gaps)")
+    pl.add_argument("task")
+    pl.add_argument("--index", type=Path, required=True)
+    pl.add_argument("--limit", type=int, default=12)
+    pl.add_argument("--save", type=Path, help="also write the plan to this .md file")
     args = ap.parse_args(argv)
     try:
+        if args.command == "plan":
+            text = plan_markdown(compose(args.task, args.index, limit=args.limit))
+            if args.save:
+                args.save.parent.mkdir(parents=True, exist_ok=True)
+                args.save.write_text(text, encoding="utf-8")
+            if hasattr(sys.stdout, "reconfigure"):
+                sys.stdout.reconfigure(encoding="utf-8")
+            print(text)
+            return 0
         if args.command == "index":
             result = build(args.root, args.out)
         elif args.command == "compose":

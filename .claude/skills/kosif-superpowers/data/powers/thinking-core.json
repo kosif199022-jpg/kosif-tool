@@ -679,7 +679,7 @@
   "status": "documented",
   "what": "قبل كتابة أداة أو مهارة ابحث عمّا هو موجود في المستودع والمهارات والحزم وGitHub، ثم قرر: اعتمد، أو وسّع، أو ركّب، أو ابنِ. — Before writing a tool or skill, search the repo, skills, package indexes and GitHub, then adopt, extend, compose or build.",
   "when": "قبل برمجة تأثير أو محلل أو محوّل أو مهارة أو تكامل يدويًا. / Before hand-coding an effect, a parser, a converter, a skill or an integration.",
-  "how": "Step 0: check which search channels work (rg, pip, npm, `gh auth status`, skills list, ToolSearch) and say which were skipped. Search order: this repo → installed skills / deferred tools → package indexes (`pip index versions X`, `npm view X version`) → GitHub (`gh search repos <kw> --sort stars --limit 10`) → web. Score function fit, maintenance, community, docs, licence, dependencies. Decide: exact, maintained, MIT/Apache match → Adopt; partial → Extend with a thin wrapper; several weak → Compose 2–3; none → Build, informed by the research. Read README and LICENSE of the top 1–3; never auto-run third-party installers or hooks.",
+  "how": "Step 0: check which search channels work (rg, pip, npm, `gh auth status`, skills list, ToolSearch) and say which were skipped. Search order: this repo → installed skills / deferred tools → package indexes (`pip index versions X`, `npm view X version`) → GitHub (`gh search repos <kw> --sort stars --limit 10`) → web. Score function fit, maintenance, community, docs, licence, dependencies. Decide: exact, maintained, MIT/Apache match → Adopt; partial → Extend with a thin wrapper; several weak → Compose 2–3; none → Build, informed by the research. Read README and LICENSE of the top 1–3; never auto-run third-party installers or hooks. Atlas upgrade 2026-11-07: Smallest-change ladder before building anything: does it need to exist at all (is deletion or not-doing the fix)? already in this project? in the standard library? a native feature or one config flag? an already-adopted dependency? one line? only then the minimum new work. Anything beyond the literal request (new dependency, new abstraction, extra files) → ask first; a deliberate shortcut is logged as a trade-off, not a silent TODO.",
   "params": "shortlist 5–12 · read top 1–3 · 4 decisions",
   "install": "",
   "requires": [
@@ -698,10 +698,34 @@
    "ابحث أولًا",
    "إعادة استخدام",
    "مكتبات",
-   "لا تعد اختراع العجلة"
+   "لا تعد اختراع العجلة",
+   "smallest change",
+   "reuse ladder",
+   "YAGNI",
+   "أصغر تغيير"
   ],
   "section": "القدرات قبل الحل — Capability-first",
-  "source": "github.com/affaan-m/ECC skills/search-first and skills/skill-scout (MIT © 2026 Affaan Mustafa; paraphrased); owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/SKILL_DISCOVERY.md ladder (owner) — distills ecc-skills-c #2–3, see-core §9"
+  "source": "github.com/affaan-m/ECC skills/search-first and skills/skill-scout (MIT © 2026 Affaan Mustafa; paraphrased); owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/SKILL_DISCOVERY.md ladder (owner) — distills ecc-skills-c #2–3, see-core §9",
+  "atlas": {
+   "ids": [
+    "2381"
+   ],
+   "examples": [
+    {
+     "id": "2381",
+     "plugin": "craftsman",
+     "skill": "smallest-change-first",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1072-craftsman/2381-smallest-change-first"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-thinking.json",
+   "skill_md_sha256": {
+    "2381": "4a1b946979afedbc8b8d31f9a2a20c5e3e3b9a746c8c0706f2dfbf71c755618f"
+   }
+  }
  },
  {
   "id": "THINK-23",
@@ -777,7 +801,7 @@
   "status": "documented",
   "what": "إن كان الخطأ رخيص الإصلاح فاختر أعقل تفسير وصرّح بافتراضك وتابع؛ واسأل فقط عند مفترق مكلف أو لا رجعة فيه. — If a wrong guess is cheap to fix, pick the most reasonable reading, state it and proceed; ask only at a costly or irreversible fork.",
   "when": "عند أي غموض في الطلب. / Any ambiguity in a request.",
-  "how": "Look first: inspect the repo, docs and files before asking anything you could find. Proceed with a stated assumption when a wrong guess is cheap; show a draft instead of a questionnaire. Ask 1–3 questions, batched, once, only for: material security exposure, data loss, irreversible migration, API breakage, meaningful cost or credits, destructive or public actions. Always confirm deleting, publishing, pushing and paid generation.",
+  "how": "Look first: inspect the repo, docs and files before asking anything you could find. Proceed with a stated assumption when a wrong guess is cheap; show a draft instead of a questionnaire. Ask 1–3 questions, batched, once, only for: material security exposure, data loss, irreversible migration, API breakage, meaningful cost or credits, destructive or public actions. Always confirm deleting, publishing, pushing and paid generation. Atlas upgrade 2026-11-07: Expected-value-of-question gate: ask only when the value of the question (how much the answer would change × risk if wrong ÷ friction) beats answering now, answering with a stated assumption, or comparing the top two interpretations. Before asking, simulate the replies — expected, contrary, minority-rescue, 'not sure'; drop the question if no reply would change the plan; prefer world-splitting questions over detail-tuning ones. Keep facts with confidence; anything under ~90% is marked, any interpretation fork under ~70% is surfaced, and you pause only when a flagged fork is blocking the deliverable — never silently adopt a default for a flagged item. Keep ruled-out readings as tombstones with a resurrection condition. Stop asking when one plan clearly dominates, top readings lead to the same answer, the owner says proceed, or friction exceeds the gain. Final pattern: 'I'll assume X; if Y instead, the main change would be Z.'",
   "params": "≤1–3 questions, batched · 6 blocking reasons",
   "install": "",
   "requires": [],
@@ -793,10 +817,51 @@
    "غموض",
    "أسئلة توضيحية",
    "افتراض",
-   "إفراط في السؤال"
+   "إفراط في السؤال",
+   "EVQ",
+   "clarification",
+   "tombstone",
+   "flagged uncertainty",
+   "متى أسأل"
   ],
   "section": "التخطيط والتفويض — Planning & delegation",
-  "source": "github.com/affaan-m/ECC skills/intent-driven-development (MIT © 2026 Affaan Mustafa; paraphrased); session-2026-10-16 distill thinking-methods §3 ambiguity rule; owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-prompt-architecture/references/KOSIF_OPTIMIZE_PROMPT.md (≤1 blocking question; owner)"
+  "source": "github.com/affaan-m/ECC skills/intent-driven-development (MIT © 2026 Affaan Mustafa; paraphrased); session-2026-10-16 distill thinking-methods §3 ambiguity rule; owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-prompt-architecture/references/KOSIF_OPTIMIZE_PROMPT.md (≤1 blocking question; owner)",
+  "atlas": {
+   "ids": [
+    "13939",
+    "851",
+    "7361"
+   ],
+   "examples": [
+    {
+     "id": "13939",
+     "plugin": "skill-craft",
+     "skill": "c-plan",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3406-skill-craft/13939-c-plan"
+    },
+    {
+     "id": "851",
+     "plugin": "zirkel",
+     "skill": "zirkel-clarify-scope",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/256-zirkel/851-zirkel-clarify-scope"
+    },
+    {
+     "id": "7361",
+     "plugin": "yellow-core",
+     "skill": "brainstorming",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2078-yellow-core/7361-brainstorming"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-thinking.json",
+   "skill_md_sha256": {
+    "13939": "e120269c953f4ccb55fe7c91cbd09c4150343b6b5a813d54a94521f1f6361977",
+    "851": "32361148febe87612429cdb071a793a588dd158f665f3d1b363a06b0424c4986",
+    "7361": "26257775f14e97d5424e0355df01fe31fcaeec4bb385a37665ee8d333f347697"
+   }
+  }
  },
  {
   "id": "THINK-26",
@@ -868,7 +933,7 @@
   "status": "documented",
   "what": "لقرار غامض متعدد المسارات: اكتب رأيك أولًا، ثم استشر ثلاثة وكلاء جدد بلا تاريخ المحادثة، ثم اجمع مع إظهار الخلاف. — For an ambiguous multi-path decision: write your view first, consult three fresh agents without the conversation history, then synthesise showing dissent.",
   "when": "عند القرارات الغامضة قليلة الإرشاد (اتجاه الأسلوب، المعمارية، الاستراتيجية). ليس للحقائق ولا مراجعة الشيفرة. / Ambiguous decisions with little guidance (style direction, architecture, strategy). Not for facts or code review.",
-  "how": "Reduce to one question (what is decided, constraints, success). Write your own position + 3 reasons + main risk before reading anyone else. Launch 3 fresh subagents in parallel with only the question and compact context: Skeptic (challenge the premise, simplify), Pragmatist (speed, user impact), Critic (failure modes). You hold the Architect voice (correctness, long-term). Synthesise: decision first, then the strongest dissent and what would change the decision.",
+  "how": "Reduce to one question (what is decided, constraints, success). Write your own position + 3 reasons + main risk before reading anyone else. Launch 3 fresh subagents in parallel with only the question and compact context: Skeptic (challenge the premise, simplify), Pragmatist (speed, user impact), Critic (failure modes). You hold the Architect voice (correctness, long-term). Synthesise: decision first, then the strongest dissent and what would change the decision. Atlas upgrade 2026-11-07: Two-voice adversarial variant: an advocate drafts the plan/requirements; a skeptic challenges each point with concrete evidence from the files or the material, severity-ranked; the advocate answers each challenge accepted / partly accepted (with the trade-off) / rejected (with counter-evidence); two rounds maximum, then the lead decides and records why. The lead manages, never debates. Each surviving challenge becomes a risk note in the final document (risk, severity, mitigation, source round). Challenges without evidence are closed.",
   "params": "4 voices · 3 fresh subagents · own view written first",
   "install": "",
   "requires": [
@@ -886,10 +951,34 @@
    "مجلس",
    "قرار",
    "آراء",
-   "تحيز الإرساء"
+   "تحيز الإرساء",
+   "advocate vs skeptic",
+   "adversarial review",
+   "battle-tested",
+   "مدافع ومشكك"
   ],
   "section": "التخطيط والتفويض — Planning & delegation",
-  "source": "github.com/affaan-m/ECC skills/council (MIT © 2026 Affaan Mustafa; paraphrased) — distill ecc-skills-a 2.2"
+  "source": "github.com/affaan-m/ECC skills/council (MIT © 2026 Affaan Mustafa; paraphrased) — distill ecc-skills-a 2.2",
+  "atlas": {
+   "ids": [
+    "14422"
+   ],
+   "examples": [
+    {
+     "id": "14422",
+     "plugin": "forge-teams",
+     "skill": "adversarial-requirements",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3596-forge-teams/14422-adversarial-requirements"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-thinking.json",
+   "skill_md_sha256": {
+    "14422": "a2294ee2ed680b77e3db39fb772cabf69fcf3a8ca2cac149d16432a09e6bcf22"
+   }
+  }
  },
  {
   "id": "THINK-29",

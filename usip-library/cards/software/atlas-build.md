@@ -1,4 +1,4 @@
-# `atlas-build` — البرمجة وبناء التطبيقات (60 بطاقة)
+# `atlas-build` — البرمجة وبناء التطبيقات (62 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/atlas-build.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/software.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -64,6 +64,8 @@
 - [`ABUILD-58` تحديد معمارية جهاز إلكتروني قبل أي مخطط: المتطلبات قبل القطع، ووحدة جاهزة أم لوحة مخصصة، وشجرة الطاقة، والتوافق الكهرومغناطيسي](#abuild-58--تحديد-معمارية-جهاز-إلكتروني-قبل-أي-مخطط-المتطلبات-قبل-القطع-ووحدة-جاهزة-أم-لوحة-مخصصة-وشجرة-الطاقة-والتوافق-الكهرومغناطيسي--scope-a-hardware-design-before-any-schematic-requirements-before-parts-module-vs-custom-pcb-the-power-tree-emc-posture)
 - [`ABUILD-59` رحلة بناء موقع أو تحسينه بترتيب ثابت: الرسالة ثم التصميم ثم التحويل، وكل إصلاح فرضية قابلة للاختبار، وملف تتبع يستأنف منه](#abuild-59--رحلة-بناء-موقع-أو-تحسينه-بترتيب-ثابت-الرسالة-ثم-التصميم-ثم-التحويل-وكل-إصلاح-فرضية-قابلة-للاختبار-وملف-تتبع-يستأنف-منه--website-creation-or-improvement-as-a-fixed-order-journey-message-then-design-then-conversion-every-fix-a-testable-hypothesis-a-tracker-to-resume-from)
 - [`ABUILD-60` إعداد طرق التثبيت لأداة CLI: صيغة Homebrew tap وgo install وcargo install مع كشف اللغة وGoReleaser والقيود الخاصة بالمنصة](#abuild-60--إعداد-طرق-التثبيت-لأداة-cli-صيغة-homebrew-tap-وgo-install-وcargo-install-مع-كشف-اللغة-وgoreleaser-والقيود-الخاصة-بالمنصة--set-up-installers-for-a-cli-a-homebrew-tap-formula-plus-go-install-and-cargo-install-support-with-language-goreleaser-and-platform-detection)
+- [`ABUILD-61` لغة حركة واحدة للصفحة مع محظورات ملزمة](#abuild-61--لغة-حركة-واحدة-للصفحة-مع-محظورات-ملزمة--one-motion-language-per-page-with-binding-bans)
+- [`ABUILD-62` بطاقة تقييم حِرفية الموقع من 10 ولحظة التوقيع أولاً](#abuild-62--بطاقة-تقييم-حِرفية-الموقع-من-10-ولحظة-التوقيع-أولاً--weighted-10-point-site-craft-scorecard-signature-moment-first)
 
 ## البطاقات / cards
 
@@ -1595,13 +1597,13 @@
 
 **متى:** User asks to verify, screenshot or record a flow without wanting permanent tests.
 
-**كيف:** 1) Pick runtime: session browser tools, project runner, bundled Playwright scripts, else report blocked. 2) Reuse a running dev server; ask if several. 3) Use role/label/text/testid locators, wait on observable state, never fixed sleeps. 4) screenshot-url/sequence scripts emit a JSON manifest (viewport, console errors, failed network, status>=400). 5) Write temp scripts under /tmp/playwright-*. 6) After two failed attempts, save evidence and stop.
+**كيف:** 1) Pick runtime: session browser tools, project runner, bundled Playwright scripts, else report blocked. 2) Reuse a running dev server; ask if several. 3) Use role/label/text/testid locators, wait on observable state, never fixed sleeps. 4) screenshot-url/sequence scripts emit a JSON manifest (viewport, console errors, failed network, status>=400). 5) Write temp scripts under /tmp/playwright-*. 6) After two failed attempts, save evidence and stop. Atlas upgrade 2026-11-07: Before testing, write the flow as one sentence: entry route -> user action -> expected rendered result. Required checks before claiming it works: page identity (URL and title), not blank (DOM has real content, not an empty shell), no framework error overlay, console errors/warnings explained, a screenshot backing every visual claim, and at least one interaction followed by a state check; re-run the same failing interaction after each edit. Check first viewport plus one phone width; look for clipping, overlap, z-index, stale loading, scroll traps and layout shift. For reference-driven work keep a mismatch ledger (reference evidence / rendered evidence / fix or intentional deviation). Report: findings first, then a pass/fail table, the exact interaction path, remaining risk, screenshots grouped at the end. For live polish sessions, let the user drive what to inspect; do not expand into general QA.
 
 **المعاملات:** url, ready selector, out path
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** verification · screenshot · دليل · واجهة
+**الوسوم:** verification · screenshot · دليل · واجهة · QA report · console health · framework overlay · mismatch ledger · تقرير فحص
 
 #### 1. الاستقبال (A25)
 
@@ -2517,13 +2519,13 @@
 
 **متى:** Reviewing mockups, preparing handoff, or checking hardcoded values.
 
-**كيف:** 1) Critique: usability, hierarchy, consistency with prioritized findings. 2) Handoff: spacing, tokens, states, responsive, edge cases. 3) System audit: naming inconsistencies, hardcoded values, missing states. 4) Component spec: variants, sizes, states. 5) Offer 2-3 variants with tradeoffs.
+**كيف:** 1) Critique: usability, hierarchy, consistency with prioritized findings. 2) Handoff: spacing, tokens, states, responsive, edge cases. 3) System audit: naming inconsistencies, hardcoded values, missing states. 4) Component spec: variants, sizes, states. 5) Offer 2-3 variants with tradeoffs. Atlas upgrade 2026-11-07: Critique instrument: form your own verdict first (primary feeling, primary failure), then rate seven dimensions pass/minor/major: hierarchy (one entry point, ≥1.25× step between levels), composition (balance, whitespace rhythm, gestalt), colour (measured ratios for every failing pair, colour never the only state cue), typography (on-scale sizes only, body ≥16 px, measure 45-75 chars), affordance (all states visible, one filled CTA), density (one goal per screen), brand (only if a brand doc exists — never invent brand rules). Classify each finding Critical (a11y fail, broken state, trust-eroding bug: fix before ship) / Major (inconsistency, hierarchy failure, AI-default pattern) / Minor, each as observation → problem → fix with the exact value or token. Red flags worth scanning: synthesized fake bold/italic, justified web text, letter-spaced body, accent on >10% of the surface, text on gradient without measured contrast, placeholder copy. Audit the first 5 seconds separately: near-miss alignment (2 px off) reads as carelessness more than either precision or bold asymmetry; loading and empty states set the halo for the whole session. Separate opinion from preference explicitly.
 
 **المعاملات:** design source
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** critique · handoff · design-system · نقد
+**الوسوم:** critique · handoff · design-system · نقد · visual critique · severity · red flags · first impression · نقد بصري · تدقيق التصميم
 
 #### 1. الاستقبال (A25)
 
@@ -2589,11 +2591,11 @@
 
 **متى:** Design direction open or existing CSS needs systematizing.
 
-**كيف:** 1. Survey current token/tooling state. 2. If direction is open, spread divergent idioms; if settled, echo variations. 3. Retrofit existing CSS into the taxonomy with zero visual change. 4. Emit to targets via committed formatters. 5. Report status of artefacts.
+**كيف:** 1. Survey current token/tooling state. 2. If direction is open, spread divergent idioms; if settled, echo variations. 3. Retrofit existing CSS into the taxonomy with zero visual change. 4. Emit to targets via committed formatters. 5. Report status of artefacts. Atlas upgrade 2026-11-07: Mechanical clean-up pipeline for an existing UI: split rules by area (spacing, type scale, colour, contrast, plus report-only containers and decoration); inspect each area separately and write findings as predicates (a check that can be recomputed), never as status words; snap replacements to a reference ladder or the project's own tokens; enforce in dependency order spacing → type → colour → contrast (contrast last because it depends on final colours), one commit per area; re-inspect with a fresh pass and re-enter only areas whose predicates are still false. Anything that would delete or re-parent elements is reported, not applied. Finish with one rendered before/after as confirmation, not as measurement.
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** design-system · retrofit · taxonomy · نظام
+**الوسوم:** design-system · retrofit · taxonomy · نظام · theme QA · predicates · snap to scale · enforce order · تنظيف الواجهة
 
 #### 1. الاستقبال (A25)
 
@@ -3221,13 +3223,13 @@
 
 **متى:** Requests for marketing or landing pages.
 
-**كيف:** 1) Interview: colors, typography, shape language, audience. 2) Choose art direction from product context. 3) Generate single HTML with GSAP ScrollTrigger and 3D CSS. 4) Audit six conversion dimensions (above-fold, trust, form). 5) Deploy optional.
+**كيف:** 1) Interview: colors, typography, shape language, audience. 2) Choose art direction from product context. 3) Generate single HTML with GSAP ScrollTrigger and 3D CSS. 4) Audit six conversion dimensions (above-fold, trust, form). 5) Deploy optional. Atlas upgrade 2026-11-07: Page architecture gate before visuals: give every section a named job (hook, context, feature/benefit, social proof, secondary CTA, FAQ, footer CTA); no two consecutive sections share a job; social proof appears before the second CTA; the page ends on a CTA, not a feature; one primary CTA per viewport. Hook = one value-prop headline, one sub-line, one CTA, optionally one trust fragment — nothing else. Write the 375 px layout before the 1280 px one for each section, max three type sizes per section, spacing only from the scale, and name each section's dominant element. Confirm the written brief (goal, CTA label, audience, key objection, tone, must-feel / must-not-feel) before layout.
 
 **المعاملات:** brand brief
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** landing · gsap · marketing · هبوط
+**الوسوم:** landing · gsap · marketing · هبوط · section jobs · page architecture · mobile first spec · هيكل الصفحة
 
 #### 1. الاستقبال (A25)
 
@@ -4280,6 +4282,7 @@
 - `ABUILD-57` ملعب HTML تفاعلي في ملف واحد: أدوات تحكم ومعاينة حية وprompt جاهز للنسخ / Single-file interactive HTML playground: controls, live preview and a ready-to-copy prompt (documented)
 - `ABUILD-58` تحديد معمارية جهاز إلكتروني قبل أي مخطط: المتطلبات قبل القطع، ووحدة جاهزة أم لوحة مخصصة، وشجرة الطاقة، والتوافق الكهرومغناطيسي / Scope a hardware design before any schematic: requirements before parts, module vs custom PCB, the power tree, EMC posture (documented)
 - `ABUILD-60` إعداد طرق التثبيت لأداة CLI: صيغة Homebrew tap وgo install وcargo install مع كشف اللغة وGoReleaser والقيود الخاصة بالمنصة / Set up installers for a CLI: a Homebrew tap formula plus go install and cargo install support, with language, GoReleaser and platform detection (documented)
+- `ABUILD-61` لغة حركة واحدة للصفحة مع محظورات ملزمة / One motion language per page, with binding bans (documented)
 
 ### `ABUILD-60` — إعداد طرق التثبيت لأداة CLI: صيغة Homebrew tap وgo install وcargo install مع كشف اللغة وGoReleaser والقيود الخاصة بالمنصة / Set up installers for a CLI: a Homebrew tap formula plus go install and cargo install support, with language, GoReleaser and platform detection
 
@@ -4349,4 +4352,150 @@
 
 - `ABUILD-58` تحديد معمارية جهاز إلكتروني قبل أي مخطط: المتطلبات قبل القطع، ووحدة جاهزة أم لوحة مخصصة، وشجرة الطاقة، والتوافق الكهرومغناطيسي / Scope a hardware design before any schematic: requirements before parts, module vs custom PCB, the power tree, EMC posture (documented)
 - `ABUILD-59` رحلة بناء موقع أو تحسينه بترتيب ثابت: الرسالة ثم التصميم ثم التحويل، وكل إصلاح فرضية قابلة للاختبار، وملف تتبع يستأنف منه / Website creation or improvement as a fixed-order journey: message, then design, then conversion; every fix a testable hypothesis; a tracker to resume from (documented)
+- `ABUILD-61` لغة حركة واحدة للصفحة مع محظورات ملزمة / One motion language per page, with binding bans (documented)
+- `ABUILD-62` بطاقة تقييم حِرفية الموقع من 10 ولحظة التوقيع أولاً / Weighted 10-point site craft scorecard, signature moment first (documented)
+
+### `ABUILD-61` — لغة حركة واحدة للصفحة مع محظورات ملزمة / One motion language per page, with binding bans
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-build` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-build.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (Apache-2.0, MIT); nothing copied |
+
+**ما هي:** اختر للموقع الحي أو فيلم الويب «لغة حركة» واحدة لها فكرة مهيمنة وحركات توقيع وقائمة محظورات ملزمة وحالة تقليل حركة مصممة، فالمحظورات تميّز أكثر من الحركات. — Pick one named motion language for a living site or web film: a dominant idea, signature moves, binding prohibitions and a designed reduced-motion state.
+
+**متى:** بداية موقع حي أو فيلم ويب أو صفحة إطلاق، أو حين تبدو الحركة عشوائية ومتراكمة / start of a living site, web film or launch page; motion feels like a pile of effects
+
+**كيف:** 1) Choose ONE language (orthogonal to mood/palette): held-breath (near-stillness, one mover per viewport, instant or glacial timing, no staggers), kinetic-type (only letterforms move, body text never animates, one text behaviour per view), one-surface (nothing enters or leaves; containers morph; one thing moves at a time; no bounce), grand-tour (scroll is a dolly track: pinned acts, one evolving world, ≤ ~6 acts, never hijack scroll speed), real-weight (mass, springs, overshoot; no fades; physics only on 2-3 handled objects), cursor-field (motion exists only as response to the pointer; nothing autoplays; settles slowly), liquid-material (one substance per page, recovery slower than disturbance, one live surface max), haunted-machine (stepped, quantized ticks; no blur/glass/soft easing; glitch never touches feedback). 2) Write its prohibition list into the brief and treat it as a lint: every animation in the build must pass it. 3) Before a one-surface morph, map the identity graph: only elements that are truly the same object may morph; others cut or crossfade. 4) Before grand-tour, give every act a story beat and a scroll length chosen on purpose; a skimmer who skips all acts must still get the full message (critical content never only inside a scene). 5) Design the reduced-motion state per language (held-breath is already it; grand-tour becomes a stacked photo-essay of key frames; liquid freezes to a still texture; morphs become crossfades at the same positions) and check the page is complete with all motion stripped. 6) Give each heavy library one job, an owner, a fallback, a budget and a removal rule; measure the expensive languages (grand-tour, liquid) on a mid-range phone before committing. 7) For a rendered web film, keep the same language across scenes; switching languages between shots reads as a different film. 8) Failure modes: two languages on one page, cursor toys that gate content, kinetic type on weak copy, stillness without gallery-grade composition. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/342-kernel/1223-frontend, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3322-stark, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3329-web-design.
+
+**المعاملات:** language name; prohibition list; reduced-motion plan; per-library budget
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** motion language · motion system · living site · web film · scroll storytelling · reduced motion · prohibitions · لغة الحركة · موقع حي · فيلم ويب · محظورات الحركة · حركة الصفحة
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ABUILD-61` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/342-kernel/1223-frontend`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3322-stark`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3329-web-design`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ABUILD-59` رحلة بناء موقع أو تحسينه بترتيب ثابت: الرسالة ثم التصميم ثم التحويل، وكل إصلاح فرضية قابلة للاختبار، وملف تتبع يستأنف منه / Website creation or improvement as a fixed-order journey: message, then design, then conversion; every fix a testable hypothesis; a tracker to resume from (documented)
+- `ABUILD-60` إعداد طرق التثبيت لأداة CLI: صيغة Homebrew tap وgo install وcargo install مع كشف اللغة وGoReleaser والقيود الخاصة بالمنصة / Set up installers for a CLI: a Homebrew tap formula plus go install and cargo install support, with language, GoReleaser and platform detection (documented)
+- `ABUILD-62` بطاقة تقييم حِرفية الموقع من 10 ولحظة التوقيع أولاً / Weighted 10-point site craft scorecard, signature moment first (documented)
+
+### `ABUILD-62` — بطاقة تقييم حِرفية الموقع من 10 ولحظة التوقيع أولاً / Weighted 10-point site craft scorecard, signature moment first
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-build` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-build.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (Apache-2.0, MIT); nothing copied |
+
+**ما هي:** قيّم الموقع أو فيلم الويب بخمسة محاور موزونة (الخط 25٪، التكوين 25٪، الحركة 20٪، اللون 15٪، التفاصيل 15٪) واذكر الرقم الحالي وما ينقص للعشرة، وصمّم لحظة التوقيع قبل الرأس. — Score a site or web film on five weighted axes, state the number and the gap to 10, and design the screenshot-worthy moment before the header.
+
+**متى:** قبل تسليم موقع حي أو صفحة إطلاق أو عند طلب «اجعلها مذهلة» / before delivering a living site or launch page; 'make it stunning'
+
+**كيف:** 1) Write four lines first: brand essence (one word), visual tension (two opposing forces), signature moment (what people will screenshot and try to reverse-engineer), technical ambition. 2) Build the signature moment first, then pick the display face (it sets mood, rhythm and motion), then prototype motion alongside layout, not after. 3) Score each axis 0-10 and combine: type×.25 + composition×.25 + motion×.20 + colour×.15 + details×.15. Type 7+ needs display:body contrast of about 10:1 and tight display tracking (Latin only; Arabic never tracks, see ARAB-03). Composition 7+ needs intentional grid breaks and varied density. Motion 7+ needs custom curves and orchestrated reveals. Colour 7+ feels owned (one accent used sparingly, no pure #000/#fff). Details 7+ covers focus, selection, loading, empty and 404 states. 4) Run a 12-question yes/no diagnostic (blur test still shows hierarchy; any section screenshot-worthy; page load choreographed; every animation answers 'why does this move'; CLS near 0 and LCP < 2.5 s; focus states visible and on-brand...) and map the count to a band. 5) Anti-convergence pass: name the most dominant visual decision and ask what evidence caused it, whether it is a recent model habit, and whether removing it makes the page clearer; warning signs (purple gradient hero, identical rounded cards, centred everything, decorative blobs, default component styling) are changed only when unexamined. 6) Context outranks score: a repeated-use tool should not get campaign spacing and choreography. 7) Ship with restraint: three things perfect beats ten mediocre; never claim a score without looking at the rendered page at phone and desktop widths. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3438-ux-design/14124-top-design, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/342-kernel/1223-frontend, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3329-web-design, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3322-stark.
+
+**المعاملات:** axis weights .25/.25/.20/.15/.15; 12-question diagnostic
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** awwwards · design score · signature moment · craft rubric · landing page · living site · تقييم التصميم · لحظة التوقيع · جودة الموقع · مقياس الحرفية
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ABUILD-62` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3438-ux-design/14124-top-design`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/342-kernel/1223-frontend`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3329-web-design`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3322-stark`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ABUILD-60` إعداد طرق التثبيت لأداة CLI: صيغة Homebrew tap وgo install وcargo install مع كشف اللغة وGoReleaser والقيود الخاصة بالمنصة / Set up installers for a CLI: a Homebrew tap formula plus go install and cargo install support, with language, GoReleaser and platform detection (documented)
+- `ABUILD-61` لغة حركة واحدة للصفحة مع محظورات ملزمة / One motion language per page, with binding bans (documented)
 

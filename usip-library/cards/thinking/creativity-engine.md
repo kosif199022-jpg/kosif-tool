@@ -52,13 +52,13 @@
 
 **متى:** عند أي طلب إبداعي أو تصميمي أو تسمية أو حملة أو «أعطني أفكارًا»؛ وخطوة الاستكشاف في THINK-01. / Any creative, design, naming, campaign or 'give me ideas' request; the EXPLORE step of THINK-01.
 
-**كيف:** Diverge: pick 3–5 operators (IDEA-02…IDEA-17) suited to the task, aim for 8–20 raw ideas, no judging while generating, write each idea as one line. Converge: score fit to done-criteria, feasibility with ✅/🟢 powers (check `python3 scripts/powers.py search`), novelty, risk (1–5 each); merge near-duplicates. Keep 1 safe + 1 bold; show both early (as stills or a one-paragraph treatment) when taste matters, then build the chosen one. Treat these operators as structured-diversity heuristics, not proven boosters.
+**كيف:** Diverge: pick 3–5 operators (IDEA-02…IDEA-17) suited to the task, aim for 8–20 raw ideas, no judging while generating, write each idea as one line. Converge: score fit to done-criteria, feasibility with ✅/🟢 powers (check `python3 scripts/powers.py search`), novelty, risk (1–5 each); merge near-duplicates. Keep 1 safe + 1 bold; show both early (as stills or a one-paragraph treatment) when taste matters, then build the chosen one. Treat these operators as structured-diversity heuristics, not proven boosters. Atlas upgrade 2026-11-07: Warrant filter and spread: 1) Generate 5–7 (or ~10) candidates without gating, using lenses: friction, inversion/removal, reframing what is treated as fixed, leverage, cross-domain analogy, constraint flip (budget ×10 or 0). 2) Order the spread cheapest → most ambitious so the owner reacts and reveals criteria he only recognises when seen; do not self-censor the ambitious end. 3) Attach to each survivor evidence (direct, external precedent, reasoned, or explicitly speculative) and a warrant — the principle linking evidence to idea, not a restatement; drop ideas with no evidence; drop speculative ones in high-risk areas (money, rights, privacy). 4) Keep three; give each a next step (smallest test) and an open question. 5) Anti-patterns: one-idea brainstorm, feature-parity copying, judging during divergence, brainstorming what needs research.
 
 **المعاملات:** 8–20 raw ideas · 3–5 operators · 4 criteria × 1–5 · safe + bold
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** divergent · convergent · brainstorm · ideation · creative · ideas · double diamond · عصف ذهني · توليد أفكار · أفكار · إبداع · ابتكار · تباعد · تقارب
+**الوسوم:** divergent · convergent · brainstorm · ideation · creative · ideas · double diamond · عصف ذهني · توليد أفكار · أفكار · إبداع · ابتكار · تباعد · تقارب · warrant · Toulmin · cheapest to ambitious · ideation lenses · فلترة الأفكار
 
 #### 1. الاستقبال (A25)
 
@@ -1004,13 +1004,13 @@
 
 **متى:** في مرحلة التباعد من IDEA-01؛ وعند أي طلب «أكثر إبداعًا / مختلف / أفضل». / Diverge phase of IDEA-01; any 'more creative / different / better' ask.
 
-**كيف:** Make 3 variants that differ on purpose; score each on 3–5 criteria (one criterion per judgement, CHECK-14); merge the winning parts; for important work use a fresh-context judge. General example: Three drafts of an email, a judge scores clarity and tone, merge the best opening and close. Motion/design example: Three style frames rendered as stills, judged on readability, brand and wow, then build the winner.
+**كيف:** Make 3 variants that differ on purpose; score each on 3–5 criteria (one criterion per judgement, CHECK-14); merge the winning parts; for important work use a fresh-context judge. General example: Three drafts of an email, a judge scores clarity and tone, merge the best opening and close. Motion/design example: Three style frames rendered as stills, judged on readability, brand and wow, then build the winner. Atlas upgrade 2026-11-07: Bake-off variant: when a goal is set but alternatives are undeveloped, give 2–3 independent workers the same brief (same hard requirements; candidate-specific assumptions stay with the candidate), developed to a fidelity where mechanism and trade-offs can be judged. Never impersonate several workers in one context. Read every candidate; hard-constraint violations cannot be outweighed by scores; get an independent judge and reconcile disagreements on evidence, not votes. Pick a coherent base and only fold in parts that keep it coherent; record rejected reasons. Fewer than two usable candidates → report incomplete, do not crown a winner. Do not run a bake-off on a settled decision.
 
 **المعاملات:** N = 3 · 3–5 criteria
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** ensemble · judge · variants · تحكيم · نسخ متعددة
+**الوسوم:** ensemble · judge · variants · تحكيم · نسخ متعددة · bake-off · independent candidates · competing solutions · منافسة الحلول
 
 #### 1. الاستقبال (A25)
 
@@ -1210,13 +1210,13 @@
 
 **متى:** عند طلبات التصميم أو الموشن أو العروض أو الصفحات حين يكون الذوق مفتوحًا وأعطى المستخدم توجيهًا قليلًا. / Design, motion, deck or page requests where taste is open and the user gave little guidance.
 
-**كيف:** Make 3 single-frame or single-slide previews (each small: <~100 lines of code or one still) that differ on a real axis (type, palette, motion grammar). Name each in two words. Ask one question: 'which direction?'. Then build the chosen one fully. Motion: render one still per direction via the scene's seek(t) and a contact sheet (QA-58).
+**كيف:** Make 3 single-frame or single-slide previews (each small: <~100 lines of code or one still) that differ on a real axis (type, palette, motion grammar). Name each in two words. Ask one question: 'which direction?'. Then build the chosen one fully. Motion: render one still per direction via the scene's seek(t) and a contact sheet (QA-58). Atlas upgrade 2026-11-07: Per-question choice of surface: show in the browser only what is visual (layouts, palettes, type, side-by-side frames, diagrams); keep conceptual trade-offs in text. One input mode per step — either the clickable cards are the answer (each option carries a choice id and you actually read the clicks) or the page is decoration and the answer is a text question; never both. A fresh file per iteration (v2, v3) so earlier options survive; wait until the preview server answers before giving the link; show a context card first so the screen never looks broken.
 
 **المعاملات:** 3 previews · 1 question
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** style preview · show don't ask · directions · taste · معاينة · اتجاهات · ذوق · اختيار
+**الوسوم:** style preview · show don't ask · directions · taste · معاينة · اتجاهات · ذوق · اختيار · visual companion · browser preview · clickable options · معاينة مرئية
 
 #### 1. الاستقبال (A25)
 

@@ -8,7 +8,7 @@
   "status": "documented",
   "what": "ولّد أفكارًا كثيرة دون حكم بثلاثة إلى خمسة مشغّلات، ثم قارب بمصفوفة تقييم، واحتفظ بخيار آمن وخيار جريء. — Generate many ideas without judging, using 3–5 operators, then converge with a rubric and keep one safe and one bold option.",
   "when": "عند أي طلب إبداعي أو تصميمي أو تسمية أو حملة أو «أعطني أفكارًا»؛ وخطوة الاستكشاف في THINK-01. / Any creative, design, naming, campaign or 'give me ideas' request; the EXPLORE step of THINK-01.",
-  "how": "Diverge: pick 3–5 operators (IDEA-02…IDEA-17) suited to the task, aim for 8–20 raw ideas, no judging while generating, write each idea as one line. Converge: score fit to done-criteria, feasibility with ✅/🟢 powers (check `python3 scripts/powers.py search`), novelty, risk (1–5 each); merge near-duplicates. Keep 1 safe + 1 bold; show both early (as stills or a one-paragraph treatment) when taste matters, then build the chosen one. Treat these operators as structured-diversity heuristics, not proven boosters.",
+  "how": "Diverge: pick 3–5 operators (IDEA-02…IDEA-17) suited to the task, aim for 8–20 raw ideas, no judging while generating, write each idea as one line. Converge: score fit to done-criteria, feasibility with ✅/🟢 powers (check `python3 scripts/powers.py search`), novelty, risk (1–5 each); merge near-duplicates. Keep 1 safe + 1 bold; show both early (as stills or a one-paragraph treatment) when taste matters, then build the chosen one. Treat these operators as structured-diversity heuristics, not proven boosters. Atlas upgrade 2026-11-07: Warrant filter and spread: 1) Generate 5–7 (or ~10) candidates without gating, using lenses: friction, inversion/removal, reframing what is treated as fixed, leverage, cross-domain analogy, constraint flip (budget ×10 or 0). 2) Order the spread cheapest → most ambitious so the owner reacts and reveals criteria he only recognises when seen; do not self-censor the ambitious end. 3) Attach to each survivor evidence (direct, external precedent, reasoned, or explicitly speculative) and a warrant — the principle linking evidence to idea, not a restatement; drop ideas with no evidence; drop speculative ones in high-risk areas (money, rights, privacy). 4) Keep three; give each a next step (smallest test) and an open question. 5) Anti-patterns: one-idea brainstorm, feature-parity copying, judging during divergence, brainstorming what needs research.",
   "params": "8–20 raw ideas · 3–5 operators · 4 criteria × 1–5 · safe + bold",
   "install": "",
   "requires": [
@@ -34,10 +34,51 @@
    "إبداع",
    "ابتكار",
    "تباعد",
-   "تقارب"
+   "تقارب",
+   "warrant",
+   "Toulmin",
+   "cheapest to ambitious",
+   "ideation lenses",
+   "فلترة الأفكار"
   ],
   "section": "التباعد ثم التقارب — Diverge → converge",
-  "source": "Guilford divergent/convergent thinking; UK Design Council Double Diamond (2005) (classic method, public-domain idea; paraphrased); session-2026-10-16 distill thinking-methods §4. Narrative: references/creativity.md"
+  "source": "Guilford divergent/convergent thinking; UK Design Council Double Diamond (2005) (classic method, public-domain idea; paraphrased); session-2026-10-16 distill thinking-methods §4. Narrative: references/creativity.md",
+  "atlas": {
+   "ids": [
+    "7366",
+    "9532",
+    "1087"
+   ],
+   "examples": [
+    {
+     "id": "7366",
+     "plugin": "yellow-core",
+     "skill": "ideation",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2078-yellow-core/7366-ideation"
+    },
+    {
+     "id": "9532",
+     "plugin": "planning",
+     "skill": "brainstorm",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2461-planning/9532-brainstorm"
+    },
+    {
+     "id": "1087",
+     "plugin": "product-management",
+     "skill": "product-brainstorming",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/332-product-management/1087-product-brainstorming"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-thinking.json",
+   "skill_md_sha256": {
+    "7366": "adf41af11b0201898a765005eeb099c8adea2a887656ac84b34cbef2098b2a58",
+    "9532": "b481c43d822be47b5aea0e125eee657307b3e9e081802a3f47967e5329b1b4ac",
+    "1087": "53ee71b6863b277aba87002d8a5bb58bd2a4172d7cfeb2e282a0161958edc8e7"
+   }
+  }
  },
  {
   "id": "IDEA-02",
@@ -399,7 +440,7 @@
   "status": "documented",
   "what": "أنتج عدة نسخ أو وكلاء، وقيّمها بمحكِّم وفق معايير، وادمج أفضل الأجزاء. — Produce N variants (or N subagents), score them with a rubric judge, merge the best parts.",
   "when": "في مرحلة التباعد من IDEA-01؛ وعند أي طلب «أكثر إبداعًا / مختلف / أفضل». / Diverge phase of IDEA-01; any 'more creative / different / better' ask.",
-  "how": "Make 3 variants that differ on purpose; score each on 3–5 criteria (one criterion per judgement, CHECK-14); merge the winning parts; for important work use a fresh-context judge. General example: Three drafts of an email, a judge scores clarity and tone, merge the best opening and close. Motion/design example: Three style frames rendered as stills, judged on readability, brand and wow, then build the winner.",
+  "how": "Make 3 variants that differ on purpose; score each on 3–5 criteria (one criterion per judgement, CHECK-14); merge the winning parts; for important work use a fresh-context judge. General example: Three drafts of an email, a judge scores clarity and tone, merge the best opening and close. Motion/design example: Three style frames rendered as stills, judged on readability, brand and wow, then build the winner. Atlas upgrade 2026-11-07: Bake-off variant: when a goal is set but alternatives are undeveloped, give 2–3 independent workers the same brief (same hard requirements; candidate-specific assumptions stay with the candidate), developed to a fidelity where mechanism and trade-offs can be judged. Never impersonate several workers in one context. Read every candidate; hard-constraint violations cannot be outweighed by scores; get an independent judge and reconcile disagreements on evidence, not votes. Pick a coherent base and only fold in parts that keep it coherent; record rejected reasons. Fewer than two usable candidates → report incomplete, do not crown a winner. Do not run a bake-off on a settled decision.",
   "params": "N = 3 · 3–5 criteria",
   "install": "",
   "requires": [
@@ -414,10 +455,34 @@
    "judge",
    "variants",
    "تحكيم",
-   "نسخ متعددة"
+   "نسخ متعددة",
+   "bake-off",
+   "independent candidates",
+   "competing solutions",
+   "منافسة الحلول"
   ],
   "section": "مشغّلات الإبداع — Creativity operators",
-  "source": "Parallel voting / evaluator patterns in https://www.anthropic.com/engineering/building-effective-agents (from memory, re-fetch before quoting numbers)"
+  "source": "Parallel voting / evaluator patterns in https://www.anthropic.com/engineering/building-effective-agents (from memory, re-fetch before quoting numbers)",
+  "atlas": {
+   "ids": [
+    "3279"
+   ],
+   "examples": [
+    {
+     "id": "3279",
+     "plugin": "compound-engineering",
+     "skill": "ce-bakeoff",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1391-compound-engineering/3279-ce-bakeoff"
+    }
+   ],
+   "theme": "knowledge-management",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-thinking.json",
+   "skill_md_sha256": {
+    "3279": "d831556a4cfdb2ea2aabbc792062d319463e10b46311285a17ab388f39653bcc"
+   }
+  }
  },
  {
   "id": "IDEA-16",
@@ -486,7 +551,7 @@
   "status": "documented",
   "what": "بدل استبيان طويل عن الذوق اعرض ثلاث معاينات صغيرة مختلفة فعلًا ودع المستخدم يختار. — Instead of a long taste questionnaire, show three small, truly different previews and let the user pick.",
   "when": "عند طلبات التصميم أو الموشن أو العروض أو الصفحات حين يكون الذوق مفتوحًا وأعطى المستخدم توجيهًا قليلًا. / Design, motion, deck or page requests where taste is open and the user gave little guidance.",
-  "how": "Make 3 single-frame or single-slide previews (each small: <~100 lines of code or one still) that differ on a real axis (type, palette, motion grammar). Name each in two words. Ask one question: 'which direction?'. Then build the chosen one fully. Motion: render one still per direction via the scene's seek(t) and a contact sheet (QA-58).",
+  "how": "Make 3 single-frame or single-slide previews (each small: <~100 lines of code or one still) that differ on a real axis (type, palette, motion grammar). Name each in two words. Ask one question: 'which direction?'. Then build the chosen one fully. Motion: render one still per direction via the scene's seek(t) and a contact sheet (QA-58). Atlas upgrade 2026-11-07: Per-question choice of surface: show in the browser only what is visual (layouts, palettes, type, side-by-side frames, diagrams); keep conceptual trade-offs in text. One input mode per step — either the clickable cards are the answer (each option carries a choice id and you actually read the clicks) or the page is decoration and the answer is a text question; never both. A fresh file per iteration (v2, v3) so earlier options survive; wait until the preview server answers before giving the link; show a context card first so the screen never looks broken.",
   "params": "3 previews · 1 question",
   "install": "",
   "requires": [],
@@ -502,10 +567,34 @@
    "معاينة",
    "اتجاهات",
    "ذوق",
-   "اختيار"
+   "اختيار",
+   "visual companion",
+   "browser preview",
+   "clickable options",
+   "معاينة مرئية"
   ],
   "section": "الاتجاهات والذوق — Directions & taste",
-  "source": "github.com/affaan-m/ECC skills/frontend-slides 'show, don't ask' (MIT © 2026 Affaan Mustafa; paraphrased) — distill ecc-skills-b 2.12"
+  "source": "github.com/affaan-m/ECC skills/frontend-slides 'show, don't ask' (MIT © 2026 Affaan Mustafa; paraphrased) — distill ecc-skills-b 2.12",
+  "atlas": {
+   "ids": [
+    "14466"
+   ],
+   "examples": [
+    {
+     "id": "14466",
+     "plugin": "quiver",
+     "skill": "visual-companion",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3603-quiver/14466-visual-companion"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-thinking.json",
+   "skill_md_sha256": {
+    "14466": "1cf5c87cfb9be2dba085029c165bafa64d0091a8ee359e963bbe4dba906ac59f"
+   }
+  }
  },
  {
   "id": "IDEA-19",

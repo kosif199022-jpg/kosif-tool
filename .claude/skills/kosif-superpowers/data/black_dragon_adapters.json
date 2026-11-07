@@ -2433,6 +2433,16 @@
       "why": "saas-animation: tiles known-colour stills into a contact sheet in time order, splits a cut-out into a layer and draws a coordinate grid, each checked by pixel (no Chrome render)",
       "skill_program": true
     },
+    "skill:kosif-stickman-studio": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "stickman-studio",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "kosif-stickman-studio: installs a synthetic GrowKaz-shaped plugin with a path escape, a symlink and a hook, and checks refusals, flags and that projects/ survives (the GrowKaz kit itself is not in the repo)",
+      "skill_program": true
+    },
     "skill:kosif-black-dragon": {
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
       "args": [
@@ -2441,6 +2451,16 @@
         "--task={task}"
       ],
       "why": "kosif-black-dragon: convenes the 12-seat council on the task twice (same fingerprint), checks 525 records each get one seat, the 31 Kahneman traps and 23 Atlas procedures are routed, runs the judgment review, and scores two routes where the better one must win and a fake independent claim must be refused; plans only",
+      "skill_program": true
+    },
+    "skill:cartoon-audio-short": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "cartoon-short",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "cartoon-audio-short: kit tools align a tagged, vowelled Arabic script to a known-answer voice (by silences and by voice-studio word times), lock music 16 dB under the voice with the SFX peak cap acting and tile vertical stills; the vendored claude-animated-shorts audio library is checked against ffmpeg ebur128 and a known inter-sample peak, renders three SFX synths, and its short_qa.py finds a planted black span (no Chromium render)",
       "skill_program": true
     },
     "skill:talking-head-reels": {
@@ -2454,6 +2474,16 @@
       "why": "talking-head-reels: a known-answer 7 s talk is pause-cut, mastered to -14 LUFS, planned, validated (planted overlap and font caught) and rendered to a 1080x1920 reel; Arabic text must reveal word by word",
       "skill_program": true,
       "media": true
+    },
+    "skill:arena": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "arena",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "arena: runs the skill's own bracket.py on a 16-agent known-answer tournament with stand-in agents (no model called): 100/16 plans, same seed same cards, the task byte for byte in every brief, a planted fatal solution with the best scores must lose, one champion after 4 rounds, a blind final check against the rejected answer, and the skill folder left unchanged",
+      "skill_program": true
     }
   }
 }

@@ -4008,7 +4008,7 @@
   "name_en": "Rotoscope fidelity gates",
   "status": "install",
   "what": "قبول النسخة المطابقة لكل رسمة مقيسٌ لا بالعين. — Replica acceptance per drawing measured, not eyeballed.",
-  "how": "Compare render vs source: XOR <= 1.2x codec floor, SSIM >= 0.980, edge-band SSIM >= 0.980; review worst crops.",
+  "how": "Compare render vs source: XOR <= 1.2x codec floor, SSIM >= 0.980, edge-band SSIM >= 0.980; review worst crops. Atlas upgrade 2026-11-07: Loop discipline for a 1:1 replica: keep every hand decision in one override file (per drawing range, with a 'why' note); geometry fixes are never overrides — they are findings to report. Fit one parameter automatically (e.g. stroke bias by bisecting replica-only vs source-only pixels), leave the rest to diagnosis. Review every worst-window crop at 1:1 even when the numbers pass (a passing XOR can hide a tint); never review a downscaled crop or a GIF. Grey XOR and SSIM are colour-blind: check paper/background colour separately. All-ink or all-paper frames have a tiny floor decided by border pixels — judge them by ratio and edge column. Log each run (failure, cause, change, before/after numbers); when the same fix recurs across shots or clips, promote it to a default and re-run the regression.",
   "params": "SSIM>=0.98",
   "install": "see arsenal-libraries.md",
   "requires": [],
@@ -4023,10 +4023,36 @@
    "دقة الرسم",
    "تشابه الصور",
    "ssim",
-   "image similarity"
+   "image similarity",
+   "rotoscope",
+   "override file",
+   "1:1 crops",
+   "replica",
+   "mimic",
+   "تتبع الرسوم"
   ],
   "id": "QA-136",
-  "when": "عند قبول رسم روتوسكوب مطابق للمصدر بالقياس بدل الحكم بالعين / when accepting a rotoscoped replica drawing by measured SSIM and XOR against the source, not by eye"
+  "when": "عند قبول رسم روتوسكوب مطابق للمصدر بالقياس بدل الحكم بالعين / when accepting a rotoscoped replica drawing by measured SSIM and XOR against the source, not by eye",
+  "atlas": {
+   "ids": [
+    "9357"
+   ],
+   "examples": [
+    {
+     "id": "9357",
+     "plugin": "animation",
+     "skill": "rotoscope",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2414-animation/9357-rotoscope"
+    }
+   ],
+   "theme": "browser-automation",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-frontend.json",
+   "skill_md_sha256": {
+    "9357": "ea684a1e851258d7ee21026191b9d472f023d9513e8baf91dd9ac28ee81e7714"
+   }
+  }
  },
  {
   "family": "qa-verification",
@@ -7448,7 +7474,7 @@
   "name_en": "Onion-skin overlay for subtle visual diffs",
   "status": "documented",
   "what": "ادمج قبل وبعد بنسبة 50/50 بنفس هندسة البكسل لإظهار تغييرات صغيرة في التباعد أو المحاذاة أو الطباعة؛ وهو دليل تكميلي يُحفظ بجانب الأصول؛ ولا تمدد صورة أو تزحها للمحاذاة. يصلح لمقارنة إطارات الرندر v1 وv2 لعمل حركي. — Blend before and after 50/50 at identical pixel geometry to expose small spacing, alignment or typography changes; it's supplemental evidence kept beside the originals; never stretch or shift one image to align. Works for comparing render v1 vs v2 frames of a motion piece.",
-  "how": "PIL Image.blend(a, b, 0.5) (runs here) or ffmpeg blend=all_mode=average; same crop coordinates for close-ups.",
+  "how": "PIL Image.blend(a, b, 0.5) (runs here) or ffmpeg blend=all_mode=average; same crop coordinates for close-ups. Atlas upgrade 2026-11-07: Before/after evidence protocol: plan the views before editing and capture the real baseline with identical geometry, state, theme, locale and timing; wait for fonts/assets/animation to settle; never stretch, retouch or regenerate a capture to make the pair agree; same explicit crop on both. Inspect the 50/50 overlay at native resolution — numeric pixel difference supports the judgement but never decides it. Missing baseline, unequal states or a blank/error frame are blockers, not exemptions; record 'text-only' or 'no-visible-change' (with the inspected overlay) honestly. Keep at most three final labelled comparisons per task; a screenshot does not prove an interaction works.",
   "params": "50% / 50%",
   "install": "",
   "requires": [
@@ -7466,10 +7492,33 @@
    "مقارنة نسختين",
    "دمج الصورتين",
    "before after",
-   "image blend"
+   "image blend",
+   "visual evidence",
+   "onion overlay",
+   "baseline"
   ],
   "id": "QA-253",
-  "when": "حين تريد كشف فروق صغيرة في المسافات أو المحاذاة أو الخط بين نسختين من الإطار / when you need to expose small spacing, alignment or typography changes between two versions of a frame"
+  "when": "حين تريد كشف فروق صغيرة في المسافات أو المحاذاة أو الخط بين نسختين من الإطار / when you need to expose small spacing, alignment or typography changes between two versions of a frame",
+  "atlas": {
+   "ids": [
+    "4153"
+   ],
+   "examples": [
+    {
+     "id": "4153",
+     "plugin": "agent-fleet",
+     "skill": "visual-evidence-review",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1523-agent-fleet/4153-visual-evidence-review"
+    }
+   ],
+   "theme": "verification-review",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-orchestration.json",
+   "skill_md_sha256": {
+    "4153": "28e7601fa1ec5d05dfe98f13f19e57b4d2576c3409e8d342ac460cd74a3625dc"
+   }
+  }
  },
  {
   "family": "qa-verification",
@@ -7478,7 +7527,7 @@
   "name_en": "Elimination order for generated variants",
   "status": "documented",
   "what": "احكم على المرشحين بالترتيب وتوقف عند أول إخفاق: ملاءمة المفهوم -> مساحة نظيفة للنص -> لوحة العلامة -> عيوب التوليد (اليدان، الوجوه، النص المشوش، التكرار الآلي، الظلال/الانعكاسات/المقاييس المستحيلة) -> اتساق المجموعة -> الجودة التقنية -> الذوق أخيرًا. افحص بالحجم الكامل، l… — Judge candidates in order and stop at the first failure: concept fit -> clean space for text -> brand palette -> generation defects (hands, faces, garbled text, mechanical repetition, impossible shadows/reflections/scale) -> set consistency -> technical quality -> taste last. Inspect at full size, l…",
-  "how": "Contact sheet + 100% crops via PIL; manifest log.",
+  "how": "Contact sheet + 100% crops via PIL; manifest log. Atlas upgrade 2026-11-07: Eliminate in a fixed order, first failure ends it: concept fit → clean space for text/composition → brand palette reachable without heavy treatment → generation defects (hands, faces, garbled in-image text, repeated texture, light without source, wrong scale) → consistency with the rest of the set → technical quality → taste LAST. Inspect every candidate at 100%, never only in the grid. Publish a comparison grid (same size, id + seed + varying prompt under each, recommendation with one-line reason). Log selected file, seed, model, prompt and the reason per rejected group — rejection reasons feed the next prompt. If none passes the first two criteria, fix the prompt/concept and generate 2, do not re-roll the same base. Never bake text into the image; overlay real type. Final review reports APPROVED / ADJUST / REJECTED with measured vs required values and a mandatory 'Not verified' section; a human selects and signs off before production.",
   "params": "",
   "install": "",
   "requires": [
@@ -7495,10 +7544,51 @@
    "عيوب التوليد",
    "أيدي مشوهة",
    "ai image defects",
-   "variant selection"
+   "variant selection",
+   "asset curation",
+   "creative review",
+   "seed log",
+   "اختيار المتغيرات",
+   "مراجعة الإبداع"
   ],
   "id": "QA-254",
-  "when": "حين تولد عدة نسخ من صورة وتريد اختيار الأفضل باستبعاد العيوب بترتيب واضح / when choosing among generated image variants by eliminating failures in a fixed order"
+  "when": "حين تولد عدة نسخ من صورة وتريد اختيار الأفضل باستبعاد العيوب بترتيب واضح / when choosing among generated image variants by eliminating failures in a fixed order",
+  "atlas": {
+   "ids": [
+    "12578",
+    "12584",
+    "8851"
+   ],
+   "examples": [
+    {
+     "id": "12578",
+     "plugin": "pwdev-social-media",
+     "skill": "asset-curation",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2976-pwdev-social-media/12578-asset-curation"
+    },
+    {
+     "id": "12584",
+     "plugin": "pwdev-social-media",
+     "skill": "creative-review",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2976-pwdev-social-media/12584-creative-review"
+    },
+    {
+     "id": "8851",
+     "plugin": "generative-web-media",
+     "skill": "curation-and-accessibility-gate",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2306-generative-web-media/8851-curation-and-accessibility-gate"
+    }
+   ],
+   "theme": "verification-review",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-orchestration.json",
+   "skill_md_sha256": {
+    "12578": "0993bf4a7542a3d9b57dddc6dd5f10f5698e98da136ff2b53d3821ca8e9ec72d",
+    "12584": "ff6a3d82dee5d0ba1b06274e61b76f8ace0480978d46aa57428872935640ee47",
+    "8851": "d962802485addbda2197e0f20f7b7ad61d2a85315f44cb3571b76f64d5421292"
+   }
+  }
  },
  {
   "family": "qa-verification",

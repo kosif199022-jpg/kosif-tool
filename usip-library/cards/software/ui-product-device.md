@@ -332,13 +332,13 @@
 
 **متى:** عند تحويل لقطة شاشة إلى واجهة حية متحركة تُبنى طبقة طبقة لكل منها توقيتها / when turning a screenshot into a live, layered UI where each layer gets its own timeline
 
-**كيف:** Rebuild the UI as live DOM/SVG/Canvas with real strings at 2× density; keep a flattened screenshot only as the reference to match. If zoom makes a screenshot unreadable, re-capture at higher resolution or rebuild it as DOM. Depth comes from elevation tiers and overlap, plus 2–4% chrome/content parallax — not from tilt or glass.
+**كيف:** Rebuild the UI as live DOM/SVG/Canvas with real strings at 2× density; keep a flattened screenshot only as the reference to match. If zoom makes a screenshot unreadable, re-capture at higher resolution or rebuild it as DOM. Depth comes from elevation tiers and overlap, plus 2–4% chrome/content parallax — not from tilt or glass. Atlas upgrade 2026-11-07: Fidelity first: before drawing any new state, rebuild the current screen (AS-IS) from the real component source — read the render functions, class names, labels and data queries — rather than from memory; schematic AS-IS causes misreads. Trace each displayed number down to its query so the scene shows what it really counts. Tag regions keep / new / changed when the change must leave the rest untouched, always include the empty (data-zero) state, version mockups v1, v2... per feedback and confirm one decision at a time.
 
 **المعاملات:** 2× density; parallax 2–4%
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** طبقات · إعادة بناء الواجهة · ui rebuild · layers · dom · لقطة شاشة · تحريك الواجهة · عمق · screenshot to ui · parallax
+**الوسوم:** طبقات · إعادة بناء الواجهة · ui rebuild · layers · dom · لقطة شاشة · تحريك الواجهة · عمق · screenshot to ui · parallax · AS-IS rebuild · real source · keep/new/changed · إعادة بناء الشاشة
 
 #### 1. الاستقبال (A25)
 
@@ -551,13 +551,13 @@
 
 **متى:** حين يظهر في الفيديو لوحة بيانات ويجب أن يتصدر مؤشر رئيسي واحد وتتراجع البقية / when a video frame shows a dashboard and one headline metric must lead while the rest recede
 
-**كيف:** One focal view + subordinate context; 5–7 KPIs max (4–6 for an executive summary); legends next to the evidence; no wall of equal tiles. Animate the headline tile first, then the rest. Operations scenes show live/stale states explicitly (status dot with halo, see UI-45).
+**كيف:** One focal view + subordinate context; 5–7 KPIs max (4–6 for an executive summary); legends next to the evidence; no wall of equal tiles. Animate the headline tile first, then the rest. Operations scenes show live/stale states explicitly (status dot with halo, see UI-45). Atlas upgrade 2026-11-07: Realism rules for product/dashboard UI built for a frame: pick ONE depth strategy (borders-only, single shadow, layered shadows or surface shifts) and never mix; four text levels (primary/secondary/muted/faint); numbers, IDs and timestamps in mono or tabular figures; grey builds structure and colour only carries meaning (status, action, error); one accent on ≤5% of pixels; consistent radius system (sharp 2-6 or soft 8-12) and spacing on a 4 px ladder. Card tiles read as tiles only with hairline border + soft low-opacity shadow together on a calm single canvas. Include navigation context (rail, page title, user) so a component never floats. When porting a dark UI to light, grep raw hex/rgba literals for dark residue (navy bars, near-black button text, cyan glows) that bypassed the tokens. Dark mode: borders over shadows, desaturated status colours.
 
 **المعاملات:** 5–7 KPIs; headline first
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** لوحة بيانات · dashboard · kpi · focal view · داشبورد · مؤشرات الأداء · ملخص تنفيذي · metrics · executive summary
+**الوسوم:** لوحة بيانات · dashboard · kpi · focal view · داشبورد · مؤشرات الأداء · ملخص تنفيذي · metrics · executive summary · dashboard realism · depth strategy · card tile · tabular numbers · dark residue · واقعية الواجهة
 
 #### 1. الاستقبال (A25)
 
@@ -5114,13 +5114,13 @@
 
 **متى:** عند بناء لوحة قياس تقنية بأشرطة زمنية ورسوم حية وشروح مسقطة من نقاط في مشهد ثلاثي الأبعاد / when building a technical HUD with live chart panels and callouts projected from 3D scene anchors
 
-**كيف:** H = K3.hud(root, W, H, {title, subtitle, panels, accent, ink, paper, font, seed}); H.addCallout({anchor, label, title, text, side, measure}); H.update(t, camera, {stage, side, duration}) — call camera.updateMatrixWorld() first. Floor: K3S.stageDisc({radius .32, color #9dffb4}) with grid, rings, 36 ticks and a uScan sweep. Lighter version: component telemetry-hud (mono label:value lines, corner brackets).
+**كيف:** H = K3.hud(root, W, H, {title, subtitle, panels, accent, ink, paper, font, seed}); H.addCallout({anchor, label, title, text, side, measure}); H.update(t, camera, {stage, side, duration}) — call camera.updateMatrixWorld() first. Floor: K3S.stageDisc({radius .32, color #9dffb4}) with grid, rings, 36 ticks and a uScan sweep. Lighter version: component telemetry-hud (mono label:value lines, corner brackets). Atlas upgrade 2026-11-07: Overlay budget: one persistent HUD cluster plus at most one small secondary cluster; persistent overlays cover no more than about 20-25% of the frame on desktop; keep the centre and lower-middle of the frame clear for the subject; long text (notes, lore, legends) goes behind a toggle or a later beat, not on screen at once. Prefer transient contextual callouts over permanent boxed panels, back text with panels/edge treatment for readability over motion, and keep HUD motion from competing with camera motion.
 
 **المعاملات:** lime #a8ff3c, ink #0f1512, paper #f4f2ec; IBM Plex Mono; top 8.5% H, bottom 20% H
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** hud · لوحة قياس · instrument panel · callouts · 3d labels · واجهة تقنية · رسوم حية · تسميات المشهد · heads-up display · live charts
+**الوسوم:** hud · لوحة قياس · instrument panel · callouts · 3d labels · واجهة تقنية · رسوم حية · تسميات المشهد · heads-up display · live charts · HUD budget · overlay budget · frame clear · حدود الواجهة على الإطار
 
 #### 1. الاستقبال (A25)
 
@@ -5926,13 +5926,13 @@
 
 **متى:** حين يطلب المستخدم واجهة زجاجية ضبابية فوق خلفية داكنة ببطاقات شفافة وحد رفيع وظل ناعم / when the user wants frosted-glass UI panels over a dark background with translucent cards, a thin border and soft shadow
 
-**كيف:** backdrop-filter blur(22–28px) saturate(150%) (40 px for modals); fill rgba(255,255,255,.05–.08); 1 px border gradient .12→.02 plus a 1 px inner highlight; box-shadow 0 24px 80px rgba(0,0,0,.25). Dark backgrounds only, max 3 cards, cards rise y 40→0 and unblur 12→0 with 80 ms stagger. Proven here: four glass cards on three parallax depths in the glass-luxury-logo film (13/13 checks). Needs Chromium's backdrop-filter. HyperFrames liquid-glass blocks need WebGPU/HTML-in-Canvas — unverified here.
+**كيف:** backdrop-filter blur(22–28px) saturate(150%) (40 px for modals); fill rgba(255,255,255,.05–.08); 1 px border gradient .12→.02 plus a 1 px inner highlight; box-shadow 0 24px 80px rgba(0,0,0,.25). Dark backgrounds only, max 3 cards, cards rise y 40→0 and unblur 12→0 with 80 ms stagger. Proven here: four glass cards on three parallax depths in the glass-luxury-logo film (13/13 checks). Needs Chromium's backdrop-filter. HyperFrames liquid-glass blocks need WebGPU/HTML-in-Canvas — unverified here. Atlas upgrade 2026-11-07: Contrast on glass is measured against the busiest region behind it, not the average: sample the worst patch of the underlying photo/footage and re-check caption contrast; also check with transparency reduced (solid fallback). Keep a clear hierarchy between content and controls on glass (ultra-thin for small floating controls, thin for menus/sidebars, thick for static containers); vibrancy pulls colour from behind for text legibility rather than plain opacity. Give small glass buttons a 44×44 hit area even if the glyph is smaller. Too many stacked glass layers with no breathing room is a density failure.
 
 **المعاملات:** blur 22–28 px (40 modals); fill 5–8%; shadow 0 24px 80px .25
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** زجاج · glassmorphism · backdrop blur · frosted · glass ui · زجاج ضبابي · شفافية · بطاقات زجاجية · translucent · blur panel
+**الوسوم:** زجاج · glassmorphism · backdrop blur · frosted · glass ui · زجاج ضبابي · شفافية · بطاقات زجاجية · translucent · blur panel · liquid glass · glass contrast · busiest region · reduce transparency · زجاج سائل
 
 #### 1. الاستقبال (A25)
 
@@ -6583,13 +6583,13 @@
 
 **متى:** حين يكون الناتج صفحة ويب أو صفحة هبوط وتحتاج ترتيب الأقسام وميزانية أداء وتقييد المرور / when the deliverable is a web or landing page needing section order, a performance budget and hover only on fine pointers
 
-**كيف:** Hero (≤ 10-word outcome headline, one CTA, product in use) → social proof → 3–6 benefits → 3 steps → offer → FAQ → final CTA; container max 72rem; H1 clamp(28px,5vw,44px); breakpoints 360/768/1024/1280; 375 px without sideways scroll. Budget: LCP ≤ 2.5 s, CLS ≤ 0.1, INP ≤ 200 ms, JS ≤ 170 KB gz. @media (hover:hover) and (pointer:fine) for hover lifts; touch targets ≥ 44 px; respect prefers-reduced-motion.
+**كيف:** Hero (≤ 10-word outcome headline, one CTA, product in use) → social proof → 3–6 benefits → 3 steps → offer → FAQ → final CTA; container max 72rem; H1 clamp(28px,5vw,44px); breakpoints 360/768/1024/1280; 375 px without sideways scroll. Budget: LCP ≤ 2.5 s, CLS ≤ 0.1, INP ≤ 200 ms, JS ≤ 170 KB gz. @media (hover:hover) and (pointer:fine) for hover lifts; touch targets ≥ 44 px; respect prefers-reduced-motion. Atlas upgrade 2026-11-07: Static-first markup contract for living sites: one <main>, one <h1>, heading ranks without skips, real <button>/<a>/<nav>, <html lang dir> set, skip link. Style only through semantic tokens; logical properties (margin-inline, padding-block, inset) so RTL works by default; container queries for components, clamp() fluid type, em-based breakpoints. Reflow 320 → 1280+ with no sideways scroll, verified by rendering at 320 px, not by reading CSS. LCP image: fetchpriority=high and never lazy; below-the-fold images lazy with width/height or aspect-ratio; AVIF/WebP with srcset/sizes; subset self-hosted fonts with font-display and preload of the critical face. Native <details name>, <dialog> and the Popover API before JavaScript; hydrate islands only where HTML+CSS cannot express the control. View Transitions only behind prefers-reduced-motion. Grep the built output for stray hex literals and secrets.
 
 **المعاملات:** LCP ≤ 2.5 s; CLS ≤ 0.1; INP ≤ 200 ms
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** صفحة هبوط · landing page · performance · hover · web · سرعة الموقع · لاندنج بيج · تصميم متجاوب · responsive · page speed
+**الوسوم:** صفحة هبوط · landing page · performance · hover · web · سرعة الموقع · لاندنج بيج · تصميم متجاوب · responsive · page speed · static site · semantic html · logical properties · RTL · LCP image · islands · موقع ثابت · خصائص منطقية
 
 #### 1. الاستقبال (A25)
 

@@ -293,7 +293,7 @@
   "status": "documented",
   "what": "رسم العمل الكبير كخريطة بتذاكر قرارات فرعية بحجم جلسة واحدة وحلها تباعا. — Chart oversized work as a map issue with child decision tickets sized to one session and resolve them one by one.",
   "when": "Work exceeds one agent session and the path to the goal is unclear.",
-  "how": "1) Name the destination. 2) Create map issue (labelled wayfinder:map) with Destination, Notes, Decisions so far, Not yet specified, Out of scope. 3) Child tickets with a Question, typed research/prototype/grilling/task, about 100K tokens each. 4) Claim by assigning first. 5) Use native blocking for the frontier. 6) Plan, do not execute; map only gists decisions and links.",
+  "how": "1) Name the destination. 2) Create map issue (labelled wayfinder:map) with Destination, Notes, Decisions so far, Not yet specified, Out of scope. 3) Child tickets with a Question, typed research/prototype/grilling/task, about 100K tokens each. 4) Claim by assigning first. 5) Use native blocking for the frontier. 6) Plan, do not execute; map only gists decisions and links. Atlas upgrade 2026-11-07: Fog test: for each uncertainty ask 'can I phrase it as a sharp question?' — sharp (even if blocked) becomes a decision ticket; foggy stays as prose under Not-yet-specified until work makes it phrasable; fog never moves to Out-of-scope. Bail out if nothing is foggy or it fits one session (route to a plain interview or tickets). Resolve one frontier item per session (research items may run in parallel); on resolution post the answer, add a pointer line to Decisions-so-far, then close — as one sequence. Never let an agent resolve a human-decision item. When the frontier is empty, close the map and hand the destination (brief, spec or plan) on.",
   "params": "issue tracker",
   "install": "",
   "requires": [],
@@ -306,7 +306,11 @@
   "tags": [
    "planning",
    "تخطيط",
-   "tickets"
+   "tickets",
+   "fog test",
+   "decision map",
+   "frontier",
+   "خريطة القرارات"
   ],
   "section": "سير عمل الوكلاء — Agent workflows & orchestration",
   "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): mattpocock-skills/wayfinder (#8424) · theme agent-workflow · 3 supporting skills · verifier read: skills/2224-mattpocock-skills/8424-wayfinder, ",
@@ -314,7 +318,8 @@
    "ids": [
     "7165",
     "8424",
-    "8428"
+    "8428",
+    "9542"
    ],
    "examples": [
     {
@@ -322,13 +327,22 @@
      "plugin": "mattpocock-skills",
      "skill": "wayfinder",
      "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2224-mattpocock-skills/8424-wayfinder"
+    },
+    {
+     "id": "9542",
+     "plugin": "planning",
+     "skill": "wayfind",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2461-planning/9542-wayfind"
     }
    ],
    "theme": "agent-workflow",
    "risk_notes": "Creates issues on tracker.",
    "kosif_overlap_ids": [],
    "stage": "extracted",
-   "verified_by": "b004-agent-workflow-4.json"
+   "verified_by": "b004-agent-workflow-4.json",
+   "skill_md_sha256": {
+    "9542": "5d5b72757d2175d1dafefb075610df7346808e8b3968c9be7812e59a6045a89a"
+   }
   }
  },
  {
@@ -606,7 +620,7 @@
   "status": "documented",
   "what": "يجري مراجعة استباقية لفكرة أو ميزة ويخرج بالحكم وأخطر افتراض وأرخص تحقق وما يؤجل. — Run a compact pre-mortem on an idea or feature and output verdict, riskiest assumption, cheapest validation and what to delay.",
   "when": "User asks to build an MVP, SaaS, or major feature with unclear demand.",
-  "how": "1) Skip if narrow fix. 2) Score demand, positioning, monetization, retention, trust, distribution, adoption. 3) Output verdict low/medium/high with one sentence. 4) Name the single assumption most likely to break. 5) Give smallest evidence to find first and one next step. 6) List what not to build yet. Optionally challenge a wrong premise before coding (skeptic).",
+  "how": "1) Skip if narrow fix. 2) Score demand, positioning, monetization, retention, trust, distribution, adoption. 3) Output verdict low/medium/high with one sentence. 4) Name the single assumption most likely to break. 5) Give smallest evidence to find first and one next step. 6) List what not to build yet. Optionally challenge a wrong premise before coding (skeptic). Atlas upgrade 2026-11-07: Anti-sycophancy verdict posture: lead with the strongest counterargument to the owner's apparent position, then take a position; compute your own numbers before looking at the owner's estimate; put a confidence level (high/moderate/low/unknown) on every substantive claim; end with a verdict (build / de-risk / kill or re-pick the market), not a list of considerations; do not capitulate under pushback without new evidence. Market before team before product: a weak market is a hard gate. Interest is not demand — look for a named buyer, a recent trigger, the current workaround and a commitment. Set proceed / sharpen / pause criteria before results arrive; the test must be able to invalidate the idea; never run deceptive tests or take money before fulfilment, cancellation and refunds are clear.",
   "params": "idea or feature brief",
   "install": "",
   "requires": [],
@@ -621,7 +635,12 @@
    "pre-mortem",
    "mvp",
    "مراجعة المخاطر",
-   "validation"
+   "validation",
+   "counterargument first",
+   "confidence levels",
+   "interest vs demand",
+   "verdict",
+   "حكم صريح"
   ],
   "section": "بناء التطبيقات — App building, SaaS & product engineering",
   "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): before-you-build/before-you-build (#14154); metaskills/create-app (#14075) · theme app-building · 8 supporting skills · verifier read: skills/3451-before-you-build/14154-before-you-build, skills/3431-metaskills/14075-create-app",
@@ -634,7 +653,9 @@
     "14075",
     "14079",
     "14082",
-    "14154"
+    "14154",
+    "649",
+    "8314"
    ],
    "examples": [
     {
@@ -648,13 +669,29 @@
      "plugin": "metaskills",
      "skill": "create-app",
      "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3431-metaskills/14075-create-app"
+    },
+    {
+     "id": "649",
+     "plugin": "andreessen",
+     "skill": "andreessen",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/203-andreessen/649-andreessen"
+    },
+    {
+     "id": "8314",
+     "plugin": "majestic-product",
+     "skill": "product-validation",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2213-majestic-product/8314-product-validation"
     }
    ],
    "theme": "app-building",
    "risk_notes": "Prose only",
    "kosif_overlap_ids": [],
    "stage": "extracted",
-   "verified_by": "b013-app-building-1.json"
+   "verified_by": "b013-app-building-1.json",
+   "skill_md_sha256": {
+    "649": "fa4dec4ebe56d407e8ef794ab96a86336718bf3e92517aec5de87e35e0a0e65e",
+    "8314": "9b4550261b08168b50ff50bbb6c658a6fb401b9d2375c3bc87118856d5ac429f"
+   }
   }
  },
  {
@@ -995,7 +1032,7 @@
   "status": "documented",
   "what": "يصمم شرائح التسعير ومقاييس القيمة وخيارات الربحية مع تحليل المنافسين ونية الدفع وتجارب التحقق. — Design pricing tiers, value metrics and monetization options with competitive and willingness-to-pay analysis plus validation experiments.",
   "when": "Setting prices, packaging tiers, usage billing, or revenue plans for a business.",
-  "how": "1) Choose pricing model (flat, tiered, usage, freemium). 2) Compare competitor prices and value metric. 3) Estimate willingness to pay. 4) Build 3 tiers; limit choices to cut decision load. 5) List 3-5 monetization options with risk and test. 6) For vertical cases use acuity, dynamic occupancy, tiered-fee blended rate.",
+  "how": "1) Choose pricing model (flat, tiered, usage, freemium). 2) Compare competitor prices and value metric. 3) Estimate willingness to pay. 4) Build 3 tiers; limit choices to cut decision load. 5) List 3-5 monetization options with risk and test. 6) For vertical cases use acuity, dynamic occupancy, tiered-fee blended rate. Atlas upgrade 2026-11-07: Creator monetization mix: 1) characterise the audience by buying intent (do they spend in this niche?), engagement (comments/saves/email opens) and size — not follower count. 2) High intent → lead with what they buy (services, templates/presets, courses, memberships), sponsorships selectively; low intent + large → ads and sponsorships, products carefully; low intent + small → grow reach and an email list, affiliate as a bridge. 3) Move toward a recurring base (memberships, retainers) and name the target. 4) Concentration check: share of income from one platform or one sponsor, share of audience with no owned channel; if losing one is catastrophic, diversification comes first. 5) Order lines so trust-spending ones (heavy sponsorship, aggressive affiliate) never outpace trust-building. Output: lines to start now vs later, recurring target, platform-risk call, and the 1-2 conditions that would change the mix.",
   "params": "segment, costs, competitors",
   "install": "",
   "requires": [],
@@ -1011,7 +1048,12 @@
    "monetization",
    "تسعير",
    "شرائح",
-   "ربحية"
+   "ربحية",
+   "creator monetization",
+   "revenue mix",
+   "platform risk",
+   "دخل المبدع",
+   "تنويع الدخل"
   ],
   "section": "الأعمال والمال — Business, finance & legal",
   "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): pm-product-strategy/pricing-strategy (#11658); tonone/deal-pricing (#4387) · theme business-finance · 7 supporting skills · verifier read: skills/2883-pm-product-strategy/11658-pricing-strategy, skills/",
@@ -1023,7 +1065,8 @@
     "9213",
     "9307",
     "11655",
-    "11658"
+    "11658",
+    "8627"
    ],
    "examples": [
     {
@@ -1037,6 +1080,12 @@
      "plugin": "tonone",
      "skill": "deal-pricing",
      "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+    },
+    {
+     "id": "8627",
+     "plugin": "creator-economy-operations",
+     "skill": "choose-monetization-mix",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2264-creator-economy-operations/8627-choose-monetization-mix"
     }
    ],
    "theme": "business-finance",
@@ -1045,7 +1094,10 @@
     "PROD-11"
    ],
    "stage": "extracted",
-   "verified_by": "b019-business-finance-2.json"
+   "verified_by": "b019-business-finance-2.json",
+   "skill_md_sha256": {
+    "8627": "22ba03c8b9cc53432e7744c576bd6939b09d342c9372eeb85321ecc7a8ac7abf"
+   }
   }
  },
  {
@@ -4804,7 +4856,7 @@
   "status": "documented",
   "what": "يحدد العميل المثالي للمبيعات: معايير ملاءمة (مؤسسية، تشغيلية، سلوكية، ومحفزات شراء) مشروطة بظرف يحتاج المنتج فعلًا، أدوار الشراء، قائمة 'ليس عميلنا' بمستبعدات صريحة، بطاقة نقاط بأوزان مبررة، وخطة تحقق بمعايير قبول ورفض. — Defines sales fit criteria, buyer roles, an anti-ICP, a scorecard and a validation plan, separating evidence from hypotheses.",
   "when": "شركة ناشئة تحدد لمن تبيع، استهداف مبيعات مشتت، قبل حملة outbound / a startup deciding who to sell to, scattered targeting, before outbound",
-  "how": "1) Separate observed evidence (best and worst customers, wins, losses, retention, expansion) from hypotheses. 2) Define firmographic, operational, behavioural and trigger-based fit criteria, each gated on a circumstance that requires the product (not merely prefers it) and on a real segment. 3) Map economic buyer, champion, user and blocker with their evidence-backed concerns. 4) Write the anti-ICP: hard disqualifiers vs friction that only costs points, plus costly edge cases; mark each buying trigger observed or hypothesised. 5) Build a simple scorecard, explain every weight and keep unknowns visible. 6) Tier accounts by fit and evidence and choose a small validation sample. 7) Specify interviews, list tests or campaign tests with pass, revise and reject criteria. Every criterion must change a targeting decision; conflicting segments force a primary choice, never an average. Full original skill(s) with license: vendor/kosif-atlas/skills/2216-majestic-sales/8360-icp-definition.",
+  "how": "1) Separate observed evidence (best and worst customers, wins, losses, retention, expansion) from hypotheses. 2) Define firmographic, operational, behavioural and trigger-based fit criteria, each gated on a circumstance that requires the product (not merely prefers it) and on a real segment. 3) Map economic buyer, champion, user and blocker with their evidence-backed concerns. 4) Write the anti-ICP: hard disqualifiers vs friction that only costs points, plus costly edge cases; mark each buying trigger observed or hypothesised. 5) Build a simple scorecard, explain every weight and keep unknowns visible. 6) Tier accounts by fit and evidence and choose a small validation sample. 7) Specify interviews, list tests or campaign tests with pass, revise and reject criteria. Every criterion must change a targeting decision; conflicting segments force a primary choice, never an average. Full original skill(s) with license: vendor/kosif-atlas/skills/2216-majestic-sales/8360-icp-definition. Atlas upgrade 2026-11-07: Viewer/buyer persona variant for creators and creative services: 2-4 named personas only; each with a one-paragraph narrative, demographic snapshot, motivations and fears, functional/emotional/social jobs, a day-in-the-life scene, trigger events and how they search for a video/motion provider, top objections with counter-messages, preferred platforms/formats/tone, and messaging do's and don'ts. Mark which fields come from real data (comments, DMs, client calls, analytics) vs hypothesis.",
   "params": "customers, product, evidence",
   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2216-majestic-sales/8360-icp-definition ~/.claude/skills/icp-definition",
   "requires": [],
@@ -4821,13 +4873,18 @@
    "targeting",
    "go-to-market",
    "العميل المثالي",
-   "مبيعات"
+   "مبيعات",
+   "persona",
+   "audience profile",
+   "viewer persona",
+   "شخصية الجمهور"
   ],
   "section": "المراجعة والتحقق — Review, verification & quality gates",
   "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch verification-review-strategy (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): majestic-sales/icp-definition (#8360) · SKILL.md read in full as inert text",
   "atlas": {
    "ids": [
-    "8360"
+    "8360",
+    "3985"
    ],
    "examples": [
     {
@@ -4835,6 +4892,12 @@
      "plugin": "majestic-sales",
      "skill": "icp-definition",
      "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2216-majestic-sales/8360-icp-definition"
+    },
+    {
+     "id": "3985",
+     "plugin": "digital-marketing-pro",
+     "skill": "audience-profile",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/3985-audience-profile"
     }
    ],
    "theme": "verification-review",
@@ -4843,7 +4906,8 @@
    "stage": "extracted",
    "verified_by": "atlas-pass-20261023-verification-review-strategy.json",
    "skill_md_sha256": {
-    "8360": "f822a7f8463514492113174e032094c174ba1cf415eb5ad3bb553aa72556c42a"
+    "8360": "f822a7f8463514492113174e032094c174ba1cf415eb5ad3bb553aa72556c42a",
+    "3985": "2a932a762e96804ce3c4763aad6017a8d66a67b5ca4e7f1d98e2bd48daabe1c6"
    },
    "vendored": [
     "vendor/kosif-atlas/skills/2216-majestic-sales/8360-icp-definition"
@@ -5136,7 +5200,7 @@
   "status": "documented",
   "what": "يبني أداة البحث وينفذها: مهام مبنية على هدف لا على تعليمات، نص إدارة محايد مع التفكير بصوت عال، تعريف النجاح ومقياس الخطورة مسبقًا، ومراجعة الاستبيانات ضد الأسئلة الموحية والمزدوجة والرغبة الاجتماعية وتحيز العينة، مع فصل ما فعله المشارك عما قاله منذ لحظة التسجيل. — Goal-based tasks, a non-leading script, predefined success and severity, survey bias checks and did-vs-said capture.",
   "when": "اختبار قابلية استخدام، مقابلات مستخدمين، كتابة استبيان، 'كيف أسأل بدون ما أوجّه المشارك؟' / planning a usability test, interviews or a survey",
-  "how": "1) Anchor to the research plan's question and method; the instrument executes that question, not a new one. 2) Write goal-based tasks ('buy a medium blue jacket and ship it home'), never click-by-click instructions; order them realistically and avoid tasks that leak the answer. 3) Script a warm-up and consent check, ask for think-aloud, and use neutral probes ('tell me more', 'what did you expect there?', silence); ban leading forms such as 'was that easy?'. 4) Define task success (pass or graded) and a severity scale (cosmetic to blocker) before the first session. 5) Audit surveys for leading items, double-barrelled items, social-desirability loading and sampling bias; rewrite to neutral single questions and state the sample's limits. 6) Record behaviour and self-report on separate lines ('P3 clicked back twice' vs 'P3 said it felt slow'), time-stamped, de-identified, and stored per the retention limit. 7) Hand off to synthesis without interpreting during capture. Full original skill(s) with license: vendor/kosif-atlas/skills/2401-ux-research/9296-run-usability-and-interview-sessions.",
+  "how": "1) Anchor to the research plan's question and method; the instrument executes that question, not a new one. 2) Write goal-based tasks ('buy a medium blue jacket and ship it home'), never click-by-click instructions; order them realistically and avoid tasks that leak the answer. 3) Script a warm-up and consent check, ask for think-aloud, and use neutral probes ('tell me more', 'what did you expect there?', silence); ban leading forms such as 'was that easy?'. 4) Define task success (pass or graded) and a severity scale (cosmetic to blocker) before the first session. 5) Audit surveys for leading items, double-barrelled items, social-desirability loading and sampling bias; rewrite to neutral single questions and state the sample's limits. 6) Record behaviour and self-report on separate lines ('P3 clicked back twice' vs 'P3 said it felt slow'), time-stamped, de-identified, and stored per the retention limit. 7) Hand off to synthesis without interpreting during capture. Full original skill(s) with license: vendor/kosif-atlas/skills/2401-ux-research/9296-run-usability-and-interview-sessions. Atlas upgrade 2026-11-07: Conversation design before the session: 1) Name the decision the conversations must improve and the riskiest assumptions, including one uncomfortable question asked early enough to change the plan. 2) Narrow the segment; up to three learning goals per type of person. 3) Ask about their life and recent past — current behaviour, specific past examples, workarounds, what it already costs them — and turn compliments, opinions and hypotheticals into requests for a concrete example; save the pitch. 4) Two modes: listening (lived experience, their words) and teaching (walk them through one slice and watch where value, confusion or skepticism appears). 5) 'I would buy/watch this' without commitment is weak evidence; prefer fewer, deeper conversations. 6) For playtests and screenings: decide what decision the test informs, pick participants who match it, choose the method (observation, think-aloud, first-session blind, survey, telemetry), do not lead, and record observation, telemetry, interpretation and reflection separately. 7) After each batch: signal, evidence, implication, decision table and the next test.",
   "params": "research question, method",
   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2401-ux-research/9296-run-usability-and-interview-sessions ~/.claude/skills/run-usability-and-interview-sessions",
   "requires": [],
@@ -5153,13 +5217,21 @@
    "survey design",
    "bias",
    "بحث المستخدم",
-   "قابلية الاستخدام"
+   "قابلية الاستخدام",
+   "mom test",
+   "customer discovery",
+   "playtest",
+   "listening interview",
+   "اختبار الجمهور"
   ],
   "section": "سير عمل الوكلاء — Agent workflows & orchestration",
   "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch3-strategy (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): ux-research/run-usability-and-interview-sessions (#9296) · SKILL.md read in full as inert text",
   "atlas": {
    "ids": [
-    "9296"
+    "9296",
+    "8021",
+    "8005",
+    "8084"
    ],
    "examples": [
     {
@@ -5167,6 +5239,24 @@
      "plugin": "ux-research",
      "skill": "run-usability-and-interview-sessions",
      "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2401-ux-research/9296-run-usability-and-interview-sessions"
+    },
+    {
+     "id": "8021",
+     "plugin": "lvtd-skills",
+     "skill": "customer-discovery-conversations",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8021-customer-discovery-conversations"
+    },
+    {
+     "id": "8005",
+     "plugin": "lvtd-skills",
+     "skill": "book-reader-conversations",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8005-book-reader-conversations"
+    },
+    {
+     "id": "8084",
+     "plugin": "lvtd-skills",
+     "skill": "game-playtest-planning",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8084-game-playtest-planning"
     }
    ],
    "theme": "agent-workflow",
@@ -5177,7 +5267,10 @@
    "stage": "extracted",
    "verified_by": "atlas-pass-20261023-batch3-strategy.json",
    "skill_md_sha256": {
-    "9296": "e6ffc54ecdd12cb08931d45138307b3a03c4815bc890b2d9411c09953e00ebda"
+    "9296": "e6ffc54ecdd12cb08931d45138307b3a03c4815bc890b2d9411c09953e00ebda",
+    "8021": "73f9f80725ce558f2afdac4e83947a8c0b46f50ae6a804095c2128a447d29ff7",
+    "8005": "679094cd1ca8af3d7c572205714645ff6e5cbfe5234416af4ba8460833408bf0",
+    "8084": "38760f2d382b6680d6a4c08a30f12915e536a213c2e3cc1378a6b0d0fe3fb3fd"
    },
    "vendored": [
     "vendor/kosif-atlas/skills/2401-ux-research/9296-run-usability-and-interview-sessions"
@@ -6196,6 +6289,834 @@
    "vendored": [
     "vendor/kosif-atlas/skills/3435-strategy-growth/14103-cold-start-problem"
    ]
+  }
+ },
+ {
+  "id": "ASTRAT-109",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "خطة نمو قناة الفيديو القصير",
+  "name_en": "Short-form channel growth plan: pillars tied to metrics, a cadence you can hold for a year, owned-audience funnel",
+  "status": "documented",
+  "what": "خطة نمو لقناة ريلز/تيك توك/شورتس: أعمدة محتوى لكل منها مقياس، وتيرة نشر تصمد سنة، وتحويل الوصول المستأجر إلى جمهور مملوك. — Plan channel growth on retention, engagement and owned conversion, not follower count.",
+  "when": "خطة نمو حساب، أي منصة أبدأ، كم مرة أنشر، الحساب واقف / grow my Reels/TikTok/Shorts channel, which platforms, posting cadence, stalled account",
+  "how": "1) Mode first: build from scratch, audit an under-performing account (read the last 20 posts for patterns), or systematise a growing one. 2) Pick 1-2 platforms where the audience already is; add a third only when the first two run without strain. 3) Define 3-5 pillars and name the one metric each format exists to move: reach (top), engagement/trust (middle), conversion (follow, email, enquiry). A format with no metric is noise. 4) Cap promotion at ~10-20% of slots; above that reach and follows drop. 5) Set a cadence the owner can sustain for 12 months (2 strong posts a week beats daily-then-quit) and back it with a repurposing engine (one long piece → native cuts) plus weekly batching. 6) Engagement is half the work: reply to every comment in the first hour, spend roughly equal time commenting on 20-50 peer/larger accounts; on X keep links in the first reply, not the post body. 7) Profile gate: avatar consistent, bio = who you help + how, pinned post = best proof, link to a specific page. 8) Owned funnel: every rented post earns a reason to follow/subscribe (lead magnet, newsletter, WhatsApp channel); track reach → owned conversion as the de-risking metric. 9) Treat any algorithm claim as verify-at-use; run one experiment per cycle. Failure modes: same export dumped on every platform, unsustainable 3×/day plans, broadcasting without engaging, vanity targets. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2264-creator-economy-operations/8628-plan-content-and-audience-growth, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/613-social-media-manager, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/611-social-content, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3530-social.",
+  "params": "platforms, pillars, weekly hours, goal",
+  "install": "none — method card; read the cited Atlas SKILL.md for the original",
+  "requires": [],
+  "license": "card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2264-creator-economy-operations/8628-plan-content-and-audience-growth",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/613-social-media-manager",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/611-social-content",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3530-social"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "growth plan",
+   "content pillars",
+   "cadence",
+   "Reels",
+   "TikTok",
+   "Shorts",
+   "owned audience",
+   "نمو القناة",
+   "أعمدة المحتوى",
+   "وتيرة النشر",
+   "جمهور مملوك"
+  ],
+  "section": "النمو والتسويق للمبدع — Creator growth & marketing",
+  "source": "KOSIF Atlas core-work pass 2026-11-07, track marketing (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): creator-economy-operations/plan-content-and-audience-growth (#8628); marketing-skills/social-media-manager (#613); marketing-skills/social-content (#611); marketing-skills/social (#3530); marketing-skills/x-twitter-growth (#615) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "8628",
+    "613",
+    "611",
+    "3530",
+    "615"
+   ],
+   "examples": [
+    {
+     "id": "8628",
+     "plugin": "creator-economy-operations",
+     "skill": "plan-content-and-audience-growth",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2264-creator-economy-operations/8628-plan-content-and-audience-growth"
+    },
+    {
+     "id": "613",
+     "plugin": "marketing-skills",
+     "skill": "social-media-manager",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/613-social-media-manager"
+    },
+    {
+     "id": "611",
+     "plugin": "marketing-skills",
+     "skill": "social-content",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/611-social-content"
+    },
+    {
+     "id": "3530",
+     "plugin": "marketing-skills",
+     "skill": "social",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3530-social"
+    },
+    {
+     "id": "615",
+     "plugin": "marketing-skills",
+     "skill": "x-twitter-growth",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/615-x-twitter-growth"
+    }
+   ],
+   "theme": "marketing-seo",
+   "risk_notes": "Method guidance only, written in our own words; SKILL.md read as inert text; no Atlas code copied, imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-marketing.json",
+   "skill_md_sha256": {
+    "8628": "deb06256331a39769bd1752664e293ece9c452ecccf51276f6e44a67aec79fc8",
+    "613": "a72fbb003a99607ad370ec791fbd42c832348c6e766f6ffc1d45b465e6adab08",
+    "611": "02008f95432fd0c9088bccd71a3358b3ead1f06ac6115f3fe3fe5f562fc2da37",
+    "3530": "8cc93d9b361622cdb640e87969747b85603bed2d268e923179f8dfb4799ec8c7",
+    "615": "f25b551a88fee2c5654e315e7113182d6fd956260ae170b2503a459e3d9d23db"
+   }
+  }
+ },
+ {
+  "id": "ASTRAT-110",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "قراءة أداء الفيديو والسوشيال بأرقام صحيحة",
+  "name_en": "Social video performance readout: validated formulas, decision vs vanity metrics, top/bottom-3 review",
+  "status": "documented",
+  "what": "تحليل أداء المنشورات والحملات بصيغ محددة ومقارنة بتاريخ الحساب أولًا ثم المعايير العامة، وكل رقم مربوط بقرار. — Read post/campaign numbers with explicit formulas and turn each into an action.",
+  "when": "حلل أداء الريلز، معدل التفاعل، أي منشور نجح ولماذا، العائد على الإعلان / analyse reel performance, engagement rate, ROAS, which post worked",
+  "how": "1) Validate input first: reach > 0, counts non-negative, date range valid, spend > 0 if ROI is asked; refuse to compute on broken rows. 2) Per post: engagement rate = (likes+comments+shares+saves)/reach×100; save rate = saves/reach; virality = shares/impressions; reach rate = reach/followers; CTR = clicks/impressions. For video add retention at 3 s and average % watched where the platform exposes it. 3) Paid: CPE, CPC, CPM = spend/impressions×1000, ROAS = revenue/spend; include production cost, not media only. 4) Compare against the account's own history first; public platform benchmarks are only context and are dated. 5) Weekly review: top 3 and bottom 3 posts with a stated reason (hook, format, topic, length, time); best slots from own data. 6) Diagnose with rules: high impressions + low engagement = resonance problem; falling reach = distribution/consistency; stalled follows = no reason to follow. 7) For multi-channel campaigns compare at least three attribution views (first, last, position-based 40/20/40) before moving budget. 8) Every reported number names the change it triggers; tag findings verified / medium / assumed. Sanity checks: engagement rate < 100%, ROI recomputes from spend. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/612-social-media-analyzer, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/576-campaign-analytics, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/613-social-media-manager, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2264-creator-economy-operations/8628-plan-content-and-audience-growth.",
+  "params": "export CSV/JSON, platform, spend",
+  "install": "none — method card; read the cited Atlas SKILL.md for the original",
+  "requires": [],
+  "license": "card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/612-social-media-analyzer",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/576-campaign-analytics",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/613-social-media-manager",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2264-creator-economy-operations/8628-plan-content-and-audience-growth"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "analytics",
+   "engagement rate",
+   "save rate",
+   "ROAS",
+   "CPM",
+   "attribution",
+   "weekly review",
+   "تحليل الأداء",
+   "معدل التفاعل",
+   "العائد على الإعلان"
+  ],
+  "section": "النمو والتسويق للمبدع — Creator growth & marketing",
+  "source": "KOSIF Atlas core-work pass 2026-11-07, track marketing (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): marketing-skills/social-media-analyzer (#612); marketing-skills/campaign-analytics (#576); marketing-skills/social-media-manager (#613); creator-economy-operations/plan-content-and-audience-growth (#8628) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "612",
+    "576",
+    "613",
+    "8628"
+   ],
+   "examples": [
+    {
+     "id": "612",
+     "plugin": "marketing-skills",
+     "skill": "social-media-analyzer",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/612-social-media-analyzer"
+    },
+    {
+     "id": "576",
+     "plugin": "marketing-skills",
+     "skill": "campaign-analytics",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/576-campaign-analytics"
+    },
+    {
+     "id": "613",
+     "plugin": "marketing-skills",
+     "skill": "social-media-manager",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/613-social-media-manager"
+    },
+    {
+     "id": "8628",
+     "plugin": "creator-economy-operations",
+     "skill": "plan-content-and-audience-growth",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2264-creator-economy-operations/8628-plan-content-and-audience-growth"
+    }
+   ],
+   "theme": "marketing-seo",
+   "risk_notes": "Method guidance only, written in our own words; SKILL.md read as inert text; no Atlas code copied, imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-marketing.json",
+   "skill_md_sha256": {
+    "612": "68cc6de8b9fa26b7543f37a197d6b8c7035b91caf1aa203911640621a9b7b86e",
+    "576": "c2a7431cbe7e92b08802597f6c02bbd0f173aebe508a1fc7b067f082764c67c1",
+    "613": "a72fbb003a99607ad370ec791fbd42c832348c6e766f6ffc1d45b465e6adab08",
+    "8628": "deb06256331a39769bd1752664e293ece9c452ecccf51276f6e44a67aec79fc8"
+   }
+  }
+ },
+ {
+  "id": "ASTRAT-111",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "دفعة إعلانات مؤسسة على أدلة: زوايا وموجات وسجل تكرار",
+  "name_en": "Grounded ad-creative batch: evidence corpus, 3-5 angles, generation waves, spec gate, iteration log",
+  "status": "documented",
+  "what": "إنتاج إعلانات بالجملة من مواد حقيقية (أفضل الإعلانات، المراجعات، التعليقات) بزوايا مختلفة لا مرادفات، مع فحص الحدود وسجل لما تعلمناه. — Scale ad concepts from real evidence, not model guesses.",
+  "when": "اكتب لي إعلانات، نسخ متعددة للإعلان، كريتف لحملة ميتا/تيك توك، إعلان موشن / ad variations, creative testing, Meta/TikTok ad concepts, motion video ad",
+  "how": "1) Build the inputs corpus before writing: 10-20 recent winning ads, 50-100 customer reviews, top ad comments (objections and unprompted praise), brand voice and assets. If winners/reviews are empty, stop and ask — no ungrounded fallback. 2) Every concept cites its source line; no invented stats, testimonials or claims. 3) Define 3-5 angles (pain, outcome, proof, curiosity, comparison, identity, contrarian, honest urgency); vary angles, not just words. 4) Generate in waves: core angles × ~5 variations; then extend the top 2; then 1-2 wild cards. 5) Spec gate per placement (e.g. Meta primary text hook within ~125 visible chars, TikTok ad text ~80-100, RSA headline 30 / description 90, each RSA headline must stand alone); trim anything over, drop near-duplicates, flag policy risks. 6) Visual gate: one message per asset, 3-second stranger test, headline legible at ~150 px wide, paid statics keep text area small (~20%), WCAG AA contrast, real copy only. 7) For video: show the payoff early, three simultaneous hooks (visual, spoken, on-screen text) in the first second, captions for sound-off. 8) Iterating from data: list winning themes/structures/words and losing patterns, keep ≥1,000 impressions before judging, change one variable per cycle, log round/date/winners/new angles/retired angles. 9) For client approval present concepts as in-feed mockups with a grounding disclosure, so the pick happens from one link. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3484-ad-creative, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4428-form-social.",
+  "params": "platform, placement, corpus folder, metric",
+  "install": "none — method card; read the cited Atlas SKILL.md for the original",
+  "requires": [
+   "npm:axe"
+  ],
+  "license": "card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3484-ad-creative",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4428-form-social"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "ad creative",
+   "angles",
+   "variations",
+   "creative testing",
+   "UGC",
+   "motion ad",
+   "Meta ads",
+   "TikTok ads",
+   "إعلانات",
+   "زوايا الإعلان",
+   "نسخ إعلانية",
+   "كريتف"
+  ],
+  "section": "النمو والتسويق للمبدع — Creator growth & marketing",
+  "source": "KOSIF Atlas core-work pass 2026-11-07, track marketing (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): marketing-skills/ad-creative (#3484); tonone/form-social (#4428) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "3484",
+    "4428"
+   ],
+   "examples": [
+    {
+     "id": "3484",
+     "plugin": "marketing-skills",
+     "skill": "ad-creative",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3484-ad-creative"
+    },
+    {
+     "id": "4428",
+     "plugin": "tonone",
+     "skill": "form-social",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4428-form-social"
+    }
+   ],
+   "theme": "marketing-seo",
+   "risk_notes": "Method guidance only, written in our own words; SKILL.md read as inert text; no Atlas code copied, imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-marketing.json",
+   "skill_md_sha256": {
+    "3484": "e874d7bde2f55a5f0687c938ea9d3c1f210a73ff948d58ba3ee0e08631587702",
+    "4428": "b4027ab67f05f2018d06408b24d5dba6f5e02241a363e9dba82666f210c3a84f"
+   }
+  }
+ },
+ {
+  "id": "ASTRAT-112",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "دفتر فرضيات للاختبارات الإبداعية",
+  "name_en": "Creative test journal: one-variable hypotheses, honest results, learnings only from patterns",
+  "status": "documented",
+  "what": "كل تغيير في الهوك أو الصورة المصغرة أو الإعلان يُكتب كفرضية قابلة للنفي قبل التنفيذ، والنتيجة تُسجل بصدق، والدروس لا تُعمم إلا بعد نمط متكرر. — Turn hook/thumbnail/ad tweaks into a learning system.",
+  "when": "اختبار هوك، اختبار صورة مصغرة، ليش هذا الفيديو نجح، نسجل التجارب / hook test, thumbnail test, creative experiment log, what did we learn",
+  "how": "1) Write the hypothesis before changing anything: 'If X changes for audience Y, metric Z moves by ≥N because R'. Must be falsifiable, scoped (which video series/platform/audience) and single-variable — an 'and' between two changes means two tests. 2) Variable classes for video: hook (first 1-3 s), thumbnail/cover, title/caption, length/pacing, sound, posting slot, CTA. Change one class per iteration. 3) Fix one primary metric and guardrails up front (e.g. 3 s hold rate primary; saves/comments guardrail) plus blast radius and revert plan. 4) Do not peek and change the outcome definition mid-run; low-volume results stay provisional. 5) Result file: held YES / NO / PARTIAL with baseline, current and delta; calibration rule — predicted +20% and got +12% is PARTIAL, never round up; failed means failed. 6) Next move is one of: ship, next iteration, revert and branch, escalate; no stacking a second change on a failed one. 7) Append-only ledger (one row per test: date, variable, scope, prediction, result, learning candidate). 8) Promote a learning only after ≥3 results in the same direction, state its scope, and log negative learnings and dead ends too; across ≥2 campaigns it may become a house rule. Refuse post-hoc hypotheses and unmeasurable predictions. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2824-google-ads-strategist/11473-iterative-campaign-design, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2824-google-ads-strategist/11472-hypothesis-journaling, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2211-majestic-marketing/8290-growth-experimentation.",
+  "params": "variable, metric, scope, ledger path",
+  "install": "none — method card; read the cited Atlas SKILL.md for the original",
+  "requires": [
+   "pip:hypothesis"
+  ],
+  "license": "card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2824-google-ads-strategist/11473-iterative-campaign-design",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2824-google-ads-strategist/11472-hypothesis-journaling",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2211-majestic-marketing/8290-growth-experimentation"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "hypothesis",
+   "A/B test",
+   "creative testing",
+   "hook test",
+   "thumbnail test",
+   "learning log",
+   "فرضية",
+   "اختبار",
+   "سجل التجارب",
+   "اختبار الهوك"
+  ],
+  "section": "النمو والتسويق للمبدع — Creator growth & marketing",
+  "source": "KOSIF Atlas core-work pass 2026-11-07, track marketing (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): google-ads-strategist/iterative-campaign-design (#11473); google-ads-strategist/hypothesis-journaling (#11472); majestic-marketing/growth-experimentation (#8290) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "11473",
+    "11472",
+    "8290"
+   ],
+   "examples": [
+    {
+     "id": "11473",
+     "plugin": "google-ads-strategist",
+     "skill": "iterative-campaign-design",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2824-google-ads-strategist/11473-iterative-campaign-design"
+    },
+    {
+     "id": "11472",
+     "plugin": "google-ads-strategist",
+     "skill": "hypothesis-journaling",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2824-google-ads-strategist/11472-hypothesis-journaling"
+    },
+    {
+     "id": "8290",
+     "plugin": "majestic-marketing",
+     "skill": "growth-experimentation",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2211-majestic-marketing/8290-growth-experimentation"
+    }
+   ],
+   "theme": "marketing-seo",
+   "risk_notes": "Method guidance only, written in our own words; SKILL.md read as inert text; no Atlas code copied, imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-marketing.json",
+   "skill_md_sha256": {
+    "11473": "01f6d62be65226c2b8c0f9670901e52498f31670350d65dcaa148bf9c317c781",
+    "11472": "31c4d5564b28aad5158c84026525876634ddb5b92090a69caf3c220c942b63c6",
+    "8290": "d4f6408150e7e1717924756effd20f562cff6b270bd5c6a7567d3fe3796d7d94"
+   }
+  }
+ },
+ {
+  "id": "ASTRAT-113",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "تسعير صفقة رعاية وشروطها والإفصاح",
+  "name_en": "Brand-deal pricing: value-based base fee, usage/exclusivity line items, walk-away floor, disclosure",
+  "status": "documented",
+  "what": "تسعير الرعايات والتعاون مع العلامات على قيمة الجمهور لا على سعر ثابت للألف مشاهدة، مع بنود منفصلة لحقوق الاستخدام والحصرية وحد أدنى للانسحاب وإفصاح واضح. — Price sponsorships on value and protect audience trust.",
+  "when": "علامة تجارية عرضت رعاية، كم أسعر الإعلان، بطاقة أسعار، عقد مع مؤثر، بريف لمؤثر / brand deal offer, rate card, sponsorship price, creator brief, usage rights",
+  "how": "1) Start from audience value: niche buying intent, engagement/trust, and how hard the audience is to reach elsewhere — not raw views or a flat CPM. 2) Price each deliverable separately: dedicated video ≠ 60 s integration ≠ story mention; bundles priced as packages. 3) Price as separate, time-boxed lines: usage/whitelisting/paid amplification (brand running the content as its ad), category exclusivity by window (premium often +25-100%), and reuse/perpetuity. Never give these away inside the base fee. 4) Name the walk-away floor before negotiating, higher for products you would not use yourself. 5) Use dated rate benchmarks only as a sanity check (verify at use). 6) Terms to fix in writing: exact deliverables and posting dates, revision rounds (2 is common) and approval window (48-72 h), payment split (e.g. 50% upfront / 50% on delivery), kill fee (25-50%), IP stays with the creator unless licensed, morality clause both ways. 7) Disclosure is mandatory and visible: first line of the caption, on-screen text in video, spoken early in longer videos, platform paid-partnership toggle; '#collab' alone is not enough; affiliate links need their own disclosure; AI or virtual presenters disclosed. A brand asking to hide it is a red flag. 8) When the owner briefs other creators: must-say / should-say / may-say hierarchy, references without asking for copies, creative freedom (over-scripted content underperforms), and a controversy plan (monitor / pause / terminate). Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2264-creator-economy-operations/8629-price-a-brand-deal, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4053-influencer-creator.",
+  "params": "audience stats, deliverables, usage window, market",
+  "install": "none — method card; read the cited Atlas SKILL.md for the original",
+  "requires": [],
+  "license": "card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2264-creator-economy-operations/8629-price-a-brand-deal",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4053-influencer-creator"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "sponsorship",
+   "brand deal",
+   "rate card",
+   "influencer",
+   "usage rights",
+   "exclusivity",
+   "disclosure",
+   "رعاية",
+   "تسعير الإعلان",
+   "حقوق الاستخدام",
+   "إفصاح",
+   "مؤثر"
+  ],
+  "section": "النمو والتسويق للمبدع — Creator growth & marketing",
+  "source": "KOSIF Atlas core-work pass 2026-11-07, track marketing (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): creator-economy-operations/price-a-brand-deal (#8629); digital-marketing-pro/influencer-creator (#4053) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "8629",
+    "4053"
+   ],
+   "examples": [
+    {
+     "id": "8629",
+     "plugin": "creator-economy-operations",
+     "skill": "price-a-brand-deal",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2264-creator-economy-operations/8629-price-a-brand-deal"
+    },
+    {
+     "id": "4053",
+     "plugin": "digital-marketing-pro",
+     "skill": "influencer-creator",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4053-influencer-creator"
+    }
+   ],
+   "theme": "marketing-seo",
+   "risk_notes": "Method guidance only, written in our own words; SKILL.md read as inert text; no Atlas code copied, imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-marketing.json",
+   "skill_md_sha256": {
+    "8629": "9a6a94259936f65adbe975c3c95948127237b8cf2d27d698b5d5728513df55c9",
+    "4053": "bf124b2157b2c693189875221941919f54185afccea262262b15d79629868c6c"
+   }
+  }
+ },
+ {
+  "id": "ASTRAT-114",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "عرض سعر لمشروع فيديو أو موشن لعميل",
+  "name_en": "Creative-project proposal: buyer's words first, scope with exclusions, distinct options, mutual next steps",
+  "status": "documented",
+  "what": "كتابة عرض لعميل بعد الاكتشاف: ملخص بكلمات العميل، نطاق واستثناءات ومعايير قبول، خيارات سعر مختلفة فعلًا، وخطة خطوات مشتركة بتواريخ. — Write a proposal that a client can approve without a call.",
+  "when": "اكتب عرض سعر، بروبوزال لعميل، عرض لفيديو إعلاني، ديك للعميل / write a proposal, quote for a video project, pitch deck for a client",
+  "how": "1) Gate: list the material gaps (budget range, decision maker, deadline, success criteria, assets they own). If key gaps remain, propose a short discovery call instead of a speculative proposal ('send me a proposal' before discovery usually means not qualified). 2) Executive summary that stands alone and mirrors the client's own words: what they told you, what success looks like. 3) Recommend 1-2 options (maximum three genuinely distinct tiers, e.g. one hero film / hero + cut-downs / full campaign pack), never a decoy. 4) Scope: deliverables with durations and ratios, revision rounds, what is excluded (stock licences, voice talent, media spend), client responsibilities and dependencies (brand assets, approvals within N days), acceptance criteria per milestone. 5) Value only from baselines the client supplied, assumptions visible, scenarios labelled; no guaranteed ROI or virality. 6) Proof stack matched to their fear: closest case study, before/after, a relevant reel, named references; remove ambiguity in price and process because ambiguity reads as risk. 7) Price easy to find, payment milestones, validity period; 5-7 pages maximum; pitch-deck version follows problem → cost → shift → approach → proof → plan → investment → next step. 8) End with a mutual action table (step, owner, date). 9) Review once as the buyer, the producer and the risk owner; route contract wording to a lawyer. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2216-majestic-sales/8364-sales-proposal, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4384-deal-close, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3524-sales-enablement, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8003-b2b-trust-engineering.",
+  "params": "client brief, discovery notes, price options",
+  "install": "none — method card; read the cited Atlas SKILL.md for the original",
+  "requires": [],
+  "license": "card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2216-majestic-sales/8364-sales-proposal",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4384-deal-close",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3524-sales-enablement",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8003-b2b-trust-engineering"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "proposal",
+   "quote",
+   "pitch deck",
+   "scope",
+   "client",
+   "creative services",
+   "عرض سعر",
+   "بروبوزال",
+   "عميل",
+   "نطاق العمل"
+  ],
+  "section": "بيع الخدمات الإبداعية — Selling creative services",
+  "source": "KOSIF Atlas core-work pass 2026-11-07, track marketing (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): majestic-sales/sales-proposal (#8364); tonone/deal-close (#4384); marketing-skills/sales-enablement (#3524); lvtd-skills/b2b-trust-engineering (#8003); lvtd-skills/eighty-twenty-conversion-message (#8059) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "8364",
+    "4384",
+    "3524",
+    "8003",
+    "8059"
+   ],
+   "examples": [
+    {
+     "id": "8364",
+     "plugin": "majestic-sales",
+     "skill": "sales-proposal",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2216-majestic-sales/8364-sales-proposal"
+    },
+    {
+     "id": "4384",
+     "plugin": "tonone",
+     "skill": "deal-close",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4384-deal-close"
+    },
+    {
+     "id": "3524",
+     "plugin": "marketing-skills",
+     "skill": "sales-enablement",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3524-sales-enablement"
+    },
+    {
+     "id": "8003",
+     "plugin": "lvtd-skills",
+     "skill": "b2b-trust-engineering",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8003-b2b-trust-engineering"
+    },
+    {
+     "id": "8059",
+     "plugin": "lvtd-skills",
+     "skill": "eighty-twenty-conversion-message",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8059-eighty-twenty-conversion-message"
+    }
+   ],
+   "theme": "sales-customer",
+   "risk_notes": "Method guidance only, written in our own words; SKILL.md read as inert text; no Atlas code copied, imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-marketing.json",
+   "skill_md_sha256": {
+    "8364": "2b6b31854882f49bd2d9590aa67d1e16f0c8153b1463cee1656d4a71333efc84",
+    "4384": "d0ccdd6ae4eb93d920ec770ba1cf8074b6ab6c678929d20f4db466d941ae8881",
+    "3524": "d83c3244dd8e2e64d585f1ff0d760eff181587f06b90ceaf8127a4ce618265dd",
+    "8003": "1187ddb77b37696316afec15bfb11591ed4384931a57230e17100ff4e5d7014b",
+    "8059": "10f852cb27fcdb19788575c19c40a82cff723abd15a3f59b709942ae6652a478"
+   }
+  }
+ },
+ {
+  "id": "ASTRAT-115",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "التعامل مع اعتراضات العميل والصفقة المتوقفة",
+  "name_en": "Client objection and stalled-deal diagnosis: real concern, own proof, one forward question",
+  "status": "documented",
+  "what": "تصنيف اعتراض العميل (سعر، توقيت، منافس، ثقة، صلاحية، الوضع الحالي) والرد بأدلة من أعمالك وكلامه هو، مع سؤال واحد يحرك الصفقة أو يكشف أنها ليست حقيقية. — Answer pushback with evidence, not scripts.",
+  "when": "العميل قال السعر غالي، العميل اختفى، نفكر فيها، عنده عرض أرخص / client says too expensive, client ghosted, we'll think about it, cheaper competitor",
+  "how": "1) Classify: price/value, timing/priority, competitor, risk/trust, authority ('I need to check with…'), status quo. Separate a real objection (reason not to buy) from a negotiation move (reason to buy cheaper). 2) Read the stall pattern: 'we'll think about it' = value unclear or wrong person; 'no budget' = ask 'if this solved X, would budget appear?' (yes → value problem, no → priority problem); 'evaluating others' = criteria not mapped to your strengths, ask what would make the choice obvious; 'next quarter' = not a priority, park it instead of chasing. 3) Ground the answer in your own evidence: the client's stated goals, a similar past project, a vetted testimonial; nothing unvetted goes to the client. 4) Response shape: acknowledge → answer with their goal + one proof point → end with a question that moves forward; 3-5 sentences. 5) Against a cheaper competitor: admit where they are strong, show where this client's need differs, ask the question that surfaces the difference (e.g. turnaround, revisions, rights, Arabic typography quality). 6) Don't-list: discounting first, feature-dumping, arguing. 7) If the deal is stuck, pick one artefact: re-engagement note (what they said mattered + what is new + one small ask), revised proposal, a brief the champion can forward internally, or a negotiation position (start, walk-away, concession order, close condition 'if we fix X can we start by DATE?'). 8) Trust before upside: when qualified clients go quiet, add proof and reduce risk (clear scope, milestone payments, a small paid pilot) before pushing harder. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/334-sales/1118-handle-objection, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4384-deal-close, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3524-sales-enablement, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8003-b2b-trust-engineering.",
+  "params": "objection text, project context, past wins",
+  "install": "none — method card; read the cited Atlas SKILL.md for the original",
+  "requires": [],
+  "license": "card in our own words; the original skills stay in the Atlas under their own licenses (Apache-2.0, MIT); nothing copied",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/334-sales/1118-handle-objection",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4384-deal-close",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3524-sales-enablement",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8003-b2b-trust-engineering"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "objection handling",
+   "stalled deal",
+   "ghosting",
+   "pricing pushback",
+   "negotiation",
+   "اعتراض العميل",
+   "السعر غالي",
+   "العميل اختفى",
+   "تفاوض"
+  ],
+  "section": "بيع الخدمات الإبداعية — Selling creative services",
+  "source": "KOSIF Atlas core-work pass 2026-11-07, track marketing (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): sales/handle-objection (#1118); tonone/deal-close (#4384); marketing-skills/sales-enablement (#3524); lvtd-skills/b2b-trust-engineering (#8003) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "1118",
+    "4384",
+    "3524",
+    "8003"
+   ],
+   "examples": [
+    {
+     "id": "1118",
+     "plugin": "sales",
+     "skill": "handle-objection",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/334-sales/1118-handle-objection"
+    },
+    {
+     "id": "4384",
+     "plugin": "tonone",
+     "skill": "deal-close",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4384-deal-close"
+    },
+    {
+     "id": "3524",
+     "plugin": "marketing-skills",
+     "skill": "sales-enablement",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3524-sales-enablement"
+    },
+    {
+     "id": "8003",
+     "plugin": "lvtd-skills",
+     "skill": "b2b-trust-engineering",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8003-b2b-trust-engineering"
+    }
+   ],
+   "theme": "sales-customer",
+   "risk_notes": "Method guidance only, written in our own words; SKILL.md read as inert text; no Atlas code copied, imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-marketing.json",
+   "skill_md_sha256": {
+    "1118": "f8e922441acbff67b2c641079dda03cb9378fce04f8997893a980fad5a6d8b79",
+    "4384": "d0ccdd6ae4eb93d920ec770ba1cf8074b6ab6c678929d20f4db466d941ae8881",
+    "3524": "d83c3244dd8e2e64d585f1ff0d760eff181587f06b90ceaf8127a4ce618265dd",
+    "8003": "1187ddb77b37696316afec15bfb11591ed4384931a57230e17100ff4e5d7014b"
+   }
+  }
+ },
+ {
+  "id": "ASTRAT-116",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "خطة إطلاق حملة مع بوابات ما قبل الإطلاق",
+  "name_en": "Launch campaign plan with preflight gates: objective→audience→message→channel→measure, backward schedule, ordered go-live",
+  "status": "documented",
+  "what": "تخطيط حملة إطلاق (فيلم، منتج، قناة) بإطار من خمسة أجزاء وجدول يُبنى من موعد الإطلاق للخلف، ثم بوابات تمنع الإطلاق قبل جاهزية الروابط والتتبع والأصول. — Plan and launch cleanly, in dependency order.",
+  "when": "خطة حملة إطلاق، نطلق الفيلم/المنتج، جدول المحتوى للحملة، تشيك لست الإطلاق / campaign plan, launch a film or product, go-live checklist",
+  "how": "1) Objective: one SMART goal (number, audience, deadline) mapped to awareness / consideration / conversion / retention / advocacy, with the matching KPI. 2) Audience sentence: '[who] struggling with [pain], wanting [outcome], found on [channels]'. 3) Message hierarchy: core line → 3-4 supporting messages each with a proof point → CTA; note what differs per channel. 4) Channels across owned / earned (press, creators, community) / paid with effort level and budget share; keep 10-15% contingency and 15-20% for tests. 5) Calendar: start from fixed milestones and work backward using real lead times (video 2-4 weeks, landing page 5-7 days, social 1-2 days); map pieces to funnel stages; leave ~20% slots open for reactive posts; write dependencies explicitly (landing page live before ads). 6) Asset list with must-have vs nice-to-have and owner. 7) Preflight gates, all must pass: plan approved, every asset exists at its path, every link returns 200, tracking/UTMs fire, AI-generated media labelled where the market requires it. 8) Show a dry-run list of every action and wait for an explicit yes. 9) Go live in a fixed order (landing page → follow-up email/DM flow → paid → organic → creators → press → team notice → monitoring); checkpoint after each step; on failure stop, never auto-retry (duplicates), record the resume point. 10) Write a launch record (time, actions, links, KPIs to check tomorrow) and schedule a day-1 review. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/324-marketing/997-campaign-plan, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4063-launch-campaign.",
+  "params": "goal, date, channels, budget",
+  "install": "none — method card; read the cited Atlas SKILL.md for the original",
+  "requires": [],
+  "license": "card in our own words; the original skills stay in the Atlas under their own licenses (Apache-2.0, MIT); nothing copied",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/324-marketing/997-campaign-plan",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4063-launch-campaign"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "campaign plan",
+   "launch",
+   "go-live",
+   "preflight",
+   "content calendar",
+   "marketing plan",
+   "حملة إطلاق",
+   "خطة حملة",
+   "قائمة الإطلاق"
+  ],
+  "section": "النمو والتسويق للمبدع — Creator growth & marketing",
+  "source": "KOSIF Atlas core-work pass 2026-11-07, track marketing (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): marketing/campaign-plan (#997); digital-marketing-pro/launch-campaign (#4063) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "997",
+    "4063"
+   ],
+   "examples": [
+    {
+     "id": "997",
+     "plugin": "marketing",
+     "skill": "campaign-plan",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/324-marketing/997-campaign-plan"
+    },
+    {
+     "id": "4063",
+     "plugin": "digital-marketing-pro",
+     "skill": "launch-campaign",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4063-launch-campaign"
+    }
+   ],
+   "theme": "marketing-seo",
+   "risk_notes": "Method guidance only, written in our own words; SKILL.md read as inert text; no Atlas code copied, imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-marketing.json",
+   "skill_md_sha256": {
+    "997": "f0b146074b64ee0fd52f7864e30191eab83878c8c1e3e7cf24754e13c7dbfad3",
+    "4063": "9f20d4541b9c60cfa94bb1ac4dfb8df9e8eb5a77bb89c4a078771a716c326b53"
+   }
+  }
+ },
+ {
+  "id": "ASTRAT-117",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "قفل هدف واحد وفلترة كل فكرة عليه",
+  "name_en": "One-goal lock: judge every idea ON / PARTIAL / OFF and always return a sharper version",
+  "status": "documented",
+  "what": "تثبيت هدف تسويقي واحد بمقياس وموعد، ثم الحكم على كل فكرة أو مسودة بأنها تخدمه أو جزئيًا أو لا، مع تعديل يقربها من الهدف ورصد الانحراف المتكرر. — Stop doing good work toward nothing in particular.",
+  "when": "هل هذه الفكرة تخدم الهدف، ركزني، أولوية هذا الربع / is this on goal, keep me focused, what's the priority",
+  "how": "1) Force one goal sentence with metric, target and deadline (e.g. '20 paid motion projects from inbound by 31 Dec'). If three goals are given, make the owner rank them; the filter breaks with more than one. 2) 'More followers' is accepted only with a because-clause that survives one 'and what does that get you?'. 3) For each idea, draft or plan: verdict ON / PARTIAL / OFF, 2-3 sentences on how directly it moves the metric and what on-goal work it displaces. 4) Always hand back an action: the fix (or 'park it' with what to do instead) plus a sharper version of the same idea that pulls harder on the metric. 5) Keep a dated history of verdicts; three OFF verdicts in a week is drift — name it and ask what is pulling attention. 6) Changing the goal is allowed but explicit: archive the old one with an end date. 7) Rule honestly; a filter that never says OFF is useless. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4042-goal-filter.",
+  "params": "goal sentence, item to judge",
+  "install": "none — method card; read the cited Atlas SKILL.md for the original",
+  "requires": [],
+  "license": "card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4042-goal-filter"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "goal",
+   "focus",
+   "prioritisation",
+   "strategy filter",
+   "drift",
+   "الهدف",
+   "التركيز",
+   "الأولوية"
+  ],
+  "section": "النمو والتسويق للمبدع — Creator growth & marketing",
+  "source": "KOSIF Atlas core-work pass 2026-11-07, track marketing (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): digital-marketing-pro/goal-filter (#4042) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "4042"
+   ],
+   "examples": [
+    {
+     "id": "4042",
+     "plugin": "digital-marketing-pro",
+     "skill": "goal-filter",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4042-goal-filter"
+    }
+   ],
+   "theme": "marketing-seo",
+   "risk_notes": "Method guidance only, written in our own words; SKILL.md read as inert text; no Atlas code copied, imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-marketing.json",
+   "skill_md_sha256": {
+    "4042": "66bc7355cef264b3940a76864d39da06ce778f958e1fe04dd6e3e14f360a16c3"
+   }
+  }
+ },
+ {
+  "id": "ASTRAT-118",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "استخراج زوايا محتوى من الأخبار والترندات",
+  "name_en": "Signal mining and listening digest: angles you have standing to make, plus an explicit dropped list",
+  "status": "documented",
+  "what": "فرز كومة أخبار وترندات وتعليقات ومنافسين إلى زوايا تخص صاحب القناة فعلًا، مع قائمة بما رُفض وسببه، وتقرير استماع اجتماعي بمصادر ونسب مع حجم العينة. — From 'interesting' to 'ours to say'.",
+  "when": "فيه ترند نركب عليه؟ حول هذه الأخبار لأفكار، ماذا يقول الناس عنا / trend ideas from this, what's in this thread for us, what are people saying about the brand",
+  "how": "1) Require the pillars, audience and positioning first; mining without them becomes trend-chasing — stop and set them. 2) Split the dump into discrete signals (claim, event, number, sentiment, competitor move). 3) Ask of each: does this creator/brand have something to add that the audience would rather hear from them? Pillar fit is necessary, authority fit decides. 4) For survivors write an angle (a take, not a topic), pillar, format (reel, carousel, thread, long video) and an honest timeliness window matched to real production speed — a 'this week' label on a two-week motion piece is a plan to be late. 5) Ship the dropped list every time with reasons (off-pillar, no standing, someone else's story, stale, risky). 6) Pasted numbers are unverified; check before any piece cites them. 7) For listening reports: collect live mentions (never answer sentiment from memory), keep a source URL per quote, separate quote (fact) from sentiment label (interpretation), mark sarcasm/ambiguous as mixed, report percentages with N, list platforms that returned nothing, date-stamp the window, and close with 2-4 recommendations each tied to a theme. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4116-signal-mine, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/895-brightdata-plugin/2035-brand-listening.",
+  "params": "pasted material, pillars, window",
+  "install": "none — method card; read the cited Atlas SKILL.md for the original",
+  "requires": [],
+  "license": "card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4116-signal-mine",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/895-brightdata-plugin/2035-brand-listening"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "trends",
+   "signal",
+   "content ideas",
+   "newsjacking",
+   "social listening",
+   "sentiment",
+   "ترند",
+   "أفكار محتوى",
+   "استماع اجتماعي",
+   "ماذا يقول الناس"
+  ],
+  "section": "النمو والتسويق للمبدع — Creator growth & marketing",
+  "source": "KOSIF Atlas core-work pass 2026-11-07, track marketing (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): digital-marketing-pro/signal-mine (#4116); brightdata-plugin/brand-listening (#2035) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "4116",
+    "2035"
+   ],
+   "examples": [
+    {
+     "id": "4116",
+     "plugin": "digital-marketing-pro",
+     "skill": "signal-mine",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4116-signal-mine"
+    },
+    {
+     "id": "2035",
+     "plugin": "brightdata-plugin",
+     "skill": "brand-listening",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/895-brightdata-plugin/2035-brand-listening"
+    }
+   ],
+   "theme": "marketing-seo",
+   "risk_notes": "Method guidance only, written in our own words; SKILL.md read as inert text; no Atlas code copied, imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-marketing.json",
+   "skill_md_sha256": {
+    "4116": "0cbb03603bd12aff0dfebe10c1508326f46c5026b7c0c67bc5a16a48f2e82686",
+    "2035": "e53a198f42de3fc70fc1b547845885a388b41fad1f515f7269cf80f7481697b8"
+   }
+  }
+ },
+ {
+  "id": "ASTRAT-119",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "اختيار قناة النمو بطريقة عين الثور",
+  "name_en": "Bullseye channel choice: one strategy per channel, three cheap tests, then focus on one",
+  "status": "documented",
+  "what": "لاختيار قناة جلب عملاء لاستوديو الموشن أو منتج: فكرة لكل قناة من 19 قناة دون تحيز، ثلاث تجارب رخيصة، ثم قناة أساسية واحدة. — Framework from the book Traction, in our words.",
+  "when": "من وين أجيب عملاء، أي قناة تسويق أجرب، الإعلانات أو المحتوى أو العلاقات / where do I find clients, which growth channel, ads vs content vs partnerships",
+  "how": "1) Set the traction goal: metric, volume, deadline, stage and constraint (budget, hours, geography). 2) Outer ring: write one concrete strategy for each of the 19 channels (targeting blogs/newsletters, publicity, unconventional PR, search ads, social/display ads, offline ads, SEO, content marketing, email, viral/referral, engineering as marketing e.g. a free tool or template, business development/partnerships, direct sales, affiliates, existing platforms/marketplaces, trade shows, offline events, speaking, community) with why it might work, evidence that would help and the assumption that would kill it. Do not skip a channel because it feels unfashionable; name the bias. 3) Middle ring: pick ~3 channels that could move the goal, reach customers now, test cheaply and give readable data quickly; on a tie pick the one a small test teaches most. 4) One cheap test per channel answering: cost per customer, how many are reachable, are they the right customers now. 5) Inner ring only if one result is clearly stronger; otherwise run another pass with what was learned. 6) Then focus: other channels only support the core until it stops moving the needle. Keep losing ideas for later rounds; use numbers even as labelled estimates. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8189-traction-bullseye.",
+  "params": "goal, budget, hours",
+  "install": "none — method card; read the cited Atlas SKILL.md for the original",
+  "requires": [],
+  "license": "card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8189-traction-bullseye"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "traction",
+   "growth channels",
+   "bullseye",
+   "client acquisition",
+   "marketing channels",
+   "قنوات النمو",
+   "جلب العملاء",
+   "تجارب تسويق"
+  ],
+  "section": "النمو والتسويق للمبدع — Creator growth & marketing",
+  "source": "KOSIF Atlas core-work pass 2026-11-07, track marketing (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): lvtd-skills/traction-bullseye (#8189) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "8189"
+   ],
+   "examples": [
+    {
+     "id": "8189",
+     "plugin": "lvtd-skills",
+     "skill": "traction-bullseye",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8189-traction-bullseye"
+    }
+   ],
+   "theme": "marketing-seo",
+   "risk_notes": "Method guidance only, written in our own words; SKILL.md read as inert text; no Atlas code copied, imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-marketing.json",
+   "skill_md_sha256": {
+    "8189": "5f68c4b3f720d96f7dfe88e74b96377f5900b862260784915736237a7efceeb0"
+   }
+  }
+ },
+ {
+  "id": "ASTRAT-120",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "موقع أو صفحة خدمات صادقة للمبدع",
+  "name_en": "Honest service/portfolio page: positioning sentence, one job per section, no invented proof, client handoff",
+  "status": "documented",
+  "what": "بناء صفحة أعمال أو هبوط لخدمة فيديو/موشن تشرح العرض وتبني الثقة وتقود لخطوة واحدة، بلا عملاء أو أرقام أو شعارات مختلقة. — Credible landing/portfolio pages that convert without marketing theatre.",
+  "when": "صفحة بورتفوليو، صفحة هبوط للخدمة، موقع الاستوديو، صفحة حملة / portfolio site, service landing page, studio website, campaign page",
+  "how": "1) Recover inputs before asking: who arrives and from where, the one desired action (book, enquire, buy, watch), the offer and how it is different, friction (price, risk, switching), real proof (reels, case studies, process, client quotes), brand and legal constraints. 2) Positioning sentence: 'For [audience in situation], [offer] helps [outcome] by [mechanism]'. 3) Page argument as a diagnostic spine, not a fixed order: problem/desire → promise → mechanism → proof → objections → action; higher price or risk needs more process detail and reassurance. 4) One job per section, one primary CTA named as the next step (not 'Submit'). 5) Truth rules: never invent clients, metrics, awards, press logos, scarcity or 'trusted by'; placeholders are visibly marked and cannot ship. 6) Let reels, before/after and specifics outweigh adjectives; answer the strongest objection next to the claim that raises it. 7) Privacy page describes what the site really collects (forms, analytics, embeds), not boilerplate. 8) Client work: confirm who approves copy, who owns assets/domain/accounts, analytics consent, editable-source handoff, rollback plan, maintenance owner; keep credentials in the client's account. 9) Verify the rendered page at target widths, follow every CTA, test form success/error, share preview metadata. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/342-kernel/1232-marketing-site.",
+  "params": "audience, action, proof assets",
+  "install": "none — method card; read the cited Atlas SKILL.md for the original",
+  "requires": [],
+  "license": "card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/342-kernel/1232-marketing-site"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "portfolio",
+   "landing page",
+   "service page",
+   "positioning",
+   "social proof",
+   "CTA",
+   "بورتفوليو",
+   "صفحة هبوط",
+   "موقع الاستوديو"
+  ],
+  "section": "بيع الخدمات الإبداعية — Selling creative services",
+  "source": "KOSIF Atlas core-work pass 2026-11-07, track marketing (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): kernel/marketing-site (#1232) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "1232"
+   ],
+   "examples": [
+    {
+     "id": "1232",
+     "plugin": "kernel",
+     "skill": "marketing-site",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/342-kernel/1232-marketing-site"
+    }
+   ],
+   "theme": "marketing-seo",
+   "risk_notes": "Method guidance only, written in our own words; SKILL.md read as inert text; no Atlas code copied, imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-marketing.json",
+   "skill_md_sha256": {
+    "1232": "11d1f67dfb836ac71ec73d10adc263fa52a0517f5a93756ccbf12fe46d7ad770"
+   }
   }
  }
 ]

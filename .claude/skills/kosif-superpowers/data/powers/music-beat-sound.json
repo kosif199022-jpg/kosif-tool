@@ -8853,7 +8853,7 @@
   "status": "documented",
   "what": "قبل أي بيت حدد عنوانًا يُحفظ من أول سماع، ووعد اللازمة، وأداة الخطاف، ومنعطف الجسر؛ ثم اكتب أبياتًا تُغنّى بنَفَس. — Before any verse fix a title phrase memorable after one listen, the chorus promise, the hook device and the bridge turn; then write lines that can be sung on a breath.",
   "when": "كتابة أغنية أو جنغل أو دويتو، بالعربية أو غيرها — writing a song, jingle or duet in Arabic or any language.",
-  "how": "Brief (infer silently, ask only high-impact gaps): the one sentence the listener keeps · language + dialect · narrator and addressee · emotional arc start → turn → end · genre/fusion · tempo/energy · vocal identity · duration/sections · must-include / forbidden phrases · intended use. Hook devices: repetition, contrast, question/answer, image, command, name/address, vowel phrase; one idea per hook. Mechanics: short clauses, natural stress, open vowels on sustained notes, clean consonant landings; concrete verses (object, place, gesture, weather); mix end rhyme, internal rhyme, assonance and an unrhymed release; each chorus repeat escalates; stable point of view; the bridge reveals, reframes or decides. Templates: pop Intro-V1-Pre-Ch-V2-Pre-Ch-Bridge-FinalCh-Outro; ballad without Pre; jingle Hook-Verse-Hook-Tag; duet as labelled call-and-response that unites in the final chorus.",
+  "how": "Brief (infer silently, ask only high-impact gaps): the one sentence the listener keeps · language + dialect · narrator and addressee · emotional arc start → turn → end · genre/fusion · tempo/energy · vocal identity · duration/sections · must-include / forbidden phrases · intended use. Hook devices: repetition, contrast, question/answer, image, command, name/address, vowel phrase; one idea per hook. Mechanics: short clauses, natural stress, open vowels on sustained notes, clean consonant landings; concrete verses (object, place, gesture, weather); mix end rhyme, internal rhyme, assonance and an unrhymed release; each chorus repeat escalates; stable point of view; the bridge reveals, reframes or decides. Templates: pop Intro-V1-Pre-Ch-V2-Pre-Ch-Bridge-FinalCh-Outro; ballad without Pre; jingle Hook-Verse-Hook-Tag; duet as labelled call-and-response that unites in the final chorus. Atlas upgrade 2026-11-07: Lyric craft gates: show scansion for every line (Arabic: count syllables/feet in its own quantitative tradition, say when it cannot be scanned reliably); never pad a line or invert natural word order to land a rhyme; read aloud — a stumbling line is a fault. Verses show (image, action), chorus tells. Raw imagery: run isolated object-writing seeds (each agent gets only the seed and timer, nothing about the song) and mine ONE image, rewrite it in plain sung dialect, say it aloud. Generate many line options to a file, show 3–4 in chat; have a fresh-context skeptic argue against each. After two rejected batches for the same slot, stop generating and hand back a brief: what the line must do, constraints, unused images, what both batches shared, one question.",
   "params": "",
   "install": "",
   "requires": [],
@@ -8871,10 +8871,51 @@
    "كتابة أغاني",
    "لازمة",
    "خطاف",
-   "كلمات"
+   "كلمات",
+   "scansion",
+   "object writing",
+   "prosody",
+   "two rejections stop",
+   "عروض"
   ],
   "section": "إضافات v2 — v2 additions",
-  "source": "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-media-motion/references/SUNO_SONGWRITING_CORE.md"
+  "source": "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-media-motion/references/SUNO_SONGWRITING_CORE.md",
+  "atlas": {
+   "ids": [
+    "2889",
+    "9602",
+    "9598"
+   ],
+   "examples": [
+    {
+     "id": "2889",
+     "plugin": "story-skills",
+     "skill": "verse-craft",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1213-story-skills/2889-verse-craft"
+    },
+    {
+     "id": "9602",
+     "plugin": "songwriting",
+     "skill": "object-writing",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2475-songwriting/9602-object-writing"
+    },
+    {
+     "id": "9598",
+     "plugin": "songwriting",
+     "skill": "co-write",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2475-songwriting/9598-co-write"
+    }
+   ],
+   "theme": "writing-content",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-writing.json",
+   "skill_md_sha256": {
+    "2889": "a48675f3538477f4c9f2a1fce37634a3e2d5c31d42b3b20db18e5b065c77f6da",
+    "9602": "4b348df82cddc6a7262450537e41fa2a146039244f6dc2ace05e290e580ae72d",
+    "9598": "49dbb5ae46ae0db81322af271842e32a7e64d6f372c4f3f2d399a35fabb0c8a8"
+   }
+  }
  },
  {
   "id": "BEAT-X07",
