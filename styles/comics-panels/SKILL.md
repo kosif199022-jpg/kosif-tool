@@ -1,9 +1,9 @@
 ---
 name: comics-panels
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A vertical reel told across a comic-book page: thick black-ink panel borders on cream paper, faded CMYK halftone shading, Arabic speech balloons that pop open with each line, and a camera that glides panel to panel across the same page. Use to make a new video in this look (Characters); address it by ID comics-panels.
 ---
 
-# KOSIF TOOL — لوحات كوميكس
+# KOSIF TOOL — لوحات كوميكس / لوحات كوميكس بحبر وتظليل نقطي وفقاعات حوار عربية
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي يُروى عبر صفحة كوميكس: إطارات بحدود حبر سوداء سميكة على ورق كريمي، تظليل نقطي بألوان CMYK باهتة، فقاعات حوار عربية تنفتح بالكلام، والكاميرا تنتقل من لوحة إلى أخرى داخل الصفحة نفسها.
+
+A vertical reel told across a comic-book page: thick black-ink panel borders on cream paper, faded CMYK halftone shading, Arabic speech balloons that pop open with each line, and a camera that glides panel to panel across the same page.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (30 s), aspect 9:16, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Characters / شخصيات, Hand-drawn / رسم يدوي.

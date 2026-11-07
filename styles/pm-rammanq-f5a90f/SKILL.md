@@ -1,9 +1,9 @@
 ---
 name: pm-rammanq-f5a90f
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 42-second square investment-app promo in twelve numbered chapters, each with a huge black-and-blue headline over a chart that builds live: floating logos, a rising portfolio line, sector donut, holdings bars, dividend calendar on blue, a 2008 crash test and Monte Carlo fan on navy, efficient frontier, tax-form flags, a phone with an AI answer, then the logo. Use to make a new video in this look (Product UI); address it by ID pm-rammanq-f5a90f.
 ---
 
-# KOSIF TOOL — AllInvestView product promo
+# KOSIF TOOL — AllInvestView product promo / ترويج تطبيق استثمار: اثنا عشر فصلاً من الرسوم البيانية الحية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/rammanq-f5a90f
@@ -17,14 +17,27 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+ترويج مربع مدته 42 ثانية لتطبيق متابعة الاستثمارات، مقسم إلى فصول مرقمة بعناوين ضخمة بلونين (أسود وأزرق): شعارات شركات تطفو حول كلمة واحدة، منحنى محفظة صاعد بشعارات على نقاطه، دائرة توزيع تتلون، أعمدة مقتنيات، تقويم أرباح على خلفية زرقاء، مقارنة بالسوق، اختبار أزمة 2008 على الأسود، محاكاة مونت كارلو، حد الكفاءة، خيارات وسندات، تقارير ضرائب بأعلام الدول، هاتف ومساعد ذكي، ثم الشعار.
+
+A 42-second square investment-app promo in twelve numbered chapters, each with a huge black-and-blue headline over a chart that builds live: floating logos, a rising portfolio line, sector donut, holdings bars, dividend calendar on blue, a 2008 crash test and Monte Carlo fan on navy, efficient frontier, tax-form flags, a phone with an AI answer, then the logo.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Web Audio), suggested duration (42 s), aspect 1:1, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية.
+Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Phone / هاتف, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/phone.md](../../playbooks/phone.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,10 +1,13 @@
 {
   "id": "pm-ryzoft-4f85bd",
   "name": "Animated space cartoon episode",
-  "name_ar": null,
+  "name_ar": "حلقة كرتون فضائية ثلاثية الأبعاد عن حارسة منارة",
   "origin": "PromptsMotion",
   "type": "Prompt",
-  "category": [],
+  "category": [
+    "characters",
+    "3d"
+  ],
   "creator": "@Ryzoft",
   "creator_url": "https://x.com/Ryzoft/status/2102989395359887481",
   "page": "https://www.promptsmotion.com/ryzoft-4f85bd",
@@ -25,5 +28,34 @@
   "source_prompt_words": 30,
   "listed": true,
   "skill": "styles/pm-ryzoft-4f85bd/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/characters.md",
+    "playbooks/3d.md"
+  ],
+  "summary_ar": "حلقة كرتون ثلاثية الأبعاد مدتها نحو 5 دقائق بشريط سينمائي أسود: سديم بنفسجي وردي، منارة حمراء وبيضاء على كويكب، فتاة صغيرة حارسة المنارة وروبوت كروي صغير، شرير آلي أسود بعين حمراء ودوامة بنفسجية، معركة بسيف ليزر أحمر، شعاع ضوء أبيض ينقذ أسطول السفن، عناق ختامي، ثم «النهاية» وشارة الأسماء ومشهد بعد الشارة، مع ترجمات ملونة بأسماء المتحدثين.",
+  "summary_en": "A roughly 5-minute 3D cartoon episode in black letterbox: a purple-pink nebula, a red-and-white lighthouse on an asteroid, a young girl keeper with a small round robot, a black robot villain with a red eye and a purple vortex, a red laser-sword fight, a white beam guiding a lost fleet home, a closing hug, then 'The End', a credits roll and a post-credits sting, with speaker-labelled subtitles.",
+  "keywords": [
+    "3D cartoon",
+    "animated episode",
+    "space adventure",
+    "lighthouse",
+    "kids series",
+    "letterbox",
+    "subtitles",
+    "robot villain",
+    "nebula",
+    "كرتون ثلاثي الأبعاد",
+    "حلقة رسوم متحركة",
+    "مغامرة فضائية",
+    "منارة",
+    "قصة أطفال"
+  ],
+  "difficulty": 5,
+  "duration_s": 295,
+  "stack": [
+    "Three.js",
+    "WebGL",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-ryzoft-4f85bd/BRIEF.md"
 }

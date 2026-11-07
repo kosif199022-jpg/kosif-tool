@@ -1,9 +1,9 @@
 ---
 name: pm-miskinho-443898
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second product film for a social-media autopilot app on white, with a bold black heading that swaps in a fixed top-left slot: an idea typed into a prompt field, a food-photo post card, per-platform copies fanned out in 3D, a weekly calendar where they get scheduled then flip to live, a green engagement curve rising, and a bird logo with the app name. Use to make a new video in this look (Product UI); address it by ID pm-miskinho-443898.
 ---
 
-# KOSIF TOOL — Quetzal social app reel
+# KOSIF TOOL — Quetzal social app reel / إعلان تطبيق نشر اجتماعي تلقائي بأسلوب أبيض نظيف
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/miskinho-443898
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #130
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+فيديو منتج مدته 15 ثانية لتطبيق يدير النشر على الشبكات الاجتماعية، على خلفية بيضاء بعنوان أسود عريض يتبدل في زاوية ثابتة: فكرة تُكتب في حقل إدخال، بطاقة منشور بصورة طعام، نسخ منها لكل منصة مصفوفة بمنظور ثلاثي الأبعاد، تقويم أسبوعي تُجدول فيه ثم تتحول إلى «مباشر»، منحنى تفاعل أخضر يصعد، ثم شعار الطائر واسم التطبيق.
+
+A 15-second product film for a social-media autopilot app on white, with a bold black heading that swaps in a fixed top-left slot: an idea typed into a prompt field, a food-photo post card, per-platform copies fanned out in 3D, a weekly calendar where they get scheduled then flip to live, a green engagement curve rising, and a bird logo with the app name.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG), suggested duration (15 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.

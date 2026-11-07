@@ -1,9 +1,9 @@
 ---
 name: pm-arjunsh1607-93005d
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second design-studio showreel in a fine HUD frame: a blue dot stretches into a rectangle and floods the screen under a giant textured 'Brands', fast client logo hits, a tilted grid of website shots and laptops, 'Products' with phone and tablet triptychs, proof stats with 'trust' highlighted in blue, and a logo end on navy. Use to make a new video in this look (Kinetic type); address it by ID pm-arjunsh1607-93005d.
 ---
 
-# KOSIF TOOL — Pixelup Labs studio showreel
+# KOSIF TOOL — Pixelup Labs studio showreel / شوريل استوديو تصميم: علامات ومواقع ومنتجات بقطع سريع
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/arjunsh1607-93005d
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شوريل مدته 15 ثانية لاستوديو تصميم بإطار واجهة دقيق (وسوم زوايا وكود زمني وفصول مرقمة): نقطة زرقاء على الأسود تتمدد إلى مستطيل ثم تملأ الشاشة بالأزرق الكهربائي تحت كلمة «علامات» ضخمة بملمس ثلاثي الأبعاد، ثم شعارات زجاجية متوهجة وصورة بورتريه بنفسجية، ثم شبكة مائلة من لقطات مواقع وحواسيب محمولة، ثم كلمة «منتجات» وثلاث لوحات هواتف وأجهزة لوحية، ثم أرقام إثبات مع كلمة «ثقة» مظللة بالأزرق، وختام بالشعار على تدرج كحلي.
+
+A 15-second design-studio showreel in a fine HUD frame: a blue dot stretches into a rectangle and floods the screen under a giant textured 'Brands', fast client logo hits, a tilted grid of website shots and laptops, 'Products' with phone and tablet triptychs, proof stats with 'trust' highlighted in blue, and a logo end on navy.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, WebGL), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Ads / إعلانات, Product UI / واجهات المنتج.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,9 +1,9 @@
 ---
 name: anime-action
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A vertical reel in Japanese anime action style: characters with hard two-tone cel shading, speed lines and a white-flash impact freeze on each hit, dutch-angle shots and extreme eye close-ups, painted backgrounds with dramatic skies, and Arabic titles that slam in with the hits. Use to make a new video in this look (Characters); address it by ID anime-action.
 ---
 
-# KOSIF TOOL — أنمي أكشن
+# KOSIF TOOL — أنمي أكشن / أنمي أكشن: لقطات قتال بخطوط سرعة ووميض وتأطير ديناميكي
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي بأسلوب الأنمي الياباني في مشاهد الحركة: شخصيات بتظليل حاد على درجتين، خطوط سرعة وتجميد لحظة الضربة بوميض أبيض، لقطات مائلة وقريبة على العيون، وخلفيات مرسومة بسماء درامية، وعناوين عربية تضرب الشاشة مع الضربات.
+
+A vertical reel in Japanese anime action style: characters with hard two-tone cel shading, speed lines and a white-flash impact freeze on each hit, dutch-angle shots and extreme eye close-ups, painted backgrounds with dramatic skies, and Arabic titles that slam in with the hits.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas), suggested duration (26 s), aspect 9:16, difficulty 5/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Characters / شخصيات.

@@ -1,10 +1,14 @@
 {
   "id": "pm-triglyceee-bd5b08",
   "name": "Moroccan political history timeline",
-  "name_ar": null,
+  "name_ar": "خط زمني عربي مسطّح للتاريخ السياسي: بطاقات شخصيات وأحزاب بألوان كاملة",
   "origin": "PromptsMotion",
   "type": "Prompt",
-  "category": [],
+  "category": [
+    "kinetic-type",
+    "characters",
+    "charts"
+  ],
   "creator": "@TrigLyceee",
   "creator_url": "https://x.com/TrigLyceee/status/2103804459986161719",
   "page": "https://www.promptsmotion.com/triglyceee-bd5b08",
@@ -23,5 +27,39 @@
   "source_prompt_words": 11,
   "listed": true,
   "skill": "styles/pm-triglyceee-bd5b08/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/kinetic-type.md",
+    "playbooks/characters.md",
+    "playbooks/charts.md"
+  ],
+  "summary_ar": "شرح عربي 16:9 مدته نحو 3 دقائق ونصف يسرد تاريخ الأحزاب في المغرب كخط زمني، بلوحات ملوّنة تنزلق أفقياً واحدة تلو الأخرى: كلمات افتتاحية ضخمة، عمودان يقسمان المعسكرين، بطاقات أحزاب بسنة كبيرة وخلفية مخططة قطرياً، بطاقات شخصيات بصورة ظلية مسطحة داخل إطار ملوّن، رسوم مسطحة للأحداث (أقواس قصر، طائرة تُطارد، صحراء)، أرقام مقاعد وأعمدة نسب، وسؤال ختامي على الأسود.",
+  "summary_en": "A 3.5 min 16:9 Arabic timeline of Morocco's political parties told in full-colour panels that slide in sideways: huge opening words, a two-camp split, party cards with a big year on diagonal stripes, figure cards with flat silhouette portraits, flat event illustrations (palace, chased jet, desert march), seat and turnout numbers, and a closing question on black.",
+  "keywords": [
+    "arabic explainer",
+    "political history",
+    "timeline",
+    "flat illustration",
+    "silhouette portraits",
+    "party cards",
+    "rtl typography",
+    "morocco",
+    "full-colour panels",
+    "شرح عربي",
+    "تاريخ سياسي",
+    "خط زمني",
+    "أحزاب",
+    "رسم مسطح",
+    "بطاقات شخصيات",
+    "المغرب",
+    "تايبوغرافي عربي"
+  ],
+  "difficulty": 3,
+  "duration_s": 211,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/pm-triglyceee-bd5b08/BRIEF.md"
 }

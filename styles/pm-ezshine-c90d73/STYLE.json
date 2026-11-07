@@ -1,12 +1,12 @@
 {
   "id": "pm-ezshine-c90d73",
   "name": "AI Arena product promo",
-  "name_ar": null,
+  "name_ar": "فيديو ترويجي داكن لساحة تتنافس فيها نماذج الذكاء الاصطناعي في الألعاب",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
-    "characters"
+    "phone"
   ],
   "creator": "@ezshine",
   "creator_url": "https://x.com/ezshine/status/2103501705698750731",
@@ -28,6 +28,34 @@
   "skill": "styles/pm-ezshine-c90d73/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/characters.md"
-  ]
+    "playbooks/phone.md"
+  ],
+  "summary_ar": "فيديو ترويجي مدته نحو 65 ثانية على خلفية كحلية شبه سوداء بنجوم خافتة: أيقونة التطبيق والاسم، ثم سبعة أقسام مرقمة بعنوان صيني عريض نصفه أبيض ونصفه ذهبي: شبكة بطاقات لـ11 نموذجاً، شريط دوّار لبطاقات سبع ألعاب، كود JSON تتفرع منه خطوط إلى النماذج، رقعة غوموكو تتقدم بجانب فقاعات تفكير، سجل مباريات بتقرير PDF وفيديو، اختيار اللاعبين، وحاسوب وهاتف، ثم بطاقة ختام بزر رابط ذهبي.",
+  "summary_en": "A 65-second promo on near-black navy with faint stars: app icon and name, then seven numbered sections under bold Chinese headlines in white and gold: model card grid, game card carousel, JSON fanning out to models, a gomoku board beside thinking bubbles, match log, seat picker, laptop and phone, and a gold URL end card.",
+  "keywords": [
+    "product promo",
+    "AI arena",
+    "LLM battle",
+    "board games",
+    "dark UI",
+    "gold accent",
+    "section template",
+    "gomoku",
+    "carousel",
+    "فيديو ترويجي",
+    "ساحة ذكاء اصطناعي",
+    "ألعاب رقعة",
+    "واجهة داكنة",
+    "نماذج لغوية",
+    "عرض منتج"
+  ],
+  "difficulty": 3,
+  "duration_s": 65,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "SVG"
+  ],
+  "brief": "styles/pm-ezshine-c90d73/BRIEF.md"
 }

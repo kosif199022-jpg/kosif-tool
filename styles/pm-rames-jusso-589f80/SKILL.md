@@ -1,9 +1,9 @@
 ---
 name: pm-rames-jusso-589f80
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A one-minute square video of a live-coding music editor on black: monospace code lines type and scroll with tiny inline sliders and boxes that light up on active pattern steps, the text glitches into random characters, then the screen erupts into pulsing coloured ASCII-art panels (red, blue and gold, then acid green), before returning to zoomed-out code and a final comment line. Use to make a new video in this look (Code); address it by ID pm-rames-jusso-589f80.
 ---
 
-# KOSIF TOOL — UK dubstep track with ASCII visuals
+# KOSIF TOOL — UK dubstep track with ASCII visuals / تراك دبستب يُكتب بالكود على الشاشة مع مقاطع فن ASCII ملونة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/rames-jusso-589f80
@@ -17,12 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو مربع دقيقة واحدة لمحرر كود موسيقي حي على خلفية سوداء: سطور برمجة تُكتب وتتمرر بخط أحادي مع مقابض منزلقة صغيرة وتظليل للمقاطع النشطة على الإيقاع، يتلوث النص بحروف عشوائية ثم تنفجر الشاشة إلى لوحات فن ASCII ملونة (أحمر وأزرق وذهبي ثم أخضر فاقع) تنبض، وتعود الشاشة للكود مصغراً وتنتهي بسطر تعليق أخير.
+
+A one-minute square video of a live-coding music editor on black: monospace code lines type and scroll with tiny inline sliders and boxes that light up on active pattern steps, the text glitches into random characters, then the screen erupts into pulsing coloured ASCII-art panels (red, blue and gold, then acid green), before returning to zoomed-out code and a final comment line.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, React, Remotion, Web Audio), suggested duration (61 s), aspect 1:1, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: creative motion.
-- (no category playbook yet)
+Categories: Code / كود, Music / موسيقى, Kinetic type / تايبوغرافي متحرك.
+- [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
-* Develop original choreography from the reference; verify imagery before claiming a match.
+* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

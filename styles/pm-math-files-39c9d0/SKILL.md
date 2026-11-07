@@ -1,9 +1,9 @@
 ---
 name: pm-math-files-39c9d0
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 20-second showcase of beautiful maths on black inside a fine HUD frame: a unit circle spinning out a pink sine wave, a Fourier epicycle chain drawing a glowing orange pi, a 3D Lissajous knot beside a grid of thumbnails, a wireframe ripple surface, a glowing Julia-set fractal, a golden-angle sunflower dot spiral, then Euler's identity written term by term before a tracked-out wordmark end card. Use to make a new video in this look (Charts); address it by ID pm-math-files-39c9d0.
 ---
 
-# KOSIF TOOL — Mathematics motion showreel
+# KOSIF TOOL — Mathematics motion showreel / عرض رياضي متحرك بخطوط نيون على خلفية داكنة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/math-files-39c9d0
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+عرض مدته 20 ثانية لجمال الرياضيات على خلفية سوداء بإطار واجهة دقيق: دائرة وحدة يخرج منها منحنى جيب وردي، سلسلة فورييه من دوائر دوارة ترسم رمز باي بالبرتقالي، منحنى ليساجو ثلاثي الأبعاد بجانب شبكة مصغرات، سطح موجي سلكي، كسيرة جوليا متوهجة، دوامة بذور زهرة الشمس بالنسبة الذهبية، ثم متطابقة أويلر تُكتب حداً حداً قبل شعار الختام.
+
+A 20-second showcase of beautiful maths on black inside a fine HUD frame: a unit circle spinning out a pink sine wave, a Fourier epicycle chain drawing a glowing orange pi, a 3D Lissajous knot beside a grid of thumbnails, a wireframe ripple surface, a glowing Julia-set fractal, a golden-angle sunflower dot spiral, then Euler's identity written term by term before a tracked-out wordmark end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, HTML Canvas, WebGL, SVG), suggested duration (20 s), aspect 16:9, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+Categories: Charts / رسوم بيانية, Diagrams / مخططات, Particles / جسيمات.
 - [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/diagrams.md](../../playbooks/diagrams.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,14 +1,13 @@
 {
   "id": "pm-kloss-xyz-15182a",
   "name": "Chaotic Claude POV video",
-  "name_ar": null,
+  "name_ar": "مونولوج نموذج ذكاء اصطناعي بضمير المتكلم: تايبوغرافي عمودي بواجهة دردشة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
+    "kinetic-type",
     "product-ui",
-    "characters",
-    "music",
-    "code"
+    "charts"
   ],
   "creator": "@kloss_xyz",
   "creator_url": "https://x.com/kloss_xyz/status/2103664956482941143",
@@ -29,9 +28,36 @@
   "listed": true,
   "skill": "styles/pm-kloss-xyz-15182a/SKILL.md",
   "playbooks": [
+    "playbooks/kinetic-type.md",
     "playbooks/product-ui.md",
-    "playbooks/characters.md",
-    "playbooks/music.md",
-    "playbooks/code.md"
-  ]
+    "playbooks/charts.md"
+  ],
+  "summary_ar": "فيديو عمودي طويل (نحو دقيقتين ونصف) يحكي فيه نموذج ذكاء اصطناعي بضمير المتكلم عمر محادثة واحدة، على خلفية سوداء تحت شريط علوي ثابت يعرض نسبة السياق المتزايدة وعداد الوقت ومؤشر بث أحمر: عناوين ضخمة مضغوطة بالكريمي والبرتقالي المحمر، أسطر سيريف مائلة، أعداد كبيرة، رموز نصية ملونة، أعمدة نسب مع أختام حمراء، شبكات بطاقات طلبات، تقويم، وومضات تشويش RGB، ثم تتحول الخلفية إلى برتقالي ثم ورق فاتح ثم رمادي حتى تنطفئ وتظهر شارة المنشئ.",
+  "summary_en": "A 2.5-minute vertical first-person AI monologue on black under a fixed HUD with a filling context bar, timecode and live dot, mixing huge condensed cream and coral headlines, italic serif asides, counters, token chips, stamped poll bars, card grids and RGB glitches, then shifting to coral, paper and grey before fading out.",
+  "keywords": [
+    "first-person AI",
+    "monologue",
+    "vertical reel",
+    "context bar HUD",
+    "condensed headline",
+    "italic serif",
+    "glitch",
+    "rubber stamp",
+    "token chips",
+    "مونولوج",
+    "ذكاء اصطناعي",
+    "ريل عمودي",
+    "تايبوغرافي",
+    "تشويش",
+    "شريط سياق"
+  ],
+  "difficulty": 4,
+  "duration_s": 153,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-kloss-xyz-15182a/BRIEF.md"
 }

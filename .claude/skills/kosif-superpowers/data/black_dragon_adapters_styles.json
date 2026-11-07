@@ -12,7 +12,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "138b5c5a4fb43b7841ea217c9ba2b2577b34827d71cf33a53573494e6b570b04",
+      "style_json_sha256": "3018f6ad45a4176263ac44f016d0e2e778adcd87a9fc1344f3a3494c92f5752d",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -23,7 +23,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "25d354f6f982de19d902e43791a629d469ec114a4101dc2a14b72a10bd5634d2",
+      "style_json_sha256": "3eccda25d0bf360fd565ecb9e72f37819d173ec2e5fa37432d0aa4e4ac36947e",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -34,7 +34,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "62a16ce8562ed2c13277fd2883a9dae42c316013b38656afeca56776ec71ccf9",
+      "style_json_sha256": "a0735b0b775ba574f9d21566b049ce29f53fe1e832f3084e09fc608c641eeb73",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -45,7 +45,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "4e55fffd9b2c33eae4272bc042a82deeb0db270be4ed59ae764dc36aab54ae07",
+      "style_json_sha256": "547d432113461aa685a5a8e57816706452c610ac0eaeb965f7175ec26114abda",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -56,7 +56,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "99e7982f15f7c3dc1eef501bff405021891a69031b3abd30d67f7e5f0435a202",
+      "style_json_sha256": "43d07edadcc108b8d0538cbb4a09286a7bef1d5f62a856477086433734f50fcb",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -67,7 +67,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "fa1b912df726b9ce1557767056f03fa6bdc3daf51bd4d867a28b9b1fd74ed3f0",
+      "style_json_sha256": "2fafdea87deff76bd0a8baa065dc54278b39f9d1afda190adb3f5d8cfc979f0d",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -78,7 +78,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "b0fd5b0eb2b3a1fdce63684d988e0b384c62b0168f2c4419b289a302e6580319",
+      "style_json_sha256": "201d309f662b7ec9ac7c1a21f9c185887d8aa14ab5cec0be56c73df60654bf5a",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -89,7 +89,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "38a42c0d53167ee7a5b4cf181ed06b2fd8369d1fe778cecab357b1dfee2651e5",
+      "style_json_sha256": "f015399397ef66b715384b9ebf6ec91115f6728c0605298503e8894317dcab39",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -100,7 +100,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "bc22bed8676d313e3dd2f60f600814a3a2003d9c5ae819991e015eab570af7cf",
+      "style_json_sha256": "a7e8d3c449f763e768bb9bd8d90b66e9505ef35780a0c6b4a4d6f7dfb3df6b3b",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -111,7 +111,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "b7f298b4a966c8474ca66236c789e7ff13b01bc4a342de06fe54817a622795ad",
+      "style_json_sha256": "f082aa4f2275c2ac6e5951d3b9c8c4c6ce738cfbe32b6824e7b840b36acc3f27",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -122,7 +122,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "f88e5605d1a931b2255de3f61c0136d9db878708bd200247b25e207f8c309008",
+      "style_json_sha256": "bab379e589834af6e59957b1fc81148371115548ce89bd3dbc4670eba5f1f3f8",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -133,7 +133,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "4cfd608fde030683fe0d05c4a3b049aa26eebd3213d6c53840fa409ae30d1f60",
+      "style_json_sha256": "3d8cf440120606c298da6a9c051c8a4000cbec6fa448f2842bb3d386c6d79766",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -155,7 +155,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "36ae60f193b8223ccd3ee7cc7ab02674226c813869c608e7912a78356b8b1ef0",
+      "style_json_sha256": "3efaa7c9f82163d39a69715a3d04280373eefe3617c596752b81feeddbaeb844",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -166,7 +166,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "3653b3c4918e0b964a18535f1dfd87a7b4ed0456f9d1369e60e2853adb86ac98",
+      "style_json_sha256": "4ee553e3de2a0d1043d4c866ce8d4475d728395efc25fb4a4d5141ed567fca94",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -177,7 +177,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "4f91d8b116a0f1af2662e2d89c4cdaeab0858c1ce3a2c91bb430a5188be989da",
+      "style_json_sha256": "67966558d02d5f250b1ef17c831f431946c7d606309b91fd7f8015ad10bbac0c",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -188,7 +188,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "32da79f4526c30255f6a36e7b9afd74ea896a9a1e39e4a52e060115717580809",
+      "style_json_sha256": "4baf1c7631946ca569b6bcaf1ac291844e00134ff2893df2386e45444b15c6a2",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -199,7 +199,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "ca53d96441d28c070ed00294c2891145d001ffe3ece62b56dd33be9bfe483c5d",
+      "style_json_sha256": "175e463700ae7a82511e2533b2e92487239bec1bf43db0c1110973d14efa3f89",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -210,7 +210,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "806c0d9149c3f163b5e9d032e0ddc00d329325e51787cc02ee17399bf33348c5",
+      "style_json_sha256": "04891af4ddcac8992bcdd607a366b90905d0461630c89d0d45b004877b75ada1",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -221,7 +221,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "9ed896747247a350c444710081b3493a1bac8ada87a4ccefd383b1138563bc2a",
+      "style_json_sha256": "db081208385174dca381e744f841ba7c1fa2e7e22b306154f562ab8a38a27aa2",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -232,7 +232,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "d1fe3037c0d4bbada26e1ec0790d63528b4cfe2cccd4c9190b5ee37aacf2d7a3",
+      "style_json_sha256": "35d9819d160e1f68d8794259ad28a972aaaf8bffc2b422f2944bd8efc97215bd",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -243,7 +243,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "9da4c339258fd85ffe3d26addfb7b7e4800957473ec967c52f430603d3fa74b9",
+      "style_json_sha256": "7f2a5b63c2a7550fd531870e5c00fc277feb11566f8c1c67c132e805cc423a29",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -254,7 +254,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "b1e1b5a78ce46a0c7a6ce7b08826a2f02240b55a1d7e1024c0707c158f72860b",
+      "style_json_sha256": "5baa5ffd57d3ff2955963e06281c7bbce47ebf1d02abfba795ae8d4ccc4e1b8e",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -265,7 +265,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "cdf666dda1a77c5671c52e84d1805c0105f623fe34016dd59e8923011f88c91d",
+      "style_json_sha256": "fdc6b7c2df5acc941cf6559cd618a40a8a49ac1b3e7f72df4172b7e652065000",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -276,7 +276,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "59f60da82b609301ec3d72b4b481d2ab760c16d9f5721edb806b399951ad36ee",
+      "style_json_sha256": "221e0f755a107b8e680819acb30db92a8a256c3d6a5868bacae0a2f8edef0318",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -287,7 +287,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "ddc612687a40c8d367c20a3628fced9b90ab5c1720098f8e216ac21c64f25b62",
+      "style_json_sha256": "10e53f0cfdec254036ed7fa240f12ed7a5e02a5d2e5271bd34f5c2277e85a452",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -298,7 +298,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "e913eea62633f83387a2710046574f6564bcc84913a5c7eb6fc7fcf630bbbde5",
+      "style_json_sha256": "cfe0cae6617b021cb31feab93998fd8266cee3176ce0e86a385322b537700fe8",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -309,7 +309,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "c3ca78b1a357bef0a8d31dcfd8309da535b8b9b22ced9ca4b230abc90717d743",
+      "style_json_sha256": "089be511f23034693fa1d62b8a1f56e93dc6361030d1508dacec83b4154c1811",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -320,7 +320,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "8744491d46caa116fbbcc173218c9e8f6ddb02a9c2b45746d09d0b63e6ebf36f",
+      "style_json_sha256": "b760948aeb733f34a789786e9bc9aa64983ee39abe7a370190a410ad2aa8253b",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -331,7 +331,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "f130035ecc9d6a690cbcf98ed1b3d9b0ca0bcee440a03a95d0dbf74672a5ebc0",
+      "style_json_sha256": "60fff16d5c01e62d1a2c52b227fa8756cbc0d7c04b7a97f25a968ccbf6a71f83",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -342,7 +342,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "e97df13bdadd0a39aa0d9655736ceb0cdc111ba2927dc19a046d556e4e92ce46",
+      "style_json_sha256": "60e0f1419016a45b8ad87a47c122ea1c6c5751c23ee3b1b57599afbd58405013",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -353,7 +353,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "87f4dccfdea50492185d09d7bd63d81c4f1728fa6fe384cb470e0d626dbe266a",
+      "style_json_sha256": "4dddf5f4aa72a6380f57ae7c05135995f76d76f37a0c552070759ffc89755924",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -364,7 +364,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "2b7267e3ea6988923a2e6cc4677eadc7b1fbf6f1d11b9c26f35ba2a946a496e8",
+      "style_json_sha256": "9ab09249a944d0bb242371a3b21e98e9a91726d942048994fe1f889cc155cc84",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -386,7 +386,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "e4b1a6b12fbbddfa730b5ffccbb8ff7795f9f3ddcc18813dbb0983d4130f201d",
+      "style_json_sha256": "ab25378be9e9e3b540321492a7d8fcb5e03aeb71c9103c8a14bd11a23fdc584d",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -397,7 +397,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "482827f5071a59099b887005912de45243e7c7ce9f3b034344566d898e7e939b",
+      "style_json_sha256": "ceec1d2a911b788acad5eab7cd288b21610dbace1d32d385087bcad1f2382ff3",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -408,7 +408,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "2e2db6a47752f6dd0670f7c81b62e52d1e4c3a6138f3ca4b6acac76a7184f2d8",
+      "style_json_sha256": "d58b5dc76b874d6afff4bc59872fd9a1849a1082524427ee729f7a3c45de7949",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -419,7 +419,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "14d5379d416eeb8495640ea75f40a19ce542bef412ae7f9d61958646a31d3d22",
+      "style_json_sha256": "64da94ccdd053778bba9a8d83c329a8fc88bbd3aea6367bdbb7d55cff251934b",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -430,7 +430,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "a5e9f0f018dce26ab63fd81410d3b2e307eb9b125185a3114acf16974f61c9b4",
+      "style_json_sha256": "1679e16f9159f8a71e88c954c4d8d17ecef7dfc1e4dc1d3a7c0046fb7cf16d03",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -452,7 +452,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "a9b4b9c26ee3513bcd3bd09d15442523ceab0eb34c2d2a1afb4a91cec9e991dc",
+      "style_json_sha256": "15585b5b5c9010ae1527d0b8b44d27d718b563b04cb4b2252da78a6b874edbc9",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -463,7 +463,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "941b8931979758eff4a49c4aba002330847fb89019de225ddb0ea93889b2a8e4",
+      "style_json_sha256": "e65dc524c9bc6a73bb8c736c8c33248670a9d67944cdc2d2b7ee24de92636299",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -474,7 +474,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "104c8127660193b0558fa2827434c3d532295c3c547243c777d3be5a926d1ede",
+      "style_json_sha256": "4ac32f3fbede4ab936d8894745bd668c27d1862312e2f510f4f335d474385a6e",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -485,7 +485,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "f328199119d61f07d50cf4d46eebba9f7f5a6aa65b4fdb78eefcd8fecfa50246",
+      "style_json_sha256": "d2822abe71b85031b0f720b54d51632ba3a245e7ac61857430c9a61b425ea38f",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -496,7 +496,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "4fb245acaa623eac83da3414f81f56cf560097947cbc6f3722abb39cd1fd1c3f",
+      "style_json_sha256": "c7fd7fcdcf9057891a6d897060e172e27686d1474d7dafc04ae51c0661a69728",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -507,7 +507,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "1d0fc93ac2a455722f536d080e6001fee5ffa8085e61b51cb79670d0cf14fd8d",
+      "style_json_sha256": "fa346509644c0f7a0176e151b5c311906b6a8060e490055298641b468cf2b24d",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -518,7 +518,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "3c5b5031d62c989d9fd233502ecc5c1a1cefe33720e9b6506c8e9c86aaf5e3f5",
+      "style_json_sha256": "cda0c8ae92e3a7699ce908c29c349fe39c1a08464d07f01cd16d0201d17ecb60",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -529,7 +529,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "e2919cceb2c4b3dabdd74aef958e639317708a3d7cfdc8c8951548e72b88eabb",
+      "style_json_sha256": "383b22f89fa948b94babcfd729b4b1331b79eedf6770fc8e94088973ee6ee785",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -540,7 +540,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "87f0263cdb705a0b7bcfc12f4530384fcf22248d3c5bf41268d2415c41023aa3",
+      "style_json_sha256": "08f54537b7879299c8bfbc9944bd51164c936dee91e22d9e66fac7873461657f",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -562,7 +562,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "5fa60a20e1a6e8470018c9d4a012816a00488197720fcd38d7cb42a8259792b2",
+      "style_json_sha256": "715f7f622af56d619db5ad4004c9e330ea2a958c1d77db3f45f6089594509328",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -573,7 +573,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "dc0773b396a5c2d979ba891f54a69ac4ea79aa305718ae13c37a9608c7adb88c",
+      "style_json_sha256": "110c73530b2baa0e9275b9f9a7e1456c7b971d89e38008c3867866699391aef5",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -584,7 +584,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "035603e6202ddf962f638b9223b52db2f018b9a714cdf830e8614591cbef2f3b",
+      "style_json_sha256": "28ac58fad819fdb7f70fcd2480e18b90a9178d424341fa149d9f8fd09368c9cf",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -595,7 +595,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "efbc7d31a2b8edf48d2c46700e928ae5de173c4f27d22a440e990b523f048927",
+      "style_json_sha256": "97a0af2a00a205c2021092a8bfaf94e672671b18ebc910387c5848ce5c6008d3",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -606,7 +606,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "3add7e632506b0283ab9dcce4612d0dcdb4aee7bc545fa221bd72efbe5aa83ff",
+      "style_json_sha256": "02ba1198bfae9db83b606f8783050b7aedc2814181fde757560719f4b91bdc6b",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -617,7 +617,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "e99b8285e7ea6ca2804298f56f38a9e3ac29f659b050e8bf1d66fccbc22ea348",
+      "style_json_sha256": "56cd68591569b8a07436d8a3a8bc83f5218be2ea824f704abff0cdf88e9fae5e",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -628,7 +628,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "ddf92f2a4b7692b49b8be050e83cf0dbdb8a5ec6cdd22ef4575e07d837fd0ded",
+      "style_json_sha256": "1faa8f92e9ccb0058d1db72e839610168ed34746e6526aeaca41bf86df7ab30b",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -639,7 +639,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "5b42d44d6671c94b807cba4e21fdd00fdff5332e099a722ddbc486e8bd478852",
+      "style_json_sha256": "6c0a08e41f1dd8329f31f4b1a290cea2bf9867ba356f843b218ae7912636f284",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -650,7 +650,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "54fa343ec51d1980d2e389d9bc4902eb7646b4d9ff04e5ca4ee09be78fb50179",
+      "style_json_sha256": "80732619ec5a5d1ae94a966ee9ce8ec921d1d60e8fdd3dfcea7ee5aaef5f7064",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -661,7 +661,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "e04d6459ce6efd1c6025d543adcaedd1ba04ba709d83977186a8f3d624d45b76",
+      "style_json_sha256": "d10904f17b7cd6cf978c92b7708e790dee5c3c7b0024cd41e6e9a7d2da3a473e",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -672,7 +672,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "7e6841befd89b1f3c8e24685c4dc75a61c444a48fee86a997230a52133bf6d0a",
+      "style_json_sha256": "04812345f584b048a710e47e217e2c680830abd269e1c790328570d493a71c1b",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -683,7 +683,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "8c9964f03d64ef2cc3fe0a49d7387dd1c5a3a4916dbc29930d3384e0472492cc",
+      "style_json_sha256": "0b5438ecdb598440fab0a773ce2ce98a80d88e793d0790fc6876a35d74c5ff9c",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -705,7 +705,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "549b9a0448049e8b0199d5d73bdbc4e1baded541cf9935246b4fccefd6a617e3",
+      "style_json_sha256": "4aa19e376a14b9fd29f7acf35b9b8ed7d801f046486756f91aa534773d7dacbb",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -716,7 +716,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "59a66f07463bbb4ebbcbe9cf9fc9b84043ee381ba81cf3370edf1aaee77b5737",
+      "style_json_sha256": "dbb2d3ccd90de53ac1408be52096b67197ebd7bb00f3978289042edf799a209f",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -727,7 +727,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "6ba015d20217ea157908437fc29a53e203b08211e48b39e8529f6f53b12bd3ad",
+      "style_json_sha256": "e70c6b7340804762982034527d0124e0cadadc21045358adf913108475614471",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -738,7 +738,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "619163419bb512d9b67f86bf0fe08f576984e8b71c7d87e4b93cb42412ebb8e7",
+      "style_json_sha256": "ca6463893546f50b065e70d8d7dafbb25d7187ab101839bf59dcab0191bc6465",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -749,7 +749,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "ff26c21a356c24ea9fc018c5d7ce4fef3a9c08cec2208fc9ad72868d964909a0",
+      "style_json_sha256": "bd216715ebae4393d94e4cc823d3b976337e85a2989ef87003340f77f007ad8b",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -760,7 +760,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "94d258024ef81320cab6f290040c57777f2fc651ce71af18c65881e017ff9e32",
+      "style_json_sha256": "0c37558b7be24dc7e5dcd7a2667916feee68e08b4e32f87adc6364bb38a7b295",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -771,7 +771,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "2c6820d59046be27077aeb3810d8f1a2403d659a026c5ab8e53478b501abcebf",
+      "style_json_sha256": "3a237b67048b0accbbc43768af0e7e25bd7510c23fe26b7ac87b2b8e703552d2",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -782,7 +782,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "e466abfa7d162645c8620000417300704aac150ca0414dcee5f7e5d252319a06",
+      "style_json_sha256": "8e18b59534461f2607a0819cb5bf88cb62c7d8e8bebe98f1aaa908b2dfd7045f",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -793,7 +793,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "9cfd8a7d20e5de95105f0032b22db23aa3b6162d6861b2e2a71f28e50eb517f3",
+      "style_json_sha256": "2e0a05596db860b87835e74bf6d599517ca52746d3af5cf6d7c8d8002bf25c51",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -804,7 +804,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "ccd91846fe7815dbcace0b79e9eb0595d17861a4f48106cb10ada235d54f0f7a",
+      "style_json_sha256": "6e061fa37307697eafe4138b7845a83287b0f6c1b4b8fd7093f0a58085c9f5af",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -815,7 +815,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "f670faad583631b64222d0886a40b348caaadaa92ae78c00979d0c0d87cc5004",
+      "style_json_sha256": "79d52d1614a8ae6d2a0b5a2882b2374bbefc9d032db87a02078fe8c6e540fbd1",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -826,7 +826,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "6dee8a4bc8d4087c0f6f3fe2d80c6ebe48364ec2899a3eb7d30e6b5ba19a04cd",
+      "style_json_sha256": "ed979e80cfb9990c9c23123a77fa5f3d5dae9542723c1cfa7e7519ad1d875dcc",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -837,7 +837,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "66affcf2028ac94c8e86dc4f4de074e4260eaedab21b9e4f9c474cf26a0b43a8",
+      "style_json_sha256": "c882c5a0699e97b8723615945aefbacae6bbe9ddcc252bb060cbb5912593dc0b",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -848,7 +848,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "8403a5728804585a84e5309162d3519bd8ee6eede405d62a192bcb8a754a2cea",
+      "style_json_sha256": "6031061db399a6756c4033c748ace3715fbc6ca6b127d18dcc676c34f3c773f0",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -881,7 +881,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "1277a4bcaa1d37459ee1c3061d83caebb3d15c3b7cc038940e1f56a4b65d17fa",
+      "style_json_sha256": "fc2a7d430a360907b76cde10819eba66cc68e0424be27b83e577034ac8628fca",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -892,7 +892,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "ed8d55eb7c71e9b38c026d9a0495d1dcc30f84efc65b193e331b120806319df2",
+      "style_json_sha256": "ef2a75712fa86b2ed3fc7bf82dda84b7e49d67915a63ef9a362cc25183f4100a",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -903,7 +903,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "98e1cb8de335cb6f9a107a17da9df3dd173dd01429c89aba5fdf1855bede7e2e",
+      "style_json_sha256": "bcc112a17533f3c735bbe37d5c2d3217386c5cbd96da90333f3715462fe7329e",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -914,7 +914,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "927219aa0d0471db48b7d6f6e62917b2a54e5da110a620143cd58c50efa0c731",
+      "style_json_sha256": "e3f144abca5111ada5b1f9a93f74b4709226c643a6192f20b0b7a31c433b4cb7",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -925,7 +925,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "2043113427dba39649b983abb3db71d0144f04b9cc751d8cd9933cebe412ba18",
+      "style_json_sha256": "b220dd8775bb27e274184fa23a3c1a5976e7e48c944be3de510e95efb240011f",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -936,7 +936,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "f1341a9919d1755a3d5818c4f7d34753aaf931485a5399d602bb0335f3f0c1d3",
+      "style_json_sha256": "9fc32540f3b511f922d9a2f9d694b21cf3f079eb34a32c681972f056eeb87982",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -947,7 +947,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "425737a3fc8972151b438a08d922f64e470f9ac552a7ca0735db50498fa30843",
+      "style_json_sha256": "42ad542f4bcc6b11dc86df8e02f72f294897b2a6acf7673c157f8e1523682048",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -969,7 +969,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "17bc0e10704018894cbd6e6e37757b0e3ec0215e3e9babe4ce1e2b4afc490e4a",
+      "style_json_sha256": "fdfd71522507ba8394124e17626fe52b2efceb3e60bcc493f97842cc02316949",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -980,7 +980,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "d93d7e0bf7b4a92b20fd54ff2af4a5a6e749769bf6ba7d220b840446b08e8c2d",
+      "style_json_sha256": "aa9447c217c6a1969049351b49b25489ba0e9060a8d19fe23ff4a8bb015a0bb9",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1002,7 +1002,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "de2ec8d65f536911aac63dc9fe553b036ddc13e4e530239ec2348d078eddc332",
+      "style_json_sha256": "ffc33fd8865dea14fab95996d862f97f7de095285bfba14cf395c293b0a717f3",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1013,7 +1013,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "05db5653cfae8d25e2b77d686957251cb6d3a9395bda68725a5038c56ca238f2",
+      "style_json_sha256": "08468faa393ebf7a302704ddf8126115f1cc8c9caf0de0315d3ca3a4bbe51f9d",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1035,7 +1035,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "8fd72b65c11ebde4aacd45f9fcb7458f8438c8a621e80d901ebad001a9c6f033",
+      "style_json_sha256": "f8791fe7c85ecb2ea89f147ffc96b23eaf5a6689ffa5b2db5b0d57c2bb7c5e3f",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1046,7 +1046,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "e131c14087dbf0548b70e19de25ada87d64692480cec67e2ecb947389f7e1b33",
+      "style_json_sha256": "94e179bbfc13f76d9e0a4331bcc50addbf2ef96bed4a8f3522f562275d7c8e8b",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1057,7 +1057,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "aa373afbd6bb818f442eb51dac8be8492d0806e95124a73848e0e89563bd27a0",
+      "style_json_sha256": "e7f7c710ae81107e09cf66e4d741ae1eae4efc7cdd75685a379f058c9590a267",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1068,7 +1068,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "1f183a4c81b623bd73aacb6941256daaad6633a90087de8961c58c3958e71e74",
+      "style_json_sha256": "1c7fc3adc1757a0d313df0f2fdfc1fee3bc071a5b9d04ae6486155744b829e51",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1079,7 +1079,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "28dcc60adb204ca9345edd6d38275ae63a841b828e357f4e78f3e56dcf7271f3",
+      "style_json_sha256": "b2b82865d287db2b8a7829324b34446707602a134f9bce1ab25f0f66590c99df",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1090,7 +1090,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "7681fa1fe7bcbafac0cfd98075860aaa24993bb03c6b7f024e7d2991df11077a",
+      "style_json_sha256": "afe26878fccc46e8fb9a1c5abb8f87583d197d1500464506170d2907fa4070d6",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1101,7 +1101,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "80e23d95154fbdeadfec421fdac0f58d74c5218004a025f4dcdeb4f1c15cb026",
+      "style_json_sha256": "a6aeb88a7304effd9b06976cf6b7b420438021ea9c374ae1d42729513fc0a972",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1112,7 +1112,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "0b48c9fb7e0f7ef8ac3bb25666bbcf4b467f9ba9aab0155a985310c6b4daa9f4",
+      "style_json_sha256": "147d262c74fc62bcaa85defc4205396c9641e19972f209ecd3742bcb51a23bfa",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1123,7 +1123,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "44dd2d207a1439d501fdee95033dcd17aa0ead652e01c9b2dc1a960eec04af40",
+      "style_json_sha256": "0c4d212367cf4229484a814f22eaa16997f5fbd6652ef2f87eb1dfc139abaecc",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1134,7 +1134,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "9ac19cb05ed33d4aeb2acf3b1f09df9ea13f1d15d5fa3c3de617bb0c2d076a33",
+      "style_json_sha256": "996e6720f8acd45ce3bd12574fd06dfa2f793996f664f0437ff6479b00a2ad05",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1145,7 +1145,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "550123eb8791b61e7d09c0762c0deaf205755e5c235d43ae5553dfd580168f9e",
+      "style_json_sha256": "2df1600fa6bc3edcfaf31f3329942b0299198677d88be7d4e0424e9764e6d726",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1156,7 +1156,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "a37b0682a399a2b628516dbb00b3ee5d738bae7a815d8619da30bd762d50181f",
+      "style_json_sha256": "b7cc19167f7d810b818cb7cf1740bb33b4ec6dc0f4e28e5836504e10e33c7831",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1167,7 +1167,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "ad71e2cfc5fd222bb21e29726e47d915f3403714fffea77248b98ecc9e75f1cc",
+      "style_json_sha256": "1703819da94bb78c5197b7ef7897276dac2ac26ade1cb4199750102da41d911c",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1178,7 +1178,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "76edf07bfb5127de8f61bbbc17c6cd512c8a4b3f8b93ba1d70483b8db2785d93",
+      "style_json_sha256": "b4fbbb06aab8554543dece0b268002f5df24722e48137994f6e70195628a47d5",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1189,7 +1189,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "318a9be132a03e01113d298d4d48f7588c86b03e7aadbc728682adfbc404e376",
+      "style_json_sha256": "252410dbc26d5e35f8262e6cf299c4156294b236bd1f1334fd17bc3c547ed17f",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1200,7 +1200,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "b6b262f4f13ac878786b8c2fc427d2be0812b8f9422bb1767b92662f3d8e6edc",
+      "style_json_sha256": "1a948c6a50cdea8bc76fbb172a3ae34a939fa418d2e980451f4cc35d190bbe1c",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1211,7 +1211,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "640aeb2dd28b72afca24dd9827b4138a09bd2105766653884bdd8dfabf4e2cf5",
+      "style_json_sha256": "f17f1fcdf5832780682c6e6ea35f0d4b5fbef3996dd636c62d03a9f062707269",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1222,7 +1222,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "ae3c643cde0531969223a1bccd23a41b7c3808a93aef1a895100fcfcd4609b1a",
+      "style_json_sha256": "c713624c92dd9083f9314d3510e942541c340bd16ee5afce6dc854aa5d6d56f1",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1244,7 +1244,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "64b5aec39694f58728aa4fada9b3d6c7306c388c5f910a28626d489c1c236aa7",
+      "style_json_sha256": "705dca37f1aaa36bd82445b1a0714e4f69265bc4bf325f5821855492a2852561",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1255,7 +1255,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "9755fc75e3733d45727534f1c4f3a1b825546a6e4bbd25d8497befffff694ce1",
+      "style_json_sha256": "ca38919caa9cf4a4142601eb89076132d863d4e73999536264f3f9e769af4130",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1266,7 +1266,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "b1104587f5e7e5309532478644ca2546a9d38e137e6b547823f9fdb43c008c3d",
+      "style_json_sha256": "d1292560d838d8537b5b5ce100268cf7a0efa476801f8b045effec70d638fc31",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1277,7 +1277,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "53ef0152e1b94376ad8ecd2f11e8d2342ea14c5d494a5d1bebceb25296b6f99a",
+      "style_json_sha256": "73603b591cbc672732e3991d7980c0e3da09c17bb3f13fee08c84180b12b1f4b",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1288,7 +1288,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "8cb42951fe485831965ab2b37de82339fdebd16a00c6858f829214ce79a5de5b",
+      "style_json_sha256": "1fa6693994785ee9cb025f35e6c12a2db51dbe38ebfe0a6eed713ab873c219c1",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1299,7 +1299,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "62cd734f6971e5ec7e7ef393db6c6add262daea373f9050aebef8b44018199c4",
+      "style_json_sha256": "5abf332ab5586f1da7872168865cae599735163ecd4e7bc8a05f2738ad7a82fa",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1310,7 +1310,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "b8c0789e1c12b778020e586f92363ccda24e5c2a4906a63233795f7b593fe4fb",
+      "style_json_sha256": "db18bccb078dbf4deff2bc3a6568241c96f64058f26b413c884ca75833e75073",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1321,7 +1321,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "56c4217fe4aa0e1fad928385becb155091534d6539539feb55dda64ec6182c25",
+      "style_json_sha256": "ebd036432d6091b958cf73008e292ae26befc5772c49d9083714ccce85fd8379",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1332,7 +1332,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "f3163182ac6da4a218dd2adb2a20c70d2c2d615ccbb68dfab4b61ee4fae5fe39",
+      "style_json_sha256": "a7eb8e17217e9d13b65570bda384d7071230341399224e0737965e93b1ad7965",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1343,7 +1343,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "ba8f6ded69bf5d8a71162b88ebf03847ad477ee165a5490cc6a2dc07ab653014",
+      "style_json_sha256": "099e4326a7549dacfeb04613b8be9c0b97edd5782144a001950de0204d4ac77d",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1354,7 +1354,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "174aa73ba65b9c4b3e854f32b7dade3244e4eb9ab7efd8526220d26dc236bd4b",
+      "style_json_sha256": "abd9cf204d7f14a3421b659d4d8b9ddea8e01e46325213d4773d602f346487d9",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1365,7 +1365,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "02dfef06ecd2e49c4aa762aef2b3f32e7975791e1ff9733b11ca5b335526f691",
+      "style_json_sha256": "f4ea7d7bfdcfcbd49c4ca3517ed07f4987afb0209c167389ea25061d1902a8ff",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1376,7 +1376,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "ec0349989c30c97a037ceb7740fb750f4615c30e5e10f052204fb23a12cc8464",
+      "style_json_sha256": "fc8800b1a08c46be9d9880a1c0821a0a5033947ec6295c149ce84eabf555c85a",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1387,7 +1387,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "10d54bbdc5c8b05e308fc1b2c8408dfcd5906c8b544a185f49e3b5e1f85b7a34",
+      "style_json_sha256": "7f4e61da50af9d05adbd6e38e4a58947779dd68e13a57ffad4cf67da734ec60f",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1398,7 +1398,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "acb383e05399594f3d2e0f5f501612074d7d27e815e1b77ed29b45e8f6951290",
+      "style_json_sha256": "c127decd8a0abf1706685ba9c0d3d66f814a1ef8da74a81dcaf322f00695f7db",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1409,7 +1409,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "cb5237dc308a523d39647cf22a51f0110206e6fed34132a0b28ff4d1997000e3",
+      "style_json_sha256": "ecb7e7a176d30993d11aac2d9ff4cfc2e8de17901ea94de61b81317e0b0c557b",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1420,7 +1420,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "069fd420e75c2710e86abef928c83e663c760d7a67ef7b3c875f4b1e8b49ab7e",
+      "style_json_sha256": "ac686881280b479dfdd0e6e7ee2f01140697b0b963f5febbab58567c786740ca",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1431,7 +1431,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "1cfda3f82070adc57f355fdbba802884c27859e0b783032a922f7e80378296fb",
+      "style_json_sha256": "aab31ea56ad6413a5ff07d224f894bd44a0916cd0befd2b0c4bafcade028c9fa",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1442,7 +1442,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "a4f98a20600d6cb786ae85fd0041e746a3e9e023881311ecf4c3c4739e096de4",
+      "style_json_sha256": "f23f713dd63a08cf9368bf36c1871f66242d82676789e1a5ae5fc2564e860744",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1453,7 +1453,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "f03a96762872824c3b04efed83399726c86b47244b2534c9804c029ec37ea02b",
+      "style_json_sha256": "5bd2fd584ae999417dec025cb3ca856ee21f45b82ebc68bdde1a9e3d16724ba4",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1464,7 +1464,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "29f7acabf6429a113904abce25ff0c8e03b334afd38237e5335e83862cbb0622",
+      "style_json_sha256": "7d5df8876a185de22d9efeef7d04cb0815bf9b85486bd29be9b75d6268f246b0",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1475,7 +1475,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "db0c98c2011882cf8b4fe4b364043d68527066facb5f717a0358dfff6caeb18d",
+      "style_json_sha256": "1172d8596c254550ebc2a1d6e8bf87b3fce7de49f258b0f80c60ba3073f33400",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1497,7 +1497,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "1766381dc280e03d5412220eae60cef46bfb85b127f2df0a3b2283d69cd9b7b4",
+      "style_json_sha256": "234a21e9b50b01d253586c47cf9bcf282775065f42790b6f8d2302816aac3427",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1519,7 +1519,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "408ede192ee2e8a4078fe7b698c06116e5e19f26d9d54c3fc3c74b466e89e822",
+      "style_json_sha256": "fda3d0069b1f4b41541bb447cf38a245ccb85059cb8001c53c781fb4378008ec",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1530,7 +1530,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "1d94941983d4eac6f865e7c52e78a1c10d7cdc917255ff7be6eeeed2e2ecb63b",
+      "style_json_sha256": "b6215619f9bf8be2b61418a8bf1de6fd8711ae8091cc1b6887342760d149654d",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1541,7 +1541,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "e13706b31a443a451c32ff8577948fced43b3d45740a9992fc77060486e32961",
+      "style_json_sha256": "22f0bd4837bc1e6948cb6593b9e44f140073eac78cbfc4de6118eba061fd3836",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1552,7 +1552,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "b75f882fb920d9d9074c7fcc6e7844709dfb4f62e8fecb6aae2760aff544c5ba",
+      "style_json_sha256": "98626fc5446ac8d1ba5f4216f03743870ad96c1fb4e75473d75fc316cc038ca7",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1585,7 +1585,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "8623f0139e6f1ef056b55399349130a0ea892f0e7b8d68842a2e174c01ab63d9",
+      "style_json_sha256": "73c5b83eb50b211aa4491c0facc3692bc8bba28c73468c0ca02d4e8fff06de9d",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1596,7 +1596,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "411f52505a5d90a0173c4d7d03e19fa781d2ccba890da30d42df807338b6d716",
+      "style_json_sha256": "d61845de383585d22bafd48b64bad82c75189786e7596cc5b092c57166bed985",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1607,7 +1607,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "eec9d9eed1b07c107a810344c4c0102f7dc89041df47b4f5e58de08a6ca7ee1e",
+      "style_json_sha256": "a887a94511d027a5d62d585fa8900f12dff93d0ffabd949f057f22be9cd97fe0",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1618,7 +1618,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "0ed33f8cf58883b09636b6ca7f439e825b3d886d5b34c77636e88432a33997a9",
+      "style_json_sha256": "c290180c27884e6b6fb91a4b6b0b76aa37bd7ccd15013976b22f8febb724043f",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1629,7 +1629,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "fd7681b144c2a82b96b459f1eb28e8e504e5e9f202bdd3f36a84e7650f6ac844",
+      "style_json_sha256": "41cde88ec3ed63360abc81183e23e441b7cd25d1f2be20a8e1a58695c1c9ed51",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1640,7 +1640,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "b13c1a990d8560b02968fb838e93df99db508037d61020bd440bb60ef964237a",
+      "style_json_sha256": "8cf2df766be9d00ec0c40be8f7fffdc28eaa1faca1b91f7b5bbf3adfaa3d63a3",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1662,7 +1662,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "cec9646094c7d6a286fe23923010e5b89ec05f24add9c6bde0f52c6e8164dd1c",
+      "style_json_sha256": "5fd78212f156e9d43680fd5a3d32cd29359c2eeb5bb5b64587aab94f55aaf4b0",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1673,7 +1673,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "d8ad041e2a7801be223fcb1e94395ce2e5e9a60092796879a4bf590a5791e245",
+      "style_json_sha256": "02418f75ae13c5e743fd08cb059f4028f4f33231b174948509b33d49d0775467",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1684,7 +1684,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "ae4c63295171a00e154fd225694621962ff2ecabe72b9499b7682743ef8d3423",
+      "style_json_sha256": "b88e96640f6f2c0706c1705d88469622533ef3b618f783b33a75f5a0a50c12ea",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1706,7 +1706,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "0c36f395a5634fbef585007a4f446130e9e206f936b3560c9c034ecf8fc3bae0",
+      "style_json_sha256": "5a82bc1a03d1ba588e14eee193570e0c434b186d9300bcdd3461ef29485fa23e",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1717,7 +1717,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "df6ca71bd25cf18db074f6775740cc40ea172035228cdd03c08a76e233d5a2c0",
+      "style_json_sha256": "80800777f7a66c4e21a0007d98e132b7db85587b942c5b4a9054a64375749c39",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1728,7 +1728,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "2498b8fe46d56b53b5d9f1831ccfe421b245aee2f6aa2f3d25da0fc6083ab155",
+      "style_json_sha256": "814ead51579f27aa4de6cd0b3c8948ec774867708fbf7bc3d13384b98fc2d8c5",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1739,7 +1739,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "99ece0d6362d7c606670b4b9e8ca05624f6e282408e779632b9c895909f6932e",
+      "style_json_sha256": "9d6fb4582bc39ed829242fee06f9af8100c4f627721477c6c4e634f00f4bf3f1",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1750,7 +1750,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "491eee5c9101e662dc85bf73ed0f0eb7ab2f3e46d8f2f3291d0ef5d7902ff77d",
+      "style_json_sha256": "15c2d3a047ef0130d57f033838ec6f309f943cc074903f3e308f3733284c70c7",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1772,7 +1772,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "4e0f63616e988aa73c5caf3fe93c3a772847e0883fc26cfad3c96065f40531ae",
+      "style_json_sha256": "aeadc708f314d92fbb77bacb0325f1f47de82bde5c98e93951fef13a42af693c",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1783,7 +1783,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "09ccf57e50daf84f438cb643a0551ec4b2dbefa844b64672b3bca80a6e3f03dc",
+      "style_json_sha256": "21cbec29d1beb18e36630ffd17a9ce955c1a7ad05dff241a78d399890054340c",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1794,7 +1794,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "8b2f431a839fd1aa64fd5a4c3d722d56add4dfe50d75c50f1512c55b5f1a0c33",
+      "style_json_sha256": "3870a82a12d33379f0c3319a9d65a45c09ba5d7cd3cda34dce66560989da2984",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1805,7 +1805,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "4053976434303cd345eee27541da4f948cd094699e26aac5e986abad1b848e88",
+      "style_json_sha256": "4df3ac02c41f07e31347bb978500cbbcd9ad6081a7ac406e8566f979658c6c62",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1827,7 +1827,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "1516a5e1395beac9b5f737f17dffea3ab28c03bafc9f59091d0c953c76a39aab",
+      "style_json_sha256": "f98ec1d50662c881e6b37a0452fcfa5ed2256a2f1537beb22850875c9d4268d7",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1838,7 +1838,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "7bb9f10c0e9e06ef5d36c0ac4d0137b17fc42bf946d887917cfeda14be22695f",
+      "style_json_sha256": "7810caa335f3b93d38c1c9fe81eb2f91ba4803c7780789b30864a44d4ac69e7c",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1849,7 +1849,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "52023b01dd7f24a0561de59a667b6f1cfb3a12fa606f8f0e2af64c73408e2f4a",
+      "style_json_sha256": "7030237a17498b3cb50d1f80e61f5db1c5c8a4989030fe1d7947519cb0537473",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1860,7 +1860,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "dae4b9929b7097d3294ca6901f98146038ad67bab32e41893eed00f82fd3eba6",
+      "style_json_sha256": "81c7511fa3ba0ae4985912e34d109209ffd84b54dda813d3c1d915568c7e81ca",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1871,7 +1871,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "211688107134f574739fd53ac4702736d548b57c591595b8457553eebb7739bb",
+      "style_json_sha256": "fc306ca65915bb08cc3020f12b4558ea1c9f1d016a98462c25db05979a6d1426",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1882,7 +1882,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "b1240f412f2d4a83f6d0016ab6cbaa45924b38cd9a8e542599d60e856aa341a7",
+      "style_json_sha256": "d3ec142de512405212e0c7964c494eca1157c494ad408f39b4a15c972f291c45",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1893,7 +1893,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "5a0b747665cc5b1d06a99edfb252e6532ba3f1e96b90b7066104217ba7902863",
+      "style_json_sha256": "5eb658e8606b653fd868af5841f9d3eb38994addecc40a3e03f9785e1e581e23",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1904,7 +1904,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "634c2c8f18e88667b6cb1d1dc1395036014c31e4c20900b7f4dbd35f7f06716a",
+      "style_json_sha256": "7a87d93000cffe8d4934806394a97c43cdeea8c6ad2e0a44207b3a0aa8c45479",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1915,7 +1915,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "2fb9d1cce672160b0d633e3f3836ca31a1b41c98ac8bbcfccb3a9f6e73b08e90",
+      "style_json_sha256": "3c443cbf00608aa04f139d835b155fb483b8f818eb7ec94a193706f35d056f58",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1926,7 +1926,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "95408a95a3f463f9da3e0c7389e44675c0c0d63f5befe78af6affc65daddd03b",
+      "style_json_sha256": "d4e061f31459b5484f0c18205fdd4cdcc356dc56c2a3bf9038a6968d44c02890",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1948,7 +1948,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "fea26f3817462b8eeb40273462e22d19eaa10c7afb0f61fea5253a56480020e0",
+      "style_json_sha256": "bb2ca7101da160312f5041353beba980bf4572dcf548a93706566dffcabfe4c0",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1959,7 +1959,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "5992a1ab5b9f173a6eaf309a2cd294c19013769e7a514d05f4c9a9faf46999d4",
+      "style_json_sha256": "f56fc1662c62c27d54e173d6dea07a8867a6c7078f8da1b90c3279480af33d7f",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1970,7 +1970,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "7b08c8d0d8ce73a288e2cd8a431b1c9f43f025044e2a9c67433cada347bcb9d6",
+      "style_json_sha256": "8b148d909c538321c69827ee75872df594ced678f0479f13a32af2da39d4a250",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1981,7 +1981,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "4835b81650885b5703c9184b11f8d24e59f4cb8c0c81166b1d20aaccb5120bd6",
+      "style_json_sha256": "1a0ac2b9a50283e663079e53946f1f739f0f9eb7a49a1569f85cfc7b0e8ad104",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -1992,7 +1992,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "df86ed5bea74637411c25bc0465d4b29bb36ded5515716b7b6006026abc2e7b4",
+      "style_json_sha256": "e105cfbb45576cf51dbdb3f3ff847e6b93b3464d2ab2d13156d5f32a7a57affd",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2003,7 +2003,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "afa9023d8021e1989c924c67f1817e4eb2e1e2ce55bc18ad17dd6c8faa17939c",
+      "style_json_sha256": "fe8a54191e113c99cc0bc7038cc6f719a09186bc1b1ea334e0f00ca7ea6ba1ce",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2014,7 +2014,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "4099b7b890b8a1d3ef2eb703ec639c5a36e56772c15d5a7021d08aa6926b99c1",
+      "style_json_sha256": "e521502edba9c4920361c5843c73f58197aa1f66e084d7d038d5731aebe0f76a",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2025,7 +2025,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "69ab7ba2b6b91b6c03e3b8e1a255a0287a2028e5d056a2d0d07a801a2d60315e",
+      "style_json_sha256": "1e6c7ed2bb9fc5d2d79ecccbbb9ce00bce6ad010bc355a43bb420a83572510f4",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2047,7 +2047,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "58ea9d6ab84213809a010cf41436ffec4e34f269cfcb6ad79182b92dc36d33d9",
+      "style_json_sha256": "ab9494926ff69298fead87990d00986bd286aa140546441b69975425870e68bd",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2058,7 +2058,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "88d727b5d5401099bccacf84dae5e0a651d61e10911750ab6e162288f732c481",
+      "style_json_sha256": "7b150d43471d46cf975a94b37421f1b785938090ac511bddda5e9be77127ffdd",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2080,7 +2080,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "323fbdb00d0252dc047e148f53ce023f996d3c908eef72b141b16159a3c55a43",
+      "style_json_sha256": "704a95ce941b021024c17eef424a581a3ac0606da9e8a9d00a29d9e190f90a4f",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2091,7 +2091,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "3648fae9178097c9a075c70183716f738a50d02a4b5ab6d6f0aa984a17e0ec01",
+      "style_json_sha256": "e9d709336ba7105a1b57fc02fb077cd0f101fc85ab609b557ca9fcc5c6793d9d",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2102,7 +2102,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "ef3c338fe212c0372c5ad4284f039473289aad2aa9e0225f899ce9dfa6fe8192",
+      "style_json_sha256": "a00460be482ded65b6fa9c8217b6d6439fb7815065b8bf1bcd6f33ba8b44225a",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2113,7 +2113,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "849d4964897a4cbb7ebf9ae5990414433393023b35c1b5df6981099030c08d63",
+      "style_json_sha256": "26f53e007ff556b726dc756aad4c763e212504052173c333d33dc11c10a2bfca",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2146,7 +2146,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "44af724d5d7e5c6947c0ee3a196cf2492e30943ed9f22667d0629f52f6c39d53",
+      "style_json_sha256": "16d4a4f1384165be6c37b1112cf501724e1301ce1bd639c62f1ee43585cd5fd1",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2157,7 +2157,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "24eecbf994c77fe4641fd650244a10b53170864426ec37f9f64f2d6dc8f7c5f3",
+      "style_json_sha256": "237938e15f0f001418ae5be1266773e62818b1aaabe2177445bc26e0e897a80c",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2168,7 +2168,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "002c72dca6c4b7232a8fced2f4884e8f3aba3628b6c3a936b12ce4f5084beadc",
+      "style_json_sha256": "2cbb214d0dfb3caef6002918e1369d54f992340934897f9586a25655630ab7b3",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2190,7 +2190,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "38bc58d35645931428c1fc8160b3802b5c3db04fcf707a3ef9c928546fd65f6f",
+      "style_json_sha256": "5ef3aad564e3131ee06c1fc1b967df8fb7c5ea97eb6f0db4dc0b202d35df62df",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2212,7 +2212,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "53706a21cc2ae1a1f25253fd7d4bee8a78bd7af37df74c0e7cb0c1d4e9c73ecb",
+      "style_json_sha256": "a83fbb7bd0da35d2c99bbe3ef71a97e0d451cb77724075d50f3946ec9f6cebab",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2223,7 +2223,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "8eefaddecd3b66cc01b660f80b01677cbfdb8d88fc30780321f356615633a7f6",
+      "style_json_sha256": "7d7dfd567add38031de420916ac345369d043166c0f0b88f96748f06fd73eb52",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2234,7 +2234,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "3ccaf91608918308a5573c188ca814cc283ff93bfff8caa63f19b7915d17fd13",
+      "style_json_sha256": "1f4f831d37ce6bb1e07c8fb6afb0f6b8afdf7f67a38e6e1358c6a87f57809292",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2245,7 +2245,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "62efca67faff2500cc6dd7d4f99667ee2f65a7965e0fb356de0920f539f0c23d",
+      "style_json_sha256": "eaf9882bb2ff7a5239c7c2104cc916a85f5f054fecaf1d507b537ff5d288788f",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2256,7 +2256,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "f1d15104b4e01f9f944daa14ea078cac002b27ab4f675313f55481966f8e2edb",
+      "style_json_sha256": "82e52b302a763acc7876345c179517d9e0fed50d50aa5a04ed83908cd027f5ee",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2267,7 +2267,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "785bcdde42e0e96c1651582a7962206de4ec6ac30534749b3f5686cbbb8340a9",
+      "style_json_sha256": "0ade712352e43d419f639cf3ec5128c3a66ffff6dd75097aeeee25737387d715",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2278,7 +2278,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "63a8c6dde6c59c0f9dcad08fbdee098919a6e5a6d7be3a8ea9cb134d4b9954ea",
+      "style_json_sha256": "db2e7c4abeb363c1754f7b6be980633ae3139b4416b8096b9bd5c79db0eac5e5",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2289,7 +2289,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "b183df2ad4f65cd146a1dfdd0461a2a2100856c06d0a26075e1cb19e2fafdeea",
+      "style_json_sha256": "7e9d056440bd0bfd8adca615519574f40dd8911c3ce4c1a9af998282bfd0114a",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2300,7 +2300,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "46ecb692f1435571c083b7a7685602f1050d6b87fdfb38acabe9eeba88fab115",
+      "style_json_sha256": "7d283fbd84a179e8efe6c48f62415d26400f90fedb04843d4afdc9e94b2ec0a8",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2311,7 +2311,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "0e2e3e67ae90c3c9e8eeaa7ff08bd45895b211df42c4a419db2235c2cb44390a",
+      "style_json_sha256": "d3a3ecb208e133ee56c95c3cb7cb8bfe91c9bc66ef3b834d9717fd343c4388fd",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2322,7 +2322,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "d5badd3af0818984ff5eadf8c329b133755a826a0ab607a6bd8722138e19bfd2",
+      "style_json_sha256": "a2296751c7d02c617ff808c00f58f3c7436f3e1b09cc567d8c106f7aede63422",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2344,7 +2344,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "99aa1fd8522abb7dfcc7f0ec6281ef0b9a252fff8e55ff1e4fab4d628430dad8",
+      "style_json_sha256": "a59e04ef7ee93c87f9a29767fabb886f9c3ea6d6832af5a5c3ae7caaf6e75c26",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2355,7 +2355,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "63a7e2c415f8d7bc1baf42b6a48bcdfbb2897c9c23d2253e4b68f1accf2bb7d4",
+      "style_json_sha256": "b4bd60a132cc3ba925c2e80891cb604083b332d132d03b6e526c7008a81b3a3e",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2366,7 +2366,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "35701ff3a9c05a43d13470f7097a8ee8f2c372065fc022dfc7498b87133b015f",
+      "style_json_sha256": "5d64b57e9ce2051f79de9f38b12bdb339ad5ecc624bf99b28cbb24ae574d1ab4",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2377,7 +2377,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "afbdee018f56aa41c926ae131cb8be29d2db4452e9b1c8c2f8ad7d3c3936c501",
+      "style_json_sha256": "aa96ad12dda40b310389fb2fa021e78f8e91c578a9f1dd7faf96123098bdd122",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2399,7 +2399,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "a966a5eb2eca171540bd36ff7f856f90ce473e7321793505ef3ec085ad59b6e9",
+      "style_json_sha256": "221dfc00076e7dd1c55c1c3422170bae24a971351d8062fd4ee8397c41606a69",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2410,7 +2410,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "1859b693d7bf5b870082b303ea05b2e355018d198057d807a9299e23b38c5aa5",
+      "style_json_sha256": "6a0974b1cc2acc962572173e004cf736e5d9f1a24034b7301dc668f99755bfbf",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2421,7 +2421,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "f4f126d47cf6808be501a17fd34c1723351b27415e28c272adf3ff91dcc5b919",
+      "style_json_sha256": "e0d455de04a1f143d9539d5b6e844c36d9fedf48421bb033fe3483ba83820f60",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2443,7 +2443,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "a98664e9460a3e0f7af10069412434e5e6859839b86c515b12f729245ed656cf",
+      "style_json_sha256": "44e743b33ba1d84457449afb77590f7f199af82d747e1f585f02ef50298c67c6",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2465,7 +2465,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "84a5efcea9308626a482c08be50f47514f2e22818bb656233cf75d176f4b1503",
+      "style_json_sha256": "b6da7498eaee3779596ac0a18a66abd01e615cdc17b3a7cd33e325e21fc3169c",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2476,7 +2476,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "cc11d22897cf70ad7b397531c1eb2e399bfe290afe019b79936e19e48d410db4",
+      "style_json_sha256": "63756e6f1a2fce8f40ed958d5c31fc582e9fd9a1e041a469da437698cb5339f5",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2487,7 +2487,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "3ae3157b15156a07c29cfef38b206f1476267ee279a3bad5530223d24876f58e",
+      "style_json_sha256": "86e7c90b5fcb451010fb9742f66d3817c93e97d1299d0bdf72d163377000e353",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2498,7 +2498,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "578bb4af39fc319644e82e5a970f86c8385272d22242beae7744654157709d49",
+      "style_json_sha256": "2ad7b86ef3853385813b4b5dd1600810da081d9b9e083a5489c0bbd767783aa5",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2509,7 +2509,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "68a0f0b003d0d26059ecc40aff499dc61fb7e4fa3b9afa67e6807f2003d58f70",
+      "style_json_sha256": "5048a71b46e9cba1ec159c02d09069eca44a2e2e09afd3a060c5f1465b750d98",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2520,7 +2520,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "264802cc0130e5427ad328b99210c3988d5f714c2f0a55b6b6dbffbe5eb9f7c1",
+      "style_json_sha256": "6545603f712701f51053d312f2f8cde5a9cc8bffc82d1796f930515ad59e5a86",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2553,7 +2553,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "01c9ca6f7979648d528af40f10ed67eca61b69f9a0a45463edd9023b8a776f70",
+      "style_json_sha256": "e18633113bcc32e65bc271e6f2f96222b1ae2bf70d04c0657d98ca537e94f93e",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2564,7 +2564,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "caa43ced3cdf24abc80ae193f00e4dda53dfc9c042b3bf4c06a8a0a8dc9253f1",
+      "style_json_sha256": "d9ef4fa13c01ef0eca2681fcdb3612aa5989059eed8b68deb2c07bfa5985109e",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2575,7 +2575,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "ec8d9526219c50a12e57e61b03d849f139903b941de102d301de76f565956dae",
+      "style_json_sha256": "c45e147289440c4c3b8d0243a809c7c1cbc56dd4f05d57f8de337cf2adc6833e",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2586,7 +2586,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "4ac7c4a65d95ea8ca39eb973cb661ec7865d2e2a81634fb1d4af073836e5dbe1",
+      "style_json_sha256": "fb16c1c2fffdd7f179305ca0ccc28487da4b14c521c3473f5171b74eb63ac14c",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2597,7 +2597,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "97ecb49b2019bd843539424478d9454f1fc662d0d76a65fc0a3687fa76f71c77",
+      "style_json_sha256": "c4a9a152ec5e1576f57eb3cfaf90c2f1650a1be050d878e8639cab78f8298dfb",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2608,7 +2608,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "cac29cf566ad02e7e71f26baa2b254ef1aed2cb877f03b18c47f5e3e1de1821a",
+      "style_json_sha256": "97304bfcf987b85885e8bb566a9289a87f666e0f0d65c03ec4bf0820c3c87dc2",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2619,7 +2619,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "588de6623aa8f77c2311ad0d6cce29c4af83e77d07342ca4f4ae122dd890cee4",
+      "style_json_sha256": "19d0eed01d1e19d6e4649bee02fd2011ab83992a4af98b67141b19e764e4d63e",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2652,7 +2652,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "b1065f40b40a8e059da917e9b100350c5be14b7a02adb0521561ee60f403fdd5",
+      "style_json_sha256": "aed38208a1b030f085fe6a0e382503277a413a5a95bec49cc7535758ba6a24f1",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2674,7 +2674,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "7dba66955f0a4e34fe8282455a7dd186921992423a4dfae06d62f8ff3b00859d",
+      "style_json_sha256": "068e578307770201dd3b28d48f0cd98a23d01818892deac93826c998282e4c51",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2685,7 +2685,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "9b4be5df69a2265e24cff9bbff683bbd7bcc23b43463af5de7eb6293d73d939a",
+      "style_json_sha256": "16aab5a7e44b8433dddd4f196df6416cf8ad0fbe7b6fa4f39e076926a353f2b6",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2696,7 +2696,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "733180f0fa820b0f553c43d4c709bbe5ceeeb3903213258c3ece33705715f31a",
+      "style_json_sha256": "f4be0caf0e5a76debd3437bcd92b4db4a7434d4e0f3aa6d90327dfe5c27db694",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2707,7 +2707,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "2778e7423338024802ad1d9673736b89be293fdaac459a38ca8f5735d270da43",
+      "style_json_sha256": "4a413aeb5c77fe10579bd98fc384eded148ad5d1ed50c46e205c12d6f6b677e9",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2718,7 +2718,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "78966dfaa975635549544db1e578d328ac7cbe942815df9575d6af85ea155c81",
+      "style_json_sha256": "110998b9110cf6f93ae2b619a5d4245d5197c83c0ec30b4f18a1b057fd464ef4",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2729,7 +2729,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "f3186adebe3295baa42b85ad37be119d207253cbf7084f9eb0f8eaab6c3f3a8e",
+      "style_json_sha256": "b611700021aab2765343578b121da09ed5815bd807cace57b06574e0bc70a4d7",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2740,7 +2740,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "91649cb106ae8f8b150427ca5eeac399cc37267ee5b5ff4bb74c807298df4fa5",
+      "style_json_sha256": "c9168b052e90bdbce040922fcf3a56b644f7b02ce3cc5e2dffdc08212c7852d3",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2751,7 +2751,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "bd90bf52d659ec0bf0dddce9afd69884d37faa9d57b92d7cef671c703cc60e36",
+      "style_json_sha256": "cb005900cc62a2a0bbde2d6b448eb39028a361c60647dc4d44122c7f7341c85c",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2762,7 +2762,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "2d0662a85a9d44ed0cdf2eeb484634bac2fc808ff3adb8a3dc12401c2e41374c",
+      "style_json_sha256": "03705f498e96977b6ded189767804f20744acb3608736c66ce535c9ef34f16cc",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2795,7 +2795,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "a49109494400c093fda506f44fcb8609153e255e27e4b9cdbe15cf65601a2fac",
+      "style_json_sha256": "69ba25e41791e2aafad6e827faced58d594042f2001a59eff64ff668eacaee86",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2806,7 +2806,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "1c9d8c942be007b92dbabab656b7d0f5d3bf6564ae9431dc16b22ac1bf699f34",
+      "style_json_sha256": "7620c69dac8e876d2f168e9c7e7979b534ff4a98fd03bbccc135909c450d568d",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2817,7 +2817,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "8d91184606291e5d2398d7d6e48194e73abce95b2ab577bc773df87ef53eec50",
+      "style_json_sha256": "904ecb10ebb80e11d8131f4cd6228eeb79e2c7d0af3ff227821899879f1bdcd6",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2828,7 +2828,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "ae3be08a4a799c7375bc8ca3f8113562f9d02ee3f5f1a9a381f716a626a15117",
+      "style_json_sha256": "af4abc286104c9f82e60bb679808315632e272b2f1afc3b14355641f9801f6e1",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2839,7 +2839,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "376f78264b4232a8ae1d584b5a66c79859ff23ff2f1a3703610095705962c7bf",
+      "style_json_sha256": "8a988f52d21dc4115bf87eba06f32e8465e428490eee62dcce6d8ca6b9fed0f9",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2850,7 +2850,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "b8e0ebb9afdccd42cce2d9c0880e8dc2f443910951dec3cb7c56da00d9688035",
+      "style_json_sha256": "6598ff58e43fc2c4a338061b89281894e5a946e2ac6b4327fa468ecca1f3785f",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2872,7 +2872,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "4e27c91658cd400445c0c995d116ad212e312d388d945196d0db09bb852d49bb",
+      "style_json_sha256": "0558bb4c050cbad03f85f23f9d9b5659b3b5d563ed4121312786d6d065470c5b",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2883,7 +2883,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "4ddc094019f26cf26a77bf01359a07ba6395674f617cff6a5cac467c55acb64b",
+      "style_json_sha256": "da8acc91afe7fef6092502c25b5576df4467d00efe5b4cdd402ae0408d788850",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2894,7 +2894,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "9fe15775df1de6cff7203cf0b6947d95ba376d2b8ab743da9466aea217e28645",
+      "style_json_sha256": "3696399fc6777a036e89876b226f0ba4a61d742e5033e5755a70bbb1b4bab234",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2905,7 +2905,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "682f28b17d8f26f8cccdf69adeef537f69b3df95e886a243ac9adfdf394eb5c2",
+      "style_json_sha256": "0237ea5888f98d3c715ce4e63e31426ddd4dc59ceb08468c93f9fd875a020d8c",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2927,7 +2927,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "6723d151712ff403550453571b70e8b32e90d3b9fb2fec751a19aaa63c025891",
+      "style_json_sha256": "9a7617cca25ca552c6b7a03f38ad348077dcb8285407a223606a8ee91522340a",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2938,7 +2938,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "a0a80e7b4645af39bb7e3097798865483737ca28d5e937fcd48d556a05a54943",
+      "style_json_sha256": "76bd94e38b6ec77f7fee5e9ffc9ee70a66ad646d47592ce50ea369b0345e450c",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2960,7 +2960,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "4861420dbc0c7c9974ce8f65c8fbe90d758863c4373e8cdc87310cd1f38254c4",
+      "style_json_sha256": "23769f736da938fc9d0aecf968411230a9c308d4ef6a2ebd74e0a8f2e297731b",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2971,7 +2971,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "28f8916dab74e7db5ef7677d09b78f938268041b381c5b18cef2ff2e91b260e7",
+      "style_json_sha256": "990ca66b1beafdcee93d59abba63c422f930f8b717bb0721525292092114ec4c",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2982,7 +2982,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "e6044a6fd2ce1c2073f61c9d1b943f1518e205a2e765cfdec83004f06b94ce82",
+      "style_json_sha256": "7781c07c4f577b077a8fab8816a8167812e3862c2b2743ea43adbaf44088451b",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -2993,7 +2993,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "019efd6705ea162a4368c6f30bbc0b4ac61ea9b41a4376c8a9b5c06193524d96",
+      "style_json_sha256": "7f7f3a370fcc77288ed022d95b5407e48b09424b473cab072699fa54d2078e12",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3004,7 +3004,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "6a90e894931911f36a8d6abf1a74a667012ece40746565b8bdfc9cec43358a9f",
+      "style_json_sha256": "382b2349c9aa9965238fd39d0d6a9900fc59d9e5fcb775c1ebca51bb74cf5816",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3026,7 +3026,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "c4b0e0c6b84735ac00f74f8ad2c845185862e0dbd6be87db830117d726cf619e",
+      "style_json_sha256": "d8d3ac7899953dd8445da4d98d8e1be087d63a4c54e9d12a0ba911d6d1086d44",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3037,7 +3037,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "406265cdec31255f08149beea9404707132132b7a9cfa35e9a70a7bbb4108ee6",
+      "style_json_sha256": "5dcc36444b5cdfc8804466ae0a7c94b99ba157c04446faf544e290d081d21de1",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3048,7 +3048,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "4eb207818eaab6fbbfef3fa17848ddf9083cf10ba67f311e2a10dd664d5f7f5d",
+      "style_json_sha256": "7346b85b922a75e4236649987bb2dd51d2389f816fd2f62d8a9d516e1129ef68",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3070,7 +3070,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "93fe58bd6cb81c1d4e0f7699e60b2c722211bd5d641725f8750ca1a53220f311",
+      "style_json_sha256": "d95fa1d22c7168c494e273a1b6d25146ba4793661d5c44daeeebada2df223059",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3081,7 +3081,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "bb70df634db9e31906a5a05017cced6422c05308bac2e83f67be499f5a6a4e17",
+      "style_json_sha256": "3d9c90808460cac71e54b97204a920231a3568a57e96cacb3d89b8827e50399a",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3092,7 +3092,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "69cc24ea11f8307ed32c0b35dc7ecd3b4a896ec68a1bc678923cda64659473e2",
+      "style_json_sha256": "b04b24740c752b818e82bcfa0709fb7993300dd67c3bf788219f8fb1e6d6bbb3",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3103,7 +3103,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "35f1614ec43c2cde9d0a58f63483899fda3bff3da22ad5c7de510da621d97a30",
+      "style_json_sha256": "51873cb5d629ce12a2734d029388893c4885b085d2041af45e5144f9550a00c5",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3114,7 +3114,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "9053a6acd9ef2fc4b9b12baa8dce5f6593a3a29a1fd7bdb3d6eed64b9e0c4648",
+      "style_json_sha256": "393e7613a6add27eb7c1f902ed1384dc8e53cd7aff1cb476935c72ceb4b37c27",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3125,7 +3125,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "20bb3992c4b63eef056153e2f6a2d4a0149c7c884ada08312eb6a1341cda51bb",
+      "style_json_sha256": "7fdd325aead3363e9f2c3f4617422fdcfa8026aa53089ac1188914b2d9e9e665",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3147,7 +3147,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "43a57cbee3857197f5ca3d32be0701f8c4ef3c56786747ff6b430914c0c48a75",
+      "style_json_sha256": "7dfb6c8c6771e5c39090f36138ff803539cdd64c9209eed7190b146bd95c8353",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3158,7 +3158,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "84190d2d0132de6c15a5676af1f93e7b76ff76143647a78964c0328b617fb253",
+      "style_json_sha256": "5cd5e367eb82be91a6f5e620fd16687dcb73d26c2186eda1eb9d1146f29449de",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3169,7 +3169,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "e8d9ede995e62e35120552479e07a7940ab79bb34dc8b4c5c11806efb742645a",
+      "style_json_sha256": "60401c783d05ecd39c05f7fb42d51287296710851cd7f609ec75392b95b59ced",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3180,7 +3180,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "6409866532e6c0013acebf73e88d621bba1efd0e8512319e488bcba57d4d92a4",
+      "style_json_sha256": "009fd90f0ef36982751f1780221ace20384ef3ab6d46936307c1a6725453a6b5",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3191,7 +3191,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "695f7b07e7991fd1781d63ba80d7773e0f084eabaf69527697dd9e02c28aa351",
+      "style_json_sha256": "2ef15850e7cc63e7a47acc3c707edfb111359c092afd24aa7b5562c3a1aa0c0d",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3202,7 +3202,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "f010ebaa458c6e285ebcdfd5c13db176c7eb6ffffc17ce016ffd939241968c01",
+      "style_json_sha256": "501c7d2e80b4eab1482ea69e6a725c9ee067d54bdc73d2db63d68e175d59609b",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3213,7 +3213,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "f7be5443f333b369ae9e3556562be076bbc1fc52c42ca886e1d84a92cfa50c25",
+      "style_json_sha256": "f1f03b97e9d89b379bad6571d11e8b772a5a906acd0aae5931a17a34c9376cd5",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3235,7 +3235,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "60a8ed0360f6a2d6793bd51a7c081c14b2e565ea6d533c11f737a348051c160f",
+      "style_json_sha256": "4b495aab108faf3c0309ff9d7a5134da9bad4641a31b0846bdf3fed91be91a41",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3246,7 +3246,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "ba68d701c1d0906170c915b0fe31e9d13cd52dd5260d4510767a9833a52073dc",
+      "style_json_sha256": "7880c83098c71c868979496a558f5cb4e17a9498f705699acd9a603240f7531a",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3257,7 +3257,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "a1c47b9876bab0bfb31dadec022e1ec5f49a2eb91c58899d406e93163216bdd1",
+      "style_json_sha256": "8373c7c81c9794db4d61e2515780e5aa19afd5772c9e830dcca43b914fb0811d",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3268,7 +3268,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "94c0e66d60ec9d1c6b84a9cff6d02e4dbc76f25cafb9fd46f4bf0cb561f665f3",
+      "style_json_sha256": "829843db0f40378e7bbbc923c9a52d86e410d418cea39898a0602efc3448e7db",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3290,7 +3290,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "fc42ee00df5c5afef6a629e790cfb1080c09c92e44c4d57173472559097be584",
+      "style_json_sha256": "644284d8828836da39ed3ca93c0f692e58da7b05fe053c53dc71f5cadff4d095",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3301,7 +3301,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "776aa385a913c584416b5e1267a1d7294bb3422d426e046e2e2ec43c1d98e3a4",
+      "style_json_sha256": "0078d09b02414ab41b024d3d0f38bad2098858d1e61a9ea06b298e9516803480",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3312,7 +3312,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "dea50106aa4abd509abf54eb071dba03409cce5c2993ac7ea49d9d44698d3d8f",
+      "style_json_sha256": "77ff513c0def8169f9959dde3dd20196246d3de2aa6b3175cb40bef5b7b86997",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3323,7 +3323,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "b1d25bf1c03ad67fcce153e93a3288375cd1fbb1d75edc3dd3abaeae0a605bd6",
+      "style_json_sha256": "e30426e0768436af39239f299137b65812c3c8072828566f4f97c0cc1a629f1b",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3334,7 +3334,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "bd234e0f119eb0e3c0147426b4caa9cc56a2574a150662172a8f4d01186787a1",
+      "style_json_sha256": "c549660b0acb696fb7c0849cf5a43248f0c433e23e47e2f9e59bee283136f741",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3345,7 +3345,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "c874c16ca77f6c687c45ac594bfd81935af465e31f841ab1d8e10588cff8f93a",
+      "style_json_sha256": "79c56a9fe7a26cd240f5783acac069375eb4b8a64f8b497e4c76ce7f8ce45dc6",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3356,7 +3356,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "e138c57a2b46c0864eba9bbae3165db466dc5c6b5ecd7c7d909e5d3e694febb8",
+      "style_json_sha256": "5d891486d4c738707b8e3ec93dba254e4e94cc69e2ffc4ef62c0a4217f065cbd",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3367,7 +3367,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "fde9c2021050c3e1a9fb974e7b356066f74cd635b63d1eb744ff90864bf63e07",
+      "style_json_sha256": "8aca0ad8a7173a349df9c02294fefa72b0c1ce05900c8106fdd9ef6fcf3c6583",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3378,7 +3378,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "ad823041c71f1218e7d2011bcf6b49710d7822d74aebf85cfd01c5a244ce9bc6",
+      "style_json_sha256": "7b0d1bee1f171a27c66a73c4a3a3e0e344a18a7eb8e9c943be37102278569bd6",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3389,7 +3389,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "7ce486430e003267af22c2e77c2c418b6969f93e094fc7e267438d8cf80cd4fd",
+      "style_json_sha256": "424b8af2721d49dbd2ec8f00402175b1bf4fc17cce7b998b4849c0f5c736a379",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3400,7 +3400,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "f79b6fa5b3a0513dd070a4eca8e08d483a45e188ef352c39677c550889a630ef",
+      "style_json_sha256": "5af052da289e3945c9b1c5f8366f8fb15385a71819b466e53d9aa73773848714",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3411,7 +3411,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "2182ea9202b93cf6f9120d363c23f55eeb4a5376d99e919a9cc8825d28c080a1",
+      "style_json_sha256": "0e3f9af678055cae7499aa0d6f3f23c608d5f86d52917185389b64bd53fcb5cc",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     },
@@ -3422,7 +3422,7 @@
         "--task={task}"
       ],
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_style.py",
-      "style_json_sha256": "3418f4c775e1b4134472cdfe68248fd4d950fb644c627835fce7b11500029e9f",
+      "style_json_sha256": "52255a60be2a703081fb9ac353c699374d1edca2be00715e6349f41476810d77",
       "style_render": true,
       "why": "Scaffolds this style (kosif.py scaffold --starter html-canvas) and renders offline Chromium frames checked for size, non-blank pixels, motion, determinism and DOM known answers; verified green when this file was built."
     }

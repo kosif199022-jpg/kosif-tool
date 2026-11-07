@@ -1,9 +1,9 @@
 ---
 name: pm-imthatcarlos-e04bfe
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A roughly 59-second explainer for a platform where AI agents run funds: white headlines with mint keywords on black with a green glow, a scattered field of agent nodes that converges into the logo, a wipe to a light canvas with four numbered steps each beside a small UI card and a top progress rail, then painterly digital-oil images of a robot hand and a human hand under the closing line and URL. Use to make a new video in this look (Product UI); address it by ID pm-imthatcarlos-e04bfe.
 ---
 
-# KOSIF TOOL — Sherwood agentic hedge fund explainer
+# KOSIF TOOL — Sherwood agentic hedge fund explainer / شرح منتج مالي يبدأ داكناً وينتقل إلى فاتح ثم لوحات زيتية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/imthatcarlos-e04bfe
@@ -17,14 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو شارح مدته نحو 59 ثانية لمنصة صناديق يديرها وكلاء ذكاء اصطناعي: يبدأ بعناوين بيضاء وكلمات خضراء نعناعية على أسود بتوهج أخضر، ثم شبكة وكلاء متفرقين تتجمع إلى الشعار، ثم انتقال ماسح إلى خلفية فاتحة بأربع خطوات مرقمة مع بطاقات واجهة صغيرة وشريط تقدم أعلاه، وينتهي بلوحات زيتية رقمية ليد آلية ويد بشرية تحت العنوان الأخير والرابط.
+
+A roughly 59-second explainer for a platform where AI agents run funds: white headlines with mint keywords on black with a green glow, a scattered field of agent nodes that converges into the logo, a wipe to a light canvas with four numbered steps each beside a small UI card and a top progress rail, then painterly digital-oil images of a robot hand and a human hand under the closing line and URL.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (59 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Diagrams / مخططات.
+Categories: Product UI / واجهات المنتج, Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/diagrams.md](../../playbooks/diagrams.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

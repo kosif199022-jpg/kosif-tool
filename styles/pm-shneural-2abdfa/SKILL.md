@@ -1,9 +1,9 @@
 ---
 name: pm-shneural-2abdfa
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 32 s 16:9 piece playing two 15 s motion-designer showreels after black title cards: one on black in red-orange and blue (bouncing ball, rippling symbol grid, 3D block city, repeating MOTION type bands, particle swirl), the other in black, acid lime and chrome (huge stacked headlines beside twisting chrome shapes, a waveform beat screen, echoing words). Use to make a new video in this look (Kinetic type); address it by ID pm-shneural-2abdfa.
 ---
 
-# KOSIF TOOL — Bold kinetic type showreel
+# KOSIF TOOL — Bold kinetic type showreel / شوريل تايبوغرافي جريء: نسختان بألوان أحمر وأزرق ثم ليموني وكروم
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/shneural-2abdfa
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+مقطع 16:9 مدته نحو 32 ثانية يعرض نسختين متتاليتين من شوريل مصمم حركة مدة كل منهما 15 ثانية بعد بطاقة عنوان سوداء: الأولى على الأسود بالأحمر البرتقالي والأزرق (كرة ترتد، شبكة رموز تتموّج، مدينة مكعبات ثلاثية الأبعاد، شرائط كلمة MOTION متكررة، دوامة جسيمات، شعار ختامي)، والثانية بالأسود والأخضر الليموني والكروم (عناوين ضخمة مكدّسة بجانب أشكال كروم ملتوية، شاشة إيقاع بموجة صوتية، وكلمات تتكرر كالصدى).
+
+A 32 s 16:9 piece playing two 15 s motion-designer showreels after black title cards: one on black in red-orange and blue (bouncing ball, rippling symbol grid, 3D block city, repeating MOTION type bands, particle swirl), the other in black, acid lime and chrome (huge stacked headlines beside twisting chrome shapes, a waveform beat screen, echoing words).
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, WebGL, CSS), suggested duration (32 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, 3D / ثلاثي الأبعاد, Shapes / أشكال.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

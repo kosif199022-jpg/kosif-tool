@@ -1,13 +1,14 @@
 {
   "id": "pm-lexnlin-038035",
   "name": "Engraving-style Claude ad",
-  "name_ar": null,
+  "name_ar": "إعلان عمودي بالنقوش القديمة: نجمة الشعار تمر بين الأرشيف والكلمات",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "kinetic-type",
+    "photos",
     "shapes",
-    "photos"
+    "hand-drawn"
   ],
   "creator": "@LexnLin",
   "creator_url": "https://x.com/LexnLin/status/2106101651010449796",
@@ -31,7 +32,35 @@
   "skill": "styles/pm-lexnlin-038035/SKILL.md",
   "playbooks": [
     "playbooks/kinetic-type.md",
+    "playbooks/photos.md",
     "playbooks/shapes.md",
-    "playbooks/photos.md"
-  ]
+    "playbooks/hand-drawn.md"
+  ],
+  "summary_ar": "إعلان عمودي مدته نحو 14.5 ثانية على أبيض ناصع: الشعار بنجمة برتقالية محمرة، ثم تتنقل النجمة كضربة فرشاة عبر صور أرشيفية بالأبيض والأسود (زهرة هندباء، رسم تشريحي، نقوش قديمة، رقاقات ثلج، حصان يعدو في دائرة، تمثال رخامي، دخان، كركدن منقوش)، وكلمات قصيرة بخط سيريف ثقيل، ثم دوامة خط تقود إلى عبارة الختام والشعار.",
+  "summary_en": "A ~14.5-second vertical ad on pure white where a single coral starburst travels as a brushstroke through black-and-white archive imagery (engravings, a dandelion, snowflakes, a horse ring, a marble bust, ink smoke, a rhinoceros) between one-word heavy-serif cues, then a drawn spiral leads to a closing line and the logo.",
+  "keywords": [
+    "engraving",
+    "archive collage",
+    "public domain imagery",
+    "brand ad",
+    "single accent colour",
+    "serif type",
+    "line spiral",
+    "zoetrope",
+    "نقوش قديمة",
+    "كولاج أرشيفي",
+    "إعلان علامة",
+    "لون واحد مميز",
+    "خط سيريف",
+    "حلزون"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "Three.js"
+  ],
+  "brief": "styles/pm-lexnlin-038035/BRIEF.md"
 }

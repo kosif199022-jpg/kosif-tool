@@ -1,12 +1,13 @@
 {
   "id": "pm-arjunsh1607-93005d",
   "name": "Pixelup Labs studio showreel",
-  "name_ar": null,
+  "name_ar": "شوريل استوديو تصميم: علامات ومواقع ومنتجات بقطع سريع",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "kinetic-type",
+    "ads",
+    "product-ui"
   ],
   "creator": "@arjunsh1607",
   "creator_url": "https://x.com/arjunsh1607/status/2104295133432922126",
@@ -27,7 +28,35 @@
   "listed": true,
   "skill": "styles/pm-arjunsh1607-93005d/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/ads.md",
+    "playbooks/product-ui.md"
+  ],
+  "summary_ar": "شوريل مدته 15 ثانية لاستوديو تصميم بإطار واجهة دقيق (وسوم زوايا وكود زمني وفصول مرقمة): نقطة زرقاء على الأسود تتمدد إلى مستطيل ثم تملأ الشاشة بالأزرق الكهربائي تحت كلمة «علامات» ضخمة بملمس ثلاثي الأبعاد، ثم شعارات زجاجية متوهجة وصورة بورتريه بنفسجية، ثم شبكة مائلة من لقطات مواقع وحواسيب محمولة، ثم كلمة «منتجات» وثلاث لوحات هواتف وأجهزة لوحية، ثم أرقام إثبات مع كلمة «ثقة» مظللة بالأزرق، وختام بالشعار على تدرج كحلي.",
+  "summary_en": "A 15-second design-studio showreel in a fine HUD frame: a blue dot stretches into a rectangle and floods the screen under a giant textured 'Brands', fast client logo hits, a tilted grid of website shots and laptops, 'Products' with phone and tablet triptychs, proof stats with 'trust' highlighted in blue, and a logo end on navy.",
+  "keywords": [
+    "studio showreel",
+    "portfolio reel",
+    "agency reel",
+    "beat cuts",
+    "electric blue",
+    "device mockups",
+    "hud frame",
+    "proof stats",
+    "شوريل",
+    "استوديو تصميم",
+    "ملف أعمال",
+    "قطع سريع",
+    "أزرق كهربائي",
+    "نماذج أجهزة"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "WebGL"
+  ],
+  "brief": "styles/pm-arjunsh1607-93005d/BRIEF.md"
 }

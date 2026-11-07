@@ -1,9 +1,9 @@
 ---
 name: whiteboard
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A clean whiteboard filling the frame, drawn by a visible marker that changes colour per element: a bold black Arabic title with two stars and a red underline, then blue waves, a smiling yellow sun, red rising vapour arrows, a cloud with rain, a black mountain with green grass and a green runoff arrow, with coloured Arabic labels, until a full cycle closes with dotted arrows and a moving droplet. Use to make a new video in this look (Hand-drawn); address it by ID whiteboard.
 ---
 
-# KOSIF TOOL — سبورة بيضاء
+# KOSIF TOOL — سبورة بيضاء / سبورة بيضاء — أقلام ماركر ملونة ترسم شرحاً بسيطاً يتراكم
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/whiteboard
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+سبورة بيضاء نظيفة تملأ الإطار، يرسم عليها قلم ماركر ظاهر يتغير لونه مع كل عنصر: عنوان عربي أسود بخط عريض مع نجمتين وخط أحمر تحته، ثم أمواج زرقاء، وشمس صفراء مبتسمة، وأسهم بخار حمراء، وسحابة ومطر، وجبل أسود بعشب أخضر، وسهم جريان أخضر، مع تسميات عربية ملونة، حتى يكتمل رسم دورة كاملة بأسهم منقطة وقطرة تتحرك فيها.
+
+A clean whiteboard filling the frame, drawn by a visible marker that changes colour per element: a bold black Arabic title with two stars and a red underline, then blue waves, a smiling yellow sun, red rising vapour arrows, a cloud with rain, a black mountain with green grass and a green runoff arrow, with coloured Arabic labels, until a full cycle closes with dotted arrows and a moving droplet.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (23 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Hand-drawn / رسم يدوي.

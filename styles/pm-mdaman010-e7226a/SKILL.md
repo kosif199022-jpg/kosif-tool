@@ -1,9 +1,9 @@
 ---
 name: pm-mdaman010-e7226a
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A ~98-second capture of an interactive 3D explainer of an AI data centre in a pale foggy grey world: the camera glides from building to power lines, data hall, one rack, a compute tray, an exploded chip, the rack network and rooftop coolers, with colour-coded power, data, heat and coolant flows, numbered chapter titles and a player bar. Use to make a new video in this look (3D); address it by ID pm-mdaman010-e7226a.
 ---
 
-# KOSIF TOOL — AI data centre 3D film
+# KOSIF TOOL — AI data centre 3D film / جولة ثلاثية الأبعاد داخل مركز بيانات للذكاء الاصطناعي
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/mdaman010-e7226a
@@ -17,14 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+تسجيل مدته نحو 98 ثانية لشرح تفاعلي ثلاثي الأبعاد داخل مركز بيانات للذكاء الاصطناعي في عالم رمادي فاتح ضبابي: الكاميرا تنساب من المبنى إلى خطوط الكهرباء، قاعة الخوادم، رف واحد، صينية حوسبة، شريحة مفككة طبقات، شبكة الربط بين الرفوف، ثم مسار الحرارة إلى المبردات على السطح، مع تدفقات ملونة للطاقة والبيانات والحرارة والتبريد، وعناوين فصول مرقمة وشريط مشغل أسفل الشاشة.
+
+A ~98-second capture of an interactive 3D explainer of an AI data centre in a pale foggy grey world: the camera glides from building to power lines, data hall, one rack, a compute tray, an exploded chip, the rack network and rooftop coolers, with colour-coded power, data, heat and coolant flows, numbered chapter titles and a player bar.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (React, Three.js, WebGL), suggested duration (98 s), aspect 1920x982, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Characters / شخصيات.
-- [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
+Categories: 3D / ثلاثي الأبعاد, Diagrams / مخططات.
+- [playbooks/3d.md](../../playbooks/3d.md)
+- [playbooks/diagrams.md](../../playbooks/diagrams.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
+* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

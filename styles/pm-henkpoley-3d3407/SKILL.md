@@ -1,9 +1,9 @@
 ---
 name: pm-henkpoley-3d3407
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 69-second parody of an early-web portfolio page with a hire-me marquee and a trial-watermarked player showing a deliberately awful reel: colour bars, film countdown, rainbow 'SHOWREEL 2026', a spinning client logo, typos, an unfinished 3D section, 'Media Offline', a star wipe, a stick figure, and a closing rejection-email toast. Use to make a new video in this look (Kinetic type); address it by ID pm-henkpoley-3d3407.
 ---
 
-# KOSIF TOOL — Deliberately terrible motion showreel
+# KOSIF TOOL — Deliberately terrible motion showreel / شوريل موشن سيئ عمداً داخل موقع شخصي قديم
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/henkpoley-3d3407
@@ -18,14 +18,19 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+مقطع ساخر مدته 69 ثانية يحاكي موقع مصمم موشن من بدايات الإنترنت: شريط متحرك «متاح للتوظيف»، مشغل فيديو بعلامة «نسخة غير مسجلة» مائلة، وداخله شوريل كارثي عمداً: أشرطة ألوان اختبار، عد تنازلي سينمائي، «شوريل 2026» بألوان قوس قزح، شعار عميل يدور، خطأ إملائي، قسم ثلاثي الأبعاد لم يكتمل، «وسائط غير متصلة»، مسح نجمة، جسيمات بائسة، رجل عصا، وينتهي بإشعار بريد رفض.
+
+A 69-second parody of an early-web portfolio page with a hire-me marquee and a trial-watermarked player showing a deliberately awful reel: colour bars, film countdown, rainbow 'SHOWREEL 2026', a spinning client logo, typos, an unfinished 3D section, 'Media Offline', a star wipe, a stick figure, and a closing rejection-email toast.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, CSS, React), suggested duration (69 s), aspect 16:10, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Code / كود.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Code / كود.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 - [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 

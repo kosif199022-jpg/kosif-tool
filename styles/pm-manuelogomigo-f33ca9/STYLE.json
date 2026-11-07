@@ -1,13 +1,13 @@
 {
   "id": "pm-manuelogomigo-f33ca9",
   "name": "Flowdrive motion showreel",
-  "name_ar": null,
+  "name_ar": "عرض حركي لخدمة استضافة الفيديو بنقاط برتقالية وكرة أرضية",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "diagrams",
-    "kinetic-type"
+    "product-ui",
+    "particles",
+    "ads"
   ],
   "creator": "@manuelogomigo",
   "creator_url": "https://x.com/manuelogomigo/status/2103614667038052364",
@@ -28,8 +28,35 @@
   "listed": true,
   "skill": "styles/pm-manuelogomigo-f33ca9/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/diagrams.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/product-ui.md",
+    "playbooks/particles.md",
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "عرض منتج مدته 15 ثانية لخدمة استضافة فيديو وملفات، يتناوب بين خلفية كريمية فاتحة وأخرى سوداء وثالثة برتقالية: أيقونة ملف مصنوعة من نقاط برتقالية تُسحب إلى صندوق رفع، شريط تقدم منقّط يمتلئ إلى 100%، طبقات فيديو مائلة متكدسة لعرض جودات البث، كرة أرضية منقطة متوهجة بنقاط مواقع، شريط عنوان بنطاق خاص وقفل أخضر، حلقة لانهاية من خطوط برتقالية، معاينة موقع على متصفح، وختام بأيقونة العلامة واسمها.",
+  "summary_en": "A 15-second hosting-product showreel flipping between cream, black and orange grounds, built from orange dots: a dotted file dragged into an upload bar filling to 100%, tilted streaming layers, a glowing dotted globe, a custom-domain URL bar with a green lock, an infinity loop of strokes, a site preview, and a logo lock-up, all titled in a light serif.",
+  "keywords": [
+    "product showreel",
+    "video hosting",
+    "dot matrix",
+    "upload progress",
+    "dotted globe",
+    "infinity loop",
+    "serif headlines",
+    "saas promo",
+    "عرض منتج",
+    "استضافة فيديو",
+    "مصفوفة نقاط",
+    "كرة أرضية",
+    "إعلان خدمة",
+    "برتقالي"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "HTML Canvas",
+    "SVG"
+  ],
+  "brief": "styles/pm-manuelogomigo-f33ca9/BRIEF.md"
 }

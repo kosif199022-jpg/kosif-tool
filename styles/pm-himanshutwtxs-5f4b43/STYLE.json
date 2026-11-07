@@ -1,12 +1,13 @@
 {
   "id": "pm-himanshutwtxs-5f4b43",
   "name": "Motion designer showreel",
-  "name_ar": null,
+  "name_ar": "ريل مصمم موشن يشرح مبادئ الحركة بملاحظات مكتوبة باليد",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
+    "kinetic-type",
     "charts",
-    "kinetic-type"
+    "hand-drawn"
   ],
   "creator": "@himanshutwtxs",
   "creator_url": "https://x.com/himanshutwtxs/status/2103495232637882858",
@@ -27,7 +28,35 @@
   "listed": true,
   "skill": "styles/pm-himanshutwtxs-5f4b43/SKILL.md",
   "playbooks": [
+    "playbooks/kinetic-type.md",
     "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/hand-drawn.md"
+  ],
+  "summary_ar": "ريل مدته 15 ثانية لمصمم موشن يعرض مبادئ التحريك نفسها: كرة زرقاء ترتد بانضغاط وتمدد مع ملاحظات زرقاء وحمراء بخط اليد على خلفية رمادية فاتحة، عنوان مكثف ضخم تدخله الحروف بتتابع، كلمات «ارتداد» و«انطلاق» و«التقاط» بضبابية على الداكن، مخطط خطي ثم منحنى تسارع مع مربع يتحرك، ذيل جسيمات يُظهر المتابعة، حلقة تحميل تُظهر التمهيد، وختام بالاسم.",
+  "summary_en": "A 15-second motion designer reel that demonstrates animation principles: a blue ball bouncing with squash and stretch beside handwritten blue and red notes on light grey, a condensed headline with staggered letters, blurred bounce/spin/snap words on dark, a linear graph turning into an ease curve, a particle follow-through trail, an anticipation loader and a name card.",
+  "keywords": [
+    "motion reel",
+    "animation principles",
+    "squash and stretch",
+    "easing graph",
+    "follow-through",
+    "anticipation",
+    "handwritten notes",
+    "bouncing ball",
+    "ريل مصمم موشن",
+    "مبادئ التحريك",
+    "انضغاط وتمدد",
+    "منحنى تسارع",
+    "ملاحظات بخط اليد",
+    "كرة مرتدة"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "HTML Canvas"
+  ],
+  "brief": "styles/pm-himanshutwtxs-5f4b43/BRIEF.md"
 }

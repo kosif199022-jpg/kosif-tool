@@ -1,7 +1,7 @@
 {
   "id": "pm-hanifproduktif-54bdee",
   "name": "Motion designer showreel",
-  "name_ar": null,
+  "name_ar": "شوريل موشن: كل كلمة تؤدي مبدأ الحركة الذي تسمّيه",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -27,5 +27,33 @@
   "skill": "styles/pm-hanifproduktif-54bdee/SKILL.md",
   "playbooks": [
     "playbooks/kinetic-type.md"
-  ]
+  ],
+  "summary_ar": "شوريل تايبوغرافي مدته 15 ثانية من نحو 14 لقطة قصيرة، كل لقطة كلمة إنجليزية ضخمة بخط غروتسك ثقيل تؤدي بنفسها مبدأ الحركة الذي تسميه (توقّع، تجاوز، تمطط، تتابع، وزن، انقسام، تحوّل، دوران، تمويه، خطف، قوس، انسياب)، على أرضيات تتبدل بين الأسود والكريمي والبرتقالي والأخضر الليموني، ثم تتجمع جسيمات في الكلمة الختامية.",
+  "summary_en": "A 15-second typographic showreel of about 14 quick shots, each a giant heavy-grotesk word that performs the motion principle it names (anticipate, overshoot, stretch, stagger, weight, split, morph, loop, blur, snap, arc, flow), on grounds cutting between black, cream, orange and acid lime, ending as dots assemble into the closing word.",
+  "keywords": [
+    "kinetic typography",
+    "showreel",
+    "animation principles",
+    "squash and stretch",
+    "overshoot",
+    "stagger",
+    "acid lime",
+    "bold grotesk",
+    "particles",
+    "تايبوغرافي متحرك",
+    "مبادئ الحركة",
+    "شوريل",
+    "تمطط وانضغاط",
+    "تتابع الحروف",
+    "ليموني وبرتقالي"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "HTML Canvas"
+  ],
+  "brief": "styles/pm-hanifproduktif-54bdee/BRIEF.md"
 }

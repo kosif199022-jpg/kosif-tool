@@ -1,9 +1,9 @@
 ---
 name: pm-nolkeeg-bf062e
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A cinematic 45-second landscape short on deep space black: a grainy glowing white title, a starfield warp, then a photoreal rim-lit Earth circled by a light trail while a huge number counts kilometres, an orbit around the Sun, lightning flickering on the night side, a blazing Sun, then a thin red heartbeat line, with an orange timeline HUD at the bottom measuring the fraction of the second. Use to make a new video in this look (Charts); address it by ID pm-nolkeeg-bf062e.
 ---
 
-# KOSIF TOOL — What happens in one second
+# KOSIF TOOL — What happens in one second / فيلم قصير سينمائي عمّا يحدث في ثانية واحدة بعدّادات ضخمة وأرض وشمس
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/nolkeeg-bf062e
@@ -17,12 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيلم أفقي سينمائي قصير (نحو 45 ثانية) على سواد فضائي: عنوان أبيض محبب متوهج، قفزة نجوم، ثم أرض واقعية بإضاءة حافة يدور حولها شعاع ضوء بينما يعدّ رقم ضخم بالكيلومترات، ثم مدار حول الشمس، وبرق على الوجه الليلي، وشمس ملتهبة، ثم خط نبض أحمر رفيع، وشريط زمني برتقالي أسفل الشاشة يقيس جزء الثانية حتى الختام.
+
+A cinematic 45-second landscape short on deep space black: a grainy glowing white title, a starfield warp, then a photoreal rim-lit Earth circled by a light trail while a huge number counts kilometres, an orbit around the Sun, lightning flickering on the night side, a blazing Sun, then a thin red heartbeat line, with an orange timeline HUD at the bottom measuring the fraction of the second.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, Remotion, React), suggested duration (45 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية.
+Categories: Charts / رسوم بيانية, 3D / ثلاثي الأبعاد, Kinetic type / تايبوغرافي متحرك.
 - [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

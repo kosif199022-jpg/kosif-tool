@@ -1,10 +1,11 @@
 {
   "id": "pm-pluginplay-3d4006",
   "name": "Pixel art LLM history",
-  "name_ar": null,
+  "name_ar": "تاريخ النماذج اللغوية بالبكسل: رجل يرمي بومرانغ",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
+    "characters",
     "code"
   ],
   "creator": "@PluginPlay__",
@@ -28,6 +29,32 @@
   "listed": true,
   "skill": "styles/pm-pluginplay-3d4006/SKILL.md",
   "playbooks": [
+    "playbooks/characters.md",
     "playbooks/code.md"
-  ]
+  ],
+  "summary_ar": "رسوم بكسل مدتها 26 ثانية: رجل على جرف فوق بحر عند غروب ريترو بنفسجي يرمي بومرانغ كل عام، وفوقه صندوق حوار أصفر بخط بكسل يكتب حدث العام (من ورقة الانتباه حتى الوكلاء). البومرانغ يعود كل مرة أكبر وأكثر توهجاً، ثم دورة تحسين ذاتي يتسارع فيها عداد الإصدار إلى اللانهاية، انفجار ضوئي، لقطة قريبة لوجه الرجل الراضي، ثم يرتد البومرانغ ويحرقه بانفجار كرتوني.",
+  "summary_en": "A 26 s pixel-art gag: a man on a cliff at a purple retro sunset throws a boomerang each year while a yellow pixel caption types that year's AI milestone; it returns bigger and brighter, then a self-improvement loop spins a version counter to infinity, a white-flash blast, a smug face close-up, and the boomerang returns to scorch him in a cartoon explosion.",
+  "keywords": [
+    "pixel art",
+    "retro sunset",
+    "boomerang",
+    "AI history",
+    "timeline gag",
+    "caption box",
+    "8-bit",
+    "comic explosion",
+    "بكسل آرت",
+    "تاريخ الذكاء الاصطناعي",
+    "غروب ريترو",
+    "بومرانغ",
+    "خط زمني",
+    "نكتة بصرية"
+  ],
+  "difficulty": 3,
+  "duration_s": 26,
+  "stack": [
+    "HTML Canvas",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-pluginplay-3d4006/BRIEF.md"
 }

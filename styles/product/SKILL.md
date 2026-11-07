@@ -1,9 +1,9 @@
 ---
 name: product
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: An Arabic launch film for a digital product: huge white words appear one at a time on near-black with a violet-orange glow rising from the bottom, a glowing prompt bar types a request, the app dashboard flies in tilted in 3D, light interludes use soft pill buttons, a wall of style cards floats past and a logo end card closes. Use to make a new video in this look (Ads); address it by ID product.
 ---
 
-# KOSIF TOOL — إعلان إطلاق منتج
+# KOSIF TOOL — إعلان إطلاق منتج / إعلان إطلاق منتج رقمي بواجهات عائمة
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/product
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+إعلان إطلاق منتج رقمي بالعربية: كلمات ضخمة بيضاء تظهر واحدة تلو الأخرى على خلفية شبه سوداء بتوهج بنفسجي برتقالي من الأسفل، شريط إدخال متوهج يُكتب فيه طلب، شاشة التطبيق تطير بميل ثلاثي الأبعاد، مقاطع فاتحة بكبسولات، جدار بطاقات، وبطاقة ختام بالشعار.
+
+An Arabic launch film for a digital product: huge white words appear one at a time on near-black with a violet-orange glow rising from the bottom, a glowing prompt bar types a request, the app dashboard flies in tilted in 3D, light interludes use soft pill buttons, a wall of style cards floats past and a logo end card closes.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (40 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Ads / إعلانات, Product UI / واجهات المنتج.

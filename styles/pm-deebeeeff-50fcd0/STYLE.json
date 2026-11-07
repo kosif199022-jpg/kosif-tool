@@ -1,11 +1,14 @@
 {
   "id": "pm-deebeeeff-50fcd0",
   "name": "Recipe brand 20th anniversary",
-  "name_ar": null,
+  "name_ar": "احتفال الذكرى العشرين لعلامة وصفات طعام",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts"
+    "ads",
+    "kinetic-type",
+    "shapes",
+    "particles"
   ],
   "creator": "@deebeeeff",
   "creator_url": "https://x.com/deebeeeff/status/2104952364365234301",
@@ -26,6 +29,36 @@
   "listed": true,
   "skill": "styles/pm-deebeeeff-50fcd0/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
-  ]
+    "playbooks/ads.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md"
+  ],
+  "summary_ar": "فيديو مربع مدته 10 ثوانٍ لذكرى مرور عشرين عاماً على علامة وصفات: رقم «20» برتقالي بحد بني ينتفخ على خلفية أشعة شمسية كريمية مع قصاصات ملونة وعدّاد سنوات يجري حتى 2026، ثم قطع إلى أشعة بنية داكنة يدخل فيها شعار العلامة كبطاقة مائلة وتُختم عليها شارة ذهبية، وينتهي بتهنئة بخط يدوي ذهبي وكبسولة سنوات برتقالية.",
+  "summary_en": "A 10-second square anniversary clip for a recipe brand: an orange, brown-outlined '20' swells on a cream sunburst with confetti while a year counter runs up to 2026, then a cut to a dark brown sunburst where the logo card swings in tilted, a gold '20 years' seal stamps on, and a gold script greeting and orange year pill close it.",
+  "keywords": [
+    "anniversary",
+    "20 years",
+    "brand celebration",
+    "sunburst",
+    "confetti",
+    "logo reveal",
+    "gold seal",
+    "year counter",
+    "recipe brand",
+    "ذكرى سنوية",
+    "عشرون عاماً",
+    "احتفال",
+    "قصاصات ملونة",
+    "كشف الشعار",
+    "تهنئة"
+  ],
+  "difficulty": 2,
+  "duration_s": 10,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-deebeeeff-50fcd0/BRIEF.md"
 }

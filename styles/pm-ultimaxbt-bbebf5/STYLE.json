@@ -1,19 +1,13 @@
 {
   "id": "pm-ultimaxbt-bbebf5",
   "name": "Orange dot motion system",
-  "name_ar": null,
+  "name_ar": "نظام حركة تقوده نقطة برتقالية واحدة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "product-ui",
-    "charts",
-    "diagrams",
-    "kinetic-type",
     "shapes",
-    "particles",
-    "characters",
-    "music",
-    "code"
+    "kinetic-type",
+    "charts"
   ],
   "creator": "@ultimaxbt",
   "creator_url": "https://x.com/ultimaxbt/status/2107486052550062398",
@@ -38,14 +32,36 @@
   "listed": true,
   "skill": "styles/pm-ultimaxbt-bbebf5/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md",
-    "playbooks/charts.md",
-    "playbooks/diagrams.md",
-    "playbooks/kinetic-type.md",
     "playbooks/shapes.md",
-    "playbooks/particles.md",
-    "playbooks/characters.md",
-    "playbooks/music.md",
-    "playbooks/code.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/charts.md"
+  ],
+  "summary_ar": "عرض مدته 15 ثانية بالتناوب بين خلفية كريمية وأخرى سوداء، تقوده نقطة برتقالية واحدة: مفتاح «Reduce Motion» يُضغط بالمؤشر، النقطة تصبح نقطة حرف i في كلمة «Motion» ثم تقفز، منحنى زنبرك بتجاوز «+22%»، كرة تتحول إلى مربع مدوّر وكبسولة، حلقة نص ثلاثية الأبعاد تدور حولها، شبكة نقاط تتموج، ثم عنوان «Motion designer.» و«0 keyframes» وعودة إلى البداية.",
+  "summary_en": "A 15-second loop on cream and black led by one orange dot: a clicked 'Reduce Motion' toggle, the dot as the tittle of 'Motion', a spring curve overshooting '+22%', a ball morphing into a square and capsule, a 3D ring of words orbiting it, a rippling dot grid, then 'Motion designer.' and '0 keyframes' before whipping back to the start.",
+  "keywords": [
+    "orange dot",
+    "motion system",
+    "spring easing",
+    "match cut",
+    "morph",
+    "toggle",
+    "3D text ring",
+    "halftone grid",
+    "seamless loop",
+    "نقطة برتقالية",
+    "نظام حركة",
+    "تخفيف زنبركي",
+    "تحول الأشكال",
+    "حلقة متكررة",
+    "تايبوغرافي متحرك"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "React",
+    "CSS",
+    "HTML Canvas",
+    "Remotion"
+  ],
+  "brief": "styles/pm-ultimaxbt-bbebf5/BRIEF.md"
 }

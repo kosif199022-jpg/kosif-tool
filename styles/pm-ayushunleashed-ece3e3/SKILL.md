@@ -1,9 +1,9 @@
 ---
 name: pm-ayushunleashed-ece3e3
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15 s showreel on black with a dot grid and technical HUD (timecode, 130 BPM, chapter x/7): a red point becomes a line then a tumbling red plane, a huge cream name flips to outline, a Fibonacci dot sphere with readouts, a BPM counter and equaliser, isometric cubes, a red word wall, polar shape morphs with formulas, and a signature over a red glow. Use to make a new video in this look (Kinetic type); address it by ID pm-ayushunleashed-ece3e3.
 ---
 
-# KOSIF TOOL — Claude motion design showreel
+# KOSIF TOOL — Claude motion design showreel / شوريل موشن بواجهة تقنية: نقطة، خط، مستوى
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/ayushunleashed-ece3e3
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شوريل مدته 15 ثانية على أسود بشبكة نقاط خافتة وإطار واجهة تقنية (رمز وقت، 130 BPM، رقم الفصل من 7): نقطة حمراء ثم خط ثم مستوى أحمر مكتوب عليه، اسم ضخم كريمي يتحول إلى حدود ثم تحل كرة نقاط محل حرف، كرة فيبوناتشي بقراءات، أرقام إيقاع ومعادل أعمدة، مكعبات أيزومترية، جدار كلمات مكثفة على الأحمر، أشكال قطبية بمعادلاتها، ثم توقيع على توهج أحمر.
+
+A 15 s showreel on black with a dot grid and technical HUD (timecode, 130 BPM, chapter x/7): a red point becomes a line then a tumbling red plane, a huge cream name flips to outline, a Fibonacci dot sphere with readouts, a BPM counter and equaliser, isometric cubes, a red word wall, polar shape morphs with formulas, and a signature over a red glow.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Three.js), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

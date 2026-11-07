@@ -2806,6 +2806,11 @@
    "label": "tests/test_tempo_agreement.py"
   },
   {
+   "id": "test:tests/test_black_dragon_build_studio.py",
+   "kind": "test",
+   "label": "tests/test_black_dragon_build_studio.py"
+  },
+  {
    "id": "test:tests/test_black_dragon_engine_wiring.py",
    "kind": "test",
    "label": "tests/test_black_dragon_engine_wiring.py"
@@ -2814,6 +2819,11 @@
    "id": "test:tests/test_black_dragon_media.py",
    "kind": "test",
    "label": "tests/test_black_dragon_media.py"
+  },
+  {
+   "id": "test:tests/test_black_dragon_motion_styles.py",
+   "kind": "test",
+   "label": "tests/test_black_dragon_motion_styles.py"
   },
   {
    "id": "test:tests/test_black_dragon_native_fusion.py",
@@ -2829,6 +2839,11 @@
    "id": "test:tests/test_black_dragon_validate.py",
    "kind": "test",
    "label": "tests/test_black_dragon_validate.py"
+  },
+  {
+   "id": "test:tests/test_black_dragon_video_protocol.py",
+   "kind": "test",
+   "label": "tests/test_black_dragon_video_protocol.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_blender_cinema.py",
@@ -8808,6 +8823,12 @@
   },
   {
    "from": "script:scripts/black_dragon.py",
+   "to": "test:tests/test_black_dragon_build_studio.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/black_dragon.py",
    "to": "test:tests/test_black_dragon_engine_wiring.py",
    "rel": "tested_by",
    "w": 1
@@ -8821,6 +8842,12 @@
   {
    "from": "script:scripts/black_dragon.py",
    "to": "test:tests/test_black_dragon_media_adapters.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/black_dragon.py",
+   "to": "test:tests/test_black_dragon_motion_styles.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -8857,6 +8884,12 @@
   {
    "from": "script:scripts/black_dragon.py",
    "to": "test:tests/test_black_dragon_validate.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/black_dragon.py",
+   "to": "test:tests/test_black_dragon_video_protocol.py",
    "rel": "tested_by",
    "w": 1
   },

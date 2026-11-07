@@ -1,14 +1,12 @@
 {
   "id": "pm-kirillk-web3-af21f3",
   "name": "Diagram Design: 44 kinds of diagrams",
-  "name_ar": null,
+  "name_ar": "جولة مقربة في صفحة مستودع كود تعرض مهارة لرسم المخططات",
   "origin": "PromptsMotion",
   "type": "Skill",
   "category": [
     "product-ui",
-    "charts",
     "diagrams",
-    "characters",
     "code"
   ],
   "creator": "unknown",
@@ -34,9 +32,33 @@
   "skill": "styles/pm-kirillk-web3-af21f3/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md",
     "playbooks/diagrams.md",
-    "playbooks/characters.md",
     "playbooks/code.md"
-  ]
+  ],
+  "summary_ar": "تسجيل شاشة مكبّر مدته 26 ثانية لصفحة مستودع على منصة كود بخلفية بيضاء: الكاميرا تقترب من اسم المستودع وتظلله، تنزلق إلى عدد النجوم، تبتعد لتعرض الصفحة كاملة، ثم تنزل إلى ملف التعريف بغلاف تحريري ومعرض لأنواع المخططات وجدول مقارنة وأوامر تثبيت، مع ضبابية حركة في التمرير وشارة اسم الناشر أسفل اليمين طوال الوقت.",
+  "summary_en": "A 26-second zoomed screen walkthrough of a code-hosting repository page on white: the camera pushes in to highlight the repo name, slides to the star count, pulls back to the whole page, then scrolls the README past an editorial cover, a diagram-type gallery, a comparison table and install commands, with a handle badge bottom-right.",
+  "keywords": [
+    "screen recording",
+    "zoom pan",
+    "repository page",
+    "README tour",
+    "diagram tool",
+    "open source",
+    "text selection",
+    "motion blur",
+    "تسجيل شاشة",
+    "تكبير وانسياب",
+    "صفحة مستودع",
+    "أداة مخططات",
+    "مفتوح المصدر",
+    "تحديد النص"
+  ],
+  "difficulty": 2,
+  "duration_s": 26,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-kirillk-web3-af21f3/BRIEF.md"
 }

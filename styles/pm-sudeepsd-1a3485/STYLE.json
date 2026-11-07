@@ -1,7 +1,7 @@
 {
   "id": "pm-sudeepsd-1a3485",
   "name": "Flexprice motion showreel",
-  "name_ar": null,
+  "name_ar": "شوريل منصة فوترة حسب الاستخدام: من حدث واحد إلى فاتورة مدفوعة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -29,5 +29,34 @@
   "playbooks": [
     "playbooks/charts.md",
     "playbooks/kinetic-type.md"
-  ]
+  ],
+  "summary_ar": "شوريل صامت مدته 15 ثانية بالكحلي والأصفر والكريمي يتبع رحلة الفوترة: نقطة بيضاء واحدة تصبح عداد أحداث يقفز إلى أكثر من مليون مع رذاذ جسيمات، حلقة حصة تمتلئ من 0% إلى 100% بالأصفر، كلمات ضخمة تُكشف بشرائح (سعّر، فوتر)، شبكة مكعبات ثلاثية الأبعاد ترتفع كخريطة حرارة، بطاقات خطط أسعار تتدحرج أرقامها، منحنى استخدام يُرسم مع أعمدة، فاتورة تُملأ بنودها وتُختم «مدفوع»، ثم الشعار من انفجار جسيمات.",
+  "summary_en": "A silent 15-second billing showreel in navy, yellow and cream: a dot becomes an event counter racing past a million, a quota ring fills to 100%, giant words reveal in slices, a 3D cube grid rises into a heat map, pricing cards roll numbers, a usage line draws, an invoice gets a PAID stamp, and the logo forms from particles.",
+  "keywords": [
+    "billing saas",
+    "usage based pricing",
+    "counter roll",
+    "quota ring",
+    "cube heatmap",
+    "pricing cards",
+    "line chart",
+    "invoice paid stamp",
+    "slice reveal",
+    "فوترة",
+    "تسعير حسب الاستخدام",
+    "عداد",
+    "خريطة حرارية",
+    "فاتورة",
+    "رسوم بيانية متحركة"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "Three.js",
+    "HTML Canvas"
+  ],
+  "brief": "styles/pm-sudeepsd-1a3485/BRIEF.md"
 }

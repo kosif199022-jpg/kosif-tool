@@ -1,12 +1,14 @@
 {
   "id": "pm-web3wesley-7bb108",
   "name": "Type, form, space showreel",
-  "name_ar": null,
+  "name_ar": "شوريل مصمم موشن: نوع، شكل، فضاء، زمن",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "kinetic-type",
+    "shapes",
+    "3d",
+    "particles"
   ],
   "creator": "@Web3Wesley",
   "creator_url": "https://x.com/Web3Wesley/status/2103644329294365164",
@@ -27,7 +29,38 @@
   "listed": true,
   "skill": "styles/pm-web3wesley-7bb108/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/3d.md",
+    "playbooks/particles.md"
+  ],
+  "summary_ar": "شوريل مدته 15 ثانية بأسلوب سويسري: بطاقة سيرة ذاتية كريمية على الأسود، ثم أربعة فصول سريعة بالترتيب: «TYPE» ضخمة سوداء على البرتقالي تتحول إلى «type» مائلة بظل متدرج، «FORM» بدائرة برتقالية بدل O تتفكك إلى شبكة أشكال باوهاوس ملونة، «SPACE» كأشكال ثلاثية الأبعاد مبعثرة تسقط عليها كرة حمراء، و«TIME» كخطوط جسيمات دوامية على الأسود؛ وينتهي ببطاقة السيرة نفسها وقد أضيفت أيقونات الفصول.",
+  "summary_en": "A 15-second Swiss-style showreel: a cream résumé card on black, then four quick chapters: a giant black 'TYPE' on orange turning into an extruded italic, 'FORM' breaking into a Bauhaus shape grid, 'SPACE' as 3D blocks with a bouncing red ball, and 'TIME' as swirling particle strokes, ending back on the card.",
+  "keywords": [
+    "showreel",
+    "motion designer",
+    "bauhaus",
+    "swiss grid",
+    "kinetic type",
+    "shape grid",
+    "3D blocks",
+    "particles",
+    "résumé card",
+    "شوريل",
+    "مصمم موشن",
+    "باوهاوس",
+    "تايبوغرافي متحرك",
+    "أشكال هندسية",
+    "جسيمات"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "Three.js",
+    "HTML Canvas",
+    "GSAP"
+  ],
+  "brief": "styles/pm-web3wesley-7bb108/BRIEF.md"
 }

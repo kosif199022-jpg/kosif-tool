@@ -1,9 +1,9 @@
 ---
 name: infographic
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A vertical flat-design infographic reel: simple icons in a limited palette, large numbers counting up, bars and percentage rings filling, arrows linking steps, and a header for each section on a tidy light background. Use to make a new video in this look (Charts); address it by ID infographic.
 ---
 
-# KOSIF TOOL — إنفوجرافيك
+# KOSIF TOOL — إنفوجرافيك / إنفوجرافيك متحرك: أيقونات وأرقام ومخططات مسطحة تشرح معلومة
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/infographic
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي بأسلوب الإنفوجرافيك المسطح: أيقونات بسيطة بألوان محدودة، أرقام كبيرة تعد صعوداً، أشرطة ودوائر نسب تمتلئ، أسهم تربط بين الخطوات، وعنوان لكل قسم على خلفية فاتحة منظمة.
+
+A vertical flat-design infographic reel: simple icons in a limited palette, large numbers counting up, bars and percentage rings filling, arrows linking steps, and a header for each section on a tidy light background.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (30 s), aspect 9:16, difficulty 2/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Diagrams / مخططات.

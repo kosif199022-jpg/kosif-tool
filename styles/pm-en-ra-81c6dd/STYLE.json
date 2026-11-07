@@ -1,13 +1,13 @@
 {
   "id": "pm-en-ra-81c6dd",
   "name": "Website analyzer product promo",
-  "name_ar": null,
+  "name_ar": "إعلان منتج يحلل الموقع ويجد فرص النشر",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
-    "charts",
-    "kinetic-type"
+    "ads",
+    "charts"
   ],
   "creator": "@en______ra",
   "creator_url": "https://x.com/en______ra/status/2104035188061986980",
@@ -29,7 +29,35 @@
   "skill": "styles/pm-en-ra-81c6dd/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/ads.md",
+    "playbooks/charts.md"
+  ],
+  "summary_ar": "إعلان مربع مدته 16 ثانية بواجهة بيضاء دافئة وبرتقالي أحمر: مؤشر يلصق رابط منتج ويضغط «Analyze»، شريط «Reading…» أسود يمتلئ، بطاقة المنتج بالوسوم، قائمة مجتمعات بنسب تطابق تُختار، حبة «Scanning» ثم «3 opportunities found»، بطاقة منشور بحلقة درجة، ردّ بثلاث نسخ يُعتمد، منزلق موعد النشر عند الذروة، بطاقة «Posted» تتصاعد أصواتها مع رسم نقرات، ثم شعار شخصية برتقالية مبتسمة.",
+  "summary_en": "A 16-second square product promo in white cards and red-orange: a cursor pastes a URL, a black 'Reading' pill fills, a product card, community match bars get ticked, a scan finds opportunities, a reply with three versions is approved and scheduled at peak, a posted card climbs in upvotes with a clicks chart, and an orange mascot logo closes.",
+  "keywords": [
+    "product promo",
+    "SaaS demo",
+    "UI walkthrough",
+    "cursor",
+    "cards",
+    "status pill",
+    "count up",
+    "mascot logo",
+    "marketing tool",
+    "إعلان منتج",
+    "عرض واجهة",
+    "بطاقات",
+    "مؤشر فأرة",
+    "تحليل موقع",
+    "فرص تسويق"
+  ],
+  "difficulty": 3,
+  "duration_s": 16,
+  "stack": [
+    "React",
+    "CSS",
+    "Remotion",
+    "SVG"
+  ],
+  "brief": "styles/pm-en-ra-81c6dd/BRIEF.md"
 }

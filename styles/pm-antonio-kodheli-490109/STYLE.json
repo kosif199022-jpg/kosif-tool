@@ -1,14 +1,13 @@
 {
   "id": "pm-antonio-kodheli-490109",
   "name": "Prompt Motion site promo",
-  "name_ar": null,
+  "name_ar": "إعلان موقع بكاميرا افتراضية تتجول في الواجهة ومؤشر ينقر وينسخ",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
     "kinetic-type",
-    "photos",
-    "music"
+    "ads"
   ],
   "creator": "@antonio_kodheli",
   "creator_url": "https://x.com/antonio_kodheli/status/2107518066615582893",
@@ -33,7 +32,33 @@
   "playbooks": [
     "playbooks/product-ui.md",
     "playbooks/kinetic-type.md",
-    "playbooks/photos.md",
-    "playbooks/music.md"
-  ]
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "إعلان موقع مدته 23 ثانية على خلفية فاتحة دافئة: كاميرا افتراضية تتصغر لتكشف عنوان الموقع وشبكة بطاقات فيديو، وتنتقل بقطعات ضبابية إلى بطاقة زرقاء بزر تشغيل، ثم مؤشر بنقطة حمراء ينقر بطاقة فتظهر نافذة تفاصيل، تقترب الكاميرا من كتلة نص تُظلَّل فيها عبارة بالأحمر ويتحول زر «نسخ» إلى «تم النسخ»، وينتهي بعنوان كبير وزر رابط وعمود بطاقات يتحرك.",
+  "summary_en": "A 23-second site promo on warm off-white: a virtual camera pulls back to reveal the site headline and a grid of video cards, blur-cuts to a full-frame blue play card, then a cursor with a red click dot opens a card into a modal, the camera pushes into a code-style text block where a phrase is boxed red and Copy flips to Copied, ending on a big headline and URL pill.",
+  "keywords": [
+    "site promo",
+    "virtual camera",
+    "UI tour",
+    "cursor click",
+    "blur transition",
+    "copy button",
+    "card grid",
+    "URL pill",
+    "إعلان موقع",
+    "كاميرا افتراضية",
+    "جولة في الواجهة",
+    "مؤشر الفأرة",
+    "انتقال ضبابي",
+    "زر نسخ"
+  ],
+  "difficulty": 3,
+  "duration_s": 23,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-antonio-kodheli-490109/BRIEF.md"
 }

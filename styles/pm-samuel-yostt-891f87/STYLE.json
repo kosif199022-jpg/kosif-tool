@@ -1,12 +1,13 @@
 {
   "id": "pm-samuel-yostt-891f87",
   "name": "ViralGrow product promo",
-  "name_ar": null,
+  "name_ar": "إعلان تطبيق مؤثرين بالذكاء الاصطناعي بهواتف وتدرج خوخي",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
-    "charts",
+    "phone",
+    "ads",
     "kinetic-type"
   ],
   "creator": "@samuel_yostt",
@@ -29,7 +30,35 @@
   "skill": "styles/pm-samuel-yostt-891f87/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md",
+    "playbooks/phone.md",
+    "playbooks/ads.md",
     "playbooks/kinetic-type.md"
-  ]
+  ],
+  "summary_ar": "إعلان منتج سريع مدته 15 ثانية على أبيض بتوهج خوخي ناعم: نقطة برتقالية تتفتح إلى صف صور شخصية دائرية تندمج في عنوان تتبدل كلمته الأخيرة بضبابية، ثم بطاقة صانع محتوى تتقلب عمودياً، هاتف وسط مروحة بطاقات فيديو، ثلاثة هواتف مع أيقونات المنصات، بطاقة إحصاء بمنحنى صاعد واختيار الفائز، شبكة مائلة من الصور، وبطاقة ختام بالشعار وزر برتقالي.",
+  "summary_en": "A fast 15-second app promo on white with a peach glow: an orange dot blooms into an avatar pill inside a headline whose last word blur-swaps, then a slot-spinning creator card, a phone in a fan of video cards, three phones with platform icons, a stats card with a rising line and winner pick, a tilted photo mosaic and a logo end card with an orange button.",
+  "keywords": [
+    "app promo",
+    "AI influencers",
+    "phone mockup",
+    "avatar pill",
+    "word swap",
+    "slot roll",
+    "stats card",
+    "motion blur",
+    "peach gradient",
+    "إعلان تطبيق",
+    "مؤثرين بالذكاء الاصطناعي",
+    "هواتف",
+    "تبديل الكلمات",
+    "ضبابية حركة",
+    "بطاقة إحصاء"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-samuel-yostt-891f87/BRIEF.md"
 }

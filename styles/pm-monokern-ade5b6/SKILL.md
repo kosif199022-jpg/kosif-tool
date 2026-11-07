@@ -1,6 +1,6 @@
 ---
 name: pm-monokern-ade5b6
-description: A 20-second psychedelic reel: an eye opens from a horizontal line, then tunnels of eyes and glowing rings, rainbow rays, an iridescent liquid-chrome blob, kaleidoscopes, a spiral of eyes, a foggy white scene, a neon eye and a glowing end title.
+description: A 20-second psychedelic reel: an eye opens from a horizontal line, then tunnels of eyes and glowing rings, rainbow rays, an iridescent liquid-chrome blob, kaleidoscopes, a spiral of eyes, a foggy white scene, a neon eye and a glowing end title. Use to make a new video in this look (Charts); address it by ID pm-monokern-ade5b6.
 ---
 
 # KOSIF TOOL — Psychedelic hypnotic eye showreel / العين المنوّمة: ريل سايكدلي عشرون ثانية

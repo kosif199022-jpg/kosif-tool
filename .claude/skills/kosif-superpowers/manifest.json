@@ -2302,7 +2302,7 @@
     {
      "name": "plan",
      "example": "python3 scripts/superpowers_unified.py plan \"Fix the crash in the montage app\"",
-     "does": "Uses a fixed keyword table (English and Arabic) to return an ordered list of process skills, starting with using-superpowers and ending with verification-before-completion, adding test-driven-development for code/app tasks."
+     "does": "Uses a fixed keyword table (English and Arabic) to return an ordered list of process skills, ending with verification-before-completion (using-superpowers is not routed), adding test-driven-development for code/app tasks."
     },
     {
      "name": "list",

@@ -1,9 +1,9 @@
 ---
 name: pm-viktoroddy-98c1d8
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A dark, silent ~54-second milestone film for a website-template platform: a tilted wall of site screenshots, a pink-to-violet gradient headline, a terminal typing setup commands, the logo reveal, a live visitor counter rolling to one million over a rising growth curve, a drifting template grid, word-swap thank-yous to each user type, and a logo end card in falling confetti. Use to make a new video in this look (Product UI); address it by ID pm-viktoroddy-98c1d8.
 ---
 
-# KOSIF TOOL — MotionSites one million visitors
+# KOSIF TOOL — MotionSites one million visitors / احتفال منصة قوالب مواقع بمليون زائر
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/viktoroddy-98c1d8
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #39
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+فيلم احتفالي داكن مدته نحو 54 ثانية بلا صوت لمنصة قوالب مواقع: جدار مائل من لقطات المواقع، عنوان يتوهج بتدرج وردي بنفسجي، نافذة طرفية تُكتب فيها أوامر الإعداد، الشعار، ثم عدّاد زوار حي يتدحرج حتى المليون فوق منحنى نمو، شبكة بطاقات تنساب، شكر لكل فئة من المستخدمين، وختام بالشعار وسط قصاصات احتفال.
+
+A dark, silent ~54-second milestone film for a website-template platform: a tilted wall of site screenshots, a pink-to-violet gradient headline, a terminal typing setup commands, the logo reveal, a live visitor counter rolling to one million over a rising growth curve, a drifting template grid, word-swap thank-yous to each user type, and a logo end card in falling confetti.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, HTML Canvas), suggested duration (54 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج.

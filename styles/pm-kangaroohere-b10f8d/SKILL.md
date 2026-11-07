@@ -1,9 +1,9 @@
 ---
 name: pm-kangaroohere-b10f8d
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 20-second newsletter promo on cream: a black kangaroo hops a dotted arc to stamp a bold serif wordmark, then a blue/black/yellow triptych with animated icons, flipping article cards, huge serif numbers with a tag and clock, an outline-type wall under a yellow lens, a phone on a blue grid, a highlighted headline and the kangaroo hopping to a subscribe button. Use to make a new video in this look (Kinetic type); address it by ID pm-kangaroohere-b10f8d.
 ---
 
-# KOSIF TOOL — Motion designer showreel
+# KOSIF TOOL — Motion designer showreel / إعلان نشرة بريدية بتايبوغرافي سريفي وكنغر يقفز
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/kangaroohere-b10f8d
@@ -17,14 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان سريع مدته 20 ثانية لنشرة بريدية على خلفية كريمية: كنغر أسود صغير يقفز على مسار منقط ليكتب الاسم بخط سريفي عريض، ثم ثلاث لوحات عمودية أزرق وأسود وأصفر بأيقونات متحركة، بطاقات مقالات تنقلب، أرقام ضخمة مع وسم وساعة، جدار كلمات مفرغة يمر بعدسة صفراء، هاتف على شبكة زرقاء، عنوان مظلل بالأصفر، والكنغر يقفز فوق البطاقات حتى زر الاشتراك.
+
+A 20-second newsletter promo on cream: a black kangaroo hops a dotted arc to stamp a bold serif wordmark, then a blue/black/yellow triptych with animated icons, flipping article cards, huge serif numbers with a tag and clock, an outline-type wall under a yellow lens, a phone on a blue grid, a highlighted headline and the kangaroo hopping to a subscribe button.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (20 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Ads / إعلانات, Phone / هاتف, Characters / شخصيات.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
+- [playbooks/phone.md](../../playbooks/phone.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
+* Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

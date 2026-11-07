@@ -1,11 +1,13 @@
 {
   "id": "pm-kamstudiolabs-447565",
   "name": "Collision-driven music machine",
-  "name_ar": null,
+  "name_ar": "آلة موسيقية فيزيائية تعزف فيها الكرات بالارتطام",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "music"
+    "music",
+    "particles",
+    "shapes"
   ],
   "creator": "@KamStudioLabs",
   "creator_url": "https://x.com/KamStudioLabs/status/2102899866762440893",
@@ -26,6 +28,36 @@
   "listed": true,
   "skill": "styles/pm-kamstudiolabs-447565/SKILL.md",
   "playbooks": [
-    "playbooks/music.md"
-  ]
+    "playbooks/music.md",
+    "playbooks/particles.md",
+    "playbooks/shapes.md"
+  ],
+  "summary_ar": "مقطع مدته 47 ثانية لآلة موسيقية فيزيائية على خلفية كحلية شبه سوداء: أربعة صفوف آلات مرسومة بخطوط رفيعة (أجراس معدنية زرقاء، ماريمبا برونزية مع أنابيب رنين، صنجات ذهبية، قضبان باص بنفسجية، وطبول حمراء)، ومدافع صغيرة تطلق كرات متوهجة بذيول تسقط بالجاذبية على المفاتيح فتضيء كل مفتاح عند الضرب، مع عنوان مقطوعة وعداد نوتات وزمن في الأعلى.",
+  "summary_en": "A 47-second physics music machine on a near-black navy ground: four rows of thin-line instruments (blue glockenspiel bars, bronze marimba with resonator tubes, gold cymbals, violet bass bars and red drums) while small cannons fire glowing comet-tailed balls that fall under gravity onto the keys, each key flashing as it is struck, with a piece title, note counter and timer at the top.",
+  "keywords": [
+    "music machine",
+    "physics",
+    "bouncing balls",
+    "audio visualizer",
+    "glockenspiel",
+    "marimba",
+    "generative music",
+    "collision",
+    "glow",
+    "آلة موسيقية",
+    "فيزياء",
+    "كرات مرتدة",
+    "تصوير الموسيقى",
+    "ارتطام",
+    "موسيقى توليدية"
+  ],
+  "difficulty": 4,
+  "duration_s": 47,
+  "stack": [
+    "HTML Canvas",
+    "Web Audio",
+    "React",
+    "Remotion"
+  ],
+  "brief": "styles/pm-kamstudiolabs-447565/BRIEF.md"
 }

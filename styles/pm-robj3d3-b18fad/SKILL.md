@@ -1,9 +1,9 @@
 ---
 name: pm-robj3d3-b18fad
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A dark 15-second teaser: copper-red light sweeps the edges of a giant X, then 'X = Twitter' appears, the word is struck through and swapped until an italic question mark remains, one post card multiplies into a wall of cards, X-shaped particles link into a constellation, and it ends on a flame logo, a one-line claim and an italic 'Soon.' Use to make a new video in this look (Product UI); address it by ID pm-robj3d3-b18fad.
 ---
 
-# KOSIF TOOL — SuperX feature release teaser
+# KOSIF TOOL — SuperX feature release teaser / تيزر ميزة جديدة: حرف X متوهج وسؤال ماذا يعني
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/robj3d3-b18fad
@@ -17,14 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+تيزر داكن مدته 15 ثانية: ضوء أحمر نحاسي يمسح حواف حرف X ضخم في العتمة، ثم يظهر الحرف صغيراً متوهجاً مع «X = اسم المنصة القديم» وسطر صغير، تُشطب الكلمة بخط أحمر وتتبدل معانٍ أخرى بسرعة حتى تبقى علامة استفهام مائلة، بطاقة منشور واحدة تتضاعف إلى جدار من البطاقات، جسيمات على شكل X تتصل بخطوط، ثم شعار بلهب وجملة ختام و«قريباً» بخط مائل.
+
+A dark 15-second teaser: copper-red light sweeps the edges of a giant X, then 'X = Twitter' appears, the word is struck through and swapped until an italic question mark remains, one post card multiplies into a wall of cards, X-shaped particles link into a constellation, and it ends on a flame logo, a one-line claim and an italic 'Soon.'
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, WebGL, Web Audio), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية.
+Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك, Particles / جسيمات, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

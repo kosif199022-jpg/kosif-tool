@@ -1,12 +1,13 @@
 {
   "id": "pm-sahildesigner23-ee3155",
   "name": "3D motion design showreel",
-  "name_ar": null,
+  "name_ar": "شوريل موشن ثلاثي الأبعاد بالأسود والبرتقالي: نص يتجسم وكرات كروم ومكعبات",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "3d",
+    "kinetic-type",
+    "product-ui"
   ],
   "creator": "@sahildesigner23",
   "creator_url": "https://x.com/sahildesigner23/status/2103536115563307120",
@@ -27,7 +28,35 @@
   "listed": true,
   "skill": "styles/pm-sahildesigner23-ee3155/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/3d.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/product-ui.md"
+  ],
+  "summary_ar": "شوريل 15 ثانية بالأسود والبرتقالي والكريمي: كلمة MOTION تُكشف بين خطين وتتلون حروفها، ثم يكررها نمط مفرّغ في الخلفية، فتتحول إلى نص ثلاثي الأبعاد ببروز برتقالي يدور، ثم كرات كروم سائلة تندمج على خلفية برتقالية، هاتف يعرض نسبة تصيير، حقل مكعبات تبرز منه أشكال برتقالية، واجهة محرر بطبقات وموجة صوت، وبطاقة اسم بنقطة برتقالية.",
+  "summary_en": "A 15 s showreel in black, orange and cream: a word revealed between two rules, outline repeats scrolling behind it, the word turning into extruded 3D type, merging chrome blobs on orange, a phone render screen, a cube field where orange shapes rise, an editor UI with layers and waveform, and a name card with an orange dot.",
+  "keywords": [
+    "3D showreel",
+    "extruded type",
+    "metaballs",
+    "chrome",
+    "cube field",
+    "editor UI",
+    "orange and black",
+    "motion designer",
+    "شوريل ثلاثي الأبعاد",
+    "نص مجسم",
+    "كرات كروم",
+    "مكعبات",
+    "واجهة محرر",
+    "برتقالي وأسود"
+  ],
+  "difficulty": 5,
+  "duration_s": 15,
+  "stack": [
+    "Three.js",
+    "WebGL",
+    "React",
+    "Remotion"
+  ],
+  "brief": "styles/pm-sahildesigner23-ee3155/BRIEF.md"
 }

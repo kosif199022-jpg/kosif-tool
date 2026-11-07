@@ -1,9 +1,9 @@
 ---
 name: pm-davidgmi-01-fd5257
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 65-second promo for an open-source photo-to-video-ad tool: a huge photo-filled serif title on ivory, a dark terminal with a pasted request and image tags, serif chapters (script, clips, edit), a GitHub repo where the star is clicked, a long settings template whose blanks fill in coral line by line under a slow zoom, a clip of the resulting ad, and an end card. Use to make a new video in this look (Product UI); address it by ID pm-davidgmi-01-fd5257.
 ---
 
-# KOSIF TOOL — Product ad generated from one photo
+# KOSIF TOOL — Product ad generated from one photo / ترويج أداة مفتوحة المصدر تصنع إعلاناً من صورة منتج واحدة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/davidgmi-01-fd5257
@@ -17,18 +17,27 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو ترويجي مدته نحو 65 ثانية لأداة مفتوحة المصدر تحول صورة منتج واحدة إلى إعلان فيديو: عنوان سيريف ضخم مقنّع بالصور على ورق عاجي، طرفية داكنة يُلصق فيها طلب مع صور، فصول بعناوين سيريف (السيناريو، اللقطات، المونتاج) مع جدول نص بتوقيتات وشريط لقطات، صفحة مستودع على GitHub يُضغط فيها زر النجمة، نموذج إعدادات تُملأ حقوله بالبرتقالي ببطء، ثم لقطة من الإعلان الناتج وبطاقة ختام.
+
+A 65-second promo for an open-source photo-to-video-ad tool: a huge photo-filled serif title on ivory, a dark terminal with a pasted request and image tags, serif chapters (script, clips, edit), a GitHub repo where the star is clicked, a long settings template whose blanks fill in coral line by line under a slow zoom, a clip of the resulting ad, and an end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, Web Audio), suggested duration (65 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Characters / شخصيات, Photos / صور, Music / موسيقى.
+Categories: Product UI / واجهات المنتج, Code / كود, Kinetic type / تايبوغرافي متحرك, Photos / صور, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 - [playbooks/photos.md](../../playbooks/photos.md)
-- [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,9 +1,9 @@
 ---
 name: pm-itsuki-dev-10942d
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second motion showreel in eight numbered chapters at 120 BPM: a white dot sliced by a red line, a black wordmark on orange, giant motion-blurred words on colour grounds, an orange shape morphing beside an easing graph, a three-colour tile grid, particles forming a year then bursting, a square tunnel, wire curves on yellow, an end card. Use to make a new video in this look (Kinetic type); address it by ID pm-itsuki-dev-10942d.
 ---
 
-# KOSIF TOOL — Kinetic type showreel
+# KOSIF TOOL — Kinetic type showreel / شوريل موشن ديزاين في ثمانية فصول: كلمات ضخمة وأشكال وجسيمات
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/itsuki-dev-10942d
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شوريل موشن مدته 15 ثانية في ثمانية فصول مرقمة على إيقاع 120 نبضة: نقطة بيضاء يقطعها خط أحمر، عنوان أسود ضخم على برتقالي مع سطر سيريف مائل، كلمات عملاقة مع ضبابية حركة على أزرق وكحلي وبنفسجي فاتح فوق خلفية من نفس الكلمة مكررة، شكل برتقالي يتحول من مربع إلى مثلث إلى سداسي مع رسم منحنى التخميد، شبكة بلاطات هندسية بثلاثة ألوان، جسيمات تتجمع رقماً ثم تنفجر، نفق مربعات دوّار، منحنيات سلكية على أصفر، ثم بطاقة ختام.
+
+A 15-second motion showreel in eight numbered chapters at 120 BPM: a white dot sliced by a red line, a black wordmark on orange, giant motion-blurred words on colour grounds, an orange shape morphing beside an easing graph, a three-colour tile grid, particles forming a year then bursting, a square tunnel, wire curves on yellow, an end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas, Web Audio), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

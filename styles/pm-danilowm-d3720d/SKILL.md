@@ -1,6 +1,6 @@
 ---
 name: pm-danilowm-d3720d
-description: A 15-second, six-chapter reel on a light ground for a pet-friendly places app: words pulling into focus from blur with a teal underline, an SVG city map drawing on with dropping pins, a count-up from 1,011 to 1,317 with category bars, a perspective grid of venue cards with a camera flight, a search bar typing and clicking, then the app logo resolve.
+description: A 15-second, six-chapter reel on a light ground for a pet-friendly places app: words pulling into focus from blur with a teal underline, an SVG city map drawing on with dropping pins, a count-up from 1,011 to 1,317 with category bars, a perspective grid of venue cards with a camera flight, a search bar typing and clicking, then the app logo resolve. Use to make a new video in this look (Charts); address it by ID pm-danilowm-d3720d.
 ---
 
 # KOSIF TOOL — Motion designer showreel / ريل تطبيق الأماكن الصديقة للحيوانات في ستة فصول

@@ -1,6 +1,6 @@
 ---
 name: pm-gautam-mer1-2ae354
-description: A 30 s vertical, Apple-calm product film for a caption app: one floating phone, sparse large type, and captions that land word by word in sync with speech.
+description: A 30 s vertical, Apple-calm product film for a caption app: one floating phone, sparse large type, and captions that land word by word in sync with speech. Use to make a new video in this look (Product UI); address it by ID pm-gautam-mer1-2ae354.
 ---
 
 # KOSIF TOOL — Matra caption app promo / ترويج تطبيق Matra للترجمة النصية بأسلوب Apple

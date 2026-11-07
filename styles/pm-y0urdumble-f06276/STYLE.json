@@ -1,12 +1,12 @@
 {
   "id": "pm-y0urdumble-f06276",
   "name": "Dancing voxel character built in Blender",
-  "name_ar": null,
+  "name_ar": "شخصية فوكسل تُبنى وتُركّب لها مفاصل وترقص مع لوحة سجل حية",
   "origin": "PromptsMotion",
   "type": "Skill",
   "category": [
+    "3d",
     "characters",
-    "music",
     "code"
   ],
   "creator": "unknown",
@@ -28,8 +28,35 @@
   "listed": true,
   "skill": "styles/pm-y0urdumble-f06276/SKILL.md",
   "playbooks": [
+    "playbooks/3d.md",
     "playbooks/characters.md",
-    "playbooks/music.md",
     "playbooks/code.md"
-  ]
+  ],
+  "summary_ar": "فيديو عمودي مدته 16 ثانية بقسمين: في الأعلى مشهد فوكسل ثلاثي الأبعاد على أرضية بنفسجية بنجوم، فيه مكعب برتقالي لطيف بوجه يشير بشعاع ليبني رجلاً بنظارة شمسية وشارب وبدلة خردلية طبقة طبقة، ثم تُضاف المفاصل ويرقص الاثنان؛ وفي الأسفل لوحة داكنة بتبويبات المراحل وشريط تقدم وخط إيقاع بنقاط مفاتيح وسجل أوامر يُكتب سطراً سطراً.",
+  "summary_en": "A 16-second vertical split: on top, a voxel 3D scene on a periwinkle floor with stars where a cute orange cube character beams a builder ray to assemble a moustached, sunglassed man in a mustard suit layer by layer, rigs him and both dance; below, a dark dashboard with stage tabs, a progress bar, a beat grid of key-pose diamonds and a command log typing line by line.",
+  "keywords": [
+    "voxel",
+    "3D character",
+    "build process",
+    "auto rig",
+    "dance loop",
+    "command log",
+    "beat grid",
+    "split screen",
+    "vertical",
+    "فوكسل",
+    "شخصية ثلاثية الأبعاد",
+    "بناء الشخصية",
+    "رقص",
+    "سجل أوامر",
+    "شاشة منقسمة"
+  ],
+  "difficulty": 4,
+  "duration_s": 16,
+  "stack": [
+    "Three.js",
+    "React",
+    "Remotion"
+  ],
+  "brief": "styles/pm-y0urdumble-f06276/BRIEF.md"
 }

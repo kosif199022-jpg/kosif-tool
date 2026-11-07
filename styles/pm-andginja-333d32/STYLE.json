@@ -1,12 +1,14 @@
 {
   "id": "pm-andginja-333d32",
   "name": "Studio website showreel",
-  "name_ar": null,
+  "name_ar": "ريل استوديو إبداعي بإطار كاميرا: فيلم وتصميم وبرمجة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
-    "kinetic-type"
+    "kinetic-type",
+    "photos",
+    "ads"
   ],
   "creator": "@andginja",
   "creator_url": "https://x.com/andginja/status/2103492000733618685",
@@ -28,6 +30,37 @@
   "skill": "styles/pm-andginja-333d32/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/photos.md",
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "ريل تعريفي سريع مدته 15 ثانية لاستوديو صغير، كله داخل إطار عدسة كاميرا بزوايا بيضاء وعدّاد زمني مع نقطة تسجيل حمراء وإحداثيات وأرقام فصول: شعار يُرسم على كحلي داكن، لقطات غروب لمدينة على النهر تحت عنوان بخط ثقيل ومائل، لوحات ألوان عمودية، كلمة ضخمة مقنّعة بالفيديو، بطاقات مشاريع مرقمة، موقع ويب يميل ثلاثي الأبعاد، أرقام نتائج، ثم شعار يفك تشفيره إلى العنوان.",
+  "summary_en": "A fast 15-second studio showreel inside a camera-viewfinder HUD (corner brackets, timecode with red rec dot, coordinates, chapter labels): a monogram draws on over navy, golden-hour river city footage under bold-plus-italic-serif headlines, a video-masked word, numbered project cards, a website mock tilting into 3D, stats, and a logo decoding into the URL.",
+  "keywords": [
+    "showreel",
+    "studio reel",
+    "viewfinder hud",
+    "timecode",
+    "serif italic",
+    "text decode",
+    "video mask text",
+    "website mockup",
+    "3d tilt",
+    "agency promo",
+    "ريل استوديو",
+    "إطار كاميرا",
+    "فك تشفير النص",
+    "نص مقنّع بالفيديو",
+    "موقع ويب",
+    "إعلان وكالة"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-andginja-333d32/BRIEF.md"
 }

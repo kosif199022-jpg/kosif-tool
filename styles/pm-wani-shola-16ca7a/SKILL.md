@@ -1,9 +1,9 @@
 ---
 name: pm-wani-shola-16ca7a
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A roughly 102-second tour of a developer-relations engineer's portfolio site in a warm editorial style: an opening on dark brown with 'I do X' lines swapping an orange italic verb, then the name in large serif on cream paper, browser shots in light and dark mode, two phones, a chat assistant answering with evidence, project cards, big numbers, a downloads chart and a URL close. Use to make a new video in this look (Product UI); address it by ID pm-wani-shola-16ca7a.
 ---
 
-# KOSIF TOOL — Developer portfolio site showreel
+# KOSIF TOOL — Developer portfolio site showreel / جولة فيديو في موقع ملف أعمال مطوّر بأسلوب تحريري دافئ
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/wani-shola-16ca7a
@@ -18,24 +18,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+جولة مدتها نحو 102 ثانية في موقع ملف أعمال لمهندس علاقات مطورين، بأسلوب تحريري دافئ: افتتاحية على بني داكن بعبارات «أنا أفعل كذا» تتبدل فيها الكلمة المائلة بالبرتقالي، ثم الاسم بخط سيريف كبير على ورق كريمي، لقطات المتصفح بالوضعين الفاتح والداكن، هاتفان، مساعد محادثة يجيب بأدلة، بطاقات المشاريع، أرقام كبيرة، مخطط تنزيلات، وختام بالرابط.
+
+A roughly 102-second tour of a developer-relations engineer's portfolio site in a warm editorial style: an opening on dark brown with 'I do X' lines swapping an orange italic verb, then the name in large serif on cream paper, browser shots in light and dark mode, two phones, a chat assistant answering with evidence, project cards, big numbers, a downloads chart and a URL close.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG), suggested duration (102 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Phone / هاتف, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Characters / شخصيات, Music / موسيقى, Code / كود.
+Categories: Product UI / واجهات المنتج, Phone / هاتف, Kinetic type / تايبوغرافي متحرك, Charts / رسوم بيانية.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/phone.md](../../playbooks/phone.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/music.md](../../playbooks/music.md)
-- [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

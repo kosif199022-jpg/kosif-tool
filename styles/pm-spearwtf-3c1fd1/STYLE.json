@@ -1,10 +1,14 @@
 {
   "id": "pm-spearwtf-3c1fd1",
   "name": "Chain.wtf pitch video",
-  "name_ar": null,
+  "name_ar": "إعلان عرض جريء لمنصة مراهنات بلقطات ثلاثية الأبعاد سينمائية وتشويش ألوان",
   "origin": "PromptsMotion",
   "type": "Prompt",
-  "category": [],
+  "category": [
+    "ads",
+    "3d",
+    "kinetic-type"
+  ],
   "creator": "@SPEARwtf",
   "creator_url": "https://x.com/SPEARwtf/status/2103857153308029058",
   "page": "https://www.promptsmotion.com/spearwtf-3c1fd1",
@@ -23,5 +27,38 @@
   "source_prompt_words": 7,
   "listed": true,
   "skill": "styles/pm-spearwtf-3c1fd1/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/ads.md",
+    "playbooks/3d.md",
+    "playbooks/kinetic-type.md"
+  ],
+  "summary_ar": "إعلان 16:9 مدته 30 ثانية يبدأ بزر أزرق ناعم على أبيض يُضغط، ثم يقطع إلى ظلام سينمائي بلقطات ثلاثية الأبعاد قريبة بعمق ميدان ضحل (زر أحمر كبير، نفق ضوء بقوس قزح، بكرات آلة قمار، عملة تدور، ملعب، لوحة LED، نرد، استمارات تتطاير) مع عنوان مائل عريض لكل فئة بجانب شعار من أربعة خطوط ملونة، وينتهي بشعار يتشوش بانفصال ألوان وخطوط سرعة وزر أصفر.",
+  "summary_en": "A 30 s 16:9 pitch ad that opens on a soft blue button on white being clicked, then cuts to dark, shallow-focus 3D close-ups (red arcade button, rainbow light tunnel, slot reels, coin, stadium, LED board, dice, flying forms), each tagged with a heavy italic uppercase word beside a four-stripe logo, ending on an RGB-split glitching wordmark and a yellow button.",
+  "keywords": [
+    "pitch ad",
+    "3d product shots",
+    "cinematic close-up",
+    "rgb split glitch",
+    "italic bold type",
+    "speed lines",
+    "dark studio",
+    "rainbow stripes",
+    "crypto ad",
+    "إعلان",
+    "لقطات ثلاثية الأبعاد",
+    "تشويش ألوان",
+    "خط مائل عريض",
+    "إعلان سينمائي",
+    "خطوط سرعة"
+  ],
+  "difficulty": 5,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "Three.js",
+    "WebGL",
+    "CSS"
+  ],
+  "brief": "styles/pm-spearwtf-3c1fd1/BRIEF.md"
 }

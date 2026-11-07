@@ -1,9 +1,9 @@
 ---
 name: pm-gabrielbuzziv-4ff0c6
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second baby-checklist app promo: a tilted 3D wall of purple baby-item icon tiles under serif-italic headlines, then white icon chips and a phone showing progress, a clothing photo scanned and sorted into age cards, an isometric nursery filling with furniture as a ring counter climbs 0-100%, and a logo end card on soft lavender. Use to make a new video in this look (Product UI); address it by ID pm-gabrielbuzziv-4ff0c6.
 ---
 
-# KOSIF TOOL — Enxovaly baby app promo
+# KOSIF TOOL — Enxovaly baby app promo / إعلان تطبيق تجهيز مستلزمات المولود بلمسة بنفسجية ناعمة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/gabrielbuzziv-4ff0c6
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #5
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+إعلان تطبيق مدته 15 ثانية لتجهيز مستلزمات المولود: حائط أيقونات ملابس وأدوات أطفال بنفسجية يميل في منظور ثلاثي الأبعاد تحت عناوين بخط سيريف مائل، ثم شرائح أيقونات بيضاء وهاتف يعرض نسبة التجهيز، صورة ملابس تُمسح وتُوزَّع على بطاقات أعمار، غرفة طفل أيزومترية تمتلئ بالأثاث مع عدّاد من 0% إلى 100%، وتنتهي بشعار التطبيق على خلفية لافندر.
+
+A 15-second baby-checklist app promo: a tilted 3D wall of purple baby-item icon tiles under serif-italic headlines, then white icon chips and a phone showing progress, a clothing photo scanned and sorted into age cards, an isometric nursery filling with furniture as a ring counter climbs 0-100%, and a logo end card on soft lavender.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, Three.js), suggested duration (15 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.

@@ -122,7 +122,7 @@ Of 478 skills (counted 2026-11-03), most are written methods with no code; 28 sh
 | `skill:kosif-upload-link` | upload-join | joins 3 upload parts, then with one part deleted | sha256 identical; missing part refused |
 | `skill:living-site` | credit-ledger | credit ledger with test entries | double billing refused; over-budget blocks (no credits spent) |
 | `skill:kosif-shadow-theatre` | shadow-theatre | check, stills, 22 s preview render, analyze the input | planted gap + missing memorable caught; stills not flat; duration 22 s with sound |
-| `skill:kosif-web-film` | web-film | plan, scaffold, check (structure only, no video render) | check passes; planted gap + uncovered requirement caught |
+| `skill:kosif-web-film` | web-film | plan, scaffold, check; World Film example, check, build (structure only, no video render) | check passes; planted gap + uncovered requirement caught; World Film example passes and 3 planted breaks (said-and-typed text, small type, dead camera stop) caught |
 | `skill:kosif-infinite-matrices` | causal-laws | reruns the elastic-memory law, verifies, tampers a frame | recorded effect 0.097492994 reproduced exactly; tamper detected |
 | `skill:kosif-instagram-video-research` | reel-research | search links (no network), index, review, export | foreign link refused; only the reviewed reel exported |
 | `skill:kosif-voice-studio` | voice-check | self-test, engine doctor, audio verify | duration matches ffprobe; planted silence rejected (speech needs an engine) |

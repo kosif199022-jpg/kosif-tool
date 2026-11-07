@@ -23,6 +23,28 @@ SKILLS = Path(".claude/skills")
 SUPER = SKILLS / "kosif-superpowers"
 SCHEMA = "kosif.black-dragon.native-fusion.v1"
 PHASES = ("understand", "research", "design", "produce", "verify", "deliver")
+# Any video product walks the mandatory seven-stage protocol (see
+# references/VIDEO_PROTOCOL.md). These words switch it on in `compose`.
+VIDEO_WORDS = {"فيديو", "فيديوهات", "ريل", "ريلز", "ريلات", "مونتاج", "اعلانات", "إعلانات", "افلام", "فيلم", "اعلان", "إعلان", "موشن", "انترو",
+               "برومو", "تيك", "شورتس", "كليب", "video", "reel", "reels", "montage", "film",
+               "promo", "intro", "motion", "ad", "commercial", "shorts", "tiktok", "clip"}
+VIDEO_STAGES = ("brief", "concept", "color-design", "shots", "produce", "qa-color", "deliver")
+
+
+def video_protocol(task: str) -> dict | None:
+    """The mandatory video path, or None when the task is not a video product."""
+    if not (words(task) & {w for v in VIDEO_WORDS for w in words(v)}):
+        return None
+    tool = ".claude/skills/kosif-black-dragon/scripts/video_protocol.py"
+    return {"mandatory": True, "stages": list(VIDEO_STAGES),
+            "doc": ".claude/skills/kosif-black-dragon/references/VIDEO_PROTOCOL.md",
+            "start": f'python3 {tool} start "<task>" --job out/black-dragon/<job>',
+            "check": f"python3 {tool} check --job out/black-dragon/<job>",
+            "cores": f"python3 {tool} cores",
+            "core": f"python3 {tool} core <core-id> --job out/black-dragon/<job> -- <args>",
+            "rule": ("Every stage first runs its mandatory core skills (Dragon Mind, tool matrix, "
+                     "Infinite Matrices, style atlas, hooks, motion repos, a renderer, the delivery "
+                     "gate) with receipts. Do not deliver until `check` passes (exit 0).")}
 
 
 def digest(data: bytes) -> str:
@@ -335,6 +357,7 @@ def compose(task: str, path: Path, *, legacy: bool = False, limit: int = 12) -> 
                       "code": x["code"], "source_sha256": x["source_sha256"],
                       **({"legacy_entry": x["id"]} if legacy else {})}
                      for x in selected],
+        **({"video_protocol": vp} if (vp := video_protocol(task)) else {}),
         "native_instruction": ("Synthesize a new coherent solution from the selected methods, "
                                "merge redundant steps, preserve unique constraints, then implement "
                                "and verify the required actual output. No legacy tool is executed."),
@@ -416,7 +439,27 @@ def judgment_guard_engine():
     return module
 
 
+def build_studio_engine():
+    """Load the native 3D build studio (Blender/Unreal planning; nothing is launched)."""
+    path = Path(__file__).with_name("build_studio.py")
+    spec = importlib.util.spec_from_file_location("_kosif_dragon_build_studio", path)
+    if spec is None or spec.loader is None:
+        raise ValueError("3D build studio unavailable")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
 def main(argv=None) -> int:
+    argv = list(sys.argv[1:] if argv is None else argv)
+    if argv[:1] == ["build3d"]:
+        return build_studio_engine().main(argv[1:])
+    if argv[:1] == ["motion"]:
+        path = Path(__file__).with_name("motion_styles.py")
+        spec = importlib.util.spec_from_file_location("_kosif_dragon_motion_styles", path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        return module.main(argv[1:])
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--root", type=Path, default=ROOT)
     cmd = ap.add_subparsers(dest="command", required=True)
@@ -434,6 +477,8 @@ def main(argv=None) -> int:
     j = cmd.add_parser("think-review", help="Book-informed fast/slow judgment check; no expert agents executed")
     j.add_argument("--input", type=Path, required=True, help="Structured JSON decision brief")
     j.add_argument("--out", type=Path, help="Optional JSON review output")
+    cmd.add_parser("build3d", help="3D build studio: list|principles|kit|match|brief|lint (planning only)")
+    cmd.add_parser("motion", help="Code-motion styles: list|principles|match|brief|clone-plan|vo-timeline|cue-check")
     v = cmd.add_parser("verify", help="Verify the catalog-source fingerprints")
     v.add_argument("--out", type=Path, required=True)
     args = ap.parse_args(argv)

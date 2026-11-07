@@ -1,9 +1,9 @@
 ---
 name: pm-ajith-io-b5626e
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second abstract reel with a bar-counter HUD: a red dot splitting into a ring, a black headline stacking on red inside selection brackets, a shape morphing in a rotating transform box, a lens-warped dot grid, particles on blue turning into a wireframe cube, a striped rope tying a knot on yellow, spinning text rings, and a serif wordmark end card. Use to make a new video in this look (Shapes); address it by ID pm-ajith-io-b5626e.
 ---
 
-# KOSIF TOOL — Abstract motion design reel
+# KOSIF TOOL — Abstract motion design reel / شوريل موشن تجريدي: نقاط وأشكال بمقابض تحويل وجسيمات وحبل وحلقات نصية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/ajith-io-b5626e
@@ -17,16 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شوريل تجريدي مدته 15 ثانية بإطار واجهة يعرض الإيقاع: نقطة حمراء على الأسود تنقسم إلى حلقة نقاط، عنوان أسود ثقيل على أحمر يتراكم كلمة كلمة مع أقواس تحديد، دائرة حمراء داخل صندوق تحويل بمقابض تتحول إلى مربع أزرق ثم زهرة، شبكة نقاط كريمية تنبعج كعدسة، جسيمات بيضاء على الأزرق تتحول من رأس إلى طوق إلى مكعب سلكي، حبل مخطط يعقد عقدة على الأصفر، شرائط كلمات تلتف إلى حلقات دوارة، وختام باسم بخط مزخرف.
+
+A 15-second abstract reel with a bar-counter HUD: a red dot splitting into a ring, a black headline stacking on red inside selection brackets, a shape morphing in a rotating transform box, a lens-warped dot grid, particles on blue turning into a wireframe cube, a striped rope tying a knot on yellow, spinning text rings, and a serif wordmark end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas, Three.js), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال.
-- [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+Categories: Shapes / أشكال, Particles / جسيمات, Kinetic type / تايبوغرافي متحرك, 3D / ثلاثي الأبعاد.
 - [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

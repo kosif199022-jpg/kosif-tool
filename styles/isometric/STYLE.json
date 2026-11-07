@@ -1,7 +1,7 @@
 {
   "id": "isometric",
   "name": "عالم أيزومتريك",
-  "name_ar": "عالم أيزومتريك",
+  "name_ar": "عالم أيزومتريك — مدينة صغيرة بألوان باستيل تشرح رحلة خطوة بخطوة",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,32 @@
   "playbooks": [
     "playbooks/3d.md",
     "playbooks/diagrams.md"
-  ]
+  ],
+  "summary_ar": "مدينة أيزومترية صغيرة بألوان باستيل (بيوت وأبراج وردية وبنفسجية وفيروزية ومستودع برتقالي وأشجار مستديرة) على خلفية لافندر فاتحة، تنتقل الكاميرا بين مبانيها لتشرح رحلة طلب أونلاين: هاتف يظهر فوق بيت، خط منقط إلى سحابة، مستودع تخرج منه شاحنة، ثم الوصول للباب، مع شريط مراحل في الأسفل يتقدم وفقاعات عربية صغيرة.",
+  "summary_en": "A tiny pastel isometric city (pink, violet and teal towers, an orange warehouse, round trees) on pale lavender, where the camera moves between buildings to explain an online order's journey: a phone pops over a house, a dotted line arcs to a cloud, a truck leaves the warehouse, and it reaches the door, while a bottom progress bar advances and small Arabic speech chips appear.",
+  "keywords": [
+    "isometric",
+    "isometric city",
+    "pastel",
+    "process explainer",
+    "delivery journey",
+    "e-commerce flow",
+    "progress bar",
+    "أيزومتريك",
+    "مدينة أيزومترية",
+    "شرح عملية",
+    "رحلة الطلب",
+    "باستيل",
+    "توصيل",
+    "تجارة إلكترونية"
+  ],
+  "difficulty": 4,
+  "duration_s": 28,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/isometric/BRIEF.md"
 }

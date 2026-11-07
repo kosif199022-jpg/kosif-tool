@@ -1,7 +1,7 @@
 {
   "id": "minimal",
   "name": "مينيمال",
-  "name_ar": "مينيمال",
+  "name_ar": "مينيمال — كلمة واحدة وشكل واحد ومساحة فارغة كثيرة",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,31 @@
   "playbooks": [
     "playbooks/kinetic-type.md",
     "playbooks/shapes.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي 9:16 على خلفية بيضاء مكسورة هادئة، كل لقطة فيها كلمة أو عبارة قصيرة واحدة بخط عربي نظيف متوسط الوزن وشكل هندسي واحد (دائرة أو خط أو مربع) بلون تمييز واحد، يتحركان بحركات قليلة وبطيئة ودقيقة مع مساحات فارغة واسعة وانتقالات بالانزلاق أو بتمدد الشكل.",
+  "summary_en": "A 9:16 reel on a calm off-white background where each shot holds one word or short phrase in a clean medium-weight Arabic sans plus one geometric shape (circle, line or square) in a single accent colour, moving with few, slow, precise motions in generous empty space, linked by slides or a shape that stretches into the next shot.",
+  "keywords": [
+    "minimal",
+    "minimalism",
+    "negative space",
+    "clean typography",
+    "single accent",
+    "geometric",
+    "brand",
+    "مينيمال",
+    "بساطة",
+    "مساحة فارغة",
+    "تايبوغرافي نظيف",
+    "أشكال هندسية",
+    "هادئ"
+  ],
+  "difficulty": 2,
+  "duration_s": 28,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "SVG"
+  ],
+  "brief": "styles/minimal/BRIEF.md"
 }

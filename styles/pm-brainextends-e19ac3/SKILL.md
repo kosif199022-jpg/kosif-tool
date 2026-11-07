@@ -1,9 +1,9 @@
 ---
 name: pm-brainextends-e19ac3
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: An 18-second music app product film inside one rounded dark panel over a green-to-black gradient: logo, a line with a green word, home screen push-in to colourful covers, a track list, a mood-cover strip, a search result, a glossy iridescent cover growing to fill the panel, a green flash, cards stacking in depth, and a logo end card. Use to make a new video in this look (Product UI); address it by ID pm-brainextends-e19ac3.
 ---
 
-# KOSIF TOOL — Spotify product film
+# KOSIF TOOL — Spotify product film / فيلم منتج لتطبيق موسيقى داخل إطار شاشة داكنة على تدرج أخضر
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/brainextends-e19ac3
@@ -18,27 +18,20 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيلم منتج مدته 18 ثانية لتطبيق بث موسيقي، كله داخل لوح داكن مستدير الحواف فوق تدرج أخضر إلى أسود: شعار دائري أخضر، سطر بكلمة خضراء، شاشة رئيسية تقترب إلى غلافات ملونة، قائمة أغانٍ، شريط غلافات المزاج يمر أفقياً، بحث يملأ نتيجة، غلاف لامع قزحي يكبر حتى يملأ اللوح، ومضة خضراء كاملة، بطاقات تنتشر وتتراكم في الفضاء، وختام بالشعار وسطرين؛ ومشغل صغير ثابت في الأسفل.
+
+An 18-second music app product film inside one rounded dark panel over a green-to-black gradient: logo, a line with a green word, home screen push-in to colourful covers, a track list, a mood-cover strip, a search result, a glossy iridescent cover growing to fill the panel, a green flash, cards stacking in depth, and a logo end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, HTML Canvas), suggested duration (18 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, Characters / شخصيات, Photos / صور, Music / موسيقى.
+Categories: Product UI / واجهات المنتج, Music / موسيقى.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/diagrams.md](../../playbooks/diagrams.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/shapes.md](../../playbooks/shapes.md)
-- [playbooks/particles.md](../../playbooks/particles.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/photos.md](../../playbooks/photos.md)
 - [playbooks/music.md](../../playbooks/music.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
 * Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
 
 ## Original creative direction (التوجيه الإبداعي)
