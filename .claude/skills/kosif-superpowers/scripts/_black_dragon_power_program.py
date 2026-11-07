@@ -48,14 +48,23 @@ def run_program(pid: str, work: Path) -> dict:
         error = ""
     except Exception:  # the program itself failed: record it, never pass
         checks, error = [], traceback.format_exc()[-1500:]
-    outputs = sorted(p for p in work.rglob("*") if p.is_file())
+    # Read each output once. Helpers a program starts can still be running (git's background
+    # auto-maintenance in a test repo makes and deletes a lock file), so a file gone by now is skipped.
+    outputs = []
+    for p in sorted(work.rglob("*")):
+        try:
+            if p.is_file():
+                data = p.read_bytes()
+                outputs.append((p, len(data), sha(data)))
+        except FileNotFoundError:
+            continue
     rows = [{"name": str(n), "passed": bool(ok), "observed": str(obs)[:400]} for n, ok, obs in checks]
     problems = []
     if error:
         problems.append("program raised")
     if not rows:
         problems.append("no checks returned")
-    if not any(p.stat().st_size for p in outputs):
+    if not any(size for _, size, _ in outputs):
         problems.append("no non-empty output file")
     problems += [f"check failed: {r['name']}" for r in rows if not r["passed"]]
     mod_file = Path(mod.__file__)
@@ -64,7 +73,7 @@ def run_program(pid: str, work: Path) -> dict:
             "program": str(mod_file.relative_to(SCRIPTS.parents[3])), "program_sha256": sha(mod_file.read_bytes()),
             "function": fn.__name__, "seconds": round(time.time() - started, 3),
             "outputs": [{"path": p.name if p.parent == work else str(p.relative_to(work)),
-                         "bytes": p.stat().st_size, "sha256": sha(p.read_bytes())} for p in outputs][:50],
+                         "bytes": size, "sha256": digest} for p, size, digest in outputs][:50],
             "checks": rows, "problems": problems, "error": error}
 
 

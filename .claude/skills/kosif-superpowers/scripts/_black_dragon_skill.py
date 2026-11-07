@@ -55,13 +55,15 @@ SCRIPT = {
     "pixel-painter": VENDOR / "pixel-studio-painter" / "scripts",
     "kling-director": SKILLS / "kosif-kling-director" / "scripts",
     "dragon-mind": SKILLS / "kosif-dragon-mind" / "scripts",
+    "saas-animation": SKILLS / "saas-animation" / "scripts",
 }
 RECIPES = tuple(SCRIPT)
 NEEDS_MEDIA = {"social", "video-editor", "motion-energy", "captions-audio", "shadow-theatre", "voice-check",
                "animation-qa", "hyperframes-beats", "montage-tools", "mimic-analyze"}
 NEEDS_MODULE = {"excel-lambdas": "openpyxl", "motion-energy": "PIL", "excel-model": "openpyxl",
                 "excel-check": "openpyxl", "captions-audio": "numpy", "shadow-theatre": "numpy",
-                "animation-qa": "PIL", "hyperframes-beats": "numpy", "mimic-analyze": "cv2", "pixel-painter": "cv2"}
+                "animation-qa": "PIL", "hyperframes-beats": "numpy", "mimic-analyze": "cv2", "pixel-painter": "cv2",
+                "saas-animation": "PIL"}
 # Scripts that import their sibling modules: run without -I (which drops the script's folder from
 # sys.path) but still with -E -s, so no environment variable or user site-packages leaks in.
 PY_SIBLINGS = [sys.executable, "-E", "-s", "-B"]  # Python packages a recipe's script imports
@@ -721,6 +723,48 @@ def dragon_mind(r, d, task, clip, selftest):
                        "note": "a planner: nothing in the catalog was executed by this step"})
 
 
+def saas_animation(r, d, task, clip, selftest):
+    from PIL import Image, ImageDraw
+    # Known-answer stills: three frames, each a flat colour, named by their time like render.mjs writes them.
+    stills = r.work / "stills"
+    stills.mkdir()
+    colours = {"0.50": (200, 30, 30), "1.20": (30, 200, 30), "2.00": (30, 30, 200)}
+    for t, c in colours.items():
+        Image.new("RGB", (1920, 1080), c).save(stills / f"{t}.jpg", quality=95)
+    sheet = r.work / "sheet.jpg"
+    step = r.call("contact_sheet.py: tile the stills", [*PY, str(d / "contact_sheet.py"), str(stills), str(sheet)])
+    r.output(sheet)
+    im = Image.open(sheet).convert("RGB")
+    r.check("sheet is 4 columns x 1 row of 640x360 tiles", im.size == (2560, 360), im.size)
+    got = [im.getpixel((x * 640 + 320, 200)) for x in range(3)]
+    r.check("tiles are in time order (red, green, blue)",
+            all(all(abs(a - b) <= 24 for a, b in zip(g, c)) for g, c in zip(got, colours.values())), got)
+    r.check("script reports 3 frames", "3 frames" in step.get("stdout_tail", ""), step.get("stdout_tail"))
+    # A cut-out with a white square on a transparent field, split into a layer by one polygon.
+    cut = r.work / "cutout.png"
+    a = Image.new("RGBA", (400, 300), (0, 0, 0, 0))
+    ImageDraw.Draw(a).rectangle([100, 100, 199, 199], fill=(255, 255, 255, 255))
+    a.save(cut)
+    r.call("split.py: cut the square into its own layer",
+           [*PY, str(d / "split.py"), str(cut), json.dumps({"card": [[90, 90], [210, 90], [210, 210], [90, 210]]})])
+    layer, base = r.work / "cutout-card.png", r.work / "cutout-base.png"
+    r.output(layer)
+    r.output(base)
+    lay, bas = Image.open(layer), Image.open(base)
+    r.check("layer keeps the square, base loses it",
+            lay.getpixel((150, 150))[3] == 255 and bas.getpixel((150, 150))[3] == 0,
+            [lay.getpixel((150, 150)), bas.getpixel((150, 150))])
+    grid = r.work / "grid.jpg"
+    r.call("grid.py: coordinate grid over the cut-out", [*PY, str(d / "grid.py"), str(cut), str(grid)])
+    r.output(grid)
+    g = Image.open(grid).convert("RGB")
+    r.check("grid keeps the image size and fills transparency with red",
+            g.size == (400, 300) and g.getpixel((350, 250))[0] > 200 and g.getpixel((350, 250))[1] < 100,
+            [g.size, g.getpixel((350, 250))])
+    r.findings.append({"note": "image tools only; render.mjs needs Chrome and was not run here, "
+                               "and the sound and Blender scripts need scipy and Blender"})
+
+
 RUNNERS = {"prompt-master": prompt_master, "prompt-architect": prompt_architect, "reel-hooks": reel_hooks,
            "excel-lambdas": excel_lambdas, "social": social, "video-editor": video_editor,
            "motion-energy": motion_energy, "image-prompts": image_prompts, "video-prompts": video_prompts,
@@ -730,7 +774,7 @@ RUNNERS = {"prompt-master": prompt_master, "prompt-architect": prompt_architect,
            "reel-research": reel_research, "voice-check": voice_check, "animation-qa": animation_qa,
            "hyperframes-beats": hyperframes_beats, "montage-tools": montage_tools,
            "mimic-analyze": mimic_analyze, "pixel-painter": pixel_painter,
-           "kling-director": kling_director, "dragon-mind": dragon_mind}
+           "kling-director": kling_director, "dragon-mind": dragon_mind, "saas-animation": saas_animation}
 
 
 def main(argv: list[str]) -> int:
