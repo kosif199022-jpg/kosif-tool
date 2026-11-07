@@ -44,6 +44,8 @@ jobs:
           python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py ledger verify
           python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py recipe validate .claude/skills/kosif-infinite-matrices/recipes/glass-remembers-light.json
           node --check .claude/skills/kosif-infinite-matrices/scripts/kmx_capture.cjs
+      - name: Arena skill bracket (vendored, MIT)
+        run: python3 -B -m unittest discover -s .claude/skills/arena/tests -v
       - name: Skill layout map (USIP v5.4)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_skill_layout.py' -v
       - name: Prompt lab, GitHub top-1000 tracker, repo map, memory ops and motion physics

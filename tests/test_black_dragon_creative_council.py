@@ -173,9 +173,9 @@ class CreativeCouncilTests(unittest.TestCase):
         core = len(framework) + len(models) + len(powers) + extras + len(books) + len(modes)
         atlas = json.loads((ROOT / council.ATLAS_MIND).read_text(encoding="utf-8"))
         self.assertEqual(core, 443)  # 404 prior records + 39 book-derived framework operators
-        self.assertEqual(len(atlas), 82)
+        self.assertEqual(len(atlas), 106)  # 82 originals + 24 from the 2026-11-07 core-work pass
         expected = core + len(atlas)
-        self.assertEqual(expected, 525)
+        self.assertEqual(expected, 549)
         self.assertEqual(len(original), expected)
         self.assertEqual(sum(x["id"].startswith("framework:tfs-") for x in original), 39)
         gate_report = council.kahneman_review("احسب خطة إطلاق المنتج من آخر سعر", ROOT)
@@ -186,8 +186,8 @@ class CreativeCouncilTests(unittest.TestCase):
         self.assertTrue(all(x["source_id"].startswith("framework:tfs-") for x in gate_report["review_gates"]))
         self.assertTrue(all(x["primary"] in council.SEATS and "critic" in x["reviewers"] for x in gate_report["review_gates"]))
         combined = council.plan("احسب خطة إطلاق المنتج من آخر سعر", ROOT)
-        self.assertEqual(combined["total_source_records"], 525)
-        self.assertEqual(sum(s["primary_count"] for s in combined["roles"]), 525)
+        self.assertEqual(combined["total_source_records"], 549)
+        self.assertEqual(sum(s["primary_count"] for s in combined["roles"]), 549)
         self.assertEqual(combined["kahneman_review"]["book_frameworks"], 42)
         self.assertEqual(sum(len(s["kahneman_review_questions"]) for s in combined["roles"]),
                          sum(len(x["reviewers"]) for x in combined["kahneman_review"]["review_gates"]))

@@ -1816,13 +1816,13 @@
 
 **متى:** كل رسم يدوي / every hand-drawn look.
 
-**كيف:** offset path vertices with seeded noise ±0.5–2 px (Catmull-Rom smoothed), width variation ±10–20%, stroke 2–6 px warm dark ink (#1a1a18, #2a2a2a, #3a2a1e); flat fills that slightly miss the outline; paper/board texture 5–10%, static unless the style boils; keep the seed fixed per stroke so frames do not jitter by accident.
+**كيف:** offset path vertices with seeded noise ±0.5–2 px (Catmull-Rom smoothed), width variation ±10–20%, stroke 2–6 px warm dark ink (#1a1a18, #2a2a2a, #3a2a1e); flat fills that slightly miss the outline; paper/board texture 5–10%, static unless the style boils; keep the seed fixed per stroke so frames do not jitter by accident. Atlas upgrade 2026-11-07: Calibration: imperfection must be chosen, refined within its irregularity, applied selectively and consistent in register; if a viewer asks 'did they mean this?', it is not designed yet. Small random tilts read as a rendering bug — either align precisely or commit to clearly large, deliberate rotations. Keep functional elements (buttons, data, captions) precise and put the hand-made texture on hero illustration, headings and brand moments. Imperfection plus visual richness becomes chaos; it needs an otherwise restrained frame. Never let texture lower text contrast.
 
 **المعاملات:** wobble 1–2 px; 5–30 strokes; texture 5–10%
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** wobble · imperfection · jitter · ink · ارتعاش
+**الوسوم:** wobble · imperfection · jitter · ink · ارتعاش · wabi-sabi · intentional imperfection · calibration · عدم الكمال المقصود
 
 #### 1. الاستقبال (A25)
 

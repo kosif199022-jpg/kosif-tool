@@ -1,0 +1,704 @@
+{
+ "schema": "kosif.atlas-5000.mining-receipt.v1",
+ "date": "2026-11-07",
+ "batch": "core-work-skillcraft",
+ "atlas": "https://github.com/kosif199022-jpg/kosif-atlas",
+ "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
+ "powers_added": 4,
+ "powers_upgraded": 11,
+ "sources_read": 64,
+ "skipped_after_reading": 18,
+ "scope_note": "Core-work pass for the owner's video, motion, writing, thinking and Black Dragon work. Each SKILL.md was read in full as inert text (including skills whose verdict is REVIEW_BEFORE_INSTALL: only their Markdown was read, no script was opened, copied or run) and its method summarised in our own words. Nothing was vendored or executed.",
+ "sources": [
+  {
+   "atlas_id": 10268,
+   "plugin": "superpowers",
+   "skill": "writing-skills",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/2679-superpowers/10268-writing-skills",
+   "skill_md_sha256": "bbdfe742f853562e643a3d40d64476359d47881e39cef80a189283fa26d11ab9",
+   "read_in_full": true,
+   "power": "ACRAFT-27"
+  },
+  {
+   "atlas_id": 3581,
+   "plugin": "aegis",
+   "skill": "writing-skills",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/1457-aegis/3581-writing-skills",
+   "skill_md_sha256": "9e74b7e83faacbd21079eb267bbc20109b0c741180a7dd3780d2bc6e83299604",
+   "read_in_full": true,
+   "power": "ACRAFT-27"
+  },
+  {
+   "atlas_id": 14000,
+   "plugin": "wix",
+   "skill": "writing-great-skills",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/3419-wix/14000-writing-great-skills",
+   "skill_md_sha256": "4d6ccbc3760b1bd4107c495a79872286ea69494003f3b0a719fc95b147457061",
+   "read_in_full": true,
+   "power": "ACRAFT-27"
+  },
+  {
+   "atlas_id": 13382,
+   "plugin": "batterie",
+   "skill": "skill-forge",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/3121-batterie/13382-skill-forge",
+   "skill_md_sha256": "b3d6008c43527d7bb6ff06c316a40a158ca588023d5291fd6193a7570dc36a49",
+   "read_in_full": true,
+   "power": "ACRAFT-27"
+  },
+  {
+   "atlas_id": 11089,
+   "plugin": "instructions",
+   "skill": "agent-prompt-standards",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/2784-instructions/11089-agent-prompt-standards",
+   "skill_md_sha256": "7b156d71999c524a7a3986444a481ae0da1807cf370ca9c737664da9f7ca956f",
+   "read_in_full": true,
+   "power": "ACRAFT-27"
+  },
+  {
+   "atlas_id": 924,
+   "plugin": "skill-creator",
+   "skill": "skill-creator",
+   "license": "Apache-2.0",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/311-skill-creator/924-skill-creator",
+   "skill_md_sha256": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf",
+   "read_in_full": true,
+   "power": "ACRAFT-27"
+  },
+  {
+   "atlas_id": 9547,
+   "plugin": "playbooks",
+   "skill": "skill-authoring",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/2462-playbooks/9547-skill-authoring",
+   "skill_md_sha256": "1e2e6d893d1d47c28e65d04b95b5196f153eb868c5f2f9ff747c408eeb600329",
+   "read_in_full": true,
+   "power": "ACRAFT-28"
+  },
+  {
+   "atlas_id": 9548,
+   "plugin": "playbooks",
+   "skill": "thariq-skills",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/2462-playbooks/9548-thariq-skills",
+   "skill_md_sha256": "7b0923d85cd41823955a797b9170b9d24a3852fff451e8860d3808809e092a4d",
+   "read_in_full": true,
+   "power": "ACRAFT-28"
+  },
+  {
+   "atlas_id": 14000,
+   "plugin": "wix",
+   "skill": "writing-great-skills",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/3419-wix/14000-writing-great-skills",
+   "skill_md_sha256": "4d6ccbc3760b1bd4107c495a79872286ea69494003f3b0a719fc95b147457061",
+   "read_in_full": true,
+   "power": "ACRAFT-28"
+  },
+  {
+   "atlas_id": 299,
+   "plugin": "discovery",
+   "skill": "writing-skills",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/114-discovery/299-writing-skills",
+   "skill_md_sha256": "735ee2d6c215b3167b7dee716c4d02e2007840f365ba382822deb530b7e58d82",
+   "read_in_full": true,
+   "power": "ACRAFT-28"
+  },
+  {
+   "atlas_id": 2571,
+   "plugin": "ambient-library",
+   "skill": "compile-skill",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/1120-ambient-library/2571-compile-skill",
+   "skill_md_sha256": "5f58fd5d1eadd525ac37e06c1c00bdf09c4e13cc85d800f56688d97d10d49450",
+   "read_in_full": true,
+   "power": "ACRAFT-28"
+  },
+  {
+   "atlas_id": 13562,
+   "plugin": "example-domain",
+   "skill": "example-procedure",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/3200-example-domain/13562-example-procedure",
+   "skill_md_sha256": "33b79ced249ecb28fc32ffa6996849b2f727c6f45eccb5068ca51546f1617f68",
+   "read_in_full": true,
+   "power": "ACRAFT-28"
+  },
+  {
+   "atlas_id": 13559,
+   "plugin": "evidence-lab-core",
+   "skill": "personal-skill-authoring",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/3199-evidence-lab-core/13559-personal-skill-authoring",
+   "skill_md_sha256": "b6152f3e481bb80280a0eada015bbc066b16344d235b9a77702dd792ae6b3e95",
+   "read_in_full": true,
+   "power": "ACRAFT-28"
+  },
+  {
+   "atlas_id": 3581,
+   "plugin": "aegis",
+   "skill": "writing-skills",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/1457-aegis/3581-writing-skills",
+   "skill_md_sha256": "9e74b7e83faacbd21079eb267bbc20109b0c741180a7dd3780d2bc6e83299604",
+   "read_in_full": true,
+   "power": "ACRAFT-28"
+  },
+  {
+   "atlas_id": 556,
+   "plugin": "write-a-skill",
+   "skill": "write-a-skill",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/187-write-a-skill/556-write-a-skill",
+   "skill_md_sha256": "446a0235f2ef8b4ea6d394a1a4209d36ba6d8e6960958cd54095cd3393c83692",
+   "read_in_full": true,
+   "power": "ACRAFT-28"
+  },
+  {
+   "atlas_id": 12576,
+   "plugin": "pwdev-skills",
+   "skill": "skill-refactor",
+   "license": "Apache-2.0",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/2975-pwdev-skills/12576-skill-refactor",
+   "skill_md_sha256": "915c391f2390f965cbadeb90e5e4d95c6e3ca905185b9c9ff510d95842eb572f",
+   "read_in_full": true,
+   "power": "ACRAFT-29"
+  },
+  {
+   "atlas_id": 12533,
+   "plugin": "pwdev-power",
+   "skill": "power-skill-refactor",
+   "license": "Apache-2.0",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/2972-pwdev-power/12533-power-skill-refactor",
+   "skill_md_sha256": "331cfff6e4b7d0168a32afccb1f5dd0388374dfb7943634fb98a2bd823b1b7a8",
+   "read_in_full": true,
+   "power": "ACRAFT-29"
+  },
+  {
+   "atlas_id": 9449,
+   "plugin": "docs-hygiene",
+   "skill": "extract-ssot",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/2434-docs-hygiene/9449-extract-ssot",
+   "skill_md_sha256": "b69aa4bcd41380bbf20bcde2fdf990e78278c33d39eb55fcd9b66c4110ee523b",
+   "read_in_full": true,
+   "power": "ACRAFT-29"
+  },
+  {
+   "atlas_id": 4290,
+   "plugin": "plugin-creator",
+   "skill": "shared-content-references",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/1547-plugin-creator/4290-shared-content-references",
+   "skill_md_sha256": "9a01e8e50fc85a25a0c42827e8acd54424f54f346158f49064a24e9d7b423aef",
+   "read_in_full": true,
+   "power": "ACRAFT-29"
+  },
+  {
+   "atlas_id": 13947,
+   "plugin": "skill-craft",
+   "skill": "prompt-audit",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/3406-skill-craft/13947-prompt-audit",
+   "skill_md_sha256": "91849049e9ae22dcef6f50358c5a2d1b9c0a146016c1f572a9e7cd673d2207fc",
+   "read_in_full": true,
+   "power": "ACRAFT-29"
+  },
+  {
+   "atlas_id": 13948,
+   "plugin": "skill-craft",
+   "skill": "prompt-migrate",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/3406-skill-craft/13948-prompt-migrate",
+   "skill_md_sha256": "5d204232b123dde5e167ffafe407f81035a87e3d7d6a590ccdc5a4b670ebd9b4",
+   "read_in_full": true,
+   "power": "ACRAFT-29"
+  },
+  {
+   "atlas_id": 13949,
+   "plugin": "skill-craft",
+   "skill": "prompt-refine",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/3406-skill-craft/13949-prompt-refine",
+   "skill_md_sha256": "baaa349f0e23cf0344c141f7429a4c071e2b0ac9c2661869557a78f624fca136",
+   "read_in_full": true,
+   "power": "ACRAFT-29"
+  },
+  {
+   "atlas_id": 13946,
+   "plugin": "skill-craft",
+   "skill": "prompt-align",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/3406-skill-craft/13946-prompt-align",
+   "skill_md_sha256": "7a3076684d5c4301a2dca5b9d4d6ba4c9457e9cc55727a1bb09cbcdc36706cdb",
+   "read_in_full": true,
+   "power": "ACRAFT-29"
+  },
+  {
+   "atlas_id": 7223,
+   "plugin": "delivery-schedule",
+   "skill": "schedule-instruction-review",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/2032-delivery-schedule/7223-schedule-instruction-review",
+   "skill_md_sha256": "78890bbf7db6cc40e1daeff8b024efdadc5cc8d46135158daadfefc22fed7f28",
+   "read_in_full": true,
+   "power": "ACRAFT-29"
+  },
+  {
+   "atlas_id": 2572,
+   "plugin": "ambient-library",
+   "skill": "context-hygiene-sweep",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/1120-ambient-library/2572-context-hygiene-sweep",
+   "skill_md_sha256": "711f6458bc7f60e983ce77aeb7152ea522738d3114d0cf1afb391855460d0544",
+   "read_in_full": true,
+   "power": "ACRAFT-29"
+  },
+  {
+   "atlas_id": 2585,
+   "plugin": "ambient-library",
+   "skill": "System Prompt: Skillify Current Session",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/1120-ambient-library/2585-system-prompt-skillify-current-session",
+   "skill_md_sha256": "f1a490a57295bc8a0942b74f5fcaea0ee74e4befd0c96f4b2fcbeaec9e2ae6cd",
+   "read_in_full": true,
+   "power": "ACRAFT-30"
+  },
+  {
+   "atlas_id": 13796,
+   "plugin": "claudeception",
+   "skill": "claudeception",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/3285-claudeception/13796-claudeception",
+   "skill_md_sha256": "0bc303863f0c9e01250b8a0c1e5edd632f6fd9bfef6ad39ba9cb97398716ae39",
+   "read_in_full": true,
+   "power": "ACRAFT-30"
+  },
+  {
+   "atlas_id": 9651,
+   "plugin": "codex-operations",
+   "skill": "find-skill-candidates",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/2487-codex-operations/9651-find-skill-candidates",
+   "skill_md_sha256": "d7e25d8882b0606a64880c26b4dfe777fa9edd0c5dbc6a2d6d98b25bda34b8f2",
+   "read_in_full": true,
+   "power": "ACRAFT-30"
+  },
+  {
+   "atlas_id": 4235,
+   "plugin": "agentskill-kaizen",
+   "skill": "kaizen-improvement",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/1544-agentskill-kaizen/4235-kaizen-improvement",
+   "skill_md_sha256": "a34abe9612e60c3069dd66a7b1f4fd45559651fe2e7ae736c4eae2f47c5839cc",
+   "read_in_full": true,
+   "power": "ACRAFT-30"
+  },
+  {
+   "atlas_id": 507,
+   "plugin": "si",
+   "skill": "promote",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/152-si/507-promote",
+   "skill_md_sha256": "ac90d59f83c7fcb4a3e63376d6546aa17f5d134f204bc08881a0f7fff4777ade",
+   "read_in_full": true,
+   "power": "ACRAFT-30"
+  },
+  {
+   "atlas_id": 13559,
+   "plugin": "evidence-lab-core",
+   "skill": "personal-skill-authoring",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/3199-evidence-lab-core/13559-personal-skill-authoring",
+   "skill_md_sha256": "b6152f3e481bb80280a0eada015bbc066b16344d235b9a77702dd792ae6b3e95",
+   "read_in_full": true,
+   "power": "ACRAFT-30"
+  },
+  {
+   "atlas_id": 3199,
+   "plugin": "epic",
+   "skill": "evolve",
+   "license": "Apache-2.0",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/1374-epic/3199-evolve",
+   "skill_md_sha256": "8d45fc75bc2fae99d2b405d67fd54293e763a99ff71e4acdeaa15f56c0b983be",
+   "read_in_full": true,
+   "power": "ACRAFT-30"
+  },
+  {
+   "atlas_id": 800,
+   "plugin": "arbeitsplan",
+   "skill": "arbeitsplan-matrix",
+   "license": "MIT",
+   "theme": "ai-llm-engineering",
+   "path": "skills/250-arbeitsplan/800-arbeitsplan-matrix",
+   "skill_md_sha256": "281cac70205b93a01c4207423d8193fa7b6a9b14bae9c7d4fd5e165b9ee629ed",
+   "read_in_full": true,
+   "power": "CHECK-21",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 13381,
+   "plugin": "batterie",
+   "skill": "fresh",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/3121-batterie/13381-fresh",
+   "skill_md_sha256": "be076e4b9f61e217d5e0fd6cda16e0826ae6a58b009a3a3f762037d21f51c481",
+   "read_in_full": true,
+   "power": "CHECK-21",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 7741,
+   "plugin": "evaluate-plugin",
+   "skill": "evaluate-skill",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/2149-evaluate-plugin/7741-evaluate-skill",
+   "skill_md_sha256": "ab2939f6b06d7b021031a3e596e0042479ccc796a63d3c5f52676522c7f59897",
+   "read_in_full": true,
+   "power": "CHECK-21",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 924,
+   "plugin": "skill-creator",
+   "skill": "skill-creator",
+   "license": "Apache-2.0",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/311-skill-creator/924-skill-creator",
+   "skill_md_sha256": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf",
+   "read_in_full": true,
+   "power": "CHECK-21",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 924,
+   "plugin": "skill-creator",
+   "skill": "skill-creator",
+   "license": "Apache-2.0",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/311-skill-creator/924-skill-creator",
+   "skill_md_sha256": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf",
+   "read_in_full": true,
+   "power": "PROMPT-22",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 13382,
+   "plugin": "batterie",
+   "skill": "skill-forge",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/3121-batterie/13382-skill-forge",
+   "skill_md_sha256": "b3d6008c43527d7bb6ff06c316a40a158ca588023d5291fd6193a7570dc36a49",
+   "read_in_full": true,
+   "power": "PROMPT-22",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 11089,
+   "plugin": "instructions",
+   "skill": "agent-prompt-standards",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/2784-instructions/11089-agent-prompt-standards",
+   "skill_md_sha256": "7b156d71999c524a7a3986444a481ae0da1807cf370ca9c737664da9f7ca956f",
+   "read_in_full": true,
+   "power": "PROMPT-22",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 4655,
+   "plugin": "skills-janitor",
+   "skill": "janitor-value",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/1653-skills-janitor/4655-janitor-value",
+   "skill_md_sha256": "093109acca93038b67d329948a3ee119a5b2e7c44284cb34eb5af3772766f179",
+   "read_in_full": true,
+   "power": "PROMPT-22",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 4842,
+   "plugin": "j-rig",
+   "skill": "j-rig",
+   "license": "Apache-2.0",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/1804-j-rig/4842-j-rig",
+   "skill_md_sha256": "f3d858dbe5fa044d51fd5155ab567358ad7da2257277e10b182f93067dd7445b",
+   "read_in_full": true,
+   "power": "AGENT-27",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 13796,
+   "plugin": "claudeception",
+   "skill": "claudeception",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/3285-claudeception/13796-claudeception",
+   "skill_md_sha256": "0bc303863f0c9e01250b8a0c1e5edd632f6fd9bfef6ad39ba9cb97398716ae39",
+   "read_in_full": true,
+   "power": "AGENT-27",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 7768,
+   "plugin": "health-plugin",
+   "skill": "health-skill-audit",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/2154-health-plugin/7768-health-skill-audit",
+   "skill_md_sha256": "22e738746b20f3089f04d2df6f85bf0bbe2406e3f03c833e47c79f2be0782749",
+   "read_in_full": true,
+   "power": "AMIND-79",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 4655,
+   "plugin": "skills-janitor",
+   "skill": "janitor-value",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/1653-skills-janitor/4655-janitor-value",
+   "skill_md_sha256": "093109acca93038b67d329948a3ee119a5b2e7c44284cb34eb5af3772766f179",
+   "read_in_full": true,
+   "power": "AMIND-79",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 4257,
+   "plugin": "plugin-creator",
+   "skill": "audit-skill-completeness",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/1547-plugin-creator/4257-audit-skill-completeness",
+   "skill_md_sha256": "4c13d5865764499e4c4e2b3dc968f353112df949ff1d0527eb85c99dd2129399",
+   "read_in_full": true,
+   "power": "AMIND-79",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 9593,
+   "plugin": "session-flow",
+   "skill": "show-options",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/2473-session-flow/9593-show-options",
+   "skill_md_sha256": "7f7c1353092008b3ef58326d7966616b1e5633c5c96561d0c121cd7809a04bf5",
+   "read_in_full": true,
+   "power": "AMIND-79",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 859,
+   "plugin": "zirkel",
+   "skill": "zirkel-optimize-instruction",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/256-zirkel/859-zirkel-optimize-instruction",
+   "skill_md_sha256": "a0db00a5344d6eae5efeb5dbdd0af07d1d00126cccc92f25143e602ccd354d22",
+   "read_in_full": true,
+   "power": "PROMPT-38",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 13940,
+   "plugin": "skill-craft",
+   "skill": "compare-prompts",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/3406-skill-craft/13940-compare-prompts",
+   "skill_md_sha256": "9ac71a61fbc9c9fa3cd17e372ca86d1c7bd1693e13c3615c293d5745d5021633",
+   "read_in_full": true,
+   "power": "PROMPT-15",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 605,
+   "plugin": "marketing-skills",
+   "skill": "prompt-engineer-toolkit",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/192-marketing-skills/605-prompt-engineer-toolkit",
+   "skill_md_sha256": "619516d20520a7a84b54aaad8f35d35d42317a1b633e173bb2595f575b2ac4df",
+   "read_in_full": true,
+   "power": "PROMPT-15",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 654,
+   "plugin": "fable-goal",
+   "skill": "fable-goal",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/207-fable-goal/654-fable-goal",
+   "skill_md_sha256": "3764113250bad205848a2b68f15c6d577b249eb3a7a491b365acf362b8e4df48",
+   "read_in_full": true,
+   "power": "PROMPT-08",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 10108,
+   "plugin": "figures",
+   "skill": "ai-full-figure",
+   "license": "BSD-3-Clause",
+   "theme": "ai-llm-engineering",
+   "path": "skills/2657-figures/10108-ai-full-figure",
+   "skill_md_sha256": "267c537b9693263da965869920c8080379c35e7d6b00811fdd68437ba5b0d49a",
+   "read_in_full": true,
+   "power": "GEN-84",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 12590,
+   "plugin": "pwdev-social-media",
+   "skill": "prompt-craft",
+   "license": "Apache-2.0",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/2976-pwdev-social-media/12590-prompt-craft",
+   "skill_md_sha256": "03249cc42c171bb8bdccedea6be386fec8199ff8e1b22cd6463724cf0277f64f",
+   "read_in_full": true,
+   "power": "PROMPT-10",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 6079,
+   "plugin": "klingai-pack",
+   "skill": "klingai-model-catalog",
+   "license": "MIT",
+   "theme": "ai-llm-engineering",
+   "path": "skills/1874-klingai-pack/6079-klingai-model-catalog",
+   "skill_md_sha256": "86a389fcfb598895dfb8926d91c3dd9131352f50a72005bac4b4dca77545406d",
+   "read_in_full": true,
+   "power": "GEN-49",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 13305,
+   "plugin": "constellation",
+   "skill": "before-compact",
+   "license": "Apache-2.0",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/3111-constellation/13305-before-compact",
+   "skill_md_sha256": "6ba2af766b67ebf615ff0b41a273c23717dea500375913656d6d0b6859a50360",
+   "read_in_full": true,
+   "power": "AGENT-31",
+   "upgrade": true
+  }
+ ],
+ "skipped": [
+  {
+   "atlas_id": 353,
+   "reason": "duplicate: byte-identical to 299"
+  },
+  {
+   "atlas_id": 13395,
+   "reason": "duplicate: identical to 13381"
+  },
+  {
+   "atlas_id": 13396,
+   "reason": "duplicate: identical to 13382"
+  },
+  {
+   "atlas_id": 14229,
+   "reason": "duplicate: identical to 13282"
+  },
+  {
+   "atlas_id": 12595,
+   "reason": "duplicate of GEN-85 (same four anchors and 1/3-outlier rule)"
+  },
+  {
+   "atlas_id": 4375,
+   "reason": "duplicate of PROMPT-07/ACRAFT-25/ACODE-313 (generic prompt package)"
+  },
+  {
+   "atlas_id": 13282,
+   "reason": "generic prompt-engineering overview; covered by PROMPT family"
+  },
+  {
+   "atlas_id": 4297,
+   "reason": "off-topic: rage-screenshot from transcripts, no portable method for owner"
+  },
+  {
+   "atlas_id": 10265,
+   "reason": "meta-instruction 'always invoke skills' with all-caps coercion; conflicts with calm-register evidence; MISC-04 covers routing"
+  },
+  {
+   "atlas_id": 11102,
+   "reason": "prose anti-pattern catalog belongs to writing track (writing-humanizer)"
+  },
+  {
+   "atlas_id": 2926,
+   "reason": "duplicate of ASTRAT-42/ENG-332 model routing; Codex-CLI specific"
+  },
+  {
+   "atlas_id": 729,
+   "reason": "generic confidence-rating prompt; covered by CHECK-08 evidence ladder"
+  },
+  {
+   "atlas_id": 2618,
+   "reason": "stub: body only points to an instructions.md"
+  },
+  {
+   "atlas_id": 2636,
+   "reason": "thinking-track divergence method (modal answer → incompatible positions); not skillcraft"
+  },
+  {
+   "atlas_id": 13954,
+   "reason": "multi-host packaging/install specifics (Grok/Codex/Hermes); little owner value"
+  },
+  {
+   "atlas_id": 10428,
+   "reason": "thin wrapper around a plugin-eval CLI"
+  },
+  {
+   "atlas_id": 3973,
+   "reason": "product-specific (incident.io); generic parts covered by AMIND-79"
+  },
+  {
+   "atlas_id": 13366,
+   "reason": "duplicate of AMIND-79 principles (Korean)"
+  }
+ ]
+}

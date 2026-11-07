@@ -736,13 +736,13 @@
 
 **متى:** مخططات دقيقة قابلة للطباعة والتحريك / precise schematics.
 
-**كيف:** width/height in mm with an equal viewBox so coordinates and font-size are mm (font pt × 25.4/72, 7 pt = 2.47 mm); LabeledBox = measured text bbox + 2 mm padding (fontTools advances, or canvas measureText — browser measuring for Arabic shaping); Arrow.connect snaps to box edges, modes straight / cubic with perpendicular bow / orthogonal / waypoints, marker orient=auto; layers registered in paint order; save SVG (+ PNG via cairosvg); the same ideas are short to hand-write in JS for animation.
+**كيف:** width/height in mm with an equal viewBox so coordinates and font-size are mm (font pt × 25.4/72, 7 pt = 2.47 mm); LabeledBox = measured text bbox + 2 mm padding (fontTools advances, or canvas measureText — browser measuring for Arabic shaping); Arrow.connect snaps to box edges, modes straight / cubic with perpendicular bow / orthogonal / waypoints, marker orient=auto; layers registered in paint order; save SVG (+ PNG via cairosvg); the same ideas are short to hand-write in JS for animation. Atlas upgrade 2026-11-07: Add in-process validators that run on the rendered SVG before saving (warn or strict mode): text-overflow (each text bbox inside a rect/diamond of its own layer, 0.5 mm tolerance), arrow-tip distance (every tip within ~0.6 mm of some shape edge, any layer), marker orient=auto on every marker, and sibling overlap (no two boxes overlapping in a non-background layer). Lock layer z-order by registering background -> connectors -> boxes -> labels first. Extra primitives worth having: Pill (radius = half height) for terminals, Diamond (doubled after text measurement), Bracket with apex label, Annotation with a leader from the text bbox edge, Group (union bbox) so arrows can target a cluster; orthogonal-h/-v routing and waypoint polylines with clamped corner radius. Author schematics at final size and place them at scale 1 so labels keep their size.
 
 **المعاملات:** padding 2 mm; marker 3 mm; 7 pt
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** svg · schematic · auto-fit · arrows · mm · مخطط برمجي
+**الوسوم:** svg · schematic · auto-fit · arrows · mm · مخطط برمجي · svg validator · arrow tip check · text overflow check · مخطط SVG مبرمج
 
 #### 1. الاستقبال (A25)
 
@@ -950,13 +950,13 @@
 
 **متى:** شرح بإحساس سبورة أو خريطة ذهنية / whiteboard-feel explainers, mind maps.
 
-**كيف:** write elements per schema (rectangles, ellipses, diamonds, arrows, lines, text; roughness 1, fontFamily 1 hand / 3 mono); render through @excalidraw/excalidraw exportToSvg in headless Chromium, then draw strokes on (DRAW-01/27); large diagrams section by section. JSON Canvas: nodes {text\|file\|link\|group, x, y, width, height} and edges {fromSide, toSide, arrows} → a script turns them into animated SVG with camera moves.
+**كيف:** write elements per schema (rectangles, ellipses, diamonds, arrows, lines, text; roughness 1, fontFamily 1 hand / 3 mono); render through @excalidraw/excalidraw exportToSvg in headless Chromium, then draw strokes on (DRAW-01/27); large diagrams section by section. JSON Canvas: nodes {text\|file\|link\|group, x, y, width, height} and edges {fromSide, toSide, arrows} → a script turns them into animated SVG with camera moves. Atlas upgrade 2026-11-07: JSON Canvas craft rules: node starting sizes title 200x80, title + one line 250x100-120, 3-4 short lines 250x160-200, dense 320-400 x 240-400 or split into several nodes; 20-unit grid and 30-40 units between neighbours; groups sit behind children with the top ~24 units reserved for the group label; use fromSide/toSide to reinforce reading order and arrowheads only where direction matters; primary content visible at the initial fit view; stable descriptive ids (phase-discover-actions); journey map, service blueprint, user flow, affinity map and mind map keep their template's columns and reading order, while flowcharts, sequence diagrams and ERDs stay Mermaid. Validate: unique ids, positive sizes, resolved edges, no unintended overlaps, local assets resolve.
 
 **المعاملات:** roughness 1; fontFamily 1/3
 
 **التثبيت:** npm i @excalidraw/excalidraw
 
-**الوسوم:** excalidraw · json canvas · whiteboard · mind map
+**الوسوم:** excalidraw · json canvas · whiteboard · mind map · json canvas sizing · canvas grid · journey map · لوحة JSON Canvas
 
 #### 1. الاستقبال (A25)
 
@@ -967,8 +967,8 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- `node` ← افحص وجوده بأمر واحد قبل كتابة الشارة
 - `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `npm:mermaid` ← npm ls mermaid أو وجود node_modules/mermaid
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)

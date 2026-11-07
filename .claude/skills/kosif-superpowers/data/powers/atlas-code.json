@@ -15041,7 +15041,7 @@
   "status": "documented",
   "what": "يكشف قبل الترجمة ما سيكسرها: نصوص ظاهرة مكتوبة في الكود، جمل مبنية بالدمج (ترتيب الكلمات والجمع يختلفان؛ العربية لها ست صيغ جمع)، تنسيق تاريخ وأرقام وعملات دون locale، وCSS لا يحتمل الاتجاه من اليمين. — Finds what will break translation: hardcoded strings, concatenated sentences, locale-less formatting and RTL-unsafe CSS.",
   "when": "منتج سيُطلق بالعربية أو لغات أخرى، إضافة دعم RTL، مراجعة كود واجهة قبل الترجمة / shipping in Arabic or other languages, adding RTL, reviewing UI before translation",
-  "how": "1) Flag user-visible string literals in text components, headings, labels, buttons, tooltips, table cells, helper text and aria-labels; ignore logs, test IDs, class names, import paths, error codes, keys and env names. 2) Flag concatenation and template literals that build sentences ('Hello ' + name, `${count} items`, label + ': ' + value); replace with one ICU MessageFormat key with placeholders and plural rules (Arabic has zero/one/two/few/many/other). 3) Flag toLocaleDateString without a locale, hand-formatted dates, numbers and currencies; use Intl.DateTimeFormat, Intl.NumberFormat and Intl.RelativeTimeFormat with the user's locale. 4) RTL: physical CSS (margin-left, padding-right, left:, text-align:left, float) → logical properties (margin-inline-start, inset-inline-start, text-align:start); directional icons mirrored; dir set at the root. 5) Check text expansion room (German, Arabic) and fonts with Arabic glyphs. 6) Report per file:line with the safe replacement. Full original skill(s) with license: vendor/kosif-atlas/skills/3000-pf-code-review/12807-pf-i18n-audit.",
+  "how": "1) Flag user-visible string literals in text components, headings, labels, buttons, tooltips, table cells, helper text and aria-labels; ignore logs, test IDs, class names, import paths, error codes, keys and env names. 2) Flag concatenation and template literals that build sentences ('Hello ' + name, `${count} items`, label + ': ' + value); replace with one ICU MessageFormat key with placeholders and plural rules (Arabic has zero/one/two/few/many/other). 3) Flag toLocaleDateString without a locale, hand-formatted dates, numbers and currencies; use Intl.DateTimeFormat, Intl.NumberFormat and Intl.RelativeTimeFormat with the user's locale. 4) RTL: physical CSS (margin-left, padding-right, left:, text-align:left, float) → logical properties (margin-inline-start, inset-inline-start, text-align:start); directional icons mirrored; dir set at the root. 5) Check text expansion room (German, Arabic) and fonts with Arabic glyphs. 6) Report per file:line with the safe replacement. Full original skill(s) with license: vendor/kosif-atlas/skills/3000-pf-code-review/12807-pf-i18n-audit. Atlas upgrade 2026-11-07: Add an l10n QA gate: pseudo-locales (accent, ~140% expansion, bidi/RTL wrap) run in CI with screenshots; lint missing/extra keys, empty values, untranslated-identical values (allow-list brands/URLs), placeholder parity, ICU syntax parse; blocking, with explicit per-line suppression; RTL smoke test on every change.",
   "params": "source directory",
   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3000-pf-code-review/12807-pf-i18n-audit ~/.claude/skills/pf-i18n-audit",
   "requires": [],
@@ -15059,13 +15059,18 @@
    "ICU MessageFormat",
    "Intl",
    "تعريب",
-   "اتجاه من اليمين"
+   "اتجاه من اليمين",
+   "pseudo-localization",
+   "l10n lint",
+   "placeholder parity"
   ],
   "section": "المراجعة والتحقق — Review, verification & quality gates",
   "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch verification-review-code (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): pf-code-review/pf-i18n-audit (#12807) · SKILL.md read in full as inert text",
   "atlas": {
    "ids": [
-    "12807"
+    "12807",
+    "8942",
+    "8940"
    ],
    "examples": [
     {
@@ -15073,6 +15078,18 @@
      "plugin": "pf-code-review",
      "skill": "pf-i18n-audit",
      "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3000-pf-code-review/12807-pf-i18n-audit"
+    },
+    {
+     "id": "8942",
+     "plugin": "localization-i18n-engineering",
+     "skill": "localization-qa-and-pseudo-loc",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2329-localization-i18n-engineering/8942-localization-qa-and-pseudo-loc"
+    },
+    {
+     "id": "8940",
+     "plugin": "localization-i18n-engineering",
+     "skill": "i18n-foundations-and-icu",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2329-localization-i18n-engineering/8940-i18n-foundations-and-icu"
     }
    ],
    "theme": "verification-review",
@@ -15083,7 +15100,9 @@
    "stage": "extracted",
    "verified_by": "atlas-pass-20261023-verification-review-code.json",
    "skill_md_sha256": {
-    "12807": "e00eb6fa9093bf6fbacb69b163165597f371105d6d9d43d2c003359a10356450"
+    "12807": "e00eb6fa9093bf6fbacb69b163165597f371105d6d9d43d2c003359a10356450",
+    "8942": "3e88c9c856364dc772b7a2398d6fee50fd40f4e3a2315bb45881391edcc523be",
+    "8940": "4e2a23041369cad6876dbd32519d1d78ffa604bfba3883efc029369eda542c00"
    },
    "vendored": [
     "vendor/kosif-atlas/skills/3000-pf-code-review/12807-pf-i18n-audit"

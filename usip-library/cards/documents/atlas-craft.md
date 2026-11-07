@@ -1,4 +1,4 @@
-# `atlas-craft` — المستندات والكتابة (26 بطاقة)
+# `atlas-craft` — المستندات والكتابة (38 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/atlas-craft.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/documents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -30,6 +30,18 @@
 - [`ACRAFT-24` الإفصاح التدريجي للمعلومات والأدوات](#acraft-24--الإفصاح-التدريجي-للمعلومات-والأدوات--progressive-disclosure-of-information-and-controls)
 - [`ACRAFT-25` حوكمة البرومبتات في الإنتاج: سجل وتقييمات وترقية وتراجع](#acraft-25--حوكمة-البرومبتات-في-الإنتاج-سجل-وتقييمات-وترقية-وتراجع--prompt-governance-registry-evals-promotion-and-rollback)
 - [`ACRAFT-26` استخراج أسلوب كاتب إلى دليل أسلوب قابل للتطبيق](#acraft-26--استخراج-أسلوب-كاتب-إلى-دليل-أسلوب-قابل-للتطبيق--extract-a-writing-style-into-a-reusable-style-guide)
+- [`ACRAFT-27` طابق شكل التعليمة مع نوع الفشل واختبر الصياغة باختبارات دقيقة](#acraft-27--طابق-شكل-التعليمة-مع-نوع-الفشل-واختبر-الصياغة-باختبارات-دقيقة--match-the-instruction-form-to-the-failure-then-micro-test-the-wording)
+- [`ACRAFT-28` صمّم شكل المهارة: نمط الاستدعاء وتصنيف الخطوات ومعيار الإنجاز وقسم المطبّات](#acraft-28--صمّم-شكل-المهارة-نمط-الاستدعاء-وتصنيف-الخطوات-ومعيار-الإنجاز-وقسم-المطبّات--design-a-skills-shape-invocation-mode-step-typing-completion-criteria-growing-gotchas)
+- [`ACRAFT-29` أعد هيكلة مهارة كبيرة دون فقدان سلوكها: سجل الثوابت ومصدر واحد للحقيقة](#acraft-29--أعد-هيكلة-مهارة-كبيرة-دون-فقدان-سلوكها-سجل-الثوابت-ومصدر-واحد-للحقيقة--refactor-a-large-skill-without-losing-behaviour-invariant-ledger-single-source-of-truth-earned-labels)
+- [`ACRAFT-30` حوّل جلسة ناجحة إلى مهارة سير عمل قابلة للإعادة](#acraft-30--حوّل-جلسة-ناجحة-إلى-مهارة-سير-عمل-قابلة-للإعادة--skillify-a-finished-session-into-a-reusable-workflow-skill)
+- [`ACRAFT-31` ملف صوت المالك: قابل للقياس ومدعوم باقتباسات وينمو من تعديلاته](#acraft-31--ملف-صوت-المالك-قابل-للقياس-ومدعوم-باقتباسات-وينمو-من-تعديلاته--owner-voice-file-measurable-quote-backed-grows-from-edits)
+- [`ACRAFT-32` إعادة كتابة على مستوى الخطاب مع قارئ بارد معزول](#acraft-32--إعادة-كتابة-على-مستوى-الخطاب-مع-قارئ-بارد-معزول--discourse-level-rewrite-with-an-isolated-cold-reader)
+- [`ACRAFT-33` إصلاح الترجمة الحرفية في العربية بعد الترجمة أو التعريب](#acraft-33--إصلاح-الترجمة-الحرفية-في-العربية-بعد-الترجمة-أو-التعريب--arabic-translationese-repair-after-translation-or-localization)
+- [`ACRAFT-34` بنك القصص: مقابلة تحفظ الأرقام ونقاط التحول والمواقف](#acraft-34--بنك-القصص-مقابلة-تحفظ-الأرقام-ونقاط-التحول-والمواقف--story-bank-interview-numbers-turning-points-positions)
+- [`ACRAFT-35` من شرارة إلى فكرة قابلة للتصوير: احتمالات، لوجلاين، رهانات](#acraft-35--من-شرارة-إلى-فكرة-قابلة-للتصوير-احتمالات-لوجلاين-رهانات--from-spark-to-filmable-premise-what-ifs-logline-tests-stakes)
+- [`ACRAFT-36` حرفة مشهد الحوار: نص فرعي، ادخل متأخرًا، فعل مرئي فقط](#acraft-36--حرفة-مشهد-الحوار-نص-فرعي-ادخل-متأخرًا-فعل-مرئي-فقط--dialogue-scene-craft-subtext-late-entry-visible-only-action)
+- [`ACRAFT-37` من شذرات إلى سكريبت: استكشاف ثم استغلال](#acraft-37--من-شذرات-إلى-سكريبت-استكشاف-ثم-استغلال--from-fragments-to-a-script-explore-then-exploit)
+- [`ACRAFT-38` مراجعة الكوبي في سبعة تمريرات مع إعادة التحقق](#acraft-38--مراجعة-الكوبي-في-سبعة-تمريرات-مع-إعادة-التحقق--seven-sweep-copy-review-with-revalidation)
 
 ## البطاقات / cards
 
@@ -1738,6 +1750,7 @@
 - `ACRAFT-23` شرح بصري بصيغة واحدة مناسبة للسؤال / Visual explanation: one format chosen by the question (documented)
 - `ACRAFT-24` الإفصاح التدريجي للمعلومات والأدوات / Progressive disclosure of information and controls (documented)
 - `ACRAFT-26` استخراج أسلوب كاتب إلى دليل أسلوب قابل للتطبيق / Extract a writing style into a reusable style guide (documented)
+- `ACRAFT-27` طابق شكل التعليمة مع نوع الفشل واختبر الصياغة باختبارات دقيقة / Match the instruction form to the failure, then micro-test the wording (documented)
 
 ### `ACRAFT-26` — استخراج أسلوب كاتب إلى دليل أسلوب قابل للتطبيق / Extract a writing style into a reusable style guide
 
@@ -1804,4 +1817,857 @@
 
 - `ACRAFT-24` الإفصاح التدريجي للمعلومات والأدوات / Progressive disclosure of information and controls (documented)
 - `ACRAFT-25` حوكمة البرومبتات في الإنتاج: سجل وتقييمات وترقية وتراجع / Prompt governance: registry, evals, promotion and rollback (documented)
+- `ACRAFT-27` طابق شكل التعليمة مع نوع الفشل واختبر الصياغة باختبارات دقيقة / Match the instruction form to the failure, then micro-test the wording (documented)
+- `ACRAFT-28` صمّم شكل المهارة: نمط الاستدعاء وتصنيف الخطوات ومعيار الإنجاز وقسم المطبّات / Design a skill's shape: invocation mode, step typing, completion criteria, growing gotchas (documented)
+
+### `ACRAFT-27` — طابق شكل التعليمة مع نوع الفشل واختبر الصياغة باختبارات دقيقة / Match the instruction form to the failure, then micro-test the wording
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-craft` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-craft.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (Apache-2.0, MIT); nothing copied |
+
+**ما هي:** قبل كتابة أي قاعدة في مهارة أو برومبت، صنّف الفشل الملاحظ واختر الشكل المناسب له (منع، وصفة، خانة إلزامية، شرط)، ثم اختبر الصياغة مقابل نسخة بلا توجيه. — Classify the observed failure, pick the instruction form that fixes that failure type, and micro-test the wording against a no-guidance control before shipping it.
+
+**متى:** كتابة قاعدة في مهارة، البرومبت يتجاهل تعليمة، المخرج شكله غلط / writing a rule into a skill or prompt, a rule keeps being ignored, output has the wrong shape
+
+**كيف:** 1) Run the task without the new guidance first; if the failure does not appear, write nothing. 2) Classify the failure: skips a known rule under pressure → short prohibition plus a table of the excuses seen and a red-flags list; right behaviour but wrong output shape → a positive recipe that states the parts of the output in order (prohibitions here make it worse); a required element is missing → a required slot in the template being filled; behaviour should depend on a condition → a conditional keyed to an observable fact ('if the brief exists, cite it'). 3) No nuance clauses ('don't X unless it matters') and no exemption clauses ('this limit doesn't apply to code'): they reopen negotiation or leak; restructure so the rule cannot reach the exempt part. 4) Give every rule its reason in one clause; reasons transfer to unseen cases where bare rules do not. 5) End a reference list with a non-exhaustive licence ('covers common cases; reason from the whys'), and mark any enumerated read-list as a floor, otherwise the list becomes the model's blind spot. 6) Prefer a strong pretrained word ('tight', 'red', 'relentless') over a restated triad; say the target behaviour positively and keep negatives only as hard guardrails. 7) Micro-test: one fresh context per sample, the real surrounding skill as context, a task that tempts the failure, 5+ samples per variant plus the no-guidance control; read every flagged hit by hand. 8) Variance is a metric: if 5 samples give 5 interpretations, tighten the form before adding words. 9) Calm craft register: threat/urgency language and ALL-CAPS drive corner-cutting. Failure modes go in the skill only after they really happened. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2679-superpowers/10268-writing-skills, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1457-aegis/3581-writing-skills, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3419-wix/14000-writing-great-skills, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3121-batterie/13382-skill-forge.
+
+**المعاملات:** failure sample, candidate wordings, 5+ reps per arm
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** prompt wording · skill authoring · prohibition vs recipe · micro-test · negation · leading words · صياغة التعليمات · اختبار الصياغة · كتابة المهارات
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ACRAFT-27` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2679-superpowers/10268-writing-skills`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1457-aegis/3581-writing-skills`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3419-wix/14000-writing-great-skills`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3121-batterie/13382-skill-forge`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACRAFT-25` حوكمة البرومبتات في الإنتاج: سجل وتقييمات وترقية وتراجع / Prompt governance: registry, evals, promotion and rollback (documented)
+- `ACRAFT-26` استخراج أسلوب كاتب إلى دليل أسلوب قابل للتطبيق / Extract a writing style into a reusable style guide (documented)
+- `ACRAFT-28` صمّم شكل المهارة: نمط الاستدعاء وتصنيف الخطوات ومعيار الإنجاز وقسم المطبّات / Design a skill's shape: invocation mode, step typing, completion criteria, growing gotchas (documented)
+- `ACRAFT-29` أعد هيكلة مهارة كبيرة دون فقدان سلوكها: سجل الثوابت ومصدر واحد للحقيقة / Refactor a large skill without losing behaviour: invariant ledger, single source of truth, earned labels (documented)
+
+### `ACRAFT-28` — صمّم شكل المهارة: نمط الاستدعاء وتصنيف الخطوات ومعيار الإنجاز وقسم المطبّات / Design a skill's shape: invocation mode, step typing, completion criteria, growing gotchas
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-craft` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-craft.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied |
+
+**ما هي:** قرارات بنية المهارة قبل كتابة نصها: من يستدعيها، أي خطوة كود وأيها استدلال وأيها قرار بشري، ومتى تُعتبر كل خطوة منتهية. — Structural decisions for a skill before writing prose: who invokes it, which steps are code vs model reasoning vs human decision, and a checkable done-condition per step.
+
+**متى:** إنشاء مهارة جديدة أو تقسيم مهارة كبيرة / creating a new skill, splitting a big skill, a skill whose steps get rushed
+
+**كيف:** 1) Pick one category per skill (reference, verification, data/analysis, automation, scaffolding, review, deploy, runbook, ops); a skill straddling several is confused. 2) Invocation: model-invoked only if the agent or another skill must reach it alone (its description is paid every turn); otherwise user-invoked with a one-line human description, and when manual skills multiply add one router skill. 3) Description = trigger condition with one phrase per distinct branch, the neighbour skill named in a NOT-for clause; never a workflow summary. 4) Type each step code / inference / hybrid / human; any output that must be byte-identical on rerun (tables, sorting, templates) goes to a script; every inference step states input, output and why code can't do it. 5) Who-does-what table plus explicit human confirmation points; never proceed on silence; missing values stay null, unreadable inputs go to a separate list. 6) Each step ends with a checkable, exhaustive completion criterion ('every modified file accounted for'); if the agent still rushes, split the later steps out so they are not in view. 7) Hub SKILL.md short; spokes one level deep, each link saying when to read it; inline what every branch needs, push behind pointers what only some branches use. 8) Start a Gotchas section and add one line every time Claude trips; it becomes the highest-signal part. 9) First-run setup in a config file (ask if missing); persistent state outside the skill folder; optional session-scoped hooks for guardrails. 10) Status labels honestly: needs-verification until behaviour was tested. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2462-playbooks/9547-skill-authoring, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2462-playbooks/9548-thariq-skills, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3419-wix/14000-writing-great-skills, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/114-discovery/299-writing-skills.
+
+**المعاملات:** skill purpose, trigger examples
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** skill design · progressive disclosure · invocation · step typing · gotchas · تصميم المهارة · الإفصاح التدريجي · معيار الإنجاز
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ACRAFT-28` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2462-playbooks/9547-skill-authoring`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2462-playbooks/9548-thariq-skills`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3419-wix/14000-writing-great-skills`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/114-discovery/299-writing-skills`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACRAFT-26` استخراج أسلوب كاتب إلى دليل أسلوب قابل للتطبيق / Extract a writing style into a reusable style guide (documented)
+- `ACRAFT-27` طابق شكل التعليمة مع نوع الفشل واختبر الصياغة باختبارات دقيقة / Match the instruction form to the failure, then micro-test the wording (documented)
+- `ACRAFT-29` أعد هيكلة مهارة كبيرة دون فقدان سلوكها: سجل الثوابت ومصدر واحد للحقيقة / Refactor a large skill without losing behaviour: invariant ledger, single source of truth, earned labels (documented)
+- `ACRAFT-30` حوّل جلسة ناجحة إلى مهارة سير عمل قابلة للإعادة / Skillify a finished session into a reusable workflow skill (documented)
+
+### `ACRAFT-29` — أعد هيكلة مهارة كبيرة دون فقدان سلوكها: سجل الثوابت ومصدر واحد للحقيقة / Refactor a large skill without losing behaviour: invariant ledger, single source of truth, earned labels
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-craft` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-craft.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (Apache-2.0, MIT); nothing copied |
+
+**ما هي:** تقليص وتنظيم مهارة أو ملف تعليمات طويل مع حفظ المحفزات والقواعد الأمنية والبدائل، ودمج النصوص المكررة في مصدر واحد بقاعدة الثلاث. — Shrink and reorganise a long skill or instruction file while preserving triggers, safety rules and fallbacks, deduplicating repeated prose into one source only under the Rule of Three.
+
+**متى:** المهارة طويلة ومكررة، قواعد متناقضة بين الملفات، تنظيف دوري للتعليمات / skill is long or repetitive, rules contradict across files, periodic instruction cleanup
+
+**كيف:** 1) Baseline: lines, chars, approx tokens, trigger and no-trigger cases, and an invariant ledger (triggers, counter-triggers, safety/authorization rules, tool fallbacks, stop and honesty criteria, output contract), each marked confirmed/inferred/unknown. Snapshot the files first. 2) Findings by class with line refs: duplication, contradiction (core vs reference), unconditional reading, over-broad or narrow description, steps no requirement explains, internal inconsistencies (numbering, terms, stale refs). 3) Dedup: classify each file as DESCRIBE (owns the concept), USE (must cite it by exact heading) or EXPOSE (may restate for humans with a pointer); create a new shared file only at 3+ real instances found by your own grep; at 1–2 instances only trim-to-citation, normalize wording or name an owner. 4) A block moved out of the core takes its guard rules and required terms with it; pointers one level deep; no ../ or symlinks across components. 5) For test-verifiable fixes write failing assertions first, then edit, then green. 6) Three sequential reviews: contract & safety; selection & disclosure; metrics & portability; re-check each fix. 7) Re-measure on the same cases; size reduction never pays for a lost invariant or a lost trigger. 8) Close with only the labels earned: refactored, statically validated, behaviorally evaluated (only after paired runs). 9) For scheduled sweeps: one commit per file with a ledger of cuts; files from a rejected earlier sweep are skipped next time; never edit frontmatter or fenced code in a tightening pass. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2975-pwdev-skills/12576-skill-refactor, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2972-pwdev-power/12533-power-skill-refactor, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2434-docs-hygiene/9449-extract-ssot, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1547-plugin-creator/4290-shared-content-references.
+
+**المعاملات:** target skill path, eval cases
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** skill refactor · single source of truth · rule of three · invariants · instruction tightening · إعادة هيكلة المهارة · إزالة التكرار · مصدر واحد للحقيقة
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `npm:three` ← npm ls three أو وجود node_modules/three
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ACRAFT-29` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2975-pwdev-skills/12576-skill-refactor`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2972-pwdev-power/12533-power-skill-refactor`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2434-docs-hygiene/9449-extract-ssot`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1547-plugin-creator/4290-shared-content-references`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACRAFT-27` طابق شكل التعليمة مع نوع الفشل واختبر الصياغة باختبارات دقيقة / Match the instruction form to the failure, then micro-test the wording (documented)
+- `ACRAFT-28` صمّم شكل المهارة: نمط الاستدعاء وتصنيف الخطوات ومعيار الإنجاز وقسم المطبّات / Design a skill's shape: invocation mode, step typing, completion criteria, growing gotchas (documented)
+- `ACRAFT-30` حوّل جلسة ناجحة إلى مهارة سير عمل قابلة للإعادة / Skillify a finished session into a reusable workflow skill (documented)
+- `ACRAFT-31` ملف صوت المالك: قابل للقياس ومدعوم باقتباسات وينمو من تعديلاته / Owner voice file: measurable, quote-backed, grows from edits (documented)
+
+### `ACRAFT-30` — حوّل جلسة ناجحة إلى مهارة سير عمل قابلة للإعادة / Skillify a finished session into a reusable workflow skill
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-craft` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-craft.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (Apache-2.0, MIT); nothing copied |
+
+**ما هي:** بعد إنجاز عمل متكرر (مونتاج ريل، حزمة برومبتات)، استخرج خطواته ومدخلاته ومعايير نجاح كل خطوة وتصحيحات المستخدم إلى مهارة، أو إلى ذاكرة إن كان مجرد معلومة. — After a repeated job is done, capture its steps, inputs, per-step success criteria and the user's corrections as a skill — or as a memory note if it is only a fact.
+
+**متى:** 'احفظ ده كمهارة'، 'إيه اللي اتعلمناه'، نفس الشغل اتكرر في أكثر من جلسة / 'save this as a skill', 'what did we learn', same workflow repeated across sessions
+
+**كيف:** 1) Gate: a repeatable multi-step procedure with judgment calls → skill; a single cause→fix, gotcha or config fact → memory/one-line rule, not a skill (most learnings are memory). Must be reusable, non-trivial, specific and verified to have worked. 2) Evidence: prefer repeated occurrences across sessions (same instructions repeated, recurring corrections, near-misses of an existing skill) over one session; weak evidence → no recommendation; an existing skill that fits → update it. 3) Analyze before asking: inputs, ordered steps, artifacts each step hands on, where the user steered or corrected, tools and permissions used. 4) Interview briefly in rounds only as needed: name + trigger phrases; goal and success criteria; step list and inline vs forked execution; per non-obvious step what proves it is done and whether to pause for the user (irreversible actions, publishing, paid generation). 5) Write: every step gets a Success criteria line; optional Artifacts, Human checkpoint, Rules (from the user's corrections), parallel steps as 3a/3b; minimum tool permissions. 6) Show a plain confirmation card (name, trigger, inputs, output, checkpoints, acceptance checks) and the full file before saving. 7) Never overwrite an existing skill; diff it. Strip client data, paths with usernames and secrets. 8) Validate structure and run 5 should-trigger and 3 should-not-trigger prompts plus one real end-to-end run; report separately what is structurally valid vs proven by a run. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2585-system-prompt-skillify-current-session, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3285-claudeception/13796-claudeception, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2487-codex-operations/9651-find-skill-candidates, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1544-agentskill-kaizen/4235-kaizen-improvement.
+
+**المعاملات:** session transcript or summary, target location
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** skillify · session to skill · continuous learning · workflow capture · memory vs skill · حفظ كمهارة · استخراج سير العمل · التعلم من الجلسة
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ACRAFT-30` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2585-system-prompt-skillify-current-session`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3285-claudeception/13796-claudeception`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2487-codex-operations/9651-find-skill-candidates`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1544-agentskill-kaizen/4235-kaizen-improvement`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACRAFT-28` صمّم شكل المهارة: نمط الاستدعاء وتصنيف الخطوات ومعيار الإنجاز وقسم المطبّات / Design a skill's shape: invocation mode, step typing, completion criteria, growing gotchas (documented)
+- `ACRAFT-29` أعد هيكلة مهارة كبيرة دون فقدان سلوكها: سجل الثوابت ومصدر واحد للحقيقة / Refactor a large skill without losing behaviour: invariant ledger, single source of truth, earned labels (documented)
+- `ACRAFT-31` ملف صوت المالك: قابل للقياس ومدعوم باقتباسات وينمو من تعديلاته / Owner voice file: measurable, quote-backed, grows from edits (documented)
+- `ACRAFT-32` إعادة كتابة على مستوى الخطاب مع قارئ بارد معزول / Discourse-level rewrite with an isolated cold reader (documented)
+
+### `ACRAFT-31` — ملف صوت المالك: قابل للقياس ومدعوم باقتباسات وينمو من تعديلاته / Owner voice file: measurable, quote-backed, grows from edits
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-craft` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-craft.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied |
+
+**ما هي:** ملف صوت قصير يصف كيف يكتب/يتكلم المالك بأرقام واقتباسات لا بصفات — Build a ≤150-line voice file from 3–5 of the owner's own pieces that every writing skill loads.
+
+**متى:** اكتب بصوتي، الريل لازم يبقى بطريقتي، out/voice.md / write like me, my voice, voice profile, before any reel script
+
+**كيف:** 1) Collect 3–5 of the owner's own pieces in the SAME genre but DIFFERENT topics (same-topic samples narrow the range and hurt); <3 → mark confidence: low; 0 → refuse. 2) Measure, don't describe: median sentence length and spread, shortest sentence, paragraph length, connector rate, concrete-anchor density, dialect markers (مش/هـ/اللي), digit system, dash/emoji rate. 3) Habits section: how he opens, gives examples, signals doubt, closes — each habit must quote one real line; no quote → drop the habit. 4) Never-say list: words/structures that appear 0 times in his samples but are common model defaults, each with his replacement (not just a ban). 5) 3–5 positive excerpts + 1 negative: the model's own default draft on the same topic with a line on what differs (contrastive example). 6) No personality adjectives (دافئ/حاد) — they are not checkable. 7) Use it as completion: continue his text rather than 'imitate his style'. 8) Update loop: after each session diff his edits against the draft; corrections that repeat become new never-say/habit lines with a dated log entry; do not rewrite the whole file. 9) If samples disagree strongly (e.g. caption vs voiceover), keep two profiles instead of averaging. 10) Only the owner's own voice (or a team he represents) — never a named third party. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3597-humanize/14430-voice-profile, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3034-linkedin-skills/13055-linkedin-humanizer, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2537-unslop/9835-unslop.
+
+**المعاملات:** 3–5 samples; out/voice.md
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** voice profile · owner voice · ملف الصوت · أسلوب المالك · never-say list · few-shot completion
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `key:unspecified` ← حساب أو مفتاح: لا تطلب لصقه في المحادثة، واسأل قبل أي صرف
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ACRAFT-31` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `permission_denied` (صلاحية مرفوضة، ميزانية 1): من رفض: نظام الملفات أم الخدمة أم المستخدم في نافذة الإذن ← اكتب في مسار مسموح (مجلد مؤقت أو مجلد العمل) · البديل: سلّم الأمر جاهزًا ليشغّله المستخدم بنفسه · تصعيد: لا تتجاوز أي رفض بحيلة؛ اشرح ما يلزم وانتظر
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3597-humanize/14430-voice-profile`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3034-linkedin-skills/13055-linkedin-humanizer`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2537-unslop/9835-unslop`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACRAFT-29` أعد هيكلة مهارة كبيرة دون فقدان سلوكها: سجل الثوابت ومصدر واحد للحقيقة / Refactor a large skill without losing behaviour: invariant ledger, single source of truth, earned labels (documented)
+- `ACRAFT-30` حوّل جلسة ناجحة إلى مهارة سير عمل قابلة للإعادة / Skillify a finished session into a reusable workflow skill (documented)
+- `ACRAFT-32` إعادة كتابة على مستوى الخطاب مع قارئ بارد معزول / Discourse-level rewrite with an isolated cold reader (documented)
+- `ACRAFT-33` إصلاح الترجمة الحرفية في العربية بعد الترجمة أو التعريب / Arabic translationese repair after translation or localization (documented)
+
+### `ACRAFT-32` — إعادة كتابة على مستوى الخطاب مع قارئ بارد معزول / Discourse-level rewrite with an isolated cold reader
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-craft` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-craft.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied |
+
+**ما هي:** إصلاح ما يجعل القارئ يفقد الخيط رغم فهمه كل كلمة — Fix the thread, not the vocabulary: old→new flow, topic chain, emphasis position, lists that replace argument; judged by a fresh-context reader.
+
+**متى:** النص مفهوم كلمة كلمة بس مش ماشي، القارئ بيتوه / reader loses the thread, reads like AI after word-level cleanup
+
+**كيف:** 1) Three layers: words (WRITE-02/03 scans), syntax (nominalised shells like تم القيام بـ, participle tails, uniform length), discourse (this card). 2) Paragraph checks: first sentence = the paragraph's claim (reading first sentences alone must carry the piece); each sentence starts with something already known and puts the new item at the end; one key term reused, never rotated. 3) Document checks: the trigger/problem with a date or number opens, the decision appears within 3 paragraphs, no closing summary paragraph, delete-test (a paragraph whose removal loses nothing is a repeat), headings as claims not category names. 4) A list whose items depend on each other (premise, cause, trade-off) becomes prose with the relation words; scan-read genres (reports, README, reference) keep their skeleton — edit sentences only and diff heading levels, list item counts and table shapes before/after. 5) The only allowed information gain is digging out specifics already in the source; missing ones become [يحتاج تحقق: …]. 6) Certainty check: count hedges/commitments before and after; 'سوف' must not become 'قد' or vice versa. 7) Review in a separate agent that gets only the rewrite, the reader and the genre (never the source or the brief); it reports per paragraph: expected / got / where lost. 8) Max 2 rounds; still failing → deliver with the list of paragraphs that need the author to add content, not more polishing. 9) For key openings: draft 5 candidates, drop the most predictable one first (typicality bias), then choose. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3597-humanize/14428-humanize, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2218-majestic-writing/8391-copy-editor.
+
+**المعاملات:** draft, reader, genre
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** discourse · cold reader · old-new · topic chain · قارئ بارد · تماسك النص · list replaces argument
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ACRAFT-32` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3597-humanize/14428-humanize`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2218-majestic-writing/8391-copy-editor`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACRAFT-30` حوّل جلسة ناجحة إلى مهارة سير عمل قابلة للإعادة / Skillify a finished session into a reusable workflow skill (documented)
+- `ACRAFT-31` ملف صوت المالك: قابل للقياس ومدعوم باقتباسات وينمو من تعديلاته / Owner voice file: measurable, quote-backed, grows from edits (documented)
+- `ACRAFT-33` إصلاح الترجمة الحرفية في العربية بعد الترجمة أو التعريب / Arabic translationese repair after translation or localization (documented)
+- `ACRAFT-34` بنك القصص: مقابلة تحفظ الأرقام ونقاط التحول والمواقف / Story bank interview: numbers, turning points, positions (documented)
+
+### `ACRAFT-33` — إصلاح الترجمة الحرفية في العربية بعد الترجمة أو التعريب / Arabic translationese repair after translation or localization
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-craft` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-craft.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (Apache-2.0, MIT); nothing copied |
+
+**ما هي:** تنعيم نص عربي مترجم دون تغيير معناه أو سجله — Post-edit translated Arabic (scripts, subtitles, UI strings) to remove calques while locking facts, modality and register.
+
+**متى:** النص مترجم وباين، ترجمة حرفية، تعريب واجهة، ترجمة سكريبت أو ترجمة / translationese, calques, localize UI, translated subtitles
+
+**كيف:** 1) Translate first, naturalize second; never do both in one pass. For long sources: pin a glossary (key terms, chapter/section titles, names) before translating, translate per section, sanity-check length ratio per section, and read one finished section against the source before running the rest. 2) Mask protected spans byte-for-byte: numbers, dates, URLs, code, names, placeholders like {count}, quotes. 3) Calque families to fix: يلعب دورًا/يعتبر بمثابة → plain verb; من خلال/عن طريق chains; تمّ + مصدر → named actor; بالإضافة إلى ذلك/علاوة على ذلك at every paragraph; human adverbs on programs (بصمت، بشفافية، بأناقة) → say what actually happens; English word order (adjective chains, sentence-final 'حيث'); English punctuation (, ? ; and em dashes). 4) Lock modality: must stays يجب, may stays قد; conditions, negations, order unchanged. 5) Keep register (MSA vs Egyptian) and one spelling/digit convention; do not convert. 6) Edit budget: character change ≲30% normal, 30–50% re-verify every claim, >50% stop — you are rewriting, not naturalizing. 7) UI-string mode suspends the budget: labels become noun phrases, short and uniform within one screen; but never add a behavior or warning the source did not state; unknown term → flag, leave as is. 8) Arabic plural/gender: ICU needs zero/one/two/few/many/other; check every category reads naturally. 9) Optional: keep a per-owner rules file (signal, exception, rewrite) that grows from his corrections; apply only when context matches. 10) Report: final text, then only 'needs check' items. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/880-superloopy/1935-humanize-korean, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1101-akbun-writing/2489-akbun-writing-naturalize, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3549-xm/14339-humanize, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3193-ru-text/13542-ru-text.
+
+**المعاملات:** source+target, glossary
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** translationese · ترجمة حرفية · calque · تعريب · localization · UI strings · subtitles translation
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ACRAFT-33` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/880-superloopy/1935-humanize-korean`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1101-akbun-writing/2489-akbun-writing-naturalize`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3549-xm/14339-humanize`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3193-ru-text/13542-ru-text`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACRAFT-31` ملف صوت المالك: قابل للقياس ومدعوم باقتباسات وينمو من تعديلاته / Owner voice file: measurable, quote-backed, grows from edits (documented)
+- `ACRAFT-32` إعادة كتابة على مستوى الخطاب مع قارئ بارد معزول / Discourse-level rewrite with an isolated cold reader (documented)
+- `ACRAFT-34` بنك القصص: مقابلة تحفظ الأرقام ونقاط التحول والمواقف / Story bank interview: numbers, turning points, positions (documented)
+- `ACRAFT-35` من شرارة إلى فكرة قابلة للتصوير: احتمالات، لوجلاين، رهانات / From spark to filmable premise: what-ifs, logline tests, stakes (documented)
+
+### `ACRAFT-34` — بنك القصص: مقابلة تحفظ الأرقام ونقاط التحول والمواقف / Story bank interview: numbers, turning points, positions
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-craft` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-craft.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied |
+
+**ما هي:** مقابلة مرة واحدة تملأ ملفًا دائمًا بالمادة الحقيقية للمحتوى — One structured interview fills a persistent story bank so hooks never need invented facts.
+
+**متى:** مش لاقي أقول إيه، اعملي مقابلة، الفكرة رفيعة / interview me, I have nothing to post, thin idea, the one true thing
+
+**كيف:** 1) Read the bank first; ask only thin sections — never re-ask. 2) Open wide with one question and follow what he gets animated about; one question at a time. 3) Press every soft answer exactly once: 'improved' → by how much, over what period; 'a while ago' → which month; 'a big client' → can it be named. 4) Chase the reversal: what he believed a year ago and no longer does, and what it cost. 5) Find the position: what he thinks is true that peers dispute, and the cost of holding it. 6) Collect the 3 stories he already tells in person (pre-tested). 7) Settle naming limits explicitly; 'rather not say' is recorded as off-limits forever. 8) Write verbatim phrasing where vivid, date the file, list thin sections; leave unknown numbers empty, never inferred. 9) Mining a single story: return 3–5 genuinely distinct angles (lesson, contrarian, method, proof, relatable moment) plus 'not worth angling' (e.g. no proof angle until numbers are final); anonymize clients by default; openings start at the surprise/number, never chronology. 10) Post mode: moment not theme → number and date → what he got wrong → who disagrees → what viewer should do; read back a 5-line spine. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3034-linkedin-skills/13056-linkedin-interviewer, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4122-story-mine.
+
+**المعاملات:** out/story-bank.md
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** story bank · interview · بنك القصص · مقابلة · angles · specifics · reel material
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ACRAFT-34` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3034-linkedin-skills/13056-linkedin-interviewer`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4122-story-mine`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACRAFT-32` إعادة كتابة على مستوى الخطاب مع قارئ بارد معزول / Discourse-level rewrite with an isolated cold reader (documented)
+- `ACRAFT-33` إصلاح الترجمة الحرفية في العربية بعد الترجمة أو التعريب / Arabic translationese repair after translation or localization (documented)
+- `ACRAFT-35` من شرارة إلى فكرة قابلة للتصوير: احتمالات، لوجلاين، رهانات / From spark to filmable premise: what-ifs, logline tests, stakes (documented)
+- `ACRAFT-36` حرفة مشهد الحوار: نص فرعي، ادخل متأخرًا، فعل مرئي فقط / Dialogue scene craft: subtext, late entry, visible-only action (documented)
+
+### `ACRAFT-35` — من شرارة إلى فكرة قابلة للتصوير: احتمالات، لوجلاين، رهانات / From spark to filmable premise: what-ifs, logline tests, stakes
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-craft` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-craft.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied |
+
+**ما هي:** تحويل صورة أو إحساس إلى فرضية فيلم/ريل تحمل صراعًا — Turn a spark into a premise that can carry a short film or series before any boards.
+
+**متى:** عندي فكرة فيلم، لو حصل كذا، هل الفكرة قوية / film idea, what if, is this premise strong, logline
+
+**كيف:** 1) Record the spark in his words and classify it: image, what-if, character, setting, feeling; ask what drew him — that answer must survive later changes. 2) Generate 8–12 what-ifs by angle: invert it, raise the cost, move it in time or place, give it to the wrong person; flag which already imply conflict; he picks 1–3. 3) Logline = protagonist + want + obstacle + stakes. 4) Stress tests, each pass/weak/fail with one reason and one fix: active protagonist, opposition that can win, a choice at the end, personal stakes, situation that sustains the target length (5 s, 30 s, 3 min, series). 5) Stakes on three levels: external, relational, internal; at least two concrete. 6) Controlling idea + its counter-argument as working hypotheses. 7) For a contrarian angle: decompose into falsifiable claims, attack each; if objections reduce it to a tautology it is not an insight; refine to more precise wording, never retreat to weaker. 8) Hand a one-screen brief (title, logline, stakes, form, language/dialect) to STORY-01 intake. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1213-story-skills/2878-premise-workshop, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2630-hot-take-forge.
+
+**المعاملات:** spark
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** premise · logline · what if · فكرة فيلم · stakes · رهانات · concept test
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ACRAFT-35` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1213-story-skills/2878-premise-workshop`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2630-hot-take-forge`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACRAFT-33` إصلاح الترجمة الحرفية في العربية بعد الترجمة أو التعريب / Arabic translationese repair after translation or localization (documented)
+- `ACRAFT-34` بنك القصص: مقابلة تحفظ الأرقام ونقاط التحول والمواقف / Story bank interview: numbers, turning points, positions (documented)
+- `ACRAFT-36` حرفة مشهد الحوار: نص فرعي، ادخل متأخرًا، فعل مرئي فقط / Dialogue scene craft: subtext, late entry, visible-only action (documented)
+- `ACRAFT-37` من شذرات إلى سكريبت: استكشاف ثم استغلال / From fragments to a script: explore, then exploit (documented)
+
+### `ACRAFT-36` — حرفة مشهد الحوار: نص فرعي، ادخل متأخرًا، فعل مرئي فقط / Dialogue scene craft: subtext, late entry, visible-only action
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-craft` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-craft.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (Apache-2.0, MIT); nothing copied |
+
+**ما هي:** قواعد كتابة مشاهد وحوار لفيلم قصير أو إعلان تمثيلي — Rules and model tells for scripted scenes with characters.
+
+**متى:** سكريبت فيه حوار، مشهد بين شخصيتين، فيلم قصير، إعلان تمثيلي / dialogue scene, short film script, screenplay
+
+**كيف:** 1) Every scene: someone wants something, something blocks it, the situation ends changed; outcomes yes-but / no-and / no-but; a clean yes kills tension. 2) Enter late, leave early: cut arrivals, greetings, goodbyes, and the summarizing last line. 3) Action lines in present tense, only what can be seen or heard, ≤3–4 lines; never 'she feels devastated'. 4) Subtext: characters talk around the thing; nobody answers the question directly; nobody explains what both know ('as you know…'). 5) Each character has a verbal signature (rhythm, words, what they never say, register/dialect fixed per pair — a shift is a story event); cover names and you should still know who speaks. 6) Monologues ≤5 lines; one physical reaction at most; withhold one thing per scene. 7) Model tells to scan: characters stating motive or theme, convenient coincidences, emotion on schedule, uniform scene length, final scene mirroring the first with one word changed, metaphors that explain themselves. 8) Timing: ~1 page ≈ 1 minute; for shorts one turn, no subplot. 9) Voiceover/audiobook version: add a pronunciation respelling list for names, and re-read for what fails aloud (visual-only jokes, tables, long untagged dialogue). Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1376-velith/3228-book-screenplay, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1376-velith/3218-book-fiction, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1213-story-skills/2869-adaptation.
+
+**المعاملات:** scene list
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** dialogue · screenplay · subtext · حوار · سيناريو · مشهد · short film
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ACRAFT-36` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1376-velith/3228-book-screenplay`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1376-velith/3218-book-fiction`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1213-story-skills/2869-adaptation`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACRAFT-34` بنك القصص: مقابلة تحفظ الأرقام ونقاط التحول والمواقف / Story bank interview: numbers, turning points, positions (documented)
+- `ACRAFT-35` من شرارة إلى فكرة قابلة للتصوير: احتمالات، لوجلاين، رهانات / From spark to filmable premise: what-ifs, logline tests, stakes (documented)
+- `ACRAFT-37` من شذرات إلى سكريبت: استكشاف ثم استغلال / From fragments to a script: explore, then exploit (documented)
+- `ACRAFT-38` مراجعة الكوبي في سبعة تمريرات مع إعادة التحقق / Seven-sweep copy review with revalidation (documented)
+
+### `ACRAFT-37` — من شذرات إلى سكريبت: استكشاف ثم استغلال / From fragments to a script: explore, then exploit
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-craft` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-craft.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied |
+
+**ما هي:** جمع شذرات بلا ترتيب ثم بناء النص فقرة فقرة على مفاهيم مؤسسة — Separate idea-mining from shaping; build explainer scripts block by block on grounded concepts.
+
+**متى:** عندي أفكار متفرقة، فويس أوفر شرح، حول ملاحظاتي لسكريبت / scattered notes to script, explainer voiceover
+
+**كيف:** 1) Explore: append every fragment (sharp line, claim, vignette, half-thought, quote) to one file separated by ---; no structure; re-read the file before each write, never overwrite. 2) Hunt the leading word: one coinage or metaphor the whole piece can hang on — it later shapes title and transitions. 3) Exploit in a separate file: agree what the viewer already knows (prerequisites); keep a running list of grounded concepts. 4) Draft 2–3 openings, each implying a different thesis; he picks or merges. 5) Grow block by block: 'given this, what does the viewer need next?'; a block may lean only on grounded concepts — otherwise ground it first. 6) Pull from the pile as a quarry (split, merge, rework); if the pile lacks an example, say so: give one now or cut the section. 7) Ask per block: what does this do that the last didn't; if I cut it what breaks; is this one job or two. 8) For argument-heavy pieces check the pyramid: one-sentence governing answer, 2–4 non-overlapping supports, evidence matched to each, gaps labeled. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2224-mattpocock-skills/8433-writing-fragments, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2224-mattpocock-skills/8434-writing-shape, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2218-majestic-writing/8394-minto-pyramid.
+
+**المعاملات:** notes file
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** fragments · explore exploit · leading word · grounding · سكريبت شرح · تنظيم الأفكار · minto
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `lean` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ACRAFT-37` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2224-mattpocock-skills/8433-writing-fragments`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2224-mattpocock-skills/8434-writing-shape`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2218-majestic-writing/8394-minto-pyramid`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACRAFT-35` من شرارة إلى فكرة قابلة للتصوير: احتمالات، لوجلاين، رهانات / From spark to filmable premise: what-ifs, logline tests, stakes (documented)
+- `ACRAFT-36` حرفة مشهد الحوار: نص فرعي، ادخل متأخرًا، فعل مرئي فقط / Dialogue scene craft: subtext, late entry, visible-only action (documented)
+- `ACRAFT-38` مراجعة الكوبي في سبعة تمريرات مع إعادة التحقق / Seven-sweep copy review with revalidation (documented)
+
+### `ACRAFT-38` — مراجعة الكوبي في سبعة تمريرات مع إعادة التحقق / Seven-sweep copy review with revalidation
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-craft` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-craft.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (Apache-2.0, MIT); nothing copied |
+
+**ما هي:** مراجعة نص تسويقي/كابشن بتمريرات منفصلة لكل بُعد — Review existing copy one dimension per pass, re-checking earlier passes after each fix.
+
+**متى:** راجع الكابشن، حسن النص الإعلاني، الكوبي ضعيف / review my caption, improve ad copy
+
+**كيف:** 0) Mechanical pass first: throat-clearing openers (في عالم اليوم، لا يخفى على أحد), binary contrast (مش بس… ده), dramatic fragments (وبس. كده.), empty jargon, stacked triads; report density per 100 words (<0.5 ok, 0.5–1.5 revise, >1.5 rewrite the passage). 1) Clarity: mark what doesn't land on first read before proposing. 2) Voice: audit against the voice file; compare start vs end for tone drift. 3) So-what: every claim answers why the viewer should care. 4) Prove: superlatives need a source; no proof → soften the claim, never invent it. 5) Specificity: vague → numbers/timeframes from the source; can't be specific → cut. 6) Emotion: concrete before-state, no fake urgency. 7) Zero risk near the CTA: unanswered objection, unclear next step. After each sweep re-run the earlier ones. Output: per-line current/proposed/reason, a 'kept on purpose' list, then the full revised text. Severity: high = meaning/legal/hidden action, medium = comprehension/trust, low = polish. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2964-pwdev-copy/12451-copy-review, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2218-majestic-writing/8391-copy-editor.
+
+**المعاملات:** copy, voice file
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** copy review · seven sweeps · مراجعة كوبي · كابشن · so what · proof
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ACRAFT-38` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2964-pwdev-copy/12451-copy-review`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2218-majestic-writing/8391-copy-editor`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACRAFT-36` حرفة مشهد الحوار: نص فرعي، ادخل متأخرًا، فعل مرئي فقط / Dialogue scene craft: subtext, late entry, visible-only action (documented)
+- `ACRAFT-37` من شذرات إلى سكريبت: استكشاف ثم استغلال / From fragments to a script: explore, then exploit (documented)
 

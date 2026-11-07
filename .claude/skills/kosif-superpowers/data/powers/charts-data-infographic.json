@@ -3357,10 +3357,11 @@
   "name_en": "Chart libraries as video frames",
   "status": "install",
   "what": "D3 أو ECharts أو Chart.js أو Vega-Lite داخل صفحة تُرندر إطارًا إطارًا، بشرط تعطيل حركتها الداخلية وقيادتها بالزمن. / D3, ECharts, Chart.js or Vega-Lite inside a page rendered frame by frame, with their own animation disabled and driven by time.",
-  "how": "Set animation:false (Chart.js/ECharts) and redraw from data(t) inside window.__kosif.seek(t); D3: compute layouts (d3-hierarchy treemap, d3-sankey, d3-geo) and interpolate attributes yourself; never ship default library styling (restyle: no legends, direct labels, palette DATA-92); render with node tools/render_html.cjs.",
+  "how": "Set animation:false (Chart.js/ECharts) and redraw from data(t) inside window.__kosif.seek(t); D3: compute layouts (d3-hierarchy treemap, d3-sankey, d3-geo) and interpolate attributes yourself; never ship default library styling (restyle: no legends, direct labels, palette DATA-92); render with node tools/render_html.cjs. Atlas upgrade 2026-11-07: SVG polish defaults (web scale; roughly double at 1080p video): tick labels 10-12 px, direct labels 11-13.5 px, non-data strokes 0.5-1 px, data lines 1.5-2.25 px, focus line 2.5-3 px, ticks 4-6 px with 6-8 px padding, tickSizeOuter(0), drop redundant domain lines, fewer ticks before rotated labels; shape-rendering crispEdges only on straight axes, gridlines and rect cells (never on curves or circles); vector-effect non-scaling-stroke for zoomed outlines, connectors and borders. Keep D3 for scales, layouts and geometry and let the page framework own structure; recompute ticks, labels and plot height per aspect instead of scaling one viewBox. Python panels destined for compositing: size the figure to the final pixel/mm size, export transparent background SVG/PNG with tight bbox, keep text as text, colour-blind-safe cycle (Okabe-Ito #0072B2 #D55E00 #009E73 #CC79A7), spines top/right off, frameless legend; record a provenance note (source file, transforms, interval definition, seed, missing-data policy) next to each exported chart and view it at final size before use.",
   "params": "",
   "install": "npm i d3@7.9.0   # or: echarts@6.1.0 | chart.js@4.5.1 | vega@6.4.0 vega-lite@6.5.0",
   "requires": [
+   "python3",
    "chromium",
    "npm:d3"
   ],
@@ -3382,9 +3383,51 @@
    "رندر فيديو",
    "تحويل الرسم لفيديو",
    "frame render",
-   "vega-lite"
+   "vega-lite",
+   "svg chart polish",
+   "crispEdges",
+   "non-scaling-stroke",
+   "transparent chart panel",
+   "provenance",
+   "تلميع المخطط"
   ],
-  "when": "حين يريد المستخدم استخدام D3 أو ECharts أو Chart.js داخل فيديو يُرندر إطارًا إطارًا / when the user wants D3, ECharts or Chart.js charts inside a video rendered frame by frame"
+  "when": "حين يريد المستخدم استخدام D3 أو ECharts أو Chart.js داخل فيديو يُرندر إطارًا إطارًا / when the user wants D3, ECharts or Chart.js charts inside a video rendered frame by frame",
+  "atlas": {
+   "ids": [
+    "10320",
+    "10111",
+    "13564"
+   ],
+   "examples": [
+    {
+     "id": "10320",
+     "plugin": "build-web-data-visualization",
+     "skill": "d3-data-visualization",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2690-build-web-data-visualization/10320-d3-data-visualization"
+    },
+    {
+     "id": "10111",
+     "plugin": "figures",
+     "skill": "plot-styling",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2657-figures/10111-plot-styling"
+    },
+    {
+     "id": "13564",
+     "plugin": "quantitative-sciences",
+     "skill": "scientific-visualization",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3202-quantitative-sciences/13564-scientific-visualization"
+    }
+   ],
+   "theme": "visualization-dashboards",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-image.json",
+   "skill_md_sha256": {
+    "10320": "1c735a00399eef9f63774f692a13c024380a331a44b1076ba72d440510f22b8f",
+    "10111": "9ce1154055fe9bc1dfdd362659dfe319018dae8dfef6d8fa11a07fc5823c3431",
+    "13564": "0c6615b47df0281805d52029f26fb2fedab6f4d1fbcafa6df79a958f010cb3ef"
+   }
+  }
  },
  {
   "id": "DATA-97",
@@ -3463,10 +3506,12 @@
   "name_en": "Scrollytelling scenes as data",
   "status": "documented",
   "what": "قصص بيانات يتغير فيها المشهد مع التقدم: كل مشهد يعلن نصه وحالته البصرية وطبقة بياناته ومدى تقدمه. / Author-led data stories where state changes with progress: each scene declares text, visual state, data layer and progress range.",
-  "how": "Techniques: graphic sequence, animated transition, pan-and-zoom, sticky side-by-side, parallax depth. For video replace scroll progress with timeline time: progress = (t − scene.start)/scene.dur; keep a reduced-motion/static fallback frame per scene.",
+  "how": "Techniques: graphic sequence, animated transition, pan-and-zoom, sticky side-by-side, parallax depth. For video replace scroll progress with timeline time: progress = (t − scene.start)/scene.dur; keep a reduced-motion/static fallback frame per scene. Atlas upgrade 2026-11-07: Scene contract per scrollytelling (or timeline) scene: text, visual state, data layer, media asset, annotation, trigger or progress range, static key frame, reduced-motion fallback, and the owner of each embedded visual layer. Every scene must contain at least one evidence-bearing change (chart transition, layer reveal, annotation shift, camera move, flow state, video frame) - a scene that only adds drama is cut or merged. Write the one-sentence takeaway and what the first, each key and the final frame prove before building. Choose a stepper instead of scroll when states are discrete and the reader needs direct access, known length or replay. Browser contract: never scrolljack; keep native wheel, touch, scrollbar and keyboard; no surprise autoplay audio; reserve media dimensions; animate transform/opacity only; test fast and reverse scroll, resize, reduced motion and mobile browser-chrome height changes. Lightest stack first: position:sticky + IntersectionObserver, then CSS scroll-driven animation, then GSAP/Motion only for scrubbing, pinning or snapping.",
   "params": "",
   "install": "",
-  "requires": [],
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "",
   "proof": [
    "kosif-atlas/skills/2690-build-web-data-visualization/10329-scrollytelling-and-parallax-data-visuali/SKILL.md"
@@ -3481,9 +3526,33 @@
    "تمرير",
    "بارالاكس",
    "scroll story",
-   "parallax"
+   "parallax",
+   "scene contract",
+   "stepper vs scroll",
+   "no scrolljack",
+   "قصة بالتمرير"
   ],
-  "when": "حين يريد المستخدم قصة بيانات تتغير مشاهدها مع التمرير أو تحويلها إلى فيديو بخط زمني / when the user wants a scroll-driven data story, or wants to turn one into a timeline video"
+  "when": "حين يريد المستخدم قصة بيانات تتغير مشاهدها مع التمرير أو تحويلها إلى فيديو بخط زمني / when the user wants a scroll-driven data story, or wants to turn one into a timeline video",
+  "atlas": {
+   "ids": [
+    "10329"
+   ],
+   "examples": [
+    {
+     "id": "10329",
+     "plugin": "build-web-data-visualization",
+     "skill": "scrollytelling-and-parallax-data-visualization",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2690-build-web-data-visualization/10329-scrollytelling-and-parallax-data-visuali"
+    }
+   ],
+   "theme": "visualization-dashboards",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-image.json",
+   "skill_md_sha256": {
+    "10329": "edfcb78d543d4d80d470f390446d65951179d07e13ada03cdd4bc3d77678eafe"
+   }
+  }
  },
  {
   "id": "DATA-100",

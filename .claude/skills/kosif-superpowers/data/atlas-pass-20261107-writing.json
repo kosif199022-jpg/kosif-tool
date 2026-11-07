@@ -1,0 +1,661 @@
+{
+ "schema": "kosif.atlas-5000.mining-receipt.v1",
+ "date": "2026-11-07",
+ "batch": "core-work-writing",
+ "atlas": "https://github.com/kosif199022-jpg/kosif-atlas",
+ "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
+ "powers_added": 8,
+ "powers_upgraded": 9,
+ "sources_read": 57,
+ "skipped_after_reading": 17,
+ "scope_note": "Core-work pass for the owner's video, motion, writing, thinking and Black Dragon work. Each SKILL.md was read in full as inert text (including skills whose verdict is REVIEW_BEFORE_INSTALL: only their Markdown was read, no script was opened, copied or run) and its method summarised in our own words. Nothing was vendored or executed.",
+ "sources": [
+  {
+   "atlas_id": 14430,
+   "plugin": "humanize",
+   "skill": "voice-profile",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/3597-humanize/14430-voice-profile",
+   "skill_md_sha256": "c432866afc7d6076f4879bc0fc66171b7806731991ce0b153c618df59e92c432",
+   "read_in_full": true,
+   "power": "ACRAFT-31"
+  },
+  {
+   "atlas_id": 13055,
+   "plugin": "linkedin-skills",
+   "skill": "linkedin-humanizer",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/3034-linkedin-skills/13055-linkedin-humanizer",
+   "skill_md_sha256": "15d30a63d7f4bf4e60c82565dd25a0c729af038c70243dc6b22d3b672895bd0f",
+   "read_in_full": true,
+   "power": "ACRAFT-31"
+  },
+  {
+   "atlas_id": 9835,
+   "plugin": "unslop",
+   "skill": "unslop",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/2537-unslop/9835-unslop",
+   "skill_md_sha256": "3f250609bed188f459779dbf3188b9e9a4ea9c39f68e94a734516e2e4590534a",
+   "read_in_full": true,
+   "power": "ACRAFT-31"
+  },
+  {
+   "atlas_id": 14428,
+   "plugin": "humanize",
+   "skill": "humanize",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/3597-humanize/14428-humanize",
+   "skill_md_sha256": "ecc90af65d748fcf0bbe3fc29e095324baef5b67cd7a632e39538e29d8ca7799",
+   "read_in_full": true,
+   "power": "ACRAFT-32"
+  },
+  {
+   "atlas_id": 8391,
+   "plugin": "majestic-writing",
+   "skill": "copy-editor",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/2218-majestic-writing/8391-copy-editor",
+   "skill_md_sha256": "cb472c3ac0d8085281195b1c88b2f31772a02e7f76c528642aa31a5822292a67",
+   "read_in_full": true,
+   "power": "ACRAFT-32"
+  },
+  {
+   "atlas_id": 1935,
+   "plugin": "superloopy",
+   "skill": "humanize-korean",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/880-superloopy/1935-humanize-korean",
+   "skill_md_sha256": "8f768f9c51c6f63e1128f70083a845b1047ae05976fdbd9b27780399e664272c",
+   "read_in_full": true,
+   "power": "ACRAFT-33"
+  },
+  {
+   "atlas_id": 2489,
+   "plugin": "akbun-writing",
+   "skill": "akbun-writing-naturalize",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/1101-akbun-writing/2489-akbun-writing-naturalize",
+   "skill_md_sha256": "8b93e8cbaedeb60e1e975978fc1121f1a5bc23b7eb2cbd1515cac961488a703e",
+   "read_in_full": true,
+   "power": "ACRAFT-33"
+  },
+  {
+   "atlas_id": 14339,
+   "plugin": "xm",
+   "skill": "humanize",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/3549-xm/14339-humanize",
+   "skill_md_sha256": "5de2daf064902f898178fd74533cf4b735b9d731bdf7032fb949c87d1fe38c7e",
+   "read_in_full": true,
+   "power": "ACRAFT-33"
+  },
+  {
+   "atlas_id": 13542,
+   "plugin": "ru-text",
+   "skill": "ru-text",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/3193-ru-text/13542-ru-text",
+   "skill_md_sha256": "ec1a71ff5a6ac99c1360ab5633b9b199c130d0fc0c86d07e29eebd5314cdbcb6",
+   "read_in_full": true,
+   "power": "ACRAFT-33"
+  },
+  {
+   "atlas_id": 10072,
+   "plugin": "proofreading-ja",
+   "skill": "proofreading-ja",
+   "license": "Apache-2.0",
+   "theme": "localization-language",
+   "path": "skills/2651-proofreading-ja/10072-proofreading-ja",
+   "skill_md_sha256": "df85ec020d5f70ce6dded584ef18576a14b34afd6b536f3f4768d65e0acd648c",
+   "read_in_full": true,
+   "power": "ACRAFT-33"
+  },
+  {
+   "atlas_id": 1995,
+   "plugin": "intel",
+   "skill": "translate",
+   "license": "MIT",
+   "theme": "localization-language",
+   "path": "skills/886-intel/1995-translate",
+   "skill_md_sha256": "f55432f30a0f99e48eba37434191058308d77339be394f8793e56c8a7c9e4620",
+   "read_in_full": true,
+   "power": "ACRAFT-33"
+  },
+  {
+   "atlas_id": 13056,
+   "plugin": "linkedin-skills",
+   "skill": "linkedin-interviewer",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/3034-linkedin-skills/13056-linkedin-interviewer",
+   "skill_md_sha256": "64e95cdb1238e66a4ae2df2995e9c6ab6098ed02b7194db472c8075ba9200eb5",
+   "read_in_full": true,
+   "power": "ACRAFT-34"
+  },
+  {
+   "atlas_id": 4122,
+   "plugin": "digital-marketing-pro",
+   "skill": "story-mine",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/1520-digital-marketing-pro/4122-story-mine",
+   "skill_md_sha256": "5d4b3710c71a5c066e6dd1f5d19bab3b093241d2be0b07a820dc0f5c874a50db",
+   "read_in_full": true,
+   "power": "ACRAFT-34"
+  },
+  {
+   "atlas_id": 2878,
+   "plugin": "story-skills",
+   "skill": "premise-workshop",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/1213-story-skills/2878-premise-workshop",
+   "skill_md_sha256": "a8755c44de58c58129e11ac7c446b6b9b0b56fe514868bf54c613d59ba3da4f5",
+   "read_in_full": true,
+   "power": "ACRAFT-35"
+  },
+  {
+   "atlas_id": 2630,
+   "plugin": "ambient-library",
+   "skill": "hot-take-forge",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/1120-ambient-library/2630-hot-take-forge",
+   "skill_md_sha256": "fe721f9661a3b95268ccad517f855f8fa664bddc2e675a9ce5470be498cf50be",
+   "read_in_full": true,
+   "power": "ACRAFT-35"
+  },
+  {
+   "atlas_id": 3228,
+   "plugin": "velith",
+   "skill": "book-screenplay",
+   "license": "Apache-2.0",
+   "theme": "writing-content",
+   "path": "skills/1376-velith/3228-book-screenplay",
+   "skill_md_sha256": "18ff17666ae5443f031c0d96ecf9577b89fe73caffd0bbe6a7f993b9cd1a31ec",
+   "read_in_full": true,
+   "power": "ACRAFT-36"
+  },
+  {
+   "atlas_id": 3218,
+   "plugin": "velith",
+   "skill": "book-fiction",
+   "license": "Apache-2.0",
+   "theme": "writing-content",
+   "path": "skills/1376-velith/3218-book-fiction",
+   "skill_md_sha256": "6094ce1e05975d7e68d8ccca5124fb48d084f3e9b3f5ac05be3c8de94bf60a67",
+   "read_in_full": true,
+   "power": "ACRAFT-36"
+  },
+  {
+   "atlas_id": 2869,
+   "plugin": "story-skills",
+   "skill": "adaptation",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/1213-story-skills/2869-adaptation",
+   "skill_md_sha256": "70865250fa1cfb10eac9ad4db0b50fa5f3c3dce12d582d2487faa42b6a6bd081",
+   "read_in_full": true,
+   "power": "ACRAFT-36"
+  },
+  {
+   "atlas_id": 8433,
+   "plugin": "mattpocock-skills",
+   "skill": "writing-fragments",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/2224-mattpocock-skills/8433-writing-fragments",
+   "skill_md_sha256": "298b0edd23df229183630de592ed8aa4289233560f2040691f6eb77caeaad4ea",
+   "read_in_full": true,
+   "power": "ACRAFT-37"
+  },
+  {
+   "atlas_id": 8434,
+   "plugin": "mattpocock-skills",
+   "skill": "writing-shape",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/2224-mattpocock-skills/8434-writing-shape",
+   "skill_md_sha256": "f5e6c57bdd85178ace4a260c92f46da6b64ddee18215b461d875739c68976f72",
+   "read_in_full": true,
+   "power": "ACRAFT-37"
+  },
+  {
+   "atlas_id": 8394,
+   "plugin": "majestic-writing",
+   "skill": "minto-pyramid",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/2218-majestic-writing/8394-minto-pyramid",
+   "skill_md_sha256": "9fb3a0e32d5d4269ca5fbedb4f4c953e97564c37695fe4e2a937d4b817e7432b",
+   "read_in_full": true,
+   "power": "ACRAFT-37"
+  },
+  {
+   "atlas_id": 12451,
+   "plugin": "pwdev-copy",
+   "skill": "copy-review",
+   "license": "Apache-2.0",
+   "theme": "writing-content",
+   "path": "skills/2964-pwdev-copy/12451-copy-review",
+   "skill_md_sha256": "22bb6ef7f6e9eee9eb4dec6d7f022bc265e544eb65ae6d3f5525fcb625fa6d09",
+   "read_in_full": true,
+   "power": "ACRAFT-38"
+  },
+  {
+   "atlas_id": 8391,
+   "plugin": "majestic-writing",
+   "skill": "copy-editor",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/2218-majestic-writing/8391-copy-editor",
+   "skill_md_sha256": "cb472c3ac0d8085281195b1c88b2f31772a02e7f76c528642aa31a5822292a67",
+   "read_in_full": true,
+   "power": "ACRAFT-38"
+  },
+  {
+   "atlas_id": 14339,
+   "plugin": "xm",
+   "skill": "humanize",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/3549-xm/14339-humanize",
+   "skill_md_sha256": "5de2daf064902f898178fd74533cf4b735b9d731bdf7032fb949c87d1fe38c7e",
+   "read_in_full": true,
+   "power": "WRITE-06",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 13055,
+   "plugin": "linkedin-skills",
+   "skill": "linkedin-humanizer",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/3034-linkedin-skills/13055-linkedin-humanizer",
+   "skill_md_sha256": "15d30a63d7f4bf4e60c82565dd25a0c729af038c70243dc6b22d3b672895bd0f",
+   "read_in_full": true,
+   "power": "WRITE-06",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 9835,
+   "plugin": "unslop",
+   "skill": "unslop",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/2537-unslop/9835-unslop",
+   "skill_md_sha256": "3f250609bed188f459779dbf3188b9e9a4ea9c39f68e94a734516e2e4590534a",
+   "read_in_full": true,
+   "power": "WRITE-06",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 72,
+   "plugin": "text-humanizer",
+   "skill": "anti-ai-writing-patterns",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/50-text-humanizer/72-anti-ai-writing-patterns",
+   "skill_md_sha256": "385684c9addc0ddbab76e5d163819c076c2f9a60b957593414dbcce5d3a3fe74",
+   "read_in_full": true,
+   "power": "WRITE-06",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 3292,
+   "plugin": "compound-engineering",
+   "skill": "ce-noslop",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/1391-compound-engineering/3292-ce-noslop",
+   "skill_md_sha256": "5e6712cede3abf4fa295568246f0d93185376e746a11d489237704972fb36bb1",
+   "read_in_full": true,
+   "power": "WRITE-06",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 14144,
+   "plugin": "avoid-ai-writing",
+   "skill": "avoid-ai-writing",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/3448-avoid-ai-writing/14144-avoid-ai-writing",
+   "skill_md_sha256": "3b0940b0014a64aaff405f367e44241095c96856cabcd0a01adf0ec33bbc1a66",
+   "read_in_full": true,
+   "power": "WRITE-06",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 13501,
+   "plugin": "humanizer",
+   "skill": "humanizer",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/3172-humanizer/13501-humanizer",
+   "skill_md_sha256": "387337e45cf609f76d88c87b4e5da637e838933e6305b0902b129b0497eb2d3f",
+   "read_in_full": true,
+   "power": "WRITE-06",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 7198,
+   "plugin": "voice",
+   "skill": "ai-writing-mistakes",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/2029-voice/7198-ai-writing-mistakes",
+   "skill_md_sha256": "edf45aab2e8c921bebc450473c985dd1c6cefb40a5f8da15276cd9424593b1ce",
+   "read_in_full": true,
+   "power": "WRITE-16",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 14144,
+   "plugin": "avoid-ai-writing",
+   "skill": "avoid-ai-writing",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/3448-avoid-ai-writing/14144-avoid-ai-writing",
+   "skill_md_sha256": "3b0940b0014a64aaff405f367e44241095c96856cabcd0a01adf0ec33bbc1a66",
+   "read_in_full": true,
+   "power": "WRITE-16",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 8391,
+   "plugin": "majestic-writing",
+   "skill": "copy-editor",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/2218-majestic-writing/8391-copy-editor",
+   "skill_md_sha256": "cb472c3ac0d8085281195b1c88b2f31772a02e7f76c528642aa31a5822292a67",
+   "read_in_full": true,
+   "power": "WRITE-16",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 8395,
+   "plugin": "majestic-writing",
+   "skill": "prose-reviser",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/2218-majestic-writing/8395-prose-reviser",
+   "skill_md_sha256": "aeee2cef262ea080694c9df823c44f43c404440aafdc18044638512945d6908e",
+   "read_in_full": true,
+   "power": "WRITE-16",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 2869,
+   "plugin": "story-skills",
+   "skill": "adaptation",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/1213-story-skills/2869-adaptation",
+   "skill_md_sha256": "70865250fa1cfb10eac9ad4db0b50fa5f3c3dce12d582d2487faa42b6a6bd081",
+   "read_in_full": true,
+   "power": "WRITE-22",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 13067,
+   "plugin": "x-skills",
+   "skill": "x-post-writer",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/3035-x-skills/13067-x-post-writer",
+   "skill_md_sha256": "cd8479b254a4a34e24553bc0313be4d89b5def464249d5e304d490ccf2492430",
+   "read_in_full": true,
+   "power": "WRITE-22",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 13057,
+   "plugin": "linkedin-skills",
+   "skill": "linkedin-post-writer",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/3034-linkedin-skills/13057-linkedin-post-writer",
+   "skill_md_sha256": "50dc3dbd5e63f0feb38edd91773c1cc9fa7d244343158503d9f3e6d77dfc686f",
+   "read_in_full": true,
+   "power": "WRITE-22",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 12448,
+   "plugin": "pwdev-copy",
+   "skill": "copy-hooks",
+   "license": "Apache-2.0",
+   "theme": "writing-content",
+   "path": "skills/2964-pwdev-copy/12448-copy-hooks",
+   "skill_md_sha256": "681563ffcb2d93e95695a584f6bdeabff5c7bf0d478ded7b8f724ad1bfa6361a",
+   "read_in_full": true,
+   "power": "STORY-17",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 13057,
+   "plugin": "linkedin-skills",
+   "skill": "linkedin-post-writer",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/3034-linkedin-skills/13057-linkedin-post-writer",
+   "skill_md_sha256": "50dc3dbd5e63f0feb38edd91773c1cc9fa7d244343158503d9f3e6d77dfc686f",
+   "read_in_full": true,
+   "power": "STORY-17",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 13067,
+   "plugin": "x-skills",
+   "skill": "x-post-writer",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/3035-x-skills/13067-x-post-writer",
+   "skill_md_sha256": "cd8479b254a4a34e24553bc0313be4d89b5def464249d5e304d490ccf2492430",
+   "read_in_full": true,
+   "power": "STORY-17",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 13054,
+   "plugin": "linkedin-skills",
+   "skill": "linkedin-hook-extractor",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/3034-linkedin-skills/13054-linkedin-hook-extractor",
+   "skill_md_sha256": "db4a791fb883bf64d8600587196dc8516b116364683c01900cfe9c7f0a2164e3",
+   "read_in_full": true,
+   "power": "STORY-17",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 12450,
+   "plugin": "pwdev-copy",
+   "skill": "copy-repurpose",
+   "license": "Apache-2.0",
+   "theme": "writing-content",
+   "path": "skills/2964-pwdev-copy/12450-copy-repurpose",
+   "skill_md_sha256": "6a6503dab237545e12a9d8c46427b8a83951e7591b9fdac69593384ddbb33acb",
+   "read_in_full": true,
+   "power": "FMT-57",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 13060,
+   "plugin": "linkedin-skills",
+   "skill": "linkedin-repurposer",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/3034-linkedin-skills/13060-linkedin-repurposer",
+   "skill_md_sha256": "8b5e1861d17ebfbc6a7cfcb8714ced0f59cd002cb22b5fdbadabb5746f726e19",
+   "read_in_full": true,
+   "power": "FMT-57",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 2889,
+   "plugin": "story-skills",
+   "skill": "verse-craft",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/1213-story-skills/2889-verse-craft",
+   "skill_md_sha256": "a48675f3538477f4c9f2a1fce37634a3e2d5c31d42b3b20db18e5b065c77f6da",
+   "read_in_full": true,
+   "power": "BEAT-X06",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 9602,
+   "plugin": "songwriting",
+   "skill": "object-writing",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/2475-songwriting/9602-object-writing",
+   "skill_md_sha256": "4b348df82cddc6a7262450537e41fa2a146039244f6dc2ace05e290e580ae72d",
+   "read_in_full": true,
+   "power": "BEAT-X06",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 9598,
+   "plugin": "songwriting",
+   "skill": "co-write",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/2475-songwriting/9598-co-write",
+   "skill_md_sha256": "49dbb5ae46ae0db81322af271842e32a7e64d6f372c4f3f2d399a35fabb0c8a8",
+   "read_in_full": true,
+   "power": "BEAT-X06",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 8942,
+   "plugin": "localization-i18n-engineering",
+   "skill": "localization-qa-and-pseudo-loc",
+   "license": "MIT",
+   "theme": "localization-language",
+   "path": "skills/2329-localization-i18n-engineering/8942-localization-qa-and-pseudo-loc",
+   "skill_md_sha256": "3e88c9c856364dc772b7a2398d6fee50fd40f4e3a2315bb45881391edcc523be",
+   "read_in_full": true,
+   "power": "ACODE-260",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 8940,
+   "plugin": "localization-i18n-engineering",
+   "skill": "i18n-foundations-and-icu",
+   "license": "MIT",
+   "theme": "localization-language",
+   "path": "skills/2329-localization-i18n-engineering/8940-i18n-foundations-and-icu",
+   "skill_md_sha256": "4e2a23041369cad6876dbd32519d1d78ffa604bfba3883efc029369eda542c00",
+   "read_in_full": true,
+   "power": "ACODE-260",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 1995,
+   "plugin": "intel",
+   "skill": "translate",
+   "license": "MIT",
+   "theme": "localization-language",
+   "path": "skills/886-intel/1995-translate",
+   "skill_md_sha256": "f55432f30a0f99e48eba37434191058308d77339be394f8793e56c8a7c9e4620",
+   "read_in_full": true,
+   "power": "ADOCS-45",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 8392,
+   "plugin": "majestic-writing",
+   "skill": "direct-response-copy",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/2218-majestic-writing/8392-direct-response-copy",
+   "skill_md_sha256": "53ab7c44dc235673510169e53f34c180ec4752fe17da869d48d787ee2f60914b",
+   "read_in_full": true,
+   "power": "STORY-46",
+   "upgrade": true
+  }
+ ],
+ "skipped": [
+  {
+   "atlas_id": 183,
+   "reason": "thin wrapper around 72"
+  },
+  {
+   "atlas_id": 581,
+   "reason": "duplicate of WRITE-02/06/11"
+  },
+  {
+   "atlas_id": 3389,
+   "reason": "duplicate of WRITE-02/06 catalog"
+  },
+  {
+   "atlas_id": 7199,
+   "reason": "off-topic: reply layout/confidence tags for chat, not owner's writing"
+  },
+  {
+   "atlas_id": 7407,
+   "reason": "product-specific flow router (brewtools), covered by WRITE family"
+  },
+  {
+   "atlas_id": 9652,
+   "reason": "duplicate of WRITE-06/07 rewrite rules"
+  },
+  {
+   "atlas_id": 10119,
+   "reason": "duplicate of blader humanizer already in WRITE-02 (academic extras off-topic)"
+  },
+  {
+   "atlas_id": 2561,
+   "reason": "stub pointer to instructions.md"
+  },
+  {
+   "atlas_id": 8142,
+   "reason": "book-specific value pacing, off-core"
+  },
+  {
+   "atlas_id": 12454,
+   "reason": "stub"
+  },
+  {
+   "atlas_id": 13226,
+   "reason": "duplicate of STORY-30 long-form skeleton"
+  },
+  {
+   "atlas_id": 12461,
+   "reason": "stub"
+  },
+  {
+   "atlas_id": 3732,
+   "reason": "duplicate of STORY-22"
+  },
+  {
+   "atlas_id": 2430,
+   "reason": "duplicate of EXPL-57 article excerpt overlay"
+  },
+  {
+   "atlas_id": 7542,
+   "reason": "chat reply length rule, off-core"
+  },
+  {
+   "atlas_id": 12420,
+   "reason": "English controlled language for tech docs, off-core"
+  },
+  {
+   "atlas_id": 3313,
+   "reason": "plain explanation of chat messages, off-core"
+  }
+ ]
+}

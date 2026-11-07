@@ -151,7 +151,7 @@
   "status": "documented",
   "what": "اقتصر النطاق على مسار واحد من الطرف إلى الطرف عبر كل الطبقات وأره للمستخدم قبل التوسع. — Cut scope to one end-to-end path through every layer and show it to the user before widening.",
   "when": "عند بداية أي بناء / start of any build",
-  "how": "MODEL-51; render 2 s, one screen, one record — then expand from feedback.",
+  "how": "MODEL-51; render 2 s, one screen, one record — then expand from feedback. Atlas upgrade 2026-11-07: Slice discipline: 1) Data walk first — inspect the actual inputs (footage, assets, API responses, existing files): count, eyeball, find outliers; reconcile if the brief promises something the material cannot support. 2) Milestone 1 is an end-to-end skeleton on toy input with everything fixed and predictable; Milestone 2 solves exactly one real instance fully (one scene, one reel, one record) — the capacity smoke test. 3) Then widen one axis per milestone (more items, longer duration, more formats), each with a verification command and expected output; a broken earlier gate blocks widening. 4) Polish and tuning last — polishing a wrong answer gives a pretty wrong answer. 5) Each iteration names the question it answers, uses the cheapest fidelity that answers it, exposes it to reality (viewer, client, data), predicts first and compares after, and has explicit stop-iterating criteria. 6) For risky creative formats define what 'the core loop works' means and gate scaling on that slice.",
   "params": "",
   "install": "",
   "requires": [],
@@ -164,10 +164,51 @@
   "tags": [
    "plan",
    "تخطيط",
-   "planning"
+   "planning",
+   "vertical slice",
+   "skeleton",
+   "overfit one case",
+   "iteration cycle",
+   "شريحة أولى"
   ],
   "section": "Planning",
-  "source": "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  "source": "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md",
+  "atlas": {
+   "ids": [
+    "13683",
+    "3849",
+    "8844"
+   ],
+   "examples": [
+    {
+     "id": "13683",
+     "plugin": "myagents",
+     "skill": "wwkd",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3245-myagents/13683-wwkd"
+    },
+    {
+     "id": "3849",
+     "plugin": "universal-design-principles",
+     "skill": "iteration",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3849-iteration"
+    },
+    {
+     "id": "8844",
+     "plugin": "game-development",
+     "skill": "scope-to-vertical-slice",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2304-game-development/8844-scope-to-vertical-slice"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-thinking.json",
+   "skill_md_sha256": {
+    "13683": "167215f5b09358aec8be7e97a67003c58605251c71869b328b0a7f7aa25b9922",
+    "3849": "18c33b1592a72862ec4d6815da703b7ddf145d5d3b0634d3ae069eb49b3c7de4",
+    "8844": "278f54668c6f90eeb598c5a1d1ea94df3ca5386ca50c36c260d09902896c3516"
+   }
+  }
  },
  {
   "id": "PLAN-07",
@@ -205,7 +246,7 @@
   "status": "documented",
   "what": "إشارة إيقاف قابلة للقياس وتاريخ، يُتفق عليهما قبل بدء العمل. — A measurable stop signal and a date, agreed before the work starts.",
   "when": "عند التجارب والتجريبات والتوليدات المدفوعة / experiments, pilots, paid generations",
-  "how": "MODEL-50.",
+  "how": "MODEL-50. Atlas upgrade 2026-11-07: Signed criteria before a trial: write 3–6 testable success criteria tied to the real pain, each with an owner who verifies it; give each a pass/fail test, the trial a kill rule (what ends it early) and one extend rule; time-box it and state what is explicitly not being proven so it does not turn into unpaid full work; get the client or owner to agree before kickoff (criteria move once results arrive); score honestly criterion by criterion — never restate a fail as a pass. A trial you cannot fail is one you cannot win.",
   "params": "",
   "install": "",
   "requires": [],
@@ -218,10 +259,35 @@
   "tags": [
    "plan",
    "تخطيط",
-   "planning"
+   "planning",
+   "success criteria",
+   "exit criteria",
+   "pilot",
+   "proof of concept",
+   "معايير النجاح"
   ],
   "section": "Planning",
-  "source": "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  "source": "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md",
+  "atlas": {
+   "ids": [
+    "9186"
+   ],
+   "examples": [
+    {
+     "id": "9186",
+     "plugin": "sales-engineering",
+     "skill": "poc-success-criteria",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2375-sales-engineering/9186-poc-success-criteria"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-thinking.json",
+   "skill_md_sha256": {
+    "9186": "d377d2d2b29b0b6acca388c43538a8835a018960b082a6ecb1607f53bdc057cd"
+   }
+  }
  },
  {
   "id": "PLAN-09",

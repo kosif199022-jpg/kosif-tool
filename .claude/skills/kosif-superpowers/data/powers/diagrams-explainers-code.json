@@ -270,7 +270,7 @@
   "name_en": "Programmatic SVG schematics",
   "status": "documented",
   "what": "صناديق تتسع لنصها، أسهم تلتصق بحافة الهدف ورأسها يتبع مماس المنحنى، ووحدات ملليمتر، وترتيب طبقات ثابت. / Auto-fit boxes, edge-snapped tangent-correct arrows, mm units and fixed layer order.",
-  "how": "width/height in mm with an equal viewBox so coordinates and font-size are mm (font pt × 25.4/72, 7 pt = 2.47 mm); LabeledBox = measured text bbox + 2 mm padding (fontTools advances, or canvas measureText — browser measuring for Arabic shaping); Arrow.connect snaps to box edges, modes straight / cubic with perpendicular bow / orthogonal / waypoints, marker orient=auto; layers registered in paint order; save SVG (+ PNG via cairosvg); the same ideas are short to hand-write in JS for animation.",
+  "how": "width/height in mm with an equal viewBox so coordinates and font-size are mm (font pt × 25.4/72, 7 pt = 2.47 mm); LabeledBox = measured text bbox + 2 mm padding (fontTools advances, or canvas measureText — browser measuring for Arabic shaping); Arrow.connect snaps to box edges, modes straight / cubic with perpendicular bow / orthogonal / waypoints, marker orient=auto; layers registered in paint order; save SVG (+ PNG via cairosvg); the same ideas are short to hand-write in JS for animation. Atlas upgrade 2026-11-07: Add in-process validators that run on the rendered SVG before saving (warn or strict mode): text-overflow (each text bbox inside a rect/diamond of its own layer, 0.5 mm tolerance), arrow-tip distance (every tip within ~0.6 mm of some shape edge, any layer), marker orient=auto on every marker, and sibling overlap (no two boxes overlapping in a non-background layer). Lock layer z-order by registering background -> connectors -> boxes -> labels first. Extra primitives worth having: Pill (radius = half height) for terminals, Diamond (doubled after text measurement), Bracket with apex label, Annotation with a leader from the text bbox edge, Group (union bbox) so arrows can target a cluster; orthogonal-h/-v routing and waypoint polylines with clamped corner radius. Author schematics at final size and place them at scale 1 so labels keep their size.",
   "params": "padding 2 mm; marker 3 mm; 7 pt",
   "install": "",
   "requires": [
@@ -289,9 +289,33 @@
    "auto-fit",
    "arrows",
    "mm",
-   "مخطط برمجي"
+   "مخطط برمجي",
+   "svg validator",
+   "arrow tip check",
+   "text overflow check",
+   "مخطط SVG مبرمج"
   ],
-  "when": "مخططات دقيقة قابلة للطباعة والتحريك / precise schematics."
+  "when": "مخططات دقيقة قابلة للطباعة والتحريك / precise schematics.",
+  "atlas": {
+   "ids": [
+    "10114"
+   ],
+   "examples": [
+    {
+     "id": "10114",
+     "plugin": "figures",
+     "skill": "svg-primitives",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2657-figures/10114-svg-primitives"
+    }
+   ],
+   "theme": "image-design-media",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-image.json",
+   "skill_md_sha256": {
+    "10114": "419db54fe526dca50dbae9b9aa53ac7b5df3fe6cfb815c5fc25e01ccece647df"
+   }
+  }
  },
  {
   "id": "EXPL-11",
@@ -358,12 +382,12 @@
   "name_en": "Excalidraw & JSON Canvas boards",
   "status": "install",
   "what": "مشاهد .excalidraw بأشكال وأسهم ونص حر بمظهر يدوي قابل للتحرير، ولوحات JSON Canvas مكانية تصلح مصدرًا لستوري بورد أو خريطة ذهنية. / Editable whiteboard scenes and spatial boards as storyboard sources.",
-  "how": "write elements per schema (rectangles, ellipses, diamonds, arrows, lines, text; roughness 1, fontFamily 1 hand / 3 mono); render through @excalidraw/excalidraw exportToSvg in headless Chromium, then draw strokes on (DRAW-01/27); large diagrams section by section. JSON Canvas: nodes {text|file|link|group, x, y, width, height} and edges {fromSide, toSide, arrows} → a script turns them into animated SVG with camera moves.",
+  "how": "write elements per schema (rectangles, ellipses, diamonds, arrows, lines, text; roughness 1, fontFamily 1 hand / 3 mono); render through @excalidraw/excalidraw exportToSvg in headless Chromium, then draw strokes on (DRAW-01/27); large diagrams section by section. JSON Canvas: nodes {text|file|link|group, x, y, width, height} and edges {fromSide, toSide, arrows} → a script turns them into animated SVG with camera moves. Atlas upgrade 2026-11-07: JSON Canvas craft rules: node starting sizes title 200x80, title + one line 250x100-120, 3-4 short lines 250x160-200, dense 320-400 x 240-400 or split into several nodes; 20-unit grid and 30-40 units between neighbours; groups sit behind children with the top ~24 units reserved for the group label; use fromSide/toSide to reinforce reading order and arrowheads only where direction matters; primary content visible at the initial fit view; stable descriptive ids (phase-discover-actions); journey map, service blueprint, user flow, affinity map and mind map keep their template's columns and reading order, while flowcharts, sequence diagrams and ERDs stay Mermaid. Validate: unique ids, positive sizes, resolved edges, no unintended overlaps, local assets resolve.",
   "params": "roughness 1; fontFamily 1/3",
   "install": "npm i @excalidraw/excalidraw",
   "requires": [
-   "node",
-   "chromium"
+   "chromium",
+   "npm:mermaid"
   ],
   "license": "",
   "proof": [
@@ -377,9 +401,33 @@
    "excalidraw",
    "json canvas",
    "whiteboard",
-   "mind map"
+   "mind map",
+   "json canvas sizing",
+   "canvas grid",
+   "journey map",
+   "لوحة JSON Canvas"
   ],
-  "when": "شرح بإحساس سبورة أو خريطة ذهنية / whiteboard-feel explainers, mind maps."
+  "when": "شرح بإحساس سبورة أو خريطة ذهنية / whiteboard-feel explainers, mind maps.",
+  "atlas": {
+   "ids": [
+    "12853"
+   ],
+   "examples": [
+    {
+     "id": "12853",
+     "plugin": "uxd-design",
+     "skill": "uxd-canvas-create",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3009-uxd-design/12853-uxd-canvas-create"
+    }
+   ],
+   "theme": "image-design-media",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-image.json",
+   "skill_md_sha256": {
+    "12853": "e82b2a6c7e68cc0468d70e81433e1d065b51777ae65de928e190accf3ec60857"
+   }
+  }
  },
  {
   "id": "EXPL-14",

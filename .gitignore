@@ -19,3 +19,5 @@ jobs/**/lyrics.json
 jobs/**/data.json
 jobs/**/data.js
 jobs/**/contact.jpg
+# arena tournaments (.claude/skills/arena) write here
+.arena/

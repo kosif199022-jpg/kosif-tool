@@ -307,7 +307,7 @@
   "status": "documented",
   "what": "صِف كل مرحلة بكلمتها الدقيقة: فُحص، عُدّل محليًا، تُحقق منه محليًا، أُودع (commit)، دُفع (push)، متوقف بمانع؛ وللموشن: كُتب الكود، عُرضت المعاينة، رُندر الفيديو، اجتاز الفحص. — Describe each stage with its exact word: inspected, changed locally, verified locally, committed, pushed, blocked; for motion: written, previewed, rendered, verified.",
   "when": "عند كل تحديث للتقدم وفي التقرير النهائي. / Every progress update and final report.",
-  "how": "Code: inspected · changed locally · verified locally (which command) · committed · pushed · blocked (reason + next step). Motion: CODE_WRITTEN ≠ PREVIEWED ≠ VIDEO_RENDERED ≠ QA_PASS. Documents: drafted · exported · opened and checked. Never merge stages ('done') when only the first happened.",
+  "how": "Code: inspected · changed locally · verified locally (which command) · committed · pushed · blocked (reason + next step). Motion: CODE_WRITTEN ≠ PREVIEWED ≠ VIDEO_RENDERED ≠ QA_PASS. Documents: drafted · exported · opened and checked. Never merge stages ('done') when only the first happened. Atlas upgrade 2026-11-07: Before writing any 'done / fixed / passes / verified / reproduced' sentence: name the observation that would prove it false, run it this turn, and put its literal output next to the claim; if it could not run, write 'not verified: X' in the same sentence, not in a footer. Banned substitutes: 'should work', 'looks correct', 'presumably', bare 'verified' with no output. Closing slots: check performed, result, covered scope, uncovered scope, residual risk, confidence grade A (target + regression, no meaningful unknown) / B (target evidence, bounded risk) / C (partial — no completion claim).",
   "params": "6 code words · 4 motion stages",
   "install": "",
   "requires": [],
@@ -325,10 +325,42 @@
    "كلمات الحالة",
    "مراحل",
    "تقرير",
-   "صدق"
+   "صدق",
+   "verify before claim",
+   "confidence grade",
+   "residual risk",
+   "التحقق قبل الادعاء"
   ],
   "section": "سُلَّم الأدلة والإيصالات — Evidence ladder & receipts",
-  "source": "github.com/affaan-m/ECC skills/terminal-ops (MIT © 2026 Affaan Mustafa; paraphrased); references/cinematic-director-pro.md rule CODE_WRITTEN ≠ VIDEO_RENDERED ≠ QA_PASS (owner)"
+  "source": "github.com/affaan-m/ECC skills/terminal-ops (MIT © 2026 Affaan Mustafa; paraphrased); references/cinematic-director-pro.md rule CODE_WRITTEN ≠ VIDEO_RENDERED ≠ QA_PASS (owner)",
+  "atlas": {
+   "ids": [
+    "7197",
+    "3579"
+   ],
+   "examples": [
+    {
+     "id": "7197",
+     "plugin": "verify-before-claim",
+     "skill": "verify-before-claim",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2028-verify-before-claim/7197-verify-before-claim"
+    },
+    {
+     "id": "3579",
+     "plugin": "aegis",
+     "skill": "verification-before-completion",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1457-aegis/3579-verification-before-completion"
+    }
+   ],
+   "theme": "verification-review",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-orchestration.json",
+   "skill_md_sha256": {
+    "7197": "c9a441d3532f0b0075104c650afee006e26ffd107a1a3bbed9c86d106a04ea46",
+    "3579": "2fd48107ce3aa3ad60b5d6dbe5c36eee976d552581413da92884413ae9560ed6"
+   }
+  }
  },
  {
   "id": "CHECK-11",
@@ -339,10 +371,12 @@
   "status": "documented",
   "what": "عرّف التقييمات قبل البناء: تقييمات قدرة للسلوك الجديد وتقييمات انحدار لما كان يعمل، بمقيّمين من كود ونموذج وإنسان. — Define evals before building: capability evals for new behaviour and regression evals for what already worked, graded by code, model and human.",
   "when": "عند الميزات الجديدة وتغييرات الموجّهات أو المهارات وأي عمل «حسّنه». / New features, prompt or skill changes, any 'make it better' work.",
-  "how": "Capability eval: checklist criteria for the new behaviour. Regression eval: baseline commit + X/Y cases passing. Graders: code (grep, test, build → PASS/FAIL) first; model (1–5 rubric: solves the problem, structure, edge cases, errors) for what code cannot check; human for risk LOW/MED/HIGH. Start with ≈20 real queries; an LLM judge giving 0–1 per criterion plus pass/fail in one call matched human judgement best in Anthropic's research eval.",
+  "how": "Capability eval: checklist criteria for the new behaviour. Regression eval: baseline commit + X/Y cases passing. Graders: code (grep, test, build → PASS/FAIL) first; model (1–5 rubric: solves the problem, structure, edge cases, errors) for what code cannot check; human for risk LOW/MED/HIGH. Start with ≈20 real queries; an LLM judge giving 0–1 per criterion plus pass/fail in one call matched human judgement best in Anthropic's research eval. Atlas upgrade 2026-11-07: Eval ladder: build tiers bottom-up from observed failures (read 20–100 real outputs, note the FIRST thing wrong in each, cluster into 4–8 modes, one narrow binary check per mode). Rungs cheapest first: structural → mutated-baseline corpus → code assertion → LLM judge → trajectory → outcome/world-state diff → end-to-end → human demo. For each tier answer: what defect it catches, what it structurally CANNOT prove (publish beside the green), is the grader validated (judge TPR and TNR measured separately against human labels), does the metric fit (pass@k capability, pass^k for anything irreversible), and how would it go red + a must-not-fire control. Run the harness and compare reported vs contained check counts; never write 'fully tested'. Trigger cases for a skill run on fresh unprimed subagents; quality cases judged PASS/FAIL against prose criteria, no invented scores.",
   "params": "≈20 real cases to start · code graders before model graders",
   "install": "",
-  "requires": [],
+  "requires": [
+   "claude:tools"
+  ],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
@@ -355,10 +389,43 @@
    "تقييم",
    "انحدار",
    "مقيّم",
-   "اختبارات"
+   "اختبارات",
+   "eval ladder",
+   "judge alignment",
+   "TPR TNR",
+   "blind spot",
+   "سلم التقييم"
   ],
   "section": "التقييمات — Evals",
-  "source": "github.com/affaan-m/ECC skills/eval-harness (MIT © 2026 Affaan Mustafa; paraphrased); https://www.anthropic.com/engineering/multi-agent-research-system (fetched 2026-10-16; copyrighted, paraphrased, link only)"
+  "source": "github.com/affaan-m/ECC skills/eval-harness (MIT © 2026 Affaan Mustafa; paraphrased); https://www.anthropic.com/engineering/multi-agent-research-system (fetched 2026-10-16; copyrighted, paraphrased, link only)",
+  "atlas": {
+   "ids": [
+    "7179",
+    "2648"
+   ],
+   "examples": [
+    {
+     "id": "7179",
+     "plugin": "eval-ladder",
+     "skill": "eval-ladder",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2013-eval-ladder/7179-eval-ladder"
+    },
+    {
+     "id": "2648",
+     "plugin": "ambient-library",
+     "skill": "skill-evals",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2648-skill-evals"
+    }
+   ],
+   "theme": "verification-review",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-orchestration.json",
+   "skill_md_sha256": {
+    "7179": "c49107fe936b256e43dc7ab14e17b80734deb1fdae59930ed316f4d9137b07eb",
+    "2648": "0dfb16a5dd6372e71392ce21d5bddbb067c412c2feac52ffbf936d8cb2867aa7"
+   }
+  }
  },
  {
   "id": "CHECK-12",
@@ -639,7 +706,7 @@
   "status": "documented",
   "what": "اختبر المهارة بحالات إيجابية وسلبية مجاورة وتصادمات وفجوات وآثار جانبية وحالات قديمة، وافصل الحالات الحتمية عن المحكومة بنموذج. — Test a skill with positive, adjacent-negative, collision, gap, side-effect and stale cases, separating deterministic cases from model-judged ones.",
   "when": "قبل تعديل وصف مهارة أو SKILL.md أو التوجيه وبعده؛ وحين تبدو مهارة تُفعَّل أكثر أو أقل من اللازم. / Before and after editing a skill's description, SKILL.md or routing; when a skill seems to over- or under-trigger.",
-  "how": "Cases (examples): trivial 'احسب 37+15' → answer directly, load nothing · 'اعمل ريلز من الصوت ده' + audio → audio-sync + Arabic type, render + verify · 'what can you do?' → capability summary with badges, flag ✅ items not present now · missing library → install in venv then verify, never 'can't' · paid voice → name the key 🔑 and offer a keyless option · a ✅ binary missing here → re-probe and downgrade for this answer · 'احسب ضريبة القيمة المضافة على 1000' → compute in code. Deterministic cases get a runner script; judged cases run with and without the change in a fresh subagent against a rubric written before the run. Record dated results per version. Keyword triggers are recall hints: a naive substring router reproduced only 15/24 expectations of an owner eval set.",
+  "how": "Cases (examples): trivial 'احسب 37+15' → answer directly, load nothing · 'اعمل ريلز من الصوت ده' + audio → audio-sync + Arabic type, render + verify · 'what can you do?' → capability summary with badges, flag ✅ items not present now · missing library → install in venv then verify, never 'can't' · paid voice → name the key 🔑 and offer a keyless option · a ✅ binary missing here → re-probe and downgrade for this answer · 'احسب ضريبة القيمة المضافة على 1000' → compute in code. Deterministic cases get a runner script; judged cases run with and without the change in a fresh subagent against a rubric written before the run. Record dated results per version. Keyword triggers are recall hints: a naive substring router reproduced only 15/24 expectations of an owner eval set. Atlas upgrade 2026-11-07: Clean-room baseline: a subagent inherits CLAUDE.md, skills and plugins, so it is not a 'without skill' control; use a fresh process per cell (claude -p with a temp HOME/empty cwd, or explicit plugin dirs) and run a sentinel asking the model to list its skills to prove the arm is clean. Grid = cases × models × with/without × repeats. Two ablations answer different questions: isolated (does the description fire at all) vs installed (does it win against the real neighbours) — fails installed but passes isolated = routing loss, not a description gap. A cell that could not be measured (auth, crash) is UNMEASURED and leaves every denominator; never quote a pass rate without the unmeasured count. Repeats that disagree = UNSTABLE, a finding that the prompt is underdetermined, not a retry. Always include an abstention case (impossible/out-of-scope task) whose correct result is refusal, so a skill that fabricates under pressure does not score like an honest one. Grader is never the agent that produced the transcript; deterministic checks grade first. Analyst pass: drop assertions that pass in both arms (non-discriminating), flag high-variance evals.",
   "params": "6 case types · deterministic vs judged · dated results",
   "install": "",
   "requires": [
@@ -656,10 +723,59 @@
    "a/b",
    "اختبار التفعيل",
    "تقييم المهارة",
-   "توجيه"
+   "توجيه",
+   "clean-room eval",
+   "ablation",
+   "UNMEASURED",
+   "abstention control",
+   "تقييم معزول"
   ],
   "section": "تطوير المهارة ذاتيًا — Skill self-evolution",
-  "source": "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/SELF_EVOLUTION_EVAL.json (24 cases, owner) and the reproduction in session-2026-10-16 (distill see-core §7.4); ECC A/B a skill via a worktree without it (MIT © 2026 Affaan Mustafa; paraphrased)"
+  "source": "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/SELF_EVOLUTION_EVAL.json (24 cases, owner) and the reproduction in session-2026-10-16 (distill see-core §7.4); ECC A/B a skill via a worktree without it (MIT © 2026 Affaan Mustafa; paraphrased)",
+  "atlas": {
+   "ids": [
+    "800",
+    "13381",
+    "7741",
+    "924"
+   ],
+   "examples": [
+    {
+     "id": "800",
+     "plugin": "arbeitsplan",
+     "skill": "arbeitsplan-matrix",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/250-arbeitsplan/800-arbeitsplan-matrix"
+    },
+    {
+     "id": "13381",
+     "plugin": "batterie",
+     "skill": "fresh",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3121-batterie/13381-fresh"
+    },
+    {
+     "id": "7741",
+     "plugin": "evaluate-plugin",
+     "skill": "evaluate-skill",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2149-evaluate-plugin/7741-evaluate-skill"
+    },
+    {
+     "id": "924",
+     "plugin": "skill-creator",
+     "skill": "skill-creator",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/311-skill-creator/924-skill-creator"
+    }
+   ],
+   "theme": "ai-llm-engineering",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-skillcraft.json",
+   "skill_md_sha256": {
+    "800": "281cac70205b93a01c4207423d8193fa7b6a9b14bae9c7d4fd5e165b9ee629ed",
+    "13381": "be076e4b9f61e217d5e0fd6cda16e0826ae6a58b009a3a3f762037d21f51c481",
+    "7741": "ab2939f6b06d7b021031a3e596e0042479ccc796a63d3c5f52676522c7f59897",
+    "924": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf"
+   }
+  }
  },
  {
   "id": "CHECK-22",
@@ -740,7 +856,7 @@
   "status": "documented",
   "what": "طوّر المهارة بالأدلة: لقطة، فرضية بجملة، أصغر تغيير قابل للتراجع، مصفوفة تقييم، قائمة فشل قاطع، قرار، قراءة راجعة، وسجل تغييرات. — Evolve the skill with evidence: snapshot, one-sentence hypothesis, smallest reversible change, eval matrix, hard-fail list, decision, read-back, changelog.",
   "when": "عند أي طلب لتحسين kosif-superpowers (أو أي مهارة) أو توسيعها أو إصلاحها؛ وبعد جلسة تكشف قدرة ناقصة أو شارة خاطئة. / Any request to improve, extend or fix kosif-superpowers (or any skill); after a session reveals a missing power or a wrong badge.",
-  "how": "1 Snapshot (CHECK-22). 2 Hypothesis: 'Claude forgets X; after the change, case Y routes to Z'. 3 Smallest reversible change on a branch: extend an existing family before adding one; never renumber IDs; new IDs append. 4 Rebuild generated files (chapters from JSON via scripts/build_chapters.py). 5 Eval matrix (CHECK-21): deterministic record gate (CHECK-23) + judged with/without cases. 6 Hard-fails (CHECK-13): validator fails, badge upgraded without proof, a passing case regresses, secret-like string, third-party text without a compatible licence, model names in skill files, SKILL.md description loses Arabic or English triggers. 7 Decide on evidence only. 8 Commit when asked, then read back the changed files from disk (a skill edited mid-session may not reload — read the file, do not republish blindly). 9 Changelog: date, hypothesis, change, cases run, expected vs actual, what is still unverified.",
+  "how": "1 Snapshot (CHECK-22). 2 Hypothesis: 'Claude forgets X; after the change, case Y routes to Z'. 3 Smallest reversible change on a branch: extend an existing family before adding one; never renumber IDs; new IDs append. 4 Rebuild generated files (chapters from JSON via scripts/build_chapters.py). 5 Eval matrix (CHECK-21): deterministic record gate (CHECK-23) + judged with/without cases. 6 Hard-fails (CHECK-13): validator fails, badge upgraded without proof, a passing case regresses, secret-like string, third-party text without a compatible licence, model names in skill files, SKILL.md description loses Arabic or English triggers. 7 Decide on evidence only. 8 Commit when asked, then read back the changed files from disk (a skill edited mid-session may not reload — read the file, do not republish blindly). 9 Changelog: date, hypothesis, change, cases run, expected vs actual, what is still unverified. Atlas upgrade 2026-11-07: Critic before accepting an evolved skill: falsify the change's predicted impact against observed per-dimension deltas (not the aggregate); reject when the score rose while output quality fell (metric gaming), warn when the claimed fix shows no change in the component it targets, and scan for non-local effects — overlapping triggers or contradicting rules in other skills.",
   "params": "9 steps · 7 hard-fails",
   "install": "",
   "requires": [
@@ -758,10 +874,33 @@
    "تطوير ذاتي",
    "تحسين المهارة",
    "سجل التغييرات",
-   "انحدار"
+   "انحدار",
+   "reward hacking",
+   "critic",
+   "non-local effects"
   ],
   "section": "تطوير المهارة ذاتيًا — Skill self-evolution",
-  "source": "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/SELF_EVOLUTION_PROTOCOL.md (11 steps, owner; rewritten for this repo) and owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-skill-orchestrator/SKILL.md — distills see-core §7.5, see-atlas §8"
+  "source": "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/SELF_EVOLUTION_PROTOCOL.md (11 steps, owner; rewritten for this repo) and owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-skill-orchestrator/SKILL.md — distills see-core §7.5, see-atlas §8",
+  "atlas": {
+   "ids": [
+    "3188"
+   ],
+   "examples": [
+    {
+     "id": "3188",
+     "plugin": "epic",
+     "skill": "_critic",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1374-epic/3188-critic"
+    }
+   ],
+   "theme": "verification-review",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-orchestration.json",
+   "skill_md_sha256": {
+    "3188": "9b3d06ca041c7b041562d30715a397ec6e0c298b008bd2229746403f01b8a29d"
+   }
+  }
  },
  {
   "id": "CHECK-25",
@@ -956,7 +1095,7 @@
   "status": "documented",
   "what": "اكتب الامتحان قبل أن يبدأ المنفّذ، وأخفه عنه، واختمه ببصمات الملفات. — Write the exam before the builder starts, hide it, and seal it with file hashes.",
   "when": "إعادة بناء أداة أو استنساخ سلوك أو أي ادعاء «مطابق للأصل» / rebuilding a tool, cloning behaviour, any 'matches the original' claim",
-  "how": "python3 scripts/differential_exam.py seal EXAM --out seal.json before the work; verify-seal EXAM seal.json at grading time (exit 1 if any file changed, vanished or appeared). Keep the seal outside the exam folder. Card HX-01.",
+  "how": "python3 scripts/differential_exam.py seal EXAM --out seal.json before the work; verify-seal EXAM seal.json at grading time (exit 1 if any file changed, vanished or appeared). Keep the seal outside the exam folder. Card HX-01. Atlas upgrade 2026-11-07: Pinned-contract grading (red-gate style): hash the criteria file and the check script when ratified; refuse to grade an unratified run; on grading re-hash both and report drift distinctly from an ordinary failure; the grader runs the pinned check itself, never reads the build transcript, and accepts a PASS only if its evidence file was written during THIS run. Mutation control: revert the core change and re-run — a criterion that stays green is WITNESS, not proven. Assert on behaviour (exit code on an otherwise passing fixture), not on a message string that fires either way. Criteria already green before the work belong in the regression tier.",
   "params": "",
   "install": "",
   "requires": [
@@ -974,10 +1113,35 @@
    "sha256",
    "امتحان خفي",
    "ختم",
-   "بصمة"
+   "بصمة",
+   "pinned contract",
+   "drift",
+   "mutation control",
+   "WITNESS",
+   "عقد مختوم"
   ],
   "section": "الاختبار الخفي التفاضلي — Differential hidden exam",
-  "source": "https://github.com/softsweb/codex-clone-hidden-test-kit (no licence: methods only, no files copied); references/codex-agent-harness.md"
+  "source": "https://github.com/softsweb/codex-clone-hidden-test-kit (no licence: methods only, no files copied); references/codex-agent-harness.md",
+  "atlas": {
+   "ids": [
+    "7190"
+   ],
+   "examples": [
+    {
+     "id": "7190",
+     "plugin": "redgate",
+     "skill": "reconcile",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2022-redgate/7190-reconcile"
+    }
+   ],
+   "theme": "verification-review",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-orchestration.json",
+   "skill_md_sha256": {
+    "7190": "6397d8e77e664960e78db5b028812b6107ae10ecf89327b4e65cf7723c8a9867"
+   }
+  }
  },
  {
   "id": "CHECK-32",

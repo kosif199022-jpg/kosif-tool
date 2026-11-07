@@ -425,7 +425,7 @@
 | `CHECK-08` | سُلَّم الأدلة للادعاءات | Evidence ladder for claims (badges are earned, leased and downgraded) | documented |  |
 | `CHECK-09` | الإيصال المنمَّط | Typed receipt after consequential actions | documented | ffmpeg |
 | `CHECK-10` | كلمات الحالة الصادقة | Honest status words (stage by stage) | documented |  |
-| `CHECK-11` | التقييم أولًا | Eval-first: capability evals + regression evals | documented |  |
+| `CHECK-11` | التقييم أولًا | Eval-first: capability evals + regression evals | documented | claude:tools |
 | `CHECK-12` | pass@k مقابل pass^k | pass@k vs pass^k (any success vs always success) | documented |  |
 | `CHECK-13` | بوابة الفشل القاطع | Hard-fail gate: one must-never-happen failure blocks release | documented |  |
 | `CHECK-14` | انضباط المحكِّم | Judge discipline: assertions first, one criterion per judgement, cited evidence | documented | ffmpeg |

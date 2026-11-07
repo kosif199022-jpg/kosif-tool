@@ -1671,13 +1671,13 @@
 
 **متى:** plan; project; launch; risk; خطة; مشروع
 
-**كيف:** Imagine the failure vividly → Write the top causes → Turn each into a mitigation or an early warning signal. Pitfall: generic risks with no signal. Ranked for a problem by `think.py models "<problem>"`.
+**كيف:** Imagine the failure vividly → Write the top causes → Turn each into a mitigation or an early warning signal. Pitfall: generic risks with no signal. Ranked for a problem by `think.py models "<problem>"`. Atlas upgrade 2026-11-07: Assumption-map variant: 1) Extract what must be true per area (audience/market, execution capacity, competitor response, money/timing, dependencies on partners and tools). 2) Rate each: confidence H/M/L/unknown × impact if wrong critical/high/medium/low; vulnerability = low confidence + high impact — these are bets, make them consciously. 3) Map the dependency chain and name the weakest link (what else breaks if it fails). 4) Reversibility: if it proves wrong at month 3, can you cut scope or pivot, or is money/commitment already spent? 5) Kill switches: what must be true at 30/60/90 days to continue vs stop. 6) Hardening actions: one validation, one alternative, one contingency. 7) Ask the skipped questions: bear case not base case; would it work run by a team we do not trust; what are we not saying because it is uncomfortable; who benefits from making it sound better. Excitement and one-sided positive feedback are signals to scrutinise harder.
 
 **المعاملات:** discipline: planning
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** planning · mental model · نموذج ذهني · plan · project · launch · risk
+**الوسوم:** planning · mental model · نموذج ذهني · plan · project · launch · risk · assumption map · vulnerability · kill switch · weakest link · خريطة الافتراضات
 
 #### 1. الاستقبال (A25)
 

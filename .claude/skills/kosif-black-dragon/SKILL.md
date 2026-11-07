@@ -121,6 +121,10 @@ Run the quick tests with:
 python3 -m unittest discover -s tests -p test_black_dragon_creative_council.py
 ```
 
+## The Arena — after the council, when the answer is rejected
+
+The council decides a plan before the work. When the owner rejects a finished answer («الإجابة وحشة»، «خليهم يتنافسوا»، «الحلبة»), use the vendored [arena skill](../arena/SKILL.md) (MIT, Jake Schincariol): the same task, byte for byte, goes to N sub-agents (16 with `--quick`, 100 only when the owner asks), each with a different card (15 reasoning modes × 12 workflows × 12 strategies). They attack each other's solutions, defend and revise, and a judge scores every match on [the rubric](../arena/rubric.md) until one survives; a blind final check compares it with the rejected answer. `bracket.py` keeps the whole bracket in one JSON file, so a compacted context resumes with `bracket.py next`. The orchestrator never judges. The Black Dragon adapter `skill:arena` proves the bracket with stand-in agents and known answers; it does not call a model.
+
 
 ## Book-informed judgment guard (Thinking, Fast and Slow)
 
@@ -199,6 +203,81 @@ Together, the external Atlas candidate procedures and book guards are
 advisory reasoning scaffolds. They do not claim independently run experts,
 actual tool execution or superior results without measured comparisons.
 Verify tests on the combined PR head before merging into `main`.
+
+
+## 3D Build Studio — Blender / Unreal (2026-11-07)
+
+A native planning module, `scripts/build_studio.py`, studied from a public
+"Claude Code 3D Build Library" (21 builds, a setup prompt, live mode and
+troubleshooting prompts) and **rewritten in our own words and structure** in
+`data/build3d_recipes.json`. No prompt is copied verbatim; the source link and
+study date are recorded in the file. Reference: `references/3d-build-studio.md`.
+
+It holds **21 recipes** (product turntable, logo reveal, floating island, data
+chart, mascot, thumbnail icons, motion loops, iso room, solar lesson, domino
+physics, printable minis, floor-plan home, studio set, gallery, OSM
+neighborhood, open world, dungeon level, trade booth, event layout, venue pitch,
+notes castle) and **18 working principles** (scene-as-script, visual self-check,
+plan-then-first-piece, draft-then-final, free assets only, exact-click handoff,
+safe fixture first, data-is-truth, swappable slot, options before commit,
+multi-format delivery, domain gates, self play-test, explain the choice,
+blockout-to-realism, follow-ups as variant axes, attribution and plugin
+vetting, live vs background).
+
+```bash
+S=.claude/skills/kosif-black-dragon/scripts/black_dragon.py
+python3 $S build3d list
+python3 $S build3d match "فيديو دوّار لزجاجة عطر"
+python3 $S build3d brief product-turntable --fill product="زجاجة عطر 50 مل" --format md
+python3 $S build3d lint --text "Make a dungeon level in Unreal"
+python3 $S build3d kit          # setup contract, live mode, troubleshooting
+python3 -m unittest discover -s tests -p test_black_dragon_build_studio.py
+```
+
+- `brief` returns stages, deliverables, domain gates, variant axes and the
+  principles applied; big or Unreal builds start with a plan for approval.
+  Unfilled inputs stay as open questions and are never invented.
+- `lint` checks a user-written 3D prompt for 7 habits (self-check, output
+  spec, rebuildable script, stages, free assets, named inputs, options) and
+  suggests the missing ones. It is lexical, not a quality score.
+- **Limits:** status is `PLANNING_BRIEF_NOT_A_RENDER`. Nothing launches
+  Blender or Unreal, downloads assets or spends money. Rendering happens only
+  with the owner's app and approval, and must then pass the brief's gates
+  with real frames before anything is called done.
+
+## Code-Motion Style Studio (2026-11-07)
+
+A second native module, `scripts/motion_styles.py`, studied from a public
+motion-graphics style library (7 code-drawn styles, its storyboard and
+voiceover options and its clone-from-screenshot flow) and **restated in our
+own words** in `data/motion_styles.json` (no prompt text or reference source
+copied; the site's prompts sit behind its own sign-up). It holds **7 style
+cards** (creator motion, chalk talk, clean tech, software walkthrough, data
+story, warm canvas, pop info) and **16 principles** (frame is a function of t,
+seeded randomness, one timeline for picture and sound, engine-vs-story
+contract, storyboard gate, word-timed voiceover, mix discipline, phone
+legibility floor, frame budget, deterministic render, pace contract, one job
+per color, safe proof shots, clone the style not the content, assumptions
+ledger, ask for missing inputs).
+
+```bash
+S=.claude/skills/kosif-black-dragon/scripts/black_dragon.py
+python3 $S motion match "شرح برنامج خطوة بخطوة"
+python3 $S motion brief data-story --topic "نمو المبيعات" [--srt voice.srt] [--direct]
+python3 $S motion clone-plan --topic "عادات النوم"
+python3 $S motion vo-timeline --srt voice.srt --out out/words.json
+python3 $S motion cue-check --cues cues.json [--speech out/words.json]
+python3 -m unittest discover -s tests -p test_black_dragon_motion_styles.py
+```
+
+- `vo-timeline` really computes word timings from an SRT (line cues are
+  spread by word length) and the duration (last word + 1.2 s).
+- `cue-check` really checks a cue list against the mix rules (≤3 at once,
+  ticks ≤12/s, booms for 2–3 moments, quiet before the biggest hit; with a
+  voiceover: small sounds soft, no riser or drone under speech). It reads cue
+  names and times, not audio, and exits 3 when a rule fails.
+- **Limits:** briefs are `STYLE_BRIEF_NOT_A_RENDER`. `kosif-web-film` and
+  `tools/render_html.cjs` stay the renderers.
 
 
 ## Wired into the Black Dragon engine (2026-11-07)
