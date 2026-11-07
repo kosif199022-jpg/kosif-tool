@@ -2422,6 +2422,16 @@
       ],
       "why": "saas-animation: tiles known-colour stills into a contact sheet in time order, splits a cut-out into a layer and draws a coordinate grid, each checked by pixel (no Chrome render)",
       "skill_program": true
+    },
+    "skill:kosif-black-dragon": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "creative-council",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "kosif-black-dragon: convenes the 12-seat council on the task twice (same fingerprint), checks 525 records each get one seat, the 31 Kahneman traps and 23 Atlas procedures are routed, runs the judgment review, and scores two routes where the better one must win and a fake independent claim must be refused; plans only",
+      "skill_program": true
     }
   }
 }
