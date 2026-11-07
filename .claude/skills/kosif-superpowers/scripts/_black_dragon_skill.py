@@ -56,14 +56,15 @@ SCRIPT = {
     "kling-director": SKILLS / "kosif-kling-director" / "scripts",
     "dragon-mind": SKILLS / "kosif-dragon-mind" / "scripts",
     "saas-animation": SKILLS / "saas-animation" / "scripts",
+    "talking-head-reels": SKILLS / "talking-head-reels" / "scripts",
 }
 RECIPES = tuple(SCRIPT)
 NEEDS_MEDIA = {"social", "video-editor", "motion-energy", "captions-audio", "shadow-theatre", "voice-check",
-               "animation-qa", "hyperframes-beats", "montage-tools", "mimic-analyze"}
+               "animation-qa", "hyperframes-beats", "montage-tools", "mimic-analyze", "talking-head-reels"}
 NEEDS_MODULE = {"excel-lambdas": "openpyxl", "motion-energy": "PIL", "excel-model": "openpyxl",
                 "excel-check": "openpyxl", "captions-audio": "numpy", "shadow-theatre": "numpy",
                 "animation-qa": "PIL", "hyperframes-beats": "numpy", "mimic-analyze": "cv2", "pixel-painter": "cv2",
-                "saas-animation": "PIL"}
+                "saas-animation": "PIL", "talking-head-reels": "numpy"}
 # Scripts that import their sibling modules: run without -I (which drops the script's folder from
 # sys.path) but still with -E -s, so no environment variable or user site-packages leaks in.
 PY_SIBLINGS = [sys.executable, "-E", "-s", "-B"]  # Python packages a recipe's script imports
@@ -765,6 +766,96 @@ def saas_animation(r, d, task, clip, selftest):
                                "and the sound and Blender scripts need scipy and Blender"})
 
 
+def talking_head_reels(r, d, task, clip, selftest):
+    """Known-answer reel: a 7 s 'talk' with speech at 0.3-1.3, 2.8-3.8 and 5.3-6.3 s, cut, mastered, planned,
+    validated and rendered by the skill's own scripts; Arabic text must reveal word by word."""
+    from PIL import Image, ImageStat
+    tool = lambda name, *a: [*PY_SIBLINGS, str(d / name), *a]
+    jumuah = SKILLS.parents[1] / "fonts" / "kosif-jumuah" / "KOSIFJumuah-Bold.ttf"
+    if not jumuah.is_file():
+        raise RuntimeError(f"Arabic font missing: {jumuah}")
+    os.environ["REEL_FONT_FILES"] = str(jumuah)
+    talk = r.work / "talk.mp4"
+    speech = "+".join(f"between(t\\,{a}\\,{b})" for a, b in ((0.3, 1.3), (2.8, 3.8), (5.3, 6.3)))
+    r.call("make the known-answer talk (ffmpeg)", [
+        "ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "testsrc2=size=1280x720:rate=25:duration=7",
+        "-f", "lavfi", "-i", f"aevalsrc='0.3*sin(2*PI*220*t)*({speech})+0.001*sin(2*PI*50*t)':s=48000:d=7",
+        "-c:v", "libx264", "-preset", "veryfast", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "256k", "-shortest", str(talk)])
+    P = r.work / "P"
+    r.call("prepare_project.py", tool("prepare_project.py", str(talk), "--project", str(P)))
+    cfg = _json(P / "project.json")
+    r.check("project reads the 7 s source", abs(cfg["src_dur"] - 7.0) <= 0.1, cfg["src_dur"])
+    words = [{"word": "أهلاً", "start": 0.3, "end": 0.8}, {"word": "بيكم.", "start": 0.8, "end": 1.3},
+             {"word": "ده", "start": 2.8, "end": 3.8}, {"word": "شغال", "start": 5.3, "end": 5.8},
+             {"word": "دلوقتي", "start": 5.8, "end": 6.3}]
+    (r.work / "words.json").write_text(json.dumps(words, ensure_ascii=False), encoding="utf-8")
+    r.call("words_to_asr.py (voice-studio words.json)", tool("words_to_asr.py", str(P), "words.json", "--language", "ar"))
+    asr = _json(P / "analysis" / "asr.json")
+    r.check("transcript splits after the full stop and the long silence", len(asr) == 3, [s["text"] for s in asr])
+    cut = r.call("cut_pauses.py", tool("cut_pauses.py", str(P)))
+    cfg = _json(P / "project.json")
+    prog = cfg.get("program_dur") or 0
+    r.check("pauses tightened: 3 speech segments kept, more than 2.5 s of air removed",
+            "segments 3" in (cut.get("stdout_tail") or "") and 3.0 <= prog <= 7.0 - 2.5, prog)
+    pw = _json(P / "analysis" / "program_words.json")
+    r.check("every word re-timed onto the program", len(pw) == len(words) and all(w["s"] < prog for w in pw), len(pw))
+    r.call("master_audio.py", tool("master_audio.py", str(P)))
+    master = P / "audio" / "program_master.wav"
+    loud = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(master), "-af", "ebur128", "-f", "null", "-"],
+                          capture_output=True, text=True, stdin=subprocess.DEVNULL, timeout=120).stderr
+    lufs = [float(l.split("I:")[1].split("LUFS")[0]) for l in loud.splitlines() if l.strip().startswith("I:")]
+    r.check("voice mastered to -14 LUFS (±0.7), measured by ffmpeg ebur128", bool(lufs) and abs(lufs[-1] + 14) <= 0.7, lufs[-1:])
+    t1, t2 = pw[2]["s"], pw[3]["s"]
+    edl = {"name": "selftest", "W": 1080, "H": 1920, "accent": "#ED3B22",
+           "fonts": {"serif": "Anton-Regular", "didot": "Anton-Regular", "sub": "Anton-Regular", "ar": "KOSIFJumuah-Bold"},
+           "zoom": [[0.0, t1, "tight"], [t1, prog, "wide"]],
+           "inserts": [{"id": "num", "t0": t1, "t1": t2, "kind": "number", "label": "SAVED", "from": 0, "to": 42,
+                        "suffix": "%", "count": [0.1, 0.6], "trans": "zoom"}],
+           "text": [{"font": "anton", "text": (task.split() or ["REEL"])[0][:12].upper(), "t0": 0, "t1": t1, "x": 540, "y": 1100, "size": 150},
+                    {"font": "ar", "text": "ده شغال دلوقتي", "t0": t2, "t1": prog, "x": 540, "y": 1100, "size": 120,
+                     "color": "#ED3B22", "anim": "build"}]}
+    (P / "edl.json").write_text(json.dumps(edl, ensure_ascii=False, indent=1), encoding="utf-8")
+    ok = r.call("validate_edl.py", tool("validate_edl.py", str(P / "edl.json")))
+    out = ok.get("stdout_tail") or ""
+    r.check("EDL passes with 0 errors", " 0 error(s)" in out, out[-200:])
+    r.check("validator flags Arabic 'build' (rendered word by word)", "Arabic text cannot build" in out, None)
+    bad = json.loads(json.dumps(edl))
+    bad["inserts"].append(dict(bad["inserts"][0], id="clash", t0=t1 + 0.2))
+    bad["text"][0]["font"] = "comic"
+    (P / "planted.json").write_text(json.dumps(bad, ensure_ascii=False), encoding="utf-8")
+    caught = r.call("validate a plan with 2 planted flaws", tool("validate_edl.py", str(P / "planted.json")), ok_codes=(1,))
+    msg = caught.get("stdout_tail") or ""
+    r.check("validator caught the overlapping insert and the unknown font", "overlaps num" in msg and "font must be" in msg, msg[-300:])
+    times = [round(t1 / 2, 2), round((t1 + t2) / 2, 2), round(t2 + 0.06, 2), round(prog - 0.25, 2)]
+    r.call("render_reel.py --stills", tool("render_reel.py", str(P / "edl.json"), "--stills", *map(str, times),
+                                           "--out-dir", str(P / "qa" / "stills")), timeout=900)
+    pngs = sorted((P / "qa" / "stills").glob("f_*.png"))
+    for png in pngs:
+        r.output(png)
+    r.output(P / "qa" / "stills" / "sheet.jpg")
+    sizes = {Image.open(p).size for p in pngs}
+    r.check("one 1080x1920 still per asked moment", len(pngs) == len(times) and sizes == {(1080, 1920)}, [len(pngs), sorted(sizes)])
+    spread = [round(ImageStat.Stat(Image.open(p).convert("L")).stddev[0], 1) for p in pngs]
+    r.check("every still has a picture", bool(spread) and min(spread) > 5, spread)
+    def red_width(p):
+        im = Image.open(p).convert("RGB").crop((0, 980, 1080, 1220))
+        xs = [x for x in range(0, 1080, 2) for y in range(0, 240, 4) if (lambda c: c[0] > 180 and c[1] < 110 and c[2] < 90)(im.getpixel((x, y)))]
+        return (max(xs) - min(xs)) if xs else 0
+    early, late = red_width(pngs[2]), red_width(pngs[3])
+    r.check("Arabic line reveals word by word (first word narrower than the full line)", 0 < early < late * 0.6, [early, late])
+    film = P / "render" / "selftest_v1.mp4"
+    r.call("render_reel.py full render", tool("render_reel.py", str(P / "edl.json"), "--out", str(film)), timeout=1800)
+    row = r.output(film, video=True)
+    facts = row.get("probe") or {}
+    v = facts.get("video") or {}
+    r.check("reel is 1080x1920 with sound", (v.get("width"), v.get("height")) == (1080, 1920) and "audio" in facts, facts)
+    r.check(f"reel lasts the program's {prog} s (±0.15)", abs((facts.get("duration") or 0) - prog) <= 0.15, facts.get("duration"))
+    if clip is not None and not selftest:
+        r.call("prepare_project.py on your media", tool("prepare_project.py", str(clip), "--project", str(r.work / "yours")), ok_codes=(0, 1))
+    r.findings.append({"program_seconds": prog, "lufs": lufs[-1:], "stills_contrast": spread, "arabic_reveal_px": [early, late],
+                       "note": "Apple Vision mattes (macOS) and faster-whisper were not used; words came from a voice-studio words.json"})
+
+
 RUNNERS = {"prompt-master": prompt_master, "prompt-architect": prompt_architect, "reel-hooks": reel_hooks,
            "excel-lambdas": excel_lambdas, "social": social, "video-editor": video_editor,
            "motion-energy": motion_energy, "image-prompts": image_prompts, "video-prompts": video_prompts,
@@ -774,7 +865,8 @@ RUNNERS = {"prompt-master": prompt_master, "prompt-architect": prompt_architect,
            "reel-research": reel_research, "voice-check": voice_check, "animation-qa": animation_qa,
            "hyperframes-beats": hyperframes_beats, "montage-tools": montage_tools,
            "mimic-analyze": mimic_analyze, "pixel-painter": pixel_painter,
-           "kling-director": kling_director, "dragon-mind": dragon_mind, "saas-animation": saas_animation}
+           "kling-director": kling_director, "dragon-mind": dragon_mind, "saas-animation": saas_animation,
+           "talking-head-reels": talking_head_reels}
 
 
 def main(argv: list[str]) -> int:

@@ -2422,6 +2422,18 @@
       ],
       "why": "saas-animation: tiles known-colour stills into a contact sheet in time order, splits a cut-out into a layer and draws a coordinate grid, each checked by pixel (no Chrome render)",
       "skill_program": true
+    },
+    "skill:talking-head-reels": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "talking-head-reels",
+        "{artifact}",
+        "--task={task}",
+        "--media={media}"
+      ],
+      "why": "talking-head-reels: a known-answer 7 s talk is pause-cut, mastered to -14 LUFS, planned, validated (planted overlap and font caught) and rendered to a 1080x1920 reel; Arabic text must reveal word by word",
+      "skill_program": true,
+      "media": true
     }
   }
 }
