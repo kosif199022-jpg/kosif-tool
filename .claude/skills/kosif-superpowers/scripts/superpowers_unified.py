@@ -75,7 +75,9 @@ def plan(task: str) -> dict:
     matches = [name for name, words in PROCESS_RULES if any(w in low for w in words)]
     if not matches:
         matches = ["brainstorming"] if any(w in low for w in ("video", "montage", "موشن", "مونتاج")) else []
-    ordered = ["using-superpowers"] + matches
+    # using-superpowers is not routed: it tells the model it has no choice but to load
+    # obra skills, which competes with kosif-superpowers as the session front door.
+    ordered = list(matches)
     if "brainstorming" in ordered or "writing-plans" in ordered:
         ordered += ["writing-plans"]
     if any(w in low for w in ("code", "app", "program", "develop", "build", "كود", "برنامج", "تطبيق", "برمجة", "تطوير", "اصلح")):
