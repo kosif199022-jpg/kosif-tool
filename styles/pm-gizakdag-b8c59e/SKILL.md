@@ -1,9 +1,9 @@
 ---
 name: pm-gizakdag-b8c59e
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A silent 10-second vertical reel about overthinking: a yellow dot and typewriter caption on navy, a star-burst flash, rings and a spinning orange 3D lattice ringed by doubt words, then a surreal collage of a blue-eyed bust, pink flowers and green beams under a huge two-word headline, and saturated dreamscapes with typed captions on orange tags. Use to make a new video in this look (Kinetic type); address it by ID pm-gizakdag-b8c59e.
 ---
 
-# KOSIF TOOL — Motion design showreel exploring "overthinking"
+# KOSIF TOOL — Motion design showreel exploring "overthinking" / ريل رأسي عن الإفراط في التفكير بكولاج سريالي مشبع الألوان
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/gizakdag-b8c59e
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+ريل رأسي 9:16 مدته 10 ثوانٍ بلا صوت عن الإفراط في التفكير: نقطة صفراء وكلمتان بخط آلة كاتبة على كحلي داكن، ثم انفجار نجمة، ثم حلقات متحدة المركز وشبكة برتقالية ثلاثية الأبعاد تدور وحولها كلمات التردد بخط مائل بزوائد، ثم كولاج سريالي لتمثال بعيون زرقاء وزهور وردية وأعمدة ضوء خضراء تحت عنوان ضخم من كلمتين، ثم مشاهد حدائق وقاعة سينما وطرق بكسلية بألوان مشبعة مع تعليقات تُكتب على شرائط برتقالية.
+
+A silent 10-second vertical reel about overthinking: a yellow dot and typewriter caption on navy, a star-burst flash, rings and a spinning orange 3D lattice ringed by doubt words, then a surreal collage of a blue-eyed bust, pink flowers and green beams under a huge two-word headline, and saturated dreamscapes with typed captions on orange tags.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Three.js, CSS), suggested duration (10 s), aspect 9:16, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Photos / صور, 3D / ثلاثي الأبعاد.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

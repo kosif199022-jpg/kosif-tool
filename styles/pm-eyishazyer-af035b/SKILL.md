@@ -1,9 +1,9 @@
 ---
 name: pm-eyishazyer-af035b
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second motion-designer showreel with a new loud ground colour per chapter: a squash-and-stretch ball before a countdown, a confetti burst revealing a huge double-shadowed name, a square-to-circle grid wave, a spinning neon tube knot, ridge lines on orange, a stats panel, then EASE, SPACING and OVERLAP flashing fast and a logo end. Use to make a new video in this look (Kinetic type); address it by ID pm-eyishazyer-af035b.
 ---
 
-# KOSIF TOOL — Motion designer showreel
+# KOSIF TOOL — Motion designer showreel / شوريل مصمم موشن: فصول الإيقاع والبُعد والتدفق ومبادئ الحركة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/eyishazyer-af035b
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شوريل شخصي لمصمم موشن مدته 15 ثانية، يغيّر لون الخلفية مع كل فصل: كرة برتقالية ترتد وتنضغط أمام عد تنازلي، ثم انفجار قصاصات ملونة يكشف اسماً ضخماً بظل مزدوج بنفسجي وأحمر وختم دائري، ثم شبكة مربعات تتحول دوائر بموجة لونية «إيقاع»، ثم عقدة أنبوبية نيون وردية زرقاء تدور «بُعد»، ثم خطوط جبلية متموجة على البرتقالي «تدفق»، ثم لوحة أرقام ومخططات «أنظمة»، ثم كلمات مبادئ الحركة على خلفيات صارخة تتبدل بسرعة، وختام بالشعار.
+
+A 15-second motion-designer showreel with a new loud ground colour per chapter: a squash-and-stretch ball before a countdown, a confetti burst revealing a huge double-shadowed name, a square-to-circle grid wave, a spinning neon tube knot, ridge lines on orange, a stats panel, then EASE, SPACING and OVERLAP flashing fast and a logo end.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, HTML Canvas, Three.js, SVG), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Charts / رسوم بيانية.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

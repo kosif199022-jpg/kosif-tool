@@ -1,9 +1,9 @@
 ---
 name: pm-sudo-kiran-6609ed
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 30-second ad for a document-to-video tool: stacked PDFs on warm grey under a bold 'nobody reads it' line, a striped-bar logo, three numbered steps (highlighted reading, a script stamped with a green check), a leaf diagram drawing on over a voice waveform, huge gradient stats on dark glows, a crossed-out weeks calendar, and a logo end card. Use to make a new video in this look (Product UI); address it by ID pm-sudo-kiran-6609ed.
 ---
 
-# KOSIF TOOL — DistilBook product explainer
+# KOSIF TOOL — DistilBook product explainer / إعلان منتج يحوّل المستند إلى فيديو شرح مرسوم
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/sudo-kiran-6609ed
@@ -17,18 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان منتج مدته 30 ثانية لأداة تحوّل المستندات إلى فيديوهات شرح: أوراق PDF مكدسة على خلفية رمادية دافئة مع عنوان عريض يقول إن أحداً لا يقرأها، ثم شعار بأعمدة ملونة، وثلاث خطوات (قراءة بخطوط تظليل صفراء، سيناريو يُعتمد بختم أخضر مائل)، ورسم توضيحي لورقة نبات يتراكم خطوة بخطوة فوق موجة صوت، ثم أرقام ضخمة متدرجة على خلفية داكنة، وتقويم أسابيع يُشطب، وبطاقة ختام بزر تجربة.
+
+A 30-second ad for a document-to-video tool: stacked PDFs on warm grey under a bold 'nobody reads it' line, a striped-bar logo, three numbered steps (highlighted reading, a script stamped with a green check), a leaf diagram drawing on over a voice waveform, huge gradient stats on dark glows, a crossed-out weeks calendar, and a logo end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (30 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Diagrams / مخططات, Music / موسيقى.
+Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك, Hand-drawn / رسم يدوي.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/diagrams.md](../../playbooks/diagrams.md)
-- [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/hand-drawn.md](../../playbooks/hand-drawn.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Order stroke draw-on like a human hand would; keep imperfection deliberate; pace reveals to narration.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

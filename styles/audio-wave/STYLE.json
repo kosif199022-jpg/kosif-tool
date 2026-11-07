@@ -1,7 +1,7 @@
 {
   "id": "audio-wave",
   "name": "موجة صوت",
-  "name_ar": "موجة صوت",
+  "name_ar": "موجة صوت متفاعلة مع التعليق أو الموسيقى وسط شاشة داكنة",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,30 @@
   "playbooks": [
     "playbooks/music.md",
     "playbooks/shapes.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي داكن تتوسطه موجة صوت حية تتفاعل مع الصوت الفعلي: أعمدة طيف دائرية أو خط موجي متوهج، ترجمة عربية كبيرة تتزامن مع الكلام، وصورة المتحدث أو غلاف الأغنية داخل الحلقة، مناسب للبودكاست ومقاطع الكلام والأغاني.",
+  "summary_en": "A dark vertical reel centred on a live audio waveform driven by the real soundtrack: a circular spectrum of bars or a glowing wave line, large Arabic captions synced to speech, and the speaker's photo or cover art inside the ring; built for podcast clips, spoken quotes and songs.",
+  "keywords": [
+    "audio waveform",
+    "audiogram",
+    "spectrum",
+    "podcast clip",
+    "music visualizer",
+    "captions",
+    "موجة صوت",
+    "بودكاست",
+    "طيف صوتي",
+    "تعليق صوتي",
+    "موسيقى",
+    "ترجمة"
+  ],
+  "difficulty": 2,
+  "duration_s": 40,
+  "stack": [
+    "Remotion",
+    "React",
+    "Web Audio",
+    "HTML Canvas"
+  ],
+  "brief": "styles/audio-wave/BRIEF.md"
 }

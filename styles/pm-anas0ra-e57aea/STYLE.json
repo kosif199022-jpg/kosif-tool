@@ -1,10 +1,14 @@
 {
   "id": "pm-anas0ra-e57aea",
   "name": "Shop chatbot mascot promo",
-  "name_ar": null,
+  "name_ar": "تميمة دردشة لطيفة أمام متجر صغير على جزيرة عائمة",
   "origin": "PromptsMotion",
   "type": "Prompt",
-  "category": [],
+  "category": [
+    "characters",
+    "3d",
+    "ads"
+  ],
   "creator": "@anas0ra",
   "creator_url": "https://x.com/anas0ra/status/2103490331815952637",
   "page": "https://www.promptsmotion.com/anas0ra-e57aea",
@@ -23,5 +27,35 @@
   "source_prompt_words": 7,
   "listed": true,
   "skill": "styles/pm-anas0ra-e57aea/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/characters.md",
+    "playbooks/3d.md",
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "إعلان قصير مدته 15 ثانية بأسلوب ثلاثي الأبعاد ناعم يشبه الصلصال: متجر أبيض بسقف أخضر داكن ومظلة مخططة على جزيرة دائرية عائمة، وتميمة على شكل فقاعة كلام بيضاء لامعة تستيقظ مع إغلاق المتجر، فتقترب الكاميرا وتظهر فقاعتا محادثة (سؤال زبون ورد فوري)، ثم يحل الليل وتبتعد الكاميرا لتنتهي ببطاقة الشعار والرابط فوق المشهد المعتم.",
+  "summary_en": "A 15-second soft clay-like 3D promo: a white shop with a dark teal roof and striped awning sits on a round floating island, a glossy white speech-bubble mascot wakes as the shop closes, the camera pushes in while a customer question and an instant reply bubble appear, then night falls, the camera pulls back and an end card with logo, tagline and URL pill fades over the dimmed scene.",
+  "keywords": [
+    "chatbot ad",
+    "mascot",
+    "speech bubble",
+    "floating island",
+    "clay 3D",
+    "diorama",
+    "shop closed",
+    "day to night",
+    "تميمة",
+    "فقاعة كلام",
+    "إعلان شات بوت",
+    "جزيرة عائمة",
+    "متجر",
+    "ثلاثي الأبعاد ناعم"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Three.js",
+    "React",
+    "Remotion"
+  ],
+  "brief": "styles/pm-anas0ra-e57aea/BRIEF.md"
 }

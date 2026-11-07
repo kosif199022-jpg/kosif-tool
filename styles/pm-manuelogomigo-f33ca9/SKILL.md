@@ -1,9 +1,9 @@
 ---
 name: pm-manuelogomigo-f33ca9
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second hosting-product showreel flipping between cream, black and orange grounds, built from orange dots: a dotted file dragged into an upload bar filling to 100%, tilted streaming layers, a glowing dotted globe, a custom-domain URL bar with a green lock, an infinity loop of strokes, a site preview, and a logo lock-up, all titled in a light serif. Use to make a new video in this look (Product UI); address it by ID pm-manuelogomigo-f33ca9.
 ---
 
-# KOSIF TOOL — Flowdrive motion showreel
+# KOSIF TOOL — Flowdrive motion showreel / عرض حركي لخدمة استضافة الفيديو بنقاط برتقالية وكرة أرضية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/manuelogomigo-f33ca9
@@ -17,16 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+عرض منتج مدته 15 ثانية لخدمة استضافة فيديو وملفات، يتناوب بين خلفية كريمية فاتحة وأخرى سوداء وثالثة برتقالية: أيقونة ملف مصنوعة من نقاط برتقالية تُسحب إلى صندوق رفع، شريط تقدم منقّط يمتلئ إلى 100%، طبقات فيديو مائلة متكدسة لعرض جودات البث، كرة أرضية منقطة متوهجة بنقاط مواقع، شريط عنوان بنطاق خاص وقفل أخضر، حلقة لانهاية من خطوط برتقالية، معاينة موقع على متصفح، وختام بأيقونة العلامة واسمها.
+
+A 15-second hosting-product showreel flipping between cream, black and orange grounds, built from orange dots: a dotted file dragged into an upload bar filling to 100%, tilted streaming layers, a glowing dotted globe, a custom-domain URL bar with a green lock, an infinity loop of strokes, a site preview, and a logo lock-up, all titled in a light serif.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, HTML Canvas, SVG), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/diagrams.md](../../playbooks/diagrams.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+Categories: Product UI / واجهات المنتج, Particles / جسيمات, Ads / إعلانات.
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

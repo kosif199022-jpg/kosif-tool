@@ -1,7 +1,7 @@
 {
   "id": "pm-majorbaguette-fb11d7",
   "name": "Brieform product presentation",
-  "name_ar": null,
+  "name_ar": "عرض منتج نماذج عبر الذكاء الاصطناعي بثلاث خطوات",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -27,5 +27,31 @@
   "skill": "styles/pm-majorbaguette-fb11d7/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md"
-  ]
+  ],
+  "summary_ar": "عرض منتج مدته 30 ثانية على خلفية فحمية بلمسة ليمونية: سؤال وعنوان مُظلل بالأصفر، ثم ثلاث خطوات مرقمة؛ نافذة دردشة يُكتب فيها طلب ويستدعي الذكاء الاصطناعي أدوات إنشاء ونشر نموذج ورابطه، صفحة نموذج بيضاء يملؤها مؤشر وتظهر رسالة شكر، ودردشة تلخص الردود في نقاط، ثم بطاقة الشعار والرابط.",
+  "summary_en": "A 30-second product walkthrough on charcoal with a lime accent: a question and a highlighter-boxed answer, then three numbered steps; a chat window where a typed request triggers tool calls that create and publish a form and return its link, a white form filled field by field ending on a thank-you check, a chat that summarises responses as bullets, then a logo, tagline and URL pill end card.",
+  "keywords": [
+    "product demo",
+    "saas walkthrough",
+    "ai chat",
+    "forms",
+    "tool calls",
+    "highlighter",
+    "three steps",
+    "dark ui",
+    "عرض منتج",
+    "شرح خطوات",
+    "دردشة ذكاء اصطناعي",
+    "نماذج",
+    "واجهة داكنة",
+    "تظليل ليموني"
+  ],
+  "difficulty": 2,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-majorbaguette-fb11d7/BRIEF.md"
 }

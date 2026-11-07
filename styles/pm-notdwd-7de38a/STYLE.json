@@ -1,19 +1,12 @@
 {
   "id": "pm-notdwd-7de38a",
   "name": "Frame by Frame launch video",
-  "name_ar": null,
+  "name_ar": "فيديو إطلاق منتج كورسات بواجهات زجاجية زرقاء وكاميرا ناعمة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
-    "charts",
-    "kinetic-type",
-    "shapes",
-    "particles",
-    "characters",
-    "photos",
-    "music",
-    "code"
+    "kinetic-type"
   ],
   "creator": "@notdwd",
   "creator_url": "https://x.com/notdwd/status/2104229441211969685",
@@ -39,13 +32,32 @@
   "skill": "styles/pm-notdwd-7de38a/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/particles.md",
-    "playbooks/characters.md",
-    "playbooks/photos.md",
-    "playbooks/music.md",
-    "playbooks/code.md"
-  ]
+    "playbooks/kinetic-type.md"
+  ],
+  "summary_ar": "إعلان إطلاق مربع قصير (نحو 12 ثانية) لمنصة دروس فيديو، يمر بالكاميرا فوق بطاقات واجهة بيضاء وزرقاء ضبابية: هيدر المنتج مع مؤشر ماوس، شعار يدور حوله أربعة مربعات ملونة، شريط قوائم نظام تشغيل يفتح منه صندوق كتابة طلب، صفحة درس، بطاقات وحدات بعناوين ضخمة، ثم شعار متوهج على خلفية سوداء.",
+  "summary_en": "A short square product-launch spot (about 12 s) for a video-course platform where a soft camera glides over blurred white-and-blue glass UI cards: a product header with a cursor, a logo orbited by four coloured tiles, an OS menu bar opening a prompt box that types itself, a lesson page, module cards with giant faded titles, and finally a glowing wordmark on black.",
+  "keywords": [
+    "product launch",
+    "SaaS promo",
+    "glass UI",
+    "depth of field",
+    "cursor",
+    "menu bar",
+    "prompt box",
+    "course platform",
+    "إعلان منتج",
+    "إطلاق",
+    "واجهة زجاجية",
+    "عمق المجال",
+    "مؤشر ماوس",
+    "منصة كورسات"
+  ],
+  "difficulty": 3,
+  "duration_s": 12,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-notdwd-7de38a/BRIEF.md"
 }

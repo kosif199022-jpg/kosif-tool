@@ -1,9 +1,9 @@
 ---
 name: pm-misbahsy-80eaec
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second developer promo in deep violet: floating SDK chips collapse into 'one API', a node diagram routes users through a gateway card to models, a light code editor swaps the model string along a provider ticker, one provider fails with a 429 and traffic falls back to another, three huge stats count up, and the logo lands with an install command. Use to make a new video in this look (Kinetic type); address it by ID pm-misbahsy-80eaec.
 ---
 
-# KOSIF TOOL — LiteLLM promo reel
+# KOSIF TOOL — LiteLLM promo reel / إعلان بوابة نماذج الذكاء: واجهة واحدة، كود يتبدل، ومزود يسقط
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/misbahsy-80eaec
@@ -17,14 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان تقني مدته 15 ثانية بالبنفسجي الداكن: أسماء دوال من حِزم برمجية مختلفة تطفو كشارات حول رقم «+100» ثم تتجمع في «واجهة واحدة» مع شارة طلب، فمخطط يربط البشر والوكلاء والآلات ببوابة مركزية ثم بقائمة نماذج، ثم محرر كود فاتح يُكتب فيه سطر واحد ويتبدل اسم النموذج مع شريط مزودين، ثم مسار يفشل فيه مزود ويتحول تلقائياً لآخر، فأرقام ضخمة، وختام بالشعار وأمر التثبيت.
+
+A 15-second developer promo in deep violet: floating SDK chips collapse into 'one API', a node diagram routes users through a gateway card to models, a light code editor swaps the model string along a provider ticker, one provider fails with a 429 and traffic falls back to another, three huge stats count up, and the logo lands with an install command.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Code / كود, Diagrams / مخططات, Product UI / واجهات المنتج.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/diagrams.md](../../playbooks/diagrams.md)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

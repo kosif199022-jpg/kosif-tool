@@ -1,7 +1,7 @@
 {
   "id": "pm-ibrahimwasim240-809370",
   "name": "Personal skills showreel",
-  "name_ar": null,
+  "name_ar": "ريل مهارات شخصي على هيئة لعبة بكسل من مستويات",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -31,5 +31,33 @@
     "playbooks/charts.md",
     "playbooks/kinetic-type.md",
     "playbooks/characters.md"
-  ]
+  ],
+  "summary_ar": "ريل شخصي مدته 25 ثانية مصمم كلعبة منصات بكسل نيون: شاشة «اضغط ابدأ» باسم اللاعب، ومستويات مرقمة لكل مهارة (منصات يقفز فيها بطل أخضر، محرر كود بمعاينة حية، موقع يتبدل بين أحجام الشاشات مع حلقات تقييم، لوحة مهام تُنقل بطاقاتها، زعيم هو «آخر خلل» ينفجر)، ثم «ترقية!» بأشعة ملونة، بطاقة شخصية بأشرطة مهارات تمتلئ، خريطة المستويات، وختام بالاسم وحساب التواصل.",
+  "summary_en": "A 25-second personal reel styled as a neon pixel platformer: a press-start title, one level per skill (a green hero jumping platforms, code beside a live preview, a site resizing across devices with score rings, a task board, a 'last bug' boss that explodes), then a level-up burst, a character sheet with filling skill bars, a level map and a name end card.",
+  "keywords": [
+    "pixel game",
+    "platformer",
+    "personal reel",
+    "skills showreel",
+    "game hud",
+    "boss fight",
+    "level up",
+    "skill bars",
+    "neon",
+    "ريل شخصي",
+    "لعبة بكسل",
+    "مستويات",
+    "مهارات",
+    "سيرة ذاتية متحركة",
+    "نيون"
+  ],
+  "difficulty": 4,
+  "duration_s": 25,
+  "stack": [
+    "Remotion",
+    "React",
+    "HTML Canvas",
+    "CSS"
+  ],
+  "brief": "styles/pm-ibrahimwasim240-809370/BRIEF.md"
 }

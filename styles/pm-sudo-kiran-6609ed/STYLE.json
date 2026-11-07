@@ -1,14 +1,13 @@
 {
   "id": "pm-sudo-kiran-6609ed",
   "name": "DistilBook product explainer",
-  "name_ar": null,
+  "name_ar": "إعلان منتج يحوّل المستند إلى فيديو شرح مرسوم",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
-    "charts",
-    "diagrams",
-    "music"
+    "kinetic-type",
+    "hand-drawn"
   ],
   "creator": "@sudo_kiran",
   "creator_url": "https://x.com/sudo_kiran/status/2103761658745335993",
@@ -30,8 +29,35 @@
   "skill": "styles/pm-sudo-kiran-6609ed/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md",
-    "playbooks/diagrams.md",
-    "playbooks/music.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/hand-drawn.md"
+  ],
+  "summary_ar": "إعلان منتج مدته 30 ثانية لأداة تحوّل المستندات إلى فيديوهات شرح: أوراق PDF مكدسة على خلفية رمادية دافئة مع عنوان عريض يقول إن أحداً لا يقرأها، ثم شعار بأعمدة ملونة، وثلاث خطوات (قراءة بخطوط تظليل صفراء، سيناريو يُعتمد بختم أخضر مائل)، ورسم توضيحي لورقة نبات يتراكم خطوة بخطوة فوق موجة صوت، ثم أرقام ضخمة متدرجة على خلفية داكنة، وتقويم أسابيع يُشطب، وبطاقة ختام بزر تجربة.",
+  "summary_en": "A 30-second ad for a document-to-video tool: stacked PDFs on warm grey under a bold 'nobody reads it' line, a striped-bar logo, three numbered steps (highlighted reading, a script stamped with a green check), a leaf diagram drawing on over a voice waveform, huge gradient stats on dark glows, a crossed-out weeks calendar, and a logo end card.",
+  "keywords": [
+    "product ad",
+    "document to video",
+    "explainer tool",
+    "highlight bars",
+    "approval stamp",
+    "illustration build",
+    "waveform",
+    "stat numbers",
+    "strike-through",
+    "إعلان منتج",
+    "مستند إلى فيديو",
+    "رسم توضيحي",
+    "موجة صوت",
+    "ختم اعتماد",
+    "شرح تعليمي"
+  ],
+  "difficulty": 4,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/pm-sudo-kiran-6609ed/BRIEF.md"
 }

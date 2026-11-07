@@ -1,7 +1,7 @@
 {
   "id": "pixel-art",
   "name": "بيكسل آرت",
-  "name_ar": "بيكسل آرت",
+  "name_ar": "بيكسل آرت — مشهد لعبة 16 بت بشخصيات صغيرة",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -24,5 +24,31 @@
   "skill": "styles/pixel-art/SKILL.md",
   "playbooks": [
     "playbooks/characters.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي 9:16 بأسلوب ألعاب 16 بت: عالم من البكسلات المكبّرة بلوحة ألوان محدودة، وشخصية صغيرة تمشي وتقفز بإطارات متقطعة، وخلفيات متعددة الطبقات تتحرك أفقياً، ونصوص عربية بخط بكسل داخل صناديق حوار، وعدادات نقاط وقلوب في الأعلى، وانتقالات بتلاشٍ متدرج على شكل مربعات.",
+  "summary_en": "A 9:16 reel styled as a 16-bit game: an upscaled pixel world in a limited palette, a small character walking and jumping on stepped frames, multi-layer side-scrolling backgrounds, Arabic text in a pixel font inside dialogue boxes, score and heart counters at the top, and blocky dissolve transitions.",
+  "keywords": [
+    "pixel art",
+    "16-bit",
+    "retro game",
+    "sprite",
+    "chiptune",
+    "8-bit",
+    "platformer",
+    "بيكسل آرت",
+    "ألعاب قديمة",
+    "بكسل",
+    "شخصية لعبة",
+    "ريترو",
+    "مرحلة"
+  ],
+  "difficulty": 4,
+  "duration_s": 32,
+  "stack": [
+    "Remotion",
+    "React",
+    "HTML Canvas",
+    "Web Audio"
+  ],
+  "brief": "styles/pixel-art/BRIEF.md"
 }

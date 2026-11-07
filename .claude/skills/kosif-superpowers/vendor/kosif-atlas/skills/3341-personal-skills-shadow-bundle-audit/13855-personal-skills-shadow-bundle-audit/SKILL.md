@@ -25,6 +25,9 @@ source: https://github.com/voitta-ai/skillz
 source_file: skills/personal-skills-shadow-bundle-audit/SKILL.md
 ---
 
+
+> **KOSIF safety note:** Run the audit as a report first. List the folders it would delete and wait for the user's yes before any `rm -rf`.
+
 > **Canonical source.** This skill lives in the repo at
 > https://github.com/voitta-ai/skillz (file:
 > `skills/personal-skills-shadow-bundle-audit/SKILL.md`).

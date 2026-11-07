@@ -1,7 +1,7 @@
 {
   "id": "handwriting-reveal",
   "name": "كتابة يدوية",
-  "name_ar": "كتابة يدوية",
+  "name_ar": "كتابة يدوية — جملة عربية تُكتب بالحبر حرفاً متصلاً",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,30 @@
   "playbooks": [
     "playbooks/hand-drawn.md",
     "playbooks/kinetic-type.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي 9:16 على ورق كريمي ذي ملمس ألياف، تُكتب فيه جملة أو اقتباس عربي بخط يد حبري متصل يتبع مسار القلم الحقيقي من اليمين لليسار، مع تشبع خفيف للحبر عند نهايات الخطوط ثم النقاط والتشكيل في آخر الكلمة، وينتهي بتوقيع صغير وزوم بطيء على السطر المكتمل.",
+  "summary_en": "A 9:16 reel on fibrous cream paper where a single Arabic sentence or quote is written in connected ink handwriting that follows the real pen path right to left, with slight ink pooling at stroke ends, dots and diacritics added after each word, and a small signature and slow push-in on the finished line.",
+  "keywords": [
+    "handwriting",
+    "ink",
+    "calligraphy",
+    "write-on",
+    "quote",
+    "ruqaa",
+    "pen path",
+    "كتابة يدوية",
+    "خط اليد",
+    "حبر",
+    "اقتباس",
+    "رقعة",
+    "كتابة متصلة"
+  ],
+  "difficulty": 4,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/handwriting-reveal/BRIEF.md"
 }

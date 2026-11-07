@@ -1,9 +1,9 @@
 ---
 name: pm-motiondsgnr-9dcfa6
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second motion showreel in nine numbered chapters, each a technique: wobbling type on orange, a slogan on royal blue, a particle sphere becoming a name, morphing shapes, a liquid blob on yellow, a spinning tunnel of text rings, data cards, waveform ridgelines, then a mosaic of every shot and a multicolour logo with geometric confetti. Use to make a new video in this look (Kinetic type); address it by ID pm-motiondsgnr-9dcfa6.
 ---
 
-# KOSIF TOOL — Bold typographic motion showreel
+# KOSIF TOOL — Bold typographic motion showreel / شوريل موشن جريء: تسع تقنيات في خمس عشرة ثانية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/motiondsgnr-9dcfa6
@@ -17,14 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شوريل موشن مدته 15 ثانية مقسم إلى نحو تسعة فصول مرقمة، كل فصل يستعرض تقنية: تايبوغرافي يتمايل، عنوان من ثلاث كلمات على أزرق ملكي، كرة جسيمات تتفكك إلى اسم، أشكال تتحول، سائل لزج على الأصفر، نفق من حلقات نصية تدور، بطاقات بيانات، خطوط موجية متراصة، ثم شبكة تجمع كل اللقطات وشعار متعدد الألوان مع قصاصات هندسية.
+
+A 15-second motion showreel in nine numbered chapters, each a technique: wobbling type on orange, a slogan on royal blue, a particle sphere becoming a name, morphing shapes, a liquid blob on yellow, a spinning tunnel of text rings, data cards, waveform ridgelines, then a mosaic of every shot and a multicolour logo with geometric confetti.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas, WebGL), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Particles / جسيمات, Shapes / أشكال, Charts / رسوم بيانية.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

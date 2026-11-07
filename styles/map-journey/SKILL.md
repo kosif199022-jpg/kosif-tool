@@ -1,9 +1,9 @@
 ---
 name: map-journey
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: An illustrated old-paper map (sand land, pale blue seas) seen with a slight perspective tilt, where a small drawn camel travels while a dashed red route draws behind it, red flags plant at each city with a paper label card holding its name and a short line, a fixed corner card counts distance and year, and a final pull-out reveals the whole journey. Use to make a new video in this look (Diagrams); address it by ID map-journey.
 ---
 
-# KOSIF TOOL — رحلة على الخريطة
+# KOSIF TOOL — رحلة على الخريطة / رحلة على الخريطة — خريطة ورقية قديمة يرسم عليها المسافر طريقه
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/map-journey
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+خريطة مرسومة بألوان ورق قديم (رملي وبحار زرقاء باهتة) تُرى بميل منظوري خفيف، يتحرك عليها جمل صغير مرسوم بينما يُرسم خلفه مسار أحمر متقطع، وتُغرس رايات حمراء في كل مدينة مع بطاقة ورقية تحمل اسمها وجملة قصيرة، وبطاقة ثابتة في الزاوية تعدّ المسافة والسنة، وتنتهي بابتعاد يكشف الرحلة كلها.
+
+An illustrated old-paper map (sand land, pale blue seas) seen with a slight perspective tilt, where a small drawn camel travels while a dashed red route draws behind it, red flags plant at each city with a paper label card holding its name and a short line, a fixed corner card counts distance and year, and a final pull-out reveals the whole journey.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (34 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Diagrams / مخططات.

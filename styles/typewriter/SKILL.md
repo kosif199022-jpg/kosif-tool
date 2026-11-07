@@ -1,9 +1,9 @@
 ---
 name: typewriter
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: Text typed out in front of the viewer as on a typewriter or terminal: a blinking caret, words arriving to a keystroke rhythm, a mistake deleted and retyped, cream paper with dark ink or a black screen with green text, light key clicks and a carriage-return line feed. Use to make a new video in this look (Kinetic type); address it by ID typewriter.
 ---
 
-# KOSIF TOOL — آلة كتابة
+# KOSIF TOOL — آلة كتابة / نص يُكتب كأنه على آلة كاتبة
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+نص يُكتب أمام المشاهد كأنه على آلة كاتبة أو طرفية: مؤشر يومض، الكلمات تظهر بإيقاع ضربات المفاتيح، أخطاء تُمحى وتُعاد كتابتها، ورقة كريمية بحبر داكن أو شاشة سوداء بنص أخضر، مع صوت مفاتيح خفيف وتنقّل للسطر.
+
+Text typed out in front of the viewer as on a typewriter or terminal: a blinking caret, words arriving to a keystroke rhythm, a mistake deleted and retyped, cream paper with dark ink or a black screen with green text, light key clicks and a carriage-return line feed.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, Web Audio), suggested duration (30 s), aspect 9:16, difficulty 2/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Kinetic type / تايبوغرافي متحرك.

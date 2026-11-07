@@ -1453,7 +1453,7 @@
 
 - **doctor**: Checks the vendored MIT LICENSE and the 15 process SKILL.md files, and reports whether KOSIF and how many process skills are installed under ~/.claude/skills. Exits with code 2 if sources are missing.
   - `python3 scripts/superpowers_unified.py doctor`
-- **plan**: Uses a fixed keyword table (English and Arabic) to return an ordered list of process skills, starting with using-superpowers and ending with verification-before-completion, adding test-driven-development for code/app tasks.
+- **plan**: Uses a fixed keyword table (English and Arabic) to return an ordered list of process skills, ending with verification-before-completion (using-superpowers is not routed), adding test-driven-development for code/app tasks.
   - `python3 scripts/superpowers_unified.py plan "Fix the crash in the montage app"`
 - **list**: Lists the 15 vendored process-skill names.
   - `python3 scripts/superpowers_unified.py list`

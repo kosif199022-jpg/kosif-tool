@@ -1,9 +1,9 @@
 ---
 name: pm-leonkohli-6dc01b
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A fast 15-second motion-designer showreel: an orange ball bounces over a timeline on black, then the words motion and design in shifting type on blue and white, a Bauhaus tile grid in blue, lime and black, a 3D cube floor the ball rolls across, an orange liquid splash, a light-streak vortex, a year counter in a coloured ring, a ring tunnel, and a name card on dark navy. Use to make a new video in this look (Shapes); address it by ID pm-leonkohli-6dc01b.
 ---
 
-# KOSIF TOOL — Geometric motion designer showreel
+# KOSIF TOOL — Geometric motion designer showreel / شوريل مصمم موشن هندسي بكرة برتقالية تقفز بين المشاهد
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/leonkohli-6dc01b
@@ -17,16 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شوريل سريع مدته 15 ثانية لمصمم موشن: كرة برتقالية تقفز فوق خط زمن على الأسود، ثم كلمتا motion وdesign بخطوط متغيرة على الأزرق والأبيض، وشبكة بلاطات باوهاوس بالأزرق والليموني والأسود، وأرضية مكعبات ثلاثية الأبعاد تتدحرج عليها الكرة، ورذاذ سائل برتقالي، ودوامة خطوط ضوئية، وعدّاد سنة داخل حلقة ألوان، ونفق حلقات، وتنتهي ببطاقة الاسم على الكحلي الداكن.
+
+A fast 15-second motion-designer showreel: an orange ball bounces over a timeline on black, then the words motion and design in shifting type on blue and white, a Bauhaus tile grid in blue, lime and black, a 3D cube floor the ball rolls across, an orange liquid splash, a light-streak vortex, a year counter in a coloured ring, a ring tunnel, and a name card on dark navy.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, SVG, WebGL), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال.
-- [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+Categories: Shapes / أشكال, Kinetic type / تايبوغرافي متحرك, 3D / ثلاثي الأبعاد.
 - [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

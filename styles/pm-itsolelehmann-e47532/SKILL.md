@@ -1,9 +1,9 @@
 ---
 name: pm-itsolelehmann-e47532
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A locked 30-second view from inside an ornate illustrated train carriage: violet velvet curtains, two pink lamps and a steaming coffee cup on a lace table, while the parallax landscape outside rolls through spring, summer, autumn, a dark tunnel, snowy winter and back to spring, with a passing train and wipes marking the season changes. Use to make a new video in this look (Hand-drawn); address it by ID pm-itsolelehmann-e47532.
 ---
 
-# KOSIF TOOL — Four seasons train window
+# KOSIF TOOL — Four seasons train window / نافذة قطار مرسومة تمر عبر الفصول الأربعة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/itsolelehmann-e47532
@@ -17,12 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+لقطة ثابتة مدتها 30 ثانية من داخل عربة قطار فاخرة مرسومة بأسلوب كرتوني مسطح: ستائر بنفسجية مخملية، مصباحان ورديان وفنجان قهوة يتصاعد منه البخار على طاولة، والمنظر خلف النافذة يمر بطبقات متحركة عبر الربيع والصيف والخريف ونفق مظلم والشتاء ثم يعود الربيع، مع قطار عابر ومسحات انتقال.
+
+A locked 30-second view from inside an ornate illustrated train carriage: violet velvet curtains, two pink lamps and a steaming coffee cup on a lace table, while the parallax landscape outside rolls through spring, summer, autumn, a dark tunnel, snowy winter and back to spring, with a passing train and wipes marking the season changes.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas), suggested duration (30 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: creative motion.
-- (no category playbook yet)
+Categories: Hand-drawn / رسم يدوي, Particles / جسيمات.
+- [playbooks/hand-drawn.md](../../playbooks/hand-drawn.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
 
 Category tactics:
-* Develop original choreography from the reference; verify imagery before claiming a match.
+* Order stroke draw-on like a human hand would; keep imperfection deliberate; pace reveals to narration.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

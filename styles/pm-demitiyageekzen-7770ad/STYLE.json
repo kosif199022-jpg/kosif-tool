@@ -1,11 +1,12 @@
 {
   "id": "pm-demitiyageekzen-7770ad",
   "name": "Tengwang Pavilion moonlit river",
-  "name_ar": null,
+  "name_ar": "جناح تنغوانغ من الغروب إلى ضوء القمر فوق النهر",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "code"
+    "code",
+    "kinetic-type"
   ],
   "creator": "@DemitiyaGeekzen",
   "creator_url": "https://x.com/DemitiyaGeekzen/status/2103517910274818523",
@@ -28,6 +29,35 @@
   "listed": true,
   "skill": "styles/pm-demitiyageekzen-7770ad/SKILL.md",
   "playbooks": [
-    "playbooks/code.md"
-  ]
+    "playbooks/code.md",
+    "playbooks/kinetic-type.md"
+  ],
+  "summary_ar": "مشهد بانورامي هادئ مدته 30 ثانية لنهر واسع من زاوية ثابتة على مستوى الماء: يبدأ بغروب وردي برتقالي خلف أفق مدينة حديثة مع طيور منفردة، ثم تتحول السماء إلى بنفسجي وتنسحب الأبراج ليظهر جناح صيني تقليدي من اليمين ويتوسط الكادر تحت بدر، تضيء طوابقه بالذهبي وتطفو فوانيس على الماء، بينما تُكتب أبيات شعر كلاسيكية عمودياً حرفاً حرفاً على الأطراف.",
+  "summary_en": "A calm 30-second river panorama from a locked water-level view: a pink-orange sunset behind a modern skyline, then a violet sky as the towers give way to a traditional Chinese pavilion that settles centre under a full moon, its tiers lighting gold and lanterns drifting on the water, while classical verse writes on vertically character by character.",
+  "keywords": [
+    "river panorama",
+    "sunset to night",
+    "chinese pavilion",
+    "vertical verse",
+    "classical poetry",
+    "lanterns",
+    "moonlight",
+    "procedural sky",
+    "غروب",
+    "جناح صيني",
+    "شعر كلاسيكي",
+    "كتابة رأسية",
+    "ضوء القمر",
+    "فوانيس",
+    "مشهد تأملي"
+  ],
+  "difficulty": 4,
+  "duration_s": 30,
+  "stack": [
+    "HTML Canvas",
+    "WebGL",
+    "Remotion",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-demitiyageekzen-7770ad/BRIEF.md"
 }

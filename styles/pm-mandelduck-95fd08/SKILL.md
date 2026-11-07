@@ -1,6 +1,6 @@
 ---
 name: pm-mandelduck-95fd08
-description: A walkable 3D scene inside the village of Starry Night rendered in moving brush strokes, where the player hunts for cats hidden among the houses and the cypress.
+description: A walkable 3D scene inside the village of Starry Night rendered in moving brush strokes, where the player hunts for cats hidden among the houses and the cypress. Use to make a new video in this look (Characters); address it by ID pm-mandelduck-95fd08.
 ---
 
 # KOSIF TOOL — Starry Night cat-spotting game / ليلة النجوم: نزهة ثلاثية الأبعاد لاصطياد القطط

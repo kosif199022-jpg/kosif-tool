@@ -1,21 +1,14 @@
 {
   "id": "pm-twoclipping-221cab",
   "name": "Photo print app launch film",
-  "name_ar": null,
+  "name_ar": "فيلم إطلاق تطبيق طباعة الصور: من الشاشة إلى الجدار",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
     "phone",
-    "charts",
-    "diagrams",
-    "kinetic-type",
-    "shapes",
-    "particles",
-    "characters",
     "photos",
-    "music",
-    "code"
+    "ads"
   ],
   "creator": "@twoclipping",
   "creator_url": "https://x.com/twoclipping/status/2103835273813496100",
@@ -43,14 +36,36 @@
   "playbooks": [
     "playbooks/product-ui.md",
     "playbooks/phone.md",
-    "playbooks/charts.md",
-    "playbooks/diagrams.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/particles.md",
-    "playbooks/characters.md",
     "playbooks/photos.md",
-    "playbooks/music.md",
-    "playbooks/code.md"
-  ]
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "فيلم إطلاق مربع مدته 29 ثانية لتطبيق يحوّل الصور إلى مطبوعات مؤطرة: كلمة «develop.» سوداء على أبيض مكسور تتحول إلى زر ثم دائرة صورة، شبكة صور سينمائية تتسع إحداها لملء الشاشة، كلمة «relight.» زجاجية، شريط أدوات زجاجي ومنزلق «Golden hour» يحوّل المشهد إلى الغروب، شاشة قفل هاتف، هاتف ومتصفح يطفوان على موجات زرقاء، صفحة منتج لاختيار الإطار والمقاس والسعر، شريط «On its way»، ثم يدان تعلقان الإطار على جدار بظلال نخيل.",
+  "summary_en": "A 29-second square launch film for a photo print app, driven by a cursor: a 'develop.' wordmark morphs into a button, a grid of cinematic images opens one full-screen, a glass toolbar and golden-hour slider relight it, a phone and browser float over blue waves, a product page picks frame and size, and hands hang the framed print on a wall.",
+  "keywords": [
+    "app launch",
+    "photo print",
+    "product UI",
+    "glassmorphism",
+    "cursor demo",
+    "shared element transition",
+    "phone mockup",
+    "framed print",
+    "screen to wall",
+    "إطلاق تطبيق",
+    "طباعة صور",
+    "واجهة زجاجية",
+    "مؤشر فأرة",
+    "إطار صورة",
+    "صفحة منتج"
+  ],
+  "difficulty": 4,
+  "duration_s": 29,
+  "stack": [
+    "React",
+    "CSS",
+    "SVG",
+    "HTML Canvas",
+    "Remotion"
+  ],
+  "brief": "styles/pm-twoclipping-221cab/BRIEF.md"
 }

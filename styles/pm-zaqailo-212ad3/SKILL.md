@@ -1,9 +1,9 @@
 ---
 name: pm-zaqailo-212ad3
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A fast 15-second landscape motion-designer reel in a HUD with timecode and BPM: a red dot stretches into a line, a bold word on cream gains a red letter and repeats in outlined rows, a red-blue-yellow Bauhaus mosaic, golden particles forming a ring and sphere, a shattering low-poly sphere, orange-to-blue metaballs, then the name with a red full stop. Use to make a new video in this look (Kinetic type); address it by ID pm-zaqailo-212ad3.
 ---
 
-# KOSIF TOOL — Motion designer showreel
+# KOSIF TOOL — Motion designer showreel / ريل أفقي لمصمم موشن: تايبوغرافي وفسيفساء باوهاوس وجسيمات وكرات معدنية سائلة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/zaqailo-212ad3
@@ -17,14 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+ريل أفقي سريع (15 ثانية) لمصمم موشن داخل إطار واجهة بتوقيت ونبض إيقاع: نقطة حمراء تمتد خطاً على شبكة، كلمة عريضة على خلفية كريمية تتحول بإضافة حرف أحمر وتتكرر صفوفاً مفرغة، فسيفساء باوهاوس بالأحمر والأزرق والأصفر، جسيمات ذهبية تصير حلقة وشريطاً وكرة، كرة منخفضة المضلعات تتشظى، كتل سائلة بتدرج برتقالي أزرق، كلمات فصول على خلفيات ملونة، ثم الاسم مع نقطة حمراء.
+
+A fast 15-second landscape motion-designer reel in a HUD with timecode and BPM: a red dot stretches into a line, a bold word on cream gains a red letter and repeats in outlined rows, a red-blue-yellow Bauhaus mosaic, golden particles forming a ring and sphere, a shattering low-poly sphere, orange-to-blue metaballs, then the name with a red full stop.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, WebGL, HTML Canvas, Web Audio), suggested duration (15 s), aspect 16:9, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, 3D / ثلاثي الأبعاد.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

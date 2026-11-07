@@ -1,9 +1,9 @@
 ---
 name: pm-rneayan-ea6129
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 40-second studio intro shown as an oscilloscope: black with glowing green phosphor traces and a faint graticule, Korean phrases in outline type over a signal trace that changes with each line, Lissajous figures, a scribble tangle, sine waves and pulses, a radar sweep, a square-wave timeline, then the beam draws an airship and the studio logo. Use to make a new video in this look (Charts); address it by ID pm-rneayan-ea6129.
 ---
 
-# KOSIF TOOL — Oscilloscope-style studio motion graphic
+# KOSIF TOOL — Oscilloscope-style studio motion graphic / فيلم تعريفي لاستوديو بأسلوب شاشة الأوسيلوسكوب الخضراء
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/rneayan-ea6129
@@ -17,12 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيلم تعريفي لاستوديو إنتاج مدته نحو 40 ثانية كله على شاشة أوسيلوسكوب: أسود بخطوط فسفورية خضراء متوهجة وشبكة باهتة وقراءات قناة صغيرة، النص الكوري بحروف مفرغة متوهجة سطراً سطراً فوق موجة إشارة تتغير مع الكلام، أشكال ليساجو صغيرة في الزاوية، كتابة متشابكة، موجات جيبية وقمم نبضية، رقم 10 مفرغ، مسح رادار، مخطط موجة مربعة لسنوات العمل، ثم منطاد يُرسم بخط الإشارة وشعار الاستوديو.
+
+A 40-second studio intro shown as an oscilloscope: black with glowing green phosphor traces and a faint graticule, Korean phrases in outline type over a signal trace that changes with each line, Lissajous figures, a scribble tangle, sine waves and pulses, a radar sweep, a square-wave timeline, then the beam draws an airship and the studio logo.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, Remotion, React, Web Audio), suggested duration (40 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية.
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال.
 - [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

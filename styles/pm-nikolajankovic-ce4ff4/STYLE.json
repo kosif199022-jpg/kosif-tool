@@ -1,12 +1,13 @@
 {
   "id": "pm-nikolajankovic-ce4ff4",
   "name": "DeFi Saver stop-motion explainer",
-  "name_ar": null,
+  "name_ar": "شرح بأسلوب رسم بالقلم الرصاص بإيقاع إيقاف الحركة لأداة حماية القروض",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
+    "hand-drawn",
     "diagrams",
-    "characters"
+    "charts"
   ],
   "creator": "@_nikolajankovic",
   "creator_url": "https://x.com/_nikolajankovic/status/2102867033100616097",
@@ -27,7 +28,35 @@
   "listed": true,
   "skill": "styles/pm-nikolajankovic-ce4ff4/SKILL.md",
   "playbooks": [
+    "playbooks/hand-drawn.md",
     "playbooks/diagrams.md",
-    "playbooks/characters.md"
-  ]
+    "playbooks/charts.md"
+  ],
+  "summary_ar": "شرح هادئ مدته 58 ثانية بنسبة قريبة من 3:2 وبإيقاع 12 إطاراً في الثانية، على ورق رمادي فاتح يُرسم عليه بالقلم: عنوان مسطّر بالأزرق، صناديق وأشجار ربط، بطاقة قرض، مقياس حرارة يمثّل نسبة الأمان مع خطّين أزرق وأحمر، مخطط سعر ينهار ليلاً بجانب سرير نائم وقمر، ثم شمس وكوب قهوة صباحاً، مع شريط ترجمة على ورقة ملصقة بشريط لاصق أسفل الإطار وراوٍ يتكلم بصيغة المتكلم.",
+  "summary_en": "A calm 58 s explainer at about 3:2 and 12 fps in pencil on light grey paper: a blue-underlined title, branching boxes, a loan card, a thermometer gauge with blue and red thresholds, a price chart crashing at night beside a sleeping figure, then sun and coffee in the morning, with first-person subtitles typed onto a taped paper strip at the bottom.",
+  "keywords": [
+    "pencil sketch",
+    "stop motion",
+    "hand drawn explainer",
+    "12 fps",
+    "thermometer gauge",
+    "taped caption",
+    "first person narrator",
+    "finance explainer",
+    "defi",
+    "رسم بالقلم",
+    "إيقاف الحركة",
+    "شرح مرسوم باليد",
+    "مقياس حرارة",
+    "ترجمة على ورقة",
+    "شرح مالي"
+  ],
+  "difficulty": 3,
+  "duration_s": 58,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-nikolajankovic-ce4ff4/BRIEF.md"
 }

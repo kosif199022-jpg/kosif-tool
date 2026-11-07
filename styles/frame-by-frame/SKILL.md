@@ -1,9 +1,9 @@
 ---
 name: frame-by-frame
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 9:16 reel in traditional frame-by-frame animation: slightly boiling black ink lines redrawn every frame, flat watercolour-wash fills on textured paper, characters and objects that squash, stretch and transform freely on twos (12 fps), and transitions where one drawing metamorphoses into the next. Use to make a new video in this look (Hand-drawn); address it by ID frame-by-frame.
 ---
 
-# KOSIF TOOL — إطار بإطار
+# KOSIF TOOL — إطار بإطار / إطار بإطار — رسوم يدوية تقليدية بخطوط تتنفس
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي 9:16 برسوم متحركة تقليدية مرسومة إطاراً إطاراً: خطوط حبر سوداء متذبذبة قليلاً في كل إطار، وتلوين مسطح بألوان مائية خفيفة على ورق ذي ملمس، وشخصيات وأشياء تتحول وتتمدد بحرية بحركة على اثنين (12 إطاراً في الثانية)، وانتقالات يتحول فيها شكل إلى شكل آخر بالرسم.
+
+A 9:16 reel in traditional frame-by-frame animation: slightly boiling black ink lines redrawn every frame, flat watercolour-wash fills on textured paper, characters and objects that squash, stretch and transform freely on twos (12 fps), and transitions where one drawing metamorphoses into the next.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, HTML Canvas, SVG), suggested duration (32 s), aspect 9:16, difficulty 5/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Hand-drawn / رسم يدوي, Characters / شخصيات.

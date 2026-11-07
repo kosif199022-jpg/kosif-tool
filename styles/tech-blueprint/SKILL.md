@@ -1,9 +1,9 @@
 ---
 name: tech-blueprint
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 9:16 reel on deep cyanotype-blue blueprint paper with a faint cyan grid, where a machine, device or building is traced in thin white drafting lines, then splits into an exploded view while dimension lines, leader arrows and monospace Arabic/English labels write on, finishing on a stamped title block in the corner. Use to make a new video in this look (Diagrams); address it by ID tech-blueprint.
 ---
 
-# KOSIF TOOL — رسومات تقنية
+# KOSIF TOOL — رسومات تقنية / رسومات تقنية — مخطط هندسي أزرق يُرسم خطاً خطاً
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي 9:16 على ورق مخطط هندسي أزرق داكن بشبكة سماوية باهتة، تُرسم فيه آلة أو جهاز أو مبنى بخطوط بيضاء رفيعة كأنها بقلم رسم فني، ثم تنفصل أجزاؤه في عرض مُفكَّك وتظهر خطوط الأبعاد والأسهم والتسميات العربية بخط هندسي أحادي، مع ختم عنوان في زاوية الورقة.
+
+A 9:16 reel on deep cyanotype-blue blueprint paper with a faint cyan grid, where a machine, device or building is traced in thin white drafting lines, then splits into an exploded view while dimension lines, leader arrows and monospace Arabic/English labels write on, finishing on a stamped title block in the corner.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (35 s), aspect 9:16, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Diagrams / مخططات, Hand-drawn / رسم يدوي.

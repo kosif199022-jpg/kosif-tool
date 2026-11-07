@@ -1,18 +1,16 @@
 {
   "id": "pm-twoclipping-6dd14e",
   "name": "UGC ad generator promo",
-  "name_ar": null,
+  "name_ar": "إعلان أداة توليد إعلانات UGC: من رابط منتج إلى حملة منطلقة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
     "phone",
     "kinetic-type",
-    "shapes",
-    "particles",
     "photos",
-    "music",
-    "code"
+    "3d",
+    "ads"
   ],
   "creator": "@twoclipping",
   "creator_url": "https://x.com/twoclipping/status/2102554209166000267",
@@ -39,10 +37,37 @@
     "playbooks/product-ui.md",
     "playbooks/phone.md",
     "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/particles.md",
     "playbooks/photos.md",
-    "playbooks/music.md",
-    "playbooks/code.md"
-  ]
+    "playbooks/3d.md",
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "إعلان منتج مدته 20 ثانية يبدأ بكلمات سوداء تُكتب كلمة بكلمة على خلفية كريمية دافئة ثم نافذة تطبيق بيضاء يُلصق فيها رابط منتج، وبعدها يتحول كل شيء إلى أسود: شبكة صور سيلفي لصانعي محتوى مع عدّاد تحليل، قائمة «هوكات» بدرجات، شريط دوّار ثلاثي الأبعاد من بطاقات فيديو عمودية، هاتف بجانب لوحة إطلاق حملة، أرقام نتائج ضخمة بالأبيض، ثم كلمة برتقالية وشعار التطبيق.",
+  "summary_en": "A 20-second product promo: black words type in on a warm cream gradient and a product link is pasted into a white app window, then it flips to black for a grid of creator selfies under a counter, a scored hooks list, a curved 3D carousel of vertical ad cards, a phone beside a launch panel, huge white result numbers, an orange payoff word and the logo.",
+  "keywords": [
+    "product promo",
+    "ugc ads",
+    "ad generator",
+    "app walkthrough",
+    "3d carousel",
+    "light to dark",
+    "result numbers",
+    "hooks list",
+    "saas launch",
+    "إعلان منتج",
+    "إعلانات UGC",
+    "شرح تطبيق",
+    "شريط دوّار",
+    "أرقام النتائج",
+    "إطلاق حملة"
+  ],
+  "difficulty": 4,
+  "duration_s": 20,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "Three.js",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-twoclipping-6dd14e/BRIEF.md"
 }

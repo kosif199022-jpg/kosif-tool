@@ -1,9 +1,9 @@
 ---
 name: pm-majin-appsheet-2d3c1a
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 10-second anime-style title intro: a thin red line on black, a kana name, huge Mincho kanji with a vertical column, black 'REBOOT' on red, 'SLIDES', a giant 'new' kanji with an RGB glitch, then the full title types on over red sunburst rays and locks onto a slanted red band with a romanised subtitle and a small 'new' stamp. Use to make a new video in this look (Kinetic type); address it by ID pm-majin-appsheet-2d3c1a.
 ---
 
-# KOSIF TOOL — Shin Majin-shiki promo
+# KOSIF TOOL — Shin Majin-shiki promo / بطاقة عنوان يابانية بأسلوب الأنمي بالأحمر والأسود
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/majin-appsheet-2d3c1a
@@ -17,12 +17,19 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+مقدمة عنوان مدتها 10 ثوانٍ بأسلوب أنمي ياباني جريء: خط أحمر رفيع على الأسود، اسم بالكانا، حرفا «إعادة» كبيرين بخط سيريف ياباني وعمود عمودي، «REBOOT» سوداء على أحمر، «SLIDES»، رمز «جديد» ضخم يرتعش بانقسام ألوان، ثم الاسم الكامل يُكتب على خلفية أشعة شمس حمراء، ويستقر على شريط أحمر مائل مع اسم بالحروف اللاتينية.
+
+A 10-second anime-style title intro: a thin red line on black, a kana name, huge Mincho kanji with a vertical column, black 'REBOOT' on red, 'SLIDES', a giant 'new' kanji with an RGB glitch, then the full title types on over red sunburst rays and locks onto a slanted red band with a romanised subtitle and a small 'new' stamp.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (10 s), aspect 16:9, difficulty 2/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: creative motion.
-- (no category playbook yet)
+Categories: Kinetic type / تايبوغرافي متحرك.
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
-* Develop original choreography from the reference; verify imagery before claiming a match.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

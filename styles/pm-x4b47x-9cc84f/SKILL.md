@@ -1,9 +1,9 @@
 ---
 name: pm-x4b47x-9cc84f
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 57-second vertical shadow-theatre piece framed by red velvet curtains: black cut-paper silhouettes of a small house, a man in a hat, a lamp and a village under a sky shifting from orange sunset to violet starry night, as windows glow and the door opens to warm light, with a hanging sign carrying short italic-serif lines. Use to make a new video in this look (Hand-drawn); address it by ID pm-x4b47x-9cc84f.
 ---
 
-# KOSIF TOOL — Shadow theatre home story
+# KOSIF TOOL — Shadow theatre home story / مسرح ظل عمودي: حكاية عن معنى البيت
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/x4b47x-9cc84f
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو عمودي مدته 57 ثانية على هيئة مسرح ظل بستارة مخملية حمراء تنفتح وتنغلق: مشهد صور ظلية سوداء لبيت صغير ورجل بقبعة ومصباح شارع وتلال وطاحونة، تحت سماء تتدرج من شمس برتقالية إلى غسق وردي ثم ليل بنفسجي بقمر ونجوم، والنوافذ تضيء والباب ينفتح بنور دافئ، مع لافتة خشبية معلقة تحمل سطوراً شعرية قصيرة بخط مائل.
+
+A 57-second vertical shadow-theatre piece framed by red velvet curtains: black cut-paper silhouettes of a small house, a man in a hat, a lamp and a village under a sky shifting from orange sunset to violet starry night, as windows glow and the door opens to warm light, with a hanging sign carrying short italic-serif lines.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas), suggested duration (57 s), aspect 9:16, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Music / موسيقى, Code / كود.
+Categories: Hand-drawn / رسم يدوي, Characters / شخصيات, Music / موسيقى.
+- [playbooks/hand-drawn.md](../../playbooks/hand-drawn.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
 - [playbooks/music.md](../../playbooks/music.md)
-- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
+* Order stroke draw-on like a human hand would; keep imperfection deliberate; pace reveals to narration.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
 * Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

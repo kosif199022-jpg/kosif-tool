@@ -1,6 +1,6 @@
 ---
 name: pm-aschapmann-131210
-description: A 30-second dark launch film for a forum marketing tool: it opens on a tilted wall of forum-post cards behind a word-by-word headline, then three pain cards with realistic UI examples, a small red sailing-ship mascot riding glowing line waves under the product name, a post card that gets an AI draft reply typed beneath it, a three-step timeline, and a red sunrise behind the sea with a letter-pop logo reveal.
+description: A 30-second dark launch film for a forum marketing tool: it opens on a tilted wall of forum-post cards behind a word-by-word headline, then three pain cards with realistic UI examples, a small red sailing-ship mascot riding glowing line waves under the product name, a post card that gets an AI draft reply typed beneath it, a three-step timeline, and a red sunrise behind the sea with a letter-pop logo reveal. Use to make a new video in this look (Product UI); address it by ID pm-aschapmann-131210.
 ---
 
 # KOSIF TOOL — SaaS launch video / فيلم إطلاق منتج SaaS مبرمج في Remotion

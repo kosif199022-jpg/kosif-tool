@@ -1,9 +1,9 @@
 ---
 name: pm-vanshwtfff-db0466
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 10-second royal-blue showreel of one-second motion lessons: 'MOTION' letters bouncing over easing-curve graphs, shapes hopping with squash and stretch, a dash field swirling on yellow, particles forming 'flow' then a sphere and torus, a bar chart with a frame counter, and the name with a red dot. Use to make a new video in this look (Kinetic type); address it by ID pm-vanshwtfff-db0466.
 ---
 
-# KOSIF TOOL — Motion designer showreel
+# KOSIF TOOL — Motion designer showreel / شوريل مصمم موشن بأزرق ملكي ومنحنيات تسارع وجسيمات
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/vanshwtfff-db0466
@@ -17,14 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شوريل مدته 10 ثوانٍ على أزرق ملكي مع ورق أبيض وأصفر وأحمر: حروف «MOTION» تسقط وترتد فوق صف رسوم منحنيات التسارع، ثم أشكال تقفز بالضغط والمط على خط أرض أبيض، حقل نقاط وخطوط صغيرة على الأصفر يدور كمجال قوى، جسيمات تشكل كلمة «flow» ثم كرة وحلقة دائرية، مخطط أعمدة بعدّاد إطارات، وكلمة «shape» بحد، ثم الاسم بنقطة حمراء وسطر مائل.
+
+A 10-second royal-blue showreel of one-second motion lessons: 'MOTION' letters bouncing over easing-curve graphs, shapes hopping with squash and stretch, a dash field swirling on yellow, particles forming 'flow' then a sphere and torus, a bar chart with a frame counter, and the name with a red dot.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, HTML Canvas, Three.js, SVG), suggested duration (10 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, Charts / رسوم بيانية.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

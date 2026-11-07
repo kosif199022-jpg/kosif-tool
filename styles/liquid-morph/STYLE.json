@@ -1,7 +1,7 @@
 {
   "id": "liquid-morph",
   "name": "أشكال سائلة",
-  "name_ar": "أشكال سائلة",
+  "name_ar": "أشكال سائلة لامعة تتحول وتندمج كقطرات معدن ملون",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,31 @@
   "playbooks": [
     "playbooks/shapes.md",
     "playbooks/3d.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي ناعم تتحرك فيه كتل سائلة لامعة بألوان متدرجة: قطرات تندمج وتنفصل كالزئبق الملون، تتحول من دائرة إلى رقم إلى أيقونة، وتنكسر الإضاءة على سطحها، مع كلمات قليلة تطفو بين الأشكال.",
+  "summary_en": "A smooth vertical reel of glossy liquid blobs in gradient colours: drops merge and split like coloured mercury, morph from sphere to number to icon, with light bending across their surfaces and a few words floating between the shapes.",
+  "keywords": [
+    "liquid",
+    "morph",
+    "metaballs",
+    "fluid shapes",
+    "glossy",
+    "blob",
+    "abstract 3d",
+    "أشكال سائلة",
+    "تحول",
+    "سائل",
+    "زئبق",
+    "تجريدي",
+    "انسيابي"
+  ],
+  "difficulty": 4,
+  "duration_s": 28,
+  "stack": [
+    "Three.js",
+    "WebGL",
+    "React",
+    "Remotion"
+  ],
+  "brief": "styles/liquid-morph/BRIEF.md"
 }

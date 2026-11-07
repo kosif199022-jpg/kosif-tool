@@ -1,7 +1,7 @@
 {
   "id": "typewriter",
   "name": "آلة كتابة",
-  "name_ar": "آلة كتابة",
+  "name_ar": "نص يُكتب كأنه على آلة كاتبة",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -24,5 +24,32 @@
   "skill": "styles/typewriter/SKILL.md",
   "playbooks": [
     "playbooks/kinetic-type.md"
-  ]
+  ],
+  "summary_ar": "نص يُكتب أمام المشاهد كأنه على آلة كاتبة أو طرفية: مؤشر يومض، الكلمات تظهر بإيقاع ضربات المفاتيح، أخطاء تُمحى وتُعاد كتابتها، ورقة كريمية بحبر داكن أو شاشة سوداء بنص أخضر، مع صوت مفاتيح خفيف وتنقّل للسطر.",
+  "summary_en": "Text typed out in front of the viewer as on a typewriter or terminal: a blinking caret, words arriving to a keystroke rhythm, a mistake deleted and retyped, cream paper with dark ink or a black screen with green text, light key clicks and a carriage-return line feed.",
+  "keywords": [
+    "typewriter",
+    "typing text",
+    "terminal",
+    "caret",
+    "letter",
+    "confession",
+    "text reveal",
+    "آلة كاتبة",
+    "كتابة حية",
+    "مؤشر",
+    "طرفية",
+    "رسالة",
+    "نص يُكتب",
+    "تايبوغرافي"
+  ],
+  "difficulty": 2,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "Web Audio"
+  ],
+  "brief": "styles/typewriter/BRIEF.md"
 }

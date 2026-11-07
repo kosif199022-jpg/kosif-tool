@@ -1,11 +1,15 @@
 {
   "id": "pm-francoxavier33-d2dfd2",
   "name": "Parenting app hype video",
-  "name_ar": null,
+  "name_ar": "إعلان تطبيق للأهل: مساعدون أذكياء بعناوين سيريف دافئة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "product-ui"
+    "product-ui",
+    "phone",
+    "kinetic-type",
+    "photos",
+    "ads"
   ],
   "creator": "@francoxavier33",
   "creator_url": "https://x.com/francoxavier33/status/2103486218323341663",
@@ -26,6 +30,39 @@
   "listed": true,
   "skill": "styles/pm-francoxavier33-d2dfd2/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md"
-  ]
+    "playbooks/product-ui.md",
+    "playbooks/phone.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/photos.md",
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "إعلان عمودي مدته 28 ثانية لتطبيق مساعدين للأهل على خلفية كريمية بتدرج خوخي: عناوين سيريف كبيرة تُكتب بمؤشر وكلمة مائلة برتقالية مسطرة بفرشاة، هاتف بشاشة يوم الجمعة يدخل من الأسفل، إشعار «تم» وشارة «أنجزت وأنت نائم»، بطاقات مساعدين تتراص، محادثة جماعية ينضم إليها المساعدون واحداً تلو الآخر، قائمة تسوق تُشطب بنودها وصور طعام، قائمة فوائد، ثم أيقونة التطبيق.",
+  "summary_en": "A 28-second vertical app ad on a cream-to-peach gradient: big serif headlines type in with a caret and an orange italic word on a brush highlight, a phone agenda rises in, task and 'done while you slept' cards pop, helper cards stack, helpers join a group thread one by one, a grocery list ticks off under food photos, a benefits list, then the app icon.",
+  "keywords": [
+    "app ad",
+    "vertical ad",
+    "parenting app",
+    "serif headline",
+    "typing caret",
+    "ui cards",
+    "phone mockup",
+    "checklist",
+    "warm gradient",
+    "إعلان تطبيق",
+    "إعلان عمودي",
+    "عناوين سيريف",
+    "كتابة بالمؤشر",
+    "بطاقات واجهة",
+    "قائمة مهام",
+    "تطبيق للأهل"
+  ],
+  "difficulty": 3,
+  "duration_s": 28,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-francoxavier33-d2dfd2/BRIEF.md"
 }

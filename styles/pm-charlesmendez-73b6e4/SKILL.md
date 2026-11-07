@@ -1,9 +1,9 @@
 ---
 name: pm-charlesmendez-73b6e4
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 57 s product explainer on black with one neon-green accent: numbered chapters pair a left headline ending in green with a right UI panel: a campaign built from one sentence, an ad inside a chat answer, a data hub with counters, attribution bars, a voice agent with a glowing orb and transcript, phone follow-ups, human approval, a KPI dashboard, then the logo. Use to make a new video in this look (Product UI); address it by ID pm-charlesmendez-73b6e4.
 ---
 
-# KOSIF TOOL — Datagran ChatGPT ads explainer
+# KOSIF TOOL — Datagran ChatGPT ads explainer / شرح منصة إعلانات داخل محادثات الذكاء الاصطناعي بالأخضر النيون
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/charlesmendez-73b6e4
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيلم شرح منتج مدته 57 ثانية على أسود بلون إبراز أخضر نيون واحد: عناوين بيضاء ضخمة تنتهي بكلمة خضراء، ثم فصول مرقمة لكل منها عنوان يساراً ولوحة واجهة يميناً: إطلاق حملة بجملة، إعلان داخل إجابة محادثة، شبكة مصادر بيانات بعدادات، رحلة عميل ومقارنة نسب، وكيل صوتي بكرة خضراء ونص المكالمة، متابعة على الهاتف، موافقة بشرية، لوحة نتائج، ثم الشعار.
+
+A 57 s product explainer on black with one neon-green accent: numbered chapters pair a left headline ending in green with a right UI panel: a campaign built from one sentence, an ad inside a chat answer, a data hub with counters, attribution bars, a voice agent with a glowing orb and transcript, phone follow-ups, human approval, a KPI dashboard, then the logo.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG), suggested duration (57 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Diagrams / مخططات.
+Categories: Product UI / واجهات المنتج, Ads / إعلانات, Charts / رسوم بيانية.
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 - [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/diagrams.md](../../playbooks/diagrams.md)
 
 Category tactics:
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

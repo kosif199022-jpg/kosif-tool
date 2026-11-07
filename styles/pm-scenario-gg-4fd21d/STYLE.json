@@ -1,13 +1,12 @@
 {
   "id": "pm-scenario-gg-4fd21d",
   "name": "ALTER: restyle footage you already shot",
-  "name_ar": null,
+  "name_ar": "إعلان أداة تعيد تصميم لقطات مصورة: بدّل كل شيء واحتفظ بالأداء",
   "origin": "PromptsMotion",
   "type": "Skill",
   "category": [
-    "product-ui",
-    "characters",
-    "photos"
+    "photos",
+    "ads"
   ],
   "creator": "unknown",
   "creator_url": "https://x.com/Scenario_gg/status/2113998556524646534",
@@ -28,8 +27,33 @@
   "listed": true,
   "skill": "styles/pm-scenario-gg-4fd21d/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md",
-    "playbooks/characters.md",
-    "playbooks/photos.md"
-  ]
+    "playbooks/photos.md",
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "إعلان سينمائي مدته نحو 55 ثانية من لقطات حية: ممثل واحد يشرب القهوة في مكتب ثم يجد نفسه بالحركة نفسها في منجم ونفق جليدي وممر نيون، ثم بطاقة عنوان سوداء بكلمة ضخمة، وسلسلة من «CHANGE THE cast/world/animal» و«KEEP THE moves/camera» و«SWAP THE product» بعناوين بيضاء مكثفة ونهاية الجملة مائلة، تثبت فوق نسخ مختلفة من اللقطة الأصلية، وينتهي بإعلان مشروب على جرف بحري.",
+  "summary_en": "A 55-second cinematic live-action ad: one actor repeats the same motion across an office, mine, ice tunnel and neon corridor, a black title card, then white condensed captions ending on an italic word (change the cast, world, animal; keep the moves, camera; swap the product) over restyled takes, closing on a drink spot on sea cliffs.",
+  "keywords": [
+    "AI restyle",
+    "video to video",
+    "match cut",
+    "same performance",
+    "caption formula",
+    "brand ad",
+    "live action",
+    "split screen grid",
+    "إعلان",
+    "إعادة تصميم الفيديو",
+    "قطع مطابق",
+    "لقطات حية",
+    "تعليقات نصية",
+    "تبديل المنتج"
+  ],
+  "difficulty": 5,
+  "duration_s": 55,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-scenario-gg-4fd21d/BRIEF.md"
 }

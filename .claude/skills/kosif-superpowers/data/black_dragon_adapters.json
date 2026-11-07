@@ -2442,6 +2442,18 @@
       ],
       "why": "kosif-black-dragon: convenes the 12-seat council on the task twice (same fingerprint), checks 525 records each get one seat, the 31 Kahneman traps and 23 Atlas procedures are routed, runs the judgment review, and scores two routes where the better one must win and a fake independent claim must be refused; plans only",
       "skill_program": true
+    },
+    "skill:talking-head-reels": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "talking-head-reels",
+        "{artifact}",
+        "--task={task}",
+        "--media={media}"
+      ],
+      "why": "talking-head-reels: a known-answer 7 s talk is pause-cut, mastered to -14 LUFS, planned, validated (planted overlap and font caught) and rendered to a 1080x1920 reel; Arabic text must reveal word by word",
+      "skill_program": true,
+      "media": true
     }
   }
 }

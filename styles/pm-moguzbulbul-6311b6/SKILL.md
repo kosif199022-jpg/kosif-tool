@@ -1,9 +1,9 @@
 ---
 name: pm-moguzbulbul-6311b6
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A calm 42-second explainer of a CRM record-page redesign on off-white: the grey original dissolves into a cyan blueprint wireframe with measurement callouts, then returns improved, across five numbered principles (one primary action, hide absence, open work first, one timeline, act in context), each with a short caption, until the page ends with a side reply panel. Use to make a new video in this look (Product UI); address it by ID pm-moguzbulbul-6311b6.
 ---
 
-# KOSIF TOOL — UX decision explainer animation
+# KOSIF TOOL — UX decision explainer animation / شرح قرارات تصميم واجهة بمخطط هندسي شفاف
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/moguzbulbul-6311b6
@@ -17,11 +17,20 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شرح هادئ مدته 42 ثانية لإعادة تصميم صفحة سجل عميل في نظام إدارة علاقات: الصفحة الأصلية الرمادية تتحول إلى مخطط هندسي بخطوط سماوية وتعليقات قياس، ثم تعود معدّلة؛ خمسة مبادئ مرقمة (إجراء أساسي واحد، إخفاء الفراغ، العمل المفتوح أولاً، خط زمني واحد، الفعل في سياقه) بتعليق سفلي قصير لكل خطوة، حتى تكتمل الصفحة بلوحة رد جانبية.
+
+A calm 42-second explainer of a CRM record-page redesign on off-white: the grey original dissolves into a cyan blueprint wireframe with measurement callouts, then returns improved, across five numbered principles (one primary action, hide absence, open work first, one timeline, act in context), each with a short caption, until the page ends with a side reply panel.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG), suggested duration (42 s), aspect 4:3, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Diagrams / مخططات.
+Categories: Product UI / واجهات المنتج, Diagrams / مخططات.
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/diagrams.md](../../playbooks/diagrams.md)
 
 Category tactics:
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
 
 ## Original creative direction (التوجيه الإبداعي)

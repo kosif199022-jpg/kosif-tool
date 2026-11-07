@@ -1,9 +1,9 @@
 ---
 name: viral-mixed-media
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A fast 9:16 mixed-media collage reel: cut-out photos and clips with white sticker borders over torn paper and loud flat colour backgrounds, hand-drawn scribbles and arrows, huge bold Arabic text that pops on the beat, cuts roughly every half second, and freeze frames with shake and sound-effect hits. Use to make a new video in this look (Ads); address it by ID viral-mixed-media.
 ---
 
-# KOSIF TOOL — مونتاج مختلط
+# KOSIF TOOL — مونتاج مختلط / مونتاج مختلط — كولاج صور مقصوصة وخربشات ونص ضخم
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي 9:16 سريع بأسلوب الكولاج المختلط: صور ومقاطع مقصوصة بحواف بيضاء كالملصقات فوق ورق ممزق وخلفيات ملونة صارخة، وخربشات وأسهم مرسومة باليد، ونص عربي ضخم عريض يقفز مع الإيقاع، وقطعات كل نصف ثانية تقريباً، وتجميد إطارات مع اهتزاز ومؤثرات صوتية.
+
+A fast 9:16 mixed-media collage reel: cut-out photos and clips with white sticker borders over torn paper and loud flat colour backgrounds, hand-drawn scribbles and arrows, huge bold Arabic text that pops on the beat, cuts roughly every half second, and freeze frames with shake and sound-effect hits.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, HTML Canvas), suggested duration (30 s), aspect 9:16, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Ads / إعلانات, Photos / صور, Kinetic type / تايبوغرافي متحرك.

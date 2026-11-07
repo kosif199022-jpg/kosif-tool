@@ -1,9 +1,9 @@
 ---
 name: pm-leadnotifi-e83f94
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 45-second three-colour product ad (charcoal, off-white, acid lime): a radar pulse, wide bold caps headlines, black liquid blobs, a rotating app icon in a transform box, a dot-field counter, a particle sphere turning into a cube ringed by greetings, a gooey workflow line, a lime-filled score gauge, a feature ticker and a logo card. Use to make a new video in this look (Product UI); address it by ID pm-leadnotifi-e83f94.
 ---
 
-# KOSIF TOOL — Lead Notifi product ad
+# KOSIF TOOL — Lead Notifi product ad / إعلان منصة رسائل المبيعات بالأسود والليموني وأشكال سائلة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/leadnotifi-e83f94
@@ -17,16 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان منتج مدته 45 ثانية بثلاثة ألوان فقط (أسود فحمي، أبيض مائل للرمادي، ليموني فاقع): نبضة رادار ودائرة نقاط، عناوين عريضة واسعة بأحرف كبيرة، قطرات حبر سوداء تتمدد كالسائل، مربع أيقونة أبيض يدور داخل إطار تحويل، عدّاد داخل حقل نقاط، كرة جسيمات تتحول مكعباً تحيط به كلمات تحية بلغات مختلفة، مخطط سير عمل كحبل سائل، مقياس دائري يمتلئ بسائل ليموني، شريط ميزات متحرك ودوامة كلمات، ثم بطاقة الشعار.
+
+A 45-second three-colour product ad (charcoal, off-white, acid lime): a radar pulse, wide bold caps headlines, black liquid blobs, a rotating app icon in a transform box, a dot-field counter, a particle sphere turning into a cube ringed by greetings, a gooey workflow line, a lime-filled score gauge, a feature ticker and a logo card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas, Three.js), suggested duration (45 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

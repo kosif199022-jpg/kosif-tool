@@ -1,10 +1,14 @@
 {
   "id": "pm-gonzalomacagno-2de1a9",
   "name": "Festival lineup promo reel",
-  "name_ar": null,
+  "name_ar": "إعلان عمودي لبرنامج مهرجان موسيقي بخطوط شريطية ملوّنة",
   "origin": "PromptsMotion",
   "type": "Prompt",
-  "category": [],
+  "category": [
+    "music",
+    "kinetic-type",
+    "ads"
+  ],
   "creator": "@GonzaloMacagno",
   "creator_url": "https://x.com/GonzaloMacagno/status/2102897651008344202",
   "page": "https://www.promptsmotion.com/gonzalomacagno-2de1a9",
@@ -23,5 +27,35 @@
   "source_prompt_words": 13,
   "listed": true,
   "skill": "styles/pm-gonzalomacagno-2de1a9/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/music.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "إعلان عمودي مدته 10 ثوانٍ بلا صوت لمهرجان موسيقي، على تدرّج بنفسجي-وردي تمرّ فوقه خطوط عريضة منحنية بالأزرق والبرتقالي والوردي: الاسم يظهر بخط ثقيل، ثم بطاقة كل يوم بشريط تاريخ أبيض وأسماء الفرق تتدرج من الأكبر إلى الأصغر، تفصل بينها مسحة من أشرطة ألوان مكدّسة، وتنتهي ببطاقة التواريخ والمكان وزر حجز داكن.",
+  "summary_en": "A silent 10-second vertical festival promo on a lilac-to-pink gradient crossed by thick looping ribbon strokes in periwinkle, orange and pink: the festival name slams in, then one card per day with a white date strip and a headliner-down lineup cascading from huge to tiny names, separated by a stacked colour-band wipe, ending on a dates-and-venue card with a dark ticket pill.",
+  "keywords": [
+    "festival lineup",
+    "music festival",
+    "vertical promo",
+    "ribbon strokes",
+    "gradient background",
+    "band wipe",
+    "lineup cascade",
+    "event poster",
+    "مهرجان موسيقي",
+    "برنامج المهرجان",
+    "إعلان عمودي",
+    "أشرطة منحنية",
+    "ملصق حفلة",
+    "تدرج لوني"
+  ],
+  "difficulty": 2,
+  "duration_s": 10,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-gonzalomacagno-2de1a9/BRIEF.md"
 }

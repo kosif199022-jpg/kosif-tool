@@ -1,9 +1,9 @@
 ---
 name: pm-andginja-333d32
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A fast 15-second studio showreel inside a camera-viewfinder HUD (corner brackets, timecode with red rec dot, coordinates, chapter labels): a monogram draws on over navy, golden-hour river city footage under bold-plus-italic-serif headlines, a video-masked word, numbered project cards, a website mock tilting into 3D, stats, and a logo decoding into the URL. Use to make a new video in this look (Product UI); address it by ID pm-andginja-333d32.
 ---
 
-# KOSIF TOOL — Studio website showreel
+# KOSIF TOOL — Studio website showreel / ريل استوديو إبداعي بإطار كاميرا: فيلم وتصميم وبرمجة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/andginja-333d32
@@ -17,14 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+ريل تعريفي سريع مدته 15 ثانية لاستوديو صغير، كله داخل إطار عدسة كاميرا بزوايا بيضاء وعدّاد زمني مع نقطة تسجيل حمراء وإحداثيات وأرقام فصول: شعار يُرسم على كحلي داكن، لقطات غروب لمدينة على النهر تحت عنوان بخط ثقيل ومائل، لوحات ألوان عمودية، كلمة ضخمة مقنّعة بالفيديو، بطاقات مشاريع مرقمة، موقع ويب يميل ثلاثي الأبعاد، أرقام نتائج، ثم شعار يفك تشفيره إلى العنوان.
+
+A fast 15-second studio showreel inside a camera-viewfinder HUD (corner brackets, timecode with red rec dot, coordinates, chapter labels): a monogram draws on over navy, golden-hour river city footage under bold-plus-italic-serif headlines, a video-masked word, numbered project cards, a website mock tilting into 3D, stats, and a logo decoding into the URL.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, Web Audio), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك.
+Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك, Photos / صور, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

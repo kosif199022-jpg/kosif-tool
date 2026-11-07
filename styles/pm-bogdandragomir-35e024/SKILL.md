@@ -1,9 +1,9 @@
 ---
 name: pm-bogdandragomir-35e024
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second e-ink style product intro: it opens on a microscopic ink capsule filling with white and black grains that bursts into a pixel screen, and every chapter builds and erases with a dithered pixel dissolve; mail and article icons trail particle tails into a list, gather into a magazine issue on light paper, land on an e-reader, then a serif logo. Use to make a new video in this look (Product UI); address it by ID pm-bogdandragomir-35e024.
 ---
 
-# KOSIF TOOL — Product intro synced to music
+# KOSIF TOOL — Product intro synced to music / تعريف بمنتج قراءة بأسلوب الحبر الإلكتروني وانتقالات تحبب
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/bogdandragomir-35e024
@@ -17,16 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+تعريف منتج مدته 15 ثانية بأسلوب الحبر الإلكتروني: يبدأ بكبسولة حبر مجهرية تمتلئ بحبيبات بيضاء وسوداء ثم تنفرط إلى شاشة من البكسلات، وكل فصل يُبنى ويُمحى بتحبب نقطي؛ أيقونات بريد ومقالات تُسحب كذيول من الجسيمات إلى قائمة، تُجمع في عدد مجلة على ورق فاتح، تصل إلى قارئ إلكتروني، ثم الشعار بخط سيريف.
+
+A 15-second e-ink style product intro: it opens on a microscopic ink capsule filling with white and black grains that bursts into a pixel screen, and every chapter builds and erases with a dithered pixel dissolve; mail and article icons trail particle tails into a list, gather into a magazine issue on light paper, land on an e-reader, then a serif logo.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, HTML Canvas, Web Audio), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Music / موسيقى, Code / كود.
+Categories: Product UI / واجهات المنتج, Particles / جسيمات, Kinetic type / تايبوغرافي متحرك, Music / موسيقى.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 - [playbooks/music.md](../../playbooks/music.md)
-- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

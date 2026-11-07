@@ -1,12 +1,12 @@
 {
   "id": "pm-amol909s-27533e",
   "name": "Commotion app showreel",
-  "name_ar": null,
+  "name_ar": "عرض تطبيق لإدارة عدة جلسات برمجة بالذكاء الاصطناعي",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
-    "charts",
+    "phone",
     "kinetic-type"
   ],
   "creator": "@Amol909S",
@@ -29,7 +29,33 @@
   "skill": "styles/pm-amol909s-27533e/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md",
+    "playbooks/phone.md",
     "playbooks/kinetic-type.md"
-  ]
+  ],
+  "summary_ar": "عرض تطبيق مدته 20 ثانية على ورق دافئ بخطوط ناعمة: شعار من مربعات رمادية يُبنى، ثم شبكة من نوافذ محادثات برمجة متعددة تعمل معاً مع وسم أسود «كل الخيوط أمامك»، تكبير على نافذة واحدة والموافقة على أمر، هاتف يعرض نفس مساحة العمل، مشهد كحلي يوجّه فيه عقدة متوهجة الطلب إلى أحد نموذجين عبر منحنى ومؤشر تعقيد، أربع بطاقات ميزات (لوحة مهام، ملاحظات المتصفح، لوحة أوامر، تنبيه الانتهاء)، ثم الشعار والشعار اللفظي.",
+  "summary_en": "A 20-second app showreel on warm soft-lit paper: a square logo builds, a grid of coding-agent chat windows runs at once under black caption pills, one window zooms in to approve a command, a phone shows the same workspace, a navy scene routes a prompt to one of two models, four feature tiles animate, and the logo returns.",
+  "keywords": [
+    "app showreel",
+    "developer tool",
+    "coding agents",
+    "multi window grid",
+    "model router",
+    "feature tiles",
+    "phone mockup",
+    "calm UI",
+    "عرض تطبيق",
+    "أداة مطورين",
+    "وكلاء برمجة",
+    "شبكة نوافذ",
+    "واجهة هادئة"
+  ],
+  "difficulty": 3,
+  "duration_s": 20,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "SVG"
+  ],
+  "brief": "styles/pm-amol909s-27533e/BRIEF.md"
 }

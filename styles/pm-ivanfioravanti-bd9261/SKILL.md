@@ -1,9 +1,9 @@
 ---
 name: pm-ivanfioravanti-bd9261
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A roughly 10-second browser screen capture of a voxel 3D racer: a dark title card with orange pixel lettering gives way to a chase camera behind a twin-engine pod that weaves between brown block rock pillars and arches over orange sand under a two-sun blue sky, trailing yellow cube sparks with speed streaks, a speed readout and a boost bar. Use to make a new video in this look (3D); address it by ID pm-ivanfioravanti-bd9261.
 ---
 
-# KOSIF TOOL — Voxel pod-racer run
+# KOSIF TOOL — Voxel pod-racer run / سباق مركبة فوكسل في صحراء بشمسين
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/ivanfioravanti-bd9261
@@ -17,12 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+تسجيل شاشة مدته نحو 10 ثوانٍ للعبة سباق ثلاثية الأبعاد في المتصفح بعالم مكعبات (فوكسل): بطاقة عنوان داكنة بحروف برتقالية، ثم كاميرا خلف مركبة سباق بمحركين مشتعلين تنطلق بين أعمدة وأقواس صخرية بنية فوق رمال برتقالية وسماء زرقاء بشمسين، وتترك ذيولاً من مكعبات صفراء متطايرة مع خطوط سرعة وعداد سرعة وشريط دفع.
+
+A roughly 10-second browser screen capture of a voxel 3D racer: a dark title card with orange pixel lettering gives way to a chase camera behind a twin-engine pod that weaves between brown block rock pillars and arches over orange sand under a two-sun blue sky, trailing yellow cube sparks with speed streaks, a speed readout and a boost bar.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, HTML Canvas), suggested duration (10 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: creative motion.
-- (no category playbook yet)
+Categories: 3D / ثلاثي الأبعاد, Particles / جسيمات.
+- [playbooks/3d.md](../../playbooks/3d.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
 
 Category tactics:
-* Develop original choreography from the reference; verify imagery before claiming a match.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

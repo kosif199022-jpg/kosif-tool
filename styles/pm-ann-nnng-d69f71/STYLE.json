@@ -1,16 +1,12 @@
 {
   "id": "pm-ann-nnng-d69f71",
   "name": "Interactive glitter sticker with peel animation",
-  "name_ar": null,
+  "name_ar": "ملصقات لامعة تفاعلية تميل مع المؤشر وتُقشَّر عن ورقتها في مقارنة بين نموذجين",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
-    "charts",
-    "kinetic-type",
-    "photos",
-    "music",
-    "code"
+    "photos"
   ],
   "creator": "unknown",
   "creator_url": "https://x.com/ann_nnng/status/2104159923886244176",
@@ -32,10 +28,32 @@
   "skill": "styles/pm-ann-nnng-d69f71/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/photos.md",
-    "playbooks/music.md",
-    "playbooks/code.md"
-  ]
+    "playbooks/photos.md"
+  ],
+  "summary_ar": "مقطع عمودي قصير (نحو 13 ثانية) مقسوم أفقياً إلى لوحتين بيضاوين فوق بعض، كل منهما باسم نموذج ذكاء اصطناعي: ملصقات بحواف بيضاء وجليتر هولوغرافي (عبارة ملونة بنجوم، علبة مشروب، شعار كروم، كوكب ديسكو) تميل وتلمع مع حركة يد المؤشر، ثم تُسحب زاويتها فتُقشَّر وتكشف ورقة خلفية رمادية، مع شريط مصغرات بالأسفل.",
+  "summary_en": "A short 13-second portrait clip split into two stacked white panels, each labelled with an AI model name: die-cut stickers with white borders and holographic glitter (a rainbow star slogan, a drink can, a chrome logo, a disco planet) tilt and shimmer as a hand cursor moves over them, then get peeled by a corner to reveal grey backing paper, with a thumbnail tray below.",
+  "keywords": [
+    "sticker",
+    "holographic",
+    "glitter",
+    "peel animation",
+    "3D tilt",
+    "cursor interaction",
+    "model comparison",
+    "split screen",
+    "ملصق",
+    "هولوغرافي",
+    "تقشير",
+    "لمعة",
+    "مقارنة نماذج",
+    "تفاعلي"
+  ],
+  "difficulty": 3,
+  "duration_s": 13,
+  "stack": [
+    "React",
+    "CSS",
+    "WebGL"
+  ],
+  "brief": "styles/pm-ann-nnng-d69f71/BRIEF.md"
 }
