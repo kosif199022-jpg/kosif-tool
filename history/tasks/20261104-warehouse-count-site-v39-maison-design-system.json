@@ -214,7 +214,7 @@
     {
       "n": 25,
       "what": "v61 (artifact version 63): book-page paper palette (warm paper + fibre texture, ink colours, navy accent); marked rows as a highlighter stroke; always-visible 'marked only' filter with a bar, marks synced to the account db (saved/marks), two-step clear; C button on every row sends the item to the Claude chat for photo + all alternatives; visual format editor (colour pickers, size sliders, font) saved by name in the theme studio.",
-      "manual": "Recorded verification checkpoint; reproduce by manually checking the reported result against the source evidence.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
       "params": {
         "checkpoint_time": "2026-11-05T08:58:00+03:00",
         "checkpoint_status": "published",
@@ -224,7 +224,7 @@
     {
       "n": 26,
       "what": "v61.1 (artifact version 64): iPhone camera — when the live camera is denied or blocked, the black area becomes step-by-step Safari/Chrome permission help with a retry button; «صوّر الرف» (local ZXing decode of a still photo) becomes the primary button; «اسأل Claude» hidden when image reading isn't available in the view; solid readable toasts.",
-      "manual": "Recorded verification checkpoint; reproduce by manually checking the reported result against the source evidence.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
       "params": {
         "checkpoint_time": "2026-11-05T09:05:00+03:00",
         "checkpoint_status": "published",
@@ -234,7 +234,7 @@
     {
       "n": 27,
       "what": "v61.2 (artifact version 65): unified 'paper & ink' light palette — 3 paper tones, warm ink in 3 weights, one indigo spot colour, earthy status colours, highlighter marks; removed cool glass/white/grey and stray bright blues; grid cells blend into rows.",
-      "manual": "Recorded verification checkpoint; reproduce by manually checking the reported result against the source evidence.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
       "params": {
         "checkpoint_time": "2026-11-05T09:20:00+03:00",
         "checkpoint_status": "published",
@@ -244,7 +244,7 @@
     {
       "n": 28,
       "what": "v61.3 (artifact version 66): theme studio AI brief rewritten — 9 page sections described top to bottom, 87 settings each with its current measured value; 50 new tokens (page width/padding, button/search/chip sizes, column widths, show/hide banner/counter/scope/tabs/mobile bar, sticky search, shadows, toasts) wired to CSS; 5 more editor sliders.",
-      "manual": "Recorded verification checkpoint; reproduce by manually checking the reported result against the source evidence.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
       "params": {
         "checkpoint_time": "2026-11-05T09:35:00+03:00",
         "checkpoint_status": "published",
@@ -254,7 +254,7 @@
     {
       "n": 29,
       "what": "v61.4 (artifact version 67): theme message made complete — description box in the studio goes into the message, every setting has a measured value (no blanks), a full 90-line :root template with current values for the AI to edit, item panel/camera/multi-search/mobile described, a 'show message' view; show/hide tokens only act on none; header text stays readable.",
-      "manual": "Recorded verification checkpoint; reproduce by manually checking the reported result against the source evidence.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
       "params": {
         "checkpoint_time": "2026-11-05T09:45:00+03:00",
         "checkpoint_status": "published",
@@ -264,7 +264,7 @@
     {
       "n": 30,
       "what": "v61.5 (artifact version 68): sticky search area made opaque (rows no longer show through while scrolling); theme message adds a 'behaviour and states' section (hover, press, focus, count/save flow, sync dot, flash, row status tints, open/marked rows, sort, highlight, disabled, toast time) with 27 new wired settings; themes accept free CSS rules after :root (sanitised: no url(, @import, @font-face, script), with a 72-entry selector map in the message.",
-      "manual": "Recorded verification checkpoint; reproduce by manually checking the reported result against the source evidence.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
       "params": {
         "checkpoint_time": "2026-11-05T10:00:00+03:00",
         "checkpoint_status": "published",
@@ -274,7 +274,7 @@
     {
       "n": 31,
       "what": "v61.6 (artifact version 69): editable grid cells (الفعلي، الموقع، الملاحظة) drawn as clear boxes inside each cell (row colour around, divider lines kept, hover and focus states); search text keeps clear of the icon; C button, when the page is not beside a chat, opens a new Claude chat with the search request (photo + 2026 alternatives) prefilled, else copies it.",
-      "manual": "Recorded verification checkpoint; reproduce by manually checking the reported result against the source evidence.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
       "params": {
         "checkpoint_time": "2026-11-05T10:15:00+03:00",
         "checkpoint_status": "published",
@@ -284,7 +284,7 @@
     {
       "n": 32,
       "what": "v61.7 (artifact version 70): element picker in the theme studio (hover highlights any element with its selector, click opens a panel: text/background/border colours, size, weight, padding, margin, radius, border, height, width, letter spacing, line height, opacity, font, alignment, hide; live preview; saved as CSS rules in the theme, reset per element); the AI message adds a live map of ~100 element types with measured size, font, colours, radius, padding and text, plus the theme's current rules; C now answers inside the page (sample, complex tier): part type, cars, position, OE and aftermarket numbers as chips marked when already in the list (click to search), notes, confidence, Google/Bing image links, copy — opening claude.ai in a new tab was refused by claude.ai (ERR_BLOCKED_BY_RESPONSE).",
-      "manual": "Recorded verification checkpoint; reproduce by manually checking the reported result against the source evidence.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
       "params": {
         "checkpoint_time": "2026-11-05T10:35:00+03:00",
         "checkpoint_status": "published",
@@ -294,7 +294,7 @@
     {
       "n": 33,
       "what": "v62 (artifact version 71): owner's Excel (Spareto + AutopartsPro + inventory file, 2,533 items) merged: +37,310 brand alternatives and +3,695 OE numbers after de-duplication (2,267 items now have alternatives), searchable; item panel credits Spareto/AutopartsPro with links; 1,961 catalogue photos (223 repeated placeholders dropped) shipped as pics.json (2.35 MB, WebP) and shown in rows and the item panel; location column narrowed to 6.6rem.",
-      "manual": "Recorded verification checkpoint; reproduce by manually checking the reported result against the source evidence.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
       "params": {
         "checkpoint_time": "2026-11-05T16:50:00+03:00",
         "checkpoint_status": "published",
@@ -304,7 +304,7 @@
     {
       "n": 34,
       "what": "v62.1 (artifact versions 72-73): photos rebuilt from the owner's original-resolution archive (2,185 JPG, 224 MB): 1,954 kept (231 repeated placeholders dropped); row thumbnails regenerated [REDACTED FINANCIAL IDENTIFIER] (pics.json 3.3 MB); full photos up [REDACTED FINANCIAL IDENTIFIER] of ~2 MB (full/p00-p31.json, 62 MB) loaded only when an item panel opens; panel shows the larger photo and a full-screen viewer with original and shown size.",
-      "manual": "Recorded verification checkpoint; reproduce by manually checking the reported result against the source evidence.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
       "params": {
         "checkpoint_time": "2026-11-05T17:20:00+03:00",
         "checkpoint_status": "published",
@@ -314,7 +314,7 @@
     {
       "n": 35,
       "what": "v62.2 (artifact version 74): owner's alternatives file 3 merged (adds autopiter.ru: 15,666 rows); exist.ru rows skipped because their numbers are partly hidden; totals after de-duplication vs the original data: +47,498 brand numbers and +4,322 OE (about +10,188 and +627 beyond the previous upload), 2,388 items now have alternatives (was 2,267); item panel credits Autopiter with a link.",
-      "manual": "Recorded verification checkpoint; reproduce by manually checking the reported result against the source evidence.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
       "params": {
         "checkpoint_time": "2026-11-05T20:15:00+03:00",
         "checkpoint_status": "published",
@@ -324,11 +324,91 @@
     {
       "n": 36,
       "what": "v62.3 (artifact version 75): owner's alternatives file 4 merged (autopiter.ru grew to 21,875 rows); unioned with file 3 (nothing from file 3 lost); about +3,922 brand numbers and +74 OE beyond version 74; still 2,388 items with alternatives; exist.ru still skipped (numbers partly hidden).",
-      "manual": "Recorded verification checkpoint; reproduce by manually checking the reported result against the source evidence.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
       "params": {
         "checkpoint_time": "2026-11-05T20:50:00+03:00",
         "checkpoint_status": "published",
         "checks": "file-4-only number 14874008 (Cs) finds item 0012512; t56/t59/t62/t64 0 errors"
+      }
+    },
+    {
+      "n": 37,
+      "what": "Site-not-loading report: live version unchanged since v75; republished as version 76; the built-in browser (signed out) showed 'Couldn't load this artifact', cause not confirmed, device disconnected before re-check. Then v63 (artifact version 77): invoices — header button with a line-count badge; panel with search-to-add (code, name, SMACC, alternatives), per-line qty/unit price/line discount, invoice discount, VAT (default 15%), totals, customer fields, auto number INV-YYYY-NNNN, save (db saved/invoices, up to 300), saved list (open, copy, two-step delete), seller settings (db saved/invset), last price remembered per item (saved/prices), print to A4/PDF and download as HTML; 'add to invoice' button in the item panel; draft kept on the device.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T09:05:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "t65: 2 lines 3x120 + 2x250 -10% = 810, -20 discount, 15% VAT 118.50, total 908.50; saved and listed; print layout screenshot; badge survives reload; 0 page errors. Not checked on the live claude.ai page."
+      }
+    },
+    {
+      "n": 38,
+      "what": "v63.1 (artifact version 78): invoice opens as a full page (desktop and phone) instead of a side panel; part location (الموقع) shown in search results, as its own column on screen and on the printed invoice, and stored with saved invoices.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T09:15:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "location B10 typed in the grid appears in search result, invoice column and print; sheet covers 1900x900 and 390x844 and closes cleanly; 0 page errors"
+      }
+    },
+    {
+      "n": 39,
+      "what": "v63.2 (artifact version 79): invoice picker shows the warehouse items straight away (the current filtered list, 40 at a time, scrollable) and searches all 2,533 items with the same word-by-word matching as the main search (name words, code, SMACC, alternative numbers); results show stock and location, items already on the invoice are marked and add +1; the typed search stays after adding.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T09:25:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "empty picker 40 items; مقص 40+, لي ماء 40+, KHZ1178PF 3, 06E121045 9, nonsense 0; add keeps query and marks the item; t65 totals 908.50; 0 page errors"
+      }
+    },
+    {
+      "n": 40,
+      "what": "v64 (artifact version 80), from the owner's analysis report and v2 plan: end-of-count report page (one big percentage + 'continue counting' primary button, status counts, value of differences using prices typed in invoices, biggest differences table, location map tiles coloured done/diff/partial/not-started that filter the list, signature lines, print); change history kept inside each count entry (last 12 values with time and who, names resolved via user.profiles) shown in the item panel; alternatives that exist in stock under another code listed in the item panel with location and availability; quick quantity buttons (1-20); save feedback (short vibration + soft tone) and screen wake lock while counting. Not done from the plan: blind counting/second-third count and supervisor approval (the app is single-count), Excel import of a new stock report (already exists as list import), offline queue (already exists).",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T09:50:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "t66: quick 12 sets qty; history shows 2 then 1; 2 in-stock alternatives found; report 3 diffs, value 50.00 from one invoice price, tiles A1 diff / A2 not started / B4 diff; tile filters list to A1; t56/t59/t62/t64/t65 0 errors; contrast gate 0 low"
+      }
+    },
+    {
+      "n": 41,
+      "what": "v65 (artifact version 81), ideas taken from the owner's other counting tool (Apple-style single-file app): part-number core matching in search (shop prefixes BP/OE/OL/ORG/OR/ATG/FRY/SK/LR/V and suffixes BP/OE/LMF/LM/ON/OEP/ATG/VW/LR ignored for PN-like tokens of 7+ chars); 'current shelf' chip — set once, every saved count on an item without a location takes it; 'recent counts' sheet (mine / whole team, 40 latest with time, location, status colour); one-click ready themes in the studio (Apple light, Apple dark, back to paper & ink). Not copied: their two-round blind counting model and their hard-coded 1,100-item list.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T10:05:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "t67: BP4H0121081AG and V4H0121081AG find the V4H item, 8K0411327BLMF finds 8K0411327B LMF, [REDACTED FINANCIAL IDENTIFIER], Arabic ى/ي normalised; shelf A-03 auto-filled on save; recent list shows it; Apple preset applies bg #F5F5F7 accent #0066CC; t56/t59/t62/t65/t66 0 page errors; contrast gate 0 low"
+      }
+    },
+    {
+      "n": 42,
+      "what": "v65.1 (artifact version 82): Apple presets rebuilt from the owner's REA measurements (apple-style-tokens.css + analysis): weight 600 for headings, motion 240/320ms on cubic-bezier(.4,0,.6,1), pill buttons 980px with #0071E3 primary (#0077ED hover, #006EDB active), cards 18px, fields 12px, focus ring 4px rgba(0,113,227,.18), glass search bar rgba(250,250,252,.8) with saturate(180%) blur(20px), dark variant; choosing a preset again upgrades an older saved copy; app-wide prefers-reduced-motion and prefers-contrast: more support. No Apple code, fonts, logo or assets used; no letter-spacing on Arabic.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T10:20:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "preset applied: export button rgb(0,113,227), button radius 980px, glass bar saturate(1.8) blur(20px), h1/name weight 600, search 12px; reduced motion -> 0.01ms; t56/t59/t65/t66/t67 0 page errors; contrast gate 0 low"
+      }
+    },
+    {
+      "n": 43,
+      "what": "v66 (artifact version 83): search with conditions — new 'بحث بشروط' button opens 3 boxes joined by 'و' where a result must match every filled box (name words, codes, SMACC, alternatives); a switch in the multi-search box flips between 'all conditions together' and 'any of them' (the old multi search); box count still adjustable; mode remembered on the device.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T12:20:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "t68: مقص 416 results, + 8K0 -> 7, + يمين -> 0; switching to 'any of them' -> 473; t56/t59/t66/t67 0 page errors"
+      }
+    },
+    {
+      "n": 44,
+      "what": "v66.1-v67 (artifact version 84): search row moved to sit directly on top of the table and pinned with the table head while the rows above scroll away; status tabs, group/location/sort, view switch, current shelf and recent counts packed into one compact row; 'search in' chips moved into the options panel (sliders button); the separate conditions button merged into one 'بحث متعدد' with the AND/OR switch inside; activity log (السجل) — every quantity, note, location, model, photo and saved invoice is logged per user per day on the account, viewable by day with search and 1/7/14/30-day range, plus older quantity changes from each item's history; new 'آخر تعديل' column (date, time, ×N edits) on wide screens; default light look changed to an Apple Store-like style from the owner's REA measurements (#F5F5F7 ground, white cards with soft shadows, light table head, #0071E3 pill buttons, glass bars, weight 600), paper & ink kept as a preset; phone header fixed (title, scrolling action row, status row).",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T12:45:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "history lists 3 events (qty empty->3, 3->5, location ->B7); last-change cell '7 نوفمبر | 12:13 م | 2×'; AND search مقص=60 visible, +8K0=7; t56/t59/t62/t66/t67 0 page errors; contrast gate 0 low after darkening ok green to #17712E; desktop 1850 and phone 390 screenshots checked"
       }
     }
   ],
