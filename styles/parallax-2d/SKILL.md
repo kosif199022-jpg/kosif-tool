@@ -1,9 +1,9 @@
 ---
 name: parallax-2d
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 9:16 reel that turns still photos into scenes with depth: each image is cut into three or four layers (foreground, subject, background, sky) that slide at different speeds under a slow camera push, with haze and dust particles between layers, and transitions where the camera passes through the foreground layer into the next picture. Use to make a new video in this look (Photos); address it by ID parallax-2d.
 ---
 
-# KOSIF TOOL — بارالاكس
+# KOSIF TOOL — بارالاكس / بارالاكس — صورة مقطّعة إلى طبقات تتحرك بعمق
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي 9:16 تتحول فيه صور ثابتة إلى مشاهد ذات عمق: كل صورة مقطّعة إلى ثلاث أو أربع طبقات (مقدمة وشخص وخلفية وسماء) تنزلق بسرعات مختلفة مع دفع بطيء للكاميرا، وضباب وجزيئات غبار بين الطبقات، وانتقالات تمر فيها الكاميرا عبر طبقة المقدمة إلى الصورة التالية.
+
+A 9:16 reel that turns still photos into scenes with depth: each image is cut into three or four layers (foreground, subject, background, sky) that slide at different speeds under a slow camera push, with haze and dust particles between layers, and transitions where the camera passes through the foreground layer into the next picture.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, HTML Canvas), suggested duration (27 s), aspect 9:16, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Photos / صور, 3D / ثلاثي الأبعاد.

@@ -1,9 +1,9 @@
 ---
 name: saas-demo
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 9:16 reel showcasing a software product: a clean, rounded web-app window with a soft shadow floating on a light gradient, a cursor that glides and clicks with a press ring, camera zooms into each feature while short Arabic headlines appear above, data and charts fill inside the UI as if live, ending on the logo and a sign-up button. Use to make a new video in this look (Product UI); address it by ID saas-demo.
 ---
 
-# KOSIF TOOL — استعراض SaaS
+# KOSIF TOOL — استعراض SaaS / استعراض SaaS — جولة سريعة داخل واجهة تطبيق ويب
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -13,12 +13,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+ريل عمودي 9:16 يعرض منتجاً برمجياً: نافذة تطبيق ويب نظيفة بزوايا مستديرة وظل ناعم تطفو على خلفية متدرجة فاتحة، ومؤشر فأرة يتحرك وينقر بحلقة ضغط، والكاميرا تقترب من كل ميزة بينما تظهر عناوين عربية قصيرة فوقها، وتمتلئ البيانات والرسوم داخل الواجهة كأنها حية، وتنتهي بالشعار وزر الاشتراك.
+
+A 9:16 reel showcasing a software product: a clean, rounded web-app window with a soft shadow floating on a light gradient, a cursor that glides and clicks with a press ring, camera zooms into each feature while short Arabic headlines appear above, data and charts fill inside the UI as if live, ending on the logo and a sign-up button.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (30 s), aspect 9:16, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج.
+Categories: Product UI / واجهات المنتج, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,10 +1,13 @@
 {
   "id": "pm-faroukzy-9ff23e",
   "name": "The Last Light animated short",
-  "name_ar": null,
+  "name_ar": "فيلم قصير متحرك: روبوت حارس المنارة يهب ضوءه لإنقاذ سفينة",
   "origin": "PromptsMotion",
   "type": "Prompt",
-  "category": [],
+  "category": [
+    "characters",
+    "3d"
+  ],
   "creator": "@faroukzy",
   "creator_url": "https://x.com/faroukzy/status/2103387771180138551",
   "page": "https://www.promptsmotion.com/faroukzy-9ff23e",
@@ -23,5 +26,37 @@
   "source_prompt_words": 9,
   "listed": true,
   "skill": "styles/pm-faroukzy-9ff23e/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/characters.md",
+    "playbooks/3d.md"
+  ],
+  "summary_ar": "فيلم قصير متحرك مدته 4 دقائق بأسلوب رسوم دافئة ثلاثية الأبعاد ناعمة: من الفضاء إلى الغروب فوق منارة حمراء وبيضاء على صخرة، روبوت أبيض صغير بوجه شاشة ونواة مضيئة في صدره يعتني بالمصباح، ثم ليل وعاصفة ونداء استغاثة عبر راديو قديم وسفينة تقترب من الصخور، فينطفئ المصباح ويضع الروبوت نواته فيه فيشق الشعاع العاصفة، وينتهي بفجر وفتاة وقبطانة تعيدان إليه الحياة، مع ترجمة بأسماء المتحدثين وأشرطة سينمائية في الذروة.",
+  "summary_en": "A 4-minute animated short in a soft 3D-illustrated look: a small white robot keeps a red-and-white lighthouse from sunset into a stormy night, hears a distress call on an old radio, gives its glowing chest core to restart the dead lamp so the beam saves a ship, and is revived at dawn by a girl and a captain, with named subtitles.",
+  "keywords": [
+    "animated short",
+    "lighthouse",
+    "robot character",
+    "storm at sea",
+    "sacrifice story",
+    "volumetric light",
+    "letterbox",
+    "subtitles",
+    "colour script",
+    "فيلم قصير متحرك",
+    "منارة",
+    "روبوت",
+    "عاصفة",
+    "تضحية",
+    "إضاءة سينمائية",
+    "قصة مصورة"
+  ],
+  "difficulty": 5,
+  "duration_s": 240,
+  "stack": [
+    "Three.js",
+    "WebGL",
+    "Remotion",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-faroukzy-9ff23e/BRIEF.md"
 }

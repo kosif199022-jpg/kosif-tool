@@ -1,9 +1,9 @@
 ---
 name: pm-gonzalomacagno-2de1a9
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A silent 10-second vertical festival promo on a lilac-to-pink gradient crossed by thick looping ribbon strokes in periwinkle, orange and pink: the festival name slams in, then one card per day with a white date strip and a headliner-down lineup cascading from huge to tiny names, separated by a stacked colour-band wipe, ending on a dates-and-venue card with a dark ticket pill. Use to make a new video in this look (Music); address it by ID pm-gonzalomacagno-2de1a9.
 ---
 
-# KOSIF TOOL — Festival lineup promo reel
+# KOSIF TOOL — Festival lineup promo reel / إعلان عمودي لبرنامج مهرجان موسيقي بخطوط شريطية ملوّنة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/gonzalomacagno-2de1a9
@@ -17,12 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان عمودي مدته 10 ثوانٍ بلا صوت لمهرجان موسيقي، على تدرّج بنفسجي-وردي تمرّ فوقه خطوط عريضة منحنية بالأزرق والبرتقالي والوردي: الاسم يظهر بخط ثقيل، ثم بطاقة كل يوم بشريط تاريخ أبيض وأسماء الفرق تتدرج من الأكبر إلى الأصغر، تفصل بينها مسحة من أشرطة ألوان مكدّسة، وتنتهي ببطاقة التواريخ والمكان وزر حجز داكن.
+
+A silent 10-second vertical festival promo on a lilac-to-pink gradient crossed by thick looping ribbon strokes in periwinkle, orange and pink: the festival name slams in, then one card per day with a white date strip and a headliner-down lineup cascading from huge to tiny names, separated by a stacked colour-band wipe, ending on a dates-and-venue card with a dark ticket pill.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (10 s), aspect 9:16, difficulty 2/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: creative motion.
-- (no category playbook yet)
+Categories: Music / موسيقى, Kinetic type / تايبوغرافي متحرك, Ads / إعلانات.
+- [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
-* Develop original choreography from the reference; verify imagery before claiming a match.
+* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

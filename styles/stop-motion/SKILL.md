@@ -1,9 +1,9 @@
 ---
 name: stop-motion
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A vertical reel in stop motion with real objects shot top-down or front-on: tools, food and paper move and assemble in small jumps at 12 frames per second, with natural light flicker, real shadows, and words built out of the objects themselves. Use to make a new video in this look (Characters); address it by ID stop-motion.
 ---
 
-# KOSIF TOOL — ستوب موشن
+# KOSIF TOOL — ستوب موشن / ستوب موشن بأشياء حقيقية تتحرك لقطة لقطة على سطح مكتب
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي بطريقة ستوب موشن لأشياء حقيقية مصورة من الأعلى أو من الأمام: أدوات وطعام وأوراق تتحرك وتتجمع بقفزات صغيرة بمعدل 12 لقطة في الثانية، مع ارتعاش الإضاءة الطبيعي وظلال حقيقية وكلمات مصنوعة من الأشياء نفسها.
+
+A vertical reel in stop motion with real objects shot top-down or front-on: tools, food and paper move and assemble in small jumps at 12 frames per second, with natural light flicker, real shadows, and words built out of the objects themselves.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (28 s), aspect 9:16, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Characters / شخصيات, Photos / صور.

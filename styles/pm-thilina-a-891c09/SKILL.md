@@ -1,9 +1,9 @@
 ---
 name: pm-thilina-a-891c09
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 25-second vertical app-update reel switching cream, chocolate and pink: a bitten cookie logo, two-line headlines (dark then pink), cute faced treat tiles, a dark-mode toggle, grumpy chocolates stacking past a limit line, a filling jar, a sunburst version reveal, an eaten tab bar, a drag-reorder list, a weekly recap count-up and a mascot end card. Use to make a new video in this look (Product UI); address it by ID pm-thilina-a-891c09.
 ---
 
-# KOSIF TOOL — sweetRegret app update reel
+# KOSIF TOOL — sweetRegret app update reel / ريل تحديث تطبيق حلويات بشخصيات لطيفة وألوان شوكولاتة ووردي
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/thilina-a-891c09
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+ريل عمودي مدته 25 ثانية لتحديث تطبيق تتبع الحلويات، يتبدل بين خلفية كريمية وبنية داكنة ووردية: كوكيز مقضومة تصبح شعاراً، شارة «جديد في» وعنوان بسطرين (أسود ثم وردي)، بطاقات حلويات كرتونية بوجوه مبتسمة، مفتاح وضع داكن، قطع شوكولاتة غاضبة تتكدس فوق خط متقطع، برطمان يمتلئ، أشعة وردية تكشف رقم الإصدار، هاتف يلتهم شريط التبويب، قائمة تُعاد ترتيبها بالسحب، بطاقة ملخص أسبوعي بعدد صاعد، وختام بالشخصية وزر تحديث.
+
+A 25-second vertical app-update reel switching cream, chocolate and pink: a bitten cookie logo, two-line headlines (dark then pink), cute faced treat tiles, a dark-mode toggle, grumpy chocolates stacking past a limit line, a filling jar, a sunburst version reveal, an eaten tab bar, a drag-reorder list, a weekly recap count-up and a mascot end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (25 s), aspect 9:16, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية.
+Categories: Product UI / واجهات المنتج, Phone / هاتف, Characters / شخصيات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/phone.md](../../playbooks/phone.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,9 +1,9 @@
 ---
 name: pm-demitiyageekzen-7770ad
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A calm 30-second river panorama from a locked water-level view: a pink-orange sunset behind a modern skyline, then a violet sky as the towers give way to a traditional Chinese pavilion that settles centre under a full moon, its tiers lighting gold and lanterns drifting on the water, while classical verse writes on vertically character by character. Use to make a new video in this look (Code); address it by ID pm-demitiyageekzen-7770ad.
 ---
 
-# KOSIF TOOL — Tengwang Pavilion moonlit river
+# KOSIF TOOL — Tengwang Pavilion moonlit river / جناح تنغوانغ من الغروب إلى ضوء القمر فوق النهر
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/demitiyageekzen-7770ad
@@ -18,12 +18,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+مشهد بانورامي هادئ مدته 30 ثانية لنهر واسع من زاوية ثابتة على مستوى الماء: يبدأ بغروب وردي برتقالي خلف أفق مدينة حديثة مع طيور منفردة، ثم تتحول السماء إلى بنفسجي وتنسحب الأبراج ليظهر جناح صيني تقليدي من اليمين ويتوسط الكادر تحت بدر، تضيء طوابقه بالذهبي وتطفو فوانيس على الماء، بينما تُكتب أبيات شعر كلاسيكية عمودياً حرفاً حرفاً على الأطراف.
+
+A calm 30-second river panorama from a locked water-level view: a pink-orange sunset behind a modern skyline, then a violet sky as the towers give way to a traditional Chinese pavilion that settles centre under a full moon, its tiers lighting gold and lanterns drifting on the water, while classical verse writes on vertically character by character.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, WebGL, Remotion, Web Audio), suggested duration (30 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Code / كود.
+Categories: Code / كود, Kinetic type / تايبوغرافي متحرك.
 - [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
 * Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,9 +1,9 @@
 ---
 name: morph-charts
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 9:16 reel on a dark navy background where one dataset keeps morphing smoothly between forms: scattered dots gather into bars, the bars curl into a donut of shares, the donut unrolls into a line over time, with a big counting number at the top and one fixed colour per category throughout. Use to make a new video in this look (Charts); address it by ID morph-charts.
 ---
 
-# KOSIF TOOL — تحولات بيانات
+# KOSIF TOOL — تحولات بيانات / تحولات بيانات — رسم بياني يتحول من شكل لآخر
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي 9:16 على خلفية كحلية داكنة تعرض فيه نفس مجموعة البيانات وهي تتحول بسلاسة من شكل لآخر: نقاط تتجمع إلى أعمدة، والأعمدة تلتف إلى دائرة نسب، والدائرة تنبسط إلى خط زمني، مع رقم كبير يعدّ في الأعلى وألوان ثابتة لكل فئة طوال الفيديو.
+
+A 9:16 reel on a dark navy background where one dataset keeps morphing smoothly between forms: scattered dots gather into bars, the bars curl into a donut of shares, the donut unrolls into a line over time, with a big counting number at the top and one fixed colour per category throughout.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, GSAP), suggested duration (34 s), aspect 9:16, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Shapes / أشكال.

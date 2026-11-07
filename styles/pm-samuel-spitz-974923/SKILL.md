@@ -1,6 +1,6 @@
 ---
 name: pm-samuel-spitz-974923
-description: A 15-second chaptered reel with a HUD frame: a red ring, a MOTION wordmark with an underline drawing on, a Bauhaus shape grid that recolours, a tilted 3D panel with a chrome sphere and italic 'depth', a large chrome sphere on dark silk with an orbiting red ellipse, 'TYPE.' on red, chrome-filled 'TIME.' and a REEL '26 end card with a flowing red line.
+description: A 15-second chaptered reel with a HUD frame: a red ring, a MOTION wordmark with an underline drawing on, a Bauhaus shape grid that recolours, a tilted 3D panel with a chrome sphere and italic 'depth', a large chrome sphere on dark silk with an orbiting red ellipse, 'TYPE.' on red, chrome-filled 'TIME.' and a REEL '26 end card with a flowing red line. Use to make a new video in this look (Charts); address it by ID pm-samuel-spitz-974923.
 ---
 
 # KOSIF TOOL — Motion design showreel / ريل عرض القدرات: فصول الحركة الأربعة

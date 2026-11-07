@@ -1,7 +1,7 @@
 {
   "id": "whiteboard",
   "name": "سبورة بيضاء",
-  "name_ar": "سبورة بيضاء",
+  "name_ar": "سبورة بيضاء — أقلام ماركر ملونة ترسم شرحاً بسيطاً يتراكم",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -24,5 +24,31 @@
   "skill": "styles/whiteboard/SKILL.md",
   "playbooks": [
     "playbooks/hand-drawn.md"
-  ]
+  ],
+  "summary_ar": "سبورة بيضاء نظيفة تملأ الإطار، يرسم عليها قلم ماركر ظاهر يتغير لونه مع كل عنصر: عنوان عربي أسود بخط عريض مع نجمتين وخط أحمر تحته، ثم أمواج زرقاء، وشمس صفراء مبتسمة، وأسهم بخار حمراء، وسحابة ومطر، وجبل أسود بعشب أخضر، وسهم جريان أخضر، مع تسميات عربية ملونة، حتى يكتمل رسم دورة كاملة بأسهم منقطة وقطرة تتحرك فيها.",
+  "summary_en": "A clean whiteboard filling the frame, drawn by a visible marker that changes colour per element: a bold black Arabic title with two stars and a red underline, then blue waves, a smiling yellow sun, red rising vapour arrows, a cloud with rain, a black mountain with green grass and a green runoff arrow, with coloured Arabic labels, until a full cycle closes with dotted arrows and a moving droplet.",
+  "keywords": [
+    "whiteboard",
+    "marker",
+    "whiteboard animation",
+    "explainer",
+    "science",
+    "water cycle",
+    "draw-on",
+    "سبورة بيضاء",
+    "ماركر",
+    "رسم على السبورة",
+    "شرح علمي",
+    "دورة الماء",
+    "رسم يدوي",
+    "تعليمي"
+  ],
+  "difficulty": 3,
+  "duration_s": 23,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/whiteboard/BRIEF.md"
 }

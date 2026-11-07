@@ -1,11 +1,12 @@
 {
   "id": "pm-bthreeagency-b9b8d9",
   "name": "Badge unlock screen animation",
-  "name_ar": null,
+  "name_ar": "شاشة فتح شارة إنجاز ذهبية في تطبيق جوال مع بريق متساقط ومؤشر تفاعلي",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
+    "phone",
+    "product-ui",
     "particles"
   ],
   "creator": "@BThreeAgency",
@@ -27,7 +28,35 @@
   "listed": true,
   "skill": "styles/pm-bthreeagency-b9b8d9/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
+    "playbooks/phone.md",
+    "playbooks/product-ui.md",
     "playbooks/particles.md"
-  ]
+  ],
+  "summary_ar": "لقطة واجهة جوال قصيرة (نحو 11 ثانية) بنسبة قريبة من 4:3: هاتف في المنتصف على خلفية رمادية فاتحة يعرض صفحة «الشارات» بسماء كحلية، شارة سداسية ذهبية يُرسم داخلها شروق ونهر ثم تنفجر حلقة ذهبية وبريق يتساقط ويظهر اسم الشارة، ثم تقترب الكاميرا ومؤشر يد أصفر يلمس الشارة فتنبض وتلمع، وتحتها صف شارات أخرى بعضها مقفل.",
+  "summary_en": "A short (about 11 s) near-4:3 mobile UI clip: a phone centred on a light grey canvas shows a 'Badges' screen with a navy sky, a gold hexagon badge whose sunrise-and-river art draws in, then a gold ring burst, falling sparkles and the badge name fading up; the camera pushes in as a yellow hand cursor taps the badge so it pulses and gleams, with a row of other badges, one locked, below.",
+  "keywords": [
+    "badge unlock",
+    "achievement",
+    "mobile UI",
+    "gold sparkle",
+    "particles",
+    "phone mockup",
+    "gamification",
+    "cursor tap",
+    "شارة إنجاز",
+    "فتح إنجاز",
+    "واجهة جوال",
+    "بريق ذهبي",
+    "تحفيز",
+    "تطبيق مشي"
+  ],
+  "difficulty": 3,
+  "duration_s": 11,
+  "stack": [
+    "React",
+    "CSS",
+    "HTML Canvas",
+    "Remotion"
+  ],
+  "brief": "styles/pm-bthreeagency-b9b8d9/BRIEF.md"
 }

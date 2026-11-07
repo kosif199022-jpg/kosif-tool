@@ -1,6 +1,6 @@
 ---
 name: pm-techyoutbe-945b56
-description: A 40-second launch film for a library of visual tech guides: a big 'CI/CD.' on a light ground, an architecture diagram drawing itself on cobalt blue, the logo on navy, a carousel of colourful ebook covers, a yellow cover beside a typing terminal, a scrolling wall of topic pills on yellow, a product card clicked by a cursor and a closing CTA.
+description: A 40-second launch film for a library of visual tech guides: a big 'CI/CD.' on a light ground, an architecture diagram drawing itself on cobalt blue, the logo on navy, a carousel of colourful ebook covers, a yellow cover beside a typing terminal, a scrolling wall of topic pills on yellow, a product card clicked by a cursor and a closing CTA. Use to make a new video in this look (Product UI); address it by ID pm-techyoutbe-945b56.
 ---
 
 # KOSIF TOOL — Visual guides library launch / إطلاق مكتبة الأدلة المرئية: فيديو منتج SaaS

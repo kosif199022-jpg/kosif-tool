@@ -1,9 +1,9 @@
 ---
 name: retrowave
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: An eighties-styled vertical reel: a striped orange-to-pink sunset over a purple neon grid floor scrolling toward the camera, wireframe mountains, chrome metallic lettering with a glint, and light VHS tape noise and scanlines. Use to make a new video in this look (Ads); address it by ID retrowave.
 ---
 
-# KOSIF TOOL — ريترو
+# KOSIF TOOL — ريترو / ريترو الثمانينات: شمس مخططة وأرض شبكية نيون وخط كروم
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي بطابع الثمانينات: غروب شمس مخططة بالبرتقالي والوردي فوق أرض شبكية بنفسجية تتحرك نحو الكاميرا، جبال سلكية، نص معدني كرومي بلمعة، وتشويش شريط VHS وخطوط مسح خفيفة.
+
+An eighties-styled vertical reel: a striped orange-to-pink sunset over a purple neon grid floor scrolling toward the camera, wireframe mountains, chrome metallic lettering with a glint, and light VHS tape noise and scanlines.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, React, Remotion), suggested duration (28 s), aspect 9:16, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Ads / إعلانات, 3D / ثلاثي الأبعاد.

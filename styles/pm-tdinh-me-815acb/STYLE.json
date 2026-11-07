@@ -1,10 +1,13 @@
 {
   "id": "pm-tdinh-me-815acb",
   "name": "TypingMind logo reveal",
-  "name_ar": null,
+  "name_ar": "كشف شعار دماغ مضلّع يتجمع من مثلثات ملونة",
   "origin": "PromptsMotion",
   "type": "Prompt",
-  "category": [],
+  "category": [
+    "shapes",
+    "3d"
+  ],
   "creator": "@tdinh_me",
   "creator_url": "https://x.com/tdinh_me/status/2103704250329301409",
   "page": "https://www.promptsmotion.com/tdinh-me-815acb",
@@ -23,5 +26,34 @@
   "source_prompt_words": 18,
   "listed": true,
   "skill": "styles/pm-tdinh-me-815acb/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/shapes.md",
+    "playbooks/3d.md"
+  ],
+  "summary_ar": "كشف شعار مدته 21 ثانية على خلفية كحلية شبه سوداء: هيكل سلكي لدماغ بخطوط ونقاط رفيعة يُرسم من الفراغ، ثم تطير مثلثات بيضاء ووردية ومرجانية وخوخية من خارج الإطار وتلتصق وجهاً وجهاً حتى يمتلئ الدماغ، فتنبض حلقة ضوء، ويستقر داخل أيقونة تطبيق بتدرج، ثم تنزلق يساراً ويُكتب الاسم بمؤشر مرجاني ويظهر سطر الشعار.",
+  "summary_en": "A 21-second logo reveal on near-black navy: a thin wireframe brain of lines and dots draws itself out of nothing, then white, pink, coral and peach triangles fly in from off-frame and lock face by face until the low-poly brain is full, a light ring pulses, it settles into a gradient app-icon tile, slides left, and the wordmark types on with a coral caret above a small tagline.",
+  "keywords": [
+    "logo reveal",
+    "low poly",
+    "wireframe",
+    "triangles assemble",
+    "app icon",
+    "typewriter wordmark",
+    "brain logo",
+    "dark background",
+    "كشف شعار",
+    "مضلع منخفض",
+    "شبكة سلكية",
+    "مثلثات",
+    "أيقونة تطبيق",
+    "كتابة الاسم"
+  ],
+  "difficulty": 3,
+  "duration_s": 21,
+  "stack": [
+    "Remotion",
+    "SVG",
+    "React"
+  ],
+  "brief": "styles/pm-tdinh-me-815acb/BRIEF.md"
 }

@@ -1,10 +1,13 @@
 {
   "id": "pm-grace-sunnyy-29bc61",
   "name": "Keyframe motion design reel",
-  "name_ar": null,
+  "name_ar": "ريل موشن بإطار كيفريمات وخط زمني بالأحمر والأسود",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
+    "kinetic-type",
+    "particles",
+    "3d",
     "charts"
   ],
   "creator": "@Grace_sunnyy",
@@ -26,6 +29,37 @@
   "listed": true,
   "skill": "styles/pm-grace-sunnyy-29bc61/SKILL.md",
   "playbooks": [
+    "playbooks/kinetic-type.md",
+    "playbooks/particles.md",
+    "playbooks/3d.md",
     "playbooks/charts.md"
-  ]
+  ],
+  "summary_ar": "ريل موشن مدته 15 ثانية داخل واجهة محرر حركة داكنة بخط زمني أحمر مرسوم أسفل الشاشة وتعليقات كود صغيرة: كيفريم معيني يتحرك على منحنى تسارع، كلمة ضخمة على أحمر، عنوان ثلاثي الأسطر بظلال مكررة، مجسم ثماني أحمر يتشظى ثم يعود، آلاف الجسيمات تتدفق ثم تشكّل كلمة، لوحة مواصفات (إطارات، ألوان، خط، إيقاع)، أربعة انتقالات مسماة، وختام بالاسم والشعار.",
+  "summary_en": "A 15-second motion reel in a dark editor interface with a red keyframe timeline and code comments: a diamond keyframe riding an easing curve, a giant word on red, a title with stacked echo shadows, a red octahedron that shatters and reassembles, particles flowing into a word, a spec board of cards, named transitions and a name end card.",
+  "keywords": [
+    "motion reel",
+    "keyframe",
+    "easing curve",
+    "timeline ui",
+    "kinetic type",
+    "shatter mesh",
+    "flow field particles",
+    "spec board",
+    "named transitions",
+    "ريل موشن",
+    "كيفريم",
+    "منحنى تسارع",
+    "خط زمني",
+    "جسيمات",
+    "تايبوغرافي متحرك"
+  ],
+  "difficulty": 5,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "HTML Canvas",
+    "Three.js"
+  ],
+  "brief": "styles/pm-grace-sunnyy-29bc61/BRIEF.md"
 }

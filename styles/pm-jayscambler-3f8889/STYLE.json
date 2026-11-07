@@ -1,10 +1,12 @@
 {
   "id": "pm-jayscambler-3f8889",
   "name": "FundMyCompute platform overview",
-  "name_ar": null,
+  "name_ar": "نظرة سريعة على منصة تمويل الحوسبة بلون أخضر نعناعي",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
+    "product-ui",
+    "code",
     "charts"
   ],
   "creator": "@JayScambler",
@@ -26,6 +28,36 @@
   "listed": true,
   "skill": "styles/pm-jayscambler-3f8889/SKILL.md",
   "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/code.md",
     "playbooks/charts.md"
-  ]
+  ],
+  "summary_ar": "فيديو منتج مدته 18.5 ثانية يبدأ بحلقة جسيمات خضراء على الأسود تنقبض إلى قلب بكسلي، والاسم يتشكل من رموز عشوائية، ثم صفحة الهبوط الفاتحة بعنوان كلمته المائلة خضراء، نقرة زر، لوحة دعم داكنة بمبالغ، تحويل «$25 ← 2,474 credits» عبر شريحة متوهجة، محرر كود موصول بقائمة نماذج، لوحة تحكم، جدار لقطات شاشة مائل، وبطاقة ختام كريمية بمربع أخضر.",
+  "summary_en": "An 18.5-second product overview: a mint particle ring on black collapses into a pixel heart, the name decodes from random symbols, then light and dark scenes alternate: landing page click, a backing panel, '$25 to 2,474 credits' through a glowing chip, code wired to a model list, a dashboard, a screenshot wall and a cream end card.",
+  "keywords": [
+    "product overview",
+    "SaaS promo",
+    "scramble text",
+    "decode effect",
+    "pixel heart",
+    "light dark alternation",
+    "code editor",
+    "credits counter",
+    "mint green",
+    "فيديو منتج",
+    "فك تشفير النص",
+    "أخضر نعناعي",
+    "واجهة تطبيق",
+    "عداد أرقام",
+    "منصة تمويل"
+  ],
+  "difficulty": 3,
+  "duration_s": 18.5,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "HTML Canvas"
+  ],
+  "brief": "styles/pm-jayscambler-3f8889/BRIEF.md"
 }

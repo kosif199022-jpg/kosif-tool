@@ -1,9 +1,9 @@
 ---
 name: claymation
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 9:16 reel in clay animation: rounded characters and props of coloured plasticine with fingerprint texture and uneven surfaces, on a small set under warm studio light with soft shadows and shallow depth of field, moving in stepped frames (12 fps) with slight shape jitter between frames, and Arabic titles that look sculpted from clay. Use to make a new video in this look (Characters); address it by ID claymation.
 ---
 
-# KOSIF TOOL — صلصال متحرك
+# KOSIF TOOL — صلصال متحرك / صلصال متحرك — شخصيات طين بإضاءة دافئة وحركة متقطعة
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي 9:16 بأسلوب الصلصال: شخصيات وأشياء مستديرة من طين ملون بملمس بصمات أصابع وسطح غير مستوٍ، على مجسم صغير بإضاءة استوديو دافئة وظلال ناعمة وعمق ميدان ضحل، تتحرك بإطارات متقطعة (12 في الثانية) مع اهتزاز طفيف في الأشكال بين الإطارات، ونصوص عربية مصنوعة كأنها من الصلصال.
+
+A 9:16 reel in clay animation: rounded characters and props of coloured plasticine with fingerprint texture and uneven surfaces, on a small set under warm studio light with soft shadows and shallow depth of field, moving in stepped frames (12 fps) with slight shape jitter between frames, and Arabic titles that look sculpted from clay.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, React, Remotion), suggested duration (32 s), aspect 9:16, difficulty 5/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Characters / شخصيات, 3D / ثلاثي الأبعاد.

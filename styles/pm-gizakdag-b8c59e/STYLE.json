@@ -1,12 +1,13 @@
 {
   "id": "pm-gizakdag-b8c59e",
   "name": "Motion design showreel exploring \"overthinking\"",
-  "name_ar": null,
+  "name_ar": "ريل رأسي عن الإفراط في التفكير بكولاج سريالي مشبع الألوان",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "kinetic-type",
+    "photos",
+    "3d"
   ],
   "creator": "@gizakdag",
   "creator_url": "https://x.com/gizakdag/status/2103566030916239768",
@@ -27,7 +28,37 @@
   "listed": true,
   "skill": "styles/pm-gizakdag-b8c59e/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/photos.md",
+    "playbooks/3d.md"
+  ],
+  "summary_ar": "ريل رأسي 9:16 مدته 10 ثوانٍ بلا صوت عن الإفراط في التفكير: نقطة صفراء وكلمتان بخط آلة كاتبة على كحلي داكن، ثم انفجار نجمة، ثم حلقات متحدة المركز وشبكة برتقالية ثلاثية الأبعاد تدور وحولها كلمات التردد بخط مائل بزوائد، ثم كولاج سريالي لتمثال بعيون زرقاء وزهور وردية وأعمدة ضوء خضراء تحت عنوان ضخم من كلمتين، ثم مشاهد حدائق وقاعة سينما وطرق بكسلية بألوان مشبعة مع تعليقات تُكتب على شرائط برتقالية.",
+  "summary_en": "A silent 10-second vertical reel about overthinking: a yellow dot and typewriter caption on navy, a star-burst flash, rings and a spinning orange 3D lattice ringed by doubt words, then a surreal collage of a blue-eyed bust, pink flowers and green beams under a huge two-word headline, and saturated dreamscapes with typed captions on orange tags.",
+  "keywords": [
+    "overthinking",
+    "vertical reel",
+    "surreal collage",
+    "psychedelic",
+    "typewriter captions",
+    "recording HUD",
+    "retro type",
+    "dreamscape",
+    "9:16",
+    "الإفراط في التفكير",
+    "ريل رأسي",
+    "كولاج سريالي",
+    "ألوان مشبعة",
+    "تعليقات آلة كاتبة",
+    "أحلام"
+  ],
+  "difficulty": 4,
+  "duration_s": 10,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "Three.js",
+    "CSS"
+  ],
+  "brief": "styles/pm-gizakdag-b8c59e/BRIEF.md"
 }

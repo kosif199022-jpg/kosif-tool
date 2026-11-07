@@ -1,9 +1,9 @@
 ---
 name: chalkboard
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A dark green chalkboard in a wooden frame: a moving stick of coloured chalk writes an Arabic handwritten title and draws a triangle and gridded squares in white, pink, blue and yellow, small unit squares travel to fill another square as visual proof, then the equation, numbers, a tick and a summary line are written while the camera pans around the board. Use to make a new video in this look (Hand-drawn); address it by ID chalkboard.
 ---
 
-# KOSIF TOOL — سبورة طباشير
+# KOSIF TOOL — سبورة طباشير / سبورة طباشير خضراء تشرح درسًا
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/chalkboard
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+سبورة طباشير خضراء داكنة بإطار خشبي: قطعة طباشير ملونة تتحرك فتكتب العنوان العربي بخط يدوي وترسم المثلث والمربعات بالأبيض والوردي والأزرق والأصفر، مربعات صغيرة تنتقل لتملأ مربعًا آخر كإثبات، ثم تُكتب المعادلة والأرقام وعلامة صح وخلاصة، والكاميرا تتحرك بين أجزاء اللوح.
+
+A dark green chalkboard in a wooden frame: a moving stick of coloured chalk writes an Arabic handwritten title and draws a triangle and gridded squares in white, pink, blue and yellow, small unit squares travel to fill another square as visual proof, then the equation, numbers, a tick and a summary line are written while the camera pans around the board.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (26 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Hand-drawn / رسم يدوي.

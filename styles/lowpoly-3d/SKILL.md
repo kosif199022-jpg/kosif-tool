@@ -1,9 +1,9 @@
 ---
 name: lowpoly-3d
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A tiny 3D world built from flat-shaded faceted low-poly models in pastel colours: an island or diorama on a base that the camera slowly orbits, objects pop up from the ground with springy scale, soft sun light and simple shadows, and flat Arabic labels floating over the scene. Use to make a new video in this look (3D); address it by ID lowpoly-3d.
 ---
 
-# KOSIF TOOL — مجسمات Low Poly
+# KOSIF TOOL — مجسمات Low Poly / عالم ثلاثي الأبعاد بمجسمات Low Poly
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+عالم صغير ثلاثي الأبعاد بمجسمات مضلعة مسطحة التظليل وألوان باستيل: جزيرة أو مشهد على قاعدة تدور الكاميرا حوله، عناصر تنبثق من الأرض بنابض، ضوء شمس ناعم وظلال بسيطة، وتسميات عربية مسطحة فوق المشهد.
+
+A tiny 3D world built from flat-shaded faceted low-poly models in pastel colours: an island or diorama on a base that the camera slowly orbits, objects pop up from the ground with springy scale, soft sun light and simple shadows, and flat Arabic labels floating over the scene.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, WebGL), suggested duration (32 s), aspect 9:16, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: 3D / ثلاثي الأبعاد.

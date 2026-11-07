@@ -1,9 +1,9 @@
 ---
 name: minimal
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 9:16 reel on a calm off-white background where each shot holds one word or short phrase in a clean medium-weight Arabic sans plus one geometric shape (circle, line or square) in a single accent colour, moving with few, slow, precise motions in generous empty space, linked by slides or a shape that stretches into the next shot. Use to make a new video in this look (Kinetic type); address it by ID minimal.
 ---
 
-# KOSIF TOOL — مينيمال
+# KOSIF TOOL — مينيمال / مينيمال — كلمة واحدة وشكل واحد ومساحة فارغة كثيرة
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي 9:16 على خلفية بيضاء مكسورة هادئة، كل لقطة فيها كلمة أو عبارة قصيرة واحدة بخط عربي نظيف متوسط الوزن وشكل هندسي واحد (دائرة أو خط أو مربع) بلون تمييز واحد، يتحركان بحركات قليلة وبطيئة ودقيقة مع مساحات فارغة واسعة وانتقالات بالانزلاق أو بتمدد الشكل.
+
+A 9:16 reel on a calm off-white background where each shot holds one word or short phrase in a clean medium-weight Arabic sans plus one geometric shape (circle, line or square) in a single accent colour, moving with few, slow, precise motions in generous empty space, linked by slides or a shape that stretches into the next shot.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG), suggested duration (28 s), aspect 9:16, difficulty 2/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال.

@@ -1,11 +1,13 @@
 {
   "id": "pm-ismailfahmi-557268",
   "name": "Drone Emprit showreel",
-  "name_ar": null,
+  "name_ar": "عرض تقديمي بجسيمات متوهجة تتحول من سحابة إلى شبكة إلى منحنى",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
+    "particles",
     "charts",
+    "diagrams",
     "kinetic-type"
   ],
   "creator": "@ismailfahmi",
@@ -27,7 +29,37 @@
   "listed": true,
   "skill": "styles/pm-ismailfahmi-557268/SKILL.md",
   "playbooks": [
+    "playbooks/particles.md",
     "playbooks/charts.md",
+    "playbooks/diagrams.md",
     "playbooks/kinetic-type.md"
-  ]
+  ],
+  "summary_ar": "عرض تقديمي مدته 15 ثانية على أزرق ليلي عميق: آلاف الخطوط الضوئية القصيرة تشكل سحابة تدور ببطء ثم تتلون بألوان المنصات، تنفجر وتتجمع في عناقيد شبكة مترابطة بأسماء المجموعات، تتطاير ثم تتراكم في منحنى زمني بقمة واضحة، وتنتهي باسم المنتج بتدرج فيروزي ذهبي فوق غبار جسيمات، مع جملة تعليق واحدة أسفل اليسار لكل مرحلة وعدّاد يرتفع أعلى اليمين.",
+  "summary_en": "A 15-second showreel on deep night blue: thousands of glowing strokes form a turning cloud that takes on platform colours, bursts into labelled network clusters, then piles into a timeline curve with a sharp spike, ending on a teal-to-gold gradient wordmark over particle dust, with one caption bottom-left per stage and a counter climbing top-right.",
+  "keywords": [
+    "particles",
+    "showreel",
+    "data visualization",
+    "social listening",
+    "network clusters",
+    "spike chart",
+    "morph",
+    "glow",
+    "night blue",
+    "جسيمات",
+    "عرض تقديمي",
+    "تصوير البيانات",
+    "رصد الإعلام",
+    "عناقيد شبكة",
+    "توهج"
+  ],
+  "difficulty": 5,
+  "duration_s": 15,
+  "stack": [
+    "Three.js",
+    "WebGL",
+    "React",
+    "Remotion"
+  ],
+  "brief": "styles/pm-ismailfahmi-557268/BRIEF.md"
 }

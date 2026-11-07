@@ -1,11 +1,13 @@
 {
   "id": "pm-theviableedge-9065be",
   "name": "Second brain service promo",
-  "name_ar": null,
+  "name_ar": "إعلان خدمة «العقل الثاني»: من فوضى الملفات إلى حزمة تسليم مُختبرة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts"
+    "kinetic-type",
+    "product-ui",
+    "code"
   ],
   "creator": "@TheViableEdge",
   "creator_url": "https://x.com/TheViableEdge/status/2104207707980869918",
@@ -26,6 +28,34 @@
   "listed": true,
   "skill": "styles/pm-theviableedge-9065be/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/product-ui.md",
+    "playbooks/code.md"
+  ],
+  "summary_ar": "إعلان خدمة مدته 15 ثانية على خلفية ورقية فاتحة: بطاقات مبعثرة (جدول أسعار، ملاحظة لاصقة، بريد، رسالة صوتية) حول جملة «ليست مشكلة أوامر» تُشطب كلمتها وتُستبدل بـ«سياق» برتقالية، ثم خطوط تعارض حمراء بين البطاقات مع عدّاد ملاحظات، ثم نافذة طرفية داكنة بشجرة مجلدات وسعر قديم مشطوب وجديد معتمد، فقائمة اختبارات خضراء، فمجلد تسليم يتقلص، وختام بعنوان من سطرين ومربعات أربعة ملونة.",
+  "summary_en": "A 15-second service promo on warm off-white paper: evidence cards surround a headline whose struck-out word becomes an orange 'context', red conflict lines link the cards, a dark terminal shows a folder tree and a superseded price, a green test checklist passes, a handoff folder shrinks away, and a two-line headline with four coloured squares closes it.",
+  "keywords": [
+    "service promo",
+    "second brain",
+    "knowledge base",
+    "terminal UI",
+    "progress rail",
+    "strikethrough swap",
+    "conflict lines",
+    "checklist pass",
+    "إعلان خدمة",
+    "عقل ثانٍ",
+    "قاعدة معرفة",
+    "واجهة طرفية",
+    "شريط مراحل",
+    "قائمة فحص"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-theviableedge-9065be/BRIEF.md"
 }

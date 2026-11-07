@@ -1,9 +1,9 @@
 ---
 name: liquid-morph
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A smooth vertical reel of glossy liquid blobs in gradient colours: drops merge and split like coloured mercury, morph from sphere to number to icon, with light bending across their surfaces and a few words floating between the shapes. Use to make a new video in this look (Shapes); address it by ID liquid-morph.
 ---
 
-# KOSIF TOOL — أشكال سائلة
+# KOSIF TOOL — أشكال سائلة / أشكال سائلة لامعة تتحول وتندمج كقطرات معدن ملون
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي ناعم تتحرك فيه كتل سائلة لامعة بألوان متدرجة: قطرات تندمج وتنفصل كالزئبق الملون، تتحول من دائرة إلى رقم إلى أيقونة، وتنكسر الإضاءة على سطحها، مع كلمات قليلة تطفو بين الأشكال.
+
+A smooth vertical reel of glossy liquid blobs in gradient colours: drops merge and split like coloured mercury, morph from sphere to number to icon, with light bending across their surfaces and a few words floating between the shapes.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, React, Remotion), suggested duration (28 s), aspect 9:16, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Shapes / أشكال, 3D / ثلاثي الأبعاد.

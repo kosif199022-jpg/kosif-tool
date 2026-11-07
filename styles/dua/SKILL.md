@@ -1,6 +1,6 @@
 ---
 name: dua
-description: A ~15 s vertical 9:16 reel: one spoken dua phrase = one shot = one on-screen line. Warm low-key shots (Quran, roses, incense, candles) cut on each phrase onset with blur, mirror and zoom transitions, under a persistent white Thuluth title «الجُمُعَة», the date, a gold subtitle and a white dua line with a tight dark halo.
+description: A ~15 s vertical 9:16 reel: one spoken dua phrase = one shot = one on-screen line. Warm low-key shots (Quran, roses, incense, candles) cut on each phrase onset with blur, mirror and zoom transitions, under a persistent white Thuluth title «الجُمُعَة», the date, a gold subtitle and a white dua line with a tight dark halo. Use to make a new video in this look (Kinetic type); address it by ID dua.
 ---
 
 # KOSIF TOOL — الدعاء / الدعاء — ريل دعاء ليلة الجمعة

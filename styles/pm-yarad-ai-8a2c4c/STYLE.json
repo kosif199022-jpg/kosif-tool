@@ -1,7 +1,7 @@
 {
   "id": "pm-yarad-ai-8a2c4c",
   "name": "Remotion workflow with precise timing",
-  "name_ar": null,
+  "name_ar": "نفق إطارات يشرح التحريك بالأرقام الدقيقة",
   "origin": "PromptsMotion",
   "type": "Skill",
   "category": [
@@ -33,5 +33,31 @@
     "playbooks/diagrams.md",
     "playbooks/kinetic-type.md",
     "playbooks/code.md"
-  ]
+  ],
+  "summary_ar": "فيديو عمودي 4:5 مدته 20 ثانية بأسلوب واجهة مطور داكنة: عنوان أبيض وبنفسجي ثابت في الأعلى، عداد إطارات ضخم يعد من 0 إلى 600، قائمة خطوات تُعلَّم بالأخضر واحدة تلو الأخرى، ونفق من مستطيلات بنفسجية متداخلة في الوسط تظهر داخله لقطات واجهة (زر تصدير، نقرة، اكتمال) ثم دورة مراحل، وطرفية أسفل تكتب الأوامر؛ وينتهي بـ600/600 أخضر ومعادلة الثواني بالإطارات.",
+  "summary_en": "A 20 s 4:5 dark developer-UI piece: a fixed white-and-violet headline, a big frame counter ticking 0 to 600, a five-step checklist ticking green, a tunnel of nested violet rectangles where UI moments appear (export, click, done) and then a loop of stages, a terminal typing commands below, ending on a green 600/600.",
+  "keywords": [
+    "frame counter",
+    "developer UI",
+    "terminal",
+    "checklist",
+    "nested tunnel",
+    "keyframes",
+    "Remotion workflow",
+    "vertical video",
+    "عداد إطارات",
+    "واجهة مطور",
+    "طرفية",
+    "توقيت دقيق",
+    "فيديو عمودي",
+    "شرح سير عمل"
+  ],
+  "difficulty": 3,
+  "duration_s": 20,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-yarad-ai-8a2c4c/BRIEF.md"
 }

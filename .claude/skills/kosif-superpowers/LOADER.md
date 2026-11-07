@@ -10,13 +10,14 @@
 
 **التحميل الخفيف:** اقرأ هذا الملف وحده أولًا. لا تقرأ ملفات المهارات الكبيرة كاملة؛ افتح الملف أو نطاق الأسطر الذي يطابق الطلب فقط (`sed -n START,ENDp <path>`)، أو اسأل السكربت: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py need "<الطلب>"`. كل مهارة وكل ملحق ممثَّل هنا بسطر، فلا توجد مهارة خارج الوصول. في الوضع الكامل: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py full`.
 
-## المهارات (19) / skills
+## المهارات (20) / skills
 
 | المهارة | الملف | الحجم | متى |
 |---|---|---|---|
+| `arena` | `.claude/skills/arena/SKILL.md` | 21 KB · 403 سطر | Make 100 versions of Claude fight to the death over one task. Spins up N sub-agents (default 100, --quick for 16), gives every one the exact same task plus a different… |
 | `cartoon-audio-short` | `.claude/skills/cartoon-audio-short/SKILL.md` | 23 KB · 200 سطر | Make a vertical animated cartoon short in Arabic or English. Offers 10 ideas, writes the script, then turns the user's voiceover into a finished MP4 with quiet music… |
 | `editorial-film-edit` | `.claude/skills/editorial-film-edit/SKILL.md` | 6 KB · 48 سطر | Edit footage in an archival editorial style with bundled video and photo references, kinetic text, film grain, bloom, masks and presenter splits. Use for new edits and… |
-| `kosif-black-dragon` | `.claude/skills/kosif-black-dragon/SKILL.md` | 14 KB · 211 سطر | التنين الأسود: new independent skill that studies the KOSIF catalog, links each original source to one traceable entry, and synthesizes new task-specific working… |
+| `kosif-black-dragon` | `.claude/skills/kosif-black-dragon/SKILL.md` | 16 KB · 231 سطر | التنين الأسود: new independent skill that studies the KOSIF catalog, links each original source to one traceable entry, and synthesizes new task-specific working… |
 | `kosif-dragon-mind` | `.claude/skills/kosif-dragon-mind/SKILL.md` | 12 KB · 153 سطر | The thinking brain of the Black Dragon («عقل التنين الأسود»). Use when a task should be thought through before the Black Dragon runs, when the owner asks to decompose,… |
 | `kosif-infinite-matrices` | `.claude/skills/kosif-infinite-matrices/SKILL.md` | 9 KB · 88 سطر | Invent new visual and motion systems from causal bricks (state, operation, law, time, memory, feedback) mined from the 86 reference styles; build a recipe, run an A/B/C… |
 | `kosif-instagram-discovery` | `.claude/skills/kosif-instagram-discovery/SKILL.md` | 3 KB · 34 سطر | Find public Instagram reel references by topic using generated public web search queries; index researcher-confirmed permalinks; rank Arabic/English metadata; create… |
@@ -29,7 +30,7 @@
 | `kosif-superpowers` | `.claude/skills/kosif-superpowers/SKILL.md` | 83 KB · 448 سطر | Capability self-awareness and thinking upgrade for Claude. One front door (scripts/hub.py find) maps a task in the user's words to the runnable tools, catalog powers… |
 | `kosif-upload-link` | `.claude/skills/kosif-upload-link/SKILL.md` | 4 KB · 46 سطر | Send the user's big-file upload link and pull what they uploaded. Use when the user asks for the upload link, says a file is too big to attach (over 30-40 MB), wants to… |
 | `kosif-voice-studio` | `.claude/skills/kosif-voice-studio/SKILL.md` | 6 KB · 108 سطر | Voice-over, voice cloning, voice design and transcription in Egyptian Arabic, MSA, English and 600+ languages - text to speech with word timings (words.json) for… |
-| `kosif-web-film` | `.claude/skills/kosif-web-film/SKILL.md` | 4 KB · 71 سطر | Direct and render a motion-design video built as a webpage (codename «التنين الأسود» / Black Dragon). Use when the user asks for a video, promo, intro, explainer or… |
+| `kosif-web-film` | `.claude/skills/kosif-web-film/SKILL.md` | 8 KB · 114 سطر | Direct and render a motion-design video built as a webpage (codename «التنين الأسود» / Black Dragon). Use when the user asks for a video, promo, intro, explainer or… |
 | `living-site` | `.claude/skills/living-site/SKILL.md` | 13 KB · 193 سطر | Build a living website in three levels. Level 1 live 3D (Spline), Level 2 generated images and a scroll film (Higgsfield), Level 3 living motion graphics drawn in code… |
 | `saas-animation` | `.claude/skills/saas-animation/SKILL.md` | 9 KB · 118 سطر | Make short, high-end SaaS, app, product and brand animations (about 8–20s) with Claude, built as code and rendered to 4K video, without any AI video or image generator.… |
 | `talking-head-reels` | `.claude/skills/talking-head-reels/SKILL.md` | 10 KB · 158 سطر | Turn a talking-head recording into a finished vertical 9:16 Instagram Reel / TikTok / YouTube Short in a bold editorial style - tightened pauses, kinetic Anton + Didot… |
@@ -106,6 +107,19 @@
 
 ## أقسام كل SKILL.md بأرقام الأسطر / section line ranges
 
+### `.claude/skills/arena/SKILL.md`
+
+- 16–27: arena
+- 28–40: The tool
+- 41–68: Step 1: size it, and get a yes if nobody asked for it
+- 69–88: Step 2: write the task file
+- 89–98: Step 3: init
+- 99–136: Step 4: the loop
+- 137–151: Step 5: the result
+- 152–169: Rules for the orchestrator
+- 170–373: The prompt templates
+- 374–402: Inside KOSIF
+
 ### `.claude/skills/cartoon-audio-short/SKILL.md`
 
 - 6–9: Cartoon short: idea → script → voiceover → finished MP4
@@ -132,16 +146,18 @@
 
 - 6–9: التنين الأسود — Black Dragon (Native Fusion)
 - 10–18: Working contract
-- 19–28: Commands
-- 29–45: Native reasoning absorbed from Dragon Mind
-- 46–66: Catalog-wide native fusion atlas
-- 67–73: Verified composition and Arabic matching
-- 74–79: Evidence and limits
-- 80–104: Creative Council — no artistic gatekeepers
-- 105–130: Book-informed judgment guard (Thinking, Fast and Slow)
-- 131–160: Source-linked external Atlas candidate bridge (2026-11-06)
-- 161–183: Combined book-to-council thinking integration (PR #238 + PR #233)
-- 184–210: Wired into the Black Dragon engine (2026-11-07)
+- 19–34: Mandatory video-product protocol (إلزامي)
+- 35–44: Commands
+- 45–61: Native reasoning absorbed from Dragon Mind
+- 62–82: Catalog-wide native fusion atlas
+- 83–89: Verified composition and Arabic matching
+- 90–95: Evidence and limits
+- 96–119: Creative Council — no artistic gatekeepers
+- 120–124: The Arena — after the council, when the answer is rejected
+- 125–150: Book-informed judgment guard (Thinking, Fast and Slow)
+- 151–180: Source-linked external Atlas candidate bridge (2026-11-06)
+- 181–203: Combined book-to-council thinking integration (PR #238 + PR #233)
+- 204–230: Wired into the Black Dragon engine (2026-11-07)
 
 ### `.claude/skills/kosif-dragon-mind/SKILL.md`
 
@@ -303,7 +319,8 @@
 - 36–46: 3. Build the page
 - 47–57: 4. Validate and fix, then look
 - 58–66: 5. Render
-- 67–70: Limits
+- 67–109: World Film mode: one world, one continuous camera
+- 110–113: Limits
 
 ### `.claude/skills/living-site/SKILL.md`
 

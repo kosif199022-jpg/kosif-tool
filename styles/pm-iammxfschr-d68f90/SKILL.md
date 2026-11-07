@@ -1,9 +1,9 @@
 ---
 name: pm-iammxfschr-d68f90
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A calm ~33-second launch film for a browser database client: warm off-white background, condensed serif lines building word by word with an italic violet keyword, alternating with dark floating app screenshots; a version reveal, the accent colour cycling across the UI, a settings panel, an update terminal, a red production-confirm dialog, supported databases and a price line. Use to make a new video in this look (Product UI); address it by ID pm-iammxfschr-d68f90.
 ---
 
-# KOSIF TOOL — Database client launch video
+# KOSIF TOOL — Database client launch video / إطلاق أداة قواعد بيانات بخط سريف أنيق ولقطات واجهة داكنة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/iammxfschr-d68f90
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #96
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+فيديو إطلاق هادئ مدته نحو 33 ثانية لعميل قواعد بيانات في المتصفح: خلفية كريمية فاتحة وعبارات بخط سريف مكثف تظهر كلمة كلمة مع كلمة مائلة بنفسجية، تتناوب مع لقطات واجهة داكنة تطفو بظل ناعم؛ رقم الإصدار، تبديل ألوان التمييز الستة عبر الواجهة، نافذة إعدادات، طرفية تحديث، نافذة تأكيد حمراء للإنتاج، أسماء قواعد البيانات المدعومة، وسطر السعر.
+
+A calm ~33-second launch film for a browser database client: warm off-white background, condensed serif lines building word by word with an italic violet keyword, alternating with dark floating app screenshots; a version reveal, the accent colour cycling across the UI, a settings panel, an update terminal, a red production-confirm dialog, supported databases and a price line.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (33 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية.

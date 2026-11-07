@@ -1,9 +1,9 @@
 ---
 name: pm-rexan-wong-7d1b8e
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: An 11-second 4:3 screen-capture tour of white web interfaces: it pulls back from a launch-video gallery header into a card grid that scrolls upward continuously, hard-cuts to a split view with a list on the left and a detail drawer on the right, then hard-cuts to a UI component library with a sidebar whose cards scroll past to the end, with no added captions and no audio. Use to make a new video in this look (Product UI); address it by ID pm-rexan-wong-7d1b8e.
 ---
 
-# KOSIF TOOL — Professional motion workflow breakdown
+# KOSIF TOOL — Professional motion workflow breakdown / جولة سريعة مصوّرة من الشاشة عبر معرض فيديوهات ومكتبة مكونات
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/rexan-wong-7d1b8e
@@ -18,22 +18,19 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+تسجيل شاشة سلس مدته 11 ثانية بنسبة 4:3 على واجهات ويب بيضاء: يبدأ بتصغير من رأس معرض فيديوهات إطلاق إلى شبكة بطاقات تمر لأعلى بتمرير متواصل، ثم قطع إلى عرض منقسم بقائمة يساراً ولوحة تفاصيل يميناً، ثم قطع إلى مكتبة مكونات واجهة بشريط جانبي تُمرَّر بطاقاتها حتى النهاية، بلا نصوص مضافة ولا صوت.
+
+An 11-second 4:3 screen-capture tour of white web interfaces: it pulls back from a launch-video gallery header into a card grid that scrolls upward continuously, hard-cuts to a split view with a list on the left and a detail drawer on the right, then hard-cuts to a UI component library with a sidebar whose cards scroll past to the end, with no added captions and no audio.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (11 s), aspect 4:3, difficulty 2/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك, Photos / صور, Music / موسيقى, Code / كود.
+Categories: Product UI / واجهات المنتج.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/diagrams.md](../../playbooks/diagrams.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/photos.md](../../playbooks/photos.md)
-- [playbooks/music.md](../../playbooks/music.md)
-- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

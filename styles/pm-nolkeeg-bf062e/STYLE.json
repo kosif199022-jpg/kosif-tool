@@ -1,11 +1,13 @@
 {
   "id": "pm-nolkeeg-bf062e",
   "name": "What happens in one second",
-  "name_ar": null,
+  "name_ar": "فيلم قصير سينمائي عمّا يحدث في ثانية واحدة بعدّادات ضخمة وأرض وشمس",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts"
+    "charts",
+    "3d",
+    "kinetic-type"
   ],
   "creator": "@nolkeeg",
   "creator_url": "https://x.com/nolkeeg/status/2103841917603635633",
@@ -26,6 +28,36 @@
   "listed": true,
   "skill": "styles/pm-nolkeeg-bf062e/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
-  ]
+    "playbooks/charts.md",
+    "playbooks/3d.md",
+    "playbooks/kinetic-type.md"
+  ],
+  "summary_ar": "فيلم أفقي سينمائي قصير (نحو 45 ثانية) على سواد فضائي: عنوان أبيض محبب متوهج، قفزة نجوم، ثم أرض واقعية بإضاءة حافة يدور حولها شعاع ضوء بينما يعدّ رقم ضخم بالكيلومترات، ثم مدار حول الشمس، وبرق على الوجه الليلي، وشمس ملتهبة، ثم خط نبض أحمر رفيع، وشريط زمني برتقالي أسفل الشاشة يقيس جزء الثانية حتى الختام.",
+  "summary_en": "A cinematic 45-second landscape short on deep space black: a grainy glowing white title, a starfield warp, then a photoreal rim-lit Earth circled by a light trail while a huge number counts kilometres, an orbit around the Sun, lightning flickering on the night side, a blazing Sun, then a thin red heartbeat line, with an orange timeline HUD at the bottom measuring the fraction of the second.",
+  "keywords": [
+    "cinematic",
+    "space",
+    "earth",
+    "sun",
+    "counter",
+    "big numbers",
+    "data story",
+    "HUD timeline",
+    "heartbeat",
+    "ثانية واحدة",
+    "فضاء",
+    "عدّاد أرقام",
+    "الأرض",
+    "وثائقي قصير",
+    "حقائق"
+  ],
+  "difficulty": 4,
+  "duration_s": 45,
+  "stack": [
+    "Three.js",
+    "WebGL",
+    "Remotion",
+    "React"
+  ],
+  "brief": "styles/pm-nolkeeg-bf062e/BRIEF.md"
 }

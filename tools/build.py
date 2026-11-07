@@ -72,6 +72,8 @@ def skill_md(r: dict, cats: dict, briefs: dict) -> str:
     name_ar = r.get("name_ar") or ""
     title = f"{r['name']}" + (f" / {name_ar}" if name_ar and name_ar != r["name"] else "")
     desc = r.get("summary_en") or "Create a new video using the motion design language referenced at this catalog entry."
+    if r.get("summary_en"):
+        desc = f"{desc.rstrip()} Use to make a new video in this look ({labels.split(' / ')[0] if labels else 'motion'}); address it by ID {r['id']}."
     ref = [f"- Page: {r.get('page')}",
            f"- Video: {r.get('video') or 'see source page'}",
            f"- Credit: {r.get('creator', 'unknown')}" + (f" ({r['creator_url']})" if r.get("creator_url") else ""),

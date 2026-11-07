@@ -1,9 +1,9 @@
 ---
 name: pm-jacksonfall-54b2ac
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A branding-agency showreel with about 25 s of content then black: logos and identities flash one per full-frame card, each in its own colour (olive, painted sky, white, teal, electric blue, dotted lime), marks built from strokes or binary digits, photo mosaics behind bold words, accelerating to cuts every half second. Use to make a new video in this look (Kinetic type); address it by ID pm-jacksonfall-54b2ac.
 ---
 
-# KOSIF TOOL — Branding agency showreel
+# KOSIF TOOL — Branding agency showreel / شوريل وكالة هويات بصرية: شعارات تتبدل على الإيقاع
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/jacksonfall-54b2ac
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شوريل لوكالة علامات تجارية مدته نحو 25 ثانية من المحتوى ثم سواد: سلسلة سريعة من الشعارات والهويات، كل واحدة في إطار ملء الشاشة بلون خلفيتها الخاص (زيتوني، سماوي بمنظر طبيعي، أبيض، أخضر مزرق، أزرق كهربائي، ليموني بنقاط)، مع رموز تنبني من خطوط أو نقاط ثنائية، شبكة صور داخلية وصور رياضية خلف كلمات عريضة، وحركة متسارعة كل نصف ثانية تقريباً قرب النهاية.
+
+A branding-agency showreel with about 25 s of content then black: logos and identities flash one per full-frame card, each in its own colour (olive, painted sky, white, teal, electric blue, dotted lime), marks built from strokes or binary digits, photo mosaics behind bold words, accelerating to cuts every half second.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Three.js), suggested duration (25 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Photos / صور.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

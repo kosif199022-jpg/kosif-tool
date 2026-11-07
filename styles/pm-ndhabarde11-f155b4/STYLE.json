@@ -1,12 +1,15 @@
 {
   "id": "pm-ndhabarde11-f155b4",
   "name": "Motion designer portrait showreel",
-  "name_ar": null,
+  "name_ar": "ريل عمودي لمصمم موشن من سبعة فصول: خطوط حركية وأشكال وجسيمات وشيدر",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "3d",
+    "product-ui"
   ],
   "creator": "@ndhabarde11",
   "creator_url": "https://x.com/ndhabarde11/status/2103832593355686104",
@@ -27,7 +30,39 @@
   "listed": true,
   "skill": "styles/pm-ndhabarde11-f155b4/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/3d.md",
+    "playbooks/product-ui.md"
+  ],
+  "summary_ar": "ريل عمودي سريع (15 ثانية) لمصمم موشن مقسوم إلى سبعة فصول مرقمة بإطار واجهة قياس وتوقيت: تحية بخط إيطالي وعنوان عريض، كلمات حركية بظلال برتقالية، شبكة أشكال تتحول بموجة على أزرق كهربائي، جسيمات تكوّن كلمة وكرة وعقدة، كرات زجاجية سائلة أمام نص شريطي، بطاقة واجهة بنسبة تعدّ وزر توظيف، ثم بطاقة اسم ختامية بوسوم المهارات.",
+  "summary_en": "A fast 15-second vertical motion-designer reel in seven numbered chapters inside a timecoded HUD: an italic greeting over a heavy name, kinetic words with orange offset shadows, a shape grid rippling on electric blue, particles forming a word, sphere and knot, glossy shader blobs over marquee type, a UI card with a counting percentage, and an end card with skill tags.",
+  "keywords": [
+    "showreel",
+    "motion designer",
+    "vertical reel",
+    "kinetic type",
+    "generative grid",
+    "particles",
+    "shader blobs",
+    "HUD",
+    "9:16",
+    "ريل",
+    "مصمم موشن",
+    "جسيمات",
+    "خطوط حركية",
+    "شيدر",
+    "عرض أعمال"
+  ],
+  "difficulty": 5,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "HTML Canvas",
+    "WebGL",
+    "Three.js"
+  ],
+  "brief": "styles/pm-ndhabarde11-f155b4/BRIEF.md"
 }

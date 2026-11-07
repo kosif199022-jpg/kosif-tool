@@ -1,12 +1,11 @@
 {
   "id": "pm-sachaarbonel-8f14f4",
   "name": "Norilu product launch video",
-  "name_ar": null,
+  "name_ar": "فيديو إطلاق هادئ لمساعد أتمتة بخط سيريف وتدرجات باستيل",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "product-ui",
-    "charts"
+    "product-ui"
   ],
   "creator": "@sachaarbonel",
   "creator_url": "https://x.com/sachaarbonel/status/2103614797501673648",
@@ -27,7 +26,32 @@
   "listed": true,
   "skill": "styles/pm-sachaarbonel-8f14f4/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md",
-    "playbooks/charts.md"
-  ]
+    "playbooks/product-ui.md"
+  ],
+  "summary_ar": "فيديو إطلاق مدته نحو 59 ثانية على تدرج باستيل ضبابي (كريمي وخوخي ولافندر): عناوين سيريف كحلية بسطر ثانٍ مائل، تبدأ بمشكلة التقارير المتكررة ثم الشعار، ثم بطاقات واجهة بيضاء عائمة بميل خفيف لكل ميزة: كتابة طلب بجملة، خطة العمل، ساعة ليلية داكنة تعدّ والمهام تكتمل، ملخص الصباح بسؤال واحد، تقرير بمصادر، صلاحيات، مشاركة الفريق، التسعير، سجل الإصدارات، وبطاقة ختام بزر قائمة الانتظار.",
+  "summary_en": "A 59-second calm launch video on a blurred cream, peach and lavender gradient: navy serif headlines with italic second lines beside gently tilted white UI cards for each feature (one-line request, plan, a navy night clock as jobs finish, morning summary, sources, permissions, pricing, history), ending on a waitlist card.",
+  "keywords": [
+    "product launch",
+    "automation assistant",
+    "pastel gradient",
+    "serif headline",
+    "floating cards",
+    "blur transition",
+    "night clock",
+    "waitlist",
+    "فيديو إطلاق",
+    "مساعد أتمتة",
+    "تدرج باستيل",
+    "بطاقات عائمة",
+    "خط سيريف",
+    "انتقال ضبابي"
+  ],
+  "difficulty": 3,
+  "duration_s": 59,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-sachaarbonel-8f14f4/BRIEF.md"
 }

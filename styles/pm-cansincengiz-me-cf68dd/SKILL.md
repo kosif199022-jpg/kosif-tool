@@ -1,6 +1,6 @@
 ---
 name: pm-cansincengiz-me-cf68dd
-description: A square 15-second promo for a Mac app: a 3D laptop shows a coding-agent terminal, the lid closes and Zs float up, a giant 'ZZ.' on blue and the wordmark; the closed laptop floats over a blue gradient with status cards (working, 147 tool calls, a 61° temperature gauge, 85% battery, task finished, Mac sleeps), ending on a white wordmark with a URL button.
+description: A square 15-second promo for a Mac app: a 3D laptop shows a coding-agent terminal, the lid closes and Zs float up, a giant 'ZZ.' on blue and the wordmark; the closed laptop floats over a blue gradient with status cards (working, 147 tool calls, a 61° temperature gauge, 85% battery, task finished, Mac sleeps), ending on a white wordmark with a URL button. Use to make a new video in this look (Product UI); address it by ID pm-cansincengiz-me-cf68dd.
 ---
 
 # KOSIF TOOL — Lidlezz app promo / برومو تطبيق Lidlezz لخلاصة X المربعة

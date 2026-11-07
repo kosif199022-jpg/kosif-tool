@@ -1,13 +1,15 @@
 {
   "id": "pm-sudo-kiran-b055de",
   "name": "DistilBook motion explainer",
-  "name_ar": null,
+  "name_ar": "إعلان تطبيق يحوّل الكتب والأوراق إلى خرائط مفاهيم ورسوم متحركة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
-    "charts",
-    "diagrams"
+    "diagrams",
+    "kinetic-type",
+    "particles",
+    "ads"
   ],
   "creator": "@sudo_kiran",
   "creator_url": "https://x.com/sudo_kiran/status/2104846546768670892",
@@ -29,7 +31,38 @@
   "skill": "styles/pm-sudo-kiran-b055de/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md",
-    "playbooks/diagrams.md"
-  ]
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/particles.md",
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "إعلان مدته 30 ثانية لأداة تلخيص تعليمية: يبدأ بورقتين في الفراغ الداكن تتكاثران إلى عاصفة من آلاف الصفحات مع عدّاد، ثم دوامة نصية حول شعار من ثلاثة أعمدة نيون، خريطة مفاهيم متوهجة لعملية البناء الضوئي، كتب وروابط تُسحب إلى الشعار وتخرج رسوماً ومقاطع شرح، ورقة شجر مرسومة على خلفية فاتحة مع معادلتها، ثم كلمات حركية سريعة وبطاقة الشعار.",
+  "summary_en": "A 30-second ad for a study-summary tool: two papers in dark space multiply into a storm of thousands of pages with a counter, then a text vortex around a three-bar neon logo, a glowing concept map of photosynthesis, books and links pulled into the logo that output illustrations and explainer videos, a leaf diagram on light paper with its equation, fast kinetic words and a logo end card.",
+  "keywords": [
+    "edtech ad",
+    "study tool",
+    "paper storm",
+    "concept map",
+    "neon glow",
+    "flow lines",
+    "educational illustration",
+    "photosynthesis",
+    "kinetic words",
+    "إعلان تعليمي",
+    "خريطة مفاهيم",
+    "تلخيص",
+    "توهج نيون",
+    "رسوم تعليمية",
+    "تايبوغرافي متحرك"
+  ],
+  "difficulty": 5,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "Three.js",
+    "SVG",
+    "WebGL"
+  ],
+  "brief": "styles/pm-sudo-kiran-b055de/BRIEF.md"
 }

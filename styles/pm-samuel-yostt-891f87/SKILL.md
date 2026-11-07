@@ -1,9 +1,9 @@
 ---
 name: pm-samuel-yostt-891f87
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A fast 15-second app promo on white with a peach glow: an orange dot blooms into an avatar pill inside a headline whose last word blur-swaps, then a slot-spinning creator card, a phone in a fan of video cards, three phones with platform icons, a stats card with a rising line and winner pick, a tilted photo mosaic and a logo end card with an orange button. Use to make a new video in this look (Product UI); address it by ID pm-samuel-yostt-891f87.
 ---
 
-# KOSIF TOOL — ViralGrow product promo
+# KOSIF TOOL — ViralGrow product promo / إعلان تطبيق مؤثرين بالذكاء الاصطناعي بهواتف وتدرج خوخي
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/samuel-yostt-891f87
@@ -17,15 +17,24 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان منتج سريع مدته 15 ثانية على أبيض بتوهج خوخي ناعم: نقطة برتقالية تتفتح إلى صف صور شخصية دائرية تندمج في عنوان تتبدل كلمته الأخيرة بضبابية، ثم بطاقة صانع محتوى تتقلب عمودياً، هاتف وسط مروحة بطاقات فيديو، ثلاثة هواتف مع أيقونات المنصات، بطاقة إحصاء بمنحنى صاعد واختيار الفائز، شبكة مائلة من الصور، وبطاقة ختام بالشعار وزر برتقالي.
+
+A fast 15-second app promo on white with a peach glow: an orange dot blooms into an avatar pill inside a headline whose last word blur-swaps, then a slot-spinning creator card, a phone in a fan of video cards, three phones with platform icons, a stats card with a rising line and winner pick, a tilted photo mosaic and a logo end card with an orange button.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+Categories: Product UI / واجهات المنتج, Phone / هاتف, Ads / إعلانات, Kinetic type / تايبوغرافي متحرك.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/phone.md](../../playbooks/phone.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)

@@ -1,6 +1,6 @@
 ---
 name: pm-xelandre-363f00
-description: A landscape SaaS launch film where every frame is a function of time in an HTML page, captured headlessly, then assembled with motion blur and code-made sound.
+description: A landscape SaaS launch film where every frame is a function of time in an HTML page, captured headlessly, then assembled with motion blur and code-made sound. Use to make a new video in this look (Product UI); address it by ID pm-xelandre-363f00.
 ---
 
 # KOSIF TOOL — SaaS product launch video / فيلم إطلاق SaaS مولّد بالكود إطارًا بإطار

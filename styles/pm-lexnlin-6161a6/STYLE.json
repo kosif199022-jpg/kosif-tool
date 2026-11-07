@@ -1,12 +1,12 @@
 {
   "id": "pm-lexnlin-6161a6",
   "name": "Cinetic skill launch film",
-  "name_ar": null,
+  "name_ar": "فيلم إطلاق أداة موشن بمؤشر كتابة يتحول إلى مخرج",
   "origin": "PromptsMotion",
   "type": "Skill",
   "category": [
     "product-ui",
-    "characters",
+    "kinetic-type",
     "code"
   ],
   "creator": "@LexnLin",
@@ -29,7 +29,34 @@
   "skill": "styles/pm-lexnlin-6161a6/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/characters.md",
+    "playbooks/kinetic-type.md",
     "playbooks/code.md"
-  ]
+  ],
+  "summary_ar": "فيلم إطلاق مدته 30 ثانية على أبيض رمادي فاتح لأداة تصنع أفلام موشن: جملة تُكتب بمؤشر أزرق وتحتها تتساقط شارات أسماء مؤثرات بخط الكود، ثم عنوان ضخم بظل أزرق مزاح، بطاقات تنقسم، قائمة تقنيات تدور كالبكرة، شريط زمني بموجة، ثم شريط عرض أفقي لأمثلة (شاشة بناء حمراء بعداد، تطبيق فواتير، شعار، تطبيق هاتف) وطرفية تثبّت الأداة وبطاقة ختام بالشعار والأمر.",
+  "summary_en": "A 30-second launch film on light grey-white for a motion tool: a line types with a blue caret as code-style effect chips tumble below, then a huge blue-shadowed headline, splitting cards, a slot reel of techniques, a waveform timeline, a carousel of sample films over a ruler playhead, a terminal install and a logo end card with a command pill.",
+  "keywords": [
+    "launch film",
+    "text caret",
+    "typewriter",
+    "effect chips",
+    "slot reel",
+    "timeline playhead",
+    "carousel",
+    "terminal install",
+    "developer tool",
+    "فيلم إطلاق",
+    "مؤشر كتابة",
+    "أداة مطورين",
+    "شريط عرض",
+    "خط زمني",
+    "طرفية"
+  ],
+  "difficulty": 3,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-lexnlin-6161a6/BRIEF.md"
 }

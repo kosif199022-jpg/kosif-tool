@@ -1,10 +1,14 @@
 {
   "id": "pm-gavinpurcell-e6cd81",
   "name": "A documentary about superintelligence",
-  "name_ar": null,
+  "name_ar": "وثائقي سينمائي عن الذكاء الفائق بمقدّمة على الشاشة",
   "origin": "PromptsMotion",
   "type": "Prompt",
-  "category": [],
+  "category": [
+    "photos",
+    "characters",
+    "kinetic-type"
+  ],
   "creator": "unknown",
   "creator_url": "https://x.com/gavinpurcell/status/2103304514329854102",
   "page": "https://www.promptsmotion.com/gavinpurcell-e6cd81",
@@ -23,5 +27,35 @@
   "source_prompt_words": 8,
   "listed": true,
   "skill": "styles/pm-gavinpurcell-e6cd81/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/photos.md",
+    "playbooks/characters.md",
+    "playbooks/kinetic-type.md"
+  ],
+  "summary_ar": "وثائقي سينمائي واقعي مدته نحو 5 دقائق و15 ثانية عن الذكاء الفائق: مقدّمة على ضفة نهر ليلية ثم في حانة دافئة بمصابيح نحاسية، تتخللها لقطات رمزية (أحجار دومينو تتساقط، أشرطة بكرات قديمة، ممر مركز بيانات أزرق، غوريلا، كومة مشابك ورق، كنيسة تغرق في رمل)، مع عناوين فصول وتعريفات قاموسية بخط سريفي رفيع واقتباس على آلة كاتبة، وينتهي بشارة العنوان فوق النهر ليلاً.",
+  "summary_en": "A ~5 min photoreal documentary on superintelligence: a camel-coated presenter on a night riverside and in a brass-lit pub, cut with symbolic B-roll (falling dominoes, tape machines, a blue data-centre aisle, a gorilla, paper clips, a church sinking in sand), thin serif chapter cards, typed dictionary definitions and a typewriter quote, ending on a title over the river.",
+  "keywords": [
+    "documentary",
+    "superintelligence",
+    "presenter to camera",
+    "cinematic b-roll",
+    "chapter cards",
+    "dictionary definition",
+    "serif titles",
+    "AI video",
+    "وثائقي",
+    "ذكاء فائق",
+    "مقدّمة برامج",
+    "لقطات مجازية",
+    "عناوين فصول",
+    "سينمائي"
+  ],
+  "difficulty": 5,
+  "duration_s": 315,
+  "stack": [
+    "Remotion",
+    "React",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-gavinpurcell-e6cd81/BRIEF.md"
 }

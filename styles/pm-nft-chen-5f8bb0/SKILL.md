@@ -1,9 +1,9 @@
 ---
 name: pm-nft-chen-5f8bb0
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 14-second stylised 3D chase shot behind a cream propeller plane with green-white-red roundels over an orange sunset sea and puffy violet clouds, as serif words stack 'NATURE / BRINGS / YOU / PEACE' then shrink to a small 'just breathe.', tracked manoeuvre captions sit at the bottom, beams and tracers cross frame, and it ends in a rolling spiral dive. Use to make a new video in this look (3D); address it by ID pm-nft-chen-5f8bb0.
 ---
 
-# KOSIF TOOL — Porco Rosso sunset dogfight
+# KOSIF TOOL — Porco Rosso sunset dogfight / معركة جوية عند الغروب بطائرة مروحية وعبارة «تنفّس فقط»
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/nft-chen-5f8bb0
@@ -17,16 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+مشهد ثلاثي الأبعاد مدته 14 ثانية بأسلوب رسوم أنمي دافئ: كاميرا تلاحق طائرة مروحية كريمية بدوائر خضراء وحمراء وذيل ثلاثي الألوان فوق بحر برتقالي وغيوم بنفسجية منتفخة، تتكدس فوقها كلمات بخط سيريف «NATURE / BRINGS / YOU / PEACE» ثم تحل محلها عبارة صغيرة «just breathe.»، مع شرائط خفيفة بأسماء المناورات أسفل الشاشة وأشعة بيضاء ورصاص خطّاط، وتنتهي بدوران حلزوني يميل فيه الأفق.
+
+A 14-second stylised 3D chase shot behind a cream propeller plane with green-white-red roundels over an orange sunset sea and puffy violet clouds, as serif words stack 'NATURE / BRINGS / YOU / PEACE' then shrink to a small 'just breathe.', tracked manoeuvre captions sit at the bottom, beams and tracers cross frame, and it ends in a rolling spiral dive.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, Remotion, React), suggested duration (14 s), aspect 16:9, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك, Characters / شخصيات, Photos / صور.
+Categories: 3D / ثلاثي الأبعاد, Kinetic type / تايبوغرافي متحرك.
+- [playbooks/3d.md](../../playbooks/3d.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/photos.md](../../playbooks/photos.md)
 
 Category tactics:
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

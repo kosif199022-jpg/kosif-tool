@@ -1,9 +1,9 @@
 ---
 name: pm-beamnxw-6d4fc1
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15.6-second 4:5 piece styled as a studio dashboard: a red headline on top, a preview window playing a shallow-depth-of-field 3D shot of a red voxel character walking across a cream keyboard beside a glass jar and a tiny green robot, a row of tool cards lighting up in order beneath it, a pixel mascot speaking short captions, and a black terminal typing each stage's commands. Use to make a new video in this look (3D); address it by ID pm-beamnxw-6d4fc1.
 ---
 
-# KOSIF TOOL — Small-world character film with Blender MCP
+# KOSIF TOOL — Small-world character film with Blender MCP / عالم صغير فوق لوحة مفاتيح: شخصية مكعبات داخل واجهة استوديو
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/beamnxw-6d4fc1
@@ -18,16 +18,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+مقطع رأسي 4:5 مدته 15.6 ثانية يشبه لوحة تحكم استوديو: في الأعلى عنوان أحمر، وفي الوسط نافذة معاينة تعرض لقطة سينمائية ثلاثية الأبعاد بعمق ميدان ضحل لشخصية حمراء من مكعبات صغيرة تمشي على لوحة مفاتيح كريمية بجانب برطمان زجاجي وروبوت أخضر صغير، وتحتها صف بطاقات الأدوات تضيء بالترتيب، وتميمة بكسلية تقول سطراً قصيراً، وطرفية سوداء تكتب أوامر كل مرحلة.
+
+A 15.6-second 4:5 piece styled as a studio dashboard: a red headline on top, a preview window playing a shallow-depth-of-field 3D shot of a red voxel character walking across a cream keyboard beside a glass jar and a tiny green robot, a row of tool cards lighting up in order beneath it, a pixel mascot speaking short captions, and a black terminal typing each stage's commands.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, Three.js, Web Audio), suggested duration (15.6 s), aspect 4:5, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Shapes / أشكال, Characters / شخصيات, Photos / صور.
-- [playbooks/shapes.md](../../playbooks/shapes.md)
+Categories: 3D / ثلاثي الأبعاد, Characters / شخصيات, Product UI / واجهات المنتج.
+- [playbooks/3d.md](../../playbooks/3d.md)
 - [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/photos.md](../../playbooks/photos.md)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 * Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

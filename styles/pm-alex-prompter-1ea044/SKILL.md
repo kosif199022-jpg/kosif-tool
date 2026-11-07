@@ -1,9 +1,9 @@
 ---
 name: pm-alex-prompter-1ea044
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A silent 34.5-second business explainer on a very pale blue background: it opens on a chat box typing out the request, then a problem headline surrounded by floating 'new' pills, a blue lightning-bolt icon and the product name, three white numbered step cards with icons (mail, bolt, yellow check), a subscriber counter rolling up to 2,000+ with a proof line, and a name end card. Use to make a new video in this look (Ads); address it by ID pm-alex-prompter-1ea044.
 ---
 
-# KOSIF TOOL — Animated business explainer
+# KOSIF TOOL — Animated business explainer / شرح أعمال هادئ لنشرة بريدية بألوان أزرق فاتح وأصفر
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/alex-prompter-1ea044
@@ -18,16 +18,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شرح أعمال مدته 34.5 ثانية بلا صوت على خلفية زرقاء فاتحة جداً: يبدأ بمربع محادثة يُكتب فيه الطلب، ثم عنوان المشكلة وحوله شارات «جديد» تطفو، ثم أيقونة برق زرقاء واسم المنتج، ثم ثلاث بطاقات بيضاء مرقمة بأيقونات (بريد، برق، علامة صح بأصفر)، ثم عداد مشتركين يصعد إلى 2000+ مع سطر إثبات، وبطاقة ختام بالاسم.
+
+A silent 34.5-second business explainer on a very pale blue background: it opens on a chat box typing out the request, then a problem headline surrounded by floating 'new' pills, a blue lightning-bolt icon and the product name, three white numbered step cards with icons (mail, bolt, yellow check), a subscriber counter rolling up to 2,000+ with a proof line, and a name end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, CSS, React, SVG), suggested duration (34.5 s), aspect 16:9, difficulty 2/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك, Code / كود.
-- [playbooks/diagrams.md](../../playbooks/diagrams.md)
+Categories: Ads / إعلانات, Kinetic type / تايبوغرافي متحرك, Product UI / واجهات المنتج.
+- [playbooks/ads.md](../../playbooks/ads.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:
-* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,7 +1,7 @@
 {
   "id": "ecommerce-ad",
   "name": "إعلان متجر",
-  "name_ar": "إعلان متجر",
+  "name_ar": "إعلان متجر إلكتروني سريع: منتج وسعر وخصم وزر شراء",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,32 @@
   "playbooks": [
     "playbooks/ads.md",
     "playbooks/product-ui.md"
-  ]
+  ],
+  "summary_ar": "إعلان عمودي سريع لمتجر أونلاين: صور منتج مقصوصة على خلفيات لونية صريحة، شارة خصم تنبض، سعر قديم يُشطب وسعر جديد يرتد، بطاقات مزايا قصيرة، وينتهي بزر «اطلب الآن» وشعار المتجر.",
+  "summary_en": "A fast vertical ad for an online shop: cut-out product shots on bold flat colour backgrounds, a pulsing discount badge, an old price struck through and a new price that bounces in, short feature cards, and a closing Order Now button with the shop logo.",
+  "keywords": [
+    "ecommerce ad",
+    "online store",
+    "product promo",
+    "discount",
+    "price reveal",
+    "call to action",
+    "sale",
+    "إعلان متجر",
+    "متجر إلكتروني",
+    "خصم",
+    "عرض",
+    "سعر",
+    "اطلب الآن",
+    "تسويق"
+  ],
+  "difficulty": 2,
+  "duration_s": 24,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "SVG"
+  ],
+  "brief": "styles/ecommerce-ad/BRIEF.md"
 }

@@ -1,12 +1,13 @@
 {
   "id": "pm-kentcdodds-6fa8cf",
   "name": "30-second motion promo for Kody",
-  "name_ar": null,
+  "name_ar": "إعلان مساعد يحفظ سياقك: «إعادة» متكررة ثم الشخصية بطلاً",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "kinetic-type",
+    "product-ui",
+    "characters"
   ],
   "creator": "@kentcdodds",
   "creator_url": "https://x.com/kentcdodds/status/2103638102333858193",
@@ -27,7 +28,34 @@
   "listed": true,
   "skill": "styles/pm-kentcdodds-6fa8cf/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/product-ui.md",
+    "playbooks/characters.md"
+  ],
+  "summary_ar": "مقطع داكن قصير (المتاح منه 10 ثوانٍ) لإعلان أداة ذكاء اصطناعي: كلمات ضخمة تبدأ ببادئة «إعادة» تتبدل كل ثلث ثانية بلون مختلف (مرجاني، بنفسجي، أزرق، أبيض) بجانب نوافذ دردشة مائلة لمساعدين مختلفين، ثم جملة من ثلاثة أسطر يتبدل آخرها بين أسماء المساعدين وينتهي بالأخضر، ثم دمية كوالا ثلاثية الأبعاد بأشعة ذهبية بجانب عنوان التعريف.",
+  "summary_en": "A short dark AI-tool promo (10 s clip available): huge 're-' words swap colour every beat beside tilted chat windows from different assistants, a three-line sentence cycles assistant names and lands on green 'every agent', then a 3D koala mascot appears on golden light rays beside an intro headline.",
+  "keywords": [
+    "product promo",
+    "AI agents",
+    "word swap",
+    "prefix rhythm",
+    "chat windows",
+    "slot text",
+    "mascot reveal",
+    "god rays",
+    "إعلان منتج",
+    "وكلاء ذكاء اصطناعي",
+    "تبديل كلمات",
+    "نوافذ دردشة",
+    "شخصية",
+    "أشعة ذهبية"
+  ],
+  "difficulty": 3,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-kentcdodds-6fa8cf/BRIEF.md"
 }

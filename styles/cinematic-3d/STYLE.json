@@ -1,7 +1,7 @@
 {
   "id": "cinematic-3d",
   "name": "مشاهد 3D سينمائية",
-  "name_ar": "مشاهد 3D سينمائية",
+  "name_ar": "مشاهد ثلاثية الأبعاد سينمائية بإضاءة درامية وعدسة واقعية",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -24,5 +24,31 @@
   "skill": "styles/cinematic-3d/SKILL.md",
   "playbooks": [
     "playbooks/3d.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي بمشاهد ثلاثية الأبعاد واقعية الإضاءة: بيئة مظلمة يخترقها ضوء حجمي وضباب، كاميرا تتحرك ببطء كرافعة سينمائية مع عمق ميدان، مواد واقعية ولون سينمائي برتقالي وأزرق، وعناوين عربية قليلة كترويسة فيلم.",
+  "summary_en": "A vertical reel of realistically lit 3D scenes: a dark environment pierced by volumetric light and haze, a slow crane-like camera with shallow depth of field, physical materials and a teal-and-orange film grade, with sparse Arabic titles like a movie trailer.",
+  "keywords": [
+    "cinematic 3d",
+    "volumetric light",
+    "depth of field",
+    "film grade",
+    "trailer",
+    "camera move",
+    "3d render",
+    "سينمائي",
+    "ثلاثي الأبعاد",
+    "إضاءة درامية",
+    "تريلر",
+    "عمق الميدان",
+    "مشاهد"
+  ],
+  "difficulty": 5,
+  "duration_s": 35,
+  "stack": [
+    "Three.js",
+    "WebGL",
+    "React",
+    "Remotion"
+  ],
+  "brief": "styles/cinematic-3d/BRIEF.md"
 }

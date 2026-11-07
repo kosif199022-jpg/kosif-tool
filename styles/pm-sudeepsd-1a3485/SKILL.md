@@ -1,9 +1,9 @@
 ---
 name: pm-sudeepsd-1a3485
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A silent 15-second billing showreel in navy, yellow and cream: a dot becomes an event counter racing past a million, a quota ring fills to 100%, giant words reveal in slices, a 3D cube grid rises into a heat map, pricing cards roll numbers, a usage line draws, an invoice gets a PAID stamp, and the logo forms from particles. Use to make a new video in this look (Charts); address it by ID pm-sudeepsd-1a3485.
 ---
 
-# KOSIF TOOL — Flexprice motion showreel
+# KOSIF TOOL — Flexprice motion showreel / شوريل منصة فوترة حسب الاستخدام: من حدث واحد إلى فاتورة مدفوعة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/sudeepsd-1a3485
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #60
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+شوريل صامت مدته 15 ثانية بالكحلي والأصفر والكريمي يتبع رحلة الفوترة: نقطة بيضاء واحدة تصبح عداد أحداث يقفز إلى أكثر من مليون مع رذاذ جسيمات، حلقة حصة تمتلئ من 0% إلى 100% بالأصفر، كلمات ضخمة تُكشف بشرائح (سعّر، فوتر)، شبكة مكعبات ثلاثية الأبعاد ترتفع كخريطة حرارة، بطاقات خطط أسعار تتدحرج أرقامها، منحنى استخدام يُرسم مع أعمدة، فاتورة تُملأ بنودها وتُختم «مدفوع»، ثم الشعار من انفجار جسيمات.
+
+A silent 15-second billing showreel in navy, yellow and cream: a dot becomes an event counter racing past a million, a quota ring fills to 100%, giant words reveal in slices, a 3D cube grid rises into a heat map, pricing cards roll numbers, a usage line draws, an invoice gets a PAID stamp, and the logo forms from particles.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Three.js, HTML Canvas), suggested duration (15 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
