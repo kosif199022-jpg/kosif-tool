@@ -357,6 +357,13 @@
    "what": "v67.1 (artifact version 85): table head back to a distinct dark bar (#1D1D1F, light text, sorted column in light blue, soft shadow); clear alternating rows (white / light blue #EDF3FB, hover #E1EBF8, thin row lines); when a search matches through the alternatives, the row shows only the matching alternative numbers plus a '+N بديل تاني' button that expands the rest for that search; muted text darkened to #5F5F64 for contrast on the blue rows.",
    "checks": "JTC7851 -> 1 matching brand number shown + '+148 بديل تاني', click -> 141 brand + 8 OE; name search shows the normal view; contrast gate 0 low; 0 page errors",
    "status": "published"
+  },
+  {
+   "n": 46,
+   "at": "2026-11-07T13:00:00+03:00",
+   "what": "v67.2 (artifact version 86): 'يبحث في' chips (اسم التقرير، اسم SMACC، البدائل، الموديل والملاحظات) back in view as a compact row directly above the search, instead of inside the options panel.",
+   "checks": "chips in .controls, row 35px, toggling SMACC works; 0 page errors",
+   "status": "published"
   }
  ],
  "outputs": [
