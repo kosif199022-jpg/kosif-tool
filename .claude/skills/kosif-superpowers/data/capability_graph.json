@@ -2815,6 +2815,11 @@
    "label": "tests/test_tempo_agreement.py"
   },
   {
+   "id": "test:tests/test_black_dragon_engine_wiring.py",
+   "kind": "test",
+   "label": "tests/test_black_dragon_engine_wiring.py"
+  },
+  {
    "id": "test:tests/test_black_dragon_media.py",
    "kind": "test",
    "label": "tests/test_black_dragon_media.py"
@@ -2948,6 +2953,16 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_v58_mastery.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_v58_mastery.py"
+  },
+  {
+   "id": "test:tests/test_black_dragon_atlas_council_bridge.py",
+   "kind": "test",
+   "label": "tests/test_black_dragon_atlas_council_bridge.py"
+  },
+  {
+   "id": "test:tests/test_black_dragon_creative_council.py",
+   "kind": "test",
+   "label": "tests/test_black_dragon_creative_council.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_creative_paint.py",
@@ -8789,6 +8804,12 @@
   },
   {
    "from": "script:scripts/black_dragon.py",
+   "to": "test:tests/test_black_dragon_engine_wiring.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/black_dragon.py",
    "to": "test:tests/test_black_dragon_media.py",
    "rel": "tested_by",
    "w": 1
@@ -9018,6 +9039,18 @@
   {
    "from": "script:scripts/council.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_v58_mastery.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/council.py",
+   "to": "test:tests/test_black_dragon_atlas_council_bridge.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/council.py",
+   "to": "test:tests/test_black_dragon_creative_council.py",
    "rel": "tested_by",
    "w": 1
   },
