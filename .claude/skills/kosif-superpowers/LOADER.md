@@ -27,7 +27,7 @@
 | `kosif-superpowers` | `.claude/skills/kosif-superpowers/SKILL.md` | 83 KB · 448 سطر | Capability self-awareness and thinking upgrade for Claude. One front door (scripts/hub.py find) maps a task in the user's words to the runnable tools, catalog powers… |
 | `kosif-upload-link` | `.claude/skills/kosif-upload-link/SKILL.md` | 4 KB · 46 سطر | Send the user's big-file upload link and pull what they uploaded. Use when the user asks for the upload link, says a file is too big to attach (over 30-40 MB), wants to… |
 | `kosif-voice-studio` | `.claude/skills/kosif-voice-studio/SKILL.md` | 6 KB · 108 سطر | Voice-over, voice cloning, voice design and transcription in Egyptian Arabic, MSA, English and 600+ languages - text to speech with word timings (words.json) for… |
-| `kosif-web-film` | `.claude/skills/kosif-web-film/SKILL.md` | 4 KB · 71 سطر | Direct and render a motion-design video built as a webpage (codename «التنين الأسود» / Black Dragon). Use when the user asks for a video, promo, intro, explainer or… |
+| `kosif-web-film` | `.claude/skills/kosif-web-film/SKILL.md` | 8 KB · 114 سطر | Direct and render a motion-design video built as a webpage (codename «التنين الأسود» / Black Dragon). Use when the user asks for a video, promo, intro, explainer or… |
 | `living-site` | `.claude/skills/living-site/SKILL.md` | 13 KB · 193 سطر | Build a living website in three levels. Level 1 live 3D (Spline), Level 2 generated images and a scroll film (Higgsfield), Level 3 living motion graphics drawn in code… |
 | `saas-animation` | `.claude/skills/saas-animation/SKILL.md` | 9 KB · 118 سطر | Make short, high-end SaaS, app, product and brand animations (about 8–20s) with Claude, built as code and rendered to 4K video, without any AI video or image generator.… |
 | `talking-head-reels` | `.claude/skills/talking-head-reels/SKILL.md` | 10 KB · 158 سطر | Turn a talking-head recording into a finished vertical 9:16 Instagram Reel / TikTok / YouTube Short in a bold editorial style - tightened pauses, kinetic Anton + Didot… |
@@ -279,7 +279,8 @@
 - 36–46: 3. Build the page
 - 47–57: 4. Validate and fix, then look
 - 58–66: 5. Render
-- 67–70: Limits
+- 67–109: World Film mode: one world, one continuous camera
+- 110–113: Limits
 
 ### `.claude/skills/living-site/SKILL.md`
 
