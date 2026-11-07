@@ -31,6 +31,8 @@ Uploaded audio or video for montage or motion graphics: use the Montage Pro task
 
 Shadow theatre / silhouette scenes (مسرح الظل، مشاهد بالظلال، «زي فقرة الظلال»): follow `.claude/skills/kosif-shadow-theatre/SKILL.md` (`shadow_theatre.py analyze` a reference, write the scene JSON, `check`, `stills`, then `render`).
 
+A reel from a recording of someone talking to camera (ريل من فيديو متحدث، قص الوقفات وكلام متحرك وB-roll، talking head): follow `.claude/skills/talking-head-reels/SKILL.md` (`prepare_project.py`, transcript, `cut_pauses.py`, `master_audio.py`, the EDL, `validate_edl.py`, stills, then `render_reel.py`; Linux and Arabic notes are in its «Inside KOSIF» section).
+
 Copy the user's own website offline or read its design system (نسخ موقعي أوفلاين، ألوان وخطوط موقعي، goclone): follow `.claude/skills/kosif-site-snapshot/SKILL.md` (`site_snapshot.py snapshot <url> --rights own --rights-note "..."`; rights first, never on sites the user has no right to copy).
 
 A motion-design video made from code (promo, intro, kinetic typography, «التنين الأسود»): follow `.claude/skills/kosif-web-film/SKILL.md` (concept and shot plan first, `web_film.py check`, stills, then `tools/render_html.cjs`).

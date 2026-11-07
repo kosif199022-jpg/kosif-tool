@@ -10,7 +10,7 @@
 
 **التحميل الخفيف:** اقرأ هذا الملف وحده أولًا. لا تقرأ ملفات المهارات الكبيرة كاملة؛ افتح الملف أو نطاق الأسطر الذي يطابق الطلب فقط (`sed -n START,ENDp <path>`)، أو اسأل السكربت: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py need "<الطلب>"`. كل مهارة وكل ملحق ممثَّل هنا بسطر، فلا توجد مهارة خارج الوصول. في الوضع الكامل: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py full`.
 
-## المهارات (16) / skills
+## المهارات (17) / skills
 
 | المهارة | الملف | الحجم | متى |
 |---|---|---|---|
@@ -30,6 +30,7 @@
 | `kosif-web-film` | `.claude/skills/kosif-web-film/SKILL.md` | 4 KB · 71 سطر | Direct and render a motion-design video built as a webpage (codename «التنين الأسود» / Black Dragon). Use when the user asks for a video, promo, intro, explainer or… |
 | `living-site` | `.claude/skills/living-site/SKILL.md` | 13 KB · 193 سطر | Build a living website in three levels. Level 1 live 3D (Spline), Level 2 generated images and a scroll film (Higgsfield), Level 3 living motion graphics drawn in code… |
 | `saas-animation` | `.claude/skills/saas-animation/SKILL.md` | 9 KB · 118 سطر | Make short, high-end SaaS, app, product and brand animations (about 8–20s) with Claude, built as code and rendered to 4K video, without any AI video or image generator.… |
+| `talking-head-reels` | `.claude/skills/talking-head-reels/SKILL.md` | 10 KB · 158 سطر | Turn a talking-head recording into a finished vertical 9:16 Instagram Reel / TikTok / YouTube Short in a bold editorial style - tightened pauses, kinetic Anton + Didot… |
 
 ## المجموعات (15) / capability groups
 
@@ -301,6 +302,22 @@
 - 90–101: Where to read more
 - 102–108: Setup
 - 109–117: Scripts
+
+### `.claude/skills/talking-head-reels/SKILL.md`
+
+- 6–17: Talking-head reels
+- 18–22: Requirements
+- 23–29: What you deliver
+- 30–45: Step 0 - setup and intake
+- 46–60: Step 1 - prepare and analyse (scripted)
+- 61–68: Step 2 - plan the edit (your judgement)
+- 69–76: Step 3 - footage
+- 77–87: Step 4 - EDL and validation
+- 88–101: Step 5 - stills, then the render
+- 102–114: Step 6 - revision rounds (how the user wants to work)
+- 115–120: Other tools
+- 121–150: Inside KOSIF
+- 151–157: Ground rules
 
 
 ## مكتبة 100 Super Skills (114) / vendored skills
