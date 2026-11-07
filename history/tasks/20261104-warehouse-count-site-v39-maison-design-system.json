@@ -410,6 +410,56 @@
         "checkpoint_status": "published",
         "checks": "history lists 3 events (qty empty->3, 3->5, location ->B7); last-change cell '7 نوفمبر | 12:13 م | 2×'; AND search مقص=60 visible, +8K0=7; t56/t59/t62/t66/t67 0 page errors; contrast gate 0 low after darkening ok green to #17712E; desktop 1850 and phone 390 screenshots checked"
       }
+    },
+    {
+      "n": 45,
+      "what": "v67.1 (artifact version 85): table head back to a distinct dark bar (#1D1D1F, light text, sorted column in light blue, soft shadow); clear alternating rows (white / light blue #EDF3FB, hover #E1EBF8, thin row lines); when a search matches through the alternatives, the row shows only the matching alternative numbers plus a '+N بديل تاني' button that expands the rest for that search; muted text darkened to #5F5F64 for contrast on the blue rows.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the reported result against the source evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T12:55:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "JTC7851 -> 1 matching brand number shown + '+148 بديل تاني', click -> 141 brand + 8 OE; name search shows the normal view; contrast gate 0 low; 0 page errors"
+      }
+    },
+    {
+      "n": 46,
+      "what": "v67.2 (artifact version 86): 'يبحث في' chips (اسم التقرير، اسم SMACC، البدائل، الموديل والملاحظات) back in view as a compact row directly above the search, instead of inside the options panel.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the reported result against the source evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T13:00:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "chips in .controls, row 35px, toggling SMACC works; 0 page errors"
+      }
+    },
+    {
+      "n": 47,
+      "what": "v67.3 (artifact version 87): the 'بحث سابق' strip of previous searches no longer shows (saved searches via ★ stay).",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the reported result against the source evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T13:03:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "#recent display none after a search and focusing the empty field; 0 page errors"
+      }
+    },
+    {
+      "n": 48,
+      "what": "New separate artifact 'جرد بضاعة جديدة' built from the count site: 334 items (261 BMW invoice lines IV262792014 + 73 LEMFOERDER proforma lines PRF-17688) in two invoice groups, invoice line data and price on each item, SMACC codes matched (exact 98, via alternative 43, none 193), alternatives on 127 items; SAR unit prices seeded into its database (261).",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the reported result against the source evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T14:10:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "334 items, OE and LEMF number searches find their lines, Latin names render LTR, 0 page errors"
+      }
+    },
+    {
+      "n": 49,
+      "what": "New-goods site v2: proforma lines removed at the owner's request, only the BMW Excel invoice remains: 261 items, SMACC exact 62, via alternative 23, none 176, alternatives on 54. Proforma delivered separately as an Excel file (73 lines, totals match the PDF).",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the reported result against the source evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T16:05:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "261 items, one group, 0 page errors; xlsx recalc 76 formulas 0 errors"
+      }
     }
   ],
   "outputs": [
@@ -422,6 +472,19 @@
         "page_bytes": 1644566,
         "items_with_alternatives": "1985 / 2533",
         "contrast_pairs_ge_4.5": "63/63",
+        "js_errors": 0
+      }
+    },
+    {
+      "url": "https://claude.ai/artifact/BfFmNg5jjjtRHTp5xzvE56",
+      "kind": "web",
+      "deterministic": false,
+      "measured": {
+        "version": 1,
+        "items": 334,
+        "smacc_exact": 98,
+        "smacc_via_alt": 43,
+        "with_alternatives": 127,
         "js_errors": 0
       }
     }
