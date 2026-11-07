@@ -1413,6 +1413,16 @@
       "why": "free-footage: runs its own 1 test file(s) on its real code (120 tests here)",
       "tool_suite": true
     },
+    "tool:free-media-catalog": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "free-media-catalog",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "free-media-catalog: runs its own 1 test file(s) on its real code (14 tests here)",
+      "tool_suite": true
+    },
     "tool:free-photos": {
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
       "args": [
@@ -2402,6 +2412,26 @@
       ],
       "why": "repo-ashell-cinema: the iPhone a-Shell app run offline in dash; Photos SAFE known answers (3 checks)",
       "tool_suite": true
+    },
+    "skill:saas-animation": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "saas-animation",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "saas-animation: tiles known-colour stills into a contact sheet in time order, splits a cut-out into a layer and draws a coordinate grid, each checked by pixel (no Chrome render)",
+      "skill_program": true
+    },
+    "skill:kosif-black-dragon": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "creative-council",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "kosif-black-dragon: convenes the 12-seat council on the task twice (same fingerprint), checks 525 records each get one seat, the 31 Kahneman traps and 23 Atlas procedures are routed, runs the judgment review, and scores two routes where the better one must win and a fake independent claim must be refused; plans only",
+      "skill_program": true
     }
   }
 }

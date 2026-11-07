@@ -55,13 +55,16 @@ SCRIPT = {
     "pixel-painter": VENDOR / "pixel-studio-painter" / "scripts",
     "kling-director": SKILLS / "kosif-kling-director" / "scripts",
     "dragon-mind": SKILLS / "kosif-dragon-mind" / "scripts",
+    "saas-animation": SKILLS / "saas-animation" / "scripts",
+    "creative-council": SKILLS / "kosif-black-dragon" / "scripts",
 }
 RECIPES = tuple(SCRIPT)
 NEEDS_MEDIA = {"social", "video-editor", "motion-energy", "captions-audio", "shadow-theatre", "voice-check",
                "animation-qa", "hyperframes-beats", "montage-tools", "mimic-analyze"}
 NEEDS_MODULE = {"excel-lambdas": "openpyxl", "motion-energy": "PIL", "excel-model": "openpyxl",
                 "excel-check": "openpyxl", "captions-audio": "numpy", "shadow-theatre": "numpy",
-                "animation-qa": "PIL", "hyperframes-beats": "numpy", "mimic-analyze": "cv2", "pixel-painter": "cv2"}
+                "animation-qa": "PIL", "hyperframes-beats": "numpy", "mimic-analyze": "cv2", "pixel-painter": "cv2",
+                "saas-animation": "PIL"}
 # Scripts that import their sibling modules: run without -I (which drops the script's folder from
 # sys.path) but still with -E -s, so no environment variable or user site-packages leaks in.
 PY_SIBLINGS = [sys.executable, "-E", "-s", "-B"]  # Python packages a recipe's script imports
@@ -739,8 +742,132 @@ def dragon_mind(r, d, task, clip, selftest):
     other = r.call("think a different task", [*tool, "think", "Write a pitch deck about solar panels", "--out", "other"])
     r.check("a different task gives a different digest", _json(r.work / "other" / "mind_trace.json")["digest"] != t["digest"],
             other.get("exit_code"))
+    # Thinking, Fast and Slow: the trap scanner and the page-level book record are part of the mind.
+    r.check("the plan carries the book's always-on System 2 gates",
+            {"tfs-wysiati", "tfs-substitution", "tfs-optimism-overconfidence"} <= {x["id"] for x in t.get("traps", [])},
+            [x["id"] for x in t.get("traps", [])])
+    r.call("scan a task with a planted anchor",
+           [*tool, "traps", "anchor the price estimate from the first number the client said"])
+    planted = r.steps[-1].get("receipt") or []
+    planted = planted if isinstance(planted, list) else planted.get("traps", [])
+    hit = next((x for x in planted if x["id"] == "tfs-anchoring"), None)
+    r.check("the planted anchor is caught with a debiasing move and book pages",
+            bool(hit and hit["score"] > 0 and hit.get("debias_en") and hit.get("pages")),
+            hit and [hit["score"], hit.get("pages")])
+    r.call("read page 69 of the book record", [*tool, "book", "--page", "69"])
+    page = r.steps[-1].get("receipt") or {}
+    r.check("the book record covers all 468 pages and returns the page gist",
+            page.get("pages_total") == 468 and page.get("pages_read") == 468 and (page.get("page") or {}).get("page") == 69,
+            [page.get("pages_total"), page.get("pages_read")])
     r.findings.append({"faculties_needed": t["faculties_needed"], "critic": t["critic"][:5], "tiers": t["tiers"],
+                       "traps": [x["id"] for x in t.get("traps", [])],
                        "note": "a planner: nothing in the catalog was executed by this step"})
+
+
+def creative_council(r, d, task, clip, selftest):
+    """The 12-seat creative council with its 525 thinking records, the Kahneman trap gates and the Atlas
+    procedures, then the judgment review and the advisory verdict. It plans and scores; it renders nothing."""
+    bd = [*PY_SIBLINGS, str(d / "black_dragon.py")]
+    cc = [*PY_SIBLINGS, str(d / "creative_council.py")]
+    r.call("convene the council on the task", [*bd, "council", task, "--out", "council.json"])
+    r.call("convene it again (same task)", [*bd, "council", task, "--out", "again.json"])
+    r.output(r.work / "council.json")
+    c, c2 = _json(r.work / "council.json"), _json(r.work / "again.json")
+    seats = [x["id"] for x in c["roles"]]
+    r.check("12 distinct seats", len(seats) == 12 == len(set(seats)), seats)
+    ids = [a["id"] for a in c["assignments"]]
+    r.check("every thinking record has exactly one primary seat",
+            c["total_source_records"] == c["primary_assigned"] == len(ids) == len(set(ids)) and len(ids) >= 525,
+            [c["total_source_records"], c["primary_assigned"], len(ids)])
+    r.check("every record's seat is a council seat", all(a["primary"] in seats for a in c["assignments"]))
+    r.check("same task gives the same fingerprint", c["fingerprint"] == c2["fingerprint"], c["fingerprint"][:12])
+    k = c["kahneman_review"]
+    gates = {g["id"] for g in k["review_gates"]}
+    r.check("the book's 31 traps are loaded and the three System 2 gates are on",
+            k["traps_catalogued"] >= 31 and {"tfs-wysiati", "tfs-substitution", "tfs-optimism-overconfidence"} <= gates,
+            [k["traps_catalogued"], sorted(gates)])
+    r.check("every trap gate goes to the critic and to a primary seat",
+            all("critic" in g["reviewers"] and g["primary"] in seats for g in k["review_gates"]))
+    r.check("the trap questions reach the seats",
+            sum(len(x.get("kahneman_review_questions", [])) for x in c["roles"]) >= len(k["review_gates"]))
+    ea = c["external_atlas"]
+    r.check("Atlas procedures are loaded and each routed to a seat",
+            ea["candidate_procedure_count"] >= 23 and all(p["primary"] in seats for p in ea["candidate_procedures"]),
+            ea["candidate_procedure_count"])
+    # Judgment review: the 11 book lenses plus the full trap scan, on a brief built from the task.
+    brief = r.work / "brief.json"
+    brief.write_text(json.dumps({"goal": task, "options": c["options"], "stakes": "high", "reversible": True,
+                                 "anchor": 5000}, ensure_ascii=False), encoding="utf-8")
+    r.call("judgment review of the brief", [*bd, "think-review", "--input", str(brief), "--out", "review.json"])
+    rv = _json(r.work / "review.json")
+    r.output(r.work / "review.json")
+    r.check("review covers the 11 book lenses", len(rv["review_checks"]) == 11, len(rv["review_checks"]))
+    r.check("review also runs the full trap scan", rv["book_trap_scan"]["traps_catalogued"] >= 31
+            and len(rv["book_trap_scan"]["gates"]) >= 3, len(rv["book_trap_scan"]["gates"]))
+    # Decision: known-answer scores pick a winner; an unbacked INDEPENDENT claim is refused.
+    a, b = c["options"][0], c["options"][1]
+    sub = {"mode": "SIMULATED", "rounds": {"3": {
+        "critic": {"scores": {a: {"meaning": 5, "feasibility": 5}, b: {"meaning": 2, "feasibility": 2}}},
+        "decision": {"scores": {a: {"meaning": 4, "feasibility": 5}, b: {"meaning": 3, "feasibility": 2}}}}}}
+    (r.work / "sub.json").write_text(json.dumps(sub), encoding="utf-8")
+    r.call("score two routes", [*cc, "verdict", "--plan", "council.json", "--submissions", "sub.json",
+                                "--out", "verdict.json"])
+    v = _json(r.work / "verdict.json")
+    r.output(r.work / "verdict.json")
+    r.check("the clearly better route wins, labelled simulated",
+            v["winning_route"] == a and v["status"] == "SIMULATED_NOT_EXECUTED", [v["winning_route"], v["status"]])
+    sub["mode"] = "INDEPENDENT"
+    (r.work / "fake.json").write_text(json.dumps(sub), encoding="utf-8")
+    fake = r.call("claim independent runs with no run IDs (planted)",
+                  [*cc, "verdict", "--plan", "council.json", "--submissions", "fake.json", "--out", "fake-v.json"],
+                  ok_codes=(0, 1, 2))
+    r.check("the planted independent claim is refused", fake["exit_code"] != 0, fake["exit_code"])
+    r.findings.append({"seats": seats, "records": c["total_source_records"],
+                       "trap_gates": sorted(gates), "atlas_procedures": ea["candidate_procedure_count"],
+                       "winning_route": v["winning_route"],
+                       "note": "planning and scoring only; no agent, model, media or paid tool was run"})
+
+
+def saas_animation(r, d, task, clip, selftest):
+    from PIL import Image, ImageDraw
+    # Known-answer stills: three frames, each a flat colour, named by their time like render.mjs writes them.
+    stills = r.work / "stills"
+    stills.mkdir()
+    colours = {"0.50": (200, 30, 30), "1.20": (30, 200, 30), "2.00": (30, 30, 200)}
+    for t, c in colours.items():
+        Image.new("RGB", (1920, 1080), c).save(stills / f"{t}.jpg", quality=95)
+    sheet = r.work / "sheet.jpg"
+    step = r.call("contact_sheet.py: tile the stills", [*PY, str(d / "contact_sheet.py"), str(stills), str(sheet)])
+    r.output(sheet)
+    im = Image.open(sheet).convert("RGB")
+    r.check("sheet is 4 columns x 1 row of 640x360 tiles", im.size == (2560, 360), im.size)
+    got = [im.getpixel((x * 640 + 320, 200)) for x in range(3)]
+    r.check("tiles are in time order (red, green, blue)",
+            all(all(abs(a - b) <= 24 for a, b in zip(g, c)) for g, c in zip(got, colours.values())), got)
+    r.check("script reports 3 frames", "3 frames" in step.get("stdout_tail", ""), step.get("stdout_tail"))
+    # A cut-out with a white square on a transparent field, split into a layer by one polygon.
+    cut = r.work / "cutout.png"
+    a = Image.new("RGBA", (400, 300), (0, 0, 0, 0))
+    ImageDraw.Draw(a).rectangle([100, 100, 199, 199], fill=(255, 255, 255, 255))
+    a.save(cut)
+    r.call("split.py: cut the square into its own layer",
+           [*PY, str(d / "split.py"), str(cut), json.dumps({"card": [[90, 90], [210, 90], [210, 210], [90, 210]]})])
+    layer, base = r.work / "cutout-card.png", r.work / "cutout-base.png"
+    r.output(layer)
+    r.output(base)
+    lay, bas = Image.open(layer), Image.open(base)
+    r.check("layer keeps the square, base loses it",
+            lay.getpixel((150, 150))[3] == 255 and bas.getpixel((150, 150))[3] == 0,
+            [lay.getpixel((150, 150)), bas.getpixel((150, 150))])
+    grid = r.work / "grid.jpg"
+    r.call("grid.py: coordinate grid over the cut-out", [*PY, str(d / "grid.py"), str(cut), str(grid)])
+    r.output(grid)
+    g = Image.open(grid).convert("RGB")
+    r.check("grid keeps the image size and fills transparency with red",
+            g.size == (400, 300) and g.getpixel((350, 250))[0] > 200 and g.getpixel((350, 250))[1] < 100,
+            [g.size, g.getpixel((350, 250))])
+    r.findings.append({"note": "image tools only; render.mjs needs Chrome and was not run here, "
+                               "and the sound and Blender scripts need scipy and Blender"})
 
 
 RUNNERS = {"prompt-master": prompt_master, "prompt-architect": prompt_architect, "reel-hooks": reel_hooks,
@@ -752,7 +879,8 @@ RUNNERS = {"prompt-master": prompt_master, "prompt-architect": prompt_architect,
            "reel-research": reel_research, "voice-check": voice_check, "animation-qa": animation_qa,
            "hyperframes-beats": hyperframes_beats, "montage-tools": montage_tools,
            "mimic-analyze": mimic_analyze, "pixel-painter": pixel_painter,
-           "kling-director": kling_director, "dragon-mind": dragon_mind}
+           "kling-director": kling_director, "dragon-mind": dragon_mind, "saas-animation": saas_animation,
+           "creative-council": creative_council}
 
 
 def main(argv: list[str]) -> int:

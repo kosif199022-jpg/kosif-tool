@@ -1,345 +1,524 @@
 {
- "schema": "kosif.task-history.v1",
- "id": "20261104-warehouse-count-site-v39-maison-design-system",
- "date": "2026-11-04",
- "title": "Warehouse stock-count web app v28→v60: design system v2 (Maison), multi-search, highlight, shelf groups, scan mode, award-site motion, phone bottom bar, measured gate",
- "request": "نفذ المقترح واستخدم قدرات التنين الاسود في تطوير الخطوط والموشن جرافك وايقونات الموقع وغيرها",
- "kind": "web",
- "mode": "موافق",
- "level": "L3",
- "plan": "B",
- "status": "DONE_VERIFIED",
- "agent": "Claude (claude.ai cloud session; repo not attached, repo scripts not executed: permission classifier refused external code)",
- "tools": [
-  "python3 (patch scripts patch3..patch28 + build.sh)",
-  "node 22 + playwright (pre-installed Chromium headless)",
-  "claude.ai Artifact publish (artifact GjTX7KLvQs1dppSoAxW7Qj)",
-  "WebSearch/WebFetch research + 3 research subagents (2 completed, 1 rate-limited)"
- ],
- "params": {
-  "artifact_versions": "28..60 (artifact version 62)",
-  "themes": [
-   "light Maison ivory/charcoal/antique gold",
-   "dark graphite/champagne",
-   "noir black/gold"
+  "schema": "kosif.task-history.v1",
+  "id": "20261104-warehouse-count-site-v39-maison-design-system",
+  "date": "2026-11-04",
+  "title": "Warehouse stock-count web app v28→v60: design system v2 (Maison), multi-search, highlight, shelf groups, scan mode, award-site motion, phone bottom bar, measured gate",
+  "request": "نفذ المقترح واستخدم قدرات التنين الاسود في تطوير الخطوط والموشن جرافك وايقونات الموقع وغيرها",
+  "kind": "web",
+  "mode": "موافق",
+  "level": "L3",
+  "plan": "B",
+  "status": "DONE_VERIFIED",
+  "agent": "Claude (claude.ai cloud session; repo not attached, repo scripts not executed: permission classifier refused external code)",
+  "tools": [
+    "python3 (patch scripts patch3..patch28 + build.sh)",
+    "node 22 + playwright (pre-installed Chromium headless)",
+    "claude.ai Artifact publish (artifact GjTX7KLvQs1dppSoAxW7Qj)",
+    "WebSearch/WebFetch research + 3 research subagents (2 completed, 1 rate-limited)"
   ],
-  "fonts": [
-   "Amiri 700 (title)",
-   "Noto Kufi Arabic 600/700 (names, numbers)",
-   "IBM Plex Sans Arabic (UI)",
-   "IBM Plex Mono (codes)"
+  "params": {
+    "artifact_versions": "28..60 (artifact version 62)",
+    "themes": [
+      "light Maison ivory/charcoal/antique gold",
+      "dark graphite/champagne",
+      "noir black/gold"
+    ],
+    "fonts": [
+      "Amiri 700 (title)",
+      "Noto Kufi Arabic 600/700 (names, numbers)",
+      "IBM Plex Sans Arabic (UI)",
+      "IBM Plex Mono (codes)"
+    ],
+    "root_font_size": "106% / 110% / 114% / 120% by breakpoint",
+    "motion": "hover 140ms std, press 80/140ms, modal 300ms expo-out, list stagger 50ms (KOSIF product-ui playbook)",
+    "icons": "24-grid, 1.7 stroke, round joins; self-drawing check; scan icon",
+    "identity_v4": {
+      "palette": "slate ink #111827 on #F3F4F6, working blue #1D4ED8/#3B82F6, lavender marks; dark #0B1220 / noir #000 with sky-blue accents",
+      "fonts": "Rubik (UI, names, numbers) + IBM Plex Sans Arabic fallback + IBM Plex Mono (codes)",
+      "views": "auto (cards while a search or marked-only filter is active, table otherwise) / cards / table, persisted in OPTS.view"
+    }
+  },
+  "inputs": [
+    {
+      "name": "SMACC stock report (2,533 items) embedded as base-data JSON in the page",
+      "kind": "data"
+    },
+    {
+      "name": "user Excel of brand/model/group per item (ref-data)",
+      "kind": "data"
+    },
+    {
+      "name": "carparts247 / oemwolf cross-reference JSON built earlier (xref, sup)",
+      "kind": "data"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/PROTOCOL.md",
+      "kind": "document"
+    },
+    {
+      "name": "kosif-tool playbooks/product-ui.md and playbooks/arabic-typography.md (read from a shallow clone)",
+      "kind": "document"
+    }
   ],
-  "root_font_size": "106% / 110% / 114% / 120% by breakpoint",
-  "motion": "hover 140ms std, press 80/140ms, modal 300ms expo-out, list stagger 50ms (KOSIF product-ui playbook)",
-  "icons": "24-grid, 1.7 stroke, round joins; self-drawing check; scan icon",
-  "identity_v4": {
-   "palette": "slate ink #111827 on #F3F4F6, working blue #1D4ED8/#3B82F6, lavender marks; dark #0B1220 / noir #000 with sky-blue accents",
-   "fonts": "Rubik (UI, names, numbers) + IBM Plex Sans Arabic fallback + IBM Plex Mono (codes)",
-   "views": "auto (cards while a search or marked-only filter is active, table otherwise) / cards / table, persisted in OPTS.view"
-  }
- },
- "inputs": [
-  {
-   "name": "SMACC stock report (2,533 items) embedded as base-data JSON in the page",
-   "kind": "data"
-  },
-  {
-   "name": "user Excel of brand/model/group per item (ref-data)",
-   "kind": "data"
-  },
-  {
-   "name": "carparts247 / oemwolf cross-reference JSON built earlier (xref, sup)",
-   "kind": "data"
-  },
-  {
-   "url": "https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/PROTOCOL.md",
-   "kind": "document"
-  },
-  {
-   "name": "kosif-tool playbooks/product-ui.md and playbooks/arabic-typography.md (read from a shallow clone)",
-   "kind": "document"
-  }
- ],
- "steps": [
-  {
-   "n": 1,
-   "what": "research: 3 parallel subagents (award sites, SaaS dashboards, luxury + Arabic/RTL) with WebSearch/WebFetch; two reports delivered (~100 sources/products)",
-   "tool": "Agent (general-purpose) x3",
-   "manual": "creative-sites agent stopped on a 5-hour usage limit"
-  },
-  {
-   "n": 2,
-   "what": "design system v2 stylesheet (v2.css) replacing four stacked theme layers; markup restructure (ring dashboard, toolbar, sticky column heads)",
-   "tool": "python3 patch24.py",
-   "command": "python3 patch24.py out/b21.html out/b22.html"
-  },
-  {
-   "n": 3,
-   "what": "search-term highlighting with Arabic/digit normalisation (patch25); keyboard help, location colours, top progress hairline, favicon, print CSS (patch26); shelf group headers, blind count, export scope chooser, status icons (patch27); icon grammar, kinetic title, scan mode, motion tokens (patch28)",
-   "tool": "python3",
-   "command": "bash build.sh   # chains patch3..patch28 over the base page"
-  },
-  {
-   "n": 4,
-   "what": "regression: 6 headless screenshots (3 themes x desktop/phone), multi-search + marks, highlight, groups, scan mode, export chooser",
-   "tool": "node + playwright",
-   "command": "node t24.js; node t19b.js; node t28.js; node t31.js; node t33.js; node t32.js"
-  },
-  {
-   "n": 5,
-   "what": "measured gate: 21 fg/bg pairs x 3 themes contrast (alpha-composited), basic a11y audit, RTL physical-property scan",
-   "tool": "node gate.js",
-   "command": "node gate.js > gate.txt"
-  },
-  {
-   "n": 6,
-   "what": "publish artifact versions 28..39 to the same URL",
-   "tool": "Artifact publish",
-   "needs_permission": true,
-   "manual": "published in-session as requested by the user"
-  },
-  {
-   "n": 7,
-   "what": "v40: award-site research (23 sites probed live by a subagent) applied: easing set with ease-in exits, two-tone focus ring, KPI radial glow, mobile tab-strip edge fade, spring linear() toggle, 180ms view transition on status swap; plus clear-all-filters chip, 1-5 tab keys (off in scan mode), toast pause on hover",
-   "tool": "python3 patch29.py + patch30.py",
-   "command": "bash build.sh && node t24.js && node t36.js && node t33.js && node gate.js"
-  },
-  {
-   "n": 8,
-   "what": "v41: phone bottom action bar (search/filters/scan/export) in the thumb zone, recent searches under the field, Ctrl+Z undo of the last count, export pending spinner, focused quantity kept above the phone keyboard, swipe-down to dismiss the sheet, phone KPI tiles stacked; scanner gap widened to 60 ms",
-   "tool": "python3 patch31.py",
-   "command": "bash build.sh && node t38.js && node t33.js && node t24.js && node gate.js"
-  },
-  {
-   "n": 9,
-   "what": "v42 «الجدول الهادئ» after the owner called v41 crowded: zebra rows (:nth-child(even of .row)), uniform table rows, alternatives folded behind a «البدائل N» chip (auto-open on a highlighted match), all option chips moved into one popover under the sliders button (bottom sheet on phones), multi-search as a switch beside the field, marks chip beside the filters, eyebrow/double rules/wash/grain/aurora/kinetic title removed, sticky bar solid (no backdrop blur), content-visibility:auto on rows, phone board as a 4-tile strip",
-   "tool": "python3 patch32.py",
-   "command": "bash build.sh && node t42.js && node t19b.js && node t28.js && node t31.js && node t33.js && node t36.js && node t38.js && node gate.js && node perf.js"
-  },
-  {
-   "n": 10,
-   "what": "publish conflict: a parallel session had published its own «clean-v3» calm-table version (dragon-eye sigil, redrawn icons, smaller type, alternatives hidden with no toggle) at 17:20Z as version 43; v42 was published on top as version 44 (the parallel version stays in the artifact history); only its plainer theme-name wording was ported",
-   "tool": "Artifact publish",
-   "needs_permission": true,
-   "manual": "owner asked for the restructure in-session; the parallel version is one click away in version history"
-  },
-  {
-   "n": 11,
-   "what": "v43 after the owner said the look was still the same and asked for search results as cards: new identity (Rubik, slate + working blue, new favicon/theme-colors), results as a responsive card grid (same .row DOM, CSS mode html.cards with grid areas main/alt/model+loc/info+in+ok/note/alts, status as a top bar, top-packed content), a three-way view switch (تلقائي/بطاقات/جدول) wired into updateMeta, field placeholders named (hidden in table mode), reference line back to flex so separators sit between items in both scripts, --ok deepened to #166534 for 4.5:1 on its soft tint",
-   "tool": "python3 patch33.py",
-   "command": "bash build.sh && node t43.js && node t19b.js && node t28.js && node t31.js && node t33.js && node t36.js && node t38.js && node gate.js && node perf.js"
-  },
-  {
-   "n": 12,
-   "what": "v44: the owner rejected cards as the default — table restored as the default view, cards kept behind a two-way switch; reference line fragments bidi-isolated in the paragraph direction so brand → model → type reads in order. v45: zebra rows in the house blue (#EEF4FF light / #15223A dark / #0F1726 noir), and «حفظ طريقة الوصول»: a bookmark button beside the flag while a search is on saves the matched search term into the part's details (attrs.via, kept across stocktakes, synced like model/location), the saved numbers show as chips under the item (tap = re-run that search, × = remove), are searchable in every scope and flag the row «طريقة وصول محفوظة»",
-   "tool": "python3 patch34.py",
-   "command": "bash build.sh && node t45.js && node t46.js && node t19b.js && node t28.js && node t31.js && node t33.js && node t36.js && node t38.js && node gate.js"
-  },
-  {
-   "n": 13,
-   "what": "v46 after the owner asked for a visible separator between rows, bigger type, stronger colour steps and a compressed title bar: rows as spaced bordered strips (gap .4rem, 10px radius) with a deeper blue zebra and a blue border on even rows, root type +4% (108/110/112/116%), SMACC code chip tinted, diff badges tinted by status, flag and save buttons shown on hover/focus on fine pointers (always on touch), app bar collapsed to one 2.2rem row, summary strip and phone tiles slimmer",
-   "tool": "python3 patch35.py",
-   "command": "bash build.sh && node t47.js && node t19b.js && node t28.js && node t31.js && node t33.js && node t36.js && node t38.js && node t45.js && node gate.js"
-  },
-  {
-   "n": 14,
-   "what": "v47: «صنف جديد» button in the app bar and the phone bar (opens the existing unregistered-item sheet, prefilled from the search), and a live camera scanner: native BarcodeDetector where the browser has it, otherwise @zxing/library 0.21.3 loaded from jsdelivr (MultiFormatReader + HTMLCanvasElementLuminanceSource, hints CODE_128/39, EAN, UPC, ITF, CODABAR, QR, DataMatrix), frames every 220 ms, torch toggle when the track supports it, a photo fallback (file input with capture=environment; full image + 2x2 + 3x3 tiles for several labels in one shot). Each code becomes a card: item name, saved location large (or an inline field to save it), system qty, status, open/mark; unknown codes offer «إضافة كصنف جديد»; vibration on a hit; the item sheet opens above the camera",
-   "tool": "python3 patch36.py",
-   "command": "bash build.sh && node t48.js (fake camera + mocked detector) && node t38.js && node t19b.js && node t28.js && node t31.js && node t33.js && node t36.js && node t45.js && node t47.js && node gate.js",
-   "manual": "the ZXing path (iPhone / desktop without BarcodeDetector) is code-ready and checked against the library's exported API (esm index, browser.js, MultiFormatReader.js read via WebFetch) but was not executed here: the CDN is unreachable from the container"
-  },
-  {
-   "n": 15,
-   "what": "v48: phone ↔ computer link over the artifact `room` capability (declared with topic scan at interact level): every camera or hardware-scanner read emits {code, key, name, at, dev}; the other device (receive on by default on fine pointers, send on by default on coarse pointers, both switchable in the options panel under «ربط الموبايل بالكمبيوتر») fills the search, flashes the row, opens the item sheet (switchable) and toasts; unknown codes offer «إضافة كصنف جديد»; presence {dev, send, recv} drives a green pill «📱 الموبايل متصل» on the computer and «🖥 بيتبعت للكمبيوتر» in the phone camera; a db doc live/scan is the fallback when the room is not connected",
-   "tool": "python3 patch37.py",
-   "command": "bash build.sh && node t49.js (fake room: receive → search + sheet + toast, unknown → add action, receive off, phone emits on scan) && node t48.js && node t45.js && node t38.js && node t19b.js && node t36.js && node t47.js && node gate.js",
-   "manual": "the real room transport (claude.ai realtime) was not exercised here; it needs both devices signed in as members"
-  },
-  {
-   "n": 16,
-   "what": "v49 «لايف بالكاميرا يخبرني الموقع»: an overlay canvas over the viewfinder draws a box around every barcode in sight (BarcodeDetector boundingBox; ZXing result points scaled back) with a floating label «📍 المكان» + item name (green = has a location, amber = none, red = unknown code), fading 2.2 s after the last sighting; the location is also spoken in Arabic through speechSynthesis (ar voice when present, letters/digits of the location spelled out, 6 s per code, 🔊/🔇 toggle persisted in OPTS.camVoice); when the iframe's permissions policy blocks getUserMedia the overlay says so and offers «صفحة كاملة» (window.open of the page's own origin, or copies the link)",
-   "tool": "python3 patch38.py",
-   "command": "bash build.sh && node t50.js (fake camera + mocked detector with boxes + mocked speechSynthesis) && node t48.js && node t49.js && node t45.js && node t38.js && node t47.js && node gate.js"
-  },
-  {
-   "n": 17,
-   "what": "v50 after the owner sent an Apple TV app screenshot («استفد من هذا الاستايل» + product photos): the dark theme became the default and was retoned to the TV look (black stage #000, charcoal cards #1C1C1E/#2C2C2E, iOS blue accent, white pill primaries with black text, round icon buttons, 14–18px radii, frosted floating capsule tab bar on phones); the item sheet opens with a hero (first photo full-bleed fading into the sheet, or the part icon), metadata line, white pill «مطابق للنظام · N», round camera + flag buttons, badge row (status, system qty, location, maker, photo count) and a horizontal photo strip with «+ صورة»; photos can be added from the row (camera icon, hover-revealed on desktop), the sheet, the camera card and the card view (first photo as the card header), opened in a swipeable lightbox with delete; uploads keep the existing 1600px JPEG shrink + assets capability",
-   "tool": "python3 patch39.py",
-   "command": "bash build.sh && node t51.js (mocked assets.upload + routed /_blob images: hero → upload → strip → lightbox → row photo without opening the sheet → card header) && node t48.js && node t49.js && node t45.js && node t38.js && node t19b.js && node t36.js && node t28.js && node t47.js && node gate.js"
-  },
-  {
-   "n": 18,
-   "what": "v51 after the owner's voice brief (white background, teal actions, small warm details, professional finish, Excel-like table, desktop and phone styles, saved searches, Ask Claude): Dragon playbooks read (product-ui tokens: 8px grid, radii, elevation tiers; arabic-typography: one family, tabular digits, no tracking, isolated Latin runs) and applied as ONE final override layer: kingfisher palette (#0F766E teal, #C2410C warm, light-blue marks), IBM Plex Sans Arabic only (+ Plex Mono for codes), white default with a one-time reset of the remembered theme; desktop grid with cell dividers, full-height editable cells, inset focus ring, sticky tinted head with click-to-sort; item card as a side panel ≥1200px (grid narrows to the counting columns while it is open); phone keeps cards; depth only on part icons and primary buttons; saved searches (star → shared db doc saved/searches with query, filters, sort and the top visible row; list sheet to restore or delete); «اسأل Claude» in the item panel through room.sendToClaudeSession (staged with item data, alternatives and OE numbers)",
-   "tool": "python3 patch40.py",
-   "command": "bash build.sh && node t52.js && node t48.js t49.js t51.js t45.js t38.js t19b.js t36.js t28.js t31.js t33.js t47.js && node gate.js",
-   "manual": "the full rewrite from scratch was not done: the logic layer is kept and the visual layer replaced; refreshing alternatives for all 2,533 items is a separate batch job, not done yet"
-  },
-  {
-   "n": 19,
-   "what": "v52: column heads in deep green #14532D with white text (owner's reference: the browser frame colour); cell dividers fixed — inputs with dir=auto/ltr flipped their logical borders, so the grid now uses physical borders for input cells and stretches the diff/system cells, measured edge-to-edge against the head; the search-scope chips (اسم التقرير / SMACC / البدائل / الموديل) moved out of the options menu to a visible bar under the field (one scrolling line on phones); head joined flush to the grid",
-   "tool": "python3 patch41.py",
-   "command": "bash build.sh && node m1.js (head vs cell edges) && node t52.js t19b.js t28.js t36.js t38.js t45.js t51.js && node gate.js"
-  },
-  {
-   "n": 20,
-   "what": "v53: one face/size/weight for every grid cell (IBM Plex Sans Arabic .95rem 500, tabular digits). v54: clearer stripes (white / #E2EEEB, darker row rule), the save-search star always shown (explains itself when nothing is searched), flag/camera/save-path tools always visible, space under the item name, model column removed from the grid (kept in the item panel), heads and cell values centred except the item column",
-   "tool": "python3 patch42.py + patch43.py",
-   "command": "bash build.sh && node m1.js && node t52.js t45.js t38.js && node gate.js"
-  },
-  {
-   "n": 21,
-   "what": "v55 shades of blue (published, then replaced at the owner's word); v56 shades of black: near-black heads #18181B, black pill actions, grid white / #EFEFF1, light-blue marks kept distinct; item cell reading order fixed (name → #code · group · alternatives → reference line; flag/camera/save-path tools grouped at the end), codes as plain text so only the search match, the status and the stripe carry colour, «لم يُجرد» as quiet text, even 0.75rem cell padding",
-   "tool": "python3 patch44.py + patch45.py",
-   "command": "bash build.sh && node gate.js && node m4.js"
-  },
-  {
-   "n": 22,
-   "what": "v57: black/white base with one blue accent (#2563EB) for selected states (owner approved: green/red/orange stay status-only), Apple-style glass on containers only (board, sticky bar, menus, panel, tab bar, list surface; soft colour wash behind), taller column heads, card view repaired over the grid rules, the alternatives strip shows every number when opened, camera «✦ اسأل Claude»: the frame (or a photo) goes to the page's `sample` capability with images to read part type, brand, car and numbers as JSON, matches against the list, and «ابحث في النت عن بدائل» stages the reading + photo asset id into the viewer's chat for a web search; «صفحة كاملة» shown whenever live camera is refused",
-   "tool": "python3 patch44.py + patch46.py",
-   "command": "bash build.sh && node t53.js (mocked sample/room/camera) && node t52.js t51.js t45.js t38.js t19b.js t48.js && node gate.js",
-   "manual": "real camera permission inside the claude.ai frame and the real sample/room transports were not exercised here"
-  },
-  {
-   "n": 23,
-   "what": "alternatives refresh started: 425 core OE numbers that had no cross references (404/error/notfound) split into 5 batches and handed to 5 parallel research agents (carparts247 first, one web search fallback, source URL recorded per OE, nothing invented)",
-   "tool": "Agent x5 + xref2/add.py",
-   "manual": "done for round 1"
-  },
-  {
-   "n": 24,
-   "what": "v58–v60: one style for all alternative numbers (OE equivalents and aftermarket alike), «اسأل Claude» always shown in the camera with a reason when the view cannot send images, camera footer wraps on phones with «صفحة كاملة» first; alternatives round 1 merged: 425 OEs re-checked by 5 agents → 6 OEs with results, 8 more items now have alternatives (1,977 → 1,985), 182 new numbers; ~200 OEs still lack the search fallback because the turn's shared 200-search budget ran out",
-   "tool": "patch46.py + Agent x5 + merge_xref.py",
-   "command": "cp xref2/out_*.jsonl xref/retry_x2_*.jsonl && bash build.sh && node gate.js && node t45.js"
-  },
-  {
-   "n": 25,
-   "at": "2026-11-05T08:58:00+03:00",
-   "what": "v61 (artifact version 63): book-page paper palette (warm paper + fibre texture, ink colours, navy accent); marked rows as a highlighter stroke; always-visible 'marked only' filter with a bar, marks synced to the account db (saved/marks), two-step clear; C button on every row sends the item to the Claude chat for photo + all alternatives; visual format editor (colour pickers, size sliders, font) saved by name in the theme studio.",
-   "checks": "t56 new (marks filter, reload, C toast + mocked send, editor save), t52/t53/t54/t45/t38 0 page errors, contrast gate 0 low pairs in light/dark/noir",
-   "status": "published"
-  },
-  {
-   "n": 26,
-   "at": "2026-11-05T09:05:00+03:00",
-   "what": "v61.1 (artifact version 64): iPhone camera — when the live camera is denied or blocked, the black area becomes step-by-step Safari/Chrome permission help with a retry button; «صوّر الرف» (local ZXing decode of a still photo) becomes the primary button; «اسأل Claude» hidden when image reading isn't available in the view; solid readable toasts.",
-   "checks": "t57 iPhone 15 Pro emulation with getUserMedia denied: help shown, retry works, 0 page errors. Not tested on a real iPhone.",
-   "status": "published"
-  },
-  {
-   "n": 27,
-   "at": "2026-11-05T09:20:00+03:00",
-   "what": "v61.2 (artifact version 65): unified 'paper & ink' light palette — 3 paper tones, warm ink in 3 weights, one indigo spot colour, earthy status colours, highlighter marks; removed cool glass/white/grey and stray bright blues; grid cells blend into rows.",
-   "checks": "computed-colour audit of every visible element: all backgrounds/text/borders inside the token set; contrast gate 0 low pairs; t56 0 errors",
-   "status": "published"
-  },
-  {
-   "n": 28,
-   "at": "2026-11-05T09:35:00+03:00",
-   "what": "v61.3 (artifact version 66): theme studio AI brief rewritten — 9 page sections described top to bottom, 87 settings each with its current measured value; 50 new tokens (page width/padding, button/search/chip sizes, column widths, show/hide banner/counter/scope/tabs/mobile bar, sticky search, shadows, toasts) wired to CSS; 5 more editor sliders.",
-   "checks": "t58: prompt 8.5k chars / 87 vars; pasted theme changed title, button, search, columns, hidden sections, sticky; t54/t56 0 errors; contrast gate 0 low",
-   "status": "published"
-  },
-  {
-   "n": 29,
-   "at": "2026-11-05T09:45:00+03:00",
-   "what": "v61.4 (artifact version 67): theme message made complete — description box in the studio goes into the message, every setting has a measured value (no blanks), a full 90-line :root template with current values for the AI to edit, item panel/camera/multi-search/mobile described, a 'show message' view; show/hide tokens only act on none; header text stays readable.",
-   "checks": "t59: 11.7k chars, 0 blanks, template 90 vars, pasting the template back reproduces the current look; t54/t56 0 errors; gate 0 low",
-   "status": "published"
-  },
-  {
-   "n": 30,
-   "at": "2026-11-05T10:00:00+03:00",
-   "what": "v61.5 (artifact version 68): sticky search area made opaque (rows no longer show through while scrolling); theme message adds a 'behaviour and states' section (hover, press, focus, count/save flow, sync dot, flash, row status tints, open/marked rows, sort, highlight, disabled, toast time) with 27 new wired settings; themes accept free CSS rules after :root (sanitised: no url(, @import, @font-face, script), with a 72-entry selector map in the message.",
-   "checks": "t60: controls opaque, 20k-char message with 0 blanks, a pasted rule restyled names and head height, url()/@import stripped; t54/t56/t57/t59 0 errors; gate 0 low",
-   "status": "published"
-  },
-  {
-   "n": 31,
-   "at": "2026-11-05T10:15:00+03:00",
-   "what": "v61.6 (artifact version 69): editable grid cells (الفعلي، الموقع، الملاحظة) drawn as clear boxes inside each cell (row colour around, divider lines kept, hover and focus states); search text keeps clear of the icon; C button, when the page is not beside a chat, opens a new Claude chat with the search request (photo + 2026 alternatives) prefilled, else copies it.",
-   "checks": "screenshots of boxes in normal/zebra/marked/focused rows; C fallback opened claude.ai/new?q=...; t45/t52/t54/t56/t59/t60 0 errors; gate 0 low",
-   "status": "published"
-  },
-  {
-   "n": 32,
-   "at": "2026-11-05T10:35:00+03:00",
-   "what": "v61.7 (artifact version 70): element picker in the theme studio (hover highlights any element with its selector, click opens a panel: text/background/border colours, size, weight, padding, margin, radius, border, height, width, letter spacing, line height, opacity, font, alignment, hide; live preview; saved as CSS rules in the theme, reset per element); the AI message adds a live map of ~100 element types with measured size, font, colours, radius, padding and text, plus the theme's current rules; C now answers inside the page (sample, complex tier): part type, cars, position, OE and aftermarket numbers as chips marked when already in the list (click to search), notes, confidence, Google/Bing image links, copy — opening claude.ai in a new tab was refused by claude.ai (ERR_BLOCKED_BY_RESPONSE).",
-   "checks": "t61 picker: colour+size+padding applied live, saved, survives reload, message 29k chars with map; t62 mocked sample: 5 chips, 2 marked as in-list, chip click searches; t54/t56/t59/t60 0 errors; gate 0 low. Real Claude answer not exercised from here.",
-   "status": "published"
-  },
-  {
-   "n": 33,
-   "at": "2026-11-05T16:50:00+03:00",
-   "what": "v62 (artifact version 71): owner's Excel (Spareto + AutopartsPro + inventory file, 2,533 items) merged: +37,310 brand alternatives and +3,695 OE numbers after de-duplication (2,267 items now have alternatives), searchable; item panel credits Spareto/AutopartsPro with links; 1,961 catalogue photos (223 repeated placeholders dropped) shipped as pics.json (2.35 MB, WebP) and shown in rows and the item panel; location column narrowed to 6.6rem.",
-   "checks": "t63: 56/60 visible rows show photos, an Excel-only number (4010530) finds its item, panel shows Spareto link; t56/t59/t61/t62 0 errors; gate 0 low. Photo loading on the live claude.ai page not checked from here.",
-   "status": "published"
-  },
-  {
-   "n": 34,
-   "at": "2026-11-05T17:20:00+03:00",
-   "what": "v62.1 (artifact versions 72-73): photos rebuilt from the owner's original-resolution archive (2,185 JPG, 224 MB): 1,954 kept (231 repeated placeholders dropped); row thumbnails regenerated at 128px from the originals (pics.json 3.3 MB); full photos up to 1600px long side as WebP q80 in 32 packs of ~2 MB (full/p00-p31.json, 62 MB) loaded only when an item panel opens; panel shows the larger photo and a full-screen viewer with original and shown size.",
-   "checks": "t64: panel swaps to the full 1457x1600 photo, lightbox fits the screen; t56/t61/t62/t63 0 errors; 34 files confirmed served. Loading on the live claude.ai page not checked from here.",
-   "status": "published"
-  },
-  {
-   "n": 35,
-   "at": "2026-11-05T20:15:00+03:00",
-   "what": "v62.2 (artifact version 74): owner's alternatives file 3 merged (adds autopiter.ru: 15,666 rows); exist.ru rows skipped because their numbers are partly hidden; totals after de-duplication vs the original data: +47,498 brand numbers and +4,322 OE (about +10,188 and +627 beyond the previous upload), 2,388 items now have alternatives (was 2,267); item panel credits Autopiter with a link.",
-   "checks": "autopiter-only numbers KHZ1178PF and Z71783R find item 0010011; panel shows Autopiter link; t56/t59/t61/t62/t64 0 errors",
-   "status": "published"
-  },
-  {
-   "n": 36,
-   "at": "2026-11-05T20:50:00+03:00",
-   "what": "v62.3 (artifact version 75): owner's alternatives file 4 merged (autopiter.ru grew to 21,875 rows); unioned with file 3 (nothing from file 3 lost); about +3,922 brand numbers and +74 OE beyond version 74; still 2,388 items with alternatives; exist.ru still skipped (numbers partly hidden).",
-   "checks": "file-4-only number 14874008 (Cs) finds item 0012512; t56/t59/t62/t64 0 errors",
-   "status": "published"
-  }
- ],
- "outputs": [
-  {
-   "url": "https://claude.ai/artifact/GjTX7KLvQs1dppSoAxW7Qj",
-   "kind": "web",
-   "deterministic": false,
-   "measured": {
-    "version": 62,
-    "page_bytes": 1644566,
-    "items_with_alternatives": "1985 / 2533",
-    "contrast_pairs_ge_4.5": "63/63",
-    "js_errors": 0
-   }
-  }
- ],
- "reproduce": {
-  "how": "Start from the base page (out/v4.html) with the data JSON blocks, run build.sh which applies patch3..patch28 in order and writes out/index.html; run the Playwright scripts for screenshots and the gate; publish index.html to the artifact URL with capabilities db+user(profile)+downloads+assets. The patch scripts and v2.css live in the session container, not in this repository; add them under projects/warehouse-count/ to make this record replayable.",
-  "prerequisites": [
-   "python3",
-   "node 22 + playwright + Chromium",
-   "Google Fonts reachable (Amiri, Noto Kufi Arabic, IBM Plex Sans Arabic, IBM Plex Mono)"
+  "steps": [
+    {
+      "n": 1,
+      "what": "research: 3 parallel subagents (award sites, SaaS dashboards, luxury + Arabic/RTL) with WebSearch/WebFetch; two reports delivered (~100 sources/products)",
+      "tool": "Agent (general-purpose) x3",
+      "manual": "creative-sites agent stopped on a 5-hour usage limit"
+    },
+    {
+      "n": 2,
+      "what": "design system v2 stylesheet (v2.css) replacing four stacked theme layers; markup restructure (ring dashboard, toolbar, sticky column heads)",
+      "tool": "python3 patch24.py",
+      "command": "python3 patch24.py out/b21.html out/b22.html"
+    },
+    {
+      "n": 3,
+      "what": "search-term highlighting with Arabic/digit normalisation (patch25); keyboard help, location colours, top progress hairline, favicon, print CSS (patch26); shelf group headers, blind count, export scope chooser, status icons (patch27); icon grammar, kinetic title, scan mode, motion tokens (patch28)",
+      "tool": "python3",
+      "command": "bash build.sh   # chains patch3..patch28 over the base page"
+    },
+    {
+      "n": 4,
+      "what": "regression: 6 headless screenshots (3 themes x desktop/phone), multi-search + marks, highlight, groups, scan mode, export chooser",
+      "tool": "node + playwright",
+      "command": "node t24.js; node t19b.js; node t28.js; node t31.js; node t33.js; node t32.js"
+    },
+    {
+      "n": 5,
+      "what": "measured gate: 21 fg/bg pairs x 3 themes contrast (alpha-composited), basic a11y audit, RTL physical-property scan",
+      "tool": "node gate.js",
+      "command": "node gate.js > gate.txt"
+    },
+    {
+      "n": 6,
+      "what": "publish artifact versions 28..39 to the same URL",
+      "tool": "Artifact publish",
+      "needs_permission": true,
+      "manual": "published in-session as requested by the user"
+    },
+    {
+      "n": 7,
+      "what": "v40: award-site research (23 sites probed live by a subagent) applied: easing set with ease-in exits, two-tone focus ring, KPI radial glow, mobile tab-strip edge fade, spring linear() toggle, 180ms view transition on status swap; plus clear-all-filters chip, 1-5 tab keys (off in scan mode), toast pause on hover",
+      "tool": "python3 patch29.py + patch30.py",
+      "command": "bash build.sh && node t24.js && node t36.js && node t33.js && node gate.js"
+    },
+    {
+      "n": 8,
+      "what": "v41: phone bottom action bar (search/filters/scan/export) in the thumb zone, recent searches under the field, Ctrl+Z undo of the last count, export pending spinner, focused quantity kept above the phone keyboard, swipe-down to dismiss the sheet, phone KPI tiles stacked; scanner gap widened to 60 ms",
+      "tool": "python3 patch31.py",
+      "command": "bash build.sh && node t38.js && node t33.js && node t24.js && node gate.js"
+    },
+    {
+      "n": 9,
+      "what": "v42 «الجدول الهادئ» after the owner called v41 crowded: zebra rows (:nth-child(even of .row)), uniform table rows, alternatives folded behind a «البدائل N» chip (auto-open on a highlighted match), all option chips moved into one popover under the sliders button (bottom sheet on phones), multi-search as a switch beside the field, marks chip beside the filters, eyebrow/double rules/wash/grain/aurora/kinetic title removed, sticky bar solid (no backdrop blur), content-visibility:auto on rows, phone board as a 4-tile strip",
+      "tool": "python3 patch32.py",
+      "command": "bash build.sh && node t42.js && node t19b.js && node t28.js && node t31.js && node t33.js && node t36.js && node t38.js && node gate.js && node perf.js"
+    },
+    {
+      "n": 10,
+      "what": "publish conflict: a parallel session had published its own «clean-v3» calm-table version (dragon-eye sigil, redrawn icons, smaller type, alternatives hidden with no toggle) at 17:20Z as version 43; v42 was published on top as version 44 (the parallel version stays in the artifact history); only its plainer theme-name wording was ported",
+      "tool": "Artifact publish",
+      "needs_permission": true,
+      "manual": "owner asked for the restructure in-session; the parallel version is one click away in version history"
+    },
+    {
+      "n": 11,
+      "what": "v43 after the owner said the look was still the same and asked for search results as cards: new identity (Rubik, slate + working blue, new favicon/theme-colors), results as a responsive card grid (same .row DOM, CSS mode html.cards with grid areas main/alt/model+loc/info+in+ok/note/alts, status as a top bar, top-packed content), a three-way view switch (تلقائي/بطاقات/جدول) wired into updateMeta, field placeholders named (hidden in table mode), reference line back to flex so separators sit between items in both scripts, --ok deepened to #166534 for 4.5:1 on its soft tint",
+      "tool": "python3 patch33.py",
+      "command": "bash build.sh && node t43.js && node t19b.js && node t28.js && node t31.js && node t33.js && node t36.js && node t38.js && node gate.js && node perf.js"
+    },
+    {
+      "n": 12,
+      "what": "v44: the owner rejected cards as the default — table restored as the default view, cards kept behind a two-way switch; reference line fragments bidi-isolated in the paragraph direction so brand → model → type reads in order. v45: zebra rows in the house blue (#EEF4FF light / #15223A dark / #0F1726 noir), and «حفظ طريقة الوصول»: a bookmark button beside the flag while a search is on saves the matched search term into the part's details (attrs.via, kept across stocktakes, synced like model/location), the saved numbers show as chips under the item (tap = re-run that search, × = remove), are searchable in every scope and flag the row «طريقة وصول محفوظة»",
+      "tool": "python3 patch34.py",
+      "command": "bash build.sh && node t45.js && node t46.js && node t19b.js && node t28.js && node t31.js && node t33.js && node t36.js && node t38.js && node gate.js"
+    },
+    {
+      "n": 13,
+      "what": "v46 after the owner asked for a visible separator between rows, bigger type, stronger colour steps and a compressed title bar: rows as spaced bordered strips (gap .4rem, 10px radius) with a deeper blue zebra and a blue border on even rows, root type +4% (108/110/112/116%), SMACC code chip tinted, diff badges tinted by status, flag and save buttons shown on hover/focus on fine pointers (always on touch), app bar collapsed to one 2.2rem row, summary strip and phone tiles slimmer",
+      "tool": "python3 patch35.py",
+      "command": "bash build.sh && node t47.js && node t19b.js && node t28.js && node t31.js && node t33.js && node t36.js && node t38.js && node t45.js && node gate.js"
+    },
+    {
+      "n": 14,
+      "what": "v47: «صنف جديد» button in the app bar and the phone bar (opens the existing unregistered-item sheet, prefilled from the search), and a live camera scanner: native BarcodeDetector where the browser has it, otherwise @zxing/library 0.21.3 loaded from jsdelivr (MultiFormatReader + HTMLCanvasElementLuminanceSource, hints CODE_128/39, EAN, UPC, ITF, CODABAR, QR, DataMatrix), frames every 220 ms, torch toggle when the track supports it, a photo fallback (file input with capture=environment; full image + 2x2 + 3x3 tiles for several labels in one shot). Each code becomes a card: item name, saved location large (or an inline field to save it), system qty, status, open/mark; unknown codes offer «إضافة كصنف جديد»; vibration on a hit; the item sheet opens above the camera",
+      "tool": "python3 patch36.py",
+      "command": "bash build.sh && node t48.js (fake camera + mocked detector) && node t38.js && node t19b.js && node t28.js && node t31.js && node t33.js && node t36.js && node t45.js && node t47.js && node gate.js",
+      "manual": "the ZXing path (iPhone / desktop without BarcodeDetector) is code-ready and checked against the library's exported API (esm index, browser.js, MultiFormatReader.js read via WebFetch) but was not executed here: the CDN is unreachable from the container"
+    },
+    {
+      "n": 15,
+      "what": "v48: phone ↔ computer link over the artifact `room` capability (declared with topic scan at interact level): every camera or hardware-scanner read emits {code, key, name, at, dev}; the other device (receive on by default on fine pointers, send on by default on coarse pointers, both switchable in the options panel under «ربط الموبايل بالكمبيوتر») fills the search, flashes the row, opens the item sheet (switchable) and toasts; unknown codes offer «إضافة كصنف جديد»; presence {dev, send, recv} drives a green pill «📱 الموبايل متصل» on the computer and «🖥 بيتبعت للكمبيوتر» in the phone camera; a db doc live/scan is the fallback when the room is not connected",
+      "tool": "python3 patch37.py",
+      "command": "bash build.sh && node t49.js (fake room: receive → search + sheet + toast, unknown → add action, receive off, phone emits on scan) && node t48.js && node t45.js && node t38.js && node t19b.js && node t36.js && node t47.js && node gate.js",
+      "manual": "the real room transport (claude.ai realtime) was not exercised here; it needs both devices signed in as members"
+    },
+    {
+      "n": 16,
+      "what": "v49 «لايف بالكاميرا يخبرني الموقع»: an overlay canvas over the viewfinder draws a box around every barcode in sight (BarcodeDetector boundingBox; ZXing result points scaled back) with a floating label «📍 المكان» + item name (green = has a location, amber = none, red = unknown code), fading 2.2 s after the last sighting; the location is also spoken in Arabic through speechSynthesis (ar voice when present, letters/digits of the location spelled out, 6 s per code, 🔊/🔇 toggle persisted in OPTS.camVoice); when the iframe's permissions policy blocks getUserMedia the overlay says so and offers «صفحة كاملة» (window.open of the page's own origin, or copies the link)",
+      "tool": "python3 patch38.py",
+      "command": "bash build.sh && node t50.js (fake camera + mocked detector with boxes + mocked speechSynthesis) && node t48.js && node t49.js && node t45.js && node t38.js && node t47.js && node gate.js"
+    },
+    {
+      "n": 17,
+      "what": "v50 after the owner sent an Apple TV app screenshot («استفد من هذا الاستايل» + product photos): the dark theme became the default and was retoned to the TV look (black stage #000, charcoal cards #1C1C1E/#2C2C2E, iOS blue accent, white pill primaries with black text, round icon buttons, 14–18px radii, frosted floating capsule tab bar on phones); the item sheet opens with a hero (first photo full-bleed fading into the sheet, or the part icon), metadata line, white pill «مطابق للنظام · N», round camera + flag buttons, badge row (status, system qty, location, maker, photo count) and a horizontal photo strip with «+ صورة»; photos can be added from the row (camera icon, hover-revealed on desktop), the sheet, the camera card and the card view (first photo as the card header), opened in a swipeable lightbox with delete; uploads keep the existing 1600px JPEG shrink + assets capability",
+      "tool": "python3 patch39.py",
+      "command": "bash build.sh && node t51.js (mocked assets.upload + routed /_blob images: hero → upload → strip → lightbox → row photo without opening the sheet → card header) && node t48.js && node t49.js && node t45.js && node t38.js && node t19b.js && node t36.js && node t28.js && node t47.js && node gate.js"
+    },
+    {
+      "n": 18,
+      "what": "v51 after the owner's voice brief (white background, teal actions, small warm details, professional finish, Excel-like table, desktop and phone styles, saved searches, Ask Claude): Dragon playbooks read (product-ui tokens: 8px grid, radii, elevation tiers; arabic-typography: one family, tabular digits, no tracking, isolated Latin runs) and applied as ONE final override layer: kingfisher palette (#0F766E teal, #C2410C warm, light-blue marks), IBM Plex Sans Arabic only (+ Plex Mono for codes), white default with a one-time reset of the remembered theme; desktop grid with cell dividers, full-height editable cells, inset focus ring, sticky tinted head with click-to-sort; item card as a side panel ≥1200px (grid narrows to the counting columns while it is open); phone keeps cards; depth only on part icons and primary buttons; saved searches (star → shared db doc saved/searches with query, filters, sort and the top visible row; list sheet to restore or delete); «اسأل Claude» in the item panel through room.sendToClaudeSession (staged with item data, alternatives and OE numbers)",
+      "tool": "python3 patch40.py",
+      "command": "bash build.sh && node t52.js && node t48.js t49.js t51.js t45.js t38.js t19b.js t36.js t28.js t31.js t33.js t47.js && node gate.js",
+      "manual": "the full rewrite from scratch was not done: the logic layer is kept and the visual layer replaced; refreshing alternatives for all 2,533 items is a separate batch job, not done yet"
+    },
+    {
+      "n": 19,
+      "what": "v52: column heads in deep green #14532D with white text (owner's reference: the browser frame colour); cell dividers fixed — inputs with dir=auto/ltr flipped their logical borders, so the grid now uses physical borders for input cells and stretches the diff/system cells, measured edge-to-edge against the head; the search-scope chips (اسم التقرير / SMACC / البدائل / الموديل) moved out of the options menu to a visible bar under the field (one scrolling line on phones); head joined flush to the grid",
+      "tool": "python3 patch41.py",
+      "command": "bash build.sh && node m1.js (head vs cell edges) && node t52.js t19b.js t28.js t36.js t38.js t45.js t51.js && node gate.js"
+    },
+    {
+      "n": 20,
+      "what": "v53: one face/size/weight for every grid cell (IBM Plex Sans Arabic .95rem 500, tabular digits). v54: clearer stripes (white / #E2EEEB, darker row rule), the save-search star always shown (explains itself when nothing is searched), flag/camera/save-path tools always visible, space under the item name, model column removed from the grid (kept in the item panel), heads and cell values centred except the item column",
+      "tool": "python3 patch42.py + patch43.py",
+      "command": "bash build.sh && node m1.js && node t52.js t45.js t38.js && node gate.js"
+    },
+    {
+      "n": 21,
+      "what": "v55 shades of blue (published, then replaced at the owner's word); v56 shades of black: near-black heads #18181B, black pill actions, grid white / #EFEFF1, light-blue marks kept distinct; item cell reading order fixed (name → #code · group · alternatives → reference line; flag/camera/save-path tools grouped at the end), codes as plain text so only the search match, the status and the stripe carry colour, «لم يُجرد» as quiet text, even 0.75rem cell padding",
+      "tool": "python3 patch44.py + patch45.py",
+      "command": "bash build.sh && node gate.js && node m4.js"
+    },
+    {
+      "n": 22,
+      "what": "v57: black/white base with one blue accent (#2563EB) for selected states (owner approved: green/red/orange stay status-only), Apple-style glass on containers only (board, sticky bar, menus, panel, tab bar, list surface; soft colour wash behind), taller column heads, card view repaired over the grid rules, the alternatives strip shows every number when opened, camera «✦ اسأل Claude»: the frame (or a photo) goes to the page's `sample` capability with images to read part type, brand, car and numbers as JSON, matches against the list, and «ابحث في النت عن بدائل» stages the reading + photo asset id into the viewer's chat for a web search; «صفحة كاملة» shown whenever live camera is refused",
+      "tool": "python3 patch44.py + patch46.py",
+      "command": "bash build.sh && node t53.js (mocked sample/room/camera) && node t52.js t51.js t45.js t38.js t19b.js t48.js && node gate.js",
+      "manual": "real camera permission inside the claude.ai frame and the real sample/room transports were not exercised here"
+    },
+    {
+      "n": 23,
+      "what": "alternatives refresh started: 425 core OE numbers that had no cross references (404/error/notfound) split into 5 batches and handed to 5 parallel research agents (carparts247 first, one web search fallback, source URL recorded per OE, nothing invented)",
+      "tool": "Agent x5 + xref2/add.py",
+      "manual": "done for round 1"
+    },
+    {
+      "n": 24,
+      "what": "v58–v60: one style for all alternative numbers (OE equivalents and aftermarket alike), «اسأل Claude» always shown in the camera with a reason when the view cannot send images, camera footer wraps on phones with «صفحة كاملة» first; alternatives round 1 merged: 425 OEs re-checked by 5 agents → 6 OEs with results, 8 more items now have alternatives (1,977 → 1,985), 182 new numbers; ~200 OEs still lack the search fallback because the turn's shared 200-search budget ran out",
+      "tool": "patch46.py + Agent x5 + merge_xref.py",
+      "command": "cp xref2/out_*.jsonl xref/retry_x2_*.jsonl && bash build.sh && node gate.js && node t45.js"
+    },
+    {
+      "n": 25,
+      "what": "v61 (artifact version 63): book-page paper palette (warm paper + fibre texture, ink colours, navy accent); marked rows as a highlighter stroke; always-visible 'marked only' filter with a bar, marks synced to the account db (saved/marks), two-step clear; C button on every row sends the item to the Claude chat for photo + all alternatives; visual format editor (colour pickers, size sliders, font) saved by name in the theme studio.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-05T08:58:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "t56 new (marks filter, reload, C toast + mocked send, editor save), t52/t53/t54/t45/t38 0 page errors, contrast gate 0 low pairs in light/dark/noir"
+      }
+    },
+    {
+      "n": 26,
+      "what": "v61.1 (artifact version 64): iPhone camera — when the live camera is denied or blocked, the black area becomes step-by-step Safari/Chrome permission help with a retry button; «صوّر الرف» (local ZXing decode of a still photo) becomes the primary button; «اسأل Claude» hidden when image reading isn't available in the view; solid readable toasts.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-05T09:05:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "t57 iPhone 15 Pro emulation with getUserMedia denied: help shown, retry works, 0 page errors. Not tested on a real iPhone."
+      }
+    },
+    {
+      "n": 27,
+      "what": "v61.2 (artifact version 65): unified 'paper & ink' light palette — 3 paper tones, warm ink in 3 weights, one indigo spot colour, earthy status colours, highlighter marks; removed cool glass/white/grey and stray bright blues; grid cells blend into rows.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-05T09:20:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "computed-colour audit of every visible element: all backgrounds/text/borders inside the token set; contrast gate 0 low pairs; t56 0 errors"
+      }
+    },
+    {
+      "n": 28,
+      "what": "v61.3 (artifact version 66): theme studio AI brief rewritten — 9 page sections described top to bottom, 87 settings each with its current measured value; 50 new tokens (page width/padding, button/search/chip sizes, column widths, show/hide banner/counter/scope/tabs/mobile bar, sticky search, shadows, toasts) wired to CSS; 5 more editor sliders.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-05T09:35:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "t58: prompt 8.5k chars / 87 vars; pasted theme changed title, button, search, columns, hidden sections, sticky; t54/t56 0 errors; contrast gate 0 low"
+      }
+    },
+    {
+      "n": 29,
+      "what": "v61.4 (artifact version 67): theme message made complete — description box in the studio goes into the message, every setting has a measured value (no blanks), a full 90-line :root template with current values for the AI to edit, item panel/camera/multi-search/mobile described, a 'show message' view; show/hide tokens only act on none; header text stays readable.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-05T09:45:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "t59: 11.7k chars, 0 blanks, template 90 vars, pasting the template back reproduces the current look; t54/t56 0 errors; gate 0 low"
+      }
+    },
+    {
+      "n": 30,
+      "what": "v61.5 (artifact version 68): sticky search area made opaque (rows no longer show through while scrolling); theme message adds a 'behaviour and states' section (hover, press, focus, count/save flow, sync dot, flash, row status tints, open/marked rows, sort, highlight, disabled, toast time) with 27 new wired settings; themes accept free CSS rules after :root (sanitised: no url(, @import, @font-face, script), with a 72-entry selector map in the message.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-05T10:00:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "t60: controls opaque, 20k-char message with 0 blanks, a pasted rule restyled names and head height, url()/@import stripped; t54/t56/t57/t59 0 errors; gate 0 low"
+      }
+    },
+    {
+      "n": 31,
+      "what": "v61.6 (artifact version 69): editable grid cells (الفعلي، الموقع، الملاحظة) drawn as clear boxes inside each cell (row colour around, divider lines kept, hover and focus states); search text keeps clear of the icon; C button, when the page is not beside a chat, opens a new Claude chat with the search request (photo + 2026 alternatives) prefilled, else copies it.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-05T10:15:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "screenshots of boxes in normal/zebra/marked/focused rows; C fallback opened claude.ai/new?q=...; t45/t52/t54/t56/t59/t60 0 errors; gate 0 low"
+      }
+    },
+    {
+      "n": 32,
+      "what": "v61.7 (artifact version 70): element picker in the theme studio (hover highlights any element with its selector, click opens a panel: text/background/border colours, size, weight, padding, margin, radius, border, height, width, letter spacing, line height, opacity, font, alignment, hide; live preview; saved as CSS rules in the theme, reset per element); the AI message adds a live map of ~100 element types with measured size, font, colours, radius, padding and text, plus the theme's current rules; C now answers inside the page (sample, complex tier): part type, cars, position, OE and aftermarket numbers as chips marked when already in the list (click to search), notes, confidence, Google/Bing image links, copy — opening claude.ai in a new tab was refused by claude.ai (ERR_BLOCKED_BY_RESPONSE).",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-05T10:35:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "t61 picker: colour+size+padding applied live, saved, survives reload, message 29k chars with map; t62 mocked sample: 5 chips, 2 marked as in-list, chip click searches; t54/t56/t59/t60 0 errors; gate 0 low. Real Claude answer not exercised from here."
+      }
+    },
+    {
+      "n": 33,
+      "what": "v62 (artifact version 71): owner's Excel (Spareto + AutopartsPro + inventory file, 2,533 items) merged: +37,310 brand alternatives and +3,695 OE numbers after de-duplication (2,267 items now have alternatives), searchable; item panel credits Spareto/AutopartsPro with links; 1,961 catalogue photos (223 repeated placeholders dropped) shipped as pics.json (2.35 MB, WebP) and shown in rows and the item panel; location column narrowed to 6.6rem.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-05T16:50:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "t63: 56/60 visible rows show photos, an Excel-only number (4010530) finds its item, panel shows Spareto link; t56/t59/t61/t62 0 errors; gate 0 low. Photo loading on the live claude.ai page not checked from here."
+      }
+    },
+    {
+      "n": 34,
+      "what": "v62.1 (artifact versions 72-73): photos rebuilt from the owner's original-resolution archive (2,185 JPG, 224 MB): 1,954 kept (231 repeated placeholders dropped); row thumbnails regenerated [REDACTED FINANCIAL IDENTIFIER] (pics.json 3.3 MB); full photos up [REDACTED FINANCIAL IDENTIFIER] of ~2 MB (full/p00-p31.json, 62 MB) loaded only when an item panel opens; panel shows the larger photo and a full-screen viewer with original and shown size.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-05T17:20:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "t64: panel swaps to the full 1457x1600 photo, lightbox fits the screen; t56/t61/t62/t63 0 errors; 34 files confirmed served. Loading on the live claude.ai page not checked from here."
+      }
+    },
+    {
+      "n": 35,
+      "what": "v62.2 (artifact version 74): owner's alternatives file 3 merged (adds autopiter.ru: 15,666 rows); exist.ru rows skipped because their numbers are partly hidden; totals after de-duplication vs the original data: +47,498 brand numbers and +4,322 OE (about +10,188 and +627 beyond the previous upload), 2,388 items now have alternatives (was 2,267); item panel credits Autopiter with a link.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-05T20:15:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "autopiter-only numbers KHZ1178PF and Z71783R find item 0010011; panel shows Autopiter link; t56/t59/t61/t62/t64 0 errors"
+      }
+    },
+    {
+      "n": 36,
+      "what": "v62.3 (artifact version 75): owner's alternatives file 4 merged (autopiter.ru grew to 21,875 rows); unioned with file 3 (nothing from file 3 lost); about +3,922 brand numbers and +74 OE beyond version 74; still 2,388 items with alternatives; exist.ru still skipped (numbers partly hidden).",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-05T20:50:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "file-4-only number 14874008 (Cs) finds item 0012512; t56/t59/t62/t64 0 errors"
+      }
+    },
+    {
+      "n": 37,
+      "what": "Site-not-loading report: live version unchanged since v75; republished as version 76; the built-in browser (signed out) showed 'Couldn't load this artifact', cause not confirmed, device disconnected before re-check. Then v63 (artifact version 77): invoices — header button with a line-count badge; panel with search-to-add (code, name, SMACC, alternatives), per-line qty/unit price/line discount, invoice discount, VAT (default 15%), totals, customer fields, auto number INV-YYYY-NNNN, save (db saved/invoices, up to 300), saved list (open, copy, two-step delete), seller settings (db saved/invset), last price remembered per item (saved/prices), print to A4/PDF and download as HTML; 'add to invoice' button in the item panel; draft kept on the device.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T09:05:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "t65: 2 lines 3x120 + 2x250 -10% = 810, -20 discount, 15% VAT 118.50, total 908.50; saved and listed; print layout screenshot; badge survives reload; 0 page errors. Not checked on the live claude.ai page."
+      }
+    },
+    {
+      "n": 38,
+      "what": "v63.1 (artifact version 78): invoice opens as a full page (desktop and phone) instead of a side panel; part location (الموقع) shown in search results, as its own column on screen and on the printed invoice, and stored with saved invoices.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T09:15:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "location B10 typed in the grid appears in search result, invoice column and print; sheet covers 1900x900 and 390x844 and closes cleanly; 0 page errors"
+      }
+    },
+    {
+      "n": 39,
+      "what": "v63.2 (artifact version 79): invoice picker shows the warehouse items straight away (the current filtered list, 40 at a time, scrollable) and searches all 2,533 items with the same word-by-word matching as the main search (name words, code, SMACC, alternative numbers); results show stock and location, items already on the invoice are marked and add +1; the typed search stays after adding.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T09:25:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "empty picker 40 items; مقص 40+, لي ماء 40+, KHZ1178PF 3, 06E121045 9, nonsense 0; add keeps query and marks the item; t65 totals 908.50; 0 page errors"
+      }
+    },
+    {
+      "n": 40,
+      "what": "v64 (artifact version 80), from the owner's analysis report and v2 plan: end-of-count report page (one big percentage + 'continue counting' primary button, status counts, value of differences using prices typed in invoices, biggest differences table, location map tiles coloured done/diff/partial/not-started that filter the list, signature lines, print); change history kept inside each count entry (last 12 values with time and who, names resolved via user.profiles) shown in the item panel; alternatives that exist in stock under another code listed in the item panel with location and availability; quick quantity buttons (1-20); save feedback (short vibration + soft tone) and screen wake lock while counting. Not done from the plan: blind counting/second-third count and supervisor approval (the app is single-count), Excel import of a new stock report (already exists as list import), offline queue (already exists).",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T09:50:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "t66: quick 12 sets qty; history shows 2 then 1; 2 in-stock alternatives found; report 3 diffs, value 50.00 from one invoice price, tiles A1 diff / A2 not started / B4 diff; tile filters list to A1; t56/t59/t62/t64/t65 0 errors; contrast gate 0 low"
+      }
+    },
+    {
+      "n": 41,
+      "what": "v65 (artifact version 81), ideas taken from the owner's other counting tool (Apple-style single-file app): part-number core matching in search (shop prefixes BP/OE/OL/ORG/OR/ATG/FRY/SK/LR/V and suffixes BP/OE/LMF/LM/ON/OEP/ATG/VW/LR ignored for PN-like tokens of 7+ chars); 'current shelf' chip — set once, every saved count on an item without a location takes it; 'recent counts' sheet (mine / whole team, 40 latest with time, location, status colour); one-click ready themes in the studio (Apple light, Apple dark, back to paper & ink). Not copied: their two-round blind counting model and their hard-coded 1,100-item list.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T10:05:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "t67: BP4H0121081AG and V4H0121081AG find the V4H item, 8K0411327BLMF finds 8K0411327B LMF, [REDACTED FINANCIAL IDENTIFIER], Arabic ى/ي normalised; shelf A-03 auto-filled on save; recent list shows it; Apple preset applies bg #F5F5F7 accent #0066CC; t56/t59/t62/t65/t66 0 page errors; contrast gate 0 low"
+      }
+    },
+    {
+      "n": 42,
+      "what": "v65.1 (artifact version 82): Apple presets rebuilt from the owner's REA measurements (apple-style-tokens.css + analysis): weight 600 for headings, motion 240/320ms on cubic-bezier(.4,0,.6,1), pill buttons 980px with #0071E3 primary (#0077ED hover, #006EDB active), cards 18px, fields 12px, focus ring 4px rgba(0,113,227,.18), glass search bar rgba(250,250,252,.8) with saturate(180%) blur(20px), dark variant; choosing a preset again upgrades an older saved copy; app-wide prefers-reduced-motion and prefers-contrast: more support. No Apple code, fonts, logo or assets used; no letter-spacing on Arabic.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T10:20:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "preset applied: export button rgb(0,113,227), button radius 980px, glass bar saturate(1.8) blur(20px), h1/name weight 600, search 12px; reduced motion -> 0.01ms; t56/t59/t65/t66/t67 0 page errors; contrast gate 0 low"
+      }
+    },
+    {
+      "n": 43,
+      "what": "v66 (artifact version 83): search with conditions — new 'بحث بشروط' button opens 3 boxes joined by 'و' where a result must match every filled box (name words, codes, SMACC, alternatives); a switch in the multi-search box flips between 'all conditions together' and 'any of them' (the old multi search); box count still adjustable; mode remembered on the device.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T12:20:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "t68: مقص 416 results, + 8K0 -> 7, + يمين -> 0; switching to 'any of them' -> 473; t56/t59/t66/t67 0 page errors"
+      }
+    },
+    {
+      "n": 44,
+      "what": "v66.1-v67 (artifact version 84): search row moved to sit directly on top of the table and pinned with the table head while the rows above scroll away; status tabs, group/location/sort, view switch, current shelf and recent counts packed into one compact row; 'search in' chips moved into the options panel (sliders button); the separate conditions button merged into one 'بحث متعدد' with the AND/OR switch inside; activity log (السجل) — every quantity, note, location, model, photo and saved invoice is logged per user per day on the account, viewable by day with search and 1/7/14/30-day range, plus older quantity changes from each item's history; new 'آخر تعديل' column (date, time, ×N edits) on wide screens; default light look changed to an Apple Store-like style from the owner's REA measurements (#F5F5F7 ground, white cards with soft shadows, light table head, #0071E3 pill buttons, glass bars, weight 600), paper & ink kept as a preset; phone header fixed (title, scrolling action row, status row).",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the result against available task evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T12:45:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "history lists 3 events (qty empty->3, 3->5, location ->B7); last-change cell '7 نوفمبر | 12:13 م | 2×'; AND search مقص=60 visible, +8K0=7; t56/t59/t62/t66/t67 0 page errors; contrast gate 0 low after darkening ok green to #17712E; desktop 1850 and phone 390 screenshots checked"
+      }
+    },
+    {
+      "n": 45,
+      "what": "v67.1 (artifact version 85): table head back to a distinct dark bar (#1D1D1F, light text, sorted column in light blue, soft shadow); clear alternating rows (white / light blue #EDF3FB, hover #E1EBF8, thin row lines); when a search matches through the alternatives, the row shows only the matching alternative numbers plus a '+N بديل تاني' button that expands the rest for that search; muted text darkened to #5F5F64 for contrast on the blue rows.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the reported result against the source evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T12:55:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "JTC7851 -> 1 matching brand number shown + '+148 بديل تاني', click -> 141 brand + 8 OE; name search shows the normal view; contrast gate 0 low; 0 page errors"
+      }
+    },
+    {
+      "n": 46,
+      "what": "v67.2 (artifact version 86): 'يبحث في' chips (اسم التقرير، اسم SMACC، البدائل، الموديل والملاحظات) back in view as a compact row directly above the search, instead of inside the options panel.",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the reported result against the source evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T13:00:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "chips in .controls, row 35px, toggling SMACC works; 0 page errors"
+      }
+    },
+    {
+      "n": 47,
+      "what": "v67.3 (artifact version 87): the 'بحث سابق' strip of previous searches no longer shows (saved searches via ★ stay).",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the reported result against the source evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T13:03:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "#recent display none after a search and focusing the empty field; 0 page errors"
+      }
+    },
+    {
+      "n": 48,
+      "what": "New separate artifact 'جرد بضاعة جديدة' built from the count site: 334 items (261 BMW invoice lines IV262792014 + 73 LEMFOERDER proforma lines PRF-17688) in two invoice groups, invoice line data and price on each item, SMACC codes matched (exact 98, via alternative 43, none 193), alternatives on 127 items; SAR unit prices seeded into its database (261).",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the reported result against the source evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T14:10:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "334 items, OE and LEMF number searches find their lines, Latin names render LTR, 0 page errors"
+      }
+    },
+    {
+      "n": 49,
+      "what": "New-goods site v2: proforma lines removed at the owner's request, only the BMW Excel invoice remains: 261 items, SMACC exact 62, via alternative 23, none 176, alternatives on 54. Proforma delivered separately as an Excel file (73 lines, totals match the PDF).",
+      "manual": "Recorded verification checkpoint; reproduce by manually checking the reported result against the source evidence.",
+      "params": {
+        "checkpoint_time": "2026-11-07T16:05:00+03:00",
+        "checkpoint_status": "published",
+        "checks": "261 items, one group, 0 page errors; xlsx recalc 76 formulas 0 errors"
+      }
+    }
   ],
-  "commands": [
-   "bash build.sh",
-   "node t24.js",
-   "node gate.js"
-  ]
- },
- "evidence": "gate output (60/63 ok), perf.js table, screenshots v1-v8 and L1-L7 (parallel version) in the session",
- "lessons": [
-  "A <button> nested inside the row's <button class=r-main> was silently splitting the row DOM; use <span role=button>.",
-  "background-clip:text on a parent with animated inline-block children hides the text; clip on the children.",
-  "Line-clamp/ellipsis on mixed RTL/LTR lines mis-cuts; clip by max-height instead.",
-  "The repo's scripts cannot run from a cloud chat without attaching the repo; the classifier refuses external code.",
-  "Two sessions publishing to one artifact: the publish tool refuses a version not built on the live one and saves the live source; compare both renders before choosing a base, and say so in the report.",
-  "Zebra striping must use :nth-child(even of .row) when sticky group headers share the list; plain nth-child(even) flips parity after every header.",
-  "A sticky bar with backdrop-filter makes position:fixed children resolve against the bar; drop the blur before using a fixed bottom sheet inside it.",
-  "A fragment forced to direction:ltr inside an RTL line puts a leading separator on its left; keep fragments in the paragraph direction (isolate only) or the dots land between the wrong items.",
-  "The owner's own words decide the default: cards were a good idea for search results but they wanted the table; keep such ideas behind a switch instead of as the default.",
-  "Camera inside a claude.ai artifact: no capability to declare; getUserMedia may be blocked by the iframe policy, so the overlay degrades to a capture=environment file input, which always opens the phone camera.",
-  "The claude.ai artifact frame host is unreachable from the container, so the iframe camera permission policy cannot be probed here; design the camera for both outcomes and tell the owner which one they hit.",
-  "A sticky element clicked by Playwright scrolls the page to it; drive such clicks with element.click() when the test depends on scroll position.",
-  "border-inline-* on an <input dir=auto> follows the input's own direction (LTR when empty), not the page's; grid dividers on inputs must use physical sides.",
-  "WebSearch has a 200-per-turn budget shared by all subagents; plan web-search fallbacks across turns, not in one fan-out.",
-  "A phone signed in to a different claude.ai account opens the artifact as «Can view»: no sample, no writes, no room — check the account before debugging features."
- ],
- "notes": "Research reports used: Stripe/Linear/Apple HIG/Material/Polaris/Square/Odoo (dashboard patterns); Rolex/Cartier/Hermes/Dior/AP + NEOM/Aramco/Al Rajhi + W3C alreq (luxury and Arabic/RTL rules). v40 adds the creative-sites report (Lusion, Locomotive, Immersive Garden, Obys, Exo Ape, Resn, Active Theory, Studio Freight, Basement, Hello Monday, Unseen, Dogstudio, By-Kin, Iventions, Mat Voyce, aengel, Long Hoang, Linear, Vercel, Stripe, Apple, Lando Norris, Igloo)."
+  "outputs": [
+    {
+      "url": "https://claude.ai/artifact/GjTX7KLvQs1dppSoAxW7Qj",
+      "kind": "web",
+      "deterministic": false,
+      "measured": {
+        "version": 62,
+        "page_bytes": 1644566,
+        "items_with_alternatives": "1985 / 2533",
+        "contrast_pairs_ge_4.5": "63/63",
+        "js_errors": 0
+      }
+    },
+    {
+      "url": "https://claude.ai/artifact/BfFmNg5jjjtRHTp5xzvE56",
+      "kind": "web",
+      "deterministic": false,
+      "measured": {
+        "version": 1,
+        "items": 334,
+        "smacc_exact": 98,
+        "smacc_via_alt": 43,
+        "with_alternatives": 127,
+        "js_errors": 0
+      }
+    }
+  ],
+  "reproduce": {
+    "how": "Start from the base page (out/v4.html) with the data JSON blocks, run build.sh which applies patch3..patch28 in order and writes out/index.html; run the Playwright scripts for screenshots and the gate; publish index.html to the artifact URL with capabilities db+user(profile)+downloads+assets. The patch scripts and v2.css live in the session container, not in this repository; add them under projects/warehouse-count/ to make this record replayable.",
+    "prerequisites": [
+      "python3",
+      "node 22 + playwright + Chromium",
+      "Google Fonts reachable (Amiri, Noto Kufi Arabic, IBM Plex Sans Arabic, IBM Plex Mono)"
+    ],
+    "commands": [
+      "bash build.sh",
+      "node t24.js",
+      "node gate.js"
+    ]
+  },
+  "evidence": "gate output (60/63 ok), perf.js table, screenshots v1-v8 and L1-L7 (parallel version) in the session",
+  "lessons": [
+    "A <button> nested inside the row's <button class=r-main> was silently splitting the row DOM; use <span role=button>.",
+    "background-clip:text on a parent with animated inline-block children hides the text; clip on the children.",
+    "Line-clamp/ellipsis on mixed RTL/LTR lines mis-cuts; clip by max-height instead.",
+    "The repo's scripts cannot run from a cloud chat without attaching the repo; the classifier refuses external code.",
+    "Two sessions publishing to one artifact: the publish tool refuses a version not built on the live one and saves the live source; compare both renders before choosing a base, and say so in the report.",
+    "Zebra striping must use :nth-child(even of .row) when sticky group headers share the list; plain nth-child(even) flips parity after every header.",
+    "A sticky bar with backdrop-filter makes position:fixed children resolve against the bar; drop the blur before using a fixed bottom sheet inside it.",
+    "A fragment forced to direction:ltr inside an RTL line puts a leading separator on its left; keep fragments in the paragraph direction (isolate only) or the dots land between the wrong items.",
+    "The owner's own words decide the default: cards were a good idea for search results but they wanted the table; keep such ideas behind a switch instead of as the default.",
+    "Camera inside a claude.ai artifact: no capability to declare; getUserMedia may be blocked by the iframe policy, so the overlay degrades to a capture=environment file input, which always opens the phone camera.",
+    "The claude.ai artifact frame host is unreachable from the container, so the iframe camera permission policy cannot be probed here; design the camera for both outcomes and tell the owner which one they hit.",
+    "A sticky element clicked by Playwright scrolls the page to it; drive such clicks with element.click() when the test depends on scroll position.",
+    "border-inline-* on an <input dir=auto> follows the input's own direction (LTR when empty), not the page's; grid dividers on inputs must use physical sides.",
+    "WebSearch has a 200-per-turn budget shared by all subagents; plan web-search fallbacks across turns, not in one fan-out.",
+    "A phone signed in to a different claude.ai account opens the artifact as «Can view»: no sample, no writes, no room — check the account before debugging features."
+  ],
+  "notes": "Research reports used: Stripe/Linear/Apple HIG/Material/Polaris/Square/Odoo (dashboard patterns); Rolex/Cartier/Hermes/Dior/AP + NEOM/Aramco/Al Rajhi + W3C alreq (luxury and Arabic/RTL rules). v40 adds the creative-sites report (Lusion, Locomotive, Immersive Garden, Obys, Exo Ape, Resn, Active Theory, Studio Freight, Basement, Hello Monday, Unseen, Dogstudio, By-Kin, Iventions, Mat Voyce, aengel, Long Hoang, Linear, Vercel, Stripe, Apple, Lando Norris, Igloo)."
 }
