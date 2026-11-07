@@ -1,7 +1,7 @@
 {
   "id": "pm-jhylee95-e1152f",
   "name": "Supademo launch video",
-  "name_ar": null,
+  "name_ar": "إعلان أداة عروض تفاعلية بكلمة واحدة في كل نبضة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -31,5 +31,33 @@
     "playbooks/product-ui.md",
     "playbooks/kinetic-type.md",
     "playbooks/music.md"
-  ]
+  ],
+  "summary_ar": "إعلان إطلاق مدته 24 ثانية لأداة عروض منتج تفاعلية ووكيل عرض ذكي: كلمة واحدة ضخمة بحروف صغيرة ونقطة ملونة في كل ثانية على خلفيات تتبدل بين الأبيض والأسود والنيلي والأخضر المزرق، وكل كلمة يرافقها عنصر واجهة يشرح الميزة (تلميح، مربع تحديد، رابط، كود تضمين، بطاقات أرقام)، ثم لوحة تحكم ومحادثة الوكيل، وتنتهي بشارة «متصل».",
+  "summary_en": "A 24-second launch ad for an interactive product-demo tool and its AI demo agent: one huge lowercase word with a coloured full stop every second on backgrounds switching between white, black, indigo and teal, each word paired with a UI element that shows the feature (tooltip, selection box, link field, embed code, stat cards), then a dashboard and the agent chat, ending on an 'online' badge.",
+  "keywords": [
+    "SaaS launch",
+    "one word per beat",
+    "kinetic type",
+    "feature list",
+    "product demo",
+    "AI agent",
+    "indigo",
+    "lowercase bold",
+    "UI micro-demo",
+    "beat cuts",
+    "إعلان إطلاق",
+    "كلمة في كل نبضة",
+    "تايبوغرافي متحرك",
+    "ميزات المنتج",
+    "وكيل ذكي",
+    "واجهة مستخدم"
+  ],
+  "difficulty": 3,
+  "duration_s": 24,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-jhylee95-e1152f/BRIEF.md"
 }

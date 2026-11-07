@@ -1,6 +1,6 @@
 ---
 name: pm-jasonzhou1993-8595e0
-description: A 15-second self-showreel split into numbered chapters inside a HUD frame: an orange dot on a timeline, kinetic type TIMING / SPACING / EASING over orange and cream with outlined marquee rows and a code comment, a grid of rotating squares and circles, a particle burst that assembles FLOW, a 3D point-cloud sphere over a floor grid, vertical colour-stripe wipes into a data card, flowing line ribbons behind an italic serif phrase, and an end card.
+description: A 15-second self-showreel split into numbered chapters inside a HUD frame: an orange dot on a timeline, kinetic type TIMING / SPACING / EASING over orange and cream with outlined marquee rows and a code comment, a grid of rotating squares and circles, a particle burst that assembles FLOW, a 3D point-cloud sphere over a floor grid, vertical colour-stripe wipes into a data card, flowing line ribbons behind an italic serif phrase, and an end card. Use to make a new video in this look (Charts); address it by ID pm-jasonzhou1993-8595e0.
 ---
 
 # KOSIF TOOL — Claude motion reel / ريل موشن ذاتي: عرض مهارات في 15 ثانية

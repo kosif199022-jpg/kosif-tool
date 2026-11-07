@@ -1,9 +1,9 @@
 ---
 name: pm-pluginplay-3d4006
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 26 s pixel-art gag: a man on a cliff at a purple retro sunset throws a boomerang each year while a yellow pixel caption types that year's AI milestone; it returns bigger and brighter, then a self-improvement loop spins a version counter to infinity, a white-flash blast, a smug face close-up, and the boomerang returns to scorch him in a cartoon explosion. Use to make a new video in this look (Characters); address it by ID pm-pluginplay-3d4006.
 ---
 
-# KOSIF TOOL — Pixel art LLM history
+# KOSIF TOOL — Pixel art LLM history / تاريخ النماذج اللغوية بالبكسل: رجل يرمي بومرانغ
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/pluginplay-3d4006
@@ -18,11 +18,20 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+رسوم بكسل مدتها 26 ثانية: رجل على جرف فوق بحر عند غروب ريترو بنفسجي يرمي بومرانغ كل عام، وفوقه صندوق حوار أصفر بخط بكسل يكتب حدث العام (من ورقة الانتباه حتى الوكلاء). البومرانغ يعود كل مرة أكبر وأكثر توهجاً، ثم دورة تحسين ذاتي يتسارع فيها عداد الإصدار إلى اللانهاية، انفجار ضوئي، لقطة قريبة لوجه الرجل الراضي، ثم يرتد البومرانغ ويحرقه بانفجار كرتوني.
+
+A 26 s pixel-art gag: a man on a cliff at a purple retro sunset throws a boomerang each year while a yellow pixel caption types that year's AI milestone; it returns bigger and brighter, then a self-improvement loop spins a version counter to infinity, a white-flash blast, a smug face close-up, and the boomerang returns to scorch him in a cartoon explosion.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, Web Audio), suggested duration (26 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Code / كود.
+Categories: Characters / شخصيات, Code / كود.
+- [playbooks/characters.md](../../playbooks/characters.md)
 - [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
 * Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)

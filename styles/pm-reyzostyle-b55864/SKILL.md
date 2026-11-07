@@ -1,9 +1,9 @@
 ---
 name: pm-reyzostyle-b55864
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 10-second dark product spot in thin corner-bracket framing: huge single words flash, a grey view counter is struck through, a scan line sweeps a wall of short-video thumbnails and lifts the outliers, a multiplier counts 12x to 31x, a borrowed title scrambles into your own version, a hook line types on, and it ends on a flower logo and button. Use to make a new video in this look (Product UI); address it by ID pm-reyzostyle-b55864.
 ---
 
-# KOSIF TOOL — Chunku product promo
+# KOSIF TOOL — Chunku product promo / إعلان أداة محتوى داكن: عناوين خاطفة وشبكة صور مصغرة ونص يُكتب
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/reyzostyle-b55864
@@ -17,16 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان منتج مدته 10 ثوانٍ على خلفية فحمية بزوايا إطار رفيعة: كلمات ضخمة تومض واحدة تلو الأخرى، عدّاد مشاهدات رمادي يُشطب، شبكة من ثلاثة صفوف لصور مصغرة لمقاطع قصيرة يمسحها خط ضوئي فتبرز القوية منها، بطاقة «12x ثم 31x» بشريط تقدم، لوحة تحول عنوان مقطع إلى نسختك، نص سيناريو يُكتب حرفاً حرفاً، ثم شعار زهرة واسم المنتج وزر.
+
+A 10-second dark product spot in thin corner-bracket framing: huge single words flash, a grey view counter is struck through, a scan line sweeps a wall of short-video thumbnails and lifts the outliers, a multiplier counts 12x to 31x, a borrowed title scrambles into your own version, a hook line types on, and it ends on a flower logo and button.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, Web Audio), suggested duration (10 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك, Charts / رسوم بيانية, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

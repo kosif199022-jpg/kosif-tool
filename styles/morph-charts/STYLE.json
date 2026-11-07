@@ -1,7 +1,7 @@
 {
   "id": "morph-charts",
   "name": "تحولات بيانات",
-  "name_ar": "تحولات بيانات",
+  "name_ar": "تحولات بيانات — رسم بياني يتحول من شكل لآخر",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,31 @@
   "playbooks": [
     "playbooks/charts.md",
     "playbooks/shapes.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي 9:16 على خلفية كحلية داكنة تعرض فيه نفس مجموعة البيانات وهي تتحول بسلاسة من شكل لآخر: نقاط تتجمع إلى أعمدة، والأعمدة تلتف إلى دائرة نسب، والدائرة تنبسط إلى خط زمني، مع رقم كبير يعدّ في الأعلى وألوان ثابتة لكل فئة طوال الفيديو.",
+  "summary_en": "A 9:16 reel on a dark navy background where one dataset keeps morphing smoothly between forms: scattered dots gather into bars, the bars curl into a donut of shares, the donut unrolls into a line over time, with a big counting number at the top and one fixed colour per category throughout.",
+  "keywords": [
+    "data morph",
+    "chart transition",
+    "bar to donut",
+    "line chart",
+    "data story",
+    "shape morph",
+    "statistics",
+    "تحولات بيانات",
+    "رسم بياني",
+    "بيانات",
+    "إحصاءات",
+    "تحول الأشكال",
+    "دائرة نسب"
+  ],
+  "difficulty": 3,
+  "duration_s": 34,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "GSAP"
+  ],
+  "brief": "styles/morph-charts/BRIEF.md"
 }

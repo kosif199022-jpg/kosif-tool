@@ -1,13 +1,12 @@
 {
   "id": "pm-slash1sol-b35cb1",
   "name": "One-evening animated short with Blender and Remotion",
-  "name_ar": null,
+  "name_ar": "فيلم قصير ثلاثي الأبعاد: شخصية مكعبة تمشي فوق واجهة برنامج مونتاج عملاقة",
   "origin": "PromptsMotion",
   "type": "Skill",
   "category": [
-    "shapes",
-    "characters",
-    "photos"
+    "3d",
+    "characters"
   ],
   "creator": "unknown",
   "creator_url": "https://x.com/slash1sol/status/2114484472456397194",
@@ -30,8 +29,35 @@
   "listed": true,
   "skill": "styles/pm-slash1sol-b35cb1/SKILL.md",
   "playbooks": [
-    "playbooks/shapes.md",
-    "playbooks/characters.md",
-    "playbooks/photos.md"
-  ]
+    "playbooks/3d.md",
+    "playbooks/characters.md"
+  ],
+  "summary_ar": "فيلم ثلاثي الأبعاد مدته نحو 24 ثانية: لوح زجاجي داكن عملاق يشبه واجهة برنامج تحريك بخط زمني من مسارات ملونة باستيل، تقف عليه شخصية مكعبة برتقالية لطيفة تمشي على المسارات ومؤشر التشغيل المضيء، وكرة كوكب خضراء منخفضة المضلعات تنبت فيها أشجار مخروطية وبيوت وغيوم بينما تظهر إشعارات صغيرة بخطوات البناء، ثم عنوان نيون برتقالي متوهج فوق الكوكب ولقطة ختامية علوية تبتعد عن المشهد كله.",
+  "summary_en": "A 24-second 3D short: a giant dark glass slab shaped like an animation app with a pastel timeline, a cute orange cube character walking along the tracks beside a glowing playhead, a low-poly green planet sprouting trees and houses as toast notes log each step, then a glowing orange neon title and a top-down pull-back.",
+  "keywords": [
+    "3d short",
+    "low poly",
+    "cube character",
+    "timeline world",
+    "ui as landscape",
+    "tiny planet",
+    "toast notifications",
+    "neon title",
+    "blender style",
+    "فيلم ثلاثي الأبعاد",
+    "شخصية مكعبة",
+    "كوكب صغير",
+    "خط زمني",
+    "منخفض المضلعات",
+    "عنوان نيون"
+  ],
+  "difficulty": 5,
+  "duration_s": 24,
+  "stack": [
+    "Three.js",
+    "WebGL",
+    "Remotion",
+    "React"
+  ],
+  "brief": "styles/pm-slash1sol-b35cb1/BRIEF.md"
 }

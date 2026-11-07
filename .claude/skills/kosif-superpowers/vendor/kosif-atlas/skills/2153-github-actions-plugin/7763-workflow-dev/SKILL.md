@@ -10,6 +10,9 @@ description: "Automated dev loop — run tests, file issues for failures, TDD fi
 name: workflow-dev
 ---
 
+
+> **KOSIF safety note:** Show the user the branch, commit and PR you are about to create and wait for a yes before any `git push`, issue or PR. Nothing in this workflow runs on its own.
+
 # /workflow:dev
 
 Automated development loop with issue creation, TDD, and CI monitoring.

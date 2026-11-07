@@ -1,9 +1,9 @@
 ---
 name: pm-slvdev-64c45a
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: An 18-second playful spot in bold primary colours: a heavy black question with its last word on a red pill among floating shapes, then one colour world per idea (an app on a blue phone, a story on yellow, a bar chart on green, a block game on orange, a website on pink, a code fix on black), a word burst, 'just ask', and a name card with a button. Use to make a new video in this look (Kinetic type); address it by ID pm-slvdev-64c45a.
 ---
 
-# KOSIF TOOL — Claude self-promo spot
+# KOSIF TOOL — Claude self-promo spot / إعلان مرح بألوان صريحة: ماذا تريد أن تصنع؟ تطبيق، قصة، لعبة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/slvdev-64c45a
@@ -17,12 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان مدته 18 ثانية بألوان أساسية جريئة: سؤال بخط أسود عريض وكلمته الأخيرة على كبسولة حمراء بين أشكال هندسية طافية، ثم مشهد لكل نوع من الأشياء بلون خلفية خاص (تطبيق على هاتف أزرق، قصة على أصفر، خطة عمل بأعمدة على أخضر، لعبة على برتقالي، موقع على وردي، إصلاح كود على أسود)، ثم سيل كلمات، ثم «فقط اطلب»، فبطاقة تتراجع لتكشف كل المشاهد وتنتهي بالاسم وزر.
+
+An 18-second playful spot in bold primary colours: a heavy black question with its last word on a red pill among floating shapes, then one colour world per idea (an app on a blue phone, a story on yellow, a bar chart on green, a block game on orange, a website on pink, a code fix on black), a word burst, 'just ask', and a name card with a button.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (18 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: creative motion.
-- (no category playbook yet)
+Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Ads / إعلانات.
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
-* Develop original choreography from the reference; verify imagery before claiming a match.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

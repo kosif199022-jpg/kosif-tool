@@ -1,6 +1,6 @@
 ---
 name: pm-ratheejaisal-1f4538
-description: A silent 20-second launch spot on a cool off-white ground: the logo reveals with a left-to-right mask, then a run of shots on one fixed layout (a bold two-line headline with a small mono kicker on the left, a white shadowed UI card on the right): claiming a handle, a profile card, a project list with Live pills, a revenue counter over a heatmap, a visitors counter with a sparkline, a revenue bar race, a founder directory on a dotted world map, a verified badge on a site and an end card with a CTA clicked by a cursor.
+description: A silent 20-second launch spot on a cool off-white ground: the logo reveals with a left-to-right mask, then a run of shots on one fixed layout (a bold two-line headline with a small mono kicker on the left, a white shadowed UI card on the right): claiming a handle, a profile card, a project list with Live pills, a revenue counter over a heatmap, a visitors counter with a sparkline, a revenue bar race, a founder directory on a dotted world map, a verified badge on a site and an end card with a CTA clicked by a cursor. Use to make a new video in this look (Product UI); address it by ID pm-ratheejaisal-1f4538.
 ---
 
 # KOSIF TOOL — founder.page launch video / فيديو إطلاق founder.page السريع

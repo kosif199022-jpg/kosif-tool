@@ -1,9 +1,9 @@
 ---
 name: pm-allforbigfire-86ff3c
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 25-second vertical super-robot anime homage in chunky low-poly blocks: a red jet, blue car and yellow tank get slanted name plates, a Japanese 'combine' shout flies in, the parts transform over navy speed lines into head, torso and legs, then a white-flash clang, glowing-eye close-ups and a victory pose on golden rays with a 'combination complete' banner. Use to make a new video in this look (Characters); address it by ID pm-allforbigfire-86ff3c.
 ---
 
-# KOSIF TOOL — Anime robot combining sequence
+# KOSIF TOOL — Anime robot combining sequence / تجميع روبوت أنمي من ثلاث مركبات بأسلوب الكتل
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/allforbigfire-86ff3c
@@ -17,12 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+مشهد عمودي مدته 25 ثانية بأسلوب أنمي الروبوتات القديم بنماذج ثلاثية الأبعاد كتلية مبسطة: تعريف بثلاث مركبات (طائرة حمراء في السماء، سيارة زرقاء على الطريق، دبابة صفراء في الصحراء) بشرائط أسماء مائلة، ثم صيحة «اندماج» بالخط الياباني، فتتحول القطع على خلفية خطوط سرعة كحلية إلى رأس وجذع وساقين وتلتحم، وتنتهي بلقطات قريبة للوجه المضيء ووقفة بطولية على أشعة ذهبية مع لافتة «اكتمل الاندماج».
+
+A 25-second vertical super-robot anime homage in chunky low-poly blocks: a red jet, blue car and yellow tank get slanted name plates, a Japanese 'combine' shout flies in, the parts transform over navy speed lines into head, torso and legs, then a white-flash clang, glowing-eye close-ups and a victory pose on golden rays with a 'combination complete' banner.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, React, Remotion), suggested duration (25 s), aspect 9:16, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Characters / شخصيات.
+Categories: Characters / شخصيات, 3D / ثلاثي الأبعاد.
 - [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
 * Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

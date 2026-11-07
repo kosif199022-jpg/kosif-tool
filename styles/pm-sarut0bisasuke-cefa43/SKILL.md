@@ -1,6 +1,6 @@
 ---
 name: pm-sarut0bisasuke-cefa43
-description: A silent 30-second recipe explainer on a split screen: a cream paper panel on the left with a wobbly hand-drawn rocks glass and an oz ruler, and a beige sidebar on the right with a handwritten title and an ingredient checklist. Ice drops, two bottles and a cream jug tilt in and pour while the liquid rises, a fraction counter ticks and a 5-step progress bar fills; cream diffuses as clouds into the dark layer, a stirrer swirls, and it ends on a handwritten sign-off with ink splatter.
+description: A silent 30-second recipe explainer on a split screen: a cream paper panel on the left with a wobbly hand-drawn rocks glass and an oz ruler, and a beige sidebar on the right with a handwritten title and an ingredient checklist. Ice drops, two bottles and a cream jug tilt in and pour while the liquid rises, a fraction counter ticks and a 5-step progress bar fills; cream diffuses as clouds into the dark layer, a stirrer swirls, and it ends on a handwritten sign-off with ink splatter. Use to make a new video in this look (Charts); address it by ID pm-sarut0bisasuke-cefa43.
 ---
 
 # KOSIF TOOL — White Russian recipe animation / وصفة الوايت روشن من الكأس الفارغة إلى الكوكتيل

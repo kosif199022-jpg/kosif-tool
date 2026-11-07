@@ -1,6 +1,6 @@
 ---
 name: pm-samaote-5e2fc2
-description: A 30-second lyric video told through a sun: it rises over a sea horizon, ignites and fills the frame, drains to grey on a 'stop time' beat, becomes a flat red dot on cream paper with a grid, and ends in an eclipse and a glowing red smile arc. Lyric type changes per section inside a persistent HUD with a countdown, bar counter and chapter label.
+description: A 30-second lyric video told through a sun: it rises over a sea horizon, ignites and fills the frame, drains to grey on a 'stop time' beat, becomes a flat red dot on cream paper with a grid, and ends in an eclipse and a glowing red smile arc. Lyric type changes per section inside a persistent HUD with a countdown, bar counter and chapter label. Use to make a new video in this look (Charts); address it by ID pm-samaote-5e2fc2.
 ---
 
 # KOSIF TOOL — Synced lyrics motion video / فيديو كلمات أغنية تحكيه شمس: من الشروق إلى الكسوف

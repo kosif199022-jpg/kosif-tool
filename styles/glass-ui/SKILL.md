@@ -1,9 +1,9 @@
 ---
 name: glass-ui
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: Frosted glass UI cards float over slowly drifting colour gradient blobs: thin glossy borders, background blur, icons and stats popping inside the cards, a light reflection gliding over the glass and calm, smooth easing for presenting apps and features. Use to make a new video in this look (Product UI); address it by ID glass-ui.
 ---
 
-# KOSIF TOOL — واجهة زجاجية
+# KOSIF TOOL — واجهة زجاجية / واجهات زجاجية شفافة فوق تدرجات لونية
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+بطاقات واجهة من زجاج مصنفر شفاف تطفو فوق كتل لونية متدرجة تتحرك ببطء: حدود لامعة رفيعة، ضبابية خلفية، أيقونات ومؤشرات تنبثق داخل البطاقات، انعكاس ضوء ينزلق على الزجاج، وحركة ناعمة هادئة لعرض التطبيقات والمزايا.
+
+Frosted glass UI cards float over slowly drifting colour gradient blobs: thin glossy borders, background blur, icons and stats popping inside the cards, a light reflection gliding over the glass and calm, smooth easing for presenting apps and features.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (30 s), aspect 9:16, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Shapes / أشكال.

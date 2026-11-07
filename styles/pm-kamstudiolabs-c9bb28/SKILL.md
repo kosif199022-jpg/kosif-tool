@@ -1,9 +1,9 @@
 ---
 name: pm-kamstudiolabs-c9bb28
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 90-second animated short in a navy night room: the camera pushes from a silhouetted programmer into the code, where lines are rounded teal, lavender and pink bars and a tiny glowing firefly-like bug dodges a giant mouse cursor, selections, red squiggles and a red line highlight, before the room dims and a wry bold title card ends it. Use to make a new video in this look (Characters); address it by ID pm-kamstudiolabs-c9bb28.
 ---
 
-# KOSIF TOOL — Animated short about a bug
+# KOSIF TOOL — Animated short about a bug / فيلم قصير عن حشرة مضيئة تختبئ داخل الكود
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/kamstudiolabs-c9bb28
@@ -17,12 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيلم رسوم قصير مدته دقيقة ونصف في غرفة ليلية كحلية: مبرمج في صورة ظلية أمام شاشة، ثم تقترب الكاميرا إلى داخل الكود حيث الأسطر كتل ملونة مستديرة (فيروزي وبنفسجي ووردي)، وتعيش بينها حشرة مضيئة صغيرة بعينين كبيرتين تهرب من مؤشر الفأرة العملاق والتحديد وخطوط الخطأ الحمراء المتعرجة وتمييز السطر الأحمر، حتى ينطفئ الضوء وتعود اللقطة للغرفة وتنتهي بعنوان ساخر بخط عريض.
+
+A 90-second animated short in a navy night room: the camera pushes from a silhouetted programmer into the code, where lines are rounded teal, lavender and pink bars and a tiny glowing firefly-like bug dodges a giant mouse cursor, selections, red squiggles and a red line highlight, before the room dims and a wry bold title card ends it.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas), suggested duration (90 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Characters / شخصيات.
+Categories: Characters / شخصيات, Code / كود.
 - [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
 * Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

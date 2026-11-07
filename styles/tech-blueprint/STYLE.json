@@ -1,7 +1,7 @@
 {
   "id": "tech-blueprint",
   "name": "رسومات تقنية",
-  "name_ar": "رسومات تقنية",
+  "name_ar": "رسومات تقنية — مخطط هندسي أزرق يُرسم خطاً خطاً",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,30 @@
   "playbooks": [
     "playbooks/diagrams.md",
     "playbooks/hand-drawn.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي 9:16 على ورق مخطط هندسي أزرق داكن بشبكة سماوية باهتة، تُرسم فيه آلة أو جهاز أو مبنى بخطوط بيضاء رفيعة كأنها بقلم رسم فني، ثم تنفصل أجزاؤه في عرض مُفكَّك وتظهر خطوط الأبعاد والأسهم والتسميات العربية بخط هندسي أحادي، مع ختم عنوان في زاوية الورقة.",
+  "summary_en": "A 9:16 reel on deep cyanotype-blue blueprint paper with a faint cyan grid, where a machine, device or building is traced in thin white drafting lines, then splits into an exploded view while dimension lines, leader arrows and monospace Arabic/English labels write on, finishing on a stamped title block in the corner.",
+  "keywords": [
+    "blueprint",
+    "technical drawing",
+    "exploded view",
+    "dimension lines",
+    "cyanotype",
+    "engineering",
+    "line draw-on",
+    "مخطط هندسي",
+    "رسم تقني",
+    "بلوبرنت",
+    "عرض مفكك",
+    "خطوط أبعاد",
+    "هندسة"
+  ],
+  "difficulty": 3,
+  "duration_s": 35,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/tech-blueprint/BRIEF.md"
 }

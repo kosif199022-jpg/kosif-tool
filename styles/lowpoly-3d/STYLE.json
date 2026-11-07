@@ -1,7 +1,7 @@
 {
   "id": "lowpoly-3d",
   "name": "مجسمات Low Poly",
-  "name_ar": "مجسمات Low Poly",
+  "name_ar": "عالم ثلاثي الأبعاد بمجسمات Low Poly",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -24,5 +24,31 @@
   "skill": "styles/lowpoly-3d/SKILL.md",
   "playbooks": [
     "playbooks/3d.md"
-  ]
+  ],
+  "summary_ar": "عالم صغير ثلاثي الأبعاد بمجسمات مضلعة مسطحة التظليل وألوان باستيل: جزيرة أو مشهد على قاعدة تدور الكاميرا حوله، عناصر تنبثق من الأرض بنابض، ضوء شمس ناعم وظلال بسيطة، وتسميات عربية مسطحة فوق المشهد.",
+  "summary_en": "A tiny 3D world built from flat-shaded faceted low-poly models in pastel colours: an island or diorama on a base that the camera slowly orbits, objects pop up from the ground with springy scale, soft sun light and simple shadows, and flat Arabic labels floating over the scene.",
+  "keywords": [
+    "low poly",
+    "lowpoly 3d",
+    "diorama",
+    "flat shading",
+    "pastel 3d",
+    "orbit camera",
+    "toy world",
+    "لو بولي",
+    "ثلاثي الأبعاد",
+    "مجسمات",
+    "عالم صغير",
+    "ألوان باستيل",
+    "كاميرا دوارة"
+  ],
+  "difficulty": 4,
+  "duration_s": 32,
+  "stack": [
+    "Remotion",
+    "React",
+    "Three.js",
+    "WebGL"
+  ],
+  "brief": "styles/lowpoly-3d/BRIEF.md"
 }

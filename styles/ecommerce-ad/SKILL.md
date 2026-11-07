@@ -1,9 +1,9 @@
 ---
 name: ecommerce-ad
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A fast vertical ad for an online shop: cut-out product shots on bold flat colour backgrounds, a pulsing discount badge, an old price struck through and a new price that bounces in, short feature cards, and a closing Order Now button with the shop logo. Use to make a new video in this look (Ads); address it by ID ecommerce-ad.
 ---
 
-# KOSIF TOOL — إعلان متجر
+# KOSIF TOOL — إعلان متجر / إعلان متجر إلكتروني سريع: منتج وسعر وخصم وزر شراء
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+إعلان عمودي سريع لمتجر أونلاين: صور منتج مقصوصة على خلفيات لونية صريحة، شارة خصم تنبض، سعر قديم يُشطب وسعر جديد يرتد، بطاقات مزايا قصيرة، وينتهي بزر «اطلب الآن» وشعار المتجر.
+
+A fast vertical ad for an online shop: cut-out product shots on bold flat colour backgrounds, a pulsing discount badge, an old price struck through and a new price that bounces in, short feature cards, and a closing Order Now button with the shop logo.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG), suggested duration (24 s), aspect 9:16, difficulty 2/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Ads / إعلانات, Product UI / واجهات المنتج.

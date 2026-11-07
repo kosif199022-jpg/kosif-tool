@@ -1,11 +1,12 @@
 {
   "id": "pm-rneayan-474bcf",
   "name": "Risograph studio intro",
-  "name_ar": null,
+  "name_ar": "مقدمة استوديو بطباعة الريسوغراف: وردي وأزرق وأصفر على ورق محبب",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts"
+    "kinetic-type",
+    "shapes"
   ],
   "creator": "@rneayan",
   "creator_url": "https://x.com/rneayan/status/2103401006281441493",
@@ -26,6 +27,34 @@
   "listed": true,
   "skill": "styles/pm-rneayan-474bcf/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md"
+  ],
+  "summary_ar": "مقدمة استوديو مدتها نحو 69 ثانية بأسلوب طباعة الريسوغراف: ورق كريمي محبب وأحبار وردية وزرقاء وصفراء وبرتقالية متراكبة بإزاحة خفيفة، عناوين كورية عريضة تتبدل على دوائر ونقاط وخطوط مائلة وتموجات مواريه، عدّاد مراحل من 01 إلى 10 بنقاط تمتلئ، خط أنابيب بأسهم، دائرتان تتداخلان، أرقام 1-2-3 في دوائر، منزلقات تحكم، ثم منطاد يعبر بين غيوم ويستقر شعاراً.",
+  "summary_en": "A ~69-second studio intro in risograph print style: grainy cream paper with pink, blue and yellow inks slightly misregistered, bold Korean headlines over dot, stripe and moiré patterns, a 01-10 step counter, a pipeline arrow, overlapping circles, numbered circles and sliders, then an airship drifting past clouds that settles into the logo.",
+  "keywords": [
+    "risograph",
+    "print texture",
+    "misregistration",
+    "studio intro",
+    "Korean typography",
+    "step counter",
+    "airship logo",
+    "halftone patterns",
+    "ريسوغراف",
+    "طباعة",
+    "ملمس حبيبي",
+    "مقدمة استوديو",
+    "عداد مراحل",
+    "منطاد"
+  ],
+  "difficulty": 3,
+  "duration_s": 69,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/pm-rneayan-474bcf/BRIEF.md"
 }

@@ -1,9 +1,9 @@
 ---
 name: pm-tdinh-me-84f579
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second product ad for an AI chat client on a starry midnight-blue gradient: a prompt box types itself, the app window floats among model-provider icons, three answer columns appear side by side, then tilted UI panels with white-and-blue headlines, a perspective wall of screens, a pricing promise with rating badges and a logo end card. Use to make a new video in this look (Product UI); address it by ID pm-tdinh-me-84f579.
 ---
 
-# KOSIF TOOL — TypingMind product reel
+# KOSIF TOOL — TypingMind product reel / إعلان منتج لتطبيق محادثة متعدد النماذج على خلفية زرقاء ليلية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/tdinh-me-84f579
@@ -17,20 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان منتج مدته 15 ثانية لعميل محادثة ذكاء اصطناعي على خلفية زرقاء ليلية متدرجة بنجوم خافتة: صندوق إدخال تُكتب فيه رسالة، نافذة التطبيق تطفو بين أيقونات مزودي النماذج، ثلاثة أعمدة إجابة متجاورة، ثم لقطات واجهة مائلة بعناوين بيضاء وزرقاء، جدار من الشاشات المنظورية، وعود التسعير مع شارات التقييم، وبطاقة الشعار.
+
+A 15-second product ad for an AI chat client on a starry midnight-blue gradient: a prompt box types itself, the app window floats among model-provider icons, three answer columns appear side by side, then tilted UI panels with white-and-blue headlines, a perspective wall of screens, a pricing promise with rating badges and a logo end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, Web Audio), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Music / موسيقى, Code / كود.
+Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/music.md](../../playbooks/music.md)
-- [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

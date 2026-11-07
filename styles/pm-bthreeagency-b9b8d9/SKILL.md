@@ -1,9 +1,9 @@
 ---
 name: pm-bthreeagency-b9b8d9
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A short (about 11 s) near-4:3 mobile UI clip: a phone centred on a light grey canvas shows a 'Badges' screen with a navy sky, a gold hexagon badge whose sunrise-and-river art draws in, then a gold ring burst, falling sparkles and the badge name fading up; the camera pushes in as a yellow hand cursor taps the badge so it pulses and gleams, with a row of other badges, one locked, below. Use to make a new video in this look (Phone); address it by ID pm-bthreeagency-b9b8d9.
 ---
 
-# KOSIF TOOL — Badge unlock screen animation
+# KOSIF TOOL — Badge unlock screen animation / شاشة فتح شارة إنجاز ذهبية في تطبيق جوال مع بريق متساقط ومؤشر تفاعلي
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/bthreeagency-b9b8d9
@@ -17,13 +17,22 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+لقطة واجهة جوال قصيرة (نحو 11 ثانية) بنسبة قريبة من 4:3: هاتف في المنتصف على خلفية رمادية فاتحة يعرض صفحة «الشارات» بسماء كحلية، شارة سداسية ذهبية يُرسم داخلها شروق ونهر ثم تنفجر حلقة ذهبية وبريق يتساقط ويظهر اسم الشارة، ثم تقترب الكاميرا ومؤشر يد أصفر يلمس الشارة فتنبض وتلمع، وتحتها صف شارات أخرى بعضها مقفل.
+
+A short (about 11 s) near-4:3 mobile UI clip: a phone centred on a light grey canvas shows a 'Badges' screen with a navy sky, a gold hexagon badge whose sunrise-and-river art draws in, then a gold ring burst, falling sparkles and the badge name fading up; the camera pushes in as a yellow hand cursor taps the badge so it pulses and gleams, with a row of other badges, one locked, below.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (React, CSS, HTML Canvas, Remotion), suggested duration (11 s), aspect 1408:1080, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك, Particles / جسيمات.
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+Categories: Phone / هاتف, Product UI / واجهات المنتج, Particles / جسيمات.
+- [playbooks/phone.md](../../playbooks/phone.md)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/particles.md](../../playbooks/particles.md)
 
 Category tactics:
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 
 ## Original creative direction (التوجيه الإبداعي)

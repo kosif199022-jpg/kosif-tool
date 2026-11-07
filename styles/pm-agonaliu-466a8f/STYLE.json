@@ -1,7 +1,7 @@
 {
   "id": "pm-agonaliu-466a8f",
   "name": "Trezio app motion reel",
-  "name_ar": null,
+  "name_ar": "فيلم تطبيق ذاكرة الإنترنت: من فوضى التبويبات إلى خزنة مرتبة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -31,5 +31,34 @@
     "playbooks/product-ui.md",
     "playbooks/charts.md",
     "playbooks/kinetic-type.md"
-  ]
+  ],
+  "summary_ar": "فيلم منتج مدته 15 ثانية في ستة فصول مرقمة بإطار كاميرا وتايم كود: عنوان أبيض فوق بطاقات وتبويبات وملاحظات لاصقة تطفو بعمق ضبابي على كحلي، ثم «احفظ أي شيء» بخط عريض وآخر مائل أزرق مع مفاتيح اختصار وبطاقات تنبثق، شريط بحث يُكتب فيه ويظهر نتيجة، بطاقة مركزية تتشعب إلى شبكة عناصر مرتبطة، قفل خزنة بكلمة مرور تتشفر، فكشف ثقب مفتاح أبيض يقود إلى الشعار وزر الدعوة.",
+  "summary_en": "A 15-second app film in six numbered chapters inside a camera-style HUD: headlines over drifting tabs and sticky notes on navy, 'Save anything' in heavy sans plus blue italic serif with keycaps and popping cards, a typing search bar, a card web, a padlock vault with a scrambling password, and a keyhole reveal into the logo.",
+  "keywords": [
+    "app promo",
+    "product film",
+    "chapter hud",
+    "timecode frame",
+    "serif italic accent",
+    "search typing",
+    "knowledge graph",
+    "vault lock",
+    "keyhole reveal",
+    "إعلان تطبيق",
+    "فيلم منتج",
+    "فصول مرقمة",
+    "شريط بحث",
+    "خزنة كلمات مرور",
+    "كشف ثقب المفتاح"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "SVG",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-agonaliu-466a8f/BRIEF.md"
 }

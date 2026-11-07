@@ -1,7 +1,7 @@
 {
   "id": "frame-by-frame",
   "name": "إطار بإطار",
-  "name_ar": "إطار بإطار",
+  "name_ar": "إطار بإطار — رسوم يدوية تقليدية بخطوط تتنفس",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,31 @@
   "playbooks": [
     "playbooks/hand-drawn.md",
     "playbooks/characters.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي 9:16 برسوم متحركة تقليدية مرسومة إطاراً إطاراً: خطوط حبر سوداء متذبذبة قليلاً في كل إطار، وتلوين مسطح بألوان مائية خفيفة على ورق ذي ملمس، وشخصيات وأشياء تتحول وتتمدد بحرية بحركة على اثنين (12 إطاراً في الثانية)، وانتقالات يتحول فيها شكل إلى شكل آخر بالرسم.",
+  "summary_en": "A 9:16 reel in traditional frame-by-frame animation: slightly boiling black ink lines redrawn every frame, flat watercolour-wash fills on textured paper, characters and objects that squash, stretch and transform freely on twos (12 fps), and transitions where one drawing metamorphoses into the next.",
+  "keywords": [
+    "frame by frame",
+    "traditional animation",
+    "hand drawn",
+    "line boil",
+    "on twos",
+    "metamorphosis",
+    "2d animation",
+    "إطار بإطار",
+    "رسوم متحركة تقليدية",
+    "رسم يدوي",
+    "تحريك يدوي",
+    "تحول",
+    "كرتون"
+  ],
+  "difficulty": 5,
+  "duration_s": 32,
+  "stack": [
+    "Remotion",
+    "React",
+    "HTML Canvas",
+    "SVG"
+  ],
+  "brief": "styles/frame-by-frame/BRIEF.md"
 }

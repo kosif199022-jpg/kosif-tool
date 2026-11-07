@@ -1,10 +1,12 @@
 {
   "id": "pm-majin-appsheet-2d3c1a",
   "name": "Shin Majin-shiki promo",
-  "name_ar": null,
+  "name_ar": "بطاقة عنوان يابانية بأسلوب الأنمي بالأحمر والأسود",
   "origin": "PromptsMotion",
   "type": "Prompt",
-  "category": [],
+  "category": [
+    "kinetic-type"
+  ],
   "creator": "@Majin_AppSheet",
   "creator_url": "https://x.com/Majin_AppSheet/status/2103497319899693327",
   "page": "https://www.promptsmotion.com/majin-appsheet-2d3c1a",
@@ -23,5 +25,33 @@
   "source_prompt_words": 8,
   "listed": true,
   "skill": "styles/pm-majin-appsheet-2d3c1a/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/kinetic-type.md"
+  ],
+  "summary_ar": "مقدمة عنوان مدتها 10 ثوانٍ بأسلوب أنمي ياباني جريء: خط أحمر رفيع على الأسود، اسم بالكانا، حرفا «إعادة» كبيرين بخط سيريف ياباني وعمود عمودي، «REBOOT» سوداء على أحمر، «SLIDES»، رمز «جديد» ضخم يرتعش بانقسام ألوان، ثم الاسم الكامل يُكتب على خلفية أشعة شمس حمراء، ويستقر على شريط أحمر مائل مع اسم بالحروف اللاتينية.",
+  "summary_en": "A 10-second anime-style title intro: a thin red line on black, a kana name, huge Mincho kanji with a vertical column, black 'REBOOT' on red, 'SLIDES', a giant 'new' kanji with an RGB glitch, then the full title types on over red sunburst rays and locks onto a slanted red band with a romanised subtitle and a small 'new' stamp.",
+  "keywords": [
+    "anime title",
+    "japanese typography",
+    "title card",
+    "red and black",
+    "sunburst",
+    "glitch",
+    "fast cuts",
+    "reboot",
+    "مقدمة أنمي",
+    "خط ياباني",
+    "بطاقة عنوان",
+    "أحمر وأسود",
+    "قطع سريع",
+    "إعادة إطلاق"
+  ],
+  "difficulty": 2,
+  "duration_s": 10,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-majin-appsheet-2d3c1a/BRIEF.md"
 }

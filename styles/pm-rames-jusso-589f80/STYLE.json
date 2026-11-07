@@ -1,10 +1,14 @@
 {
   "id": "pm-rames-jusso-589f80",
   "name": "UK dubstep track with ASCII visuals",
-  "name_ar": null,
+  "name_ar": "تراك دبستب يُكتب بالكود على الشاشة مع مقاطع فن ASCII ملونة",
   "origin": "PromptsMotion",
   "type": "Prompt",
-  "category": [],
+  "category": [
+    "code",
+    "music",
+    "kinetic-type"
+  ],
   "creator": "@Rames_Jusso",
   "creator_url": "https://x.com/Rames_Jusso/status/2103200703598776559",
   "page": "https://www.promptsmotion.com/rames-jusso-589f80",
@@ -23,5 +27,36 @@
   "source_prompt_words": 6,
   "listed": true,
   "skill": "styles/pm-rames-jusso-589f80/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/code.md",
+    "playbooks/music.md",
+    "playbooks/kinetic-type.md"
+  ],
+  "summary_ar": "فيديو مربع دقيقة واحدة لمحرر كود موسيقي حي على خلفية سوداء: سطور برمجة تُكتب وتتمرر بخط أحادي مع مقابض منزلقة صغيرة وتظليل للمقاطع النشطة على الإيقاع، يتلوث النص بحروف عشوائية ثم تنفجر الشاشة إلى لوحات فن ASCII ملونة (أحمر وأزرق وذهبي ثم أخضر فاقع) تنبض، وتعود الشاشة للكود مصغراً وتنتهي بسطر تعليق أخير.",
+  "summary_en": "A one-minute square video of a live-coding music editor on black: monospace code lines type and scroll with tiny inline sliders and boxes that light up on active pattern steps, the text glitches into random characters, then the screen erupts into pulsing coloured ASCII-art panels (red, blue and gold, then acid green), before returning to zoomed-out code and a final comment line.",
+  "keywords": [
+    "live coding",
+    "dubstep",
+    "ASCII art",
+    "code music",
+    "glitch",
+    "monospace",
+    "pattern sequencer",
+    "audio visual",
+    "برمجة حية",
+    "دبستب",
+    "فن ASCII",
+    "موسيقى بالكود",
+    "تشويش",
+    "خط أحادي"
+  ],
+  "difficulty": 4,
+  "duration_s": 61,
+  "stack": [
+    "HTML Canvas",
+    "React",
+    "Remotion",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-rames-jusso-589f80/BRIEF.md"
 }

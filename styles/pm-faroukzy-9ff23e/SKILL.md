@@ -1,9 +1,9 @@
 ---
 name: pm-faroukzy-9ff23e
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 4-minute animated short in a soft 3D-illustrated look: a small white robot keeps a red-and-white lighthouse from sunset into a stormy night, hears a distress call on an old radio, gives its glowing chest core to restart the dead lamp so the beam saves a ship, and is revived at dawn by a girl and a captain, with named subtitles. Use to make a new video in this look (Characters); address it by ID pm-faroukzy-9ff23e.
 ---
 
-# KOSIF TOOL — The Last Light animated short
+# KOSIF TOOL — The Last Light animated short / فيلم قصير متحرك: روبوت حارس المنارة يهب ضوءه لإنقاذ سفينة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/faroukzy-9ff23e
@@ -17,12 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيلم قصير متحرك مدته 4 دقائق بأسلوب رسوم دافئة ثلاثية الأبعاد ناعمة: من الفضاء إلى الغروب فوق منارة حمراء وبيضاء على صخرة، روبوت أبيض صغير بوجه شاشة ونواة مضيئة في صدره يعتني بالمصباح، ثم ليل وعاصفة ونداء استغاثة عبر راديو قديم وسفينة تقترب من الصخور، فينطفئ المصباح ويضع الروبوت نواته فيه فيشق الشعاع العاصفة، وينتهي بفجر وفتاة وقبطانة تعيدان إليه الحياة، مع ترجمة بأسماء المتحدثين وأشرطة سينمائية في الذروة.
+
+A 4-minute animated short in a soft 3D-illustrated look: a small white robot keeps a red-and-white lighthouse from sunset into a stormy night, hears a distress call on an old radio, gives its glowing chest core to restart the dead lamp so the beam saves a ship, and is revived at dawn by a girl and a captain, with named subtitles.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, Remotion, Web Audio), suggested duration (240 s), aspect 16:9, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: creative motion.
-- (no category playbook yet)
+Categories: Characters / شخصيات, 3D / ثلاثي الأبعاد.
+- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
-* Develop original choreography from the reference; verify imagery before claiming a match.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

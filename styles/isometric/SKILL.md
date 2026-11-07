@@ -1,9 +1,9 @@
 ---
 name: isometric
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A tiny pastel isometric city (pink, violet and teal towers, an orange warehouse, round trees) on pale lavender, where the camera moves between buildings to explain an online order's journey: a phone pops over a house, a dotted line arcs to a cloud, a truck leaves the warehouse, and it reaches the door, while a bottom progress bar advances and small Arabic speech chips appear. Use to make a new video in this look (3D); address it by ID isometric.
 ---
 
-# KOSIF TOOL — عالم أيزومتريك
+# KOSIF TOOL — عالم أيزومتريك / عالم أيزومتريك — مدينة صغيرة بألوان باستيل تشرح رحلة خطوة بخطوة
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/isometric
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+مدينة أيزومترية صغيرة بألوان باستيل (بيوت وأبراج وردية وبنفسجية وفيروزية ومستودع برتقالي وأشجار مستديرة) على خلفية لافندر فاتحة، تنتقل الكاميرا بين مبانيها لتشرح رحلة طلب أونلاين: هاتف يظهر فوق بيت، خط منقط إلى سحابة، مستودع تخرج منه شاحنة، ثم الوصول للباب، مع شريط مراحل في الأسفل يتقدم وفقاعات عربية صغيرة.
+
+A tiny pastel isometric city (pink, violet and teal towers, an orange warehouse, round trees) on pale lavender, where the camera moves between buildings to explain an online order's journey: a phone pops over a house, a dotted line arcs to a cloud, a truck leaves the warehouse, and it reaches the door, while a bottom progress bar advances and small Arabic speech chips appear.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (28 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: 3D / ثلاثي الأبعاد, Diagrams / مخططات.

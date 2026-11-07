@@ -1,10 +1,13 @@
 {
   "id": "pm-ivanfioravanti-bd9261",
   "name": "Voxel pod-racer run",
-  "name_ar": null,
+  "name_ar": "سباق مركبة فوكسل في صحراء بشمسين",
   "origin": "PromptsMotion",
   "type": "Prompt",
-  "category": [],
+  "category": [
+    "3d",
+    "particles"
+  ],
   "creator": "@ivanfioravanti",
   "creator_url": "https://x.com/ivanfioravanti/status/2077763009657627055",
   "page": "https://www.promptsmotion.com/ivanfioravanti-bd9261",
@@ -23,5 +26,34 @@
   "source_prompt_words": 5,
   "listed": true,
   "skill": "styles/pm-ivanfioravanti-bd9261/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/3d.md",
+    "playbooks/particles.md"
+  ],
+  "summary_ar": "تسجيل شاشة مدته نحو 10 ثوانٍ للعبة سباق ثلاثية الأبعاد في المتصفح بعالم مكعبات (فوكسل): بطاقة عنوان داكنة بحروف برتقالية، ثم كاميرا خلف مركبة سباق بمحركين مشتعلين تنطلق بين أعمدة وأقواس صخرية بنية فوق رمال برتقالية وسماء زرقاء بشمسين، وتترك ذيولاً من مكعبات صفراء متطايرة مع خطوط سرعة وعداد سرعة وشريط دفع.",
+  "summary_en": "A roughly 10-second browser screen capture of a voxel 3D racer: a dark title card with orange pixel lettering gives way to a chase camera behind a twin-engine pod that weaves between brown block rock pillars and arches over orange sand under a two-sun blue sky, trailing yellow cube sparks with speed streaks, a speed readout and a boost bar.",
+  "keywords": [
+    "voxel",
+    "racing game",
+    "pod racer",
+    "desert",
+    "chase camera",
+    "particle trail",
+    "browser game",
+    "3d gameplay",
+    "فوكسل",
+    "لعبة سباق",
+    "صحراء",
+    "مكعبات",
+    "لقطة لعب",
+    "ثلاثي الأبعاد"
+  ],
+  "difficulty": 4,
+  "duration_s": 10,
+  "stack": [
+    "Three.js",
+    "WebGL",
+    "HTML Canvas"
+  ],
+  "brief": "styles/pm-ivanfioravanti-bd9261/BRIEF.md"
 }

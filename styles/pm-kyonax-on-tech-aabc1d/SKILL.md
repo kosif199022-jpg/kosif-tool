@@ -1,9 +1,9 @@
 ---
 name: pm-kyonax-on-tech-aabc1d
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second product film for a CLI that turns Org documents into sites, in black and golden yellow inside a fine HUD: a pixel mascot dissolving into glyphs, a decoding code editor, four stages with huge yellow numerals (lex, parse, render, style), a one-flag theme switch, a grid of output files, then wordmark, mascot and install command. Use to make a new video in this look (Product UI); address it by ID pm-kyonax-on-tech-aabc1d.
 ---
 
-# KOSIF TOOL — org2html product showreel
+# KOSIF TOOL — org2html product showreel / عرض أداة مطورين بالأسود والأصفر وتميمة بكسلية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/kyonax-on-tech-aabc1d
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #195
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+فيديو منتج مدته 15 ثانية لأداة سطر أوامر تحوّل مستندات Org إلى مواقع، بالأسود والأصفر الذهبي داخل واجهة تقنية رفيعة: تميمة بكسلية تتشكل وتتفكك إلى رموز، محرر كود وعنوان بكلمة صفراء، أربع مراحل مرقمة بأرقام صفراء ضخمة (تحليل، بناء شجرة، تصيير، تنسيق)، تبديل مظهر بأمر واحد، شبكة ملفات ناتجة، ثم الشعار والتميمة وأمر التثبيت.
+
+A 15-second product film for a CLI that turns Org documents into sites, in black and golden yellow inside a fine HUD: a pixel mascot dissolving into glyphs, a decoding code editor, four stages with huge yellow numerals (lex, parse, render, style), a one-flag theme switch, a grid of output files, then wordmark, mascot and install command.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, HTML Canvas, CSS), suggested duration (15 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك, Code / كود.

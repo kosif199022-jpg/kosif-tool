@@ -1,9 +1,9 @@
 ---
 name: pm-loicrambo-ad6830
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 20 s flat-vector life story on one ground line that starts and ends as an ECG trace: a baby, a kid in a sunny park, a skating teen in a purple retro scene, a commuter in a hamster wheel before a grey city, a heart, a family at sunset, an elderly couple into night who fade to white outlines as the pulse flatlines; age counter top-left, BPM top-right. Use to make a new video in this look (Characters); address it by ID pm-loicrambo-ad6830.
 ---
 
-# KOSIF TOOL — Cycle of life animation
+# KOSIF TOOL — Cycle of life animation / دورة الحياة في عشرين ثانية على خط نبض واحد
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/loicrambo-ad6830
@@ -17,14 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+رسوم مسطحة مدتها 20 ثانية تحكي عمر إنسان على خط أرض واحد يبدأ وينتهي كخط نبض: رضيع ثم طفل في حديقة مشمسة، مراهق بلوح تزلج في مشهد ريترو بنفسجي، موظف يركض داخل عجلة هامستر أمام مدينة رمادية وشبكة أيام متكررة، قلب حب، عائلة أمام بيت عند الغروب، زوجان مسنّان في الخريف ثم الليل، ويتحولان إلى خطوط بيضاء ويستوي النبض. عدّاد العمر يساراً ونبض القلب يميناً.
+
+A 20 s flat-vector life story on one ground line that starts and ends as an ECG trace: a baby, a kid in a sunny park, a skating teen in a purple retro scene, a commuter in a hamster wheel before a grey city, a heart, a family at sunset, an elderly couple into night who fade to white outlines as the pulse flatlines; age counter top-left, BPM top-right.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (SVG, GSAP, Remotion), suggested duration (20 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+Categories: Characters / شخصيات, Shapes / أشكال.
+- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,13 +1,14 @@
 {
   "id": "pm-johnsavage-ai-b091c0",
   "name": "Code-only motion design reel",
-  "name_ar": null,
+  "name_ar": "بكرة موشن مكتوبة بالكود بالكامل بإطار شاشة عرض",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
     "kinetic-type",
-    "code"
+    "code",
+    "particles",
+    "3d"
   ],
   "creator": "@johnsavage_ai",
   "creator_url": "https://x.com/johnsavage_ai/status/2103600308010041677",
@@ -28,8 +29,38 @@
   "listed": true,
   "skill": "styles/pm-johnsavage-ai-b091c0/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
     "playbooks/kinetic-type.md",
-    "playbooks/code.md"
-  ]
+    "playbooks/code.md",
+    "playbooks/particles.md",
+    "playbooks/3d.md"
+  ],
+  "summary_ar": "بكرة أعمال مدتها 15 ثانية بإطار واجهة تقنية (زوايا، رقم فصل، مؤقت زمني): نقطة بيضاء ترسم منحنى تخفيف، كلمة «MOTION» سوداء ضخمة على برتقالي مع «design» بخط يدوي مائل، كتلة كروم سائلة تعكس أضواء نيون أمام نص مائل، شبكة أشكال تتحول من دوائر إلى مربعات ومثلثات، دوامة جسيمات حمراء تتجمع في «100% CODE»، خطوط موجية بيضاء على أزرق، أشرطة مهارات، أنفاق نص دائري، ثم اسم ختامي ينهار.",
+  "summary_en": "A 15-second code-made showreel inside a monitor-style HUD frame: an ease curve, a huge black 'MOTION' on orange with script 'design', a neon-lit chrome blob, a morphing shape grid, a red particle vortex forming '100% CODE', ridgeline waves on blue, skill bars, a circular-text tunnel, and a glitching name card.",
+  "keywords": [
+    "showreel",
+    "code only",
+    "HUD frame",
+    "chrome blob",
+    "shader",
+    "particles",
+    "generative waves",
+    "skill bars",
+    "glitch",
+    "بكرة أعمال",
+    "موشن بالكود",
+    "جسيمات",
+    "شيدر",
+    "إطار تقني",
+    "خلل رقمي"
+  ],
+  "difficulty": 5,
+  "duration_s": 15,
+  "stack": [
+    "Three.js",
+    "WebGL",
+    "HTML Canvas",
+    "Remotion",
+    "React"
+  ],
+  "brief": "styles/pm-johnsavage-ai-b091c0/BRIEF.md"
 }

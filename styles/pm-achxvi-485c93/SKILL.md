@@ -1,9 +1,9 @@
 ---
 name: pm-achxvi-485c93
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second product explainer led by a curly-haired 3D mascot rendered in black halftone dots, cutting between white, electric-blue and black grounds: he whispers to camera, digital-product cards pop in, a phone shows the store, a dashboard grid of checkout, subscription, tax and payout panels fills and gets a blue handwritten stamp, then a black text beat and a serif wordmark end card. Use to make a new video in this look (Product UI); address it by ID pm-achxvi-485c93.
 ---
 
-# KOSIF TOOL — Character-led Pocketsflow product explainer
+# KOSIF TOOL — Character-led Pocketsflow product explainer / شخصية نقطية ترشد مشاهدها في متجر رقمي للمبدعين
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/achxvi-485c93
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #208
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+فيديو منتج مدته 15 ثانية على أرضية بيضاء وزرقاء وسوداء، تقوده شخصية ثلاثية الأبعاد بشعر مجعد مرسومة بنقاط طباعة سوداء (هافتون): تهمس للمشاهد، ثم تظهر بطاقات المنتجات الرقمية على خلفية زرقاء، وهاتف يعرض المتجر، وشبكة لوحات دفع واشتراكات وضرائب وأرباح تنتهي بختم «تم» أزرق، ثم شاشة سوداء بكلمات متتابعة وشعار ختامي بخط سيريف.
+
+A 15-second product explainer led by a curly-haired 3D mascot rendered in black halftone dots, cutting between white, electric-blue and black grounds: he whispers to camera, digital-product cards pop in, a phone shows the store, a dashboard grid of checkout, subscription, tax and payout panels fills and gets a blue handwritten stamp, then a black text beat and a serif wordmark end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG), suggested duration (15 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك, Characters / شخصيات.

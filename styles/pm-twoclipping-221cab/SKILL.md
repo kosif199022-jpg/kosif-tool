@@ -1,9 +1,9 @@
 ---
 name: pm-twoclipping-221cab
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 29-second square launch film for a photo print app, driven by a cursor: a 'develop.' wordmark morphs into a button, a grid of cinematic images opens one full-screen, a glass toolbar and golden-hour slider relight it, a phone and browser float over blue waves, a product page picks frame and size, and hands hang the framed print on a wall. Use to make a new video in this look (Product UI); address it by ID pm-twoclipping-221cab.
 ---
 
-# KOSIF TOOL — Photo print app launch film
+# KOSIF TOOL — Photo print app launch film / فيلم إطلاق تطبيق طباعة الصور: من الشاشة إلى الجدار
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/twoclipping-221cab
@@ -18,32 +18,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيلم إطلاق مربع مدته 29 ثانية لتطبيق يحوّل الصور إلى مطبوعات مؤطرة: كلمة «develop.» سوداء على أبيض مكسور تتحول إلى زر ثم دائرة صورة، شبكة صور سينمائية تتسع إحداها لملء الشاشة، كلمة «relight.» زجاجية، شريط أدوات زجاجي ومنزلق «Golden hour» يحوّل المشهد إلى الغروب، شاشة قفل هاتف، هاتف ومتصفح يطفوان على موجات زرقاء، صفحة منتج لاختيار الإطار والمقاس والسعر، شريط «On its way»، ثم يدان تعلقان الإطار على جدار بظلال نخيل.
+
+A 29-second square launch film for a photo print app, driven by a cursor: a 'develop.' wordmark morphs into a button, a grid of cinematic images opens one full-screen, a glass toolbar and golden-hour slider relight it, a phone and browser float over blue waves, a product page picks frame and size, and hands hang the framed print on a wall.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (React, CSS, SVG, HTML Canvas, Remotion), suggested duration (29 s), aspect 1:1, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Phone / هاتف, Charts / رسوم بيانية, Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, Characters / شخصيات, Photos / صور, Music / موسيقى, Code / كود.
+Categories: Product UI / واجهات المنتج, Phone / هاتف, Photos / صور, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/phone.md](../../playbooks/phone.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/diagrams.md](../../playbooks/diagrams.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/shapes.md](../../playbooks/shapes.md)
-- [playbooks/particles.md](../../playbooks/particles.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
 - [playbooks/photos.md](../../playbooks/photos.md)
-- [playbooks/music.md](../../playbooks/music.md)
-- [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
 * Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

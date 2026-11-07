@@ -1,9 +1,9 @@
 ---
 name: pm-jhylee95-e1152f
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 24-second launch ad for an interactive product-demo tool and its AI demo agent: one huge lowercase word with a coloured full stop every second on backgrounds switching between white, black, indigo and teal, each word paired with a UI element that shows the feature (tooltip, selection box, link field, embed code, stat cards), then a dashboard and the agent chat, ending on an 'online' badge. Use to make a new video in this look (Product UI); address it by ID pm-jhylee95-e1152f.
 ---
 
-# KOSIF TOOL — Supademo launch video
+# KOSIF TOOL — Supademo launch video / إعلان أداة عروض تفاعلية بكلمة واحدة في كل نبضة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/jhylee95-e1152f
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #257
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+إعلان إطلاق مدته 24 ثانية لأداة عروض منتج تفاعلية ووكيل عرض ذكي: كلمة واحدة ضخمة بحروف صغيرة ونقطة ملونة في كل ثانية على خلفيات تتبدل بين الأبيض والأسود والنيلي والأخضر المزرق، وكل كلمة يرافقها عنصر واجهة يشرح الميزة (تلميح، مربع تحديد، رابط، كود تضمين، بطاقات أرقام)، ثم لوحة تحكم ومحادثة الوكيل، وتنتهي بشارة «متصل».
+
+A 24-second launch ad for an interactive product-demo tool and its AI demo agent: one huge lowercase word with a coloured full stop every second on backgrounds switching between white, black, indigo and teal, each word paired with a UI element that shows the feature (tooltip, selection box, link field, embed code, stat cards), then a dashboard and the agent chat, ending on an 'online' badge.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (24 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك, Music / موسيقى.

@@ -1,9 +1,9 @@
 ---
 name: editorial
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A vertical reel styled like an upscale magazine spread: black-and-white or muted photos revealed inside rectangular masks, large Arabic headlines in an elegant Naskh face, small captions and folio numbers on a precise column grid, over a light paper background. Use to make a new video in this look (Kinetic type); address it by ID editorial.
 ---
 
-# KOSIF TOOL — مونتاج تحريري
+# KOSIF TOOL — مونتاج تحريري / مونتاج تحريري بطابع المجلات: صور مقصوصة وعناوين كبيرة وشبكة
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي بطابع صفحات المجلات الراقية: صور بالأبيض والأسود أو بألوان هادئة داخل أقنعة مستطيلة تنكشف، عناوين عربية كبيرة بخط نسخ أنيق، أرقام صفحات وتعليقات صغيرة على شبكة أعمدة دقيقة، وخلفية ورقية فاتحة.
+
+A vertical reel styled like an upscale magazine spread: black-and-white or muted photos revealed inside rectangular masks, large Arabic headlines in an elegant Naskh face, small captions and folio numbers on a precise column grid, over a light paper background.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (30 s), aspect 9:16, difficulty 2/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Kinetic type / تايبوغرافي متحرك, Photos / صور.

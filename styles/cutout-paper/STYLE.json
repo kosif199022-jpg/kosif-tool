@@ -1,7 +1,7 @@
 {
   "id": "cutout-paper",
   "name": "قصاصات ورقية",
-  "name_ar": "قصاصات ورقية",
+  "name_ar": "قصاصات ورقية متحركة على طاولة",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,31 @@
   "playbooks": [
     "playbooks/hand-drawn.md",
     "playbooks/characters.md"
-  ]
+  ],
+  "summary_ar": "مشاهد مصنوعة من ورق مقصوص بحواف ممزقة وخامات ورقية حقيقية: طبقات بظلال ناعمة فوق بعضها، عناصر تنزلق وتدور كأن يدًا تحركها، حركة متقطعة بـ12 إطارًا في الثانية، وكلمات عربية مقصوصة من ورق ملون.",
+  "summary_en": "Scenes built from cut paper with torn edges and real paper grain: layers stacked with soft drop shadows, pieces sliding and pivoting as if pushed by hand, stepped motion at 12 frames per second, and Arabic words cut out of coloured paper for titles.",
+  "keywords": [
+    "cutout paper",
+    "paper cut",
+    "torn paper",
+    "craft animation",
+    "12 fps",
+    "paper texture",
+    "storytelling",
+    "قصاصات ورقية",
+    "ورق مقصوص",
+    "ورق ممزق",
+    "تحريك يدوي",
+    "حكايات",
+    "خامة ورق"
+  ],
+  "difficulty": 3,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/cutout-paper/BRIEF.md"
 }

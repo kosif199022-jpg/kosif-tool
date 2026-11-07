@@ -29,6 +29,10 @@ class UnificationTests(unittest.TestCase):
         self.assertIn("writing-plans", p["process_skills"])
         self.assertNotIn("systematic-debugging", p["process_skills"])
 
+    def test_using_superpowers_is_not_routed(self):
+        for task in ("Fix the crash in the app", "مونتاج سينمائي", "anything"):
+            self.assertNotIn("using-superpowers", m.plan(task)["process_skills"])
+
     def test_arabic_planning(self):
         p = m.plan("اعمل خطة لتطوير برنامج المونتاج")
         self.assertIn("writing-plans", p["process_skills"])

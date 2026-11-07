@@ -1,7 +1,7 @@
 {
   "id": "logo-reveal",
   "name": "كشف شعار",
-  "name_ar": "كشف شعار",
+  "name_ar": "كشف شعار من الأشكال الهندسية",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,30 @@
   "playbooks": [
     "playbooks/ads.md",
     "playbooks/shapes.md"
-  ]
+  ],
+  "summary_ar": "ستينغ قصير لكشف شعار: نقطة ضوء تنقسم إلى أشكال هندسية تتجمع وتلتف لتبني الشعار، ثم لمعة ضوئية تعبر عليه ويظهر الاسم والشعار اللفظي، على خلفية داكنة متدرجة بإيقاع سريع ينتهي بثبات نظيف.",
+  "summary_en": "A short logo sting: a single point of light splits into geometric shapes that orbit, snap and fold together into the logo mark, a light sweep crosses it, then the wordmark and tagline settle beneath on a dark gradient, ending on a clean held frame.",
+  "keywords": [
+    "logo reveal",
+    "logo sting",
+    "logo animation",
+    "brand intro",
+    "light sweep",
+    "geometric build",
+    "كشف شعار",
+    "تحريك شعار",
+    "مقدمة قناة",
+    "هوية بصرية",
+    "لمعة ضوء",
+    "ستينغ"
+  ],
+  "difficulty": 2,
+  "duration_s": 7,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "Web Audio"
+  ],
+  "brief": "styles/logo-reveal/BRIEF.md"
 }

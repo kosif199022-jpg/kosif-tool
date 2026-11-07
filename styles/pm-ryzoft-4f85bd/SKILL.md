@@ -1,9 +1,9 @@
 ---
 name: pm-ryzoft-4f85bd
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A roughly 5-minute 3D cartoon episode in black letterbox: a purple-pink nebula, a red-and-white lighthouse on an asteroid, a young girl keeper with a small round robot, a black robot villain with a red eye and a purple vortex, a red laser-sword fight, a white beam guiding a lost fleet home, a closing hug, then 'The End', a credits roll and a post-credits sting, with speaker-labelled subtitles. Use to make a new video in this look (Characters); address it by ID pm-ryzoft-4f85bd.
 ---
 
-# KOSIF TOOL — Animated space cartoon episode
+# KOSIF TOOL — Animated space cartoon episode / حلقة كرتون فضائية ثلاثية الأبعاد عن حارسة منارة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/ryzoft-4f85bd
@@ -18,12 +18,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+حلقة كرتون ثلاثية الأبعاد مدتها نحو 5 دقائق بشريط سينمائي أسود: سديم بنفسجي وردي، منارة حمراء وبيضاء على كويكب، فتاة صغيرة حارسة المنارة وروبوت كروي صغير، شرير آلي أسود بعين حمراء ودوامة بنفسجية، معركة بسيف ليزر أحمر، شعاع ضوء أبيض ينقذ أسطول السفن، عناق ختامي، ثم «النهاية» وشارة الأسماء ومشهد بعد الشارة، مع ترجمات ملونة بأسماء المتحدثين.
+
+A roughly 5-minute 3D cartoon episode in black letterbox: a purple-pink nebula, a red-and-white lighthouse on an asteroid, a young girl keeper with a small round robot, a black robot villain with a red eye and a purple vortex, a red laser-sword fight, a white beam guiding a lost fleet home, a closing hug, then 'The End', a credits roll and a post-credits sting, with speaker-labelled subtitles.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, Web Audio), suggested duration (295 s), aspect 16:9, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: creative motion.
-- (no category playbook yet)
+Categories: Characters / شخصيات, 3D / ثلاثي الأبعاد.
+- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
-* Develop original choreography from the reference; verify imagery before claiming a match.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

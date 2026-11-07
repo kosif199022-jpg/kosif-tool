@@ -1,14 +1,15 @@
 {
   "id": "pm-davidgmi-01-fd5257",
   "name": "Product ad generated from one photo",
-  "name_ar": null,
+  "name_ar": "ترويج أداة مفتوحة المصدر تصنع إعلاناً من صورة منتج واحدة",
   "origin": "PromptsMotion",
   "type": "Skill",
   "category": [
     "product-ui",
-    "characters",
+    "code",
+    "kinetic-type",
     "photos",
-    "music"
+    "ads"
   ],
   "creator": "unknown",
   "creator_url": "https://x.com/Davidgmi_01/status/2113555264422985810",
@@ -30,8 +31,38 @@
   "skill": "styles/pm-davidgmi-01-fd5257/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/characters.md",
+    "playbooks/code.md",
+    "playbooks/kinetic-type.md",
     "playbooks/photos.md",
-    "playbooks/music.md"
-  ]
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "فيديو ترويجي مدته نحو 65 ثانية لأداة مفتوحة المصدر تحول صورة منتج واحدة إلى إعلان فيديو: عنوان سيريف ضخم مقنّع بالصور على ورق عاجي، طرفية داكنة يُلصق فيها طلب مع صور، فصول بعناوين سيريف (السيناريو، اللقطات، المونتاج) مع جدول نص بتوقيتات وشريط لقطات، صفحة مستودع على GitHub يُضغط فيها زر النجمة، نموذج إعدادات تُملأ حقوله بالبرتقالي ببطء، ثم لقطة من الإعلان الناتج وبطاقة ختام.",
+  "summary_en": "A 65-second promo for an open-source photo-to-video-ad tool: a huge photo-filled serif title on ivory, a dark terminal with a pasted request and image tags, serif chapters (script, clips, edit), a GitHub repo where the star is clicked, a long settings template whose blanks fill in coral line by line under a slow zoom, a clip of the resulting ad, and an end card.",
+  "keywords": [
+    "tool promo",
+    "open source",
+    "terminal demo",
+    "cli walkthrough",
+    "serif chapters",
+    "photo mask title",
+    "github star",
+    "screen zoom",
+    "ai ad workflow",
+    "ترويج أداة",
+    "مفتوح المصدر",
+    "شرح طرفية",
+    "سطر الأوامر",
+    "عناوين سيريف",
+    "إعلان بالذكاء الاصطناعي",
+    "تكبير الشاشة"
+  ],
+  "difficulty": 3,
+  "duration_s": 65,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-davidgmi-01-fd5257/BRIEF.md"
 }

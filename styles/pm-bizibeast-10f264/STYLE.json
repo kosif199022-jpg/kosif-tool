@@ -1,13 +1,14 @@
 {
   "id": "pm-bizibeast-10f264",
   "name": "Bento.surf product video",
-  "name_ar": null,
+  "name_ar": "فيديو منتج لمنصة صناع المحتوى بأسلوب بلوكات البينتو",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
-    "charts",
-    "kinetic-type"
+    "phone",
+    "kinetic-type",
+    "charts"
   ],
   "creator": "@bizibeast",
   "creator_url": "https://x.com/bizibeast/status/2103696876130505124",
@@ -29,7 +30,34 @@
   "skill": "styles/pm-bizibeast-10f264/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/phone.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/charts.md"
+  ],
+  "summary_ar": "فيديو منتج مدته 40 ثانية لمنصة تجمع أدوات صانع المحتوى في مكان واحد: يبدأ بعنوان «ثماني أدوات» وبطاقات اشتراكات متناثرة بأسعارها، ثم تتجمع في شبكة بلوكات ملونة (أزرق وأصفر وأحمر) بسعر واحد، وعنوان على خلفية زرقاء بأشرطة تظليل، وهاتف يعرض صفحة الرابط، وسلسلة رد آلي على الخلفية الحمراء، وتقويم نشر، وبطاقات منتجات صفراء، ومحادثة وكيل ذكي على الكحلي، ولوحة إحصاءات، ثم الشعار.",
+  "summary_en": "A 40-second product video for an all-in-one creator platform: an 'eight tools' headline with scattered priced subscription cards, which merge into a colourful blue/yellow/red bento grid at one price, a highlighter-pill headline on blue, a phone showing the link page, an auto-DM flow on red, a posting calendar, yellow product cards, a navy AI-agent chat, an analytics count-up and a logo end card.",
+  "keywords": [
+    "product video",
+    "creator platform",
+    "bento grid",
+    "SaaS promo",
+    "phone mockup",
+    "price comparison",
+    "auto DM",
+    "pill highlight",
+    "count up",
+    "فيديو منتج",
+    "منصة صناع المحتوى",
+    "شبكة بينتو",
+    "إعلان تطبيق",
+    "مقارنة أسعار"
+  ],
+  "difficulty": 3,
+  "duration_s": 40,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-bizibeast-10f264/BRIEF.md"
 }

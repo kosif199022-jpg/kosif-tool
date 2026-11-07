@@ -16,7 +16,7 @@
 |---|---|---|---|
 | `cartoon-audio-short` | `.claude/skills/cartoon-audio-short/SKILL.md` | 23 KB · 200 سطر | Make a vertical animated cartoon short in Arabic or English. Offers 10 ideas, writes the script, then turns the user's voiceover into a finished MP4 with quiet music… |
 | `editorial-film-edit` | `.claude/skills/editorial-film-edit/SKILL.md` | 6 KB · 48 سطر | Edit footage in an archival editorial style with bundled video and photo references, kinetic text, film grain, bloom, masks and presenter splits. Use for new edits and… |
-| `kosif-black-dragon` | `.claude/skills/kosif-black-dragon/SKILL.md` | 14 KB · 211 سطر | التنين الأسود: new independent skill that studies the KOSIF catalog, links each original source to one traceable entry, and synthesizes new task-specific working… |
+| `kosif-black-dragon` | `.claude/skills/kosif-black-dragon/SKILL.md` | 15 KB · 227 سطر | التنين الأسود: new independent skill that studies the KOSIF catalog, links each original source to one traceable entry, and synthesizes new task-specific working… |
 | `kosif-dragon-mind` | `.claude/skills/kosif-dragon-mind/SKILL.md` | 12 KB · 153 سطر | The thinking brain of the Black Dragon («عقل التنين الأسود»). Use when a task should be thought through before the Black Dragon runs, when the owner asks to decompose,… |
 | `kosif-infinite-matrices` | `.claude/skills/kosif-infinite-matrices/SKILL.md` | 9 KB · 88 سطر | Invent new visual and motion systems from causal bricks (state, operation, law, time, memory, feedback) mined from the 86 reference styles; build a recipe, run an A/B/C… |
 | `kosif-instagram-discovery` | `.claude/skills/kosif-instagram-discovery/SKILL.md` | 3 KB · 34 سطر | Find public Instagram reel references by topic using generated public web search queries; index researcher-confirmed permalinks; rank Arabic/English metadata; create… |
@@ -131,16 +131,17 @@
 
 - 6–9: التنين الأسود — Black Dragon (Native Fusion)
 - 10–18: Working contract
-- 19–28: Commands
-- 29–45: Native reasoning absorbed from Dragon Mind
-- 46–66: Catalog-wide native fusion atlas
-- 67–73: Verified composition and Arabic matching
-- 74–79: Evidence and limits
-- 80–104: Creative Council — no artistic gatekeepers
-- 105–130: Book-informed judgment guard (Thinking, Fast and Slow)
-- 131–160: Source-linked external Atlas candidate bridge (2026-11-06)
-- 161–183: Combined book-to-council thinking integration (PR #238 + PR #233)
-- 184–210: Wired into the Black Dragon engine (2026-11-07)
+- 19–34: Mandatory video-product protocol (إلزامي)
+- 35–44: Commands
+- 45–61: Native reasoning absorbed from Dragon Mind
+- 62–82: Catalog-wide native fusion atlas
+- 83–89: Verified composition and Arabic matching
+- 90–95: Evidence and limits
+- 96–120: Creative Council — no artistic gatekeepers
+- 121–146: Book-informed judgment guard (Thinking, Fast and Slow)
+- 147–176: Source-linked external Atlas candidate bridge (2026-11-06)
+- 177–199: Combined book-to-council thinking integration (PR #238 + PR #233)
+- 200–226: Wired into the Black Dragon engine (2026-11-07)
 
 ### `.claude/skills/kosif-dragon-mind/SKILL.md`
 

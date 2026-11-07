@@ -1,9 +1,9 @@
 ---
 name: pm-rossaxbt-3085b7
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 22-second square launch film for an image model on clean white: floating photo cards, headlines typed with a caret, a full-bleed dune photo, a prompt box generating a horse in switching styles, a blue cyanotype moodboard orbiting a portrait, a control panel of sliders over a pastel aura, a dense photo wall behind a typed search pill, then a crescent logo end card. Use to make a new video in this look (Product UI); address it by ID pm-rossaxbt-3085b7.
 ---
 
-# KOSIF TOOL — Ora 2 image model launch film
+# KOSIF TOOL — Ora 2 image model launch film / فيلم إطلاق نموذج صور بأسلوب أبيض ناعم
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/rossaxbt-3085b7
@@ -17,6 +17,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #40
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+فيلم إطلاق مربع مدته 22 ثانية لنموذج توليد صور على خلفية بيضاء: بطاقات صور طافية، عناوين تُكتب بمؤشر كتابة، صورة صحراء كاملة، مربع إدخال يولّد حصاناً بأساليب متبدلة، لوحة إلهام سيانوتايب زرقاء تتجمع حول بورتريه، لوحة مزالق تحكم فوق هالة ألوان باستيل، جدار ضخم من الصور، ثم شعار بهلال و«Out now».
+
+A 22-second square launch film for an image model on clean white: floating photo cards, headlines typed with a caret, a full-bleed dune photo, a prompt box generating a horse in switching styles, a blue cyanotype moodboard orbiting a portrait, a control panel of sliders over a pastel aura, a dense photo wall behind a typed search pill, then a crescent logo end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, HTML Canvas), suggested duration (22 s), aspect 1:1, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Characters / شخصيات, Photos / صور, Music / موسيقى, Code / كود.

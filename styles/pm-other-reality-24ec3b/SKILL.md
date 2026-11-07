@@ -1,9 +1,9 @@
 ---
 name: pm-other-reality-24ec3b
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 2.5 min watercolour cartoon music video starring a smiling orange box creature and a bespectacled scientist, one storybook scene per lyric line (retro computer, crowned throne, party hats, danger gauge, heart cage, crowned serpent, desert road, paper-clip planet), with lyric captions in a dark pill and a red-curtain stage finale. Use to make a new video in this look (Characters); address it by ID pm-other-reality-24ec3b.
 ---
 
-# KOSIF TOOL — Opus visual design test
+# KOSIF TOOL — Opus visual design test / فيديو كليب كرتوني بألوان مائية عن الذكاء الاصطناعي بطله مربع برتقالي وعالم
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/other-reality-24ec3b
@@ -17,28 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو موسيقي كرتوني طويل (نحو دقيقتين ونصف) بملمس ألوان مائية وورق، بطله مخلوق مربع برتقالي بأرجل صغيرة ووجه مبتسم وعالِم بمعطف أبيض ونظارة: يخرج من شاشة كمبيوتر قديم، يتزلج على منحنى، يجلس على عرش بتاج، حفلة بقبعات، عدّاد خطر، قفص قلب وردي، أفعى بتاج وكلمة BOOM، طريق صحراوي، كهف، جزيرة على كوكب مليء بمشابك ورق، ونهاية على مسرح أحمر بعنوان كبير، مع ترجمة كلمات الأغنية في كبسولة داكنة أسفل الشاشة.
+
+A 2.5 min watercolour cartoon music video starring a smiling orange box creature and a bespectacled scientist, one storybook scene per lyric line (retro computer, crowned throne, party hats, danger gauge, heart cage, crowned serpent, desert road, paper-clip planet), with lyric captions in a dark pill and a red-curtain stage finale.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (157 s), aspect 16:9, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, Characters / شخصيات, Photos / صور, Music / موسيقى, Code / كود.
-- [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/diagrams.md](../../playbooks/diagrams.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/shapes.md](../../playbooks/shapes.md)
-- [playbooks/particles.md](../../playbooks/particles.md)
+Categories: Characters / شخصيات, Music / موسيقى, Hand-drawn / رسم يدوي.
 - [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/photos.md](../../playbooks/photos.md)
 - [playbooks/music.md](../../playbooks/music.md)
-- [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/hand-drawn.md](../../playbooks/hand-drawn.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 * Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
 * Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Order stroke draw-on like a human hand would; keep imperfection deliberate; pace reveals to narration.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

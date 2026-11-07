@@ -1,13 +1,14 @@
 {
   "id": "pm-m1n9-k7-ff9ab9",
   "name": "Kinetic type and particle showreel",
-  "name_ar": null,
+  "name_ar": "شوريل تايبوغرافي وجسيمات سريع لمصمم موشن",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
     "kinetic-type",
-    "particles"
+    "particles",
+    "shapes",
+    "3d"
   ],
   "creator": "@m1n9_k7",
   "creator_url": "https://x.com/m1n9_k7/status/2103580011882295601",
@@ -28,8 +29,39 @@
   "listed": true,
   "skill": "styles/pm-m1n9-k7-ff9ab9/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
     "playbooks/kinetic-type.md",
-    "playbooks/particles.md"
-  ]
+    "playbooks/particles.md",
+    "playbooks/shapes.md",
+    "playbooks/3d.md"
+  ],
+  "summary_ar": "شوريل مدته 15 ثانية بإيقاع سريع يتنقل كل ثانية تقريباً بين عوالم لونية: كرة ترتد على خط أفق أسود، كلمة ضخمة على أحمر، حرف يُكتب على ورق، كلمة بأصداء خطية على أزرق كهربائي، شبكة نقاط تتحول، أشكال نقطية ثلاثية الأبعاد، فقاعة سائلة لامعة داخل كلمة، تفكك نصي إلى جسيمات، نمط هافتون أحمر، تشويش RGB، كلمات متكررة مموجة، ثم اسم وتوقيع؛ كل ذلك داخل إطار واجهة كاميرا بأرقام زمنية صغيرة.",
+  "summary_en": "A 15-second rapid showreel that jumps roughly every second between colour worlds: a ball bouncing on a black horizon, a huge word on red, a letter writing itself on paper, an outlined-echo word on electric blue, morphing dot grids, 3D point clouds, a liquid blob inside a word, text dissolving into particles, halftone rings, RGB glitch and a name sign-off, all in a camera-HUD frame.",
+  "keywords": [
+    "showreel",
+    "motion designer reel",
+    "kinetic type",
+    "particles",
+    "point cloud",
+    "metaballs",
+    "halftone",
+    "glitch",
+    "HUD frame",
+    "fast cuts",
+    "شوريل",
+    "تايبوغرافي متحرك",
+    "جسيمات",
+    "قطع سريع",
+    "مصمم موشن"
+  ],
+  "difficulty": 5,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "HTML Canvas",
+    "Three.js",
+    "WebGL",
+    "SVG"
+  ],
+  "brief": "styles/pm-m1n9-k7-ff9ab9/BRIEF.md"
 }

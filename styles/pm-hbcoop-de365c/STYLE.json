@@ -1,10 +1,14 @@
 {
   "id": "pm-hbcoop-de365c",
   "name": "Full Stop figure sequence",
-  "name_ar": null,
+  "name_ar": "متتالية أشكال «شكل 1… شكل 9» على ورق كريمي: من نقطة إلى كرة وسرب وعالم",
   "origin": "PromptsMotion",
   "type": "Prompt",
-  "category": [],
+  "category": [
+    "3d",
+    "shapes",
+    "particles"
+  ],
   "creator": "@HBCoop_",
   "creator_url": "https://x.com/HBCoop_/status/2107139305324122491",
   "page": "https://www.promptsmotion.com/hbcoop-de365c",
@@ -23,5 +27,40 @@
   "source_prompt_words": 17,
   "listed": true,
   "skill": "styles/pm-hbcoop-de365c/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/3d.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md"
+  ],
+  "summary_ar": "مقطع 16:9 مدته نحو 29 ثانية على ورق كريمي هادئ يتطور فيه شكل واحد من نقطة إلى خط ثم دائرة ثم كرة سوداء لامعة ثلاثية الأبعاد بظل ناعم، ثم عدسة زجاجية تكسر سطور كود منسوخة على الأرض، وكرة ترتد تاركة أثراً منقطاً أحمر، وسرب جسيمات يتلوّى، وكرة أرضية بنقش نقطي تدور، ثم تعود نقطة وتصير نقطة نهاية جملة مكتوبة، وتحت كل مرحلة تعليق «شكل N» بخط مائل.",
+  "summary_en": "A 29 s 16:9 piece on cream paper where one shape evolves from a point to a line, a circle and a glossy black 3D sphere, then a glass lens over code, a ball bouncing with a red dotted trail, a particle flock and a halftone globe, before shrinking to the full stop of a typed sentence, each stage captioned 'FIG. N' in italic serif, with no cuts.",
+  "keywords": [
+    "generative",
+    "figure sequence",
+    "morphing shape",
+    "glossy sphere",
+    "glass refraction",
+    "bouncing ball trail",
+    "particle flock",
+    "halftone globe",
+    "editorial serif",
+    "minimal paper",
+    "تحول الأشكال",
+    "كرة لامعة",
+    "انكسار زجاجي",
+    "سرب جسيمات",
+    "كرة أرضية",
+    "ورق كريمي",
+    "تصميم بسيط"
+  ],
+  "difficulty": 5,
+  "duration_s": 29,
+  "stack": [
+    "Remotion",
+    "React",
+    "Three.js",
+    "WebGL",
+    "SVG"
+  ],
+  "brief": "styles/pm-hbcoop-de365c/BRIEF.md"
 }

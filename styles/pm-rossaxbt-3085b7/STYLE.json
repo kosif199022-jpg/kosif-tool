@@ -1,7 +1,7 @@
 {
   "id": "pm-rossaxbt-3085b7",
   "name": "Ora 2 image model launch film",
-  "name_ar": null,
+  "name_ar": "فيلم إطلاق نموذج صور بأسلوب أبيض ناعم",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -42,5 +42,33 @@
     "playbooks/photos.md",
     "playbooks/music.md",
     "playbooks/code.md"
-  ]
+  ],
+  "summary_ar": "فيلم إطلاق مربع مدته 22 ثانية لنموذج توليد صور على خلفية بيضاء: بطاقات صور طافية، عناوين تُكتب بمؤشر كتابة، صورة صحراء كاملة، مربع إدخال يولّد حصاناً بأساليب متبدلة، لوحة إلهام سيانوتايب زرقاء تتجمع حول بورتريه، لوحة مزالق تحكم فوق هالة ألوان باستيل، جدار ضخم من الصور، ثم شعار بهلال و«Out now».",
+  "summary_en": "A 22-second square launch film for an image model on clean white: floating photo cards, headlines typed with a caret, a full-bleed dune photo, a prompt box generating a horse in switching styles, a blue cyanotype moodboard orbiting a portrait, a control panel of sliders over a pastel aura, a dense photo wall behind a typed search pill, then a crescent logo end card.",
+  "keywords": [
+    "product launch",
+    "image model",
+    "ai launch",
+    "typewriter",
+    "photo cards",
+    "moodboard",
+    "sliders",
+    "photo wall",
+    "white minimal",
+    "إطلاق منتج",
+    "نموذج صور",
+    "كتابة حرفية",
+    "لوحة إلهام",
+    "بطاقات صور",
+    "تصميم أبيض"
+  ],
+  "difficulty": 3,
+  "duration_s": 22,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "HTML Canvas"
+  ],
+  "brief": "styles/pm-rossaxbt-3085b7/BRIEF.md"
 }

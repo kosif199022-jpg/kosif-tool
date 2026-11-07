@@ -1,9 +1,9 @@
 ---
 name: pm-ik-builds-b8bdcf
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second launch film led by a glossy teal ball: it bounces on a drawn line over off-white paper leaving dotted ghost trails and red handwritten notes beside taped documents, then on a dark board it glows and absorbs them, a huge extruded block-letter headline tumbles, a chart draws a rising S-curve, and it returns to paper for the logo. Use to make a new video in this look (Product UI); address it by ID pm-ik-builds-b8bdcf.
 ---
 
-# KOSIF TOOL — Paper-style product launch film
+# KOSIF TOOL — Paper-style product launch film / فيلم إطلاق بأسلوب الورق: كرة فيروزية تقود القصة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/ik-builds-b8bdcf
@@ -18,28 +18,29 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيلم إطلاق منتج مدته 15 ثانية تقوده كرة فيروزية لامعة: ترتد على خط مرسوم فوق ورق أبيض تاركة آثاراً منقطة وملاحظات بخط اليد، تحيط بها أوراق ووثائق بشرائط لاصقة، ثم ينقلب المشهد إلى سبورة داكنة تتوهج فيها الكرة وتمتص الأوراق، عنوان ضخم بأحرف كتلية ثلاثية الأبعاد يتبعثر، رسم بياني بمنحنى صاعد، ثم عودة إلى الورق والشعار.
+
+A 15-second launch film led by a glossy teal ball: it bounces on a drawn line over off-white paper leaving dotted ghost trails and red handwritten notes beside taped documents, then on a dark board it glows and absorbs them, a huge extruded block-letter headline tumbles, a chart draws a rising S-curve, and it returns to paper for the logo.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, GSAP, SVG, Remotion, Web Audio), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, Characters / شخصيات, Music / موسيقى, Code / كود.
+Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Hand-drawn / رسم يدوي, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/diagrams.md](../../playbooks/diagrams.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 - [playbooks/shapes.md](../../playbooks/shapes.md)
-- [playbooks/particles.md](../../playbooks/particles.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/music.md](../../playbooks/music.md)
-- [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/hand-drawn.md](../../playbooks/hand-drawn.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Order stroke draw-on like a human hand would; keep imperfection deliberate; pace reveals to narration.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.
