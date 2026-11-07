@@ -399,7 +399,27 @@ def judgment_guard_engine():
     return module
 
 
+def build_studio_engine():
+    """Load the native 3D build studio (Blender/Unreal planning; nothing is launched)."""
+    path = Path(__file__).with_name("build_studio.py")
+    spec = importlib.util.spec_from_file_location("_kosif_dragon_build_studio", path)
+    if spec is None or spec.loader is None:
+        raise ValueError("3D build studio unavailable")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
 def main(argv=None) -> int:
+    argv = list(sys.argv[1:] if argv is None else argv)
+    if argv[:1] == ["build3d"]:
+        return build_studio_engine().main(argv[1:])
+    if argv[:1] == ["motion"]:
+        path = Path(__file__).with_name("motion_styles.py")
+        spec = importlib.util.spec_from_file_location("_kosif_dragon_motion_styles", path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        return module.main(argv[1:])
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--root", type=Path, default=ROOT)
     cmd = ap.add_subparsers(dest="command", required=True)
@@ -417,6 +437,8 @@ def main(argv=None) -> int:
     j = cmd.add_parser("think-review", help="Book-informed fast/slow judgment check; no expert agents executed")
     j.add_argument("--input", type=Path, required=True, help="Structured JSON decision brief")
     j.add_argument("--out", type=Path, help="Optional JSON review output")
+    cmd.add_parser("build3d", help="3D build studio: list|principles|kit|match|brief|lint (planning only)")
+    cmd.add_parser("motion", help="Code-motion styles: list|principles|match|brief|clone-plan|vo-timeline|cue-check")
     v = cmd.add_parser("verify", help="Verify the catalog-source fingerprints")
     v.add_argument("--out", type=Path, required=True)
     args = ap.parse_args(argv)

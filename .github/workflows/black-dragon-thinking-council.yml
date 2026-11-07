@@ -8,6 +8,8 @@ on:
       - 'tests/test_black_dragon_creative_council.py'
       - 'tests/test_black_dragon_atlas_council_bridge.py'
       - 'tests/test_black_dragon_judgment_guard.py'
+      - 'tests/test_black_dragon_build_studio.py'
+      - 'tests/test_black_dragon_motion_styles.py'
       - 'tests/test_dragon_mind_book.py'
       - '.github/workflows/black-dragon-thinking-council.yml'
   push:
@@ -30,6 +32,8 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_black_dragon_creative_council.py' -v
           python3 -m unittest discover -s tests -p 'test_black_dragon_atlas_council_bridge.py' -v
           python3 -m unittest discover -s tests -p 'test_black_dragon_judgment_guard.py' -v
+          python3 -m unittest discover -s tests -p 'test_black_dragon_build_studio.py' -v
+          python3 -m unittest discover -s tests -p 'test_black_dragon_motion_styles.py' -v
       - name: Verify plan uses all 525 records and book trap checks
         run: |
           python3 .claude/skills/kosif-black-dragon/scripts/creative_council.py plan \
