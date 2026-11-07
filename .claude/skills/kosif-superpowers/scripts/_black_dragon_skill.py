@@ -57,10 +57,11 @@ SCRIPT = {
     "dragon-mind": SKILLS / "kosif-dragon-mind" / "scripts",
     "saas-animation": SKILLS / "saas-animation" / "scripts",
     "creative-council": SKILLS / "kosif-black-dragon" / "scripts",
+    "dragon-montage": SKILLS / "kosif-dragon-montage" / "scripts",
 }
 RECIPES = tuple(SCRIPT)
 NEEDS_MEDIA = {"social", "video-editor", "motion-energy", "captions-audio", "shadow-theatre", "voice-check",
-               "animation-qa", "hyperframes-beats", "montage-tools", "mimic-analyze"}
+               "animation-qa", "hyperframes-beats", "montage-tools", "mimic-analyze", "dragon-montage"}
 NEEDS_MODULE = {"excel-lambdas": "openpyxl", "motion-energy": "PIL", "excel-model": "openpyxl",
                 "excel-check": "openpyxl", "captions-audio": "numpy", "shadow-theatre": "numpy",
                 "animation-qa": "PIL", "hyperframes-beats": "numpy", "mimic-analyze": "cv2", "pixel-painter": "cv2",
@@ -848,7 +849,27 @@ def saas_animation(r, d, task, clip, selftest):
                                "and the sound and Blender scripts need scipy and Blender"})
 
 
-RUNNERS = {"prompt-master": prompt_master, "prompt-architect": prompt_architect, "reel-hooks": reel_hooks,
+def dragon_montage(r, d, task, clip, selftest):
+    """The eight-station montage protocol end to end on one clip: analyse, brief, concepts, look, EDL,
+    render, review. Transcription is skipped (no model download); the preview render keeps it fast."""
+    job = r.work / "job"
+    r.call("dragon_montage.py edit: footage to an edited video",
+           [*PY_SIBLINGS, str(d / "dragon_montage.py"), "edit", task, "--clip", str(clip), "--job", str(job),
+            "--seconds", "4", "--no-transcribe", "--preview", "--rounds", "1"], timeout=900)
+    for name in ("analysis.json", "edl.json", "review.json", "report.md"):
+        r.output(job / name)
+    edl, review = _json(job / "edl.json"), _json(job / "review.json")
+    r.check("every station wrote its contract file",
+            all((job / f"{k}.json").is_file() for k in ("analysis", "brief", "concepts", "look", "edl", "render", "review")))
+    r.check("the edit has cuts and every cut has a reason",
+            bool(edl["events"]) and all(str(e.get("reason", "")).strip() for e in edl["events"]), len(edl["events"]))
+    final = job / _json(job / "render.json")["final"]
+    r.output(final)
+    r.check("a rendered video exists", final.is_file() and final.stat().st_size > 0, str(final.name))
+    r.check("the review produced a verdict", review.get("verdict") in ("ship", "fix"), review.get("verdict"))
+
+
+RUNNERS = {"dragon-montage": dragon_montage, "prompt-master": prompt_master, "prompt-architect": prompt_architect, "reel-hooks": reel_hooks,
            "excel-lambdas": excel_lambdas, "social": social, "video-editor": video_editor,
            "motion-energy": motion_energy, "image-prompts": image_prompts, "video-prompts": video_prompts,
            "excel-model": excel_model, "excel-check": excel_check, "judge-eval": judge_eval,

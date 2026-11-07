@@ -76,6 +76,7 @@
 | [A46 Suno](references/protocol/A46-suno-mcp.md) | أول خطوة (سطر `suno:`)، أو أي موسيقى | v6.1 | Suno MCP |
 | [A45 يوتيوب](references/protocol/A45-youtube-download.md) · [A47 الجيتواي](references/protocol/A47-v62-media-gateway.md) | يوتيوب (على جهاز المستخدم)، `kosif-send` | v6.2 | `yt_get.sh` |
 | [A48 التنين](references/protocol/A48-v64-black-dragon.md) · [A49 في المسار](references/protocol/A49-v65-dragon-in-pipeline.md) | «استدعِ التنين الأسود»، L3، «بأقصى قوة» | v6.5 | `black_dragon.py` |
+| [A50 مونتاج التنين](references/protocol/A50-v66-dragon-montage.md) | «التنين الأسود، مونتاج» | v6.6 | `montage` |
 | [CHANGELOG](references/protocol/CHANGELOG.md) | تبحث عن قسم قديم برقمه أو عن تاريخ الإصدارات | خريطة كل قسم قديم إلى مكانه | — |
 
 ## المستودع الأصل — اقرأه كاملًا حتى لو لم تكن المهارة مثبتة
@@ -245,11 +246,11 @@
 **جسر SEE:** ثلاث طبقات لا تُجمع أعدادها: منهج SEE (حزمة أو متخصص ديناميكي واحد) · جرد قدرات Superpowers بالسكربت وإيصاله · أدوات التنفيذ المتاحة في المضيف؛ ولا تفترض أن عناصر SEE وAtlas ظهرت في `data/powers/*.json`، و`complete=true` لا يُنسب إلى غير ما عدّه السكربت ([النص الكامل](references/protocol/A1-see-thinking.md#جسر-see--المرحلة-2)). ومبادئ اختيار الأداة في أي بيئة وفصول المجموعات الخمس عشرة في [A28](references/protocol/A28-capability-routing.md).
 
 ```bash
-mkdir -p out/<YYYYMMDD>-<اسم-قصير>                                                                                   # مجلد العمل (out/ مُدرج في .gitignore)؛ أنشئه قبل --out
-python3 .claude/skills/kosif-superpowers/scripts/skill_intelligence.py brief "<الطلب بكلماتي>"                         # التقرير المقروء
-python3 .claude/skills/kosif-superpowers/scripts/skill_intelligence.py brief "<الطلب>" --out <مجلد العمل>/brief.json   # يحفظ JSON ويطبع ملخصًا قصيرًا
-python3 .claude/skills/kosif-superpowers/scripts/skill_intelligence.py brief "<الطلب>" --terms "accounting ledger"     # عند سوء التوجيه
-python3 .claude/skills/kosif-superpowers/scripts/skill_intelligence.py deep SP-0116 ARAB-12 montage-pro                # بطاقات المرشحات دفعة واحدة
+mkdir -p out/<YYYYMMDD>-<اسم-قصير>  # مجلد العمل (out/ مُدرج في .gitignore)؛ أنشئه قبل --out
+python3 .claude/skills/kosif-superpowers/scripts/skill_intelligence.py brief "<الطلب بكلماتي>"  # التقرير المقروء
+python3 .claude/skills/kosif-superpowers/scripts/skill_intelligence.py brief "<الطلب>" --out <مجلد العمل>/brief.json  # يحفظ JSON ويطبع ملخصًا قصيرًا
+python3 .claude/skills/kosif-superpowers/scripts/skill_intelligence.py brief "<الطلب>" --terms "accounting ledger"  # عند سوء التوجيه
+python3 .claude/skills/kosif-superpowers/scripts/skill_intelligence.py deep SP-0116 ARAB-12 montage-pro  # بطاقات المرشحات دفعة واحدة
 ```
 
 **المستوى الأول — الفحص الشامل (إلزامي، آلي، بإيصال):** السكربت يقرأ كل سجل في كل ملف من `data/powers/*.json` (المعرف، الاسم، الوصف، المجموعة، العائلة، الحالة، المتطلبات، القسم، متى تُستخدم)، ويصنّفه في مجموعته، ويحسب صلته بطلبي، ويطبع **إيصال تغطية**: عدد السجلات على القرص = عدد ما فُحص = عدد ما صُنّف، وعدد التالف وغير المصنف، وبصمة SHA-256 للكتالوج كله. **شرط الإتمام:** `complete = true`. بدونه لا تكتب «راجعت كل القدرات».

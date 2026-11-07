@@ -1,5 +1,7 @@
 # A50 — USIP v6.6: بروتوكول مونتاج التنين الأسود (Dragon Montage)
 
+> **متى تقرأه / when to read:** «التنين الأسود، مونتاج»، أو فيديوهات معاها طلب مونتاج أو ريل، أو «اعمل زي الفيديو ده» · [العودة إلى النواة / back to the core](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
+
 **Trigger:** «التنين الأسود، مونتاج» / «مونتاج بالتنين» / «اعمل ريل من الفيديو ده» / «اعمل زي الفيديو ده», with one or more videos.
 
 **Runs:** `black_dragon.py montage edit "<task>" --clip … [--music …] [--reference …]`
