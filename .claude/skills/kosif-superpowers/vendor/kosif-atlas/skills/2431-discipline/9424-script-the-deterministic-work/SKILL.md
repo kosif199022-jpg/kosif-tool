@@ -15,7 +15,7 @@ A drift corrector for the discipline of offloading deterministic sub-work to
 a script instead of performing it in your head. The method, re-anchor, audit
 the work in flight, correct forward, report, and the tone that firing this is
 not an accusation, lives in
-`${CLAUDE_PLUGIN_ROOT}/context/re-anchor-audit-correct.md`.
+[`${CLAUDE_PLUGIN_ROOT}/context/re-anchor-audit-correct.md`](../../context/re-anchor-audit-correct.md).
 Read it; this file adds only what is specific to scripting deterministic work.
 
 ## The discipline this re-anchors

@@ -14,7 +14,7 @@ description: Execute the prioritized attacks against an AI system within the rul
 ## Procedure
 
 1. **Confirm the rules of engagement first.** Scope, in/out-of-bounds, data-handling (no real PII to test infra; use canary secrets), kill-switch, disclosure. No RoE → stop and get one from the `ai-redteam-lead`. Testing without RoE is an incident, not a test.
-2. **Work the prioritized taxonomy in order** (P0 first), pulling techniques from `../../knowledge/ai-red-teaming-patterns-2026.md`:
+2. **Work the prioritized taxonomy in order** (P0 first), pulling techniques from [`../../knowledge/ai-red-teaming-patterns-2026.md`](../../knowledge/ai-red-teaming-patterns-2026.md):
    - **Direct injection / jailbreaks** — roleplay/persona, encoding/obfuscation (base64/leetspeak/translation), many-shot, crescendo, payload-splitting. Goal: bypass the guardrail in the user's own turn.
    - **Indirect injection** — plant the instruction in content the model **reads** (a RAG chunk, a webpage it browses, an email it summarizes, a tool result). The highest-yield, most-missed class — test *every* untrusted-content seam.
    - **Disclosure & extraction** — coax out PII/secrets/cross-tenant data; prompt for memorized training data; leak the system prompt (LLM07/LLM02).
@@ -23,7 +23,7 @@ description: Execute the prioritized attacks against an AI system within the rul
 3. **Capture every attempt reproducibly.** Payload + full transcript + model/version + settings (temperature, system prompt) + observed behavior + the OWASP/ATLAS class. Note the **success rate** if probabilistic. A finding you can't re-run isn't a finding.
 4. **Assign a provisional severity (likelihood × impact)** per finding as you go, on the lead's scale, so triage isn't a from-scratch pass later.
 5. **Automate what repeats into a harness.** Turn the productive attacks into a suite — **PyRIT** (orchestrated multi-turn + scoring), **Garak** (probe library), **Promptfoo red-team** (config-driven, CI-friendly), or **Giskard** (vulnerability scan). Give it attack datasets per class, a **scorer/judge** (was the attack successful? — often an LLM-as-judge with a strict adversarial rubric), pass-fail gates, and a **regression baseline** wired into CI. **Keep it distinct from quality eval-regression** (`llm-evaluation-engineering`'s domain) — same tools, different question.
-6. **Hand triaged findings to remediation.** Dedup, confirm reproducibility, rank by severity, and pass to `harden-and-remediate-ai-system`. Record everything in `../../templates/ai-redteam-findings-report.md`.
+6. **Hand triaged findings to remediation.** Dedup, confirm reproducibility, rank by severity, and pass to [`harden-and-remediate-ai-system`](../harden-and-remediate-ai-system/SKILL.md). Record everything in [`../../templates/ai-redteam-findings-report.md`](../../templates/ai-redteam-findings-report.md).
 
 ## Worked example
 
@@ -43,4 +43,4 @@ description: Execute the prioritized attacks against an AI system within the rul
 - **Indirect injection is the one that gets missed** — test every seam where the model reads attacker-controllable content, not just the user turn.
 - **Attack the tools, not just the text** on any agentic system — unauthorized tool calls are the high-impact findings.
 - **Automate so it can't regress** — bake successful attacks into the CI harness; keep the adversarial suite distinct from quality eval-regression.
-- Jailbreak techniques and model behaviors are **volatile** — re-verify a technique against the target model (and re-check after any version bump); carry retrieval dates. See `../../knowledge/ai-red-teaming-patterns-2026.md`.
+- Jailbreak techniques and model behaviors are **volatile** — re-verify a technique against the target model (and re-check after any version bump); carry retrieval dates. See [`../../knowledge/ai-red-teaming-patterns-2026.md`](../../knowledge/ai-red-teaming-patterns-2026.md).

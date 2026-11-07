@@ -16,7 +16,7 @@ certification needs. The MCU and parts are conclusions of these — not the star
 
 ## Step 2 — Decide module vs custom PCB
 
-Traverse `../../knowledge/module-vs-custom-pcb-decision-tree.md`:
+Traverse [`../../knowledge/module-vs-custom-pcb-decision-tree.md`](../../knowledge/module-vs-custom-pcb-decision-tree.md):
 volume × cost × size × certification × time-to-market. Special-case **wireless** — a
 pre-certified radio module reuses its FCC/CE approval; a discrete radio means your own
 intentional-radiator certification. State the crossover conditions.
@@ -42,5 +42,5 @@ Note that certification is a **test-lab verdict**, not something asserted here.
 
 An architecture brief: **build-vs-buy verdict + requirements + MCU/component direction +
 power tree + interface plan + pre-compliance posture + the flip conditions.** Hand
-component detail to `select-components-and-bom`,
+component detail to [`select-components-and-bom`](../select-components-and-bom/SKILL.md),
 then schematic + layout to `pcb-design-engineer`.

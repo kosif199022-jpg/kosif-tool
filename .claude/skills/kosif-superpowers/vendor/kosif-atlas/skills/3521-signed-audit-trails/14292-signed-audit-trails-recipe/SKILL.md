@@ -7,7 +7,7 @@ description: Step-by-step cookbook for setting up cryptographically signed audit
 
 Cookbook-style walkthrough for cryptographically signed receipts on every
 Claude Code tool call. This is the teaching skill. For the runtime
-implementation, install the `protect-mcp` plugin.
+implementation, install the [`protect-mcp`](../../../protect-mcp/) plugin.
 
 ## What this gives you
 
@@ -233,9 +233,9 @@ create the policy in Step 2.
 
 ## Related in this marketplace
 
-- `protect-mcp` — the runtime hook implementation
+- [`protect-mcp`](../../../protect-mcp/) — the runtime hook implementation
   (use this plugin in production)
-- `review-agent-governance` — require
+- [`review-agent-governance`](../../../review-agent-governance/) — require
   human approval before review-surface actions; composes with protect-mcp
 
 ## References

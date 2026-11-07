@@ -3,9 +3,6 @@ name: "ciso-review"
 description: "/cs:ciso-review <plan> — Risk-paranoid interrogation of any plan that touches data, compliance, or production access. Use when launching features that handle customer data, before a SOC 2 / ISO audit, or after any incident or near-miss."
 ---
 
-> **Note (KOSIF):** the calculator scripts named below (../../../c-level-advisor/..., product-team/...) belong to the original c-level-advisor repository and are **not bundled** here. Do the same analysis directly: read the user's data, write a short Python script for the calculation if numbers are involved, show the formula, and tell the user the original tool was not available.
-
-
 # /cs:ciso-review — CISO Forcing Questions
 
 **Command:** `/cs:ciso-review <plan>`
@@ -107,8 +104,8 @@ python ../../../c-level-advisor/skills/ciso-advisor/scripts/compliance_tracker.p
 
 ## Related
 
-- Agent: `cs-ciso-advisor`
-- Skill: `ciso-advisor`
+- Agent: [`cs-ciso-advisor`](../../agents/cs-ciso-advisor.md)
+- Skill: [`ciso-advisor`](../../../c-level-advisor/skills/ciso-advisor/SKILL.md)
 - Compliance: `../../../ra-qm-team/`
 
 ---

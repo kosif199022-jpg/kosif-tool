@@ -10,13 +10,13 @@ The commission model is the brokerage's biggest recurring recruiting lever. Mode
 ## The loop
 
 1. **Start from the agent's expected GCI.** Gross commission income per agent per year is the input everything else derives from. Model a realistic band, not a best case.
-2. **Lay the models side by side.** Traverse the split-vs-cap tree in `../../knowledge/residential-brokerage-decision-trees.md`:
+2. **Lay the models side by side.** Traverse the split-vs-cap tree in [`../../knowledge/residential-brokerage-decision-trees.md`](../../knowledge/residential-brokerage-decision-trees.md):
    - **Split** — house takes a percentage of every deal (company dollar scales with production).
    - **Cap** — agent pays the split until a cap, then keeps ~100% (minus fees) for the rest of the year; company dollar plateaus at the cap.
    - **Fee / desk** — flat monthly or per-transaction fee; company dollar is roughly fixed per agent.
    Rates, caps, and fees are `[verify-at-use]` against the brokerage's agreements and the market.
 3. **Compute the crossover.** Find the GCI at which the cap model's company dollar equals the split model's. Below it the split earns the house more; above it the cap does — which is exactly why high producers prefer a cap and want it.
-4. **Weigh recruiting vs retention.** A model that pencils only for the house loses producers; one that pencils only for the agent starves the brokerage. Recruit and retain on the whole value stack, not the split alone (see `../../best-practices/recruit-and-retain-on-economics-and-support.md`).
+4. **Weigh recruiting vs retention.** A model that pencils only for the house loses producers; one that pencils only for the agent starves the brokerage. Recruit and retain on the whole value stack, not the split alone (see [`../../best-practices/recruit-and-retain-on-economics-and-support.md`](../../best-practices/recruit-and-retain-on-economics-and-support.md)).
 
 ## Metrics
 
@@ -34,6 +34,6 @@ The commission model is the brokerage's biggest recurring recruiting lever. Mode
 
 ## See also
 
-- `../transaction-timeline-management/SKILL.md`.
-- Best practice: `../../best-practices/recruit-and-retain-on-economics-and-support.md`.
-- Reference: `../../knowledge/residential-brokerage-reference-2026.md` (commission norms, verify-at-use).
+- [`../transaction-timeline-management/SKILL.md`](../transaction-timeline-management/SKILL.md).
+- Best practice: [`../../best-practices/recruit-and-retain-on-economics-and-support.md`](../../best-practices/recruit-and-retain-on-economics-and-support.md).
+- Reference: [`../../knowledge/residential-brokerage-reference-2026.md`](../../knowledge/residential-brokerage-reference-2026.md) (commission norms, verify-at-use).

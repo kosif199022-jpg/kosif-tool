@@ -13,12 +13,12 @@ description: "Frame a fuzzy research ask into a researchable question, run the r
 
 ## Procedure
 
-1. **Run the research-theater gate FIRST.** Traverse `../../knowledge/ux-research-decision-tree.md` Tree C: is there a genuine open question, or is the decision already made and someone wants cover? If it's decided, name it — kill the study or reframe it into a real question. A study that only confirms a made decision burns budget and credibility.
+1. **Run the research-theater gate FIRST.** Traverse [`../../knowledge/ux-research-decision-tree.md`](../../knowledge/ux-research-decision-tree.md) Tree C: is there a genuine open question, or is the decision already made and someone wants cover? If it's decided, name it — kill the study or reframe it into a real question. A study that only confirms a made decision burns budget and credibility.
 2. **Reframe the ask into a researchable question.** "Do users like it?" / "Is it good?" are not researchable. Convert to a specific, answerable question ("where do first-time users abandon checkout, and why?"). State **the decision it informs** — an insight with no decision attached is trivia, so if no decision hangs on it, stop.
 3. **Select the method from the question** via Tree A — never the reverse. Generative (why/what — interviews, diary studies, field) vs evaluative (does-it-work — usability tests); qualitative (why/how) vs quantitative (how-many/how-much — surveys, analytics); attitudinal (what they say) vs behavioral (what they do); moderated vs unmoderated. Name **what the chosen method CANNOT answer** (you can't A/B your way to "why", or interview your way to "how many").
 4. **Size the sample to the claim** via Tree B. ~5 users is enough for **directional** usability discovery; a **statistic** needs a powered quant sample. Set the size the claim requires and state explicitly what that sample can and cannot support — never launder qual into quant.
 5. **Plan the recruit.** Screener (criteria that match the real user, with anti-fraud/anti-professional-tester checks), panel/source, incentive, and scheduling cadence. Name ≥2 recruit sources before declaring a segment unreachable.
-6. **Set the ethics & participant-PII plan BEFORE collecting anything** via Tree D: informed consent (purpose, recording, withdrawal), data minimization (collect only what the question needs), de-identification/anonymization, a **retention limit set now**, and extra care for sensitive populations. Capture in `../../templates/research-plan.md`.
+6. **Set the ethics & participant-PII plan BEFORE collecting anything** via Tree D: informed consent (purpose, recording, withdrawal), data minimization (collect only what the question needs), de-identification/anonymization, a **retention limit set now**, and extra care for sensitive populations. Capture in [`../../templates/research-plan.md`](../../templates/research-plan.md).
 7. **State the seams and flip conditions.** The roadmap decision → `product-management`; visual/IA → `web-design`; A/B-at-scale → `experimentation-growth-engineering`; advanced stats → `data-science-research`. Name the 1-2 facts that would change the plan.
 
 ## Worked example
@@ -41,4 +41,4 @@ description: "Frame a fuzzy research ask into a researchable question, run the r
 - **Ethics/PII plan is set BEFORE collection** — consent, minimize, de-identify, retention limit; sensitive populations get extra care.
 - **Recruit real users** — screen out professional testers and fraud; name ≥2 sources before calling a segment unreachable.
 - The **roadmap decision, the visual design, A/B-at-scale, and advanced stats leave this layer** — route to `product-management` / `web-design` / `experimentation-growth-engineering` / `data-science-research`.
-- Method benchmarks and tooling facts carry a **retrieval date** and are re-verified before a stakeholder commitment. See `../../knowledge/ux-research-patterns-2026.md`.
+- Method benchmarks and tooling facts carry a **retrieval date** and are re-verified before a stakeholder commitment. See [`../../knowledge/ux-research-patterns-2026.md`](../../knowledge/ux-research-patterns-2026.md).

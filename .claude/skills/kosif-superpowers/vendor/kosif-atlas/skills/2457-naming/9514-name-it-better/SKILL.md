@@ -164,7 +164,7 @@ pre-scoring filters could not match.
    consequential rename's blast radius cannot be settled, withhold the
    RECOMMENDED mark and name the evidence that would settle it. A changed
    pick is restated as old → new → why. Contract:
-   `${CLAUDE_PLUGIN_ROOT}/context/recommendation-basis.md`;
+   [`${CLAUDE_PLUGIN_ROOT}/context/recommendation-basis.md`](../../context/recommendation-basis.md);
    full convention: [recommendation-basis](https://github.com/melodic-software/claude-code-plugins/blob/main/docs/conventions/recommendation-basis/README.md#basis-label).
 5. **Human picks.** Stop and let the user choose. Do not apply the name.
 

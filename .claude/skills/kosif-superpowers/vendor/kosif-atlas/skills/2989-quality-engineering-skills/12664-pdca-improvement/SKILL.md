@@ -35,7 +35,7 @@ Use PDCA for:
 
 **Key distinction from 8D:** PDCA is proactive or slow-burn improvement. 8D is reactive to a specific defect or failure. Both use root cause analysis, but PDCA has a broader scope and a pilot step before full deployment.
 
-**When PDCA is used for corrective action** (e.g., responding to an audit finding or recurring NC): a Corrective Action Request (CAR) must also be opened to document root cause, actions, and VOE per ISO 9001 §10.2. PDCA is the improvement methodology; the CAR is the governance record.
+**When PDCA is used for corrective action** (e.g., responding to an audit finding or recurring NC): a [Corrective Action Request (CAR)](../../documentation/car-corrective-action/) must also be opened to document root cause, actions, and VOE per ISO 9001 §10.2. PDCA is the improvement methodology; the CAR is the governance record.
 
 ## Prerequisites
 
@@ -55,7 +55,7 @@ Use PDCA for:
    - What is the target? (SMART: Specific, Measurable, Achievable, Relevant, Time-bound)
 
 2. **Analyse root cause**
-   - Use Fishbone and 5-Why to understand why current performance is below target
+   - Use [Fishbone](../fishbone-analysis/) and [5-Why](../5why-root-cause/) to understand why current performance is below target
    - Use data: Pareto charts, run charts, capability studies
 
 3. **Develop the improvement plan**

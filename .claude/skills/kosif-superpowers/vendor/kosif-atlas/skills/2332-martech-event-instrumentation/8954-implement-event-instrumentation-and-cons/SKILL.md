@@ -13,8 +13,8 @@ description: Implement a tracking plan as working event collection — typed cli
 
 ## Procedure
 
-1. **Load the plan as the contract.** Read `../../templates/tracking-plan.md` and the per-event specs (`../../templates/event-schema-spec.md`). An event not in the plan doesn't get a `track()` call — kick gaps back to the `event-taxonomy-architect` rather than inventing them.
-2. **Codegen a typed tracking library from the plan.** Generate types + call wrappers (Avo / Segment Typewriter-style) so the plan and code can't drift — never hand-write stringly-typed `track('...')`. See `../../knowledge/event-instrumentation-patterns-2026.md`.
+1. **Load the plan as the contract.** Read [`../../templates/tracking-plan.md`](../../templates/tracking-plan.md) and the per-event specs ([`../../templates/event-schema-spec.md`](../../templates/event-schema-spec.md)). An event not in the plan doesn't get a `track()` call — kick gaps back to the `event-taxonomy-architect` rather than inventing them.
+2. **Codegen a typed tracking library from the plan.** Generate types + call wrappers (Avo / Segment Typewriter-style) so the plan and code can't drift — never hand-write stringly-typed `track('...')`. See [`../../knowledge/event-instrumentation-patterns-2026.md`](../../knowledge/event-instrumentation-patterns-2026.md).
 3. **Place each event client- vs server-side per the plan.** Server-side (`Track` from the backend / a server-side CDP source) for revenue/conversion and anything ITP/ad-blockers drop; client-side for UI-context events; wire both for hybrid. Say when you'd move an event server-side for accuracy.
 4. **Wire identity exactly as designed.** `Identify(userId, traits)` on known, `alias`/merge on the anonymous→known transition, a stable `anonymousId`. Don't invent stitching the plan didn't specify. Keep PII in traits behind a consent category — out of event properties.
 5. **Add schema validation to CI.** Generate a schema (JSON Schema / the tracking-library types) from the plan and add a CI gate that fails the PR on an off-plan or mis-typed event. This is the point of catching bad events — cheap at the PR, expensive in the warehouse.

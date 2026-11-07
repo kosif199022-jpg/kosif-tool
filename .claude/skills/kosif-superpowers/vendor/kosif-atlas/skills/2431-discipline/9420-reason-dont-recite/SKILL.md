@@ -14,7 +14,7 @@ metadata:
 A drift corrector for incumbency discipline. The method, re-anchor, audit
 the work in flight, correct forward, report, and the tone that firing this
 is not an accusation, lives in
-`${CLAUDE_PLUGIN_ROOT}/context/re-anchor-audit-correct.md`.
+[`${CLAUDE_PLUGIN_ROOT}/context/re-anchor-audit-correct.md`](../../context/re-anchor-audit-correct.md).
 Read it; this file adds only what is specific to interrogating inherited
 content.
 

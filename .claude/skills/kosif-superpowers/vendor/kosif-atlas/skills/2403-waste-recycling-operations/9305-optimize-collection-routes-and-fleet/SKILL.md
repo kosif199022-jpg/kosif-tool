@@ -14,12 +14,12 @@ description: Raise route density and cut cost-per-stop for a collection territor
 ## Procedure
 
 1. **Measure the baseline before proposing anything.** Pull current **stops per hour**, **windshield time** (drive-to-route + between-clusters + to-disposal), route balance across trucks, and **cost per stop**. A route plan built on guessed numbers is a guess — get the telematics/RouteWare data first.
-2. **Match the truck to the stream and container.** Side-load / automated (ASL) for cart-based residential (the labor + safety win), rear-load for manual/alley, front-load for commercial dumpsters, roll-off for C&D/temporary. Traverse `../../knowledge/waste-operations-decision-tree.md` — don't put an ASL on a route the carts/streets don't support.
+2. **Match the truck to the stream and container.** Side-load / automated (ASL) for cart-based residential (the labor + safety win), rear-load for manual/alley, front-load for commercial dumpsters, roll-off for C&D/temporary. Traverse [`../../knowledge/waste-operations-decision-tree.md`](../../knowledge/waste-operations-decision-tree.md) — don't put an ASL on a route the carts/streets don't support.
 3. **Attack density — it's the profit driver.** Tighten service-area geography, cluster stops, and **balance** the routes (an overloaded route beside a light one wastes capacity). Density × stops-per-hour is what cost-per-stop rolls up from.
 4. **Cut windshield time.** Reduce disposal round-trips (a **transfer station** consolidates loads so trucks don't drive the full haul), sequence to minimize deadhead, and check depot/disposal siting. Unproductive drive time is pure cost.
 5. **Choose static vs dynamic routing deliberately.** **Static** (fixed daily routes, re-balanced periodically) for predictable residential subscription; **dynamic** (re-sequenced from demand + telematics) for on-call commercial and roll-off. Name the tool (RouteWare / Routeware-AMCS / Trux) and the mode — don't default to whatever ships out of the box.
 6. **Set the fleet posture.** The truck mix by stream, the maintenance cadence (refuse duty cycles are brutal — PM keeps the fleet available and safe), and any RNG/EV call grounded in duty cycle + infrastructure + incentives (hand the alt-fuel decision to `waste-operations-lead` if it drives a capital plan).
-7. **State the KPI and the flip conditions.** Cost-per-stop is the number; name the 1-2 facts that would change the routing/fleet call (a new transfer station, a service-area growth that unbalances static routes, an alt-fuel incentive). Capture it in `../../templates/route-optimization-plan.md`.
+7. **State the KPI and the flip conditions.** Cost-per-stop is the number; name the 1-2 facts that would change the routing/fleet call (a new transfer station, a service-area growth that unbalances static routes, an alt-fuel incentive). Capture it in [`../../templates/route-optimization-plan.md`](../../templates/route-optimization-plan.md).
 
 ## Worked example
 
@@ -38,5 +38,5 @@ description: Raise route density and cut cost-per-stop for a collection territor
 - Density and windshield time drive cost-per-stop — **optimize the route before the vehicle** (a faster truck on a sparse route loses).
 - Match the truck to the stream + container; an ASL needs standardized carts + street geometry.
 - Static vs dynamic is a deliberate choice by demand predictability, not a tool default.
-- The disposal round-trip is often the biggest windshield-time lever — cross-reference `manage-disposal-and-regulatory-compliance` for the transfer-station economics.
-- Volatile facts (alt-fuel incentives, tooling feature sets) carry a **retrieval date**. See `../../knowledge/waste-recycling-patterns-2026.md`.
+- The disposal round-trip is often the biggest windshield-time lever — cross-reference [`manage-disposal-and-regulatory-compliance`](../manage-disposal-and-regulatory-compliance/SKILL.md) for the transfer-station economics.
+- Volatile facts (alt-fuel incentives, tooling feature sets) carry a **retrieval date**. See [`../../knowledge/waste-recycling-patterns-2026.md`](../../knowledge/waste-recycling-patterns-2026.md).

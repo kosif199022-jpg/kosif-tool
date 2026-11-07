@@ -3,9 +3,6 @@ name: "cco-review"
 description: "/cs:cco-review <plan> — Retention-obsessed Chief Customer Officer interrogation of any plan that touches customer retention, segmentation, CS team sizing, or CS team hiring. Use when gross retention is slipping, before approving CSM headcount, or when deciding which customer segments to keep or fire."
 ---
 
-> **Note (KOSIF):** the calculator scripts named below (../../../c-level-advisor/..., product-team/...) belong to the original c-level-advisor repository and are **not bundled** here. Do the same analysis directly: read the user's data, write a short Python script for the calculation if numbers are involved, show the formula, and tell the user the original tool was not available.
-
-
 # /cs:cco-review — CCO Forcing Questions
 
 **Command:** `/cs:cco-review <plan>`
@@ -124,8 +121,8 @@ python ../../../c-level-advisor/skills/chief-customer-officer-advisor/scripts/cs
 
 ## Related
 
-- Agent: `cs-cco-advisor`
-- Skill: `chief-customer-officer-advisor`
+- Agent: [`cs-cco-advisor`](../../agents/cs-cco-advisor.md)
+- Skill: [`chief-customer-officer-advisor`](../../../c-level-advisor/skills/chief-customer-officer-advisor/SKILL.md)
 - Adjacent: `../../../business-growth/` (tactical CS execution)
 
 ---

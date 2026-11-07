@@ -15,7 +15,7 @@ description: Pick the right genomics workflow engine, reference build, tool chai
 
 1. **Restate the situation in the tree's terms.** Capture: the **scientific question** (variant discovery, differential expression, cell-type atlas), the **assay** (WGS / WES / somatic / RNA-seq / single-cell / long-read), the **sample scale**, the **team's fluency** (Nextflow / Python / WDL), and the **compute + budget** constraints (owned HPC vs cloud, cost sensitivity).
 2. **Check for a curated community pipeline first.** If **nf-core** (sarek, rnaseq, scrnaseq) or an equivalent curated WDL/Snakemake workflow already covers the assay, adopting + configuring it usually beats hand-rolling — you inherit its tests, containers, and community review. Only go bespoke for what the community doesn't cover.
-3. **Traverse the decision tree** in `../../knowledge/bioinformatics-pipeline-decision-tree.md` against those inputs:
+3. **Traverse the decision tree** in [`../../knowledge/bioinformatics-pipeline-decision-tree.md`](../../knowledge/bioinformatics-pipeline-decision-tree.md) against those inputs:
    - curated pipeline + Nextflow-fluent (or willing) → **Nextflow / nf-core**,
    - cloud/Terra-centric, want Broad GATK WDLs → **WDL + Cromwell / miniwdl**,
    - Python-native research lab, local rule reasoning → **Snakemake**,
@@ -47,4 +47,4 @@ description: Pick the right genomics workflow engine, reference build, tool chai
 - Choose the **validation truth set (GIAB/hap.py)** up front, not after the pipeline is built.
 - Spot instances are safe on fault-tolerant steps, a footgun on long single-shot ones — say which.
 - Clinical-trial operations/regulatory are **not** pipeline choice — route to `clinical-trials`; generic model training → `ml-engineering`.
-- Volatile claims (tool versions, accessory files, cloud pricing) carry a **retrieval date** and are re-verified before a commitment. See `../../knowledge/genomics-workflow-patterns-2026.md`.
+- Volatile claims (tool versions, accessory files, cloud pricing) carry a **retrieval date** and are re-verified before a commitment. See [`../../knowledge/genomics-workflow-patterns-2026.md`](../../knowledge/genomics-workflow-patterns-2026.md).

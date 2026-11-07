@@ -14,12 +14,12 @@ description: Build a prioritized, capacity-weighted grant pipeline and decide wh
 ## Procedure
 
 1. **Restate the program and the prospect universe.** Capture the program (its need, activities, target population, geography, and the org's real *delivery* capacity + budget) and the prospects in scope (federal / state / foundation / corporate). Fit is measured against the program, so name the program precisely first.
-2. **Classify each opportunity in the tree's terms.** Grant type (federal / state / foundation / corporate; project vs general-operating vs capacity; competitive vs formula) sets the compliance weight before anything else — traverse `../../knowledge/grants-lifecycle-decision-tree.md`.
+2. **Classify each opportunity in the tree's terms.** Grant type (federal / state / foundation / corporate; project vs general-operating vs capacity; competitive vs formula) sets the compliance weight before anything else — traverse [`../../knowledge/grants-lifecycle-decision-tree.md`](../../knowledge/grants-lifecycle-decision-tree.md).
 3. **Score funder fit — before effort.** Rate alignment on **mission**, **geography**, **population served**, **funding type** (does the funder give the *kind* of support you need — project vs operating vs capacity), and **typical award size** vs your ask. Call out the *weak* dimensions explicitly; a high-dollar misaligned funder is negative ROI even if won.
 4. **Run the go/no-go gate.** For each aligned prospect weigh: **eligibility** (are you even allowed to apply?), **capacity to deliver** (not just to write the proposal), **cost-to-apply vs expected value** (effort × win-probability × award size), and the **compliance burden** the award would create. Recommend **PASS** when the math says pass — a documented pass is a win, not a failure.
 5. **Prioritize into a pipeline.** Sequence the pursues against real capacity and deadlines — you cannot write ten strong proposals at once. Rank by expected value adjusted for effort and win-probability; stagger deadlines; mark the must-win vs the stretch.
 6. **State the flip conditions.** For each borderline call, name the 1-2 facts that would change it (e.g., "if the cost-match must be cash not in-kind, we pass"; "if we can partner to add the missing capacity, this flips to pursue").
-7. **Hand off.** Pursues go to `write-and-assemble-grant-proposals` to build the case; flag any compliance commitment that needs a pre-check with the compliance specialist.
+7. **Hand off.** Pursues go to [`write-and-assemble-grant-proposals`](../write-and-assemble-grant-proposals/SKILL.md) to build the case; flag any compliance commitment that needs a pre-check with the compliance specialist.
 
 ## Worked example
 
@@ -38,4 +38,4 @@ description: Build a prioritized, capacity-weighted grant pipeline and decide wh
 - **Capacity to *deliver*, not just to write** — winning a grant you can't execute is a compliance and reputation liability.
 - **Sequence against real capacity** — a pipeline that assumes infinite writing/delivery bandwidth is fiction.
 - Individual/major-donor cultivation is **not** this skill → route to `nonprofit-fundraising`.
-- Volatile funder facts (deadlines, eligibility, portal steps) carry a **retrieval date** and are re-verified before a client commitment. See `../../knowledge/grants-management-patterns-2026.md`. **Not legal/accounting advice.**
+- Volatile funder facts (deadlines, eligibility, portal steps) carry a **retrieval date** and are re-verified before a client commitment. See [`../../knowledge/grants-management-patterns-2026.md`](../../knowledge/grants-management-patterns-2026.md). **Not legal/accounting advice.**

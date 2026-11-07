@@ -55,7 +55,7 @@ Render a GitHub-flavored markdown table with these exact columns, in this order:
 
 | Column     | Contents                                                              |
 |------------|-----------------------------------------------------------------------|
-| `#`        | PR number, linked as `#9170`                                   |
+| `#`        | PR number, linked as `[#9170](url)`                                   |
 | `Package`  | Package name. For multi-package PRs, comma-separate (e.g., `react-dom, react`) |
 | `Bump`     | `old → new` (e.g., `7.2.4 → 8.0.10`)                                  |
 | `Type`     | `patch`, `minor`, or `major`. Prefix with `🔒` if the PR addresses a security advisory |

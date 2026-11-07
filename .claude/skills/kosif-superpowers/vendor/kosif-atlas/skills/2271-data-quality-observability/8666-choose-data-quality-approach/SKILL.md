@@ -16,7 +16,7 @@ description: Pick the right data-quality approach and tooling for a described st
 1. **Restate the situation in the tree's terms.** Capture: the **stack** (warehouse, on-dbt-or-not, orchestrator), the **pain** (silent bad data / stakeholder-found errors / no coverage / audit pressure), the **team size & budget**, and the **datasets in scope** with their consumers.
 2. **Separate what you're asserting.** For each concern, classify it: a **known rule** (not-null, unique, referential, accepted-values) → a **test**; the **unknown over time** (freshness slipping, volume anomaly, schema drift, distribution shift) → a **monitor**; a **producer-boundary guarantee** (schema + semantics a consumer relies on) → a **contract**. Most programs need all three — name the mix, don't force one tool to be everything.
 3. **Sequence by ROI.** Freshness + volume monitors first (cheap, catch most real incidents), producer contracts on the highest-value sources next, column-level tests where they earn their keep. Flag any "200 tests, zero monitors" starting point as inverted.
-4. **Traverse the decision tree** in `../../knowledge/data-quality-tooling-decision-tree.md` against those inputs:
+4. **Traverse the decision tree** in [`../../knowledge/data-quality-tooling-decision-tree.md`](../../knowledge/data-quality-tooling-decision-tree.md) against those inputs:
    - already-on-dbt + the check is a schema/row-level rule → **dbt tests** (+ **dbt-expectations** for distribution/value-range assertions),
    - Python-centric pipeline, rich expectation library + data docs wanted → **Great Expectations**,
    - warehouse-native, YAML-first checks + a monitoring UI, dbt-or-not → **Soda Core / Soda Cloud**,
@@ -45,4 +45,4 @@ description: Pick the right data-quality approach and tooling for a described st
 - A contract that blocks nothing is aspirational — say so and put it at the producer boundary, enforced.
 - Block-vs-warn is a per-check decision, not a global default; weigh harm against stall cost.
 - Governance questions (who may access, PII, retention) are **not** DQ — route to `data-governance-privacy`.
-- Volatile claims (platform features, pricing, connector coverage) carry a **retrieval date** and are re-verified before a client commitment. See `../../knowledge/data-observability-patterns-2026.md`.
+- Volatile claims (platform features, pricing, connector coverage) carry a **retrieval date** and are re-verified before a client commitment. See [`../../knowledge/data-observability-patterns-2026.md`](../../knowledge/data-observability-patterns-2026.md).

@@ -15,7 +15,7 @@ A drift corrector for selection discipline: the tool must fit the problem,
 not the reflex. The method, re-anchor, audit the work in flight, correct
 forward, report, and the tone that firing this is not an accusation, lives
 in
-`${CLAUDE_PLUGIN_ROOT}/context/re-anchor-audit-correct.md`.
+[`${CLAUDE_PLUGIN_ROOT}/context/re-anchor-audit-correct.md`](../../context/re-anchor-audit-correct.md).
 Read it; this file adds only what is specific to selecting a tool, library,
 framework, language, or approach.
 
@@ -73,7 +73,7 @@ State the chosen option with a `Basis:`: `verified` with the source URLs or tool
 on, or `judgment` only where the call is not consequential (cross-repo, shared
 infrastructure, irreversible, or security). A consequential choice research cannot settle is
 withheld: raise it as an open question naming the evidence that would settle it. Contract:
-`${CLAUDE_PLUGIN_ROOT}/context/recommendation-basis.md`;
+[`${CLAUDE_PLUGIN_ROOT}/context/recommendation-basis.md`](../../context/recommendation-basis.md);
 full convention: [recommendation-basis](https://github.com/melodic-software/claude-code-plugins/blob/main/docs/conventions/recommendation-basis/README.md#basis-label).
 
 ## Audit. What to look for

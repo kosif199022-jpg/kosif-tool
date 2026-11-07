@@ -71,7 +71,7 @@ export default defineConfig({
 | Rolldown Options | Pass options directly to Rolldown | [advanced-rolldown-options](references/advanced-rolldown-options.md) |
 | CI Environment | CI detection, `'ci-only'` / `'local-only'` values | [advanced-ci](references/advanced-ci.md) |
 
-> For comprehensive migration assistance with complete option mappings, install the dedicated `tsdown-migrate` skill: `npx skills add rolldown/tsdown --skill tsdown-migrate`
+> For comprehensive migration assistance with complete option mappings, install the dedicated [`tsdown-migrate`](../tsdown-migrate/SKILL.md) skill: `npx skills add rolldown/tsdown --skill tsdown-migrate`
 
 ## Build Options
 

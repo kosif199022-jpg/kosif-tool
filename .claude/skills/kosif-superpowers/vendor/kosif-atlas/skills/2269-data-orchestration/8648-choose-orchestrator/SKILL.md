@@ -15,7 +15,7 @@ description: Pick the right data-pipeline orchestrator for a described workload 
 
 1. **Restate the workload in the tree's terms.** Capture: data **volume & cadence**, the **latency target** (minutes/hours vs sub-minute), **dependency complexity** (linear vs cross-team DAG mesh), whether the mental model is **asset/data-centric or task-centric**, the **team size & ops capacity**, and the **existing cloud / lock-in tolerance**.
 2. **Gate latency first.** If the real requirement is sub-minute/continuous, this is **not** an orchestration problem — route to `data-streaming-engineering` (Kafka/Flink) and stop. Orchestrators schedule batch/micro-batch work.
-3. **Traverse the decision tree** in `../../knowledge/orchestrator-selection-decision-tree.md` against those inputs:
+3. **Traverse the decision tree** in [`../../knowledge/orchestrator-selection-decision-tree.md`](../../knowledge/orchestrator-selection-decision-tree.md) against those inputs:
    - asset/lineage-first + typed I/O + local dev → **Dagster** (software-defined assets),
    - large cross-team DAG estate + mature scheduling/backfill + big ops team → **Apache Airflow**,
    - dynamic Python-native flows + light ops → **Prefect**,
@@ -41,4 +41,4 @@ description: Pick the right data-pipeline orchestrator for a described workload 
 - Never name an orchestrator before traversing the tree — workload before brand.
 - Sub-minute latency → not orchestration; route to streaming and say so.
 - Don't recommend Temporal for batch table builds, or Step Functions/ADF where heavy DAG scheduling/backfill is the core need.
-- Volatile claims (versions, managed-service feature parity, pricing) carry a **retrieval date** and are re-verified before a client commitment. See `../../knowledge/orchestration-patterns-2026.md`.
+- Volatile claims (versions, managed-service feature parity, pricing) carry a **retrieval date** and are re-verified before a client commitment. See [`../../knowledge/orchestration-patterns-2026.md`](../../knowledge/orchestration-patterns-2026.md).

@@ -34,6 +34,6 @@ COGS per unit is the number that hides in a craft-beverage business — in yield
 
 ## See also
 
-- `../three-tier-and-self-distribution-economics/SKILL.md` — channel margin needs the unit cost.
-- Best practices: `../../best-practices/cogs-per-unit-is-the-number-that-hides.md`, `../../best-practices/capacity-is-tanks-barrels-and-time.md`.
-- Command: `/model-channel-mix`.
+- [`../three-tier-and-self-distribution-economics/SKILL.md`](../three-tier-and-self-distribution-economics/SKILL.md) — channel margin needs the unit cost.
+- Best practices: [`../../best-practices/cogs-per-unit-is-the-number-that-hides.md`](../../best-practices/cogs-per-unit-is-the-number-that-hides.md), [`../../best-practices/capacity-is-tanks-barrels-and-time.md`](../../best-practices/capacity-is-tanks-barrels-and-time.md).
+- Command: [`/model-channel-mix`](../../commands/model-channel-mix.md).
