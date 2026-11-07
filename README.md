@@ -15,6 +15,7 @@
 | **الأدوات** `tools/` `starters/` `templates/` | `kosif.py` (بحث وتجهيز مشروع)، `render_html.cjs` (رندر HTML إلى فيديو)، `verify_video.py` (فحص الناتج)، ومشروعا بداية html-canvas وRemotion | [tools/render_html.md](tools/render_html.md) |
 | **مهارة المونتاج التحريري** `.claude/skills/editorial-film-edit/` | مهارة مستقلة لمونتاج لقطات بأسلوب أرشيفي تحريري مع مراجع متصفح جاهزة | [SKILL.md](.claude/skills/editorial-film-edit/SKILL.md) |
 | **مهارة إعلانات SaaS** `.claude/skills/saas-animation/` | إعلانات قصيرة 8–20 ثانية لتطبيقات ومنتجات وبراندات تُبنى ككود وتُرندر 4K بدون أي مولّد فيديو بالذكاء الاصطناعي: ستوري بورد، كاميرا واحدة مستمرة، واجهة حقيقية في 3D، تحريك رسوم بالدبابيس، منتجات في Blender، وصوت ومزج | [SKILL.md](.claude/skills/saas-animation/SKILL.md) |
+| **استوديو الستيك مان** `.claude/skills/kosif-stickman-studio/` | فويس أوفر يتحول لفيديو شرح بشخصيات ستيك مان سينمائية مرسومة بالكود (ديكورات 2.5D، لقطات وش قريبة، رسوم بيانية، لقطات 3D، موسيقى ومؤثرات، توقيت Whisper). المحرك من بلجن GrowKaz ويتثبت من نسخة المالك الخاصة، مش محفوظ هنا | [SKILL.md](.claude/skills/kosif-stickman-studio/SKILL.md) |
 | **المشاريع** `projects/` | أفلام منتهية بمصادرها القابلة للتعديل: مفاتيح الثروة، تحية مصر والسعودية، وثلاث ريلز أدعية | [projects/README.md](projects/README.md) |
 | **الموقع** `index.html` `web/` | واجهة تصفح الأساليب ومولّد الطلبات، تُنشر على GitHub Pages | https://kosif199022-jpg.github.io/kosif-tool/ |
 

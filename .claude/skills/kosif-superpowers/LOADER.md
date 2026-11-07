@@ -10,7 +10,7 @@
 
 **التحميل الخفيف:** اقرأ هذا الملف وحده أولًا. لا تقرأ ملفات المهارات الكبيرة كاملة؛ افتح الملف أو نطاق الأسطر الذي يطابق الطلب فقط (`sed -n START,ENDp <path>`)، أو اسأل السكربت: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py need "<الطلب>"`. كل مهارة وكل ملحق ممثَّل هنا بسطر، فلا توجد مهارة خارج الوصول. في الوضع الكامل: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py full`.
 
-## المهارات (16) / skills
+## المهارات (17) / skills
 
 | المهارة | الملف | الحجم | متى |
 |---|---|---|---|
@@ -24,6 +24,7 @@
 | `kosif-reel-hooks` | `.claude/skills/kosif-reel-hooks/SKILL.md` | 6 KB · 120 سطر | Write an Instagram Reel or short video script from one raw idea, in Egyptian Arabic, MSA or English - three hooks off the Arabic hook library, scored by a local tool,… |
 | `kosif-shadow-theatre` | `.claude/skills/kosif-shadow-theatre/SKILL.md` | 7 KB · 80 سطر | Make shadow-theatre / silhouette motion-graphics films (مسرح الظل، مشاهد بالظلال) from code — bodies that join into trees, boats and buildings, figures that grow as… |
 | `kosif-site-snapshot` | `.claude/skills/kosif-site-snapshot/SKILL.md` | 4 KB · 47 سطر | Copy a website the user owns (or may copy) offline with its CSS, JS, images and fonts, goclone-style, and measure its design system into design.md (colours, fonts, type… |
+| `kosif-stickman-studio` | `.claude/skills/kosif-stickman-studio/SKILL.md` | 7 KB · 56 سطر | Turn a voiceover into a cinematic stick-figure explainer video drawn entirely by code (GrowKaz Stickman studio) - rim-lit black stick figures in moody 2.5D sets, giant… |
 | `kosif-superpowers` | `.claude/skills/kosif-superpowers/SKILL.md` | 83 KB · 448 سطر | Capability self-awareness and thinking upgrade for Claude. One front door (scripts/hub.py find) maps a task in the user's words to the runnable tools, catalog powers… |
 | `kosif-upload-link` | `.claude/skills/kosif-upload-link/SKILL.md` | 4 KB · 46 سطر | Send the user's big-file upload link and pull what they uploaded. Use when the user asks for the upload link, says a file is too big to attach (over 30-40 MB), wants to… |
 | `kosif-voice-studio` | `.claude/skills/kosif-voice-studio/SKILL.md` | 6 KB · 108 سطر | Voice-over, voice cloning, voice design and transcription in Egyptian Arabic, MSA, English and 600+ languages - text to speech with word timings (words.json) for… |
@@ -199,6 +200,14 @@
 - 18–33: Steps
 - 34–37: What it writes
 - 38–46: Rules
+
+### `.claude/skills/kosif-stickman-studio/SKILL.md`
+
+- 6–11: KOSIF Stickman Studio — استوديو الستيك مان
+- 12–25: Front door
+- 26–40: The pipeline (eight stages)
+- 41–51: KOSIF rules on top of the kit
+- 52–55: How it fits the rest of KOSIF
 
 ### `.claude/skills/kosif-superpowers/SKILL.md`
 

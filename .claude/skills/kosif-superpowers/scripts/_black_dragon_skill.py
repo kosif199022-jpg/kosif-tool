@@ -56,6 +56,7 @@ SCRIPT = {
     "kling-director": SKILLS / "kosif-kling-director" / "scripts",
     "dragon-mind": SKILLS / "kosif-dragon-mind" / "scripts",
     "saas-animation": SKILLS / "saas-animation" / "scripts",
+    "stickman-studio": SKILLS / "kosif-stickman-studio" / "scripts",
 }
 RECIPES = tuple(SCRIPT)
 NEEDS_MEDIA = {"social", "video-editor", "motion-energy", "captions-audio", "shadow-theatre", "voice-check",
@@ -765,6 +766,21 @@ def saas_animation(r, d, task, clip, selftest):
                                "and the sound and Blender scripts need scipy and Blender"})
 
 
+def stickman_studio(r, d, task, clip, selftest):
+    """The GrowKaz kit itself is not in the repo (no licence); this runs KOSIF's installer on a synthetic plugin."""
+    out = r.work / "selftest"
+    r.call("stickman_kit.py: known-answer install self-test", [*PY, str(d / "stickman_kit.py"), "self-test", "--out", str(out)])
+    res = _json(out / "selftest.json")
+    r.output(out / "selftest.json")
+    names = {c["name"]: c["passed"] for c in res["checks"]}
+    r.check("all 13 self-test checks pass", res["passed"] and len(names) == 13, names)
+    r.check("parent path and symlink are refused", names.get("parent path refused") and names.get("symlink refused"), None)
+    r.check("the owner's projects/ folder survives an install", names.get("user's projects/ kept"), None)
+    r.check("nothing is written outside the destination", names.get("nothing escaped dest"), None)
+    r.findings.append({"note": "installer only; the GrowKaz renderer needs the owner's plugin, Node, Chromium and ffmpeg "
+                               "and is not run by the Dragon"})
+
+
 RUNNERS = {"prompt-master": prompt_master, "prompt-architect": prompt_architect, "reel-hooks": reel_hooks,
            "excel-lambdas": excel_lambdas, "social": social, "video-editor": video_editor,
            "motion-energy": motion_energy, "image-prompts": image_prompts, "video-prompts": video_prompts,
@@ -774,7 +790,8 @@ RUNNERS = {"prompt-master": prompt_master, "prompt-architect": prompt_architect,
            "reel-research": reel_research, "voice-check": voice_check, "animation-qa": animation_qa,
            "hyperframes-beats": hyperframes_beats, "montage-tools": montage_tools,
            "mimic-analyze": mimic_analyze, "pixel-painter": pixel_painter,
-           "kling-director": kling_director, "dragon-mind": dragon_mind, "saas-animation": saas_animation}
+           "kling-director": kling_director, "dragon-mind": dragon_mind, "saas-animation": saas_animation,
+           "stickman-studio": stickman_studio}
 
 
 def main(argv: list[str]) -> int:
