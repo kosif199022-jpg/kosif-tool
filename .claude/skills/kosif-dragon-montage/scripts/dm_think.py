@@ -193,15 +193,15 @@ def facts(analysis) -> dict:
         f["word_lang"] = "ar-eg" if len(AR_RE.findall(txt)) >= len(LATIN_RE.findall(txt)) else "en"
         f["low_conf"] = round(sum(1 for w in words if float(w.get("conf", 1)) < 0.6) / len(words), 3)
     if shots:
-        q = lambda s: float((s.get("quality") or {}).get("score", 0.5))  # noqa: E731
+        q = lambda s: float((s.get("quality") or {}).get("score") or 0.5)  # noqa: E731
         f["faces_ratio"] = round(sum(1 for s in shots if (s.get("faces") or 0) >= 1) / len(shots), 3)
         f["group_ratio"] = round(sum(1 for s in shots if (s.get("faces") or 0) >= 2) / len(shots), 3)
         f["max_faces"] = max(int(s.get("faces") or 0) for s in shots)
         f["motion_mean"] = round(sum(float(s.get("motion_energy") or 0) for s in shots) / len(shots), 3)
         f["quality_mean"] = round(sum(q(s) for s in shots) / len(shots), 3)
         f["usable_s"] = round(sum(float(s["end"]) - float(s["start"]) for s in shots
-                                  if q(s) >= 0.45 and float((s.get("quality") or {}).get("shake", 0)) < 0.6), 3)
-        f["shaky"] = [s["id"] for s in shots if float((s.get("quality") or {}).get("shake", 0)) >= 0.6][:8]
+                                  if q(s) >= 0.45 and float((s.get("quality") or {}).get("shake") or 0) < 0.6), 3)
+        f["shaky"] = [s["id"] for s in shots if float((s.get("quality") or {}).get("shake") or 0) >= 0.6][:8]
         f["best_shot"] = max(shots, key=lambda s: (q(s), s["id"]))["id"]
         f["best_motion_shot"] = max(shots, key=lambda s: (float(s.get("motion_energy") or 0) * q(s), s["id"]))["id"]
     else:
