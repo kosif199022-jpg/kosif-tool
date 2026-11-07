@@ -1,4 +1,4 @@
-# أدوات المجال `sources` (27 أداة)
+# أدوات المجال `sources` (28 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -443,6 +443,59 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:free-footage --evidence <ملف>`.
+
+### `free-media-catalog` — قائمة المواقع المجانية للمونتاج: فيديو وصور ومؤثرات وصوت، وترخيص كل موقع / Free media catalog: the montage source list with licence, commercial use and credit per site
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/free_media_catalog.py` (جذر: skill) |
+| المجال | `sources` |
+| الدليل | `tested-here` |
+| العائلات | `photo-video-footage`, `web-research` |
+
+**ما تفعله:** قائمة واحدة مفحوصة بـ129 موقع مجاني نستعين بمحتواها في المونتاج: المئة موقع اللي بعتها صاحب المشروع (فيديو، أقسام مجانية في مواقع مدفوعة، مؤثرات، أرشيفات، صور، متاحف، فضاء، خامات) و29 إضافة (موسيقى ومؤثرات صوتية، رسوم وLottie وخطوط، متاحف فيها آثار مصرية، صور أقمار صناعية، طبيعة 4K). لكل موقع: الترخيص ورابطه، هل التجاري مسموح، هل النسب لازم، وهل الموقع بيرد من السحابة، وأنهي أداة عندنا بتبحث فيه. أمر list بيفلتر بالنوع والموضوع (مصر، طبيعة 4K) والتجاري، وlinks بيطلع روابط بحث جاهزة.
+
+**What it does:** One checked list of 129 free and open-licence sites the montage work draws from: the owner's 100-site list (stock video, free sections of paid sites, VFX, archives and agencies, photos, museums, space, textures and HDRI) plus 29 additions (music and sound effects, Lottie and illustration, fonts, Egyptian-collection museums, satellite imagery, 4K nature footage). Each record gives the licence and its link, whether commercial use is allowed (yes, per-item, limited, no), whether credit is required, tier (free, freemium, free section of a paid site, aggregator), topics (egypt, nature-4k, space, vertical), reachability measured from the cloud, and which existing tool (free_footage, free_photos, media_sources) already searches or downloads it. list filters by section, topic, commercial, no-credit and star; links fills ready search URLs on 24 sites; check validates ids, urls, enums and tool references; probe re-measures reachability.
+
+#### متى تُستدعى
+
+- «هات لي مواقع فيديو طبيعة 4K مجانية مسموح استخدامها تجاري»
+- «فين ألاقي صور وفيديوهات عن مصر من غير حقوق»
+- «أي مواقع موسيقى ومؤثرات صوتية مجانية للمونتاج»
+- «Which free stock sites need no credit for commercial use?»
+- «List free museum and archive sources with Egyptian collections»
+
+#### الأوامر
+
+- **sections**: Offline: sections and topics with their counts.
+  - `python3 scripts/free_media_catalog.py sections`
+- **list**: Offline: sites grouped by section with commercial use, credit rule and url; --section, --topic, --commercial (only 'yes'), --no-credit (not required or only requested), --star, --origin, --reachable, --json.
+  - `python3 scripts/free_media_catalog.py list --topic nature-4k --commercial --no-credit`
+- **find**: Offline: every site whose name, url, note, licence, section or topic contains all the words; exit 1 when none.
+  - `python3 scripts/free_media_catalog.py find CC0 museum`
+- **show**: Offline: one record as JSON.
+  - `python3 scripts/free_media_catalog.py show polyhaven`
+- **links**: Offline: ready search links for the query on the matching sites that have a search URL.
+  - `python3 scripts/free_media_catalog.py links "cairo" --topic egypt --commercial`
+- **check**: Offline: validates the catalog (unique ids and urls ignoring www and trailing slash, https, enums, sections, topics, search templates, free_footage and free_photos references, counts); exit 1 on any problem.
+  - `python3 scripts/free_media_catalog.py check`
+- **probe**: Network: one GET per site and the reachability next to the stored one; prints only, never writes.
+  - `python3 scripts/free_media_catalog.py probe --ids polyhaven,pexels`
+
+#### المتطلبات والأمان
+
+- الأمان: read-only
+- الموافقة: Only probe touches the network (one GET per listed site); the rest reads the local catalog.
+- الحدود: The licence, commercial and credit fields summarise each site's published terms as of 2026-11-06 from the existing checked databases and known terms; they were not re-read per file and free tiers change, so per-item and paid work still need the file's own page. Reachability is from a claude.ai cloud sandbox: 43 sites answered with bot walls (403/429) that a home browser usually passes, stokpic.com and wedistill.io did not resolve, and three timed out. It lists sites; searching and downloading with a licence sidecar stays in free_footage.py and free_photos.py.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_free_media_catalog.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/sources.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:free-media-catalog --evidence <ملف>`.
 
 ### `free-photos` — صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب / Free photos: open-licence and free stock photo search and download with credits
 

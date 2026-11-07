@@ -327,6 +327,8 @@ def compose(task: str, path: Path, *, legacy: bool = False, limit: int = 12) -> 
         "phases": list(PHASES),
         "source_count": len(items),
         "native_mind": synthesis,
+        # Book guard: Dragon Mind's real scan_traps (31 Kahneman traps) on this task.
+        "thinking_guards": thinking_guards(task),
         "catalog_wide_fusion": verified_catalog_atlas(path, items),
         "selected": [{"id": x["id"], "faculty": x["faculty"], "purpose": x["purpose"][:450],
                       "method": x["method"][:800], "requirements": x["requirements"],
@@ -391,6 +393,21 @@ def plan_markdown(result: dict, limit_methods: int = 4) -> str:
     return "\n".join(lines) + "\n"
 
 
+def thinking_guards(task: str, root: Path = ROOT) -> dict:
+    """Run Dragon Mind's own trap scanner on the task, routed to council seats.
+
+    Lexical review questions only; a listed trap is not a proven error.
+    """
+    review = creative_council_engine().kahneman_review(task, root)
+    return {"status": review["status"], "traps_catalogued": review.get("traps_catalogued", 0),
+            "book_frameworks": review.get("book_frameworks", 0),
+            "gates": [{"id": g["id"], "name_en": g.get("name_en"), "why": g["why"],
+                       "question_ar": g.get("question_ar"), "debias_ar": g.get("debias_ar"),
+                       "pages": g.get("pages", []), "reviewers": g.get("reviewers", [])}
+                      for g in review.get("review_gates", [])],
+            "limits": review.get("limits")}
+
+
 def verify(root: Path, folder: Path) -> dict:
     summary = read_json(folder / "summary.json")
     path = folder / "sources.jsonl"
@@ -426,6 +443,29 @@ def verify(root: Path, folder: Path) -> dict:
             "native_implemented": summary["native_implemented"]}
 
 
+def creative_council_engine():
+    """Load the new local council; never execute legacy or external agents."""
+    path = Path(__file__).with_name("creative_council.py")
+    spec = importlib.util.spec_from_file_location("_kosif_dragon_creative_council", path)
+    if spec is None or spec.loader is None:
+        raise ValueError("independent creative council unavailable")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+
+def judgment_guard_engine():
+    """Load independently authored, book-informed review prompts (no agents run)."""
+    path = Path(__file__).with_name("judgment_guard.py")
+    spec = importlib.util.spec_from_file_location("_kosif_dragon_judgment_guard", path)
+    if spec is None or spec.loader is None:
+        raise ValueError("judgment guard module unavailable")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--root", type=Path, default=ROOT)
@@ -436,6 +476,14 @@ def main(argv=None) -> int:
     m.add_argument("task")
     m.add_argument("--index", type=Path, required=True)
     m.add_argument("--legacy-links", action="store_true", help="only return optional legacy entry IDs")
+    c = cmd.add_parser("council", help="Build source-traceable 12-seat film council, no agents run")
+    c.add_argument("task")
+    c.add_argument("--out", type=Path, help="Optional JSON plan output")
+    c.add_argument("--options", default="licensed-footage,code-motion,hybrid",
+                   help="2-8 distinct routes separated by commas")
+    j = cmd.add_parser("think-review", help="Book-informed fast/slow judgment check; no expert agents executed")
+    j.add_argument("--input", type=Path, required=True, help="Structured JSON decision brief")
+    j.add_argument("--out", type=Path, help="Optional JSON review output")
     v = cmd.add_parser("verify", help="Verify the catalog-source fingerprints")
     v.add_argument("--out", type=Path, required=True)
     pl = cmd.add_parser("plan", help="Readable Markdown action plan (stages, steps, catalog commands, gaps)")
@@ -458,6 +506,22 @@ def main(argv=None) -> int:
             result = build(args.root, args.out)
         elif args.command == "compose":
             result = compose(args.task, args.index, legacy=args.legacy_links)
+        elif args.command == "council":
+            engine = creative_council_engine()
+            result = engine.plan(args.task, args.root.resolve(), args.options.split(","))
+            if args.out:
+                engine._save(args.out, result)
+        elif args.command == "think-review":
+            engine = judgment_guard_engine()
+            brief = read_json(args.input)
+            result = engine.review(brief)
+            # Add the book's full 31-trap scanner (Dragon Mind) to the 11 fixed lenses.
+            text = " ".join([str(brief.get("goal", "")), *[str(x) for x in brief.get("options") or []],
+                             str(brief.get("target_question", ""))])
+            result["book_trap_scan"] = thinking_guards(text, args.root.resolve())
+            if args.out:
+                args.out.parent.mkdir(parents=True, exist_ok=True)
+                args.out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         else:
             result = verify(args.root.resolve(), args.out)
         print(json.dumps(result, ensure_ascii=False, indent=2))

@@ -1,0 +1,2828 @@
+{
+ "schema": "kosif.free-media-catalog.v1",
+ "checked_on": "2026-11-06",
+ "about": "The montage source list: every free or open-licence site KOSIF draws footage, photos, VFX, textures, music, sound effects and graphics from, one record per site with its licence, commercial use and credit rule. Read by scripts/free_media_catalog.py (list, find, show, check). The searchable subset lives in data/free_footage_sources.json (video) and scripts/free_photos.py (photos); data/media_sources_100.json is the download gateway's domain list. 'tools' names which of those already cover a site.",
+ "reachability_note": "reach was measured on checked_on from a claude.ai cloud sandbox behind its agent proxy (one GET each): ok, blocked-from-cloud (401/403/429/503, usually a bot wall that a home browser passes), timeout, or no-dns (the domain did not resolve: the site may be gone). Re-measure with scripts/free_media_catalog.py probe.",
+ "notice": "A listed site is not a licence for any file. 'commercial' and 'credit' summarise each site's published terms as of checked_on and were not re-read per file: per-item means read the file's own page. Free tiers change; before paid or monetised work open the licence link. ND and non-commercial licences do not fit monetised montage.",
+ "enums": {
+  "commercial": {
+   "yes": "allowed",
+   "per-item": "depends on each file",
+   "limited": "allowed with notable limits (read note)",
+   "no": "non-commercial only"
+  },
+  "credit": {
+   "no": "not required",
+   "yes": "required",
+   "requested": "not legally required, asked for",
+   "per-item": "depends on each file"
+  },
+  "tier": {
+   "free": "free site",
+   "freemium": "free and paid mixed",
+   "free-section": "free section of a paid site",
+   "aggregator": "search engine over other sites"
+  }
+ },
+ "sections": {
+  "video": "فيديوهات مجانية (Stock Footage)",
+  "paid-free": "أقسام مجانية في مواقع مدفوعة",
+  "vfx": "مؤثرات بصرية VFX وأوفرلاي",
+  "archive": "أرشيفات وجهات حكومية",
+  "photo": "صور عالية الدقة",
+  "museum": "متاحف ومكتبات (Open Access)",
+  "space": "فضاء وطبيعة",
+  "texture": "خامات وخلفيات HDRI و3D",
+  "audio": "موسيقى ومؤثرات صوتية",
+  "graphics": "رسوم وأيقونات وموشن وخطوط"
+ },
+ "topics": {
+  "nature-4k": "فيديو وصور طبيعة بدقة عالية",
+  "egypt": "مصر: آثار وأماكن ونيل وصور قديمة وحديثة",
+  "space": "فضاء",
+  "vertical": "لقطات طولية 9:16"
+ },
+ "counts": {
+  "user_list": 100,
+  "extras": 29,
+  "total": 129
+ },
+ "sources": [
+  {
+   "id": "pexels",
+   "name": "Pexels",
+   "url": "https://www.pexels.com/videos/",
+   "section": "video",
+   "star": true,
+   "tier": "free",
+   "licence": {
+    "name": "Pexels License",
+    "url": "https://www.pexels.com/license/"
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [
+    "nature-4k",
+    "egypt",
+    "vertical"
+   ],
+   "tools": [
+    "free_footage:pexels",
+    "free_photos:pexels",
+    "media_sources"
+   ],
+   "note_ar": "فيديو وصور حتى 4K، لقطات طولية كثيرة. ممنوع بيع اللقطة كما هي.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud",
+   "search_url": "https://www.pexels.com/search/videos/{q}/"
+  },
+  {
+   "id": "pixabay",
+   "name": "Pixabay",
+   "url": "https://pixabay.com/videos/",
+   "section": "video",
+   "star": true,
+   "tier": "free",
+   "licence": {
+    "name": "Pixabay Content License",
+    "url": "https://pixabay.com/service/license-summary/"
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [
+    "nature-4k",
+    "egypt"
+   ],
+   "tools": [
+    "free_footage:pixabay",
+    "free_photos:pixabay",
+    "media_sources"
+   ],
+   "note_ar": "فيديو وصور وموسيقى ومؤثرات. ممنوع بيع الملف كما هو أو إيحاء بتأييد الأشخاص.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud",
+   "search_url": "https://pixabay.com/videos/search/{q}/"
+  },
+  {
+   "id": "mixkit",
+   "name": "Mixkit",
+   "url": "https://mixkit.co/free-stock-video/",
+   "section": "video",
+   "star": true,
+   "tier": "free",
+   "licence": {
+    "name": "Mixkit License (Free / Restricted)",
+    "url": "https://mixkit.co/license/"
+   },
+   "commercial": "per-item",
+   "credit": "no",
+   "topics": [
+    "nature-4k"
+   ],
+   "tools": [
+    "free_footage:mixkit",
+    "media_sources"
+   ],
+   "note_ar": "كل لقطة إما Free (تجاري مسموح) أو Restricted (ممنوع في الإعلانات): اقرأ صفحة اللقطة.",
+   "origin": "user-100",
+   "reach": "ok",
+   "search_url": "https://mixkit.co/free-stock-video/discover/{q}/"
+  },
+  {
+   "id": "coverr",
+   "name": "Coverr",
+   "url": "https://coverr.co/",
+   "section": "video",
+   "star": true,
+   "tier": "free",
+   "licence": {
+    "name": "Coverr License",
+    "url": "https://coverr.co/license"
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [
+    "nature-4k"
+   ],
+   "tools": [
+    "free_footage:coverr",
+    "media_sources"
+   ],
+   "note_ar": "لقطات B-roll نظيفة؛ تجنّب لقطات الشركاء المدفوعة.",
+   "origin": "user-100",
+   "reach": "ok",
+   "search_url": "https://coverr.co/s?q={q}"
+  },
+  {
+   "id": "videvo",
+   "name": "Videvo",
+   "url": "https://www.videvo.net/",
+   "section": "video",
+   "star": false,
+   "tier": "freemium",
+   "licence": {
+    "name": "Videvo / Freepik terms (per clip)",
+    "url": null
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [],
+   "tools": [
+    "free_footage:videvo",
+    "media_sources"
+   ],
+   "note_ar": "بعضه مدفوع وبعض المجاني يشترط النسب؛ الموقع يحوّل الآن إلى Freepik.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "videezy",
+   "name": "Videezy",
+   "url": "https://www.videezy.com/",
+   "section": "video",
+   "star": false,
+   "tier": "freemium",
+   "licence": {
+    "name": "Videezy Free / Pro License",
+    "url": null
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [],
+   "tools": [
+    "free_footage:videezy",
+    "media_sources"
+   ],
+   "note_ar": "المجاني يشترط ذكر Videezy غالبًا؛ Pro مدفوع بلا نسب.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "lifeofvids",
+   "name": "Life of Vids",
+   "url": "https://www.lifeofvids.com/",
+   "section": "video",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Life of Vids terms (no copyright restrictions)",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [
+    "nature-4k"
+   ],
+   "tools": [
+    "free_footage:lifeofvids",
+    "media_sources"
+   ],
+   "note_ar": "لقطات طبيعة ومدن بلا قيود معلنة؛ ممنوع إعادة توزيعها كمكتبة.",
+   "origin": "user-100",
+   "reach": "timeout"
+  },
+  {
+   "id": "mazwai",
+   "name": "Mazwai",
+   "url": "https://mazwai.com/",
+   "section": "video",
+   "star": false,
+   "tier": "freemium",
+   "licence": {
+    "name": "CC BY 3.0 / Mazwai License (per clip)",
+    "url": null
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [
+    "nature-4k"
+   ],
+   "tools": [
+    "free_footage:mazwai",
+    "media_sources"
+   ],
+   "note_ar": "لقطات سينمائية؛ كثير منها CC BY يشترط النسب. يحوّل الآن إلى Freepik.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "dareful",
+   "name": "Dareful",
+   "url": "https://dareful.com/",
+   "section": "video",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC BY 4.0",
+    "url": "https://dareful.com/license"
+   },
+   "commercial": "yes",
+   "credit": "yes",
+   "topics": [
+    "nature-4k"
+   ],
+   "tools": [
+    "free_footage:dareful",
+    "media_sources"
+   ],
+   "note_ar": "طبيعة 4K؛ اذكر Dareful في الوصف.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "vidsplay",
+   "name": "Vidsplay",
+   "url": "https://www.vidsplay.com/",
+   "section": "video",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Vidsplay terms (credit link)",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "yes",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "مجاني بشرط رابط نسب لـ Vidsplay.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "vecteezy",
+   "name": "Vecteezy",
+   "url": "https://www.vecteezy.com/free-videos",
+   "section": "video",
+   "star": false,
+   "tier": "freemium",
+   "licence": {
+    "name": "Vecteezy Free License",
+    "url": "https://www.vecteezy.com/licensing-agreement"
+   },
+   "commercial": "yes",
+   "credit": "yes",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [
+    "free_footage:vecteezy"
+   ],
+   "note_ar": "المجاني يشترط النسب، والاشتراك Pro يلغيه. فيه فيديو وفيكتور وصور.",
+   "origin": "user-100",
+   "reach": "ok",
+   "search_url": "https://www.vecteezy.com/free-videos/{q}"
+  },
+  {
+   "id": "motionplaces",
+   "name": "Motion Places",
+   "url": "https://www.motionplaces.com/",
+   "section": "video",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Motion Places terms",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "requested",
+   "topics": [
+    "nature-4k"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "لقطات أماكن ومدن؛ راجع شروط الموقع قبل الإعلانات.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "ignitemotion",
+   "name": "Ignite Motion",
+   "url": "https://ignitemotion.com/",
+   "section": "video",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Ignite Motion terms",
+    "url": null
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [],
+   "tools": [],
+   "note_ar": "خلفيات حركة؛ الشروط تختلف حسب الحزمة.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "distill",
+   "name": "Distill",
+   "url": "https://www.wedistill.io/",
+   "section": "video",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Distill terms",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [
+    "nature-4k"
+   ],
+   "tools": [],
+   "note_ar": "لقطات HD تُرسل دوريًا؛ راجع الشروط قبل العمل التجاري.",
+   "origin": "user-100",
+   "reach": "no-dns"
+  },
+  {
+   "id": "beachfront",
+   "name": "Beachfront B-Roll",
+   "url": "https://beachfrontbroll.com/",
+   "section": "video",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Beachfront B-Roll terms",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "requested",
+   "topics": [
+    "nature-4k"
+   ],
+   "tools": [],
+   "note_ar": "B-roll طبيعة وخلفيات؛ النسب مستحب.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "xstockvideo",
+   "name": "XStockvideo",
+   "url": "https://xstockvideo.com/",
+   "section": "video",
+   "star": false,
+   "tier": "freemium",
+   "licence": {
+    "name": "XStockvideo terms",
+    "url": null
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [],
+   "tools": [],
+   "note_ar": "مجاني ومدفوع مختلطان؛ اقرأ كل لقطة.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "freenaturestock",
+   "name": "Free Nature Stock",
+   "url": "https://freenaturestock.com/",
+   "section": "video",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0-style (Free Nature Stock terms)",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [
+    "nature-4k"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "صور وفيديو طبيعة بلا نسب.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "splitshire",
+   "name": "SplitShire",
+   "url": "https://www.splitshire.com/",
+   "section": "video",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "SplitShire License",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [
+    "nature-4k"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "صور وفيديو؛ ممنوع إعادة البيع كما هي.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "isorepublic",
+   "name": "ISO Republic",
+   "url": "https://isorepublic.com/",
+   "section": "video",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "ISO Republic License",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "صور وفيديو بلا نسب.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "freepik-videos",
+   "name": "Freepik Videos",
+   "url": "https://www.freepik.com/videos",
+   "section": "video",
+   "star": false,
+   "tier": "freemium",
+   "licence": {
+    "name": "Freepik License",
+    "url": "https://www.freepik.com/legal/terms-of-use"
+   },
+   "commercial": "yes",
+   "credit": "yes",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [],
+   "note_ar": "المجاني يشترط النسب «Video by ... on Freepik»؛ Premium يلغيه.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud",
+   "search_url": "https://www.freepik.com/search?format=search&query={q}&type=video"
+  },
+  {
+   "id": "mitchmartinez",
+   "name": "Mitch Martinez Free 4K",
+   "url": "https://mitchmartinez.com/",
+   "section": "video",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Mitch Martinez free stock terms",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [
+    "nature-4k"
+   ],
+   "tools": [],
+   "note_ar": "لقطات 4K مصوّرة بكاميرا RED: طبيعة وماء وسماء ودخان.",
+   "origin": "extra",
+   "reach": "timeout"
+  },
+  {
+   "id": "stockfootageforfree",
+   "name": "Stock Footage For Free",
+   "url": "https://www.stockfootageforfree.com/",
+   "section": "video",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Royalty-free (site terms, account)",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [
+    "nature-4k"
+   ],
+   "tools": [],
+   "note_ar": "لقطات HD وأحيانًا 4K بحساب مجاني.",
+   "origin": "extra",
+   "reach": "timeout"
+  },
+  {
+   "id": "adobe-free",
+   "name": "Adobe Stock Free",
+   "url": "https://stock.adobe.com/free",
+   "section": "paid-free",
+   "star": false,
+   "tier": "free-section",
+   "licence": {
+    "name": "Adobe Stock Standard License",
+    "url": "https://stock.adobe.com/license-terms"
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [
+    "nature-4k"
+   ],
+   "tools": [],
+   "note_ar": "آلاف الملفات المجانية بحساب Adobe؛ نفس الرخصة القياسية.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "pond5-pd",
+   "name": "Pond5 Public Domain",
+   "url": "https://www.pond5.com/free",
+   "section": "paid-free",
+   "star": false,
+   "tier": "free-section",
+   "licence": {
+    "name": "Public domain (Pond5 Public Domain Project)",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "لقطات أرشيفية وتاريخية ملك عام؛ تأكد من علامة PD على كل ملف.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "motionarray-free",
+   "name": "Motion Array Free",
+   "url": "https://motionarray.com/browse/free/",
+   "section": "paid-free",
+   "star": false,
+   "tier": "free-section",
+   "licence": {
+    "name": "Motion Array License",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [],
+   "note_ar": "قوالب ولقطات ومؤثرات مجانية بحساب مجاني.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "envato-free",
+   "name": "Envato Elements (free files)",
+   "url": "https://elements.envato.com/free-files",
+   "section": "paid-free",
+   "star": false,
+   "tier": "free-section",
+   "licence": {
+    "name": "Envato Elements License",
+    "url": "https://elements.envato.com/license-terms"
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [],
+   "note_ar": "ملفات مجانية شهريًا بحساب؛ سجّل المشروع عند التحميل.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "motionelements-free",
+   "name": "MotionElements Free",
+   "url": "https://www.motionelements.com/free",
+   "section": "paid-free",
+   "star": false,
+   "tier": "free-section",
+   "licence": {
+    "name": "MotionElements Royalty-Free License",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [],
+   "note_ar": "لقطات وقوالب مجانية بحساب.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "canva",
+   "name": "Canva (free content)",
+   "url": "https://www.canva.com/",
+   "section": "paid-free",
+   "star": false,
+   "tier": "free-section",
+   "licence": {
+    "name": "Canva Content License",
+    "url": "https://www.canva.com/policies/content-license-agreement/"
+   },
+   "commercial": "limited",
+   "credit": "no",
+   "topics": [],
+   "tools": [],
+   "note_ar": "مسموح داخل تصميمك في Canva فقط، لا كملف منفصل في برنامج مونتاج آخر.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "footagecrate",
+   "name": "Footage Crate",
+   "url": "https://footagecrate.com/",
+   "section": "vfx",
+   "star": true,
+   "tier": "freemium",
+   "licence": {
+    "name": "Footage Crate License",
+    "url": "https://footagecrate.com/license"
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [],
+   "note_ar": "انفجارات ونار ودخان وشاشات خضراء؛ حد تحميل مجاني بحساب.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "actionvfx-free",
+   "name": "ActionVFX Free",
+   "url": "https://www.actionvfx.com/collections/free-vfx",
+   "section": "vfx",
+   "star": false,
+   "tier": "free-section",
+   "licence": {
+    "name": "ActionVFX License",
+    "url": "https://www.actionvfx.com/license"
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [],
+   "note_ar": "مؤثرات نار ودخان وشرر مجانية بحساب.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "rocketstock",
+   "name": "RocketStock",
+   "url": "https://www.rocketstock.com/free-after-effects-templates/",
+   "section": "vfx",
+   "star": false,
+   "tier": "free-section",
+   "licence": {
+    "name": "RocketStock free pack terms",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [],
+   "note_ar": "حزم مجانية: LUTs وتوهج عدسات وأوفرلاي؛ راجع ملف الرخصة داخل كل حزمة.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "internet-archive",
+   "name": "Internet Archive",
+   "url": "https://archive.org/",
+   "section": "archive",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Per item (uploader's claim)",
+    "url": "https://archive.org/about/terms.php"
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [
+    "free_footage:archive",
+    "media_sources"
+   ],
+   "note_ar": "الرخصة ادعاء الرافع؛ الأغاني والأفلام المنسوخة مشكوك فيها.",
+   "origin": "user-100",
+   "reach": "ok",
+   "search_url": "https://archive.org/search?query={q}"
+  },
+  {
+   "id": "prelinger",
+   "name": "Prelinger Archives",
+   "url": "https://archive.org/details/prelinger",
+   "section": "archive",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Mostly public domain / CC0 (per film)",
+    "url": "https://archive.org/details/prelinger"
+   },
+   "commercial": "per-item",
+   "credit": "requested",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "أفلام أمريكية قديمة: إعلانات وتعليمية وصناعية؛ تحقق من كل فيلم.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "nasa-images",
+   "name": "NASA Image and Video Library",
+   "url": "https://images.nasa.gov/",
+   "section": "archive",
+   "star": true,
+   "tier": "free",
+   "licence": {
+    "name": "NASA Media Usage Guidelines",
+    "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+   },
+   "commercial": "yes",
+   "credit": "yes",
+   "topics": [
+    "egypt",
+    "space"
+   ],
+   "tools": [
+    "free_footage:nasa",
+    "free_photos:nasa",
+    "media_sources"
+   ],
+   "note_ar": "غالبًا ملك عام؛ اذكر NASA، بلا إيحاء بالتأييد، الشعارات تحتاج إذنًا. (صور مدارية لمصر والنيل)",
+   "origin": "user-100",
+   "reach": "ok",
+   "search_url": "https://images.nasa.gov/search?q={q}"
+  },
+  {
+   "id": "nasa-svs",
+   "name": "NASA Scientific Visualization Studio",
+   "url": "https://svs.gsfc.nasa.gov/",
+   "section": "archive",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "NASA SVS (public domain, credit requested)",
+    "url": "https://svs.gsfc.nasa.gov/help/"
+   },
+   "commercial": "yes",
+   "credit": "yes",
+   "topics": [
+    "space",
+    "nature-4k"
+   ],
+   "tools": [],
+   "note_ar": "محاكاة وفيديو 4K للأرض والفضاء؛ اكتب سطر النسب المذكور في الصفحة.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "esa",
+   "name": "ESA Multimedia",
+   "url": "https://www.esa.int/",
+   "section": "archive",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC BY-SA 3.0 IGO (most) / per item",
+    "url": "https://www.esa.int/ESA_Multimedia/Copyright_Notice_Images"
+   },
+   "commercial": "per-item",
+   "credit": "yes",
+   "topics": [
+    "space",
+    "egypt"
+   ],
+   "tools": [
+    "free_footage:esa"
+   ],
+   "note_ar": "قسم Multimedia: كثير منه CC BY-SA مع اسم ESA؛ بعض الملفات حقوقها محفوظة.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "noaa",
+   "name": "NOAA Photo Library",
+   "url": "https://photolib.noaa.gov/",
+   "section": "archive",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Public domain (NOAA), credit requested",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "requested",
+   "topics": [
+    "nature-4k"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "بحار وطقس وحياة بحرية؛ ملك عام غالبًا.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "wikimedia",
+   "name": "Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/",
+   "section": "archive",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Per file: CC0, PD, CC BY, CC BY-SA",
+    "url": "https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia"
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [
+    "egypt",
+    "nature-4k"
+   ],
+   "tools": [
+    "free_footage:wikimedia",
+    "free_photos:wikimedia",
+    "media_sources"
+   ],
+   "note_ar": "مكتبة ضخمة (فيها تصنيف Category:Egypt)؛ النسب لازم غالبًا.",
+   "origin": "user-100",
+   "reach": "ok",
+   "search_url": "https://commons.wikimedia.org/w/index.php?search={q}&title=Special:MediaSearch"
+  },
+  {
+   "id": "unsplash",
+   "name": "Unsplash",
+   "url": "https://unsplash.com/",
+   "section": "photo",
+   "star": true,
+   "tier": "free",
+   "licence": {
+    "name": "Unsplash License",
+    "url": "https://unsplash.com/license"
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [
+    "egypt",
+    "nature-4k"
+   ],
+   "tools": [
+    "free_photos:unsplash",
+    "media_sources"
+   ],
+   "note_ar": "تصوير عالي الجودة؛ تجنّب Unsplash+ المدفوع. ممنوع بناء موقع منافس.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud",
+   "search_url": "https://unsplash.com/s/photos/{q}"
+  },
+  {
+   "id": "burst",
+   "name": "Burst (Shopify)",
+   "url": "https://burst.shopify.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Burst License",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "صور منتجات وأعمال.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "stocksnap",
+   "name": "StockSnap",
+   "url": "https://stocksnap.io/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "CC0.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "kaboompics",
+   "name": "Kaboompics",
+   "url": "https://kaboompics.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Kaboompics License",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "صور داخلية وأسلوب حياة مع لوحة ألوان.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "picjumbo",
+   "name": "Picjumbo",
+   "url": "https://picjumbo.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "freemium",
+   "licence": {
+    "name": "Picjumbo License",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "المجاني بلا نسب؛ Premium مدفوع.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "gratisography",
+   "name": "Gratisography",
+   "url": "https://gratisography.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Gratisography License",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "صور غريبة ومرحة.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "reshot",
+   "name": "Reshot",
+   "url": "https://www.reshot.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Reshot License",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "أيقونات ورسومات وصور بلا نسب.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "negativespace",
+   "name": "Negative Space",
+   "url": "https://negativespace.co/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "CC0.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "newoldstock",
+   "name": "New Old Stock",
+   "url": "https://nos.twnsnd.co/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "No known copyright restrictions (from public archives)",
+    "url": null
+   },
+   "commercial": "per-item",
+   "credit": "requested",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [],
+   "note_ar": "صور قديمة من أرشيفات عامة؛ ارجع للأرشيف الأصلي لكل صورة.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "lifeofpix",
+   "name": "Life of Pix",
+   "url": "https://www.lifeofpix.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Public domain / CC0",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [],
+   "note_ar": "CC0.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "picography",
+   "name": "Picography",
+   "url": "https://picography.co/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "CC0.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "foodiesfeed",
+   "name": "Foodiesfeed",
+   "url": "https://www.foodiesfeed.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Foodiesfeed License",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "صور طعام.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "skitterphoto",
+   "name": "Skitterphoto",
+   "url": "https://skitterphoto.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "CC0.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "freerange",
+   "name": "Freerange Stock",
+   "url": "https://freerangestock.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Freerange Equalicense",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "بحساب مجاني.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "barnimages",
+   "name": "Barnimages",
+   "url": "https://barnimages.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Barnimages License",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "بلا نسب.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "jaymantri",
+   "name": "Jay Mantri",
+   "url": "https://jaymantri.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [
+    "nature-4k"
+   ],
+   "tools": [],
+   "note_ar": "مناظر طبيعية CC0.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "magdeleine",
+   "name": "Magdeleine",
+   "url": "https://magdeleine.co/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0 or CC BY (per photo)",
+    "url": null
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "كل صورة مكتوب عليها CC0 أو CC BY.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "rawpixel",
+   "name": "Rawpixel",
+   "url": "https://www.rawpixel.com/public-domain",
+   "section": "photo",
+   "star": false,
+   "tier": "freemium",
+   "licence": {
+    "name": "CC0 (public domain section) / Rawpixel licence",
+    "url": null
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "قسم الملك العام CC0 (فيه لوحات ومصر القديمة)؛ باقي الموقع شروطه أضيق.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud",
+   "search_url": "https://www.rawpixel.com/search/{q}?mode=shop&page=1&path=_topics&sort=curated&topic=_public_domain"
+  },
+  {
+   "id": "styledstock",
+   "name": "StyledStock",
+   "url": "https://styledstock.co/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "StyledStock terms",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [],
+   "note_ar": "صور أنثوية مكتبية.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "nappy",
+   "name": "Nappy",
+   "url": "https://nappy.co/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Nappy License (CC0-style)",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "صور لأشخاص سود ومتنوعين.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "pikwizard",
+   "name": "PikWizard",
+   "url": "https://pikwizard.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "PikWizard License",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "بلا نسب.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "freeimages",
+   "name": "FreeImages",
+   "url": "https://www.freeimages.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "freemium",
+   "licence": {
+    "name": "FreeImages License (per image)",
+    "url": null
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "بعض الصور تشترط النسب أو تمنع التجاري؛ نتائج iStock المدفوعة مختلطة.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "freestocks",
+   "name": "Freestocks",
+   "url": "https://freestocks.org/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "CC0.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "morguefile",
+   "name": "Morguefile",
+   "url": "https://morguefile.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Morguefile License",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "ممنوع بيع الصورة كما هي.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "publicdomainpictures",
+   "name": "PublicDomainPictures",
+   "url": "https://www.publicdomainpictures.net/",
+   "section": "photo",
+   "star": false,
+   "tier": "freemium",
+   "licence": {
+    "name": "CC0 (free size); premium paid",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "الحجم المجاني CC0؛ الحجم الكبير مدفوع.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "pxhere",
+   "name": "PxHere",
+   "url": "https://pxhere.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "CC0.",
+   "origin": "user-100",
+   "reach": "ok",
+   "search_url": "https://pxhere.com/en/photos?q={q}"
+  },
+  {
+   "id": "stockvault",
+   "name": "Stockvault",
+   "url": "https://www.stockvault.net/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Per image (some non-commercial)",
+    "url": null
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "بعض الصور للاستخدام غير التجاري فقط.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "pixnio",
+   "name": "Pixnio",
+   "url": "https://pixnio.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [
+    "nature-4k"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "CC0.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "moose",
+   "name": "Moose Photos (Icons8)",
+   "url": "https://icons8.com/photos",
+   "section": "photo",
+   "star": false,
+   "tier": "freemium",
+   "licence": {
+    "name": "Icons8 Free License (link required)",
+    "url": "https://icons8.com/license"
+   },
+   "commercial": "yes",
+   "credit": "yes",
+   "topics": [],
+   "tools": [],
+   "note_ar": "المجاني يشترط رابطًا لـ Icons8؛ الاشتراك يلغيه.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "wunderstock",
+   "name": "Wunderstock",
+   "url": "https://wunderstock.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Per image (site terms)",
+    "url": null
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [],
+   "tools": [],
+   "note_ar": "راجع رخصة كل صورة.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "picryl",
+   "name": "Picryl",
+   "url": "https://picryl.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "freemium",
+   "licence": {
+    "name": "Public domain (per item)",
+    "url": null
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [],
+   "note_ar": "محرك ملك عام (أرشيفات وصور قديمة)؛ بعض التحميلات مدفوعة.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "openverse",
+   "name": "Openverse",
+   "url": "https://openverse.org/",
+   "section": "photo",
+   "star": true,
+   "tier": "aggregator",
+   "licence": {
+    "name": "Per image: CC BY, CC BY-SA, CC0, PDM",
+    "url": "https://openverse.org/about"
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [
+    "egypt",
+    "nature-4k"
+   ],
+   "tools": [
+    "free_footage:openverse",
+    "free_photos:openverse",
+    "media_sources"
+   ],
+   "note_ar": "محرك بحث فوق 800 مليون صورة وملف صوتي بتراخيص مفتوحة.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud",
+   "search_url": "https://openverse.org/search/?q={q}"
+  },
+  {
+   "id": "flickr-commons",
+   "name": "Flickr Commons",
+   "url": "https://www.flickr.com/commons",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "No known copyright restrictions",
+    "url": "https://www.flickr.com/commons/usage/"
+   },
+   "commercial": "per-item",
+   "credit": "requested",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "صور أرشيفات مؤسسات (فيها مصر القديمة والقرن العشرين).",
+   "origin": "user-100",
+   "reach": "ok",
+   "search_url": "https://www.flickr.com/search/?text={q}&is_commons=1"
+  },
+  {
+   "id": "deathtostock",
+   "name": "Death to Stock",
+   "url": "https://deathtothestockphoto.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "freemium",
+   "licence": {
+    "name": "Death to Stock License",
+    "url": null
+   },
+   "commercial": "limited",
+   "credit": "no",
+   "topics": [],
+   "tools": [],
+   "note_ar": "حزم مجانية بالبريد والاشتراك مدفوع؛ ممنوع إعادة التوزيع.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "startupstock",
+   "name": "Startup Stock Photos",
+   "url": "https://startupstockphotos.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [],
+   "note_ar": "مكاتب وتقنية.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "libreshot",
+   "name": "LibreShot",
+   "url": "https://libreshot.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0-style",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "بلا نسب.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "goodfreephotos",
+   "name": "Good Free Photos",
+   "url": "https://www.goodfreephotos.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Public domain (mostly)",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "فيه أقسام دول منها مصر.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "publicdomainarchive",
+   "name": "Public Domain Archive",
+   "url": "https://www.publicdomainarchive.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "freemium",
+   "licence": {
+    "name": "Public domain",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [],
+   "note_ar": "بعض المحتوى Premium مدفوع.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "visualhunt",
+   "name": "Visual Hunt",
+   "url": "https://visualhunt.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "aggregator",
+   "licence": {
+    "name": "CC0 or CC BY (per photo)",
+    "url": null
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [],
+   "tools": [],
+   "note_ar": "مجمّع؛ صور CC BY تشترط النسب.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "fancycrave",
+   "name": "Fancycrave",
+   "url": "https://fancycrave.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [],
+   "note_ar": "CC0.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "stokpic",
+   "name": "StokPic",
+   "url": "https://stokpic.com/",
+   "section": "photo",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "StokPic terms",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [],
+   "note_ar": "ممنوع إعادة التوزيع كمكتبة.",
+   "origin": "user-100",
+   "reach": "no-dns"
+  },
+  {
+   "id": "thestocks",
+   "name": "The Stocks",
+   "url": "https://thestocks.im/",
+   "section": "photo",
+   "star": false,
+   "tier": "aggregator",
+   "licence": {
+    "name": "Licence of each linked site",
+    "url": null
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [],
+   "tools": [],
+   "note_ar": "بوابة لمواقع كثيرة؛ الرخصة رخصة الموقع الأصلي.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "smithsonian",
+   "name": "Smithsonian Open Access",
+   "url": "https://www.si.edu/openaccess",
+   "section": "museum",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0 (Open Access items)",
+    "url": "https://www.si.edu/openaccess/faq"
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "فقط ما عليه CC0.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud",
+   "search_url": "https://www.si.edu/search/collection-images?edan_q={q}&edan_fq[0]=media_usage:CC0"
+  },
+  {
+   "id": "met",
+   "name": "The Met Open Access",
+   "url": "https://www.metmuseum.org/art/collection",
+   "section": "museum",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0 (Open Access)",
+    "url": "https://www.metmuseum.org/about-the-met/policies-and-documents/open-access"
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [
+    "free_photos:met",
+    "media_sources"
+   ],
+   "note_ar": "فن إسلامي ومصري قديم وخط؛ فقط ما عليه OA.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud",
+   "search_url": "https://www.metmuseum.org/art/collection/search?q={q}&showOnly=openAccess"
+  },
+  {
+   "id": "rijksmuseum",
+   "name": "Rijksmuseum",
+   "url": "https://www.rijksmuseum.nl/en/rijksstudio",
+   "section": "museum",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0 / Public Domain Mark",
+    "url": "https://www.rijksmuseum.nl/en/research/our-research/open-data"
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "لوحات هولندية بدقة عالية جدًا.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "nypl",
+   "name": "NYPL Digital Collections",
+   "url": "https://digitalcollections.nypl.org/",
+   "section": "museum",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Public domain items (filter)",
+    "url": "https://digitalcollections.nypl.org/about"
+   },
+   "commercial": "per-item",
+   "credit": "requested",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "فيها «وصف مصر» ورحلات القرن 19؛ فلتر Public Domain.",
+   "origin": "user-100",
+   "reach": "ok",
+   "search_url": "https://digitalcollections.nypl.org/search/index?keywords={q}&filters[rights]=pd"
+  },
+  {
+   "id": "loc",
+   "name": "Library of Congress Free to Use",
+   "url": "https://www.loc.gov/free-to-use/",
+   "section": "museum",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Free to use and reuse (no known restrictions)",
+    "url": "https://www.loc.gov/free-to-use/"
+   },
+   "commercial": "yes",
+   "credit": "requested",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [
+    "free_footage:loc",
+    "media_sources"
+   ],
+   "note_ar": "مجموعة Matson فيها صور مصر والشرق الأوسط 1898-1946.",
+   "origin": "user-100",
+   "reach": "ok",
+   "search_url": "https://www.loc.gov/free-to-use/?q={q}"
+  },
+  {
+   "id": "nga",
+   "name": "National Gallery of Art",
+   "url": "https://www.nga.gov/open-access-images.html",
+   "section": "museum",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0 (NGA Images)",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "لوحات بلا نسب.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "artic",
+   "name": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/collection",
+   "section": "museum",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0 (public domain works)",
+    "url": "https://www.artic.edu/open-access/open-access-images"
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "فقط الأعمال المعلّمة CC0.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud",
+   "search_url": "https://www.artic.edu/collection?q={q}&is_public_domain=1"
+  },
+  {
+   "id": "getty",
+   "name": "Getty Open Content",
+   "url": "https://www.getty.edu/projects/open-content-program/",
+   "section": "museum",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Getty Open Content (no restrictions)",
+    "url": "https://www.getty.edu/projects/open-content-program/"
+   },
+   "commercial": "yes",
+   "credit": "requested",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "صور ملك عام؛ سطر النسب مستحب. فيه صور مصر القرن 19.",
+   "origin": "user-100",
+   "reach": "ok",
+   "search_url": "https://www.getty.edu/art/collection/search?q={q}&open_content=true"
+  },
+  {
+   "id": "cleveland",
+   "name": "Cleveland Museum of Art",
+   "url": "https://www.clevelandart.org/art/collection/search",
+   "section": "museum",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0 (Open Access)",
+    "url": "https://www.clevelandart.org/open-access"
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "قطع مصرية قديمة كثيرة CC0.",
+   "origin": "user-100",
+   "reach": "ok",
+   "search_url": "https://www.clevelandart.org/art/collection/search?search={q}&open_access=1"
+  },
+  {
+   "id": "parismusees",
+   "name": "Paris Musées",
+   "url": "https://www.parismuseescollections.paris.fr/fr",
+   "section": "museum",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0 (public domain works)",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [],
+   "note_ar": "متاحف باريس؛ الأعمال الملك العام CC0.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "europeana",
+   "name": "Europeana",
+   "url": "https://www.europeana.eu/",
+   "section": "museum",
+   "star": false,
+   "tier": "aggregator",
+   "licence": {
+    "name": "Per item rights statement",
+    "url": "https://www.europeana.eu/en/rights"
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [
+    "free_footage:europeana",
+    "media_sources"
+   ],
+   "note_ar": "مجمّع متاحف أوروبا؛ فلتر «يمكن إعادة الاستخدام».",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud",
+   "search_url": "https://www.europeana.eu/en/search?query={q}&reusability=open"
+  },
+  {
+   "id": "bhl",
+   "name": "Biodiversity Heritage Library",
+   "url": "https://www.biodiversitylibrary.org/",
+   "section": "museum",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Per item (public domain or CC BY-NC)",
+    "url": "https://about.biodiversitylibrary.org/help/copyright-and-reuse/"
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [
+    "nature-4k"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "رسوم حيوانات ونباتات قديمة؛ بعضها غير تجاري.",
+   "origin": "user-100",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "oldbookillustrations",
+   "name": "Old Book Illustrations",
+   "url": "https://www.oldbookillustrations.com/",
+   "section": "museum",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Public domain (scans free to use)",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "requested",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "رسوم كتب قديمة، فيها رحلات مصر.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "brooklyn",
+   "name": "Brooklyn Museum (Egyptian)",
+   "url": "https://www.brooklynmuseum.org/opencollection/collections/egyptian_classical_ancient_near_eastern_art",
+   "section": "museum",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC BY (museum photos) / per item",
+    "url": null
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "من أكبر مجموعات الآثار المصرية؛ صور المتحف غالبًا CC BY.",
+   "origin": "extra",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "walters",
+   "name": "Walters Art Museum",
+   "url": "https://art.thewalters.org/",
+   "section": "museum",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [],
+   "note_ar": "آثار مصرية ومخطوطات إسلامية CC0.",
+   "origin": "extra",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "qdl",
+   "name": "Qatar Digital Library",
+   "url": "https://www.qdl.qa/",
+   "section": "museum",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Open Government Licence / per item",
+    "url": null
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "مخطوطات وخرائط وصور عربية؛ راجع حقوق كل ملف.",
+   "origin": "extra",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "louvre",
+   "name": "Louvre Collections",
+   "url": "https://collections.louvre.fr/",
+   "section": "museum",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Louvre terms of use",
+    "url": null
+   },
+   "commercial": "limited",
+   "credit": "yes",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [],
+   "note_ar": "أكبر قسم آثار مصرية في أوروبا؛ الشروط تختلف حسب العمل، راجع قبل التجاري.",
+   "origin": "extra",
+   "reach": "ok"
+  },
+  {
+   "id": "museo-egizio",
+   "name": "Museo Egizio (Turin)",
+   "url": "https://collezioni.museoegizio.it/",
+   "section": "museum",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Per item (museum terms)",
+    "url": null
+   },
+   "commercial": "per-item",
+   "credit": "yes",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [],
+   "note_ar": "ثاني أكبر متحف مصري في العالم؛ تحقق من الترخيص قبل الاستخدام.",
+   "origin": "extra",
+   "reach": "ok"
+  },
+  {
+   "id": "british-museum",
+   "name": "British Museum Collection",
+   "url": "https://www.britishmuseum.org/collection",
+   "section": "museum",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC BY-NC-SA 4.0",
+    "url": "https://www.britishmuseum.org/terms-use/copyright-and-permissions"
+   },
+   "commercial": "no",
+   "credit": "yes",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [],
+   "note_ar": "آثار مصرية كثيرة لكن غير تجاري فقط؛ للمحتوى الربحي اطلب ترخيصًا.",
+   "origin": "extra",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "eso",
+   "name": "ESO",
+   "url": "https://www.eso.org/public/images/",
+   "section": "space",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC BY 4.0",
+    "url": "https://www.eso.org/public/copyright/"
+   },
+   "commercial": "yes",
+   "credit": "yes",
+   "topics": [
+    "space",
+    "nature-4k"
+   ],
+   "tools": [],
+   "note_ar": "اذكر «ESO». فيديو وصور سماء ليلية حتى 4K وأكثر.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "esahubble",
+   "name": "ESA/Hubble",
+   "url": "https://esahubble.org/",
+   "section": "space",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC BY 4.0",
+    "url": "https://esahubble.org/copyright/"
+   },
+   "commercial": "yes",
+   "credit": "yes",
+   "topics": [
+    "space"
+   ],
+   "tools": [],
+   "note_ar": "اذكر «ESA/Hubble».",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "webb",
+   "name": "Webb Telescope (STScI)",
+   "url": "https://webbtelescope.org/resource-gallery",
+   "section": "space",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "STScI/NASA usage (credit NASA, ESA, CSA, STScI)",
+    "url": "https://webbtelescope.org/copyright"
+   },
+   "commercial": "yes",
+   "credit": "yes",
+   "topics": [
+    "space"
+   ],
+   "tools": [],
+   "note_ar": "اكتب سطر النسب المذكور على كل صورة.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "usgs",
+   "name": "USGS Multimedia",
+   "url": "https://www.usgs.gov/products/multimedia-gallery",
+   "section": "space",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Public domain (USGS)",
+    "url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+   },
+   "commercial": "yes",
+   "credit": "requested",
+   "topics": [
+    "nature-4k",
+    "egypt"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "طبيعة وجيولوجيا وصور Landsat؛ بعض الملفات من أطراف أخرى.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "nps",
+   "name": "National Park Service",
+   "url": "https://www.nps.gov/media/multimedia-search.htm",
+   "section": "space",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Public domain (NPS-made), exceptions per item",
+    "url": "https://www.nps.gov/aboutus/disclaimer.htm"
+   },
+   "commercial": "yes",
+   "credit": "requested",
+   "topics": [
+    "nature-4k"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "صور وفيديو وB-roll الحدائق الوطنية الأمريكية.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "copernicus",
+   "name": "Copernicus Sentinel imagery",
+   "url": "https://browser.dataspace.copernicus.eu/",
+   "section": "space",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Copernicus Sentinel data licence (free, credit)",
+    "url": "https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice"
+   },
+   "commercial": "yes",
+   "credit": "yes",
+   "topics": [
+    "egypt",
+    "nature-4k"
+   ],
+   "tools": [],
+   "note_ar": "صور أقمار صناعية للنيل والدلتا والصحراء؛ اكتب «Contains modified Copernicus Sentinel data».",
+   "origin": "extra",
+   "reach": "ok"
+  },
+  {
+   "id": "earthobservatory",
+   "name": "NASA Earth Observatory",
+   "url": "https://earthobservatory.nasa.gov/",
+   "section": "space",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "NASA (credit NASA Earth Observatory)",
+    "url": "https://earthobservatory.nasa.gov/image-use-policy"
+   },
+   "commercial": "yes",
+   "credit": "yes",
+   "topics": [
+    "egypt",
+    "nature-4k"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "صور مدارية مشروحة، فيها مصر والنيل والأهرامات من الفضاء.",
+   "origin": "extra",
+   "reach": "ok"
+  },
+  {
+   "id": "usfws",
+   "name": "USFWS National Digital Library",
+   "url": "https://digitalmedia.fws.gov/",
+   "section": "space",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Public domain (most)",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "requested",
+   "topics": [
+    "nature-4k"
+   ],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "حياة برية وطيور، صور وفيديو.",
+   "origin": "extra",
+   "reach": "ok"
+  },
+  {
+   "id": "polyhaven",
+   "name": "Poly Haven",
+   "url": "https://polyhaven.com/",
+   "section": "texture",
+   "star": true,
+   "tier": "free",
+   "licence": {
+    "name": "CC0",
+    "url": "https://polyhaven.com/license"
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "HDRI وخامات ونماذج 3D CC0.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "ambientcg",
+   "name": "ambientCG",
+   "url": "https://ambientcg.com/",
+   "section": "texture",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0",
+    "url": "https://docs.ambientcg.com/license/"
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "خامات PBR وHDRI CC0.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "textureninja",
+   "name": "Texture Ninja",
+   "url": "https://texture.ninja/",
+   "section": "texture",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC0 / public domain",
+    "url": null
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [],
+   "note_ar": "صور خامات خام.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "textures-com",
+   "name": "Textures.com",
+   "url": "https://www.textures.com/",
+   "section": "texture",
+   "star": false,
+   "tier": "freemium",
+   "licence": {
+    "name": "Textures.com License",
+    "url": "https://www.textures.com/about/license"
+   },
+   "commercial": "limited",
+   "credit": "no",
+   "topics": [],
+   "tools": [],
+   "note_ar": "رصيد مجاني يومي محدود؛ ممنوع إعادة توزيع الخامات.",
+   "origin": "user-100",
+   "reach": "ok"
+  },
+  {
+   "id": "sketchfab",
+   "name": "Sketchfab (CC models)",
+   "url": "https://sketchfab.com/search?features=downloadable&licenses=7c23a1ba438d4306920229c12afcb5f9&type=models",
+   "section": "texture",
+   "star": false,
+   "tier": "freemium",
+   "licence": {
+    "name": "Per model (filter CC0 / CC BY)",
+    "url": "https://sketchfab.com/licenses"
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [
+    "egypt"
+   ],
+   "tools": [],
+   "note_ar": "نماذج 3D (فيها آثار مصرية ممسوحة)؛ الرابط مفلتر على CC0.",
+   "origin": "extra",
+   "reach": "ok"
+  },
+  {
+   "id": "youtube-audio",
+   "name": "YouTube Audio Library",
+   "url": "https://www.youtube.com/audiolibrary",
+   "section": "audio",
+   "star": true,
+   "tier": "free",
+   "licence": {
+    "name": "YouTube Audio Library terms (per track)",
+    "url": "https://support.google.com/youtube/answer/3376882"
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [],
+   "tools": [],
+   "note_ar": "موسيقى ومؤثرات من YouTube Studio؛ بعض المقاطع تشترط النسب.",
+   "origin": "extra",
+   "reach": "ok"
+  },
+  {
+   "id": "pixabay-music",
+   "name": "Pixabay Music & Sound Effects",
+   "url": "https://pixabay.com/music/",
+   "section": "audio",
+   "star": true,
+   "tier": "free",
+   "licence": {
+    "name": "Pixabay Content License",
+    "url": "https://pixabay.com/service/license-summary/"
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "موسيقى ومؤثرات صوتية؛ قد يظهر Content ID على بعض المقاطع.",
+   "origin": "extra",
+   "reach": "blocked-from-cloud",
+   "search_url": "https://pixabay.com/music/search/{q}/"
+  },
+  {
+   "id": "mixkit-audio",
+   "name": "Mixkit Music & SFX",
+   "url": "https://mixkit.co/free-sound-effects/",
+   "section": "audio",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Mixkit Sound Effects / Stock Music Free License",
+    "url": "https://mixkit.co/license/"
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "مؤثرات وموسيقى؛ مسموحة في الفيديو لا كملفات صوتية منفصلة للبيع.",
+   "origin": "extra",
+   "reach": "ok"
+  },
+  {
+   "id": "freesound",
+   "name": "Freesound",
+   "url": "https://freesound.org/",
+   "section": "audio",
+   "star": true,
+   "tier": "free",
+   "licence": {
+    "name": "Per sound: CC0, CC BY, CC BY-NC",
+    "url": "https://freesound.org/help/faq/#licenses"
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [],
+   "tools": [],
+   "note_ar": "أكبر مكتبة مؤثرات؛ فلتر CC0 أو CC BY للعمل التجاري.",
+   "origin": "extra",
+   "reach": "ok",
+   "search_url": "https://freesound.org/search/?q={q}"
+  },
+  {
+   "id": "fma",
+   "name": "Free Music Archive",
+   "url": "https://freemusicarchive.org/",
+   "section": "audio",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Per track (CC licences)",
+    "url": "https://freemusicarchive.org/License_Guide"
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [],
+   "tools": [],
+   "note_ar": "كثير منها NC؛ اقرأ رخصة كل أغنية.",
+   "origin": "extra",
+   "reach": "ok"
+  },
+  {
+   "id": "incompetech",
+   "name": "Incompetech (Kevin MacLeod)",
+   "url": "https://incompetech.com/music/",
+   "section": "audio",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "CC BY 4.0",
+    "url": "https://incompetech.com/music/royalty-free/licenses/"
+   },
+   "commercial": "yes",
+   "credit": "yes",
+   "topics": [],
+   "tools": [],
+   "note_ar": "موسيقى خلفية؛ النسب لازم أو اشترِ رخصة بلا نسب.",
+   "origin": "extra",
+   "reach": "ok"
+  },
+  {
+   "id": "ccmixter",
+   "name": "ccMixter",
+   "url": "https://dig.ccmixter.org/",
+   "section": "audio",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Per track (CC BY / BY-NC)",
+    "url": "https://dig.ccmixter.org/licenses"
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [],
+   "tools": [],
+   "note_ar": "فلتر «free for commercial use».",
+   "origin": "extra",
+   "reach": "ok"
+  },
+  {
+   "id": "musopen",
+   "name": "Musopen",
+   "url": "https://musopen.org/",
+   "section": "audio",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Public domain / CC (per recording)",
+    "url": "https://musopen.org/faq/"
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [],
+   "tools": [],
+   "note_ar": "تسجيلات موسيقى كلاسيكية ملك عام.",
+   "origin": "extra",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "sonniss",
+   "name": "Sonniss GDC Game Audio Bundle",
+   "url": "https://sonniss.com/gameaudiogdc",
+   "section": "audio",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Sonniss royalty-free licence",
+    "url": "https://sonniss.com/gdc-bundle-license/"
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [],
+   "note_ar": "عشرات الجيجات من المؤثرات الاحترافية بلا نسب.",
+   "origin": "extra",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "zapsplat",
+   "name": "ZapSplat",
+   "url": "https://www.zapsplat.com/",
+   "section": "audio",
+   "star": false,
+   "tier": "freemium",
+   "licence": {
+    "name": "ZapSplat Standard License",
+    "url": "https://www.zapsplat.com/license-type/standard-license/"
+   },
+   "commercial": "yes",
+   "credit": "yes",
+   "topics": [],
+   "tools": [],
+   "note_ar": "المجاني يشترط النسب؛ Gold يلغيه.",
+   "origin": "extra",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "uppbeat",
+   "name": "Uppbeat",
+   "url": "https://uppbeat.io/",
+   "section": "audio",
+   "star": false,
+   "tier": "freemium",
+   "licence": {
+    "name": "Uppbeat licence (free tier)",
+    "url": "https://uppbeat.io/licence"
+   },
+   "commercial": "limited",
+   "credit": "yes",
+   "topics": [],
+   "tools": [],
+   "note_ar": "موسيقى لصنّاع المحتوى؛ المجاني بحد شهري ونسب.",
+   "origin": "extra",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "bbc-sfx",
+   "name": "BBC Sound Effects",
+   "url": "https://sound-effects.bbcrewind.co.uk/",
+   "section": "audio",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "RemArc Licence (personal, educational, research)",
+    "url": "https://sound-effects.bbcrewind.co.uk/licensing"
+   },
+   "commercial": "no",
+   "credit": "yes",
+   "topics": [],
+   "tools": [],
+   "note_ar": "غير تجاري فقط؛ للتجاري ترخيص مدفوع.",
+   "origin": "extra",
+   "reach": "ok"
+  },
+  {
+   "id": "lottiefiles",
+   "name": "LottieFiles (free animations)",
+   "url": "https://lottiefiles.com/free-animations",
+   "section": "graphics",
+   "star": false,
+   "tier": "freemium",
+   "licence": {
+    "name": "Lottie Simple License",
+    "url": "https://lottiefiles.com/page/license"
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [],
+   "note_ar": "رسوم متحركة جاهزة JSON/MP4 للموشن جرافيك.",
+   "origin": "extra",
+   "reach": "ok"
+  },
+  {
+   "id": "undraw",
+   "name": "unDraw",
+   "url": "https://undraw.co/",
+   "section": "graphics",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "unDraw License",
+    "url": "https://undraw.co/license"
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [],
+   "note_ar": "رسوم توضيحية SVG بلون قابل للتغيير.",
+   "origin": "extra",
+   "reach": "ok"
+  },
+  {
+   "id": "storyset",
+   "name": "Storyset (Freepik)",
+   "url": "https://storyset.com/",
+   "section": "graphics",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Freepik License",
+    "url": "https://storyset.com/terms"
+   },
+   "commercial": "yes",
+   "credit": "yes",
+   "topics": [],
+   "tools": [],
+   "note_ar": "رسوم توضيحية قابلة للتحريك؛ النسب لازم.",
+   "origin": "extra",
+   "reach": "ok"
+  },
+  {
+   "id": "svgrepo",
+   "name": "SVG Repo",
+   "url": "https://www.svgrepo.com/",
+   "section": "graphics",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "Per icon (CC0, MIT, CC BY...)",
+    "url": "https://www.svgrepo.com/page/licensing/"
+   },
+   "commercial": "per-item",
+   "credit": "per-item",
+   "topics": [],
+   "tools": [
+    "media_sources"
+   ],
+   "note_ar": "أيقونات SVG؛ اقرأ رخصة كل أيقونة.",
+   "origin": "extra",
+   "reach": "blocked-from-cloud"
+  },
+  {
+   "id": "google-fonts",
+   "name": "Google Fonts",
+   "url": "https://fonts.google.com/",
+   "section": "graphics",
+   "star": false,
+   "tier": "free",
+   "licence": {
+    "name": "SIL Open Font License (most)",
+    "url": "https://developers.google.com/fonts/faq"
+   },
+   "commercial": "yes",
+   "credit": "no",
+   "topics": [],
+   "tools": [],
+   "note_ar": "خطوط عربية مجانية للتجاري: Cairo، Tajawal، Amiri، Reem Kufi، Noto Kufi Arabic.",
+   "origin": "extra",
+   "reach": "ok"
+  }
+ ]
+}
