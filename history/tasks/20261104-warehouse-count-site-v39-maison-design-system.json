@@ -322,6 +322,13 @@
    "what": "v64 (artifact version 80), from the owner's analysis report and v2 plan: end-of-count report page (one big percentage + 'continue counting' primary button, status counts, value of differences using prices typed in invoices, biggest differences table, location map tiles coloured done/diff/partial/not-started that filter the list, signature lines, print); change history kept inside each count entry (last 12 values with time and who, names resolved via user.profiles) shown in the item panel; alternatives that exist in stock under another code listed in the item panel with location and availability; quick quantity buttons (1-20); save feedback (short vibration + soft tone) and screen wake lock while counting. Not done from the plan: blind counting/second-third count and supervisor approval (the app is single-count), Excel import of a new stock report (already exists as list import), offline queue (already exists).",
    "checks": "t66: quick 12 sets qty; history shows 2 then 1; 2 in-stock alternatives found; report 3 diffs, value 50.00 from one invoice price, tiles A1 diff / A2 not started / B4 diff; tile filters list to A1; t56/t59/t62/t64/t65 0 errors; contrast gate 0 low",
    "status": "published"
+  },
+  {
+   "n": 41,
+   "at": "2026-11-07T10:05:00+03:00",
+   "what": "v65 (artifact version 81), ideas taken from the owner's other counting tool (Apple-style single-file app): part-number core matching in search (shop prefixes BP/OE/OL/ORG/OR/ATG/FRY/SK/LR/V and suffixes BP/OE/LMF/LM/ON/OEP/ATG/VW/LR ignored for PN-like tokens of 7+ chars); 'current shelf' chip — set once, every saved count on an item without a location takes it; 'recent counts' sheet (mine / whole team, 40 latest with time, location, status colour); one-click ready themes in the studio (Apple light, Apple dark, back to paper & ink). Not copied: their two-round blind counting model and their hard-coded 1,100-item list.",
+   "checks": "t67: BP4H0121081AG and V4H0121081AG find the V4H item, 8K0411327BLMF finds 8K0411327B LMF, OE06E121045BE finds 06E121045BE, Arabic ى/ي normalised; shelf A-03 auto-filled on save; recent list shows it; Apple preset applies bg #F5F5F7 accent #0066CC; t56/t59/t62/t65/t66 0 page errors; contrast gate 0 low",
+   "status": "published"
   }
  ],
  "outputs": [
