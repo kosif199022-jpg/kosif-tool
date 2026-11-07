@@ -29,13 +29,12 @@ from power_programs import (  # noqa: E402
 )
 
 FAMILIES = ["app-feature-transfer", "ui-product-device", "apps-artifacts", "formats-platforms", "brand-logo-identity"]
-def offline_modules(fam):
-    """The family's modules without the `__local` wave, whose programs need downloaded models (faster-whisper,
-    piper) and are tested where their engine exists by test_power_programs_bd_wave (env_scope=local)."""
-    return [m for m in pp.modules_for(fam) if not m.__name__.endswith("__local")]
-
-
-IDS = sorted(pid for fam in FAMILIES for mod in offline_modules(fam) for pid in mod.PROGRAMS)
+IDS = sorted(pid for fam in FAMILIES for mod in pp.modules_for(fam) for pid in mod.PROGRAMS)
+# Modules explicitly named __local require installed models and must not become
+# false failures or false passes on the generic CI runner.
+LOCAL_ONLY = {pid for fam in FAMILIES for mod in pp.modules_for(fam)
+              if mod.__name__.endswith("__local") for pid in mod.PROGRAMS}
+CI_IDS = sorted(set(IDS) - LOCAL_ONLY)
 
 
 def run(pid):
@@ -87,12 +86,17 @@ PLANTED = {
 
 class AppsPowerPrograms(unittest.TestCase):
     def test_every_family_has_programs(self):
-        counts = {fam: sum(len(m.PROGRAMS) for m in offline_modules(fam)) for fam in FAMILIES}
-        self.assertEqual(counts, {"app-feature-transfer": 43, "ui-product-device": 82, "apps-artifacts": 10,
+        counts = {fam: sum(len(m.PROGRAMS) for m in pp.modules_for(fam)) for fam in FAMILIES}
+        self.assertEqual(counts, {"app-feature-transfer": 44, "ui-product-device": 82, "apps-artifacts": 10,
                                   "formats-platforms": 52, "brand-logo-identity": 35})
 
+    def test_local_only_programs_are_identified_not_mislabeled_ci_pass(self):
+        self.assertIn("APPX-13", LOCAL_ONLY)
+        self.assertIn("APPX-13", IDS)
+        self.assertNotIn("APPX-13", CI_IDS)
+
     def test_every_program_passes(self):
-        for pid in IDS:
+        for pid in CI_IDS:
             with self.subTest(pid=pid):
                 res = run(pid)
                 self.assertTrue(res["ok"], (failed(res), res.get("error", "")[-800:]))
