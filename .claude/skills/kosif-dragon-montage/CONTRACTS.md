@@ -13,6 +13,7 @@ brief.json          kosif.dm.brief.v1     station 2 (يفهم المطلوب)
 concepts.json       kosif.dm.concepts.v1  station 3 (يفكر بإبداع)
 look.json           kosif.dm.look.v1      station 4 (يختار الذوق)
 edl.json            kosif.dm.edl.v1       station 5 (يكتب المونتاج)
+preview/            station 5b: storyboard.jpg, PLAN_AR.md (movement matrix), plan.json (kosif.dm.plan.v1), animatic.mp4
 render/             station 6 outputs: final.mp4, captions.srt, project.fcpxml …
 render.json         kosif.dm.render.v1    station 6 receipt
 review.json         kosif.dm.review.v1    station 7 (يتفرج وينقد)

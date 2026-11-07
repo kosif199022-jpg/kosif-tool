@@ -19,7 +19,7 @@
 | `editorial-film-edit` | `.claude/skills/editorial-film-edit/SKILL.md` | 6 KB · 48 سطر | Edit footage in an archival editorial style with bundled video and photo references, kinetic text, film grain, bloom, masks and presenter splits. Use for new edits and… |
 | `kosif-black-dragon` | `.claude/skills/kosif-black-dragon/SKILL.md` | 21 KB · 310 سطر | التنين الأسود: new independent skill that studies the KOSIF catalog, links each original source to one traceable entry, and synthesizes new task-specific working… |
 | `kosif-dragon-mind` | `.claude/skills/kosif-dragon-mind/SKILL.md` | 12 KB · 153 سطر | The thinking brain of the Black Dragon («عقل التنين الأسود»). Use when a task should be thought through before the Black Dragon runs, when the owner asks to decompose,… |
-| `kosif-dragon-montage` | `.claude/skills/kosif-dragon-montage/SKILL.md` | 6 KB · 80 سطر | Black Dragon montage protocol («التنين الأسود، مونتاج»). Use when the owner gives one or more videos (and optionally music or a reference video) and asks the Black… |
+| `kosif-dragon-montage` | `.claude/skills/kosif-dragon-montage/SKILL.md` | 8 KB · 98 سطر | Black Dragon montage protocol («التنين الأسود، مونتاج»). Use when the owner gives one or more videos (and optionally music or a reference video) and asks the Black… |
 | `kosif-infinite-matrices` | `.claude/skills/kosif-infinite-matrices/SKILL.md` | 9 KB · 88 سطر | Invent new visual and motion systems from causal bricks (state, operation, law, time, memory, feedback) mined from the 86 reference styles; build a recipe, run an A/B/C… |
 | `kosif-instagram-discovery` | `.claude/skills/kosif-instagram-discovery/SKILL.md` | 3 KB · 34 سطر | Find public Instagram reel references by topic using generated public web search queries; index researcher-confirmed permalinks; rank Arabic/English metadata; create… |
 | `kosif-instagram-video-research` | `.claude/skills/kosif-instagram-video-research/SKILL.md` | 6 KB · 85 سطر | Search public Instagram Reel references by content/topic and known creator, expand Arabic-to-English queries, optionally ingest public search index via Brave Search… |
@@ -178,12 +178,13 @@
 
 ### `.claude/skills/kosif-dragon-montage/SKILL.md`
 
-- 6–25: Dragon Montage — بروتوكول مونتاج التنين الأسود
-- 26–50: The eight stations
-- 51–61: Claude's part (the creative eye)
-- 62–69: Rules
-- 70–76: Required tools
-- 77–79: Tests
+- 6–32: Dragon Montage — بروتوكول مونتاج التنين الأسود
+- 33–58: The eight stations
+- 59–74: Claude's part (the creative eye)
+- 75–82: Rules
+- 83–87: Paste-ready prompt
+- 88–94: Required tools
+- 95–97: Tests
 
 ### `.claude/skills/kosif-infinite-matrices/SKILL.md`
 

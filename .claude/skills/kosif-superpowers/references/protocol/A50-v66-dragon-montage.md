@@ -4,7 +4,8 @@
 
 **Trigger:** «التنين الأسود، مونتاج» / «مونتاج بالتنين» / «اعمل ريل من الفيديو ده» / «اعمل زي الفيديو ده», with one or more videos.
 
-**Runs:** `black_dragon.py montage edit "<task>" --clip … [--music …] [--reference …]`
+**Runs:** `black_dragon.py montage plan "<task>" --clip … [--music …] [--reference …]`, then, after the
+owner approves the preview, `black_dragon.py montage go --job …` (`edit` = both with no stop, only on «نفّذ مباشرة»)
 (entry point `.claude/skills/kosif-dragon-montage/scripts/dragon_montage.py`, skill `kosif-dragon-montage`).
 
 ## Why it exists
@@ -19,6 +20,9 @@ stations uses the few tools that fit, and every station writes a file whose deci
    sensitivity, pre-mortem, council prompt pack (Claude runs the council when the decision is fragile)
 4. يختار الذوق → look.json from the taste index (897 styles), executable grades/transitions/camera/captions, matrices for `--invent`
 5. يكتب المونتاج → edl.json, one canonical EDL, every cut with a reason
+5b. يوريك الشكل قبل ما ينفّذ → preview/storyboard.jpg + preview/PLAN_AR.md (مصفوفة التحركات: time, source,
+   role, camera move, transition, words, reason per cut). **Mandatory stop:** show it to the owner and wait for
+   «موافق» or changes; nothing is rendered before the yes.
 6. ينفّذ → final.mp4 + captions + editable project (FCPXML, Premiere XML, OTIO, EDL, CapCut pack)
 7. يتفرج وينقد → review.json: automated checks + frames for Claude's eyes + concrete fixes
 8. يصلّح ويسلّم → apply fixes, re-render, up to three rounds, keep the best round, report.md

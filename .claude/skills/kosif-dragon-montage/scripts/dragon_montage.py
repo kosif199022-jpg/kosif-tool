@@ -8,6 +8,7 @@ One command that runs the eight stations of the Black Dragon montage protocol:
   3 concepts يفكر بإبداع       3 different concepts + decision → concepts.json
   4 taste    يختار الذوق       style/grade/transitions/camera/captions → look.json
   5 direct   يكتب المونتاج     real edit decisions → edl.json
+  5b preview يوريك الشكل        storyboard + movement matrix (preview/PLAN_AR.md) → the owner approves
   6 render   ينفّذ             final.mp4 + captions + editable project
   7 review   يتفرج وينقد       checks + frames + fixes → review.json
   8 fix      يصلّح ويسلّم       apply fixes, re-render (max 3 rounds), report.md
@@ -15,7 +16,9 @@ One command that runs the eight stations of the Black Dragon montage protocol:
 Optional: generate (proposals only, consent required) and mimic (copy a
 reference video's rhythm). Nothing here spends credits, uploads or publishes.
 
-Usage:
+Usage (the protocol: plan, show the owner, then go):
+  dragon_montage.py plan "<task>" --clip a.mp4 … [--animatic]   stops before the render
+  dragon_montage.py go --job DIR [--preview] [--rounds 3]        after the owner says yes
   dragon_montage.py edit "<task>" --clip a.mp4 [--clip b.mp4] [--music m.mp3]
         [--job out/dragon-montage/<id>] [--platform reel] [--seconds 45]
         [--style ID] [--invent] [--reference ref.mp4] [--rounds 3] [--preview]
@@ -49,6 +52,7 @@ STATIONS = {
     "mimic": ("dm_mimic.py", ["mimic"]),
     "stock-search": ("dm_stock.py", ["search"]),
     "stock-fetch": ("dm_stock.py", ["fetch"]),
+    "storyboard": ("dm_storyboard.py", ["storyboard"]),
 }
 
 ARABIC = {
@@ -56,6 +60,7 @@ ARABIC = {
     "taste": "يختار الذوق", "direct": "يكتب المونتاج", "render": "ينفّذ",
     "review": "يتفرج وينقد", "generate": "اقتراحات التوليد", "mimic": "المحاكاة",
     "stock-search": "يدوّر في المواقع المفتوحة", "stock-fetch": "ينزّل اللقطات بترخيصها",
+    "storyboard": "يوريك الشكل قبل ما ينفّذ",
 }
 
 
@@ -96,12 +101,13 @@ def job_status(job: Path, log: list[dict], extra: dict) -> None:
     (job / "job.json").write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-def cmd_edit(a) -> int:
+def prepare(a) -> tuple[Path, list[dict], dict]:
+    """Stations 1-5 plus the preview: everything up to (not including) the render."""
     job = C.job_dir(a.job or f"out/dragon-montage/{time.strftime('%Y%m%d-%H%M%S')}")
     log: list[dict] = []
     meta = {"task": a.task, "clips": [str(Path(c).resolve()) for c in (a.clip or [])],
             "music": str(Path(a.music).resolve()) if a.music else None,
-            "options": {k: getattr(a, k) for k in ("platform", "seconds", "style", "invent", "rounds", "preview")}}
+            "options": {k: getattr(a, k, None) for k in ("platform", "seconds", "style", "invent", "rounds", "preview")}}
     job_status(job, log, meta)
     J = ["--job", str(job)]
 
@@ -153,9 +159,49 @@ def cmd_edit(a) -> int:
     station("taste", tp, log=log)
     station("direct", J, log=log)
     station("generate", J, log=log)          # proposals only; nothing is spent
+    station("storyboard", J + (["--animatic"] if getattr(a, "animatic", False) else []), log=log)
+    return job, log, meta
 
-    rr = [*J] + (["--preview"] if a.preview else [])
-    rounds = max(1, min(3, a.rounds))
+
+def cmd_plan(a) -> int:
+    """Stop before the render: the owner sees preview/PLAN_AR.md + storyboard.jpg and says yes or asks for changes."""
+    job, log, meta = prepare(a)
+    meta["status"] = "awaiting_owner_approval"
+    job_status(job, log, meta)
+    pv = job / "preview"
+    print(json.dumps({"job": str(job), "status": "awaiting_owner_approval", "plan": str(pv / "PLAN_AR.md"),
+                      "storyboard": str(pv / "storyboard.jpg") if (pv / "storyboard.jpg").exists() else None,
+                      "animatic": str(pv / "animatic.mp4") if (pv / "animatic.mp4").exists() else None,
+                      "next": f"dragon_montage.py go --job {job}"}, ensure_ascii=False))
+    return 0
+
+
+def cmd_go(a) -> int:
+    """The owner approved the preview: render, review and fix the EDL that is in the job now."""
+    job = C.job_dir(a.job)
+    if not (job / "edl.json").exists():
+        raise SystemExit(f"no edl.json in {job}: run `dragon_montage.py plan …` first")
+    old = json.loads((job / "job.json").read_text(encoding="utf-8")) if (job / "job.json").exists() else {}
+    log = list(old.get("stations") or [])
+    meta = {k: v for k, v in old.items() if k not in ("schema", "stations")}
+    opts = meta.get("options") or {}
+    preview = a.preview if a.preview is not None else bool(opts.get("preview"))
+    rounds = a.rounds or opts.get("rounds") or 3
+    station("storyboard", ["--job", str(job)], log=log)   # the plan file matches the EDL that gets rendered
+    meta["status"] = "approved"
+    meta["approved_at"] = time.strftime("%Y-%m-%dT%H:%M:%S")
+    return finish(job, log, meta, preview=preview, rounds=rounds)
+
+
+def cmd_edit(a) -> int:
+    job, log, meta = prepare(a)
+    return finish(job, log, meta, preview=a.preview, rounds=a.rounds)
+
+
+def finish(job: Path, log: list[dict], meta: dict, *, preview: bool, rounds: int) -> int:
+    J = ["--job", str(job)]
+    rr = [*J] + (["--preview"] if preview else [])
+    rounds = max(1, min(3, int(rounds)))
     review = None
     scores: dict[int, float] = {}
     for n in range(1, rounds + 1):
@@ -242,7 +288,36 @@ def main(argv=None) -> int:
             pass
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="cmd", required=True)
-    e = sub.add_parser("edit", help="full protocol: footage → edited video")
+    e = sub.add_parser("edit", help="all stations in one go, no approval stop (tests, or when the owner says «نفّذ مباشرة»)")
+    pl = sub.add_parser("plan", help="stations 1-5 + preview (storyboard, movement matrix); stops for the owner's yes")
+    g = sub.add_parser("go", help="the owner approved the preview: render, review, fix")
+    g.add_argument("--job", required=True)
+    g.add_argument("--rounds", type=int)
+    g.add_argument("--preview", action="store_true", default=None)
+    pl.add_argument("--animatic", action="store_true", help="also a fast low-res draft video of the plan")
+    for e in (e, pl):
+        _edit_args(e)
+    sub.add_parser("doctor", help="which tools are installed / missing (passes extra flags to dm_doctor)")
+    s = sub.add_parser("station", help="run one station")
+    s.add_argument("name", choices=sorted(STATIONS))
+    a, rest = p.parse_known_args(argv)
+    if a.cmd in ("edit", "plan", "go") and rest:
+        p.error(f"unrecognized arguments: {' '.join(rest)}")
+    a.rest = rest
+    if a.cmd == "edit":
+        return cmd_edit(a)
+    if a.cmd == "plan":
+        return cmd_plan(a)
+    if a.cmd == "go":
+        return cmd_go(a)
+    if a.cmd == "doctor":
+        script, sub_ = STATIONS["doctor"]
+        return subprocess.call([sys.executable, str(HERE / script), "doctor", *a.rest])
+    script, sub_ = STATIONS[a.name]
+    return subprocess.call([sys.executable, str(HERE / script), *sub_, *a.rest])
+
+
+def _edit_args(e) -> None:
     e.add_argument("task")
     e.add_argument("--clip", action="append")
     e.add_argument("--stock", help="search open-licence sites for this (English) query and add the best clips")
@@ -258,20 +333,6 @@ def main(argv=None) -> int:
     e.add_argument("--rounds", type=int, default=3)
     e.add_argument("--preview", action="store_true")
     e.add_argument("--no-transcribe", action="store_true")
-    sub.add_parser("doctor", help="which tools are installed / missing (passes extra flags to dm_doctor)")
-    s = sub.add_parser("station", help="run one station")
-    s.add_argument("name", choices=sorted(STATIONS))
-    a, rest = p.parse_known_args(argv)
-    if a.cmd == "edit" and rest:
-        p.error(f"unrecognized arguments: {' '.join(rest)}")
-    a.rest = rest
-    if a.cmd == "edit":
-        return cmd_edit(a)
-    if a.cmd == "doctor":
-        script, sub_ = STATIONS["doctor"]
-        return subprocess.call([sys.executable, str(HERE / script), "doctor", *a.rest])
-    script, sub_ = STATIONS[a.name]
-    return subprocess.call([sys.executable, str(HERE / script), *sub_, *a.rest])
 
 
 if __name__ == "__main__":
