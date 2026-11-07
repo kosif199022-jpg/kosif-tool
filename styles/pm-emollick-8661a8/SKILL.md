@@ -1,9 +1,9 @@
 ---
 name: pm-emollick-8661a8
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 75 s recursion explainer that dives one screen deeper per TV genre (corporate explainer, green terminal, 8-bit game, nature doc, film noir, kids' TV, infomercial, gold trailer) down to a bare white HTML 'base case', then climbs back out in reverse while a breadcrumb bar on top tracks the depth. Use to make a new video in this look (Diagrams); address it by ID pm-emollick-8661a8.
 ---
 
-# KOSIF TOOL — Recursion explained in genres
+# KOSIF TOOL — Recursion explained in genres / شرح التكرار الذاتي بفيديو يغوص داخل نفسه عبر أنواع تلفزيونية مختلفة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/emollick-8661a8
@@ -17,12 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو 75 ثانية يشرح التكرار الذاتي (Recursion) بأن ينزل عمقاً بعد عمق، وكل عمق بأسلوب تلفزيوني مختلف: عنوان جريء أحمر وأبيض، فيديو شرح شركاتي مسطّح، طرفية خضراء قديمة، لعبة 8-بت، وثائقي طبيعة عن السرخس، فيلم نوار بالأبيض والأسود، برنامج أطفال، إعلان تلفزيوني صاخب، تريلر سينمائي ذهبي، ثم صفحة HTML بيضاء عارية هي 'الحالة الأساسية'، قبل أن يصعد بالترتيب العكسي، مع شريط مكدس أعلى الشاشة يعرض العمق.
+
+A 75 s recursion explainer that dives one screen deeper per TV genre (corporate explainer, green terminal, 8-bit game, nature doc, film noir, kids' TV, infomercial, gold trailer) down to a bare white HTML 'base case', then climbs back out in reverse while a breadcrumb bar on top tracks the depth.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS, HTML Canvas), suggested duration (75 s), aspect 16:9, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Diagrams / مخططات.
+Categories: Diagrams / مخططات, Characters / شخصيات, Kinetic type / تايبوغرافي متحرك, Code / كود.
 - [playbooks/diagrams.md](../../playbooks/diagrams.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
 * Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

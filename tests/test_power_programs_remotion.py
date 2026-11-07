@@ -70,7 +70,7 @@ class Bookkeeping(unittest.TestCase):
         self.assertEqual(set(done), ids)
         self.assertTrue(all(v == MODULE for v in done.values()))
         self.assertTrue(ids <= set(skipped), sorted(ids - set(skipped)))
-        for other in pp.modules_for(FAMILY):
+        for other in pp.modules_for(FAMILY, local=False):
             if other.__name__.endswith(MODULE):
                 continue
             self.assertEqual(ids & set(getattr(other, "PROGRAMS", {})), set(), other.__name__)

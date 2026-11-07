@@ -1,7 +1,7 @@
 {
   "id": "pm-iammxfschr-d68f90",
   "name": "Database client launch video",
-  "name_ar": null,
+  "name_ar": "إطلاق أداة قواعد بيانات بخط سريف أنيق ولقطات واجهة داكنة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -29,5 +29,32 @@
   "playbooks": [
     "playbooks/product-ui.md",
     "playbooks/charts.md"
-  ]
+  ],
+  "summary_ar": "فيديو إطلاق هادئ مدته نحو 33 ثانية لعميل قواعد بيانات في المتصفح: خلفية كريمية فاتحة وعبارات بخط سريف مكثف تظهر كلمة كلمة مع كلمة مائلة بنفسجية، تتناوب مع لقطات واجهة داكنة تطفو بظل ناعم؛ رقم الإصدار، تبديل ألوان التمييز الستة عبر الواجهة، نافذة إعدادات، طرفية تحديث، نافذة تأكيد حمراء للإنتاج، أسماء قواعد البيانات المدعومة، وسطر السعر.",
+  "summary_en": "A calm ~33-second launch film for a browser database client: warm off-white background, condensed serif lines building word by word with an italic violet keyword, alternating with dark floating app screenshots; a version reveal, the accent colour cycling across the UI, a settings panel, an update terminal, a red production-confirm dialog, supported databases and a price line.",
+  "keywords": [
+    "product launch",
+    "database client",
+    "editorial serif",
+    "word by word",
+    "blur-in text",
+    "app screenshots",
+    "accent color swap",
+    "terminal",
+    "calm launch film",
+    "إطلاق منتج",
+    "قاعدة بيانات",
+    "خط سريف",
+    "نص كلمة كلمة",
+    "لقطات واجهة",
+    "فيديو هادئ"
+  ],
+  "difficulty": 3,
+  "duration_s": 33,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-iammxfschr-d68f90/BRIEF.md"
 }

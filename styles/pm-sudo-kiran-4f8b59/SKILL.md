@@ -1,9 +1,9 @@
 ---
 name: pm-sudo-kiran-4f8b59
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 30-second product explainer that opens in dark space over a perspective grid with floating document pages and a struck-through line swapped for videos, then moves to a light pastel canvas for the logo, three numbered steps with gradient numerals beside app windows, a fast illustration-style montage, a feature-card bento, a 'minutes not weeks' stat line and a try-it CTA. Use to make a new video in this look (Product UI); address it by ID pm-sudo-kiran-4f8b59.
 ---
 
-# KOSIF TOOL — DistilBook product explainer
+# KOSIF TOOL — DistilBook product explainer / شرح منتج يحوّل المستندات إلى فيديوهات شرح بأنماط رسم متعددة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/sudo-kiran-4f8b59
@@ -17,16 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو شرح منتج مدته 30 ثانية: يبدأ في فضاء داكن بشبكة أرضية تطفو فيه أوراق مستندات وعبارة تُشطب بالوردي ثم تتحول إلى فيديوهات، ثم الشعار على خلفية فاتحة بتدرجات باستيل، ثلاث خطوات مرقمة بأرقام متدرجة بجانب نوافذ التطبيق، مونتاج سريع لأنماط رسم مختلفة، بطاقات ميزات، عبارة «دقائق لا أسابيع» مع أرقام، وختام بزر تجربة.
+
+A 30-second product explainer that opens in dark space over a perspective grid with floating document pages and a struck-through line swapped for videos, then moves to a light pastel canvas for the logo, three numbered steps with gradient numerals beside app windows, a fast illustration-style montage, a feature-card bento, a 'minutes not weeks' stat line and a try-it CTA.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, CSS), suggested duration (30 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Diagrams / مخططات.
+Categories: Product UI / واجهات المنتج, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/diagrams.md](../../playbooks/diagrams.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

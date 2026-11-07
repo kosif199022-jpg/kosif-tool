@@ -1,6 +1,6 @@
 ---
 name: pm-mrtanviir-132457
-description: A fast 15-second motion-skills reel cut on a 120 BPM grid: dots, a letter in a circle, giant uppercase words on red, a blue rounded square with transform handles, a phyllotaxis dot flower, a waving dot grid, a 3D particle cloud, a striped ribbon drawing a curve on yellow, text on circular paths and a closing serif signature.
+description: A fast 15-second motion-skills reel cut on a 120 BPM grid: dots, a letter in a circle, giant uppercase words on red, a blue rounded square with transform handles, a phyllotaxis dot flower, a waving dot grid, a 3D particle cloud, a striped ribbon drawing a curve on yellow, text on circular paths and a closing serif signature. Use to make a new video in this look (Charts); address it by ID pm-mrtanviir-132457.
 ---
 
 # KOSIF TOOL — Claude motion designer showreel / ريل مهارات موشن: أربعة فصول على إيقاع واحد

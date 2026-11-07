@@ -1,12 +1,13 @@
 {
   "id": "pm-thismacapital-dfba20",
   "name": "Travel visa service promo",
-  "name_ar": null,
+  "name_ar": "إعلان خدمة تأشيرات وإقامة: تذكرة وحقيبة وقائمة إجراءات تكتمل",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "ads",
+    "kinetic-type",
+    "photos"
   ],
   "creator": "@thismacapital",
   "creator_url": "https://x.com/thismacapital/status/2103773635714375808",
@@ -27,7 +28,37 @@
   "listed": true,
   "skill": "styles/pm-thismacapital-dfba20/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/ads.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/photos.md"
+  ],
+  "summary_ar": "إعلان مدته 15 ثانية باللغة الفرنسية بالأزرق السماوي والأبيض: عنوان ثقيل بجانب بطاقة صعود طائرة يُختم عليها «محجوز»، ثم أرضية زرقاء كاملة ومسار طائرة ورقية منقط يدور حول جملة تُكتب، وحقيبة سفر داكنة يتبدل فوقها شريط إجراءات (إقامة، شركة، بنك، تأمين، سكن، تأشيرات) مع عداد نقاط حتى «كل شيء جاهز»، ثم مسحة مائلة إلى صور وجهات بأسمائها الضخمة، وثلاث بطاقات وجهات معاً، وختام بالشعار.",
+  "summary_en": "A 15-second French-language visa promo in sky blue and white: a headline beside a boarding pass that gets stamped, a paper plane looping a typed line, a dark suitcase under a checklist pill that ticks through six procedures, a slanted wipe into destination photos with huge names, three destination cards, and a logo end card.",
+  "keywords": [
+    "visa service",
+    "travel promo",
+    "boarding pass",
+    "suitcase",
+    "checklist steps",
+    "destination photos",
+    "sky blue",
+    "iris transition",
+    "french ad",
+    "خدمة تأشيرات",
+    "إعلان سفر",
+    "بطاقة صعود",
+    "حقيبة سفر",
+    "قائمة إجراءات",
+    "وجهات"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "SVG",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-thismacapital-dfba20/BRIEF.md"
 }

@@ -1,7 +1,7 @@
 {
   "id": "documentary-map",
   "name": "خريطة وثائقية",
-  "name_ar": "خريطة وثائقية",
+  "name_ar": "خريطة وثائقية — خريطة واقعية مع صور أرشيفية وتواريخ",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,32 @@
   "playbooks": [
     "playbooks/diagrams.md",
     "playbooks/photos.md"
-  ]
+  ],
+  "summary_ar": "ريل وثائقي عمودي 9:16 على خريطة تضاريس واقعية بألوان باهتة وحبوب فيلم، تنقضّ الكاميرا من رؤية إقليمية إلى مدن محددة بدبابيس، وتظهر صور أرشيفية بالأبيض والأسود في إطارات مائلة قليلاً بحركة كين بيرنز، مع شريط تاريخ كبير وأسماء أماكن بخط سيريف عربي.",
+  "summary_en": "A 9:16 documentary reel over a desaturated, film-grained realistic terrain map: the camera swoops from a regional view down to pinned cities, black-and-white archival photos appear in slightly tilted frames with Ken Burns drift, and a large date ribbon and serif Arabic place names anchor each stop.",
+  "keywords": [
+    "documentary",
+    "map",
+    "archival photos",
+    "ken burns",
+    "terrain",
+    "history",
+    "film grain",
+    "pins",
+    "خريطة وثائقية",
+    "وثائقي",
+    "صور أرشيفية",
+    "تاريخ",
+    "تضاريس",
+    "خريطة"
+  ],
+  "difficulty": 4,
+  "duration_s": 36,
+  "stack": [
+    "Remotion",
+    "React",
+    "WebGL",
+    "CSS"
+  ],
+  "brief": "styles/documentary-map/BRIEF.md"
 }

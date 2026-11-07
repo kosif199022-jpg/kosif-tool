@@ -1,6 +1,6 @@
 ---
 name: pm-tak3sh8-be5012
-description: A long whiteboard explainer (about 5 min 8 s) inside a framed board on a dark slate wall, where a visible marker writes each section title and then draws: an all-to-all spin network with red and blue couplings, a frustrated triangle and a rugged energy curve, boxed replicas with coupling arcs, an overlap matrix with a red-circled wrong result, hatched nested block matrices, then an ultrametric tree and a P(q) plot. An eraser wipes the board between chapters, narration-synced subtitles sit below, and it ends on a colour-coded five-point recap.
+description: A long whiteboard explainer (about 5 min 8 s) inside a framed board on a dark slate wall, where a visible marker writes each section title and then draws: an all-to-all spin network with red and blue couplings, a frustrated triangle and a rugged energy curve, boxed replicas with coupling arcs, an overlap matrix with a red-circled wrong result, hatched nested block matrices, then an ultrametric tree and a P(q) plot. An eraser wipes the board between chapters, narration-synced subtitles sit below, and it ends on a colour-coded five-point recap. Use to make a new video in this look (Diagrams); address it by ID pm-tak3sh8-be5012.
 ---
 
 # KOSIF TOOL — Replica symmetry breaking whiteboard / سبورة مرسومة باليد تشرح كسر تناظر النسخ في نموذج SK

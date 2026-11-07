@@ -1,7 +1,7 @@
 {
   "id": "whiteboard-cinematic",
   "name": "وايتبورد سينمائي",
-  "name_ar": "وايتبورد سينمائي",
+  "name_ar": "وايتبورد سينمائي بحركة كاميرا وعمق",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -24,5 +24,29 @@
   "skill": "styles/whiteboard-cinematic/SKILL.md",
   "playbooks": [
     "playbooks/hand-drawn.md"
-  ]
+  ],
+  "summary_ar": "رسم بالحبر على لوح أبيض ضخم تصوّره كاميرا سينمائية: انزلاق وتقريب بين رسومات متباعدة، عمق ميدان يضبّب الحواف، ظل يد خافت، ولون واحد أحمر للتأكيد، بإيقاع قصصي هادئ ونهاية بلقطة واسعة تكشف اللوح كله.",
+  "summary_en": "Black-ink marker drawings on a huge white board filmed like a movie: the camera dollies and pushes between distant drawings, depth of field blurs the edges, a soft hand shadow passes, one red accent marks key ideas, and a final pull-back reveals the whole board as one connected story map.",
+  "keywords": [
+    "whiteboard cinematic",
+    "camera dolly",
+    "depth of field",
+    "explainer",
+    "story map",
+    "marker drawing",
+    "وايتبورد سينمائي",
+    "رسم بالقلم",
+    "حركة كاميرا",
+    "عمق ميدان",
+    "فيديو شرح",
+    "خريطة قصة"
+  ],
+  "difficulty": 3,
+  "duration_s": 36,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/whiteboard-cinematic/BRIEF.md"
 }

@@ -1,7 +1,7 @@
 {
   "id": "map-journey",
   "name": "رحلة على الخريطة",
-  "name_ar": "رحلة على الخريطة",
+  "name_ar": "رحلة على الخريطة — خريطة ورقية قديمة يرسم عليها المسافر طريقه",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -24,5 +24,32 @@
   "skill": "styles/map-journey/SKILL.md",
   "playbooks": [
     "playbooks/diagrams.md"
-  ]
+  ],
+  "summary_ar": "خريطة مرسومة بألوان ورق قديم (رملي وبحار زرقاء باهتة) تُرى بميل منظوري خفيف، يتحرك عليها جمل صغير مرسوم بينما يُرسم خلفه مسار أحمر متقطع، وتُغرس رايات حمراء في كل مدينة مع بطاقة ورقية تحمل اسمها وجملة قصيرة، وبطاقة ثابتة في الزاوية تعدّ المسافة والسنة، وتنتهي بابتعاد يكشف الرحلة كلها.",
+  "summary_en": "An illustrated old-paper map (sand land, pale blue seas) seen with a slight perspective tilt, where a small drawn camel travels while a dashed red route draws behind it, red flags plant at each city with a paper label card holding its name and a short line, a fixed corner card counts distance and year, and a final pull-out reveals the whole journey.",
+  "keywords": [
+    "map journey",
+    "travel route",
+    "old map",
+    "illustrated map",
+    "route animation",
+    "history trip",
+    "camel",
+    "رحلة على الخريطة",
+    "خريطة قديمة",
+    "مسار الرحلة",
+    "رحالة",
+    "تاريخ",
+    "خريطة مرسومة",
+    "رايات"
+  ],
+  "difficulty": 4,
+  "duration_s": 34,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/map-journey/BRIEF.md"
 }

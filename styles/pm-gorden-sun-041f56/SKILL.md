@@ -1,9 +1,9 @@
 ---
 name: pm-gorden-sun-041f56
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A roughly one-minute low-poly 3D music piece: an orange ball character with a face and a headlamp hard hat hops from one glowing mushroom cap to the next along a winding path in a dark red cave over cracked lava, every landing firing a coloured light ring and sparks, with short speech bubbles and a piece-title lower third, accelerating toward the end. Use to make a new video in this look (Music); address it by ID pm-gorden-sun-041f56.
 ---
 
-# KOSIF TOOL — Beat-synced bouncing 3D ball
+# KOSIF TOOL — Beat-synced bouncing 3D ball / كرة ثلاثية الأبعاد تقفز على الإيقاع فوق فطر مضيء في كهف
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/gorden-sun-041f56
@@ -18,12 +18,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+مقطع موسيقي مدته دقيقة تقريباً بأسلوب ثلاثي الأبعاد منخفض المضلعات: كرة برتقالية بوجه وخوذة بمصباح تقفز من قبعة فطر مضيئة إلى أخرى على طول مسار في كهف أحمر داكن فوق بحيرة حمم، وكل هبوط يطلق حلقة ضوء ملونة وشرارات، مع فقاعات كلام قصيرة وبطاقة عنوان للمقطوعة، والإيقاع يتسارع حتى الختام.
+
+A roughly one-minute low-poly 3D music piece: an orange ball character with a face and a headlamp hard hat hops from one glowing mushroom cap to the next along a winding path in a dark red cave over cracked lava, every landing firing a coloured light ring and sparks, with short speech bubbles and a piece-title lower third, accelerating toward the end.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, Web Audio, React), suggested duration (59 s), aspect 16:9, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Music / موسيقى.
+Categories: Music / موسيقى, 3D / ثلاثي الأبعاد, Characters / شخصيات.
 - [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
 
 Category tactics:
 * Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

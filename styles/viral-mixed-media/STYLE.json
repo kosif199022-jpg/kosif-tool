@@ -1,7 +1,7 @@
 {
   "id": "viral-mixed-media",
   "name": "مونتاج مختلط",
-  "name_ar": "مونتاج مختلط",
+  "name_ar": "مونتاج مختلط — كولاج صور مقصوصة وخربشات ونص ضخم",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -28,5 +28,32 @@
     "playbooks/ads.md",
     "playbooks/photos.md",
     "playbooks/kinetic-type.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي 9:16 سريع بأسلوب الكولاج المختلط: صور ومقاطع مقصوصة بحواف بيضاء كالملصقات فوق ورق ممزق وخلفيات ملونة صارخة، وخربشات وأسهم مرسومة باليد، ونص عربي ضخم عريض يقفز مع الإيقاع، وقطعات كل نصف ثانية تقريباً، وتجميد إطارات مع اهتزاز ومؤثرات صوتية.",
+  "summary_en": "A fast 9:16 mixed-media collage reel: cut-out photos and clips with white sticker borders over torn paper and loud flat colour backgrounds, hand-drawn scribbles and arrows, huge bold Arabic text that pops on the beat, cuts roughly every half second, and freeze frames with shake and sound-effect hits.",
+  "keywords": [
+    "mixed media",
+    "collage",
+    "viral reel",
+    "cut-out",
+    "scribbles",
+    "stickers",
+    "fast edit",
+    "halftone",
+    "مونتاج مختلط",
+    "كولاج",
+    "ريلز",
+    "ملصقات",
+    "خربشات",
+    "مونتاج سريع"
+  ],
+  "difficulty": 3,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "HTML Canvas"
+  ],
+  "brief": "styles/viral-mixed-media/BRIEF.md"
 }

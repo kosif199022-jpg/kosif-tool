@@ -1,9 +1,9 @@
 ---
 name: pm-blushpetal795-0c85c2
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second self-intro reel in black and fiery orange: an orange line draws, then a huge name where an orange dot replaces a letter, a portrait in a ring with rotating circular text, then giant achievement numbers firing about every half second each with a mini graphic (dot grid, bars, progress ring, people icons), a particle city map, tossed skill cards and an orange contact card. Use to make a new video in this look (Charts); address it by ID pm-blushpetal795-0c85c2.
 ---
 
-# KOSIF TOOL — Recruiter self-intro reel
+# KOSIF TOOL — Recruiter self-intro reel / تعريف ذاتي سريع بالأرقام بالأسود والبرتقالي
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/blushpetal795-0c85c2
@@ -17,14 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو تعريف ذاتي مدته 15 ثانية بالأسود والبرتقالي الناري: خط برتقالي يرسم ثم اسم ضخم يحل فيه دائرة برتقالية محل حرف، صورة شخصية في حلقة مع نص دائري يدور، ثم أرقام إنجاز عملاقة تتوالى كل نصف ثانية تقريباً مع رسم صغير لكل منها (شبكة نقاط، أعمدة، حلقة تقدم، أيقونات أشخاص)، خريطة جسيمات لمدن، بطاقات مهارات متطايرة، وبطاقة تواصل برتقالية.
+
+A 15-second self-intro reel in black and fiery orange: an orange line draws, then a huge name where an orange dot replaces a letter, a portrait in a ring with rotating circular text, then giant achievement numbers firing about every half second each with a mini graphic (dot grid, bars, progress ring, people icons), a particle city map, tossed skill cards and an orange contact card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Photos / صور, Particles / جسيمات.
 - [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

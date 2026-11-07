@@ -1,11 +1,13 @@
 {
   "id": "pm-buildfastwithai-53234e",
   "name": "Indian civilisation history film",
-  "name_ar": null,
+  "name_ar": "تاريخ حضارة الهند في لوحات ملصقات بالخط الديفاناغري",
   "origin": "PromptsMotion",
   "type": "Skill",
   "category": [
-    "characters",
+    "diagrams",
+    "kinetic-type",
+    "shapes",
     "music"
   ],
   "creator": "@BuildFastWithAI",
@@ -27,7 +29,37 @@
   "listed": true,
   "skill": "styles/pm-buildfastwithai-53234e/SKILL.md",
   "playbooks": [
-    "playbooks/characters.md",
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
     "playbooks/music.md"
-  ]
+  ],
+  "summary_ar": "فيلم تاريخي مدته 87 ثانية مبني كسلسلة «لوحات» ملصقات مسطحة جريئة بألوان كحلي وكريمي وأصفر زعفراني ووردي وأحمر طوبي: نقطة واحدة تبدأ الخيط، ثم كلمة ديفاناغرية بجانب نقلها اللاتيني الضخم في كل لوحة، مدينة مخططة كشبكة، موجة صوتية للأناشيد المحفوظة، عجلة وحروف قديمة تتفرع، كوكب وثابت باي، الصفر ومثلث العروض، معبد كسوري، شبكة كولام، كلمات إنجليزية مستعارة، هبوط على القمر، ثم خط زمني بأيقونات يربط كل شيء.",
+  "summary_en": "An 87-second history film told as bold flat poster plates in navy, cream, saffron, pink and brick red: each pairs a Devanagari word with a giant Latin transliteration and a diagram (gridded city, hymn waveform, branching scripts, planet and pi, zero and a number triangle, fractal temple, kolam loop, borrowed English words, moon landing), ending on an icon timeline.",
+  "keywords": [
+    "history explainer",
+    "India",
+    "Devanagari",
+    "poster plates",
+    "flat illustration",
+    "timeline",
+    "infographic",
+    "kolam",
+    "zero",
+    "تاريخ",
+    "حضارة الهند",
+    "لوحات ملصقات",
+    "خط زمني",
+    "إنفوجرافيك",
+    "شرح تاريخي"
+  ],
+  "difficulty": 4,
+  "duration_s": 87,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-buildfastwithai-53234e/BRIEF.md"
 }

@@ -1,7 +1,7 @@
 {
   "id": "plotter",
   "name": "قلم البلوتر",
-  "name_ar": "قلم البلوتر",
+  "name_ar": "قلم البلوتر: موشن تقني أسود وبرتقالي",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,33 @@
   "playbooks": [
     "playbooks/hand-drawn.md",
     "playbooks/shapes.md"
-  ]
+  ],
+  "summary_ar": "موشن جرافيك تقني بالأسود والبرتقالي كأنه مرسوم بقلم بلوتر: خطوط رفيعة بيضاء تُرسم على شبكة داكنة، عناوين عربية بيضاء بكلمة برتقالية، منحنيات تسهيل ومخططات زمنية وكود يُكتب، أشكال سلكية ثلاثية، وفواصل ورقية بيضاء كاستمارات رسمية بخط آلة كاتبة وخط أحمر يشطب.",
+  "summary_en": "Technical black-and-orange motion graphics drawn as if by a pen plotter: thin white lines plotted on a dark grid, white Arabic headlines with one orange word, easing curves, timeline diagrams and code typing, wireframe 3D shapes, and interludes on off-white paper styled like official forms with typewriter text and a red strike-through.",
+  "keywords": [
+    "plotter",
+    "pen plotter",
+    "technical motion",
+    "diagram",
+    "black and orange",
+    "wireframe",
+    "visual essay",
+    "code typing",
+    "قلم البلوتر",
+    "موشن تقني",
+    "مخططات",
+    "أسود وبرتقالي",
+    "مقال مرئي",
+    "رسم سلكي",
+    "استمارة"
+  ],
+  "difficulty": 4,
+  "duration_s": 120,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "Three.js"
+  ],
+  "brief": "styles/plotter/BRIEF.md"
 }

@@ -1,7 +1,7 @@
 {
   "id": "pm-0xnfrith-5be616",
   "name": "Celld job ownership explainer",
-  "name_ar": null,
+  "name_ar": "شرح ملكية المهام بين الأجهزة بأسلوب بطاقات ملونة جريئة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -27,5 +27,32 @@
   "skill": "styles/pm-0xnfrith-5be616/SKILL.md",
   "playbooks": [
     "playbooks/diagrams.md"
-  ]
+  ],
+  "summary_ar": "فيلم شرح تقني صامت مدته نحو 53 ثانية بأسلوب «نيو بروتاليزم» على خلفية كريمية: بطاقات مسطحة بحدود سوداء سميكة وظلال مصمتة بالوردي والسماوي والأخضر الفاتح والأصفر، تحكي مشكلة مؤقت على جهاز واحد يتعطل، ثم جهازين يطلقان الأمر مرتين، ثم الحل: دلو تخزين مشترك أصفر فيه «ورقة ملكية» يكتب فيها أول جهاز اسمه، وعقود إيجار بأشرطة عد تنازلي، وجهاز يستلم المهمة حين ينتهي عقد المالك، وختام بجدول مقارنة بين خيارين.",
+  "summary_en": "A silent ~53-second neo-brutalist tech explainer on cream: thick-bordered pink, cyan, mint and yellow cards show a single timer machine dying, two machines firing twice, then a shared yellow bucket with an ownership sheet, lease countdown bars, a backup machine taking over, the old owner stopping itself, and a two-option comparison table.",
+  "keywords": [
+    "tech explainer",
+    "neo brutalism",
+    "distributed systems",
+    "leader election",
+    "lease lock",
+    "cron job",
+    "card diagram",
+    "failover",
+    "شرح تقني",
+    "نيو بروتاليزم",
+    "أنظمة موزعة",
+    "قفل الملكية",
+    "مهام مجدولة",
+    "مخطط بطاقات"
+  ],
+  "difficulty": 3,
+  "duration_s": 53,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/pm-0xnfrith-5be616/BRIEF.md"
 }

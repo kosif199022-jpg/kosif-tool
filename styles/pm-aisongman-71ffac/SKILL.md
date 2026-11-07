@@ -1,9 +1,9 @@
 ---
 name: pm-aisongman-71ffac
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15 s gameplay capture of a pixel-art card battler on navy stone tiles: a green felt table in a wood frame with round creature tokens, heroes above and below, a fanned hand of blue cards, a fireball dragged along a dotted arc, hover card previews, hit flashes and particle deaths, an enemy-turn banner and a red execute spell. Use to make a new video in this look (Characters); address it by ID pm-aisongman-71ffac.
 ---
 
-# KOSIF TOOL — Pixel art card battle game
+# KOSIF TOOL — Pixel art card battle game / لعبة بطاقات قتالية بأسلوب البكسل: لعب أدوار على طاولة خضراء
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/aisongman-71ffac
@@ -17,12 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+لقطة لعب مدتها 15 ثانية للعبة بطاقات قتالية بفن البكسل على أرضية من بلاط حجري كحلي: طاولة خضراء بإطار خشبي يجلس عليها توكنات وحوش دائرية للطرفين، بطل كل طرف في الأعلى والأسفل بنقاط حياته، يد من البطاقات الزرقاء في الأسفل؛ بطاقة كرة نار تُسحب بسهم منقط نحو هدف، بطاقات وحوش تُكبَّر عند التمرير، توكنات تومض وتهتز عند الضربة، شريط دور العدو يمر، ثم بطاقة إعدام حمراء تقضي على وحش.
+
+A 15 s gameplay capture of a pixel-art card battler on navy stone tiles: a green felt table in a wood frame with round creature tokens, heroes above and below, a fanned hand of blue cards, a fireball dragged along a dotted arc, hover card previews, hit flashes and particle deaths, an enemy-turn banner and a red execute spell.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, React, CSS), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: creative motion.
-- (no category playbook yet)
+Categories: Characters / شخصيات, Product UI / واجهات المنتج.
+- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:
-* Develop original choreography from the reference; verify imagery before claiming a match.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,9 +1,9 @@
 ---
 name: audio-wave
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A dark vertical reel centred on a live audio waveform driven by the real soundtrack: a circular spectrum of bars or a glowing wave line, large Arabic captions synced to speech, and the speaker's photo or cover art inside the ring; built for podcast clips, spoken quotes and songs. Use to make a new video in this look (Music); address it by ID audio-wave.
 ---
 
-# KOSIF TOOL — موجة صوت
+# KOSIF TOOL — موجة صوت / موجة صوت متفاعلة مع التعليق أو الموسيقى وسط شاشة داكنة
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي داكن تتوسطه موجة صوت حية تتفاعل مع الصوت الفعلي: أعمدة طيف دائرية أو خط موجي متوهج، ترجمة عربية كبيرة تتزامن مع الكلام، وصورة المتحدث أو غلاف الأغنية داخل الحلقة، مناسب للبودكاست ومقاطع الكلام والأغاني.
+
+A dark vertical reel centred on a live audio waveform driven by the real soundtrack: a circular spectrum of bars or a glowing wave line, large Arabic captions synced to speech, and the speaker's photo or cover art inside the ring; built for podcast clips, spoken quotes and songs.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Web Audio, HTML Canvas), suggested duration (40 s), aspect 9:16, difficulty 2/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Music / موسيقى, Shapes / أشكال.

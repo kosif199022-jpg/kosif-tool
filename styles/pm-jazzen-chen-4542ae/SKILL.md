@@ -1,9 +1,9 @@
 ---
 name: pm-jazzen-chen-4542ae
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 30 s app-launch film on near-black navy built entirely around a laptop notch: two sparks trace its edges and ignite a green-to-amber-to-red glowing rim, quota labels branch out of it, a monospace line types itself, ASCII and binary character flows pour around it, then the notch expands into status, warning, statistics and approval cards before a wide laptop shot and a product name card. Use to make a new video in this look (Product UI); address it by ID pm-jazzen-chen-4542ae.
 ---
 
-# KOSIF TOOL — AgentHud project motion video
+# KOSIF TOOL — AgentHud project motion video / إطلاق تطبيق نوتش متوهج: جزيرة ديناميكية لحصص وكلاء الذكاء الاصطناعي
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/jazzen-chen-4542ae
@@ -17,11 +17,22 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو إطلاق منتج مدته 30 ثانية على خلفية كحلية شبه سوداء يدور كله حول نوتش شاشة لابتوب: شرارتان تنزلقان على حوافه فتشعلان حدّاً متوهجاً متدرجاً من الأخضر إلى الأصفر إلى الأحمر، ثم وسوم الحصص تتفرع منه، وجملة بخط أحادي المسافة تُكتب حرفاً حرفاً، ثم أنماط ASCII وثنائية ملونة تنساب حوله، ثم يتمدد النوتش إلى بطاقات حالة وتحذير وإحصاءات وموافقة بنقرة، ثم لقطة لابتوب واسعة وبطاقة اسم المنتج.
+
+A 30 s app-launch film on near-black navy built entirely around a laptop notch: two sparks trace its edges and ignite a green-to-amber-to-red glowing rim, quota labels branch out of it, a monospace line types itself, ASCII and binary character flows pour around it, then the notch expands into status, warning, statistics and approval cards before a wide laptop shot and a product name card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG, HTML Canvas), suggested duration (30 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية.
+Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك, Charts / رسوم بيانية.
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 - [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)

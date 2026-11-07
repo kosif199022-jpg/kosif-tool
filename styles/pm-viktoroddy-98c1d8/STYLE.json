@@ -1,7 +1,7 @@
 {
   "id": "pm-viktoroddy-98c1d8",
   "name": "MotionSites one million visitors",
-  "name_ar": null,
+  "name_ar": "احتفال منصة قوالب مواقع بمليون زائر",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -27,5 +27,33 @@
   "skill": "styles/pm-viktoroddy-98c1d8/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md"
-  ]
+  ],
+  "summary_ar": "فيلم احتفالي داكن مدته نحو 54 ثانية بلا صوت لمنصة قوالب مواقع: جدار مائل من لقطات المواقع، عنوان يتوهج بتدرج وردي بنفسجي، نافذة طرفية تُكتب فيها أوامر الإعداد، الشعار، ثم عدّاد زوار حي يتدحرج حتى المليون فوق منحنى نمو، شبكة بطاقات تنساب، شكر لكل فئة من المستخدمين، وختام بالشعار وسط قصاصات احتفال.",
+  "summary_en": "A dark, silent ~54-second milestone film for a website-template platform: a tilted wall of site screenshots, a pink-to-violet gradient headline, a terminal typing setup commands, the logo reveal, a live visitor counter rolling to one million over a rising growth curve, a drifting template grid, word-swap thank-yous to each user type, and a logo end card in falling confetti.",
+  "keywords": [
+    "milestone video",
+    "one million visitors",
+    "counter roll",
+    "gradient text",
+    "blur-in words",
+    "terminal typing",
+    "screenshot wall",
+    "confetti",
+    "thank you video",
+    "فيديو إنجاز",
+    "مليون زائر",
+    "عداد متحرك",
+    "نص متدرج",
+    "شكر المستخدمين",
+    "معرض قوالب"
+  ],
+  "difficulty": 3,
+  "duration_s": 54,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "HTML Canvas"
+  ],
+  "brief": "styles/pm-viktoroddy-98c1d8/BRIEF.md"
 }

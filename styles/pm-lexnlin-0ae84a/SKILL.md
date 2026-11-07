@@ -1,9 +1,9 @@
 ---
 name: pm-lexnlin-0ae84a
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A ~47 s launch film for a coding-agent UI skill: a typed line with an orange caret on pale paper, then a fast tour of dashboards (portfolio tracker, sales pipeline, bakery back office, mobile leave planner, household budget, café site) framed by orange corner brackets and tiny annotation tags, punctuated by short headlines whose last word turns orange, ending on the logo and an install command. Use to make a new video in this look (Product UI); address it by ID pm-lexnlin-0ae84a.
 ---
 
-# KOSIF TOOL — TasteSkill dashboard launch film
+# KOSIF TOOL — TasteSkill dashboard launch film / فيلم إطلاق مهارة تصميم لوحات تحكم بذوق
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/lexnlin-0ae84a
@@ -17,18 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيلم إطلاق مدته نحو 47 ثانية لمهارة وكيل برمجي تبني الواجهات: سطر كتابة بمؤشر برتقالي على ورق فاتح، ثم جولة سريعة في لوحات تحكم حقيقية (متتبع محافظ، خط مبيعات، مكتب خلفي لمخبز، مخطط إجازات على الهاتف، ميزانية منزلية، موقع مقهى) بأقواس تحديد برتقالية ووسوم تعليق صغيرة، تتخللها عناوين بيضاء قصيرة كلمتها الأخيرة برتقالية، وتنتهي بشعار المهارة وأمر التثبيت.
+
+A ~47 s launch film for a coding-agent UI skill: a typed line with an orange caret on pale paper, then a fast tour of dashboards (portfolio tracker, sales pipeline, bakery back office, mobile leave planner, household budget, café site) framed by orange corner brackets and tiny annotation tags, punctuated by short headlines whose last word turns orange, ending on the logo and an install command.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (47 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Characters / شخصيات, Code / كود.
+Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

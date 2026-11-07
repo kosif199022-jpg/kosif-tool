@@ -1,10 +1,13 @@
 {
   "id": "pm-itsolelehmann-e47532",
   "name": "Four seasons train window",
-  "name_ar": null,
+  "name_ar": "نافذة قطار مرسومة تمر عبر الفصول الأربعة",
   "origin": "PromptsMotion",
   "type": "Prompt",
-  "category": [],
+  "category": [
+    "hand-drawn",
+    "particles"
+  ],
   "creator": "@itsolelehmann",
   "creator_url": "https://x.com/itsolelehmann/status/2103124033365762215",
   "page": "https://www.promptsmotion.com/itsolelehmann-e47532",
@@ -23,5 +26,36 @@
   "source_prompt_words": 21,
   "listed": true,
   "skill": "styles/pm-itsolelehmann-e47532/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/hand-drawn.md",
+    "playbooks/particles.md"
+  ],
+  "summary_ar": "لقطة ثابتة مدتها 30 ثانية من داخل عربة قطار فاخرة مرسومة بأسلوب كرتوني مسطح: ستائر بنفسجية مخملية، مصباحان ورديان وفنجان قهوة يتصاعد منه البخار على طاولة، والمنظر خلف النافذة يمر بطبقات متحركة عبر الربيع والصيف والخريف ونفق مظلم والشتاء ثم يعود الربيع، مع قطار عابر ومسحات انتقال.",
+  "summary_en": "A locked 30-second view from inside an ornate illustrated train carriage: violet velvet curtains, two pink lamps and a steaming coffee cup on a lace table, while the parallax landscape outside rolls through spring, summer, autumn, a dark tunnel, snowy winter and back to spring, with a passing train and wipes marking the season changes.",
+  "keywords": [
+    "train window",
+    "four seasons",
+    "parallax",
+    "illustrated",
+    "storybook",
+    "cozy loop",
+    "flat vector",
+    "snow",
+    "autumn leaves",
+    "نافذة قطار",
+    "الفصول الأربعة",
+    "رسم مسطح",
+    "منظر متحرك",
+    "فيديو هادئ",
+    "حلقة متكررة"
+  ],
+  "difficulty": 4,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "HTML Canvas"
+  ],
+  "brief": "styles/pm-itsolelehmann-e47532/BRIEF.md"
 }

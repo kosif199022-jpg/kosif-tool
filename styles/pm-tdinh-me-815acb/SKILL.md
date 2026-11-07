@@ -1,9 +1,9 @@
 ---
 name: pm-tdinh-me-815acb
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 21-second logo reveal on near-black navy: a thin wireframe brain of lines and dots draws itself out of nothing, then white, pink, coral and peach triangles fly in from off-frame and lock face by face until the low-poly brain is full, a light ring pulses, it settles into a gradient app-icon tile, slides left, and the wordmark types on with a coral caret above a small tagline. Use to make a new video in this look (Shapes); address it by ID pm-tdinh-me-815acb.
 ---
 
-# KOSIF TOOL — TypingMind logo reveal
+# KOSIF TOOL — TypingMind logo reveal / كشف شعار دماغ مضلّع يتجمع من مثلثات ملونة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/tdinh-me-815acb
@@ -17,12 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+كشف شعار مدته 21 ثانية على خلفية كحلية شبه سوداء: هيكل سلكي لدماغ بخطوط ونقاط رفيعة يُرسم من الفراغ، ثم تطير مثلثات بيضاء ووردية ومرجانية وخوخية من خارج الإطار وتلتصق وجهاً وجهاً حتى يمتلئ الدماغ، فتنبض حلقة ضوء، ويستقر داخل أيقونة تطبيق بتدرج، ثم تنزلق يساراً ويُكتب الاسم بمؤشر مرجاني ويظهر سطر الشعار.
+
+A 21-second logo reveal on near-black navy: a thin wireframe brain of lines and dots draws itself out of nothing, then white, pink, coral and peach triangles fly in from off-frame and lock face by face until the low-poly brain is full, a light ring pulses, it settles into a gradient app-icon tile, slides left, and the wordmark types on with a coral caret above a small tagline.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, SVG, React), suggested duration (21 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: creative motion.
-- (no category playbook yet)
+Categories: Shapes / أشكال, 3D / ثلاثي الأبعاد.
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
-* Develop original choreography from the reference; verify imagery before claiming a match.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

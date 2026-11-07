@@ -1,6 +1,6 @@
 ---
 name: pm-0xevinho-3777d8
-description: A fixed 20-second night pixel-art diorama by a lake (moon, pines, campfire, red banner, rippling reflections) where a hero faces a training dummy. The hero swaps classes every few seconds (blue wizard, red wizard, knight, hooded rogue) and casts spells whose names type into a top banner while damage numbers stack like a combat log. The final spell draws a green candlestick rally that crashes into red candles, the screen floods red, a huge negative figure and REKT appear and the dummy is left charred.
+description: A fixed 20-second night pixel-art diorama by a lake (moon, pines, campfire, red banner, rippling reflections) where a hero faces a training dummy. The hero swaps classes every few seconds (blue wizard, red wizard, knight, hooded rogue) and casts spells whose names type into a top banner while damage numbers stack like a combat log. The final spell draws a green candlestick rally that crashes into red candles, the screen floods red, a huge negative figure and REKT appear and the dummy is left charred. Use to make a new video in this look (creative motion); address it by ID pm-0xevinho-3777d8.
 ---
 
 # KOSIF TOOL — Pixel wizard crypto animation / ساحر بكسل يضرب دمية التدريب حتى التصفية

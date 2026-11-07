@@ -1,9 +1,9 @@
 ---
 name: pm-souravbhar871-61f424
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: Ten seconds of kinetic type over three alternating fields (cream, terracotta, charcoal): 'Hi.' morphs from a hand-drawn stroke to a heavy face, 'I read every word' sits over scrolling walls of tiny text, 'I think it through' rides tangled threads, scattered letters snap into 'straight', 'I build with you' gets a stacked extrusion, ending on 'I'm Claude' with an orange spark. Use to make a new video in this look (Kinetic type); address it by ID pm-souravbhar871-61f424.
 ---
 
-# KOSIF TOOL — Kinetic type self-portrait
+# KOSIF TOOL — Kinetic type self-portrait / بورتريه ذاتي بالتايبوغرافي المتحرك في عشر ثوانٍ
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/souravbhar871-61f424
@@ -17,13 +17,18 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+عشر ثوانٍ من التايبوغرافي المتحرك بثلاث خلفيات تتبادل (كريمي، طوبي، فحمي): «Hi.» تتشكل من خط يدوي إلى خط ثقيل، «I read every word» فوق جدار نصوص صغيرة متحركة، «I think it through» بخيوط متشابكة، «I tell it straight» تستقيم حروفه المبعثرة، «I build with you» بظل ممتد، ثم «I'm Claude» مع نجمة برتقالية وسطر الإصدار.
+
+Ten seconds of kinetic type over three alternating fields (cream, terracotta, charcoal): 'Hi.' morphs from a hand-drawn stroke to a heavy face, 'I read every word' sits over scrolling walls of tiny text, 'I think it through' rides tangled threads, scattered letters snap into 'straight', 'I build with you' gets a stacked extrusion, ending on 'I'm Claude' with an orange spark.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (10 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)

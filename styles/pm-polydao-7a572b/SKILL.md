@@ -1,9 +1,9 @@
 ---
 name: pm-polydao-7a572b
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 24-second neo-brutalist tech explainer on cream with pink and blue halftone blobs: a terminal typing a long answer, a multiplying window wall with a decision counter under slab headlines, a huge heavy wordmark, hard-shadow cards, probability bars and gauges, a four-layer cascade, a time-and-cost race, a blurred giant multiplier and a magenta end card. Use to make a new video in this look (Kinetic type); address it by ID pm-polydao-7a572b.
 ---
 
-# KOSIF TOOL — Jev engineering showreel
+# KOSIF TOOL — Jev engineering showreel / عرض هندسي بطابع بروتاليست وردي وأزرق ونقاط هافتون
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/polydao-7a572b
@@ -17,16 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو شرح تقني مدته 24 ثانية على خلفية كريمية بنقاط هافتون وردية وزرقاء: نافذة طرفية يُكتب فيها سؤال وجواب طويل، جدار من النوافذ يتكاثر مع عداد قرارات وعنوان بأشرطة سوداء ووردية، شعار ضخم بخط ثقيل، ثلاث بطاقات بإطارات وظلال صلبة، أشرطة احتمالات ومقاييس، شلال قرارات من أربع طبقات، مقارنة زمن وسعر، رقم ضخم مهتز، ثم بطاقة ختام وردية كاملة.
+
+A 24-second neo-brutalist tech explainer on cream with pink and blue halftone blobs: a terminal typing a long answer, a multiplying window wall with a decision counter under slab headlines, a huge heavy wordmark, hard-shadow cards, probability bars and gauges, a four-layer cascade, a time-and-cost race, a blurred giant multiplier and a magenta end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (24 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Music / موسيقى.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Charts / رسوم بيانية, Diagrams / مخططات, Ads / إعلانات.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/diagrams.md](../../playbooks/diagrams.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

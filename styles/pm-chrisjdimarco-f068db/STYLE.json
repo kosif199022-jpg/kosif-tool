@@ -1,10 +1,12 @@
 {
   "id": "pm-chrisjdimarco-f068db",
   "name": "Fiery samurai kata",
-  "name_ar": null,
+  "name_ar": "ساموراي يؤدي كاتا بالسيف أمام شمس حمراء وسط النار والشرر",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
+    "characters",
+    "particles",
     "code"
   ],
   "creator": "@chrisjdimarco",
@@ -26,6 +28,36 @@
   "listed": true,
   "skill": "styles/pm-chrisjdimarco-f068db/SKILL.md",
   "playbooks": [
+    "playbooks/characters.md",
+    "playbooks/particles.md",
     "playbooks/code.md"
-  ]
+  ],
+  "summary_ar": "مشهد 18 ثانية لساموراي بدرع أحمر بأسلوب رسم خطي متوهج، يقف أمام شمس حمراء عملاقة بخطوط أفقية بين مشعلي نار، ويؤدي سلسلة ضربات سيف متتالية تترك أقواساً وحلقات من النار والشرر، ومع كل حركة يظهر اسمها بحروف يابانية رأسية وترجمة إنجليزية صغيرة أعلى اليمين، وتنتهي بانفجار لهب وحرف ياباني ضخم شفاف فوق الشمس ثم عودة للسكون.",
+  "summary_en": "An 18 s scene of a red-armoured samurai in glowing line art before a huge striped red sun between two fire braziers, chaining sword techniques that leave arcs and rings of fire and sparks, each move named in vertical Japanese characters top-right, ending in a flame burst with a giant translucent kanji.",
+  "keywords": [
+    "samurai",
+    "kata",
+    "fire effects",
+    "sword slash",
+    "red sun",
+    "kanji titles",
+    "glow line art",
+    "particles",
+    "ساموراي",
+    "سيف",
+    "مؤثرات نار",
+    "شرر",
+    "شمس حمراء",
+    "حروف يابانية",
+    "قتال"
+  ],
+  "difficulty": 4,
+  "duration_s": 18.6,
+  "stack": [
+    "HTML Canvas",
+    "SVG",
+    "React",
+    "Remotion"
+  ],
+  "brief": "styles/pm-chrisjdimarco-f068db/BRIEF.md"
 }

@@ -1,11 +1,13 @@
 {
   "id": "pm-madebyjmayala-b9204d",
   "name": "Gene Spectra promo",
-  "name_ar": null,
+  "name_ar": "إعلان تحليل جينات خاص بحلزون DNA وطيف ألوان",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts"
+    "charts",
+    "particles",
+    "ads"
   ],
   "creator": "@madebyjmayala",
   "creator_url": "https://x.com/madebyjmayala/status/2103578285892649220",
@@ -26,6 +28,36 @@
   "listed": true,
   "skill": "styles/pm-madebyjmayala-b9204d/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
-  ]
+    "playbooks/charts.md",
+    "playbooks/particles.md",
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "إعلان داكن مدته 15 ثانية لأداة تحليل DNA في المتصفح: جدار من بيانات جينية خافتة تتمرر خلف عبارة سريف بيضاء، نافذة متصفح كحلية تُسقط فيها ملفاً فيتحول إلى سحابة نقاط ثم حلزون DNA سلكي، تنطلق منه خيوط ضوئية بألوان قوس قزح إلى عمود فئات صحية بينما يعدّ رقم كبير المؤشرات الجينية، وتنتهي بالشعار وشريط طيف عمودي.",
+  "summary_en": "A dark 15-second ad for an in-browser DNA analysis tool: a wall of faint scrolling genome data behind a white serif line, a navy browser frame where a dropped file bursts into a point cloud and resolves into a wireframe DNA helix, rainbow light strands fanning from it into a column of health categories while a big number counts genetic markers, then the logo beside a vertical spectrum bar.",
+  "keywords": [
+    "dna",
+    "genome",
+    "privacy",
+    "helix",
+    "point cloud",
+    "spectrum",
+    "data visualization",
+    "dark ad",
+    "serif headline",
+    "حمض نووي",
+    "جينات",
+    "خصوصية",
+    "حلزون",
+    "طيف ألوان",
+    "تصوير البيانات"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "Three.js",
+    "SVG"
+  ],
+  "brief": "styles/pm-madebyjmayala-b9204d/BRIEF.md"
 }

@@ -1,12 +1,13 @@
 {
   "id": "pm-math-files-39c9d0",
   "name": "Mathematics motion showreel",
-  "name_ar": null,
+  "name_ar": "عرض رياضي متحرك بخطوط نيون على خلفية داكنة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "charts",
-    "kinetic-type"
+    "diagrams",
+    "particles"
   ],
   "creator": "@Math_files",
   "creator_url": "https://x.com/Math_files/status/2104486181853610052",
@@ -28,6 +29,37 @@
   "skill": "styles/pm-math-files-39c9d0/SKILL.md",
   "playbooks": [
     "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/diagrams.md",
+    "playbooks/particles.md"
+  ],
+  "summary_ar": "عرض مدته 20 ثانية لجمال الرياضيات على خلفية سوداء بإطار واجهة دقيق: دائرة وحدة يخرج منها منحنى جيب وردي، سلسلة فورييه من دوائر دوارة ترسم رمز باي بالبرتقالي، منحنى ليساجو ثلاثي الأبعاد بجانب شبكة مصغرات، سطح موجي سلكي، كسيرة جوليا متوهجة، دوامة بذور زهرة الشمس بالنسبة الذهبية، ثم متطابقة أويلر تُكتب حداً حداً قبل شعار الختام.",
+  "summary_en": "A 20-second showcase of beautiful maths on black inside a fine HUD frame: a unit circle spinning out a pink sine wave, a Fourier epicycle chain drawing a glowing orange pi, a 3D Lissajous knot beside a grid of thumbnails, a wireframe ripple surface, a glowing Julia-set fractal, a golden-angle sunflower dot spiral, then Euler's identity written term by term before a tracked-out wordmark end card.",
+  "keywords": [
+    "math visualization",
+    "fourier epicycles",
+    "unit circle",
+    "lissajous",
+    "julia set",
+    "fractal",
+    "phyllotaxis",
+    "euler identity",
+    "neon hud",
+    "رياضيات",
+    "تصوير رياضي",
+    "دوائر فورييه",
+    "كسيرة",
+    "نسبة ذهبية",
+    "معادلة أويلر",
+    "عرض أعمال"
+  ],
+  "difficulty": 5,
+  "duration_s": 20,
+  "stack": [
+    "Remotion",
+    "React",
+    "HTML Canvas",
+    "WebGL",
+    "SVG"
+  ],
+  "brief": "styles/pm-math-files-39c9d0/BRIEF.md"
 }

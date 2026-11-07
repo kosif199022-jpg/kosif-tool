@@ -1,6 +1,6 @@
 ---
 name: pm-jake11moran-a269c4
-description: A warm, ink-outlined cartoon of about 53 seconds in a single fixed office: the agent is an orange box character with dot eyes and stubby arms behind a desk with a brass plaque. It starts asleep at night, a push-in to the monitor types the session start, then user messages arrive as paper airplanes that unfold into handwritten notes; the agent reacts with expressions while the monitor shows code, an image, a progress bar or a green check, rewards pile up on its head and the window cycles from day to night.
+description: A warm, ink-outlined cartoon of about 53 seconds in a single fixed office: the agent is an orange box character with dot eyes and stubby arms behind a desk with a brass plaque. It starts asleep at night, a push-in to the monitor types the session start, then user messages arrive as paper airplanes that unfold into handwritten notes; the agent reacts with expressions while the monitor shows code, an image, a progress bar or a green check, rewards pile up on its head and the window cycles from day to night. Use to make a new video in this look (Characters); address it by ID pm-jake11moran-a269c4.
 ---
 
 # KOSIF TOOL — Animated agent session story / حكاية جلسة الوكيل البرمجي

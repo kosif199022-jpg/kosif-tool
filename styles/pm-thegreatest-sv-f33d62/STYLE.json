@@ -1,12 +1,13 @@
 {
   "id": "pm-thegreatest-sv-f33d62",
   "name": "HyperFrames motion setup for Claude Code",
-  "name_ar": null,
+  "name_ar": "لوحة واجهة سرية لدماغ آلي: صور متوهجة ونوافذ تقريب منبثقة",
   "origin": "PromptsMotion",
   "type": "Skill",
   "category": [
-    "product-ui",
-    "code"
+    "diagrams",
+    "photos",
+    "product-ui"
   ],
   "creator": "unknown",
   "creator_url": "https://x.com/thegreatest_sv/status/2112609040962359354",
@@ -32,7 +33,36 @@
   "listed": true,
   "skill": "styles/pm-thegreatest-sv-f33d62/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md",
-    "playbooks/code.md"
-  ]
+    "playbooks/diagrams.md",
+    "playbooks/photos.md",
+    "playbooks/product-ui.md"
+  ],
+  "summary_ar": "مقطع مدته نحو 25 ثانية لواجهة معلومات علمية خيالية بلون أبيض بارد مليئة بلوحات صغيرة (مناظر الدماغ، طبقات القشرة، خريطة الشبكة العصبية، العين، جذع الدماغ، التدفق العصبي، الكود)، وفي وسطها دماغ آلي متوهج بالأزرق مع كابلات يتبدل منظره كل ثانية تقريباً، بينما تنبثق من الشبكة نوافذ تقريب تكبّر لوحة ما ثم تعود إلى مكانها.",
+  "summary_en": "A ~25-second sci-fi 'top secret' dashboard in cool white packed with small panels (brain views, cortical layers, neural map, eye, brain stem, signal flow, code), with a glowing blue cyborg brain wrapped in cables at the centre that swaps viewing angle about every second, while zoom windows pop out of the grid to enlarge one panel and then return.",
+  "keywords": [
+    "sci-fi hud",
+    "dashboard",
+    "top secret",
+    "cyborg brain",
+    "glowing blue",
+    "zoom windows",
+    "pop-out panels",
+    "loop",
+    "ai imagery",
+    "واجهة خيال علمي",
+    "لوحة معلومات",
+    "دماغ آلي",
+    "أزرق متوهج",
+    "نوافذ تقريب",
+    "ملف سري"
+  ],
+  "difficulty": 3,
+  "duration_s": 25,
+  "stack": [
+    "HTML Canvas",
+    "CSS",
+    "GSAP",
+    "React"
+  ],
+  "brief": "styles/pm-thegreatest-sv-f33d62/BRIEF.md"
 }

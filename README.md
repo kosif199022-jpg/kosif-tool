@@ -1,7 +1,7 @@
 # KOSIF TOOL — أطلس الموشن جرافيك لـ Claude Code
 
 <!-- stats:start -->
-**311** styles · **265** PromptsMotion references · **46** KOSIF base styles · **45** original briefs · **19** playbooks · **225** credited creators
+**311** styles · **265** PromptsMotion references · **46** KOSIF base styles · **311** original briefs · **19** playbooks · **225** credited creators
 <!-- stats:end -->
 
 ## ابدأ من هنا — خريطة المستودع / Start here
@@ -14,6 +14,7 @@
 | **أطلس الموشن** `styles/` `playbooks/` `catalog/` | 289 أسلوب موشن جرافيك، لكل منها SKILL.md وSTYLE.json وBRIEF.md، و17 دليل إنتاج | [STYLE_INDEX.md](STYLE_INDEX.md) · [AGENTS.md](AGENTS.md) |
 | **الأدوات** `tools/` `starters/` `templates/` | `kosif.py` (بحث وتجهيز مشروع)، `render_html.cjs` (رندر HTML إلى فيديو)، `verify_video.py` (فحص الناتج)، ومشروعا بداية html-canvas وRemotion | [tools/render_html.md](tools/render_html.md) |
 | **مهارة المونتاج التحريري** `.claude/skills/editorial-film-edit/` | مهارة مستقلة لمونتاج لقطات بأسلوب أرشيفي تحريري مع مراجع متصفح جاهزة | [SKILL.md](.claude/skills/editorial-film-edit/SKILL.md) |
+| **مهارة ريلز المتحدث** `.claude/skills/talking-head-reels/` | تحويل فيديو شخص بيتكلم للكاميرا لريل 9:16 جاهز بالكود (Python + ffmpeg): قص الوقفات، صوت على -14 LUFS، كلام متحرك كبير، لقطات B-roll، شاشة مقسومة، وكل المونتاج في ملف EDL واحد. يشتغل على لينكس ويدعم العربي متصل كلمة بكلمة | [SKILL.md](.claude/skills/talking-head-reels/SKILL.md) |
 | **مهارة إعلانات SaaS** `.claude/skills/saas-animation/` | إعلانات قصيرة 8–20 ثانية لتطبيقات ومنتجات وبراندات تُبنى ككود وتُرندر 4K بدون أي مولّد فيديو بالذكاء الاصطناعي: ستوري بورد، كاميرا واحدة مستمرة، واجهة حقيقية في 3D، تحريك رسوم بالدبابيس، منتجات في Blender، وصوت ومزج | [SKILL.md](.claude/skills/saas-animation/SKILL.md) |
 | **المشاريع** `projects/` | أفلام منتهية بمصادرها القابلة للتعديل: مفاتيح الثروة، تحية مصر والسعودية، وثلاث ريلز أدعية | [projects/README.md](projects/README.md) |
 | **الموقع** `index.html` `web/` | واجهة تصفح الأساليب ومولّد الطلبات، تُنشر على GitHub Pages | https://kosif199022-jpg.github.io/kosif-tool/ |

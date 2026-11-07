@@ -1,9 +1,9 @@
 ---
 name: pm-adamdesgns-478d6d
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second app promo on black with a faint dot grid: a welding spark draws a glowing pipe with dimension lines under a 'measure twice, cut once' slogan, a shaky sketch snaps into clean blue lines, a 3D box solves an offset with a gold counter, a huge records counter, a phone result, full-frame feature words, and a ring-icon end card. Use to make a new video in this look (Product UI); address it by ID pm-adamdesgns-478d6d.
 ---
 
-# KOSIF TOOL — Fitters Bible app promo
+# KOSIF TOOL — Fitters Bible app promo / ترويج تطبيق للسباكين بخطوط أنابيب متوهجة وأرقام ضخمة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/adamdesgns-478d6d
@@ -17,16 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+ترويج تطبيق مدته 15 ثانية على أسود بشبكة نقاط خافتة: شرارة لحام ترسم أنبوباً معدنياً متوهجاً مع أبعاد هندسية تحت شعار «قس مرتين، اقطع مرة»، رسم إصبع متعرج يتحول إلى خطوط زرقاء نظيفة، صندوق ثلاثي الأبعاد يحسب الإزاحة برقم ذهبي يعدّ، عداد سجلات ضخم فوق حقل نقاط، هاتف يعرض نتيجة، كلمات ميزات تملأ الشاشة، وختام بأيقونة الحلقة والاسم وشارات.
+
+A 15-second app promo on black with a faint dot grid: a welding spark draws a glowing pipe with dimension lines under a 'measure twice, cut once' slogan, a shaky sketch snaps into clean blue lines, a 3D box solves an offset with a gold counter, a huge records counter, a phone result, full-frame feature words, and a ring-icon end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Three.js, HTML Canvas), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك, Diagrams / مخططات, Particles / جسيمات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/diagrams.md](../../playbooks/diagrams.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

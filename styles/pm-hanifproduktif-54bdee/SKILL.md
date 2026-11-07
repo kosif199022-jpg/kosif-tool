@@ -1,9 +1,9 @@
 ---
 name: pm-hanifproduktif-54bdee
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second typographic showreel of about 14 quick shots, each a giant heavy-grotesk word that performs the motion principle it names (anticipate, overshoot, stretch, stagger, weight, split, morph, loop, blur, snap, arc, flow), on grounds cutting between black, cream, orange and acid lime, ending as dots assemble into the closing word. Use to make a new video in this look (Kinetic type); address it by ID pm-hanifproduktif-54bdee.
 ---
 
-# KOSIF TOOL — Motion designer showreel
+# KOSIF TOOL — Motion designer showreel / شوريل موشن: كل كلمة تؤدي مبدأ الحركة الذي تسمّيه
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/hanifproduktif-54bdee
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #117
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+شوريل تايبوغرافي مدته 15 ثانية من نحو 14 لقطة قصيرة، كل لقطة كلمة إنجليزية ضخمة بخط غروتسك ثقيل تؤدي بنفسها مبدأ الحركة الذي تسميه (توقّع، تجاوز، تمطط، تتابع، وزن، انقسام، تحوّل، دوران، تمويه، خطف، قوس، انسياب)، على أرضيات تتبدل بين الأسود والكريمي والبرتقالي والأخضر الليموني، ثم تتجمع جسيمات في الكلمة الختامية.
+
+A 15-second typographic showreel of about 14 quick shots, each a giant heavy-grotesk word that performs the motion principle it names (anticipate, overshoot, stretch, stagger, weight, split, morph, loop, blur, snap, arc, flow), on grounds cutting between black, cream, orange and acid lime, ending as dots assemble into the closing word.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas), suggested duration (15 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Kinetic type / تايبوغرافي متحرك.

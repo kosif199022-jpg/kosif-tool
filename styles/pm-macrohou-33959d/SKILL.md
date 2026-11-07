@@ -1,9 +1,9 @@
 ---
 name: pm-macrohou-33959d
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A ~30-second app launch film: tumbling pills on black give way to calm cream paper with green key words, the arch logo rides beside sentences, trial rules lock into a card, a phone fills a dose calendar, a slot reel lands on 'worked', a heart-rate line drops, a next-test tree branches, and particles form 'n = 1' and the logo. Use to make a new video in this look (Product UI); address it by ID pm-macrohou-33959d.
 ---
 
-# KOSIF TOOL — Ren app launch video
+# KOSIF TOOL — Ren app launch video / إطلاق تطبيق تجارب المكملات: «تجربة على شخص واحد» بهدوء ورقي
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/macrohou-33959d
@@ -17,16 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيلم إطلاق مدته نحو 30 ثانية لتطبيق صحي: يبدأ بحبوب ونجوم متطايرة على الأسود حول سؤال «الجميع يقسم إنها تنفع»، ثم ينتقل إلى ورق كريمي هادئ بعناوين داكنة وكلمات مفتاحية خضراء، شعار القوس يرافق الجمل، قواعد التجربة كبطاقات تُقفل، هاتف يملأ تقويم الجرعات بنقرة، صندوق نتيجة يدور حتى «نجح»، منحنى نبض ينخفض، شجرة الاختبار التالي، ثم جسيمات تتجمع في «n = 1» والشعار.
+
+A ~30-second app launch film: tumbling pills on black give way to calm cream paper with green key words, the arch logo rides beside sentences, trial rules lock into a card, a phone fills a dose calendar, a slot reel lands on 'worked', a heart-rate line drops, a next-test tree branches, and particles form 'n = 1' and the logo.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas), suggested duration (30 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Music / موسيقى.
+Categories: Product UI / واجهات المنتج, Phone / هاتف, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/phone.md](../../playbooks/phone.md)
 - [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

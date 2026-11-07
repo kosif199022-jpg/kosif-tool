@@ -1,9 +1,9 @@
 ---
 name: pm-fionntobin-97b7af
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second editorial motion reel in cobalt on cream over a thin design grid: squares doubling to 64 beside a serif numeral, a condensed 'EVERY' on blue then italic 'frame' and wide 'written', a beat step chart, a stick runner clearing hurdles, rising isometric tiles, halftone dot ripples, a glyph matrix and a huge serif signature. Use to make a new video in this look (Kinetic type); address it by ID pm-fionntobin-97b7af.
 ---
 
-# KOSIF TOOL — Blue editorial motion showreel
+# KOSIF TOOL — Blue editorial motion showreel / شوريل تحريري بالأزرق الكوبالت على الكريمي
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/fionntobin-97b7af
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شوريل موشن تحريري مدته 15 ثانية بلونين فقط، أزرق كوبالت على كريمي، على شبكة تصميم رفيعة: مربعات تتضاعف من 2 إلى 8 إلى 64 مع رقم سيريف كبير، كلمة «EVERY» مكثفة تملأ الشاشة الزرقاء ثم «frame» مائلة و«written» عريضة، مخطط درجات يرسم إيقاع الموسيقى بالأرقام، رجل عصا أزرق يقفز حواجز، بلاطات متساوية القياس ترتفع، شبكة نقاط تتحول إلى تموجات طباعة نصفية، مصفوفة رموز، ثم توقيع ضخم بالسيريف.
+
+A 15-second editorial motion reel in cobalt on cream over a thin design grid: squares doubling to 64 beside a serif numeral, a condensed 'EVERY' on blue then italic 'frame' and wide 'written', a beat step chart, a stick runner clearing hurdles, rising isometric tiles, halftone dot ripples, a glyph matrix and a huge serif signature.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Charts / رسوم بيانية, Shapes / أشكال.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

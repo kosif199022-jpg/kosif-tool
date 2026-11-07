@@ -1,6 +1,6 @@
 ---
 name: pm-marouanegazouzi-6071d5
-description: A 15-second reel for an X-post analytics app inside a persistent HUD: a glowing heartbeat line that becomes the logo glyph, a big serif headline over ghosted repeating text, a dot histogram resolving into a bell curve with a counter and percentile band, a light-burst into the logo, a UI card with metric bars and multipliers, an orbital radar, a split-flap board, a full blue frame and an end card.
+description: A 15-second reel for an X-post analytics app inside a persistent HUD: a glowing heartbeat line that becomes the logo glyph, a big serif headline over ghosted repeating text, a dot histogram resolving into a bell curve with a counter and percentile band, a light-burst into the logo, a UI card with metric bars and multipliers, an orbital radar, a split-flap board, a full blue frame and an end card. Use to make a new video in this look (Charts); address it by ID pm-marouanegazouzi-6071d5.
 ---
 
 # KOSIF TOOL — Crux motion design showreel / ريل Crux: تحليلات منشورات X داخل إطار HUD

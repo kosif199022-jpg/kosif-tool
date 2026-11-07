@@ -1,6 +1,6 @@
 ---
 name: pm-micheleharmonic-77628e
-description: A roughly 38-second vertical hype edit for a decentralised exchange: the dot-ring logo draws as outlines then fills while a mono line types, the ring becomes a glowing blue iris inside an RGB-split eye, then a fast beat-cut run of huge words in black, white or violet over a rotating chrome 3D coin, a 24-dot ring with violet radial lines, white flash frames, inverted scenes, glitch-sliced violet kanji and a calm logo lock-up.
+description: A roughly 38-second vertical hype edit for a decentralised exchange: the dot-ring logo draws as outlines then fills while a mono line types, the ring becomes a glowing blue iris inside an RGB-split eye, then a fast beat-cut run of huge words in black, white or violet over a rotating chrome 3D coin, a 24-dot ring with violet radial lines, white flash frames, inverted scenes, glitch-sliced violet kanji and a calm logo lock-up. Use to make a new video in this look (creative motion); address it by ID pm-micheleharmonic-77628e.
 ---
 
 # KOSIF TOOL — GravityDEX anime hype edit / مونتاج أنمي حماسي عمودي لمنصة GravityDEX

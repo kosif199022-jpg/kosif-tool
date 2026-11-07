@@ -1,18 +1,13 @@
 {
   "id": "pm-theparuchh-6e08c3",
   "name": "38-second fictional game trailer built entirely in code",
-  "name_ar": null,
+  "name_ar": "إعلان لعبة خيالية: شمس منطفئة وتنين ميكانيكي",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "diagrams",
-    "kinetic-type",
-    "shapes",
+    "3d",
     "particles",
-    "characters",
-    "photos",
-    "music",
-    "code"
+    "characters"
   ],
   "creator": "@theparuchh",
   "creator_url": "https://x.com/theparuchh/status/2106824464092770455",
@@ -35,13 +30,36 @@
   "listed": true,
   "skill": "styles/pm-theparuchh-6e08c3/SKILL.md",
   "playbooks": [
-    "playbooks/diagrams.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
+    "playbooks/3d.md",
     "playbooks/particles.md",
-    "playbooks/characters.md",
-    "playbooks/photos.md",
-    "playbooks/music.md",
-    "playbooks/code.md"
-  ]
+    "playbooks/characters.md"
+  ],
+  "summary_ar": "إعلان تشويقي مدته 38 ثانية للعبة خيالية مبني بالكامل بالكود بإطار سينمائي عريض: منظر ثلاثي الأبعاد بلون الغسق لصخور شاهقة وأعمدة وأقواس مهدمة وجزر طائرة فوق بحر ساكن، تتوسطه شمس سوداء بحلقة ضوء رقيقة، ومسافر صغير بعباءة حمراء، ثم يغرق المكان في الظلام ويظهر أن الحلقة تنين ميكانيكي بأجنحة، وينتهي ببطاقة اسم بحروف متباعدة.",
+  "summary_en": "A 38-second letterboxed teaser for a fictional game, built in code: a dusky 3D world of rock spires, broken columns and floating islands over a still sea under a black sun with a glowing ring and a tiny red-cloaked traveller, then the world goes dark, the ring is revealed as a winged mechanical creature, and a tracked title card ends it.",
+  "keywords": [
+    "game trailer",
+    "teaser",
+    "black sun",
+    "mechanical dragon",
+    "fantasy landscape",
+    "letterbox",
+    "cinematic 3D",
+    "embers",
+    "shaders",
+    "إعلان لعبة",
+    "إعلان تشويقي",
+    "شمس سوداء",
+    "تنين ميكانيكي",
+    "منظر خيالي",
+    "سينمائي ثلاثي الأبعاد"
+  ],
+  "difficulty": 5,
+  "duration_s": 38,
+  "stack": [
+    "Three.js",
+    "WebGL",
+    "React",
+    "Remotion"
+  ],
+  "brief": "styles/pm-theparuchh-6e08c3/BRIEF.md"
 }

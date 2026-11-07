@@ -1,11 +1,11 @@
 {
   "id": "pm-tankazunori0914-0fc886",
   "name": "What day is it",
-  "name_ar": null,
+  "name_ar": "ما يوم اليوم؟ تقويم يبحث على الإيقاع حتى الجمعة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
+    "kinetic-type",
     "music"
   ],
   "creator": "@tankazunori0914",
@@ -27,7 +27,35 @@
   "listed": true,
   "skill": "styles/pm-tankazunori0914-0fc886/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
     "playbooks/music.md"
-  ]
+  ],
+  "summary_ar": "فيلم تايبوغرافي مدته 30 ثانية على خلفية فحمية بوهج برتقالي وإطار واجهة تقنية بأرقام صغيرة: سؤال ياباني يُكتب بمؤشر برتقالي، ثم صف من سبع خانات أيام يقفز فيه إطار تحديد برتقالي يميناً ويساراً حتى يستقر على الجمعة، فتنفجر كلمة FRIDAY ضخمة بتشويش لوني وشريط نص متكرر في الخلفية، ثم لوحة بيانات (التاريخ، رقم الأسبوع، يوم السنة بشريط تقدم) وختام بالجواب الياباني الكبير.",
+  "summary_en": "A 30-second beat-synced type film on charcoal with an orange glow and HUD frame: a Japanese 'what day is it?' types on, an orange box hops across seven day tiles until it locks on Friday, a giant FRIDAY slams in with RGB glitch over a text marquee, then a date/week/day-of-year data panel and a big orange Japanese answer.",
+  "keywords": [
+    "what day is it",
+    "calendar scan",
+    "day picker",
+    "beat sync",
+    "hud frame",
+    "glitch slam",
+    "japanese typography",
+    "kinetic type",
+    "data panel",
+    "تايبوغرافي متحرك",
+    "تقويم",
+    "يوم الجمعة",
+    "مزامنة الإيقاع",
+    "واجهة تقنية",
+    "خط ياباني"
+  ],
+  "difficulty": 3,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-tankazunori0914-0fc886/BRIEF.md"
 }

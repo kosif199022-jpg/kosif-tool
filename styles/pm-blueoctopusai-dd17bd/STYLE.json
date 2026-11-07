@@ -1,11 +1,11 @@
 {
   "id": "pm-blueoctopusai-dd17bd",
   "name": "First & 10 yellow line explainer",
-  "name_ar": null,
+  "name_ar": "شرح ثلاثي الأبعاد لخط الياردات الأصفر في بث كرة القدم الأمريكية",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
+    "3d",
     "diagrams"
   ],
   "creator": "@blueoctopusai",
@@ -27,7 +27,35 @@
   "listed": true,
   "skill": "styles/pm-blueoctopusai-dd17bd/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
+    "playbooks/3d.md",
     "playbooks/diagrams.md"
-  ]
+  ],
+  "summary_ar": "شرح ثلاثي الأبعاد مدته نحو دقيقتين و48 ثانية لتقنية خط الياردات الأصفر المرسوم في البث التلفزيوني: ملعب ولاعبون منخفضو المضلعات، ثم ملعب رمادي يُقطع لإظهار الكابلات، كاميرا على حامل بحساسات مُعلَّمة، الملعب المقوَّس بشبكة فيروزية، معايرة العدسة، عينات ألوان العشب في دوائر، معادلة الإسقاط، الخط الذي يمر تحت اللاعبين، ثم إزالة الطلاء، مع عناوين فصول بيضاء مكثفة أعلى اليسار ولوحات بيانات صغيرة.",
+  "summary_en": "A 2 min 48 s low-poly 3D explainer of the broadcast yellow first-down line: a stadium cutaway with cables, a tripod camera with labelled sensors, the crowned field under a teal mesh, lens calibration, grass colour samples, a projection formula, the line keyed under players and the paint removed, each chapter headed by a white condensed title top-left.",
+  "keywords": [
+    "3D explainer",
+    "sports broadcast",
+    "first down line",
+    "American football",
+    "low poly",
+    "stadium",
+    "camera tracking",
+    "chroma key",
+    "شرح ثلاثي الأبعاد",
+    "كرة القدم الأمريكية",
+    "بث رياضي",
+    "خط أصفر",
+    "ملعب",
+    "تقنية البث"
+  ],
+  "difficulty": 5,
+  "duration_s": 168,
+  "stack": [
+    "Three.js",
+    "WebGL",
+    "React",
+    "Remotion",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-blueoctopusai-dd17bd/BRIEF.md"
 }

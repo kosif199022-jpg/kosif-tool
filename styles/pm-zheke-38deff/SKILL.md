@@ -1,6 +1,6 @@
 ---
 name: pm-zheke-38deff
-description: A square, rapid-cut 15-second piece: 'HI' with a bouncing orange ball, then 'I CAN' followed by a verb acted out literally: SQUASH, OVERSHOOT, RENDER with a glossy 3D sphere, particles, BEND LIGHT through refractive glass blobs, a spiral square tunnel, STRETCH with chromatic split, AFTER EFFECTS struck through, JUST CODE. and a closing model name.
+description: A square, rapid-cut 15-second piece: 'HI' with a bouncing orange ball, then 'I CAN' followed by a verb acted out literally: SQUASH, OVERSHOOT, RENDER with a glossy 3D sphere, particles, BEND LIGHT through refractive glass blobs, a spiral square tunnel, STRETCH with chromatic split, AFTER EFFECTS struck through, JUST CODE. and a closing model name. Use to make a new video in this look (Kinetic type); address it by ID pm-zheke-38deff.
 ---
 
 # KOSIF TOOL — Kinetic type showreel / طباعة حركية مربعة: «أستطيع» والفعل يمثّل معناه

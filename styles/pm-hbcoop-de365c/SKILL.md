@@ -1,9 +1,9 @@
 ---
 name: pm-hbcoop-de365c
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 29 s 16:9 piece on cream paper where one shape evolves from a point to a line, a circle and a glossy black 3D sphere, then a glass lens over code, a ball bouncing with a red dotted trail, a particle flock and a halftone globe, before shrinking to the full stop of a typed sentence, each stage captioned 'FIG. N' in italic serif, with no cuts. Use to make a new video in this look (3D); address it by ID pm-hbcoop-de365c.
 ---
 
-# KOSIF TOOL — Full Stop figure sequence
+# KOSIF TOOL — Full Stop figure sequence / متتالية أشكال «شكل 1… شكل 9» على ورق كريمي: من نقطة إلى كرة وسرب وعالم
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/hbcoop-de365c
@@ -17,12 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+مقطع 16:9 مدته نحو 29 ثانية على ورق كريمي هادئ يتطور فيه شكل واحد من نقطة إلى خط ثم دائرة ثم كرة سوداء لامعة ثلاثية الأبعاد بظل ناعم، ثم عدسة زجاجية تكسر سطور كود منسوخة على الأرض، وكرة ترتد تاركة أثراً منقطاً أحمر، وسرب جسيمات يتلوّى، وكرة أرضية بنقش نقطي تدور، ثم تعود نقطة وتصير نقطة نهاية جملة مكتوبة، وتحت كل مرحلة تعليق «شكل N» بخط مائل.
+
+A 29 s 16:9 piece on cream paper where one shape evolves from a point to a line, a circle and a glossy black 3D sphere, then a glass lens over code, a ball bouncing with a red dotted trail, a particle flock and a halftone globe, before shrinking to the full stop of a typed sentence, each stage captioned 'FIG. N' in italic serif, with no cuts.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, WebGL, SVG), suggested duration (29 s), aspect 16:9, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: creative motion.
-- (no category playbook yet)
+Categories: 3D / ثلاثي الأبعاد, Shapes / أشكال, Particles / جسيمات.
+- [playbooks/3d.md](../../playbooks/3d.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
 
 Category tactics:
-* Develop original choreography from the reference; verify imagery before claiming a match.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,9 +1,9 @@
 ---
 name: character-rig
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A flat vector cartoon character on a bone rig: clear joint-based gestures, blinks and lip sync to the voice-over, secondary motion on hair and clothes, a simple warm background set and short labels or props appearing beside the character as it explains. Use to make a new video in this look (Characters); address it by ID character-rig.
 ---
 
-# KOSIF TOOL — تحريك هيكلي
+# KOSIF TOOL — تحريك هيكلي / شخصية متجهية بتحريك هيكلي ومزامنة شفاه
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+شخصية كرتونية متجهية مسطحة مركّبة على هيكل عظمي: تتحرك بمفاصل وإيماءات واضحة، ترمش وتتكلم بمزامنة شفاه مع الصوت، مع حركة ثانوية للشعر والملابس، على خلفية بسيطة بألوان دافئة وتسميات تظهر بجانبها.
+
+A flat vector cartoon character on a bone rig: clear joint-based gestures, blinks and lip sync to the voice-over, secondary motion on hair and clothes, a simple warm background set and short labels or props appearing beside the character as it explains.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (30 s), aspect 9:16, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Characters / شخصيات.

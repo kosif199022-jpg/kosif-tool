@@ -1,10 +1,12 @@
 {
   "id": "pm-rebutonepress-810f78",
   "name": "Black hole time story",
-  "name_ar": null,
+  "name_ar": "قصة الزمن عند ثقب أسود: مسبار يسقط والساعات تفترق",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
+    "3d",
+    "particles",
     "music"
   ],
   "creator": "@RebutonePress",
@@ -26,6 +28,36 @@
   "listed": true,
   "skill": "styles/pm-rebutonepress-810f78/SKILL.md",
   "playbooks": [
+    "playbooks/3d.md",
+    "playbooks/particles.md",
     "playbooks/music.md"
-  ]
+  ],
+  "summary_ar": "فيلم علمي سينمائي طويل (5 دقائق) بإطار عريض بين شريطين أسودين: ثقب أسود صغير بين النجوم يقترب ببطء حتى يملأ قرص التراكم الكريمي الذهبي الكادر بحلقة ضوء منحنية، مع ترجمة صينية سطراً سطراً أسفل الشاشة. ثم لوحتا بيانات دقيقتان في الزاويتين للسفينة الأم والمسبار (الزمن، الانزياح الأحمر، شدة الإشارة) بينما تنكمش نقطة المسبار المضيئة نحو الأفق، ثم تتبدل وجهة النظر إلى المسبار، وينتهي بعنوان مركزي بحرفين كبيرين.",
+  "summary_en": "A 5-minute letterboxed science film: a small black hole among stars slowly grows until its cream-gold lensed accretion disk fills the frame, with Chinese subtitles below; tiny corner data panels track a mothership and a probe whose glowing dot dims and reddens toward the horizon, the viewpoint switches to the probe, and it ends on a centred title.",
+  "keywords": [
+    "black hole",
+    "event horizon",
+    "time dilation",
+    "accretion disk",
+    "gravitational lensing",
+    "science film",
+    "letterbox",
+    "data hud",
+    "ثقب أسود",
+    "أفق الحدث",
+    "تمدد الزمن",
+    "قرص التراكم",
+    "فيلم علمي",
+    "سينمائي",
+    "ترجمة"
+  ],
+  "difficulty": 5,
+  "duration_s": 300,
+  "stack": [
+    "WebGL",
+    "Three.js",
+    "Remotion",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-rebutonepress-810f78/BRIEF.md"
 }

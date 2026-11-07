@@ -1,9 +1,9 @@
 ---
 name: neon-tech
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A dark tech world in cyan and magenta neon glow: circuit traces carry light pulses, HUD rings and counters spin around the subject, particles swarm to form icons and words, and short digital glitches punctuate a fast rhythm built for tech ads and AI explainers. Use to make a new video in this look (Ads); address it by ID neon-tech.
 ---
 
-# KOSIF TOOL — نيون تقني
+# KOSIF TOOL — نيون تقني / نيون تقني بواجهات HUD وجسيمات
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+عالم تقني داكن بتوهج نيون سماوي وأرجواني: خطوط دوائر كهربائية تجري نبضات ضوء، واجهات HUD بحلقات وعدادات، جسيمات تتجمع لتكوّن الأيقونات والكلمات، ووميض رقمي خفيف، بإيقاع سريع لإعلانات التقنية.
+
+A dark tech world in cyan and magenta neon glow: circuit traces carry light pulses, HUD rings and counters spin around the subject, particles swarm to form icons and words, and short digital glitches punctuate a fast rhythm built for tech ads and AI explainers.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, WebGL), suggested duration (30 s), aspect 9:16, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Ads / إعلانات, Particles / جسيمات.

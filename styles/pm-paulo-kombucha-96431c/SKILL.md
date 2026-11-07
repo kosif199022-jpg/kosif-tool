@@ -1,6 +1,6 @@
 ---
 name: pm-paulo-kombucha-96431c
-description: A 15-second referral promo for a mascot studio: 'tell a friend' gets a pink scribble strike-through and is rewritten with a tilted orange sticker and a small mascot, an orange circle wipe leads to a prompt box that types a description and clicks create, revealing a 3D potato mascot in a pink circle, more mascots with name pills, a tilted translucent lifetime-commission card sweeps across, an earnings calculator where a cursor drags a slider from 50 to 500 while the payout ticks to $5,000, and an end card with a clicked affiliate button.
+description: A 15-second referral promo for a mascot studio: 'tell a friend' gets a pink scribble strike-through and is rewritten with a tilted orange sticker and a small mascot, an orange circle wipe leads to a prompt box that types a description and clicks create, revealing a 3D potato mascot in a pink circle, more mascots with name pills, a tilted translucent lifetime-commission card sweeps across, an earnings calculator where a cursor drags a slider from 50 to 500 while the payout ticks to $5,000, and an end card with a clicked affiliate button. Use to make a new video in this look (Charts); address it by ID pm-paulo-kombucha-96431c.
 ---
 
 # KOSIF TOOL — Mascot referral program promo / إعلان برنامج الإحالة لاستوديو التمائم

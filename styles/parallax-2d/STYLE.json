@@ -1,7 +1,7 @@
 {
   "id": "parallax-2d",
   "name": "بارالاكس",
-  "name_ar": "بارالاكس",
+  "name_ar": "بارالاكس — صورة مقطّعة إلى طبقات تتحرك بعمق",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,31 @@
   "playbooks": [
     "playbooks/photos.md",
     "playbooks/3d.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي 9:16 تتحول فيه صور ثابتة إلى مشاهد ذات عمق: كل صورة مقطّعة إلى ثلاث أو أربع طبقات (مقدمة وشخص وخلفية وسماء) تنزلق بسرعات مختلفة مع دفع بطيء للكاميرا، وضباب وجزيئات غبار بين الطبقات، وانتقالات تمر فيها الكاميرا عبر طبقة المقدمة إلى الصورة التالية.",
+  "summary_en": "A 9:16 reel that turns still photos into scenes with depth: each image is cut into three or four layers (foreground, subject, background, sky) that slide at different speeds under a slow camera push, with haze and dust particles between layers, and transitions where the camera passes through the foreground layer into the next picture.",
+  "keywords": [
+    "parallax",
+    "2.5d photo",
+    "layered photo",
+    "depth",
+    "ken burns",
+    "nostalgia",
+    "photo animation",
+    "بارالاكس",
+    "طبقات",
+    "عمق",
+    "صور متحركة",
+    "ذكريات",
+    "تحريك الصور"
+  ],
+  "difficulty": 3,
+  "duration_s": 27,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "HTML Canvas"
+  ],
+  "brief": "styles/parallax-2d/BRIEF.md"
 }

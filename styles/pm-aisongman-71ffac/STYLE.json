@@ -1,10 +1,13 @@
 {
   "id": "pm-aisongman-71ffac",
   "name": "Pixel art card battle game",
-  "name_ar": null,
+  "name_ar": "لعبة بطاقات قتالية بأسلوب البكسل: لعب أدوار على طاولة خضراء",
   "origin": "PromptsMotion",
   "type": "Prompt",
-  "category": [],
+  "category": [
+    "characters",
+    "product-ui"
+  ],
   "creator": "@aisongman",
   "creator_url": "https://x.com/aisongman/status/2103763192971461057",
   "page": "https://www.promptsmotion.com/aisongman-71ffac",
@@ -23,5 +26,34 @@
   "source_prompt_words": 18,
   "listed": true,
   "skill": "styles/pm-aisongman-71ffac/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/characters.md",
+    "playbooks/product-ui.md"
+  ],
+  "summary_ar": "لقطة لعب مدتها 15 ثانية للعبة بطاقات قتالية بفن البكسل على أرضية من بلاط حجري كحلي: طاولة خضراء بإطار خشبي يجلس عليها توكنات وحوش دائرية للطرفين، بطل كل طرف في الأعلى والأسفل بنقاط حياته، يد من البطاقات الزرقاء في الأسفل؛ بطاقة كرة نار تُسحب بسهم منقط نحو هدف، بطاقات وحوش تُكبَّر عند التمرير، توكنات تومض وتهتز عند الضربة، شريط دور العدو يمر، ثم بطاقة إعدام حمراء تقضي على وحش.",
+  "summary_en": "A 15 s gameplay capture of a pixel-art card battler on navy stone tiles: a green felt table in a wood frame with round creature tokens, heroes above and below, a fanned hand of blue cards, a fireball dragged along a dotted arc, hover card previews, hit flashes and particle deaths, an enemy-turn banner and a red execute spell.",
+  "keywords": [
+    "pixel art",
+    "card battler",
+    "card game",
+    "gameplay capture",
+    "turn-based",
+    "game UI",
+    "targeting arrow",
+    "8-bit",
+    "فن البكسل",
+    "لعبة بطاقات",
+    "لعبة أدوار",
+    "واجهة لعبة",
+    "قتال",
+    "ألعاب"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "HTML Canvas",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-aisongman-71ffac/BRIEF.md"
 }

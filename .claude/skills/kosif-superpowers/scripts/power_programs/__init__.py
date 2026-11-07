@@ -28,10 +28,13 @@ def card_index() -> dict:
     return out
 
 
-def modules_for(family: str) -> list:
-    """The family's module <family>.py plus any wave modules <family>__<wave>.py."""
+def modules_for(family: str, local: bool = True) -> list:
+    """The family's module <family>.py plus any wave modules <family>__<wave>.py.
+
+    local=False leaves out <family>__local.py: programs that need a pip model or the network
+    (env_scope=local), which a clean CI image cannot run."""
     name = family.replace("-", "_")
-    paths = [HERE / f"{name}.py"] + sorted(HERE.glob(f"{name}__*.py"))
+    paths = [HERE / f"{name}.py"] + sorted(p for p in HERE.glob(f"{name}__*.py") if local or p.stem != f"{name}__local")
     return [importlib.import_module(f"power_programs.{p.stem}") for p in paths if p.is_file()]
 
 

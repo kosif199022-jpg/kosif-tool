@@ -19,6 +19,9 @@ source: https://github.com/voitta-ai/skillz
 source_file: skills/session-transcript-mining/SKILL.md
 ---
 
+
+> **KOSIF safety note:** Transcripts hold private conversations. Ask the user before reading them, report what you found, and ask again before opening any PR with the results.
+
 > **Canonical source.** This skill lives in the repo at
 > https://github.com/voitta-ai/skillz (file:
 > `skills/session-transcript-mining/SKILL.md`). Updates go through the

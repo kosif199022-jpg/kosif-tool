@@ -1,7 +1,7 @@
 {
   "id": "chalkboard",
   "name": "سبورة طباشير",
-  "name_ar": "سبورة طباشير",
+  "name_ar": "سبورة طباشير خضراء تشرح درسًا",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -24,5 +24,31 @@
   "skill": "styles/chalkboard/SKILL.md",
   "playbooks": [
     "playbooks/hand-drawn.md"
-  ]
+  ],
+  "summary_ar": "سبورة طباشير خضراء داكنة بإطار خشبي: قطعة طباشير ملونة تتحرك فتكتب العنوان العربي بخط يدوي وترسم المثلث والمربعات بالأبيض والوردي والأزرق والأصفر، مربعات صغيرة تنتقل لتملأ مربعًا آخر كإثبات، ثم تُكتب المعادلة والأرقام وعلامة صح وخلاصة، والكاميرا تتحرك بين أجزاء اللوح.",
+  "summary_en": "A dark green chalkboard in a wooden frame: a moving stick of coloured chalk writes an Arabic handwritten title and draws a triangle and gridded squares in white, pink, blue and yellow, small unit squares travel to fill another square as visual proof, then the equation, numbers, a tick and a summary line are written while the camera pans around the board.",
+  "keywords": [
+    "chalkboard",
+    "chalk",
+    "blackboard",
+    "math lesson",
+    "visual proof",
+    "education",
+    "handwriting",
+    "سبورة طباشير",
+    "طباشير",
+    "درس رياضيات",
+    "إثبات بصري",
+    "تعليم",
+    "شرح",
+    "نظرية فيثاغورس"
+  ],
+  "difficulty": 3,
+  "duration_s": 26,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/chalkboard/BRIEF.md"
 }

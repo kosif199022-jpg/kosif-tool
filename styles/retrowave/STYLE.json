@@ -1,7 +1,7 @@
 {
   "id": "retrowave",
   "name": "ريترو",
-  "name_ar": "ريترو",
+  "name_ar": "ريترو الثمانينات: شمس مخططة وأرض شبكية نيون وخط كروم",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,32 @@
   "playbooks": [
     "playbooks/ads.md",
     "playbooks/3d.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي بطابع الثمانينات: غروب شمس مخططة بالبرتقالي والوردي فوق أرض شبكية بنفسجية تتحرك نحو الكاميرا، جبال سلكية، نص معدني كرومي بلمعة، وتشويش شريط VHS وخطوط مسح خفيفة.",
+  "summary_en": "An eighties-styled vertical reel: a striped orange-to-pink sunset over a purple neon grid floor scrolling toward the camera, wireframe mountains, chrome metallic lettering with a glint, and light VHS tape noise and scanlines.",
+  "keywords": [
+    "retrowave",
+    "synthwave",
+    "80s",
+    "outrun",
+    "neon grid",
+    "chrome text",
+    "vhs",
+    "sunset",
+    "ريترو",
+    "الثمانينات",
+    "نيون",
+    "شبكة",
+    "حنين",
+    "كروم"
+  ],
+  "difficulty": 3,
+  "duration_s": 28,
+  "stack": [
+    "Three.js",
+    "WebGL",
+    "React",
+    "Remotion"
+  ],
+  "brief": "styles/retrowave/BRIEF.md"
 }
