@@ -56,9 +56,12 @@ SCRIPT = {
     "kling-director": SKILLS / "kosif-kling-director" / "scripts",
     "dragon-mind": SKILLS / "kosif-dragon-mind" / "scripts",
     "saas-animation": SKILLS / "saas-animation" / "scripts",
+    "stickman-studio": SKILLS / "kosif-stickman-studio" / "scripts",
     "creative-council": SKILLS / "kosif-black-dragon" / "scripts",
+    "cartoon-short": SKILLS / "cartoon-audio-short" / "kit" / "tools",
     "talking-head-reels": SKILLS / "talking-head-reels" / "scripts",
     "dragon-montage": SKILLS / "kosif-dragon-montage" / "scripts",
+    "arena": SKILLS / "arena",
 }
 RECIPES = tuple(SCRIPT)
 NEEDS_MEDIA = {"social", "video-editor", "motion-energy", "captions-audio", "shadow-theatre", "voice-check",
@@ -67,7 +70,7 @@ NEEDS_MEDIA = {"social", "video-editor", "motion-energy", "captions-audio", "sha
 NEEDS_MODULE = {"excel-lambdas": "openpyxl", "motion-energy": "PIL", "excel-model": "openpyxl",
                 "excel-check": "openpyxl", "captions-audio": "numpy", "shadow-theatre": "numpy",
                 "animation-qa": "PIL", "hyperframes-beats": "numpy", "mimic-analyze": "cv2", "pixel-painter": "cv2",
-                "saas-animation": "PIL", "talking-head-reels": "numpy"}
+                "saas-animation": "PIL", "cartoon-short": "scipy", "talking-head-reels": "numpy"}
 # Scripts that import their sibling modules: run without -I (which drops the script's folder from
 # sys.path) but still with -E -s, so no environment variable or user site-packages leaks in.
 PY_SIBLINGS = [sys.executable, "-E", "-s", "-B"]  # Python packages a recipe's script imports
@@ -873,6 +876,211 @@ def saas_animation(r, d, task, clip, selftest):
                                "and the sound and Blender scripts need scipy and Blender"})
 
 
+def stickman_studio(r, d, task, clip, selftest):
+    """The GrowKaz kit itself is not in the repo (no licence); this runs KOSIF's installer on a synthetic plugin."""
+    out = r.work / "selftest"
+    r.call("stickman_kit.py: known-answer install self-test", [*PY, str(d / "stickman_kit.py"), "self-test", "--out", str(out)])
+    res = _json(out / "selftest.json")
+    r.output(out / "selftest.json")
+    names = {c["name"]: c["passed"] for c in res["checks"]}
+    r.check("all 13 self-test checks pass", res["passed"] and len(names) == 13, names)
+    r.check("parent path and symlink are refused", names.get("parent path refused") and names.get("symlink refused"), None)
+    r.check("the owner's projects/ folder survives an install", names.get("user's projects/ kept"), None)
+    r.check("nothing is written outside the destination", names.get("nothing escaped dest"), None)
+    r.findings.append({"note": "installer only; the GrowKaz renderer needs the owner's plugin, Node, Chromium and ffmpeg "
+                               "and is not run by the Dragon"})
+
+
+def cartoon_short(r, d, task, clip, selftest):
+    import re
+    import wave
+    import numpy as np
+    from PIL import Image
+    if not shutil.which("ffmpeg") or not shutil.which("ffprobe"):
+        raise RuntimeError("ffmpeg and ffprobe are required")
+    sr = 48000
+
+    def write(path, x):
+        with wave.open(str(path), "wb") as w:
+            w.setnchannels(1)
+            w.setsampwidth(2)
+            w.setframerate(sr)
+            w.writeframes((np.clip(x, -1, 1) * 32767).astype(np.int16).tobytes())
+
+    # Known-answer voice: three spoken spans (1.0 s, 2.0 s, 1.0 s) with silences between them.
+    spans = [(0.30, 1.30), (1.90, 3.90), (4.50, 5.50)]
+    total = 5.80
+    t = np.arange(int(total * sr)) / sr
+    voice = np.zeros_like(t)
+    for a, b in spans:
+        on = (t >= a) & (t < b)
+        voice[on] = 0.5 * np.sin(2 * np.pi * 220 * t[on]) * (0.8 + 0.2 * np.sin(2 * np.pi * 4 * t[on]))
+    voice_wav = r.work / "voice.wav"
+    write(voice_wav, voice)
+    # The script as pasted into a voice generator: an audio tag and tashkeel, which timing.py must strip.
+    script = r.work / "script.txt"
+    script.write_text("[serious] جُنْدِيٌّ وَاحِدٌ بَقِيَ. ظل يحرس الجسر القديم ثلاثين سنة كاملة بعد الحرب، "
+                      "ولم يخبره أحد أنها انتهت. والسبب؟", encoding="utf-8")
+    out = r.work / "timing"
+    r.call("timing.py: align the Arabic script to the voice by silences",
+           [*PY, str(d / "timing.py"), str(voice_wav), str(script), "--out", str(out)])
+    r.output(out / "phrases.json")
+    r.output(out / "words.json")
+    ph = json.loads((out / "phrases.json").read_text(encoding="utf-8"))
+    starts = [p["s"] for p in ph["phrases"]]
+    r.check("three phrases, one per spoken span", len(starts) == 3, [p["text"] for p in ph["phrases"]])
+    r.check("each phrase starts within 0.1 s of its span",
+            len(starts) == 3 and all(abs(s - a) <= 0.1 for s, (a, _) in zip(starts, spans)), starts)
+    text = " ".join(p["text"] for p in ph["phrases"])
+    r.check("tag and tashkeel removed, Arabic detected",
+            ph["language"] == "ar" and "[" not in text and not re.search("[\u064b-\u0652]", text), text)
+    r.check("frame count is duration x 30", ph["frames30"] == round(ph["duration"] * 30), ph["frames30"])
+    # Word times in kosif-voice-studio's words.json format, with one misheard word: the script's own word must win.
+    asr = [{"word": w, "start": s, "end": e} for w, s, e in [("جندي", .3, .6), ("واحد", .6, 1.0), ("بقى", 1.0, 1.3)]]
+    asr_file = r.work / "asr.json"
+    asr_file.write_text(json.dumps(asr, ensure_ascii=False), encoding="utf-8")
+    script2 = r.work / "script2.txt"
+    script2.write_text("جندي واحد بقي.", encoding="utf-8")
+    out2 = r.work / "timing-asr"
+    r.call("timing.py: map the script onto recognised word times",
+           [*PY, str(d / "timing.py"), str(voice_wav), str(script2), "--out", str(out2), "--asr-words", str(asr_file)])
+    w2 = json.loads((out2 / "words.json").read_text(encoding="utf-8"))
+    r.output(out2 / "words.json")
+    r.check("script words kept over misheard ones, with the recognised times",
+            [w["w"] for w in w2] == ["جندي", "واحد", "بقي."] and w2[2]["s"] == 1.0, w2)
+    # Mix: a loud music bed and a 2 ms click in a silence. At 50 % RMS the click would peak far above
+    # the voice, so the 0.7x peak cap has to act.
+    music = 0.6 * np.sin(2 * np.pi * 110 * t)
+    sfx = np.zeros_like(t)
+    sfx[(t >= 1.50) & (t < 1.502)] = 0.95
+    hit = (t >= 1.45) & (t < 1.65)
+    write(r.work / "music.wav", music)
+    write(r.work / "sfx.wav", sfx)
+    step = r.call("mix.py: lock music and SFX under the voice",
+                  [*PY, str(d / "mix.py"), str(voice_wav), str(r.work / "music.wav"), str(r.work / "sfx.wav")])
+    mixed = r.work / "mix_raw.wav"
+    r.output(mixed)
+    with wave.open(str(mixed)) as w:
+        m = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(np.float64) / 32767
+    r.check("mix is exactly as long as the voice", len(m) == len(voice), [len(m), len(voice)])
+    h = int(.05 * sr)
+    blocks = np.sqrt((voice[:len(voice) // h * h].reshape(-1, h) ** 2).mean(1))
+    vr = float(np.sqrt((blocks[blocks > blocks.max() * 0.01] ** 2).mean()))
+    lead = m[int(.05 * sr):int(.25 * sr)]  # before the voice and the hit: music alone
+    music_db = 20 * np.log10(np.sqrt((lead ** 2).mean()) / vr)
+    r.check("music sits 16 dB under the voice (measured in the mix)", abs(music_db + 16) <= 0.3, round(music_db, 2))
+    # In the gap the mix is music + click; the music's own peak is known from its level.
+    click = np.abs(m[hit]).max() - 10 ** (-16 / 20) * vr * np.sqrt(2)
+    r.check("SFX click capped at 0.7x the voice peak (measured in the mix)",
+            click <= 0.7 * np.abs(voice).max() + 0.01, round(float(click), 4))
+    said = re.search(r"music ([-+\d.]+) dB.*sfx ([-+\d.]+) dB.*sfx peak ([-+\d.]+) dB", step.get("stdout_tail", ""))
+    r.check("script reports music -16.0 dB, SFX at or under -6 dB and the peak cap at -3.1 dB",
+            bool(said) and float(said[1]) == -16.0 and float(said[2]) <= -6.0 and float(said[3]) == -3.1,
+            step.get("stdout_tail"))
+    # Contact sheet of vertical stills, in frame order.
+    stills = r.work / "stills"
+    stills.mkdir()
+    colours = [(200, 30, 30), (30, 200, 30), (30, 30, 200)]
+    for i, c in enumerate(colours):
+        Image.new("RGB", (1080, 1920), c).save(stills / f"f{i * 40:04d}.jpg", quality=95)
+    sheet = r.work / "sheet.jpg"
+    r.call("sheet.py: tile the stills", [*PY, str(d / "sheet.py"), str(stills), str(sheet)])
+    r.output(sheet)
+    im = Image.open(sheet).convert("RGB")
+    got = [im.getpixel((x * 270 + 135, 240)) for x in range(3)]
+    r.check("sheet is 3 vertical 270x480 tiles in frame order", im.size == (810, 480) and
+            all(all(abs(a - b) <= 24 for a, b in zip(g, c)) for g, c in zip(got, colours)), [im.size, got])
+    r.findings.append({"note": "kit: timing, mix and contact sheet only; render.mjs needs Chromium with WebGL and "
+                               "finish.sh needs rendered frames, so neither ran here"})
+    animated_shorts_upstream(r, d.parents[1] / "upstream" / "claude-animated-shorts" / "templates")
+
+
+# Library code has no CLI: this small driver imports the upstream dsp/sfx_gen modules and prints JSON.
+ANIMATED_SHORTS_DRIVER = r"""
+import json, sys
+sys.path.insert(0, sys.argv[1])
+import numpy as np
+import dsp, sfx_gen
+out = sys.argv[2]
+t = dsp.tt(4.0)
+tone = 0.5 * np.sin(dsp.TAU * 1000 * t)
+dsp.write_wav(out + "/tone.wav", np.vstack([tone, tone]))
+# A sine at SR/4 with a 45 degree phase: every sample sits at 0.707 of the real (inter-sample) peak.
+q = np.sin(dsp.TAU * (dsp.SR / 4) * dsp.tt(0.5) + np.pi / 4)
+r = dsp.rng(7)
+made = {}
+for name, x in (("whoosh", sfx_gen.whoosh(0.8, r)), ("hammer_hit", sfx_gen.hammer_hit(r)), ("applause", sfx_gen.applause(1.5, r))):
+    x = np.asarray(x, float)
+    dsp.write_wav(out + "/" + name + ".wav", x)
+    # Synths come out unscaled; norm_to sets each event's loudest 400 ms to a target, as sfx.py does.
+    made[name] = {"seconds": round(x.shape[-1] / dsp.SR, 3), "peak": float(np.abs(x).max()),
+                  "finite": bool(np.isfinite(x).all()),
+                  "normed_lufs": round(float(dsp.momentary_max(dsp.norm_to(x, -20.0))), 2)}
+print(json.dumps({"tone_lufs": round(float(dsp.integrated(np.vstack([tone, tone]))), 2),
+                  "sample_peak_db": round(float(20 * np.log10(np.abs(q).max())), 2),
+                  "true_peak_db": round(float(dsp.true_peak(q)), 2), "sfx": made}))
+"""
+
+
+def animated_shorts_upstream(r, d):
+    """The vendored claude-animated-shorts templates (d): its audio library and QA scripts."""
+    import re
+    from PIL import Image
+    driver = r.work / "driver.py"
+    driver.write_text(ANIMATED_SHORTS_DRIVER, encoding="utf-8")
+    step = r.call("dsp.py + sfx_gen.py: loudness, true peak and three SFX synths",
+                  [*PY, str(driver), str(d / "audio"), str(r.work)])
+    got = step.get("receipt") or {}
+    for name in ("tone.wav", "whoosh.wav", "hammer_hit.wav", "applause.wav"):
+        r.output(r.work / name)
+    ff = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(r.work / "tone.wav"), "-af", "ebur128",
+                         "-f", "null", "-"], capture_output=True, text=True).stderr
+    ref = re.findall(r"I:\s+(-?[\d.]+) LUFS", ff)
+    r.check("BS.1770 integrated loudness matches ffmpeg ebur128 within 0.2 LU",
+            bool(ref) and "tone_lufs" in got and abs(got["tone_lufs"] - float(ref[-1])) <= 0.2,
+            [got.get("tone_lufs"), ref[-1:] or None])
+    r.check("true peak finds the inter-sample peak (0 dBTP) where samples show -3 dB",
+            abs(got.get("true_peak_db", 9) - 0.0) <= 0.2 and abs(got.get("sample_peak_db", 9) + 3.01) <= 0.05,
+            [got.get("sample_peak_db"), got.get("true_peak_db")])
+    sfx = got.get("sfx", {})
+    r.check("three SFX synths render finite, audible sound that norm_to sets to -20 LUFS momentary",
+            len(sfx) == 3 and all(v["finite"] and v["peak"] > 0.01 and v["seconds"] > 0.05
+                                  and abs(v["normed_lufs"] + 20) <= 0.05 for v in sfx.values()), sfx)
+    # A short with a planted 1 s black span (frames 60-89) after 2 s of moving picture, plus a tone.
+    vid = r.work / "short.mp4"
+    r.call("ffmpeg: build the test short", [
+        "ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "testsrc2=s=180x320:r=30:d=2",
+        "-f", "lavfi", "-i", "color=c=black:s=180x320:r=30:d=1", "-f", "lavfi", "-i", "sine=frequency=440:duration=3",
+        "-filter_complex", "[0:v][1:v]concat=n=2:v=1:a=0[v]", "-map", "[v]", "-map", "2:a",
+        "-c:v", "libx264", "-pix_fmt", "yuv420p", "-c:a", "aac", "-shortest", str(vid)])
+    qa = r.work / "qa"
+    r.call("short_qa.py: frame-by-frame QA", [*PY, str(d / "scripts" / "short_qa.py"), str(vid), str(qa)])
+    rep = qa / "report.md"
+    r.output(rep)
+    text = rep.read_text(encoding="utf-8") if rep.is_file() else ""
+    black = re.search(r"black \[([^\]]*)\]", text)
+    frames = [int(x) for x in re.findall(r"\d+", black[1])] if black else []
+    r.check("QA finds the planted black span and no black in the moving part",
+            bool(frames) and min(frames) >= 59 and 60 in frames, frames[:20])
+    r.check("QA reports specs and loudness", "SPECS 180x320" in text and "LOUDNESS" in text, text[:300])
+    # Side-by-side sheet: two of ours over one reference, all scaled to 200 px high.
+    ims = []
+    for name, size, c in (("a", (100, 200), (200, 30, 30)), ("b", (100, 200), (30, 200, 30)), ("ref", (200, 400), (30, 30, 200))):
+        path = r.work / f"{name}.jpg"
+        Image.new("RGB", size, c).save(path, quality=95)
+        ims.append(str(path))
+    sheet = r.work / "sbs.jpg"
+    r.call("sbs_sheet.py: ours over the reference",
+           [*PY, str(d / "scripts" / "sbs_sheet.py"), str(sheet), "--ours", *ims[:2], "--ref", ims[2], "--h", "200"])
+    r.output(sheet)
+    im = Image.open(sheet).convert("RGB")
+    r.check("sheet is 2 rows of 200 px with ours on top, reference below",
+            im.size == (208, 416) and im.getpixel((50, 100))[0] > 150 and im.getpixel((50, 316))[2] > 150,
+            [im.size, im.getpixel((50, 100)), im.getpixel((50, 316))])
+    r.findings.append({"note": "upstream: audio library and QA scripts only; the Remotion bridge template, music.py "
+                               "and mix.py are story-specific and need the bridge project, so they did not run here"})
+
+
 def talking_head_reels(r, d, task, clip, selftest):
     """Known-answer reel: a 7 s 'talk' with speech at 0.3-1.3, 2.8-3.8 and 5.3-6.3 s, cut, mastered, planned,
     validated and rendered by the skill's own scripts; Arabic text must reveal word by word."""
@@ -963,6 +1171,117 @@ def talking_head_reels(r, d, task, clip, selftest):
                        "note": "Apple Vision mattes (macOS) and faster-whisper were not used; words came from a voice-studio words.json"})
 
 
+def arena(r, d, task, clip, selftest):
+    """Known-answer tournament through the arena skill's own bracket.py, with stand-in agents (no model is called).
+    Each stand-in solution has a known quality; the planted fatal one carries the best scores and must still lose."""
+    import hashlib
+    import importlib.util
+    tool = lambda *a: [*PY, str(d / "bracket.py"), *map(str, a)]
+    def tree_hash(root):
+        h = hashlib.sha256()
+        for f in sorted(p for p in root.rglob("*") if p.is_file() and "__pycache__" not in p.parts):
+            h.update(str(f.relative_to(root)).encode() + media.sha256(f).encode())
+        return h.hexdigest()
+    before = tree_hash(d)
+    spec = importlib.util.spec_from_file_location("kosif_arena_bracket", d / "bracket.py")
+    B = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(B)  # read-only helpers (job paths); every state change goes through the CLI
+    plan = r.call("bracket.py plan --agents 100", tool("plan", "--agents", 100)).get("stdout_tail") or ""
+    total = next((l.split() for l in plan.splitlines() if l.strip().startswith("total")), [])
+    r.check("100 agents: 7 rounds, 595 sub-agent calls, 70 waves", total[1:3] == ["595", "70"] and "7 rounds" in plan, total)
+    quick = r.call("bracket.py plan --quick", tool("plan", "--quick")).get("stdout_tail") or ""
+    qt = next((l.split() for l in quick.splitlines() if l.strip().startswith("total")), [])
+    r.check("--quick: 16 agents, 91 calls, 16 waves", qt[1:3] == ["91", "16"], qt)
+    run, twin = r.work / "run", r.work / "twin"
+    (r.work / "task.md").write_text(task, encoding="utf-8")
+    baseline = r.work / "baseline.md"
+    baseline.write_text("REJECTED ANSWER: too vague.", encoding="utf-8")
+    r.call("bracket.py init 16 agents, seed 7, with the rejected answer",
+           tool("init", "--agents", 16, "--seed", 7, "--task-file", "task.md", "--baseline-file", "baseline.md", "--dir", run))
+    r.call("bracket.py init again with the same seed", tool("init", "--agents", 16, "--seed", 7, "--task-file", "task.md", "--dir", twin))
+    state = _json(run / "arena.json")
+    cards = {a: tuple(v["card"][k]["id"] for k in ("reasoning", "workflow", "strategy")) for a, v in state["agents"].items()}
+    twin_cards = {a: tuple(v["card"][k]["id"] for k in ("reasoning", "workflow", "strategy"))
+                  for a, v in _json(twin / "arena.json")["agents"].items()}
+    r.check("16 different cards, and the same seed deals the same cards", len(set(cards.values())) == 16 and cards == twin_cards,
+            len(set(cards.values())))
+    r.check("16 cards cover every reasoning mode", len({c[0] for c in cards.values()}) == min(16, len(B.load_strategies()["reasoning"])),
+            len({c[0] for c in cards.values()}))
+    quality = {a: 3 + (i * 7) % 16 for i, a in enumerate(sorted(state["agents"]))}  # known, all different
+    first = state["rounds"][0]["matches"][0]
+    planted = first["a"] if quality[first["a"]] > quality[first["b"]] else first["b"]
+    honest = first["b"] if planted == first["a"] else first["a"]
+    def score(q, fatal=False):
+        v = max(0, min(10, round(q * 10 / 18)))
+        return {"correctness": v, "completeness": v, "specificity": v, "robustness": v, "clarity": v, "fatal": fatal}
+    def jobs(phase):
+        return B.phase_jobs(_json(run / "arena.json"), phase)
+    def write(path, text):
+        Path(path).parent.mkdir(parents=True, exist_ok=True)
+        Path(path).write_text(text, encoding="utf-8")
+    r.call("bracket.py prompts spawn", tool("prompts", "spawn", "--dir", run))
+    briefs = [Path(j["prompt"]).read_text(encoding="utf-8") for j in jobs("spawn")]
+    r.check("every one of the 16 spawn briefs carries the task byte for byte", len(briefs) == 16 and all(task in b for b in briefs),
+            sum(task in b for b in briefs))
+    for j in jobs("spawn"):
+        write(j["outputs"][0], f"SOLUTION {j['agent']} quality {quality[j['agent']]}")
+    planted_lost, rounds = None, 0
+    while True:
+        nxt = r.call("bracket.py next", tool("next", "--dir", run)).get("stdout_tail") or ""
+        st = _json(run / "arena.json")
+        if st["champion"] and (st.get("final") or {}).get("result"):
+            break
+        if st["champion"]:
+            r.call("bracket.py prompts final", tool("prompts", "final", "--dir", run))
+            fin = st["final"]
+            x = (run / "final" / "X.md").read_text(encoding="utf-8")
+            y = (run / "final" / "Y.md").read_text(encoding="utf-8")
+            fprompt = Path(jobs("final")[0]["prompt"]).read_text(encoding="utf-8")
+            r.check("final check is blind: X/Y copies, no champion id or baseline path in the brief",
+                    {x, y} == {(run / "baseline.md").read_text(encoding="utf-8"), Path(st["agents"][st["champion"]]["solution"]).read_text(encoding="utf-8")}
+                    and st["champion"] not in fprompt and "baseline.md" not in fprompt, fin)
+            champ = "x" if fin["X"] == "champion" else "y"
+            write(jobs("final")[0]["outputs"][0], json.dumps({"scores": {champ.upper(): score(17), ("Y" if champ == "x" else "X"): score(4)},
+                                                               "winner": champ.upper(), "reason": "known answer", "fixed": ["vague"]}))
+            r.call("bracket.py collect (final)", tool("collect", "--dir", run))
+            continue
+        rd = st["rounds"][-1]
+        rounds = rd["n"]
+        for j in jobs("attack"):
+            write(j["outputs"][0], f"ATTACK 1 [MINOR] stand-in\nWhere: all\nProblem: known answer")
+        for j in jobs("defend"):
+            prev = Path(st["agents"][j["agent"]]["solution"]).read_text(encoding="utf-8")
+            write(j["outputs"][0], "ATTACK 1: CONCEDE. fixed")
+            write(j["outputs"][1], prev)
+        for j in jobs("judge"):
+            a, b = j["a"], j["b"]
+            fatal = {planted} & {a, b} and rd["n"] == 1
+            sa, sb = score(quality[a], a == planted and bool(fatal)), score(quality[b], b == planted and bool(fatal))
+            pick = a if quality[a] > quality[b] else b
+            write(j["outputs"][0], json.dumps({"match": j["match"], "scores": {a: sa, b: sb}, "winner": pick,
+                                               "reason": "known answer", "survived": ["stand-in attack"], "standing": {a: [], b: []}}))
+        r.call(f"bracket.py collect round {rd['n']}", tool("collect", "--dir", run))
+        if rd["n"] == 1:
+            m = next(x for x in _json(run / "arena.json")["rounds"][0]["matches"] if x["id"] == first["id"])
+            planted_lost = m["winner"] == honest
+        r.call(f"bracket.py advance round {rd['n']}", tool("advance", "--dir", run))
+        if rounds > 8:
+            raise RuntimeError("bracket did not converge")
+    r.check("planted fatal solution lost although its scores were higher", planted_lost is True, [planted, honest])
+    st = _json(run / "arena.json")
+    alive = [a for a, v in st["agents"].items() if v["alive"]]
+    best = max((a for a in quality if a != planted), key=lambda a: quality[a])
+    r.check("bracket ends with one champion after 4 rounds", alive == [st["champion"]] and rounds == 4, [alive, rounds])
+    r.check("the best honest solution won", st["champion"] == best, [st["champion"], best])
+    w = r.call("bracket.py winner --json", tool("winner", "--json", "--dir", run)).get("receipt") or {}
+    r.check("winner report names the champion and the final check", w.get("champion") == best and bool(st["final"]["result"])
+            and st["final"]["result"]["better"] == "champion", {k: w.get(k) for k in ("champion", "rounds")})
+    r.check("the skill folder is unchanged by the run", tree_hash(d) == before, None)
+    r.output(run / "arena.json")
+    r.findings.append({"champion": st["champion"], "card": cards[st["champion"]], "rounds": rounds,
+                       "note": "stand-in agents with known answers: this proves the bracket, not the quality of any model answer"})
+
+
 def dragon_montage(r, d, task, clip, selftest):
     """The eight-station montage protocol end to end on one clip: analyse, brief, concepts, look, EDL,
     render, review. Transcription is skipped (no model download); the preview render keeps it fast."""
@@ -993,7 +1312,8 @@ RUNNERS = {"dragon-montage": dragon_montage, "prompt-master": prompt_master, "pr
            "hyperframes-beats": hyperframes_beats, "montage-tools": montage_tools,
            "mimic-analyze": mimic_analyze, "pixel-painter": pixel_painter,
            "kling-director": kling_director, "dragon-mind": dragon_mind, "saas-animation": saas_animation,
-           "creative-council": creative_council, "talking-head-reels": talking_head_reels}
+           "creative-council": creative_council, "cartoon-short": cartoon_short, "talking-head-reels": talking_head_reels,
+           "arena": arena, "stickman-studio": stickman_studio}
 
 
 def main(argv: list[str]) -> int:
