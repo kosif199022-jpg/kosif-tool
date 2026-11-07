@@ -301,6 +301,13 @@
    "what": "Site-not-loading report: live version unchanged since v75; republished as version 76; the built-in browser (signed out) showed 'Couldn't load this artifact', cause not confirmed, device disconnected before re-check. Then v63 (artifact version 77): invoices — header button with a line-count badge; panel with search-to-add (code, name, SMACC, alternatives), per-line qty/unit price/line discount, invoice discount, VAT (default 15%), totals, customer fields, auto number INV-YYYY-NNNN, save (db saved/invoices, up to 300), saved list (open, copy, two-step delete), seller settings (db saved/invset), last price remembered per item (saved/prices), print to A4/PDF and download as HTML; 'add to invoice' button in the item panel; draft kept on the device.",
    "checks": "t65: 2 lines 3x120 + 2x250 -10% = 810, -20 discount, 15% VAT 118.50, total 908.50; saved and listed; print layout screenshot; badge survives reload; 0 page errors. Not checked on the live claude.ai page.",
    "status": "published"
+  },
+  {
+   "n": 38,
+   "at": "2026-11-07T09:15:00+03:00",
+   "what": "v63.1 (artifact version 78): invoice opens as a full page (desktop and phone) instead of a side panel; part location (الموقع) shown in search results, as its own column on screen and on the printed invoice, and stored with saved invoices.",
+   "checks": "location B10 typed in the grid appears in search result, invoice column and print; sheet covers 1900x900 and 390x844 and closes cleanly; 0 page errors",
+   "status": "published"
   }
  ],
  "outputs": [
