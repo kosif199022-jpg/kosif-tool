@@ -343,6 +343,13 @@
    "what": "v66 (artifact version 83): search with conditions — new 'بحث بشروط' button opens 3 boxes joined by 'و' where a result must match every filled box (name words, codes, SMACC, alternatives); a switch in the multi-search box flips between 'all conditions together' and 'any of them' (the old multi search); box count still adjustable; mode remembered on the device.",
    "checks": "t68: مقص 416 results, + 8K0 -> 7, + يمين -> 0; switching to 'any of them' -> 473; t56/t59/t66/t67 0 page errors",
    "status": "published"
+  },
+  {
+   "n": 44,
+   "at": "2026-11-07T12:45:00+03:00",
+   "what": "v66.1-v67 (artifact version 84): search row moved to sit directly on top of the table and pinned with the table head while the rows above scroll away; status tabs, group/location/sort, view switch, current shelf and recent counts packed into one compact row; 'search in' chips moved into the options panel (sliders button); the separate conditions button merged into one 'بحث متعدد' with the AND/OR switch inside; activity log (السجل) — every quantity, note, location, model, photo and saved invoice is logged per user per day on the account, viewable by day with search and 1/7/14/30-day range, plus older quantity changes from each item's history; new 'آخر تعديل' column (date, time, ×N edits) on wide screens; default light look changed to an Apple Store-like style from the owner's REA measurements (#F5F5F7 ground, white cards with soft shadows, light table head, #0071E3 pill buttons, glass bars, weight 600), paper & ink kept as a preset; phone header fixed (title, scrolling action row, status row).",
+   "checks": "history lists 3 events (qty empty->3, 3->5, location ->B7); last-change cell '7 نوفمبر | 12:13 م | 2×'; AND search مقص=60 visible, +8K0=7; t56/t59/t62/t66/t67 0 page errors; contrast gate 0 low after darkening ok green to #17712E; desktop 1850 and phone 390 screenshots checked",
+   "status": "published"
   }
  ],
  "outputs": [
