@@ -1028,13 +1028,13 @@
 
 **متى:** حين تريد تفكيك فيديو مرجعي إلى نبضات قصيرة بألوانها وحركتها وإيقاعها لإعادة بنائه مشهدًا مشهدًا / when breaking a reference video into short beats with palette, motion, likely transitions, loudness and tempo
 
-**كيف:** kmotion analyze VIDEO --max-beat 3.0 [--transcribe] [--batch DIR]. For a scene-by-scene recreation schema sample ~12 evenly spaced frames ≤ 1024 px and describe shot type, camera motion, lighting and mood per scene, with scene N's end frame = scene N+1's start.
+**كيف:** kmotion analyze VIDEO --max-beat 3.0 [--transcribe] [--batch DIR]. For a scene-by-scene recreation schema sample ~12 evenly spaced frames ≤ 1024 px and describe shot type, camera motion, lighting and mood per scene, with scene N's end frame = scene N+1's start. Atlas upgrade 2026-11-07: Human edit-anatomy pass on top of the numbers: walk the reference from 0:00 and log per beat shot/framing, cut rhythm (on beat, word or breath), on-screen text and its position, caption style and animation, motion (punch-ins, whips, ramps), overlays, sound (music hits, SFX, silence before a beat), and the pacing curve. Decode the first 2 s in the most detail. Then distil 3–5 reusable 'signature moves' (e.g. hard cut + small punch-in per sentence; one-word karaoke captions bottom third; music drops 0.5 s before CTA) — those rules, not the 40 timestamps, are the deliverable. Review the beat sheet once before editing: the text must say OUR message and cuts must land on OUR footage's beats, never the reference's calendar. Copy the grammar only — own footage, script, VO, licensed music/SFX.
 
 **المعاملات:** beats ≤ 3 s; 12 samples ≤ 1024 px
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** تحليل · breakdown · palette · tempo · reference · تفكيك فيديو · لوحة ألوان · تحليل مشاهد · scene by scene · beats
+**الوسوم:** تحليل · breakdown · palette · tempo · reference · تفكيك فيديو · لوحة ألوان · تحليل مشاهد · scene by scene · beats · edit anatomy · signature moves · تفكيك المونتاج · حركات مميزة · reference edit
 
 #### 1. الاستقبال (A25)
 

@@ -1,0 +1,399 @@
+{
+ "schema": "kosif.atlas-5000.mining-receipt.v1",
+ "date": "2026-11-07",
+ "batch": "core-work-image",
+ "atlas": "https://github.com/kosif199022-jpg/kosif-atlas",
+ "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
+ "powers_added": 2,
+ "powers_upgraded": 12,
+ "sources_read": 47,
+ "skipped_after_reading": 22,
+ "scope_note": "Core-work pass for the owner's video, motion, writing, thinking and Black Dragon work. Each SKILL.md was read in full as inert text (including skills whose verdict is REVIEW_BEFORE_INSTALL: only their Markdown was read, no script was opened, copied or run) and its method summarised in our own words. Nothing was vendored or executed.",
+ "sources": [
+  {
+   "atlas_id": 230,
+   "plugin": "adobe-for-creativity",
+   "skill": "adobe-batch-edit-photos",
+   "license": "Apache-2.0",
+   "theme": "image-design-media",
+   "path": "skills/103-adobe-for-creativity/230-adobe-batch-edit-photos",
+   "skill_md_sha256": "062112a424340bef585f0c3aed9a484721ff4b200044883dd0bdb1dd7599642c",
+   "read_in_full": true,
+   "power": "AMEDIA-31"
+  },
+  {
+   "atlas_id": 239,
+   "plugin": "adobe-for-creativity",
+   "skill": "adobe-retouch-portraits",
+   "license": "Apache-2.0",
+   "theme": "image-design-media",
+   "path": "skills/103-adobe-for-creativity/239-adobe-retouch-portraits",
+   "skill_md_sha256": "3b3d098547f0e8c6b885dda0d32acaf1a9450660c6c803c2950b02a2acd30a5a",
+   "read_in_full": true,
+   "power": "AMEDIA-31"
+  },
+  {
+   "atlas_id": 10335,
+   "plugin": "build-web-data-visualization",
+   "skill": "visualization-strategy-and-critique",
+   "license": "MIT",
+   "theme": "visualization-dashboards",
+   "path": "skills/2690-build-web-data-visualization/10335-visualization-strategy-and-critique",
+   "skill_md_sha256": "71f6e7b4538d90b1d0350045e3f18bf5a4709bf06602925a2daf901f8bd2ac2c",
+   "read_in_full": true,
+   "power": "ADOCS-61"
+  },
+  {
+   "atlas_id": 10322,
+   "plugin": "build-web-data-visualization",
+   "skill": "data-visualization",
+   "license": "MIT",
+   "theme": "visualization-dashboards",
+   "path": "skills/2690-build-web-data-visualization/10322-data-visualization",
+   "skill_md_sha256": "6e71d7fc7976d4949f77eb57cc6e2557bd8fc07cf513a793bc6a8d4b88f88b66",
+   "read_in_full": true,
+   "power": "ADOCS-61"
+  },
+  {
+   "atlas_id": 10330,
+   "plugin": "build-web-data-visualization",
+   "skill": "statistical-and-uncertainty-visualization",
+   "license": "MIT",
+   "theme": "visualization-dashboards",
+   "path": "skills/2690-build-web-data-visualization/10330-statistical-and-uncertainty-visualizatio",
+   "skill_md_sha256": "544542158d7b2302ca34f8d992349b4048d106b30b238bf7184a57c457f95b3a",
+   "read_in_full": true,
+   "power": "ADOCS-61"
+  },
+  {
+   "atlas_id": 123,
+   "plugin": "learning",
+   "skill": "generate-mindmap",
+   "license": "MIT",
+   "theme": "diagrams-visual-docs",
+   "path": "skills/70-learning/123-generate-mindmap",
+   "skill_md_sha256": "bcc9a86150f03c29df50cd04c8bd6e6873010779b8512730621440df889df115",
+   "read_in_full": true,
+   "power": "AMIND-41",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 11308,
+   "plugin": "work",
+   "skill": "draw-excalidraw",
+   "license": "MIT",
+   "theme": "diagrams-visual-docs",
+   "path": "skills/2802-work/11308-draw-excalidraw",
+   "skill_md_sha256": "f08236874eb0458f04b801774311ad00cbddcc711ec94c882eb5b89359dd437e",
+   "read_in_full": true,
+   "power": "ADOCS-20",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 11424,
+   "plugin": "work",
+   "skill": "draw-excalidraw",
+   "license": "MIT",
+   "theme": "diagrams-visual-docs",
+   "path": "skills/2814-work/11424-draw-excalidraw",
+   "skill_md_sha256": "5b20474d2a16ce4d9a75f34cf26f55d5419194405b1ffb22b4f5655a992ac209",
+   "read_in_full": true,
+   "power": "ADOCS-20",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 10114,
+   "plugin": "figures",
+   "skill": "svg-primitives",
+   "license": "BSD-3-Clause",
+   "theme": "image-design-media",
+   "path": "skills/2657-figures/10114-svg-primitives",
+   "skill_md_sha256": "419db54fe526dca50dbae9b9aa53ac7b5df3fe6cfb815c5fc25e01ccece647df",
+   "read_in_full": true,
+   "power": "EXPL-10",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 12853,
+   "plugin": "uxd-design",
+   "skill": "uxd-canvas-create",
+   "license": "Apache-2.0",
+   "theme": "image-design-media",
+   "path": "skills/3009-uxd-design/12853-uxd-canvas-create",
+   "skill_md_sha256": "e82b2a6c7e68cc0468d70e81433e1d065b51777ae65de928e190accf3ec60857",
+   "read_in_full": true,
+   "power": "EXPL-13",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 10329,
+   "plugin": "build-web-data-visualization",
+   "skill": "scrollytelling-and-parallax-data-visualization",
+   "license": "MIT",
+   "theme": "visualization-dashboards",
+   "path": "skills/2690-build-web-data-visualization/10329-scrollytelling-and-parallax-data-visuali",
+   "skill_md_sha256": "edfcb78d543d4d80d470f390446d65951179d07e13ada03cdd4bc3d77678eafe",
+   "read_in_full": true,
+   "power": "DATA-99",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 10320,
+   "plugin": "build-web-data-visualization",
+   "skill": "d3-data-visualization",
+   "license": "MIT",
+   "theme": "visualization-dashboards",
+   "path": "skills/2690-build-web-data-visualization/10320-d3-data-visualization",
+   "skill_md_sha256": "1c735a00399eef9f63774f692a13c024380a331a44b1076ba72d440510f22b8f",
+   "read_in_full": true,
+   "power": "DATA-96",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 10111,
+   "plugin": "figures",
+   "skill": "plot-styling",
+   "license": "BSD-3-Clause",
+   "theme": "visualization-dashboards",
+   "path": "skills/2657-figures/10111-plot-styling",
+   "skill_md_sha256": "9ce1154055fe9bc1dfdd362659dfe319018dae8dfef6d8fa11a07fc5823c3431",
+   "read_in_full": true,
+   "power": "DATA-96",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 13564,
+   "plugin": "quantitative-sciences",
+   "skill": "scientific-visualization",
+   "license": "MIT",
+   "theme": "visualization-dashboards",
+   "path": "skills/3202-quantitative-sciences/13564-scientific-visualization",
+   "skill_md_sha256": "0c6615b47df0281805d52029f26fb2fedab6f4d1fbcafa6df79a958f010cb3ef",
+   "read_in_full": true,
+   "power": "DATA-96",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 10319,
+   "plugin": "build-web-data-visualization",
+   "skill": "canvas2d-data-visualization",
+   "license": "MIT",
+   "theme": "visualization-dashboards",
+   "path": "skills/2690-build-web-data-visualization/10319-canvas2d-data-visualization",
+   "skill_md_sha256": "84818b1115021ef92305dd5a602553b7d2980ba5b512a9f356391e3b62798f30",
+   "read_in_full": true,
+   "power": "ENG-381",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 10324,
+   "plugin": "build-web-data-visualization",
+   "skill": "geospatial-and-cartographic-visualization",
+   "license": "MIT",
+   "theme": "visualization-dashboards",
+   "path": "skills/2690-build-web-data-visualization/10324-geospatial-and-cartographic-visualizatio",
+   "skill_md_sha256": "18f5cf852b8a2d635a8198ba0b7da69118860d66c9755ef3108d476bfa8be0ee",
+   "read_in_full": true,
+   "power": "MAP-10",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 4300,
+   "plugin": "summarizer",
+   "skill": "image-summarization",
+   "license": "MIT",
+   "theme": "image-design-media",
+   "path": "skills/1549-summarizer/4300-image-summarization",
+   "skill_md_sha256": "46fbc76f6f8be223b588e9e91183da170de166e5f4138601569f9109789ba6e6",
+   "read_in_full": true,
+   "power": "GEN-32",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 13580,
+   "plugin": "research-images",
+   "skill": "research-image-analysis",
+   "license": "MIT",
+   "theme": "image-design-media",
+   "path": "skills/3210-research-images/13580-research-image-analysis",
+   "skill_md_sha256": "9a47aea1773343e00024e6b98470cff20b44534d1119f865fddeba1a135ea18c",
+   "read_in_full": true,
+   "power": "GEN-32",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 4425,
+   "plugin": "tonone",
+   "skill": "form-logo",
+   "license": "MIT",
+   "theme": "image-design-media",
+   "path": "skills/1567-tonone/4425-form-logo",
+   "skill_md_sha256": "7b99663eea7282579d6f5eabf59a6b02a22413fc8da945232f8d49d2eb96653b",
+   "read_in_full": true,
+   "power": "BRAND-12",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 8561,
+   "plugin": "brand-identity-studio",
+   "skill": "logo-and-visual-system-direction",
+   "license": "MIT",
+   "theme": "image-design-media",
+   "path": "skills/2248-brand-identity-studio/8561-logo-and-visual-system-direction",
+   "skill_md_sha256": "a991f0f6c5b2011570ee7ec76431c65896118bda292568524d828828f2bd8dd9",
+   "read_in_full": true,
+   "power": "BRAND-12",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 4714,
+   "plugin": "brand-forge",
+   "skill": "generate-logo",
+   "license": "MIT",
+   "theme": "image-design-media",
+   "path": "skills/1708-brand-forge/4714-generate-logo",
+   "skill_md_sha256": "50a01489f42cd958622b21849b0a44580de7231712831baadd0cfa825c292c4e",
+   "read_in_full": true,
+   "power": "BRAND-12",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 3504,
+   "plugin": "marketing-skills",
+   "skill": "image",
+   "license": "MIT",
+   "theme": "image-design-media",
+   "path": "skills/1446-marketing-skills/3504-image",
+   "skill_md_sha256": "c34b67e249e558410ee960043d0de3c1d188dc3b6ba36d7714c16ec6f1fad46e",
+   "read_in_full": true,
+   "power": "FMT-50",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 1261,
+   "plugin": "legends-seo-dungeon",
+   "skill": "seo-image-gen",
+   "license": "MIT",
+   "theme": "image-design-media",
+   "path": "skills/347-legends-seo-dungeon/1261-seo-image-gen",
+   "skill_md_sha256": "fbfe38171737d063abe5669928e801ea27df623ce02041b187fee8533ea2beae",
+   "read_in_full": true,
+   "power": "FMT-50",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 1954,
+   "plugin": "codex-seo",
+   "skill": "seo-image-gen",
+   "license": "MIT",
+   "theme": "image-design-media",
+   "path": "skills/881-codex-seo/1954-seo-image-gen",
+   "skill_md_sha256": "b112ab754814f03770ccc5b3015e610e48b65427cf61f4cd36e0cc7721a36ca1",
+   "read_in_full": true,
+   "power": "FMT-50",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 12588,
+   "plugin": "pwdev-social-media",
+   "skill": "image-gen",
+   "license": "Apache-2.0",
+   "theme": "image-design-media",
+   "path": "skills/2976-pwdev-social-media/12588-image-gen",
+   "skill_md_sha256": "24d478e2387eb6913f366a6514b6c080f13475e2a2570693a211f9c087007067",
+   "read_in_full": true,
+   "power": "GEN-86",
+   "upgrade": true
+  }
+ ],
+ "skipped": [
+  {
+   "atlas_id": 238,
+   "reason": "product-specific: Adobe resize connector; size table duplicates FMT-02/FMT-09/FMT-18"
+  },
+  {
+   "atlas_id": 734,
+   "reason": "product-specific: Photoshop ExtendScript/UXP batch; generic advice already in FOOT-30/FMT-20"
+  },
+  {
+   "atlas_id": 705,
+   "reason": "duplicate of AMEDIA-29 (headless 3D/Blender automation); generic bpy primer"
+  },
+  {
+   "atlas_id": 940,
+   "reason": "duplicate of DATA-01/DATA-04/DATA-25 (chart choice, insight title, number formatting)"
+  },
+  {
+   "atlas_id": 942,
+   "reason": "duplicate of DATA-01/DATA-07/DATA-49 (chart selection, forbidden forms, small multiples)"
+  },
+  {
+   "atlas_id": 2486,
+   "reason": "duplicate of QA-248 Six-check thumbnail review (same source method already mined)"
+  },
+  {
+   "atlas_id": 3222,
+   "reason": "stub: alias that points to another command"
+  },
+  {
+   "atlas_id": 3666,
+   "reason": "product-specific: Gemini REST wrapper; covered by GEN-37"
+  },
+  {
+   "atlas_id": 4427,
+   "reason": "duplicate of COLOR-31 (one hex to WCAG token set, light/dark)"
+  },
+  {
+   "atlas_id": 4452,
+   "reason": "duplicate of DATA-01; output is a CLI box around a private KB search"
+  },
+  {
+   "atlas_id": 4479,
+   "reason": "duplicate of DATA-01; output is a CLI box around a private KB search"
+  },
+  {
+   "atlas_id": 7651,
+   "reason": "product-specific: ComfyUI node catalogue; resize/latent sizing covered by GEN-47/FMT-07"
+  },
+  {
+   "atlas_id": 7896,
+   "reason": "duplicate of QA-131 Golden-frame regression with odiff"
+  },
+  {
+   "atlas_id": 7917,
+   "reason": "product-specific: Nano Banana Pro wrapper; covered by GEN-37/GEN-38"
+  },
+  {
+   "atlas_id": 7919,
+   "reason": "duplicate of MEDIA-12/FOOT-30 (ImageMagick CLI recipes)"
+  },
+  {
+   "atlas_id": 8854,
+   "reason": "duplicate of GEN-46/GEN-45/GEN-86/GEN-87 (licence-first routing, edit-before-regenerate, draft vs final)"
+  },
+  {
+   "atlas_id": 9635,
+   "reason": "product-specific: Claude visualize router (terminal/file/artifact medium); form choice covered by EXPL-03"
+  },
+  {
+   "atlas_id": 10325,
+   "reason": "thin: reference index only; declarative chart route covered by ANLY-14/DATA-96"
+  },
+  {
+   "atlas_id": 12579,
+   "reason": "duplicate of FOOT-15 Upscale triage (same symptom table)"
+  },
+  {
+   "atlas_id": 12626,
+   "reason": "duplicate of BRAND-13 (raster logo embedded in SVG wrapper note)"
+  },
+  {
+   "atlas_id": 13594,
+   "reason": "product-specific: Together AI SDK routing; covered by GEN-39"
+  },
+  {
+   "atlas_id": 14708,
+   "reason": "product-specific: omnimodal MCP for text-only models (DashScope/GLM config)"
+  }
+ ]
+}

@@ -541,11 +541,11 @@
 
 **متى:** عند التفويض إلى وكيل فرعي أو مهمة مجدولة أو جلسة متوازية أو خطوة سير عمل. / Delegating to a subagent, a scheduled task, a parallel session or a workflow step.
 
-**كيف:** Goal + why; exact paths, symbols, URLs; the pattern file to copy; do-not-touch list; ask before destructive or external actions; the command to run and what "done" means; "if blocked, stop and report, do not work around it"; return format and size (e.g. at most 10 bullets with file:line). Research subagents: tight scope, condensed findings with sources. Reviewers: report only correctness and requirement gaps. Explore → plan → implement → verify for multi-file work; skip the plan when the diff fits in one sentence. Template in §8.3.
+**كيف:** Goal + why; exact paths, symbols, URLs; the pattern file to copy; do-not-touch list; ask before destructive or external actions; the command to run and what "done" means; "if blocked, stop and report, do not work around it"; return format and size (e.g. at most 10 bullets with file:line). Research subagents: tight scope, condensed findings with sources. Reviewers: report only correctness and requirement gaps. Explore → plan → implement → verify for multi-file work; skip the plan when the diff fits in one sentence. Template in §8.3. Atlas upgrade 2026-11-07: Autonomous goal prompt for a fresh session (150–350 words, prose): desire + real stakes (never invented), quality bar (vivid adjectives for creative work, behaviours for functional), verified tool inventory (ls the paths, check the tool list — name only 2–4 load-bearing resources) plus a discovery mandate, explicit creative freedom and decision authority, a verification loop in the medium's own terms (render and watch the video, load and click the page) with ≥3 passes, exact delivery destination, and a closing goal line + autonomy directive with nothing after it. Ask all gap questions in one batch or none; list 2–4 assumptions after the prompt. If the user wants it built now, build instead of writing a prompt.
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** subagent · delegation · brief · claude code · تكليف · وكيل فرعي
+**الوسوم:** subagent · delegation · brief · claude code · تكليف · وكيل فرعي · goal prompt · autonomous · fresh session · برومبت الهدف
 
 #### 1. الاستقبال (A25)
 
@@ -678,11 +678,11 @@
 
 **متى:** عند أي طلب توليد صورة ثابتة، أو حين يستدعي Claude أداة صور. / Any still-image generation request, or Claude calling an image tool.
 
-**كيف:** Subject → action → environment → shot and lens → light source and direction → palette, style, materials → aspect. On-image text in quotes with placement (keep Arabic text exact). Locks repeated word for word across a series. Style by visible properties, not living-artist imitation. No hype tokens (8k, masterpiece, ultra-detailed, trending). Negatives in the platform's negative field or as positive replacements ("empty room"). Variants change one dimension. Platform syntax and tested forges: GEN-06, GEN-10, GEN-12.
+**كيف:** Subject → action → environment → shot and lens → light source and direction → palette, style, materials → aspect. On-image text in quotes with placement (keep Arabic text exact). Locks repeated word for word across a series. Style by visible properties, not living-artist imitation. No hype tokens (8k, masterpiece, ultra-detailed, trending). Negatives in the platform's negative field or as positive replacements ("empty room"). Variants change one dimension. Platform syntax and tested forges: GEN-06, GEN-10, GEN-12. Atlas upgrade 2026-11-07: Iteration budget: first round 2 variations, not 8; diagnose which axis failed (subject, composition, light, style, palette) and change one axis per round; the moment a result is approved record seed + model + version in the manifest, then generate volume. Put the essentials first (generators weight the start). Aspect ratio both in the prompt and the parameter.
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** image prompt · midjourney · text to image · برومبت صور · توليد صور
+**الوسوم:** image prompt · midjourney · text to image · برومبت صور · توليد صور · iteration · seed · one axis · تكرار التوليد
 
 #### 1. الاستقبال (A25)
 
@@ -1021,13 +1021,13 @@
 
 **متى:** عند برومبتات النظام والمهارات وخطوط الأنابيب وإعدادات المولّدات المسبقة التي ستُعاد استخدامها. / System prompts, skills, pipelines and generator presets that will be reused.
 
-**كيف:** Include edge cases (missing input, very long input, harmful input, disputed cases). Grade by exact match, schema or tests where possible; otherwise an LLM grader with a written rubric and fixed labels; humans last. Keep the new prompt only if it wins without regressions. One-off generator prompts: cheap draft (low resolution, short clip) before the expensive run. Not every failure is a prompt problem (latency and cost may be a model choice).
+**كيف:** Include edge cases (missing input, very long input, harmful input, disputed cases). Grade by exact match, schema or tests where possible; otherwise an LLM grader with a written rubric and fixed labels; humans last. Keep the new prompt only if it wins without regressions. One-off generator prompts: cheap draft (low resolution, short clip) before the expensive run. Not every failure is a prompt problem (latency and cost may be a model choice). Atlas upgrade 2026-11-07: Decision chain for A vs B: quality first (pairwise judge with position randomized per case, results remapped), then tokens, then time, each with a noise threshold (≈15% win-rate spread, 10% tokens, 15% latency) — otherwise NEUTRAL. Each run in a fresh independent session; a failed run removes that case's judge instead of counting it. Fewer than 3 cases = warn low confidence. For very large prompts judge the diff against each input instead of running them. Never change prompt and model in the same comparison; include must-not-contain checks; promote only if violations stay at zero.
 
 **المعاملات:** 5–20 cases; prefer volume over hand-graded quality
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** eval · a/b test · regression · تقييم البرومبت
+**الوسوم:** eval · a/b test · regression · تقييم البرومبت · tiebreak · noise threshold · pairwise
 
 #### 1. الاستقبال (A25)
 
@@ -1495,11 +1495,11 @@
 
 **متى:** عند كتابة أو تعديل مهارة أو أمر شرطة مائلة أو مدخل في CLAUDE.md. / Writing or editing a skill, a slash command or a CLAUDE.md entry.
 
-**كيف:** A skill body loads only when invoked; there is no "run on every prompt" mode for skills (use CLAUDE.md or a hook for that). Specific trigger words in the description in every language the user writes; negative triggers stated. Must-hold rules near the top, because after compaction only the start of a re-attached skill is kept (5,000 tokens per the Claude Code docs read 2026-10-16). Progressive disclosure: one-level-deep references with a table of contents. Portable frontmatter if the skill may be uploaded outside Claude Code. Build evals first.
+**كيف:** A skill body loads only when invoked; there is no "run on every prompt" mode for skills (use CLAUDE.md or a hook for that). Specific trigger words in the description in every language the user writes; negative triggers stated. Must-hold rules near the top, because after compaction only the start of a re-attached skill is kept (5,000 tokens per the Claude Code docs read 2026-10-16). Progressive disclosure: one-level-deep references with a table of contents. Portable frontmatter if the skill may be uploaded outside Claude Code. Build evals first. Atlas upgrade 2026-11-07: Description optimization loop: 20 realistic queries (8–10 should-trigger in varied phrasing incl. ones not naming the skill; 8–10 near-miss should-not-trigger sharing keywords), split 60% train / 40% held-out, run each query 3 times, propose a better description from train failures, pick the winner by held-out score to avoid overfitting. Trivial one-step queries never trigger skills regardless of wording, so they are bad test cases. Claude tends to undertrigger: slightly 'pushy' or directive wording ('use whenever… even if the user doesn't say X') raises activation, but measure collisions with neighbours before keeping it. Lifecycle positioning ('required before…', 'first') raises invocation; 'helps with…' kills it. Remember only descriptions are always-loaded cost; body tokens load on trigger.
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** skill authoring · description · triggers · claude code · كتابة مهارة
+**الوسوم:** skill authoring · description · triggers · claude code · كتابة مهارة · description optimization · held-out · trigger rate · تحسين الوصف
 
 #### 1. الاستقبال (A25)
 
@@ -2582,11 +2582,11 @@
 
 **متى:** لا تعرف أفضل صياغة لمهمة متكررة / you do not know the best wording for a recurring task
 
-**كيف:** Give the model the task, 5 input/output pairs and the failure you see; ask for 5 distinct instructions (different strategies, not paraphrases). Generate outputs for each on the eval set, score with `prompt_lab.py eval`, keep the best only if it beats the current prompt with no regression (PROMPT-15). Record the losing variants too, so they are not retried.
+**كيف:** Give the model the task, 5 input/output pairs and the failure you see; ask for 5 distinct instructions (different strategies, not paraphrases). Generate outputs for each on the eval set, score with `prompt_lab.py eval`, keep the best only if it beats the current prompt with no regression (PROMPT-15). Record the losing variants too, so they are not retried. Atlas upgrade 2026-11-07: Use five fixed framings as the candidate set (APE): rule-based, example-based, definition-based, question-based, chain-of-thought; each commits fully, no blending. Score each on 3–5 real test cases (source from real prior inputs; never fabricate or adjust expected outcomes). Tie-break by framing precedence rule → example → definition → question → CoT. Critique only the winner with a 4-item checklist (rules unambiguous, handles out-of-scope input with an explicit fallback, format rules compatible, no two-way readings) and revise only failing items.
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** meta prompting · automatic prompt engineer · ape · candidates · برومبت يكتب برومبت · توليد صيغ
+**الوسوم:** meta prompting · automatic prompt engineer · ape · candidates · برومبت يكتب برومبت · توليد صيغ · APE · framings · instruction optimization
 
 #### 1. الاستقبال (A25)
 

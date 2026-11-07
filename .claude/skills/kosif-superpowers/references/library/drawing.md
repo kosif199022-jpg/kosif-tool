@@ -136,7 +136,7 @@
 | `SHAPE-68` | أشعة شمسية دوارة | Rotating sunburst ground | proven |  |
 | `BRAND-03` | ورقة نظام العلامة للفيديو | Video brand-system sheet | ready | python3 |
 | `BRAND-05` | أنظمة تصميم جاهزة للكاميرا (frame.md) | Video-first design presets (frame.md) | ready | chromium, npm:hyperframes |
-| `BRAND-12` | قواعد بناء الشعار SVG | SVG logo construction rules & logo suite | ready | node, pip:fonttools |
+| `BRAND-12` | قواعد بناء الشعار SVG | SVG logo construction rules & logo suite | ready | pip:fonttools, fonts:arabic, npm:axe |
 | `BRAND-22` | انكماش التباعد إلى الشعار (لاتيني فقط) | Tracking-collapse lockup (Latin only) | ready |  |
 | `BRAND-35` | إطار البث الثابت وتوقيع الزاوية | Persistent broadcast chrome & corner signature | ready |  |
 | `BRAND-36` | غمر لون العلامة | Brand-colour flood end frame | ready | fonts:arabic |
@@ -349,7 +349,7 @@
 | `BRAND-26` | بطاقة شعار Remotion بحلقة وشيفرون | Remotion logo card: ring draw + chevron mark | install | npm:remotion |
 | `BRAND-34` | كتل الختام والدليل الاجتماعي | Closer blocks: CTA close/lockup, social proof, testimonials, trust strip | install | npm:hyperframes |
 | `EXPL-11` | مخططات Mermaid من نص | Mermaid text-to-diagram | install | npm:mermaid |
-| `EXPL-13` | سبورة Excalidraw ولوحات JSON Canvas | Excalidraw & JSON Canvas boards | install | node, chromium |
+| `EXPL-13` | سبورة Excalidraw ولوحات JSON Canvas | Excalidraw & JSON Canvas boards | install | chromium, npm:mermaid |
 | `EXPL-14` | شبكة مفاهيم بقوة الجذب | Force-directed concept graph | install | npm:d3 |
 | `EXPL-19` | محور وأذرع ومدارات | Hub-and-spoke, constellations & orbits | install | npm:hyperframes |
 | `EXPL-24` | مسار قرار ومخطط انسيابي | Decision path & flowchart | install | npm:hyperframes |

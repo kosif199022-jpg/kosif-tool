@@ -24,12 +24,12 @@
 |---|---:|---|
 | `proven` | 96 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 42 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 99 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 101 | 📄 documented: a described method; needs building or wiring before it runs |
 | `seen` | 22 | 👁 seen: observed in a reference or demo, not executed here |
 | `install` | 27 | 📦 install: needs a package, binary or model first |
 | `key` | 35 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 2 | 💡 idea: not built |
-| **المجموع** | **323** | |
+| **المجموع** | **325** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -85,7 +85,7 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `ai-generation` | 94 | [ai-generation.md](../powers/ai-generation.md) |
-| `atlas-media` | 30 | [atlas-media.md](../powers/atlas-media.md) |
+| `atlas-media` | 32 | [atlas-media.md](../powers/atlas-media.md) |
 | `color-palette-grading` | 87 | [color-palette-grading.md](../powers/color-palette-grading.md) |
 | `media-image-audio` | 41 | [media-image-audio.md](../powers/media-image-audio.md) |
 | `photo-video-footage` | 71 | [photo-video-footage.md](../powers/photo-video-footage.md) |
@@ -296,6 +296,8 @@
 | `AMEDIA-28` | توليد خط زمني لـFinal Cut Pro برمجيًا عبر FCPXML وتصدير دفعي بـCompressor | Programmatic Final Cut Pro timelines via FCPXML and batch export with Compressor | documented | imagemagick |
 | `AMEDIA-29` | أتمتة برامج ثلاثية الأبعاد والتصميم الهندسي دون واجهة: خبز المحاكاة، تقليل المضلعات، واستخراج الخصائص | Headless automation of 3D and CAD apps: simulation baking, batch decimation, property extraction | documented | python3, chromium |
 | `AMEDIA-30` | ربط الوكيل الصوتي بالهاتف وتقييمه: SIP وDTMF والتحويل الدافئ ونجاح المهمة كمقياس أول | Telephony and call-flow integration for a voice agent: SIP, DTMF, warm transfer, and task success as the primary metric | documented |  |
+| `AMEDIA-31` | تحرير دفعة صور بلوك واحد متماسك وتنقيح البورتريه: نفس القيم لكل صورة، وبوابة معاينة على صورة مصغرة، ولا تعديل توليدي على البشر | Cohesive batch photo look and portrait retouch: same values on every image, a downscaled preview gate, no generative edits on people | documented | imagemagick, pip:pillow |
+| `AMEDIA-32` | مخطط فيديو يوتيوب تعليمي طويل مع قائمة تجهيز العروض الحية | Long-form tutorial outline with demo-prep checklist | documented |  |
 | `COLOR-08` | مكتبة اللوكات المسماة | Named film-stock and photo looks library | documented | pip:numpy, key:unspecified |
 | `COLOR-13` | ترتيب عقد التلوين | Grade order: technical before creative | documented | ffmpeg |
 | `COLOR-20` | لوكات مقاسة بأهداف السكوب | Scope-target looks (Japan summer, New York, Still, Tokyo night) | documented |  |

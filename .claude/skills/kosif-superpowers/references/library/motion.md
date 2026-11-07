@@ -1072,7 +1072,7 @@
 | `CAM-59` | طبقات عمق بتتبع المؤشر | Mouse-parallax depth layers | install | npm:gsap |
 | `CAM-60` | بارالاكس مرتبط بالتمرير ومشاهد مثبتة | Scroll-scrubbed parallax and pinned acts | install | npm:gsap |
 | `CAM-61` | رصّ البطاقات المثبتة أثناء التمرير | Sticky scroll-stack of cards | install | npm:gsap |
-| `CAM-62` | قصة تمرير بصورة مثبتة | Sticky-graphic scroll story | install | npm:gsap |
+| `CAM-62` | قصة تمرير بصورة مثبتة | Sticky-graphic scroll story | install | npm:three, npm:gsap |
 | `CAM-63` | كشف بطاقات بميلان ثلاثي | Card batch reveal with 3D tilt-up | install | npm:gsap |
 | `CAM-64` | عمق الميدان / بوكيه | Depth of field (TSL dof) | install | npm:three |
 | `CAM-65` | معرض WebGL مدفوع بالزمن | Scroll/time-driven WebGL gallery | install | npm:three, npm:gsap |

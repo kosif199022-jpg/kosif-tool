@@ -1325,7 +1325,7 @@
   "status": "documented",
   "what": "يكتب عنوان الفيديو ونص الصورة المصغرة كزوج: العنوان يحمل الموضوع والكلمات المفتاحية، والمصغرة تحمل التوتر. — Writes title and thumbnail text as a pair: the title carries topic and keywords, the thumbnail carries the tension.",
   "when": "عنوان يوتيوب، صورة مصغرة، ثمبنيل / YouTube title, thumbnail text, video packaging",
-  "how": "1) Tag intent: search (front-load the query phrase), browse (more intrigue, the thumbnail breaks the pattern), or both (package for search, thumbnail does browse). 2) Reject any pair where a thumbnail word repeats in the title. 3) Title ≤60 characters where possible; thumbnail text 1-3 words (4 is a caption). 4) Clarity beats curiosity; never promise more than the video delivers. 5) Thumbnail: one accent colour, high contrast, a real face with a readable expression when the format calls for it, nothing that does not earn its place. 6) Always give at least three pairs or three fixes.",
+  "how": "1) Tag intent: search (front-load the query phrase), browse (more intrigue, the thumbnail breaks the pattern), or both (package for search, thumbnail does browse). 2) Reject any pair where a thumbnail word repeats in the title. 3) Title ≤60 characters where possible; thumbnail text 1-3 words (4 is a caption). 4) Clarity beats curiosity; never promise more than the video delivers. 5) Thumbnail: one accent colour, high contrast, a real face with a readable expression when the format calls for it, nothing that does not earn its place. 6) Always give at least three pairs or three fixes. Atlas upgrade 2026-11-07: Full YouTube metadata package: 5 title variants each run through tests (completes 'I want ___', instantly clear, positive energy, the audience's own words, memorable) and labelled destination-led vs journey-led; description = hook restated as outcome in 2-3 sentences, 3-5 'you will…' outcomes, timestamps, resources, sign-off; chapter names phrased as outcomes not topics ('Why this changes your edit' not 'Background'), estimated if no markers; 20-30 tags mixing broad, specific, brand and long-tail (no hype tags); thumbnail text 2-4 words with a one-line brief to the designer; pick the single best 30-60 s standalone moment for Shorts with why it hooks and why it works alone. Optimise for the right viewer: low-CTR/high-retention from the target audience beats broad clicks.",
   "params": "title ≤60 chars; thumb 1-3 words",
   "install": "",
   "requires": [],
@@ -1342,7 +1342,14 @@
    "YouTube",
    "يوتيوب",
    "title",
-   "عنوان"
+   "عنوان",
+   "YouTube SEO",
+   "metadata package",
+   "chapters",
+   "tags",
+   "Shorts pick",
+   "وصف يوتيوب",
+   "وسوم"
   ],
   "section": "الفيديو والموشن — Video, motion & creative web",
   "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): digital-marketing-pro/video-packaging (#4132); youtube/creator-thumbnail-agent (#13228) · theme video-motion · 3 supporting skills · SKILL.md read in full as inert text: skills/1520-digital-marketing-pro/4132-video-packaging, skills/3067-youtube/13228-creator-thumbnail-agent",
@@ -1350,7 +1357,8 @@
    "ids": [
     "4132",
     "13228",
-    "4868"
+    "4868",
+    "13227"
    ],
    "examples": [
     {
@@ -1364,6 +1372,12 @@
      "plugin": "youtube",
      "skill": "creator-thumbnail-agent",
      "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3067-youtube/13228-creator-thumbnail-agent"
+    },
+    {
+     "id": "13227",
+     "plugin": "youtube",
+     "skill": "creator-seo-agent",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3067-youtube/13227-creator-seo-agent"
     }
    ],
    "theme": "video-motion",
@@ -1373,7 +1387,8 @@
    "verified_by": "atlas-5000-mining-20261023.json",
    "skill_md_sha256": {
     "4132": "9cccbea141603ffde92dad2f684b8deaf491141083d5be0e074a1f69c1ed97a9",
-    "13228": "72330118cdcfad66deab49c497b1f66a560a6b29c958f51299de3bf2fd5ca69d"
+    "13228": "72330118cdcfad66deab49c497b1f66a560a6b29c958f51299de3bf2fd5ca69d",
+    "13227": "80e4232b2c535608de0bd0bbbc08e8374241b7413640ad5cee5b1fedb1ab36d2"
    }
   }
  },
@@ -1715,6 +1730,163 @@
    "vendored": [
     "vendor/kosif-atlas/skills/2261-conversational-ai-voice-engineering/8617-telephony-and-call-flow-integration"
    ]
+  }
+ },
+ {
+  "id": "AMEDIA-31",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "تحرير دفعة صور بلوك واحد متماسك وتنقيح البورتريه: نفس القيم لكل صورة، وبوابة معاينة على صورة مصغرة، ولا تعديل توليدي على البشر",
+  "name_en": "Cohesive batch photo look and portrait retouch: same values on every image, a downscaled preview gate, no generative edits on people",
+  "status": "documented",
+  "what": "جعل مجموعة صور (سفر، فعالية، منتج، لقطات مونتاج) تبدو كأنها حُررت معًا: لوك واحد بقيم ثابتة على الكل، وترتيب ثابت للخطوات، ومعاينة قبل/بعد على أول صورة مصغرة قبل تشغيل الدفعة، وقواعد بورتريه تحمي البشرة والهوية. — Make a photo set read as one intentional edit, with a fixed step order, a preview gate and portrait-safe rules.",
+  "when": "وحّد لون صوري، نفس الستايل لكل الصور، صور جوال بإضاءات مختلطة، صور مونتاج من مصادر متعددة، تنقيح بورتريهات بالجملة / make my photos cohesive, batch edit, same look for all, retouch a folder of portraits",
+  "how": "1) Goal = cohesion of the set, not the best possible single image: apply the SAME look parameter values to every image; per-image variation is allowed only where an element is actually detected (sky, person, background) and only for that element. 2) Fixed per-image order: straighten -> auto-tone/exposure normalise -> look adjustments in ONE pass (temperature/tint + vibrance/saturation + brightness/contrast) -> look preset or LUT -> optional element-aware tweaks -> the user's fine-tune deltas applied on top of the look output (never summed into the look numbers) -> background blur -> crop. If a step fails, continue from the previous step's output and log it; never drop an image silently. 3) Starting look recipes (relative deltas, tune per source): Warm & golden = warm shift + vibrance +15; Bright & airy = slight warm, saturation -10, vibrance +10, brightness +15; Moody & cinematic = cool shift, saturation -20, contrast +25; Cool & fresh = blue shift, vibrance +10; Vibrant = vibrance +30, saturation +15, contrast +10; Muted film = saturation -35, vibrance -10, contrast +10. Looks defined as neutral must not receive any temperature change. 4) Preview gate (mandatory): downscale image 1 to a 1200 px long edge, run the whole chain, show before/after, wait for an explicit yes; any settings change repeats the preview; the final batch runs on the full-resolution originals and never reuses the preview file. 5) Portrait rules: boost with vibrance, not saturation (vibrance spares skin tones); diagnostic ranges instead of fixed numbers: highlights -40 (mildly blown) to -70 (clipped), shadows +30 to +50, contrast +15 (slight pop) to +30 (very flat only). Crops frame on the face, fall back to the subject; with no ratio given use 4:3 for landscape sources and 3:4 for portrait. 6) Never change a person generatively (hair, age, face, body). Generative fill is allowed only to remove dust, sensor spots or scratches on non-human background areas, and only if the fix is invisible at normal viewing size. 7) Never overwrite sources; write suffixed copies and a one-line summary of the look actually applied plus any per-image failures. 8) Local route here: one .cube/LUT or one ImageMagick/Pillow chain with identical arguments for all files (COLOR-04, FOOT-30), then a contact sheet of every output side by side (MEDIA-14): one outlier -> fix that image; three or more -> change the look, not the images. 9) Failure modes: per-image auto-tone after the look (destroys cohesion), stacking the user's tweak onto the look value twice, cropping before the look (preset results shift with framing), previewing on a different image than the batch's first. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/103-adobe-for-creativity/230-adobe-batch-edit-photos, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/103-adobe-for-creativity/239-adobe-retouch-portraits.",
+  "params": "look name, fine-tune deltas, crop ratio + focus (face/subject/centre), preview long edge 1200 px",
+  "install": "none — method card; read the cited Atlas SKILL.md for the original",
+  "requires": [
+   "imagemagick",
+   "pip:pillow"
+  ],
+  "license": "card in our own words; the original skills stay in the Atlas under their own licenses (Apache-2.0); nothing copied",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/103-adobe-for-creativity/230-adobe-batch-edit-photos",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/103-adobe-for-creativity/239-adobe-retouch-portraits"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "batch photo edit",
+   "photo cohesion",
+   "consistent look",
+   "portrait retouch",
+   "vibrance vs saturation",
+   "preview gate",
+   "تحرير صور بالجملة",
+   "توحيد لون الصور",
+   "تنقيح بورتريه",
+   "لوك موحد",
+   "معاينة قبل التنفيذ"
+  ],
+  "section": "معالجة الصور — Photo processing",
+  "source": "KOSIF Atlas core-work pass 2026-11-07, track image (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): adobe-for-creativity/adobe-batch-edit-photos (#230); adobe-for-creativity/adobe-retouch-portraits (#239) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "230",
+    "239"
+   ],
+   "examples": [
+    {
+     "id": "230",
+     "plugin": "adobe-for-creativity",
+     "skill": "adobe-batch-edit-photos",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/103-adobe-for-creativity/230-adobe-batch-edit-photos"
+    },
+    {
+     "id": "239",
+     "plugin": "adobe-for-creativity",
+     "skill": "adobe-retouch-portraits",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/103-adobe-for-creativity/239-adobe-retouch-portraits"
+    }
+   ],
+   "theme": "image-design-media",
+   "risk_notes": "Method guidance only, written in our own words; SKILL.md read as inert text; no Atlas code copied, imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-image.json",
+   "skill_md_sha256": {
+    "230": "062112a424340bef585f0c3aed9a484721ff4b200044883dd0bdb1dd7599642c",
+    "239": "3b3d098547f0e8c6b885dda0d32acaf1a9450660c6c803c2950b02a2acd30a5a"
+   }
+  }
+ },
+ {
+  "id": "AMEDIA-32",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "مخطط فيديو يوتيوب تعليمي طويل مع قائمة تجهيز العروض الحية",
+  "name_en": "Long-form tutorial outline with demo-prep checklist",
+  "status": "documented",
+  "what": "تحويل فكرة مقيَّمة إلى مخطط إنتاج لفيديو يوتيوب طويل: هيكل حسب النوع، وما يُقال وما يظهر لكل قسم، ومجموع زمني صادق، وقائمة تجهيز لكل عرض حي مع خطة بديلة. — Turn a scored idea into a production outline for a long YouTube tutorial: structure by type, say/show per section, an honest running total and a per-demo prep checklist with a fallback.",
+  "when": "فيديو شرح طويل، تحديث أداة، حالة استخدام، دورة كاملة / long tutorial, update video, use-case build, full course, before filming a screen demo",
+  "how": "1) Ideas first: generate 15–20, tag each with type, one-line angle, evergreen vs timely; drop any the target viewer can't use or that can't be demonstrated; score survivors on demand vs existing competition and pick 1–3. 2) Pick the skeleton by type: feature tutorial = hook 30–60 s (what they can do by the end) → context 1–2 min → core demo → power tips → CTA; update = what changed → overview → per-feature walkthrough → impact; use-case = impressive outcome first → manual process it replaces → build → real results; full course adds roadmap + setup + summary. 3) Verify every step against the current product before writing; note prerequisites and the shortest path to the first 'wow'. 4) Per section write: key message (bullets, not script), transition in, exact on-screen actions (click/type/navigate), expected visible result, target minutes and a running total. 5) If the outline's total exceeds the target length, cut or restructure — never trust optimistic durations. 6) Demo-prep checklist per demo: logged-in accounts, sample data, clean workspace, notifications off, readable font size, and a fallback if the live call fails (pre-recorded take or cached result). 7) Videos > ~8 min get chapters (see FMT-59); say the primary keyword in the first 30 s. 8) Failure modes: filler like 'in this section we'll cover', talking-head stretches with nothing on screen, invented results; every claim must be visible on screen. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1817-youtube-strategy/4867-yt-outline, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1817-youtube-strategy/4866-yt-ideation, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/617-video-content-strategist, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/195-video-content-strategist/620-video-content-strategist.",
+  "params": "type, target minutes, demos[]",
+  "install": "none — method card; read the cited Atlas SKILL.md for the original",
+  "requires": [],
+  "license": "card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1817-youtube-strategy/4867-yt-outline",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1817-youtube-strategy/4866-yt-ideation",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/617-video-content-strategist",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/195-video-content-strategist/620-video-content-strategist"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "youtube",
+   "tutorial",
+   "outline",
+   "demo prep",
+   "running total",
+   "long-form",
+   "شرح",
+   "يوتيوب",
+   "مخطط",
+   "تجهيز العرض",
+   "فيديو تعليمي"
+  ],
+  "section": "تخطيط الفيديو — Video planning",
+  "source": "KOSIF Atlas core-work pass 2026-11-07, track video (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): youtube-strategy/yt-outline (#4867); youtube-strategy/yt-ideation (#4866); marketing-skills/video-content-strategist (#617); video-content-strategist/video-content-strategist (#620); video-skills/ui-tutorial-video (#220) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "4867",
+    "4866",
+    "617",
+    "620",
+    "220"
+   ],
+   "examples": [
+    {
+     "id": "4867",
+     "plugin": "youtube-strategy",
+     "skill": "yt-outline",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1817-youtube-strategy/4867-yt-outline"
+    },
+    {
+     "id": "4866",
+     "plugin": "youtube-strategy",
+     "skill": "yt-ideation",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1817-youtube-strategy/4866-yt-ideation"
+    },
+    {
+     "id": "617",
+     "plugin": "marketing-skills",
+     "skill": "video-content-strategist",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/617-video-content-strategist"
+    },
+    {
+     "id": "620",
+     "plugin": "video-content-strategist",
+     "skill": "video-content-strategist",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/195-video-content-strategist/620-video-content-strategist"
+    },
+    {
+     "id": "220",
+     "plugin": "video-skills",
+     "skill": "ui-tutorial-video",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/101-video-skills/220-ui-tutorial-video"
+    }
+   ],
+   "theme": "video-motion",
+   "risk_notes": "Method guidance only, written in our own words; SKILL.md read as inert text; no Atlas code copied, imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-video.json",
+   "skill_md_sha256": {
+    "4867": "eae3eefe39ea53b1216e36e104c178bc14d90609b9d8536ee28b16829b7f1930",
+    "4866": "c35be22e1652e8a9efeee880d75d4275be3e9154079dca2318dd40c087e04f53",
+    "617": "0788d327bc4deec2fa6adf78813b78d8fb54f91e595fb42b9b928f44e5ca301b",
+    "620": "0788d327bc4deec2fa6adf78813b78d8fb54f91e595fb42b9b928f44e5ca301b",
+    "220": "fb87a3380e66383a15e758e7ee9db380ae014c0c1530a1540fe7a6f083b8b9e6"
+   }
   }
  }
 ]

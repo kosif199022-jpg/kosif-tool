@@ -1282,7 +1282,7 @@
   "status": "documented",
   "what": "إثبات ادعاء واجهة في متصفح حقيقي بأرخص وسيلة متاحة والإبلاغ بنجاح أو فشل أو تعطل مع الأدلة. — Prove a UI claim in a real browser using the cheapest available runtime and report pass, fail or blocked with evidence.",
   "when": "User asks to verify, screenshot or record a flow without wanting permanent tests.",
-  "how": "1) Pick runtime: session browser tools, project runner, bundled Playwright scripts, else report blocked. 2) Reuse a running dev server; ask if several. 3) Use role/label/text/testid locators, wait on observable state, never fixed sleeps. 4) screenshot-url/sequence scripts emit a JSON manifest (viewport, console errors, failed network, status>=400). 5) Write temp scripts under /tmp/playwright-*. 6) After two failed attempts, save evidence and stop.",
+  "how": "1) Pick runtime: session browser tools, project runner, bundled Playwright scripts, else report blocked. 2) Reuse a running dev server; ask if several. 3) Use role/label/text/testid locators, wait on observable state, never fixed sleeps. 4) screenshot-url/sequence scripts emit a JSON manifest (viewport, console errors, failed network, status>=400). 5) Write temp scripts under /tmp/playwright-*. 6) After two failed attempts, save evidence and stop. Atlas upgrade 2026-11-07: Before testing, write the flow as one sentence: entry route -> user action -> expected rendered result. Required checks before claiming it works: page identity (URL and title), not blank (DOM has real content, not an empty shell), no framework error overlay, console errors/warnings explained, a screenshot backing every visual claim, and at least one interaction followed by a state check; re-run the same failing interaction after each edit. Check first viewport plus one phone width; look for clipping, overlap, z-index, stale loading, scroll traps and layout shift. For reference-driven work keep a mismatch ledger (reference evidence / rendered evidence / fix or intentional deviation). Report: findings first, then a pass/fail table, the exact interaction path, remaining risk, screenshots grouped at the end. For live polish sessions, let the user drive what to inspect; do not expand into general QA.",
   "params": "url, ready selector, out path",
   "install": "",
   "requires": [
@@ -1300,7 +1300,12 @@
    "verification",
    "screenshot",
    "دليل",
-   "واجهة"
+   "واجهة",
+   "QA report",
+   "console health",
+   "framework overlay",
+   "mismatch ledger",
+   "تقرير فحص"
   ],
   "section": "أتمتة المتصفح — Browser automation & web apps testing",
   "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): browser/browser-automation (#286); browser/browser (#775); frontend-dev-kit/browser-debug (#7511) · theme browser-automation · 4 supporting skills · verifier read: skills/112-browser/286-browser-automation, skills/238-browser/775-browser, skills/2111-frontend-dev-kit/7511-browser-debug",
@@ -1309,7 +1314,9 @@
     "286",
     "775",
     "7511",
-    "13376"
+    "13376",
+    "10313",
+    "3295"
    ],
    "examples": [
     {
@@ -1329,13 +1336,29 @@
      "plugin": "frontend-dev-kit",
      "skill": "browser-debug",
      "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2111-frontend-dev-kit/7511-browser-debug"
+    },
+    {
+     "id": "10313",
+     "plugin": "build-web-apps",
+     "skill": "frontend-testing-debugging",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2689-build-web-apps/10313-frontend-testing-debugging"
+    },
+    {
+     "id": "3295",
+     "plugin": "compound-engineering",
+     "skill": "ce-polish",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1391-compound-engineering/3295-ce-polish"
     }
    ],
    "theme": "browser-automation",
    "risk_notes": "Bundled scripts run Playwright and may auto-install it; start dev servers; avoid production data and destructive actions.",
    "kosif_overlap_ids": [],
    "stage": "extracted",
-   "verified_by": "b017-browser-automation-1.json"
+   "verified_by": "b017-browser-automation-1.json",
+   "skill_md_sha256": {
+    "10313": "03724620cf7e7de425b607a5492f572d867b1cf5d9c92c74bf50d057d7415e0b",
+    "3295": "985888097d7e82a04a4b59856d53d7e6a30854094400b5be36c278261f0c92fa"
+   }
   }
  },
  {
@@ -2021,7 +2044,7 @@
   "status": "documented",
   "what": "نقد منظم للتصميم وإعداد مواصفات التسليم وتدقيق اتساق نظام التصميم. — Run structured design critique, produce developer handoff specs and audit design system consistency.",
   "when": "Reviewing mockups, preparing handoff, or checking hardcoded values.",
-  "how": "1) Critique: usability, hierarchy, consistency with prioritized findings. 2) Handoff: spacing, tokens, states, responsive, edge cases. 3) System audit: naming inconsistencies, hardcoded values, missing states. 4) Component spec: variants, sizes, states. 5) Offer 2-3 variants with tradeoffs.",
+  "how": "1) Critique: usability, hierarchy, consistency with prioritized findings. 2) Handoff: spacing, tokens, states, responsive, edge cases. 3) System audit: naming inconsistencies, hardcoded values, missing states. 4) Component spec: variants, sizes, states. 5) Offer 2-3 variants with tradeoffs. Atlas upgrade 2026-11-07: Critique instrument: form your own verdict first (primary feeling, primary failure), then rate seven dimensions pass/minor/major: hierarchy (one entry point, ≥1.25× step between levels), composition (balance, whitespace rhythm, gestalt), colour (measured ratios for every failing pair, colour never the only state cue), typography (on-scale sizes only, body ≥16 px, measure 45-75 chars), affordance (all states visible, one filled CTA), density (one goal per screen), brand (only if a brand doc exists — never invent brand rules). Classify each finding Critical (a11y fail, broken state, trust-eroding bug: fix before ship) / Major (inconsistency, hierarchy failure, AI-default pattern) / Minor, each as observation → problem → fix with the exact value or token. Red flags worth scanning: synthesized fake bold/italic, justified web text, letter-spaced body, accent on >10% of the surface, text on gradient without measured contrast, placeholder copy. Audit the first 5 seconds separately: near-miss alignment (2 px off) reads as carelessness more than either precision or bold asymmetry; loading and empty states set the halo for the whole session. Separate opinion from preference explicitly.",
   "params": "design source",
   "install": "",
   "requires": [],
@@ -2037,7 +2060,13 @@
    "critique",
    "handoff",
    "design-system",
-   "نقد"
+   "نقد",
+   "visual critique",
+   "severity",
+   "red flags",
+   "first impression",
+   "نقد بصري",
+   "تدقيق التصميم"
   ],
   "section": "الواجهات والتصميم — Front-end, UI & design systems",
   "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): design/design-critique (#949); design/design-handoff (#950); boss/ui-designer/design-variants (#3174) · theme frontend-ui-design · 8 supporting skills · verifier read: skills/949, skills/950, skills/3174",
@@ -2050,7 +2079,10 @@
     "3172",
     "3174",
     "10195",
-    "12627"
+    "12627",
+    "12625",
+    "4488",
+    "3791"
    ],
    "examples": [
     {
@@ -2070,13 +2102,36 @@
      "plugin": "boss",
      "skill": "ui-designer/design-variants",
      "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3174"
+    },
+    {
+     "id": "12625",
+     "plugin": "designer-skill",
+     "skill": "designer-skill",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2981-designer-skill/12625-designer-skill"
+    },
+    {
+     "id": "4488",
+     "plugin": "tonone",
+     "skill": "proof-design",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4488-proof-design"
+    },
+    {
+     "id": "3791",
+     "plugin": "universal-design-principles",
+     "skill": "expectation-effect-design-cues",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3791-expectation-effect-design-cues"
     }
    ],
    "theme": "frontend-ui-design",
    "risk_notes": "none",
    "kosif_overlap_ids": [],
    "stage": "extracted",
-   "verified_by": "b037-frontend-ui-design-1.json"
+   "verified_by": "b037-frontend-ui-design-1.json",
+   "skill_md_sha256": {
+    "12625": "583ec67c907e834565ccd13bfebd03c857ecb70baabe873744b03cdeb463b0ac",
+    "4488": "3fd1f271854b981f202918216840b350564e2d82f23861a46ca0fcbd379465e3",
+    "3791": "13c5675b040a503ffee3b410480d8feb488f37bb8952fa6cd977ff3594cdbf85"
+   }
   }
  },
  {
@@ -2088,7 +2143,7 @@
   "status": "documented",
   "what": "اشتق نظام تصميم وانقل CSS الحالي إلى تصنيفه دون تغيير بصري. — Derive a design system, lift ad-hoc CSS into its taxonomy, and render to targets without visual change.",
   "when": "Design direction open or existing CSS needs systematizing.",
-  "how": "1. Survey current token/tooling state. 2. If direction is open, spread divergent idioms; if settled, echo variations. 3. Retrofit existing CSS into the taxonomy with zero visual change. 4. Emit to targets via committed formatters. 5. Report status of artefacts.",
+  "how": "1. Survey current token/tooling state. 2. If direction is open, spread divergent idioms; if settled, echo variations. 3. Retrofit existing CSS into the taxonomy with zero visual change. 4. Emit to targets via committed formatters. 5. Report status of artefacts. Atlas upgrade 2026-11-07: Mechanical clean-up pipeline for an existing UI: split rules by area (spacing, type scale, colour, contrast, plus report-only containers and decoration); inspect each area separately and write findings as predicates (a check that can be recomputed), never as status words; snap replacements to a reference ladder or the project's own tokens; enforce in dependency order spacing → type → colour → contrast (contrast last because it depends on final colours), one commit per area; re-inspect with a fresh pass and re-enter only areas whose predicates are still false. Anything that would delete or re-parent elements is reported, not applied. Finish with one rendered before/after as confirmation, not as measurement.",
   "params": "",
   "install": "",
   "requires": [],
@@ -2103,7 +2158,12 @@
    "design-system",
    "retrofit",
    "taxonomy",
-   "نظام"
+   "نظام",
+   "theme QA",
+   "predicates",
+   "snap to scale",
+   "enforce order",
+   "تنظيف الواجهة"
   ],
   "section": "الواجهات والتصميم — Front-end, UI & design systems",
   "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): matrize/matrize-retrofit (#846); matrize/matrize-emit (#843) · theme frontend-ui-design · 6 supporting skills · verifier read: skills/matrize/846-matrize-retrofit, skills/matrize/843-matrize-emit",
@@ -2114,7 +2174,8 @@
     "846",
     "847",
     "848",
-    "849"
+    "849",
+    "10173"
    ],
    "examples": [
     {
@@ -2128,13 +2189,22 @@
      "plugin": "matrize",
      "skill": "matrize-emit",
      "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/matrize/843-matrize-emit"
+    },
+    {
+     "id": "10173",
+     "plugin": "hera-godot",
+     "skill": "ui-theme-qa",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2669-hera-godot/10173-ui-theme-qa"
     }
    ],
    "theme": "frontend-ui-design",
    "risk_notes": "Committed formatter scripts possible",
    "kosif_overlap_ids": [],
    "stage": "extracted",
-   "verified_by": "b038-frontend-ui-design-2.json"
+   "verified_by": "b038-frontend-ui-design-2.json",
+   "skill_md_sha256": {
+    "10173": "0dad37831e2eeca33f5eb732cbc12619a53287550502e44f9a56bbeafab63e6f"
+   }
   }
  },
  {
@@ -2619,7 +2689,7 @@
   "status": "documented",
   "what": "بناء صفحة هبوط بهوية العلامة مع CSS ثلاثي الأبعاد وحركة GSAP بعد مقابلة العلامة. — Build a brand-first single-page landing with 3D CSS and GSAP scroll effects after a brand interview.",
   "when": "Requests for marketing or landing pages.",
-  "how": "1) Interview: colors, typography, shape language, audience. 2) Choose art direction from product context. 3) Generate single HTML with GSAP ScrollTrigger and 3D CSS. 4) Audit six conversion dimensions (above-fold, trust, form). 5) Deploy optional.",
+  "how": "1) Interview: colors, typography, shape language, audience. 2) Choose art direction from product context. 3) Generate single HTML with GSAP ScrollTrigger and 3D CSS. 4) Audit six conversion dimensions (above-fold, trust, form). 5) Deploy optional. Atlas upgrade 2026-11-07: Page architecture gate before visuals: give every section a named job (hook, context, feature/benefit, social proof, secondary CTA, FAQ, footer CTA); no two consecutive sections share a job; social proof appears before the second CTA; the page ends on a CTA, not a feature; one primary CTA per viewport. Hook = one value-prop headline, one sub-line, one CTA, optionally one trust fragment — nothing else. Write the 375 px layout before the 1280 px one for each section, max three type sizes per section, spacing only from the scale, and name each section's dominant element. Confirm the written brief (goal, CTA label, audience, key objection, tone, must-feel / must-not-feel) before layout.",
   "params": "brand brief",
   "install": "",
   "requires": [
@@ -2637,7 +2707,11 @@
    "landing",
    "gsap",
    "marketing",
-   "هبوط"
+   "هبوط",
+   "section jobs",
+   "page architecture",
+   "mobile first spec",
+   "هيكل الصفحة"
   ],
   "section": "الواجهات والتصميم — Front-end, UI & design systems",
   "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): landing/landing (#621); brand-landingpage/brand-landingpage (#14160); digital-marketing-pro/landing-page-audit (#4059) · theme frontend-ui-design · 6 supporting skills · verifier read: skills/196-landing/621-landing, skills/14160, skills/4059",
@@ -2648,7 +2722,8 @@
     "1231",
     "3377",
     "4059",
-    "14160"
+    "14160",
+    "4431"
    ],
    "examples": [
     {
@@ -2668,13 +2743,22 @@
      "plugin": "digital-marketing-pro",
      "skill": "landing-page-audit",
      "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/4059"
+    },
+    {
+     "id": "4431",
+     "plugin": "tonone",
+     "skill": "form-web",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4431-form-web"
     }
    ],
    "theme": "frontend-ui-design",
    "risk_notes": "621 ships 3 python helpers; not executed",
    "kosif_overlap_ids": [],
    "stage": "extracted",
-   "verified_by": "b037-frontend-ui-design-1.json"
+   "verified_by": "b037-frontend-ui-design-1.json",
+   "skill_md_sha256": {
+    "4431": "26ff32d17d8f3a4643848cf731ec5e4a25845e01850a30add796acec44c72155"
+   }
   }
  },
  {
@@ -3651,6 +3735,161 @@
    "vendored": [
     "vendor/kosif-atlas/skills/977-set-up-installers/2261-set-up-installers"
    ]
+  }
+ },
+ {
+  "id": "ABUILD-61",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "لغة حركة واحدة للصفحة مع محظورات ملزمة",
+  "name_en": "One motion language per page, with binding bans",
+  "status": "documented",
+  "what": "اختر للموقع الحي أو فيلم الويب «لغة حركة» واحدة لها فكرة مهيمنة وحركات توقيع وقائمة محظورات ملزمة وحالة تقليل حركة مصممة، فالمحظورات تميّز أكثر من الحركات. — Pick one named motion language for a living site or web film: a dominant idea, signature moves, binding prohibitions and a designed reduced-motion state.",
+  "when": "بداية موقع حي أو فيلم ويب أو صفحة إطلاق، أو حين تبدو الحركة عشوائية ومتراكمة / start of a living site, web film or launch page; motion feels like a pile of effects",
+  "how": "1) Choose ONE language (orthogonal to mood/palette): held-breath (near-stillness, one mover per viewport, instant or glacial timing, no staggers), kinetic-type (only letterforms move, body text never animates, one text behaviour per view), one-surface (nothing enters or leaves; containers morph; one thing moves at a time; no bounce), grand-tour (scroll is a dolly track: pinned acts, one evolving world, ≤ ~6 acts, never hijack scroll speed), real-weight (mass, springs, overshoot; no fades; physics only on 2-3 handled objects), cursor-field (motion exists only as response to the pointer; nothing autoplays; settles slowly), liquid-material (one substance per page, recovery slower than disturbance, one live surface max), haunted-machine (stepped, quantized ticks; no blur/glass/soft easing; glitch never touches feedback). 2) Write its prohibition list into the brief and treat it as a lint: every animation in the build must pass it. 3) Before a one-surface morph, map the identity graph: only elements that are truly the same object may morph; others cut or crossfade. 4) Before grand-tour, give every act a story beat and a scroll length chosen on purpose; a skimmer who skips all acts must still get the full message (critical content never only inside a scene). 5) Design the reduced-motion state per language (held-breath is already it; grand-tour becomes a stacked photo-essay of key frames; liquid freezes to a still texture; morphs become crossfades at the same positions) and check the page is complete with all motion stripped. 6) Give each heavy library one job, an owner, a fallback, a budget and a removal rule; measure the expensive languages (grand-tour, liquid) on a mid-range phone before committing. 7) For a rendered web film, keep the same language across scenes; switching languages between shots reads as a different film. 8) Failure modes: two languages on one page, cursor toys that gate content, kinetic type on weak copy, stillness without gallery-grade composition. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/342-kernel/1223-frontend, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3322-stark, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3329-web-design.",
+  "params": "language name; prohibition list; reduced-motion plan; per-library budget",
+  "install": "none — method card; read the cited Atlas SKILL.md for the original",
+  "requires": [],
+  "license": "card in our own words; the original skills stay in the Atlas under their own licenses (Apache-2.0, MIT); nothing copied",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/342-kernel/1223-frontend",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3322-stark",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3329-web-design"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "motion language",
+   "motion system",
+   "living site",
+   "web film",
+   "scroll storytelling",
+   "reduced motion",
+   "prohibitions",
+   "لغة الحركة",
+   "موقع حي",
+   "فيلم ويب",
+   "محظورات الحركة",
+   "حركة الصفحة"
+  ],
+  "section": "الواجهات والتصميم — Front-end, UI & design systems",
+  "source": "KOSIF Atlas core-work pass 2026-11-07, track frontend (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): kernel/frontend (#1223); stark/stark (#3322); stark/web-design (#3329) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "1223",
+    "3322",
+    "3329"
+   ],
+   "examples": [
+    {
+     "id": "1223",
+     "plugin": "kernel",
+     "skill": "frontend",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/342-kernel/1223-frontend"
+    },
+    {
+     "id": "3322",
+     "plugin": "stark",
+     "skill": "stark",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3322-stark"
+    },
+    {
+     "id": "3329",
+     "plugin": "stark",
+     "skill": "web-design",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3329-web-design"
+    }
+   ],
+   "theme": "frontend-ui-design",
+   "risk_notes": "Method guidance only, written in our own words; SKILL.md read as inert text; no Atlas code copied, imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-frontend.json",
+   "skill_md_sha256": {
+    "1223": "deb0d651f157335ef4f6b04cfc8b9266f50d2d2e217f01bbdce91d689602b7ad",
+    "3322": "d47afa578f03dda3090ae370b1fcfbbb9d20cb853ebe811f0a59665c0fd0e2a2",
+    "3329": "1cc128dbbfa950d5fbbf961ced7117a259b532b180db537e4cf737cbf5c41e6e"
+   }
+  }
+ },
+ {
+  "id": "ABUILD-62",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "بطاقة تقييم حِرفية الموقع من 10 ولحظة التوقيع أولاً",
+  "name_en": "Weighted 10-point site craft scorecard, signature moment first",
+  "status": "documented",
+  "what": "قيّم الموقع أو فيلم الويب بخمسة محاور موزونة (الخط 25٪، التكوين 25٪، الحركة 20٪، اللون 15٪، التفاصيل 15٪) واذكر الرقم الحالي وما ينقص للعشرة، وصمّم لحظة التوقيع قبل الرأس. — Score a site or web film on five weighted axes, state the number and the gap to 10, and design the screenshot-worthy moment before the header.",
+  "when": "قبل تسليم موقع حي أو صفحة إطلاق أو عند طلب «اجعلها مذهلة» / before delivering a living site or launch page; 'make it stunning'",
+  "how": "1) Write four lines first: brand essence (one word), visual tension (two opposing forces), signature moment (what people will screenshot and try to reverse-engineer), technical ambition. 2) Build the signature moment first, then pick the display face (it sets mood, rhythm and motion), then prototype motion alongside layout, not after. 3) Score each axis 0-10 and combine: type×.25 + composition×.25 + motion×.20 + colour×.15 + details×.15. Type 7+ needs display:body contrast of about 10:1 and tight display tracking (Latin only; Arabic never tracks, see ARAB-03). Composition 7+ needs intentional grid breaks and varied density. Motion 7+ needs custom curves and orchestrated reveals. Colour 7+ feels owned (one accent used sparingly, no pure #000/#fff). Details 7+ covers focus, selection, loading, empty and 404 states. 4) Run a 12-question yes/no diagnostic (blur test still shows hierarchy; any section screenshot-worthy; page load choreographed; every animation answers 'why does this move'; CLS near 0 and LCP < 2.5 s; focus states visible and on-brand...) and map the count to a band. 5) Anti-convergence pass: name the most dominant visual decision and ask what evidence caused it, whether it is a recent model habit, and whether removing it makes the page clearer; warning signs (purple gradient hero, identical rounded cards, centred everything, decorative blobs, default component styling) are changed only when unexamined. 6) Context outranks score: a repeated-use tool should not get campaign spacing and choreography. 7) Ship with restraint: three things perfect beats ten mediocre; never claim a score without looking at the rendered page at phone and desktop widths. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3438-ux-design/14124-top-design, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/342-kernel/1223-frontend, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3329-web-design, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3322-stark.",
+  "params": "axis weights .25/.25/.20/.15/.15; 12-question diagnostic",
+  "install": "none — method card; read the cited Atlas SKILL.md for the original",
+  "requires": [],
+  "license": "card in our own words; the original skills stay in the Atlas under their own licenses (Apache-2.0, MIT); nothing copied",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3438-ux-design/14124-top-design",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/342-kernel/1223-frontend",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3329-web-design",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3322-stark"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "awwwards",
+   "design score",
+   "signature moment",
+   "craft rubric",
+   "landing page",
+   "living site",
+   "تقييم التصميم",
+   "لحظة التوقيع",
+   "جودة الموقع",
+   "مقياس الحرفية"
+  ],
+  "section": "الواجهات والتصميم — Front-end, UI & design systems",
+  "source": "KOSIF Atlas core-work pass 2026-11-07, track frontend (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): ux-design/top-design (#14124); kernel/frontend (#1223); stark/web-design (#3329); stark/stark (#3322) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "14124",
+    "1223",
+    "3329",
+    "3322"
+   ],
+   "examples": [
+    {
+     "id": "14124",
+     "plugin": "ux-design",
+     "skill": "top-design",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3438-ux-design/14124-top-design"
+    },
+    {
+     "id": "1223",
+     "plugin": "kernel",
+     "skill": "frontend",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/342-kernel/1223-frontend"
+    },
+    {
+     "id": "3329",
+     "plugin": "stark",
+     "skill": "web-design",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3329-web-design"
+    },
+    {
+     "id": "3322",
+     "plugin": "stark",
+     "skill": "stark",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3322-stark"
+    }
+   ],
+   "theme": "frontend-ui-design",
+   "risk_notes": "Method guidance only, written in our own words; SKILL.md read as inert text; no Atlas code copied, imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-frontend.json",
+   "skill_md_sha256": {
+    "14124": "38e84e4c254697514ec1c2f52c5faafa927baea87b05ae3fa8e31ef76cdf1679",
+    "1223": "deb0d651f157335ef4f6b04cfc8b9266f50d2d2e217f01bbdce91d689602b7ad",
+    "3329": "1cc128dbbfa950d5fbbf961ced7117a259b532b180db537e4cf737cbf5c41e6e",
+    "3322": "d47afa578f03dda3090ae370b1fcfbbb9d20cb853ebe811f0a59665c0fd0e2a2"
+   }
   }
  }
 ]

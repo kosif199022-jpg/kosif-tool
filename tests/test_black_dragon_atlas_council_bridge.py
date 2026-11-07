@@ -96,7 +96,7 @@ class AtlasBridgeTests(unittest.TestCase):
         council=importlib.util.module_from_spec(spec)
         spec.loader.exec_module(council)
         report=council.plan('فيديو جمهور تفسير وتحليل',ROOT)
-        self.assertEqual(report['total_source_records'],525)
+        self.assertEqual(report['total_source_records'],549)
         self.assertEqual(report['external_atlas']['catalogued_paths'],26)
         self.assertEqual(sum(s['external_atlas_candidate_count'] for s in report['roles']),26)
         self.assertEqual(sum(len(s['external_atlas_candidate_actions']) for s in report['roles']),26)

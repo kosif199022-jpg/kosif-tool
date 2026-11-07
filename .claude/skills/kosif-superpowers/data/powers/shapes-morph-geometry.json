@@ -2774,7 +2774,7 @@
   "name_en": "Icon rules: 24 px grid & closure",
   "status": "documented",
   "what": "شبكة 24px، خط 2px، نهايات دائرية، viewBox مربع، بلا نص، < 4KB؛ والإيحاء بالشكل بفجوات ونهايات متحاذية — اختبرها في 8–16px. / 24 px grid, 2 px stroke, round caps, square viewBox, no text, < 4 KB; imply forms with gaps and aligned terminals (closure) — test at 8–16 px.",
-  "how": "Test at 16/24/48/192 px; draw-on works especially well with closure because the eye completes the form early.",
+  "how": "Test at 16/24/48/192 px; draw-on works especially well with closure because the eye completes the form early. Atlas upgrade 2026-11-07: Closure calibration: familiar forms (house, arrow, person, circle) can be reduced to very few strokes; specialised or high-stakes forms (delete, warning) must stay explicit. Gaps must be small enough that the form does not fragment; aligned terminations and proximity help the eye close it. A hidden negative-space shape must be noticeable in normal viewing or it is just decoration. Containers can be implied by tint, soft shadow or consistent padding instead of full borders. Skeleton loaders are closure in time. Always test at the real rendering size: a reduction that reads at 32 px can break at 16 px.",
   "params": "24 px / 2 px; test 8–16 px",
   "install": "",
   "requires": [],
@@ -2794,9 +2794,33 @@
    "شبكة",
    "حجم صغير",
    "stroke",
-   "small size"
+   "small size",
+   "negative space",
+   "implied shape",
+   "icon reduction",
+   "الإغلاق البصري"
   ],
-  "when": "عند تصميم أيقونة أو مراجعتها لتبقى واضحة في الأحجام الصغيرة على شبكة 24 / when designing or checking an icon so it reads clearly at small sizes on a 24 px grid"
+  "when": "عند تصميم أيقونة أو مراجعتها لتبقى واضحة في الأحجام الصغيرة على شبكة 24 / when designing or checking an icon so it reads clearly at small sizes on a 24 px grid",
+  "atlas": {
+   "ids": [
+    "3812"
+   ],
+   "examples": [
+    {
+     "id": "3812",
+     "plugin": "universal-design-principles",
+     "skill": "closure-implied-shapes",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3812-closure-implied-shapes"
+    }
+   ],
+   "theme": "frontend-ui-design",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-frontend.json",
+   "skill_md_sha256": {
+    "3812": "264d8d2596ec803f4824c30589cef862567b17c712446b1493ad7efc8362afd8"
+   }
+  }
  },
  {
   "id": "SHAPE-80",

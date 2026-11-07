@@ -3946,13 +3946,13 @@
 
 **متى:** عند قبول رسم روتوسكوب مطابق للمصدر بالقياس بدل الحكم بالعين / when accepting a rotoscoped replica drawing by measured SSIM and XOR against the source, not by eye
 
-**كيف:** Compare render vs source: XOR <= 1.2x codec floor, SSIM >= 0.980, edge-band SSIM >= 0.980; review worst crops.
+**كيف:** Compare render vs source: XOR <= 1.2x codec floor, SSIM >= 0.980, edge-band SSIM >= 0.980; review worst crops. Atlas upgrade 2026-11-07: Loop discipline for a 1:1 replica: keep every hand decision in one override file (per drawing range, with a 'why' note); geometry fixes are never overrides — they are findings to report. Fit one parameter automatically (e.g. stroke bias by bisecting replica-only vs source-only pixels), leave the rest to diagnosis. Review every worst-window crop at 1:1 even when the numbers pass (a passing XOR can hide a tint); never review a downscaled crop or a GIF. Grey XOR and SSIM are colour-blind: check paper/background colour separately. All-ink or all-paper frames have a tiny floor decided by border pixels — judge them by ratio and edge column. Log each run (failure, cause, change, before/after numbers); when the same fix recurs across shots or clips, promote it to a default and re-run the regression.
 
 **المعاملات:** SSIM>=0.98
 
 **التثبيت:** see arsenal-libraries.md
 
-**الوسوم:** مطابقة · دقة الرسم · تشابه الصور · ssim · image similarity
+**الوسوم:** مطابقة · دقة الرسم · تشابه الصور · ssim · image similarity · rotoscope · override file · 1:1 crops · replica · mimic · تتبع الرسوم
 
 #### 1. الاستقبال (A25)
 
@@ -13263,13 +13263,13 @@
 
 **متى:** حين تريد كشف فروق صغيرة في المسافات أو المحاذاة أو الخط بين نسختين من الإطار / when you need to expose small spacing, alignment or typography changes between two versions of a frame
 
-**كيف:** PIL Image.blend(a, b, 0.5) (runs here) or ffmpeg blend=all_mode=average; same crop coordinates for close-ups.
+**كيف:** PIL Image.blend(a, b, 0.5) (runs here) or ffmpeg blend=all_mode=average; same crop coordinates for close-ups. Atlas upgrade 2026-11-07: Before/after evidence protocol: plan the views before editing and capture the real baseline with identical geometry, state, theme, locale and timing; wait for fonts/assets/animation to settle; never stretch, retouch or regenerate a capture to make the pair agree; same explicit crop on both. Inspect the 50/50 overlay at native resolution — numeric pixel difference supports the judgement but never decides it. Missing baseline, unequal states or a blank/error frame are blockers, not exemptions; record 'text-only' or 'no-visible-change' (with the inspected overlay) honestly. Keep at most three final labelled comparisons per task; a screenshot does not prove an interaction works.
 
 **المعاملات:** 50% / 50%
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** قبل وبعد · مقارنة نسختين · دمج الصورتين · before after · image blend
+**الوسوم:** قبل وبعد · مقارنة نسختين · دمج الصورتين · before after · image blend · visual evidence · onion overlay · baseline
 
 #### 1. الاستقبال (A25)
 
@@ -13336,11 +13336,11 @@
 
 **متى:** حين تولد عدة نسخ من صورة وتريد اختيار الأفضل باستبعاد العيوب بترتيب واضح / when choosing among generated image variants by eliminating failures in a fixed order
 
-**كيف:** Contact sheet + 100% crops via PIL; manifest log.
+**كيف:** Contact sheet + 100% crops via PIL; manifest log. Atlas upgrade 2026-11-07: Eliminate in a fixed order, first failure ends it: concept fit → clean space for text/composition → brand palette reachable without heavy treatment → generation defects (hands, faces, garbled in-image text, repeated texture, light without source, wrong scale) → consistency with the rest of the set → technical quality → taste LAST. Inspect every candidate at 100%, never only in the grid. Publish a comparison grid (same size, id + seed + varying prompt under each, recommendation with one-line reason). Log selected file, seed, model, prompt and the reason per rejected group — rejection reasons feed the next prompt. If none passes the first two criteria, fix the prompt/concept and generate 2, do not re-roll the same base. Never bake text into the image; overlay real type. Final review reports APPROVED / ADJUST / REJECTED with measured vs required values and a mandatory 'Not verified' section; a human selects and signs off before production.
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** اختيار النسخة · عيوب التوليد · أيدي مشوهة · ai image defects · variant selection
+**الوسوم:** اختيار النسخة · عيوب التوليد · أيدي مشوهة · ai image defects · variant selection · asset curation · creative review · seed log · اختيار المتغيرات · مراجعة الإبداع
 
 #### 1. الاستقبال (A25)
 

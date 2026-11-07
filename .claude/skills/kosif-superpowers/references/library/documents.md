@@ -23,10 +23,10 @@
 | الحالة | العدد | المعنى |
 |---|---:|---|
 | `proven` | 32 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
-| `documented` | 104 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 117 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 8 | 📦 install: needs a package, binary or model first |
 | `key` | 4 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **148** | |
+| **المجموع** | **161** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -41,8 +41,8 @@
 
 | العائلة | القدرات | الفصل |
 |---|---:|---|
-| `atlas-craft` | 26 | [atlas-craft.md](../powers/atlas-craft.md) |
-| `atlas-docs` | 60 | [atlas-docs.md](../powers/atlas-docs.md) |
+| `atlas-craft` | 38 | [atlas-craft.md](../powers/atlas-craft.md) |
+| `atlas-docs` | 61 | [atlas-docs.md](../powers/atlas-docs.md) |
 | `documents-office` | 34 | [documents-office.md](../powers/documents-office.md) |
 | `writing-humanizer` | 28 | [writing-humanizer.md](../powers/writing-humanizer.md) |
 
@@ -110,6 +110,18 @@
 | `ACRAFT-24` | الإفصاح التدريجي للمعلومات والأدوات | Progressive disclosure of information and controls | documented |  |
 | `ACRAFT-25` | حوكمة البرومبتات في الإنتاج: سجل وتقييمات وترقية وتراجع | Prompt governance: registry, evals, promotion and rollback | documented |  |
 | `ACRAFT-26` | استخراج أسلوب كاتب إلى دليل أسلوب قابل للتطبيق | Extract a writing style into a reusable style guide | documented |  |
+| `ACRAFT-27` | طابق شكل التعليمة مع نوع الفشل واختبر الصياغة باختبارات دقيقة | Match the instruction form to the failure, then micro-test the wording | documented |  |
+| `ACRAFT-28` | صمّم شكل المهارة: نمط الاستدعاء وتصنيف الخطوات ومعيار الإنجاز وقسم المطبّات | Design a skill's shape: invocation mode, step typing, completion criteria, growing gotchas | documented |  |
+| `ACRAFT-29` | أعد هيكلة مهارة كبيرة دون فقدان سلوكها: سجل الثوابت ومصدر واحد للحقيقة | Refactor a large skill without losing behaviour: invariant ledger, single source of truth, earned labels | documented | npm:three |
+| `ACRAFT-30` | حوّل جلسة ناجحة إلى مهارة سير عمل قابلة للإعادة | Skillify a finished session into a reusable workflow skill | documented |  |
+| `ACRAFT-31` | ملف صوت المالك: قابل للقياس ومدعوم باقتباسات وينمو من تعديلاته | Owner voice file: measurable, quote-backed, grows from edits | documented | key:unspecified |
+| `ACRAFT-32` | إعادة كتابة على مستوى الخطاب مع قارئ بارد معزول | Discourse-level rewrite with an isolated cold reader | documented |  |
+| `ACRAFT-33` | إصلاح الترجمة الحرفية في العربية بعد الترجمة أو التعريب | Arabic translationese repair after translation or localization | documented |  |
+| `ACRAFT-34` | بنك القصص: مقابلة تحفظ الأرقام ونقاط التحول والمواقف | Story bank interview: numbers, turning points, positions | documented |  |
+| `ACRAFT-35` | من شرارة إلى فكرة قابلة للتصوير: احتمالات، لوجلاين، رهانات | From spark to filmable premise: what-ifs, logline tests, stakes | documented |  |
+| `ACRAFT-36` | حرفة مشهد الحوار: نص فرعي، ادخل متأخرًا، فعل مرئي فقط | Dialogue scene craft: subtext, late entry, visible-only action | documented |  |
+| `ACRAFT-37` | من شذرات إلى سكريبت: استكشاف ثم استغلال | From fragments to a script: explore, then exploit | documented | lean |
+| `ACRAFT-38` | مراجعة الكوبي في سبعة تمريرات مع إعادة التحقق | Seven-sweep copy review with revalidation | documented |  |
 | `ADOCS-01` | كتابة AGENTS.md وCLAUDE.md جاهزة للوكلاء | Agent-ready AGENTS.md and CLAUDE.md authoring | documented |  |
 | `ADOCS-02` | تدقيق CLAUDE.md وAGENTS.md وتخفيف السياق | Audit CLAUDE.md and AGENTS.md for context diet | documented | claude:tools |
 | `ADOCS-03` | مزامنة ذاكرة التعليمات دون تضخم مع تحقق مستقل | Non-growth instruction-memory sync with independent verify | documented |  |
@@ -139,7 +151,7 @@
 | `ADOCS-27` | إعادة هيكلة التوثيق بإطار دياتاكسيس | Diataxis four-kind docs restructuring | documented |  |
 | `ADOCS-28` | تدقيق انحراف التوثيق عن الكود | Docs drift audit against current code | documented | git |
 | `ADOCS-29` | توثيق الدروس المستفادة من المشكلات المحلولة | Durable solved-problem learning notes | documented | claude:tools |
-| `ADOCS-30` | ويكي مترابط تديره النماذج | LLM-maintained interlinked wiki | documented |  |
+| `ADOCS-30` | ويكي مترابط تديره النماذج | LLM-maintained interlinked wiki | documented | git |
 | `ADOCS-31` | البحث في توثيق المكتبات بالإصدار الصحيح | Look up version-correct library docs | documented |  |
 | `ADOCS-32` | ضغط الماركداون دون فقدان المعنى | Lossless markdown compression with semantic-diff gate | documented |  |
 | `ADOCS-33` | كتابة README والتحقق منه | README authoring and verification | documented |  |
@@ -170,6 +182,7 @@
 | `ADOCS-58` | من المتطلبات إلى قصص جاهزة للتذاكر بسيناريوهات Gherkin، مع تدقيق جودة المتطلبات قبل التسليم | Requirements to ticket-ready stories with Gherkin scenarios, plus a requirements quality audit before handoff | documented |  |
 | `ADOCS-59` | التطوير بالمواصفة للوكلاء: دستور ثم مواصفة بلا تقنية ثم صيد الغموض ثم خطة ثم مهام، ودمج تغييرات المواصفة في الأساس | Spec-driven development for coding agents: constitution, tech-free spec, ambiguity hunt, plan, tasks, and merging delta specs into the baseline | documented |  |
 | `ADOCS-60` | قائمة الأعمال المؤجلة في المستودع: ملف لكل بند، وحقل يستحق نعم أو لا أو لاحقًا، والإغلاق بحذف الملف في git | In-repo backlog of deferred work: one file per item, a worth yes/no/later field, closed by deleting the file in git | documented |  |
+| `ADOCS-61` | بوابة نقد المخطط والإنفوجرافيك قبل التصيير: عنوان ادعاء، أقوى ترميز للمقارنة الأساسية، اختبار الإطار الثابت، ومعنى لكل حركة وجسيم | Chart and infographic critique gate before render: claim title, strongest encoding for the key comparison, still-frame test, a stated job for every motion and particle | documented |  |
 | `DOC-24` | مراجعة المستند قبل التسليم | Document delivery gate | documented |  |
 | `WRITE-01` | سؤال واحد لكل جملة: هل تضيف جديدًا للقارئ؟ | One-question causal model for every sentence | documented |  |
 | `WRITE-06` | إعادة الصياغة في أربع خطوات | Four-step rewrite: mark, draft, check, final | documented | python3 |

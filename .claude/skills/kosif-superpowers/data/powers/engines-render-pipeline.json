@@ -1722,12 +1722,13 @@
   "name_en": "HTML-to-PNG still with auto-trim",
   "status": "ready",
   "what": "تصميم البطاقات والجداول والأشكال كـ HTML مكتفٍ ذاتيًا بخلفية جسم صلبة وهوامش، وتصييرها بضعف الدقة في Chromium دون واجهة، ثم القص على المحتوى بالمقارنة بلون الخلفية وإعادة الحشو بالتساوي — صور ثابتة حادة للشرائط السفلية وبطاقات الختام وبطاقات البيانات. — Design cards, tables and figures as self-contained HTML with a solid body background and padding, render at 2x in headless Chromium, then crop to content by comparing against the background colour and re-pad evenly - crisp stills for lower thirds, end cards and data cards.",
-  "how": "Playwright page.screenshot (installed); then PIL: bg = pixel(2,2); mask = |img-bg| > thresh; crop bbox; pad margin x scale. Run render and trim as separate steps. The atlas render.sh hardcodes the macOS Chrome path, so reimplement with Playwright.",
+  "how": "Playwright page.screenshot (installed); then PIL: bg = pixel(2,2); mask = |img-bg| > thresh; crop bbox; pad margin x scale. Run render and trim as separate steps. The atlas render.sh hardcodes the macOS Chrome path, so reimplement with Playwright. Atlas upgrade 2026-11-07: Browser-free alternative for templated covers/OG cards: Satori-style HTML/CSS→SVG (then PNG) supports only a flexbox subset — no grid, no CSS variables, no media queries, no pseudo-elements, no animation, inline styles only, every font loaded explicitly; standard card 1200×630. Treat Arabic as unverified on that path: check shaping and RTL order in the output and fall back to Chromium capture (or ARAB-59's RAQM route) when letters are disconnected or reversed.",
   "params": "scale 2; margin 16 CSS px (32 device px)",
   "install": "",
   "requires": [
    "chromium",
    "pip:pillow",
+   "npm:satori",
    "os:macos"
   ],
   "license": "MIT",
@@ -1744,10 +1745,35 @@
    "لقطة شاشة",
    "screenshot",
    "lower third",
-   "end card"
+   "end card",
+   "satori",
+   "og image",
+   "social card",
+   "html to svg",
+   "صورة مشاركة"
   ],
   "id": "ENG-58",
-  "when": "عند تصميم بطاقة أو جدول أو عنوان سفلي كصورة PNG حادة مقصوصة على المحتوى / when designing a card, table or lower third as a crisp PNG still trimmed to its content"
+  "when": "عند تصميم بطاقة أو جدول أو عنوان سفلي كصورة PNG حادة مقصوصة على المحتوى / when designing a card, table or lower third as a crisp PNG still trimmed to its content",
+  "atlas": {
+   "ids": [
+    "10554"
+   ],
+   "examples": [
+    {
+     "id": "10554",
+     "plugin": "vercel",
+     "skill": "satori",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2722-vercel/10554-satori"
+    }
+   ],
+   "theme": "frontend-ui-design",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-frontend.json",
+   "skill_md_sha256": {
+    "10554": "e18bc83ab691fa888301a3678b7d7d888f2d8989d9ee9344ec192dec3c75fddc"
+   }
+  }
  },
  {
   "family": "engines-render-pipeline",
@@ -11457,7 +11483,7 @@
   "name_en": "Renderer ladder SVG -> Canvas -> WebGL",
   "status": "documented",
   "what": "اختر أخف مُصيِّر يتحمل عدد العلامات والحركة، بالقياس لا بالافتراض. — Pick the lightest renderer that handles the mark count and motion, measured not assumed.",
-  "how": "SVG/DOM: labels, exact values, moderate marks (crisp vector export). Canvas2D: dense flat marks, many sparklines, frequent redraws. WebGL (Three.js, PixiJS, regl, deck.gl, Sigma.js): 1e5-1e6+ marks, particles, blending, shaders, true 3D. Keep labels/axes in SVG/HTML even when marks are WebGL; one scene clock; typed arrays; rebuild buffers only on data change; clamp devicePixelRatio for heavy scenes.",
+  "how": "SVG/DOM: labels, exact values, moderate marks (crisp vector export). Canvas2D: dense flat marks, many sparklines, frequent redraws. WebGL (Three.js, PixiJS, regl, deck.gl, Sigma.js): 1e5-1e6+ marks, particles, blending, shaders, true 3D. Keep labels/axes in SVG/HTML even when marks are WebGL; one scene clock; typed arrays; rebuild buffers only on data change; clamp devicePixelRatio for heavy scenes. Atlas upgrade 2026-11-07: Canvas2D specifics when that rung is chosen: CSS size in CSS px, backing store = cssSize x devicePixelRatio, then ctx.setTransform(dpr,0,0,dpr,0,0) so drawing code stays in CSS px; cap the ratio on mobile when memory or heat matters; backing-store memory = width x height x dpr^2 x 4 bytes x layers x instances. Layer canvases: static background / marks / highlight / interaction overlay, with partial invalidation instead of full redraws. Hybrid: Canvas for bulk marks, SVG or HTML for axes, labels, annotations and focusable controls, all sharing one scale/transform. Performance: batch draw calls, pre-group styles, typed arrays, cull off-screen marks, decimate when the viewport cannot resolve points, OffscreenCanvas in a worker under main-thread contention. Hit testing via spatial index or colour-picking buffer; pointer coordinates through getBoundingClientRect and the inverse pan/zoom transform; setPointerCapture for drags.",
   "params": "WebGL when ~1e5-1e6+ marks",
   "install": "",
   "requires": [
@@ -11477,10 +11503,34 @@
    "عناصر كثيرة",
    "data viz",
    "pixijs",
-   "particles"
+   "particles",
+   "canvas hidpi",
+   "backing store memory",
+   "hybrid canvas svg",
+   "كانفاس عالي الدقة"
   ],
   "id": "ENG-381",
-  "when": "عند اختيار طريقة رسم البيانات أو الجسيمات بين SVG وCanvas وWebGL حسب عدد العناصر / when picking SVG, Canvas or WebGL for charts or particles based on how many marks must move"
+  "when": "عند اختيار طريقة رسم البيانات أو الجسيمات بين SVG وCanvas وWebGL حسب عدد العناصر / when picking SVG, Canvas or WebGL for charts or particles based on how many marks must move",
+  "atlas": {
+   "ids": [
+    "10319"
+   ],
+   "examples": [
+    {
+     "id": "10319",
+     "plugin": "build-web-data-visualization",
+     "skill": "canvas2d-data-visualization",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2690-build-web-data-visualization/10319-canvas2d-data-visualization"
+    }
+   ],
+   "theme": "visualization-dashboards",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-image.json",
+   "skill_md_sha256": {
+    "10319": "84818b1115021ef92305dd5a602553b7d2980ba5b512a9f356391e3b62798f30"
+   }
+  }
  },
  {
   "family": "engines-render-pipeline",

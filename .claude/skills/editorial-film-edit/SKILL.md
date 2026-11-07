@@ -9,16 +9,16 @@ Assemble and refine real videos in a soft archival editorial style. The style ad
 
 ## Bundled materials
 
-All permanent references are already included in the skill. Do not ask for them to be uploaded as separate attachments or for the package author's finished work to be sent. Social media links provide provenance and additional guidance; access to them is not required to view the local copies.
+The skill ships its written style system and browser modules. This copy contains **no reference media** (photos, frame overviews or MP4 examples); [reference-map.md](references/reference-map.md) explains how to work from the style guide alone or from references the user is allowed to supply.
 
 Before a new edit:
 
 1. Read [style-guide.md](references/style-guide.md): composition, grain, bloom, B&W, fonts, motion, masks, splits and sound.
-2. Read [reference-map.md](references/reference-map.md). Open the four bundled photographs and four frame overviews; to study animation, examine the local MP4s or frame sequences in the specified time windows. Motion cannot be determined from a cover image. All four MP4s are silent; they cannot establish what music the originals use.
+2. Read [reference-map.md](references/reference-map.md). If the user supplies references, study motion from frames or playback, never from a cover image.
 3. For revisions, also read [revision-checklist.md](references/revision-checklist.md) and review the latest version belonging to the current user.
 4. When using the included modules, first read [implementation-guide.md](references/implementation-guide.md). These are implementation examples for individual layers, not a ready-to-run project. Their default values do not replace the style guide.
 
-Media are in `references/photos/`, `references/videos/`, `references/frames/`; [media-manifest.json](references/media-manifest.json) contains paths, provenance and checksums. The local examples demonstrate motion and materials, but do not grant permission to automatically include them as B-roll in a new video.
+If media are added later they go in `references/photos/`, `references/videos/`, `references/frames/` and are listed in [media-manifest.json](references/media-manifest.json) with provenance and checksums. Examples demonstrate motion and materials; they do not grant permission to include them as B-roll in a new video.
 
 ## New project
 

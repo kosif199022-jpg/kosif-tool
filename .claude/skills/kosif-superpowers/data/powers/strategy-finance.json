@@ -158,7 +158,7 @@
   "status": "documented",
   "what": "سجّل كل قرار مهم في سطر: ما تغير، والدليل، والعلامة (قبول/مراقبة/رفض)، وشرط المراجعة. — Record each important decision as one line: what changed, the evidence, a mark (accept / watch / reject) and a review condition.",
   "when": "عند المشاريع الطويلة، والتجارب المتكررة، وأي شيء قد تعود إليه / long projects, repeated trials, anything you may revisit",
-  "how": "Append JSONL {date, decision, options, evidence, mark, review_if}. Repeating confidence is not approval; default to a dry run for risky moves. Lead every summary with the decision.",
+  "how": "Append JSONL {date, decision, options, evidence, mark, review_if}. Repeating confidence is not approval; default to a dry run for risky moves. Lead every summary with the decision. Atlas upgrade 2026-11-07: Revisit loop: every logged decision gets a revisit date, a falsifier (what to observe, when, threshold), assumed invariants and pre-mortem scenarios. At the revisit ask one at a time: actual outcome; was the original confidence under/over/well calibrated; did the falsifier trip; are invariants still true; did a pre-mortem path happen; was the decision reasonable with the information at the time (separate decision quality from outcome quality — a bad result from a sound decision is calibration data, not a failure; guard against hindsight re-grading); supersede, affirm or defer. If an invariant broke, queue every child decision for revisit. Flag revisits overdue by 30+ days instead of skipping them. Optionally track a running Brier score of stated confidences.",
   "params": "",
   "install": "",
   "requires": [],
@@ -170,10 +170,35 @@
    "decision log",
    "ledger",
    "jsonl",
-   "سجل القرارات"
+   "سجل القرارات",
+   "decision revisit",
+   "decision quality",
+   "falsifier",
+   "Brier",
+   "مراجعة القرار"
   ],
   "section": "القرار — Deciding",
-  "source": "github.com/affaan-m/ECC skills/recursive-decision-ledger (MIT (c) 2026 Affaan Mustafa), paraphrased"
+  "source": "github.com/affaan-m/ECC skills/recursive-decision-ledger (MIT (c) 2026 Affaan Mustafa), paraphrased",
+  "atlas": {
+   "ids": [
+    "13333"
+   ],
+   "examples": [
+    {
+     "id": "13333",
+     "plugin": "hyperbrief",
+     "skill": "hyperbrief-revisit",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3115-hyperbrief/13333-hyperbrief-revisit"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-thinking.json",
+   "skill_md_sha256": {
+    "13333": "174f0eae3e38b69884c8a037151d2529424a6c40afcaae3577985788c4686687"
+   }
+  }
  },
  {
   "id": "PROD-07",

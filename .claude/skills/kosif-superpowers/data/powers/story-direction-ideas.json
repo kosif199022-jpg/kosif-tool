@@ -589,7 +589,7 @@
   "name_en": "Named hook library",
   "status": "documented",
   "what": "أنماط افتتاح بشروط نجاحها: نتيجة أولًا، اختبار مرئي، مشكلة محددة، فعل مفاجئ، سؤال مباشر، رقم دقيق غريب، اعتراف، قبل/بعد، ادعاء مخالف، رقم صادم، استعارة حسية. / Named openers with conditions: result-first, visible test, specific problem, surprising action, direct question, odd-precision number, confession, before/after, contrarian, shocking stat, visceral metaphor.",
-  "how": "Generate 5–7 variants in different patterns (never five of one kind), label each, recommend one; use verbatim audience language. Viral-opener classifier: 11 shapes (flat contrarian one-liner, odd-precision number, build-in-public confession, quote reframe, mini-list, relatable cold open, listicle promise, story at the tension…). PR/launch extras: concept announcement, before/after teaser, stakes. Ship three distinct 3 s hooks per script as alternate first scenes of the same composition (props switch) for A/B without re-editing the body.",
+  "how": "Generate 5–7 variants in different patterns (never five of one kind), label each, recommend one; use verbatim audience language. Viral-opener classifier: 11 shapes (flat contrarian one-liner, odd-precision number, build-in-public confession, quote reframe, mini-list, relatable cold open, listicle promise, story at the tension…). PR/launch extras: concept announcement, before/after teaser, stakes. Ship three distinct 3 s hooks per script as alternate first scenes of the same composition (props switch) for A/B without re-editing the body. Atlas upgrade 2026-11-07: Short-form specifics: land three hooks at once in the first second — visual (motion or payoff frame), spoken line and on-screen text; build the body as problem → agitate → solution → CTA (15-30 s), list with an item every 5-8 s (30-60 s), or tutorial showing the end result first. Captions max 2 lines of 3-5 words with key words highlighted. Common killers: slow build-up, no text overlay, poor audio, longer than needed, no CTA, ignoring first-hour comments. Atlas upgrade 2026-11-07: Pick the hook by goal first: comments → confession with a dated fact, contrarian, controlled comparison; shares → contrarian, named tribute; saves → mini-list, odd-precision number ledger, explain-simply; likes → emotional cold open. Channel space: Reel = first 1–3 s spoken AND on screen plus caption line 1 (~125 chars). Self-test: would you stop for it if you hadn't written it; does it open a question the body answers; is it too specific to fit anyone else's post. Weak 2026 vendor data: question-as-first-line underperforms, odd-precision number with a named referent outperforms — treat as priors, trust his retention data. Test: same piece, change only the first lines, compare rates not counts, log which named pattern won. Reverse-engineering a viral reference: label the formula, extract a slot template, list its AI tells so they are not copied. Never invent the statistic that makes a hook work — leave [املأ: مصدر الرقم].",
   "params": "5–7 variants · 3 hooks × 3 s · 11 formulas",
   "install": "",
   "requires": [],
@@ -612,9 +612,77 @@
    "سؤال افتتاحي",
    "قبل وبعد",
    "viral opener",
-   "hook ideas"
+   "hook ideas",
+   "three-layer hook",
+   "short-form structure",
+   "هوك ثلاثي",
+   "hook by goal",
+   "hook test",
+   "saves",
+   "shares",
+   "reverse engineer hook"
   ],
-  "when": "حين تحتاج عدة صيغ افتتاح مختلفة لنفس الفيديو للاختيار بينها: سؤال، رقم صادم، قبل/بعد، اعتراف / when you need several labelled opener variants — question, shocking stat, before/after, confession — to pick from"
+  "when": "حين تحتاج عدة صيغ افتتاح مختلفة لنفس الفيديو للاختيار بينها: سؤال، رقم صادم، قبل/بعد، اعتراف / when you need several labelled opener variants — question, shocking stat, before/after, confession — to pick from",
+  "atlas": {
+   "ids": [
+    "3530",
+    "611",
+    "12448",
+    "13057",
+    "13067",
+    "13054"
+   ],
+   "examples": [
+    {
+     "id": "3530",
+     "plugin": "marketing-skills",
+     "skill": "social",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3530-social"
+    },
+    {
+     "id": "611",
+     "plugin": "marketing-skills",
+     "skill": "social-content",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/611-social-content"
+    },
+    {
+     "id": "12448",
+     "plugin": "pwdev-copy",
+     "skill": "copy-hooks",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2964-pwdev-copy/12448-copy-hooks"
+    },
+    {
+     "id": "13057",
+     "plugin": "linkedin-skills",
+     "skill": "linkedin-post-writer",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3034-linkedin-skills/13057-linkedin-post-writer"
+    },
+    {
+     "id": "13067",
+     "plugin": "x-skills",
+     "skill": "x-post-writer",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3035-x-skills/13067-x-post-writer"
+    },
+    {
+     "id": "13054",
+     "plugin": "linkedin-skills",
+     "skill": "linkedin-hook-extractor",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3034-linkedin-skills/13054-linkedin-hook-extractor"
+    }
+   ],
+   "theme": "marketing-seo",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-marketing.json",
+   "skill_md_sha256": {
+    "3530": "8cc93d9b361622cdb640e87969747b85603bed2d268e923179f8dfb4799ec8c7",
+    "611": "02008f95432fd0c9088bccd71a3358b3ead1f06ac6115f3fe3fe5f562fc2da37",
+    "12448": "681563ffcb2d93e95695a584f6bdeabff5c7bf0d478ded7b8f724ad1bfa6361a",
+    "13057": "50dc3dbd5e63f0feb38edd91773c1cc9fa7d244343158503d9f3e6d77dfc686f",
+    "13067": "cd8479b254a4a34e24553bc0313be4d89b5def464249d5e304d490ccf2492430",
+    "13054": "db4a791fb883bf64d8600587196dc8516b116364683c01900cfe9c7f0a2164e3"
+   }
+  }
  },
  {
   "id": "STORY-18",
@@ -1664,7 +1732,7 @@
   "name_en": "Honesty rules for claims",
   "status": "documented",
   "what": "«واقعي» = لوحة رقمية مضاءة بواقعية لا صورة فوتوغرافية؛ الأرقام من المصدر فقط؛ لا تدّعي رؤية ما لم تفتحه. / \"Realistic\" means a realistically lit painting, not a photo; numbers only from the source; never claim to have seen what you did not open.",
-  "how": "State limits up front (code from a description never matches a photo; exact match only via image code or exact mode). Facts only from the cue: scene headline is the number the cue said, else its longest word — never a demo value (audio2motion.head, tested). Document → film: summarise faithfully, never invent facts; image-only PDFs are rejected with an OCR hint. Label fictional data.",
+  "how": "State limits up front (code from a description never matches a photo; exact match only via image code or exact mode). Facts only from the cue: scene headline is the number the cue said, else its longest word — never a demo value (audio2motion.head, tested). Document → film: summarise faithfully, never invent facts; image-only PDFs are rejected with an OCR hint. Label fictional data. Atlas upgrade 2026-11-07: Proof inventory for ad/reel claims: table of claim → supplied evidence → status (verified/qualified/unsupported/prohibited) → allowed wording; size every claim to its evidence; trace feature → functional change → practical consequence → viewer value and stop where evidence stops; urgency/scarcity only when true; testimonials stay verbatim.",
   "params": "",
   "install": "",
   "requires": [
@@ -1689,9 +1757,32 @@
    "حدود",
    "واقعي",
    "accuracy",
-   "fact check"
+   "fact check",
+   "proof inventory",
+   "claims",
+   "ادعاءات"
   ],
-  "when": "حين يطلب المستخدم نتيجة «واقعية» أو أرقامًا أو تلخيص مستند وتحتاج توضيح الحدود دون اختراع / when the user asks for 'realistic' output, figures or a document summary and you must state limits without inventing"
+  "when": "حين يطلب المستخدم نتيجة «واقعية» أو أرقامًا أو تلخيص مستند وتحتاج توضيح الحدود دون اختراع / when the user asks for 'realistic' output, figures or a document summary and you must state limits without inventing",
+  "atlas": {
+   "ids": [
+    "8392"
+   ],
+   "examples": [
+    {
+     "id": "8392",
+     "plugin": "majestic-writing",
+     "skill": "direct-response-copy",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2218-majestic-writing/8392-direct-response-copy"
+    }
+   ],
+   "theme": "writing-content",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-writing.json",
+   "skill_md_sha256": {
+    "8392": "53ab7c44dc235673510169e53f34c180ec4752fe17da869d48d787ee2f60914b"
+   }
+  }
  },
  {
   "id": "STORY-47",
@@ -3047,7 +3138,7 @@
   "name_en": "Content pillars & publishing calendar",
   "status": "proven",
   "what": "خليط أعمدة (رؤى 30%، كواليس 25%، تعليم 25%، شخصي 15%، ترويج 5%) يوزَّع بالأوزان على المنصات والأيام إلى تقويم يُستورد كتذكيرات. / A pillar mix spread by weight across platforms and allowed days into an importable calendar.",
-  "how": "`python3 social.py calendar plan.json --out DIR` → calendar.csv/.xlsx/.md/.ics (ran here on the example plan). Promotion above ~20% reduces reach; 3–5 pillars each tied to a metric; plan one motion template series per pillar so cost per post drops.",
+  "how": "`python3 social.py calendar plan.json --out DIR` → calendar.csv/.xlsx/.md/.ics (ran here on the example plan). Promotion above ~20% reduces reach; 3–5 pillars each tied to a metric; plan one motion template series per pillar so cost per post drops. Atlas upgrade 2026-11-07: Calendar construction: start from fixed dates (launches, Ramadan/Eid, events) and work backward with real lead times; tag every row with pillar, funnel stage, format, platform, owner and evergreen-vs-timely; attach a repurposing chain to each core piece (long video → 3-5 clips → carousel → newsletter); keep ~20% of slots open for reactive posts; validate the calendar against capacity (one batching day + 15 min daily engagement) and flag any plan above ~20% promotional or above a cadence the team can hold for a year.",
   "params": "30/25/25/15/5 % · CSV/XLSX/MD/ICS",
   "install": "",
   "requires": [
@@ -3072,9 +3163,48 @@
    "جدول نشر",
    "سوشيال ميديا",
    "content plan",
-   "social media"
+   "social media",
+   "editorial calendar",
+   "تقويم المحتوى",
+   "repurposing chain"
   ],
-  "when": "حين يريد المستخدم خطة نشر على السوشيال ميديا بأعمدة محتوى موزعة على المنصات والأيام في تقويم / when the user wants a social posting plan with weighted content pillars spread across platforms and days"
+  "when": "حين يريد المستخدم خطة نشر على السوشيال ميديا بأعمدة محتوى موزعة على المنصات والأيام في تقويم / when the user wants a social posting plan with weighted content pillars spread across platforms and days",
+  "atlas": {
+   "ids": [
+    "4010",
+    "997",
+    "613"
+   ],
+   "examples": [
+    {
+     "id": "4010",
+     "plugin": "digital-marketing-pro",
+     "skill": "content-calendar",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4010-content-calendar"
+    },
+    {
+     "id": "997",
+     "plugin": "marketing",
+     "skill": "campaign-plan",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/324-marketing/997-campaign-plan"
+    },
+    {
+     "id": "613",
+     "plugin": "marketing-skills",
+     "skill": "social-media-manager",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/613-social-media-manager"
+    }
+   ],
+   "theme": "marketing-seo",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-marketing.json",
+   "skill_md_sha256": {
+    "4010": "8060c8b833cea9baa954187cab6519c6d2fc1601e87ae05507b361274e7c6517",
+    "997": "f0b146074b64ee0fd52f7864e30191eab83878c8c1e3e7cf24754e13c7dbfad3",
+    "613": "a72fbb003a99607ad370ec791fbd42c832348c6e766f6ffc1d45b465e6adab08"
+   }
+  }
  },
  {
   "id": "STORY-84",

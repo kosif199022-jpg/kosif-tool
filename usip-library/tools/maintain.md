@@ -1,4 +1,4 @@
-# أدوات المجال `maintain` (17 أداة)
+# أدوات المجال `maintain` (18 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -778,6 +778,51 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:skill-layout --evidence <ملف>`.
+
+### `skills-lint` — فاحص كل المهارات في المستودع / Repo-wide skill lint
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/skills_lint.py` (جذر: skill) |
+| المجال | `maintain` |
+| الدليل | `tested-here` |
+| العائلات | `self-discovery` |
+
+**ما تفعله:** يفحص كل ملفات SKILL.md في المستودع (المهارات الرئيسية، وأطلس، والسوبر سكيلز، وobra، والستايلات) ويبيّن الواجهة الناقصة والاسم أو الوصف المفقود والوصف الأطول من 1024 حرفًا والروابط المكسورة والأوصاف المكررة والأسماء المتكررة.
+
+**What it does:** Checks every SKILL.md in the repository (top-level skills, vendored Atlas, 100 superskills and obra sets, and the video styles) for missing frontmatter, names or descriptions, descriptions over 1024 characters, broken relative links, shared descriptions and duplicate names.
+
+#### متى تُستدعى
+
+- «افحص كل المهارات اللي في المستودع»
+- «فيه روابط مكسورة في المهارات؟»
+- «Lint every SKILL.md in the repo before a release»
+- «Which skills have descriptions over 1024 characters?»
+
+#### الأوامر
+
+- **summary**: Prints errors and warnings per group and exits 1 if any error is found.
+  - `python3 scripts/skills_lint.py`
+- **list**: Prints one line per error (or warning, or all) with the SKILL.md path.
+  - `python3 scripts/skills_lint.py --list errors`
+- **json**: Prints the full report as JSON, optionally for one group.
+  - `python3 scripts/skills_lint.py --json --group styles`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- الأمان: read-only
+- الموافقة: none: it only reads files.
+- الحدود: Checks structure and links only. It does not judge whether a skill's method is good; links inside code blocks and inline code are not checked.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_skills_lint.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/maintain.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:skills-lint --evidence <ملف>`.
 
 ### `validate-receipt` — فاحص إيصال التسليم USIP v6.0 / USIP v6.0 receipt validator
 

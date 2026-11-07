@@ -376,11 +376,11 @@
 
 **متى:** عند بداية أي بناء / start of any build
 
-**كيف:** MODEL-51; render 2 s, one screen, one record — then expand from feedback.
+**كيف:** MODEL-51; render 2 s, one screen, one record — then expand from feedback. Atlas upgrade 2026-11-07: Slice discipline: 1) Data walk first — inspect the actual inputs (footage, assets, API responses, existing files): count, eyeball, find outliers; reconcile if the brief promises something the material cannot support. 2) Milestone 1 is an end-to-end skeleton on toy input with everything fixed and predictable; Milestone 2 solves exactly one real instance fully (one scene, one reel, one record) — the capacity smoke test. 3) Then widen one axis per milestone (more items, longer duration, more formats), each with a verification command and expected output; a broken earlier gate blocks widening. 4) Polish and tuning last — polishing a wrong answer gives a pretty wrong answer. 5) Each iteration names the question it answers, uses the cheapest fidelity that answers it, exposes it to reality (viewer, client, data), predicts first and compares after, and has explicit stop-iterating criteria. 6) For risky creative formats define what 'the core loop works' means and gate scaling on that slice.
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** plan · تخطيط · planning
+**الوسوم:** plan · تخطيط · planning · vertical slice · skeleton · overfit one case · iteration cycle · شريحة أولى
 
 #### 1. الاستقبال (A25)
 
@@ -508,11 +508,11 @@
 
 **متى:** عند التجارب والتجريبات والتوليدات المدفوعة / experiments, pilots, paid generations
 
-**كيف:** MODEL-50.
+**كيف:** MODEL-50. Atlas upgrade 2026-11-07: Signed criteria before a trial: write 3–6 testable success criteria tied to the real pain, each with an owner who verifies it; give each a pass/fail test, the trial a kill rule (what ends it early) and one extend rule; time-box it and state what is explicitly not being proven so it does not turn into unpaid full work; get the client or owner to agree before kickoff (criteria move once results arrive); score honestly criterion by criterion — never restate a fail as a pass. A trial you cannot fail is one you cannot win.
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** plan · تخطيط · planning
+**الوسوم:** plan · تخطيط · planning · success criteria · exit criteria · pilot · proof of concept · معايير النجاح
 
 #### 1. الاستقبال (A25)
 

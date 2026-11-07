@@ -1759,10 +1759,11 @@
   "name_en": "Sticky-graphic scroll story",
   "status": "install",
   "what": "عنصر بصري مثبت في جهة يبدل الإطارات أو يستكملها بينما تتمرر خطوات النص في الجهة الأخرى. — A pinned visual on one side swaps or interpolates frames as text steps scroll past on the other side.",
-  "how": "ScrollTrigger per step start 'top 58%' end 'bottom 42%' calling show(index); pin visual from 'top top+=96'; frames autoAlpha with slight scale. Default CSS shows all steps stacked (fallback).",
+  "how": "ScrollTrigger per step start 'top 58%' end 'bottom 42%' calling show(index); pin visual from 'top top+=96'; frames autoAlpha with slight scale. Default CSS shows all steps stacked (fallback). Atlas upgrade 2026-11-07: Accessibility for scroll stories: separate what the imagery shows from what the data or claim proves, and state the claim in text; keep native scroll and keyboard behaviour; with reduced motion, acts become a stacked sequence of key frames (same story, no scrub); WebGL/particle meaning is described in text with a static fallback that keeps direction and emphasis; nothing essential depends on hover, colour alone or pointer precision; shared URLs/back navigation restore the same step.",
   "params": "frame scale 0.985->1; step trigger top 58% / bottom 42%; pin offset 96px",
   "install": "see arsenal-libraries.md",
   "requires": [
+   "npm:three",
    "npm:gsap"
   ],
   "license": "MIT",
@@ -1777,10 +1778,33 @@
    "سرد بالتمرير",
    "صورة مثبتة",
    "scrollytelling",
-   "pinned graphic"
+   "pinned graphic",
+   "scrollytelling accessibility",
+   "key-frame fallback",
+   "reduced motion"
   ],
   "id": "CAM-62",
-  "when": "عند سرد قصة بالتمرير مع صورة مثبتة تتغير بجانب خطوات النص / for scrollytelling with a pinned visual that swaps frames as text steps scroll by"
+  "when": "عند سرد قصة بالتمرير مع صورة مثبتة تتغير بجانب خطوات النص / for scrollytelling with a pinned visual that swaps frames as text steps scroll by",
+  "atlas": {
+   "ids": [
+    "10318"
+   ],
+   "examples": [
+    {
+     "id": "10318",
+     "plugin": "build-web-data-visualization",
+     "skill": "accessibility-and-inclusive-visualization",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2690-build-web-data-visualization/10318-accessibility-and-inclusive-visualizatio"
+    }
+   ],
+   "theme": "frontend-ui-design",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-frontend.json",
+   "skill_md_sha256": {
+    "10318": "4b027cdceb71903dc24f9b4323344a77390fdf312fe4aeb0d2d4dd0f9628742a"
+   }
+  }
  },
  {
   "family": "camera-composition-layout",

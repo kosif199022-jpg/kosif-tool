@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5864,
+  "catalog_powers": 5917,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 211,
+  "tool_count": 212,
   "groups": [
     {
       "id": "research",
@@ -74,16 +74,16 @@
       ],
       "keywords": "think reasoning idea brainstorm strategy plan finance decision تحليل تخطيط ابتكار قرار",
       "workflow": [],
-      "count": 402,
+      "count": 438,
       "status_counts": {
-        "documented": 375,
+        "documented": 411,
         "install": 2,
         "proven": 17,
         "ready": 8
       },
       "family_counts": {
-        "atlas-mind": 82,
-        "atlas-strategy": 108,
+        "atlas-mind": 106,
+        "atlas-strategy": 120,
         "creativity-engine": 29,
         "mental-models": 63,
         "planning-execution": 14,
@@ -190,9 +190,9 @@
         "الاختبار",
         "النشر"
       ],
-      "count": 692,
+      "count": 694,
       "status_counts": {
-        "documented": 503,
+        "documented": 505,
         "idea": 2,
         "install": 32,
         "key": 7,
@@ -203,7 +203,7 @@
       "family_counts": {
         "app-feature-transfer": 155,
         "apps-artifacts": 27,
-        "atlas-build": 60,
+        "atlas-build": 62,
         "atlas-code": 331,
         "code-engineering": 26,
         "ui-product-device": 93
@@ -317,9 +317,9 @@
         "التوليد الاختياري",
         "تصدير النتيجة"
       ],
-      "count": 323,
+      "count": 325,
       "status_counts": {
-        "documented": 99,
+        "documented": 101,
         "idea": 2,
         "install": 27,
         "key": 35,
@@ -329,7 +329,7 @@
       },
       "family_counts": {
         "ai-generation": 94,
-        "atlas-media": 30,
+        "atlas-media": 32,
         "color-palette-grading": 87,
         "media-image-audio": 41,
         "photo-video-footage": 71
@@ -678,16 +678,16 @@
       ],
       "keywords": "document pdf word excel office writing report مستند تقرير كتابة وورد",
       "workflow": [],
-      "count": 148,
+      "count": 161,
       "status_counts": {
-        "documented": 104,
+        "documented": 117,
         "install": 8,
         "key": 4,
         "proven": 32
       },
       "family_counts": {
-        "atlas-craft": 26,
-        "atlas-docs": 60,
+        "atlas-craft": 38,
+        "atlas-docs": 61,
         "documents-office": 34,
         "writing-humanizer": 28
       },
@@ -9503,6 +9503,41 @@
       "what": "يجهز توزيع أداة سطر أوامر مكتوبة بـ Go أو Swift أو Rust أو Zig: يكتشف اللغة من go.mod وPackage.swift وCargo.toml وbuild.zig، يلاحظ وجود GoReleaser، يكشف قيود macOS فقط في Swift، ثم يكتب صيغة Homebrew وتعليمات README لطرق التثبيت المناسبة. — Distribution setup for Go, Swift, Rust "
     },
     {
+      "id": "ABUILD-61",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "One motion language per page, with binding bans",
+      "name_ar": "لغة حركة واحدة للصفحة مع محظورات ملزمة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/342-kernel/1223-frontend",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3322-stark",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3329-web-design"
+      ],
+      "source": "atlas-build.json",
+      "what": "اختر للموقع الحي أو فيلم الويب «لغة حركة» واحدة لها فكرة مهيمنة وحركات توقيع وقائمة محظورات ملزمة وحالة تقليل حركة مصممة، فالمحظورات تميّز أكثر من الحركات. — Pick one named motion language for a living site or web film: a dominant idea, signature moves, binding prohibitions and a"
+    },
+    {
+      "id": "ABUILD-62",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Weighted 10-point site craft scorecard, signature moment first",
+      "name_ar": "بطاقة تقييم حِرفية الموقع من 10 ولحظة التوقيع أولاً",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3438-ux-design/14124-top-design",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/342-kernel/1223-frontend",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3329-web-design",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3322-stark"
+      ],
+      "source": "atlas-build.json",
+      "what": "قيّم الموقع أو فيلم الويب بخمسة محاور موزونة (الخط 25٪، التكوين 25٪، الحركة 20٪، اللون 15٪، التفاصيل 15٪) واذكر الرقم الحالي وما ينقص للعشرة، وصمّم لحظة التوقيع قبل الرأس. — Score a site or web film on five weighted axes, state the number and the gap to 10, and design the screens"
+    },
+    {
       "id": "ACODE-01",
       "family": "atlas-code",
       "group": "software",
@@ -15464,6 +15499,217 @@
       "what": "يحلل نصًا مصدرًا عبر 17 بعدًا أسلوبيًا (و10 سردية للأدب) من عينات موزعة، وينتج دليلًا وبطاقة صوت وقائمة افعل/لا تفعل ومعيار تقييم. — Analyses a source text across 17 style dimensions (plus 10 narrative ones for fiction) from spread samples and produces a guide, a voice card, a do"
     },
     {
+      "id": "ACRAFT-27",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Match the instruction form to the failure, then micro-test the wording",
+      "name_ar": "طابق شكل التعليمة مع نوع الفشل واختبر الصياغة باختبارات دقيقة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2679-superpowers/10268-writing-skills",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1457-aegis/3581-writing-skills",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3419-wix/14000-writing-great-skills",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3121-batterie/13382-skill-forge"
+      ],
+      "source": "atlas-craft.json",
+      "what": "قبل كتابة أي قاعدة في مهارة أو برومبت، صنّف الفشل الملاحظ واختر الشكل المناسب له (منع، وصفة، خانة إلزامية، شرط)، ثم اختبر الصياغة مقابل نسخة بلا توجيه. — Classify the observed failure, pick the instruction form that fixes that failure type, and micro-test the wording against a no"
+    },
+    {
+      "id": "ACRAFT-28",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Design a skill's shape: invocation mode, step typing, completion criteria, growing gotchas",
+      "name_ar": "صمّم شكل المهارة: نمط الاستدعاء وتصنيف الخطوات ومعيار الإنجاز وقسم المطبّات",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2462-playbooks/9547-skill-authoring",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2462-playbooks/9548-thariq-skills",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3419-wix/14000-writing-great-skills",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/114-discovery/299-writing-skills"
+      ],
+      "source": "atlas-craft.json",
+      "what": "قرارات بنية المهارة قبل كتابة نصها: من يستدعيها، أي خطوة كود وأيها استدلال وأيها قرار بشري، ومتى تُعتبر كل خطوة منتهية. — Structural decisions for a skill before writing prose: who invokes it, which steps are code vs model reasoning vs human decision, and a checkable done-conditi"
+    },
+    {
+      "id": "ACRAFT-29",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Refactor a large skill without losing behaviour: invariant ledger, single source of truth, earned labels",
+      "name_ar": "أعد هيكلة مهارة كبيرة دون فقدان سلوكها: سجل الثوابت ومصدر واحد للحقيقة",
+      "status": "documented",
+      "requires": [
+        "npm:three"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2975-pwdev-skills/12576-skill-refactor",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2972-pwdev-power/12533-power-skill-refactor",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2434-docs-hygiene/9449-extract-ssot",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1547-plugin-creator/4290-shared-content-references"
+      ],
+      "source": "atlas-craft.json",
+      "what": "تقليص وتنظيم مهارة أو ملف تعليمات طويل مع حفظ المحفزات والقواعد الأمنية والبدائل، ودمج النصوص المكررة في مصدر واحد بقاعدة الثلاث. — Shrink and reorganise a long skill or instruction file while preserving triggers, safety rules and fallbacks, deduplicating repeated prose into one "
+    },
+    {
+      "id": "ACRAFT-30",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Skillify a finished session into a reusable workflow skill",
+      "name_ar": "حوّل جلسة ناجحة إلى مهارة سير عمل قابلة للإعادة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2585-system-prompt-skillify-current-session",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3285-claudeception/13796-claudeception",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2487-codex-operations/9651-find-skill-candidates",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1544-agentskill-kaizen/4235-kaizen-improvement"
+      ],
+      "source": "atlas-craft.json",
+      "what": "بعد إنجاز عمل متكرر (مونتاج ريل، حزمة برومبتات)، استخرج خطواته ومدخلاته ومعايير نجاح كل خطوة وتصحيحات المستخدم إلى مهارة، أو إلى ذاكرة إن كان مجرد معلومة. — After a repeated job is done, capture its steps, inputs, per-step success criteria and the user's corrections as a skill — "
+    },
+    {
+      "id": "ACRAFT-31",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Owner voice file: measurable, quote-backed, grows from edits",
+      "name_ar": "ملف صوت المالك: قابل للقياس ومدعوم باقتباسات وينمو من تعديلاته",
+      "status": "documented",
+      "requires": [
+        "key:unspecified"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3597-humanize/14430-voice-profile",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3034-linkedin-skills/13055-linkedin-humanizer",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2537-unslop/9835-unslop"
+      ],
+      "source": "atlas-craft.json",
+      "what": "ملف صوت قصير يصف كيف يكتب/يتكلم المالك بأرقام واقتباسات لا بصفات — Build a ≤150-line voice file from 3–5 of the owner's own pieces that every writing skill loads."
+    },
+    {
+      "id": "ACRAFT-32",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Discourse-level rewrite with an isolated cold reader",
+      "name_ar": "إعادة كتابة على مستوى الخطاب مع قارئ بارد معزول",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3597-humanize/14428-humanize",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2218-majestic-writing/8391-copy-editor"
+      ],
+      "source": "atlas-craft.json",
+      "what": "إصلاح ما يجعل القارئ يفقد الخيط رغم فهمه كل كلمة — Fix the thread, not the vocabulary: old→new flow, topic chain, emphasis position, lists that replace argument; judged by a fresh-context reader."
+    },
+    {
+      "id": "ACRAFT-33",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Arabic translationese repair after translation or localization",
+      "name_ar": "إصلاح الترجمة الحرفية في العربية بعد الترجمة أو التعريب",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/880-superloopy/1935-humanize-korean",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1101-akbun-writing/2489-akbun-writing-naturalize",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3549-xm/14339-humanize",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3193-ru-text/13542-ru-text"
+      ],
+      "source": "atlas-craft.json",
+      "what": "تنعيم نص عربي مترجم دون تغيير معناه أو سجله — Post-edit translated Arabic (scripts, subtitles, UI strings) to remove calques while locking facts, modality and register."
+    },
+    {
+      "id": "ACRAFT-34",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Story bank interview: numbers, turning points, positions",
+      "name_ar": "بنك القصص: مقابلة تحفظ الأرقام ونقاط التحول والمواقف",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3034-linkedin-skills/13056-linkedin-interviewer",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4122-story-mine"
+      ],
+      "source": "atlas-craft.json",
+      "what": "مقابلة مرة واحدة تملأ ملفًا دائمًا بالمادة الحقيقية للمحتوى — One structured interview fills a persistent story bank so hooks never need invented facts."
+    },
+    {
+      "id": "ACRAFT-35",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "From spark to filmable premise: what-ifs, logline tests, stakes",
+      "name_ar": "من شرارة إلى فكرة قابلة للتصوير: احتمالات، لوجلاين، رهانات",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1213-story-skills/2878-premise-workshop",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2630-hot-take-forge"
+      ],
+      "source": "atlas-craft.json",
+      "what": "تحويل صورة أو إحساس إلى فرضية فيلم/ريل تحمل صراعًا — Turn a spark into a premise that can carry a short film or series before any boards."
+    },
+    {
+      "id": "ACRAFT-36",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Dialogue scene craft: subtext, late entry, visible-only action",
+      "name_ar": "حرفة مشهد الحوار: نص فرعي، ادخل متأخرًا، فعل مرئي فقط",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1376-velith/3228-book-screenplay",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1376-velith/3218-book-fiction",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1213-story-skills/2869-adaptation"
+      ],
+      "source": "atlas-craft.json",
+      "what": "قواعد كتابة مشاهد وحوار لفيلم قصير أو إعلان تمثيلي — Rules and model tells for scripted scenes with characters."
+    },
+    {
+      "id": "ACRAFT-37",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "From fragments to a script: explore, then exploit",
+      "name_ar": "من شذرات إلى سكريبت: استكشاف ثم استغلال",
+      "status": "documented",
+      "requires": [
+        "lean"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2224-mattpocock-skills/8433-writing-fragments",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2224-mattpocock-skills/8434-writing-shape",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2218-majestic-writing/8394-minto-pyramid"
+      ],
+      "source": "atlas-craft.json",
+      "what": "جمع شذرات بلا ترتيب ثم بناء النص فقرة فقرة على مفاهيم مؤسسة — Separate idea-mining from shaping; build explainer scripts block by block on grounded concepts."
+    },
+    {
+      "id": "ACRAFT-38",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Seven-sweep copy review with revalidation",
+      "name_ar": "مراجعة الكوبي في سبعة تمريرات مع إعادة التحقق",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2964-pwdev-copy/12451-copy-review",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2218-majestic-writing/8391-copy-editor"
+      ],
+      "source": "atlas-craft.json",
+      "what": "مراجعة نص تسويقي/كابشن بتمريرات منفصلة لكل بُعد — Review existing copy one dimension per pass, re-checking earlier passes after each fix."
+    },
+    {
       "id": "ADATA-01",
       "family": "atlas-data",
       "group": "data",
@@ -16958,7 +17204,9 @@
       "name_en": "LLM-maintained interlinked wiki",
       "name_ar": "ويكي مترابط تديره النماذج",
       "status": "documented",
-      "requires": [],
+      "requires": [
+        "git"
+      ],
       "proof": [],
       "source": "atlas-docs.json",
       "what": "تحويل المصادر إلى قاعدة معرفة ماركداون مترابطة. — Ingest sources into a persistent cross-referenced markdown knowledge base in the Karpathy pattern."
@@ -17442,6 +17690,23 @@
       ],
       "source": "atlas-docs.json",
       "what": "مجلد docs/backlog يحفظ العمل الحقيقي غير المنفذ الآن: عيب لم يُدخله التغيير الحالي، انحراف بلا عرض ظاهر، إصلاح أكبر من قيمته، فكرة تستحق الحفظ؛ لكل بند ملف باسم العيب نفسه، وثلاثة حقول فقط، و'لا' تُحفظ حتى لا يُكتشف البند ويُناقش من جديد. — A dedupe-friendly backlog that never ga"
+    },
+    {
+      "id": "ADOCS-61",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Chart and infographic critique gate before render: claim title, strongest encoding for the key comparison, still-frame test, a stated job for every motion and particle",
+      "name_ar": "بوابة نقد المخطط والإنفوجرافيك قبل التصيير: عنوان ادعاء، أقوى ترميز للمقارنة الأساسية، اختبار الإطار الثابت، ومعنى لكل حركة وجسيم",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2690-build-web-data-visualization/10335-visualization-strategy-and-critique",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2690-build-web-data-visualization/10322-data-visualization",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2690-build-web-data-visualization/10330-statistical-and-uncertainty-visualizatio"
+      ],
+      "source": "atlas-docs.json",
+      "what": "فحص قبل التصيير لكل مخطط أو إنفوجرافيك داخل فيديو أو صفحة: هل العنوان ادعاء قابل للاختبار، هل المقارنة الأساسية بأقوى ترميز، هل يصمد الادعاء في إطار متوقف دون حركة أو تمرير، وهل لكل حركة أو جسيم أو خلفية مولدة وظيفة تحليلية — مع حذف «الجو» الزخرفي. — A verdict-table critique pass"
     },
     {
       "id": "AMEDIA-01",
@@ -17964,6 +18229,43 @@
       ],
       "source": "atlas-media.json",
       "what": "السباكة التي تصل الوكيل بالمتصلين الحقيقيين والأداة التي تثبت أنه يعمل: قناة الهاتف أو المتصفح بالترميز الصحيح، والتقاط أزرار لوحة المفاتيح، والمزج المقصود بين خطوات IVR الثابتة والمحادثة، وتحويل دافئ للإنسان مع السياق، وفروع لفشل المكالمة، ومجموعة تقييم بمعيار نجاح المهمة. — Wir"
+    },
+    {
+      "id": "AMEDIA-31",
+      "family": "atlas-media",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Cohesive batch photo look and portrait retouch: same values on every image, a downscaled preview gate, no generative edits on people",
+      "name_ar": "تحرير دفعة صور بلوك واحد متماسك وتنقيح البورتريه: نفس القيم لكل صورة، وبوابة معاينة على صورة مصغرة، ولا تعديل توليدي على البشر",
+      "status": "documented",
+      "requires": [
+        "imagemagick",
+        "pip:pillow"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/103-adobe-for-creativity/230-adobe-batch-edit-photos",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/103-adobe-for-creativity/239-adobe-retouch-portraits"
+      ],
+      "source": "atlas-media.json",
+      "what": "جعل مجموعة صور (سفر، فعالية، منتج، لقطات مونتاج) تبدو كأنها حُررت معًا: لوك واحد بقيم ثابتة على الكل، وترتيب ثابت للخطوات، ومعاينة قبل/بعد على أول صورة مصغرة قبل تشغيل الدفعة، وقواعد بورتريه تحمي البشرة والهوية. — Make a photo set read as one intentional edit, with a fixed step o"
+    },
+    {
+      "id": "AMEDIA-32",
+      "family": "atlas-media",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Long-form tutorial outline with demo-prep checklist",
+      "name_ar": "مخطط فيديو يوتيوب تعليمي طويل مع قائمة تجهيز العروض الحية",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1817-youtube-strategy/4867-yt-outline",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1817-youtube-strategy/4866-yt-ideation",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/617-video-content-strategist",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/195-video-content-strategist/620-video-content-strategist"
+      ],
+      "source": "atlas-media.json",
+      "what": "تحويل فكرة مقيَّمة إلى مخطط إنتاج لفيديو يوتيوب طويل: هيكل حسب النوع، وما يُقال وما يظهر لكل قسم، ومجموع زمني صادق، وقائمة تجهيز لكل عرض حي مع خطة بديلة. — Turn a scored idea into a production outline for a long YouTube tutorial: structure by type, say/show per section, an honest"
     },
     {
       "id": "AMIND-01",
@@ -19295,6 +19597,404 @@
       ],
       "source": "atlas-mind.json",
       "what": "نظام متعدد الوكلاء للتحسين المستمر: يُعرَّف ما يعتبر إنجازًا بشروط يمكن فحصها آليًا، فالرئيس يقيّم فقط ولا يعمل، والمنفذون يعملون ولا يقيّمون أنفسهم، وكل تحسن يُثبت ولا يُقبل تراجع، ومن يتوقف أو يدعي الانتهاء دون بلوغ المعيار يُستبدل بآخر جديد. — Independent evaluation, kept gain"
+    },
+    {
+      "id": "AMIND-83",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Council verdict synthesizer: dedupe, weight, arbitrate, classify — never re-review",
+      "name_ar": "قاضي تجميع المراجعات: يدمج ولا يعيد المراجعة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3595-done-when-pipeline/14414-meta-judge",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3019-river-review/12914-review-team",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2663-review",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3603-quiver/14460-report-check"
+      ],
+      "source": "atlas-mind.json",
+      "what": "بعد أن يعمل عدة مراجعين بالتوازي، وكيل واحد يجمع نتائجهم في حكم نهائي PASS / BLOCK / NEEDS_HUMAN دون أن يكوّن رأيًا جديدًا في العمل نفسه. — One synthesizer turns parallel reviews into a single auditable verdict without becoming another reviewer."
+    },
+    {
+      "id": "AMIND-84",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Ensemble rule review: overlapping rule slices across rigid parallel workers, corroboration-weighted merge",
+      "name_ar": "مراجعة القواعد بفرقة متداخلة: شرائح قواعد متقاطعة ووزن بالتأكيد المتبادل",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1547-plugin-creator/4265-ensemble-rule-review",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3019-river-review/12914-review-team",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2663-review"
+      ],
+      "source": "atlas-mind.json",
+      "what": "بدل أن يطبّق وكيل واحد قائمة فحص طويلة فيسقط بعض البنود بصمت، تُقسم القواعد على عمال متوازيين صارمين بتداخل متعمد ويُحسب الوزن بعدد من وجد الخلل نفسه. — Split a 10+ item checklist over parallel workers with deliberate overlap and keep what is corroborated."
+    },
+    {
+      "id": "AMIND-85",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Independent re-derivation verifier: GIVEN is not DERIVED; withhold the author's numbers and reasoning",
+      "name_ar": "محقق مستقل يعيد الاشتقاق: المعطى ليس دليلًا حتى يُشتق من المصدر",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/36-peer-review/50-cross-model-peer-review",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2459-performance/9524-verify",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1277-analytics-verify/2955-analytics-verify",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2432-discovery/9433-report"
+      ],
+      "source": "atlas-mind.json",
+      "what": "المحقق يأخذ المعايير والملف فقط، لا تفسير المؤلف ولا أرقامه، ويعيد القياس بنفسه؛ وتكرار حقيقة مُعطاة لا يُعد تأكيدًا حتى يصل أحد إلى المصدر. — A verifier that re-derives the result in fresh context; repeating a given fact corroborates nothing."
+    },
+    {
+      "id": "AMIND-86",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Verify the premise before dispatching a wave of parallel agents",
+      "name_ar": "تحقق من الفرضية قبل إطلاق موجة الوكلاء",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2134-agent-patterns-plugin/7583-verify-before-plan",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/256-zirkel/863-zirkel-verify-assumptions",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2119-fable-mode/7543-precondition-check"
+      ],
+      "source": "atlas-mind.json",
+      "what": "قبل توزيع العمل على وكلاء متوازيين، تُفحص الحقائق التي يقوم عليها التوزيع (عدد ملفات، حالة بناء، وجود ملف، ماذا تفعل أداة) بفحص قراءة رخيص، لأن الفرضية الخاطئة تفسد الموجة كلها. — Check counts, paths and tool behaviour with a cheap read-only probe before fan-out."
+    },
+    {
+      "id": "AMIND-87",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Cold-reader gate and fresh-walker loop for anything a stranger must act on",
+      "name_ar": "بوابة القارئ البارد ودورة المستخدم الغريب",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2134-agent-patterns-plugin/7564-cold-read-gate",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2620-fresh-eyes"
+      ],
+      "source": "atlas-mind.json",
+      "what": "نص أو دليل أو خطوات تشغيل تُعطى لوكيل جديد بلا أي سياق: يقرأ فقط (أو ينفّذ حرفيًا) ويقول ماذا يُطلب منه في جملة واحدة وأين تاه؛ ثم يُصلح السبب ويُعاد مع وكيل جديد. — A context-free reader states the ask in one sentence and logs every confusion; fix at root and respawn fresh."
+    },
+    {
+      "id": "AMIND-88",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Human sign-off gate with structured, countable feedback",
+      "name_ar": "بوابة توقيع بشري بملاحظات منظمة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/173-human-gate/542-human-gate"
+      ],
+      "source": "atlas-mind.json",
+      "what": "ما لا يستطيع سكربت إثباته — هل رآه إنسان وحُلّت اعتراضاته — يُدار كملف ملاحظات بشدّات محددة، وبوابة ترفض الإغلاق ما دام هناك اعتراض مانع أو لا يوجد مراجع مسمّى. — Review feedback becomes a parseable artifact and a gate that refuses to close while blockers are open."
+    },
+    {
+      "id": "AMIND-89",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Unknown-coverage review: is there evidence each risk class was even investigated",
+      "name_ar": "مراجعة كفاية الأدلة: ما الذي لم يُفحص أصلًا",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3019-river-review/12924-unknown-coverage-review"
+      ],
+      "source": "atlas-mind.json",
+      "what": "مراجعة منفصلة عن البحث عن الأخطاء: لا تسأل 'ما المكسور' بل 'هل يوجد دليل أننا فحصنا هذا النوع من الخطر'، وتخرج قائمة المجهولات المتبقية مع ما ينقص لحسمها ومتى. — A meta-review of residual unknowns, separate from defect hunting."
+    },
+    {
+      "id": "AMIND-90",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Second-opinion pipeline with an honest delta — never counterfeit a validation",
+      "name_ar": "رأي ثانٍ صادق: لا شكل تحقق بلا تحقق جرى فعلًا",
+      "status": "documented",
+      "requires": [
+        "claude:tools"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2029-voice/7201-second-opinion",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2028-verify-before-claim/7197-verify-before-claim"
+      ],
+      "source": "atlas-mind.json",
+      "what": "عند طلب 'تأكد' أو 'رأي ثان' تُستخرج الادعاءات الحاملة للحكم، ويُرسل فحص حقائق واحد مجمّع ومستشارون محدودون، ثم يُعاد الحكم مصنفًا مع سطر تغيير إلزامي؛ وإن لم يتوفر وكلاء فلا يُكتب أي شكل يوحي بفحص لم يحدث. — Batch fact-check plus scoped advisors, grouped output, mandatory delta; "
+    },
+    {
+      "id": "AMIND-91",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Agent-session review rubric: fixed categories, verbatim quoted evidence, unclassified bucket",
+      "name_ar": "مراجعة جلسات الوكيل بمعيار ثابت واقتباس حرفي",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/236-agent-transcripts/763-transcript-review"
+      ],
+      "source": "atlas-mind.json",
+      "what": "قراءة جلسة وكيل واحدة كل مرة والإجابة عن نفس فئات الفشل (تكرار نهج فاشل، ادعاء بلا دليل، تجاهل تعليمات…) بنعم/لا مع اقتباس حرفي يُتحقق منه آليًا؛ لتحسين التنين الأسود والمهارات من سلوكها الحقيقي. — Judge one session at a time on a fixed rubric with machine-checked quotes."
+    },
+    {
+      "id": "AMIND-92",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Hard call with no good option: reversibility test, 10/10/10, outsider test and the pre-announcement draft",
+      "name_ar": "قرار بلا خيار جيد: اختبار الرجوع و10/10/10 وإعلان القرار قبل اتخاذه",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/138-c-level-skills/402-hard-call"
+      ],
+      "source": "atlas-mind.json",
+      "what": "طريقة لقرارات مؤلمة كلها خسارة (إلغاء مشروع، حذف مشهد محبوب، إنهاء تعاون): تبحث عن الأقل خطأ لا عن الصحيح. — A structure for decisions where every option hurts."
+    },
+    {
+      "id": "AMIND-93",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Brain dump to a plan with zero loss: tag every fragment, keep the owner's voice, find the spine, park the asides",
+      "name_ar": "تفريغ الدماغ إلى نظام: لا يضيع شيء، بصوت صاحبه، وكل فكرة مصنّفة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/204-capture/650-capture",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2165-prose-plugin/7844-prose-synthesize",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/231-mas-common-sense-pack/731-clean-messy-notes-to-action-items"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يحوّل سيل أفكار وملاحظات ورسائل صوتية فوضوية إلى مشاريع ومهام وقرارات وأسئلة مفتوحة دون حذف أي عنصر. — Turns a chaotic dump into projects, tasks, decisions and open questions."
+    },
+    {
+      "id": "AMIND-94",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Problem-first one-page brief: a condition not a solution, minimal reading, explicit Not-Doing list and a human checkpoint",
+      "name_ar": "بريف المشكلة أولًا: صفحة واحدة بلا حل مخفي، وما لن نفعله صريح",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3224-idea-refine/13637-idea-refine",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1072-craftsman/2379-ideation-first",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2213-majestic-product/8304-feature-brief",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3012-uxd-workshop/12867-uxd-problem-brief-create"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يحوّل فكرة غامضة أو طلب عميل إلى بريف من صفحة: لمن، ما الحالة الآن، ما الدليل، ما النطاق، وما الذي لن نفعله. — A one-page brief that settles the what before anyone plans the how."
+    },
+    {
+      "id": "AMIND-95",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Evidence-based retrospective: audit last time's promises, rank waste by cost, turn each lesson into repeat/change/stop",
+      "name_ar": "مراجعة بعد العمل مبنية على الدليل: هل نُفّذت دروس المرة الماضية؟ وما الهدر الأكبر؟",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/342-kernel/1236-retrospective",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/885-feature/1979-retro",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2212-majestic-misc/8299-lessons-learned",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3549-xm/14340-humble"
+      ],
+      "source": "atlas-mind.json",
+      "what": "مراجعة قصيرة بعد مشروع أو جلسة طويلة تبدأ بفحص هل الإصلاحات الموعودة سابقًا تعمل فعلًا، ثم ترتب الهدر وتحول كل درس إلى تغيير محدد. — A retrospective that installs changes instead of writing gravestones."
+    },
+    {
+      "id": "AMIND-96",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Second-brain method: atomic claim-titled notes, maps of content, PARA buckets and progressive summarisation",
+      "name_ar": "الدماغ الثاني: ملاحظات ذرية بعناوين جُمل، خرائط محتوى، PARA، وتلخيص تدريجي",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3013-obsidian-second-brain/12875-second-brain",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3439-desktop-commander/14131-obsidian-vault",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3439-desktop-commander/14130-knowledge-base"
+      ],
+      "source": "atlas-mind.json",
+      "what": "منهج لبناء قاعدة معرفة شخصية تتراكم: ملاحظات عابرة ثم ملاحظات مصدر ثم ملاحظات دائمة مترابطة، مع خرائط محتوى وفهرس. — A knowledge system that compounds instead of piling up."
+    },
+    {
+      "id": "AMIND-97",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Digest a long source into durable highlights: by theme not order, keep specifics and disagreements, claim nothing unsaid",
+      "name_ar": "هضم مصدر طويل إلى أبرز النقاط: بالموضوع لا بالترتيب، بالأرقام، وبالخلافات",
+      "status": "documented",
+      "requires": [
+        "claude:tools"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/886-intel/1986-digest"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يقرأ مقالًا أو بودكاست أو فيديو أو كتابًا كاملًا ويخرج بأبرز نقاط قابلة للبحث لاحقًا. — Durable, searchable highlights from long-form sources."
+    },
+    {
+      "id": "AMIND-98",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Audience feedback round: collect every response before revising, then sort convergent, divergent, single-reader and declined-with-reason",
+      "name_ar": "جولة آراء الجمهور: اجمع كل الآراء أولًا ثم صنّف متفق/مختلف/فردي/مرفوض بسبب",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1213-story-skills/2874-feedback-triage",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8004-beta-reader-feedback"
+      ],
+      "source": "atlas-mind.json",
+      "what": "طريقة لعرض نسخة (مونتاج، سكربت، تصميم) على قرّاء أو عملاء وتحويل ملاحظاتهم إلى خطة تعديل وحكم جاهزية. — Turns reviewer notes into revision decisions and a readiness verdict."
+    },
+    {
+      "id": "AMIND-99",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Plan drift check: reopen the plan, quote its gate, park off-scope finds in a later list or a deferred-decision record",
+      "name_ar": "فحص الانحراف عن الخطة: افتح الوثيقة، اقتبس البوابة، وضع ما خارج النطاق في قائمة لاحقًا",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/5-executive-self-monitoring/10-executive-self-monitoring",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3549-xm/14343-later",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/879-debt-ops/1931-add"
+      ],
+      "source": "atlas-mind.json",
+      "what": "تذكير قصير في المهام الطويلة: أعد قراءة الخطة نفسها لا ذاكرتك عنها، وكل ما لا يخدم شرط الإنجاز يُسجَّل ويُترك. — Keeps long runs on the agreed gate."
+    },
+    {
+      "id": "AMIND-100",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Question scoreboard: never stall on a question — log it in one line, resolve by measurement or bypass, keep working",
+      "name_ar": "لوحة الأسئلة المفتوحة: لا تتوقف عند سؤال، سجّله وتابع ما لا يعتمد عليه",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3116-superscalar/13337-ooo"
+      ],
+      "source": "atlas-mind.json",
+      "what": "عند ظهور سؤال للمالك أثناء العمل، يُكتب سطرًا واحدًا ويستمر كل ما لا يعتمد عليه، وتُوجّه الإجابة المتأخرة الجزء المتأثر فقط. — Out-of-order execution for the main lane."
+    },
+    {
+      "id": "AMIND-101",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Cut to focus: full inventory, a grid on two real axes, a cut list that names each loss, one-sentence survivors",
+      "name_ar": "قصّ للتركيز: جرد كل شيء، شبكة بمحورين حقيقيين، قائمة قصّ بخسارة مسمّاة، وجملة واحدة لكل ناجٍ",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/252-cupertino/827-cupertino-focus",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3853-ockhams-feature-pruning",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3745-80-20-feature-prioritization",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4433-helm-arbiter"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يقلّص كثرة المشاريع أو المشاهد أو الأفكار أو الخيارات إلى مجموعة مركزة قبل استثمار الجهد. — Reduce first, then build."
+    },
+    {
+      "id": "AMIND-102",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Rehearse a difficult conversation: labelled simulation, one counterpart turn at a time, out-of-character debrief and a real plan",
+      "name_ar": "بروفة محادثة صعبة: محاكاة معلنة، دور واحد في كل دور، ثم تحليل خارج الشخصية",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2213-majestic-product/8316-stakeholder-conversation-roleplay"
+      ],
+      "source": "atlas-mind.json",
+      "what": "تدريب على محادثة مع عميل أو شريك (تسعير، رفض تعديل، تأخير) دون ادعاء معرفة ما سيقوله الشخص الحقيقي. — Practice, not prediction."
+    },
+    {
+      "id": "AMIND-103",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Questionnaire for the person who knows: interview the send, not the subject",
+      "name_ar": "استبيان لمن يعرف: استجوب الإرسال لا الموضوع",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2224-mattpocock-skills/8443-to-questionnaire"
+      ],
+      "source": "atlas-mind.json",
+      "what": "حين لا يملك المالك الإجابة (العميل أو الخبير يملكها) يُكتب استبيان مرتب يُرسل لشخص واحد. — Pull missing knowledge out of a client or expert asynchronously."
+    },
+    {
+      "id": "AMIND-104",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Decision memo shaped like a decision: trigger and a number, the decision in one sentence, alternatives killed for specific reasons, all consequences",
+      "name_ar": "مذكرة قرار بشكل قرار لا مسح: حادثة ورقم، قرار في جملة، بدائل ماتت بسبب محدد",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3597-humanize/14429-techdoc",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/231-mas-common-sense-pack/730-ask-short-answer-first"
+      ],
+      "source": "atlas-mind.json",
+      "what": "شكل لكتابة اقتراح أو تصميم أو مراجعة حادثة يقرأها المراجع ولا يُفاجأ: الجواب أولًا والعواقب كلها. — A proposal that decides instead of surveying."
+    },
+    {
+      "id": "AMIND-105",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Standalone editor brief: feel statement, chapter timeline with pacing, cut/audio/graphics rules, thumbnail and short pulls, delivery spec with QC",
+      "name_ar": "بريف مونتير مستقل: ملخص الإحساس، خط زمني لكل فصل، تعليمات القص والصوت والجرافيك، وتسليمات بمواصفات",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3067-youtube/13224-creator-editor-brief",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2293-film-video-production/8773-define-the-deliverables"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يجمع السكربت وخطة اللقطات وحزمة النشر في وثيقة واحدة يستطيع مونتير لم يقابلك تنفيذها دون أسئلة. — A post-production brief an editor can execute with zero extra context."
+    },
+    {
+      "id": "AMIND-106",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Opportunity–solution tree: one outcome, evidence-backed opportunities, three solutions each, cheap experiments",
+      "name_ar": "شجرة الفرص والحلول: نتيجة واحدة، فرص من الدليل، ثلاثة حلول لكل فرصة، وتجربة رخيصة",
+      "status": "documented",
+      "requires": [
+        "pip:hypothesis"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2882-pm-product-discovery/11648-opportunity-solution-tree",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2882-pm-product-discovery/11643-brainstorm-ideas-new",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2882-pm-product-discovery/11645-identify-assumptions-new"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يربط هدفًا قابلًا للقياس (نمو قناة، تفاعل) باحتياجات الجمهور ثم الحلول ثم التجارب، بدل القفز إلى أول فكرة. — Structure discovery before building."
     },
     {
       "id": "AWEB-01",
@@ -21198,6 +21898,208 @@
       "what": "أثر الشبكة يبدأ عبئًا لا ميزة: القيمة في الروابط بين المستخدمين، وفي اليوم الأول لا روابط. لا تنجو بالإطلاق للسوق كله بل ببناء شبكة صغيرة مكتملة تعمل وحدها ثم تكرارها. مقياس من 0 إلى 10 لخطط الإطلاق والنمو مع ما يلزم للوصول إلى 10. — Framework from Andrew Chen's book, in our word"
     },
     {
+      "id": "ASTRAT-109",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Short-form channel growth plan: pillars tied to metrics, a cadence you can hold for a year, owned-audience funnel",
+      "name_ar": "خطة نمو قناة الفيديو القصير",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2264-creator-economy-operations/8628-plan-content-and-audience-growth",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/613-social-media-manager",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/611-social-content",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3530-social"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "خطة نمو لقناة ريلز/تيك توك/شورتس: أعمدة محتوى لكل منها مقياس، وتيرة نشر تصمد سنة، وتحويل الوصول المستأجر إلى جمهور مملوك. — Plan channel growth on retention, engagement and owned conversion, not follower count."
+    },
+    {
+      "id": "ASTRAT-110",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Social video performance readout: validated formulas, decision vs vanity metrics, top/bottom-3 review",
+      "name_ar": "قراءة أداء الفيديو والسوشيال بأرقام صحيحة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/612-social-media-analyzer",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/576-campaign-analytics",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/613-social-media-manager",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2264-creator-economy-operations/8628-plan-content-and-audience-growth"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "تحليل أداء المنشورات والحملات بصيغ محددة ومقارنة بتاريخ الحساب أولًا ثم المعايير العامة، وكل رقم مربوط بقرار. — Read post/campaign numbers with explicit formulas and turn each into an action."
+    },
+    {
+      "id": "ASTRAT-111",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Grounded ad-creative batch: evidence corpus, 3-5 angles, generation waves, spec gate, iteration log",
+      "name_ar": "دفعة إعلانات مؤسسة على أدلة: زوايا وموجات وسجل تكرار",
+      "status": "documented",
+      "requires": [
+        "npm:axe"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3484-ad-creative",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4428-form-social"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "إنتاج إعلانات بالجملة من مواد حقيقية (أفضل الإعلانات، المراجعات، التعليقات) بزوايا مختلفة لا مرادفات، مع فحص الحدود وسجل لما تعلمناه. — Scale ad concepts from real evidence, not model guesses."
+    },
+    {
+      "id": "ASTRAT-112",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Creative test journal: one-variable hypotheses, honest results, learnings only from patterns",
+      "name_ar": "دفتر فرضيات للاختبارات الإبداعية",
+      "status": "documented",
+      "requires": [
+        "pip:hypothesis"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2824-google-ads-strategist/11473-iterative-campaign-design",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2824-google-ads-strategist/11472-hypothesis-journaling",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2211-majestic-marketing/8290-growth-experimentation"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "كل تغيير في الهوك أو الصورة المصغرة أو الإعلان يُكتب كفرضية قابلة للنفي قبل التنفيذ، والنتيجة تُسجل بصدق، والدروس لا تُعمم إلا بعد نمط متكرر. — Turn hook/thumbnail/ad tweaks into a learning system."
+    },
+    {
+      "id": "ASTRAT-113",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Brand-deal pricing: value-based base fee, usage/exclusivity line items, walk-away floor, disclosure",
+      "name_ar": "تسعير صفقة رعاية وشروطها والإفصاح",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2264-creator-economy-operations/8629-price-a-brand-deal",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4053-influencer-creator"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "تسعير الرعايات والتعاون مع العلامات على قيمة الجمهور لا على سعر ثابت للألف مشاهدة، مع بنود منفصلة لحقوق الاستخدام والحصرية وحد أدنى للانسحاب وإفصاح واضح. — Price sponsorships on value and protect audience trust."
+    },
+    {
+      "id": "ASTRAT-114",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Creative-project proposal: buyer's words first, scope with exclusions, distinct options, mutual next steps",
+      "name_ar": "عرض سعر لمشروع فيديو أو موشن لعميل",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2216-majestic-sales/8364-sales-proposal",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4384-deal-close",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3524-sales-enablement",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8003-b2b-trust-engineering"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "كتابة عرض لعميل بعد الاكتشاف: ملخص بكلمات العميل، نطاق واستثناءات ومعايير قبول، خيارات سعر مختلفة فعلًا، وخطة خطوات مشتركة بتواريخ. — Write a proposal that a client can approve without a call."
+    },
+    {
+      "id": "ASTRAT-115",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Client objection and stalled-deal diagnosis: real concern, own proof, one forward question",
+      "name_ar": "التعامل مع اعتراضات العميل والصفقة المتوقفة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/334-sales/1118-handle-objection",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4384-deal-close",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3524-sales-enablement",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8003-b2b-trust-engineering"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "تصنيف اعتراض العميل (سعر، توقيت، منافس، ثقة، صلاحية، الوضع الحالي) والرد بأدلة من أعمالك وكلامه هو، مع سؤال واحد يحرك الصفقة أو يكشف أنها ليست حقيقية. — Answer pushback with evidence, not scripts."
+    },
+    {
+      "id": "ASTRAT-116",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Launch campaign plan with preflight gates: objective→audience→message→channel→measure, backward schedule, ordered go-live",
+      "name_ar": "خطة إطلاق حملة مع بوابات ما قبل الإطلاق",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/324-marketing/997-campaign-plan",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4063-launch-campaign"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "تخطيط حملة إطلاق (فيلم، منتج، قناة) بإطار من خمسة أجزاء وجدول يُبنى من موعد الإطلاق للخلف، ثم بوابات تمنع الإطلاق قبل جاهزية الروابط والتتبع والأصول. — Plan and launch cleanly, in dependency order."
+    },
+    {
+      "id": "ASTRAT-117",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "One-goal lock: judge every idea ON / PARTIAL / OFF and always return a sharper version",
+      "name_ar": "قفل هدف واحد وفلترة كل فكرة عليه",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4042-goal-filter"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "تثبيت هدف تسويقي واحد بمقياس وموعد، ثم الحكم على كل فكرة أو مسودة بأنها تخدمه أو جزئيًا أو لا، مع تعديل يقربها من الهدف ورصد الانحراف المتكرر. — Stop doing good work toward nothing in particular."
+    },
+    {
+      "id": "ASTRAT-118",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Signal mining and listening digest: angles you have standing to make, plus an explicit dropped list",
+      "name_ar": "استخراج زوايا محتوى من الأخبار والترندات",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4116-signal-mine",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/895-brightdata-plugin/2035-brand-listening"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "فرز كومة أخبار وترندات وتعليقات ومنافسين إلى زوايا تخص صاحب القناة فعلًا، مع قائمة بما رُفض وسببه، وتقرير استماع اجتماعي بمصادر ونسب مع حجم العينة. — From 'interesting' to 'ours to say'."
+    },
+    {
+      "id": "ASTRAT-119",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Bullseye channel choice: one strategy per channel, three cheap tests, then focus on one",
+      "name_ar": "اختيار قناة النمو بطريقة عين الثور",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8189-traction-bullseye"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "لاختيار قناة جلب عملاء لاستوديو الموشن أو منتج: فكرة لكل قناة من 19 قناة دون تحيز، ثلاث تجارب رخيصة، ثم قناة أساسية واحدة. — Framework from the book Traction, in our words."
+    },
+    {
+      "id": "ASTRAT-120",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Honest service/portfolio page: positioning sentence, one job per section, no invented proof, client handoff",
+      "name_ar": "موقع أو صفحة خدمات صادقة للمبدع",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/342-kernel/1232-marketing-site"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "بناء صفحة أعمال أو هبوط لخدمة فيديو/موشن تشرح العرض وتبني الثقة وتقود لخطوة واحدة، بلا عملاء أو أرقام أو شعارات مختلقة. — Credible landing/portfolio pages that convert without marketing theatre."
+    },
+    {
       "id": "SYNC-01",
       "family": "audio-sync-captions",
       "group": "audio",
@@ -22528,8 +23430,9 @@
       "name_ar": "قواعد بناء الشعار SVG",
       "status": "ready",
       "requires": [
-        "node",
-        "pip:fonttools"
+        "pip:fonttools",
+        "fonts:arabic",
+        "npm:axe"
       ],
       "proof": [
         "kosif-atlas/skills/1567-tonone/4425-form-logo",
@@ -24111,6 +25014,7 @@
       "name_ar": "قصة تمرير بصورة مثبتة",
       "status": "install",
       "requires": [
+        "npm:three",
         "npm:gsap"
       ],
       "proof": [
@@ -32468,6 +33372,7 @@
       "name_ar": "مكتبات الرسوم كإطارات فيديو",
       "status": "install",
       "requires": [
+        "python3",
         "chromium",
         "npm:d3"
       ],
@@ -32525,7 +33430,9 @@
       "name_en": "Scrollytelling scenes as data",
       "name_ar": "مشاهد السرد بالتمرير كبيانات",
       "status": "documented",
-      "requires": [],
+      "requires": [
+        "npm:gsap"
+      ],
       "proof": [
         "kosif-atlas/skills/2690-build-web-data-visualization/10329-scrollytelling-and-parallax-data-visuali/SKILL.md"
       ],
@@ -35998,8 +36905,8 @@
       "name_ar": "سبورة Excalidraw ولوحات JSON Canvas",
       "status": "install",
       "requires": [
-        "node",
-        "chromium"
+        "chromium",
+        "npm:mermaid"
       ],
       "proof": [
         "kosif-atlas/skills/2790-work/11181-draw-excalidraw",
@@ -40452,6 +41359,7 @@
       "requires": [
         "chromium",
         "pip:pillow",
+        "npm:satori",
         "os:macos"
       ],
       "proof": [
@@ -99647,7 +100555,9 @@
       "name_en": "Eval-first: capability evals + regression evals",
       "name_ar": "التقييم أولًا",
       "status": "documented",
-      "requires": [],
+      "requires": [
+        "claude:tools"
+      ],
       "proof": [],
       "source": "verification-evals.json",
       "what": "عرّف التقييمات قبل البناء: تقييمات قدرة للسلوك الجديد وتقييمات انحدار لما كان يعمل، بمقيّمين من كود ونموذج وإنسان. — Define evals before building: capability evals for new behaviour and regression evals for what already worked, graded by code, model and human."
@@ -100683,7 +101593,9 @@
       "name_en": "Scene narration writing rules",
       "name_ar": "قواعد كتابة التعليق للمشهد",
       "status": "documented",
-      "requires": [],
+      "requires": [
+        "ffmpeg"
+      ],
       "proof": [
         "kosif-atlas/skills/166-demo-video/535-demo-video/SKILL.md",
         "kosif-atlas/skills/2836-video-guide/11537-video-guide-creator/SKILL.md",
