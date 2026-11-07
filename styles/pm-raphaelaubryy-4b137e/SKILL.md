@@ -1,9 +1,9 @@
 ---
 name: pm-raphaelaubryy-4b137e
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second showreel in cream, black and terracotta: 'SHOW REEL' revealed off a ruled line, a circle morphing to square and triangle, a cell grid spelling a pixel '5.5', particles forming 'OPUS', cream metaballs on terracotta, a scrolling word wall cut by a title band, a tumbling 3D cube of skill names, and an end card. Use to make a new video in this look (Shapes); address it by ID pm-raphaelaubryy-4b137e.
 ---
 
-# KOSIF TOOL — Motion designer résumé reel
+# KOSIF TOOL — Motion designer résumé reel / بكرة سيرة ذاتية لمصمم موشن بالأشكال والشبكات
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/raphaelaubryy-4b137e
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+بكرة مدتها 15 ثانية بلوحة كريمي وأسود وتيراكوتا: خط يرسم ويكشف «SHOW REEL» بغروتسك أسود، دائرة تيراكوتا تتحول إلى مربع ومثلث داخل حلقات رفيعة، شبكة خلايا كريمية تمتلئ لتشكّل «5.5» بالبكسل، سحابة جسيمات تتجمع في «OPUS»، فقاعات سائلة كريمية على تيراكوتا تلتحم وتنفصل، جدار كلمات متحرك يقطعه شريط عنوان، مكعب ثلاثي الأبعاد يدور بأسماء المهارات، ثم بطاقة ختام.
+
+A 15-second showreel in cream, black and terracotta: 'SHOW REEL' revealed off a ruled line, a circle morphing to square and triangle, a cell grid spelling a pixel '5.5', particles forming 'OPUS', cream metaballs on terracotta, a scrolling word wall cut by a title band, a tumbling 3D cube of skill names, and an end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (React, SVG, HTML Canvas, Three.js, Remotion), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Shapes / أشكال, Kinetic type / تايبوغرافي متحرك, Particles / جسيمات.
+- [playbooks/shapes.md](../../playbooks/shapes.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

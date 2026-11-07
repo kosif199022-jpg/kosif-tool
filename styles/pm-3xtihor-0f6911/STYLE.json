@@ -1,12 +1,14 @@
 {
   "id": "pm-3xtihor-0f6911",
   "name": "Claude motion designer showreel",
-  "name_ar": null,
+  "name_ar": "شوريل مصمم موشن: حلقة نصوص ثلاثية الأبعاد وألواح مهارات",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "3d"
   ],
   "creator": "@3xtihor",
   "creator_url": "https://x.com/3xtihor/status/2103551886272159839",
@@ -27,7 +29,38 @@
   "listed": true,
   "skill": "styles/pm-3xtihor-0f6911/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/3d.md"
+  ],
+  "summary_ar": "شوريل مدته 15 ثانية بإطار عدسة ورقم وقت وعلامة إيقاع: كرة حمراء تسقط بآثار متكررة على خط بمقياس، ثم كلمتان ضخمتان على حقل برتقالي (الثانية تتمدد ضبابياً)، مربع كريمي يتحول إلى مثلث وزهرة على أزرق بمقابض بيزيه، شبكة مربعات ثم نقاط تتنفس، حلقة أسطوانية دوارة من نصوص الموشن بالليموني والأحمر والوردي، لوحة شبكية من خمس بطاقات مهارات، دوامة جسيمات تتجمع في اسم، وختام بالاسم ونقطة حمراء.",
+  "summary_en": "A 15-second showreel with viewfinder corners and timecode: a red ball drops with onion-skin ghosts, giant words smear across an orange field, a cream square morphs on blue with bezier handles, grids breathe, a 3D cylinder of motion terms spins, a five-tile bento board shows skills, and a particle vortex condenses into the name with a red-dot end card.",
+  "keywords": [
+    "showreel",
+    "motion designer",
+    "onion skin",
+    "shape morph",
+    "bezier handles",
+    "3D text ring",
+    "bento grid",
+    "particle galaxy",
+    "glitch",
+    "شوريل",
+    "مصمم موشن",
+    "تحويل أشكال",
+    "نص ثلاثي الأبعاد",
+    "جسيمات",
+    "شبكة"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "Three.js",
+    "HTML Canvas"
+  ],
+  "brief": "styles/pm-3xtihor-0f6911/BRIEF.md"
 }

@@ -1,9 +1,9 @@
 ---
 name: pm-0xfemyn-e114d3
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second orange-and-charcoal product promo: a terminal line types, huge words flash on white and orange cards, a key counter jumps from 4 to 5,000 while floating key-name tags and error chips swarm around it, then a glowing dot bursts into 'One key.' with a key chip, a hub logo branches to stat cards, giant counters roll on cream, and an end card shows logo, tagline and a Get started button. Use to make a new video in this look (Charts); address it by ID pm-0xfemyn-e114d3.
 ---
 
-# KOSIF TOOL — AIsa API key promo
+# KOSIF TOOL — AIsa API key promo / إعلان مفتاح API واحد: من فوضى المفاتيح إلى مفتاح واحد برتقالي
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/0xfemyn-e114d3
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #247
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+إعلان منتج مدته 15 ثانية بالبرتقالي والفحمي: سطر طرفية يُكتب ثم كلمات ضخمة تتبدل بسرعة على خلفيات بيضاء وبرتقالية، عدّاد مفاتيح يقفز من 4 إلى 5,000 بينما تتكاثر حوله بطاقات أسماء مفاتيح وتنبيهات أخطاء، ثم نقطة متوهجة تنفجر في «مفتاح واحد» مع شريحة مفتاح، فشعار مركزي تتفرع منه بطاقات إحصاء، وعدادات ضخمة على خلفية كريمية، وبطاقة ختام بالشعار وزر البدء.
+
+A 15-second orange-and-charcoal product promo: a terminal line types, huge words flash on white and orange cards, a key counter jumps from 4 to 5,000 while floating key-name tags and error chips swarm around it, then a glowing dot bursts into 'One key.' with a key chip, a hub logo branches to stat cards, giant counters roll on cream, and an end card shows logo, tagline and a Get started button.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG, Web Audio), suggested duration (15 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية.

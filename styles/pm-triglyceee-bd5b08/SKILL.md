@@ -1,9 +1,9 @@
 ---
 name: pm-triglyceee-bd5b08
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 3.5 min 16:9 Arabic timeline of Morocco's political parties told in full-colour panels that slide in sideways: huge opening words, a two-camp split, party cards with a big year on diagonal stripes, figure cards with flat silhouette portraits, flat event illustrations (palace, chased jet, desert march), seat and turnout numbers, and a closing question on black. Use to make a new video in this look (Kinetic type); address it by ID pm-triglyceee-bd5b08.
 ---
 
-# KOSIF TOOL — Moroccan political history timeline
+# KOSIF TOOL — Moroccan political history timeline / خط زمني عربي مسطّح للتاريخ السياسي: بطاقات شخصيات وأحزاب بألوان كاملة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/triglyceee-bd5b08
@@ -17,12 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شرح عربي 16:9 مدته نحو 3 دقائق ونصف يسرد تاريخ الأحزاب في المغرب كخط زمني، بلوحات ملوّنة تنزلق أفقياً واحدة تلو الأخرى: كلمات افتتاحية ضخمة، عمودان يقسمان المعسكرين، بطاقات أحزاب بسنة كبيرة وخلفية مخططة قطرياً، بطاقات شخصيات بصورة ظلية مسطحة داخل إطار ملوّن، رسوم مسطحة للأحداث (أقواس قصر، طائرة تُطارد، صحراء)، أرقام مقاعد وأعمدة نسب، وسؤال ختامي على الأسود.
+
+A 3.5 min 16:9 Arabic timeline of Morocco's political parties told in full-colour panels that slide in sideways: huge opening words, a two-camp split, party cards with a big year on diagonal stripes, figure cards with flat silhouette portraits, flat event illustrations (palace, chased jet, desert march), seat and turnout numbers, and a closing question on black.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (211 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: creative motion.
-- (no category playbook yet)
+Categories: Kinetic type / تايبوغرافي متحرك, Characters / شخصيات, Charts / رسوم بيانية.
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
-* Develop original choreography from the reference; verify imagery before claiming a match.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

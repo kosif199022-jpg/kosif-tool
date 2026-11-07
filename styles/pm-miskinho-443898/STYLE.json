@@ -1,7 +1,7 @@
 {
   "id": "pm-miskinho-443898",
   "name": "Quetzal social app reel",
-  "name_ar": null,
+  "name_ar": "إعلان تطبيق نشر اجتماعي تلقائي بأسلوب أبيض نظيف",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -31,5 +31,33 @@
     "playbooks/product-ui.md",
     "playbooks/charts.md",
     "playbooks/kinetic-type.md"
-  ]
+  ],
+  "summary_ar": "فيديو منتج مدته 15 ثانية لتطبيق يدير النشر على الشبكات الاجتماعية، على خلفية بيضاء بعنوان أسود عريض يتبدل في زاوية ثابتة: فكرة تُكتب في حقل إدخال، بطاقة منشور بصورة طعام، نسخ منها لكل منصة مصفوفة بمنظور ثلاثي الأبعاد، تقويم أسبوعي تُجدول فيه ثم تتحول إلى «مباشر»، منحنى تفاعل أخضر يصعد، ثم شعار الطائر واسم التطبيق.",
+  "summary_en": "A 15-second product film for a social-media autopilot app on white, with a bold black heading that swaps in a fixed top-left slot: an idea typed into a prompt field, a food-photo post card, per-platform copies fanned out in 3D, a weekly calendar where they get scheduled then flip to live, a green engagement curve rising, and a bird logo with the app name.",
+  "keywords": [
+    "social media app",
+    "product film",
+    "post scheduler",
+    "content calendar",
+    "heading roll",
+    "platform cards",
+    "engagement chart",
+    "clean white UI",
+    "SaaS launch",
+    "تطبيق تواصل اجتماعي",
+    "جدولة المنشورات",
+    "تقويم محتوى",
+    "فيديو منتج",
+    "منحنى تفاعل",
+    "واجهة بيضاء"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "SVG"
+  ],
+  "brief": "styles/pm-miskinho-443898/BRIEF.md"
 }

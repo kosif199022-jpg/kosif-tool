@@ -1,6 +1,6 @@
 ---
 name: pm-melvynx-6cde6c
-description: A calm, roughly 45-second promo for an email tool on warm off-white: a giant 'Email' word, a year odometer rolling to 2018, a CSV import wizard, a dot grid showing 80% never open, a rising monthly bill, then an AI-agent terminal that cannot reach the old tool, a red button that connects agents, and a logo with call to action.
+description: A calm, roughly 45-second promo for an email tool on warm off-white: a giant 'Email' word, a year odometer rolling to 2018, a CSV import wizard, a dot grid showing 80% never open, a rising monthly bill, then an AI-agent terminal that cannot reach the old tool, a red button that connects agents, and a logo with call to action. Use to make a new video in this look (Product UI); address it by ID pm-melvynx-6cde6c.
 ---
 
 # KOSIF TOOL — Email tool promo reel / ريل ترويجي لأداة بريد إلكتروني

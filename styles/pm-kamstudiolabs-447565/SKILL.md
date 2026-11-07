@@ -1,9 +1,9 @@
 ---
 name: pm-kamstudiolabs-447565
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 47-second physics music machine on a near-black navy ground: four rows of thin-line instruments (blue glockenspiel bars, bronze marimba with resonator tubes, gold cymbals, violet bass bars and red drums) while small cannons fire glowing comet-tailed balls that fall under gravity onto the keys, each key flashing as it is struck, with a piece title, note counter and timer at the top. Use to make a new video in this look (Music); address it by ID pm-kamstudiolabs-447565.
 ---
 
-# KOSIF TOOL — Collision-driven music machine
+# KOSIF TOOL — Collision-driven music machine / آلة موسيقية فيزيائية تعزف فيها الكرات بالارتطام
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/kamstudiolabs-447565
@@ -17,12 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+مقطع مدته 47 ثانية لآلة موسيقية فيزيائية على خلفية كحلية شبه سوداء: أربعة صفوف آلات مرسومة بخطوط رفيعة (أجراس معدنية زرقاء، ماريمبا برونزية مع أنابيب رنين، صنجات ذهبية، قضبان باص بنفسجية، وطبول حمراء)، ومدافع صغيرة تطلق كرات متوهجة بذيول تسقط بالجاذبية على المفاتيح فتضيء كل مفتاح عند الضرب، مع عنوان مقطوعة وعداد نوتات وزمن في الأعلى.
+
+A 47-second physics music machine on a near-black navy ground: four rows of thin-line instruments (blue glockenspiel bars, bronze marimba with resonator tubes, gold cymbals, violet bass bars and red drums) while small cannons fire glowing comet-tailed balls that fall under gravity onto the keys, each key flashing as it is struck, with a piece title, note counter and timer at the top.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, Web Audio, React, Remotion), suggested duration (47 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Music / موسيقى.
+Categories: Music / موسيقى, Particles / جسيمات, Shapes / أشكال.
 - [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
 
 Category tactics:
 * Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

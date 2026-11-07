@@ -1,9 +1,9 @@
 ---
 name: cutout-paper
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: Scenes built from cut paper with torn edges and real paper grain: layers stacked with soft drop shadows, pieces sliding and pivoting as if pushed by hand, stepped motion at 12 frames per second, and Arabic words cut out of coloured paper for titles. Use to make a new video in this look (Hand-drawn); address it by ID cutout-paper.
 ---
 
-# KOSIF TOOL — قصاصات ورقية
+# KOSIF TOOL — قصاصات ورقية / قصاصات ورقية متحركة على طاولة
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+مشاهد مصنوعة من ورق مقصوص بحواف ممزقة وخامات ورقية حقيقية: طبقات بظلال ناعمة فوق بعضها، عناصر تنزلق وتدور كأن يدًا تحركها، حركة متقطعة بـ12 إطارًا في الثانية، وكلمات عربية مقصوصة من ورق ملون.
+
+Scenes built from cut paper with torn edges and real paper grain: layers stacked with soft drop shadows, pieces sliding and pivoting as if pushed by hand, stepped motion at 12 frames per second, and Arabic words cut out of coloured paper for titles.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (30 s), aspect 9:16, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Hand-drawn / رسم يدوي, Characters / شخصيات.

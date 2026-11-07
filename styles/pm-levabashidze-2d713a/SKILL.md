@@ -1,9 +1,9 @@
 ---
 name: pm-levabashidze-2d713a
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second Swiss-technical motion showreel in a corner-marked frame with tiny monospace labels: an orange ball bouncing on a ruler timeline, 'ease in / ease out / never linear' on orange with curve editors, a circle-to-star-to-hexagon morph, a rippling isometric cube grid, a curve-tile pattern, a scrolling word wall, a blue render counter and a name card. Use to make a new video in this look (Kinetic type); address it by ID pm-levabashidze-2d713a.
 ---
 
-# KOSIF TOOL — Swiss-style motion showreel
+# KOSIF TOOL — Swiss-style motion showreel / شوريل موشن بالأسلوب السويسري: من التوقيت إلى التصيير
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/levabashidze-2d713a
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شوريل موشن مدته 15 ثانية بطابع سويسري تقني داخل إطار بعلامات زوايا ونصوص صغيرة أحادية العرض: كرة برتقالية ترتد فوق مسطرة زمنية على الأسود، «EASE IN / EASE OUT / never LINEAR» على البرتقالي مع منحنيات توقيت، أشكال تتحول من دائرة إلى نجمة إلى سداسي على الكريمي، شبكة مكعبات متساوية القياس تتموج، نمط منحنيات أسود متشابك، جدار كلمات «تصميم يتحرك»، شاشة تصيير زرقاء بنسبة مئوية، ثم بطاقة الاسم.
+
+A 15-second Swiss-technical motion showreel in a corner-marked frame with tiny monospace labels: an orange ball bouncing on a ruler timeline, 'ease in / ease out / never linear' on orange with curve editors, a circle-to-star-to-hexagon morph, a rippling isometric cube grid, a curve-tile pattern, a scrolling word wall, a blue render counter and a name card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Three.js), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, 3D / ثلاثي الأبعاد.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

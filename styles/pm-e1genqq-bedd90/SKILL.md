@@ -1,9 +1,9 @@
 ---
 name: pm-e1genqq-bedd90
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second 4:5 piece on cream under a huge condensed headline: in a 3D viewport an orange cube character tries to press an oversized lavender render key, fails, backs up and jumps on it so keys and stickers burst out, with deadpan captions on dark tags; below, three tool cards light up in turn and a dark-green code panel highlights the line driving each beat. Use to make a new video in this look (Characters); address it by ID pm-e1genqq-bedd90.
 ---
 
-# KOSIF TOOL — Character scene with Remotion, GSAP and Three.js
+# KOSIF TOOL — Character scene with Remotion, GSAP and Three.js / شخصية مكعب برتقالية تضغط زر التصيير في لوحة عرض تقنية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/e1genqq-bedd90
@@ -18,16 +18,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+مقطع 4:5 مدته 15 ثانية على خلفية كريمية بعنوان ضخم مكثف: نافذة مشهد ثلاثي الأبعاد فيها شخصية مكعب برتقالية تحاول ضغط مفتاح كيبورد بنفسجي ضخم مكتوب عليه التصيير، تفشل ثم تتراجع وتقفز عليه فتتطاير المفاتيح والملصقات، مع تعليقات ساخرة في ملصقات داكنة، وتحتها ثلاث بطاقات أدوات تضيء بالتناوب ولوحة كود خضراء داكنة يتقدم فيها السطر النشط مع الحركة.
+
+A 15-second 4:5 piece on cream under a huge condensed headline: in a 3D viewport an orange cube character tries to press an oversized lavender render key, fails, backs up and jumps on it so keys and stickers burst out, with deadpan captions on dark tags; below, three tool cards light up in turn and a dark-green code panel highlights the line driving each beat.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, GSAP), suggested duration (15 s), aspect 4:5, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Shapes / أشكال, Characters / شخصيات, Music / موسيقى.
-- [playbooks/shapes.md](../../playbooks/shapes.md)
+Categories: Characters / شخصيات, 3D / ثلاثي الأبعاد, Code / كود.
 - [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
+- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
 * Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
+* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

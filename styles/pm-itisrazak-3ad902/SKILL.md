@@ -1,6 +1,6 @@
 ---
 name: pm-itisrazak-3ad902
-description: A 40-second product reel for a tool that turns documents into hand-illustrated explainer videos: a paragraph with pastel highlights, a 3D book flipping pages, a water-cycle diagram drawing on inside a video player with word-by-word captions, a dark section cycling one sentence through many languages, a Stoicism mind-map, a 2,200+ counter and a logo end card.
+description: A 40-second product reel for a tool that turns documents into hand-illustrated explainer videos: a paragraph with pastel highlights, a 3D book flipping pages, a water-cycle diagram drawing on inside a video player with word-by-word captions, a dark section cycling one sentence through many languages, a Stoicism mind-map, a 2,200+ counter and a logo end card. Use to make a new video in this look (Charts); address it by ID pm-itisrazak-3ad902.
 ---
 
 # KOSIF TOOL — Distilbook motion showreel / ريل ديستيل بوك: من كتاب كامل إلى خلاصة

@@ -1,9 +1,9 @@
 ---
 name: pm-notdwd-c2037d
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 12 s time-locked split screen comparing an AI helper app launch film (left) with its frame-matched remake for another product (right): pill name badge on pale sky gradient, app window push-in with cursor click, icon orbited by coloured squares, frosted menu-bar prompt, article morphing into image cards, glowing wordmark on black. Use to make a new video in this look (Product UI); address it by ID pm-notdwd-c2037d.
 ---
 
-# KOSIF TOOL — Launch video remake comparison
+# KOSIF TOOL — Launch video remake comparison / مقارنة جنباً إلى جنب: فيديو إطلاق أصلي ونسخته المعاد بناؤها إطاراً بإطار
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/notdwd-c2037d
@@ -18,28 +18,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو مقارنة مدته 12 ثانية بشاشة مقسومة إلى نصفين متطابقين التوقيت: إعلان إطلاق تطبيق مساعد بالذكاء الاصطناعي على اليسار ونسخة معاد بناؤها لمنتج آخر على اليمين، بالأسلوب نفسه: شارة اسم مستديرة على تدرج سماوي فاتح، تطبيق يكبر مع نقرة مؤشر، أيقونة تحيط بها مربعات ملونة تدور، شريط قوائم سطح مكتب بحقل كتابة زجاجي، صفحة مقالة تتحول إلى بطاقات بصور وعناوين، ثم شعار يتنفس وينتهي باسم متوهج على أسود.
+
+A 12 s time-locked split screen comparing an AI helper app launch film (left) with its frame-matched remake for another product (right): pill name badge on pale sky gradient, app window push-in with cursor click, icon orbited by coloured squares, frosted menu-bar prompt, article morphing into image cards, glowing wordmark on black.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG), suggested duration (12 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, Characters / شخصيات, Photos / صور, Music / موسيقى, Code / كود.
+Categories: Product UI / واجهات المنتج, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/shapes.md](../../playbooks/shapes.md)
-- [playbooks/particles.md](../../playbooks/particles.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/photos.md](../../playbooks/photos.md)
-- [playbooks/music.md](../../playbooks/music.md)
-- [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

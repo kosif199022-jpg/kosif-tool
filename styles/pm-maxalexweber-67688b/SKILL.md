@@ -1,9 +1,9 @@
 ---
 name: pm-maxalexweber-67688b
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: An 18-second hype edit in deep blue with hyperspace streaks: a typed terminal line, three huge words in turn with small numbered labels and RGB-split glitches, a node diagram tying them to a spinning logo ring, a logo reveal, a rapid numbered roll call of ecosystem products on blue bars, a second terminal line, and the logo lock-up with URL fading out. Use to make a new video in this look (Kinetic type); address it by ID pm-maxalexweber-67688b.
 ---
 
-# KOSIF TOOL — ODATANO Cardano hype edit
+# KOSIF TOOL — ODATANO Cardano hype edit / مونتاج حماسي لمنظومة بلوكتشين بقفزات فضائية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/maxalexweber-67688b
@@ -17,12 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+مونتاج حماسي مدته 18 ثانية بالأزرق الداكن وخطوط سرعة فضائية: سطر طرفية يُكتب، ثلاث كلمات ضخمة متتالية بأرقام صغيرة (مؤسسات، دفتر، معرفة صفرية) بتشويش لوني، شبكة تربط الثلاثة بشعار يدور، كشف الشعار، استعراض سريع مرقم لمنتجات المنظومة على شرائط زرقاء، سطر طرفية ثانٍ، ثم الشعار مع الرابط ويخفت.
+
+An 18-second hype edit in deep blue with hyperspace streaks: a typed terminal line, three huge words in turn with small numbered labels and RGB-split glitches, a node diagram tying them to a spinning logo ring, a logo reveal, a rapid numbered roll call of ecosystem products on blue bars, a second terminal line, and the logo lock-up with URL fading out.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, HTML Canvas, Web Audio), suggested duration (18 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Ads / إعلانات.
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -60,6 +60,7 @@ SCRIPT = {
     "creative-council": SKILLS / "kosif-black-dragon" / "scripts",
     "cartoon-short": SKILLS / "cartoon-audio-short" / "kit" / "tools",
     "talking-head-reels": SKILLS / "talking-head-reels" / "scripts",
+    "arena": SKILLS / "arena",
 }
 RECIPES = tuple(SCRIPT)
 NEEDS_MEDIA = {"social", "video-editor", "motion-energy", "captions-audio", "shadow-theatre", "voice-check",
@@ -451,8 +452,30 @@ def web_film(r, d, task, clip, selftest):
     errs = " | ".join(caught.get("errors") or [])
     r.check("check caught the planted gap and the uncovered requirement",
             "gap or overlap" in errs and "no shot covering" in errs, errs[:300])
+    # World Film mode: one world, one continuous camera; the checker enforces the storytelling,
+    # readability and camera rules, so plant three breaks and expect all three caught.
+    wt = [*PY, str(d / "world_film.py")]
+    r.call("world film: write the example plan", [*wt, "example", "--out", "world.plan.json"])
+    wrep = r.call("world film: check the example", [*wt, "check", "world.plan.json", "--json"], ok_codes=(0, 1))
+    wres = wrep.get("receipt") or {}
+    r.check("world film example passes every rule (camera included)", wres.get("ok") is True, wres.get("errors"))
+    world = _json(r.work / "world.plan.json")
+    by = {o["id"]: o for o in world["objects"]}
+    by["t_end"]["text"] = world["beats"][1]["narration"]          # typed while the narrator says it
+    by["t_place"]["size"] = 30                                     # too small to read on a phone
+    world["beats"][1]["camera"]["drift"] = 0                       # park the camera on one target
+    world["beats"][2]["camera"] = dict(world["beats"][1]["camera"])
+    (r.work / "planted.world.json").write_text(json.dumps(world, ensure_ascii=False), encoding="utf-8")
+    wbad = r.call("world film: check a plan with 3 planted breaks", [*wt, "check", "planted.world.json", "--json"],
+                  ok_codes=(1,)).get("receipt") or {}
+    werrs = " | ".join(wbad.get("errors") or [])
+    r.check("world film check caught said-and-typed text, small type and a dead camera stop",
+            "never both" in werrs and "read on a phone" in werrs and "stops dead" in werrs, werrs[:400])
+    r.call("world film: build the page", [*wt, "build", "world.plan.json", "--out", "world.html"])
+    r.output(r.work / "world.html")
     r.findings.append({"shots": len(plan["shots"]), "duration": plan.get("duration"),
-                       "note": "structure only; the page was not rendered to video here"})
+                       "world_film_camera": (wres.get("stats") or {}).get("camera"),
+                       "note": "structure only; the pages were not rendered to video here"})
 
 
 def causal_laws(r, d, task, clip, selftest):
@@ -1146,6 +1169,117 @@ def talking_head_reels(r, d, task, clip, selftest):
                        "note": "Apple Vision mattes (macOS) and faster-whisper were not used; words came from a voice-studio words.json"})
 
 
+def arena(r, d, task, clip, selftest):
+    """Known-answer tournament through the arena skill's own bracket.py, with stand-in agents (no model is called).
+    Each stand-in solution has a known quality; the planted fatal one carries the best scores and must still lose."""
+    import hashlib
+    import importlib.util
+    tool = lambda *a: [*PY, str(d / "bracket.py"), *map(str, a)]
+    def tree_hash(root):
+        h = hashlib.sha256()
+        for f in sorted(p for p in root.rglob("*") if p.is_file() and "__pycache__" not in p.parts):
+            h.update(str(f.relative_to(root)).encode() + media.sha256(f).encode())
+        return h.hexdigest()
+    before = tree_hash(d)
+    spec = importlib.util.spec_from_file_location("kosif_arena_bracket", d / "bracket.py")
+    B = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(B)  # read-only helpers (job paths); every state change goes through the CLI
+    plan = r.call("bracket.py plan --agents 100", tool("plan", "--agents", 100)).get("stdout_tail") or ""
+    total = next((l.split() for l in plan.splitlines() if l.strip().startswith("total")), [])
+    r.check("100 agents: 7 rounds, 595 sub-agent calls, 70 waves", total[1:3] == ["595", "70"] and "7 rounds" in plan, total)
+    quick = r.call("bracket.py plan --quick", tool("plan", "--quick")).get("stdout_tail") or ""
+    qt = next((l.split() for l in quick.splitlines() if l.strip().startswith("total")), [])
+    r.check("--quick: 16 agents, 91 calls, 16 waves", qt[1:3] == ["91", "16"], qt)
+    run, twin = r.work / "run", r.work / "twin"
+    (r.work / "task.md").write_text(task, encoding="utf-8")
+    baseline = r.work / "baseline.md"
+    baseline.write_text("REJECTED ANSWER: too vague.", encoding="utf-8")
+    r.call("bracket.py init 16 agents, seed 7, with the rejected answer",
+           tool("init", "--agents", 16, "--seed", 7, "--task-file", "task.md", "--baseline-file", "baseline.md", "--dir", run))
+    r.call("bracket.py init again with the same seed", tool("init", "--agents", 16, "--seed", 7, "--task-file", "task.md", "--dir", twin))
+    state = _json(run / "arena.json")
+    cards = {a: tuple(v["card"][k]["id"] for k in ("reasoning", "workflow", "strategy")) for a, v in state["agents"].items()}
+    twin_cards = {a: tuple(v["card"][k]["id"] for k in ("reasoning", "workflow", "strategy"))
+                  for a, v in _json(twin / "arena.json")["agents"].items()}
+    r.check("16 different cards, and the same seed deals the same cards", len(set(cards.values())) == 16 and cards == twin_cards,
+            len(set(cards.values())))
+    r.check("16 cards cover every reasoning mode", len({c[0] for c in cards.values()}) == min(16, len(B.load_strategies()["reasoning"])),
+            len({c[0] for c in cards.values()}))
+    quality = {a: 3 + (i * 7) % 16 for i, a in enumerate(sorted(state["agents"]))}  # known, all different
+    first = state["rounds"][0]["matches"][0]
+    planted = first["a"] if quality[first["a"]] > quality[first["b"]] else first["b"]
+    honest = first["b"] if planted == first["a"] else first["a"]
+    def score(q, fatal=False):
+        v = max(0, min(10, round(q * 10 / 18)))
+        return {"correctness": v, "completeness": v, "specificity": v, "robustness": v, "clarity": v, "fatal": fatal}
+    def jobs(phase):
+        return B.phase_jobs(_json(run / "arena.json"), phase)
+    def write(path, text):
+        Path(path).parent.mkdir(parents=True, exist_ok=True)
+        Path(path).write_text(text, encoding="utf-8")
+    r.call("bracket.py prompts spawn", tool("prompts", "spawn", "--dir", run))
+    briefs = [Path(j["prompt"]).read_text(encoding="utf-8") for j in jobs("spawn")]
+    r.check("every one of the 16 spawn briefs carries the task byte for byte", len(briefs) == 16 and all(task in b for b in briefs),
+            sum(task in b for b in briefs))
+    for j in jobs("spawn"):
+        write(j["outputs"][0], f"SOLUTION {j['agent']} quality {quality[j['agent']]}")
+    planted_lost, rounds = None, 0
+    while True:
+        nxt = r.call("bracket.py next", tool("next", "--dir", run)).get("stdout_tail") or ""
+        st = _json(run / "arena.json")
+        if st["champion"] and (st.get("final") or {}).get("result"):
+            break
+        if st["champion"]:
+            r.call("bracket.py prompts final", tool("prompts", "final", "--dir", run))
+            fin = st["final"]
+            x = (run / "final" / "X.md").read_text(encoding="utf-8")
+            y = (run / "final" / "Y.md").read_text(encoding="utf-8")
+            fprompt = Path(jobs("final")[0]["prompt"]).read_text(encoding="utf-8")
+            r.check("final check is blind: X/Y copies, no champion id or baseline path in the brief",
+                    {x, y} == {(run / "baseline.md").read_text(encoding="utf-8"), Path(st["agents"][st["champion"]]["solution"]).read_text(encoding="utf-8")}
+                    and st["champion"] not in fprompt and "baseline.md" not in fprompt, fin)
+            champ = "x" if fin["X"] == "champion" else "y"
+            write(jobs("final")[0]["outputs"][0], json.dumps({"scores": {champ.upper(): score(17), ("Y" if champ == "x" else "X"): score(4)},
+                                                               "winner": champ.upper(), "reason": "known answer", "fixed": ["vague"]}))
+            r.call("bracket.py collect (final)", tool("collect", "--dir", run))
+            continue
+        rd = st["rounds"][-1]
+        rounds = rd["n"]
+        for j in jobs("attack"):
+            write(j["outputs"][0], f"ATTACK 1 [MINOR] stand-in\nWhere: all\nProblem: known answer")
+        for j in jobs("defend"):
+            prev = Path(st["agents"][j["agent"]]["solution"]).read_text(encoding="utf-8")
+            write(j["outputs"][0], "ATTACK 1: CONCEDE. fixed")
+            write(j["outputs"][1], prev)
+        for j in jobs("judge"):
+            a, b = j["a"], j["b"]
+            fatal = {planted} & {a, b} and rd["n"] == 1
+            sa, sb = score(quality[a], a == planted and bool(fatal)), score(quality[b], b == planted and bool(fatal))
+            pick = a if quality[a] > quality[b] else b
+            write(j["outputs"][0], json.dumps({"match": j["match"], "scores": {a: sa, b: sb}, "winner": pick,
+                                               "reason": "known answer", "survived": ["stand-in attack"], "standing": {a: [], b: []}}))
+        r.call(f"bracket.py collect round {rd['n']}", tool("collect", "--dir", run))
+        if rd["n"] == 1:
+            m = next(x for x in _json(run / "arena.json")["rounds"][0]["matches"] if x["id"] == first["id"])
+            planted_lost = m["winner"] == honest
+        r.call(f"bracket.py advance round {rd['n']}", tool("advance", "--dir", run))
+        if rounds > 8:
+            raise RuntimeError("bracket did not converge")
+    r.check("planted fatal solution lost although its scores were higher", planted_lost is True, [planted, honest])
+    st = _json(run / "arena.json")
+    alive = [a for a, v in st["agents"].items() if v["alive"]]
+    best = max((a for a in quality if a != planted), key=lambda a: quality[a])
+    r.check("bracket ends with one champion after 4 rounds", alive == [st["champion"]] and rounds == 4, [alive, rounds])
+    r.check("the best honest solution won", st["champion"] == best, [st["champion"], best])
+    w = r.call("bracket.py winner --json", tool("winner", "--json", "--dir", run)).get("receipt") or {}
+    r.check("winner report names the champion and the final check", w.get("champion") == best and bool(st["final"]["result"])
+            and st["final"]["result"]["better"] == "champion", {k: w.get(k) for k in ("champion", "rounds")})
+    r.check("the skill folder is unchanged by the run", tree_hash(d) == before, None)
+    r.output(run / "arena.json")
+    r.findings.append({"champion": st["champion"], "card": cards[st["champion"]], "rounds": rounds,
+                       "note": "stand-in agents with known answers: this proves the bracket, not the quality of any model answer"})
+
+
 RUNNERS = {"prompt-master": prompt_master, "prompt-architect": prompt_architect, "reel-hooks": reel_hooks,
            "excel-lambdas": excel_lambdas, "social": social, "video-editor": video_editor,
            "motion-energy": motion_energy, "image-prompts": image_prompts, "video-prompts": video_prompts,
@@ -1157,7 +1291,7 @@ RUNNERS = {"prompt-master": prompt_master, "prompt-architect": prompt_architect,
            "mimic-analyze": mimic_analyze, "pixel-painter": pixel_painter,
            "kling-director": kling_director, "dragon-mind": dragon_mind, "saas-animation": saas_animation,
            "creative-council": creative_council, "cartoon-short": cartoon_short, "talking-head-reels": talking_head_reels,
-           "stickman-studio": stickman_studio}
+           "arena": arena, "stickman-studio": stickman_studio}
 
 
 def main(argv: list[str]) -> int:

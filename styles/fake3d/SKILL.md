@@ -1,9 +1,9 @@
 ---
 name: fake3d
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: Flat illustration that moves as if 3D: a gold key draws as an outline, fills and floats with a glow over mint, then turns with real thickness against a violet sunset sky, flies to a teal door in a purple room, turns in the lock and the door opens onto golden light that floods the frame, ending on a framed picture beside a short line. Use to make a new video in this look (3D); address it by ID fake3d.
 ---
 
-# KOSIF TOOL — عمق 2.5D
+# KOSIF TOOL — عمق 2.5D / عمق 2.5D لقصة رمزية بالمفتاح والباب
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/fake3d
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+رسم مسطح يتحرك كأنه ثلاثي الأبعاد: مفتاح ذهبي يُرسم بخط ثم يمتلئ ويطفو بتوهج فوق خلفية نعناعية، ثم يدور بسماكة حقيقية في سماء غروب بنفسجية، يطير إلى باب أخضر في غرفة بنفسجية، يدور في القفل فيُفتح الباب على ضوء ذهبي يغمر الكادر، وينتهي ببطاقة صورة وجملة.
+
+Flat illustration that moves as if 3D: a gold key draws as an outline, fills and floats with a glow over mint, then turns with real thickness against a violet sunset sky, flies to a teal door in a purple room, turns in the lock and the door opens onto golden light that floods the frame, ending on a framed picture beside a short line.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (18 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: 3D / ثلاثي الأبعاد, Photos / صور.

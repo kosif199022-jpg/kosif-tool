@@ -16,6 +16,22 @@ description: "التنين الأسود: new independent skill that studies the 
 5. Turn extracted insights into native executable features when practical. Only mark a feature implemented after its new code exists. Count executed only from real task evidence.
 6. Original Black Dragon / Dragon Mind / standalone tool routing is **off by default**; legacy IDs can be returned as **optional links**, without executing them.
 
+## Mandatory video-product protocol (إلزامي)
+
+Any request for a video product (reel, ad, promo, montage, motion, film, intro,
+shorts) walks ONE fixed path of seven stages: `brief → concept → color-design →
+shots → produce → qa-color → deliver`. Read `references/VIDEO_PROTOCOL.md` and drive
+it with `scripts/video_protocol.py` (`start`, `record`, `color`, `check`). A stage can
+only be recorded after the previous one; each stage is sealed; the two color stages
+are measured from real pixels (60/30/10 palette, ONE accent on the hero, chosen by
+the contrast / emotion / neon rule). Every stage first runs its MANDATORY CORE SKILLS
+for real with `video_protocol.py core <id> --job J -- <args>` (sealed receipt, exit 0):
+Dragon Mind + tool matrix (brief), Infinite Matrices + 86-style atlas + hook scorer
+(concept), motion-graphics repos + a shot planner (shots), one renderer (produce),
+the delivery gate (qa). `video_protocol.py cores` prints the map. Never deliver a video until
+`video_protocol.py check --job <job>` exits 0. `compose` adds a `video_protocol`
+block automatically when the task mentions video.
+
 ## Commands
 
 Run from repository root:
@@ -100,6 +116,10 @@ Run the quick tests with:
 ```bash
 python3 -m unittest discover -s tests -p test_black_dragon_creative_council.py
 ```
+
+## The Arena — after the council, when the answer is rejected
+
+The council decides a plan before the work. When the owner rejects a finished answer («الإجابة وحشة»، «خليهم يتنافسوا»، «الحلبة»), use the vendored [arena skill](../arena/SKILL.md) (MIT, Jake Schincariol): the same task, byte for byte, goes to N sub-agents (16 with `--quick`, 100 only when the owner asks), each with a different card (15 reasoning modes × 12 workflows × 12 strategies). They attack each other's solutions, defend and revise, and a judge scores every match on [the rubric](../arena/rubric.md) until one survives; a blind final check compares it with the rejected answer. `bracket.py` keeps the whole bracket in one JSON file, so a compacted context resumes with `bracket.py next`. The orchestrator never judges. The Black Dragon adapter `skill:arena` proves the bracket with stand-in agents and known answers; it does not call a model.
 
 
 ## Book-informed judgment guard (Thinking, Fast and Slow)

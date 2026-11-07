@@ -1,10 +1,15 @@
 {
   "id": "pm-ghinaiya-nirmal-5d8fec",
   "name": "Claude motion design reel",
-  "name_ar": null,
+  "name_ar": "ريل مصمم موشن بثمانية أساليب في 15 ثانية",
   "origin": "PromptsMotion",
   "type": "Prompt",
-  "category": [],
+  "category": [
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "3d"
+  ],
   "creator": "@ghinaiya_nirmal",
   "creator_url": "https://x.com/ghinaiya_nirmal/status/2103540656182308943",
   "page": "https://www.promptsmotion.com/ghinaiya-nirmal-5d8fec",
@@ -23,5 +28,40 @@
   "source_prompt_words": 9,
   "listed": true,
   "skill": "styles/pm-ghinaiya-nirmal-5d8fec/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/3d.md"
+  ],
+  "summary_ar": "ريل استعراضي مدته 15 ثانية يمر على ثمانية أساليب حركة داخل إطار شاشة عرض بعلامات زوايا وتوقيت وعداد إيقاع 128 BPM: كرة حمراء تقفز بالضغط والمط مع منحنى سرعتها، حرف مائل ضخم على البرتقالي، «THINGS» ضبابية على الأزرق و«MOVE» بقرص، أشكال تتحول، شبكة نقاط موجية ملونة، جسيمات كرة ودونات، «fluid» بنقاط سائلة تقطر، موجة ليمونية، «GLITCH»، ثم بطاقة الاسم.",
+  "summary_en": "A 15-second showreel cycling eight motion disciplines inside a viewfinder HUD with a 128 BPM bar counter: a squash-and-stretch red ball with its graph, giant kinetic words on orange, blue and cream, morphing shapes in a selection box, a dot-matrix wave, a particle sphere turning torus, dripping 'fluid' blobs, a lime sine line, an RGB-split 'GLITCH', then a name card.",
+  "keywords": [
+    "showreel",
+    "motion designer reel",
+    "squash and stretch",
+    "shape morph",
+    "particles",
+    "fluid",
+    "glitch",
+    "beat sync",
+    "128 bpm",
+    "ريل موشن",
+    "مبادئ الحركة",
+    "تحول الأشكال",
+    "جسيمات",
+    "سوائل",
+    "تشويش",
+    "مزامنة الإيقاع"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "Three.js",
+    "HTML Canvas"
+  ],
+  "brief": "styles/pm-ghinaiya-nirmal-5d8fec/BRIEF.md"
 }

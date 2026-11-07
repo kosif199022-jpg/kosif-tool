@@ -1,11 +1,11 @@
 {
   "id": "pm-elliot-garreffa-f334bc",
   "name": "Muse connector tracker promo",
-  "name_ar": null,
+  "name_ar": "إعلان أداة تتبع موصلات الذكاء الاصطناعي بأزرق نقي وبطاقات بيضاء",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
+    "product-ui",
     "kinetic-type"
   ],
   "creator": "@elliot_garreffa",
@@ -27,7 +27,34 @@
   "listed": true,
   "skill": "styles/pm-elliot-garreffa-f334bc/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
+    "playbooks/product-ui.md",
     "playbooks/kinetic-type.md"
-  ]
+  ],
+  "summary_ar": "إعلان منتج مدته 39 ثانية على خلفية بيضاء بتدرجات خضراء منقطة: شعار حرف M أزرق، عنوان بلونين، دائرة زرقاء تتمدد لتملأ الشاشة بثلاث كلمات، ثم قائمة موصلات تمتلئ صفاً صفاً، بطاقة إنستغرام تتفرع إلى ثلاث قدرات، بطاقات منصات متناثرة تصطف بعد البحث، مقارنة أربع منظومات على أخضر داكن، وختام بزر اشتراك يومي.",
+  "summary_en": "A 39-second product promo on white with dotted green gradient blobs: a blue M logo, a two-tone headline, a blue circle expanding to full-screen for three words, then a connector list filling row by row, an Instagram card branching to three capabilities, scattered platform cards snapping into a filtered row, four ecosystems compared on dark green, and a daily-email sign-up end card.",
+  "keywords": [
+    "product promo",
+    "SaaS",
+    "UI cards",
+    "connector tracker",
+    "two-tone headline",
+    "circle wipe",
+    "halftone gradient",
+    "email signup",
+    "إعلان منتج",
+    "بطاقات واجهة",
+    "عنوان بلونين",
+    "أزرق",
+    "تتبع",
+    "ذكاء اصطناعي"
+  ],
+  "difficulty": 3,
+  "duration_s": 39,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "SVG"
+  ],
+  "brief": "styles/pm-elliot-garreffa-f334bc/BRIEF.md"
 }

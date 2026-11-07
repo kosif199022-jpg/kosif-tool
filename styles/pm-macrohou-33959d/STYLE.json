@@ -1,13 +1,14 @@
 {
   "id": "pm-macrohou-33959d",
   "name": "Ren app launch video",
-  "name_ar": null,
+  "name_ar": "إطلاق تطبيق تجارب المكملات: «تجربة على شخص واحد» بهدوء ورقي",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
+    "phone",
     "charts",
-    "music"
+    "kinetic-type"
   ],
   "creator": "@macrohou",
   "creator_url": "https://x.com/macrohou/status/2103545787875733862",
@@ -29,7 +30,36 @@
   "skill": "styles/pm-macrohou-33959d/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
+    "playbooks/phone.md",
     "playbooks/charts.md",
-    "playbooks/music.md"
-  ]
+    "playbooks/kinetic-type.md"
+  ],
+  "summary_ar": "فيلم إطلاق مدته نحو 30 ثانية لتطبيق صحي: يبدأ بحبوب ونجوم متطايرة على الأسود حول سؤال «الجميع يقسم إنها تنفع»، ثم ينتقل إلى ورق كريمي هادئ بعناوين داكنة وكلمات مفتاحية خضراء، شعار القوس يرافق الجمل، قواعد التجربة كبطاقات تُقفل، هاتف يملأ تقويم الجرعات بنقرة، صندوق نتيجة يدور حتى «نجح»، منحنى نبض ينخفض، شجرة الاختبار التالي، ثم جسيمات تتجمع في «n = 1» والشعار.",
+  "summary_en": "A ~30-second app launch film: tumbling pills on black give way to calm cream paper with green key words, the arch logo rides beside sentences, trial rules lock into a card, a phone fills a dose calendar, a slot reel lands on 'worked', a heart-rate line drops, a next-test tree branches, and particles form 'n = 1' and the logo.",
+  "keywords": [
+    "app launch",
+    "health app",
+    "supplement trial",
+    "n of 1",
+    "phone mockup",
+    "slot reel",
+    "line chart",
+    "decision tree",
+    "sage green",
+    "إطلاق تطبيق",
+    "تطبيق صحي",
+    "مكملات غذائية",
+    "تجربة شخصية",
+    "هاتف",
+    "مخطط خطي"
+  ],
+  "difficulty": 3,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "HTML Canvas"
+  ],
+  "brief": "styles/pm-macrohou-33959d/BRIEF.md"
 }

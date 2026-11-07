@@ -1,9 +1,9 @@
 ---
 name: pm-justincooperman-e7bbc4
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 30-second product video on cream with soft peach and sage glows: an opening question with a green keyword, a chat panel beside an email preview, a request typed and sent, an image resolving from a shimmer into an autumn café shot with the logo on a coffee bag, the image flying into the email, black caption pills, then the logo and a button. Use to make a new video in this look (Product UI); address it by ID pm-justincooperman-e7bbc4.
 ---
 
-# KOSIF TOOL — Tented image gen product video
+# KOSIF TOOL — Tented image gen product video / عرض منتج يولّد صورة بهوية العلامة داخل بريد تسويقي
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/justincooperman-e7bbc4
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو منتج مدته 30 ثانية على خلفية كريمية بتدرج خوخي وأخضر ناعم: سؤال افتتاحي بكلمة خضراء، ثم نافذة دردشة وبجانبها معاينة بريد، طلب يُكتب في الحقل ويُرسل، صورة تتكون من بطاقة فارغة إلى لقطة مقهى خريفية بكيس قهوة يحمل الشعار، الصورة تطير إلى أعلى البريد، وكبسولات تعليق سوداء أسفل الكادر، ثم شعار المنتج وزر التجربة.
+
+A 30-second product video on cream with soft peach and sage glows: an opening question with a green keyword, a chat panel beside an email preview, a request typed and sent, an image resolving from a shimmer into an autumn café shot with the logo on a coffee bag, the image flying into the email, black caption pills, then the logo and a button.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, Web Audio), suggested duration (30 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Photos / صور.
+Categories: Product UI / واجهات المنتج, Photos / صور, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/photos.md](../../playbooks/photos.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

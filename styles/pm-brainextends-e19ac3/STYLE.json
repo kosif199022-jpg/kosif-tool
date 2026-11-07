@@ -1,18 +1,11 @@
 {
   "id": "pm-brainextends-e19ac3",
   "name": "Spotify product film",
-  "name_ar": null,
+  "name_ar": "فيلم منتج لتطبيق موسيقى داخل إطار شاشة داكنة على تدرج أخضر",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
-    "charts",
-    "diagrams",
-    "kinetic-type",
-    "shapes",
-    "particles",
-    "characters",
-    "photos",
     "music"
   ],
   "creator": "@brainextends",
@@ -38,13 +31,33 @@
   "skill": "styles/pm-brainextends-e19ac3/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md",
-    "playbooks/diagrams.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/particles.md",
-    "playbooks/characters.md",
-    "playbooks/photos.md",
     "playbooks/music.md"
-  ]
+  ],
+  "summary_ar": "فيلم منتج مدته 18 ثانية لتطبيق بث موسيقي، كله داخل لوح داكن مستدير الحواف فوق تدرج أخضر إلى أسود: شعار دائري أخضر، سطر بكلمة خضراء، شاشة رئيسية تقترب إلى غلافات ملونة، قائمة أغانٍ، شريط غلافات المزاج يمر أفقياً، بحث يملأ نتيجة، غلاف لامع قزحي يكبر حتى يملأ اللوح، ومضة خضراء كاملة، بطاقات تنتشر وتتراكم في الفضاء، وختام بالشعار وسطرين؛ ومشغل صغير ثابت في الأسفل.",
+  "summary_en": "An 18-second music app product film inside one rounded dark panel over a green-to-black gradient: logo, a line with a green word, home screen push-in to colourful covers, a track list, a mood-cover strip, a search result, a glossy iridescent cover growing to fill the panel, a green flash, cards stacking in depth, and a logo end card.",
+  "keywords": [
+    "music app",
+    "product film",
+    "streaming UI",
+    "cover art cards",
+    "mini player",
+    "green gradient",
+    "zoom transitions",
+    "card stack",
+    "تطبيق موسيقى",
+    "فيلم منتج",
+    "واجهة بث",
+    "غلافات ألبومات",
+    "تدرج أخضر",
+    "بطاقات"
+  ],
+  "difficulty": 3,
+  "duration_s": 18,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "HTML Canvas"
+  ],
+  "brief": "styles/pm-brainextends-e19ac3/BRIEF.md"
 }

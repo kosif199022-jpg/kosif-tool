@@ -1,12 +1,14 @@
 {
   "id": "pm-sudiyasa-f48ac9",
   "name": "EyezOn 100 users thank-you",
-  "name_ar": null,
+  "name_ar": "فيديو شكر لأول 100 مستخدم بأرقام نقطية ومكعبات إيزومترية ومجرة جسيمات",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
+    "kinetic-type",
     "charts",
-    "kinetic-type"
+    "particles",
+    "shapes"
   ],
   "creator": "@Sudiyasa_",
   "creator_url": "https://x.com/Sudiyasa_/status/2103638831669076027",
@@ -27,7 +29,37 @@
   "listed": true,
   "skill": "styles/pm-sudiyasa-f48ac9/SKILL.md",
   "playbooks": [
+    "playbooks/kinetic-type.md",
     "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/particles.md",
+    "playbooks/shapes.md"
+  ],
+  "summary_ar": "فيديو شكر سريع (15 ثانية) لتطبيق وصل إلى 100 مستخدم، يتنقل بين خلفيات ذهبية وسوداء وكريمية ووردية: منحنى إيزنج بنقطة متوهجة، رقم 100 عريض ثم بخط مائل، مربع يتحول لعين، رقم 100 من نقاط داخل حلقة نصف تونية وردية، شبكة مكعبات إيزومترية 10×10 ترتفع منها أعمدة وردية، مجرة جسيمات لولبية، ثم كلمات الشكر كل كلمة على لون ونهاية بالشعار.",
+  "summary_en": "A fast 15 s thank-you reel for an app reaching 100 users, cutting between gold, black, cream and hot-pink grounds: a heavy '100', the number in italic serif, a dot-matrix '100' in a pink halftone ring, an isometric block grid sprouting pink columns, a spiral particle galaxy, then one thank-you word per colour and a logo card.",
+  "keywords": [
+    "milestone",
+    "thank you video",
+    "100 users",
+    "isometric blocks",
+    "dot matrix",
+    "particle galaxy",
+    "beat cuts",
+    "showreel HUD",
+    "شكر المستخدمين",
+    "إنجاز",
+    "100 مستخدم",
+    "مكعبات إيزومترية",
+    "جسيمات",
+    "قطع على الإيقاع"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "HTML Canvas",
+    "Three.js"
+  ],
+  "brief": "styles/pm-sudiyasa-f48ac9/BRIEF.md"
 }

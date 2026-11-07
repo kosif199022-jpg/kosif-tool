@@ -1,12 +1,12 @@
 {
   "id": "pm-mdaman010-e7226a",
   "name": "AI data centre 3D film",
-  "name_ar": null,
+  "name_ar": "جولة ثلاثية الأبعاد داخل مركز بيانات للذكاء الاصطناعي",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "characters"
+    "3d",
+    "diagrams"
   ],
   "creator": "@mdaman010",
   "creator_url": "https://x.com/mdaman010/status/2103845689713111079",
@@ -27,7 +27,36 @@
   "listed": true,
   "skill": "styles/pm-mdaman010-e7226a/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/characters.md"
-  ]
+    "playbooks/3d.md",
+    "playbooks/diagrams.md"
+  ],
+  "summary_ar": "تسجيل مدته نحو 98 ثانية لشرح تفاعلي ثلاثي الأبعاد داخل مركز بيانات للذكاء الاصطناعي في عالم رمادي فاتح ضبابي: الكاميرا تنساب من المبنى إلى خطوط الكهرباء، قاعة الخوادم، رف واحد، صينية حوسبة، شريحة مفككة طبقات، شبكة الربط بين الرفوف، ثم مسار الحرارة إلى المبردات على السطح، مع تدفقات ملونة للطاقة والبيانات والحرارة والتبريد، وعناوين فصول مرقمة وشريط مشغل أسفل الشاشة.",
+  "summary_en": "A ~98-second capture of an interactive 3D explainer of an AI data centre in a pale foggy grey world: the camera glides from building to power lines, data hall, one rack, a compute tray, an exploded chip, the rack network and rooftop coolers, with colour-coded power, data, heat and coolant flows, numbered chapter titles and a player bar.",
+  "keywords": [
+    "data centre",
+    "3D explainer",
+    "scrollytelling",
+    "infrastructure",
+    "GPU rack",
+    "exploded view",
+    "colour-coded flows",
+    "fog",
+    "chapter player",
+    "cooling",
+    "مركز بيانات",
+    "شرح ثلاثي الأبعاد",
+    "بنية تحتية",
+    "رف خوادم",
+    "منظر مفكك",
+    "تبريد",
+    "ذكاء اصطناعي"
+  ],
+  "difficulty": 5,
+  "duration_s": 98,
+  "stack": [
+    "React",
+    "Three.js",
+    "WebGL"
+  ],
+  "brief": "styles/pm-mdaman010-e7226a/BRIEF.md"
 }

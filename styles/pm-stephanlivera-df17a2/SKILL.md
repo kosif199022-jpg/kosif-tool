@@ -1,6 +1,6 @@
 ---
 name: pm-stephanlivera-df17a2
-description: A fast 15-second self-promo reel of separate vignettes joined by hard cuts and colour flips: a line burst, a giant CLAUDE wordmark on red, a six-easing comparison board, a star pop on electric blue, rippling Truchet tiles, a 3D particle torus and a giant EASE.
+description: A fast 15-second self-promo reel of separate vignettes joined by hard cuts and colour flips: a line burst, a giant CLAUDE wordmark on red, a six-easing comparison board, a star pop on electric blue, rippling Truchet tiles, a 3D particle torus and a giant EASE. Use to make a new video in this look (Charts); address it by ID pm-stephanlivera-df17a2.
 ---
 
 # KOSIF TOOL — Claude motion designer showreel / ريل تعريفي لمصمم موشن بالذكاء الاصطناعي

@@ -1,7 +1,7 @@
 {
   "id": "pm-hqmank-7c61f1",
   "name": "Browser automation skill launch",
-  "name_ar": null,
+  "name_ar": "إطلاق أداة أتمتة متصفح بعناوين ضخمة وطرفية وموقع تجريبي",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -29,5 +29,31 @@
   "playbooks": [
     "playbooks/product-ui.md",
     "playbooks/charts.md"
-  ]
+  ],
+  "summary_ar": "فيلم إطلاق مدته 23 ثانية لأداة تتيح لوكيل ذكاء اصطناعي تصفح المواقع: عناوين ضخمة بأحرف كبيرة سوداء وبرتقالية على ورق كريمي، ثلاث خطوات (موقع، هدف، تشغيل) متصلة بخط، طرفية داكنة يُكتب فيها الأمر، ثم موقع تجريبي يتنقل فيه مؤشر حتى صفحة الأسعار ويضغط الزر بجانب سجل خطوات حي، ثلاث بطاقات صفات بخلفيات برتقالية وسوداء وكريمية، وختام بأمر النسخ من المستودع.",
+  "summary_en": "A 23-second launch film for a browser-automation agent skill: huge black-and-orange uppercase headlines on cream paper, a three-step site/goal/run flow, a dark terminal typing the command, a mock website where a cursor finds the pricing page and clicks the button beside a live step log, three full-bleed trait cards (orange, black, cream), and a copyable clone-command end card.",
+  "keywords": [
+    "product launch",
+    "developer tool",
+    "browser automation",
+    "terminal",
+    "cursor demo",
+    "step log",
+    "editorial type",
+    "cream and orange",
+    "إطلاق منتج",
+    "أداة مطورين",
+    "أتمتة المتصفح",
+    "طرفية",
+    "عرض واجهة",
+    "عناوين ضخمة"
+  ],
+  "difficulty": 3,
+  "duration_s": 23,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-hqmank-7c61f1/BRIEF.md"
 }

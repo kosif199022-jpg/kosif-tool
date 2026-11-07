@@ -1,7 +1,7 @@
 {
   "id": "doodle",
   "name": "قصص الدودل",
-  "name_ar": "قصص الدودل",
+  "name_ar": "قصص الدودل: رسوم يدوية عفوية تتراكم حول الفكرة على ورق",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -24,5 +24,30 @@
   "skill": "styles/doodle/SKILL.md",
   "playbooks": [
     "playbooks/hand-drawn.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي بأسلوب الشخبطة اليدوية على ورق دفتر: خطوط قلم عفوية متعرجة ترسم أمامنا الأيقونات والشخصيات الصغيرة والأسهم والنجوم حول كلمة محورية، مع تلوين سريع بقلم تحديد يخرج قليلاً عن الحدود، وارتجاف خفيف مستمر في الخطوط.",
+  "summary_en": "A vertical reel in hand-doodled style on notebook paper: loose wobbly pen lines draw icons, tiny characters, arrows and stars around a central word in front of us, with quick highlighter fills that spill slightly over the edges and a constant gentle line boil.",
+  "keywords": [
+    "doodle",
+    "hand drawn",
+    "notebook",
+    "sketch",
+    "line boil",
+    "mind map",
+    "scribble",
+    "دودل",
+    "شخبطة",
+    "رسم يدوي",
+    "دفتر",
+    "رسوم بسيطة",
+    "قصة"
+  ],
+  "difficulty": 3,
+  "duration_s": 30,
+  "stack": [
+    "SVG",
+    "React",
+    "Remotion"
+  ],
+  "brief": "styles/doodle/BRIEF.md"
 }

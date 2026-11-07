@@ -1,15 +1,14 @@
 {
   "id": "pm-lukasersil-0ed38e",
   "name": "Motion techniques showreel",
-  "name_ar": null,
+  "name_ar": "شوريل تقنيات الموشن: من النقطة إلى السوائل والجسيمات",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
     "kinetic-type",
     "shapes",
     "particles",
-    "photos"
+    "3d"
   ],
   "creator": "@lukasersil",
   "creator_url": "https://x.com/lukasersil/status/2103742861971726495",
@@ -30,10 +29,36 @@
   "listed": true,
   "skill": "styles/pm-lukasersil-0ed38e/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
     "playbooks/kinetic-type.md",
     "playbooks/shapes.md",
     "playbooks/particles.md",
-    "playbooks/photos.md"
-  ]
+    "playbooks/3d.md"
+  ],
+  "summary_ar": "شوريل مدته 15 ثانية يتدرج في تقنيات الموشن داخل إطار بعداد زمني: نقطة ضوء على شبكة نقاط تكتب «POINT»، خط مضيء يتموج، كلمة «LINE» من شرائح أفقية تنزلق، أشكال باوهاوس (دائرة زرقاء ومربع أحمر ومثلث أصفر) وسط فسيفساء، أجسام لامعة ثلاثية الأبعاد وكرة كروم على أرض عاكسة، محاكاة سوائل ملونة بكلمة «FLUID» زجاجية، انفجار جسيمات وكلمة «MOTION»، ترجيع سريع، ثم «SHOWREEL ’26».",
+  "summary_en": "A 15-second showreel climbing through motion techniques in a timecoded frame: a light point spelling 'POINT' on a dot grid, a rippling line, 'LINE' in sliding slices, Bauhaus circle, square and triangle in a mosaic, glossy 3D primitives and a chrome sphere, a marbled fluid behind glassy 'FLUID', a particle burst forming 'MOTION', and a 'SHOWREEL ’26' card.",
+  "keywords": [
+    "showreel",
+    "motion techniques",
+    "bauhaus",
+    "primary colours",
+    "fluid simulation",
+    "particles",
+    "chrome sphere",
+    "sliced type",
+    "rewind",
+    "شوريل",
+    "تقنيات الموشن",
+    "باوهاوس",
+    "محاكاة سوائل",
+    "جسيمات"
+  ],
+  "difficulty": 5,
+  "duration_s": 15,
+  "stack": [
+    "Three.js",
+    "WebGL",
+    "Remotion",
+    "React"
+  ],
+  "brief": "styles/pm-lukasersil-0ed38e/BRIEF.md"
 }

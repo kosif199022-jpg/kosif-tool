@@ -2657,8 +2657,8 @@
    "files": [
     {
      "path": "SKILL.md",
-     "sha256": "da04ed311ab7490ea2f2eb3e94756ae206d566726844fcecd6efc7ce09a1d6bd",
-     "bytes": 20845
+     "sha256": "d6bfdcd2edf124ed449b5eae3c34d3fbf302f9407b09bb59e58c6539297182ce",
+     "bytes": 21046
     }
    ],
    "refused_non_text": [],
@@ -4577,8 +4577,8 @@
    "files": [
     {
      "path": "SKILL.md",
-     "sha256": "da63c388e56d7db12d4b60f1775d89447cdda6931d4d83d29b208dfe26fb648a",
-     "bytes": 9783
+     "sha256": "79a9b15c62912a5aeb0f3df114b3d2b15ca907bd8f3834d8aed33bd87e897c93",
+     "bytes": 9925
     }
    ],
    "refused_non_text": [],
@@ -4611,8 +4611,8 @@
    "files": [
     {
      "path": "SKILL.md",
-     "sha256": "de3005c073555c935d58133a14bb27700a2d7b3f784e506afce1d7ae94bfda61",
-     "bytes": 10790
+     "sha256": "5dcaf358b07abd9431014b8efa9edd2ad8c549a9ea1a31db83edab1c7968e90c",
+     "bytes": 10968
     }
    ],
    "refused_non_text": [],
@@ -8439,8 +8439,8 @@
    "files": [
     {
      "path": "SKILL.md",
-     "sha256": "1b16ebc38bd4fb3bf216446176b359c7ca4efb0f0792613fcd68450382c0b48b",
-     "bytes": 5005
+     "sha256": "5ba622b92ec83bb923881a6a4eb43d24d9d89980e7dcf1c7fae23c079e5a95a2",
+     "bytes": 5269
     },
     {
      "path": "references/debug-intermittent-failures.md",
@@ -9024,8 +9024,8 @@
     },
     {
      "path": "SKILL.md",
-     "sha256": "e9ce82b0fa694d4f5c5b8f8e5f5e42b0d7bba7ef3105f74d7155eb6e5943eedf",
-     "bytes": 6581
+     "sha256": "bee5c2c3c2fce0b4a932162e2b91c4746393a0b057e9fba4ef20e22dd90144d5",
+     "bytes": 6769
     }
    ],
    "refused_non_text": [],

@@ -1,9 +1,9 @@
 ---
 name: pm-ibrahimwasim240-809370
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 25-second personal reel styled as a neon pixel platformer: a press-start title, one level per skill (a green hero jumping platforms, code beside a live preview, a site resizing across devices with score rings, a task board, a 'last bug' boss that explodes), then a level-up burst, a character sheet with filling skill bars, a level map and a name end card. Use to make a new video in this look (Charts); address it by ID pm-ibrahimwasim240-809370.
 ---
 
-# KOSIF TOOL — Personal skills showreel
+# KOSIF TOOL — Personal skills showreel / ريل مهارات شخصي على هيئة لعبة بكسل من مستويات
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/ibrahimwasim240-809370
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #116
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل شخصي مدته 25 ثانية مصمم كلعبة منصات بكسل نيون: شاشة «اضغط ابدأ» باسم اللاعب، ومستويات مرقمة لكل مهارة (منصات يقفز فيها بطل أخضر، محرر كود بمعاينة حية، موقع يتبدل بين أحجام الشاشات مع حلقات تقييم، لوحة مهام تُنقل بطاقاتها، زعيم هو «آخر خلل» ينفجر)، ثم «ترقية!» بأشعة ملونة، بطاقة شخصية بأشرطة مهارات تمتلئ، خريطة المستويات، وختام بالاسم وحساب التواصل.
+
+A 25-second personal reel styled as a neon pixel platformer: a press-start title, one level per skill (a green hero jumping platforms, code beside a live preview, a site resizing across devices with score rings, a task board, a 'last bug' boss that explodes), then a level-up burst, a character sheet with filling skill bars, a level map and a name end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, HTML Canvas, CSS), suggested duration (25 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Characters / شخصيات.

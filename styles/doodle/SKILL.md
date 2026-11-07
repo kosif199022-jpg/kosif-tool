@@ -1,9 +1,9 @@
 ---
 name: doodle
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A vertical reel in hand-doodled style on notebook paper: loose wobbly pen lines draw icons, tiny characters, arrows and stars around a central word in front of us, with quick highlighter fills that spill slightly over the edges and a constant gentle line boil. Use to make a new video in this look (Hand-drawn); address it by ID doodle.
 ---
 
-# KOSIF TOOL — قصص الدودل
+# KOSIF TOOL — قصص الدودل / قصص الدودل: رسوم يدوية عفوية تتراكم حول الفكرة على ورق
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/doodle
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي بأسلوب الشخبطة اليدوية على ورق دفتر: خطوط قلم عفوية متعرجة ترسم أمامنا الأيقونات والشخصيات الصغيرة والأسهم والنجوم حول كلمة محورية، مع تلوين سريع بقلم تحديد يخرج قليلاً عن الحدود، وارتجاف خفيف مستمر في الخطوط.
+
+A vertical reel in hand-doodled style on notebook paper: loose wobbly pen lines draw icons, tiny characters, arrows and stars around a central word in front of us, with quick highlighter fills that spill slightly over the edges and a constant gentle line boil.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (SVG, React, Remotion), suggested duration (30 s), aspect 9:16, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Hand-drawn / رسم يدوي.

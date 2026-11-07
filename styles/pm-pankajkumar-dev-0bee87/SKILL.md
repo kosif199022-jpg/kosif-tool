@@ -1,9 +1,9 @@
 ---
 name: pm-pankajkumar-dev-0bee87
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 30-second Bauhaus-style type film on gridded cream paper: a giant black word presses a technical-drawing frame until it bends, the frame tilts into 3D beside blue and red slabs, huge letters fill red and yellow grounds and fall on a grid floor, a chaotic shape-and-word collage erupts, then it resets to a clean frame and the designer's name. Use to make a new video in this look (Kinetic type); address it by ID pm-pankajkumar-dev-0bee87.
 ---
 
-# KOSIF TOOL — Poster breaking its frame
+# KOSIF TOOL — Poster breaking its frame / تايبوغرافي باوهاوس يكسر إطاره ويخرج منه
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/pankajkumar-dev-0bee87
@@ -17,12 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيلم تايبوغرافي مدته 30 ثانية بروح باوهاوس على ورق كريمي بشبكة رفيعة: كلمة سوداء ضخمة تضغط على إطار مخطط تقني حتى ينثني، ثم يتحول الإطار إلى بطاقة تميل في فضاء ثلاثي الأبعاد مع كتل زرقاء وحمراء، وحروف عملاقة على الأحمر والأصفر، وأرضية شبكية منظورية، وحرف يدور إلى دوامة ألوان، وانفجار فوضوي من الأشكال والكلمات، ثم عودة إلى إطار نظيف واسم المصمم.
+
+A 30-second Bauhaus-style type film on gridded cream paper: a giant black word presses a technical-drawing frame until it bends, the frame tilts into 3D beside blue and red slabs, huge letters fill red and yellow grounds and fall on a grid floor, a chaotic shape-and-word collage erupts, then it resets to a clean frame and the designer's name.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Three.js), suggested duration (30 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: creative motion.
-- (no category playbook yet)
+Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, 3D / ثلاثي الأبعاد.
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
-* Develop original choreography from the reference; verify imagery before claiming a match.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

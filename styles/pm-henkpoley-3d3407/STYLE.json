@@ -1,11 +1,10 @@
 {
   "id": "pm-henkpoley-3d3407",
   "name": "Deliberately terrible motion showreel",
-  "name_ar": null,
+  "name_ar": "شوريل موشن سيئ عمداً داخل موقع شخصي قديم",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
     "kinetic-type",
     "code"
   ],
@@ -30,8 +29,33 @@
   "listed": true,
   "skill": "styles/pm-henkpoley-3d3407/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
     "playbooks/kinetic-type.md",
     "playbooks/code.md"
-  ]
+  ],
+  "summary_ar": "مقطع ساخر مدته 69 ثانية يحاكي موقع مصمم موشن من بدايات الإنترنت: شريط متحرك «متاح للتوظيف»، مشغل فيديو بعلامة «نسخة غير مسجلة» مائلة، وداخله شوريل كارثي عمداً: أشرطة ألوان اختبار، عد تنازلي سينمائي، «شوريل 2026» بألوان قوس قزح، شعار عميل يدور، خطأ إملائي، قسم ثلاثي الأبعاد لم يكتمل، «وسائط غير متصلة»، مسح نجمة، جسيمات بائسة، رجل عصا، وينتهي بإشعار بريد رفض.",
+  "summary_en": "A 69-second parody of an early-web portfolio page with a hire-me marquee and a trial-watermarked player showing a deliberately awful reel: colour bars, film countdown, rainbow 'SHOWREEL 2026', a spinning client logo, typos, an unfinished 3D section, 'Media Offline', a star wipe, a stick figure, and a closing rejection-email toast.",
+  "keywords": [
+    "parody",
+    "showreel",
+    "bad design",
+    "retro web page",
+    "watermark",
+    "star wipe",
+    "lens flare",
+    "comedy timing",
+    "محاكاة ساخرة",
+    "شوريل",
+    "تصميم سيئ عمداً",
+    "موقع قديم",
+    "كوميديا",
+    "موشن"
+  ],
+  "difficulty": 3,
+  "duration_s": 69,
+  "stack": [
+    "HTML Canvas",
+    "CSS",
+    "React"
+  ],
+  "brief": "styles/pm-henkpoley-3d3407/BRIEF.md"
 }

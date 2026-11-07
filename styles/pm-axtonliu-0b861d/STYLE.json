@@ -1,10 +1,12 @@
 {
   "id": "pm-axtonliu-0b861d",
   "name": "Pelican riding a bicycle",
-  "name_ar": null,
+  "name_ar": "بجعة تقود دراجة على رصيف بحري عند الغروب",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
+    "3d",
+    "characters",
     "code"
   ],
   "creator": "@AxtonLiu",
@@ -29,6 +31,34 @@
   "listed": true,
   "skill": "styles/pm-axtonliu-0b861d/SKILL.md",
   "playbooks": [
+    "playbooks/3d.md",
+    "playbooks/characters.md",
     "playbooks/code.md"
-  ]
+  ],
+  "summary_ar": "فيلم ثلاثي الأبعاد واقعي مدته 38 ثانية لبجعة بيضاء تقود دراجة سوداء بسلة خوص على رصيف خشبي فوق البحر عند الغروب: لقطة جانبية عريضة، ثم اقتراب على الدواسات والسلسلة، ولقطة قريبة للمنقار البرتقالي، ثم لقطة منخفضة تحت سماء بنفسجية ترفرف فيها البجعة بجناحيها، وتبتعد على الرصيف بينما يظهر العنوان بخط سريفي رفيع فوق الماء.",
+  "summary_en": "A 38-second photoreal 3D short of a white pelican pedalling a black bicycle with a wicker basket along a wooden pier over the sea at sunset: a wide side tracking shot, a close-up on pedals and chain, a beak close-up, a low angle under a purple sky as it flaps its wings, then it rides away down the pier as a thin serif title fades in over the water.",
+  "keywords": [
+    "pelican on a bicycle",
+    "3D short",
+    "sunset pier",
+    "ocean shader",
+    "character rig",
+    "cinematic camera",
+    "benchmark",
+    "Three.js",
+    "بجعة",
+    "دراجة",
+    "غروب",
+    "رصيف بحري",
+    "ثلاثي الأبعاد",
+    "فيلم قصير"
+  ],
+  "difficulty": 5,
+  "duration_s": 38,
+  "stack": [
+    "Three.js",
+    "WebGL",
+    "React"
+  ],
+  "brief": "styles/pm-axtonliu-0b861d/BRIEF.md"
 }

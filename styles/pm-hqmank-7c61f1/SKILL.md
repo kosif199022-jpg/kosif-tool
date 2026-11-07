@@ -1,9 +1,9 @@
 ---
 name: pm-hqmank-7c61f1
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 23-second launch film for a browser-automation agent skill: huge black-and-orange uppercase headlines on cream paper, a three-step site/goal/run flow, a dark terminal typing the command, a mock website where a cursor finds the pricing page and clicks the button beside a live step log, three full-bleed trait cards (orange, black, cream), and a copyable clone-command end card. Use to make a new video in this look (Product UI); address it by ID pm-hqmank-7c61f1.
 ---
 
-# KOSIF TOOL — Browser automation skill launch
+# KOSIF TOOL — Browser automation skill launch / إطلاق أداة أتمتة متصفح بعناوين ضخمة وطرفية وموقع تجريبي
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/hqmank-7c61f1
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #34
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+فيلم إطلاق مدته 23 ثانية لأداة تتيح لوكيل ذكاء اصطناعي تصفح المواقع: عناوين ضخمة بأحرف كبيرة سوداء وبرتقالية على ورق كريمي، ثلاث خطوات (موقع، هدف، تشغيل) متصلة بخط، طرفية داكنة يُكتب فيها الأمر، ثم موقع تجريبي يتنقل فيه مؤشر حتى صفحة الأسعار ويضغط الزر بجانب سجل خطوات حي، ثلاث بطاقات صفات بخلفيات برتقالية وسوداء وكريمية، وختام بأمر النسخ من المستودع.
+
+A 23-second launch film for a browser-automation agent skill: huge black-and-orange uppercase headlines on cream paper, a three-step site/goal/run flow, a dark terminal typing the command, a mock website where a cursor finds the pricing page and clicks the button beside a live step log, three full-bleed trait cards (orange, black, cream), and a copyable clone-command end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (23 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية.

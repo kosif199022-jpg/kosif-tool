@@ -1,13 +1,14 @@
 {
   "id": "pm-bogdandragomir-35e024",
   "name": "Product intro synced to music",
-  "name_ar": null,
+  "name_ar": "تعريف بمنتج قراءة بأسلوب الحبر الإلكتروني وانتقالات تحبب",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
-    "music",
-    "code"
+    "particles",
+    "kinetic-type",
+    "music"
   ],
   "creator": "@BogdanDragomir",
   "creator_url": "https://x.com/BogdanDragomir/status/2104045641538412658",
@@ -29,7 +30,35 @@
   "skill": "styles/pm-bogdandragomir-35e024/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/music.md",
-    "playbooks/code.md"
-  ]
+    "playbooks/particles.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/music.md"
+  ],
+  "summary_ar": "تعريف منتج مدته 15 ثانية بأسلوب الحبر الإلكتروني: يبدأ بكبسولة حبر مجهرية تمتلئ بحبيبات بيضاء وسوداء ثم تنفرط إلى شاشة من البكسلات، وكل فصل يُبنى ويُمحى بتحبب نقطي؛ أيقونات بريد ومقالات تُسحب كذيول من الجسيمات إلى قائمة، تُجمع في عدد مجلة على ورق فاتح، تصل إلى قارئ إلكتروني، ثم الشعار بخط سيريف.",
+  "summary_en": "A 15-second e-ink style product intro: it opens on a microscopic ink capsule filling with white and black grains that bursts into a pixel screen, and every chapter builds and erases with a dithered pixel dissolve; mail and article icons trail particle tails into a list, gather into a magazine issue on light paper, land on an e-reader, then a serif logo.",
+  "keywords": [
+    "e-ink",
+    "dither transition",
+    "pixel dissolve",
+    "product intro",
+    "newsletter",
+    "e-reader",
+    "particle trails",
+    "serif editorial",
+    "text scramble",
+    "حبر إلكتروني",
+    "انتقال تحبب",
+    "قارئ إلكتروني",
+    "تعريف منتج",
+    "خط سيريف"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "HTML Canvas",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-bogdandragomir-35e024/BRIEF.md"
 }

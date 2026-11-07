@@ -1,15 +1,13 @@
 {
   "id": "pm-tdinh-me-84f579",
   "name": "TypingMind product reel",
-  "name_ar": null,
+  "name_ar": "إعلان منتج لتطبيق محادثة متعدد النماذج على خلفية زرقاء ليلية",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
-    "charts",
     "kinetic-type",
-    "music",
-    "code"
+    "ads"
   ],
   "creator": "unknown",
   "creator_url": "https://x.com/tdinh_me/status/2103703135902740699",
@@ -31,9 +29,33 @@
   "skill": "styles/pm-tdinh-me-84f579/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md",
     "playbooks/kinetic-type.md",
-    "playbooks/music.md",
-    "playbooks/code.md"
-  ]
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "إعلان منتج مدته 15 ثانية لعميل محادثة ذكاء اصطناعي على خلفية زرقاء ليلية متدرجة بنجوم خافتة: صندوق إدخال تُكتب فيه رسالة، نافذة التطبيق تطفو بين أيقونات مزودي النماذج، ثلاثة أعمدة إجابة متجاورة، ثم لقطات واجهة مائلة بعناوين بيضاء وزرقاء، جدار من الشاشات المنظورية، وعود التسعير مع شارات التقييم، وبطاقة الشعار.",
+  "summary_en": "A 15-second product ad for an AI chat client on a starry midnight-blue gradient: a prompt box types itself, the app window floats among model-provider icons, three answer columns appear side by side, then tilted UI panels with white-and-blue headlines, a perspective wall of screens, a pricing promise with rating badges and a logo end card.",
+  "keywords": [
+    "product ad",
+    "saas promo",
+    "ai chat app",
+    "multi-model",
+    "tilted ui",
+    "screenshot wall",
+    "two-tone headline",
+    "pricing promise",
+    "إعلان منتج",
+    "تطبيق ذكاء اصطناعي",
+    "واجهة مستخدم",
+    "عناوين بلونين",
+    "خلفية زرقاء"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-tdinh-me-84f579/BRIEF.md"
 }

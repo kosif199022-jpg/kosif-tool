@@ -1,13 +1,14 @@
 {
   "id": "pm-leadnotifi-e83f94",
   "name": "Lead Notifi product ad",
-  "name_ar": null,
+  "name_ar": "إعلان منصة رسائل المبيعات بالأسود والليموني وأشكال سائلة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
-    "charts",
-    "kinetic-type"
+    "kinetic-type",
+    "shapes",
+    "ads"
   ],
   "creator": "@leadnotifi",
   "creator_url": "https://x.com/leadnotifi/status/2103628028391960983",
@@ -29,7 +30,37 @@
   "skill": "styles/pm-leadnotifi-e83f94/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "إعلان منتج مدته 45 ثانية بثلاثة ألوان فقط (أسود فحمي، أبيض مائل للرمادي، ليموني فاقع): نبضة رادار ودائرة نقاط، عناوين عريضة واسعة بأحرف كبيرة، قطرات حبر سوداء تتمدد كالسائل، مربع أيقونة أبيض يدور داخل إطار تحويل، عدّاد داخل حقل نقاط، كرة جسيمات تتحول مكعباً تحيط به كلمات تحية بلغات مختلفة، مخطط سير عمل كحبل سائل، مقياس دائري يمتلئ بسائل ليموني، شريط ميزات متحرك ودوامة كلمات، ثم بطاقة الشعار.",
+  "summary_en": "A 45-second three-colour product ad (charcoal, off-white, acid lime): a radar pulse, wide bold caps headlines, black liquid blobs, a rotating app icon in a transform box, a dot-field counter, a particle sphere turning into a cube ringed by greetings, a gooey workflow line, a lime-filled score gauge, a feature ticker and a logo card.",
+  "keywords": [
+    "product ad",
+    "saas promo",
+    "lime and black",
+    "liquid blobs",
+    "metaballs",
+    "lead score gauge",
+    "particle sphere",
+    "feature ticker",
+    "word spiral",
+    "إعلان منتج",
+    "ليموني وأسود",
+    "أشكال سائلة",
+    "عداد",
+    "واتساب للمبيعات",
+    "موشن جرافيك"
+  ],
+  "difficulty": 4,
+  "duration_s": 45,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "HTML Canvas",
+    "Three.js"
+  ],
+  "brief": "styles/pm-leadnotifi-e83f94/BRIEF.md"
 }

@@ -1,9 +1,9 @@
 ---
 name: logo-reveal
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A short logo sting: a single point of light splits into geometric shapes that orbit, snap and fold together into the logo mark, a light sweep crosses it, then the wordmark and tagline settle beneath on a dark gradient, ending on a clean held frame. Use to make a new video in this look (Ads); address it by ID logo-reveal.
 ---
 
-# KOSIF TOOL — كشف شعار
+# KOSIF TOOL — كشف شعار / كشف شعار من الأشكال الهندسية
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ستينغ قصير لكشف شعار: نقطة ضوء تنقسم إلى أشكال هندسية تتجمع وتلتف لتبني الشعار، ثم لمعة ضوئية تعبر عليه ويظهر الاسم والشعار اللفظي، على خلفية داكنة متدرجة بإيقاع سريع ينتهي بثبات نظيف.
+
+A short logo sting: a single point of light splits into geometric shapes that orbit, snap and fold together into the logo mark, a light sweep crosses it, then the wordmark and tagline settle beneath on a dark gradient, ending on a clean held frame.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Web Audio), suggested duration (7 s), aspect 9:16, difficulty 2/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Ads / إعلانات, Shapes / أشكال.

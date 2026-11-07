@@ -1,9 +1,9 @@
 ---
 name: pm-antonio-kodheli-490109
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 23-second site promo on warm off-white: a virtual camera pulls back to reveal the site headline and a grid of video cards, blur-cuts to a full-frame blue play card, then a cursor with a red click dot opens a card into a modal, the camera pushes into a code-style text block where a phrase is boxed red and Copy flips to Copied, ending on a big headline and URL pill. Use to make a new video in this look (Product UI); address it by ID pm-antonio-kodheli-490109.
 ---
 
-# KOSIF TOOL — Prompt Motion site promo
+# KOSIF TOOL — Prompt Motion site promo / إعلان موقع بكاميرا افتراضية تتجول في الواجهة ومؤشر ينقر وينسخ
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/antonio-kodheli-490109
@@ -18,18 +18,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان موقع مدته 23 ثانية على خلفية فاتحة دافئة: كاميرا افتراضية تتصغر لتكشف عنوان الموقع وشبكة بطاقات فيديو، وتنتقل بقطعات ضبابية إلى بطاقة زرقاء بزر تشغيل، ثم مؤشر بنقطة حمراء ينقر بطاقة فتظهر نافذة تفاصيل، تقترب الكاميرا من كتلة نص تُظلَّل فيها عبارة بالأحمر ويتحول زر «نسخ» إلى «تم النسخ»، وينتهي بعنوان كبير وزر رابط وعمود بطاقات يتحرك.
+
+A 23-second site promo on warm off-white: a virtual camera pulls back to reveal the site headline and a grid of video cards, blur-cuts to a full-frame blue play card, then a cursor with a red click dot opens a card into a modal, the camera pushes into a code-style text block where a phrase is boxed red and Copy flips to Copied, ending on a big headline and URL pill.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, Web Audio), suggested duration (23 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك, Photos / صور, Music / موسيقى.
+Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/photos.md](../../playbooks/photos.md)
-- [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

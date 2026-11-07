@@ -1,9 +1,9 @@
 ---
 name: pm-slash1sol-b35cb1
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 24-second 3D short: a giant dark glass slab shaped like an animation app with a pastel timeline, a cute orange cube character walking along the tracks beside a glowing playhead, a low-poly green planet sprouting trees and houses as toast notes log each step, then a glowing orange neon title and a top-down pull-back. Use to make a new video in this look (3D); address it by ID pm-slash1sol-b35cb1.
 ---
 
-# KOSIF TOOL — One-evening animated short with Blender and Remotion
+# KOSIF TOOL — One-evening animated short with Blender and Remotion / فيلم قصير ثلاثي الأبعاد: شخصية مكعبة تمشي فوق واجهة برنامج مونتاج عملاقة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/slash1sol-b35cb1
@@ -18,16 +18,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيلم ثلاثي الأبعاد مدته نحو 24 ثانية: لوح زجاجي داكن عملاق يشبه واجهة برنامج تحريك بخط زمني من مسارات ملونة باستيل، تقف عليه شخصية مكعبة برتقالية لطيفة تمشي على المسارات ومؤشر التشغيل المضيء، وكرة كوكب خضراء منخفضة المضلعات تنبت فيها أشجار مخروطية وبيوت وغيوم بينما تظهر إشعارات صغيرة بخطوات البناء، ثم عنوان نيون برتقالي متوهج فوق الكوكب ولقطة ختامية علوية تبتعد عن المشهد كله.
+
+A 24-second 3D short: a giant dark glass slab shaped like an animation app with a pastel timeline, a cute orange cube character walking along the tracks beside a glowing playhead, a low-poly green planet sprouting trees and houses as toast notes log each step, then a glowing orange neon title and a top-down pull-back.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, Remotion, React), suggested duration (24 s), aspect 16:9, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Shapes / أشكال, Characters / شخصيات, Photos / صور.
-- [playbooks/shapes.md](../../playbooks/shapes.md)
+Categories: 3D / ثلاثي الأبعاد, Characters / شخصيات.
+- [playbooks/3d.md](../../playbooks/3d.md)
 - [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/photos.md](../../playbooks/photos.md)
 
 Category tactics:
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 * Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

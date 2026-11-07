@@ -1,6 +1,6 @@
 ---
 name: pm-listudio-820c7b
-description: A 52-second launch film for an AI image and video prompt platform on a dark ground: a prompt types into an input pill, a cinematic image fills the frame, shrinks into a card and becomes a tilted 3D gallery wall, and short headlines mixing sans and italic serif sit over realistic UI: a model picker, four images resolving from blur, still-to-motion, an infinite canvas with an agent checklist, a fast triptych montage and a logo end card.
+description: A 52-second launch film for an AI image and video prompt platform on a dark ground: a prompt types into an input pill, a cinematic image fills the frame, shrinks into a card and becomes a tilted 3D gallery wall, and short headlines mixing sans and italic serif sit over realistic UI: a model picker, four images resolving from blur, still-to-motion, an infinite canvas with an agent checklist, a fast triptych montage and a logo end card. Use to make a new video in this look (Product UI); address it by ID pm-listudio-820c7b.
 ---
 
 # KOSIF TOOL — GenVizu product launch / إطلاق GenVizu: منصة أوامر الصور والفيديو بالذكاء الاصطناعي

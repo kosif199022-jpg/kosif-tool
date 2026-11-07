@@ -1,9 +1,9 @@
 ---
 name: pm-teslachartz-c58b32
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second rapid-fire motion showreel: a dot in a circle bursting into rays, 'I make things move' in heavy white type on red with ticker strips and a horizontal glitch, a red/blue/black shape grid rippling, a wireframe-then-shaded torus on blue, lime metaballs with 'FLOW', easing curves and sliders on lime, extruded '3D', 'COLOR' over stripes, and a name end card with a red dot. Use to make a new video in this look (Kinetic type); address it by ID pm-teslachartz-c58b32.
 ---
 
-# KOSIF TOOL — Motion designer showreel
+# KOSIF TOOL — Motion designer showreel / شوريل مصمم موشن سريع بأحمر وأزرق وليموني
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/teslachartz-c58b32
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شوريل مدته 15 ثانية بإيقاع سريع: نقطة في دائرة تنفجر أشعة، «أنا أحرّك الأشياء» بخط عريض أبيض على أحمر مع شرائط نص متحركة وتشويش أفقي، شبكة أشكال حمراء وزرقاء وسوداء تتموج، حلقة ثلاثية الأبعاد سلكية ثم ملونة على أزرق، كرات ميتا ليمونية مع «FLOW»، منحنيات توقيت ومنزلقات على ليموني، «3D» بارزة، «COLOR» على أشرطة، وختام بالاسم ونقطة حمراء.
+
+A 15-second rapid-fire motion showreel: a dot in a circle bursting into rays, 'I make things move' in heavy white type on red with ticker strips and a horizontal glitch, a red/blue/black shape grid rippling, a wireframe-then-shaded torus on blue, lime metaballs with 'FLOW', easing curves and sliders on lime, extruded '3D', 'COLOR' over stripes, and a name end card with a red dot.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, HTML Canvas, SVG), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, 3D / ثلاثي الأبعاد.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

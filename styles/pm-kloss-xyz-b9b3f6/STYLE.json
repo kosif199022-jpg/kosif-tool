@@ -1,10 +1,13 @@
 {
   "id": "pm-kloss-xyz-b9b3f6",
   "name": "History of AI animated timeline video",
-  "name_ar": null,
+  "name_ar": "افتتاحية سينمائية لتاريخ الذكاء الاصطناعي: نقطة تنبض ثم عنوان ضخم",
   "origin": "PromptsMotion",
   "type": "Prompt",
-  "category": [],
+  "category": [
+    "kinetic-type",
+    "particles"
+  ],
   "creator": "@kloss_xyz",
   "creator_url": "https://x.com/kloss\\_xyz/status/2103652674336067876",
   "page": "https://www.promptsmotion.com/kloss-xyz-b9b3f6",
@@ -23,5 +26,35 @@
   "source_prompt_words": 11,
   "listed": true,
   "skill": "styles/pm-kloss-xyz-b9b3f6/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/kinetic-type.md",
+    "playbooks/particles.md"
+  ],
+  "summary_ar": "افتتاحية مدتها 10 ثوانٍ على أسود شبه كامل: نقطة برتقالية صغيرة تنبض بتوهج كنبض قلب، ثم سطر أبيض صغير بأحرف كبيرة يُكشف كلمة كلمة ويتبعه سطر برتقالي يرد عليه، يخفت كل شيء، ثم وميض رمادي ومؤشر كتابة، ويصعد عنوان مكثف ضخم من سطرين (الأول أبيض والثاني برتقالي) حرفاً حرفاً من خط خفي، مع سطر فرعي صغير متباعد وتواريخ أسفله.",
+  "summary_en": "A 10-second cold open on near-black: a tiny orange dot pulses with a glow like a heartbeat, a small white uppercase line reveals word by word and an orange line answers it, everything dims, then a grey flash with a typing cursor, and a huge condensed two-line title (white over orange) rises letter by letter from a hidden baseline, with a tiny tracked subtitle and a date range beneath.",
+  "keywords": [
+    "cold open",
+    "title sequence",
+    "history of AI",
+    "timeline intro",
+    "pulse",
+    "letter reveal",
+    "condensed type",
+    "orange accent",
+    "film grain",
+    "افتتاحية",
+    "عنوان سينمائي",
+    "تاريخ الذكاء الاصطناعي",
+    "خط زمني",
+    "نبض"
+  ],
+  "difficulty": 2,
+  "duration_s": 10,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "HTML Canvas"
+  ],
+  "brief": "styles/pm-kloss-xyz-b9b3f6/BRIEF.md"
 }

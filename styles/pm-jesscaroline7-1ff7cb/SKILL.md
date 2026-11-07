@@ -1,9 +1,9 @@
 ---
 name: pm-jesscaroline7-1ff7cb
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A ~60-second vertical reel for a places-to-go app: a white arrow logo on black, then huge black questions on orange with emoji, then big condensed numbers built from thousands of dots (sphere, grid, pinned map, ratings ring), isometric 3D rooms for days of the week, app screens in phones with callout lines, gold badges and a podium, ending on the logo card on orange. Use to make a new video in this look (Product UI); address it by ID pm-jesscaroline7-1ff7cb.
 ---
 
-# KOSIF TOOL — Ondefica app motion reel
+# KOSIF TOOL — Ondefica app motion reel / ريل تطبيق دليل أماكن: أرقام بالنقاط وغرف متساوية القياس وهواتف
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/jesscaroline7-1ff7cb
@@ -17,16 +17,27 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+ريل طولي مدته نحو 60 ثانية لتطبيق يقترح أماكن للخروج: يبدأ بشعار سهم أبيض على أسود، ثم أسئلة ضخمة بالأسود على البرتقالي مع رموز تعبيرية، ثم أرقام مكثفة كبيرة تنبني من آلاف النقاط (كرة، شبكة، خريطة بدبابيس، حلقة تقييمات)، ثم غرف ثلاثية الأبعاد متساوية القياس لأيام الأسبوع، ثم شاشات التطبيق داخل هواتف مع خطوط تعليق، وشارات ذهبية ومنصة تتويج، وتنتهي ببطاقة الشعار على البرتقالي.
+
+A ~60-second vertical reel for a places-to-go app: a white arrow logo on black, then huge black questions on orange with emoji, then big condensed numbers built from thousands of dots (sphere, grid, pinned map, ratings ring), isometric 3D rooms for days of the week, app screens in phones with callout lines, gold badges and a podium, ending on the logo card on orange.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, HTML Canvas, SVG), suggested duration (60 s), aspect 9:16, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Phone / هاتف, Particles / جسيمات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/phone.md](../../playbooks/phone.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

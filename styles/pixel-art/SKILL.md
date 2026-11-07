@@ -1,9 +1,9 @@
 ---
 name: pixel-art
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 9:16 reel styled as a 16-bit game: an upscaled pixel world in a limited palette, a small character walking and jumping on stepped frames, multi-layer side-scrolling backgrounds, Arabic text in a pixel font inside dialogue boxes, score and heart counters at the top, and blocky dissolve transitions. Use to make a new video in this look (Characters); address it by ID pixel-art.
 ---
 
-# KOSIF TOOL — بيكسل آرت
+# KOSIF TOOL — بيكسل آرت / بيكسل آرت — مشهد لعبة 16 بت بشخصيات صغيرة
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي 9:16 بأسلوب ألعاب 16 بت: عالم من البكسلات المكبّرة بلوحة ألوان محدودة، وشخصية صغيرة تمشي وتقفز بإطارات متقطعة، وخلفيات متعددة الطبقات تتحرك أفقياً، ونصوص عربية بخط بكسل داخل صناديق حوار، وعدادات نقاط وقلوب في الأعلى، وانتقالات بتلاشٍ متدرج على شكل مربعات.
+
+A 9:16 reel styled as a 16-bit game: an upscaled pixel world in a limited palette, a small character walking and jumping on stepped frames, multi-layer side-scrolling backgrounds, Arabic text in a pixel font inside dialogue boxes, score and heart counters at the top, and blocky dissolve transitions.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, HTML Canvas, Web Audio), suggested duration (32 s), aspect 9:16, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Characters / شخصيات.

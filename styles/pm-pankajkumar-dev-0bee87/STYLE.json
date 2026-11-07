@@ -1,10 +1,14 @@
 {
   "id": "pm-pankajkumar-dev-0bee87",
   "name": "Poster breaking its frame",
-  "name_ar": null,
+  "name_ar": "تايبوغرافي باوهاوس يكسر إطاره ويخرج منه",
   "origin": "PromptsMotion",
   "type": "Prompt",
-  "category": [],
+  "category": [
+    "kinetic-type",
+    "shapes",
+    "3d"
+  ],
   "creator": "@pankajkumar_dev",
   "creator_url": "https://x.com/pankajkumar_dev/status/2103502614134718609",
   "page": "https://www.promptsmotion.com/pankajkumar-dev-0bee87",
@@ -23,5 +27,37 @@
   "source_prompt_words": 14,
   "listed": true,
   "skill": "styles/pm-pankajkumar-dev-0bee87/SKILL.md",
-  "playbooks": []
+  "playbooks": [
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/3d.md"
+  ],
+  "summary_ar": "فيلم تايبوغرافي مدته 30 ثانية بروح باوهاوس على ورق كريمي بشبكة رفيعة: كلمة سوداء ضخمة تضغط على إطار مخطط تقني حتى ينثني، ثم يتحول الإطار إلى بطاقة تميل في فضاء ثلاثي الأبعاد مع كتل زرقاء وحمراء، وحروف عملاقة على الأحمر والأصفر، وأرضية شبكية منظورية، وحرف يدور إلى دوامة ألوان، وانفجار فوضوي من الأشكال والكلمات، ثم عودة إلى إطار نظيف واسم المصمم.",
+  "summary_en": "A 30-second Bauhaus-style type film on gridded cream paper: a giant black word presses a technical-drawing frame until it bends, the frame tilts into 3D beside blue and red slabs, huge letters fill red and yellow grounds and fall on a grid floor, a chaotic shape-and-word collage erupts, then it resets to a clean frame and the designer's name.",
+  "keywords": [
+    "bauhaus",
+    "kinetic typography",
+    "breaking the frame",
+    "primary colours",
+    "swiss grid",
+    "technical drawing",
+    "3D card",
+    "collage chaos",
+    "geometric shapes",
+    "باوهاوس",
+    "تايبوغرافي متحرك",
+    "كسر الإطار",
+    "ألوان أساسية",
+    "أشكال هندسية",
+    "شبكة تصميم"
+  ],
+  "difficulty": 4,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "Three.js"
+  ],
+  "brief": "styles/pm-pankajkumar-dev-0bee87/BRIEF.md"
 }

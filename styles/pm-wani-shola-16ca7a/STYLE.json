@@ -1,17 +1,14 @@
 {
   "id": "pm-wani-shola-16ca7a",
   "name": "Developer portfolio site showreel",
-  "name_ar": null,
+  "name_ar": "جولة فيديو في موقع ملف أعمال مطوّر بأسلوب تحريري دافئ",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
     "phone",
-    "charts",
     "kinetic-type",
-    "characters",
-    "music",
-    "code"
+    "charts"
   ],
   "creator": "@wani_shola",
   "creator_url": "https://x.com/wani_shola/status/2103769906638459278",
@@ -36,10 +33,34 @@
   "playbooks": [
     "playbooks/product-ui.md",
     "playbooks/phone.md",
-    "playbooks/charts.md",
     "playbooks/kinetic-type.md",
-    "playbooks/characters.md",
-    "playbooks/music.md",
-    "playbooks/code.md"
-  ]
+    "playbooks/charts.md"
+  ],
+  "summary_ar": "جولة مدتها نحو 102 ثانية في موقع ملف أعمال لمهندس علاقات مطورين، بأسلوب تحريري دافئ: افتتاحية على بني داكن بعبارات «أنا أفعل كذا» تتبدل فيها الكلمة المائلة بالبرتقالي، ثم الاسم بخط سيريف كبير على ورق كريمي، لقطات المتصفح بالوضعين الفاتح والداكن، هاتفان، مساعد محادثة يجيب بأدلة، بطاقات المشاريع، أرقام كبيرة، مخطط تنزيلات، وختام بالرابط.",
+  "summary_en": "A roughly 102-second tour of a developer-relations engineer's portfolio site in a warm editorial style: an opening on dark brown with 'I do X' lines swapping an orange italic verb, then the name in large serif on cream paper, browser shots in light and dark mode, two phones, a chat assistant answering with evidence, project cards, big numbers, a downloads chart and a URL close.",
+  "keywords": [
+    "portfolio site",
+    "site walkthrough",
+    "editorial serif",
+    "cream paper",
+    "browser mockup",
+    "chat assistant",
+    "stats count-up",
+    "developer relations",
+    "ملف أعمال",
+    "جولة موقع",
+    "خط سيريف",
+    "أسلوب تحريري",
+    "إطار متصفح",
+    "أرقام"
+  ],
+  "difficulty": 3,
+  "duration_s": 102,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "SVG"
+  ],
+  "brief": "styles/pm-wani-shola-16ca7a/BRIEF.md"
 }

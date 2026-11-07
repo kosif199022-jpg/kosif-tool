@@ -1,9 +1,9 @@
 ---
 name: pm-prasenx-8d9323
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second showreel: an easing curve drawing on a dark timeline, a sliced giant name on red, a neon torus, a flipping geometric tile mosaic, fibre and liquid shader words, a neon tunnel, an isometric cube field, then 0.4-second beat cuts spelling a four-word line on changing colours, ending on a red starburst logo. Use to make a new video in this look (Kinetic type); address it by ID pm-prasenx-8d9323.
 ---
 
-# KOSIF TOOL — Motion showreel with a fully code-synthesized soundtrack
+# KOSIF TOOL — Motion showreel with a fully code-synthesized soundtrack / شوريل موشن بقطعات على الإيقاع وصوت مولَّد بالكود
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/prasenx-8d9323
@@ -17,18 +17,27 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شوريل مدته 15 ثانية: منحنى تسارع يُرسم على مخطط زمني داكن، ثم مربع أحمر يندفع، واسم ضخم مقطوع أفقياً على الأحمر، وطارة نيون ثلاثية الأبعاد، وفسيفساء أشكال هندسية حمراء وزرقاء وسوداء، وكلمة من ألياف، ونفق نيون، وكلمة بخامة سائلة، وشبكة مكعبات متساوية القياس، وجدار كلمات مائل، ثم قطعات كل 0.4 ثانية تكتب جملة من أربع كلمات على خلفيات متبدلة، وتنتهي بشعار نجمة حمراء.
+
+A 15-second showreel: an easing curve drawing on a dark timeline, a sliced giant name on red, a neon torus, a flipping geometric tile mosaic, fibre and liquid shader words, a neon tunnel, an isometric cube field, then 0.4-second beat cuts spelling a four-word line on changing colours, ending on a red starburst logo.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, WebGL, Three.js, SVG, Web Audio), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Music / موسيقى, Code / كود.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Music / موسيقى, Code / كود, Shapes / أشكال, 3D / ثلاثي الأبعاد.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 - [playbooks/music.md](../../playbooks/music.md)
 - [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
 * Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

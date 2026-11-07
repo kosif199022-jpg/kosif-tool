@@ -1,7 +1,7 @@
 {
   "id": "pm-wozu-co-242285",
   "name": "Supasito launch video",
-  "name_ar": null,
+  "name_ar": "فيديو إطلاق منتج نظيف بفقرات قصيرة وعناوين تتضح من الضبابية",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -27,5 +27,33 @@
   "skill": "styles/pm-wozu-co-242285/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md"
-  ]
+  ],
+  "summary_ar": "فيديو إطلاق 16:9 مدته نحو 14 ثانية على خلفية رمادية فاتحة جداً، تتضح فيه جمل قصيرة كلمة بكلمة من ضبابية، ثم تتطاير إشعارات رسائل حول أيقونة التطبيق الحمراء، وتقترب الكاميرا من نافذة تطبيق داكنة يتغيّر فيها سعر في بطاقة التسعير، ثم أيقونات بسيطة لكل ميزة (وعاء، مجلد برتقالي، خط يربط ثلاث أيقونات) وتنتهي بالشعار.",
+  "summary_en": "A 14 s 16:9 product launch on a near-white grey background where short lines resolve word by word out of blur, message notifications float around a red app icon, the camera pushes into a dark desktop app where a pricing card's number updates, then simple icon vignettes (a bowl, an orange folder, a line linking three icons) explain each benefit before the logo end card.",
+  "keywords": [
+    "product launch",
+    "SaaS promo",
+    "blur-in text",
+    "notification cards",
+    "camera push UI",
+    "pricing card",
+    "icon vignettes",
+    "apple style",
+    "minimal",
+    "إطلاق منتج",
+    "إعلان تطبيق",
+    "نص يتضح من الضبابية",
+    "واجهة تطبيق",
+    "إشعارات",
+    "تصميم بسيط"
+  ],
+  "difficulty": 3,
+  "duration_s": 14,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "SVG"
+  ],
+  "brief": "styles/pm-wozu-co-242285/BRIEF.md"
 }

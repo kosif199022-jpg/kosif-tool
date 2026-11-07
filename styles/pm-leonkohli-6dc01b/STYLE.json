@@ -1,13 +1,13 @@
 {
   "id": "pm-leonkohli-6dc01b",
   "name": "Geometric motion designer showreel",
-  "name_ar": null,
+  "name_ar": "شوريل مصمم موشن هندسي بكرة برتقالية تقفز بين المشاهد",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
+    "shapes",
     "kinetic-type",
-    "shapes"
+    "3d"
   ],
   "creator": "@LeonKohli",
   "creator_url": "https://x.com/LeonKohli/status/2103517696038191220",
@@ -28,8 +28,37 @@
   "listed": true,
   "skill": "styles/pm-leonkohli-6dc01b/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
+    "playbooks/shapes.md",
     "playbooks/kinetic-type.md",
-    "playbooks/shapes.md"
-  ]
+    "playbooks/3d.md"
+  ],
+  "summary_ar": "شوريل سريع مدته 15 ثانية لمصمم موشن: كرة برتقالية تقفز فوق خط زمن على الأسود، ثم كلمتا motion وdesign بخطوط متغيرة على الأزرق والأبيض، وشبكة بلاطات باوهاوس بالأزرق والليموني والأسود، وأرضية مكعبات ثلاثية الأبعاد تتدحرج عليها الكرة، ورذاذ سائل برتقالي، ودوامة خطوط ضوئية، وعدّاد سنة داخل حلقة ألوان، ونفق حلقات، وتنتهي ببطاقة الاسم على الكحلي الداكن.",
+  "summary_en": "A fast 15-second motion-designer showreel: an orange ball bounces over a timeline on black, then the words motion and design in shifting type on blue and white, a Bauhaus tile grid in blue, lime and black, a 3D cube floor the ball rolls across, an orange liquid splash, a light-streak vortex, a year counter in a coloured ring, a ring tunnel, and a name card on dark navy.",
+  "keywords": [
+    "showreel",
+    "motion designer",
+    "bouncing ball",
+    "bauhaus tiles",
+    "variable type",
+    "cube floor",
+    "liquid splash",
+    "ring tunnel",
+    "geometric",
+    "شوريل",
+    "مصمم موشن",
+    "كرة تقفز",
+    "أشكال هندسية",
+    "أزرق وبرتقالي",
+    "مكعبات ثلاثية الأبعاد"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "Three.js",
+    "SVG",
+    "WebGL"
+  ],
+  "brief": "styles/pm-leonkohli-6dc01b/BRIEF.md"
 }

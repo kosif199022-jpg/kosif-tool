@@ -1,6 +1,6 @@
 ---
 name: pm-kloss-xyz-fe0c31
-description: A long, dark documentary film (about 172 s) on the history of AI split into numbered chapters: a logic-neuron diagram, the Dartmouth title, an ELIZA terminal, the AI-winter curve, a convolution net reading a 7, an ImageNet mosaic, a 3D Go board, attention arcs, a word forming from noise and a closing particle galaxy.
+description: A long, dark documentary film (about 172 s) on the history of AI split into numbered chapters: a logic-neuron diagram, the Dartmouth title, an ELIZA terminal, the AI-winter curve, a convolution net reading a 7, an ImageNet mosaic, a 3D Go board, attention arcs, a word forming from noise and a closing particle galaxy. Use to make a new video in this look (creative motion); address it by ID pm-kloss-xyz-fe0c31.
 ---
 
 # KOSIF TOOL — History of AI timeline / خط زمني متحرك لأبرز محطات الذكاء الاصطناعي

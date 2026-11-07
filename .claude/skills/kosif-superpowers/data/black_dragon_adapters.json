@@ -2464,6 +2464,16 @@
       "why": "talking-head-reels: a known-answer 7 s talk is pause-cut, mastered to -14 LUFS, planned, validated (planted overlap and font caught) and rendered to a 1080x1920 reel; Arabic text must reveal word by word",
       "skill_program": true,
       "media": true
+    },
+    "skill:arena": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "arena",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "arena: runs the skill's own bracket.py on a 16-agent known-answer tournament with stand-in agents (no model called): 100/16 plans, same seed same cards, the task byte for byte in every brief, a planted fatal solution with the best scores must lose, one champion after 4 rounds, a blind final check against the rejected answer, and the skill folder left unchanged",
+      "skill_program": true
     }
   }
 }

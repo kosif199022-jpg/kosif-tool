@@ -1,7 +1,7 @@
 {
   "id": "pm-kyonax-on-tech-aabc1d",
   "name": "org2html product showreel",
-  "name_ar": null,
+  "name_ar": "عرض أداة مطورين بالأسود والأصفر وتميمة بكسلية",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -35,5 +35,34 @@
     "playbooks/diagrams.md",
     "playbooks/kinetic-type.md",
     "playbooks/code.md"
-  ]
+  ],
+  "summary_ar": "فيديو منتج مدته 15 ثانية لأداة سطر أوامر تحوّل مستندات Org إلى مواقع، بالأسود والأصفر الذهبي داخل واجهة تقنية رفيعة: تميمة بكسلية تتشكل وتتفكك إلى رموز، محرر كود وعنوان بكلمة صفراء، أربع مراحل مرقمة بأرقام صفراء ضخمة (تحليل، بناء شجرة، تصيير، تنسيق)، تبديل مظهر بأمر واحد، شبكة ملفات ناتجة، ثم الشعار والتميمة وأمر التثبيت.",
+  "summary_en": "A 15-second product film for a CLI that turns Org documents into sites, in black and golden yellow inside a fine HUD: a pixel mascot dissolving into glyphs, a decoding code editor, four stages with huge yellow numerals (lex, parse, render, style), a one-flag theme switch, a grid of output files, then wordmark, mascot and install command.",
+  "keywords": [
+    "developer tool",
+    "CLI launch",
+    "black and yellow",
+    "pixel mascot",
+    "code decode",
+    "pipeline stages",
+    "AST tree",
+    "terminal",
+    "HUD",
+    "static site generator",
+    "أداة مطورين",
+    "سطر أوامر",
+    "تميمة بكسلية",
+    "فك ترميز",
+    "مراحل المعالجة",
+    "طرفية"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "HTML Canvas",
+    "CSS"
+  ],
+  "brief": "styles/pm-kyonax-on-tech-aabc1d/BRIEF.md"
 }

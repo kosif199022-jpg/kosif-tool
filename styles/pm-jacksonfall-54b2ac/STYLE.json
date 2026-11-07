@@ -1,12 +1,13 @@
 {
   "id": "pm-jacksonfall-54b2ac",
   "name": "Branding agency showreel",
-  "name_ar": null,
+  "name_ar": "شوريل وكالة هويات بصرية: شعارات تتبدل على الإيقاع",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "kinetic-type",
+    "shapes",
+    "photos"
   ],
   "creator": "@jacksonfall",
   "creator_url": "https://x.com/jacksonfall/status/2103925420211229164",
@@ -27,7 +28,35 @@
   "listed": true,
   "skill": "styles/pm-jacksonfall-54b2ac/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/photos.md"
+  ],
+  "summary_ar": "شوريل لوكالة علامات تجارية مدته نحو 25 ثانية من المحتوى ثم سواد: سلسلة سريعة من الشعارات والهويات، كل واحدة في إطار ملء الشاشة بلون خلفيتها الخاص (زيتوني، سماوي بمنظر طبيعي، أبيض، أخضر مزرق، أزرق كهربائي، ليموني بنقاط)، مع رموز تنبني من خطوط أو نقاط ثنائية، شبكة صور داخلية وصور رياضية خلف كلمات عريضة، وحركة متسارعة كل نصف ثانية تقريباً قرب النهاية.",
+  "summary_en": "A branding-agency showreel with about 25 s of content then black: logos and identities flash one per full-frame card, each in its own colour (olive, painted sky, white, teal, electric blue, dotted lime), marks built from strokes or binary digits, photo mosaics behind bold words, accelerating to cuts every half second.",
+  "keywords": [
+    "showreel",
+    "branding agency",
+    "logo reel",
+    "identity",
+    "brand cards",
+    "fast cuts",
+    "logo animation",
+    "binary dots",
+    "glass logo",
+    "شوريل",
+    "هوية بصرية",
+    "شعارات",
+    "وكالة تصميم",
+    "قطع سريع"
+  ],
+  "difficulty": 4,
+  "duration_s": 25,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "Three.js"
+  ],
+  "brief": "styles/pm-jacksonfall-54b2ac/BRIEF.md"
 }

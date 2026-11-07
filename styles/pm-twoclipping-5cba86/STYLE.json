@@ -1,19 +1,13 @@
 {
   "id": "pm-twoclipping-5cba86",
   "name": "Shape morphing through UI states",
-  "name_ar": null,
+  "name_ar": "شكل واحد يتحول عبر حالات الواجهة: من زر إلى مشغل إلى رسم بياني",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
-    "charts",
-    "kinetic-type",
     "shapes",
-    "particles",
-    "characters",
-    "photos",
-    "music",
-    "code"
+    "charts"
   ],
   "creator": "@twoclipping",
   "creator_url": "https://x.com/twoclipping/status/2103273003555402193",
@@ -39,13 +33,35 @@
   "skill": "styles/pm-twoclipping-5cba86/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md",
     "playbooks/shapes.md",
-    "playbooks/particles.md",
-    "playbooks/characters.md",
-    "playbooks/photos.md",
-    "playbooks/music.md",
-    "playbooks/code.md"
-  ]
+    "playbooks/charts.md"
+  ],
+  "summary_ar": "حلقة مربعة مدتها 14 ثانية على رمادي فاتح دافئ: عنصر أسود واحد مستدير يتحول بلا قطع من زر «توليد» إلى مؤشر تحميل دائري ثم كبسولة ثم بطاقة مشغل موسيقى بغلاف متدرج، ثم شريط صوت، ثم مفتاح تبديل، ثم مبدّل أيام وأسابيع وأشهر، ثم بطاقة رسم بياني بيضاء بعداد ومنحنى، ثم لوحة أوامر يُكتب فيها، ثم إشعار، ويعود زراً كما بدأ، ومؤشر فأرة يقود كل تحول بنقرة.",
+  "summary_en": "A 14-second square loop on warm light grey: one rounded black element morphs without cuts from a Generate button into a spinner, a music-player card with a gradient cover, a volume bar, a toggle, a Day/Week/Month switch, a white chart card, a command palette that types, a toast, and back to the button, a cursor clicking each change.",
+  "keywords": [
+    "shape morph",
+    "ui states",
+    "component showcase",
+    "music player",
+    "toggle switch",
+    "segmented control",
+    "chart card",
+    "command palette",
+    "seamless loop",
+    "تحول الأشكال",
+    "حالات الواجهة",
+    "مكونات واجهة",
+    "مشغل موسيقى",
+    "لوحة أوامر",
+    "حلقة متكررة"
+  ],
+  "difficulty": 3,
+  "duration_s": 14,
+  "stack": [
+    "React",
+    "CSS",
+    "HTML Canvas",
+    "Remotion"
+  ],
+  "brief": "styles/pm-twoclipping-5cba86/BRIEF.md"
 }

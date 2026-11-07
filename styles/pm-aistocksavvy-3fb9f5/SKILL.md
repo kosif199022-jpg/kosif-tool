@@ -1,9 +1,9 @@
 ---
 name: pm-aistocksavvy-3fb9f5
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second stock-app promo on a glowing navy-violet ground: a logo mark spins in a ring, a three-word punch headline with RGB-split glitch sits between two slanted ticker tapes, then five numbered sections (news, earnings, calendar, analyst targets, watchlist) each pair a two-tone headline with a floating white UI card, before a tilted wall of app screens and a wordmark end card. Use to make a new video in this look (Product UI); address it by ID pm-aistocksavvy-3fb9f5.
 ---
 
-# KOSIF TOOL — Stock analysis app promo
+# KOSIF TOOL — Stock analysis app promo / عرض تطبيق تحليل أسهم بشريط أسعار وبطاقات واجهة عائمة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/aistocksavvy-3fb9f5
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #181
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+إعلان تطبيق أسهم مدته 15 ثانية على خلفية كحلية بنفسجية متوهجة: شعار يلتف داخل حلقة، ثم عنوان ضخم بثلاث كلمات مع تشويش لوني بين شريطي أسعار مائلين، ثم خمسة أقسام مرقمة (أخبار، أرباح، تقويم، تقييمات محللين، قائمة متابعة) كل منها عنوان بلونين بجانب بطاقة واجهة بيضاء تتحرك، وجدار من الشاشات المائلة، وشعار ختامي.
+
+A 15-second stock-app promo on a glowing navy-violet ground: a logo mark spins in a ring, a three-word punch headline with RGB-split glitch sits between two slanted ticker tapes, then five numbered sections (news, earnings, calendar, analyst targets, watchlist) each pair a two-tone headline with a floating white UI card, before a tilted wall of app screens and a wordmark end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (15 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية.

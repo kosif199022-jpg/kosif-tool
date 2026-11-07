@@ -1,9 +1,9 @@
 ---
 name: pm-astrodevil-3f2054
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second agency intro on warm black with a red-orange glow: it opens on a terminal command, then a heavy white headline completes in orange, giant proof numbers count up beside a growth curve, a star and a contribution grid, a few beats flip to a full orange ground, full-width service words slam in, a scrolling wall of client names passes, and the wordmark types itself out. Use to make a new video in this look (Product UI); address it by ID pm-astrodevil-3f2054.
 ---
 
-# KOSIF TOOL — Studio1 intro showreel
+# KOSIF TOOL — Studio1 intro showreel / عرض وكالة بأرقام ضخمة ووهج برتقالي على الأسود
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/astrodevil-3f2054
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #148
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+عرض تعريفي لوكالة محتوى مدته 15 ثانية على أسود دافئ بوهج أحمر برتقالي: يبدأ بأمر في طرفية، ثم عنوان أبيض ثقيل تكتمل جملته بالبرتقالي، ثم أرقام إنجاز عملاقة تعدّ بجانب منحنى ونجمة وشبكة مساهمات، ولقطات قلب إلى أرضية برتقالية، وكلمات خدمات بملء الشاشة، وجدار أسماء عملاء يتحرك، وشعار ختامي يُكتب حرفاً حرفاً.
+
+A 15-second agency intro on warm black with a red-orange glow: it opens on a terminal command, then a heavy white headline completes in orange, giant proof numbers count up beside a growth curve, a star and a contribution grid, a few beats flip to a full orange ground, full-width service words slam in, a scrolling wall of client names passes, and the wordmark types itself out.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (15 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.

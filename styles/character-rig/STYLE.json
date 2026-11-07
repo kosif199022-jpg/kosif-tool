@@ -1,7 +1,7 @@
 {
   "id": "character-rig",
   "name": "تحريك هيكلي",
-  "name_ar": "تحريك هيكلي",
+  "name_ar": "شخصية متجهية بتحريك هيكلي ومزامنة شفاه",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -24,5 +24,29 @@
   "skill": "styles/character-rig/SKILL.md",
   "playbooks": [
     "playbooks/characters.md"
-  ]
+  ],
+  "summary_ar": "شخصية كرتونية متجهية مسطحة مركّبة على هيكل عظمي: تتحرك بمفاصل وإيماءات واضحة، ترمش وتتكلم بمزامنة شفاه مع الصوت، مع حركة ثانوية للشعر والملابس، على خلفية بسيطة بألوان دافئة وتسميات تظهر بجانبها.",
+  "summary_en": "A flat vector cartoon character on a bone rig: clear joint-based gestures, blinks and lip sync to the voice-over, secondary motion on hair and clothes, a simple warm background set and short labels or props appearing beside the character as it explains.",
+  "keywords": [
+    "character rig",
+    "rigged character",
+    "lip sync",
+    "vector character",
+    "explainer character",
+    "pose to pose",
+    "تحريك هيكلي",
+    "شخصية كرتونية",
+    "مزامنة شفاه",
+    "شخصية متحركة",
+    "مقدم كرتوني",
+    "تحريك شخصيات"
+  ],
+  "difficulty": 4,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/character-rig/BRIEF.md"
 }

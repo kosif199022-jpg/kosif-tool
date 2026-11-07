@@ -1,9 +1,9 @@
 ---
 name: pm-devius-maximus-beab45
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A punchy 44-second landscape app ad cutting between cream, orange and black backgrounds: condensed heavy headlines build word by word, a hand-inked stick figure sulks, kicks a 'doubt' cloud and rides a rocket, handwritten task chips scatter, a phone shows an 'I won' button and +1 badge, and it ends on a torn orange banner and an app-store badge. Use to make a new video in this look (Hand-drawn); address it by ID pm-devius-maximus-beab45.
 ---
 
-# KOSIF TOOL — Dubz Up motion showreel
+# KOSIF TOOL — Dubz Up motion showreel / إعلان تطبيق بشخصيات عصوية مرسومة وعناوين عريضة بالبرتقالي والأسود
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/devius-maximus-beab45
@@ -17,14 +17,27 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان تطبيق أفقي سريع (نحو 44 ثانية) يتنقل بين خلفيات كريمية وبرتقالية وسوداء: عناوين عريضة مضغوطة تُكتب كلمة كلمة، شخصية عصوية مرسومة بالحبر تحزن ثم تركل سحابة الشك وتصعد على صاروخ، شارات مهام بخط يدوي، وهاتف يظهر فيه زر «فزت» و«+1»، وينتهي بشريط برتقالي ممزق وشارة المتجر.
+
+A punchy 44-second landscape app ad cutting between cream, orange and black backgrounds: condensed heavy headlines build word by word, a hand-inked stick figure sulks, kicks a 'doubt' cloud and rides a rocket, handwritten task chips scatter, a phone shows an 'I won' button and +1 badge, and it ends on a torn orange banner and an app-store badge.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (44 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Hand-drawn / رسم يدوي, Characters / شخصيات, Kinetic type / تايبوغرافي متحرك, Phone / هاتف, Ads / إعلانات.
+- [playbooks/hand-drawn.md](../../playbooks/hand-drawn.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/phone.md](../../playbooks/phone.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Order stroke draw-on like a human hand would; keep imperfection deliberate; pace reveals to narration.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

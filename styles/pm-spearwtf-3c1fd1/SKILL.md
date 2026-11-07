@@ -1,9 +1,9 @@
 ---
 name: pm-spearwtf-3c1fd1
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 30 s 16:9 pitch ad that opens on a soft blue button on white being clicked, then cuts to dark, shallow-focus 3D close-ups (red arcade button, rainbow light tunnel, slot reels, coin, stadium, LED board, dice, flying forms), each tagged with a heavy italic uppercase word beside a four-stripe logo, ending on an RGB-split glitching wordmark and a yellow button. Use to make a new video in this look (Ads); address it by ID pm-spearwtf-3c1fd1.
 ---
 
-# KOSIF TOOL — Chain.wtf pitch video
+# KOSIF TOOL — Chain.wtf pitch video / إعلان عرض جريء لمنصة مراهنات بلقطات ثلاثية الأبعاد سينمائية وتشويش ألوان
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/spearwtf-3c1fd1
@@ -17,12 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان 16:9 مدته 30 ثانية يبدأ بزر أزرق ناعم على أبيض يُضغط، ثم يقطع إلى ظلام سينمائي بلقطات ثلاثية الأبعاد قريبة بعمق ميدان ضحل (زر أحمر كبير، نفق ضوء بقوس قزح، بكرات آلة قمار، عملة تدور، ملعب، لوحة LED، نرد، استمارات تتطاير) مع عنوان مائل عريض لكل فئة بجانب شعار من أربعة خطوط ملونة، وينتهي بشعار يتشوش بانفصال ألوان وخطوط سرعة وزر أصفر.
+
+A 30 s 16:9 pitch ad that opens on a soft blue button on white being clicked, then cuts to dark, shallow-focus 3D close-ups (red arcade button, rainbow light tunnel, slot reels, coin, stadium, LED board, dice, flying forms), each tagged with a heavy italic uppercase word beside a four-stripe logo, ending on an RGB-split glitching wordmark and a yellow button.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, WebGL, CSS), suggested duration (30 s), aspect 16:9, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: creative motion.
-- (no category playbook yet)
+Categories: Ads / إعلانات, 3D / ثلاثي الأبعاد, Kinetic type / تايبوغرافي متحرك.
+- [playbooks/ads.md](../../playbooks/ads.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
-* Develop original choreography from the reference; verify imagery before claiming a match.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

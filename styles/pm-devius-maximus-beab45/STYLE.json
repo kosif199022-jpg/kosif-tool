@@ -1,12 +1,15 @@
 {
   "id": "pm-devius-maximus-beab45",
   "name": "Dubz Up motion showreel",
-  "name_ar": null,
+  "name_ar": "إعلان تطبيق بشخصيات عصوية مرسومة وعناوين عريضة بالبرتقالي والأسود",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "hand-drawn",
+    "characters",
+    "kinetic-type",
+    "phone",
+    "ads"
   ],
   "creator": "@Devius_Maximus",
   "creator_url": "https://x.com/Devius_Maximus/status/2105069053521887428",
@@ -27,7 +30,37 @@
   "listed": true,
   "skill": "styles/pm-devius-maximus-beab45/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/hand-drawn.md",
+    "playbooks/characters.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/phone.md",
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "إعلان تطبيق أفقي سريع (نحو 44 ثانية) يتنقل بين خلفيات كريمية وبرتقالية وسوداء: عناوين عريضة مضغوطة تُكتب كلمة كلمة، شخصية عصوية مرسومة بالحبر تحزن ثم تركل سحابة الشك وتصعد على صاروخ، شارات مهام بخط يدوي، وهاتف يظهر فيه زر «فزت» و«+1»، وينتهي بشريط برتقالي ممزق وشارة المتجر.",
+  "summary_en": "A punchy 44-second landscape app ad cutting between cream, orange and black backgrounds: condensed heavy headlines build word by word, a hand-inked stick figure sulks, kicks a 'doubt' cloud and rides a rocket, handwritten task chips scatter, a phone shows an 'I won' button and +1 badge, and it ends on a torn orange banner and an app-store badge.",
+  "keywords": [
+    "app ad",
+    "stick figure",
+    "hand-drawn doodle",
+    "condensed type",
+    "orange black cream",
+    "phone mockup",
+    "habit tracker",
+    "fast cuts",
+    "إعلان تطبيق",
+    "شخصية عصوية",
+    "رسم يدوي",
+    "تايبوغرافي عريض",
+    "إنجازات يومية",
+    "تحفيز"
+  ],
+  "difficulty": 4,
+  "duration_s": 44,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/pm-devius-maximus-beab45/BRIEF.md"
 }

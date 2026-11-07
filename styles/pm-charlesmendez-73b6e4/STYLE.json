@@ -1,12 +1,13 @@
 {
   "id": "pm-charlesmendez-73b6e4",
   "name": "Datagran ChatGPT ads explainer",
-  "name_ar": null,
+  "name_ar": "شرح منصة إعلانات داخل محادثات الذكاء الاصطناعي بالأخضر النيون",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "diagrams"
+    "product-ui",
+    "ads",
+    "charts"
   ],
   "creator": "@charlesmendez",
   "creator_url": "https://x.com/charlesmendez/status/2102847039415476517",
@@ -27,7 +28,35 @@
   "listed": true,
   "skill": "styles/pm-charlesmendez-73b6e4/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/diagrams.md"
-  ]
+    "playbooks/product-ui.md",
+    "playbooks/ads.md",
+    "playbooks/charts.md"
+  ],
+  "summary_ar": "فيلم شرح منتج مدته 57 ثانية على أسود بلون إبراز أخضر نيون واحد: عناوين بيضاء ضخمة تنتهي بكلمة خضراء، ثم فصول مرقمة لكل منها عنوان يساراً ولوحة واجهة يميناً: إطلاق حملة بجملة، إعلان داخل إجابة محادثة، شبكة مصادر بيانات بعدادات، رحلة عميل ومقارنة نسب، وكيل صوتي بكرة خضراء ونص المكالمة، متابعة على الهاتف، موافقة بشرية، لوحة نتائج، ثم الشعار.",
+  "summary_en": "A 57 s product explainer on black with one neon-green accent: numbered chapters pair a left headline ending in green with a right UI panel: a campaign built from one sentence, an ad inside a chat answer, a data hub with counters, attribution bars, a voice agent with a glowing orb and transcript, phone follow-ups, human approval, a KPI dashboard, then the logo.",
+  "keywords": [
+    "product explainer",
+    "SaaS demo",
+    "neon green",
+    "dark UI",
+    "chat ads",
+    "attribution",
+    "voice agent",
+    "KPI dashboard",
+    "شرح منتج",
+    "إعلانات",
+    "واجهة داكنة",
+    "وكيل صوتي",
+    "لوحة مؤشرات",
+    "رحلة العميل"
+  ],
+  "difficulty": 4,
+  "duration_s": 57,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "SVG"
+  ],
+  "brief": "styles/pm-charlesmendez-73b6e4/BRIEF.md"
 }

@@ -1,9 +1,9 @@
 ---
 name: ui-micro
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A vertical reel zoomed in close on app interface elements: a button presses, turns into a spinner and then a check mark, a toggle slides, a notification drops in on a spring, and a heart icon bursts into particles, all on a clean light background with soft shadows. Use to make a new video in this look (Product UI); address it by ID ui-micro.
 ---
 
-# KOSIF TOOL — واجهات دقيقة
+# KOSIF TOOL — واجهات دقيقة / تفاعلات واجهة دقيقة: أزرار ومفاتيح وإشعارات بحركة متقنة
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي مقرّب جداً على عناصر واجهة تطبيق: زر يُضغط ويتحول إلى مؤشر تحميل ثم علامة صح، مفتاح تبديل ينزلق، إشعار ينزل بنابض، وأيقونة قلب تنفجر بجسيمات، على خلفية فاتحة نظيفة بظلال ناعمة.
+
+A vertical reel zoomed in close on app interface elements: a button presses, turns into a spinner and then a check mark, a toggle slides, a notification drops in on a spring, and a heart icon bursts into particles, all on a clean light background with soft shadows.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (React, Remotion, CSS, SVG, Lottie), suggested duration (25 s), aspect 9:16, difficulty 2/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج.

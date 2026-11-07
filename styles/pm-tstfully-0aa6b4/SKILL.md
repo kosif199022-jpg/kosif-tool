@@ -1,6 +1,6 @@
 ---
 name: pm-tstfully-0aa6b4
-description: A calm 15-second product ad on a dark, red-tinted background for a YouTube transcript tool: a glowing play icon, headlines revealing word by word with a red italic serif accent, a URL bar, transcript lines under a scan line, source cards, a waveform, a JSON response panel, stats and a CTA.
+description: A calm 15-second product ad on a dark, red-tinted background for a YouTube transcript tool: a glowing play icon, headlines revealing word by word with a red italic serif accent, a URL bar, transcript lines under a scan line, source cards, a waveform, a JSON response panel, stats and a CTA. Use to make a new video in this look (Product UI); address it by ID pm-tstfully-0aa6b4.
 ---
 
 # KOSIF TOOL — YouTube transcript product ad / إعلان منتج: من رابط يوتيوب إلى نص كامل

@@ -2850,6 +2850,11 @@
    "label": "tests/test_black_dragon_validate.py"
   },
   {
+   "id": "test:tests/test_black_dragon_video_protocol.py",
+   "kind": "test",
+   "label": "tests/test_black_dragon_video_protocol.py"
+  },
+  {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_blender_cinema.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_blender_cinema.py"
@@ -8870,6 +8875,12 @@
   {
    "from": "script:scripts/black_dragon.py",
    "to": "test:tests/test_black_dragon_validate.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/black_dragon.py",
+   "to": "test:tests/test_black_dragon_video_protocol.py",
    "rel": "tested_by",
    "w": 1
   },
