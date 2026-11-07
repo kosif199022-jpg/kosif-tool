@@ -152,16 +152,16 @@ ATLAS_SECTION_ROLE = {
 }
 ATLAS_ROLE_SPECIALISMS = {
     "learning": {1, 3, 6, 8, 10, 23, 26, 27, 28, 29, 30, 35, 36,
-                 61, 62, 64, 65, 66, 67, 80, 82},
+                 61, 62, 64, 65, 66, 67, 80, 82, 93, 95, 96, 97},
     "critic": {15, 16, 22, 39, 42, 44, 45, 51, 52, 55, 57, 58, 59, 60,
-               73, 74, 78},
-    "analyst": {17, 46, 47, 54, 63, 75, 76},
+               73, 74, 78, 84, 85, 87, 89, 90, 91},
+    "analyst": {17, 46, 47, 54, 63, 75, 76, 94, 103, 105},
     "research": {50, 56},
     "chair": {7, 9, 11, 12, 13, 14, 18, 19, 20, 21, 24, 25, 32, 33,
-              34, 37, 38, 48, 70, 77},
+              34, 37, 38, 48, 70, 77, 83, 86, 99, 100},
     "engineer": {2, 4, 5, 31, 40, 49, 53, 68, 69, 71, 72, 79},
     "visual": {41},
-    "decision": {43, 81},
+    "decision": {43, 81, 88, 92, 98, 101, 102, 104, 106},
 }
 # Duplicate role assignments are a bug, not a second specialist.
 ATLAS_ROLE_BY_ID = {}
@@ -300,8 +300,11 @@ def inventory(root: Path = ROOT) -> list[dict]:
     atlas_file = root / ATLAS_MIND
     if atlas_file.is_file():
         records = _read(atlas_file)
-        expected = {f"AMIND-{n:02d}" for n in range(1, 83)}
-        if not isinstance(records, list) or len(records) != 82 or {x.get("id") for x in records} != expected:
+        # 82 originals plus later passes; every id past 82 must carry a reviewed role above.
+        count = len(records) if isinstance(records, list) else 0
+        expected = {f"AMIND-{n:02d}" for n in range(1, count + 1)}
+        unreviewed = {i for i in expected if int(i.split("-")[1]) > 82 and i not in ATLAS_ROLE_BY_ID}
+        if count < 82 or {x.get("id") for x in records} != expected or unreviewed:
             raise ValueError("Atlas Mind source IDs changed; review new inventory before routing")
         for x in records:
             section = x.get("section")

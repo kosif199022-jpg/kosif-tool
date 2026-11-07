@@ -865,13 +865,13 @@
 
 **متى:** عند بناء شعار SVG نظيف قابل للتحريك مع نسخه الأفقية والمكدسة والأحادية / when building a clean animatable SVG logo and its full suite of versions
 
-**كيف:** Outline fonts to paths for wordmarks (fonttools is a pip install; opentype.js an npm install); preserveAspectRatio xMidYMid; acid test: identifiable in flat black-and-white; 32 px legibility; clear space in mark units (e.g. cap height); do/don’t gallery (stretch, recolour, respace, drop shadow). Deterministic generator idea (brand-forge): wordmark, rounded-square monogram and 64×64 favicon SVG from palette + heading font — a short template here. Arabic wordmarks: shape with HarfBuzz/browser first, then outline (never per-letter paths from an unshaped font).
+**كيف:** Outline fonts to paths for wordmarks (fonttools is a pip install; opentype.js an npm install); preserveAspectRatio xMidYMid; acid test: identifiable in flat black-and-white; 32 px legibility; clear space in mark units (e.g. cap height); do/don’t gallery (stretch, recolour, respace, drop shadow). Deterministic generator idea (brand-forge): wordmark, rounded-square monogram and 64×64 favicon SVG from palette + heading font — a short template here. Arabic wordmarks: shape with HarfBuzz/browser first, then outline (never per-letter paths from an unshaped font). Atlas upgrade 2026-11-07: Presentation and hand-off: show concepts monochrome first (black on white), then brand colour on dark, then the combination mark; mock each concept in at least two real contexts for its primary surface (32 px favicon/app icon always, plus nav bar, circle-cropped social avatar, card/email signature or signage); end with one recommendation (concept, one-sentence reason tied to the ONE THING, next step) instead of an open menu. Write the construction note per concept before the SVG: visual idea, semantic read (if it must be explained it fails), grid and base unit, coordinates, what survives at 32 px. Root SVG: viewBox only (no fixed width/height), role=img + aria-label + title, exact hex (no CSS variables), groups id=mark / id=wordmark, no <text>, no embedded raster. Colour spec per role (primary/secondary/accent/full neutral ramp) as HEX + RGB + OKLCH with WCAG pairs validated by script (4.5:1 text, 3:1 large text and UI); each typeface gets a web-licence class (self-hostable OFL/Apache preferred). When AI explored the concepts, keep a curation log: who selected which output and what human modification made it the deliverable; the curated vector is final and is never regenerated.
 
 **المعاملات:** 32 px test · favicon 64×64
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** svg · شعار · logo construction · logo suite · clear space · wordmark · لوجو · مسارات · نسخ الشعار · vector logo · monochrome
+**الوسوم:** svg · شعار · logo construction · logo suite · clear space · wordmark · لوجو · مسارات · نسخ الشعار · vector logo · monochrome · logo presentation · logo mockup contexts · curation log · monochrome first · عرض الشعار · سجل الاختيار
 
 #### 1. الاستقبال (A25)
 
@@ -882,8 +882,9 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- `node` ← افحص وجوده بأمر واحد قبل كتابة الشارة
 - `pip:fonttools` ← python3 -c "import fonttools" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- `fonts:arabic` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `npm:axe` ← npm ls axe أو وجود node_modules/axe
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 🟢 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 🟢 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)

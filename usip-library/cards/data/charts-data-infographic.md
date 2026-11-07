@@ -7294,11 +7294,11 @@
 
 **متى:** حين يريد المستخدم استخدام D3 أو ECharts أو Chart.js داخل فيديو يُرندر إطارًا إطارًا / when the user wants D3, ECharts or Chart.js charts inside a video rendered frame by frame
 
-**كيف:** Set animation:false (Chart.js/ECharts) and redraw from data(t) inside window.__kosif.seek(t); D3: compute layouts (d3-hierarchy treemap, d3-sankey, d3-geo) and interpolate attributes yourself; never ship default library styling (restyle: no legends, direct labels, palette DATA-92); render with node tools/render_html.cjs.
+**كيف:** Set animation:false (Chart.js/ECharts) and redraw from data(t) inside window.__kosif.seek(t); D3: compute layouts (d3-hierarchy treemap, d3-sankey, d3-geo) and interpolate attributes yourself; never ship default library styling (restyle: no legends, direct labels, palette DATA-92); render with node tools/render_html.cjs. Atlas upgrade 2026-11-07: SVG polish defaults (web scale; roughly double at 1080p video): tick labels 10-12 px, direct labels 11-13.5 px, non-data strokes 0.5-1 px, data lines 1.5-2.25 px, focus line 2.5-3 px, ticks 4-6 px with 6-8 px padding, tickSizeOuter(0), drop redundant domain lines, fewer ticks before rotated labels; shape-rendering crispEdges only on straight axes, gridlines and rect cells (never on curves or circles); vector-effect non-scaling-stroke for zoomed outlines, connectors and borders. Keep D3 for scales, layouts and geometry and let the page framework own structure; recompute ticks, labels and plot height per aspect instead of scaling one viewBox. Python panels destined for compositing: size the figure to the final pixel/mm size, export transparent background SVG/PNG with tight bbox, keep text as text, colour-blind-safe cycle (Okabe-Ito #0072B2 #D55E00 #009E73 #CC79A7), spines top/right off, frameless legend; record a provenance note (source file, transforms, interval definition, seed, missing-data policy) next to each exported chart and view it at final size before use.
 
 **التثبيت:** npm i d3@7.9.0 # or: echarts@6.1.0 \| chart.js@4.5.1 \| vega@6.4.0 vega-lite@6.5.0
 
-**الوسوم:** d3 · echarts · chart.js · vega · libraries · مكتبات الرسوم · رندر فيديو · تحويل الرسم لفيديو · frame render · vega-lite
+**الوسوم:** d3 · echarts · chart.js · vega · libraries · مكتبات الرسوم · رندر فيديو · تحويل الرسم لفيديو · frame render · vega-lite · svg chart polish · crispEdges · non-scaling-stroke · transparent chart panel · provenance · تلميع المخطط
 
 #### 1. الاستقبال (A25)
 
@@ -7309,6 +7309,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
 - `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
 - `npm:d3` ← npm ls d3 أو وجود node_modules/d3
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
@@ -7506,11 +7507,11 @@
 
 **متى:** حين يريد المستخدم قصة بيانات تتغير مشاهدها مع التمرير أو تحويلها إلى فيديو بخط زمني / when the user wants a scroll-driven data story, or wants to turn one into a timeline video
 
-**كيف:** Techniques: graphic sequence, animated transition, pan-and-zoom, sticky side-by-side, parallax depth. For video replace scroll progress with timeline time: progress = (t − scene.start)/scene.dur; keep a reduced-motion/static fallback frame per scene.
+**كيف:** Techniques: graphic sequence, animated transition, pan-and-zoom, sticky side-by-side, parallax depth. For video replace scroll progress with timeline time: progress = (t − scene.start)/scene.dur; keep a reduced-motion/static fallback frame per scene. Atlas upgrade 2026-11-07: Scene contract per scrollytelling (or timeline) scene: text, visual state, data layer, media asset, annotation, trigger or progress range, static key frame, reduced-motion fallback, and the owner of each embedded visual layer. Every scene must contain at least one evidence-bearing change (chart transition, layer reveal, annotation shift, camera move, flow state, video frame) - a scene that only adds drama is cut or merged. Write the one-sentence takeaway and what the first, each key and the final frame prove before building. Choose a stepper instead of scroll when states are discrete and the reader needs direct access, known length or replay. Browser contract: never scrolljack; keep native wheel, touch, scrollbar and keyboard; no surprise autoplay audio; reserve media dimensions; animate transform/opacity only; test fast and reverse scroll, resize, reduced motion and mobile browser-chrome height changes. Lightest stack first: position:sticky + IntersectionObserver, then CSS scroll-driven animation, then GSAP/Motion only for scrubbing, pinning or snapping.
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** scrollytelling · سرد · scenes · قصة تفاعلية · تمرير · بارالاكس · scroll story · parallax
+**الوسوم:** scrollytelling · سرد · scenes · قصة تفاعلية · تمرير · بارالاكس · scroll story · parallax · scene contract · stepper vs scroll · no scrolljack · قصة بالتمرير
 
 #### 1. الاستقبال (A25)
 
@@ -7521,7 +7522,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:gsap` ← npm ls gsap أو وجود node_modules/gsap
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
@@ -7542,6 +7543,7 @@
 
 #### 5. التعافي (A29)
 
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
 - `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
 - `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
 - `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه

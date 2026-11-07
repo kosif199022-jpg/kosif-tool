@@ -1,0 +1,485 @@
+{
+ "schema": "kosif.atlas-5000.mining-receipt.v1",
+ "date": "2026-11-07",
+ "batch": "core-work-frontend",
+ "atlas": "https://github.com/kosif199022-jpg/kosif-atlas",
+ "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
+ "powers_added": 2,
+ "powers_upgraded": 17,
+ "sources_read": 48,
+ "skipped_after_reading": 23,
+ "scope_note": "Core-work pass for the owner's video, motion, writing, thinking and Black Dragon work. Each SKILL.md was read in full as inert text (including skills whose verdict is REVIEW_BEFORE_INSTALL: only their Markdown was read, no script was opened, copied or run) and its method summarised in our own words. Nothing was vendored or executed.",
+ "sources": [
+  {
+   "atlas_id": 1223,
+   "plugin": "kernel",
+   "skill": "frontend",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/342-kernel/1223-frontend",
+   "skill_md_sha256": "deb0d651f157335ef4f6b04cfc8b9266f50d2d2e217f01bbdce91d689602b7ad",
+   "read_in_full": true,
+   "power": "ABUILD-61"
+  },
+  {
+   "atlas_id": 3322,
+   "plugin": "stark",
+   "skill": "stark",
+   "license": "Apache-2.0",
+   "theme": "frontend-ui-design",
+   "path": "skills/1394-stark/3322-stark",
+   "skill_md_sha256": "d47afa578f03dda3090ae370b1fcfbbb9d20cb853ebe811f0a59665c0fd0e2a2",
+   "read_in_full": true,
+   "power": "ABUILD-61"
+  },
+  {
+   "atlas_id": 3329,
+   "plugin": "stark",
+   "skill": "web-design",
+   "license": "Apache-2.0",
+   "theme": "frontend-ui-design",
+   "path": "skills/1394-stark/3329-web-design",
+   "skill_md_sha256": "1cc128dbbfa950d5fbbf961ced7117a259b532b180db537e4cf737cbf5c41e6e",
+   "read_in_full": true,
+   "power": "ABUILD-61"
+  },
+  {
+   "atlas_id": 14124,
+   "plugin": "ux-design",
+   "skill": "top-design",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/3438-ux-design/14124-top-design",
+   "skill_md_sha256": "38e84e4c254697514ec1c2f52c5faafa927baea87b05ae3fa8e31ef76cdf1679",
+   "read_in_full": true,
+   "power": "ABUILD-62"
+  },
+  {
+   "atlas_id": 1223,
+   "plugin": "kernel",
+   "skill": "frontend",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/342-kernel/1223-frontend",
+   "skill_md_sha256": "deb0d651f157335ef4f6b04cfc8b9266f50d2d2e217f01bbdce91d689602b7ad",
+   "read_in_full": true,
+   "power": "ABUILD-62"
+  },
+  {
+   "atlas_id": 3329,
+   "plugin": "stark",
+   "skill": "web-design",
+   "license": "Apache-2.0",
+   "theme": "frontend-ui-design",
+   "path": "skills/1394-stark/3329-web-design",
+   "skill_md_sha256": "1cc128dbbfa950d5fbbf961ced7117a259b532b180db537e4cf737cbf5c41e6e",
+   "read_in_full": true,
+   "power": "ABUILD-62"
+  },
+  {
+   "atlas_id": 3322,
+   "plugin": "stark",
+   "skill": "stark",
+   "license": "Apache-2.0",
+   "theme": "frontend-ui-design",
+   "path": "skills/1394-stark/3322-stark",
+   "skill_md_sha256": "d47afa578f03dda3090ae370b1fcfbbb9d20cb853ebe811f0a59665c0fd0e2a2",
+   "read_in_full": true,
+   "power": "ABUILD-62"
+  },
+  {
+   "atlas_id": 2978,
+   "plugin": "design-helper",
+   "skill": "design-helper",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/1328-design-helper/2978-design-helper",
+   "skill_md_sha256": "bb73a0eb33b746d6840bf7ff78bd81921098ef2d8513c1d7bbe5ab235e267c18",
+   "read_in_full": true,
+   "power": "APP-17",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 1223,
+   "plugin": "kernel",
+   "skill": "frontend",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/342-kernel/1223-frontend",
+   "skill_md_sha256": "deb0d651f157335ef4f6b04cfc8b9266f50d2d2e217f01bbdce91d689602b7ad",
+   "read_in_full": true,
+   "power": "APP-17",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 10313,
+   "plugin": "build-web-apps",
+   "skill": "frontend-testing-debugging",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/2689-build-web-apps/10313-frontend-testing-debugging",
+   "skill_md_sha256": "03724620cf7e7de425b607a5492f572d867b1cf5d9c92c74bf50d057d7415e0b",
+   "read_in_full": true,
+   "power": "ABUILD-22",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 3295,
+   "plugin": "compound-engineering",
+   "skill": "ce-polish",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/1391-compound-engineering/3295-ce-polish",
+   "skill_md_sha256": "985888097d7e82a04a4b59856d53d7e6a30854094400b5be36c278261f0c92fa",
+   "read_in_full": true,
+   "power": "ABUILD-22",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 12625,
+   "plugin": "designer-skill",
+   "skill": "designer-skill",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/2981-designer-skill/12625-designer-skill",
+   "skill_md_sha256": "583ec67c907e834565ccd13bfebd03c857ecb70baabe873744b03cdeb463b0ac",
+   "read_in_full": true,
+   "power": "ABUILD-35",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 4488,
+   "plugin": "tonone",
+   "skill": "proof-design",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/1567-tonone/4488-proof-design",
+   "skill_md_sha256": "3fd1f271854b981f202918216840b350564e2d82f23861a46ca0fcbd379465e3",
+   "read_in_full": true,
+   "power": "ABUILD-35",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 3791,
+   "plugin": "universal-design-principles",
+   "skill": "expectation-effect-design-cues",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/1503-universal-design-principles/3791-expectation-effect-design-cues",
+   "skill_md_sha256": "13c5675b040a503ffee3b410480d8feb488f37bb8952fa6cd977ff3594cdbf85",
+   "read_in_full": true,
+   "power": "ABUILD-35",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 12442,
+   "plugin": "pwdev-code",
+   "skill": "skill-frontend-design",
+   "license": "Apache-2.0",
+   "theme": "frontend-ui-design",
+   "path": "skills/2963-pwdev-code/12442-skill-frontend-design",
+   "skill_md_sha256": "d8c52966ab05c60b42eb07664a7506560982ed6b092594d83be2f46f452f0f4d",
+   "read_in_full": true,
+   "power": "UI-07",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 9318,
+   "plugin": "web-design",
+   "skill": "card-tile-ui",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/2406-web-design/9318-card-tile-ui",
+   "skill_md_sha256": "79d3553d083c297e0b86cd307cc7a7016cd94c1b87d3f1d0396414cf45442904",
+   "read_in_full": true,
+   "power": "UI-07",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 9328,
+   "plugin": "web-design",
+   "skill": "static-site-implementation",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/2406-web-design/9328-static-site-implementation",
+   "skill_md_sha256": "349fe5d49f0a7ee6ed4d41f5bc6579b0be42f8706484486f483398c2ee5ada7a",
+   "read_in_full": true,
+   "power": "UI-89",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 1243,
+   "plugin": "visuals",
+   "skill": "html-doc",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/345-visuals/1243-html-doc",
+   "skill_md_sha256": "a8dc6ab5c21c71ec170278660112b4244f4c189177007d8b6bd5f5dad0224c9a",
+   "read_in_full": true,
+   "power": "UI-89",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 1243,
+   "plugin": "visuals",
+   "skill": "html-doc",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/345-visuals/1243-html-doc",
+   "skill_md_sha256": "a8dc6ab5c21c71ec170278660112b4244f4c189177007d8b6bd5f5dad0224c9a",
+   "read_in_full": true,
+   "power": "DOC-06",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 629,
+   "plugin": "product-skills",
+   "skill": "apple-hig-expert",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/198-product-skills/629-apple-hig-expert",
+   "skill_md_sha256": "85c5aaa9653aeb9671b7047a9ea64063bdaee81955a918bc627aa38b307eb68c",
+   "read_in_full": true,
+   "power": "UI-80",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 646,
+   "plugin": "apple-hig-expert",
+   "skill": "apple-hig-expert",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/200-apple-hig-expert/646-apple-hig-expert",
+   "skill_md_sha256": "85c5aaa9653aeb9671b7047a9ea64063bdaee81955a918bc627aa38b307eb68c",
+   "read_in_full": true,
+   "power": "UI-80",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 10365,
+   "plugin": "game-studio",
+   "skill": "game-ui-frontend",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/2696-game-studio/10365-game-ui-frontend",
+   "skill_md_sha256": "cd017fe0761207dcfd801f236490896cbf1cd6627ee267c801a19c7c780b7a01",
+   "read_in_full": true,
+   "power": "UI-69",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 3812,
+   "plugin": "universal-design-principles",
+   "skill": "closure-implied-shapes",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/1503-universal-design-principles/3812-closure-implied-shapes",
+   "skill_md_sha256": "264d8d2596ec803f4824c30589cef862567b17c712446b1493ad7efc8362afd8",
+   "read_in_full": true,
+   "power": "SHAPE-79",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 9357,
+   "plugin": "animation",
+   "skill": "rotoscope",
+   "license": "MIT",
+   "theme": "browser-automation",
+   "path": "skills/2414-animation/9357-rotoscope",
+   "skill_md_sha256": "ea684a1e851258d7ee21026191b9d472f023d9513e8baf91dd9ac28ee81e7714",
+   "read_in_full": true,
+   "power": "QA-136",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 10554,
+   "plugin": "vercel",
+   "skill": "satori",
+   "license": "Apache-2.0",
+   "theme": "frontend-ui-design",
+   "path": "skills/2722-vercel/10554-satori",
+   "skill_md_sha256": "e18bc83ab691fa888301a3678b7d7d888f2d8989d9ee9344ec192dec3c75fddc",
+   "read_in_full": true,
+   "power": "ENG-58",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 3743,
+   "plugin": "universal-design-principles",
+   "skill": "wabi-sabi-imperfection",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/1503-universal-design-principles/3743-wabi-sabi-imperfection",
+   "skill_md_sha256": "5fb91b6611c36bcc19e62bcb7d99e3d88b08412a45246c66cd09a0884e2fa180",
+   "read_in_full": true,
+   "power": "DRAW-25",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 2382,
+   "plugin": "design-from-code",
+   "skill": "design-from-code",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/1073-design-from-code/2382-design-from-code",
+   "skill_md_sha256": "8779e750854a0bda457bf1305a16e9c910d4e9a49b164cb9ea0d278eeb9135ed",
+   "read_in_full": true,
+   "power": "UI-04",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 10173,
+   "plugin": "hera-godot",
+   "skill": "ui-theme-qa",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/2669-hera-godot/10173-ui-theme-qa",
+   "skill_md_sha256": "0dad37831e2eeca33f5eb732cbc12619a53287550502e44f9a56bbeafab63e6f",
+   "read_in_full": true,
+   "power": "ABUILD-36",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 10318,
+   "plugin": "build-web-data-visualization",
+   "skill": "accessibility-and-inclusive-visualization",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/2690-build-web-data-visualization/10318-accessibility-and-inclusive-visualizatio",
+   "skill_md_sha256": "4b027cdceb71903dc24f9b4323344a77390fdf312fe4aeb0d2d4dd0f9628742a",
+   "read_in_full": true,
+   "power": "CAM-62",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 4431,
+   "plugin": "tonone",
+   "skill": "form-web",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/1567-tonone/4431-form-web",
+   "skill_md_sha256": "26ff32d17d8f3a4643848cf731ec5e4a25845e01850a30add796acec44c72155",
+   "read_in_full": true,
+   "power": "ABUILD-45",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 12625,
+   "plugin": "designer-skill",
+   "skill": "designer-skill",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/2981-designer-skill/12625-designer-skill",
+   "skill_md_sha256": "583ec67c907e834565ccd13bfebd03c857ecb70baabe873744b03cdeb463b0ac",
+   "read_in_full": true,
+   "power": "APP-16",
+   "upgrade": true
+  },
+  {
+   "atlas_id": 3791,
+   "plugin": "universal-design-principles",
+   "skill": "expectation-effect-design-cues",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/1503-universal-design-principles/3791-expectation-effect-design-cues",
+   "skill_md_sha256": "13c5675b040a503ffee3b410480d8feb488f37bb8952fa6cd977ff3594cdbf85",
+   "read_in_full": true,
+   "power": "APP-16",
+   "upgrade": true
+  }
+ ],
+ "skipped": [
+  {
+   "atlas_id": 219,
+   "reason": "duplicate of UI-09 (same seamless UI loop method)"
+  },
+  {
+   "atlas_id": 313,
+   "reason": "duplicate of ABUILD-22 (same browser-automation skill, other copy)"
+  },
+  {
+   "atlas_id": 340,
+   "reason": "duplicate of ABUILD-22 (same browser-automation skill, other copy)"
+  },
+  {
+   "atlas_id": 1866,
+   "reason": "stub: one-line description, no method"
+  },
+  {
+   "atlas_id": 1853,
+   "reason": "stub: one-line description, no method"
+  },
+  {
+   "atlas_id": 1523,
+   "reason": "stub: one-line description, no method"
+  },
+  {
+   "atlas_id": 3420,
+   "reason": "thin wrapper: only fetches remote guidelines file"
+  },
+  {
+   "atlas_id": 10915,
+   "reason": "product-specific: grim package note for one container system"
+  },
+  {
+   "atlas_id": 12093,
+   "reason": "thin wrapper: defers all guidance to an npx CLI"
+  },
+  {
+   "atlas_id": 4201,
+   "reason": "product-specific workflow (condux house tokens, backend diagrams); covered by ADOCS-23 / ABUILD-06"
+  },
+  {
+   "atlas_id": 3326,
+   "reason": "off-topic: native platform router (Windows/Apple/Android); owner builds web"
+  },
+  {
+   "atlas_id": 4429,
+   "reason": "product-specific: depends on a private style database CLI"
+  },
+  {
+   "atlas_id": 12273,
+   "reason": "product-specific: PostHog canvas runtime"
+  },
+  {
+   "atlas_id": 13390,
+   "reason": "product-specific: passe CDP CLI cookbook; method covered by ABUILD-14/19"
+  },
+  {
+   "atlas_id": 11729,
+   "reason": "product-specific: d3k runtime"
+  },
+  {
+   "atlas_id": 10380,
+   "reason": "duplicate of ENG-205 / UI-84 (HyperFrames registry)"
+  },
+  {
+   "atlas_id": 11200,
+   "reason": "duplicate of APP-15 (generic bold-direction frontend prompt)"
+  },
+  {
+   "atlas_id": 825,
+   "reason": "product-gated workflow; five-lens brief overlaps APP-15"
+  },
+  {
+   "atlas_id": 10115,
+   "reason": "product-specific: scientific icon generation via external image API"
+  },
+  {
+   "atlas_id": 3719,
+   "reason": "thin and off-core: research slide advice"
+  },
+  {
+   "atlas_id": 8695,
+   "reason": "off-topic: component library API engineering"
+  },
+  {
+   "atlas_id": 643,
+   "reason": "duplicate of ABUILD-37 / ABUILD-48 (token generation)"
+  },
+  {
+   "atlas_id": 9529,
+   "reason": "off-core: RPG Maker / engine pixel UI sheets"
+  }
+ ]
+}

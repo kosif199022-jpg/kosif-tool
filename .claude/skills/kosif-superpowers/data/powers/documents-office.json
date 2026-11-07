@@ -186,7 +186,7 @@
   "status": "proven",
   "what": "اطبع أي صفحة HTML (حتى المعتمدة على JavaScript) إلى PDF عبر Chromium الخفي. — Print any HTML page, including JavaScript-driven ones, to PDF through headless Chromium.",
   "when": "حين تستخدم الصفحة رسومًا بـ JS أو CSS حديثًا لا يدعمه weasyprint / the page uses JS charts or modern CSS that weasyprint does not support",
-  "how": "Playwright: page.goto(file URL); await document.fonts.ready; page.pdf({path, format:'A4', printBackground:true}). Proof snap.cjs printed the RTL dashboard; pdffonts shows Tajawal-Bold embedded.",
+  "how": "Playwright: page.goto(file URL); await document.fonts.ready; page.pdf({path, format:'A4', printBackground:true}). Proof snap.cjs printed the RTL dashboard; pdffonts shows Tajawal-Bold embedded. Atlas upgrade 2026-11-07: For HTML reports and one-pagers turned into PDF: pick a shape first (explainer = question then answer then reasoning; one-pager; report = findings first, method after; dashboard = KPI row then charts; comparison = matrix with the recommendation marked). One dominant element per view; vary rhythm instead of repeating one card grid; no orphaned last card. Charts read colours from CSS variables and must have animation turned off before export so the PDF never catches a half-drawn chart; give canvases role=img and an aria-label. Print block: hide the menu, keep cards unsplit across pages, keep backgrounds, build bookmarks from headings. Check both themes, 768 and 375 px, body ≥14 px. State what the PDF loses (toggles, filters). Never fabricate figures.",
   "params": "",
   "install": "npm i playwright && npx playwright install chromium (bundled at /opt/pw-browsers in the cloud image)",
   "requires": [
@@ -205,10 +205,35 @@
    "playwright",
    "pdf",
    "print",
-   "طباعة"
+   "طباعة",
+   "html report",
+   "one-pager",
+   "print css",
+   "chart animation off",
+   "تقرير HTML"
   ],
   "section": "إنشاء المستندات — Create documents",
-  "source": "proofs/general-data/snap.cjs"
+  "source": "proofs/general-data/snap.cjs",
+  "atlas": {
+   "ids": [
+    "1243"
+   ],
+   "examples": [
+    {
+     "id": "1243",
+     "plugin": "visuals",
+     "skill": "html-doc",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/345-visuals/1243-html-doc"
+    }
+   ],
+   "theme": "frontend-ui-design",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-frontend.json",
+   "skill_md_sha256": {
+    "1243": "a8dc6ab5c21c71ec170278660112b4244f4c189177007d8b6bd5f5dad0224c9a"
+   }
+  }
  },
  {
   "id": "DOC-07",

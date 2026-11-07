@@ -22333,13 +22333,13 @@
 
 **متى:** عند اختيار طريقة رسم البيانات أو الجسيمات بين SVG وCanvas وWebGL حسب عدد العناصر / when picking SVG, Canvas or WebGL for charts or particles based on how many marks must move
 
-**كيف:** SVG/DOM: labels, exact values, moderate marks (crisp vector export). Canvas2D: dense flat marks, many sparklines, frequent redraws. WebGL (Three.js, PixiJS, regl, deck.gl, Sigma.js): 1e5-1e6+ marks, particles, blending, shaders, true 3D. Keep labels/axes in SVG/HTML even when marks are WebGL; one scene clock; typed arrays; rebuild buffers only on data change; clamp devicePixelRatio for heavy scenes.
+**كيف:** SVG/DOM: labels, exact values, moderate marks (crisp vector export). Canvas2D: dense flat marks, many sparklines, frequent redraws. WebGL (Three.js, PixiJS, regl, deck.gl, Sigma.js): 1e5-1e6+ marks, particles, blending, shaders, true 3D. Keep labels/axes in SVG/HTML even when marks are WebGL; one scene clock; typed arrays; rebuild buffers only on data change; clamp devicePixelRatio for heavy scenes. Atlas upgrade 2026-11-07: Canvas2D specifics when that rung is chosen: CSS size in CSS px, backing store = cssSize x devicePixelRatio, then ctx.setTransform(dpr,0,0,dpr,0,0) so drawing code stays in CSS px; cap the ratio on mobile when memory or heat matters; backing-store memory = width x height x dpr^2 x 4 bytes x layers x instances. Layer canvases: static background / marks / highlight / interaction overlay, with partial invalidation instead of full redraws. Hybrid: Canvas for bulk marks, SVG or HTML for axes, labels, annotations and focusable controls, all sharing one scale/transform. Performance: batch draw calls, pre-group styles, typed arrays, cull off-screen marks, decimate when the viewport cannot resolve points, OffscreenCanvas in a worker under main-thread contention. Hit testing via spatial index or colour-picking buffer; pointer coordinates through getBoundingClientRect and the inverse pan/zoom transform; setPointerCapture for drags.
 
 **المعاملات:** WebGL when ~1e5-1e6+ marks
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** رسم بياني · جسيمات · عناصر كثيرة · data viz · pixijs · particles
+**الوسوم:** رسم بياني · جسيمات · عناصر كثيرة · data viz · pixijs · particles · canvas hidpi · backing store memory · hybrid canvas svg · كانفاس عالي الدقة
 
 #### 1. الاستقبال (A25)
 
@@ -27347,13 +27347,13 @@
 
 **متى:** عند تصميم بطاقة أو جدول أو عنوان سفلي كصورة PNG حادة مقصوصة على المحتوى / when designing a card, table or lower third as a crisp PNG still trimmed to its content
 
-**كيف:** Playwright page.screenshot (installed); then PIL: bg = pixel(2,2); mask = \|img-bg\| > thresh; crop bbox; pad margin x scale. Run render and trim as separate steps. The atlas render.sh hardcodes the macOS Chrome path, so reimplement with Playwright.
+**كيف:** Playwright page.screenshot (installed); then PIL: bg = pixel(2,2); mask = \|img-bg\| > thresh; crop bbox; pad margin x scale. Run render and trim as separate steps. The atlas render.sh hardcodes the macOS Chrome path, so reimplement with Playwright. Atlas upgrade 2026-11-07: Browser-free alternative for templated covers/OG cards: Satori-style HTML/CSS→SVG (then PNG) supports only a flexbox subset — no grid, no CSS variables, no media queries, no pseudo-elements, no animation, inline styles only, every font loaded explicitly; standard card 1200×630. Treat Arabic as unverified on that path: check shaping and RTL order in the output and fall back to Chromium capture (or ARAB-59's RAQM route) when letters are disconnected or reversed.
 
 **المعاملات:** scale 2; margin 16 CSS px (32 device px)
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** بطاقة بيانات · عنوان سفلي · لقطة شاشة · screenshot · lower third · end card
+**الوسوم:** بطاقة بيانات · عنوان سفلي · لقطة شاشة · screenshot · lower third · end card · satori · og image · social card · html to svg · صورة مشاركة
 
 #### 1. الاستقبال (A25)
 
@@ -27365,6 +27365,7 @@
 
 - `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
 - `pip:pillow` ← python3 -c "import pillow" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- `npm:satori` ← npm ls satori أو وجود node_modules/satori
 - `os:macos` ← افحص وجوده بأمر واحد قبل كتابة الشارة
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 🟢 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 🟢 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 

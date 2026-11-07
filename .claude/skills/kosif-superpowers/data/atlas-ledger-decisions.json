@@ -5,6 +5,259 @@
   {
    "match": {
     "ids": [
+     219
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (frontend): duplicate of ui; e.g. duplicate of UI-09 (same seamless UI loop method)"
+  },
+  {
+   "match": {
+    "ids": [
+     3326,
+     8695
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (frontend): off; e.g. off-topic: native platform router (Windows/Apple/Android); owner builds web"
+  },
+  {
+   "match": {
+    "ids": [
+     11729
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (frontend): product; e.g. product-specific: d3k runtime"
+  },
+  {
+   "match": {
+    "ids": [
+     3420,
+     12093
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (frontend): thin wrapper; e.g. thin wrapper: only fetches remote guidelines file"
+  },
+  {
+   "match": {
+    "ids": [
+     705
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (image): duplicate of amedia; e.g. duplicate of AMEDIA-29 (headless 3D/Blender automation); generic bpy primer"
+  },
+  {
+   "match": {
+    "ids": [
+     734,
+     9635
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (image): product; e.g. product-specific: Photoshop ExtendScript/UXP batch; generic advice already in FOOT-30/FMT-20"
+  },
+  {
+   "match": {
+    "ids": [
+     3222
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (image): stub; e.g. stub: alias that points to another command"
+  },
+  {
+   "match": {
+    "ids": [
+     3731
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (marketing): duplicate of acraft; e.g. duplicate of ACRAFT-19 brand archetypes"
+  },
+  {
+   "match": {
+    "ids": [
+     14540
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (marketing): product; e.g. product-specific: TranscriptAPI wrapper; duplicate of AWEB-01"
+  },
+  {
+   "match": {
+    "ids": [
+     12446
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (marketing): stub; e.g. stub: copy-ads skill marked STUB with TODO sections"
+  },
+  {
+   "match": {
+    "ids": [
+     4087
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (marketing): thin; e.g. thin: PR pitch package is a process list with no method beyond outputs; press outreach is off the owner's core"
+  },
+  {
+   "match": {
+    "ids": [
+     2926
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (skillcraft): duplicate of astrat; e.g. duplicate of ASTRAT-42/ENG-332 model routing; Codex-CLI specific"
+  },
+  {
+   "match": {
+    "ids": [
+     729
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (skillcraft): generic confidence; e.g. generic confidence-rating prompt; covered by CHECK-08 evidence ladder"
+  },
+  {
+   "match": {
+    "ids": [
+     4009
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (thinking): off; e.g. off-topic for thinking track: SEO/marketing content brief tied to a brand-profile plugin (marketing track)"
+  },
+  {
+   "match": {
+    "ids": [
+     2786
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (thinking): stub; e.g. stub: pointer to instructions.md"
+  },
+  {
+   "match": {
+    "ids": [
+     13229
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (video): brand; e.g. brand-specific creator template; scene/B-roll brief covered by STORY cards"
+  },
+  {
+   "match": {
+    "ids": [
+     213,
+     221
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (video): duplicate of brand; e.g. duplicate of BRAND-38 brand grid montage"
+  },
+  {
+   "match": {
+    "ids": [
+     757
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (video): duplicate of eng remotion contract cards; e.g. duplicate of ENG remotion contract cards (frame-driven, seeded random, props)"
+  },
+  {
+   "match": {
+    "ids": [
+     222
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (video): duplicate of fmt; e.g. duplicate of FMT-46/APPX-17/FMT-62 cover pick + loop seam"
+  },
+  {
+   "match": {
+    "ids": [
+     212
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (video): duplicate of sp; e.g. duplicate of SP-0407 brand film arc / STORY-31"
+  },
+  {
+   "match": {
+    "ids": [
+     214,
+     218
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (video): duplicate of story; e.g. duplicate of STORY-73 creator-video shapes"
+  },
+  {
+   "match": {
+    "ids": [
+     3419
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (video): off; e.g. off-core web UI; view transitions already in TRANS/atlas-media"
+  },
+  {
+   "match": {
+    "ids": [
+     619,
+     11537,
+     14533,
+     14536
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (video): product; e.g. product-specific: TranscriptAPI wrapper (same as 616)"
+  },
+  {
+   "match": {
+    "ids": [
+     3732,
+     13226
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (writing): duplicate of story; e.g. duplicate of STORY-30 long-form skeleton"
+  },
+  {
+   "match": {
+    "ids": [
+     9652
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (writing): duplicate of write; e.g. duplicate of WRITE-06/07 rewrite rules"
+  },
+  {
+   "match": {
+    "ids": [
+     12454,
+     12461
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (writing): stub; e.g. stub"
+  },
+  {
+   "match": {
+    "ids": [
+     183
+    ]
+   },
+   "status": "skipped",
+   "reason": "2026-11-07 core-work pass (writing): thin wrapper around 72; e.g. thin wrapper around 72"
+  },
+  {
+   "match": {
+    "ids": [
      10628,
      10630,
      10632,

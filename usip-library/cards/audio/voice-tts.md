@@ -1527,13 +1527,13 @@
 
 **متى:** حين تكتب نص التعليق لمشاهد فيديو وتريده قصيرًا واضحًا يسبق الحدث على الشاشة بلحظة / when writing scene narration that is short, clear and lands just before the on-screen action
 
-**كيف:** If a sentence needs 'and' (و) it is two scenes. Contrast in counts: '24 تبويبًا. نقرة واحدة. 5 مجموعات.' Narrate an action ~0.3–0.5 s before it appears so the eye arrives with the ear. Strong first line (hook within 2 s). Each scene's narration in its own text file feeding TTS and caption timing. The script complements the visuals; it never reads the on-screen text aloud.
+**كيف:** If a sentence needs 'and' (و) it is two scenes. Contrast in counts: '24 تبويبًا. نقرة واحدة. 5 مجموعات.' Narrate an action ~0.3–0.5 s before it appears so the eye arrives with the ear. Strong first line (hook within 2 s). Each scene's narration in its own text file feeding TTS and caption timing. The script complements the visuals; it never reads the on-screen text aloud. Atlas upgrade 2026-11-07: Long-form audio (podcast/explainer VO) — write for the ear: listeners can't see segment boundaries, so open every segment with a verbal transition and vary them (subject lead, framing hook, topic shift, bridge, time marker); introduce any named person with one clause of who they are; describe any visual that matters; give major items 4–6 sentences and minor ones 3–4; never more than two long sentences in a row. Assembly: TTS per segment, insert ≥300 ms silence between segments and ≥500 ms at major shifts, concat by re-encoding (not stream copy), loudnorm after the concat, and compute chapter start times from cumulative measured segment+silence durations. Approve a one-line-per-chapter outline before writing the full script.
 
 **المعاملات:** 1 idea / scene; action narrated 0.3–0.5 s early; hook ≤ 2 s
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** كتابة التعليق · فكرة واحدة · narration rules · one idea per scene · contrast lines · نص الفيديو · سكريبت · خطاف · hook · voiceover script
+**الوسوم:** كتابة التعليق · فكرة واحدة · narration rules · one idea per scene · contrast lines · نص الفيديو · سكريبت · خطاف · hook · voiceover script · write for the ear · podcast · segment transitions · chapters from durations · بودكاست · الكتابة للأذن
 
 #### 1. الاستقبال (A25)
 
@@ -1544,7 +1544,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
@@ -1564,6 +1564,7 @@
 
 #### 5. التعافي (A29)
 
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
 - `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
 - `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
 - `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه

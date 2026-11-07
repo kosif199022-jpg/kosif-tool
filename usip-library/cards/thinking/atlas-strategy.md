@@ -1,4 +1,4 @@
-# `atlas-strategy` — التفكير والتخطيط والاستراتيجية (108 بطاقة)
+# `atlas-strategy` — التفكير والتخطيط والاستراتيجية (120 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/atlas-strategy.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/thinking.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -23,8 +23,20 @@
 - [`ASTRAT-106` تقدير حجم السوق TAM وSAM وSOM من أعلى ومن أسفل والتحقق المتبادل](#astrat-106--تقدير-حجم-السوق-tam-وsam-وsom-من-أعلى-ومن-أسفل-والتحقق-المتبادل--market-sizing-tam-sam-and-som-top-down-and-bottom-up-cross-checked)
 - [`ASTRAT-107` اكتشاف المنتج: أفكار من ثلاث زوايا، وفرضية XYZ، وتجارب منخفضة الجهد بعتبة نجاح، وترتيب بدرجة الفرصة](#astrat-107--اكتشاف-المنتج-أفكار-من-ثلاث-زوايا-وفرضية-xyz-وتجارب-منخفضة-الجهد-بعتبة-نجاح-وترتيب-بدرجة-الفرصة--product-discovery-ideas-from-three-perspectives-xyz-hypotheses-low-effort-experiments-with-success-thresholds-opportunity-score-ranking)
 - [`ASTRAT-108` مشكلة البداية الباردة للمنتجات الشبكية: شبكة ذرية واحدة، والجانب الصعب أولًا، ونقطة الانقلاب، ومقاييس الكثافة لا الإجمالي](#astrat-108--مشكلة-البداية-الباردة-للمنتجات-الشبكية-شبكة-ذرية-واحدة-والجانب-الصعب-أولًا-ونقطة-الانقلاب-ومقاييس-الكثافة-لا-الإجمالي--the-cold-start-problem-for-networked-products-one-atomic-network-the-hard-side-first-the-tipping-point-density-metrics-over-totals)
+- [`ASTRAT-109` خطة نمو قناة الفيديو القصير](#astrat-109--خطة-نمو-قناة-الفيديو-القصير--short-form-channel-growth-plan-pillars-tied-to-metrics-a-cadence-you-can-hold-for-a-year-owned-audience-funnel)
 - [`ASTRAT-11` رحلة من الفكرة إلى التطبيق بمتتبع](#astrat-11--رحلة-من-الفكرة-إلى-التطبيق-بمتتبع--idea-to-app-journey-with-docs-tracker)
+- [`ASTRAT-110` قراءة أداء الفيديو والسوشيال بأرقام صحيحة](#astrat-110--قراءة-أداء-الفيديو-والسوشيال-بأرقام-صحيحة--social-video-performance-readout-validated-formulas-decision-vs-vanity-metrics-topbottom-3-review)
+- [`ASTRAT-111` دفعة إعلانات مؤسسة على أدلة: زوايا وموجات وسجل تكرار](#astrat-111--دفعة-إعلانات-مؤسسة-على-أدلة-زوايا-وموجات-وسجل-تكرار--grounded-ad-creative-batch-evidence-corpus-3-5-angles-generation-waves-spec-gate-iteration-log)
+- [`ASTRAT-112` دفتر فرضيات للاختبارات الإبداعية](#astrat-112--دفتر-فرضيات-للاختبارات-الإبداعية--creative-test-journal-one-variable-hypotheses-honest-results-learnings-only-from-patterns)
+- [`ASTRAT-113` تسعير صفقة رعاية وشروطها والإفصاح](#astrat-113--تسعير-صفقة-رعاية-وشروطها-والإفصاح--brand-deal-pricing-value-based-base-fee-usageexclusivity-line-items-walk-away-floor-disclosure)
+- [`ASTRAT-114` عرض سعر لمشروع فيديو أو موشن لعميل](#astrat-114--عرض-سعر-لمشروع-فيديو-أو-موشن-لعميل--creative-project-proposal-buyers-words-first-scope-with-exclusions-distinct-options-mutual-next-steps)
+- [`ASTRAT-115` التعامل مع اعتراضات العميل والصفقة المتوقفة](#astrat-115--التعامل-مع-اعتراضات-العميل-والصفقة-المتوقفة--client-objection-and-stalled-deal-diagnosis-real-concern-own-proof-one-forward-question)
+- [`ASTRAT-116` خطة إطلاق حملة مع بوابات ما قبل الإطلاق](#astrat-116--خطة-إطلاق-حملة-مع-بوابات-ما-قبل-الإطلاق--launch-campaign-plan-with-preflight-gates-objectiveaudiencemessagechannelmeasure-backward-schedule-ordered-go-live)
+- [`ASTRAT-117` قفل هدف واحد وفلترة كل فكرة عليه](#astrat-117--قفل-هدف-واحد-وفلترة-كل-فكرة-عليه--one-goal-lock-judge-every-idea-on--partial--off-and-always-return-a-sharper-version)
+- [`ASTRAT-118` استخراج زوايا محتوى من الأخبار والترندات](#astrat-118--استخراج-زوايا-محتوى-من-الأخبار-والترندات--signal-mining-and-listening-digest-angles-you-have-standing-to-make-plus-an-explicit-dropped-list)
+- [`ASTRAT-119` اختيار قناة النمو بطريقة عين الثور](#astrat-119--اختيار-قناة-النمو-بطريقة-عين-الثور--bullseye-channel-choice-one-strategy-per-channel-three-cheap-tests-then-focus-on-one)
 - [`ASTRAT-12` مراجعة مخاطر ما قبل البناء](#astrat-12--مراجعة-مخاطر-ما-قبل-البناء--pre-build-risk-review-and-kill-test)
+- [`ASTRAT-120` موقع أو صفحة خدمات صادقة للمبدع](#astrat-120--موقع-أو-صفحة-خدمات-صادقة-للمبدع--honest-serviceportfolio-page-positioning-sentence-one-job-per-section-no-invented-proof-client-handoff)
 - [`ASTRAT-13` قرار تخزين البيانات على السلسلة أو خارجها](#astrat-13--قرار-تخزين-البيانات-على-السلسلة-أو-خارجها--on-chain-versus-off-chain-data-placement)
 - [`ASTRAT-14` اختبار استراتيجية تداول بمقاييس المخاطر](#astrat-14--اختبار-استراتيجية-تداول-بمقاييس-المخاطر--backtest-trading-strategy-with-risk-metrics)
 - [`ASTRAT-15` تقييم DCF متين مع فحوص تقاطعية](#astrat-15--تقييم-dcf-متين-مع-فحوص-تقاطعية--defensible-dcf-valuation-with-cross-checks)
@@ -472,13 +484,13 @@
 
 **متى:** Work exceeds one agent session and the path to the goal is unclear.
 
-**كيف:** 1) Name the destination. 2) Create map issue (labelled wayfinder:map) with Destination, Notes, Decisions so far, Not yet specified, Out of scope. 3) Child tickets with a Question, typed research/prototype/grilling/task, about 100K tokens each. 4) Claim by assigning first. 5) Use native blocking for the frontier. 6) Plan, do not execute; map only gists decisions and links.
+**كيف:** 1) Name the destination. 2) Create map issue (labelled wayfinder:map) with Destination, Notes, Decisions so far, Not yet specified, Out of scope. 3) Child tickets with a Question, typed research/prototype/grilling/task, about 100K tokens each. 4) Claim by assigning first. 5) Use native blocking for the frontier. 6) Plan, do not execute; map only gists decisions and links. Atlas upgrade 2026-11-07: Fog test: for each uncertainty ask 'can I phrase it as a sharp question?' — sharp (even if blocked) becomes a decision ticket; foggy stays as prose under Not-yet-specified until work makes it phrasable; fog never moves to Out-of-scope. Bail out if nothing is foggy or it fits one session (route to a plain interview or tickets). Resolve one frontier item per session (research items may run in parallel); on resolution post the answer, add a pointer line to Decisions-so-far, then close — as one sequence. Never let an agent resolve a human-decision item. When the frontier is empty, close the map and hand the destination (brief, spec or plan) on.
 
 **المعاملات:** issue tracker
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** planning · تخطيط · tickets
+**الوسوم:** planning · تخطيط · tickets · fog test · decision map · frontier · خريطة القرارات
 
 #### 1. الاستقبال (A25)
 
@@ -1353,7 +1365,7 @@
 - `ASTRAT-105` تخطيط الإنتاج وتكلفة الوحدة: الفاقد تكلفة حقيقية، والطاقة تقاس بالأوعية والزمن، والتغليف يحدد القناة / Production planning and unit cost: yield loss is a real cost, capacity is vessels and time, packaging gates the channel (documented)
 - `ASTRAT-106` تقدير حجم السوق TAM وSAM وSOM من أعلى ومن أسفل والتحقق المتبادل / Market sizing TAM, SAM and SOM, top-down and bottom-up, cross-checked (documented)
 - `ASTRAT-108` مشكلة البداية الباردة للمنتجات الشبكية: شبكة ذرية واحدة، والجانب الصعب أولًا، ونقطة الانقلاب، ومقاييس الكثافة لا الإجمالي / The cold start problem for networked products: one atomic network, the hard side first, the tipping point, density metrics over totals (documented)
-- `ASTRAT-11` رحلة من الفكرة إلى التطبيق بمتتبع / Idea-to-app journey with docs tracker (documented)
+- `ASTRAT-109` خطة نمو قناة الفيديو القصير / Short-form channel growth plan: pillars tied to metrics, a cadence you can hold for a year, owned-audience funnel (documented)
 
 ### `ASTRAT-108` — مشكلة البداية الباردة للمنتجات الشبكية: شبكة ذرية واحدة، والجانب الصعب أولًا، ونقطة الانقلاب، ومقاييس الكثافة لا الإجمالي / The cold start problem for networked products: one atomic network, the hard side first, the tipping point, density metrics over totals
 
@@ -1421,8 +1433,80 @@
 
 - `ASTRAT-106` تقدير حجم السوق TAM وSAM وSOM من أعلى ومن أسفل والتحقق المتبادل / Market sizing TAM, SAM and SOM, top-down and bottom-up, cross-checked (documented)
 - `ASTRAT-107` اكتشاف المنتج: أفكار من ثلاث زوايا، وفرضية XYZ، وتجارب منخفضة الجهد بعتبة نجاح، وترتيب بدرجة الفرصة / Product discovery: ideas from three perspectives, XYZ hypotheses, low-effort experiments with success thresholds, opportunity-score ranking (documented)
+- `ASTRAT-109` خطة نمو قناة الفيديو القصير / Short-form channel growth plan: pillars tied to metrics, a cadence you can hold for a year, owned-audience funnel (documented)
 - `ASTRAT-11` رحلة من الفكرة إلى التطبيق بمتتبع / Idea-to-app journey with docs tracker (documented)
-- `ASTRAT-12` مراجعة مخاطر ما قبل البناء / Pre-build risk review and kill-test (documented)
+
+### `ASTRAT-109` — خطة نمو قناة الفيديو القصير / Short-form channel growth plan: pillars tied to metrics, a cadence you can hold for a year, owned-audience funnel
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-strategy` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-strategy.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied |
+
+**ما هي:** خطة نمو لقناة ريلز/تيك توك/شورتس: أعمدة محتوى لكل منها مقياس، وتيرة نشر تصمد سنة، وتحويل الوصول المستأجر إلى جمهور مملوك. — Plan channel growth on retention, engagement and owned conversion, not follower count.
+
+**متى:** خطة نمو حساب، أي منصة أبدأ، كم مرة أنشر، الحساب واقف / grow my Reels/TikTok/Shorts channel, which platforms, posting cadence, stalled account
+
+**كيف:** 1) Mode first: build from scratch, audit an under-performing account (read the last 20 posts for patterns), or systematise a growing one. 2) Pick 1-2 platforms where the audience already is; add a third only when the first two run without strain. 3) Define 3-5 pillars and name the one metric each format exists to move: reach (top), engagement/trust (middle), conversion (follow, email, enquiry). A format with no metric is noise. 4) Cap promotion at ~10-20% of slots; above that reach and follows drop. 5) Set a cadence the owner can sustain for 12 months (2 strong posts a week beats daily-then-quit) and back it with a repurposing engine (one long piece → native cuts) plus weekly batching. 6) Engagement is half the work: reply to every comment in the first hour, spend roughly equal time commenting on 20-50 peer/larger accounts; on X keep links in the first reply, not the post body. 7) Profile gate: avatar consistent, bio = who you help + how, pinned post = best proof, link to a specific page. 8) Owned funnel: every rented post earns a reason to follow/subscribe (lead magnet, newsletter, WhatsApp channel); track reach → owned conversion as the de-risking metric. 9) Treat any algorithm claim as verify-at-use; run one experiment per cycle. Failure modes: same export dumped on every platform, unsustainable 3×/day plans, broadcasting without engaging, vanity targets. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2264-creator-economy-operations/8628-plan-content-and-audience-growth, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/613-social-media-manager, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/611-social-content, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3530-social.
+
+**المعاملات:** platforms, pillars, weekly hours, goal
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** growth plan · content pillars · cadence · Reels · TikTok · Shorts · owned audience · نمو القناة · أعمدة المحتوى · وتيرة النشر · جمهور مملوك
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:ASTRAT-109` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `decision-math`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2264-creator-economy-operations/8628-plan-content-and-audience-growth`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/613-social-media-manager`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/611-social-content`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3530-social`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ASTRAT-107` اكتشاف المنتج: أفكار من ثلاث زوايا، وفرضية XYZ، وتجارب منخفضة الجهد بعتبة نجاح، وترتيب بدرجة الفرصة / Product discovery: ideas from three perspectives, XYZ hypotheses, low-effort experiments with success thresholds, opportunity-score ranking (documented)
+- `ASTRAT-108` مشكلة البداية الباردة للمنتجات الشبكية: شبكة ذرية واحدة، والجانب الصعب أولًا، ونقطة الانقلاب، ومقاييس الكثافة لا الإجمالي / The cold start problem for networked products: one atomic network, the hard side first, the tipping point, density metrics over totals (documented)
+- `ASTRAT-11` رحلة من الفكرة إلى التطبيق بمتتبع / Idea-to-app journey with docs tracker (documented)
+- `ASTRAT-110` قراءة أداء الفيديو والسوشيال بأرقام صحيحة / Social video performance readout: validated formulas, decision vs vanity metrics, top/bottom-3 review (documented)
 
 ### `ASTRAT-11` — رحلة من الفكرة إلى التطبيق بمتتبع / Idea-to-app journey with docs tracker
 
@@ -1485,10 +1569,715 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `ASTRAT-107` اكتشاف المنتج: أفكار من ثلاث زوايا، وفرضية XYZ، وتجارب منخفضة الجهد بعتبة نجاح، وترتيب بدرجة الفرصة / Product discovery: ideas from three perspectives, XYZ hypotheses, low-effort experiments with success thresholds, opportunity-score ranking (documented)
 - `ASTRAT-108` مشكلة البداية الباردة للمنتجات الشبكية: شبكة ذرية واحدة، والجانب الصعب أولًا، ونقطة الانقلاب، ومقاييس الكثافة لا الإجمالي / The cold start problem for networked products: one atomic network, the hard side first, the tipping point, density metrics over totals (documented)
+- `ASTRAT-109` خطة نمو قناة الفيديو القصير / Short-form channel growth plan: pillars tied to metrics, a cadence you can hold for a year, owned-audience funnel (documented)
+- `ASTRAT-110` قراءة أداء الفيديو والسوشيال بأرقام صحيحة / Social video performance readout: validated formulas, decision vs vanity metrics, top/bottom-3 review (documented)
+- `ASTRAT-111` دفعة إعلانات مؤسسة على أدلة: زوايا وموجات وسجل تكرار / Grounded ad-creative batch: evidence corpus, 3-5 angles, generation waves, spec gate, iteration log (documented)
+
+### `ASTRAT-110` — قراءة أداء الفيديو والسوشيال بأرقام صحيحة / Social video performance readout: validated formulas, decision vs vanity metrics, top/bottom-3 review
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-strategy` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-strategy.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied |
+
+**ما هي:** تحليل أداء المنشورات والحملات بصيغ محددة ومقارنة بتاريخ الحساب أولًا ثم المعايير العامة، وكل رقم مربوط بقرار. — Read post/campaign numbers with explicit formulas and turn each into an action.
+
+**متى:** حلل أداء الريلز، معدل التفاعل، أي منشور نجح ولماذا، العائد على الإعلان / analyse reel performance, engagement rate, ROAS, which post worked
+
+**كيف:** 1) Validate input first: reach > 0, counts non-negative, date range valid, spend > 0 if ROI is asked; refuse to compute on broken rows. 2) Per post: engagement rate = (likes+comments+shares+saves)/reach×100; save rate = saves/reach; virality = shares/impressions; reach rate = reach/followers; CTR = clicks/impressions. For video add retention at 3 s and average % watched where the platform exposes it. 3) Paid: CPE, CPC, CPM = spend/impressions×1000, ROAS = revenue/spend; include production cost, not media only. 4) Compare against the account's own history first; public platform benchmarks are only context and are dated. 5) Weekly review: top 3 and bottom 3 posts with a stated reason (hook, format, topic, length, time); best slots from own data. 6) Diagnose with rules: high impressions + low engagement = resonance problem; falling reach = distribution/consistency; stalled follows = no reason to follow. 7) For multi-channel campaigns compare at least three attribution views (first, last, position-based 40/20/40) before moving budget. 8) Every reported number names the change it triggers; tag findings verified / medium / assumed. Sanity checks: engagement rate < 100%, ROI recomputes from spend. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/612-social-media-analyzer, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/576-campaign-analytics, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/613-social-media-manager, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2264-creator-economy-operations/8628-plan-content-and-audience-growth.
+
+**المعاملات:** export CSV/JSON, platform, spend
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** analytics · engagement rate · save rate · ROAS · CPM · attribution · weekly review · تحليل الأداء · معدل التفاعل · العائد على الإعلان
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:ASTRAT-110` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `decision-math`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/612-social-media-analyzer`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/576-campaign-analytics`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/192-marketing-skills/613-social-media-manager`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2264-creator-economy-operations/8628-plan-content-and-audience-growth`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ASTRAT-109` خطة نمو قناة الفيديو القصير / Short-form channel growth plan: pillars tied to metrics, a cadence you can hold for a year, owned-audience funnel (documented)
+- `ASTRAT-11` رحلة من الفكرة إلى التطبيق بمتتبع / Idea-to-app journey with docs tracker (documented)
+- `ASTRAT-111` دفعة إعلانات مؤسسة على أدلة: زوايا وموجات وسجل تكرار / Grounded ad-creative batch: evidence corpus, 3-5 angles, generation waves, spec gate, iteration log (documented)
+- `ASTRAT-112` دفتر فرضيات للاختبارات الإبداعية / Creative test journal: one-variable hypotheses, honest results, learnings only from patterns (documented)
+
+### `ASTRAT-111` — دفعة إعلانات مؤسسة على أدلة: زوايا وموجات وسجل تكرار / Grounded ad-creative batch: evidence corpus, 3-5 angles, generation waves, spec gate, iteration log
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-strategy` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-strategy.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied |
+
+**ما هي:** إنتاج إعلانات بالجملة من مواد حقيقية (أفضل الإعلانات، المراجعات، التعليقات) بزوايا مختلفة لا مرادفات، مع فحص الحدود وسجل لما تعلمناه. — Scale ad concepts from real evidence, not model guesses.
+
+**متى:** اكتب لي إعلانات، نسخ متعددة للإعلان، كريتف لحملة ميتا/تيك توك، إعلان موشن / ad variations, creative testing, Meta/TikTok ad concepts, motion video ad
+
+**كيف:** 1) Build the inputs corpus before writing: 10-20 recent winning ads, 50-100 customer reviews, top ad comments (objections and unprompted praise), brand voice and assets. If winners/reviews are empty, stop and ask — no ungrounded fallback. 2) Every concept cites its source line; no invented stats, testimonials or claims. 3) Define 3-5 angles (pain, outcome, proof, curiosity, comparison, identity, contrarian, honest urgency); vary angles, not just words. 4) Generate in waves: core angles × ~5 variations; then extend the top 2; then 1-2 wild cards. 5) Spec gate per placement (e.g. Meta primary text hook within ~125 visible chars, TikTok ad text ~80-100, RSA headline 30 / description 90, each RSA headline must stand alone); trim anything over, drop near-duplicates, flag policy risks. 6) Visual gate: one message per asset, 3-second stranger test, headline legible at ~150 px wide, paid statics keep text area small (~20%), WCAG AA contrast, real copy only. 7) For video: show the payoff early, three simultaneous hooks (visual, spoken, on-screen text) in the first second, captions for sound-off. 8) Iterating from data: list winning themes/structures/words and losing patterns, keep ≥1,000 impressions before judging, change one variable per cycle, log round/date/winners/new angles/retired angles. 9) For client approval present concepts as in-feed mockups with a grounding disclosure, so the pick happens from one link. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3484-ad-creative, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4428-form-social.
+
+**المعاملات:** platform, placement, corpus folder, metric
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** ad creative · angles · variations · creative testing · UGC · motion ad · Meta ads · TikTok ads · إعلانات · زوايا الإعلان · نسخ إعلانية · كريتف
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `npm:axe` ← npm ls axe أو وجود node_modules/axe
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:ASTRAT-111` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `decision-math`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3484-ad-creative`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4428-form-social`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ASTRAT-11` رحلة من الفكرة إلى التطبيق بمتتبع / Idea-to-app journey with docs tracker (documented)
+- `ASTRAT-110` قراءة أداء الفيديو والسوشيال بأرقام صحيحة / Social video performance readout: validated formulas, decision vs vanity metrics, top/bottom-3 review (documented)
+- `ASTRAT-112` دفتر فرضيات للاختبارات الإبداعية / Creative test journal: one-variable hypotheses, honest results, learnings only from patterns (documented)
+- `ASTRAT-113` تسعير صفقة رعاية وشروطها والإفصاح / Brand-deal pricing: value-based base fee, usage/exclusivity line items, walk-away floor, disclosure (documented)
+
+### `ASTRAT-112` — دفتر فرضيات للاختبارات الإبداعية / Creative test journal: one-variable hypotheses, honest results, learnings only from patterns
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-strategy` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-strategy.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied |
+
+**ما هي:** كل تغيير في الهوك أو الصورة المصغرة أو الإعلان يُكتب كفرضية قابلة للنفي قبل التنفيذ، والنتيجة تُسجل بصدق، والدروس لا تُعمم إلا بعد نمط متكرر. — Turn hook/thumbnail/ad tweaks into a learning system.
+
+**متى:** اختبار هوك، اختبار صورة مصغرة، ليش هذا الفيديو نجح، نسجل التجارب / hook test, thumbnail test, creative experiment log, what did we learn
+
+**كيف:** 1) Write the hypothesis before changing anything: 'If X changes for audience Y, metric Z moves by ≥N because R'. Must be falsifiable, scoped (which video series/platform/audience) and single-variable — an 'and' between two changes means two tests. 2) Variable classes for video: hook (first 1-3 s), thumbnail/cover, title/caption, length/pacing, sound, posting slot, CTA. Change one class per iteration. 3) Fix one primary metric and guardrails up front (e.g. 3 s hold rate primary; saves/comments guardrail) plus blast radius and revert plan. 4) Do not peek and change the outcome definition mid-run; low-volume results stay provisional. 5) Result file: held YES / NO / PARTIAL with baseline, current and delta; calibration rule — predicted +20% and got +12% is PARTIAL, never round up; failed means failed. 6) Next move is one of: ship, next iteration, revert and branch, escalate; no stacking a second change on a failed one. 7) Append-only ledger (one row per test: date, variable, scope, prediction, result, learning candidate). 8) Promote a learning only after ≥3 results in the same direction, state its scope, and log negative learnings and dead ends too; across ≥2 campaigns it may become a house rule. Refuse post-hoc hypotheses and unmeasurable predictions. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2824-google-ads-strategist/11473-iterative-campaign-design, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2824-google-ads-strategist/11472-hypothesis-journaling, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2211-majestic-marketing/8290-growth-experimentation.
+
+**المعاملات:** variable, metric, scope, ledger path
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** hypothesis · A/B test · creative testing · hook test · thumbnail test · learning log · فرضية · اختبار · سجل التجارب · اختبار الهوك
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `pip:hypothesis` ← python3 -c "import hypothesis" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:ASTRAT-112` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `decision-math`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2824-google-ads-strategist/11473-iterative-campaign-design`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2824-google-ads-strategist/11472-hypothesis-journaling`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2211-majestic-marketing/8290-growth-experimentation`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ASTRAT-110` قراءة أداء الفيديو والسوشيال بأرقام صحيحة / Social video performance readout: validated formulas, decision vs vanity metrics, top/bottom-3 review (documented)
+- `ASTRAT-111` دفعة إعلانات مؤسسة على أدلة: زوايا وموجات وسجل تكرار / Grounded ad-creative batch: evidence corpus, 3-5 angles, generation waves, spec gate, iteration log (documented)
+- `ASTRAT-113` تسعير صفقة رعاية وشروطها والإفصاح / Brand-deal pricing: value-based base fee, usage/exclusivity line items, walk-away floor, disclosure (documented)
+- `ASTRAT-114` عرض سعر لمشروع فيديو أو موشن لعميل / Creative-project proposal: buyer's words first, scope with exclusions, distinct options, mutual next steps (documented)
+
+### `ASTRAT-113` — تسعير صفقة رعاية وشروطها والإفصاح / Brand-deal pricing: value-based base fee, usage/exclusivity line items, walk-away floor, disclosure
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-strategy` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-strategy.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied |
+
+**ما هي:** تسعير الرعايات والتعاون مع العلامات على قيمة الجمهور لا على سعر ثابت للألف مشاهدة، مع بنود منفصلة لحقوق الاستخدام والحصرية وحد أدنى للانسحاب وإفصاح واضح. — Price sponsorships on value and protect audience trust.
+
+**متى:** علامة تجارية عرضت رعاية، كم أسعر الإعلان، بطاقة أسعار، عقد مع مؤثر، بريف لمؤثر / brand deal offer, rate card, sponsorship price, creator brief, usage rights
+
+**كيف:** 1) Start from audience value: niche buying intent, engagement/trust, and how hard the audience is to reach elsewhere — not raw views or a flat CPM. 2) Price each deliverable separately: dedicated video ≠ 60 s integration ≠ story mention; bundles priced as packages. 3) Price as separate, time-boxed lines: usage/whitelisting/paid amplification (brand running the content as its ad), category exclusivity by window (premium often +25-100%), and reuse/perpetuity. Never give these away inside the base fee. 4) Name the walk-away floor before negotiating, higher for products you would not use yourself. 5) Use dated rate benchmarks only as a sanity check (verify at use). 6) Terms to fix in writing: exact deliverables and posting dates, revision rounds (2 is common) and approval window (48-72 h), payment split (e.g. 50% upfront / 50% on delivery), kill fee (25-50%), IP stays with the creator unless licensed, morality clause both ways. 7) Disclosure is mandatory and visible: first line of the caption, on-screen text in video, spoken early in longer videos, platform paid-partnership toggle; '#collab' alone is not enough; affiliate links need their own disclosure; AI or virtual presenters disclosed. A brand asking to hide it is a red flag. 8) When the owner briefs other creators: must-say / should-say / may-say hierarchy, references without asking for copies, creative freedom (over-scripted content underperforms), and a controversy plan (monitor / pause / terminate). Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2264-creator-economy-operations/8629-price-a-brand-deal, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4053-influencer-creator.
+
+**المعاملات:** audience stats, deliverables, usage window, market
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** sponsorship · brand deal · rate card · influencer · usage rights · exclusivity · disclosure · رعاية · تسعير الإعلان · حقوق الاستخدام · إفصاح · مؤثر
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:ASTRAT-113` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `decision-math`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2264-creator-economy-operations/8629-price-a-brand-deal`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4053-influencer-creator`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ASTRAT-111` دفعة إعلانات مؤسسة على أدلة: زوايا وموجات وسجل تكرار / Grounded ad-creative batch: evidence corpus, 3-5 angles, generation waves, spec gate, iteration log (documented)
+- `ASTRAT-112` دفتر فرضيات للاختبارات الإبداعية / Creative test journal: one-variable hypotheses, honest results, learnings only from patterns (documented)
+- `ASTRAT-114` عرض سعر لمشروع فيديو أو موشن لعميل / Creative-project proposal: buyer's words first, scope with exclusions, distinct options, mutual next steps (documented)
+- `ASTRAT-115` التعامل مع اعتراضات العميل والصفقة المتوقفة / Client objection and stalled-deal diagnosis: real concern, own proof, one forward question (documented)
+
+### `ASTRAT-114` — عرض سعر لمشروع فيديو أو موشن لعميل / Creative-project proposal: buyer's words first, scope with exclusions, distinct options, mutual next steps
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-strategy` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-strategy.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied |
+
+**ما هي:** كتابة عرض لعميل بعد الاكتشاف: ملخص بكلمات العميل، نطاق واستثناءات ومعايير قبول، خيارات سعر مختلفة فعلًا، وخطة خطوات مشتركة بتواريخ. — Write a proposal that a client can approve without a call.
+
+**متى:** اكتب عرض سعر، بروبوزال لعميل، عرض لفيديو إعلاني، ديك للعميل / write a proposal, quote for a video project, pitch deck for a client
+
+**كيف:** 1) Gate: list the material gaps (budget range, decision maker, deadline, success criteria, assets they own). If key gaps remain, propose a short discovery call instead of a speculative proposal ('send me a proposal' before discovery usually means not qualified). 2) Executive summary that stands alone and mirrors the client's own words: what they told you, what success looks like. 3) Recommend 1-2 options (maximum three genuinely distinct tiers, e.g. one hero film / hero + cut-downs / full campaign pack), never a decoy. 4) Scope: deliverables with durations and ratios, revision rounds, what is excluded (stock licences, voice talent, media spend), client responsibilities and dependencies (brand assets, approvals within N days), acceptance criteria per milestone. 5) Value only from baselines the client supplied, assumptions visible, scenarios labelled; no guaranteed ROI or virality. 6) Proof stack matched to their fear: closest case study, before/after, a relevant reel, named references; remove ambiguity in price and process because ambiguity reads as risk. 7) Price easy to find, payment milestones, validity period; 5-7 pages maximum; pitch-deck version follows problem → cost → shift → approach → proof → plan → investment → next step. 8) End with a mutual action table (step, owner, date). 9) Review once as the buyer, the producer and the risk owner; route contract wording to a lawyer. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2216-majestic-sales/8364-sales-proposal, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4384-deal-close, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3524-sales-enablement, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8003-b2b-trust-engineering.
+
+**المعاملات:** client brief, discovery notes, price options
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** proposal · quote · pitch deck · scope · client · creative services · عرض سعر · بروبوزال · عميل · نطاق العمل
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:ASTRAT-114` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `decision-math`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2216-majestic-sales/8364-sales-proposal`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4384-deal-close`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3524-sales-enablement`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8003-b2b-trust-engineering`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ASTRAT-112` دفتر فرضيات للاختبارات الإبداعية / Creative test journal: one-variable hypotheses, honest results, learnings only from patterns (documented)
+- `ASTRAT-113` تسعير صفقة رعاية وشروطها والإفصاح / Brand-deal pricing: value-based base fee, usage/exclusivity line items, walk-away floor, disclosure (documented)
+- `ASTRAT-115` التعامل مع اعتراضات العميل والصفقة المتوقفة / Client objection and stalled-deal diagnosis: real concern, own proof, one forward question (documented)
+- `ASTRAT-116` خطة إطلاق حملة مع بوابات ما قبل الإطلاق / Launch campaign plan with preflight gates: objective→audience→message→channel→measure, backward schedule, ordered go-live (documented)
+
+### `ASTRAT-115` — التعامل مع اعتراضات العميل والصفقة المتوقفة / Client objection and stalled-deal diagnosis: real concern, own proof, one forward question
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-strategy` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-strategy.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (Apache-2.0, MIT); nothing copied |
+
+**ما هي:** تصنيف اعتراض العميل (سعر، توقيت، منافس، ثقة، صلاحية، الوضع الحالي) والرد بأدلة من أعمالك وكلامه هو، مع سؤال واحد يحرك الصفقة أو يكشف أنها ليست حقيقية. — Answer pushback with evidence, not scripts.
+
+**متى:** العميل قال السعر غالي، العميل اختفى، نفكر فيها، عنده عرض أرخص / client says too expensive, client ghosted, we'll think about it, cheaper competitor
+
+**كيف:** 1) Classify: price/value, timing/priority, competitor, risk/trust, authority ('I need to check with…'), status quo. Separate a real objection (reason not to buy) from a negotiation move (reason to buy cheaper). 2) Read the stall pattern: 'we'll think about it' = value unclear or wrong person; 'no budget' = ask 'if this solved X, would budget appear?' (yes → value problem, no → priority problem); 'evaluating others' = criteria not mapped to your strengths, ask what would make the choice obvious; 'next quarter' = not a priority, park it instead of chasing. 3) Ground the answer in your own evidence: the client's stated goals, a similar past project, a vetted testimonial; nothing unvetted goes to the client. 4) Response shape: acknowledge → answer with their goal + one proof point → end with a question that moves forward; 3-5 sentences. 5) Against a cheaper competitor: admit where they are strong, show where this client's need differs, ask the question that surfaces the difference (e.g. turnaround, revisions, rights, Arabic typography quality). 6) Don't-list: discounting first, feature-dumping, arguing. 7) If the deal is stuck, pick one artefact: re-engagement note (what they said mattered + what is new + one small ask), revised proposal, a brief the champion can forward internally, or a negotiation position (start, walk-away, concession order, close condition 'if we fix X can we start by DATE?'). 8) Trust before upside: when qualified clients go quiet, add proof and reduce risk (clear scope, milestone payments, a small paid pilot) before pushing harder. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/334-sales/1118-handle-objection, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4384-deal-close, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3524-sales-enablement, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8003-b2b-trust-engineering.
+
+**المعاملات:** objection text, project context, past wins
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** objection handling · stalled deal · ghosting · pricing pushback · negotiation · اعتراض العميل · السعر غالي · العميل اختفى · تفاوض
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:ASTRAT-115` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `decision-math`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/334-sales/1118-handle-objection`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4384-deal-close`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1446-marketing-skills/3524-sales-enablement`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8003-b2b-trust-engineering`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ASTRAT-113` تسعير صفقة رعاية وشروطها والإفصاح / Brand-deal pricing: value-based base fee, usage/exclusivity line items, walk-away floor, disclosure (documented)
+- `ASTRAT-114` عرض سعر لمشروع فيديو أو موشن لعميل / Creative-project proposal: buyer's words first, scope with exclusions, distinct options, mutual next steps (documented)
+- `ASTRAT-116` خطة إطلاق حملة مع بوابات ما قبل الإطلاق / Launch campaign plan with preflight gates: objective→audience→message→channel→measure, backward schedule, ordered go-live (documented)
+- `ASTRAT-117` قفل هدف واحد وفلترة كل فكرة عليه / One-goal lock: judge every idea ON / PARTIAL / OFF and always return a sharper version (documented)
+
+### `ASTRAT-116` — خطة إطلاق حملة مع بوابات ما قبل الإطلاق / Launch campaign plan with preflight gates: objective→audience→message→channel→measure, backward schedule, ordered go-live
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-strategy` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-strategy.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (Apache-2.0, MIT); nothing copied |
+
+**ما هي:** تخطيط حملة إطلاق (فيلم، منتج، قناة) بإطار من خمسة أجزاء وجدول يُبنى من موعد الإطلاق للخلف، ثم بوابات تمنع الإطلاق قبل جاهزية الروابط والتتبع والأصول. — Plan and launch cleanly, in dependency order.
+
+**متى:** خطة حملة إطلاق، نطلق الفيلم/المنتج، جدول المحتوى للحملة، تشيك لست الإطلاق / campaign plan, launch a film or product, go-live checklist
+
+**كيف:** 1) Objective: one SMART goal (number, audience, deadline) mapped to awareness / consideration / conversion / retention / advocacy, with the matching KPI. 2) Audience sentence: '[who] struggling with [pain], wanting [outcome], found on [channels]'. 3) Message hierarchy: core line → 3-4 supporting messages each with a proof point → CTA; note what differs per channel. 4) Channels across owned / earned (press, creators, community) / paid with effort level and budget share; keep 10-15% contingency and 15-20% for tests. 5) Calendar: start from fixed milestones and work backward using real lead times (video 2-4 weeks, landing page 5-7 days, social 1-2 days); map pieces to funnel stages; leave ~20% slots open for reactive posts; write dependencies explicitly (landing page live before ads). 6) Asset list with must-have vs nice-to-have and owner. 7) Preflight gates, all must pass: plan approved, every asset exists at its path, every link returns 200, tracking/UTMs fire, AI-generated media labelled where the market requires it. 8) Show a dry-run list of every action and wait for an explicit yes. 9) Go live in a fixed order (landing page → follow-up email/DM flow → paid → organic → creators → press → team notice → monitoring); checkpoint after each step; on failure stop, never auto-retry (duplicates), record the resume point. 10) Write a launch record (time, actions, links, KPIs to check tomorrow) and schedule a day-1 review. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/324-marketing/997-campaign-plan, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4063-launch-campaign.
+
+**المعاملات:** goal, date, channels, budget
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** campaign plan · launch · go-live · preflight · content calendar · marketing plan · حملة إطلاق · خطة حملة · قائمة الإطلاق
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:ASTRAT-116` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `decision-math`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/324-marketing/997-campaign-plan`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4063-launch-campaign`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ASTRAT-114` عرض سعر لمشروع فيديو أو موشن لعميل / Creative-project proposal: buyer's words first, scope with exclusions, distinct options, mutual next steps (documented)
+- `ASTRAT-115` التعامل مع اعتراضات العميل والصفقة المتوقفة / Client objection and stalled-deal diagnosis: real concern, own proof, one forward question (documented)
+- `ASTRAT-117` قفل هدف واحد وفلترة كل فكرة عليه / One-goal lock: judge every idea ON / PARTIAL / OFF and always return a sharper version (documented)
+- `ASTRAT-118` استخراج زوايا محتوى من الأخبار والترندات / Signal mining and listening digest: angles you have standing to make, plus an explicit dropped list (documented)
+
+### `ASTRAT-117` — قفل هدف واحد وفلترة كل فكرة عليه / One-goal lock: judge every idea ON / PARTIAL / OFF and always return a sharper version
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-strategy` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-strategy.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied |
+
+**ما هي:** تثبيت هدف تسويقي واحد بمقياس وموعد، ثم الحكم على كل فكرة أو مسودة بأنها تخدمه أو جزئيًا أو لا، مع تعديل يقربها من الهدف ورصد الانحراف المتكرر. — Stop doing good work toward nothing in particular.
+
+**متى:** هل هذه الفكرة تخدم الهدف، ركزني، أولوية هذا الربع / is this on goal, keep me focused, what's the priority
+
+**كيف:** 1) Force one goal sentence with metric, target and deadline (e.g. '20 paid motion projects from inbound by 31 Dec'). If three goals are given, make the owner rank them; the filter breaks with more than one. 2) 'More followers' is accepted only with a because-clause that survives one 'and what does that get you?'. 3) For each idea, draft or plan: verdict ON / PARTIAL / OFF, 2-3 sentences on how directly it moves the metric and what on-goal work it displaces. 4) Always hand back an action: the fix (or 'park it' with what to do instead) plus a sharper version of the same idea that pulls harder on the metric. 5) Keep a dated history of verdicts; three OFF verdicts in a week is drift — name it and ask what is pulling attention. 6) Changing the goal is allowed but explicit: archive the old one with an end date. 7) Rule honestly; a filter that never says OFF is useless. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4042-goal-filter.
+
+**المعاملات:** goal sentence, item to judge
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** goal · focus · prioritisation · strategy filter · drift · الهدف · التركيز · الأولوية
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:ASTRAT-117` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `decision-math`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4042-goal-filter`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ASTRAT-115` التعامل مع اعتراضات العميل والصفقة المتوقفة / Client objection and stalled-deal diagnosis: real concern, own proof, one forward question (documented)
+- `ASTRAT-116` خطة إطلاق حملة مع بوابات ما قبل الإطلاق / Launch campaign plan with preflight gates: objective→audience→message→channel→measure, backward schedule, ordered go-live (documented)
+- `ASTRAT-118` استخراج زوايا محتوى من الأخبار والترندات / Signal mining and listening digest: angles you have standing to make, plus an explicit dropped list (documented)
+- `ASTRAT-119` اختيار قناة النمو بطريقة عين الثور / Bullseye channel choice: one strategy per channel, three cheap tests, then focus on one (documented)
+
+### `ASTRAT-118` — استخراج زوايا محتوى من الأخبار والترندات / Signal mining and listening digest: angles you have standing to make, plus an explicit dropped list
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-strategy` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-strategy.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied |
+
+**ما هي:** فرز كومة أخبار وترندات وتعليقات ومنافسين إلى زوايا تخص صاحب القناة فعلًا، مع قائمة بما رُفض وسببه، وتقرير استماع اجتماعي بمصادر ونسب مع حجم العينة. — From 'interesting' to 'ours to say'.
+
+**متى:** فيه ترند نركب عليه؟ حول هذه الأخبار لأفكار، ماذا يقول الناس عنا / trend ideas from this, what's in this thread for us, what are people saying about the brand
+
+**كيف:** 1) Require the pillars, audience and positioning first; mining without them becomes trend-chasing — stop and set them. 2) Split the dump into discrete signals (claim, event, number, sentiment, competitor move). 3) Ask of each: does this creator/brand have something to add that the audience would rather hear from them? Pillar fit is necessary, authority fit decides. 4) For survivors write an angle (a take, not a topic), pillar, format (reel, carousel, thread, long video) and an honest timeliness window matched to real production speed — a 'this week' label on a two-week motion piece is a plan to be late. 5) Ship the dropped list every time with reasons (off-pillar, no standing, someone else's story, stale, risky). 6) Pasted numbers are unverified; check before any piece cites them. 7) For listening reports: collect live mentions (never answer sentiment from memory), keep a source URL per quote, separate quote (fact) from sentiment label (interpretation), mark sarcasm/ambiguous as mixed, report percentages with N, list platforms that returned nothing, date-stamp the window, and close with 2-4 recommendations each tied to a theme. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4116-signal-mine, https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/895-brightdata-plugin/2035-brand-listening.
+
+**المعاملات:** pasted material, pillars, window
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** trends · signal · content ideas · newsjacking · social listening · sentiment · ترند · أفكار محتوى · استماع اجتماعي · ماذا يقول الناس
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:ASTRAT-118` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `decision-math`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4116-signal-mine`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/895-brightdata-plugin/2035-brand-listening`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ASTRAT-116` خطة إطلاق حملة مع بوابات ما قبل الإطلاق / Launch campaign plan with preflight gates: objective→audience→message→channel→measure, backward schedule, ordered go-live (documented)
+- `ASTRAT-117` قفل هدف واحد وفلترة كل فكرة عليه / One-goal lock: judge every idea ON / PARTIAL / OFF and always return a sharper version (documented)
+- `ASTRAT-119` اختيار قناة النمو بطريقة عين الثور / Bullseye channel choice: one strategy per channel, three cheap tests, then focus on one (documented)
 - `ASTRAT-12` مراجعة مخاطر ما قبل البناء / Pre-build risk review and kill-test (documented)
-- `ASTRAT-13` قرار تخزين البيانات على السلسلة أو خارجها / On-chain versus off-chain data placement (documented)
+
+### `ASTRAT-119` — اختيار قناة النمو بطريقة عين الثور / Bullseye channel choice: one strategy per channel, three cheap tests, then focus on one
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-strategy` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-strategy.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied |
+
+**ما هي:** لاختيار قناة جلب عملاء لاستوديو الموشن أو منتج: فكرة لكل قناة من 19 قناة دون تحيز، ثلاث تجارب رخيصة، ثم قناة أساسية واحدة. — Framework from the book Traction, in our words.
+
+**متى:** من وين أجيب عملاء، أي قناة تسويق أجرب، الإعلانات أو المحتوى أو العلاقات / where do I find clients, which growth channel, ads vs content vs partnerships
+
+**كيف:** 1) Set the traction goal: metric, volume, deadline, stage and constraint (budget, hours, geography). 2) Outer ring: write one concrete strategy for each of the 19 channels (targeting blogs/newsletters, publicity, unconventional PR, search ads, social/display ads, offline ads, SEO, content marketing, email, viral/referral, engineering as marketing e.g. a free tool or template, business development/partnerships, direct sales, affiliates, existing platforms/marketplaces, trade shows, offline events, speaking, community) with why it might work, evidence that would help and the assumption that would kill it. Do not skip a channel because it feels unfashionable; name the bias. 3) Middle ring: pick ~3 channels that could move the goal, reach customers now, test cheaply and give readable data quickly; on a tie pick the one a small test teaches most. 4) One cheap test per channel answering: cost per customer, how many are reachable, are they the right customers now. 5) Inner ring only if one result is clearly stronger; otherwise run another pass with what was learned. 6) Then focus: other channels only support the core until it stops moving the needle. Keep losing ideas for later rounds; use numbers even as labelled estimates. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8189-traction-bullseye.
+
+**المعاملات:** goal, budget, hours
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** traction · growth channels · bullseye · client acquisition · marketing channels · قنوات النمو · جلب العملاء · تجارب تسويق
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:ASTRAT-119` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `decision-math`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8189-traction-bullseye`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ASTRAT-117` قفل هدف واحد وفلترة كل فكرة عليه / One-goal lock: judge every idea ON / PARTIAL / OFF and always return a sharper version (documented)
+- `ASTRAT-118` استخراج زوايا محتوى من الأخبار والترندات / Signal mining and listening digest: angles you have standing to make, plus an explicit dropped list (documented)
+- `ASTRAT-12` مراجعة مخاطر ما قبل البناء / Pre-build risk review and kill-test (documented)
+- `ASTRAT-120` موقع أو صفحة خدمات صادقة للمبدع / Honest service/portfolio page: positioning sentence, one job per section, no invented proof, client handoff (documented)
 
 ### `ASTRAT-12` — مراجعة مخاطر ما قبل البناء / Pre-build risk review and kill-test
 
@@ -1506,13 +2295,13 @@
 
 **متى:** User asks to build an MVP, SaaS, or major feature with unclear demand.
 
-**كيف:** 1) Skip if narrow fix. 2) Score demand, positioning, monetization, retention, trust, distribution, adoption. 3) Output verdict low/medium/high with one sentence. 4) Name the single assumption most likely to break. 5) Give smallest evidence to find first and one next step. 6) List what not to build yet. Optionally challenge a wrong premise before coding (skeptic).
+**كيف:** 1) Skip if narrow fix. 2) Score demand, positioning, monetization, retention, trust, distribution, adoption. 3) Output verdict low/medium/high with one sentence. 4) Name the single assumption most likely to break. 5) Give smallest evidence to find first and one next step. 6) List what not to build yet. Optionally challenge a wrong premise before coding (skeptic). Atlas upgrade 2026-11-07: Anti-sycophancy verdict posture: lead with the strongest counterargument to the owner's apparent position, then take a position; compute your own numbers before looking at the owner's estimate; put a confidence level (high/moderate/low/unknown) on every substantive claim; end with a verdict (build / de-risk / kill or re-pick the market), not a list of considerations; do not capitulate under pushback without new evidence. Market before team before product: a weak market is a hard gate. Interest is not demand — look for a named buyer, a recent trigger, the current workaround and a commitment. Set proceed / sharpen / pause criteria before results arrive; the test must be able to invalidate the idea; never run deceptive tests or take money before fulfilment, cancellation and refunds are clear.
 
 **المعاملات:** idea or feature brief
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** pre-mortem · mvp · مراجعة المخاطر · validation
+**الوسوم:** pre-mortem · mvp · مراجعة المخاطر · validation · counterargument first · confidence levels · interest vs demand · verdict · حكم صريح
 
 #### 1. الاستقبال (A25)
 
@@ -1554,8 +2343,77 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `ASTRAT-108` مشكلة البداية الباردة للمنتجات الشبكية: شبكة ذرية واحدة، والجانب الصعب أولًا، ونقطة الانقلاب، ومقاييس الكثافة لا الإجمالي / The cold start problem for networked products: one atomic network, the hard side first, the tipping point, density metrics over totals (documented)
-- `ASTRAT-11` رحلة من الفكرة إلى التطبيق بمتتبع / Idea-to-app journey with docs tracker (documented)
+- `ASTRAT-118` استخراج زوايا محتوى من الأخبار والترندات / Signal mining and listening digest: angles you have standing to make, plus an explicit dropped list (documented)
+- `ASTRAT-119` اختيار قناة النمو بطريقة عين الثور / Bullseye channel choice: one strategy per channel, three cheap tests, then focus on one (documented)
+- `ASTRAT-120` موقع أو صفحة خدمات صادقة للمبدع / Honest service/portfolio page: positioning sentence, one job per section, no invented proof, client handoff (documented)
+- `ASTRAT-13` قرار تخزين البيانات على السلسلة أو خارجها / On-chain versus off-chain data placement (documented)
+
+### `ASTRAT-120` — موقع أو صفحة خدمات صادقة للمبدع / Honest service/portfolio page: positioning sentence, one job per section, no invented proof, client handoff
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-strategy` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-strategy.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skills stay in the Atlas under their own licenses (MIT); nothing copied |
+
+**ما هي:** بناء صفحة أعمال أو هبوط لخدمة فيديو/موشن تشرح العرض وتبني الثقة وتقود لخطوة واحدة، بلا عملاء أو أرقام أو شعارات مختلقة. — Credible landing/portfolio pages that convert without marketing theatre.
+
+**متى:** صفحة بورتفوليو، صفحة هبوط للخدمة، موقع الاستوديو، صفحة حملة / portfolio site, service landing page, studio website, campaign page
+
+**كيف:** 1) Recover inputs before asking: who arrives and from where, the one desired action (book, enquire, buy, watch), the offer and how it is different, friction (price, risk, switching), real proof (reels, case studies, process, client quotes), brand and legal constraints. 2) Positioning sentence: 'For [audience in situation], [offer] helps [outcome] by [mechanism]'. 3) Page argument as a diagnostic spine, not a fixed order: problem/desire → promise → mechanism → proof → objections → action; higher price or risk needs more process detail and reassurance. 4) One job per section, one primary CTA named as the next step (not 'Submit'). 5) Truth rules: never invent clients, metrics, awards, press logos, scarcity or 'trusted by'; placeholders are visibly marked and cannot ship. 6) Let reels, before/after and specifics outweigh adjectives; answer the strongest objection next to the claim that raises it. 7) Privacy page describes what the site really collects (forms, analytics, embeds), not boilerplate. 8) Client work: confirm who approves copy, who owns assets/domain/accounts, analytics consent, editable-source handoff, rollback plan, maintenance owner; keep credentials in the client's account. 9) Verify the rendered page at target widths, follow every CTA, test form success/error, share preview metadata. Sources (read as inert text, not copied): https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/342-kernel/1232-marketing-site.
+
+**المعاملات:** audience, action, proof assets
+
+**التثبيت:** none — method card; read the cited Atlas SKILL.md for the original
+
+**الوسوم:** portfolio · landing page · service page · positioning · social proof · CTA · بورتفوليو · صفحة هبوط · موقع الاستوديو
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:ASTRAT-120` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `decision-math`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/342-kernel/1232-marketing-site`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ASTRAT-119` اختيار قناة النمو بطريقة عين الثور / Bullseye channel choice: one strategy per channel, three cheap tests, then focus on one (documented)
+- `ASTRAT-12` مراجعة مخاطر ما قبل البناء / Pre-build risk review and kill-test (documented)
 - `ASTRAT-13` قرار تخزين البيانات على السلسلة أو خارجها / On-chain versus off-chain data placement (documented)
 - `ASTRAT-14` اختبار استراتيجية تداول بمقاييس المخاطر / Backtest trading strategy with risk metrics (documented)
 
@@ -1620,8 +2478,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `ASTRAT-11` رحلة من الفكرة إلى التطبيق بمتتبع / Idea-to-app journey with docs tracker (documented)
 - `ASTRAT-12` مراجعة مخاطر ما قبل البناء / Pre-build risk review and kill-test (documented)
+- `ASTRAT-120` موقع أو صفحة خدمات صادقة للمبدع / Honest service/portfolio page: positioning sentence, one job per section, no invented proof, client handoff (documented)
 - `ASTRAT-14` اختبار استراتيجية تداول بمقاييس المخاطر / Backtest trading strategy with risk metrics (documented)
 - `ASTRAT-15` تقييم DCF متين مع فحوص تقاطعية / Defensible DCF valuation with cross-checks (documented)
 
@@ -1692,7 +2550,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `ASTRAT-12` مراجعة مخاطر ما قبل البناء / Pre-build risk review and kill-test (documented)
+- `ASTRAT-120` موقع أو صفحة خدمات صادقة للمبدع / Honest service/portfolio page: positioning sentence, one job per section, no invented proof, client handoff (documented)
 - `ASTRAT-13` قرار تخزين البيانات على السلسلة أو خارجها / On-chain versus off-chain data placement (documented)
 - `ASTRAT-15` تقييم DCF متين مع فحوص تقاطعية / Defensible DCF valuation with cross-checks (documented)
 - `ASTRAT-16` سجل مخاطر مؤسسي مع التقييم / Enterprise risk register with scoring (documented)
@@ -1989,13 +2847,13 @@
 
 **متى:** Setting prices, packaging tiers, usage billing, or revenue plans for a business.
 
-**كيف:** 1) Choose pricing model (flat, tiered, usage, freemium). 2) Compare competitor prices and value metric. 3) Estimate willingness to pay. 4) Build 3 tiers; limit choices to cut decision load. 5) List 3-5 monetization options with risk and test. 6) For vertical cases use acuity, dynamic occupancy, tiered-fee blended rate.
+**كيف:** 1) Choose pricing model (flat, tiered, usage, freemium). 2) Compare competitor prices and value metric. 3) Estimate willingness to pay. 4) Build 3 tiers; limit choices to cut decision load. 5) List 3-5 monetization options with risk and test. 6) For vertical cases use acuity, dynamic occupancy, tiered-fee blended rate. Atlas upgrade 2026-11-07: Creator monetization mix: 1) characterise the audience by buying intent (do they spend in this niche?), engagement (comments/saves/email opens) and size — not follower count. 2) High intent → lead with what they buy (services, templates/presets, courses, memberships), sponsorships selectively; low intent + large → ads and sponsorships, products carefully; low intent + small → grow reach and an email list, affiliate as a bridge. 3) Move toward a recurring base (memberships, retainers) and name the target. 4) Concentration check: share of income from one platform or one sponsor, share of audience with no owned channel; if losing one is catastrophic, diversification comes first. 5) Order lines so trust-spending ones (heavy sponsorship, aggressive affiliate) never outpace trust-building. Output: lines to start now vs later, recurring target, platform-risk call, and the 1-2 conditions that would change the mix.
 
 **المعاملات:** segment, costs, competitors
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** pricing · monetization · تسعير · شرائح · ربحية
+**الوسوم:** pricing · monetization · تسعير · شرائح · ربحية · creator monetization · revenue mix · platform risk · دخل المبدع · تنويع الدخل
 
 #### 1. الاستقبال (A25)
 
@@ -6568,13 +7426,13 @@
 
 **متى:** شركة ناشئة تحدد لمن تبيع، استهداف مبيعات مشتت، قبل حملة outbound / a startup deciding who to sell to, scattered targeting, before outbound
 
-**كيف:** 1) Separate observed evidence (best and worst customers, wins, losses, retention, expansion) from hypotheses. 2) Define firmographic, operational, behavioural and trigger-based fit criteria, each gated on a circumstance that requires the product (not merely prefers it) and on a real segment. 3) Map economic buyer, champion, user and blocker with their evidence-backed concerns. 4) Write the anti-ICP: hard disqualifiers vs friction that only costs points, plus costly edge cases; mark each buying trigger observed or hypothesised. 5) Build a simple scorecard, explain every weight and keep unknowns visible. 6) Tier accounts by fit and evidence and choose a small validation sample. 7) Specify interviews, list tests or campaign tests with pass, revise and reject criteria. Every criterion must change a targeting decision; conflicting segments force a primary choice, never an average. Full original skill(s) with license: vendor/kosif-atlas/skills/2216-majestic-sales/8360-icp-definition.
+**كيف:** 1) Separate observed evidence (best and worst customers, wins, losses, retention, expansion) from hypotheses. 2) Define firmographic, operational, behavioural and trigger-based fit criteria, each gated on a circumstance that requires the product (not merely prefers it) and on a real segment. 3) Map economic buyer, champion, user and blocker with their evidence-backed concerns. 4) Write the anti-ICP: hard disqualifiers vs friction that only costs points, plus costly edge cases; mark each buying trigger observed or hypothesised. 5) Build a simple scorecard, explain every weight and keep unknowns visible. 6) Tier accounts by fit and evidence and choose a small validation sample. 7) Specify interviews, list tests or campaign tests with pass, revise and reject criteria. Every criterion must change a targeting decision; conflicting segments force a primary choice, never an average. Full original skill(s) with license: vendor/kosif-atlas/skills/2216-majestic-sales/8360-icp-definition. Atlas upgrade 2026-11-07: Viewer/buyer persona variant for creators and creative services: 2-4 named personas only; each with a one-paragraph narrative, demographic snapshot, motivations and fears, functional/emotional/social jobs, a day-in-the-life scene, trigger events and how they search for a video/motion provider, top objections with counter-messages, preferred platforms/formats/tone, and messaging do's and don'ts. Mark which fields come from real data (comments, DMs, client calls, analytics) vs hypothesis.
 
 **المعاملات:** customers, product, evidence
 
 **التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2216-majestic-sales/8360-icp-definition ~/.claude/skills/icp-definition
 
-**الوسوم:** ICP · sales · B2B · targeting · go-to-market · العميل المثالي · مبيعات
+**الوسوم:** ICP · sales · B2B · targeting · go-to-market · العميل المثالي · مبيعات · persona · audience profile · viewer persona · شخصية الجمهور
 
 #### 1. الاستقبال (A25)
 
@@ -6983,13 +7841,13 @@
 
 **متى:** اختبار قابلية استخدام، مقابلات مستخدمين، كتابة استبيان، 'كيف أسأل بدون ما أوجّه المشارك؟' / planning a usability test, interviews or a survey
 
-**كيف:** 1) Anchor to the research plan's question and method; the instrument executes that question, not a new one. 2) Write goal-based tasks ('buy a medium blue jacket and ship it home'), never click-by-click instructions; order them realistically and avoid tasks that leak the answer. 3) Script a warm-up and consent check, ask for think-aloud, and use neutral probes ('tell me more', 'what did you expect there?', silence); ban leading forms such as 'was that easy?'. 4) Define task success (pass or graded) and a severity scale (cosmetic to blocker) before the first session. 5) Audit surveys for leading items, double-barrelled items, social-desirability loading and sampling bias; rewrite to neutral single questions and state the sample's limits. 6) Record behaviour and self-report on separate lines ('P3 clicked back twice' vs 'P3 said it felt slow'), time-stamped, de-identified, and stored per the retention limit. 7) Hand off to synthesis without interpreting during capture. Full original skill(s) with license: vendor/kosif-atlas/skills/2401-ux-research/9296-run-usability-and-interview-sessions.
+**كيف:** 1) Anchor to the research plan's question and method; the instrument executes that question, not a new one. 2) Write goal-based tasks ('buy a medium blue jacket and ship it home'), never click-by-click instructions; order them realistically and avoid tasks that leak the answer. 3) Script a warm-up and consent check, ask for think-aloud, and use neutral probes ('tell me more', 'what did you expect there?', silence); ban leading forms such as 'was that easy?'. 4) Define task success (pass or graded) and a severity scale (cosmetic to blocker) before the first session. 5) Audit surveys for leading items, double-barrelled items, social-desirability loading and sampling bias; rewrite to neutral single questions and state the sample's limits. 6) Record behaviour and self-report on separate lines ('P3 clicked back twice' vs 'P3 said it felt slow'), time-stamped, de-identified, and stored per the retention limit. 7) Hand off to synthesis without interpreting during capture. Full original skill(s) with license: vendor/kosif-atlas/skills/2401-ux-research/9296-run-usability-and-interview-sessions. Atlas upgrade 2026-11-07: Conversation design before the session: 1) Name the decision the conversations must improve and the riskiest assumptions, including one uncomfortable question asked early enough to change the plan. 2) Narrow the segment; up to three learning goals per type of person. 3) Ask about their life and recent past — current behaviour, specific past examples, workarounds, what it already costs them — and turn compliments, opinions and hypotheticals into requests for a concrete example; save the pitch. 4) Two modes: listening (lived experience, their words) and teaching (walk them through one slice and watch where value, confusion or skepticism appears). 5) 'I would buy/watch this' without commitment is weak evidence; prefer fewer, deeper conversations. 6) For playtests and screenings: decide what decision the test informs, pick participants who match it, choose the method (observation, think-aloud, first-session blind, survey, telemetry), do not lead, and record observation, telemetry, interpretation and reflection separately. 7) After each batch: signal, evidence, implication, decision table and the next test.
 
 **المعاملات:** research question, method
 
 **التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2401-ux-research/9296-run-usability-and-interview-sessions ~/.claude/skills/run-usability-and-interview-sessions
 
-**الوسوم:** UX research · usability testing · interviews · survey design · bias · بحث المستخدم · قابلية الاستخدام
+**الوسوم:** UX research · usability testing · interviews · survey design · bias · بحث المستخدم · قابلية الاستخدام · mom test · customer discovery · playtest · listening interview · اختبار الجمهور
 
 #### 1. الاستقبال (A25)
 

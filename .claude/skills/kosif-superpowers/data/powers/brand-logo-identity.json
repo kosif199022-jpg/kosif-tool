@@ -413,12 +413,13 @@
   "name_en": "SVG logo construction rules & logo suite",
   "status": "ready",
   "what": "الشعار متجه خالص بمسارات (لا <text>)، viewBox فقط، ألوان hex صريحة، ومجموعات #mark و#wordmark لتحريك الأجزاء؛ ومجموعة كاملة: أفقي، مكدّس، رمز، كلمة، مساحة أمان، حد أدنى، أحادي، معكوس. / Pure vector paths, viewBox only, hard-coded hex, #mark/#wordmark groups; plus a full suite.",
-  "how": "Outline fonts to paths for wordmarks (fonttools is a pip install; opentype.js an npm install); preserveAspectRatio xMidYMid; acid test: identifiable in flat black-and-white; 32 px legibility; clear space in mark units (e.g. cap height); do/don’t gallery (stretch, recolour, respace, drop shadow). Deterministic generator idea (brand-forge): wordmark, rounded-square monogram and 64×64 favicon SVG from palette + heading font — a short template here. Arabic wordmarks: shape with HarfBuzz/browser first, then outline (never per-letter paths from an unshaped font).",
+  "how": "Outline fonts to paths for wordmarks (fonttools is a pip install; opentype.js an npm install); preserveAspectRatio xMidYMid; acid test: identifiable in flat black-and-white; 32 px legibility; clear space in mark units (e.g. cap height); do/don’t gallery (stretch, recolour, respace, drop shadow). Deterministic generator idea (brand-forge): wordmark, rounded-square monogram and 64×64 favicon SVG from palette + heading font — a short template here. Arabic wordmarks: shape with HarfBuzz/browser first, then outline (never per-letter paths from an unshaped font). Atlas upgrade 2026-11-07: Presentation and hand-off: show concepts monochrome first (black on white), then brand colour on dark, then the combination mark; mock each concept in at least two real contexts for its primary surface (32 px favicon/app icon always, plus nav bar, circle-cropped social avatar, card/email signature or signage); end with one recommendation (concept, one-sentence reason tied to the ONE THING, next step) instead of an open menu. Write the construction note per concept before the SVG: visual idea, semantic read (if it must be explained it fails), grid and base unit, coordinates, what survives at 32 px. Root SVG: viewBox only (no fixed width/height), role=img + aria-label + title, exact hex (no CSS variables), groups id=mark / id=wordmark, no <text>, no embedded raster. Colour spec per role (primary/secondary/accent/full neutral ramp) as HEX + RGB + OKLCH with WCAG pairs validated by script (4.5:1 text, 3:1 large text and UI); each typeface gets a web-licence class (self-hostable OFL/Apache preferred). When AI explored the concepts, keep a curation log: who selected which output and what human modification made it the deliverable; the curated vector is final and is never regenerated.",
   "params": "32 px test · favicon 64×64",
   "install": "",
   "requires": [
-   "node",
-   "pip:fonttools"
+   "pip:fonttools",
+   "fonts:arabic",
+   "npm:axe"
   ],
   "license": "",
   "proof": [
@@ -439,9 +440,51 @@
    "مسارات",
    "نسخ الشعار",
    "vector logo",
-   "monochrome"
+   "monochrome",
+   "logo presentation",
+   "logo mockup contexts",
+   "curation log",
+   "monochrome first",
+   "عرض الشعار",
+   "سجل الاختيار"
   ],
-  "when": "عند بناء شعار SVG نظيف قابل للتحريك مع نسخه الأفقية والمكدسة والأحادية / when building a clean animatable SVG logo and its full suite of versions"
+  "when": "عند بناء شعار SVG نظيف قابل للتحريك مع نسخه الأفقية والمكدسة والأحادية / when building a clean animatable SVG logo and its full suite of versions",
+  "atlas": {
+   "ids": [
+    "4425",
+    "8561",
+    "4714"
+   ],
+   "examples": [
+    {
+     "id": "4425",
+     "plugin": "tonone",
+     "skill": "form-logo",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4425-form-logo"
+    },
+    {
+     "id": "8561",
+     "plugin": "brand-identity-studio",
+     "skill": "logo-and-visual-system-direction",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2248-brand-identity-studio/8561-logo-and-visual-system-direction"
+    },
+    {
+     "id": "4714",
+     "plugin": "brand-forge",
+     "skill": "generate-logo",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1708-brand-forge/4714-generate-logo"
+    }
+   ],
+   "theme": "image-design-media",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-image.json",
+   "skill_md_sha256": {
+    "4425": "7b99663eea7282579d6f5eabf59a6b02a22413fc8da945232f8d49d2eb96653b",
+    "8561": "a991f0f6c5b2011570ee7ec76431c65896118bda292568524d828828f2bd8dd9",
+    "4714": "50a01489f42cd958622b21849b0a44580de7231712831baadd0cfa825c292c4e"
+   }
+  }
  },
  {
   "id": "BRAND-13",

@@ -466,7 +466,7 @@
   "status": "documented",
   "what": "أرقام صغيرة تصنع فرقًا: نصف قطر متداخل، أرقام جدولية، مساحة لمس 44px، خروج أقصر من الدخول. — Small numbers that matter: concentric radius, tabular numerals, 44px hit areas, exits shorter than entrances.",
   "when": "عند اللمسة الأخيرة لأي واجهة أو حركة عرض واجهة / final polish of any UI or UI-demo animation",
-  "how": "outer radius = inner radius + padding; optical (not geometric) centring for play/arrow icons; text-wrap: balance for headings; tabular-nums for counters; enter = opacity + small translateY, exit about 150 ms; press scale(0.96); never `transition: all`; animate only transform/opacity; honour prefers-reduced-motion.",
+  "how": "outer radius = inner radius + padding; optical (not geometric) centring for play/arrow icons; text-wrap: balance for headings; tabular-nums for counters; enter = opacity + small translateY, exit about 150 ms; press scale(0.96); never `transition: all`; animate only transform/opacity; honour prefers-reduced-motion. Atlas upgrade 2026-11-07: Decide whether to animate by frequency: actions seen 100+ times a day (shortcuts, palette toggles) get no animation; tens of times a day get little; occasional (modals, toasts) standard; rare/first-time (onboarding, celebration) may delight. Every animation names its purpose in one sentence (spatial consistency, state, explanation, feedback, avoiding a jarring jump). Use ease-in only for exits; entrances and responses ease out. Spend disproportionate polish on the first interaction and the first loading state, since they set the quality halo for everything after; show a skeleton within ~100 ms instead of a blank wait.",
   "params": "",
   "install": "",
   "requires": [],
@@ -478,10 +478,43 @@
    "ui polish",
    "micro-interactions",
    "accessibility",
-   "تفاصيل الواجهة"
+   "تفاصيل الواجهة",
+   "animation frequency",
+   "purpose test",
+   "first interaction",
+   "halo",
+   "تكرار الحركة"
   ],
   "section": "منهج التصميم والجودة — Design & quality method",
-  "source": "github.com/affaan-m/ECC skills/make-interfaces-feel-better (MIT (c) 2026 Affaan Mustafa), paraphrased; github.com/affaan-m/ECC skills/motion-foundations (MIT (c) 2026 Affaan Mustafa), paraphrased"
+  "source": "github.com/affaan-m/ECC skills/make-interfaces-feel-better (MIT (c) 2026 Affaan Mustafa), paraphrased; github.com/affaan-m/ECC skills/motion-foundations (MIT (c) 2026 Affaan Mustafa), paraphrased",
+  "atlas": {
+   "ids": [
+    "12625",
+    "3791"
+   ],
+   "examples": [
+    {
+     "id": "12625",
+     "plugin": "designer-skill",
+     "skill": "designer-skill",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2981-designer-skill/12625-designer-skill"
+    },
+    {
+     "id": "3791",
+     "plugin": "universal-design-principles",
+     "skill": "expectation-effect-design-cues",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3791-expectation-effect-design-cues"
+    }
+   ],
+   "theme": "frontend-ui-design",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-frontend.json",
+   "skill_md_sha256": {
+    "12625": "583ec67c907e834565ccd13bfebd03c857ecb70baabe873744b03cdeb463b0ac",
+    "3791": "13c5675b040a503ffee3b410480d8feb488f37bb8952fa6cd977ff3594cdbf85"
+   }
+  }
  },
  {
   "id": "APP-17",
@@ -492,7 +525,7 @@
   "status": "documented",
   "what": "بدل استبيان الذوق ابنِ ثلاث معاينات صغيرة مختلفة حقًا ودع المستخدم يختار. — Instead of a taste questionnaire, build three small, genuinely different previews and let the user pick.",
   "when": "حين يعطي المستخدم إرشادًا قليلًا عن الأسلوب؛ العروض ولوحات المعلومات وصفحات الهبوط / the user gave little style guidance; decks, landing pages, dashboards",
-  "how": "Each preview is under 100 lines with one screen or slide, and each differs in layout, type and colour (not three shades of the same idea). Then build the chosen one fully.",
+  "how": "Each preview is under 100 lines with one screen or slide, and each differs in layout, type and colour (not three shades of the same idea). Then build the chosen one fully. Atlas upgrade 2026-11-07: Specimen-ladder variant for fine choices: one order = one axis = one ladder = one decision. Move a single property (e.g. blur 4/8/12/16/24, radius, shadow, spacing) and hold every settled value fixed; letter specimens A·B·C and restart letters per decision; put the value, cost (token unchanged / shared token edited in N places / new token) and what to look at beside each specimen, and end each section with one recommended letter. Verify before showing: every referenced class or var exists (a wrong name fails silently), read the computed style off each rung and confirm the rungs actually differ, then screenshot and look. A clear pick in chat is the apply order: record axis → value in a memo, check blast radius, apply, re-verify. For open briefs, run a small tournament of 2-3 divergent renders of the same direction and fork the winner.",
   "params": "",
   "install": "",
   "requires": [],
@@ -504,10 +537,44 @@
    "previews",
    "options",
    "creativity",
-   "خيارات"
+   "خيارات",
+   "specimen ladder",
+   "one axis",
+   "side by side",
+   "A/B/C",
+   "مقارنة بصرية",
+   "سلم العينات"
   ],
   "section": "منهج التصميم والجودة — Design & quality method",
-  "source": "github.com/affaan-m/ECC skills/frontend-slides (MIT (c) 2026 Affaan Mustafa), paraphrased"
+  "source": "github.com/affaan-m/ECC skills/frontend-slides (MIT (c) 2026 Affaan Mustafa), paraphrased",
+  "atlas": {
+   "ids": [
+    "2978",
+    "1223"
+   ],
+   "examples": [
+    {
+     "id": "2978",
+     "plugin": "design-helper",
+     "skill": "design-helper",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1328-design-helper/2978-design-helper"
+    },
+    {
+     "id": "1223",
+     "plugin": "kernel",
+     "skill": "frontend",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/342-kernel/1223-frontend"
+    }
+   ],
+   "theme": "frontend-ui-design",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261107-frontend.json",
+   "skill_md_sha256": {
+    "2978": "bb73a0eb33b746d6840bf7ff78bd81921098ef2d8513c1d7bbe5ab235e267c18",
+    "1223": "deb0d651f157335ef4f6b04cfc8b9266f50d2d2e217f01bbdce91d689602b7ad"
+   }
+  }
  },
  {
   "id": "APP-18",

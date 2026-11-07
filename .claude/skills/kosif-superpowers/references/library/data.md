@@ -213,7 +213,7 @@
 | `DATA-89` | مخططات مشاهد البيانات في HyperFrames | HyperFrames data blueprints & categories | documented | npm:hyperframes |
 | `DATA-91` | ستايل البيانات المتحركة الداكن | Data-in-Motion dark style | documented |  |
 | `DATA-93` | رموز بطاقات البيانات التقنية | Tech-doc data-card tokens | documented |  |
-| `DATA-99` | مشاهد السرد بالتمرير كبيانات | Scrollytelling scenes as data | documented |  |
+| `DATA-99` | مشاهد السرد بالتمرير كبيانات | Scrollytelling scenes as data | documented | npm:gsap |
 | `ANLY-29` | هيكل نموذج الجداول المالية | Spreadsheet model structure | documented | libreoffice |
 | `MAP-01` | هل نحتاج خريطة أصلًا | Map or not | documented |  |
 | `MAP-02` | الخريطة الأساسية حسب الغرض | Basemap substrate by purpose | documented |  |
@@ -296,7 +296,7 @@
 | `DATA-71` | حلقة قياس مع عدّاد متزامن | Arc gauge with synced counter | install | npm:hyperframes |
 | `DATA-74` | تعبئة النجوم والتقييم | Star-rating fill | install | npm:hyperframes |
 | `DATA-88` | سجل HyperFrames للبيانات | HyperFrames data registry (components & blocks) | install | npm:gsap, npm:hyperframes |
-| `DATA-96` | مكتبات الرسوم كإطارات فيديو | Chart libraries as video frames | install | chromium, npm:d3 |
+| `DATA-96` | مكتبات الرسوم كإطارات فيديو | Chart libraries as video frames | install | python3, chromium, npm:d3 |
 | `ANLY-25` | تنبؤ الأعمال بـ prophet | Business forecasting with prophet | install | python3 |
 | `ANLY-32` | Lean 4: كتابة براهين رياضية صورية والتحقق منها آليًا | Lean 4: Write and machine-check formal proofs of theorems | install | network, lean |
 | `MAP-13` | MapLibre حتمي بلا واجهة | Deterministic headless MapLibre | install | chromium, npm:remotion, npm:maplibre |

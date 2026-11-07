@@ -322,7 +322,7 @@
 | `VOICE-17` | أوضاع مخرج الصوت الخارجي | KOSIF Voice Director provider modes | documented |  |
 | `VOICE-18` | ميزانية الكلمات في الثانية | Words-per-second budget | documented | pip:piper |
 | `VOICE-20` | نص النطق غير نص الشاشة | Spoken form vs on-screen form | documented |  |
-| `VOICE-21` | قواعد كتابة التعليق للمشهد | Scene narration writing rules | documented |  |
+| `VOICE-21` | قواعد كتابة التعليق للمشهد | Scene narration writing rules | documented | ffmpeg |
 | `VOICE-22` | سكربت تعليق بوسوم أداء SSML | VO script with performance tags (SSML) | documented | pip:piper, key:elevenlabs |
 | `VOICE-23` | نص التعليق المقفل SCRIPT.md | Locked narration file (SCRIPT.md) | documented |  |
 | `VOICE-24` | توجيه الصوت باللهجات العربية | Arabic dialect voice-direction workflow | documented |  |

@@ -24,9 +24,9 @@
 |---|---:|---|
 | `proven` | 17 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 8 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 375 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 411 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 2 | 📦 install: needs a package, binary or model first |
-| **المجموع** | **402** | |
+| **المجموع** | **438** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -65,8 +65,8 @@
 
 | العائلة | القدرات | الفصل |
 |---|---:|---|
-| `atlas-mind` | 82 | [atlas-mind.md](../powers/atlas-mind.md) |
-| `atlas-strategy` | 108 | [atlas-strategy.md](../powers/atlas-strategy.md) |
+| `atlas-mind` | 106 | [atlas-mind.md](../powers/atlas-mind.md) |
+| `atlas-strategy` | 120 | [atlas-strategy.md](../powers/atlas-strategy.md) |
 | `creativity-engine` | 29 | [creativity-engine.md](../powers/creativity-engine.md) |
 | `mental-models` | 63 | [mental-models.md](../powers/mental-models.md) |
 | `planning-execution` | 14 | [planning-execution.md](../powers/planning-execution.md) |
@@ -115,6 +115,13 @@
 | `AMIND-08` | سجل حالة المهام عبر الجلسات | Cross-session task-state journal | documented | git |
 | `AMIND-09` | قرار التفويض للوكلاء أو التنفيذ المباشر | Delegate-or-inline decision for subagents | documented | claude:tools |
 | `AMIND-10` | نقطة حفظ مدعومة بالأدلة لاستئناف المهمة | Evidence-based checkpoint manifest for resume | documented |  |
+| `AMIND-100` | لوحة الأسئلة المفتوحة: لا تتوقف عند سؤال، سجّله وتابع ما لا يعتمد عليه | Question scoreboard: never stall on a question — log it in one line, resolve by measurement or bypass, keep working | documented |  |
+| `AMIND-101` | قصّ للتركيز: جرد كل شيء، شبكة بمحورين حقيقيين، قائمة قصّ بخسارة مسمّاة، وجملة واحدة لكل ناجٍ | Cut to focus: full inventory, a grid on two real axes, a cut list that names each loss, one-sentence survivors | documented |  |
+| `AMIND-102` | بروفة محادثة صعبة: محاكاة معلنة، دور واحد في كل دور، ثم تحليل خارج الشخصية | Rehearse a difficult conversation: labelled simulation, one counterpart turn at a time, out-of-character debrief and a real plan | documented |  |
+| `AMIND-103` | استبيان لمن يعرف: استجوب الإرسال لا الموضوع | Questionnaire for the person who knows: interview the send, not the subject | documented |  |
+| `AMIND-104` | مذكرة قرار بشكل قرار لا مسح: حادثة ورقم، قرار في جملة، بدائل ماتت بسبب محدد | Decision memo shaped like a decision: trigger and a number, the decision in one sentence, alternatives killed for specific reasons, all consequences | documented |  |
+| `AMIND-105` | بريف مونتير مستقل: ملخص الإحساس، خط زمني لكل فصل، تعليمات القص والصوت والجرافيك، وتسليمات بمواصفات | Standalone editor brief: feel statement, chapter timeline with pacing, cut/audio/graphics rules, thumbnail and short pulls, delivery spec with QC | documented |  |
+| `AMIND-106` | شجرة الفرص والحلول: نتيجة واحدة، فرص من الدليل، ثلاثة حلول لكل فرصة، وتجربة رخيصة | Opportunity–solution tree: one outcome, evidence-backed opportunities, three solutions each, cheap experiments | documented | pip:hypothesis |
 | `AMIND-11` | تنفيذ الخطط بوكلاء مسمّين وسجل تقدم دائم | Execute plans with named agents and progress ledger | documented | git, claude:tools |
 | `AMIND-12` | نقل نتائج الوكلاء بأمانة | Faithful relay of agent results | documented |  |
 | `AMIND-13` | بروتوكول صندوق وارد وتحكم بالملفات بين الوكلاء | File-based multi-agent inbox and control protocol | documented |  |
@@ -187,6 +194,23 @@
 | `AMIND-80` | حوّل التصحيح المتكرر للوكيل إلى قاعدة في المكان الصحيح: ملف سياق أو مهارة أو قاعدة لمسار أو خطاف أو اختبار | Turn a repeated correction into a rule in the right place: context file, skill, path rule, hook or test | documented |  |
 | `AMIND-81` | أسماء أفضل: مولدات عمياء من زوايا مختلفة لكسر التثبيت، ومعايير مرتبة تبدأ بألا يكذب الاسم، والإنسان يختار دائمًا | Better names: blind generators from distinct lenses to break the anchor, ranked criteria led by 'the name must not lie', and the human always picks | documented |  |
 | `AMIND-82` | حلقة تحسين بسقاطة يقودها الهدف: حدد النهاية لا الطريق، وافصل الحكم عن المنفذ، واستبدل الوكيل العالق | Goal-driven ratchet optimisation loop: define the end, not the route; separate judge from worker; replace a stuck worker | documented |  |
+| `AMIND-83` | قاضي تجميع المراجعات: يدمج ولا يعيد المراجعة | Council verdict synthesizer: dedupe, weight, arbitrate, classify — never re-review | documented |  |
+| `AMIND-84` | مراجعة القواعد بفرقة متداخلة: شرائح قواعد متقاطعة ووزن بالتأكيد المتبادل | Ensemble rule review: overlapping rule slices across rigid parallel workers, corroboration-weighted merge | documented |  |
+| `AMIND-85` | محقق مستقل يعيد الاشتقاق: المعطى ليس دليلًا حتى يُشتق من المصدر | Independent re-derivation verifier: GIVEN is not DERIVED; withhold the author's numbers and reasoning | documented |  |
+| `AMIND-86` | تحقق من الفرضية قبل إطلاق موجة الوكلاء | Verify the premise before dispatching a wave of parallel agents | documented |  |
+| `AMIND-87` | بوابة القارئ البارد ودورة المستخدم الغريب | Cold-reader gate and fresh-walker loop for anything a stranger must act on | documented |  |
+| `AMIND-88` | بوابة توقيع بشري بملاحظات منظمة | Human sign-off gate with structured, countable feedback | documented |  |
+| `AMIND-89` | مراجعة كفاية الأدلة: ما الذي لم يُفحص أصلًا | Unknown-coverage review: is there evidence each risk class was even investigated | documented |  |
+| `AMIND-90` | رأي ثانٍ صادق: لا شكل تحقق بلا تحقق جرى فعلًا | Second-opinion pipeline with an honest delta — never counterfeit a validation | documented | claude:tools |
+| `AMIND-91` | مراجعة جلسات الوكيل بمعيار ثابت واقتباس حرفي | Agent-session review rubric: fixed categories, verbatim quoted evidence, unclassified bucket | documented |  |
+| `AMIND-92` | قرار بلا خيار جيد: اختبار الرجوع و10/10/10 وإعلان القرار قبل اتخاذه | Hard call with no good option: reversibility test, 10/10/10, outsider test and the pre-announcement draft | documented |  |
+| `AMIND-93` | تفريغ الدماغ إلى نظام: لا يضيع شيء، بصوت صاحبه، وكل فكرة مصنّفة | Brain dump to a plan with zero loss: tag every fragment, keep the owner's voice, find the spine, park the asides | documented |  |
+| `AMIND-94` | بريف المشكلة أولًا: صفحة واحدة بلا حل مخفي، وما لن نفعله صريح | Problem-first one-page brief: a condition not a solution, minimal reading, explicit Not-Doing list and a human checkpoint | documented |  |
+| `AMIND-95` | مراجعة بعد العمل مبنية على الدليل: هل نُفّذت دروس المرة الماضية؟ وما الهدر الأكبر؟ | Evidence-based retrospective: audit last time's promises, rank waste by cost, turn each lesson into repeat/change/stop | documented |  |
+| `AMIND-96` | الدماغ الثاني: ملاحظات ذرية بعناوين جُمل، خرائط محتوى، PARA، وتلخيص تدريجي | Second-brain method: atomic claim-titled notes, maps of content, PARA buckets and progressive summarisation | documented |  |
+| `AMIND-97` | هضم مصدر طويل إلى أبرز النقاط: بالموضوع لا بالترتيب، بالأرقام، وبالخلافات | Digest a long source into durable highlights: by theme not order, keep specifics and disagreements, claim nothing unsaid | documented | claude:tools |
+| `AMIND-98` | جولة آراء الجمهور: اجمع كل الآراء أولًا ثم صنّف متفق/مختلف/فردي/مرفوض بسبب | Audience feedback round: collect every response before revising, then sort convergent, divergent, single-reader and declined-with-reason | documented |  |
+| `AMIND-99` | فحص الانحراف عن الخطة: افتح الوثيقة، اقتبس البوابة، وضع ما خارج النطاق في قائمة لاحقًا | Plan drift check: reopen the plan, quote its gate, park off-scope finds in a later list or a deferred-decision record | documented |  |
 | `ASTRAT-01` | تدقيق جدوى تعدد الوكلاء مقابل وكيل واحد | Audit multi-agent topology against single-agent baseline | documented |  |
 | `ASTRAT-02` | حلقة مستقلة لتصريف قائمة المهام | Autonomous backlog-draining loop and single-task ralph loop | documented |  |
 | `ASTRAT-03` | توجيه أسئلة المؤسس إلى أدوار المستشارين التنفيذيين | Route founder questions to C-suite advisor roles | documented |  |
@@ -206,8 +230,20 @@
 | `ASTRAT-106` | تقدير حجم السوق TAM وSAM وSOM من أعلى ومن أسفل والتحقق المتبادل | Market sizing TAM, SAM and SOM, top-down and bottom-up, cross-checked | documented |  |
 | `ASTRAT-107` | اكتشاف المنتج: أفكار من ثلاث زوايا، وفرضية XYZ، وتجارب منخفضة الجهد بعتبة نجاح، وترتيب بدرجة الفرصة | Product discovery: ideas from three perspectives, XYZ hypotheses, low-effort experiments with success thresholds, opportunity-score ranking | documented | pip:hypothesis |
 | `ASTRAT-108` | مشكلة البداية الباردة للمنتجات الشبكية: شبكة ذرية واحدة، والجانب الصعب أولًا، ونقطة الانقلاب، ومقاييس الكثافة لا الإجمالي | The cold start problem for networked products: one atomic network, the hard side first, the tipping point, density metrics over totals | documented |  |
+| `ASTRAT-109` | خطة نمو قناة الفيديو القصير | Short-form channel growth plan: pillars tied to metrics, a cadence you can hold for a year, owned-audience funnel | documented |  |
 | `ASTRAT-11` | رحلة من الفكرة إلى التطبيق بمتتبع | Idea-to-app journey with docs tracker | documented |  |
+| `ASTRAT-110` | قراءة أداء الفيديو والسوشيال بأرقام صحيحة | Social video performance readout: validated formulas, decision vs vanity metrics, top/bottom-3 review | documented |  |
+| `ASTRAT-111` | دفعة إعلانات مؤسسة على أدلة: زوايا وموجات وسجل تكرار | Grounded ad-creative batch: evidence corpus, 3-5 angles, generation waves, spec gate, iteration log | documented | npm:axe |
+| `ASTRAT-112` | دفتر فرضيات للاختبارات الإبداعية | Creative test journal: one-variable hypotheses, honest results, learnings only from patterns | documented | pip:hypothesis |
+| `ASTRAT-113` | تسعير صفقة رعاية وشروطها والإفصاح | Brand-deal pricing: value-based base fee, usage/exclusivity line items, walk-away floor, disclosure | documented |  |
+| `ASTRAT-114` | عرض سعر لمشروع فيديو أو موشن لعميل | Creative-project proposal: buyer's words first, scope with exclusions, distinct options, mutual next steps | documented |  |
+| `ASTRAT-115` | التعامل مع اعتراضات العميل والصفقة المتوقفة | Client objection and stalled-deal diagnosis: real concern, own proof, one forward question | documented |  |
+| `ASTRAT-116` | خطة إطلاق حملة مع بوابات ما قبل الإطلاق | Launch campaign plan with preflight gates: objective→audience→message→channel→measure, backward schedule, ordered go-live | documented |  |
+| `ASTRAT-117` | قفل هدف واحد وفلترة كل فكرة عليه | One-goal lock: judge every idea ON / PARTIAL / OFF and always return a sharper version | documented |  |
+| `ASTRAT-118` | استخراج زوايا محتوى من الأخبار والترندات | Signal mining and listening digest: angles you have standing to make, plus an explicit dropped list | documented |  |
+| `ASTRAT-119` | اختيار قناة النمو بطريقة عين الثور | Bullseye channel choice: one strategy per channel, three cheap tests, then focus on one | documented |  |
 | `ASTRAT-12` | مراجعة مخاطر ما قبل البناء | Pre-build risk review and kill-test | documented |  |
+| `ASTRAT-120` | موقع أو صفحة خدمات صادقة للمبدع | Honest service/portfolio page: positioning sentence, one job per section, no invented proof, client handoff | documented |  |
 | `ASTRAT-13` | قرار تخزين البيانات على السلسلة أو خارجها | On-chain versus off-chain data placement | documented |  |
 | `ASTRAT-14` | اختبار استراتيجية تداول بمقاييس المخاطر | Backtest trading strategy with risk metrics | documented | pip:numpy, pip:pandas, pip:matplotlib |
 | `ASTRAT-15` | تقييم DCF متين مع فحوص تقاطعية | Defensible DCF valuation with cross-checks | documented |  |
