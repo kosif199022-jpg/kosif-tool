@@ -1,9 +1,9 @@
 ---
 name: pm-mehul4795-4a7007
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A ~33-second vertical launch ad for an image-to-text app on lavender-white: a struck-through 'stop retyping' headline, the icon with four-colour scan corners, a green scan line extracting printed text into a Copy card, language bubbles round a 140+ counter, handwriting to text, export buttons, history search, proof counters and a store-button end card. Use to make a new video in this look (Product UI); address it by ID pm-mehul4795-4a7007.
 ---
 
-# KOSIF TOOL — ocrX app launch video
+# KOSIF TOOL — ocrX app launch video / إعلان إطلاق تطبيق تحويل الصور إلى نص بواجهة فاتحة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/mehul4795-4a7007
@@ -17,12 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان عمودي مدته نحو 33 ثانية لتطبيق تحويل الصور إلى نص، على خلفية بيضاء مائلة للبنفسجي بفقاعات ألوان ضبابية: عنوان «توقف عن إعادة الكتابة» يُشطب بخط أحمر، أيقونة التطبيق بزوايا مسح ملونة، بطاقة نص مطبوع يعبرها خط مسح أخضر فيتظلل النص ويُستخرج في بطاقة مع زر نسخ، فقاعات لغات حول عداد يصعد إلى 140+، ملاحظة بخط اليد تتحول إلى نص، أزرار التصدير، بحث في سجل المسح، عدادات التقييم والتنزيلات، وبطاقة ختام بزر المتجر.
+
+A ~33-second vertical launch ad for an image-to-text app on lavender-white: a struck-through 'stop retyping' headline, the icon with four-colour scan corners, a green scan line extracting printed text into a Copy card, language bubbles round a 140+ counter, handwriting to text, export buttons, history search, proof counters and a store-button end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (33 s), aspect 9:16, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج.
+Categories: Product UI / واجهات المنتج, Phone / هاتف, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/phone.md](../../playbooks/phone.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

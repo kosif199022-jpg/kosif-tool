@@ -1,6 +1,6 @@
 ---
 name: pm-kantamk-61f410
-description: A roughly 32-second vertical clip on a near-black navy ground: a glowing white ball ricochets inside twelve concentric rings with rotating gaps, coloured from pink at the centre through purple and blue to teal outside. Each time the ball slips through a gap, that ring dissolves into glowing dots and the rings-left counter drops, until the ball escapes, 'ESCAPED.' appears and an end card follows.
+description: A roughly 32-second vertical clip on a near-black navy ground: a glowing white ball ricochets inside twelve concentric rings with rotating gaps, coloured from pink at the centre through purple and blue to teal outside. Each time the ball slips through a gap, that ring dissolves into glowing dots and the rings-left counter drops, until the ball escapes, 'ESCAPED.' appears and an end card follows. Use to make a new video in this look (creative motion); address it by ID pm-kantamk-61f410.
 ---
 
 # KOSIF TOOL — Ball escaping twelve rings / كرة تهرب من اثنتي عشرة حلقة

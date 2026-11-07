@@ -1,19 +1,11 @@
 {
   "id": "pm-demonugc-4c5753",
   "name": "Morphing UI states loop",
-  "name_ar": null,
+  "name_ar": "حلقة تحولات عناصر الواجهة من حالة إلى أخرى",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "product-ui",
-    "charts",
-    "kinetic-type",
-    "shapes",
-    "particles",
-    "characters",
-    "photos",
-    "music",
-    "code"
+    "product-ui"
   ],
   "creator": "@demonugc",
   "creator_url": "https://x.com/demonugc/status/2103526713208525162",
@@ -38,14 +30,33 @@
   "listed": true,
   "skill": "styles/pm-demonugc-4c5753/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md",
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/particles.md",
-    "playbooks/characters.md",
-    "playbooks/photos.md",
-    "playbooks/music.md",
-    "playbooks/code.md"
-  ]
+    "playbooks/product-ui.md"
+  ],
+  "summary_ar": "حلقة مربعة صامتة مدتها 14 ثانية على خلفية بيضاء مكسورة: عنصر واجهة أسود صغير واحد يتحول باستمرار من حالة إلى أخرى بنقرات مؤشر: زر «Continue» يصبح مؤشر تحميل دائري، ثم مشغل موسيقى صغير بشريط تقدم أخضر، ثم شريط تقدم، ثم مفتاح يتحول إلى الأخضر، ثم شريط ألسنة، ثم بطاقة رسم بياني يُرسم خطها الأخضر، ثم لوحة أوامر تكتب «export chart»، ثم إشعار صغير، ثم يعود إلى زر.",
+  "summary_en": "A silent 14-second square loop on off-white where one small black UI element keeps morphing under cursor clicks: a 'Continue' button becomes a spinner, a mini music player, a progress bar, a green toggle, a tab bar, a chart card drawing a green line, a command palette exporting the chart, then a toast and back to a pill.",
+  "keywords": [
+    "UI morph",
+    "component states",
+    "micro interactions",
+    "spinner",
+    "toggle",
+    "tab bar",
+    "command palette",
+    "toast",
+    "seamless loop",
+    "تحولات الواجهة",
+    "تفاعلات دقيقة",
+    "حالات المكونات",
+    "مفتاح تبديل",
+    "لوحة أوامر",
+    "حلقة متكررة"
+  ],
+  "difficulty": 3,
+  "duration_s": 14,
+  "stack": [
+    "React",
+    "CSS",
+    "Remotion"
+  ],
+  "brief": "styles/pm-demonugc-4c5753/BRIEF.md"
 }

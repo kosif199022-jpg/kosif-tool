@@ -1,12 +1,13 @@
 {
   "id": "pm-ayushunleashed-ece3e3",
   "name": "Claude motion design showreel",
-  "name_ar": null,
+  "name_ar": "شوريل موشن بواجهة تقنية: نقطة، خط، مستوى",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "kinetic-type",
+    "shapes",
+    "particles"
   ],
   "creator": "@ayushunleashed",
   "creator_url": "https://x.com/ayushunleashed/status/2103794962257084755",
@@ -27,7 +28,36 @@
   "listed": true,
   "skill": "styles/pm-ayushunleashed-ece3e3/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md"
+  ],
+  "summary_ar": "شوريل مدته 15 ثانية على أسود بشبكة نقاط خافتة وإطار واجهة تقنية (رمز وقت، 130 BPM، رقم الفصل من 7): نقطة حمراء ثم خط ثم مستوى أحمر مكتوب عليه، اسم ضخم كريمي يتحول إلى حدود ثم تحل كرة نقاط محل حرف، كرة فيبوناتشي بقراءات، أرقام إيقاع ومعادل أعمدة، مكعبات أيزومترية، جدار كلمات مكثفة على الأحمر، أشكال قطبية بمعادلاتها، ثم توقيع على توهج أحمر.",
+  "summary_en": "A 15 s showreel on black with a dot grid and technical HUD (timecode, 130 BPM, chapter x/7): a red point becomes a line then a tumbling red plane, a huge cream name flips to outline, a Fibonacci dot sphere with readouts, a BPM counter and equaliser, isometric cubes, a red word wall, polar shape morphs with formulas, and a signature over a red glow.",
+  "keywords": [
+    "showreel",
+    "technical HUD",
+    "point line plane",
+    "fibonacci sphere",
+    "kinetic type",
+    "isometric",
+    "shape morph",
+    "polar formula",
+    "BPM",
+    "شوريل",
+    "واجهة تقنية",
+    "كرة نقاط",
+    "تحول الأشكال",
+    "تايبوغرافي متحرك",
+    "أيزومتري"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "Three.js"
+  ],
+  "brief": "styles/pm-ayushunleashed-ece3e3/BRIEF.md"
 }

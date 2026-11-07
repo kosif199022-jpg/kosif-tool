@@ -1,12 +1,13 @@
 {
   "id": "pm-amitsingha89-150378",
   "name": "Handwoven textiles brand explainer",
-  "name_ar": null,
+  "name_ar": "تعريف تحريري دافئ بعلامة منسوجات يدوية بالصور",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "diagrams",
-    "kinetic-type"
+    "photos",
+    "kinetic-type",
+    "ads"
   ],
   "creator": "@AmitSingha89",
   "creator_url": "https://x.com/AmitSingha89/status/2103737604277780553",
@@ -27,7 +28,34 @@
   "listed": true,
   "skill": "styles/pm-amitsingha89-150378/SKILL.md",
   "playbooks": [
-    "playbooks/diagrams.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/photos.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "فيديو تعريفي مدته 54 ثانية لعلامة أقمشة منسوجة يدوياً بأسلوب موقع تحريري دافئ: افتتاح على بني داكن بلقطة نول ضبابية وعنوان سيريف بنصف مائل بلون الطين، ثم شرائح على ورق كريمي وبني تتناوب فيها كتل نص وشبكات صور حقيقية (نساجون، أقمشة، ورش)، أرقام كبيرة، ثلاث قيم، خطوات طلب مرقمة، وختام بزر برتقالي ورابط.",
+  "summary_en": "A 54-second brand explainer for a handwoven textiles label in a warm editorial web style: it opens on dark brown over a blurred loom with a serif headline whose second half is terracotta italic, then cream and brown slides pair text with real photo grids (weavers, fabrics, workshops), a big number, three values, numbered ordering steps and a close with an orange button and URL.",
+  "keywords": [
+    "brand explainer",
+    "textiles",
+    "handwoven",
+    "editorial layout",
+    "photo grid",
+    "serif italic",
+    "earthy palette",
+    "how it works steps",
+    "تعريف بعلامة",
+    "منسوجات يدوية",
+    "صور حقيقية",
+    "أسلوب تحريري",
+    "ألوان ترابية",
+    "خطوات"
+  ],
+  "difficulty": 2,
+  "duration_s": 54,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-amitsingha89-150378/BRIEF.md"
 }

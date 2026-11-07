@@ -1,9 +1,9 @@
 ---
 name: pm-apoorvjain25-d24184
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 20-second science micro-story: inside the Sun a photon zigzags through a bokeh-orange particle haze while 'again' words pile up and live depth/temperature counters run, the Sun appears with '170,000 years', then a warp-speed space run with huge translucent words and a time/distance HUD, a dive through clouds over Earth, a targeted human eye, and a black end card: you blinked. Use to make a new video in this look (Particles); address it by ID pm-apoorvjain25-d24184.
 ---
 
-# KOSIF TOOL — Photon journey from the Sun
+# KOSIF TOOL — Photon journey from the Sun / رحلة فوتون من قلب الشمس حتى عينك في 20 ثانية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/apoorvjain25-d24184
@@ -17,12 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+قصة علمية سريعة مدتها 20 ثانية: داخل الشمس بضباب برتقالي من الجسيمات يرتد فوتون في مسار متعرج مع كلمات «مرة أخرى» تملأ الشاشة وعدادات عمق وحرارة حية، ثم تخرج الشمس كقرص مع «170 ألف سنة»، فرحلة في الفضاء بخطوط نجوم وكلمات عملاقة شفافة وعداد زمن ومسافة، اختراق السحب فوق الأرض، ثم عين بشرية تُستهدف حدقتها، وتنتهي على الأسود بـ«رمشت».
+
+A 20-second science micro-story: inside the Sun a photon zigzags through a bokeh-orange particle haze while 'again' words pile up and live depth/temperature counters run, the Sun appears with '170,000 years', then a warp-speed space run with huge translucent words and a time/distance HUD, a dive through clouds over Earth, a targeted human eye, and a black end card: you blinked.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, HTML Canvas, SVG), suggested duration (20 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Photos / صور.
-- [playbooks/photos.md](../../playbooks/photos.md)
+Categories: Particles / جسيمات, Kinetic type / تايبوغرافي متحرك.
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
-* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

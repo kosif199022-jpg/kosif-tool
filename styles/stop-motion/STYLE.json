@@ -1,7 +1,7 @@
 {
   "id": "stop-motion",
   "name": "ستوب موشن",
-  "name_ar": "ستوب موشن",
+  "name_ar": "ستوب موشن بأشياء حقيقية تتحرك لقطة لقطة على سطح مكتب",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,29 @@
   "playbooks": [
     "playbooks/characters.md",
     "playbooks/photos.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي بطريقة ستوب موشن لأشياء حقيقية مصورة من الأعلى أو من الأمام: أدوات وطعام وأوراق تتحرك وتتجمع بقفزات صغيرة بمعدل 12 لقطة في الثانية، مع ارتعاش الإضاءة الطبيعي وظلال حقيقية وكلمات مصنوعة من الأشياء نفسها.",
+  "summary_en": "A vertical reel in stop motion with real objects shot top-down or front-on: tools, food and paper move and assemble in small jumps at 12 frames per second, with natural light flicker, real shadows, and words built out of the objects themselves.",
+  "keywords": [
+    "stop motion",
+    "pixilation",
+    "objects",
+    "tabletop",
+    "handmade",
+    "12fps",
+    "ستوب موشن",
+    "تحريك الأشياء",
+    "لقطة لقطة",
+    "يدوي",
+    "مكتب",
+    "صور"
+  ],
+  "difficulty": 3,
+  "duration_s": 28,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/stop-motion/BRIEF.md"
 }

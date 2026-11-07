@@ -1,9 +1,9 @@
 ---
 name: pm-madebyjmayala-b9204d
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A dark 15-second ad for an in-browser DNA analysis tool: a wall of faint scrolling genome data behind a white serif line, a navy browser frame where a dropped file bursts into a point cloud and resolves into a wireframe DNA helix, rainbow light strands fanning from it into a column of health categories while a big number counts genetic markers, then the logo beside a vertical spectrum bar. Use to make a new video in this look (Charts); address it by ID pm-madebyjmayala-b9204d.
 ---
 
-# KOSIF TOOL — Gene Spectra promo
+# KOSIF TOOL — Gene Spectra promo / إعلان تحليل جينات خاص بحلزون DNA وطيف ألوان
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/madebyjmayala-b9204d
@@ -17,12 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان داكن مدته 15 ثانية لأداة تحليل DNA في المتصفح: جدار من بيانات جينية خافتة تتمرر خلف عبارة سريف بيضاء، نافذة متصفح كحلية تُسقط فيها ملفاً فيتحول إلى سحابة نقاط ثم حلزون DNA سلكي، تنطلق منه خيوط ضوئية بألوان قوس قزح إلى عمود فئات صحية بينما يعدّ رقم كبير المؤشرات الجينية، وتنتهي بالشعار وشريط طيف عمودي.
+
+A dark 15-second ad for an in-browser DNA analysis tool: a wall of faint scrolling genome data behind a white serif line, a navy browser frame where a dropped file bursts into a point cloud and resolves into a wireframe DNA helix, rainbow light strands fanning from it into a column of health categories while a big number counts genetic markers, then the logo beside a vertical spectrum bar.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, SVG), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية.
+Categories: Charts / رسوم بيانية, Particles / جسيمات, Ads / إعلانات.
 - [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

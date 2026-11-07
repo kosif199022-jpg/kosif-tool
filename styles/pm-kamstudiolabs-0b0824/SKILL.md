@@ -1,6 +1,6 @@
 ---
 name: pm-kamstudiolabs-0b0824
-description: A dialogue-free short of about 46 seconds in a 2.35:1 frame: a wide-tracked serif title, then a lighthouse on a rock in rain and fog whose lamp goes out; inside, the keeper dozes in a rocking chair beside a stove, pendulum clock and lantern, the room darkens, he climbs a spiral stair with the lantern to the lamp room, relights the lens, the beams sweep the sea again while he walks the gallery, and it fades to a distant lighthouse in darkness.
+description: A dialogue-free short of about 46 seconds in a 2.35:1 frame: a wide-tracked serif title, then a lighthouse on a rock in rain and fog whose lamp goes out; inside, the keeper dozes in a rocking chair beside a stove, pendulum clock and lantern, the room darkens, he climbs a spiral stair with the lantern to the lamp room, relights the lens, the beams sweep the sea again while he walks the gallery, and it fades to a distant lighthouse in darkness. Use to make a new video in this look (Characters); address it by ID pm-kamstudiolabs-0b0824.
 ---
 
 # KOSIF TOOL — Lighthouse keeper silent short / فيلم صامت قصير عن حارس المنارة

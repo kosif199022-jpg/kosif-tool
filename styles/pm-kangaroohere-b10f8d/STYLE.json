@@ -1,12 +1,14 @@
 {
   "id": "pm-kangaroohere-b10f8d",
   "name": "Motion designer showreel",
-  "name_ar": null,
+  "name_ar": "إعلان نشرة بريدية بتايبوغرافي سريفي وكنغر يقفز",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "kinetic-type",
+    "ads",
+    "phone",
+    "characters"
   ],
   "creator": "@KangarooHere",
   "creator_url": "https://x.com/KangarooHere/status/2103617278671818789",
@@ -27,7 +29,36 @@
   "listed": true,
   "skill": "styles/pm-kangaroohere-b10f8d/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/ads.md",
+    "playbooks/phone.md",
+    "playbooks/characters.md"
+  ],
+  "summary_ar": "إعلان سريع مدته 20 ثانية لنشرة بريدية على خلفية كريمية: كنغر أسود صغير يقفز على مسار منقط ليكتب الاسم بخط سريفي عريض، ثم ثلاث لوحات عمودية أزرق وأسود وأصفر بأيقونات متحركة، بطاقات مقالات تنقلب، أرقام ضخمة مع وسم وساعة، جدار كلمات مفرغة يمر بعدسة صفراء، هاتف على شبكة زرقاء، عنوان مظلل بالأصفر، والكنغر يقفز فوق البطاقات حتى زر الاشتراك.",
+  "summary_en": "A 20-second newsletter promo on cream: a black kangaroo hops a dotted arc to stamp a bold serif wordmark, then a blue/black/yellow triptych with animated icons, flipping article cards, huge serif numbers with a tag and clock, an outline-type wall under a yellow lens, a phone on a blue grid, a highlighted headline and the kangaroo hopping to a subscribe button.",
+  "keywords": [
+    "newsletter promo",
+    "serif wordmark",
+    "mascot hop",
+    "highlighter",
+    "triptych",
+    "big numbers",
+    "phone inbox",
+    "outline type wall",
+    "subscribe button",
+    "إعلان نشرة",
+    "كنغر",
+    "تايبوغرافي سريفي",
+    "تظليل أصفر",
+    "زر اشتراك",
+    "أرقام كبيرة"
+  ],
+  "difficulty": 3,
+  "duration_s": 20,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/pm-kangaroohere-b10f8d/BRIEF.md"
 }

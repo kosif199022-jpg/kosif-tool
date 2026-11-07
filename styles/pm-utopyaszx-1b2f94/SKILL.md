@@ -1,6 +1,6 @@
 ---
 name: pm-utopyaszx-1b2f94
-description: A 15-second promo for an automated SEO service in three numbered steps: keyword pills on red with a rolling counter, an article card typing itself beside live stat counters, a weekly grid filling with published cards, then a red wipe to a galloping jockey silhouette and the logo lockup.
+description: A 15-second promo for an automated SEO service in three numbered steps: keyword pills on red with a rolling counter, an article card typing itself beside live stat counters, a weekly grid filling with published cards, then a red wipe to a galloping jockey silhouette and the logo lockup. Use to make a new video in this look (Charts); address it by ID pm-utopyaszx-1b2f94.
 ---
 
 # KOSIF TOOL — Bold Pilot SEO promo / بولد بايلوت: تسلّق الترتيب إلى المركز الأول

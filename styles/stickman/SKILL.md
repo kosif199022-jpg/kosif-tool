@@ -1,9 +1,9 @@
 ---
 name: stickman
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A vertical reel with simple black stick figures (round head, line limbs) acting out the story on a white background: they walk, jump and react, with a few props drawn in a single line weight, one accent colour, and short Arabic text captions. Use to make a new video in this look (Characters); address it by ID stickman.
 ---
 
-# KOSIF TOOL — شخصيات عصوية
+# KOSIF TOOL — شخصيات عصوية / شخصيات عصوية بسيطة تمثل القصة بحركات معبرة على خلفية بيضاء
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/stickman
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي بشخصيات عصوية سوداء بسيطة (رأس دائري وخطوط للأطراف) تمثل مواقف القصة على خلفية بيضاء: تمشي وتقفز وتتفاجأ، مع أشياء قليلة مرسومة بخط واحد ولون مميز واحد، وتعليق نصي عربي قصير.
+
+A vertical reel with simple black stick figures (round head, line limbs) acting out the story on a white background: they walk, jump and react, with a few props drawn in a single line weight, one accent colour, and short Arabic text captions.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (SVG, React, Remotion, GSAP), suggested duration (30 s), aspect 9:16, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Characters / شخصيات, Hand-drawn / رسم يدوي.

@@ -1,6 +1,6 @@
 ---
 name: pm-ajith-io-ea7f2d
-description: A 32-second product reel that opens on a doodled document beside an orange flower on paper, dives through speed lines into a radial burst, rainbow stripes, a ribbon of coloured cards in purple space, a flock of letters, a glowing orb that becomes a light thread growing a sprout card over a planet, a wall of cards, then back to paper with a handwritten line and the logo.
+description: A 32-second product reel that opens on a doodled document beside an orange flower on paper, dives through speed lines into a radial burst, rainbow stripes, a ribbon of coloured cards in purple space, a flock of letters, a glowing orb that becomes a light thread growing a sprout card over a planet, a wall of cards, then back to paper with a handwritten line and the logo. Use to make a new video in this look (Charts); address it by ID pm-ajith-io-ea7f2d.
 ---
 
 # KOSIF TOOL — Distilbook motion showreel / ديستيل بوك: رحلة ملوّنة من الورق إلى الفضاء

@@ -1,9 +1,9 @@
 ---
 name: documentary-map
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 9:16 documentary reel over a desaturated, film-grained realistic terrain map: the camera swoops from a regional view down to pinned cities, black-and-white archival photos appear in slightly tilted frames with Ken Burns drift, and a large date ribbon and serif Arabic place names anchor each stop. Use to make a new video in this look (Diagrams); address it by ID documentary-map.
 ---
 
-# KOSIF TOOL — خريطة وثائقية
+# KOSIF TOOL — خريطة وثائقية / خريطة وثائقية — خريطة واقعية مع صور أرشيفية وتواريخ
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل وثائقي عمودي 9:16 على خريطة تضاريس واقعية بألوان باهتة وحبوب فيلم، تنقضّ الكاميرا من رؤية إقليمية إلى مدن محددة بدبابيس، وتظهر صور أرشيفية بالأبيض والأسود في إطارات مائلة قليلاً بحركة كين بيرنز، مع شريط تاريخ كبير وأسماء أماكن بخط سيريف عربي.
+
+A 9:16 documentary reel over a desaturated, film-grained realistic terrain map: the camera swoops from a regional view down to pinned cities, black-and-white archival photos appear in slightly tilted frames with Ken Burns drift, and a large date ribbon and serif Arabic place names anchor each stop.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, WebGL, CSS), suggested duration (36 s), aspect 9:16, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Diagrams / مخططات, Photos / صور.

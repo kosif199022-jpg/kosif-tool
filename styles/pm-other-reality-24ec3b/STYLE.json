@@ -1,19 +1,13 @@
 {
   "id": "pm-other-reality-24ec3b",
   "name": "Opus visual design test",
-  "name_ar": null,
+  "name_ar": "فيديو كليب كرتوني بألوان مائية عن الذكاء الاصطناعي بطله مربع برتقالي وعالم",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "diagrams",
-    "kinetic-type",
-    "shapes",
-    "particles",
     "characters",
-    "photos",
     "music",
-    "code"
+    "hand-drawn"
   ],
   "creator": "unknown",
   "creator_url": "https://x.com/other__reality/status/2102514581684052169",
@@ -34,14 +28,36 @@
   "listed": true,
   "skill": "styles/pm-other-reality-24ec3b/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/diagrams.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/particles.md",
     "playbooks/characters.md",
-    "playbooks/photos.md",
     "playbooks/music.md",
-    "playbooks/code.md"
-  ]
+    "playbooks/hand-drawn.md"
+  ],
+  "summary_ar": "فيديو موسيقي كرتوني طويل (نحو دقيقتين ونصف) بملمس ألوان مائية وورق، بطله مخلوق مربع برتقالي بأرجل صغيرة ووجه مبتسم وعالِم بمعطف أبيض ونظارة: يخرج من شاشة كمبيوتر قديم، يتزلج على منحنى، يجلس على عرش بتاج، حفلة بقبعات، عدّاد خطر، قفص قلب وردي، أفعى بتاج وكلمة BOOM، طريق صحراوي، كهف، جزيرة على كوكب مليء بمشابك ورق، ونهاية على مسرح أحمر بعنوان كبير، مع ترجمة كلمات الأغنية في كبسولة داكنة أسفل الشاشة.",
+  "summary_en": "A 2.5 min watercolour cartoon music video starring a smiling orange box creature and a bespectacled scientist, one storybook scene per lyric line (retro computer, crowned throne, party hats, danger gauge, heart cage, crowned serpent, desert road, paper-clip planet), with lyric captions in a dark pill and a red-curtain stage finale.",
+  "keywords": [
+    "music video",
+    "cartoon",
+    "watercolor",
+    "lyric captions",
+    "AI satire",
+    "mascot",
+    "storybook",
+    "p(doom)",
+    "فيديو كليب",
+    "كرتون",
+    "ألوان مائية",
+    "كلمات الأغنية",
+    "سخرية",
+    "شخصية كرتونية",
+    "ذكاء اصطناعي"
+  ],
+  "difficulty": 5,
+  "duration_s": 157,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/pm-other-reality-24ec3b/BRIEF.md"
 }

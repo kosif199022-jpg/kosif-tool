@@ -1,19 +1,11 @@
 {
   "id": "pm-gdgtify-287ddf",
   "name": "Speech built as architecture",
-  "name_ar": null,
+  "name_ar": "خطاب يُبنى كعمارة: كلمات ضخمة تصير جسراً وأعمدة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "phone",
-    "charts",
-    "diagrams",
-    "kinetic-type",
-    "particles",
-    "characters",
-    "photos",
-    "music",
-    "code"
+    "kinetic-type"
   ],
   "creator": "@Gdgtify",
   "creator_url": "https://x.com/Gdgtify/status/2103458245213929495",
@@ -39,14 +31,31 @@
   "listed": true,
   "skill": "styles/pm-gdgtify-287ddf/SKILL.md",
   "playbooks": [
-    "playbooks/phone.md",
-    "playbooks/charts.md",
-    "playbooks/diagrams.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/particles.md",
-    "playbooks/characters.md",
-    "playbooks/photos.md",
-    "playbooks/music.md",
-    "playbooks/code.md"
-  ]
+    "playbooks/kinetic-type.md"
+  ],
+  "summary_ar": "فيديو تايبوغرافي مربع مدته 20 ثانية على خلفية خضراء غابية داكنة: كلمات ضخمة بخط عريض كريمي تتأرجح وتسقط وتتعلق بحبل ذهبي رفيع كجسر معلق، وكلمات أخرى تقف عمودية كأعمدة، بينما تُكتب جمل قصيرة بخط سيريف رفيع مائل الإيقاع بينها، حتى تتكون بنية تشبه البوابة، ثم يعود المشهد للكلمة الأولى مقرّبة جداً.",
+  "summary_en": "A 20 s square kinetic-type piece on deep forest green where huge cream heavy-sans words swing, drop and hang from a thin gold cable like a suspension bridge, other words stand vertically as pillars, and short lines in a light serif write in between until the words form a gateway-like structure, before looping back to an extreme close-up of the first word.",
+  "keywords": [
+    "kinetic typography",
+    "typographic architecture",
+    "hanging words",
+    "rope physics",
+    "serif and grotesque",
+    "square video",
+    "manifesto",
+    "تايبوغرافي متحرك",
+    "كلمات معلقة",
+    "بناء بالكلمات",
+    "خطاب",
+    "حبل ذهبي",
+    "فيديو مربع"
+  ],
+  "difficulty": 3,
+  "duration_s": 20,
+  "stack": [
+    "SVG",
+    "CSS",
+    "GSAP"
+  ],
+  "brief": "styles/pm-gdgtify-287ddf/BRIEF.md"
 }

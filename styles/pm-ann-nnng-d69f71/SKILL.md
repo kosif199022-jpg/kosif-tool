@@ -1,9 +1,9 @@
 ---
 name: pm-ann-nnng-d69f71
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A short 13-second portrait clip split into two stacked white panels, each labelled with an AI model name: die-cut stickers with white borders and holographic glitter (a rainbow star slogan, a drink can, a chrome logo, a disco planet) tilt and shimmer as a hand cursor moves over them, then get peeled by a corner to reveal grey backing paper, with a thumbnail tray below. Use to make a new video in this look (Product UI); address it by ID pm-ann-nnng-d69f71.
 ---
 
-# KOSIF TOOL — Interactive glitter sticker with peel animation
+# KOSIF TOOL — Interactive glitter sticker with peel animation / ملصقات لامعة تفاعلية تميل مع المؤشر وتُقشَّر عن ورقتها في مقارنة بين نموذجين
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/ann-nnng-d69f71
@@ -17,22 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+مقطع عمودي قصير (نحو 13 ثانية) مقسوم أفقياً إلى لوحتين بيضاوين فوق بعض، كل منهما باسم نموذج ذكاء اصطناعي: ملصقات بحواف بيضاء وجليتر هولوغرافي (عبارة ملونة بنجوم، علبة مشروب، شعار كروم، كوكب ديسكو) تميل وتلمع مع حركة يد المؤشر، ثم تُسحب زاويتها فتُقشَّر وتكشف ورقة خلفية رمادية، مع شريط مصغرات بالأسفل.
+
+A short 13-second portrait clip split into two stacked white panels, each labelled with an AI model name: die-cut stickers with white borders and holographic glitter (a rainbow star slogan, a drink can, a chrome logo, a disco planet) tilt and shimmer as a hand cursor moves over them, then get peeled by a corner to reveal grey backing paper, with a thumbnail tray below.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (React, CSS, WebGL), suggested duration (13 s), aspect 480:636, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Photos / صور, Music / موسيقى, Code / كود.
+Categories: Product UI / واجهات المنتج, Photos / صور.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 - [playbooks/photos.md](../../playbooks/photos.md)
-- [playbooks/music.md](../../playbooks/music.md)
-- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

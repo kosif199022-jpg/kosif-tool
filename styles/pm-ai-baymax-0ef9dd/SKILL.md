@@ -1,9 +1,9 @@
 ---
 name: pm-ai-baymax-0ef9dd
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 55-second promo for an AI scientific-figure tool on a cream-to-blue pastel gradient: an opening question dissolves into the logo, then six numbered chapters with copy left and a browser window right demoing the product (prompt, sketch, style reference, click-to-edit, export, poster), a gallery with university logos and a navy CTA end card. Use to make a new video in this look (Product UI); address it by ID pm-ai-baymax-0ef9dd.
 ---
 
-# KOSIF TOOL — FigPad product promo
+# KOSIF TOOL — FigPad product promo / إعلان أداة رسوم علمية بواجهة متصفح وتدرج باستيل
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/ai-baymax-0ef9dd
@@ -17,14 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان منتج مدته 55 ثانية لأداة تولّد رسوماً علمية، على تدرج باستيل كريمي-أزرق: سؤال افتتاحي يتلاشى خلف الشعار، ثم ستة فصول مرقمة يكون فيها النص يساراً ونافذة متصفح يميناً تعرض الأداة فعلياً (كتابة وصف، رسم تخطيطي يتحول، أسلوب مرجعي، تعديل نص بنقرة، تصدير، ورقة تتحول إلى ملصق)، ثم جدار أمثلة وشعارات جامعات وبطاقة ختام بزر كحلي.
+
+A 55-second promo for an AI scientific-figure tool on a cream-to-blue pastel gradient: an opening question dissolves into the logo, then six numbered chapters with copy left and a browser window right demoing the product (prompt, sketch, style reference, click-to-edit, export, poster), a gallery with university logos and a navy CTA end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (55 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Code / كود.
+Categories: Product UI / واجهات المنتج, Ads / إعلانات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

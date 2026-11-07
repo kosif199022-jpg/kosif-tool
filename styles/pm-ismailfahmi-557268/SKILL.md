@@ -1,9 +1,9 @@
 ---
 name: pm-ismailfahmi-557268
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second showreel on deep night blue: thousands of glowing strokes form a turning cloud that takes on platform colours, bursts into labelled network clusters, then piles into a timeline curve with a sharp spike, ending on a teal-to-gold gradient wordmark over particle dust, with one caption bottom-left per stage and a counter climbing top-right. Use to make a new video in this look (Particles); address it by ID pm-ismailfahmi-557268.
 ---
 
-# KOSIF TOOL — Drone Emprit showreel
+# KOSIF TOOL — Drone Emprit showreel / عرض تقديمي بجسيمات متوهجة تتحول من سحابة إلى شبكة إلى منحنى
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/ismailfahmi-557268
@@ -17,13 +17,24 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+عرض تقديمي مدته 15 ثانية على أزرق ليلي عميق: آلاف الخطوط الضوئية القصيرة تشكل سحابة تدور ببطء ثم تتلون بألوان المنصات، تنفجر وتتجمع في عناقيد شبكة مترابطة بأسماء المجموعات، تتطاير ثم تتراكم في منحنى زمني بقمة واضحة، وتنتهي باسم المنتج بتدرج فيروزي ذهبي فوق غبار جسيمات، مع جملة تعليق واحدة أسفل اليسار لكل مرحلة وعدّاد يرتفع أعلى اليمين.
+
+A 15-second showreel on deep night blue: thousands of glowing strokes form a turning cloud that takes on platform colours, bursts into labelled network clusters, then piles into a timeline curve with a sharp spike, ending on a teal-to-gold gradient wordmark over particle dust, with one caption bottom-left per stage and a counter climbing top-right.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, React, Remotion), suggested duration (15 s), aspect 16:9, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+Categories: Particles / جسيمات, Charts / رسوم بيانية, Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك.
+- [playbooks/particles.md](../../playbooks/particles.md)
 - [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/diagrams.md](../../playbooks/diagrams.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)

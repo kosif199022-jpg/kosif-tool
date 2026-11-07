@@ -1,11 +1,12 @@
 {
   "id": "pm-allforbigfire-86ff3c",
   "name": "Anime robot combining sequence",
-  "name_ar": null,
+  "name_ar": "تجميع روبوت أنمي من ثلاث مركبات بأسلوب الكتل",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "characters"
+    "characters",
+    "3d"
   ],
   "creator": "@allforbigfire",
   "creator_url": "https://x.com/allforbigfire/status/2104193522715029657",
@@ -26,6 +27,34 @@
   "listed": true,
   "skill": "styles/pm-allforbigfire-86ff3c/SKILL.md",
   "playbooks": [
-    "playbooks/characters.md"
-  ]
+    "playbooks/characters.md",
+    "playbooks/3d.md"
+  ],
+  "summary_ar": "مشهد عمودي مدته 25 ثانية بأسلوب أنمي الروبوتات القديم بنماذج ثلاثية الأبعاد كتلية مبسطة: تعريف بثلاث مركبات (طائرة حمراء في السماء، سيارة زرقاء على الطريق، دبابة صفراء في الصحراء) بشرائط أسماء مائلة، ثم صيحة «اندماج» بالخط الياباني، فتتحول القطع على خلفية خطوط سرعة كحلية إلى رأس وجذع وساقين وتلتحم، وتنتهي بلقطات قريبة للوجه المضيء ووقفة بطولية على أشعة ذهبية مع لافتة «اكتمل الاندماج».",
+  "summary_en": "A 25-second vertical super-robot anime homage in chunky low-poly blocks: a red jet, blue car and yellow tank get slanted name plates, a Japanese 'combine' shout flies in, the parts transform over navy speed lines into head, torso and legs, then a white-flash clang, glowing-eye close-ups and a victory pose on golden rays with a 'combination complete' banner.",
+  "keywords": [
+    "super robot",
+    "mecha combine",
+    "anime homage",
+    "low poly",
+    "toon shading",
+    "transformation",
+    "speed lines",
+    "sunburst",
+    "روبوت عملاق",
+    "اندماج",
+    "أنمي",
+    "تحول",
+    "مكعبات",
+    "خطوط سرعة"
+  ],
+  "difficulty": 4,
+  "duration_s": 25,
+  "stack": [
+    "Three.js",
+    "WebGL",
+    "React",
+    "Remotion"
+  ],
+  "brief": "styles/pm-allforbigfire-86ff3c/BRIEF.md"
 }

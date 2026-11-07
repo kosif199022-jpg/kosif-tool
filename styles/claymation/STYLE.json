@@ -1,7 +1,7 @@
 {
   "id": "claymation",
   "name": "صلصال متحرك",
-  "name_ar": "صلصال متحرك",
+  "name_ar": "صلصال متحرك — شخصيات طين بإضاءة دافئة وحركة متقطعة",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,31 @@
   "playbooks": [
     "playbooks/characters.md",
     "playbooks/3d.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي 9:16 بأسلوب الصلصال: شخصيات وأشياء مستديرة من طين ملون بملمس بصمات أصابع وسطح غير مستوٍ، على مجسم صغير بإضاءة استوديو دافئة وظلال ناعمة وعمق ميدان ضحل، تتحرك بإطارات متقطعة (12 في الثانية) مع اهتزاز طفيف في الأشكال بين الإطارات، ونصوص عربية مصنوعة كأنها من الصلصال.",
+  "summary_en": "A 9:16 reel in clay animation: rounded characters and props of coloured plasticine with fingerprint texture and uneven surfaces, on a small set under warm studio light with soft shadows and shallow depth of field, moving in stepped frames (12 fps) with slight shape jitter between frames, and Arabic titles that look sculpted from clay.",
+  "keywords": [
+    "claymation",
+    "clay",
+    "plasticine",
+    "stop motion look",
+    "miniature",
+    "fingerprints",
+    "cute characters",
+    "صلصال",
+    "صلصال متحرك",
+    "كلاي",
+    "شخصيات طين",
+    "مجسم صغير",
+    "رسوم مضحكة"
+  ],
+  "difficulty": 5,
+  "duration_s": 32,
+  "stack": [
+    "Three.js",
+    "WebGL",
+    "React",
+    "Remotion"
+  ],
+  "brief": "styles/claymation/BRIEF.md"
 }

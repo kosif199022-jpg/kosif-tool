@@ -1,12 +1,14 @@
 {
   "id": "pm-imthatcarlos-e04bfe",
   "name": "Sherwood agentic hedge fund explainer",
-  "name_ar": null,
+  "name_ar": "شرح منتج مالي يبدأ داكناً وينتقل إلى فاتح ثم لوحات زيتية",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
-    "diagrams"
+    "diagrams",
+    "kinetic-type",
+    "ads"
   ],
   "creator": "@imthatcarlos",
   "creator_url": "https://x.com/imthatcarlos/status/2102849219388133592",
@@ -28,6 +30,36 @@
   "skill": "styles/pm-imthatcarlos-e04bfe/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/diagrams.md"
-  ]
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "فيديو شارح مدته نحو 59 ثانية لمنصة صناديق يديرها وكلاء ذكاء اصطناعي: يبدأ بعناوين بيضاء وكلمات خضراء نعناعية على أسود بتوهج أخضر، ثم شبكة وكلاء متفرقين تتجمع إلى الشعار، ثم انتقال ماسح إلى خلفية فاتحة بأربع خطوات مرقمة مع بطاقات واجهة صغيرة وشريط تقدم أعلاه، وينتهي بلوحات زيتية رقمية ليد آلية ويد بشرية تحت العنوان الأخير والرابط.",
+  "summary_en": "A roughly 59-second explainer for a platform where AI agents run funds: white headlines with mint keywords on black with a green glow, a scattered field of agent nodes that converges into the logo, a wipe to a light canvas with four numbered steps each beside a small UI card and a top progress rail, then painterly digital-oil images of a robot hand and a human hand under the closing line and URL.",
+  "keywords": [
+    "fintech explainer",
+    "AI agents",
+    "onchain",
+    "step by step",
+    "UI cards",
+    "dark to light",
+    "highlighter",
+    "painterly",
+    "Creation of Adam",
+    "mint accent",
+    "شرح منتج",
+    "وكلاء ذكاء اصطناعي",
+    "تمويل",
+    "خطوات مرقمة",
+    "لوحات زيتية"
+  ],
+  "difficulty": 3,
+  "duration_s": 59,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/pm-imthatcarlos-e04bfe/BRIEF.md"
 }

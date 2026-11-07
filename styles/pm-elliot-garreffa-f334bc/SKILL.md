@@ -1,9 +1,9 @@
 ---
 name: pm-elliot-garreffa-f334bc
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 39-second product promo on white with dotted green gradient blobs: a blue M logo, a two-tone headline, a blue circle expanding to full-screen for three words, then a connector list filling row by row, an Instagram card branching to three capabilities, scattered platform cards snapping into a filtered row, four ecosystems compared on dark green, and a daily-email sign-up end card. Use to make a new video in this look (Product UI); address it by ID pm-elliot-garreffa-f334bc.
 ---
 
-# KOSIF TOOL — Muse connector tracker promo
+# KOSIF TOOL — Muse connector tracker promo / إعلان أداة تتبع موصلات الذكاء الاصطناعي بأزرق نقي وبطاقات بيضاء
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/elliot-garreffa-f334bc
@@ -17,13 +17,20 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان منتج مدته 39 ثانية على خلفية بيضاء بتدرجات خضراء منقطة: شعار حرف M أزرق، عنوان بلونين، دائرة زرقاء تتمدد لتملأ الشاشة بثلاث كلمات، ثم قائمة موصلات تمتلئ صفاً صفاً، بطاقة إنستغرام تتفرع إلى ثلاث قدرات، بطاقات منصات متناثرة تصطف بعد البحث، مقارنة أربع منظومات على أخضر داكن، وختام بزر اشتراك يومي.
+
+A 39-second product promo on white with dotted green gradient blobs: a blue M logo, a two-tone headline, a blue circle expanding to full-screen for three words, then a connector list filling row by row, an Instagram card branching to three capabilities, scattered platform cards snapping into a filtered row, four ecosystems compared on dark green, and a daily-email sign-up end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG), suggested duration (39 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك.
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)

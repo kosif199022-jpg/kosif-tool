@@ -1,7 +1,7 @@
 {
   "id": "product",
   "name": "إعلان إطلاق منتج",
-  "name_ar": "إعلان إطلاق منتج",
+  "name_ar": "إعلان إطلاق منتج رقمي بواجهات عائمة",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,31 @@
   "playbooks": [
     "playbooks/ads.md",
     "playbooks/product-ui.md"
-  ]
+  ],
+  "summary_ar": "إعلان إطلاق منتج رقمي بالعربية: كلمات ضخمة بيضاء تظهر واحدة تلو الأخرى على خلفية شبه سوداء بتوهج بنفسجي برتقالي من الأسفل، شريط إدخال متوهج يُكتب فيه طلب، شاشة التطبيق تطير بميل ثلاثي الأبعاد، مقاطع فاتحة بكبسولات، جدار بطاقات، وبطاقة ختام بالشعار.",
+  "summary_en": "An Arabic launch film for a digital product: huge white words appear one at a time on near-black with a violet-orange glow rising from the bottom, a glowing prompt bar types a request, the app dashboard flies in tilted in 3D, light interludes use soft pill buttons, a wall of style cards floats past and a logo end card closes.",
+  "keywords": [
+    "product launch",
+    "launch film",
+    "app ad",
+    "prompt bar",
+    "3d tilt dashboard",
+    "big words",
+    "glow gradient",
+    "إعلان إطلاق",
+    "إطلاق منتج",
+    "إعلان تطبيق",
+    "كلمات ضخمة",
+    "توهج بنفسجي",
+    "واجهة المنتج",
+    "عرض منتج"
+  ],
+  "difficulty": 3,
+  "duration_s": 40,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/product/BRIEF.md"
 }

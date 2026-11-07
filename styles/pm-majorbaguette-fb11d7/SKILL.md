@@ -1,9 +1,9 @@
 ---
 name: pm-majorbaguette-fb11d7
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 30-second product walkthrough on charcoal with a lime accent: a question and a highlighter-boxed answer, then three numbered steps; a chat window where a typed request triggers tool calls that create and publish a form and return its link, a white form filled field by field ending on a thank-you check, a chat that summarises responses as bullets, then a logo, tagline and URL pill end card. Use to make a new video in this look (Product UI); address it by ID pm-majorbaguette-fb11d7.
 ---
 
-# KOSIF TOOL — Brieform product presentation
+# KOSIF TOOL — Brieform product presentation / عرض منتج نماذج عبر الذكاء الاصطناعي بثلاث خطوات
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/majorbaguette-fb11d7
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #129
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+عرض منتج مدته 30 ثانية على خلفية فحمية بلمسة ليمونية: سؤال وعنوان مُظلل بالأصفر، ثم ثلاث خطوات مرقمة؛ نافذة دردشة يُكتب فيها طلب ويستدعي الذكاء الاصطناعي أدوات إنشاء ونشر نموذج ورابطه، صفحة نموذج بيضاء يملؤها مؤشر وتظهر رسالة شكر، ودردشة تلخص الردود في نقاط، ثم بطاقة الشعار والرابط.
+
+A 30-second product walkthrough on charcoal with a lime accent: a question and a highlighter-boxed answer, then three numbered steps; a chat window where a typed request triggers tool calls that create and publish a form and return its link, a white form filled field by field ending on a thank-you check, a chat that summarises responses as bullets, then a logo, tagline and URL pill end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (30 s), aspect 16:9, difficulty 2/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Product UI / واجهات المنتج.

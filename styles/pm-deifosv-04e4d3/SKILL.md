@@ -1,6 +1,6 @@
 ---
 name: pm-deifosv-04e4d3
-description: A 30-second launch trailer for a browser 3D tennis game: dimmed top-down gameplay under huge condensed headlines, opening with live stat counters (games played, hours on court) and a LIVE pill, then 'no download, no install, no sign-up' on slanted highlighter bars, a phone mock-up running the game with device chips, a court roll call with city names, a wireframe globe with player dots and arcs, and an end card with app icon and URL pill.
+description: A 30-second launch trailer for a browser 3D tennis game: dimmed top-down gameplay under huge condensed headlines, opening with live stat counters (games played, hours on court) and a LIVE pill, then 'no download, no install, no sign-up' on slanted highlighter bars, a phone mock-up running the game with device chips, a court roll call with city names, a wireframe globe with player dots and arcs, and an end card with app icon and URL pill. Use to make a new video in this look (Product UI); address it by ID pm-deifosv-04e4d3.
 ---
 
 # KOSIF TOOL — Tennis game launch video / إطلاق لعبة تنس بإحصاءات حية

@@ -1,9 +1,9 @@
 ---
 name: pm-jayscambler-3f8889
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: An 18.5-second product overview: a mint particle ring on black collapses into a pixel heart, the name decodes from random symbols, then light and dark scenes alternate: landing page click, a backing panel, '$25 to 2,474 credits' through a glowing chip, code wired to a model list, a dashboard, a screenshot wall and a cream end card. Use to make a new video in this look (Product UI); address it by ID pm-jayscambler-3f8889.
 ---
 
-# KOSIF TOOL — FundMyCompute platform overview
+# KOSIF TOOL — FundMyCompute platform overview / نظرة سريعة على منصة تمويل الحوسبة بلون أخضر نعناعي
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/jayscambler-3f8889
@@ -17,11 +17,22 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو منتج مدته 18.5 ثانية يبدأ بحلقة جسيمات خضراء على الأسود تنقبض إلى قلب بكسلي، والاسم يتشكل من رموز عشوائية، ثم صفحة الهبوط الفاتحة بعنوان كلمته المائلة خضراء، نقرة زر، لوحة دعم داكنة بمبالغ، تحويل «$25 ← 2,474 credits» عبر شريحة متوهجة، محرر كود موصول بقائمة نماذج، لوحة تحكم، جدار لقطات شاشة مائل، وبطاقة ختام كريمية بمربع أخضر.
+
+An 18.5-second product overview: a mint particle ring on black collapses into a pixel heart, the name decodes from random symbols, then light and dark scenes alternate: landing page click, a backing panel, '$25 to 2,474 credits' through a glowing chip, code wired to a model list, a dashboard, a screenshot wall and a cream end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, HTML Canvas), suggested duration (18.5 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية.
+Categories: Product UI / واجهات المنتج, Code / كود, Charts / رسوم بيانية.
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/code.md](../../playbooks/code.md)
 - [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)

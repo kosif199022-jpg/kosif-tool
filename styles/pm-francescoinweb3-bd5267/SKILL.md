@@ -1,9 +1,9 @@
 ---
 name: pm-francescoinweb3-bd5267
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second 4:5 engineering-drawing explainer: a big central gear labelled with the final video file, ringed by five smaller spirograph-lined gears (reference, data, story, motion, direct) that turn orange in turn and add an arc to the main dial, above a six-panel live dashboard (log, gauges, code, file track, easing curve, a match score rising 0.78 to 0.91), ending on an 'approved' state. Use to make a new video in this look (Diagrams); address it by ID pm-francescoinweb3-bd5267.
 ---
 
-# KOSIF TOOL — Step-by-step video pipeline with Lottie
+# KOSIF TOOL — Step-by-step video pipeline with Lottie / تروس هندسية تشرح خطوات صناعة فيديو مع لوحة تحكم حية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/francescoinweb3-bd5267
@@ -18,16 +18,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو عمودي 4:5 مدته 15 ثانية بأسلوب رسم هندسي: ترس كبير مركزي مكتوب عليه الملف النهائي تحيط به خمسة تروس أصغر (مرجع، بيانات، قصة، حركة، إخراج) مرسومة بخطوط سبيروغراف دقيقة، كل ترس يتلون بالبرتقالي حين يأتي دوره ويضيف قوساً على الترس الكبير، وتحتها لوحة تحكم من ستة ألواح (سجل، مقاييس، كود، ملفات، منحنى توقيت، نسبة تطابق ترتفع من 0.78 إلى 0.91) وتنتهي بختم «تمت الموافقة».
+
+A 15-second 4:5 engineering-drawing explainer: a big central gear labelled with the final video file, ringed by five smaller spirograph-lined gears (reference, data, story, motion, direct) that turn orange in turn and add an arc to the main dial, above a six-panel live dashboard (log, gauges, code, file track, easing curve, a match score rising 0.78 to 0.91), ending on an 'approved' state.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 4:5, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Shapes / أشكال.
-- [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Diagrams / مخططات, Shapes / أشكال, Charts / رسوم بيانية.
+- [playbooks/diagrams.md](../../playbooks/diagrams.md)
 - [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
-* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
 * Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,12 +1,13 @@
 {
   "id": "pm-thilina-a-891c09",
   "name": "sweetRegret app update reel",
-  "name_ar": null,
+  "name_ar": "ريل تحديث تطبيق حلويات بشخصيات لطيفة وألوان شوكولاتة ووردي",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
-    "charts"
+    "phone",
+    "characters"
   ],
   "creator": "@thilina_a",
   "creator_url": "https://x.com/thilina_a/status/2104455320424915273",
@@ -28,6 +29,34 @@
   "skill": "styles/pm-thilina-a-891c09/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md"
-  ]
+    "playbooks/phone.md",
+    "playbooks/characters.md"
+  ],
+  "summary_ar": "ريل عمودي مدته 25 ثانية لتحديث تطبيق تتبع الحلويات، يتبدل بين خلفية كريمية وبنية داكنة ووردية: كوكيز مقضومة تصبح شعاراً، شارة «جديد في» وعنوان بسطرين (أسود ثم وردي)، بطاقات حلويات كرتونية بوجوه مبتسمة، مفتاح وضع داكن، قطع شوكولاتة غاضبة تتكدس فوق خط متقطع، برطمان يمتلئ، أشعة وردية تكشف رقم الإصدار، هاتف يلتهم شريط التبويب، قائمة تُعاد ترتيبها بالسحب، بطاقة ملخص أسبوعي بعدد صاعد، وختام بالشخصية وزر تحديث.",
+  "summary_en": "A 25-second vertical app-update reel switching cream, chocolate and pink: a bitten cookie logo, two-line headlines (dark then pink), cute faced treat tiles, a dark-mode toggle, grumpy chocolates stacking past a limit line, a filling jar, a sunburst version reveal, an eaten tab bar, a drag-reorder list, a weekly recap count-up and a mascot end card.",
+  "keywords": [
+    "app update",
+    "vertical reel",
+    "cute characters",
+    "sticker UI",
+    "rounded type",
+    "feature reel",
+    "dark mode toggle",
+    "counter",
+    "تحديث تطبيق",
+    "ريل عمودي",
+    "شخصيات لطيفة",
+    "حلويات",
+    "مزايا جديدة",
+    "واجهة ملصقات"
+  ],
+  "difficulty": 4,
+  "duration_s": 25,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/pm-thilina-a-891c09/BRIEF.md"
 }

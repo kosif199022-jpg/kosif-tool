@@ -1,9 +1,9 @@
 ---
 name: pm-parkerrex-1a54fe
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A silent 18-second square terminal-style diagram of a token-bucket rate limiter: a ten-slot blue bucket beside a huge remaining-token number and a scrolling request log (green 'taken', red 'refused'), above a step chart tracing bucket level with request ticks on a 12 s axis, through four phases: steady traffic, a burst that drains it, refusals until refill, then recovery and the takeaway. Use to make a new video in this look (Diagrams); address it by ID pm-parkerrex-1a54fe.
 ---
 
-# KOSIF TOOL — Token bucket rate limiter
+# KOSIF TOOL — Token bucket rate limiter / شرح محدد المعدل بدلو الرموز بلوحة طرفية حية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/parkerrex-1a54fe
@@ -18,12 +18,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+مخطط مربع صامت مدته 18 ثانية بأسلوب الطرفية الداكنة يشرح محدد المعدل بدلو الرموز: دلو من عشر خانات زرقاء بجانب رقم ضخم للرموز المتبقية وسجل طلبات يتدحرج (مأخوذ بالأخضر، مرفوض بالأحمر)، ومخطط درجات أسفلها يرسم مستوى الدلو مع علامات الطلبات على خط زمني 12 ثانية، عبر أربع مراحل: حركة ثابتة، اندفاع يفرغه، رفض حتى يمتلئ، ثم تعافٍ وخلاصة.
+
+A silent 18-second square terminal-style diagram of a token-bucket rate limiter: a ten-slot blue bucket beside a huge remaining-token number and a scrolling request log (green 'taken', red 'refused'), above a step chart tracing bucket level with request ticks on a 12 s axis, through four phases: steady traffic, a burst that drains it, refusals until refill, then recovery and the takeaway.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, React), suggested duration (18 s), aspect 1:1, difficulty 2/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Diagrams / مخططات.
+Categories: Diagrams / مخططات, Charts / رسوم بيانية, Code / كود.
 - [playbooks/diagrams.md](../../playbooks/diagrams.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
 * Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,10 +1,11 @@
 {
   "id": "pm-moguzbulbul-6311b6",
   "name": "UX decision explainer animation",
-  "name_ar": null,
+  "name_ar": "شرح قرارات تصميم واجهة بمخطط هندسي شفاف",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
+    "product-ui",
     "diagrams"
   ],
   "creator": "@moguzbulbul",
@@ -26,6 +27,34 @@
   "listed": true,
   "skill": "styles/pm-moguzbulbul-6311b6/SKILL.md",
   "playbooks": [
+    "playbooks/product-ui.md",
     "playbooks/diagrams.md"
-  ]
+  ],
+  "summary_ar": "شرح هادئ مدته 42 ثانية لإعادة تصميم صفحة سجل عميل في نظام إدارة علاقات: الصفحة الأصلية الرمادية تتحول إلى مخطط هندسي بخطوط سماوية وتعليقات قياس، ثم تعود معدّلة؛ خمسة مبادئ مرقمة (إجراء أساسي واحد، إخفاء الفراغ، العمل المفتوح أولاً، خط زمني واحد، الفعل في سياقه) بتعليق سفلي قصير لكل خطوة، حتى تكتمل الصفحة بلوحة رد جانبية.",
+  "summary_en": "A calm 42-second explainer of a CRM record-page redesign on off-white: the grey original dissolves into a cyan blueprint wireframe with measurement callouts, then returns improved, across five numbered principles (one primary action, hide absence, open work first, one timeline, act in context), each with a short caption, until the page ends with a side reply panel.",
+  "keywords": [
+    "ux explainer",
+    "ui redesign",
+    "blueprint",
+    "wireframe",
+    "crm",
+    "design principles",
+    "before after",
+    "saas",
+    "شرح تجربة المستخدم",
+    "إعادة تصميم",
+    "مخطط هندسي",
+    "قبل وبعد",
+    "مبادئ التصميم",
+    "واجهة"
+  ],
+  "difficulty": 3,
+  "duration_s": 42,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "SVG"
+  ],
+  "brief": "styles/pm-moguzbulbul-6311b6/BRIEF.md"
 }

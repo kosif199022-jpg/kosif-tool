@@ -1,9 +1,9 @@
 ---
 name: pm-bonsaixbt-7e98df
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 20-second 4:5 vertical piece in deep violet: a fixed two-tone headline, a huge frame counter climbing to 600, a five-item pipeline checklist ticking green, a terminal at the bottom typing commands, and in the centre a neon tunnel of nested rectangles from which a UI card emerges, gets clicked and exports, then a looping workflow ring, ending on a '20 s = 600 frames' card. Use to make a new video in this look (Kinetic type); address it by ID pm-bonsaixbt-7e98df.
 ---
 
-# KOSIF TOOL — Frame-accurate edits with Remotion
+# KOSIF TOOL — Frame-accurate edits with Remotion / شرح التحرير بدقة الإطار داخل نفق إطارات
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/bonsaixbt-7e98df
@@ -18,14 +18,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+مقطع عمودي 4:5 مدته 20 ثانية بالبنفسجي الداكن: عنوان ثابت أعلاه وعداد إطارات ضخم يصعد من 0 إلى 600، قائمة خطوات من خمسة بنود تُعلَّم بالأخضر، طرفية أسفل تُكتب فيها أوامر، وفي الوسط نفق مستطيلات نيون بنفسجية تخرج منه بطاقة واجهة تُضغط وتصدّر، ثم حلقة خطوات العمل، وينتهي بـ«20 ثانية = 600 إطار».
+
+A 20-second 4:5 vertical piece in deep violet: a fixed two-tone headline, a huge frame counter climbing to 600, a five-item pipeline checklist ticking green, a terminal at the bottom typing commands, and in the centre a neon tunnel of nested rectangles from which a UI card emerges, gets clicked and exports, then a looping workflow ring, ending on a '20 s = 600 frames' card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG), suggested duration (20 s), aspect 4:5, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك, Code / كود.
+Categories: Kinetic type / تايبوغرافي متحرك, Code / كود, Product UI / واجهات المنتج.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 - [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

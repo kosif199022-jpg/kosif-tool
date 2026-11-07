@@ -1,9 +1,9 @@
 ---
 name: pm-ezshine-c90d73
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 65-second promo on near-black navy with faint stars: app icon and name, then seven numbered sections under bold Chinese headlines in white and gold: model card grid, game card carousel, JSON fanning out to models, a gomoku board beside thinking bubbles, match log, seat picker, laptop and phone, and a gold URL end card. Use to make a new video in this look (Product UI); address it by ID pm-ezshine-c90d73.
 ---
 
-# KOSIF TOOL — AI Arena product promo
+# KOSIF TOOL — AI Arena product promo / فيديو ترويجي داكن لساحة تتنافس فيها نماذج الذكاء الاصطناعي في الألعاب
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/ezshine-c90d73
@@ -17,14 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو ترويجي مدته نحو 65 ثانية على خلفية كحلية شبه سوداء بنجوم خافتة: أيقونة التطبيق والاسم، ثم سبعة أقسام مرقمة بعنوان صيني عريض نصفه أبيض ونصفه ذهبي: شبكة بطاقات لـ11 نموذجاً، شريط دوّار لبطاقات سبع ألعاب، كود JSON تتفرع منه خطوط إلى النماذج، رقعة غوموكو تتقدم بجانب فقاعات تفكير، سجل مباريات بتقرير PDF وفيديو، اختيار اللاعبين، وحاسوب وهاتف، ثم بطاقة ختام بزر رابط ذهبي.
+
+A 65-second promo on near-black navy with faint stars: app icon and name, then seven numbered sections under bold Chinese headlines in white and gold: model card grid, game card carousel, JSON fanning out to models, a gomoku board beside thinking bubbles, match log, seat picker, laptop and phone, and a gold URL end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG), suggested duration (65 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Characters / شخصيات.
+Categories: Product UI / واجهات المنتج, Phone / هاتف.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/phone.md](../../playbooks/phone.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

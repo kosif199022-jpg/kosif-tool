@@ -1,9 +1,9 @@
 ---
 name: pm-theparuchh-6e08c3
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 38-second letterboxed teaser for a fictional game, built in code: a dusky 3D world of rock spires, broken columns and floating islands over a still sea under a black sun with a glowing ring and a tiny red-cloaked traveller, then the world goes dark, the ring is revealed as a winged mechanical creature, and a tracked title card ends it. Use to make a new video in this look (3D); address it by ID pm-theparuchh-6e08c3.
 ---
 
-# KOSIF TOOL — 38-second fictional game trailer built entirely in code
+# KOSIF TOOL — 38-second fictional game trailer built entirely in code / إعلان لعبة خيالية: شمس منطفئة وتنين ميكانيكي
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/theparuchh-6e08c3
@@ -18,26 +18,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان تشويقي مدته 38 ثانية للعبة خيالية مبني بالكامل بالكود بإطار سينمائي عريض: منظر ثلاثي الأبعاد بلون الغسق لصخور شاهقة وأعمدة وأقواس مهدمة وجزر طائرة فوق بحر ساكن، تتوسطه شمس سوداء بحلقة ضوء رقيقة، ومسافر صغير بعباءة حمراء، ثم يغرق المكان في الظلام ويظهر أن الحلقة تنين ميكانيكي بأجنحة، وينتهي ببطاقة اسم بحروف متباعدة.
+
+A 38-second letterboxed teaser for a fictional game, built in code: a dusky 3D world of rock spires, broken columns and floating islands over a still sea under a black sun with a glowing ring and a tiny red-cloaked traveller, then the world goes dark, the ring is revealed as a winged mechanical creature, and a tracked title card ends it.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, React, Remotion), suggested duration (38 s), aspect 16:9, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, Characters / شخصيات, Photos / صور, Music / موسيقى, Code / كود.
-- [playbooks/diagrams.md](../../playbooks/diagrams.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/shapes.md](../../playbooks/shapes.md)
+Categories: 3D / ثلاثي الأبعاد, Particles / جسيمات, Characters / شخصيات.
+- [playbooks/3d.md](../../playbooks/3d.md)
 - [playbooks/particles.md](../../playbooks/particles.md)
 - [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/photos.md](../../playbooks/photos.md)
-- [playbooks/music.md](../../playbooks/music.md)
-- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
-* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 * Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 * Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

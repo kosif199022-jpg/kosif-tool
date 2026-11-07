@@ -1,13 +1,14 @@
 {
   "id": "pm-ajith-io-b5626e",
   "name": "Abstract motion design reel",
-  "name_ar": null,
+  "name_ar": "شوريل موشن تجريدي: نقاط وأشكال بمقابض تحويل وجسيمات وحبل وحلقات نصية",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
+    "shapes",
+    "particles",
     "kinetic-type",
-    "shapes"
+    "3d"
   ],
   "creator": "@ajith_io",
   "creator_url": "https://x.com/ajith_io/status/2103449416325890146",
@@ -28,8 +29,38 @@
   "listed": true,
   "skill": "styles/pm-ajith-io-b5626e/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
     "playbooks/kinetic-type.md",
-    "playbooks/shapes.md"
-  ]
+    "playbooks/3d.md"
+  ],
+  "summary_ar": "شوريل تجريدي مدته 15 ثانية بإطار واجهة يعرض الإيقاع: نقطة حمراء على الأسود تنقسم إلى حلقة نقاط، عنوان أسود ثقيل على أحمر يتراكم كلمة كلمة مع أقواس تحديد، دائرة حمراء داخل صندوق تحويل بمقابض تتحول إلى مربع أزرق ثم زهرة، شبكة نقاط كريمية تنبعج كعدسة، جسيمات بيضاء على الأزرق تتحول من رأس إلى طوق إلى مكعب سلكي، حبل مخطط يعقد عقدة على الأصفر، شرائط كلمات تلتف إلى حلقات دوارة، وختام باسم بخط مزخرف.",
+  "summary_en": "A 15-second abstract reel with a bar-counter HUD: a red dot splitting into a ring, a black headline stacking on red inside selection brackets, a shape morphing in a rotating transform box, a lens-warped dot grid, particles on blue turning into a wireframe cube, a striped rope tying a knot on yellow, spinning text rings, and a serif wordmark end card.",
+  "keywords": [
+    "abstract reel",
+    "motion showreel",
+    "transform handles",
+    "shape morph",
+    "dot grid lens",
+    "3D particles",
+    "rope knot",
+    "text rings",
+    "bar counter",
+    "شوريل تجريدي",
+    "تحول أشكال",
+    "شبكة نقاط",
+    "جسيمات ثلاثية الأبعاد",
+    "حلقات نصية",
+    "إيقاع"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "HTML Canvas",
+    "Three.js"
+  ],
+  "brief": "styles/pm-ajith-io-b5626e/BRIEF.md"
 }

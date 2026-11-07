@@ -1,11 +1,13 @@
 {
   "id": "pm-gorden-sun-041f56",
   "name": "Beat-synced bouncing 3D ball",
-  "name_ar": null,
+  "name_ar": "كرة ثلاثية الأبعاد تقفز على الإيقاع فوق فطر مضيء في كهف",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "music"
+    "music",
+    "3d",
+    "characters"
   ],
   "creator": "@Gorden_Sun",
   "creator_url": "https://x.com/Gorden_Sun/status/2105302007896797351",
@@ -28,6 +30,35 @@
   "listed": true,
   "skill": "styles/pm-gorden-sun-041f56/SKILL.md",
   "playbooks": [
-    "playbooks/music.md"
-  ]
+    "playbooks/music.md",
+    "playbooks/3d.md",
+    "playbooks/characters.md"
+  ],
+  "summary_ar": "مقطع موسيقي مدته دقيقة تقريباً بأسلوب ثلاثي الأبعاد منخفض المضلعات: كرة برتقالية بوجه وخوذة بمصباح تقفز من قبعة فطر مضيئة إلى أخرى على طول مسار في كهف أحمر داكن فوق بحيرة حمم، وكل هبوط يطلق حلقة ضوء ملونة وشرارات، مع فقاعات كلام قصيرة وبطاقة عنوان للمقطوعة، والإيقاع يتسارع حتى الختام.",
+  "summary_en": "A roughly one-minute low-poly 3D music piece: an orange ball character with a face and a headlamp hard hat hops from one glowing mushroom cap to the next along a winding path in a dark red cave over cracked lava, every landing firing a coloured light ring and sparks, with short speech bubbles and a piece-title lower third, accelerating toward the end.",
+  "keywords": [
+    "music visualizer",
+    "beat sync",
+    "bouncing ball",
+    "low poly",
+    "3D cave",
+    "glowing mushrooms",
+    "light rings",
+    "character",
+    "مزامنة الإيقاع",
+    "كرة تقفز",
+    "موسيقى",
+    "ثلاثي الأبعاد",
+    "فطر مضيء",
+    "كهف"
+  ],
+  "difficulty": 5,
+  "duration_s": 59,
+  "stack": [
+    "Three.js",
+    "WebGL",
+    "Web Audio",
+    "React"
+  ],
+  "brief": "styles/pm-gorden-sun-041f56/BRIEF.md"
 }

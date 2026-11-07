@@ -1,7 +1,7 @@
 {
   "id": "brutalist",
   "name": "بروتالي",
-  "name_ar": "بروتالي",
+  "name_ar": "تايبوغرافي بروتالي خام بقطعات حادة",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -24,5 +24,30 @@
   "skill": "styles/brutalist/SKILL.md",
   "playbooks": [
     "playbooks/kinetic-type.md"
-  ]
+  ],
+  "summary_ar": "تصميم بروتالي خام: كلمات ضخمة سوداء ثقيلة تملأ الكادر على خلفية بيضاء أو صفراء، شبكة ظاهرة وأرقام وأسهم، قطع حاد بلا تسهيل على كل نبضة، أشرطة حمراء وأختام وصور أبيض وأسود عالية التباين.",
+  "summary_en": "Raw brutalist type: huge heavy black words fill the frame on white or signal yellow, visible grid lines, index numbers and arrows, hard cuts with no easing on every beat, red bars, rubber-stamp labels and high-contrast black-and-white photos slammed in and out.",
+  "keywords": [
+    "brutalist",
+    "brutalism",
+    "bold typography",
+    "hard cuts",
+    "grid",
+    "manifesto",
+    "high contrast",
+    "بروتالي",
+    "تايبوغرافي جريء",
+    "قطع حاد",
+    "خط ضخم",
+    "تباين عالٍ",
+    "بيان"
+  ],
+  "difficulty": 2,
+  "duration_s": 28,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/brutalist/BRIEF.md"
 }

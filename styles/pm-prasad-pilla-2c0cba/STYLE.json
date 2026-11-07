@@ -1,11 +1,13 @@
 {
   "id": "pm-prasad-pilla-2c0cba",
   "name": "Alan agent platform promo",
-  "name_ar": null,
+  "name_ar": "إعلان منصة وكلاء برمجة بواجهة بيضاء هادئة ولمسات ليمونية",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts"
+    "product-ui",
+    "diagrams",
+    "kinetic-type"
   ],
   "creator": "@prasad_pilla",
   "creator_url": "https://x.com/prasad_pilla/status/2103728953785496049",
@@ -26,6 +28,35 @@
   "listed": true,
   "skill": "styles/pm-prasad-pilla-2c0cba/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
-  ]
+    "playbooks/product-ui.md",
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md"
+  ],
+  "summary_ar": "إعلان منتج مدته 15 ثانية على خلفية بيضاء رمادية ناعمة: عنوان أسود يكشف كلماته تدريجياً مع كلمة مظللة بالليموني فوق خط متقطع يختنق عند ساعة رملية، ثم شعار، ثم أربع بطاقات خطوات متصلة (تخطيط، بناء، تحقق، شحن) تضيء بالتتابع، ومسح ليموني كامل، ولوحتان جنباً إلى جنب لعقدة ذاكرة وقائمة مهام بأشرطة تقدم، وحلقة تحقق مقابل مقارنة قبل وبعد، وختام بالشعار وعنوان مسطّر ورابط.",
+  "summary_en": "A 15-second product promo on soft off-white: a black word-by-word headline with a lime-highlighted word over a dashed line jamming at an hourglass, a logo, four linked step cards lighting up in turn, a full lime wipe, a memory hub beside agent task bars, a verification loop beside a before/after strip, and a logo end card with underlined tagline.",
+  "keywords": [
+    "product promo",
+    "agent platform",
+    "developer tool",
+    "word by word reveal",
+    "lime accent",
+    "step cards",
+    "progress bars",
+    "clean UI",
+    "إعلان منتج",
+    "وكلاء برمجة",
+    "واجهة نظيفة",
+    "كشف كلمة كلمة",
+    "مخطط خطوات",
+    "لون ليموني"
+  ],
+  "difficulty": 3,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "CSS"
+  ],
+  "brief": "styles/pm-prasad-pilla-2c0cba/BRIEF.md"
 }

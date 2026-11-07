@@ -1,9 +1,9 @@
 ---
 name: pm-stefan-3d-ai-c5f9fd
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A silent ~77-second showcase of a cartoon-fantasy MMORPG: a split-screen opener, a character creator cycling races and classes beside a parchment panel, over-the-shoulder gameplay in wheat fields, a graveyard and a town square, then Unity editor and AI-terminal captures, crude low-poly prototypes, and a closing grid of overhead world maps. Use to make a new video in this look (3D); address it by ID pm-stefan-3d-ai-c5f9fd.
 ---
 
-# KOSIF TOOL — Old-school MMORPG built with Opus 5.5
+# KOSIF TOOL — Old-school MMORPG built with Opus 5.5 / عرض لعبة MMORPG كلاسيكية: من اختيار الشخصية إلى كواليس البناء
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/stefan-3d-ai-c5f9fd
@@ -17,15 +17,20 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيلم عرض مدته نحو 77 ثانية بلا صوت للعبة تقمص أدوار جماعية بأسلوب فانتازي كرتوني ملون: يبدأ بشاشة منقسمة بين منصة اختيار الشخصية وعالم اللعب، ثم شاشة إنشاء الشخصية تتنقل بين الأعراق والفئات مع لوحة رقّ وصفية، ثم لقطات لعب بكاميرا خلف الكتف في حقول قمح ومقبرة ليلية وساحة مدينة بنافورة سحرية، ثم لقطات من محرر Unity وطرفية الذكاء الاصطناعي، ونسخ بدائية مبكرة منخفضة المضلعات، وأخيراً شبكة خرائط علوية للعالم.
+
+A silent ~77-second showcase of a cartoon-fantasy MMORPG: a split-screen opener, a character creator cycling races and classes beside a parchment panel, over-the-shoulder gameplay in wheat fields, a graveyard and a town square, then Unity editor and AI-terminal captures, crude low-poly prototypes, and a closing grid of overhead world maps.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React), suggested duration (77 s), aspect 16:9, difficulty 2/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Photos / صور, Music / موسيقى, Code / كود.
-- [playbooks/photos.md](../../playbooks/photos.md)
-- [playbooks/music.md](../../playbooks/music.md)
+Categories: 3D / ثلاثي الأبعاد, Code / كود.
+- [playbooks/3d.md](../../playbooks/3d.md)
 - [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
-* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 * Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)

@@ -1,9 +1,9 @@
 ---
 name: higgsfield-journey
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A vertical reel that feels like one continuous flying-camera trip: the camera dives through a window, door or cloud into each new place, every location an AI-generated shot or a depth-layered photo, with seamless fly-through transitions and a short Arabic title at each stop. Use to make a new video in this look (3D); address it by ID higgsfield-journey.
 ---
 
-# KOSIF TOOL — جولة سينمائية
+# KOSIF TOOL — جولة سينمائية / جولة سينمائية بكاميرا تطير عبر مشاهد متصلة بلا قطع
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي يبدو كرحلة كاميرا طائرة واحدة: الكاميرا تندفع عبر نافذة أو باب أو سحابة إلى مكان جديد، كل مشهد مولد بالذكاء الاصطناعي أو صورة واقعية بعمق، والانتقالات «عبور» مستمرة بلا قطع، مع عناوين عربية قليلة تظهر في كل محطة.
+
+A vertical reel that feels like one continuous flying-camera trip: the camera dives through a window, door or cloud into each new place, every location an AI-generated shot or a depth-layered photo, with seamless fly-through transitions and a short Arabic title at each stop.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, WebGL), suggested duration (30 s), aspect 9:16, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: 3D / ثلاثي الأبعاد, Photos / صور.

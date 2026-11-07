@@ -1,9 +1,9 @@
 ---
 name: pm-ndhabarde11-f155b4
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A fast 15-second vertical motion-designer reel in seven numbered chapters inside a timecoded HUD: an italic greeting over a heavy name, kinetic words with orange offset shadows, a shape grid rippling on electric blue, particles forming a word, sphere and knot, glossy shader blobs over marquee type, a UI card with a counting percentage, and an end card with skill tags. Use to make a new video in this look (Kinetic type); address it by ID pm-ndhabarde11-f155b4.
 ---
 
-# KOSIF TOOL — Motion designer portrait showreel
+# KOSIF TOOL — Motion designer portrait showreel / ريل عمودي لمصمم موشن من سبعة فصول: خطوط حركية وأشكال وجسيمات وشيدر
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/ndhabarde11-f155b4
@@ -17,14 +17,27 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+ريل عمودي سريع (15 ثانية) لمصمم موشن مقسوم إلى سبعة فصول مرقمة بإطار واجهة قياس وتوقيت: تحية بخط إيطالي وعنوان عريض، كلمات حركية بظلال برتقالية، شبكة أشكال تتحول بموجة على أزرق كهربائي، جسيمات تكوّن كلمة وكرة وعقدة، كرات زجاجية سائلة أمام نص شريطي، بطاقة واجهة بنسبة تعدّ وزر توظيف، ثم بطاقة اسم ختامية بوسوم المهارات.
+
+A fast 15-second vertical motion-designer reel in seven numbered chapters inside a timecoded HUD: an italic greeting over a heavy name, kinetic words with orange offset shadows, a shape grid rippling on electric blue, particles forming a word, sphere and knot, glossy shader blobs over marquee type, a UI card with a counting percentage, and an end card with skill tags.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, HTML Canvas, WebGL, Three.js), suggested duration (15 s), aspect 9:16, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, 3D / ثلاثي الأبعاد, Product UI / واجهات المنتج.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

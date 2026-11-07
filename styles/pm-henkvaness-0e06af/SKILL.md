@@ -1,9 +1,9 @@
 ---
 name: pm-henkvaness-0e06af
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 5.5 min editorial-magazine explainer on warm beige paper: thin serif numbers and headlines, simple line drawings, then eight chapters each opening on a huge outlined numeral with a red icon, followed by dark prompt cards with red-highlighted words set against better prompts, ending on a rules list and a green percentage bar. Use to make a new video in this look (Kinetic type); address it by ID pm-henkvaness-0e06af.
 ---
 
-# KOSIF TOOL — Prompting mistakes video tutorial
+# KOSIF TOOL — Prompting mistakes video tutorial / درس فيديو عن أخطاء كتابة الطلبات بأسلوب مجلة تحريرية هادئة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/henkvaness-0e06af
@@ -17,12 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شرح طويل (نحو 5 دقائق ونصف) على ورق بيج دافئ بأسلوب مجلة: أرقام وعناوين بخط سيريف رفيع، رسوم خطية بسيطة (طابعة تُخرج أوراقاً، صناديق دردشة)، ثم ثمانية فصول مرقمة 01-08 لكل منها رقم ضخم مفرّغ وأيقونة حمراء وعنوان، تتبعها مقارنة بين ما يكتبه الناس بطاقات داكنة بكلمات مظللة بالأحمر وما يجب كتابته، وتنتهي بقائمة قواعد وشريط نسبة أخضر.
+
+A 5.5 min editorial-magazine explainer on warm beige paper: thin serif numbers and headlines, simple line drawings, then eight chapters each opening on a huge outlined numeral with a red icon, followed by dark prompt cards with red-highlighted words set against better prompts, ending on a rules list and a green percentage bar.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (337 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Characters / شخصيات.
-- [playbooks/characters.md](../../playbooks/characters.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Product UI / واجهات المنتج, Charts / رسوم بيانية.
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

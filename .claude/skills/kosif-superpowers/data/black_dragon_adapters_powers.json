@@ -3449,7 +3449,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/build.py": "959f79d0e53e95a58a07d40954bd1d1c129857f95cf6d59e782743b3a4f96a75"
+        "tools/build.py": "83f74c8f42a3682fa8c1f05d266e824497a4e1dd798028ce84324af903044646"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "TOOL-101: its cited proof code ran green here (tool-runner; 0 tests)"

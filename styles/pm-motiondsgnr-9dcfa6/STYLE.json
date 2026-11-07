@@ -1,12 +1,14 @@
 {
   "id": "pm-motiondsgnr-9dcfa6",
   "name": "Bold typographic motion showreel",
-  "name_ar": null,
+  "name_ar": "شوريل موشن جريء: تسع تقنيات في خمس عشرة ثانية",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "kinetic-type",
+    "particles",
+    "shapes",
+    "charts"
   ],
   "creator": "@motiondsgnr",
   "creator_url": "https://x.com/motiondsgnr/status/2103692944771313960",
@@ -27,7 +29,38 @@
   "listed": true,
   "skill": "styles/pm-motiondsgnr-9dcfa6/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/particles.md",
+    "playbooks/shapes.md",
+    "playbooks/charts.md"
+  ],
+  "summary_ar": "شوريل موشن مدته 15 ثانية مقسم إلى نحو تسعة فصول مرقمة، كل فصل يستعرض تقنية: تايبوغرافي يتمايل، عنوان من ثلاث كلمات على أزرق ملكي، كرة جسيمات تتفكك إلى اسم، أشكال تتحول، سائل لزج على الأصفر، نفق من حلقات نصية تدور، بطاقات بيانات، خطوط موجية متراصة، ثم شبكة تجمع كل اللقطات وشعار متعدد الألوان مع قصاصات هندسية.",
+  "summary_en": "A 15-second motion showreel in nine numbered chapters, each a technique: wobbling type on orange, a slogan on royal blue, a particle sphere becoming a name, morphing shapes, a liquid blob on yellow, a spinning tunnel of text rings, data cards, waveform ridgelines, then a mosaic of every shot and a multicolour logo with geometric confetti.",
+  "keywords": [
+    "motion showreel",
+    "bold typography",
+    "primary colours",
+    "particles",
+    "shape morph",
+    "liquid blob",
+    "text rings tunnel",
+    "data cards",
+    "waveform ridgelines",
+    "شوريل موشن",
+    "تايبوغرافي جريء",
+    "ألوان أساسية",
+    "جسيمات",
+    "تحول الأشكال",
+    "شبكة ختامية"
+  ],
+  "difficulty": 4,
+  "duration_s": 15,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "HTML Canvas",
+    "WebGL"
+  ],
+  "brief": "styles/pm-motiondsgnr-9dcfa6/BRIEF.md"
 }

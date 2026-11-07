@@ -1,12 +1,14 @@
 {
   "id": "pm-vanshwtfff-db0466",
   "name": "Motion designer showreel",
-  "name_ar": null,
+  "name_ar": "شوريل مصمم موشن بأزرق ملكي ومنحنيات تسارع وجسيمات",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "kinetic-type"
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "charts"
   ],
   "creator": "@VanshWTFFF",
   "creator_url": "https://x.com/VanshWTFFF/status/2103644352794992798",
@@ -27,7 +29,37 @@
   "listed": true,
   "skill": "styles/pm-vanshwtfff-db0466/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/charts.md"
+  ],
+  "summary_ar": "شوريل مدته 10 ثوانٍ على أزرق ملكي مع ورق أبيض وأصفر وأحمر: حروف «MOTION» تسقط وترتد فوق صف رسوم منحنيات التسارع، ثم أشكال تقفز بالضغط والمط على خط أرض أبيض، حقل نقاط وخطوط صغيرة على الأصفر يدور كمجال قوى، جسيمات تشكل كلمة «flow» ثم كرة وحلقة دائرية، مخطط أعمدة بعدّاد إطارات، وكلمة «shape» بحد، ثم الاسم بنقطة حمراء وسطر مائل.",
+  "summary_en": "A 10-second royal-blue showreel of one-second motion lessons: 'MOTION' letters bouncing over easing-curve graphs, shapes hopping with squash and stretch, a dash field swirling on yellow, particles forming 'flow' then a sphere and torus, a bar chart with a frame counter, and the name with a red dot.",
+  "keywords": [
+    "showreel",
+    "motion designer",
+    "easing curves",
+    "squash and stretch",
+    "flow field",
+    "particles",
+    "bar chart",
+    "royal blue",
+    "شوريل",
+    "منحنيات التسارع",
+    "ضغط ومط",
+    "جسيمات",
+    "حقل تدفق",
+    "مبادئ الحركة"
+  ],
+  "difficulty": 4,
+  "duration_s": 10,
+  "stack": [
+    "Remotion",
+    "React",
+    "HTML Canvas",
+    "Three.js",
+    "SVG"
+  ],
+  "brief": "styles/pm-vanshwtfff-db0466/BRIEF.md"
 }

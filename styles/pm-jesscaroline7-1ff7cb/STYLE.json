@@ -1,13 +1,15 @@
 {
   "id": "pm-jesscaroline7-1ff7cb",
   "name": "Ondefica app motion reel",
-  "name_ar": null,
+  "name_ar": "ريل تطبيق دليل أماكن: أرقام بالنقاط وغرف متساوية القياس وهواتف",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
     "charts",
-    "kinetic-type"
+    "kinetic-type",
+    "phone",
+    "particles"
   ],
   "creator": "@jesscaroline7",
   "creator_url": "https://x.com/jesscaroline7/status/2104336637752955094",
@@ -30,6 +32,36 @@
   "playbooks": [
     "playbooks/product-ui.md",
     "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
-  ]
+    "playbooks/kinetic-type.md",
+    "playbooks/phone.md",
+    "playbooks/particles.md"
+  ],
+  "summary_ar": "ريل طولي مدته نحو 60 ثانية لتطبيق يقترح أماكن للخروج: يبدأ بشعار سهم أبيض على أسود، ثم أسئلة ضخمة بالأسود على البرتقالي مع رموز تعبيرية، ثم أرقام مكثفة كبيرة تنبني من آلاف النقاط (كرة، شبكة، خريطة بدبابيس، حلقة تقييمات)، ثم غرف ثلاثية الأبعاد متساوية القياس لأيام الأسبوع، ثم شاشات التطبيق داخل هواتف مع خطوط تعليق، وشارات ذهبية ومنصة تتويج، وتنتهي ببطاقة الشعار على البرتقالي.",
+  "summary_en": "A ~60-second vertical reel for a places-to-go app: a white arrow logo on black, then huge black questions on orange with emoji, then big condensed numbers built from thousands of dots (sphere, grid, pinned map, ratings ring), isometric 3D rooms for days of the week, app screens in phones with callout lines, gold badges and a podium, ending on the logo card on orange.",
+  "keywords": [
+    "app reel",
+    "places app",
+    "dot data viz",
+    "particle numbers",
+    "isometric rooms",
+    "phone mockup",
+    "badges",
+    "podium",
+    "orange black",
+    "ريل تطبيق",
+    "دليل أماكن",
+    "أرقام بالنقاط",
+    "غرف متساوية القياس",
+    "شاشات هاتف",
+    "بيانات المجتمع"
+  ],
+  "difficulty": 4,
+  "duration_s": 60,
+  "stack": [
+    "Remotion",
+    "React",
+    "HTML Canvas",
+    "SVG"
+  ],
+  "brief": "styles/pm-jesscaroline7-1ff7cb/BRIEF.md"
 }

@@ -1,14 +1,13 @@
 {
   "id": "pm-dale-vaz-cc612a",
   "name": "Sahi trading terminal reveal",
-  "name_ar": null,
+  "name_ar": "كشف منصة تداول بزوم من البكسل إلى المجرة",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
+    "product-ui",
     "phone",
-    "charts",
-    "photos",
-    "code"
+    "charts"
   ],
   "creator": "@dale_vaz",
   "creator_url": "https://x.com/dale_vaz/status/2103290592679879074",
@@ -29,9 +28,36 @@
   "listed": true,
   "skill": "styles/pm-dale-vaz-cc612a/SKILL.md",
   "playbooks": [
+    "playbooks/product-ui.md",
     "playbooks/phone.md",
-    "playbooks/charts.md",
-    "playbooks/photos.md",
-    "playbooks/code.md"
-  ]
+    "playbooks/charts.md"
+  ],
+  "summary_ar": "فيلم 47 ثانية بأسلوب «قوى العشرة» لمنصة تداول: نقطة ضوء في الظلام تتمدد إلى خط ثم إطار يفتح على شاشة تداول داكنة بالشموع، زوم عميق حتى الشمعة الأخيرة ثم حتى بكسلات الشاشة الملونة، ارتداد عبر جدول الخيارات ومخطط الربح، ثم خروج إلى سماء نجوم تحمل نجمتين باسمَي المنصة والتطبيق، وغوص في هاتف أفقي يُنفّذ أمر شراء ويُختم بالشعار.",
+  "summary_en": "A 47-second 'powers of ten' reveal for a trading platform on near-black: a point of light opens into a dark candlestick terminal, the camera dives into the last candle down to RGB subpixels, pulls back through an option chain and payoff chart, out to a starfield with two labelled stars for the desktop and mobile apps, then into a phone placing a buy order before the logo card.",
+  "keywords": [
+    "trading platform",
+    "powers of ten",
+    "infinite zoom",
+    "candlestick",
+    "option chain",
+    "subpixel",
+    "starfield",
+    "fintech",
+    "product reveal",
+    "منصة تداول",
+    "زوم لا نهائي",
+    "شموع يابانية",
+    "تقنية مالية",
+    "سماء نجوم",
+    "كشف منتج"
+  ],
+  "difficulty": 5,
+  "duration_s": 47,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG",
+    "WebGL"
+  ],
+  "brief": "styles/pm-dale-vaz-cc612a/BRIEF.md"
 }

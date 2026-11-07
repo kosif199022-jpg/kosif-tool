@@ -1,9 +1,9 @@
 ---
 name: pm-rneayan-474bcf
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A ~69-second studio intro in risograph print style: grainy cream paper with pink, blue and yellow inks slightly misregistered, bold Korean headlines over dot, stripe and moiré patterns, a 01-10 step counter, a pipeline arrow, overlapping circles, numbered circles and sliders, then an airship drifting past clouds that settles into the logo. Use to make a new video in this look (Kinetic type); address it by ID pm-rneayan-474bcf.
 ---
 
-# KOSIF TOOL — Risograph studio intro
+# KOSIF TOOL — Risograph studio intro / مقدمة استوديو بطباعة الريسوغراف: وردي وأزرق وأصفر على ورق محبب
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/rneayan-474bcf
@@ -17,12 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+مقدمة استوديو مدتها نحو 69 ثانية بأسلوب طباعة الريسوغراف: ورق كريمي محبب وأحبار وردية وزرقاء وصفراء وبرتقالية متراكبة بإزاحة خفيفة، عناوين كورية عريضة تتبدل على دوائر ونقاط وخطوط مائلة وتموجات مواريه، عدّاد مراحل من 01 إلى 10 بنقاط تمتلئ، خط أنابيب بأسهم، دائرتان تتداخلان، أرقام 1-2-3 في دوائر، منزلقات تحكم، ثم منطاد يعبر بين غيوم ويستقر شعاراً.
+
+A ~69-second studio intro in risograph print style: grainy cream paper with pink, blue and yellow inks slightly misregistered, bold Korean headlines over dot, stripe and moiré patterns, a 01-10 step counter, a pipeline arrow, overlapping circles, numbered circles and sliders, then an airship drifting past clouds that settles into the logo.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (69 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال.
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

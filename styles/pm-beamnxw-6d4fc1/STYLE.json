@@ -1,13 +1,13 @@
 {
   "id": "pm-beamnxw-6d4fc1",
   "name": "Small-world character film with Blender MCP",
-  "name_ar": null,
+  "name_ar": "عالم صغير فوق لوحة مفاتيح: شخصية مكعبات داخل واجهة استوديو",
   "origin": "PromptsMotion",
   "type": "Skill",
   "category": [
-    "shapes",
+    "3d",
     "characters",
-    "photos"
+    "product-ui"
   ],
   "creator": "unknown",
   "creator_url": "https://x.com/beamnxw/status/2113275303808160226",
@@ -30,8 +30,37 @@
   "listed": true,
   "skill": "styles/pm-beamnxw-6d4fc1/SKILL.md",
   "playbooks": [
-    "playbooks/shapes.md",
+    "playbooks/3d.md",
     "playbooks/characters.md",
-    "playbooks/photos.md"
-  ]
+    "playbooks/product-ui.md"
+  ],
+  "summary_ar": "مقطع رأسي 4:5 مدته 15.6 ثانية يشبه لوحة تحكم استوديو: في الأعلى عنوان أحمر، وفي الوسط نافذة معاينة تعرض لقطة سينمائية ثلاثية الأبعاد بعمق ميدان ضحل لشخصية حمراء من مكعبات صغيرة تمشي على لوحة مفاتيح كريمية بجانب برطمان زجاجي وروبوت أخضر صغير، وتحتها صف بطاقات الأدوات تضيء بالترتيب، وتميمة بكسلية تقول سطراً قصيراً، وطرفية سوداء تكتب أوامر كل مرحلة.",
+  "summary_en": "A 15.6-second 4:5 piece styled as a studio dashboard: a red headline on top, a preview window playing a shallow-depth-of-field 3D shot of a red voxel character walking across a cream keyboard beside a glass jar and a tiny green robot, a row of tool cards lighting up in order beneath it, a pixel mascot speaking short captions, and a black terminal typing each stage's commands.",
+  "keywords": [
+    "3D character",
+    "voxel",
+    "tiny world",
+    "keyboard diorama",
+    "Blender",
+    "making of",
+    "dashboard",
+    "terminal",
+    "depth of field",
+    "شخصية ثلاثية الأبعاد",
+    "عالم صغير",
+    "لوحة مفاتيح",
+    "كواليس الإنتاج",
+    "طرفية",
+    "فوكسل"
+  ],
+  "difficulty": 5,
+  "duration_s": 15.6,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "Three.js",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-beamnxw-6d4fc1/BRIEF.md"
 }

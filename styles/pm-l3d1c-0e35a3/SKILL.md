@@ -1,6 +1,6 @@
 ---
 name: pm-l3d1c-0e35a3
-description: A vertical 15 s app ad where one selfie becomes an AI-generated twin inside a live phone UI, told as a split-screen before/after reveal.
+description: A vertical 15 s app ad where one selfie becomes an AI-generated twin inside a live phone UI, told as a split-screen before/after reveal. Use to make a new video in this look (Product UI); address it by ID pm-l3d1c-0e35a3.
 ---
 
 # KOSIF TOOL — PicTwin AI app ad / إعلان عمودي لتطبيق PicTwin للصور بالذكاء الاصطناعي

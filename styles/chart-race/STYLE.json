@@ -1,7 +1,7 @@
 {
   "id": "chart-race",
   "name": "سباق رسوم",
-  "name_ar": "سباق رسوم",
+  "name_ar": "سباق أعمدة بيانات عبر الزمن",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -24,5 +24,29 @@
   "skill": "styles/chart-race/SKILL.md",
   "playbooks": [
     "playbooks/charts.md"
-  ]
+  ],
+  "summary_ar": "سباق أعمدة أفقية مرتبة: الأعمدة تطول وتتبادل المراكز بانزلاق ناعم مع مرور السنوات، عداد سنة ضخم في الزاوية، أعلام أو شعارات على رؤوس الأعمدة، قيم تعدّ حيًّا، ولحظات تثبيت تبرز التجاوزات المهمة.",
+  "summary_en": "A ranked horizontal bar chart race: bars grow and swap positions with smooth slides as the years tick by, a huge year counter sits in the corner, icons or flags ride the bar ends, values count live, and brief pauses highlight the key overtakes before the final ranking holds.",
+  "keywords": [
+    "bar chart race",
+    "chart race",
+    "ranking",
+    "data over time",
+    "overtake",
+    "year counter",
+    "سباق أعمدة",
+    "سباق بيانات",
+    "ترتيب",
+    "بيانات عبر الزمن",
+    "تجاوز",
+    "رسوم بيانية"
+  ],
+  "difficulty": 3,
+  "duration_s": 40,
+  "stack": [
+    "Remotion",
+    "React",
+    "SVG"
+  ],
+  "brief": "styles/chart-race/BRIEF.md"
 }

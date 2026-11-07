@@ -1,9 +1,9 @@
 ---
 name: pm-0xnfrith-5be616
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A silent ~53-second neo-brutalist tech explainer on cream: thick-bordered pink, cyan, mint and yellow cards show a single timer machine dying, two machines firing twice, then a shared yellow bucket with an ownership sheet, lease countdown bars, a backup machine taking over, the old owner stopping itself, and a two-option comparison table. Use to make a new video in this look (Diagrams); address it by ID pm-0xnfrith-5be616.
 ---
 
-# KOSIF TOOL — Celld job ownership explainer
+# KOSIF TOOL — Celld job ownership explainer / شرح ملكية المهام بين الأجهزة بأسلوب بطاقات ملونة جريئة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/0xnfrith-5be616
@@ -16,6 +16,13 @@ description: Create a new video using the motion design language referenced at t
 - Popularity rank on source library: #197
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+فيلم شرح تقني صامت مدته نحو 53 ثانية بأسلوب «نيو بروتاليزم» على خلفية كريمية: بطاقات مسطحة بحدود سوداء سميكة وظلال مصمتة بالوردي والسماوي والأخضر الفاتح والأصفر، تحكي مشكلة مؤقت على جهاز واحد يتعطل، ثم جهازين يطلقان الأمر مرتين، ثم الحل: دلو تخزين مشترك أصفر فيه «ورقة ملكية» يكتب فيها أول جهاز اسمه، وعقود إيجار بأشرطة عد تنازلي، وجهاز يستلم المهمة حين ينتهي عقد المالك، وختام بجدول مقارنة بين خيارين.
+
+A silent ~53-second neo-brutalist tech explainer on cream: thick-bordered pink, cyan, mint and yellow cards show a single timer machine dying, two machines firing twice, then a shared yellow bucket with an ownership sheet, lease countdown bars, a backup machine taking over, the old owner stopping itself, and a two-option comparison table.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (53 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Diagrams / مخططات.

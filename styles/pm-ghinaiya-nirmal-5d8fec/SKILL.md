@@ -1,9 +1,9 @@
 ---
 name: pm-ghinaiya-nirmal-5d8fec
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second showreel cycling eight motion disciplines inside a viewfinder HUD with a 128 BPM bar counter: a squash-and-stretch red ball with its graph, giant kinetic words on orange, blue and cream, morphing shapes in a selection box, a dot-matrix wave, a particle sphere turning torus, dripping 'fluid' blobs, a lime sine line, an RGB-split 'GLITCH', then a name card. Use to make a new video in this look (Kinetic type); address it by ID pm-ghinaiya-nirmal-5d8fec.
 ---
 
-# KOSIF TOOL — Claude motion design reel
+# KOSIF TOOL — Claude motion design reel / ريل مصمم موشن بثمانية أساليب في 15 ثانية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/ghinaiya-nirmal-5d8fec
@@ -17,12 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+ريل استعراضي مدته 15 ثانية يمر على ثمانية أساليب حركة داخل إطار شاشة عرض بعلامات زوايا وتوقيت وعداد إيقاع 128 BPM: كرة حمراء تقفز بالضغط والمط مع منحنى سرعتها، حرف مائل ضخم على البرتقالي، «THINGS» ضبابية على الأزرق و«MOVE» بقرص، أشكال تتحول، شبكة نقاط موجية ملونة، جسيمات كرة ودونات، «fluid» بنقاط سائلة تقطر، موجة ليمونية، «GLITCH»، ثم بطاقة الاسم.
+
+A 15-second showreel cycling eight motion disciplines inside a viewfinder HUD with a 128 BPM bar counter: a squash-and-stretch red ball with its graph, giant kinetic words on orange, blue and cream, morphing shapes in a selection box, a dot-matrix wave, a particle sphere turning torus, dripping 'fluid' blobs, a lime sine line, an RGB-split 'GLITCH', then a name card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Three.js, HTML Canvas), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: creative motion.
-- (no category playbook yet)
+Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, 3D / ثلاثي الأبعاد.
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
-* Develop original choreography from the reference; verify imagery before claiming a match.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

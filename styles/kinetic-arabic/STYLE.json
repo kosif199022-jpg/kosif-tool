@@ -1,7 +1,7 @@
 {
   "id": "kinetic-arabic",
   "name": "تايبوغرافي عربي",
-  "name_ar": "تايبوغرافي عربي",
+  "name_ar": "تايبوغرافي عربي متحرك: كلمات كبيرة تتشكل وتتحرك مع الصوت",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -24,5 +24,31 @@
   "skill": "styles/kinetic-arabic/SKILL.md",
   "playbooks": [
     "playbooks/kinetic-type.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي يملؤه النص العربي وحده: كلمات كبيرة بأوزان وأحجام متباينة تدخل وتدور وتتكدس وتتبدل مع كل كلمة منطوقة، الكلمة المهمة تتضخم بلون مميز، والتكوين يتغير كل جملة على خلفية بلون واحد صريح.",
+  "summary_en": "A vertical reel filled only with Arabic type: large words in contrasting weights and sizes enter, rotate, stack and swap with each spoken word, the key word swells in an accent colour, and the composition rebuilds every sentence on a single bold background colour.",
+  "keywords": [
+    "kinetic typography",
+    "arabic typography",
+    "motion type",
+    "word animation",
+    "lyric video",
+    "quote video",
+    "تايبوغرافي",
+    "خط عربي",
+    "كلمات متحركة",
+    "نص متحرك",
+    "اقتباس",
+    "تحريك الخطوط",
+    "RTL"
+  ],
+  "difficulty": 3,
+  "duration_s": 32,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "GSAP"
+  ],
+  "brief": "styles/kinetic-arabic/BRIEF.md"
 }

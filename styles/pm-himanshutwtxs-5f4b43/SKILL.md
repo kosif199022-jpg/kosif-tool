@@ -1,9 +1,9 @@
 ---
 name: pm-himanshutwtxs-5f4b43
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second motion designer reel that demonstrates animation principles: a blue ball bouncing with squash and stretch beside handwritten blue and red notes on light grey, a condensed headline with staggered letters, blurred bounce/spin/snap words on dark, a linear graph turning into an ease curve, a particle follow-through trail, an anticipation loader and a name card. Use to make a new video in this look (Kinetic type); address it by ID pm-himanshutwtxs-5f4b43.
 ---
 
-# KOSIF TOOL — Motion designer showreel
+# KOSIF TOOL — Motion designer showreel / ريل مصمم موشن يشرح مبادئ الحركة بملاحظات مكتوبة باليد
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/himanshutwtxs-5f4b43
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+ريل مدته 15 ثانية لمصمم موشن يعرض مبادئ التحريك نفسها: كرة زرقاء ترتد بانضغاط وتمدد مع ملاحظات زرقاء وحمراء بخط اليد على خلفية رمادية فاتحة، عنوان مكثف ضخم تدخله الحروف بتتابع، كلمات «ارتداد» و«انطلاق» و«التقاط» بضبابية على الداكن، مخطط خطي ثم منحنى تسارع مع مربع يتحرك، ذيل جسيمات يُظهر المتابعة، حلقة تحميل تُظهر التمهيد، وختام بالاسم.
+
+A 15-second motion designer reel that demonstrates animation principles: a blue ball bouncing with squash and stretch beside handwritten blue and red notes on light grey, a condensed headline with staggered letters, blurred bounce/spin/snap words on dark, a linear graph turning into an ease curve, a particle follow-through trail, an anticipation loader and a name card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Charts / رسوم بيانية, Hand-drawn / رسم يدوي.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/hand-drawn.md](../../playbooks/hand-drawn.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Order stroke draw-on like a human hand would; keep imperfection deliberate; pace reveals to narration.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

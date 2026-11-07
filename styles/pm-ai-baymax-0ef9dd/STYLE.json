@@ -1,12 +1,12 @@
 {
   "id": "pm-ai-baymax-0ef9dd",
   "name": "FigPad product promo",
-  "name_ar": null,
+  "name_ar": "إعلان أداة رسوم علمية بواجهة متصفح وتدرج باستيل",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
     "product-ui",
-    "code"
+    "ads"
   ],
   "creator": "@Ai_Baymax",
   "creator_url": "https://x.com/Ai_Baymax/status/2103411004902416787",
@@ -28,6 +28,32 @@
   "skill": "styles/pm-ai-baymax-0ef9dd/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/code.md"
-  ]
+    "playbooks/ads.md"
+  ],
+  "summary_ar": "إعلان منتج مدته 55 ثانية لأداة تولّد رسوماً علمية، على تدرج باستيل كريمي-أزرق: سؤال افتتاحي يتلاشى خلف الشعار، ثم ستة فصول مرقمة يكون فيها النص يساراً ونافذة متصفح يميناً تعرض الأداة فعلياً (كتابة وصف، رسم تخطيطي يتحول، أسلوب مرجعي، تعديل نص بنقرة، تصدير، ورقة تتحول إلى ملصق)، ثم جدار أمثلة وشعارات جامعات وبطاقة ختام بزر كحلي.",
+  "summary_en": "A 55-second promo for an AI scientific-figure tool on a cream-to-blue pastel gradient: an opening question dissolves into the logo, then six numbered chapters with copy left and a browser window right demoing the product (prompt, sketch, style reference, click-to-edit, export, poster), a gallery with university logos and a navy CTA end card.",
+  "keywords": [
+    "product promo",
+    "SaaS demo",
+    "browser mockup",
+    "scientific figures",
+    "numbered chapters",
+    "cursor demo",
+    "pastel gradient",
+    "CTA end card",
+    "إعلان منتج",
+    "عرض واجهة",
+    "رسوم علمية",
+    "نافذة متصفح",
+    "مؤشر فأرة",
+    "تدرج باستيل"
+  ],
+  "difficulty": 3,
+  "duration_s": 55,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS"
+  ],
+  "brief": "styles/pm-ai-baymax-0ef9dd/BRIEF.md"
 }

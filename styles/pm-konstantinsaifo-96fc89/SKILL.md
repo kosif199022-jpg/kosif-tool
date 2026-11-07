@@ -1,9 +1,9 @@
 ---
 name: pm-konstantinsaifo-96fc89
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 10-second screen capture of an interactive 3D web page: a rocket engine on a night test stand fires a long violet plume with shock diamonds, framed by a title card and stat readouts on the left and a control panel top-right; a click on 'cutaway' slices the engine open to reveal labelled colour-coded pumps and pipes, then the camera slowly pushes in while the oxygen path is highlighted. Use to make a new video in this look (Diagrams); address it by ID pm-konstantinsaifo-96fc89.
 ---
 
-# KOSIF TOOL — Interactive Raptor 3 rocket engine explainer
+# KOSIF TOOL — Interactive Raptor 3 rocket engine explainer / شرح تفاعلي ثلاثي الأبعاد لمحرك صاروخ Raptor 3 بمقطع عرضي
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/konstantinsaifo-96fc89
@@ -17,12 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+تسجيل شاشة مدته 10 ثوانٍ لصفحة ويب تفاعلية ثلاثية الأبعاد: محرك صاروخ على منصة اختبار في حظيرة ليلية يطلق لهباً بنفسجياً طويلاً بعقد صدمة، مع لوحة عنوان وأرقام أداء يساراً ولوحة أزرار أعلى اليمين؛ نقرة على «مقطع عرضي» تشق المحرك فتظهر المضخات والأنابيب الملونة بملصقات، ثم تقترب الكاميرا ببطء بينما يتتبع مسار الأكسجين.
+
+A 10-second screen capture of an interactive 3D web page: a rocket engine on a night test stand fires a long violet plume with shock diamonds, framed by a title card and stat readouts on the left and a control panel top-right; a click on 'cutaway' slices the engine open to reveal labelled colour-coded pumps and pipes, then the camera slowly pushes in while the oxygen path is highlighted.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, React, CSS), suggested duration (10 s), aspect 16:9, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Diagrams / مخططات.
+Categories: Diagrams / مخططات, 3D / ثلاثي الأبعاد.
 - [playbooks/diagrams.md](../../playbooks/diagrams.md)
+- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
 * Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

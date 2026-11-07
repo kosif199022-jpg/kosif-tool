@@ -1,7 +1,7 @@
 {
   "id": "pm-lester-tyy-f897f7",
   "name": "CloudJoi search showcase",
-  "name_ar": null,
+  "name_ar": "عرض محرك بحث الفعاليات: شريط بحث وملصقات تتدفق كشلال",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
@@ -29,5 +29,33 @@
   "skill": "styles/pm-lester-tyy-f897f7/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md"
-  ]
+  ],
+  "summary_ar": "عرض منتج مدته 76 ثانية بأسلوب واجهة بيضاء نظيفة: شعار فوق شريط بحث مستدير بحافة متدرجة وردية بنفسجية، يُكتب فيه سؤال عن الخروج في المدينة فتنهمر عشرات ملصقات الفعاليات من الأسفل وتصطف شريطاً، ثم يتكبر ملصق واحد إلى بطاقة تفاصيل تتبدل حولها الصور مع أزرار إعادة ومعلومات وإعجاب، ثم بطاقة عنوان سوداء ووابل من استعلامات جديدة يُكتب كل منها وتتدفق تحته ملصقات مختلفة، وينتهي بسؤال «جرّب الآن؟» والرابط.",
+  "summary_en": "A 76-second search demo in clean white UI: a query types into a rounded bar with a pink-violet glow, dozens of event posters cascade up from the bottom, one zooms into a detail card with fanned photos and buttons, then a black title card, a run of everyday queries each bringing new posters, and a 'Try now?' end card.",
+  "keywords": [
+    "search demo",
+    "product ui",
+    "event posters",
+    "typing query",
+    "gradient search bar",
+    "poster cascade",
+    "detail card",
+    "title card",
+    "screen demo",
+    "عرض منتج",
+    "محرك بحث",
+    "ملصقات فعاليات",
+    "شريط بحث",
+    "كتابة استعلام",
+    "واجهة بيضاء"
+  ],
+  "difficulty": 3,
+  "duration_s": 76,
+  "stack": [
+    "Remotion",
+    "React",
+    "CSS",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-lester-tyy-f897f7/BRIEF.md"
 }

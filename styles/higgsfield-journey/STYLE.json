@@ -1,7 +1,7 @@
 {
   "id": "higgsfield-journey",
   "name": "جولة سينمائية",
-  "name_ar": "جولة سينمائية",
+  "name_ar": "جولة سينمائية بكاميرا تطير عبر مشاهد متصلة بلا قطع",
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
@@ -26,5 +26,30 @@
   "playbooks": [
     "playbooks/3d.md",
     "playbooks/photos.md"
-  ]
+  ],
+  "summary_ar": "ريل عمودي يبدو كرحلة كاميرا طائرة واحدة: الكاميرا تندفع عبر نافذة أو باب أو سحابة إلى مكان جديد، كل مشهد مولد بالذكاء الاصطناعي أو صورة واقعية بعمق، والانتقالات «عبور» مستمرة بلا قطع، مع عناوين عربية قليلة تظهر في كل محطة.",
+  "summary_en": "A vertical reel that feels like one continuous flying-camera trip: the camera dives through a window, door or cloud into each new place, every location an AI-generated shot or a depth-layered photo, with seamless fly-through transitions and a short Arabic title at each stop.",
+  "keywords": [
+    "camera journey",
+    "fly-through",
+    "seamless transition",
+    "ai video",
+    "fpv",
+    "generated shots",
+    "travel",
+    "جولة سينمائية",
+    "رحلة",
+    "انتقال سلس",
+    "كاميرا طائرة",
+    "فيديو مولد",
+    "سفر"
+  ],
+  "difficulty": 4,
+  "duration_s": 30,
+  "stack": [
+    "Remotion",
+    "React",
+    "WebGL"
+  ],
+  "brief": "styles/higgsfield-journey/BRIEF.md"
 }

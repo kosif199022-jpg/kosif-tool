@@ -1,9 +1,9 @@
 ---
 name: pm-koldo2k-5cff87
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 10-second infinite-zoom loop in surreal vintage collage: a man in a field under cloudy sky with a floating pocket watch and bowler hat; the camera pushes into the watch to a cliff coast with a whale, box camera and phone floating as paper cut-outs, then into the camera lens to a dune desert whose magnifying glass holds the opening scene. Use to make a new video in this look (Photos); address it by ID pm-koldo2k-5cff87.
 ---
 
-# KOSIF TOOL — Infinite-zoom landscape loop
+# KOSIF TOOL — Infinite-zoom landscape loop / زووم لا نهائي سريالي بأسلوب الكولاج العتيق
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/koldo2k-5cff87
@@ -17,18 +17,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+حلقة زووم لا نهائية مدتها 10 ثوانٍ بأسلوب كولاج سريالي عتيق: رجل من الخلف في حقل تحت سماء غائمة وساعة جيب وقبعة طافيتان، والكاميرا تدفع داخل وجه الساعة فينكشف ساحل بجروف وحوت وكاميرا صندوقية وهاتف قديم تطفو كقصاصات ورق، ثم داخل عدسة الكاميرا صحراء كثبان بمفتاح وعدسة مكبرة وفونوغراف، وعدسة المكبرة تحمل المشهد الأول لتُغلق الحلقة.
+
+A 10-second infinite-zoom loop in surreal vintage collage: a man in a field under cloudy sky with a floating pocket watch and bowler hat; the camera pushes into the watch to a cliff coast with a whale, box camera and phone floating as paper cut-outs, then into the camera lens to a dune desert whose magnifying glass holds the opening scene.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, HTML Canvas), suggested duration (10 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Phone / هاتف, Characters / شخصيات, Photos / صور, Music / موسيقى.
-- [playbooks/phone.md](../../playbooks/phone.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
+Categories: Photos / صور, Characters / شخصيات.
 - [playbooks/photos.md](../../playbooks/photos.md)
-- [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
 
 Category tactics:
-* Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
 * Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

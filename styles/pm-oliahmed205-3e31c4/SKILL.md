@@ -1,9 +1,9 @@
 ---
 name: pm-oliahmed205-3e31c4
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second photo-editing app promo on a glowing navy-violet field: a bold headline with a gradient lens O, a face scanned on a phone with a before/after slider, strips of one street in different looks, a pink brush erasing objects into pixels, a tilted photo wall, image-filled words and a gradient app icon end card. Use to make a new video in this look (Product UI); address it by ID pm-oliahmed205-3e31c4.
 ---
 
-# KOSIF TOOL — Photo retouch app promo
+# KOSIF TOOL — Photo retouch app promo / إعلان تطبيق تعديل صور بتوهج بنفسجي ومقارنة قبل وبعد
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/oliahmed205-3e31c4
@@ -17,14 +17,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+إعلان مدته 15 ثانية لتطبيق تعديل صور على خلفية كحلية بنفسجية متوهجة: عنوان أبيض عريض تصبح فيه إحدى الحروف عدسة بتدرج، صورة وجه بالأبيض والأسود، هاتف يمسح الوجه بنقاط ثم شريط مقارنة قبل وبعد مع بطاقات قيم، شرائح عمودية لنفس الشارع بفلاتر مختلفة، محو جسم من صورة شاطئ بفرشاة وردية يتفتت إلى بكسلات، جدار صور مائل، كلمات بحشو صور، وختام بأيقونة التطبيق.
+
+A 15-second photo-editing app promo on a glowing navy-violet field: a bold headline with a gradient lens O, a face scanned on a phone with a before/after slider, strips of one street in different looks, a pink brush erasing objects into pixels, a tilted photo wall, image-filled words and a gradient app icon end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, HTML Canvas), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Photos / صور.
+Categories: Product UI / واجهات المنتج, Photos / صور, Phone / هاتف.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/photos.md](../../playbooks/photos.md)
+- [playbooks/phone.md](../../playbooks/phone.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
+* Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

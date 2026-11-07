@@ -1,9 +1,9 @@
 ---
 name: pm-buildfastwithai-ed9447
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 39-second showcase of a code-built Cold War propeller attack plane in Three.js: it sits on a tiled sand apron beside a white control panel while the camera orbits and its parts move (prop, canopy, flaps, folding wings) and its paint and stores swap, then it flies over a procedural green patchwork and ends on a dark condensed-type end card. Use to make a new video in this look (3D); address it by ID pm-buildfastwithai-ed9447.
 ---
 
-# KOSIF TOOL — Three.js Skyraider aircraft model
+# KOSIF TOOL — Three.js Skyraider aircraft model / طائرة مروحية ثلاثية الأبعاد قابلة للطيران في ملف HTML واحد
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/buildfastwithai-ed9447
@@ -18,12 +18,21 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+عرض مدته 39 ثانية لطائرة هجوم مروحية من الحرب الباردة مبنية بالكود في Three.js: تقف على أرضية رملية مبلطة بجانب لوحة تحكم بيضاء، والكاميرا تدور حولها بينما تتحرك أجزاؤها (المروحة، الغطاء، القلابات، الأجنحة المطوية) ويتبدل طلاؤها وحمولتها، ثم تقلع فوق غابة إجرائية خضراء وتنتهي ببطاقة ختام بخط مكثف داكن.
+
+A 39-second showcase of a code-built Cold War propeller attack plane in Three.js: it sits on a tiled sand apron beside a white control panel while the camera orbits and its parts move (prop, canopy, flaps, folding wings) and its paint and stores swap, then it flies over a procedural green patchwork and ends on a dark condensed-type end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, HTML Canvas, CSS), suggested duration (39 s), aspect 16:9, difficulty 5/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: creative motion.
-- (no category playbook yet)
+Categories: 3D / ثلاثي الأبعاد, Product UI / واجهات المنتج.
+- [playbooks/3d.md](../../playbooks/3d.md)
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:
-* Develop original choreography from the reference; verify imagery before claiming a match.
+* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

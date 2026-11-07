@@ -1,9 +1,9 @@
 ---
 name: handwriting-reveal
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 9:16 reel on fibrous cream paper where a single Arabic sentence or quote is written in connected ink handwriting that follows the real pen path right to left, with slight ink pooling at stroke ends, dots and diacritics added after each word, and a small signature and slow push-in on the finished line. Use to make a new video in this look (Hand-drawn); address it by ID handwriting-reveal.
 ---
 
-# KOSIF TOOL — كتابة يدوية
+# KOSIF TOOL — كتابة يدوية / كتابة يدوية — جملة عربية تُكتب بالحبر حرفاً متصلاً
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+ريل عمودي 9:16 على ورق كريمي ذي ملمس ألياف، تُكتب فيه جملة أو اقتباس عربي بخط يد حبري متصل يتبع مسار القلم الحقيقي من اليمين لليسار، مع تشبع خفيف للحبر عند نهايات الخطوط ثم النقاط والتشكيل في آخر الكلمة، وينتهي بتوقيع صغير وزوم بطيء على السطر المكتمل.
+
+A 9:16 reel on fibrous cream paper where a single Arabic sentence or quote is written in connected ink handwriting that follows the real pen path right to left, with slight ink pooling at stroke ends, dots and diacritics added after each word, and a small signature and slow push-in on the finished line.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (30 s), aspect 9:16, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Hand-drawn / رسم يدوي, Kinetic type / تايبوغرافي متحرك.

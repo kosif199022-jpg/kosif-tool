@@ -1,9 +1,9 @@
 ---
 name: pm-rendesr-86be44
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second showreel in a chapter HUD: a red ball bouncing on a timing ruler, a heavy black headline on red shredding with smear, a blue shape morphing amid a reactive dot grid, a dash flow field spelling a lime word, 3D particles forming a torus, a lime blob becoming a winking face on blue, a burst of rapid style cuts, and a wordmark end card. Use to make a new video in this look (Kinetic type); address it by ID pm-rendesr-86be44.
 ---
 
-# KOSIF TOOL — Claude motion design showreel
+# KOSIF TOOL — Claude motion design showreel / شوريل موشن ديزاين بفصول مرقمة: توقيت وخطوط وأشكال وجسيمات وشخصية
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/rendesr-86be44
@@ -17,14 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+شوريل مدته 15 ثانية بإطار واجهة دقيق وعداد فصول: كرة حمراء ترتد على مسطرة توقيت على الأسود، عنوان أسود عريض على أحمر يُكتب ويتفكك بسحب حركي، شكل أزرق يتحول من مربع إلى مثلث تشغيل أحمر ثم نجمة وسط شبكة نقاط متجاوبة، حقل شرطات يتدفق ويشكل كلمة بالليموني، جسيمات ثلاثية الأبعاد تتحول إلى طوق، كرة ليمونية تصبح وجهاً يغمز على الأزرق، ثم انفجار قطعات سريعة بين أساليب، وختام بالاسم ونقطة حمراء.
+
+A 15-second showreel in a chapter HUD: a red ball bouncing on a timing ruler, a heavy black headline on red shredding with smear, a blue shape morphing amid a reactive dot grid, a dash flow field spelling a lime word, 3D particles forming a torus, a lime blob becoming a winking face on blue, a burst of rapid style cuts, and a wordmark end card.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas, Three.js), suggested duration (15 s), aspect 16:9, difficulty 4/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, Characters / شخصيات.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

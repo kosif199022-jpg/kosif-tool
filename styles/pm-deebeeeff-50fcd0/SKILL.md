@@ -1,9 +1,9 @@
 ---
 name: pm-deebeeeff-50fcd0
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 10-second square anniversary clip for a recipe brand: an orange, brown-outlined '20' swells on a cream sunburst with confetti while a year counter runs up to 2026, then a cut to a dark brown sunburst where the logo card swings in tilted, a gold '20 years' seal stamps on, and a gold script greeting and orange year pill close it. Use to make a new video in this look (Ads); address it by ID pm-deebeeeff-50fcd0.
 ---
 
-# KOSIF TOOL — Recipe brand 20th anniversary
+# KOSIF TOOL — Recipe brand 20th anniversary / احتفال الذكرى العشرين لعلامة وصفات طعام
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/deebeeeff-50fcd0
@@ -17,12 +17,25 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+فيديو مربع مدته 10 ثوانٍ لذكرى مرور عشرين عاماً على علامة وصفات: رقم «20» برتقالي بحد بني ينتفخ على خلفية أشعة شمسية كريمية مع قصاصات ملونة وعدّاد سنوات يجري حتى 2026، ثم قطع إلى أشعة بنية داكنة يدخل فيها شعار العلامة كبطاقة مائلة وتُختم عليها شارة ذهبية، وينتهي بتهنئة بخط يدوي ذهبي وكبسولة سنوات برتقالية.
+
+A 10-second square anniversary clip for a recipe brand: an orange, brown-outlined '20' swells on a cream sunburst with confetti while a year counter runs up to 2026, then a cut to a dark brown sunburst where the logo card swings in tilted, a gold '20 years' seal stamps on, and a gold script greeting and orange year pill close it.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (10 s), aspect 1:1, difficulty 2/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية.
-- [playbooks/charts.md](../../playbooks/charts.md)
+Categories: Ads / إعلانات, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات.
+- [playbooks/ads.md](../../playbooks/ads.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
 
 Category tactics:
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

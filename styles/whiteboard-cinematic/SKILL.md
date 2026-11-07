@@ -1,9 +1,9 @@
 ---
 name: whiteboard-cinematic
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: Black-ink marker drawings on a huge white board filmed like a movie: the camera dollies and pushes between distant drawings, depth of field blurs the edges, a soft hand shadow passes, one red accent marks key ideas, and a final pull-back reveals the whole board as one connected story map. Use to make a new video in this look (Hand-drawn); address it by ID whiteboard-cinematic.
 ---
 
-# KOSIF TOOL — وايتبورد سينمائي
+# KOSIF TOOL — وايتبورد سينمائي / وايتبورد سينمائي بحركة كاميرا وعمق
 
 ## Primary motion reference (المرجع)
 - Page: https://github.com/kosif199022-jpg/kosif-one
@@ -12,6 +12,13 @@ description: Create a new video using the motion design language referenced at t
 - Source type: Style · Origin: KOSIF original style
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
+
+## Creative brief (الملف الإبداعي)
+رسم بالحبر على لوح أبيض ضخم تصوّره كاميرا سينمائية: انزلاق وتقريب بين رسومات متباعدة، عمق ميدان يضبّب الحواف، ظل يد خافت، ولون واحد أحمر للتأكيد، بإيقاع قصصي هادئ ونهاية بلقطة واسعة تكشف اللوح كله.
+
+Black-ink marker drawings on a huge white board filmed like a movie: the camera dollies and pushes between distant drawings, depth of field blurs the edges, a soft hand shadow passes, one red accent marks key ideas, and a final pull-back reveals the whole board as one connected story map.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (36 s), aspect 9:16, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
 Categories: Hand-drawn / رسم يدوي.

@@ -1,11 +1,13 @@
 {
   "id": "pm-rneayan-ea6129",
   "name": "Oscilloscope-style studio motion graphic",
-  "name_ar": null,
+  "name_ar": "فيلم تعريفي لاستوديو بأسلوب شاشة الأوسيلوسكوب الخضراء",
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts"
+    "charts",
+    "kinetic-type",
+    "shapes"
   ],
   "creator": "@rneayan",
   "creator_url": "https://x.com/rneayan/status/2103401461837406275",
@@ -26,6 +28,35 @@
   "listed": true,
   "skill": "styles/pm-rneayan-ea6129/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md"
-  ]
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md"
+  ],
+  "summary_ar": "فيلم تعريفي لاستوديو إنتاج مدته نحو 40 ثانية كله على شاشة أوسيلوسكوب: أسود بخطوط فسفورية خضراء متوهجة وشبكة باهتة وقراءات قناة صغيرة، النص الكوري بحروف مفرغة متوهجة سطراً سطراً فوق موجة إشارة تتغير مع الكلام، أشكال ليساجو صغيرة في الزاوية، كتابة متشابكة، موجات جيبية وقمم نبضية، رقم 10 مفرغ، مسح رادار، مخطط موجة مربعة لسنوات العمل، ثم منطاد يُرسم بخط الإشارة وشعار الاستوديو.",
+  "summary_en": "A 40-second studio intro shown as an oscilloscope: black with glowing green phosphor traces and a faint graticule, Korean phrases in outline type over a signal trace that changes with each line, Lissajous figures, a scribble tangle, sine waves and pulses, a radar sweep, a square-wave timeline, then the beam draws an airship and the studio logo.",
+  "keywords": [
+    "oscilloscope",
+    "phosphor green",
+    "studio intro",
+    "waveform",
+    "lissajous",
+    "CRT glow",
+    "outline text",
+    "radar sweep",
+    "airship logo",
+    "أوسيلوسكوب",
+    "أخضر فسفوري",
+    "موجة إشارة",
+    "فيلم تعريفي",
+    "شاشة قديمة"
+  ],
+  "difficulty": 3,
+  "duration_s": 40,
+  "stack": [
+    "HTML Canvas",
+    "Remotion",
+    "React",
+    "Web Audio"
+  ],
+  "brief": "styles/pm-rneayan-ea6129/BRIEF.md"
 }

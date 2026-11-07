@@ -1,9 +1,9 @@
 ---
 name: pm-ultimaxbt-bbebf5
-description: Create a new video using the motion design language referenced at this catalog entry.
+description: A 15-second loop on cream and black led by one orange dot: a clicked 'Reduce Motion' toggle, the dot as the tittle of 'Motion', a spring curve overshooting '+22%', a ball morphing into a square and capsule, a 3D ring of words orbiting it, a rippling dot grid, then 'Motion designer.' and '0 keyframes' before whipping back to the start. Use to make a new video in this look (Shapes); address it by ID pm-ultimaxbt-bbebf5.
 ---
 
-# KOSIF TOOL — Orange dot motion system
+# KOSIF TOOL — Orange dot motion system / نظام حركة تقوده نقطة برتقالية واحدة
 
 ## Primary motion reference (المرجع)
 - Page: https://www.promptsmotion.com/ultimaxbt-bbebf5
@@ -18,28 +18,23 @@ description: Create a new video using the motion design language referenced at t
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
+## Creative brief (الملف الإبداعي)
+عرض مدته 15 ثانية بالتناوب بين خلفية كريمية وأخرى سوداء، تقوده نقطة برتقالية واحدة: مفتاح «Reduce Motion» يُضغط بالمؤشر، النقطة تصبح نقطة حرف i في كلمة «Motion» ثم تقفز، منحنى زنبرك بتجاوز «+22%»، كرة تتحول إلى مربع مدوّر وكبسولة، حلقة نص ثلاثية الأبعاد تدور حولها، شبكة نقاط تتموج، ثم عنوان «Motion designer.» و«0 keyframes» وعودة إلى البداية.
+
+A 15-second loop on cream and black led by one orange dot: a clicked 'Reduce Motion' toggle, the dot as the tittle of 'Motion', a spring curve overshooting '+22%', a ball morphing into a square and capsule, a 3D ring of words orbiting it, a rippling dot grid, then 'Motion designer.' and '0 keyframes' before whipping back to the start.
+
+Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (React, CSS, HTML Canvas, Remotion), suggested duration (15 s), aspect 16:9, difficulty 3/5.
+
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, Characters / شخصيات, Music / موسيقى, Code / كود.
-- [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/diagrams.md](../../playbooks/diagrams.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+Categories: Shapes / أشكال, Kinetic type / تايبوغرافي متحرك, Charts / رسوم بيانية.
 - [playbooks/shapes.md](../../playbooks/shapes.md)
-- [playbooks/particles.md](../../playbooks/particles.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/music.md](../../playbooks/music.md)
-- [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
-* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.
