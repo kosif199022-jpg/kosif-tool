@@ -2846,6 +2846,11 @@
    "label": "tests/test_black_dragon_video_protocol.py"
   },
   {
+   "id": "test:tests/test_dragon_montage_e2e.py",
+   "kind": "test",
+   "label": "tests/test_dragon_montage_e2e.py"
+  },
+  {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_blender_cinema.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_blender_cinema.py"
@@ -3239,6 +3244,11 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_think_models.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_think_models.py"
+  },
+  {
+   "id": "test:tests/test_dragon_montage_think.py",
+   "kind": "test",
+   "label": "tests/test_dragon_montage_think.py"
   },
   {
    "id": "test:tests/test_think.py",
@@ -8894,6 +8904,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/black_dragon.py",
+   "to": "test:tests/test_dragon_montage_e2e.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/black_dragon_media.py",
    "to": "test:tests/test_black_dragon.py",
    "rel": "tested_by",
@@ -9706,6 +9722,12 @@
   {
    "from": "script:scripts/think.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_think_models.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/think.py",
+   "to": "test:tests/test_dragon_montage_think.py",
    "rel": "tested_by",
    "w": 1
   },

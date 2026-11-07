@@ -2484,6 +2484,18 @@
       ],
       "why": "arena: runs the skill's own bracket.py on a 16-agent known-answer tournament with stand-in agents (no model called): 100/16 plans, same seed same cards, the task byte for byte in every brief, a planted fatal solution with the best scores must lose, one champion after 4 rounds, a blind final check against the rejected answer, and the skill folder left unchanged",
       "skill_program": true
+    },
+    "skill:kosif-dragon-montage": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "dragon-montage",
+        "{artifact}",
+        "--task={task}",
+        "--media={media}"
+      ],
+      "why": "dragon-montage: runs the eight-station montage protocol on the clip (self-test clip when no --media) and checks every station's file, the reasons and the render",
+      "skill_program": true,
+      "media": true
     }
   }
 }

@@ -1,0 +1,31 @@
+# Dragon Montage (مونتاج التنين) — Python libraries.
+# Source of truth: data/required_tools.json. Check with: python3 scripts/dm_doctor.py doctor
+# Install (inside a venv): python -m pip install -r requirements-montage.txt
+# System tools (ffmpeg/ffprobe, Node, fonts) are NOT pip packages: use scripts/install_tools.sh / .ps1.
+
+# --- required (لازم) ---
+numpy>=1.26,<3
+pillow>=10,<14
+
+# --- recommended (مهمة) ---
+opencv-python-headless>=4.9
+scenedetect>=0.6.4,<0.8
+librosa>=0.10,<2
+soundfile>=0.12
+faster-whisper>=1.0,<2        # downloads the "small" model (~480 MB) on first use
+yt-dlp>=2025.1.0              # update often: pip install -U yt-dlp
+
+# --- optional (إضافات) — uncomment what you want ---
+# opentimelineio>=0.17        # NLE project export read-back
+# mediapipe                   # face landmarks for reframing (may lag new Python versions)
+# pyloudnorm                  # second LUFS check
+# pedalboard                  # audio polish
+# imageio-ffmpeg              # fallback ffmpeg binary
+# edge-tts                    # free online Arabic voice-over
+# piper-tts                   # offline Arabic TTS
+# rembg                       # background removal
+# manim                       # explainer animations (Linux needs libpango1.0-dev libcairo2-dev first)
+# pytesseract                 # needs the tesseract binary + Arabic data
+# Heavy ML (put in a separate .venv-ml; install CPU torch FIRST on machines without NVIDIA):
+#   pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+#   pip install demucs whisperx easyocr

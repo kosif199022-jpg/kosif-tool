@@ -1,0 +1,291 @@
+{
+ "schema": "kosif.dm.camera.v1",
+ "note": "Digital camera moves applied to real footage. `ffmpeg` is a -vf template: fill it with str.format using W,H (output size), W2,H2 (=2W,2H), fps, frames (=round(seconds*fps)) plus the move's defaults (overridable from look.json/edl.json camera params). Run after scaling the event to the output size and before the grade. dm_taste.camera_filter(id, W, H, fps, seconds, **params) does the filling. matrix_atoms = kosif-infinite-matrices camera atoms; kling = kosif-kling-director movement words (living-site/references/level-2-kling-director.md).",
+ "cameras": [
+  {
+   "id": "static",
+   "name_ar": "كادر ثابت",
+   "ffmpeg": "null",
+   "defaults": {},
+   "energy": 0.1,
+   "feelings": [
+    "calm",
+    "sad",
+    "tense"
+   ],
+   "matrix_atoms": [
+    "MX-CAMERA-16"
+   ],
+   "kling": [
+    "locked-off",
+    "tripod"
+   ],
+   "aliases": [
+    "locked",
+    "none"
+   ]
+  },
+  {
+   "id": "punch-in",
+   "name_ar": "قص مقرّب (بانش إن)",
+   "ffmpeg": "scale=w='2*trunc({W}*{scale}/2)':h='2*trunc({H}*{scale}/2)',crop={W}:{H}",
+   "defaults": {
+    "scale": 1.08
+   },
+   "energy": 0.6,
+   "feelings": [
+    "funny",
+    "playful",
+    "tense",
+    "inspiring"
+   ],
+   "matrix_atoms": [
+    "MX-CAMERA-05"
+   ],
+   "kling": [
+    "push-in"
+   ],
+   "aliases": [
+    "punchin",
+    "digital-zoom"
+   ],
+   "note": "static crop-zoom for the whole event; alternate 1.0/1.08–1.15 on jump-cuts so a cut inside one shot feels intentional"
+  },
+  {
+   "id": "slow-push",
+   "name_ar": "دفع بطيء للأمام",
+   "ffmpeg": "scale={W2}:{H2},zoompan=z='1+{amount}*on/{frames}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s={W}x{H}:fps={fps}",
+   "defaults": {
+    "amount": 0.08
+   },
+   "energy": 0.3,
+   "feelings": [
+    "epic",
+    "inspiring",
+    "tense",
+    "warm",
+    "calm"
+   ],
+   "matrix_atoms": [
+    "MX-CAMERA-01"
+   ],
+   "kling": [
+    "dolly-in",
+    "push-in"
+   ],
+   "aliases": [
+    "push",
+    "dolly-in",
+    "zoom-in"
+   ],
+   "note": "the source is upscaled 2x first ({W2}x{H2}) to avoid zoompan jitter"
+  },
+  {
+   "id": "pull-back",
+   "name_ar": "سحب للخلف",
+   "ffmpeg": "scale={W2}:{H2},zoompan=z='1+{amount}-{amount}*on/{frames}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s={W}x{H}:fps={fps}",
+   "defaults": {
+    "amount": 0.1
+   },
+   "energy": 0.35,
+   "feelings": [
+    "sad",
+    "epic",
+    "calm"
+   ],
+   "matrix_atoms": [
+    "MX-CAMERA-14"
+   ],
+   "kling": [
+    "pull-back",
+    "dolly-out"
+   ],
+   "aliases": [
+    "dolly-out",
+    "zoom-out"
+   ]
+  },
+  {
+   "id": "ken-burns-left",
+   "name_ar": "كين بيرنز يمين→يسار",
+   "ffmpeg": "scale={W2}:{H2},zoompan=z='1+{amount}':x='(iw-iw/zoom)*(1-on/{frames})':y='ih/2-(ih/zoom/2)':d=1:s={W}x{H}:fps={fps}",
+   "defaults": {
+    "amount": 0.15
+   },
+   "energy": 0.25,
+   "feelings": [
+    "calm",
+    "warm",
+    "sad",
+    "inspiring"
+   ],
+   "matrix_atoms": [
+    "MX-CAMERA-02",
+    "MX-CAMERA-06"
+   ],
+   "kling": [
+    "pan",
+    "tracking"
+   ],
+   "aliases": [
+    "ken-burns",
+    "pan-left"
+   ]
+  },
+  {
+   "id": "ken-burns-right",
+   "name_ar": "كين بيرنز يسار→يمين",
+   "ffmpeg": "scale={W2}:{H2},zoompan=z='1+{amount}':x='(iw-iw/zoom)*on/{frames}':y='ih/2-(ih/zoom/2)':d=1:s={W}x{H}:fps={fps}",
+   "defaults": {
+    "amount": 0.15
+   },
+   "energy": 0.25,
+   "feelings": [
+    "calm",
+    "warm",
+    "inspiring"
+   ],
+   "matrix_atoms": [
+    "MX-CAMERA-02",
+    "MX-CAMERA-03"
+   ],
+   "kling": [
+    "pan",
+    "side-tracking"
+   ],
+   "aliases": [
+    "pan-right"
+   ]
+  },
+  {
+   "id": "tilt-up",
+   "name_ar": "إمالة لأعلى (كشف)",
+   "ffmpeg": "scale={W2}:{H2},zoompan=z='1+{amount}':x='iw/2-(iw/zoom/2)':y='(ih-ih/zoom)*(1-on/{frames})':d=1:s={W}x{H}:fps={fps}",
+   "defaults": {
+    "amount": 0.15
+   },
+   "energy": 0.35,
+   "feelings": [
+    "epic",
+    "inspiring"
+   ],
+   "matrix_atoms": [
+    "MX-CAMERA-07"
+   ],
+   "kling": [
+    "tilt",
+    "crane up"
+   ],
+   "aliases": [
+    "reveal-up",
+    "crane-up"
+   ]
+  },
+  {
+   "id": "snap-zoom",
+   "name_ar": "زووم خاطف",
+   "ffmpeg": "scale={W2}:{H2},zoompan=z='1+{amount}*min(1,on/({fps}*{snap}))':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s={W}x{H}:fps={fps}",
+   "defaults": {
+    "amount": 0.2,
+    "snap": 0.25
+   },
+   "energy": 0.9,
+   "feelings": [
+    "funny",
+    "tense",
+    "epic"
+   ],
+   "matrix_atoms": [
+    "MX-CAMERA-05",
+    "MX-CAMERA-12"
+   ],
+   "kling": [
+    "push-in"
+   ],
+   "aliases": [
+    "crash-zoom",
+    "snap"
+   ],
+   "note": "zooms in over {snap}s then holds — the comedic/realisation beat"
+  },
+  {
+   "id": "shake-in",
+   "name_ar": "اهتزاز دخول (إمباكت)",
+   "ffmpeg": "scale=w='2*trunc({W}*{scale}/2)':h='2*trunc({H}*{scale}/2)',crop={W}:{H}:x='(iw-ow)/2+{amp}*sin(t*43)*max(0,1-t/{decay})':y='(ih-oh)/2+{amp}*cos(t*37)*max(0,1-t/{decay})'",
+   "defaults": {
+    "scale": 1.08,
+    "amp": 14,
+    "decay": 0.5
+   },
+   "energy": 0.95,
+   "feelings": [
+    "tense",
+    "epic",
+    "funny"
+   ],
+   "matrix_atoms": [
+    "MX-CAMERA-12"
+   ],
+   "kling": [
+    "handheld"
+   ],
+   "aliases": [
+    "impact-shake",
+    "shake"
+   ],
+   "note": "a short decaying shake on the first {decay}s — put it on a beat/drop"
+  },
+  {
+   "id": "handheld-drift",
+   "name_ar": "يدوي هادئ (ستيدي كام)",
+   "ffmpeg": "scale=w='2*trunc({W}*{scale}/2)':h='2*trunc({H}*{scale}/2)',crop={W}:{H}:x='(iw-ow)/2+{amp}*sin(t*1.3)':y='(ih-oh)/2+{amp}*sin(t*0.9+1)'",
+   "defaults": {
+    "scale": 1.05,
+    "amp": 8
+   },
+   "energy": 0.4,
+   "feelings": [
+    "tense",
+    "warm",
+    "calm"
+   ],
+   "matrix_atoms": [
+    "MX-CAMERA-13"
+   ],
+   "kling": [
+    "handheld",
+    "gimbal"
+   ],
+   "aliases": [
+    "steadicam",
+    "drift"
+   ]
+  },
+  {
+   "id": "speed-ramp",
+   "name_ar": "تسريع/تبطئة (سبيد رامب)",
+   "ffmpeg": "setpts='if(lt(T,{t1}),PTS,{t1}/TB+(PTS-{t1}/TB)/{speed})'",
+   "defaults": {
+    "t1": 0.5,
+    "speed": 2.0
+   },
+   "energy": 0.8,
+   "feelings": [
+    "epic",
+    "playful",
+    "tense"
+   ],
+   "matrix_atoms": [
+    "MX-CAMERA-09"
+   ],
+   "kling": [
+    "speed ramp"
+   ],
+   "aliases": [
+    "ramp",
+    "time-ramp"
+   ],
+   "note": "video only: real time until {t1}s then {speed}x (speed<1 = slow motion). Mute or retime audio for the event (atempo)."
+  }
+ ]
+}

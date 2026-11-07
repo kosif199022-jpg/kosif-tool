@@ -1,0 +1,1049 @@
+{
+ "schema": "kosif.dm.editor_mind.v1",
+ "about": "عقل المونتير: أقواس القصة، أنماط الإيقاع، قواعد الإحساس والسرعة، قواعد الهوك، افتراضات كل نوع محتوى، وقواعد المنصات. ده اللي dm_think.py بيقرا منه عشان يفهم المطلوب ويفكر بإبداع. كل قاعدة ليها مصدر في sources.",
+ "sources": {
+  "story-direction": ".claude/skills/kosif-superpowers/references/powers/story-direction-ideas.md (line 207: viral five-line arc hook → misconception → hidden mechanism → contrast → memorable truth, ≤14 words/line)",
+  "storyboard-shotlist": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/storyboard-shotlist/SKILL.md (five beats hook/setup/escalation/climax/cta, hook in first 1.5 s, ≤1 shot per 2.5 s in reels, every shot adds new info)",
+  "storytelling-scripts": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/storytelling-scripts/SKILL.md (conflict in first 10%, hero decides, no narration of what the picture shows)",
+  "reels-factory": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/reels-shorts-factory/SKILL.md (hook in first second with motion + text, ≤150 words per 45 s, safe zone, 1080x1920)",
+  "edit-captions": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/video-editing-captions/SKILL.md (cut per beat or per sentence, ≤2 transition types, −14 LUFS, −1 dBTP, music −18 dB under speech, 42 chars/line, 2 lines)",
+  "red-team-premortem": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/red-team-premortem/SKILL.md (5 failure stories with different causes, each with early sign and fix)",
+  "ideation-100": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/ideation-100-ideas/SKILL.md (directions: reverse, combine, constrain, exaggerate, swap audience; criteria declared before filtering)",
+  "hooks-ar": ".claude/skills/kosif-reel-hooks/data/hooks_ar.json (16 Egyptian hook formulas + 7 rules)",
+  "reel-tools": ".claude/skills/kosif-reel-hooks/scripts/reel_tools.py (hook score on length/specificity/stakes/frontload/address; HOOK_WINDOW 3 s, MAX_BEAT 4 s, loop check)",
+  "a17": ".claude/skills/kosif-superpowers/references/protocol/A17-story-scene-charter.md (logline + arc first, scene contract as data, shot list with 'what is new' beats, continuity locks)",
+  "book-KV-04": ".claude/skills/kosif-superpowers/data/book_methods.json#KV-04 (timed emotional arc: build 0–5 s, intensify 5–20, turn 20–25, payoff 25–30; register by platform)",
+  "tfs-two-selves": ".claude/skills/kosif-dragon-mind/data/frameworks.json#tfs-two-selves (peak-end rule: the remembered video is its peak and its ending)",
+  "resonate-sparkline": ".claude/skills/kosif-dragon-mind/data/frameworks.json#resonate-sparkline (what is ↔ what could be contrast)",
+  "made-to-stick": ".claude/skills/kosif-dragon-mind/data/frameworks.json#made-to-stick-success (simple, unexpected, concrete, credible, emotional, story)",
+  "AM-01": ".claude/skills/kosif-superpowers/data/book_methods.json#AM-01 (the look serves the story; lock the look before the first shot)"
+ },
+ "arcs": {
+  "classic-5": {
+   "name_ar": "القوس الكلاسيكي: هوك ← تمهيد ← لفّة ← حصاد ← دعوة",
+   "beats": [
+    {
+     "id": "hook",
+     "role": "hook",
+     "share": 0.1,
+     "purpose_ar": "أقوى لحظة أو جملة، من غير مقدمة"
+    },
+    {
+     "id": "setup",
+     "role": "setup",
+     "share": 0.2,
+     "purpose_ar": "مين وفين وإيه اللي على المحك"
+    },
+    {
+     "id": "turn",
+     "role": "turn",
+     "share": 0.3,
+     "purpose_ar": "اللحظة اللي الحكاية بتتقلب فيها"
+    },
+    {
+     "id": "payoff",
+     "role": "payoff",
+     "share": 0.3,
+     "purpose_ar": "الوعد اللي في الهوك بيتسلّم هنا"
+    },
+    {
+     "id": "cta",
+     "role": "cta",
+     "share": 0.1,
+     "purpose_ar": "دعوة واحدة بس، أو لوب يرجّع للهوك"
+    }
+   ],
+   "best_for": [
+    "talking-head",
+    "event",
+    "product"
+   ],
+   "min_seconds": 15,
+   "sources": [
+    "storyboard-shotlist",
+    "storytelling-scripts",
+    "a17"
+   ]
+  },
+  "viral-editorial": {
+   "name_ar": "القوس الفيرال: هوك ← الفكرة الغلط ← الميكانيزم الخفي ← المقارنة ← الحقيقة اللي تتحفظ",
+   "beats": [
+    {
+     "id": "hook",
+     "role": "hook",
+     "share": 0.12,
+     "purpose_ar": "جملة بتكسر توقع، بتكلّم المشاهد"
+    },
+    {
+     "id": "misconception",
+     "role": "context",
+     "share": 0.18,
+     "purpose_ar": "اللي الناس فاكراه صح"
+    },
+    {
+     "id": "mechanism",
+     "role": "reveal",
+     "share": 0.3,
+     "purpose_ar": "السبب الحقيقي اللي محدش شايفه"
+    },
+    {
+     "id": "contrast",
+     "role": "proof",
+     "share": 0.25,
+     "purpose_ar": "مثال أو مقارنة: كده ضد كده"
+    },
+    {
+     "id": "truth",
+     "role": "payoff",
+     "share": 0.15,
+     "purpose_ar": "جملة واحدة تتحفظ، وتلف على الهوك"
+    }
+   ],
+   "best_for": [
+    "talking-head",
+    "interview",
+    "product"
+   ],
+   "min_seconds": 15,
+   "rules": [
+    "أطول سطر ≤ 14 كلمة",
+    "جملة واحدة لكل مشهد تقريبًا كل 6 ثواني",
+    "مخاطبة المشاهد مباشرة"
+   ],
+   "sources": [
+    "story-direction",
+    "made-to-stick"
+   ]
+  },
+  "problem-agitate-solve": {
+   "name_ar": "مشكلة ← تقليب الوجع ← الحل",
+   "beats": [
+    {
+     "id": "problem",
+     "role": "problem",
+     "share": 0.2,
+     "purpose_ar": "المشكلة في جملة ملموسة برقم لو موجود"
+    },
+    {
+     "id": "agitate",
+     "role": "build",
+     "share": 0.3,
+     "purpose_ar": "تمن المشكلة لو فضلت"
+    },
+    {
+     "id": "solve",
+     "role": "payoff",
+     "share": 0.4,
+     "purpose_ar": "الحل بيتشاف مش بيتحكي"
+    },
+    {
+     "id": "cta",
+     "role": "cta",
+     "share": 0.1,
+     "purpose_ar": "الخطوة الجاية للمشاهد"
+    }
+   ],
+   "best_for": [
+    "product",
+    "talking-head"
+   ],
+   "min_seconds": 12,
+   "sources": [
+    "reels-factory",
+    "hooks-ar"
+   ]
+  },
+  "journey": {
+   "name_ar": "الرحلة: انطلاق ← الطريق ← العقبة ← الوصول ← لحظة تأمل",
+   "beats": [
+    {
+     "id": "departure",
+     "role": "hook",
+     "share": 0.12,
+     "purpose_ar": "نبدأ من نص الحركة، مش من التحضير"
+    },
+    {
+     "id": "road",
+     "role": "journey",
+     "share": 0.28,
+     "purpose_ar": "مونتاج سريع للطريق والتفاصيل"
+    },
+    {
+     "id": "obstacle",
+     "role": "turn",
+     "share": 0.2,
+     "purpose_ar": "حاجة صعبة أو مفاجأة: دي اللي بتعمل حكاية"
+    },
+    {
+     "id": "arrival",
+     "role": "climax",
+     "share": 0.25,
+     "purpose_ar": "الذروة البصرية: أوسع وأحلى لقطة"
+    },
+    {
+     "id": "reflection",
+     "role": "outro",
+     "share": 0.15,
+     "purpose_ar": "نهاية هادية تتفتكر (الذروة والنهاية)"
+    }
+   ],
+   "best_for": [
+    "travel",
+    "event",
+    "montage"
+   ],
+   "min_seconds": 15,
+   "sources": [
+    "storytelling-scripts",
+    "tfs-two-selves"
+   ]
+  },
+  "countdown": {
+   "name_ar": "قائمة/عدّ تنازلي: هوك ← ٣ ← ٢ ← ١ ← المفاجأة",
+   "beats": [
+    {
+     "id": "hook",
+     "role": "hook",
+     "share": 0.12,
+     "purpose_ar": "وعد بعدد محدد"
+    },
+    {
+     "id": "item3",
+     "role": "build",
+     "share": 0.22,
+     "purpose_ar": "أضعف عنصر الأول"
+    },
+    {
+     "id": "item2",
+     "role": "proof",
+     "share": 0.22,
+     "purpose_ar": "العنصر الأقوى"
+    },
+    {
+     "id": "item1",
+     "role": "climax",
+     "share": 0.26,
+     "purpose_ar": "الأقوى خالص"
+    },
+    {
+     "id": "payoff",
+     "role": "payoff",
+     "share": 0.18,
+     "purpose_ar": "مفاجأة أو لوب يرجع للأول"
+    }
+   ],
+   "best_for": [
+    "product",
+    "travel",
+    "montage"
+   ],
+   "min_seconds": 15,
+   "sources": [
+    "hooks-ar",
+    "storyboard-shotlist"
+   ]
+  },
+  "before-after": {
+   "name_ar": "قبل وبعد: هوك ← قبل ← لحظة التحول ← بعد ← الحقيقة",
+   "beats": [
+    {
+     "id": "hook",
+     "role": "hook",
+     "share": 0.1,
+     "purpose_ar": "نوري النتيجة الأول ثانية واحدة"
+    },
+    {
+     "id": "before",
+     "role": "setup",
+     "share": 0.25,
+     "purpose_ar": "الحالة القديمة: بطيئة، باهتة"
+    },
+    {
+     "id": "turn",
+     "role": "turn",
+     "share": 0.2,
+     "purpose_ar": "التحول: قطع على البيت أو ووش"
+    },
+    {
+     "id": "after",
+     "role": "reveal",
+     "share": 0.3,
+     "purpose_ar": "الحالة الجديدة: أسرع، ألوان أعلى"
+    },
+    {
+     "id": "truth",
+     "role": "payoff",
+     "share": 0.15,
+     "purpose_ar": "اللي اتغير في جملة"
+    }
+   ],
+   "best_for": [
+    "product",
+    "event",
+    "travel"
+   ],
+   "min_seconds": 10,
+   "sources": [
+    "hooks-ar",
+    "resonate-sparkline"
+   ]
+  }
+ },
+ "rhythms": {
+  "speech-led": {
+   "name_ar": "الكلام هو اللي بيقود",
+   "cut_rule": "القطع على نهاية الجملة أو النَفَس، وB-roll يغطي القطع (J/L cut)",
+   "avg_cut_s": [
+    2.5,
+    5.0
+   ],
+   "max_hold_s": 6.0,
+   "transitions": [
+    "cut"
+   ],
+   "music": "تحت الكلام بـ −18 dB، وتنزل −10 وقت الكلام",
+   "requires": "كلام مفرّغ (words) في التحليل",
+   "sources": [
+    "edit-captions",
+    "reel-tools"
+   ]
+  },
+  "on-beat": {
+   "name_ar": "على البيت",
+   "cut_rule": "كل قطع على بيت أو داون بيت؛ لقطة كل 1–2 بيت حسب الـ BPM",
+   "avg_cut_s": [
+    0.5,
+    1.6
+   ],
+   "max_hold_s": 2.5,
+   "transitions": [
+    "cut",
+    "xfade-fade"
+   ],
+   "music": "الموسيقى قدّام، والكلام لو موجود جمل قصيرة بس",
+   "requires": "موسيقى بـ beats، أو حركة عالية في اللقطات",
+   "sources": [
+    "edit-captions",
+    "storyboard-shotlist"
+   ]
+  },
+  "slow-burn": {
+   "name_ar": "نار هادية",
+   "cut_rule": "لقطات طويلة بتتنفس، القطع على الحركة أو الصمت، والإيقاع بيسرّع في الذروة بس",
+   "avg_cut_s": [
+    3.0,
+    6.0
+   ],
+   "max_hold_s": 8.0,
+   "transitions": [
+    "cut",
+    "xfade-fade"
+   ],
+   "music": "أمبيانس أو بيانو، صمت مقصود قبل الذروة",
+   "requires": "لقطات جودتها عالية ومدة كافية",
+   "sources": [
+    "tfs-two-selves",
+    "book-KV-04"
+   ]
+  }
+ },
+ "feelings": {
+  "tense": {
+   "name_ar": "مشدود",
+   "pace": "fast",
+   "avg_cut_s": [
+    0.6,
+    1.5
+   ],
+   "bpm": [
+    110,
+    140
+   ],
+   "energy": 0.8,
+   "rhythm": "on-beat",
+   "transitions": [
+    "cut"
+   ],
+   "captions": "punchy",
+   "grade_hint": "تباين عالي، ألوان باردة"
+  },
+  "warm": {
+   "name_ar": "دافي",
+   "pace": "medium",
+   "avg_cut_s": [
+    2.0,
+    4.0
+   ],
+   "bpm": [
+    80,
+    100
+   ],
+   "energy": 0.45,
+   "rhythm": "speech-led",
+   "transitions": [
+    "cut",
+    "xfade-fade"
+   ],
+   "captions": "clean",
+   "grade_hint": "ألوان دافية، تشبع متوسط"
+  },
+  "epic": {
+   "name_ar": "ملحمي",
+   "pace": "build",
+   "avg_cut_s": [
+    1.0,
+    3.0
+   ],
+   "bpm": [
+    90,
+    130
+   ],
+   "energy": 0.85,
+   "rhythm": "on-beat",
+   "transitions": [
+    "cut",
+    "xfade-fade"
+   ],
+   "captions": "punchy",
+   "grade_hint": "سينمائي، سما عميقة"
+  },
+  "playful": {
+   "name_ar": "مرح",
+   "pace": "fast",
+   "avg_cut_s": [
+    0.6,
+    1.8
+   ],
+   "bpm": [
+    100,
+    128
+   ],
+   "energy": 0.75,
+   "rhythm": "on-beat",
+   "transitions": [
+    "cut",
+    "slideup"
+   ],
+   "captions": "karaoke",
+   "grade_hint": "ألوان مشبعة ومشرقة"
+  },
+  "calm": {
+   "name_ar": "هادي",
+   "pace": "slow",
+   "avg_cut_s": [
+    3.0,
+    6.0
+   ],
+   "bpm": [
+    60,
+    85
+   ],
+   "energy": 0.25,
+   "rhythm": "slow-burn",
+   "transitions": [
+    "xfade-fade"
+   ],
+   "captions": "clean",
+   "grade_hint": "تباين ناعم، ألوان باستيل"
+  },
+  "inspiring": {
+   "name_ar": "ملهم",
+   "pace": "build",
+   "avg_cut_s": [
+    1.5,
+    3.5
+   ],
+   "bpm": [
+    90,
+    120
+   ],
+   "energy": 0.65,
+   "rhythm": "speech-led",
+   "transitions": [
+    "cut",
+    "xfade-fade"
+   ],
+   "captions": "karaoke",
+   "grade_hint": "دافي ومضيء"
+  },
+  "sad": {
+   "name_ar": "حزين",
+   "pace": "slow",
+   "avg_cut_s": [
+    3.0,
+    7.0
+   ],
+   "bpm": [
+    55,
+    80
+   ],
+   "energy": 0.2,
+   "rhythm": "slow-burn",
+   "transitions": [
+    "xfade-fade"
+   ],
+   "captions": "clean",
+   "grade_hint": "تشبع واطي، ظلال تقيلة"
+  },
+  "funny": {
+   "name_ar": "مضحك",
+   "pace": "fast",
+   "avg_cut_s": [
+    0.5,
+    2.0
+   ],
+   "bpm": [
+    100,
+    130
+   ],
+   "energy": 0.7,
+   "rhythm": "speech-led",
+   "transitions": [
+    "cut"
+   ],
+   "captions": "punchy",
+   "grade_hint": "طبيعي ومشرق؛ الكوميديا في التوقيت مش في اللون"
+  }
+ },
+ "feeling_words": {
+  "tense": [
+   "توتر",
+   "مشدود",
+   "اكشن",
+   "أكشن",
+   "تشويق",
+   "tense",
+   "action",
+   "thriller",
+   "suspense"
+  ],
+  "warm": [
+   "دافي",
+   "دافئ",
+   "عيلة",
+   "عائلة",
+   "حب",
+   "warm",
+   "family",
+   "cozy"
+  ],
+  "epic": [
+   "ملحمي",
+   "عظيم",
+   "سينمائي",
+   "قوي",
+   "epic",
+   "cinematic",
+   "powerful"
+  ],
+  "playful": [
+   "مرح",
+   "خفيف",
+   "لعب",
+   "playful",
+   "fun",
+   "energetic"
+  ],
+  "calm": [
+   "هادي",
+   "هادئ",
+   "رايق",
+   "استرخاء",
+   "calm",
+   "chill",
+   "relax"
+  ],
+  "inspiring": [
+   "ملهم",
+   "تحفيز",
+   "تحفيزي",
+   "حماس",
+   "inspiring",
+   "motivational"
+  ],
+  "sad": [
+   "حزين",
+   "ذكرى",
+   "وداع",
+   "sad",
+   "memorial",
+   "goodbye"
+  ],
+  "funny": [
+   "مضحك",
+   "كوميدي",
+   "هزار",
+   "ضحك",
+   "funny",
+   "comedy"
+  ]
+ },
+ "hook_rules": {
+  "window_s": 3.0,
+  "rules_ar": [
+   "مفيش مقدمة: الفيديو يبدأ من الجملة اللي كنت هتوصلها في الثانية السادسة",
+   "أول فريم هوك برضه: حركة أو نص من أول فريم، مش وش ثابت",
+   "الجملة المنطوقة 4–10 كلمات وتتقال في أقل من 3 ثواني",
+   "كارت الشاشة 6 كلمات أو أقل، منفصل عن الجملة المنطوقة",
+   "رقم أو اسم أو حاجة تتقاس في الهوك؛ «كتير» مش رقم",
+   "الهوك وعد: يتسلّم قبل نص الفيديو",
+   "ممنوع اختراع أرقام أو نتايج؛ لو الرقم مش معروف نسيب {{رقمك}} وننبّه",
+   "آخر جملة تكرر كلمة من الهوك عشان اللوب يركب"
+  ],
+  "arc_formulas": {
+   "classic-5": [
+    3,
+    14,
+    9
+   ],
+   "viral-editorial": [
+    15,
+    3,
+    7
+   ],
+   "problem-agitate-solve": [
+    2,
+    1,
+    10
+   ],
+   "journey": [
+    14,
+    11,
+    4
+   ],
+   "countdown": [
+    16,
+    9,
+    8
+   ],
+   "before-after": [
+    4,
+    5,
+    6
+   ]
+  },
+  "sources": [
+   "hooks-ar",
+   "reel-tools",
+   "storyboard-shotlist",
+   "reels-factory"
+  ]
+ },
+ "hook_roles": {
+  "roles": [
+   "hook",
+   "problem",
+   "question",
+   "cold-open",
+   "tease"
+  ],
+  "note_ar": "الأدوار اللي ينفع تفتح الفيديو وتتحسب هوك في أول 3 ثواني. dm_think بيضمن إن كل قوس يبدأ بواحد منهم (ولو لأ بيحط hook قبله)، dm_direct بيختار أول لقطة في الدور ده بمعايير الهوك، وdm_review بيعدّيها في فحص hook-in-3s. المصدر واحد عشان التلاتة يتفقوا.",
+  "used_by": [
+   "dm_think.build_concepts",
+   "dm_direct.direct_plan",
+   "dm_review.hook-in-3s"
+  ]
+ },
+ "pacing_by_kind": {
+  "speech": {
+   "shot_s": [
+    1.5,
+    9.0
+   ],
+   "rule_ar": "الكلام بيتقاس بالجملة مش بالبيت: من 1.5 لـ 9 ثواني، والقطع على فاصل بين كلمتين أبدًا مش في نص كلمة. لو الجملة أطول نقصّها عند فاصل كلمة."
+  },
+  "broll": {
+   "rule_ar": "اللقطات من غير كلام بتتقاس بإيقاع الإحساس/الطاقة (feeling × energy) زي PACING في dm_direct/dm_review."
+  },
+  "used_by": [
+   "dm_review.shot-length",
+   "dm_direct.apply_review"
+  ]
+ },
+ "content_types": {
+  "talking-head": {
+   "name_ar": "حد بيتكلم للكاميرا",
+   "detect": {
+    "speech_coverage_min": 0.35,
+    "faces_ratio_min": 0.5
+   },
+   "words": [
+    "بتكلم",
+    "بيتكلم",
+    "كلام",
+    "نصيحة",
+    "شرح",
+    "بودكاست",
+    "talking",
+    "explainer",
+    "vlog",
+    "tips"
+   ],
+   "default_feeling": "inspiring",
+   "captions": "karaoke",
+   "pool": [
+    [
+     "viral-editorial",
+     "speech-led"
+    ],
+    [
+     "problem-agitate-solve",
+     "on-beat"
+    ],
+    [
+     "classic-5",
+     "slow-burn"
+    ],
+    [
+     "before-after",
+     "on-beat"
+    ]
+   ],
+   "keep_ar": [
+    "أقوى جملة في الهوك",
+    "الوش ظاهر في الجمل المهمة"
+   ],
+   "avoid_ar": [
+    "الصمت الميت أكتر من 0.4 ثانية",
+    "أمم وإيه والتكرار",
+    "لقطة واحدة أكتر من 6 ثواني من غير punch-in"
+   ]
+  },
+  "interview": {
+   "name_ar": "مقابلة",
+   "detect": {
+    "speech_coverage_min": 0.35,
+    "faces_min": 2
+   },
+   "words": [
+    "مقابلة",
+    "انترفيو",
+    "لقاء",
+    "حوار",
+    "ضيف",
+    "interview",
+    "podcast guest"
+   ],
+   "default_feeling": "warm",
+   "captions": "clean",
+   "pool": [
+    [
+     "viral-editorial",
+     "speech-led"
+    ],
+    [
+     "classic-5",
+     "speech-led"
+    ],
+    [
+     "countdown",
+     "on-beat"
+    ],
+    [
+     "journey",
+     "slow-burn"
+    ]
+   ],
+   "keep_ar": [
+    "ردّ الضيف الأقوى",
+    "رد فعل المحاور"
+   ],
+   "avoid_ar": [
+    "السؤال الطويل؛ نقص منه أو نحطه كارت"
+   ]
+  },
+  "travel": {
+   "name_ar": "سفر ورحلات",
+   "detect": {
+    "speech_coverage_max": 0.2,
+    "motion_min": 0.3
+   },
+   "words": [
+    "سفر",
+    "رحلة",
+    "رحلتي",
+    "مصيف",
+    "الساحل",
+    "دهب",
+    "شرم",
+    "الغردقة",
+    "سياحة",
+    "travel",
+    "trip",
+    "vacation",
+    "beach"
+   ],
+   "default_feeling": "epic",
+   "captions": "none",
+   "pool": [
+    [
+     "journey",
+     "on-beat"
+    ],
+    [
+     "countdown",
+     "on-beat"
+    ],
+    [
+     "before-after",
+     "slow-burn"
+    ],
+    [
+     "classic-5",
+     "slow-burn"
+    ]
+   ],
+   "keep_ar": [
+    "أوسع لقطة للمكان",
+    "لقطة فيها ناس بتتحرك"
+   ],
+   "avoid_ar": [
+    "لقطات مهزوزة",
+    "نفس الكادر مرتين ورا بعض"
+   ]
+  },
+  "product": {
+   "name_ar": "منتج",
+   "detect": {},
+   "words": [
+    "منتج",
+    "اعلان",
+    "إعلان",
+    "براند",
+    "متجر",
+    "بيع",
+    "عرض",
+    "product",
+    "ad",
+    "brand",
+    "unboxing",
+    "shop"
+   ],
+   "default_feeling": "playful",
+   "captions": "punchy",
+   "pool": [
+    [
+     "problem-agitate-solve",
+     "on-beat"
+    ],
+    [
+     "before-after",
+     "on-beat"
+    ],
+    [
+     "viral-editorial",
+     "speech-led"
+    ],
+    [
+     "countdown",
+     "on-beat"
+    ]
+   ],
+   "keep_ar": [
+    "المنتج واضح في أول 3 ثواني",
+    "لقطة الاستخدام"
+   ],
+   "avoid_ar": [
+    "وعود مش مثبتة",
+    "أسعار مخترعة"
+   ]
+  },
+  "event": {
+   "name_ar": "مناسبة/فعالية",
+   "detect": {
+    "faces_min": 2
+   },
+   "words": [
+    "فرح",
+    "حفلة",
+    "حفل",
+    "خطوبة",
+    "عيد ميلاد",
+    "مؤتمر",
+    "فعالية",
+    "تخرج",
+    "wedding",
+    "party",
+    "event",
+    "conference",
+    "graduation"
+   ],
+   "default_feeling": "warm",
+   "captions": "none",
+   "pool": [
+    [
+     "journey",
+     "on-beat"
+    ],
+    [
+     "classic-5",
+     "slow-burn"
+    ],
+    [
+     "before-after",
+     "on-beat"
+    ],
+    [
+     "countdown",
+     "on-beat"
+    ]
+   ],
+   "keep_ar": [
+    "الوشوش والضحك",
+    "لحظة الذروة (الكوشة، الكيكة، الجايزة)"
+   ],
+   "avoid_ar": [
+    "لقطات الضلمة",
+    "حد واقف ومش بيعمل حاجة"
+   ]
+  },
+  "montage": {
+   "name_ar": "مونتاج عام",
+   "detect": {
+    "speech_coverage_max": 0.15
+   },
+   "words": [
+    "تجميعة",
+    "ذكريات",
+    "هايلايتس",
+    "highlights",
+    "recap",
+    "compilation"
+   ],
+   "default_feeling": "epic",
+   "captions": "none",
+   "pool": [
+    [
+     "journey",
+     "on-beat"
+    ],
+    [
+     "countdown",
+     "on-beat"
+    ],
+    [
+     "classic-5",
+     "slow-burn"
+    ],
+    [
+     "before-after",
+     "on-beat"
+    ]
+   ],
+   "keep_ar": [
+    "أعلى لقطات في الجودة",
+    "تنوع الأحجام: واسعة/متوسطة/قريبة"
+   ],
+   "avoid_ar": [
+    "تكرار نفس المكان",
+    "ترانزيشن أكتر من نوعين"
+   ],
+   "words_note": "«مونتاج» نفسها مش دليل: هي كلمة التشغيل في «التنين الأسود، مونتاج»"
+  }
+ },
+ "platforms": {
+  "reel": {
+   "name_ar": "ريلز/تيك توك/شورتس",
+   "aspect": "9:16",
+   "seconds": [
+    15,
+    60
+   ],
+   "default_seconds": 30,
+   "safe_zone": "سيب 14% فوق و20% تحت للواجهة",
+   "captions": true,
+   "target_lufs": -14,
+   "true_peak_db": -1,
+   "max_words_per_45s": 150
+  },
+  "story": {
+   "name_ar": "ستوري",
+   "aspect": "9:16",
+   "seconds": [
+    5,
+    15
+   ],
+   "default_seconds": 15,
+   "safe_zone": "سيب 14% فوق و17% تحت",
+   "captions": true,
+   "target_lufs": -14,
+   "true_peak_db": -1,
+   "max_words_per_45s": 120
+  },
+  "youtube": {
+   "name_ar": "يوتيوب",
+   "aspect": "16:9",
+   "seconds": [
+    60,
+    900
+   ],
+   "default_seconds": 180,
+   "safe_zone": "عادي",
+   "captions": true,
+   "target_lufs": -14,
+   "true_peak_db": -1,
+   "max_words_per_45s": 160
+  },
+  "square": {
+   "name_ar": "مربع (فيد)",
+   "aspect": "1:1",
+   "seconds": [
+    10,
+    60
+   ],
+   "default_seconds": 30,
+   "safe_zone": "عادي",
+   "captions": true,
+   "target_lufs": -14,
+   "true_peak_db": -1,
+   "max_words_per_45s": 150
+  },
+  "landscape": {
+   "name_ar": "عرضي",
+   "aspect": "16:9",
+   "seconds": [
+    15,
+    300
+   ],
+   "default_seconds": 60,
+   "safe_zone": "عادي",
+   "captions": true,
+   "target_lufs": -14,
+   "true_peak_db": -1,
+   "max_words_per_45s": 160
+  }
+ },
+ "platform_words": {
+  "reel": [
+   "ريل",
+   "ريلز",
+   "تيك توك",
+   "تيكتوك",
+   "شورتس",
+   "reel",
+   "reels",
+   "tiktok",
+   "shorts"
+  ],
+  "story": [
+   "ستوري",
+   "استوري",
+   "story"
+  ],
+  "youtube": [
+   "يوتيوب",
+   "youtube"
+  ],
+  "square": [
+   "مربع",
+   "square",
+   "فيد"
+  ],
+  "landscape": [
+   "عرضي",
+   "landscape",
+   "16:9"
+  ]
+ },
+ "about_roles": "role = اسم الدور اللي dm_direct.py بيفهمه (ROLE_WEIGHT)؛ id = اسم البيت التحريري. concepts.json بيكتب arc بالأدوار."
+}
