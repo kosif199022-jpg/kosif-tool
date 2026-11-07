@@ -2422,6 +2422,16 @@
       ],
       "why": "saas-animation: tiles known-colour stills into a contact sheet in time order, splits a cut-out into a layer and draws a coordinate grid, each checked by pixel (no Chrome render)",
       "skill_program": true
+    },
+    "skill:cartoon-audio-short": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "cartoon-short",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "cartoon-audio-short: kit tools align a tagged, vowelled Arabic script to a known-answer voice (by silences and by voice-studio word times), lock music 16 dB under the voice with the SFX peak cap acting and tile vertical stills; the vendored claude-animated-shorts audio library is checked against ffmpeg ebur128 and a known inter-sample peak, renders three SFX synths, and its short_qa.py finds a planted black span (no Chromium render)",
+      "skill_program": true
     }
   }
 }

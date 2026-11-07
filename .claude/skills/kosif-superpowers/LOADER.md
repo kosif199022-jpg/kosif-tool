@@ -10,10 +10,11 @@
 
 **التحميل الخفيف:** اقرأ هذا الملف وحده أولًا. لا تقرأ ملفات المهارات الكبيرة كاملة؛ افتح الملف أو نطاق الأسطر الذي يطابق الطلب فقط (`sed -n START,ENDp <path>`)، أو اسأل السكربت: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py need "<الطلب>"`. كل مهارة وكل ملحق ممثَّل هنا بسطر، فلا توجد مهارة خارج الوصول. في الوضع الكامل: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py full`.
 
-## المهارات (16) / skills
+## المهارات (17) / skills
 
 | المهارة | الملف | الحجم | متى |
 |---|---|---|---|
+| `cartoon-audio-short` | `.claude/skills/cartoon-audio-short/SKILL.md` | 23 KB · 200 سطر | Make a vertical animated cartoon short in Arabic or English. Offers 10 ideas, writes the script, then turns the user's voiceover into a finished MP4 with quiet music… |
 | `editorial-film-edit` | `.claude/skills/editorial-film-edit/SKILL.md` | 6 KB · 48 سطر | Edit footage in an archival editorial style with bundled video and photo references, kinetic text, film grain, bloom, masks and presenter splits. Use for new edits and… |
 | `kosif-black-dragon` | `.claude/skills/kosif-black-dragon/SKILL.md` | 13 KB · 183 سطر | التنين الأسود: new independent skill that studies the KOSIF catalog, links each original source to one traceable entry, and synthesizes new task-specific working… |
 | `kosif-dragon-mind` | `.claude/skills/kosif-dragon-mind/SKILL.md` | 12 KB · 153 سطر | The thinking brain of the Black Dragon («عقل التنين الأسود»). Use when a task should be thought through before the Black Dragon runs, when the owner asks to decompose,… |
@@ -102,6 +103,20 @@
 | [A49 في المسار](references/protocol/A49-v65-dragon-in-pipeline.md) | «استدعِ التنين الأسود»، L3، «بأقصى قوة» |
 
 ## أقسام كل SKILL.md بأرقام الأسطر / section line ranges
+
+### `.claude/skills/cartoon-audio-short/SKILL.md`
+
+- 6–9: Cartoon short: idea → script → voiceover → finished MP4
+- 10–16: If this skill arrived as files in the chat
+- 17–30: Language: Arabic or English
+- 31–38: Rules
+- 39–46: Stage 1: Intake (always first)
+- 47–68: Stage 2: 10 video ideas
+- 69–96: Stage 3: Script (after they pick)
+- 97–176: Stage 4: Build the video (after the voiceover is uploaded)
+- 177–185: Inside KOSIF (Black Dragon)
+- 186–193: Engine gotchas (kept in the kit; keep them if rebuilding)
+- 194–200: Architecture (reference for editing the kit)
 
 ### `.claude/skills/editorial-film-edit/SKILL.md`
 
