@@ -47,12 +47,15 @@ STATIONS = {
     "review": ("dm_review.py", ["review"]),
     "generate": ("dm_generate.py", ["gaps"]),
     "mimic": ("dm_mimic.py", ["mimic"]),
+    "stock-search": ("dm_stock.py", ["search"]),
+    "stock-fetch": ("dm_stock.py", ["fetch"]),
 }
 
 ARABIC = {
     "analyze": "العين الأولى", "brief": "يفهم المطلوب", "concepts": "يفكر بإبداع",
     "taste": "يختار الذوق", "direct": "يكتب المونتاج", "render": "ينفّذ",
     "review": "يتفرج وينقد", "generate": "اقتراحات التوليد", "mimic": "المحاكاة",
+    "stock-search": "يدوّر في المواقع المفتوحة", "stock-fetch": "ينزّل اللقطات بترخيصها",
 }
 
 
@@ -96,14 +99,32 @@ def job_status(job: Path, log: list[dict], extra: dict) -> None:
 def cmd_edit(a) -> int:
     job = C.job_dir(a.job or f"out/dragon-montage/{time.strftime('%Y%m%d-%H%M%S')}")
     log: list[dict] = []
-    meta = {"task": a.task, "clips": [str(Path(c).resolve()) for c in a.clip],
+    meta = {"task": a.task, "clips": [str(Path(c).resolve()) for c in (a.clip or [])],
             "music": str(Path(a.music).resolve()) if a.music else None,
             "options": {k: getattr(a, k) for k in ("platform", "seconds", "style", "invent", "rounds", "preview")}}
     job_status(job, log, meta)
     J = ["--job", str(job)]
 
+    clips = list(a.clip or [])
+    if a.stock:                               # only when the owner asks: open-licence sites (Pexels, Mixkit, …)
+        sq = [*J, "--query", a.stock] + (["--commercial"] if a.stock_commercial else [])
+        if a.platform in ("reel", "story"):
+            sq += ["--orientation", "portrait"]
+        elif a.platform in ("youtube", "landscape"):
+            sq += ["--orientation", "landscape"]
+        station("stock-search", sq, log=log)
+        res = station("stock-fetch", [*J, "--top", str(a.stock_top)], log=log)
+        try:
+            clips += json.loads(res.stdout.strip().splitlines()[-1]).get("downloaded", [])
+        except (ValueError, IndexError):
+            pass
+        meta["stock_clips"] = clips[len(a.clip or []):]
+        job_status(job, log, meta)
+    if not clips:
+        raise SystemExit("no footage: pass --clip and/or --stock \"<query>\"")
+
     an = [*J]
-    for c in a.clip:
+    for c in clips:
         an += ["--clip", c]
     if a.music:
         an += ["--music", a.music]
@@ -202,6 +223,13 @@ def write_report(job: Path, log: list[dict], review: dict | None) -> None:
         if props:
             lines += ["", "## اقتراحات توليد (محتاجة موافقتك قبل أي صرف)"]
             lines += [f"- {p['id']}: {p['kind']} لـ {p.get('role', '')} ({p.get('seconds', '?')} ث)" for p in props]
+    stock = job / "stock.json"
+    if stock.exists():
+        got = json.loads(stock.read_text(encoding="utf-8")).get("downloaded", [])
+        if got:
+            lines += ["", "## لقطات من مواقع مفتوحة المصدر (بترخيصها)"]
+            lines += [f"- {g.get('attribution') or g['path']}" for g in got]
+            lines += ["- ملف النسب الكامل: `stock/ATTRIBUTION.md`"]
     lines += ["", "## المراحل", *[f"- {ARABIC.get(s['station'], s['station'])}: {'✓' if s['rc'] == 0 else '✗'} ({s['seconds']} ث)" for s in log]]
     (job / "report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -216,7 +244,10 @@ def main(argv=None) -> int:
     sub = p.add_subparsers(dest="cmd", required=True)
     e = sub.add_parser("edit", help="full protocol: footage → edited video")
     e.add_argument("task")
-    e.add_argument("--clip", action="append", required=True)
+    e.add_argument("--clip", action="append")
+    e.add_argument("--stock", help="search open-licence sites for this (English) query and add the best clips")
+    e.add_argument("--stock-top", type=int, default=3)
+    e.add_argument("--stock-commercial", action="store_true", help="keep only licences that allow commercial use")
     e.add_argument("--music")
     e.add_argument("--job")
     e.add_argument("--platform")

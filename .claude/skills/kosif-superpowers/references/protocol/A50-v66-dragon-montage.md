@@ -27,6 +27,12 @@ stations uses the few tools that fit, and every station writes a file whose deci
 «التنين-مونتاج: consulted · ran_on_your_video · missing · rounds · verdict»
 Never present consulted cards as executed.
 
+## Open-licence footage («دوّر في Pexels»)
+When the owner asks for stock, `edit --stock "<english query>"` searches the free sites (Pexels, Pixabay,
+Mixkit, Coverr, Wikimedia Commons, Internet Archive, NASA, Library of Congress) through `free_footage.py`,
+downloads the best-licensed clips with a sidecar each and `stock/ATTRIBUTION.md`, and adds them to the edit;
+the report lists every credit line. Paid stock sites are never searched.
+
 ## Consent
 Generation (Kling/Higgsfield/Suno) is proposal-only: `generate.json` + `GENERATE_AR.md`. The owner's
 yes in chat is required before any paid call. Nothing installs, uploads or publishes by itself.

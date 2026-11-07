@@ -36,6 +36,15 @@ python3 .claude/skills/kosif-dragon-montage/scripts/dragon_montage.py station <a
 | 7 | يتفرج وينقد (review) | `dm_review.py review` | review.json, frames, VISION_PROMPT.md | verify_video.py, video_eyes.py, blackdetect, silencedetect |
 | 8 | يصلّح ويسلّم (fix + deliver) | `dm_direct.py direct --apply-review` → render → review | edl.rN.json history, report.md | keeps the best-scoring round |
 
+Open-licence footage, only when the owner asks («دوّر في Pexels / المواقع المفتوحة»): add
+`--stock "<english query>" [--stock-top 3] [--stock-commercial]` to `edit` (or run
+`dm_stock.py search|fetch`). It searches the free sites in `kosif-superpowers/data/free_footage_sources.json`
+(Pexels and Pixabay with `PEXELS_API_KEY` / `PIXABAY_API_KEY`, plus Mixkit, Coverr, Wikimedia Commons,
+Internet Archive, NASA, Library of Congress with no key) through `free_footage.py`, keeps a licence sidecar
+per clip and `stock/ATTRIBUTION.md`, drops no-derivatives licences, and adds the clips to the edit. The wider
+129-site catalog is `data/free_media_catalog.json`; stills come from `free_photos.py`. Free stock is tried
+before any paid generation proposal.
+
 Optional: `dm_generate.py gaps` (proposals for Kling/Higgsfield/Suno with prompts, never spends) and
 `dm_mimic.py mimic --reference` («اعمل زي الفيديو ده»: copies a reference's shot rhythm, transitions and look).
 
