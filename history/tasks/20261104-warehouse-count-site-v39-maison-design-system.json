@@ -460,6 +460,13 @@
         "checkpoint_status": "published",
         "checks": "261 items, one group, 0 page errors; xlsx recalc 76 formulas 0 errors"
       }
+    },
+    {
+      "n": 50,
+      "at": "2026-11-08T13:40:00+03:00",
+      "what": "Third separate artifact 'بضاعة جديدة 2' from the LEMFOERDER proforma PRF-17688: 73 items, full multi-line descriptions, SMACC exact 36, via alternative 20, none 17, alternatives on all 73.",
+      "checks": "73 items, one group, title and heading correct, 0 page errors",
+      "status": "published"
     }
   ],
   "outputs": [
@@ -485,6 +492,19 @@
         "smacc_exact": 98,
         "smacc_via_alt": 43,
         "with_alternatives": 127,
+        "js_errors": 0
+      }
+    },
+    {
+      "url": "https://claude.ai/artifact/JwNjZvfR2utcKv2EQVSUGn",
+      "kind": "web",
+      "deterministic": false,
+      "measured": {
+        "version": 1,
+        "items": 73,
+        "smacc_exact": 36,
+        "smacc_via_alt": 20,
+        "with_alternatives": 73,
         "js_errors": 0
       }
     }
