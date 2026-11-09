@@ -5,7 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
+    "charts",
     "music"
   ],
   "creator": "@tankazunori0914",
@@ -18,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 45,
+  "rank": 183,
   "published": "2026-10-02",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -27,7 +27,7 @@
   "listed": true,
   "skill": "styles/pm-tankazunori0914-0fc886/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
+    "playbooks/charts.md",
     "playbooks/music.md"
   ],
   "summary_ar": "فيلم تايبوغرافي مدته 30 ثانية على خلفية فحمية بوهج برتقالي وإطار واجهة تقنية بأرقام صغيرة: سؤال ياباني يُكتب بمؤشر برتقالي، ثم صف من سبع خانات أيام يقفز فيه إطار تحديد برتقالي يميناً ويساراً حتى يستقر على الجمعة، فتنفجر كلمة FRIDAY ضخمة بتشويش لوني وشريط نص متكرر في الخلفية، ثم لوحة بيانات (التاريخ، رقم الأسبوع، يوم السنة بشريط تقدم) وختام بالجواب الياباني الكبير.",

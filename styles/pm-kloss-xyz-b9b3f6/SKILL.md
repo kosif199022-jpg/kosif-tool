@@ -13,7 +13,7 @@ description: A 10-second cold open on near-black: a tiny orange dot pulses with 
 - Published on source: 2026-09-26 · credited model: Opus 5.5
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 11 words (not reproduced here)
-- Popularity rank on source library: #186
+- Popularity rank on source library: #48
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 

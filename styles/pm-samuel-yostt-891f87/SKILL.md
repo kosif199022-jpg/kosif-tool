@@ -13,7 +13,7 @@ description: A fast 15-second app promo on white with a peach glow: an orange do
 - Published on source: 2026-10-01 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 45 words (not reproduced here)
-- Popularity rank on source library: #250
+- Popularity rank on source library: #112
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,16 +25,14 @@ A fast 15-second app promo on white with a peach glow: an orange dot blooms into
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (15 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Phone / هاتف, Ads / إعلانات, Kinetic type / تايبوغرافي متحرك.
+Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/phone.md](../../playbooks/phone.md)
-- [playbooks/ads.md](../../playbooks/ads.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
-* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)

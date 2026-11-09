@@ -6,8 +6,8 @@
   "type": "Prompt",
   "category": [
     "product-ui",
-    "ads",
-    "charts"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@en______ra",
   "creator_url": "https://x.com/en______ra/status/2104035188061986980",
@@ -19,7 +19,7 @@
     "h": 1440
   },
   "aspect_label": "1:1",
-  "rank": 175,
+  "rank": 37,
   "published": "2026-09-27",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,8 +29,8 @@
   "skill": "styles/pm-en-ra-81c6dd/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/ads.md",
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "إعلان مربع مدته 16 ثانية بواجهة بيضاء دافئة وبرتقالي أحمر: مؤشر يلصق رابط منتج ويضغط «Analyze»، شريط «Reading…» أسود يمتلئ، بطاقة المنتج بالوسوم، قائمة مجتمعات بنسب تطابق تُختار، حبة «Scanning» ثم «3 opportunities found»، بطاقة منشور بحلقة درجة، ردّ بثلاث نسخ يُعتمد، منزلق موعد النشر عند الذروة، بطاقة «Posted» تتصاعد أصواتها مع رسم نقرات، ثم شعار شخصية برتقالية مبتسمة.",
   "summary_en": "A 16-second square product promo in white cards and red-orange: a cursor pastes a URL, a black 'Reading' pill fills, a product card, community match bars get ticked, a scan finds opportunities, a reply with three versions is approved and scheduled at peak, a posted card climbs in upvotes with a clicks chart, and an orange mascot logo closes.",

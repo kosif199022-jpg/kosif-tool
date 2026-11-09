@@ -5,10 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "shapes",
-    "particles",
-    "charts"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@VanshWTFFF",
   "creator_url": "https://x.com/VanshWTFFF/status/2103644352794992798",
@@ -20,7 +18,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 273,
+  "rank": 135,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,10 +27,8 @@
   "listed": true,
   "skill": "styles/pm-vanshwtfff-db0466/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/particles.md",
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "شوريل مدته 10 ثوانٍ على أزرق ملكي مع ورق أبيض وأصفر وأحمر: حروف «MOTION» تسقط وترتد فوق صف رسوم منحنيات التسارع، ثم أشكال تقفز بالضغط والمط على خط أرض أبيض، حقل نقاط وخطوط صغيرة على الأصفر يدور كمجال قوى، جسيمات تشكل كلمة «flow» ثم كرة وحلقة دائرية، مخطط أعمدة بعدّاد إطارات، وكلمة «shape» بحد، ثم الاسم بنقطة حمراء وسطر مائل.",
   "summary_en": "A 10-second royal-blue showreel of one-second motion lessons: 'MOTION' letters bouncing over easing-curve graphs, shapes hopping with squash and stretch, a dash field swirling on yellow, particles forming 'flow' then a sphere and torus, a bar chart with a frame counter, and the name with a red dot.",

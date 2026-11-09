@@ -5,9 +5,9 @@
   "origin": "PromptsMotion",
   "type": "Skill",
   "category": [
-    "diagrams",
-    "shapes",
-    "charts"
+    "product-ui",
+    "charts",
+    "shapes"
   ],
   "creator": "unknown",
   "creator_url": "https://x.com/francescoinweb3/status/2112648679731392876",
@@ -19,7 +19,7 @@
     "h": 1350
   },
   "aspect_label": "4:5",
-  "rank": 222,
+  "rank": 84,
   "published": "2026-10-20",
   "model": null,
   "effort": null,
@@ -30,9 +30,9 @@
   "listed": true,
   "skill": "styles/pm-francescoinweb3-bd5267/SKILL.md",
   "playbooks": [
-    "playbooks/diagrams.md",
-    "playbooks/shapes.md",
-    "playbooks/charts.md"
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/shapes.md"
   ],
   "summary_ar": "فيديو عمودي 4:5 مدته 15 ثانية بأسلوب رسم هندسي: ترس كبير مركزي مكتوب عليه الملف النهائي تحيط به خمسة تروس أصغر (مرجع، بيانات، قصة، حركة، إخراج) مرسومة بخطوط سبيروغراف دقيقة، كل ترس يتلون بالبرتقالي حين يأتي دوره ويضيف قوساً على الترس الكبير، وتحتها لوحة تحكم من ستة ألواح (سجل، مقاييس، كود، ملفات، منحنى توقيت، نسبة تطابق ترتفع من 0.78 إلى 0.91) وتنتهي بختم «تمت الموافقة».",
   "summary_en": "A 15-second 4:5 engineering-drawing explainer: a big central gear labelled with the final video file, ringed by five smaller spirograph-lined gears (reference, data, story, motion, direct) that turn orange in turn and add an arc to the main dial, above a six-panel live dashboard (log, gauges, code, file track, easing curve, a match score rising 0.78 to 0.91), ending on an 'approved' state.",

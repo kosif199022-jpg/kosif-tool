@@ -5,9 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "product-ui",
-    "phone",
-    "ads"
+    "product-ui"
   ],
   "creator": "@mehul4795",
   "creator_url": "https://x.com/mehul4795/status/2103420457110417532",
@@ -19,7 +17,7 @@
     "h": 1920
   },
   "aspect_label": "9:16",
-  "rank": 103,
+  "rank": 241,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +26,7 @@
   "listed": true,
   "skill": "styles/pm-mehul4795-4a7007/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md",
-    "playbooks/phone.md",
-    "playbooks/ads.md"
+    "playbooks/product-ui.md"
   ],
   "summary_ar": "إعلان عمودي مدته نحو 33 ثانية لتطبيق تحويل الصور إلى نص، على خلفية بيضاء مائلة للبنفسجي بفقاعات ألوان ضبابية: عنوان «توقف عن إعادة الكتابة» يُشطب بخط أحمر، أيقونة التطبيق بزوايا مسح ملونة، بطاقة نص مطبوع يعبرها خط مسح أخضر فيتظلل النص ويُستخرج في بطاقة مع زر نسخ، فقاعات لغات حول عداد يصعد إلى 140+، ملاحظة بخط اليد تتحول إلى نص، أزرار التصدير، بحث في سجل المسح، عدادات التقييم والتنزيلات، وبطاقة ختام بزر المتجر.",
   "summary_en": "A ~33-second vertical launch ad for an image-to-text app on lavender-white: a struck-through 'stop retyping' headline, the icon with four-colour scan corners, a green scan line extracting printed text into a Copy card, language bubbles round a 140+ counter, handwriting to text, export buttons, history search, proof counters and a store-button end card.",

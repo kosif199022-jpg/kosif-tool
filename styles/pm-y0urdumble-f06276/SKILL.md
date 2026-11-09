@@ -1,6 +1,6 @@
 ---
 name: pm-y0urdumble-f06276
-description: A 16-second vertical split: on top, a voxel 3D scene on a periwinkle floor with stars where a cute orange cube character beams a builder ray to assemble a moustached, sunglassed man in a mustard suit layer by layer, rigs him and both dance; below, a dark dashboard with stage tabs, a progress bar, a beat grid of key-pose diamonds and a command log typing line by line. Use to make a new video in this look (3D); address it by ID pm-y0urdumble-f06276.
+description: A 16-second vertical split: on top, a voxel 3D scene on a periwinkle floor with stars where a cute orange cube character beams a builder ray to assemble a moustached, sunglassed man in a mustard suit layer by layer, rigs him and both dance; below, a dark dashboard with stage tabs, a progress bar, a beat grid of key-pose diamonds and a command log typing line by line. Use to make a new video in this look (Characters); address it by ID pm-y0urdumble-f06276.
 ---
 
 # KOSIF TOOL — Dancing voxel character built in Blender / شخصية فوكسل تُبنى وتُركّب لها مفاصل وترقص مع لوحة سجل حية
@@ -13,7 +13,7 @@ description: A 16-second vertical split: on top, a voxel 3D scene on a periwinkl
 - Published on source: 2026-10-22
 - Reference aspect: other (1080×1500)
 - Creator's public prompt length: about 103 words (not reproduced here)
-- Popularity rank on source library: #223
+- Popularity rank on source library: #85
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,14 +25,14 @@ A 16-second vertical split: on top, a voxel 3D scene on a periwinkle floor with 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, React, Remotion), suggested duration (16 s), aspect 1080x1500, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: 3D / ثلاثي الأبعاد, Characters / شخصيات, Code / كود.
-- [playbooks/3d.md](../../playbooks/3d.md)
+Categories: Characters / شخصيات, Music / موسيقى, Code / كود.
 - [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/music.md](../../playbooks/music.md)
 - [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 * Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
 * Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)

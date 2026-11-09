@@ -13,7 +13,7 @@ description: A 6 min 48 s beginner Git explainer in Chinese on a navy gradient: 
 - Published on source: 2026-09-27 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 53 words (not reproduced here)
-- Popularity rank on source library: #269
+- Popularity rank on source library: #131
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,13 +25,13 @@ A 6 min 48 s beginner Git explainer in Chinese on a navy gradient: duplicate fil
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Web Audio), suggested duration (408 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Diagrams / مخططات, Code / كود.
+Categories: Diagrams / مخططات, Music / موسيقى.
 - [playbooks/diagrams.md](../../playbooks/diagrams.md)
-- [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/music.md](../../playbooks/music.md)
 
 Category tactics:
 * Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

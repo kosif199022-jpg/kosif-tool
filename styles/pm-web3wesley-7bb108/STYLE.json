@@ -5,10 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "shapes",
-    "3d",
-    "particles"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@Web3Wesley",
   "creator_url": "https://x.com/Web3Wesley/status/2103644329294365164",
@@ -20,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 59,
+  "rank": 197,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,10 +27,8 @@
   "listed": true,
   "skill": "styles/pm-web3wesley-7bb108/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/3d.md",
-    "playbooks/particles.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "شوريل مدته 15 ثانية بأسلوب سويسري: بطاقة سيرة ذاتية كريمية على الأسود، ثم أربعة فصول سريعة بالترتيب: «TYPE» ضخمة سوداء على البرتقالي تتحول إلى «type» مائلة بظل متدرج، «FORM» بدائرة برتقالية بدل O تتفكك إلى شبكة أشكال باوهاوس ملونة، «SPACE» كأشكال ثلاثية الأبعاد مبعثرة تسقط عليها كرة حمراء، و«TIME» كخطوط جسيمات دوامية على الأسود؛ وينتهي ببطاقة السيرة نفسها وقد أضيفت أيقونات الفصول.",
   "summary_en": "A 15-second Swiss-style showreel: a cream résumé card on black, then four quick chapters: a giant black 'TYPE' on orange turning into an extruded italic, 'FORM' breaking into a Bauhaus shape grid, 'SPACE' as 3D blocks with a bouncing red ball, and 'TIME' as swirling particle strokes, ending back on the card.",

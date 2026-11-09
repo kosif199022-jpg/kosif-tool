@@ -13,7 +13,7 @@ description: A 20-second landscape SaaS ad alternating glowing dark violet and p
 - Published on source: 2026-09-26 · credited model: Opus 5.5 · effort: High
 - Reference aspect: 16:9 (1280×720)
 - Creator's public prompt length: about 47 words (not reproduced here)
-- Popularity rank on source library: #202
+- Popularity rank on source library: #64
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,15 +25,15 @@ A 20-second landscape SaaS ad alternating glowing dark violet and pale lavender 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (20 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك, Ads / إعلانات.
+Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Characters / شخصيات.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/ads.md](../../playbooks/ads.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

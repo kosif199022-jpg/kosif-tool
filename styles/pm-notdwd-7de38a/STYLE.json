@@ -6,7 +6,14 @@
   "type": "Prompt",
   "category": [
     "product-ui",
-    "kinetic-type"
+    "charts",
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "characters",
+    "photos",
+    "music",
+    "code"
   ],
   "creator": "@notdwd",
   "creator_url": "https://x.com/notdwd/status/2104229441211969685",
@@ -18,7 +25,7 @@
     "h": 1080
   },
   "aspect_label": "1:1",
-  "rank": 18,
+  "rank": 156,
   "published": "2026-09-27",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -32,7 +39,14 @@
   "skill": "styles/pm-notdwd-7de38a/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/kinetic-type.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/characters.md",
+    "playbooks/photos.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
   ],
   "summary_ar": "إعلان إطلاق مربع قصير (نحو 12 ثانية) لمنصة دروس فيديو، يمر بالكاميرا فوق بطاقات واجهة بيضاء وزرقاء ضبابية: هيدر المنتج مع مؤشر ماوس، شعار يدور حوله أربعة مربعات ملونة، شريط قوائم نظام تشغيل يفتح منه صندوق كتابة طلب، صفحة درس، بطاقات وحدات بعناوين ضخمة، ثم شعار متوهج على خلفية سوداء.",
   "summary_en": "A short square product-launch spot (about 12 s) for a video-course platform where a soft camera glides over blurred white-and-blue glass UI cards: a product header with a cursor, a logo orbited by four coloured tiles, an OS menu bar opening a prompt box that types itself, a lesson page, module cards with giant faded titles, and finally a glowing wordmark on black.",

@@ -6,8 +6,8 @@
   "type": "Prompt",
   "category": [
     "product-ui",
-    "kinetic-type",
-    "ads"
+    "charts",
+    "characters"
   ],
   "creator": "@KmAsiff",
   "creator_url": "https://x.com/KmAsiff/status/2103810247131549880",
@@ -19,7 +19,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 202,
+  "rank": 64,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "High",
@@ -29,8 +29,8 @@
   "skill": "styles/pm-kmasiff-cc72cb/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/ads.md"
+    "playbooks/charts.md",
+    "playbooks/characters.md"
   ],
   "summary_ar": "إعلان منتج أفقي (20 ثانية) يتبادل بين خلفية بنفسجية داكنة متوهجة وأخرى لافندر فاتحة: عنوان بكلمة مشطوبة بالأحمر، بطاقة إدخال بريد تُكتب فيها عنوان وخطوات فحص تتقدم ثم نتيجة 85/100، ست بطاقات زجاجية ملونة لأنواع النتائج، ثم شريط تبويبات يقلب بين رفع ملف وحماية نموذج تسجيل وطلب برمجي ومحادثة وكيل ومخطط تكاملات وطرفية، ويختم بثلاث مزايا والشعار والرابط.",
   "summary_en": "A 20-second landscape SaaS ad alternating glowing dark violet and pale lavender grounds: a headline with a red-struck word, an email input card that types an address and steps through checks to an 85/100 score, six tinted glass result tiles, then a pill tab bar flipping through list upload, signup form, API, agent chat, integrations and terminal, ending on the logo and URL.",

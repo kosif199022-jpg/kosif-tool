@@ -5,8 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "product-ui",
-    "kinetic-type"
+    "product-ui"
   ],
   "creator": "@VisheshBaghell",
   "creator_url": "https://x.com/VisheshBaghell/status/2103772327146119508",
@@ -18,7 +17,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 20,
+  "rank": 158,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -27,8 +26,7 @@
   "listed": true,
   "skill": "styles/pm-visheshbaghell-3aba37/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md",
-    "playbooks/kinetic-type.md"
+    "playbooks/product-ui.md"
   ],
   "summary_ar": "عرض منتج أفقي هادئ (نحو 81 ثانية) على خلفية بيضاء مزرقة بعلامات عدّ باهتة: ملاحظة فني تُكتب بخط آلة كاتبة وتُسطَّر عباراتها بالأحمر والأزرق بجانب فاتورة داكنة، ثم شعار الأداة، ثم نوافذ تطبيق تتكبر عليها الكاميرا تُظهر بطاقات قرار وشرائط ثقة وأزرار «افوتر/اترك»، وتنتهي برقم ضخم أزرق للمبالغ المكتشفة والشعار مع الرابط.",
   "summary_en": "A calm 81-second landscape product demo on a pale blue-white canvas with faint tally marks: a technician's note types out in monospace and gets red and blue underlines beside a dark invoice card, then the logo, then app windows the camera pushes into showing decision cards, confidence bars and Bill/Leave buttons, ending on a huge blue dollar total and the logo with its URL.",

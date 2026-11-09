@@ -5,8 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "product-ui"
+    "particles",
+    "music"
   ],
   "creator": "@davidmarcus",
   "creator_url": "https://x.com/davidmarcus/status/2103275618045686217",
@@ -18,7 +18,7 @@
     "h": 1920
   },
   "aspect_label": "9:16",
-  "rank": 84,
+  "rank": 222,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -27,8 +27,8 @@
   "listed": true,
   "skill": "styles/pm-davidmarcus-a28a60/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/product-ui.md"
+    "playbooks/particles.md",
+    "playbooks/music.md"
   ],
   "summary_ar": "ترويج اجتماعي عمودي مدته 23 ثانية بأسلوب سويسري هادئ: عناوين سوداء كبيرة بخط بلا زوائد على خلفية أوف وايت بشبكة باهتة، مع رأس صفحة ثابت وتبويب قسم مسطّر، تتبدل أحياناً إلى صفحات فحمية؛ رموز عملات ضخمة تتبدل مع عداد دول، خط تسوية بين عملتين يمتلئ، قائمة منتجات تتكدس وتخفت، طرفية كود تكتب أمر دفع، وختام بالشعار والرابط.",
   "summary_en": "A 23-second vertical social promo in quiet Swiss style: large black sans headlines on an off-white faint grid with a fixed page header and an underlined section tab, flipping at times to charcoal pages; giant currency codes swap above a country counter, a settlement line fills between two currencies, a product list stacks and dims, a terminal types a payment call, and it ends on logo and URL.",

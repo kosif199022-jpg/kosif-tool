@@ -1,6 +1,6 @@
 ---
 name: pm-techhalla-7acbc2
-description: A 20-second square identity bumper on near-black with a fine HUD frame: huge heavy white words type on letter by letter with popping letters, lime words scramble as random glyphs before resolving with an underline, magenta-dot tags pile up, a code box types a JSON line, and it ends on the handle with a magenta bar and a typed copy line. Use to make a new video in this look (Kinetic type); address it by ID pm-techhalla-7acbc2.
+description: A 20-second square identity bumper on near-black with a fine HUD frame: huge heavy white words type on letter by letter with popping letters, lime words scramble as random glyphs before resolving with an underline, magenta-dot tags pile up, a code box types a JSON line, and it ends on the handle with a magenta bar and a typed copy line. Use to make a new video in this look (Product UI); address it by ID pm-techhalla-7acbc2.
 ---
 
 # KOSIF TOOL — 20-second kinetic identity bumper for TechHalla / فاصل هوية حركي بخطوط عريضة ضخمة وتشويش رموز على الأسود
@@ -14,7 +14,7 @@ description: A 20-second square identity bumper on near-black with a fine HUD fr
 - Reference aspect: 16:9 (1920×1080)
 - Technologies named by the source: CSS, HTML, React
 - Creator's public prompt length: about 627 words (not reproduced here)
-- Popularity rank on source library: #51
+- Popularity rank on source library: #189
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -26,12 +26,28 @@ A 20-second square identity bumper on near-black with a fine HUD frame: huge hea
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (20 s), aspect 1:1, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك, Code / كود.
+Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, Characters / شخصيات, Photos / صور, Music / موسيقى, Code / كود.
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/diagrams.md](../../playbooks/diagrams.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
+- [playbooks/music.md](../../playbooks/music.md)
 - [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
+* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
 * Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)

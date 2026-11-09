@@ -6,8 +6,7 @@
   "type": "Prompt",
   "category": [
     "product-ui",
-    "charts",
-    "ads"
+    "charts"
   ],
   "creator": "@FractaDev",
   "creator_url": "https://x.com/FractaDev/status/2103941789744861266",
@@ -19,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 275,
+  "rank": 137,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,8 +28,7 @@
   "skill": "styles/pm-fractadev-149adc/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md",
-    "playbooks/ads.md"
+    "playbooks/charts.md"
   ],
   "summary_ar": "فيلم إطلاق مدته نحو 48 ثانية على خلفية بيضاء نظيفة: بطاقة مكالمة واردة تتحول إلى فائتة وتتكدس تحتها إشعارات، عنوان أسود بكلمة حمراء، ثم الوكيل يرد بفقاعات حوار وموجة صوت وشارة «تم الحجز» خضراء، تقويم أسبوعي يُضاف إليه موعد بإطار أخضر، استمارة بيانات عميل تمتلئ، لوحة عملاء محتملين وتحليلات بمنحنى رمادي، صفحة حجز ذاتي، ثم شعار المنتج وزر الرابط.",
   "summary_en": "A roughly 48-second SaaS launch on clean white: an incoming call turns into a missed call with notifications stacking, a black headline with one red word, the voice agent answering in chat bubbles with a waveform and a green booked badge, a calendar booking, a lead form filling, dashboards with a grey area chart, a self-booking page, then the logo and URL.",

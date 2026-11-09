@@ -1,6 +1,6 @@
 ---
 name: pm-1littlecoder-9fef89
-description: A 10-second self-intro on indigo and pale lavender: an orange dot drags a white line into a scribble, then traits arrive each in its own treatment ('curious' on rules, 'rigorous' on a grid, 'candid' in plain serif), a scrolling list of things it does, and a circle wipe to a name-and-version card with a tagline. Use to make a new video in this look (Kinetic type); address it by ID pm-1littlecoder-9fef89.
+description: A 10-second self-intro on indigo and pale lavender: an orange dot drags a white line into a scribble, then traits arrive each in its own treatment ('curious' on rules, 'rigorous' on a grid, 'candid' in plain serif), a scrolling list of things it does, and a circle wipe to a name-and-version card with a tagline. Use to make a new video in this look (Charts); address it by ID pm-1littlecoder-9fef89.
 ---
 
 # KOSIF TOOL — Claude self-intro motion graphic / تعريف ذاتي بالموشن: نقطة برتقالية تكتب صفات قصيرة
@@ -13,7 +13,7 @@ description: A 10-second self-intro on indigo and pale lavender: an orange dot d
 - Published on source: 2026-09-25 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 37 words (not reproduced here)
-- Popularity rank on source library: #112
+- Popularity rank on source library: #250
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,10 +25,12 @@ A 10-second self-intro on indigo and pale lavender: an orange dot drags a white 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (React, SVG, CSS, Remotion), suggested duration (10 s), aspect 16:9, difficulty 2/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك.
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)

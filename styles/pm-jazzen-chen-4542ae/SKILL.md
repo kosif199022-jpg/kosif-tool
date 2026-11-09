@@ -1,6 +1,6 @@
 ---
 name: pm-jazzen-chen-4542ae
-description: A 30 s app-launch film on near-black navy built entirely around a laptop notch: two sparks trace its edges and ignite a green-to-amber-to-red glowing rim, quota labels branch out of it, a monospace line types itself, ASCII and binary character flows pour around it, then the notch expands into status, warning, statistics and approval cards before a wide laptop shot and a product name card. Use to make a new video in this look (Product UI); address it by ID pm-jazzen-chen-4542ae.
+description: A 30 s app-launch film on near-black navy built entirely around a laptop notch: two sparks trace its edges and ignite a green-to-amber-to-red glowing rim, quota labels branch out of it, a monospace line types itself, ASCII and binary character flows pour around it, then the notch expands into status, warning, statistics and approval cards before a wide laptop shot and a product name card. Use to make a new video in this look (Charts); address it by ID pm-jazzen-chen-4542ae.
 ---
 
 # KOSIF TOOL — AgentHud project motion video / إطلاق تطبيق نوتش متوهج: جزيرة ديناميكية لحصص وكلاء الذكاء الاصطناعي
@@ -13,7 +13,7 @@ description: A 30 s app-launch film on near-black navy built entirely around a l
 - Published on source: 2026-09-26 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 10 words (not reproduced here)
-- Popularity rank on source library: #125
+- Popularity rank on source library: #263
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,14 +25,10 @@ A 30 s app-launch film on near-black navy built entirely around a laptop notch: 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG, HTML Canvas), suggested duration (30 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك, Charts / رسوم بيانية.
-- [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+Categories: Charts / رسوم بيانية.
 - [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
-* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)

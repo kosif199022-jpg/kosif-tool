@@ -5,8 +5,6 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "product-ui",
-    "kinetic-type",
     "charts"
   ],
   "creator": "@Jazzen_Chen",
@@ -19,7 +17,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 125,
+  "rank": 263,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,8 +26,6 @@
   "listed": true,
   "skill": "styles/pm-jazzen-chen-4542ae/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md",
-    "playbooks/kinetic-type.md",
     "playbooks/charts.md"
   ],
   "summary_ar": "فيديو إطلاق منتج مدته 30 ثانية على خلفية كحلية شبه سوداء يدور كله حول نوتش شاشة لابتوب: شرارتان تنزلقان على حوافه فتشعلان حدّاً متوهجاً متدرجاً من الأخضر إلى الأصفر إلى الأحمر، ثم وسوم الحصص تتفرع منه، وجملة بخط أحادي المسافة تُكتب حرفاً حرفاً، ثم أنماط ASCII وثنائية ملونة تنساب حوله، ثم يتمدد النوتش إلى بطاقات حالة وتحذير وإحصاءات وموافقة بنقرة، ثم لقطة لابتوب واسعة وبطاقة اسم المنتج.",

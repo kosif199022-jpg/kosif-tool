@@ -6,9 +6,8 @@
   "type": "Prompt",
   "category": [
     "product-ui",
-    "phone",
     "charts",
-    "kinetic-type"
+    "music"
   ],
   "creator": "@macrohou",
   "creator_url": "https://x.com/macrohou/status/2103545787875733862",
@@ -20,7 +19,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 260,
+  "rank": 122,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -30,9 +29,8 @@
   "skill": "styles/pm-macrohou-33959d/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/phone.md",
     "playbooks/charts.md",
-    "playbooks/kinetic-type.md"
+    "playbooks/music.md"
   ],
   "summary_ar": "فيلم إطلاق مدته نحو 30 ثانية لتطبيق صحي: يبدأ بحبوب ونجوم متطايرة على الأسود حول سؤال «الجميع يقسم إنها تنفع»، ثم ينتقل إلى ورق كريمي هادئ بعناوين داكنة وكلمات مفتاحية خضراء، شعار القوس يرافق الجمل، قواعد التجربة كبطاقات تُقفل، هاتف يملأ تقويم الجرعات بنقرة، صندوق نتيجة يدور حتى «نجح»، منحنى نبض ينخفض، شجرة الاختبار التالي، ثم جسيمات تتجمع في «n = 1» والشعار.",
   "summary_en": "A ~30-second app launch film: tumbling pills on black give way to calm cream paper with green key words, the arch logo rides beside sentences, trial rules lock into a card, a phone fills a dose calendar, a slot reel lands on 'worked', a heart-rate line drops, a next-test tree branches, and particles form 'n = 1' and the logo.",

@@ -1,6 +1,6 @@
 ---
 name: pm-sab8a-364a5a
-description: A 37 s 16:9 talking-head edit before a warm amber curtain where the speaker is cut out every few seconds and dropped into a new thumbnail world (sunny 3D cartoon, sepia rubber-hose, pink kawaii, manga, holographic card, explosion, pop art), with bold word-by-word captions and a heart counter, ending on a numbered grid of all nine ideas for a vote. Use to make a new video in this look (Photos); address it by ID pm-sab8a-364a5a.
+description: A 37 s 16:9 talking-head edit before a warm amber curtain where the speaker is cut out every few seconds and dropped into a new thumbnail world (sunny 3D cartoon, sepia rubber-hose, pink kawaii, manga, holographic card, explosion, pop art), with bold word-by-word captions and a heart counter, ending on a numbered grid of all nine ideas for a vote. Use to make a new video in this look (Charts); address it by ID pm-sab8a-364a5a.
 ---
 
 # KOSIF TOOL — Talking-head clip edit / مقطع متحدثة أمام الكاميرا يتنقل بين تسعة أنماط لصور مصغّرة
@@ -13,7 +13,7 @@ description: A 37 s 16:9 talking-head edit before a warm amber curtain where the
 - Published on source: 2026-09-24 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 15 words (not reproduced here)
-- Popularity rank on source library: #14
+- Popularity rank on source library: #152
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,13 +25,13 @@ A 37 s 16:9 talking-head edit before a warm amber curtain where the speaker is c
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG), suggested duration (37 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Photos / صور, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/photos.md](../../playbooks/photos.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+Categories: Charts / رسوم بيانية, Music / موسيقى.
+- [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/music.md](../../playbooks/music.md)
 
 Category tactics:
-* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

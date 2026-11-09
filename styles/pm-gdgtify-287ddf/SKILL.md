@@ -1,6 +1,6 @@
 ---
 name: pm-gdgtify-287ddf
-description: A 20 s square kinetic-type piece on deep forest green where huge cream heavy-sans words swing, drop and hang from a thin gold cable like a suspension bridge, other words stand vertically as pillars, and short lines in a light serif write in between until the words form a gateway-like structure, before looping back to an extreme close-up of the first word. Use to make a new video in this look (Kinetic type); address it by ID pm-gdgtify-287ddf.
+description: A 20 s square kinetic-type piece on deep forest green where huge cream heavy-sans words swing, drop and hang from a thin gold cable like a suspension bridge, other words stand vertically as pillars, and short lines in a light serif write in between until the words form a gateway-like structure, before looping back to an extreme close-up of the first word. Use to make a new video in this look (Phone); address it by ID pm-gdgtify-287ddf.
 ---
 
 # KOSIF TOOL — Speech built as architecture / خطاب يُبنى كعمارة: كلمات ضخمة تصير جسراً وأعمدة
@@ -14,7 +14,7 @@ description: A 20 s square kinetic-type piece on deep forest green where huge cr
 - Reference aspect: 1:1 (1080×1080)
 - Technologies named by the source: CSS, Canvas, HTML, SVG
 - Creator's public prompt length: about 648 words (not reproduced here)
-- Popularity rank on source library: #37
+- Popularity rank on source library: #175
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -26,11 +26,27 @@ A 20 s square kinetic-type piece on deep forest green where huge cream heavy-san
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (SVG, CSS, GSAP), suggested duration (20 s), aspect 1:1, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك.
+Categories: Phone / هاتف, Charts / رسوم بيانية, Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك, Particles / جسيمات, Characters / شخصيات, Photos / صور, Music / موسيقى, Code / كود.
+- [playbooks/phone.md](../../playbooks/phone.md)
+- [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/diagrams.md](../../playbooks/diagrams.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
+- [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
+* Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
+* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
+* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

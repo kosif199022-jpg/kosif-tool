@@ -5,9 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "shapes",
-    "particles"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@_topi_003",
   "creator_url": "https://x.com/_topi_003/status/2104086342204592443",
@@ -19,7 +18,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 82,
+  "rank": 220,
   "published": "2026-09-27",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +27,8 @@
   "listed": true,
   "skill": "styles/pm-topi-003-9ca6b5/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/particles.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "شوريل مدته 15 ثانية في إطار شاشة تصوير بزوايا ومؤقت: خط أفقي على الأسود، ثم كلمة تحية سوداء مكثفة تُبنى على الأحمر، وكلمة MOTION تتحول حروفها الدائرية إلى حلقات حمراء، وشبكة نقاط زرقاء تتحول إلى صلبان وعصي بإيقاع، وكرة جسيمات ثلاثية الأبعاد تتشوه، ثم قطعات سريعة (حرف ياباني، كلمة ملونة بين خطوط مائلة، تكرار كلمة على الأحمر)، ودوامة جسيمات، وبطاقة اسم بأحرف متباعدة.",
   "summary_en": "A 15-second showreel inside a viewfinder HUD with timecode: a heavy black greeting builds on red, MOTION with red ring letters, a blue dot grid morphing to crosses and dashes, a 3D particle sphere twisting apart, quarter-second cuts (kanji, striped colour word, repeated word on red), a particle vortex and a name card.",

@@ -5,7 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "3d",
+    "photos",
+    "music",
     "code"
   ],
   "creator": "unknown",
@@ -18,7 +19,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 72,
+  "rank": 71,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -27,7 +28,8 @@
   "listed": true,
   "skill": "styles/pm-stefan-3d-ai-c5f9fd/SKILL.md",
   "playbooks": [
-    "playbooks/3d.md",
+    "playbooks/photos.md",
+    "playbooks/music.md",
     "playbooks/code.md"
   ],
   "summary_ar": "فيلم عرض مدته نحو 77 ثانية بلا صوت للعبة تقمص أدوار جماعية بأسلوب فانتازي كرتوني ملون: يبدأ بشاشة منقسمة بين منصة اختيار الشخصية وعالم اللعب، ثم شاشة إنشاء الشخصية تتنقل بين الأعراق والفئات مع لوحة رقّ وصفية، ثم لقطات لعب بكاميرا خلف الكتف في حقول قمح ومقبرة ليلية وساحة مدينة بنافورة سحرية، ثم لقطات من محرر Unity وطرفية الذكاء الاصطناعي، ونسخ بدائية مبكرة منخفضة المضلعات، وأخيراً شبكة خرائط علوية للعالم.",

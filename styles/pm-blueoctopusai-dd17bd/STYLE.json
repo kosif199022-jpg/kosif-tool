@@ -5,7 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "3d",
+    "charts",
     "diagrams"
   ],
   "creator": "@blueoctopusai",
@@ -18,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 113,
+  "rank": 251,
   "published": "2026-09-30",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -27,7 +27,7 @@
   "listed": true,
   "skill": "styles/pm-blueoctopusai-dd17bd/SKILL.md",
   "playbooks": [
-    "playbooks/3d.md",
+    "playbooks/charts.md",
     "playbooks/diagrams.md"
   ],
   "summary_ar": "شرح ثلاثي الأبعاد مدته نحو دقيقتين و48 ثانية لتقنية خط الياردات الأصفر المرسوم في البث التلفزيوني: ملعب ولاعبون منخفضو المضلعات، ثم ملعب رمادي يُقطع لإظهار الكابلات، كاميرا على حامل بحساسات مُعلَّمة، الملعب المقوَّس بشبكة فيروزية، معايرة العدسة، عينات ألوان العشب في دوائر، معادلة الإسقاط، الخط الذي يمر تحت اللاعبين، ثم إزالة الطلاء، مع عناوين فصول بيضاء مكثفة أعلى اليسار ولوحات بيانات صغيرة.",

@@ -5,9 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "product-ui",
-    "diagrams",
-    "kinetic-type"
+    "charts"
   ],
   "creator": "@prasad_pilla",
   "creator_url": "https://x.com/prasad_pilla/status/2103728953785496049",
@@ -19,7 +17,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 19,
+  "rank": 157,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +26,7 @@
   "listed": true,
   "skill": "styles/pm-prasad-pilla-2c0cba/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md",
-    "playbooks/diagrams.md",
-    "playbooks/kinetic-type.md"
+    "playbooks/charts.md"
   ],
   "summary_ar": "إعلان منتج مدته 15 ثانية على خلفية بيضاء رمادية ناعمة: عنوان أسود يكشف كلماته تدريجياً مع كلمة مظللة بالليموني فوق خط متقطع يختنق عند ساعة رملية، ثم شعار، ثم أربع بطاقات خطوات متصلة (تخطيط، بناء، تحقق، شحن) تضيء بالتتابع، ومسح ليموني كامل، ولوحتان جنباً إلى جنب لعقدة ذاكرة وقائمة مهام بأشرطة تقدم، وحلقة تحقق مقابل مقارنة قبل وبعد، وختام بالشعار وعنوان مسطّر ورابط.",
   "summary_en": "A 15-second product promo on soft off-white: a black word-by-word headline with a lime-highlighted word over a dashed line jamming at an hourglass, a logo, four linked step cards lighting up in turn, a full lime wipe, a memory hub beside agent task bars, a verification loop beside a before/after strip, and a logo end card with underlined tagline.",

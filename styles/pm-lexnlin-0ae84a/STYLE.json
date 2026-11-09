@@ -7,7 +7,8 @@
   "category": [
     "product-ui",
     "charts",
-    "ads"
+    "characters",
+    "code"
   ],
   "creator": "unknown",
   "creator_url": "https://x.com/LexnLin/status/2112674349132194185",
@@ -19,7 +20,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 9,
+  "rank": 147,
   "published": "2026-10-20",
   "model": null,
   "effort": null,
@@ -30,7 +31,8 @@
   "playbooks": [
     "playbooks/product-ui.md",
     "playbooks/charts.md",
-    "playbooks/ads.md"
+    "playbooks/characters.md",
+    "playbooks/code.md"
   ],
   "summary_ar": "فيلم إطلاق مدته نحو 47 ثانية لمهارة وكيل برمجي تبني الواجهات: سطر كتابة بمؤشر برتقالي على ورق فاتح، ثم جولة سريعة في لوحات تحكم حقيقية (متتبع محافظ، خط مبيعات، مكتب خلفي لمخبز، مخطط إجازات على الهاتف، ميزانية منزلية، موقع مقهى) بأقواس تحديد برتقالية ووسوم تعليق صغيرة، تتخللها عناوين بيضاء قصيرة كلمتها الأخيرة برتقالية، وتنتهي بشعار المهارة وأمر التثبيت.",
   "summary_en": "A ~47 s launch film for a coding-agent UI skill: a typed line with an orange caret on pale paper, then a fast tour of dashboards (portfolio tracker, sales pipeline, bakery back office, mobile leave planner, household budget, café site) framed by orange corner brackets and tiny annotation tags, punctuated by short headlines whose last word turns orange, ending on the logo and an install command.",

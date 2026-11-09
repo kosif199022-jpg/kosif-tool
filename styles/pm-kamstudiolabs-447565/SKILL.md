@@ -13,7 +13,7 @@ description: A 47-second physics music machine on a near-black navy ground: four
 - Published on source: 2026-09-23 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 19 words (not reproduced here)
-- Popularity rank on source library: #261
+- Popularity rank on source library: #123
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,15 +25,11 @@ A 47-second physics music machine on a near-black navy ground: four rows of thin
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, Web Audio, React, Remotion), suggested duration (47 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Music / موسيقى, Particles / جسيمات, Shapes / أشكال.
+Categories: Music / موسيقى.
 - [playbooks/music.md](../../playbooks/music.md)
-- [playbooks/particles.md](../../playbooks/particles.md)
-- [playbooks/shapes.md](../../playbooks/shapes.md)
 
 Category tactics:
 * Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

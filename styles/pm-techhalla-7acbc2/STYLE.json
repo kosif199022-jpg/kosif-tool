@@ -5,7 +5,15 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
+    "product-ui",
+    "charts",
+    "diagrams",
     "kinetic-type",
+    "shapes",
+    "particles",
+    "characters",
+    "photos",
+    "music",
     "code"
   ],
   "creator": "@techhalla",
@@ -18,7 +26,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 51,
+  "rank": 189,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": null,
@@ -31,7 +39,15 @@
   "listed": true,
   "skill": "styles/pm-techhalla-7acbc2/SKILL.md",
   "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/diagrams.md",
     "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/characters.md",
+    "playbooks/photos.md",
+    "playbooks/music.md",
     "playbooks/code.md"
   ],
   "summary_ar": "فاصل هوية مربع مدته 20 ثانية على أسود شبه كامل بإطار واجهة دقيق: كلمات عريضة ثقيلة بيضاء تملأ العرض وتُكتب حرفاً حرفاً بحروف تقفز وتستقر، كلمات ليمونية تبدأ رموزاً عشوائية ثم تنحلّ إلى معناها مع خط سفلي، شارات صغيرة وردية تظهر في الأعلى، صندوق كود يُكتب فيه سطر JSON بين وسوم مؤطرة، وختام باسم الحساب مع شريط وردي وخط ليموني ونص نسخ يُكتب.",

@@ -1,6 +1,6 @@
 ---
 name: pm-roundtablespace-d3a1be
-description: A 15-second easing and morphing reel in a HUD frame: a red ray star with circular text, a super-wide black wordmark on red, six balls racing along six labelled easing curves on cream, white shapes morphing on blue with red trails, a truchet tile pattern swept by red, a wireframe sphere-to-torus, giant kinetic words, and a red end card. Use to make a new video in this look (Shapes); address it by ID pm-roundtablespace-d3a1be.
+description: A 15-second easing and morphing reel in a HUD frame: a red ray star with circular text, a super-wide black wordmark on red, six balls racing along six labelled easing curves on cream, white shapes morphing on blue with red trails, a truchet tile pattern swept by red, a wireframe sphere-to-torus, giant kinetic words, and a red end card. Use to make a new video in this look (Charts); address it by ID pm-roundtablespace-d3a1be.
 ---
 
 # KOSIF TOOL — Easing and morphing showreel / شوريل التسهيل والتحول: ستة منحنيات حركة وأشكال تتحول وأنماط بلاط
@@ -13,7 +13,7 @@ description: A 15-second easing and morphing reel in a HUD frame: a red ray star
 - Published on source: 2026-09-28 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 18 words (not reproduced here)
-- Popularity rank on source library: #172
+- Popularity rank on source library: #34
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,17 +25,15 @@ A 15-second easing and morphing reel in a HUD frame: a red ray star with circula
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas, Three.js), suggested duration (15 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Shapes / أشكال, Kinetic type / تايبوغرافي متحرك, Charts / رسوم بيانية, 3D / ثلاثي الأبعاد.
-- [playbooks/shapes.md](../../playbooks/shapes.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال.
 - [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/3d.md](../../playbooks/3d.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
 
 Category tactics:
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

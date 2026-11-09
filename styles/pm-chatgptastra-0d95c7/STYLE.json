@@ -5,9 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "diagrams",
-    "shapes"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@ChatGptAstra",
   "creator_url": "https://x.com/ChatGptAstra/status/2103834787647807540",
@@ -19,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 192,
+  "rank": 54,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +27,8 @@
   "listed": true,
   "skill": "styles/pm-chatgptastra-0d95c7/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/diagrams.md",
-    "playbooks/shapes.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "شوريل مدته 15 ثانية يشرح مبادئ الحركة وهو يطبقها: كرة زرقاء ترتد مع آثار تباعد وتعليقات زرقاء وحمراء بخط اليد (ابطأ في البداية والنهاية، انضغاط، تمدد)، عنوان ضخم مكثف يتجمع حرفاً حرفاً، كلمات حركة على الأسود كل منها تؤدي معناها، منحنى موضع-زمن خطي يُشطب ليصير ناعماً، ذيل جسيمات للمتابعة، حلقة تحميل للتوقع، ثم توقيع.",
   "summary_en": "A 15 s showreel that performs the motion principles it names: a blue ball bouncing with spacing ghosts and handwritten notes (slow in/out, squash, stretch), a condensed headline assembling, motion words on black that do what they say, a linear curve crossed out for an ease, a dot trail for follow-through, a loading ring for anticipation, then a signature.",

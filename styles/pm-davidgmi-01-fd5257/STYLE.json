@@ -6,10 +6,9 @@
   "type": "Skill",
   "category": [
     "product-ui",
-    "code",
-    "kinetic-type",
+    "characters",
     "photos",
-    "ads"
+    "music"
   ],
   "creator": "unknown",
   "creator_url": "https://x.com/Davidgmi_01/status/2113555264422985810",
@@ -21,7 +20,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 224,
+  "rank": 86,
   "published": "2026-10-23",
   "model": null,
   "effort": null,
@@ -31,10 +30,9 @@
   "skill": "styles/pm-davidgmi-01-fd5257/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/code.md",
-    "playbooks/kinetic-type.md",
+    "playbooks/characters.md",
     "playbooks/photos.md",
-    "playbooks/ads.md"
+    "playbooks/music.md"
   ],
   "summary_ar": "فيديو ترويجي مدته نحو 65 ثانية لأداة مفتوحة المصدر تحول صورة منتج واحدة إلى إعلان فيديو: عنوان سيريف ضخم مقنّع بالصور على ورق عاجي، طرفية داكنة يُلصق فيها طلب مع صور، فصول بعناوين سيريف (السيناريو، اللقطات، المونتاج) مع جدول نص بتوقيتات وشريط لقطات، صفحة مستودع على GitHub يُضغط فيها زر النجمة، نموذج إعدادات تُملأ حقوله بالبرتقالي ببطء، ثم لقطة من الإعلان الناتج وبطاقة ختام.",
   "summary_en": "A 65-second promo for an open-source photo-to-video-ad tool: a huge photo-filled serif title on ivory, a dark terminal with a pasted request and image tags, serif chapters (script, clips, edit), a GitHub repo where the star is clicked, a long settings template whose blanks fill in coral line by line under a slow zoom, a clip of the resulting ad, and an end card.",

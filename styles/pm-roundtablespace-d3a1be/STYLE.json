@@ -5,10 +5,9 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "shapes",
-    "kinetic-type",
     "charts",
-    "3d"
+    "kinetic-type",
+    "shapes"
   ],
   "creator": "@RoundtableSpace",
   "creator_url": "https://x.com/RoundtableSpace/status/2104424611010232366",
@@ -20,7 +19,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 172,
+  "rank": 34,
   "published": "2026-09-28",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,10 +28,9 @@
   "listed": true,
   "skill": "styles/pm-roundtablespace-d3a1be/SKILL.md",
   "playbooks": [
-    "playbooks/shapes.md",
-    "playbooks/kinetic-type.md",
     "playbooks/charts.md",
-    "playbooks/3d.md"
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md"
   ],
   "summary_ar": "شوريل مدته 15 ثانية بإطار واجهة: دائرة حمراء على الأسود تنفجر إلى نجمة أشعة محاطة بنص دائري، اسم أسود عريض جداً على أحمر يتقلص بالسحب مع كلمة مائلة بخط زوائد، لوحة كريمية تعرض ست كرات تجري بستة منحنيات تسهيل مختلفة، أشكال بيضاء تتحول على الأزرق بأثر أحمر ودائرة توابع، نمط بلاط منحنٍ أبيض على الأسود تجتاحه موجة حمراء، كرة سلكية بنقاط حمراء تصير طوقاً، كلمات حركية ضخمة، وختام على الأحمر بنجمة واسم.",
   "summary_en": "A 15-second easing and morphing reel in a HUD frame: a red ray star with circular text, a super-wide black wordmark on red, six balls racing along six labelled easing curves on cream, white shapes morphing on blue with red trails, a truchet tile pattern swept by red, a wireframe sphere-to-torus, giant kinetic words, and a red end card.",

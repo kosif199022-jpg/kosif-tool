@@ -13,7 +13,7 @@ description: A 3.5 min 16:9 Arabic timeline of Morocco's political parties told 
 - Published on source: 2026-09-26 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (854×480)
 - Creator's public prompt length: about 11 words (not reproduced here)
-- Popularity rank on source library: #101
+- Popularity rank on source library: #239
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 

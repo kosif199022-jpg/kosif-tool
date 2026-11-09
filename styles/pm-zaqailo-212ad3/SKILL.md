@@ -1,6 +1,6 @@
 ---
 name: pm-zaqailo-212ad3
-description: A fast 15-second landscape motion-designer reel in a HUD with timecode and BPM: a red dot stretches into a line, a bold word on cream gains a red letter and repeats in outlined rows, a red-blue-yellow Bauhaus mosaic, golden particles forming a ring and sphere, a shattering low-poly sphere, orange-to-blue metaballs, then the name with a red full stop. Use to make a new video in this look (Kinetic type); address it by ID pm-zaqailo-212ad3.
+description: A fast 15-second landscape motion-designer reel in a HUD with timecode and BPM: a red dot stretches into a line, a bold word on cream gains a red letter and repeats in outlined rows, a red-blue-yellow Bauhaus mosaic, golden particles forming a ring and sphere, a shattering low-poly sphere, orange-to-blue metaballs, then the name with a red full stop. Use to make a new video in this look (Charts); address it by ID pm-zaqailo-212ad3.
 ---
 
 # KOSIF TOOL — Motion designer showreel / ريل أفقي لمصمم موشن: تايبوغرافي وفسيفساء باوهاوس وجسيمات وكرات معدنية سائلة
@@ -13,7 +13,7 @@ description: A fast 15-second landscape motion-designer reel in a HUD with timec
 - Published on source: 2026-09-26 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 26 words (not reproduced here)
-- Popularity rank on source library: #238
+- Popularity rank on source library: #100
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,17 +25,13 @@ A fast 15-second landscape motion-designer reel in a HUD with timecode and BPM: 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, WebGL, HTML Canvas, Web Audio), suggested duration (15 s), aspect 16:9, difficulty 5/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, 3D / ثلاثي الأبعاد.
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/shapes.md](../../playbooks/shapes.md)
-- [playbooks/particles.md](../../playbooks/particles.md)
-- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

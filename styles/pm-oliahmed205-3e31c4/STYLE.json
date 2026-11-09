@@ -6,8 +6,7 @@
   "type": "Prompt",
   "category": [
     "product-ui",
-    "photos",
-    "phone"
+    "photos"
   ],
   "creator": "@oliahmed205",
   "creator_url": "https://x.com/oliahmed205/status/2104679078465069378",
@@ -19,7 +18,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 237,
+  "rank": 99,
   "published": "2026-09-28",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,8 +28,7 @@
   "skill": "styles/pm-oliahmed205-3e31c4/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/photos.md",
-    "playbooks/phone.md"
+    "playbooks/photos.md"
   ],
   "summary_ar": "إعلان مدته 15 ثانية لتطبيق تعديل صور على خلفية كحلية بنفسجية متوهجة: عنوان أبيض عريض تصبح فيه إحدى الحروف عدسة بتدرج، صورة وجه بالأبيض والأسود، هاتف يمسح الوجه بنقاط ثم شريط مقارنة قبل وبعد مع بطاقات قيم، شرائح عمودية لنفس الشارع بفلاتر مختلفة، محو جسم من صورة شاطئ بفرشاة وردية يتفتت إلى بكسلات، جدار صور مائل، كلمات بحشو صور، وختام بأيقونة التطبيق.",
   "summary_en": "A 15-second photo-editing app promo on a glowing navy-violet field: a bold headline with a gradient lens O, a face scanned on a phone with a before/after slider, strips of one street in different looks, a pink brush erasing objects into pixels, a tilted photo wall, image-filled words and a gradient app icon end card.",

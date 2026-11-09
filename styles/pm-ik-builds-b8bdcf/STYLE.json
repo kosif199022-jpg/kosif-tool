@@ -7,10 +7,13 @@
   "category": [
     "product-ui",
     "charts",
+    "diagrams",
     "kinetic-type",
     "shapes",
-    "hand-drawn",
-    "ads"
+    "particles",
+    "characters",
+    "music",
+    "code"
   ],
   "creator": "@ik_builds",
   "creator_url": "https://x.com/ik_builds/status/2103890476885585923",
@@ -22,7 +25,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 124,
+  "rank": 262,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Medium",
@@ -36,10 +39,13 @@
   "playbooks": [
     "playbooks/product-ui.md",
     "playbooks/charts.md",
+    "playbooks/diagrams.md",
     "playbooks/kinetic-type.md",
     "playbooks/shapes.md",
-    "playbooks/hand-drawn.md",
-    "playbooks/ads.md"
+    "playbooks/particles.md",
+    "playbooks/characters.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
   ],
   "summary_ar": "فيلم إطلاق منتج مدته 15 ثانية تقوده كرة فيروزية لامعة: ترتد على خط مرسوم فوق ورق أبيض تاركة آثاراً منقطة وملاحظات بخط اليد، تحيط بها أوراق ووثائق بشرائط لاصقة، ثم ينقلب المشهد إلى سبورة داكنة تتوهج فيها الكرة وتمتص الأوراق، عنوان ضخم بأحرف كتلية ثلاثية الأبعاد يتبعثر، رسم بياني بمنحنى صاعد، ثم عودة إلى الورق والشعار.",
   "summary_en": "A 15-second launch film led by a glossy teal ball: it bounces on a drawn line over off-white paper leaving dotted ghost trails and red handwritten notes beside taped documents, then on a dark board it glows and absorbs them, a huge extruded block-letter headline tumbles, a chart draws a rising S-curve, and it returns to paper for the logo.",

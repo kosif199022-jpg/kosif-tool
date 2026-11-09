@@ -7,7 +7,8 @@
   "category": [
     "product-ui",
     "kinetic-type",
-    "ads"
+    "photos",
+    "music"
   ],
   "creator": "@antonio_kodheli",
   "creator_url": "https://x.com/antonio_kodheli/status/2107518066615582893",
@@ -19,7 +20,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 32,
+  "rank": 170,
   "published": "2026-10-06",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -32,7 +33,8 @@
   "playbooks": [
     "playbooks/product-ui.md",
     "playbooks/kinetic-type.md",
-    "playbooks/ads.md"
+    "playbooks/photos.md",
+    "playbooks/music.md"
   ],
   "summary_ar": "إعلان موقع مدته 23 ثانية على خلفية فاتحة دافئة: كاميرا افتراضية تتصغر لتكشف عنوان الموقع وشبكة بطاقات فيديو، وتنتقل بقطعات ضبابية إلى بطاقة زرقاء بزر تشغيل، ثم مؤشر بنقطة حمراء ينقر بطاقة فتظهر نافذة تفاصيل، تقترب الكاميرا من كتلة نص تُظلَّل فيها عبارة بالأحمر ويتحول زر «نسخ» إلى «تم النسخ»، وينتهي بعنوان كبير وزر رابط وعمود بطاقات يتحرك.",
   "summary_en": "A 23-second site promo on warm off-white: a virtual camera pulls back to reveal the site headline and a grid of video cards, blur-cuts to a full-frame blue play card, then a cursor with a red click dot opens a card into a modal, the camera pushes into a code-style text block where a phrase is boxed red and Copy flips to Copied, ending on a big headline and URL pill.",

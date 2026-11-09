@@ -1,6 +1,6 @@
 ---
 name: pm-tankazunori0914-0fc886
-description: A 30-second beat-synced type film on charcoal with an orange glow and HUD frame: a Japanese 'what day is it?' types on, an orange box hops across seven day tiles until it locks on Friday, a giant FRIDAY slams in with RGB glitch over a text marquee, then a date/week/day-of-year data panel and a big orange Japanese answer. Use to make a new video in this look (Kinetic type); address it by ID pm-tankazunori0914-0fc886.
+description: A 30-second beat-synced type film on charcoal with an orange glow and HUD frame: a Japanese 'what day is it?' types on, an orange box hops across seven day tiles until it locks on Friday, a giant FRIDAY slams in with RGB glitch over a text marquee, then a date/week/day-of-year data panel and a big orange Japanese answer. Use to make a new video in this look (Charts); address it by ID pm-tankazunori0914-0fc886.
 ---
 
 # KOSIF TOOL — What day is it / ما يوم اليوم؟ تقويم يبحث على الإيقاع حتى الجمعة
@@ -13,7 +13,7 @@ description: A 30-second beat-synced type film on charcoal with an orange glow a
 - Published on source: 2026-10-02 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 24 words (not reproduced here)
-- Popularity rank on source library: #45
+- Popularity rank on source library: #183
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,12 +25,12 @@ A 30-second beat-synced type film on charcoal with an orange glow and HUD frame:
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, Web Audio), suggested duration (30 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك, Music / موسيقى.
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+Categories: Charts / رسوم بيانية, Music / موسيقى.
+- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/music.md](../../playbooks/music.md)
 
 Category tactics:
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
 
 ## Original creative direction (التوجيه الإبداعي)

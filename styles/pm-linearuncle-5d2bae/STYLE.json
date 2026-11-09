@@ -5,8 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "diagrams",
-    "charts"
+    "diagrams"
   ],
   "creator": "@LinearUncle",
   "creator_url": "https://x.com/LinearUncle/status/2103128559174971663",
@@ -18,7 +17,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 78,
+  "rank": 216,
   "published": "2026-09-24",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,8 +28,7 @@
   "listed": true,
   "skill": "styles/pm-linearuncle-5d2bae/SKILL.md",
   "playbooks": [
-    "playbooks/diagrams.md",
-    "playbooks/charts.md"
+    "playbooks/diagrams.md"
   ],
   "summary_ar": "درس رياضيات أفقي طويل (نحو 7 دقائق و37 ثانية) على خلفية كحلية داكنة بأسلوب مانيم: سيارة صغيرة وعداد سرعة، ثم منحنى s=t² تُرسم عليه قاطعة برتقالية تضيق حتى تصير مماساً أصفر، وجدول قيم يقترب من 2، ثم صيغة التعريف بإطارات ملونة، ودالة المشتقة بجانب الأصلية، وعدسة مكبرة تُظهر استقامة المنحنى، وملخص وأسئلة. العناوين صفراء أعلى اليسار والترجمة بالصينية أسفل الشاشة.",
   "summary_en": "A 7.5-minute Manim-style maths lesson on dark navy: a car and speedometer, an s=t² curve where an orange secant shrinks into a yellow tangent beside a table converging on 2, the colour-boxed limit definition, the derivative plotted beside the original, a magnifier that straightens the curve, and a recap; yellow titles top-left, subtitles at the bottom.",

@@ -1,6 +1,6 @@
 ---
 name: pm-topi-003-b0e12c
-description: A 15-second pop-art dance reel for a 2D anime maid character: a big-number count-in, dancing on yellow sunburst rays between scrolling marquee bands, duotone clones in stripes and a 3x3 grid, face and footwork close-ups, a spin with onion-skin trails, and a confetti title card. Use to make a new video in this look (Characters); address it by ID pm-topi-003-b0e12c.
+description: A 15-second pop-art dance reel for a 2D anime maid character: a big-number count-in, dancing on yellow sunburst rays between scrolling marquee bands, duotone clones in stripes and a 3x3 grid, face and footwork close-ups, a spin with onion-skin trails, and a confetti title card. Use to make a new video in this look (Charts); address it by ID pm-topi-003-b0e12c.
 ---
 
 # KOSIF TOOL — Anime maid dance showreel / شوريل رقص لشخصية أنمي بأسلوب بوب آرت ياباني
@@ -13,7 +13,7 @@ description: A 15-second pop-art dance reel for a 2D anime maid character: a big
 - Published on source: 2026-09-27 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1280×720)
 - Creator's public prompt length: about 30 words (not reproduced here)
-- Popularity rank on source library: #182
+- Popularity rank on source library: #44
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,15 +25,15 @@ A 15-second pop-art dance reel for a 2D anime maid character: a big-number count
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, HTML Canvas, SVG, Web Audio), suggested duration (15 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Characters / شخصيات, Kinetic type / تايبوغرافي متحرك, Music / موسيقى.
-- [playbooks/characters.md](../../playbooks/characters.md)
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Photos / صور.
+- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
 
 Category tactics:
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
+* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

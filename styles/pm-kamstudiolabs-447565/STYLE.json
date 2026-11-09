@@ -5,9 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "music",
-    "particles",
-    "shapes"
+    "music"
   ],
   "creator": "@KamStudioLabs",
   "creator_url": "https://x.com/KamStudioLabs/status/2102899866762440893",
@@ -19,7 +17,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 261,
+  "rank": 123,
   "published": "2026-09-23",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +26,7 @@
   "listed": true,
   "skill": "styles/pm-kamstudiolabs-447565/SKILL.md",
   "playbooks": [
-    "playbooks/music.md",
-    "playbooks/particles.md",
-    "playbooks/shapes.md"
+    "playbooks/music.md"
   ],
   "summary_ar": "مقطع مدته 47 ثانية لآلة موسيقية فيزيائية على خلفية كحلية شبه سوداء: أربعة صفوف آلات مرسومة بخطوط رفيعة (أجراس معدنية زرقاء، ماريمبا برونزية مع أنابيب رنين، صنجات ذهبية، قضبان باص بنفسجية، وطبول حمراء)، ومدافع صغيرة تطلق كرات متوهجة بذيول تسقط بالجاذبية على المفاتيح فتضيء كل مفتاح عند الضرب، مع عنوان مقطوعة وعداد نوتات وزمن في الأعلى.",
   "summary_en": "A 47-second physics music machine on a near-black navy ground: four rows of thin-line instruments (blue glockenspiel bars, bronze marimba with resonator tubes, gold cymbals, violet bass bars and red drums) while small cannons fire glowing comet-tailed balls that fall under gravity onto the keys, each key flashing as it is struck, with a piece title, note counter and timer at the top.",

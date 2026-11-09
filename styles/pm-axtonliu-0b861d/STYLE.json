@@ -5,8 +5,6 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "3d",
-    "characters",
     "code"
   ],
   "creator": "@AxtonLiu",
@@ -19,7 +17,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 35,
+  "rank": 173,
   "published": "2026-09-24",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -31,8 +29,6 @@
   "listed": true,
   "skill": "styles/pm-axtonliu-0b861d/SKILL.md",
   "playbooks": [
-    "playbooks/3d.md",
-    "playbooks/characters.md",
     "playbooks/code.md"
   ],
   "summary_ar": "فيلم ثلاثي الأبعاد واقعي مدته 38 ثانية لبجعة بيضاء تقود دراجة سوداء بسلة خوص على رصيف خشبي فوق البحر عند الغروب: لقطة جانبية عريضة، ثم اقتراب على الدواسات والسلسلة، ولقطة قريبة للمنقار البرتقالي، ثم لقطة منخفضة تحت سماء بنفسجية ترفرف فيها البجعة بجناحيها، وتبتعد على الرصيف بينما يظهر العنوان بخط سريفي رفيع فوق الماء.",

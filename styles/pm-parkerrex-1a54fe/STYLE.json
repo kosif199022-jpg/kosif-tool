@@ -5,9 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "diagrams",
-    "charts",
-    "code"
+    "diagrams"
   ],
   "creator": "@ParkerRex",
   "creator_url": "https://x.com/ParkerRex/status/2103206747846701462",
@@ -19,7 +17,7 @@
     "h": 1080
   },
   "aspect_label": "1:1",
-  "rank": 156,
+  "rank": 18,
   "published": "2026-09-24",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -30,9 +28,7 @@
   "listed": true,
   "skill": "styles/pm-parkerrex-1a54fe/SKILL.md",
   "playbooks": [
-    "playbooks/diagrams.md",
-    "playbooks/charts.md",
-    "playbooks/code.md"
+    "playbooks/diagrams.md"
   ],
   "summary_ar": "مخطط مربع صامت مدته 18 ثانية بأسلوب الطرفية الداكنة يشرح محدد المعدل بدلو الرموز: دلو من عشر خانات زرقاء بجانب رقم ضخم للرموز المتبقية وسجل طلبات يتدحرج (مأخوذ بالأخضر، مرفوض بالأحمر)، ومخطط درجات أسفلها يرسم مستوى الدلو مع علامات الطلبات على خط زمني 12 ثانية، عبر أربع مراحل: حركة ثابتة، اندفاع يفرغه، رفض حتى يمتلئ، ثم تعافٍ وخلاصة.",
   "summary_en": "A silent 18-second square terminal-style diagram of a token-bucket rate limiter: a ten-slot blue bucket beside a huge remaining-token number and a scrolling request log (green 'taken', red 'refused'), above a step chart tracing bucket level with request ticks on a 12 s axis, through four phases: steady traffic, a burst that drains it, refusals until refill, then recovery and the takeaway.",

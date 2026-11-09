@@ -1,6 +1,6 @@
 ---
 name: pm-theviableedge-9065be
-description: A 15-second service promo on warm off-white paper: evidence cards surround a headline whose struck-out word becomes an orange 'context', red conflict lines link the cards, a dark terminal shows a folder tree and a superseded price, a green test checklist passes, a handoff folder shrinks away, and a two-line headline with four coloured squares closes it. Use to make a new video in this look (Kinetic type); address it by ID pm-theviableedge-9065be.
+description: A 15-second service promo on warm off-white paper: evidence cards surround a headline whose struck-out word becomes an orange 'context', red conflict lines link the cards, a dark terminal shows a folder tree and a superseded price, a green test checklist passes, a handoff folder shrinks away, and a two-line headline with four coloured squares closes it. Use to make a new video in this look (Charts); address it by ID pm-theviableedge-9065be.
 ---
 
 # KOSIF TOOL — Second brain service promo / إعلان خدمة «العقل الثاني»: من فوضى الملفات إلى حزمة تسليم مُختبرة
@@ -13,7 +13,7 @@ description: A 15-second service promo on warm off-white paper: evidence cards s
 - Published on source: 2026-09-27 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1280×720)
 - Creator's public prompt length: about 27 words (not reproduced here)
-- Popularity rank on source library: #16
+- Popularity rank on source library: #154
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,15 +25,11 @@ A 15-second service promo on warm off-white paper: evidence cards surround a hea
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (15 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك, Product UI / واجهات المنتج, Code / كود.
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/code.md](../../playbooks/code.md)
+Categories: Charts / رسوم بيانية.
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

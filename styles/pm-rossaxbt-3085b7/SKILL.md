@@ -14,7 +14,7 @@ description: A 22-second square launch film for an image model on clean white: f
 - Reference aspect: 1:1 (1080×1080)
 - Technologies named by the source: Canvas, HTML
 - Creator's public prompt length: about 1033 words (not reproduced here)
-- Popularity rank on source library: #40
+- Popularity rank on source library: #178
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 

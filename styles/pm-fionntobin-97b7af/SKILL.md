@@ -1,6 +1,6 @@
 ---
 name: pm-fionntobin-97b7af
-description: A 15-second editorial motion reel in cobalt on cream over a thin design grid: squares doubling to 64 beside a serif numeral, a condensed 'EVERY' on blue then italic 'frame' and wide 'written', a beat step chart, a stick runner clearing hurdles, rising isometric tiles, halftone dot ripples, a glyph matrix and a huge serif signature. Use to make a new video in this look (Kinetic type); address it by ID pm-fionntobin-97b7af.
+description: A 15-second editorial motion reel in cobalt on cream over a thin design grid: squares doubling to 64 beside a serif numeral, a condensed 'EVERY' on blue then italic 'frame' and wide 'written', a beat step chart, a stick runner clearing hurdles, rising isometric tiles, halftone dot ripples, a glyph matrix and a huge serif signature. Use to make a new video in this look (Charts); address it by ID pm-fionntobin-97b7af.
 ---
 
 # KOSIF TOOL — Blue editorial motion showreel / شوريل تحريري بالأزرق الكوبالت على الكريمي
@@ -13,7 +13,7 @@ description: A 15-second editorial motion reel in cobalt on cream over a thin de
 - Published on source: 2026-09-25 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 26 words (not reproduced here)
-- Popularity rank on source library: #146
+- Popularity rank on source library: #8
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,15 +25,13 @@ A 15-second editorial motion reel in cobalt on cream over a thin design grid: sq
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas), suggested duration (15 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك, Charts / رسوم بيانية, Shapes / أشكال.
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
 - [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

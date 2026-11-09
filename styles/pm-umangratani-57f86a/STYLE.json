@@ -5,9 +5,9 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "shapes",
+    "charts",
     "kinetic-type",
-    "particles"
+    "shapes"
   ],
   "creator": "@umangratani",
   "creator_url": "https://x.com/umangratani/status/2103486881136840800",
@@ -19,7 +19,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 66,
+  "rank": 204,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +28,9 @@
   "listed": true,
   "skill": "styles/pm-umangratani-57f86a/SKILL.md",
   "playbooks": [
-    "playbooks/shapes.md",
+    "playbooks/charts.md",
     "playbooks/kinetic-type.md",
-    "playbooks/particles.md"
+    "playbooks/shapes.md"
   ],
   "summary_ar": "شوريل موشن مدته 15 ثانية بإطار واجهة محرر (زوايا، عدّاد إطارات، شريط إيقاع 128 BPM): نقطة حمراء واحدة تتكاثر إلى حلقة، شاشة حمراء بعنوان ثقيل يُبنى كلمة كلمة بين أقواس، أشكال تتحول داخل صندوق تحديد (دائرة، مربع أزرق، زهرة)، شبكة نقاط على كريمي تنبعج بموجات، كرة جسيمات وحلقة وتكعيب سلكي على الأزرق، شريط مخطط ينعقد على الأصفر، دوامة كلمات، ثم توقيع بخط سيريف.",
   "summary_en": "A 15 s showreel inside an editor HUD (corners, frame counter, 128 BPM): a red dot multiplies into a ring, a heavy headline builds on a red slate, shapes morph in a transform box, a cream dot grid ripples, particles form a sphere, torus and wire cube on blue, a striped ribbon ties a knot on yellow, words spiral, then a serif signature.",

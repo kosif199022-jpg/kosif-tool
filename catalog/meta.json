@@ -5,20 +5,20 @@
  "with_briefs": 311,
  "playbooks": 19,
  "categories": {
-  "diagrams": 38,
-  "hand-drawn": 23,
-  "characters": 50,
-  "kinetic-type": 165,
-  "ads": 55,
-  "product-ui": 117,
-  "shapes": 58,
-  "photos": 35,
-  "music": 26,
-  "charts": 88,
-  "3d": 61,
-  "particles": 51,
-  "phone": 22,
-  "code": 38
+  "diagrams": 43,
+  "hand-drawn": 12,
+  "characters": 67,
+  "kinetic-type": 146,
+  "ads": 10,
+  "product-ui": 95,
+  "shapes": 42,
+  "photos": 45,
+  "music": 60,
+  "charts": 159,
+  "3d": 20,
+  "particles": 28,
+  "code": 52,
+  "phone": 8
  },
  "types": {
   "Style": 46,
@@ -30,10 +30,10 @@
   "16:9": 214,
   "1:1": 14,
   "4:3": 2,
-  "9:16": 17,
+  "4:5": 8,
   "other": 10,
-  "21:9": 1,
-  "4:5": 8
+  "9:16": 17,
+  "21:9": 1
  },
  "creators": 225,
  "latest_published": "2026-10-25"

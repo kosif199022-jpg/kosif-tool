@@ -25,13 +25,11 @@ A 10-second screen capture of an interactive 3D web page: a rocket engine on a n
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, React, CSS), suggested duration (10 s), aspect 16:9, difficulty 5/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Diagrams / مخططات, 3D / ثلاثي الأبعاد.
+Categories: Diagrams / مخططات.
 - [playbooks/diagrams.md](../../playbooks/diagrams.md)
-- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
 * Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

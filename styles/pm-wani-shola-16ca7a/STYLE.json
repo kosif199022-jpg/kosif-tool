@@ -7,8 +7,11 @@
   "category": [
     "product-ui",
     "phone",
+    "charts",
     "kinetic-type",
-    "charts"
+    "characters",
+    "music",
+    "code"
   ],
   "creator": "@wani_shola",
   "creator_url": "https://x.com/wani_shola/status/2103769906638459278",
@@ -20,7 +23,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 105,
+  "rank": 243,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -33,8 +36,11 @@
   "playbooks": [
     "playbooks/product-ui.md",
     "playbooks/phone.md",
+    "playbooks/charts.md",
     "playbooks/kinetic-type.md",
-    "playbooks/charts.md"
+    "playbooks/characters.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
   ],
   "summary_ar": "جولة مدتها نحو 102 ثانية في موقع ملف أعمال لمهندس علاقات مطورين، بأسلوب تحريري دافئ: افتتاحية على بني داكن بعبارات «أنا أفعل كذا» تتبدل فيها الكلمة المائلة بالبرتقالي، ثم الاسم بخط سيريف كبير على ورق كريمي، لقطات المتصفح بالوضعين الفاتح والداكن، هاتفان، مساعد محادثة يجيب بأدلة، بطاقات المشاريع، أرقام كبيرة، مخطط تنزيلات، وختام بالرابط.",
   "summary_en": "A roughly 102-second tour of a developer-relations engineer's portfolio site in a warm editorial style: an opening on dark brown with 'I do X' lines swapping an orange italic verb, then the name in large serif on cream paper, browser shots in light and dark mode, two phones, a chat assistant answering with evidence, project cards, big numbers, a downloads chart and a URL close.",

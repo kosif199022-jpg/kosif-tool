@@ -5,6 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
+    "charts",
     "kinetic-type"
   ],
   "creator": "@souravbhar871",
@@ -17,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 98,
+  "rank": 236,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -26,6 +27,7 @@
   "listed": true,
   "skill": "styles/pm-souravbhar871-61f424/SKILL.md",
   "playbooks": [
+    "playbooks/charts.md",
     "playbooks/kinetic-type.md"
   ],
   "summary_ar": "عشر ثوانٍ من التايبوغرافي المتحرك بثلاث خلفيات تتبادل (كريمي، طوبي، فحمي): «Hi.» تتشكل من خط يدوي إلى خط ثقيل، «I read every word» فوق جدار نصوص صغيرة متحركة، «I think it through» بخيوط متشابكة، «I tell it straight» تستقيم حروفه المبعثرة، «I build with you» بظل ممتد، ثم «I'm Claude» مع نجمة برتقالية وسطر الإصدار.",

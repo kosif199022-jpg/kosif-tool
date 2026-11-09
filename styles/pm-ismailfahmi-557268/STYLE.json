@@ -5,9 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "particles",
     "charts",
-    "diagrams",
     "kinetic-type"
   ],
   "creator": "@ismailfahmi",
@@ -20,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 120,
+  "rank": 258,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,9 +27,7 @@
   "listed": true,
   "skill": "styles/pm-ismailfahmi-557268/SKILL.md",
   "playbooks": [
-    "playbooks/particles.md",
     "playbooks/charts.md",
-    "playbooks/diagrams.md",
     "playbooks/kinetic-type.md"
   ],
   "summary_ar": "عرض تقديمي مدته 15 ثانية على أزرق ليلي عميق: آلاف الخطوط الضوئية القصيرة تشكل سحابة تدور ببطء ثم تتلون بألوان المنصات، تنفجر وتتجمع في عناقيد شبكة مترابطة بأسماء المجموعات، تتطاير ثم تتراكم في منحنى زمني بقمة واضحة، وتنتهي باسم المنتج بتدرج فيروزي ذهبي فوق غبار جسيمات، مع جملة تعليق واحدة أسفل اليسار لكل مرحلة وعدّاد يرتفع أعلى اليمين.",

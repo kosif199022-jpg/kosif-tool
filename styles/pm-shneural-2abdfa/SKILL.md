@@ -1,6 +1,6 @@
 ---
 name: pm-shneural-2abdfa
-description: A 32 s 16:9 piece playing two 15 s motion-designer showreels after black title cards: one on black in red-orange and blue (bouncing ball, rippling symbol grid, 3D block city, repeating MOTION type bands, particle swirl), the other in black, acid lime and chrome (huge stacked headlines beside twisting chrome shapes, a waveform beat screen, echoing words). Use to make a new video in this look (Kinetic type); address it by ID pm-shneural-2abdfa.
+description: A 32 s 16:9 piece playing two 15 s motion-designer showreels after black title cards: one on black in red-orange and blue (bouncing ball, rippling symbol grid, 3D block city, repeating MOTION type bands, particle swirl), the other in black, acid lime and chrome (huge stacked headlines beside twisting chrome shapes, a waveform beat screen, echoing words). Use to make a new video in this look (Charts); address it by ID pm-shneural-2abdfa.
 ---
 
 # KOSIF TOOL — Bold kinetic type showreel / شوريل تايبوغرافي جريء: نسختان بألوان أحمر وأزرق ثم ليموني وكروم
@@ -13,7 +13,7 @@ description: A 32 s 16:9 piece playing two 15 s motion-designer showreels after 
 - Published on source: 2026-09-24 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 26 words (not reproduced here)
-- Popularity rank on source library: #71
+- Popularity rank on source library: #70
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,15 +25,13 @@ A 32 s 16:9 piece playing two 15 s motion-designer showreels after black title c
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, WebGL, CSS), suggested duration (32 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك, 3D / ثلاثي الأبعاد, Shapes / أشكال.
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/3d.md](../../playbooks/3d.md)
-- [playbooks/shapes.md](../../playbooks/shapes.md)
 
 Category tactics:
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

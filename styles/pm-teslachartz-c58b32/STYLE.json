@@ -5,9 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "shapes",
-    "3d"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@TeslaChartz",
   "creator_url": "https://x.com/TeslaChartz/status/2103746486978887985",
@@ -19,7 +18,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 249,
+  "rank": 111,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +27,8 @@
   "listed": true,
   "skill": "styles/pm-teslachartz-c58b32/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/3d.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "شوريل مدته 15 ثانية بإيقاع سريع: نقطة في دائرة تنفجر أشعة، «أنا أحرّك الأشياء» بخط عريض أبيض على أحمر مع شرائط نص متحركة وتشويش أفقي، شبكة أشكال حمراء وزرقاء وسوداء تتموج، حلقة ثلاثية الأبعاد سلكية ثم ملونة على أزرق، كرات ميتا ليمونية مع «FLOW»، منحنيات توقيت ومنزلقات على ليموني، «3D» بارزة، «COLOR» على أشرطة، وختام بالاسم ونقطة حمراء.",
   "summary_en": "A 15-second rapid-fire motion showreel: a dot in a circle bursting into rays, 'I make things move' in heavy white type on red with ticker strips and a horizontal glitch, a red/blue/black shape grid rippling, a wireframe-then-shaded torus on blue, lime metaballs with 'FLOW', easing curves and sliders on lime, extruded '3D', 'COLOR' over stripes, and a name end card with a red dot.",

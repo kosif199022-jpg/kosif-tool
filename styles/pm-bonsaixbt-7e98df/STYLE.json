@@ -6,8 +6,7 @@
   "type": "Skill",
   "category": [
     "kinetic-type",
-    "code",
-    "product-ui"
+    "code"
   ],
   "creator": "unknown",
   "creator_url": "https://x.com/bonsaixbt/status/2113751074414744061",
@@ -19,7 +18,7 @@
     "h": 1334
   },
   "aspect_label": "4:5",
-  "rank": 228,
+  "rank": 90,
   "published": "2026-10-23",
   "model": null,
   "effort": null,
@@ -31,8 +30,7 @@
   "skill": "styles/pm-bonsaixbt-7e98df/SKILL.md",
   "playbooks": [
     "playbooks/kinetic-type.md",
-    "playbooks/code.md",
-    "playbooks/product-ui.md"
+    "playbooks/code.md"
   ],
   "summary_ar": "مقطع عمودي 4:5 مدته 20 ثانية بالبنفسجي الداكن: عنوان ثابت أعلاه وعداد إطارات ضخم يصعد من 0 إلى 600، قائمة خطوات من خمسة بنود تُعلَّم بالأخضر، طرفية أسفل تُكتب فيها أوامر، وفي الوسط نفق مستطيلات نيون بنفسجية تخرج منه بطاقة واجهة تُضغط وتصدّر، ثم حلقة خطوات العمل، وينتهي بـ«20 ثانية = 600 إطار».",
   "summary_en": "A 20-second 4:5 vertical piece in deep violet: a fixed two-tone headline, a huge frame counter climbing to 600, a five-item pipeline checklist ticking green, a terminal at the bottom typing commands, and in the centre a neon tunnel of nested rectangles from which a UI card emerges, gets clicked and exports, then a looping workflow ring, ending on a '20 s = 600 frames' card.",

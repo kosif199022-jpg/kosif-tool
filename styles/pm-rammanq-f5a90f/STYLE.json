@@ -6,10 +6,7 @@
   "type": "Prompt",
   "category": [
     "product-ui",
-    "charts",
-    "kinetic-type",
-    "phone",
-    "ads"
+    "charts"
   ],
   "creator": "@rammanq",
   "creator_url": "https://x.com/rammanq/status/2103788796022034553",
@@ -21,7 +18,7 @@
     "h": 720
   },
   "aspect_label": "1:1",
-  "rank": 251,
+  "rank": 113,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -31,10 +28,7 @@
   "skill": "styles/pm-rammanq-f5a90f/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/charts.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/phone.md",
-    "playbooks/ads.md"
+    "playbooks/charts.md"
   ],
   "summary_ar": "ترويج مربع مدته 42 ثانية لتطبيق متابعة الاستثمارات، مقسم إلى فصول مرقمة بعناوين ضخمة بلونين (أسود وأزرق): شعارات شركات تطفو حول كلمة واحدة، منحنى محفظة صاعد بشعارات على نقاطه، دائرة توزيع تتلون، أعمدة مقتنيات، تقويم أرباح على خلفية زرقاء، مقارنة بالسوق، اختبار أزمة 2008 على الأسود، محاكاة مونت كارلو، حد الكفاءة، خيارات وسندات، تقارير ضرائب بأعلام الدول، هاتف ومساعد ذكي، ثم الشعار.",
   "summary_en": "A 42-second square investment-app promo in twelve numbered chapters, each with a huge black-and-blue headline over a chart that builds live: floating logos, a rising portfolio line, sector donut, holdings bars, dividend calendar on blue, a 2008 crash test and Monte Carlo fan on navy, efficient frontier, tax-form flags, a phone with an AI answer, then the logo.",

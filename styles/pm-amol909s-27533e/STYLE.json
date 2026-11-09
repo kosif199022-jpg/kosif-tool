@@ -6,7 +6,7 @@
   "type": "Prompt",
   "category": [
     "product-ui",
-    "phone",
+    "charts",
     "kinetic-type"
   ],
   "creator": "@Amol909S",
@@ -19,7 +19,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 114,
+  "rank": 252,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Medium",
@@ -29,7 +29,7 @@
   "skill": "styles/pm-amol909s-27533e/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/phone.md",
+    "playbooks/charts.md",
     "playbooks/kinetic-type.md"
   ],
   "summary_ar": "عرض تطبيق مدته 20 ثانية على ورق دافئ بخطوط ناعمة: شعار من مربعات رمادية يُبنى، ثم شبكة من نوافذ محادثات برمجة متعددة تعمل معاً مع وسم أسود «كل الخيوط أمامك»، تكبير على نافذة واحدة والموافقة على أمر، هاتف يعرض نفس مساحة العمل، مشهد كحلي يوجّه فيه عقدة متوهجة الطلب إلى أحد نموذجين عبر منحنى ومؤشر تعقيد، أربع بطاقات ميزات (لوحة مهام، ملاحظات المتصفح، لوحة أوامر، تنبيه الانتهاء)، ثم الشعار والشعار اللفظي.",

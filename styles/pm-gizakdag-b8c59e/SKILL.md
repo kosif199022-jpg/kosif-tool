@@ -1,6 +1,6 @@
 ---
 name: pm-gizakdag-b8c59e
-description: A silent 10-second vertical reel about overthinking: a yellow dot and typewriter caption on navy, a star-burst flash, rings and a spinning orange 3D lattice ringed by doubt words, then a surreal collage of a blue-eyed bust, pink flowers and green beams under a huge two-word headline, and saturated dreamscapes with typed captions on orange tags. Use to make a new video in this look (Kinetic type); address it by ID pm-gizakdag-b8c59e.
+description: A silent 10-second vertical reel about overthinking: a yellow dot and typewriter caption on navy, a star-burst flash, rings and a spinning orange 3D lattice ringed by doubt words, then a surreal collage of a blue-eyed bust, pink flowers and green beams under a huge two-word headline, and saturated dreamscapes with typed captions on orange tags. Use to make a new video in this look (Charts); address it by ID pm-gizakdag-b8c59e.
 ---
 
 # KOSIF TOOL — Motion design showreel exploring "overthinking" / ريل رأسي عن الإفراط في التفكير بكولاج سريالي مشبع الألوان
@@ -13,7 +13,7 @@ description: A silent 10-second vertical reel about overthinking: a yellow dot a
 - Published on source: 2026-09-25 · credited model: Opus 5.5
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 30 words (not reproduced here)
-- Popularity rank on source library: #205
+- Popularity rank on source library: #67
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,15 +25,13 @@ A silent 10-second vertical reel about overthinking: a yellow dot and typewriter
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Three.js, CSS), suggested duration (10 s), aspect 9:16, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك, Photos / صور, 3D / ثلاثي الأبعاد.
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/photos.md](../../playbooks/photos.md)
-- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

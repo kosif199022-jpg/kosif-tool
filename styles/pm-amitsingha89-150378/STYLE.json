@@ -5,9 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "photos",
-    "kinetic-type",
-    "ads"
+    "diagrams",
+    "kinetic-type"
   ],
   "creator": "@AmitSingha89",
   "creator_url": "https://x.com/AmitSingha89/status/2103737604277780553",
@@ -19,7 +18,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 167,
+  "rank": 29,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +27,8 @@
   "listed": true,
   "skill": "styles/pm-amitsingha89-150378/SKILL.md",
   "playbooks": [
-    "playbooks/photos.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/ads.md"
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "فيديو تعريفي مدته 54 ثانية لعلامة أقمشة منسوجة يدوياً بأسلوب موقع تحريري دافئ: افتتاح على بني داكن بلقطة نول ضبابية وعنوان سيريف بنصف مائل بلون الطين، ثم شرائح على ورق كريمي وبني تتناوب فيها كتل نص وشبكات صور حقيقية (نساجون، أقمشة، ورش)، أرقام كبيرة، ثلاث قيم، خطوات طلب مرقمة، وختام بزر برتقالي ورابط.",
   "summary_en": "A 54-second brand explainer for a handwoven textiles label in a warm editorial web style: it opens on dark brown over a blurred loom with a serif headline whose second half is terracotta italic, then cream and brown slides pair text with real photo grids (weavers, fabrics, workshops), a big number, three values, numbered ordering steps and a close with an orange button and URL.",

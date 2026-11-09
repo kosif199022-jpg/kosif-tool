@@ -1,6 +1,6 @@
 ---
 name: pm-stefan-3d-ai-c5f9fd
-description: A silent ~77-second showcase of a cartoon-fantasy MMORPG: a split-screen opener, a character creator cycling races and classes beside a parchment panel, over-the-shoulder gameplay in wheat fields, a graveyard and a town square, then Unity editor and AI-terminal captures, crude low-poly prototypes, and a closing grid of overhead world maps. Use to make a new video in this look (3D); address it by ID pm-stefan-3d-ai-c5f9fd.
+description: A silent ~77-second showcase of a cartoon-fantasy MMORPG: a split-screen opener, a character creator cycling races and classes beside a parchment panel, over-the-shoulder gameplay in wheat fields, a graveyard and a town square, then Unity editor and AI-terminal captures, crude low-poly prototypes, and a closing grid of overhead world maps. Use to make a new video in this look (Photos); address it by ID pm-stefan-3d-ai-c5f9fd.
 ---
 
 # KOSIF TOOL — Old-school MMORPG built with Opus 5.5 / عرض لعبة MMORPG كلاسيكية: من اختيار الشخصية إلى كواليس البناء
@@ -13,7 +13,7 @@ description: A silent ~77-second showcase of a cartoon-fantasy MMORPG: a split-s
 - Published on source: 2026-09-26 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1280×720)
 - Creator's public prompt length: about 99 words (not reproduced here)
-- Popularity rank on source library: #72
+- Popularity rank on source library: #71
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,12 +25,14 @@ A silent ~77-second showcase of a cartoon-fantasy MMORPG: a split-screen opener,
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React), suggested duration (77 s), aspect 16:9, difficulty 2/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: 3D / ثلاثي الأبعاد, Code / كود.
-- [playbooks/3d.md](../../playbooks/3d.md)
+Categories: Photos / صور, Music / موسيقى, Code / كود.
+- [playbooks/photos.md](../../playbooks/photos.md)
+- [playbooks/music.md](../../playbooks/music.md)
 - [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
+* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
+* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
 * Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)

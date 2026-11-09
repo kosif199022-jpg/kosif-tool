@@ -5,8 +5,9 @@
   "origin": "PromptsMotion",
   "type": "Skill",
   "category": [
-    "3d",
-    "characters"
+    "shapes",
+    "characters",
+    "photos"
   ],
   "creator": "unknown",
   "creator_url": "https://x.com/slash1sol/status/2114484472456397194",
@@ -18,7 +19,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 220,
+  "rank": 82,
   "published": "2026-10-25",
   "model": null,
   "effort": null,
@@ -29,8 +30,9 @@
   "listed": true,
   "skill": "styles/pm-slash1sol-b35cb1/SKILL.md",
   "playbooks": [
-    "playbooks/3d.md",
-    "playbooks/characters.md"
+    "playbooks/shapes.md",
+    "playbooks/characters.md",
+    "playbooks/photos.md"
   ],
   "summary_ar": "فيلم ثلاثي الأبعاد مدته نحو 24 ثانية: لوح زجاجي داكن عملاق يشبه واجهة برنامج تحريك بخط زمني من مسارات ملونة باستيل، تقف عليه شخصية مكعبة برتقالية لطيفة تمشي على المسارات ومؤشر التشغيل المضيء، وكرة كوكب خضراء منخفضة المضلعات تنبت فيها أشجار مخروطية وبيوت وغيوم بينما تظهر إشعارات صغيرة بخطوات البناء، ثم عنوان نيون برتقالي متوهج فوق الكوكب ولقطة ختامية علوية تبتعد عن المشهد كله.",
   "summary_en": "A 24-second 3D short: a giant dark glass slab shaped like an animation app with a pastel timeline, a cute orange cube character walking along the tracks beside a glowing playhead, a low-poly green planet sprouting trees and houses as toast notes log each step, then a glowing orange neon title and a top-down pull-back.",

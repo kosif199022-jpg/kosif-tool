@@ -1,6 +1,6 @@
 ---
 name: pm-elliot-garreffa-f334bc
-description: A 39-second product promo on white with dotted green gradient blobs: a blue M logo, a two-tone headline, a blue circle expanding to full-screen for three words, then a connector list filling row by row, an Instagram card branching to three capabilities, scattered platform cards snapping into a filtered row, four ecosystems compared on dark green, and a daily-email sign-up end card. Use to make a new video in this look (Product UI); address it by ID pm-elliot-garreffa-f334bc.
+description: A 39-second product promo on white with dotted green gradient blobs: a blue M logo, a two-tone headline, a blue circle expanding to full-screen for three words, then a connector list filling row by row, an Instagram card branching to three capabilities, scattered platform cards snapping into a filtered row, four ecosystems compared on dark green, and a daily-email sign-up end card. Use to make a new video in this look (Charts); address it by ID pm-elliot-garreffa-f334bc.
 ---
 
 # KOSIF TOOL — Muse connector tracker promo / إعلان أداة تتبع موصلات الذكاء الاصطناعي بأزرق نقي وبطاقات بيضاء
@@ -13,7 +13,7 @@ description: A 39-second product promo on white with dotted green gradient blobs
 - Published on source: 2026-09-27 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 26 words (not reproduced here)
-- Popularity rank on source library: #122
+- Popularity rank on source library: #260
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,12 +25,12 @@ A 39-second product promo on white with dotted green gradient blobs: a blue M lo
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG), suggested duration (39 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
-* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)

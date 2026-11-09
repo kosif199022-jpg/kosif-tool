@@ -5,9 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "hand-drawn",
-    "characters",
-    "music"
+    "music",
+    "code"
   ],
   "creator": "@x4b47x",
   "creator_url": "https://x.com/x4b47x/status/2103019799614034026",
@@ -19,7 +18,7 @@
     "h": 1280
   },
   "aspect_label": "9:16",
-  "rank": 27,
+  "rank": 165,
   "published": "2026-09-24",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +27,8 @@
   "listed": true,
   "skill": "styles/pm-x4b47x-9cc84f/SKILL.md",
   "playbooks": [
-    "playbooks/hand-drawn.md",
-    "playbooks/characters.md",
-    "playbooks/music.md"
+    "playbooks/music.md",
+    "playbooks/code.md"
   ],
   "summary_ar": "فيديو عمودي مدته 57 ثانية على هيئة مسرح ظل بستارة مخملية حمراء تنفتح وتنغلق: مشهد صور ظلية سوداء لبيت صغير ورجل بقبعة ومصباح شارع وتلال وطاحونة، تحت سماء تتدرج من شمس برتقالية إلى غسق وردي ثم ليل بنفسجي بقمر ونجوم، والنوافذ تضيء والباب ينفتح بنور دافئ، مع لافتة خشبية معلقة تحمل سطوراً شعرية قصيرة بخط مائل.",
   "summary_en": "A 57-second vertical shadow-theatre piece framed by red velvet curtains: black cut-paper silhouettes of a small house, a man in a hat, a lamp and a village under a sky shifting from orange sunset to violet starry night, as windows glow and the door opens to warm light, with a hanging sign carrying short italic-serif lines.",

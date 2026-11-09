@@ -5,8 +5,10 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
+    "phone",
+    "characters",
     "photos",
-    "characters"
+    "music"
   ],
   "creator": "@koldo2k",
   "creator_url": "https://x.com/koldo2k/status/2103129343253778767",
@@ -18,7 +20,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 159,
+  "rank": 21,
   "published": "2026-09-24",
   "model": "Opus 5.5",
   "effort": null,
@@ -27,8 +29,10 @@
   "listed": true,
   "skill": "styles/pm-koldo2k-5cff87/SKILL.md",
   "playbooks": [
+    "playbooks/phone.md",
+    "playbooks/characters.md",
     "playbooks/photos.md",
-    "playbooks/characters.md"
+    "playbooks/music.md"
   ],
   "summary_ar": "حلقة زووم لا نهائية مدتها 10 ثوانٍ بأسلوب كولاج سريالي عتيق: رجل من الخلف في حقل تحت سماء غائمة وساعة جيب وقبعة طافيتان، والكاميرا تدفع داخل وجه الساعة فينكشف ساحل بجروف وحوت وكاميرا صندوقية وهاتف قديم تطفو كقصاصات ورق، ثم داخل عدسة الكاميرا صحراء كثبان بمفتاح وعدسة مكبرة وفونوغراف، وعدسة المكبرة تحمل المشهد الأول لتُغلق الحلقة.",
   "summary_en": "A 10-second infinite-zoom loop in surreal vintage collage: a man in a field under cloudy sky with a floating pocket watch and bowler hat; the camera pushes into the watch to a cliff coast with a whale, box camera and phone floating as paper cut-outs, then into the camera lens to a dune desert whose magnifying glass holds the opening scene.",

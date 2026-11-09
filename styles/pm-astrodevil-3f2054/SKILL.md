@@ -13,7 +13,7 @@ description: A 15-second agency intro on warm black with a red-orange glow: it o
 - Published on source: 2026-09-25 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 38 words (not reproduced here)
-- Popularity rank on source library: #148
+- Popularity rank on source library: #10
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 

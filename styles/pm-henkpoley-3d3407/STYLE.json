@@ -5,6 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
+    "charts",
     "kinetic-type",
     "code"
   ],
@@ -18,7 +19,7 @@
     "h": 720
   },
   "aspect_label": "other",
-  "rank": 152,
+  "rank": 14,
   "published": "2026-09-27",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,6 +30,7 @@
   "listed": true,
   "skill": "styles/pm-henkpoley-3d3407/SKILL.md",
   "playbooks": [
+    "playbooks/charts.md",
     "playbooks/kinetic-type.md",
     "playbooks/code.md"
   ],

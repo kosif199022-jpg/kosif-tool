@@ -1,6 +1,6 @@
 ---
 name: pm-ajith-io-b5626e
-description: A 15-second abstract reel with a bar-counter HUD: a red dot splitting into a ring, a black headline stacking on red inside selection brackets, a shape morphing in a rotating transform box, a lens-warped dot grid, particles on blue turning into a wireframe cube, a striped rope tying a knot on yellow, spinning text rings, and a serif wordmark end card. Use to make a new video in this look (Shapes); address it by ID pm-ajith-io-b5626e.
+description: A 15-second abstract reel with a bar-counter HUD: a red dot splitting into a ring, a black headline stacking on red inside selection brackets, a shape morphing in a rotating transform box, a lens-warped dot grid, particles on blue turning into a wireframe cube, a striped rope tying a knot on yellow, spinning text rings, and a serif wordmark end card. Use to make a new video in this look (Charts); address it by ID pm-ajith-io-b5626e.
 ---
 
 # KOSIF TOOL — Abstract motion design reel / شوريل موشن تجريدي: نقاط وأشكال بمقابض تحويل وجسيمات وحبل وحلقات نصية
@@ -25,17 +25,15 @@ A 15-second abstract reel with a bar-counter HUD: a red dot splitting into a rin
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas, Three.js), suggested duration (15 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Shapes / أشكال, Particles / جسيمات, Kinetic type / تايبوغرافي متحرك, 3D / ثلاثي الأبعاد.
-- [playbooks/shapes.md](../../playbooks/shapes.md)
-- [playbooks/particles.md](../../playbooks/particles.md)
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال.
+- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/3d.md](../../playbooks/3d.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
 
 Category tactics:
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

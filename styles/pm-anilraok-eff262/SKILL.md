@@ -1,6 +1,6 @@
 ---
 name: pm-anilraok-eff262
-description: A ~42-second vertical 3D story: wooden letter tiles with glossy eyes and eyebrows hop into place on a paper mini-crossword on a dark table while the Q tile is left alone and worried in bokeh-lit close-ups, until it finds its corner slot, confetti bursts, and it ends on a top-down view of the solved grid with a serif headline and an app name card. Use to make a new video in this look (Characters); address it by ID pm-anilraok-eff262.
+description: A ~42-second vertical 3D story: wooden letter tiles with glossy eyes and eyebrows hop into place on a paper mini-crossword on a dark table while the Q tile is left alone and worried in bokeh-lit close-ups, until it finds its corner slot, confetti bursts, and it ends on a top-down view of the solved grid with a serif headline and an app name card. Use to make a new video in this look (Product UI); address it by ID pm-anilraok-eff262.
 ---
 
 # KOSIF TOOL — Scrabble tile character story / قصة بلاطات حروف خشبية بعيون: الحرف Q يبحث عن مكانه
@@ -14,7 +14,7 @@ description: A ~42-second vertical 3D story: wooden letter tiles with glossy eye
 - Reference aspect: 9:16 (1080×1920)
 - Technologies named by the source: Three.js
 - Creator's public prompt length: about 56 words (not reproduced here)
-- Popularity rank on source library: #143
+- Popularity rank on source library: #213
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -26,15 +26,15 @@ A ~42-second vertical 3D story: wooden letter tiles with glossy eyes and eyebrow
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, React, Remotion), suggested duration (42 s), aspect 9:16, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Characters / شخصيات, 3D / ثلاثي الأبعاد, Ads / إعلانات.
+Categories: Product UI / واجهات المنتج, Characters / شخصيات, Code / كود.
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/3d.md](../../playbooks/3d.md)
-- [playbooks/ads.md](../../playbooks/ads.md)
+- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
-* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
+* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

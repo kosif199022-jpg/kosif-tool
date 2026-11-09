@@ -5,10 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "shapes",
-    "particles",
-    "charts"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@safarkhanshuvo",
   "creator_url": "https://x.com/safarkhanshuvo/status/2103520091552059752",
@@ -20,7 +18,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 99,
+  "rank": 237,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,10 +27,8 @@
   "listed": true,
   "skill": "styles/pm-safarkhanshuvo-ffd52d/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/particles.md",
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "شوريل مدته 15 ثانية لمصمم موشن، كل ثانية أو اثنتين فصل جديد داخل إطار واجهة تقنية بزوايا وعدّاد زمني: كرة ترتد بالضغط والتمدد على الأسود، كلمات مكثفة على البرتقالي، دوامة نقاط ومربعات زرقاء وبرتقالية، كرة جسيمات تتشكل كلمة، لوحة أرقام ورسوم بيانية على الأزرق، نفق مربعات دوّار بكلمات عن التوقيت، ثم ثلاثة أشكال تتجمع شعاراً.",
   "summary_en": "A 15-second motion designer showreel, a new chapter every second or two inside a HUD frame with corner brackets and timecode: a squash-and-stretch ball bounce on black, condensed words on orange, a vortex of blue and orange dots, a particle sphere that forms a word, a stats panel on blue, a rotating square tunnel of timing words, and shapes assembling a logo.",

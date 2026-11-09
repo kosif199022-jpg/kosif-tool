@@ -14,7 +14,7 @@ description: A 7.5-minute Manim-style maths lesson on dark navy: a car and speed
 - Reference aspect: 16:9 (1920×1080)
 - Technologies named by the source: Manim
 - Creator's public prompt length: about 31 words (not reproduced here)
-- Popularity rank on source library: #78
+- Popularity rank on source library: #216
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -26,13 +26,11 @@ A 7.5-minute Manim-style maths lesson on dark navy: a car and speedometer, an s=
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (SVG, Remotion, React), suggested duration (457 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Diagrams / مخططات, Charts / رسوم بيانية.
+Categories: Diagrams / مخططات.
 - [playbooks/diagrams.md](../../playbooks/diagrams.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
 * Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

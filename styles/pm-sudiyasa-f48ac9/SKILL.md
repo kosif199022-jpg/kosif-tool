@@ -1,6 +1,6 @@
 ---
 name: pm-sudiyasa-f48ac9
-description: A fast 15 s thank-you reel for an app reaching 100 users, cutting between gold, black, cream and hot-pink grounds: a heavy '100', the number in italic serif, a dot-matrix '100' in a pink halftone ring, an isometric block grid sprouting pink columns, a spiral particle galaxy, then one thank-you word per colour and a logo card. Use to make a new video in this look (Kinetic type); address it by ID pm-sudiyasa-f48ac9.
+description: A fast 15 s thank-you reel for an app reaching 100 users, cutting between gold, black, cream and hot-pink grounds: a heavy '100', the number in italic serif, a dot-matrix '100' in a pink halftone ring, an isometric block grid sprouting pink columns, a spiral particle galaxy, then one thank-you word per colour and a logo card. Use to make a new video in this look (Charts); address it by ID pm-sudiyasa-f48ac9.
 ---
 
 # KOSIF TOOL — EyezOn 100 users thank-you / فيديو شكر لأول 100 مستخدم بأرقام نقطية ومكعبات إيزومترية ومجرة جسيمات
@@ -13,7 +13,7 @@ description: A fast 15 s thank-you reel for an app reaching 100 users, cutting b
 - Published on source: 2026-09-26 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 36 words (not reproduced here)
-- Popularity rank on source library: #75
+- Popularity rank on source library: #144
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,17 +25,13 @@ A fast 15 s thank-you reel for an app reaching 100 users, cutting between gold, 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas, Three.js), suggested duration (15 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك, Charts / رسوم بيانية, Particles / جسيمات, Shapes / أشكال.
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
 - [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/particles.md](../../playbooks/particles.md)
-- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

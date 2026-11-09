@@ -5,8 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Skill",
   "category": [
-    "3d",
     "characters",
+    "music",
     "code"
   ],
   "creator": "unknown",
@@ -19,7 +19,7 @@
     "h": 1500
   },
   "aspect_label": "other",
-  "rank": 223,
+  "rank": 85,
   "published": "2026-10-22",
   "model": null,
   "effort": null,
@@ -28,8 +28,8 @@
   "listed": true,
   "skill": "styles/pm-y0urdumble-f06276/SKILL.md",
   "playbooks": [
-    "playbooks/3d.md",
     "playbooks/characters.md",
+    "playbooks/music.md",
     "playbooks/code.md"
   ],
   "summary_ar": "فيديو عمودي مدته 16 ثانية بقسمين: في الأعلى مشهد فوكسل ثلاثي الأبعاد على أرضية بنفسجية بنجوم، فيه مكعب برتقالي لطيف بوجه يشير بشعاع ليبني رجلاً بنظارة شمسية وشارب وبدلة خردلية طبقة طبقة، ثم تُضاف المفاصل ويرقص الاثنان؛ وفي الأسفل لوحة داكنة بتبويبات المراحل وشريط تقدم وخط إيقاع بنقاط مفاتيح وسجل أوامر يُكتب سطراً سطراً.",

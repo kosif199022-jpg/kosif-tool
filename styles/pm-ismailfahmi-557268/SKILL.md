@@ -1,6 +1,6 @@
 ---
 name: pm-ismailfahmi-557268
-description: A 15-second showreel on deep night blue: thousands of glowing strokes form a turning cloud that takes on platform colours, bursts into labelled network clusters, then piles into a timeline curve with a sharp spike, ending on a teal-to-gold gradient wordmark over particle dust, with one caption bottom-left per stage and a counter climbing top-right. Use to make a new video in this look (Particles); address it by ID pm-ismailfahmi-557268.
+description: A 15-second showreel on deep night blue: thousands of glowing strokes form a turning cloud that takes on platform colours, bursts into labelled network clusters, then piles into a timeline curve with a sharp spike, ending on a teal-to-gold gradient wordmark over particle dust, with one caption bottom-left per stage and a counter climbing top-right. Use to make a new video in this look (Charts); address it by ID pm-ismailfahmi-557268.
 ---
 
 # KOSIF TOOL — Drone Emprit showreel / عرض تقديمي بجسيمات متوهجة تتحول من سحابة إلى شبكة إلى منحنى
@@ -13,7 +13,7 @@ description: A 15-second showreel on deep night blue: thousands of glowing strok
 - Published on source: 2026-09-25 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 27 words (not reproduced here)
-- Popularity rank on source library: #120
+- Popularity rank on source library: #258
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,16 +25,12 @@ A 15-second showreel on deep night blue: thousands of glowing strokes form a tur
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, React, Remotion), suggested duration (15 s), aspect 16:9, difficulty 5/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Particles / جسيمات, Charts / رسوم بيانية, Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/particles.md](../../playbooks/particles.md)
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
 - [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/diagrams.md](../../playbooks/diagrams.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)

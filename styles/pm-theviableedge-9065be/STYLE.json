@@ -5,9 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "product-ui",
-    "code"
+    "charts"
   ],
   "creator": "@TheViableEdge",
   "creator_url": "https://x.com/TheViableEdge/status/2104207707980869918",
@@ -19,7 +17,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 16,
+  "rank": 154,
   "published": "2026-09-27",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +26,7 @@
   "listed": true,
   "skill": "styles/pm-theviableedge-9065be/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/product-ui.md",
-    "playbooks/code.md"
+    "playbooks/charts.md"
   ],
   "summary_ar": "إعلان خدمة مدته 15 ثانية على خلفية ورقية فاتحة: بطاقات مبعثرة (جدول أسعار، ملاحظة لاصقة، بريد، رسالة صوتية) حول جملة «ليست مشكلة أوامر» تُشطب كلمتها وتُستبدل بـ«سياق» برتقالية، ثم خطوط تعارض حمراء بين البطاقات مع عدّاد ملاحظات، ثم نافذة طرفية داكنة بشجرة مجلدات وسعر قديم مشطوب وجديد معتمد، فقائمة اختبارات خضراء، فمجلد تسليم يتقلص، وختام بعنوان من سطرين ومربعات أربعة ملونة.",
   "summary_en": "A 15-second service promo on warm off-white paper: evidence cards surround a headline whose struck-out word becomes an orange 'context', red conflict lines link the cards, a dark terminal shows a folder tree and a superseded price, a green test checklist passes, a handoff folder shrinks away, and a two-line headline with four coloured squares closes it.",

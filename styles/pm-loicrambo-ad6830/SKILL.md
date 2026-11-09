@@ -1,6 +1,6 @@
 ---
 name: pm-loicrambo-ad6830
-description: A 20 s flat-vector life story on one ground line that starts and ends as an ECG trace: a baby, a kid in a sunny park, a skating teen in a purple retro scene, a commuter in a hamster wheel before a grey city, a heart, a family at sunset, an elderly couple into night who fade to white outlines as the pulse flatlines; age counter top-left, BPM top-right. Use to make a new video in this look (Characters); address it by ID pm-loicrambo-ad6830.
+description: A 20 s flat-vector life story on one ground line that starts and ends as an ECG trace: a baby, a kid in a sunny park, a skating teen in a purple retro scene, a commuter in a hamster wheel before a grey city, a heart, a family at sunset, an elderly couple into night who fade to white outlines as the pulse flatlines; age counter top-left, BPM top-right. Use to make a new video in this look (Charts); address it by ID pm-loicrambo-ad6830.
 ---
 
 # KOSIF TOOL — Cycle of life animation / دورة الحياة في عشرين ثانية على خط نبض واحد
@@ -13,7 +13,7 @@ description: A 20 s flat-vector life story on one ground line that starts and en
 - Published on source: 2026-09-25 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 71 words (not reproduced here)
-- Popularity rank on source library: #38
+- Popularity rank on source library: #176
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,13 +25,13 @@ A 20 s flat-vector life story on one ground line that starts and ends as an ECG 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (SVG, GSAP, Remotion), suggested duration (20 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Characters / شخصيات, Shapes / أشكال.
-- [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/shapes.md](../../playbooks/shapes.md)
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+- [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -14,7 +14,7 @@ description: A roughly 5-minute 3D cartoon episode in black letterbox: a purple-
 - Reference aspect: 16:9 (1920×1080)
 - Technologies named by the source: Three.js
 - Creator's public prompt length: about 30 words (not reproduced here)
-- Popularity rank on source library: #56
+- Popularity rank on source library: #194
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 

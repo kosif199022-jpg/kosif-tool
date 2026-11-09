@@ -5,9 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "shapes",
-    "photos"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@jacksonfall",
   "creator_url": "https://x.com/jacksonfall/status/2103925420211229164",
@@ -19,7 +18,7 @@
     "h": 1068
   },
   "aspect_label": "16:9",
-  "rank": 174,
+  "rank": 36,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +27,8 @@
   "listed": true,
   "skill": "styles/pm-jacksonfall-54b2ac/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/photos.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "شوريل لوكالة علامات تجارية مدته نحو 25 ثانية من المحتوى ثم سواد: سلسلة سريعة من الشعارات والهويات، كل واحدة في إطار ملء الشاشة بلون خلفيتها الخاص (زيتوني، سماوي بمنظر طبيعي، أبيض، أخضر مزرق، أزرق كهربائي، ليموني بنقاط)، مع رموز تنبني من خطوط أو نقاط ثنائية، شبكة صور داخلية وصور رياضية خلف كلمات عريضة، وحركة متسارعة كل نصف ثانية تقريباً قرب النهاية.",
   "summary_en": "A branding-agency showreel with about 25 s of content then black: logos and identities flash one per full-frame card, each in its own colour (olive, painted sky, white, teal, electric blue, dotted lime), marks built from strokes or binary digits, photo mosaics behind bold words, accelerating to cuts every half second.",

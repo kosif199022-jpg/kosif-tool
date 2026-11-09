@@ -5,9 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "hand-drawn",
     "diagrams",
-    "charts"
+    "characters"
   ],
   "creator": "@_nikolajankovic",
   "creator_url": "https://x.com/_nikolajankovic/status/2102867033100616097",
@@ -19,7 +18,7 @@
     "h": 848
   },
   "aspect_label": "other",
-  "rank": 134,
+  "rank": 272,
   "published": "2026-09-23",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +27,8 @@
   "listed": true,
   "skill": "styles/pm-nikolajankovic-ce4ff4/SKILL.md",
   "playbooks": [
-    "playbooks/hand-drawn.md",
     "playbooks/diagrams.md",
-    "playbooks/charts.md"
+    "playbooks/characters.md"
   ],
   "summary_ar": "شرح هادئ مدته 58 ثانية بنسبة قريبة من 3:2 وبإيقاع 12 إطاراً في الثانية، على ورق رمادي فاتح يُرسم عليه بالقلم: عنوان مسطّر بالأزرق، صناديق وأشجار ربط، بطاقة قرض، مقياس حرارة يمثّل نسبة الأمان مع خطّين أزرق وأحمر، مخطط سعر ينهار ليلاً بجانب سرير نائم وقمر، ثم شمس وكوب قهوة صباحاً، مع شريط ترجمة على ورقة ملصقة بشريط لاصق أسفل الإطار وراوٍ يتكلم بصيغة المتكلم.",
   "summary_en": "A calm 58 s explainer at about 3:2 and 12 fps in pencil on light grey paper: a blue-underlined title, branching boxes, a loan card, a thermometer gauge with blue and red thresholds, a price chart crashing at night beside a sleeping figure, then sun and coffee in the morning, with first-person subtitles typed onto a taped paper strip at the bottom.",

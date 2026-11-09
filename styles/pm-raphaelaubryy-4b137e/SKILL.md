@@ -1,6 +1,6 @@
 ---
 name: pm-raphaelaubryy-4b137e
-description: A 15-second showreel in cream, black and terracotta: 'SHOW REEL' revealed off a ruled line, a circle morphing to square and triangle, a cell grid spelling a pixel '5.5', particles forming 'OPUS', cream metaballs on terracotta, a scrolling word wall cut by a title band, a tumbling 3D cube of skill names, and an end card. Use to make a new video in this look (Shapes); address it by ID pm-raphaelaubryy-4b137e.
+description: A 15-second showreel in cream, black and terracotta: 'SHOW REEL' revealed off a ruled line, a circle morphing to square and triangle, a cell grid spelling a pixel '5.5', particles forming 'OPUS', cream metaballs on terracotta, a scrolling word wall cut by a title band, a tumbling 3D cube of skill names, and an end card. Use to make a new video in this look (Charts); address it by ID pm-raphaelaubryy-4b137e.
 ---
 
 # KOSIF TOOL — Motion designer résumé reel / بكرة سيرة ذاتية لمصمم موشن بالأشكال والشبكات
@@ -13,7 +13,7 @@ description: A 15-second showreel in cream, black and terracotta: 'SHOW REEL' re
 - Published on source: 2026-09-25 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 26 words (not reproduced here)
-- Popularity rank on source library: #240
+- Popularity rank on source library: #102
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,15 +25,13 @@ A 15-second showreel in cream, black and terracotta: 'SHOW REEL' revealed off a 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (React, SVG, HTML Canvas, Three.js, Remotion), suggested duration (15 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Shapes / أشكال, Kinetic type / تايبوغرافي متحرك, Particles / جسيمات.
-- [playbooks/shapes.md](../../playbooks/shapes.md)
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/particles.md](../../playbooks/particles.md)
 
 Category tactics:
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

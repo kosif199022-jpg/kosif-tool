@@ -1,6 +1,6 @@
 ---
 name: pm-thegreatest-sv-f33d62
-description: A ~25-second sci-fi 'top secret' dashboard in cool white packed with small panels (brain views, cortical layers, neural map, eye, brain stem, signal flow, code), with a glowing blue cyborg brain wrapped in cables at the centre that swaps viewing angle about every second, while zoom windows pop out of the grid to enlarge one panel and then return. Use to make a new video in this look (Diagrams); address it by ID pm-thegreatest-sv-f33d62.
+description: A ~25-second sci-fi 'top secret' dashboard in cool white packed with small panels (brain views, cortical layers, neural map, eye, brain stem, signal flow, code), with a glowing blue cyborg brain wrapped in cables at the centre that swaps viewing angle about every second, while zoom windows pop out of the grid to enlarge one panel and then return. Use to make a new video in this look (Product UI); address it by ID pm-thegreatest-sv-f33d62.
 ---
 
 # KOSIF TOOL — HyperFrames motion setup for Claude Code / لوحة واجهة سرية لدماغ آلي: صور متوهجة ونوافذ تقريب منبثقة
@@ -14,7 +14,7 @@ description: A ~25-second sci-fi 'top secret' dashboard in cool white packed wit
 - Reference aspect: other (1080×1530)
 - Technologies named by the source: GSAP, HTML, Lottie, Remotion
 - Creator's public prompt length: about 123 words (not reproduced here)
-- Popularity rank on source library: #79
+- Popularity rank on source library: #217
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -26,15 +26,13 @@ A ~25-second sci-fi 'top secret' dashboard in cool white packed with small panel
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, CSS, GSAP, React), suggested duration (25 s), aspect 720x1020, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Diagrams / مخططات, Photos / صور, Product UI / واجهات المنتج.
-- [playbooks/diagrams.md](../../playbooks/diagrams.md)
-- [playbooks/photos.md](../../playbooks/photos.md)
+Categories: Product UI / واجهات المنتج, Code / كود.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
-* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
-* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

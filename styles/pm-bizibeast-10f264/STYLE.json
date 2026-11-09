@@ -6,9 +6,8 @@
   "type": "Prompt",
   "category": [
     "product-ui",
-    "phone",
-    "kinetic-type",
-    "charts"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@bizibeast",
   "creator_url": "https://x.com/bizibeast/status/2103696876130505124",
@@ -20,7 +19,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 25,
+  "rank": 163,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -30,9 +29,8 @@
   "skill": "styles/pm-bizibeast-10f264/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/phone.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "فيديو منتج مدته 40 ثانية لمنصة تجمع أدوات صانع المحتوى في مكان واحد: يبدأ بعنوان «ثماني أدوات» وبطاقات اشتراكات متناثرة بأسعارها، ثم تتجمع في شبكة بلوكات ملونة (أزرق وأصفر وأحمر) بسعر واحد، وعنوان على خلفية زرقاء بأشرطة تظليل، وهاتف يعرض صفحة الرابط، وسلسلة رد آلي على الخلفية الحمراء، وتقويم نشر، وبطاقات منتجات صفراء، ومحادثة وكيل ذكي على الكحلي، ولوحة إحصاءات، ثم الشعار.",
   "summary_en": "A 40-second product video for an all-in-one creator platform: an 'eight tools' headline with scattered priced subscription cards, which merge into a colourful blue/yellow/red bento grid at one price, a highlighter-pill headline on blue, a phone showing the link page, an auto-DM flow on red, a posting calendar, yellow product cards, a navy AI-agent chat, an analytics count-up and a logo end card.",

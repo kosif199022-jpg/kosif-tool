@@ -5,11 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "shapes",
-    "particles",
-    "3d",
-    "product-ui"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@ndhabarde11",
   "creator_url": "https://x.com/ndhabarde11/status/2103832593355686104",
@@ -21,7 +18,7 @@
     "h": 1920
   },
   "aspect_label": "9:16",
-  "rank": 173,
+  "rank": 35,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -30,11 +27,8 @@
   "listed": true,
   "skill": "styles/pm-ndhabarde11-f155b4/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/particles.md",
-    "playbooks/3d.md",
-    "playbooks/product-ui.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "ريل عمودي سريع (15 ثانية) لمصمم موشن مقسوم إلى سبعة فصول مرقمة بإطار واجهة قياس وتوقيت: تحية بخط إيطالي وعنوان عريض، كلمات حركية بظلال برتقالية، شبكة أشكال تتحول بموجة على أزرق كهربائي، جسيمات تكوّن كلمة وكرة وعقدة، كرات زجاجية سائلة أمام نص شريطي، بطاقة واجهة بنسبة تعدّ وزر توظيف، ثم بطاقة اسم ختامية بوسوم المهارات.",
   "summary_en": "A fast 15-second vertical motion-designer reel in seven numbered chapters inside a timecoded HUD: an italic greeting over a heavy name, kinetic words with orange offset shadows, a shape grid rippling on electric blue, particles forming a word, sphere and knot, glossy shader blobs over marquee type, a UI card with a counting percentage, and an end card with skill tags.",

@@ -5,8 +5,6 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "product-ui",
-    "code",
     "charts"
   ],
   "creator": "@JayScambler",
@@ -19,7 +17,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 118,
+  "rank": 256,
   "published": "2026-09-28",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,8 +26,6 @@
   "listed": true,
   "skill": "styles/pm-jayscambler-3f8889/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md",
-    "playbooks/code.md",
     "playbooks/charts.md"
   ],
   "summary_ar": "فيديو منتج مدته 18.5 ثانية يبدأ بحلقة جسيمات خضراء على الأسود تنقبض إلى قلب بكسلي، والاسم يتشكل من رموز عشوائية، ثم صفحة الهبوط الفاتحة بعنوان كلمته المائلة خضراء، نقرة زر، لوحة دعم داكنة بمبالغ، تحويل «$25 ← 2,474 credits» عبر شريحة متوهجة، محرر كود موصول بقائمة نماذج، لوحة تحكم، جدار لقطات شاشة مائل، وبطاقة ختام كريمية بمربع أخضر.",

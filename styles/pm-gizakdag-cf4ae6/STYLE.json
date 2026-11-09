@@ -5,8 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "photos"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@gizakdag",
   "creator_url": "https://x.com/gizakdag/status/2103566030916239768",
@@ -18,7 +18,7 @@
     "h": 1920
   },
   "aspect_label": "9:16",
-  "rank": 119,
+  "rank": 257,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -27,8 +27,8 @@
   "listed": true,
   "skill": "styles/pm-gizakdag-cf4ae6/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/photos.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "ريل عمودي مدته 15 ثانية بإطار كاميرا تسجيل وتايم كود وعدّاد أفكار: نقطة صفراء واحدة على الكحلي تصبح «فكرة واحدة»، ثم دوامة دوائر نيون وشبكة برتقالية تدور حولها عبارات التردد بخط مائل، فكولاج سريالي مشبع (تمثال بعينين زرقاوين وزهور وأشعة) تحت عنوان ضخم ثلاثي الظلال، ومشاهد لوحات حالمة مع شرائط نصية بخط آلة كاتبة، وانفجار تكرار للكلمة بتشويش ألوان، وختام هادئ على الأسود بدائرة وكلمة «تنفّس».",
   "summary_en": "A 15-second vertical reel in a camcorder HUD: one yellow dot on navy, then neon rings and a spinning wireframe orbited by italic doubt phrases, a saturated surreal collage under a huge drop-shadowed title, dreamy illustrated scenes with typewriter caption strips, a glitchy repeated-word blowout, and a calm black 'breathe.' end card.",

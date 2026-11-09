@@ -5,9 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "shapes",
-    "particles"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@itsuki_dev",
   "creator_url": "https://x.com/itsuki_dev/status/2103438087204618392",
@@ -19,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 274,
+  "rank": 136,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +27,8 @@
   "listed": true,
   "skill": "styles/pm-itsuki-dev-10942d/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/particles.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "شوريل موشن مدته 15 ثانية في ثمانية فصول مرقمة على إيقاع 120 نبضة: نقطة بيضاء يقطعها خط أحمر، عنوان أسود ضخم على برتقالي مع سطر سيريف مائل، كلمات عملاقة مع ضبابية حركة على أزرق وكحلي وبنفسجي فاتح فوق خلفية من نفس الكلمة مكررة، شكل برتقالي يتحول من مربع إلى مثلث إلى سداسي مع رسم منحنى التخميد، شبكة بلاطات هندسية بثلاثة ألوان، جسيمات تتجمع رقماً ثم تنفجر، نفق مربعات دوّار، منحنيات سلكية على أصفر، ثم بطاقة ختام.",
   "summary_en": "A 15-second motion showreel in eight numbered chapters at 120 BPM: a white dot sliced by a red line, a black wordmark on orange, giant motion-blurred words on colour grounds, an orange shape morphing beside an easing graph, a three-colour tile grid, particles forming a year then bursting, a square tunnel, wire curves on yellow, an end card.",

@@ -6,8 +6,9 @@
   "type": "Prompt",
   "category": [
     "product-ui",
-    "kinetic-type",
-    "hand-drawn"
+    "charts",
+    "diagrams",
+    "music"
   ],
   "creator": "@sudo_kiran",
   "creator_url": "https://x.com/sudo_kiran/status/2103761658745335993",
@@ -19,7 +20,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 26,
+  "rank": 164,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,8 +30,9 @@
   "skill": "styles/pm-sudo-kiran-6609ed/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/hand-drawn.md"
+    "playbooks/charts.md",
+    "playbooks/diagrams.md",
+    "playbooks/music.md"
   ],
   "summary_ar": "إعلان منتج مدته 30 ثانية لأداة تحوّل المستندات إلى فيديوهات شرح: أوراق PDF مكدسة على خلفية رمادية دافئة مع عنوان عريض يقول إن أحداً لا يقرأها، ثم شعار بأعمدة ملونة، وثلاث خطوات (قراءة بخطوط تظليل صفراء، سيناريو يُعتمد بختم أخضر مائل)، ورسم توضيحي لورقة نبات يتراكم خطوة بخطوة فوق موجة صوت، ثم أرقام ضخمة متدرجة على خلفية داكنة، وتقويم أسابيع يُشطب، وبطاقة ختام بزر تجربة.",
   "summary_en": "A 30-second ad for a document-to-video tool: stacked PDFs on warm grey under a bold 'nobody reads it' line, a striped-bar logo, three numbered steps (highlighted reading, a script stamped with a green check), a leaf diagram drawing on over a voice waveform, huge gradient stats on dark glows, a crossed-out weeks calendar, and a logo end card.",

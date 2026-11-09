@@ -5,9 +5,6 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "particles",
-    "3d",
     "charts"
   ],
   "creator": "@Grace_sunnyy",
@@ -20,7 +17,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 147,
+  "rank": 9,
   "published": "2026-10-03",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,9 +26,6 @@
   "listed": true,
   "skill": "styles/pm-grace-sunnyy-29bc61/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/particles.md",
-    "playbooks/3d.md",
     "playbooks/charts.md"
   ],
   "summary_ar": "ريل موشن مدته 15 ثانية داخل واجهة محرر حركة داكنة بخط زمني أحمر مرسوم أسفل الشاشة وتعليقات كود صغيرة: كيفريم معيني يتحرك على منحنى تسارع، كلمة ضخمة على أحمر، عنوان ثلاثي الأسطر بظلال مكررة، مجسم ثماني أحمر يتشظى ثم يعود، آلاف الجسيمات تتدفق ثم تشكّل كلمة، لوحة مواصفات (إطارات، ألوان، خط، إيقاع)، أربعة انتقالات مسماة، وختام بالاسم والشعار.",

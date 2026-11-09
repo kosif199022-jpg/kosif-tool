@@ -5,10 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "diagrams",
-    "characters",
-    "kinetic-type",
-    "code"
+    "diagrams"
   ],
   "creator": "@emollick",
   "creator_url": "https://x.com/emollick/status/2103688362960019567",
@@ -20,7 +17,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 106,
+  "rank": 244,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,10 +26,7 @@
   "listed": true,
   "skill": "styles/pm-emollick-8661a8/SKILL.md",
   "playbooks": [
-    "playbooks/diagrams.md",
-    "playbooks/characters.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/code.md"
+    "playbooks/diagrams.md"
   ],
   "summary_ar": "فيديو 75 ثانية يشرح التكرار الذاتي (Recursion) بأن ينزل عمقاً بعد عمق، وكل عمق بأسلوب تلفزيوني مختلف: عنوان جريء أحمر وأبيض، فيديو شرح شركاتي مسطّح، طرفية خضراء قديمة، لعبة 8-بت، وثائقي طبيعة عن السرخس، فيلم نوار بالأبيض والأسود، برنامج أطفال، إعلان تلفزيوني صاخب، تريلر سينمائي ذهبي، ثم صفحة HTML بيضاء عارية هي 'الحالة الأساسية'، قبل أن يصعد بالترتيب العكسي، مع شريط مكدس أعلى الشاشة يعرض العمق.",
   "summary_en": "A 75 s recursion explainer that dives one screen deeper per TV genre (corporate explainer, green terminal, 8-bit game, nature doc, film noir, kids' TV, infomercial, gold trailer) down to a bare white HTML 'base case', then climbs back out in reverse while a breadcrumb bar on top tracks the depth.",

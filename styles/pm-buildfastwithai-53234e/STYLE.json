@@ -5,9 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Skill",
   "category": [
-    "diagrams",
-    "kinetic-type",
-    "shapes",
+    "characters",
     "music"
   ],
   "creator": "@BuildFastWithAI",
@@ -20,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 55,
+  "rank": 193,
   "published": "2026-09-28",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,9 +27,7 @@
   "listed": true,
   "skill": "styles/pm-buildfastwithai-53234e/SKILL.md",
   "playbooks": [
-    "playbooks/diagrams.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
+    "playbooks/characters.md",
     "playbooks/music.md"
   ],
   "summary_ar": "فيلم تاريخي مدته 87 ثانية مبني كسلسلة «لوحات» ملصقات مسطحة جريئة بألوان كحلي وكريمي وأصفر زعفراني ووردي وأحمر طوبي: نقطة واحدة تبدأ الخيط، ثم كلمة ديفاناغرية بجانب نقلها اللاتيني الضخم في كل لوحة، مدينة مخططة كشبكة، موجة صوتية للأناشيد المحفوظة، عجلة وحروف قديمة تتفرع، كوكب وثابت باي، الصفر ومثلث العروض، معبد كسوري، شبكة كولام، كلمات إنجليزية مستعارة، هبوط على القمر، ثم خط زمني بأيقونات يربط كل شيء.",

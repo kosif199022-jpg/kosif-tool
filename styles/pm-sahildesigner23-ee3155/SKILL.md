@@ -1,6 +1,6 @@
 ---
 name: pm-sahildesigner23-ee3155
-description: A 15 s showreel in black, orange and cream: a word revealed between two rules, outline repeats scrolling behind it, the word turning into extruded 3D type, merging chrome blobs on orange, a phone render screen, a cube field where orange shapes rise, an editor UI with layers and waveform, and a name card with an orange dot. Use to make a new video in this look (3D); address it by ID pm-sahildesigner23-ee3155.
+description: A 15 s showreel in black, orange and cream: a word revealed between two rules, outline repeats scrolling behind it, the word turning into extruded 3D type, merging chrome blobs on orange, a phone render screen, a cube field where orange shapes rise, an editor UI with layers and waveform, and a name card with an orange dot. Use to make a new video in this look (Charts); address it by ID pm-sahildesigner23-ee3155.
 ---
 
 # KOSIF TOOL — 3D motion design showreel / شوريل موشن ثلاثي الأبعاد بالأسود والبرتقالي: نص يتجسم وكرات كروم ومكعبات
@@ -13,7 +13,7 @@ description: A 15 s showreel in black, orange and cream: a word revealed between
 - Published on source: 2026-09-25 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 26 words (not reproduced here)
-- Popularity rank on source library: #236
+- Popularity rank on source library: #98
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,15 +25,13 @@ A 15 s showreel in black, orange and cream: a word revealed between two rules, o
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, React, Remotion), suggested duration (15 s), aspect 16:9, difficulty 5/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: 3D / ثلاثي الأبعاد, Kinetic type / تايبوغرافي متحرك, Product UI / واجهات المنتج.
-- [playbooks/3d.md](../../playbooks/3d.md)
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

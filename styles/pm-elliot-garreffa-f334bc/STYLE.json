@@ -5,7 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "product-ui",
+    "charts",
     "kinetic-type"
   ],
   "creator": "@elliot_garreffa",
@@ -18,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 122,
+  "rank": 260,
   "published": "2026-09-27",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -27,7 +27,7 @@
   "listed": true,
   "skill": "styles/pm-elliot-garreffa-f334bc/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md",
+    "playbooks/charts.md",
     "playbooks/kinetic-type.md"
   ],
   "summary_ar": "إعلان منتج مدته 39 ثانية على خلفية بيضاء بتدرجات خضراء منقطة: شعار حرف M أزرق، عنوان بلونين، دائرة زرقاء تتمدد لتملأ الشاشة بثلاث كلمات، ثم قائمة موصلات تمتلئ صفاً صفاً، بطاقة إنستغرام تتفرع إلى ثلاث قدرات، بطاقات منصات متناثرة تصطف بعد البحث، مقارنة أربع منظومات على أخضر داكن، وختام بزر اشتراك يومي.",

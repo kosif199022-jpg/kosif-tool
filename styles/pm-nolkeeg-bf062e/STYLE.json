@@ -5,9 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "charts",
-    "3d",
-    "kinetic-type"
+    "charts"
   ],
   "creator": "@nolkeeg",
   "creator_url": "https://x.com/nolkeeg/status/2103841917603635633",
@@ -19,7 +17,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 110,
+  "rank": 248,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +26,7 @@
   "listed": true,
   "skill": "styles/pm-nolkeeg-bf062e/SKILL.md",
   "playbooks": [
-    "playbooks/charts.md",
-    "playbooks/3d.md",
-    "playbooks/kinetic-type.md"
+    "playbooks/charts.md"
   ],
   "summary_ar": "فيلم أفقي سينمائي قصير (نحو 45 ثانية) على سواد فضائي: عنوان أبيض محبب متوهج، قفزة نجوم، ثم أرض واقعية بإضاءة حافة يدور حولها شعاع ضوء بينما يعدّ رقم ضخم بالكيلومترات، ثم مدار حول الشمس، وبرق على الوجه الليلي، وشمس ملتهبة، ثم خط نبض أحمر رفيع، وشريط زمني برتقالي أسفل الشاشة يقيس جزء الثانية حتى الختام.",
   "summary_en": "A cinematic 45-second landscape short on deep space black: a grainy glowing white title, a starfield warp, then a photoreal rim-lit Earth circled by a light trail while a huge number counts kilometres, an orbit around the Sun, lightning flickering on the night side, a blazing Sun, then a thin red heartbeat line, with an orange timeline HUD at the bottom measuring the fraction of the second.",

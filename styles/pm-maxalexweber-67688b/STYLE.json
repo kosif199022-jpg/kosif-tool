@@ -5,8 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "ads"
+    "charts"
   ],
   "creator": "@maxalexweber",
   "creator_url": "https://x.com/maxalexweber/status/2103118009535459784",
@@ -18,7 +17,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 158,
+  "rank": 20,
   "published": "2026-09-24",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -27,8 +26,7 @@
   "listed": true,
   "skill": "styles/pm-maxalexweber-67688b/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/ads.md"
+    "playbooks/charts.md"
   ],
   "summary_ar": "مونتاج حماسي مدته 18 ثانية بالأزرق الداكن وخطوط سرعة فضائية: سطر طرفية يُكتب، ثلاث كلمات ضخمة متتالية بأرقام صغيرة (مؤسسات، دفتر، معرفة صفرية) بتشويش لوني، شبكة تربط الثلاثة بشعار يدور، كشف الشعار، استعراض سريع مرقم لمنتجات المنظومة على شرائط زرقاء، سطر طرفية ثانٍ، ثم الشعار مع الرابط ويخفت.",
   "summary_en": "An 18-second hype edit in deep blue with hyperspace streaks: a typed terminal line, three huge words in turn with small numbered labels and RGB-split glitches, a node diagram tying them to a spinning logo ring, a logo reveal, a rapid numbered roll call of ecosystem products on blue bars, a second terminal line, and the logo lock-up with URL fading out.",

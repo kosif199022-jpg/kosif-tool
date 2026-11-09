@@ -1,6 +1,6 @@
 ---
 name: pm-scenario-gg-4fd21d
-description: A 55-second cinematic live-action ad: one actor repeats the same motion across an office, mine, ice tunnel and neon corridor, a black title card, then white condensed captions ending on an italic word (change the cast, world, animal; keep the moves, camera; swap the product) over restyled takes, closing on a drink spot on sea cliffs. Use to make a new video in this look (Photos); address it by ID pm-scenario-gg-4fd21d.
+description: A 55-second cinematic live-action ad: one actor repeats the same motion across an office, mine, ice tunnel and neon corridor, a black title card, then white condensed captions ending on an italic word (change the cast, world, animal; keep the moves, camera; swap the product) over restyled takes, closing on a drink spot on sea cliffs. Use to make a new video in this look (Product UI); address it by ID pm-scenario-gg-4fd21d.
 ---
 
 # KOSIF TOOL — ALTER: restyle footage you already shot / إعلان أداة تعيد تصميم لقطات مصورة: بدّل كل شيء واحتفظ بالأداء
@@ -13,7 +13,7 @@ description: A 55-second cinematic live-action ad: one actor repeats the same mo
 - Published on source: 2026-10-24
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 117 words (not reproduced here)
-- Popularity rank on source library: #149
+- Popularity rank on source library: #11
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,13 +25,15 @@ A 55-second cinematic live-action ad: one actor repeats the same motion across a
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (55 s), aspect 16:9, difficulty 5/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Photos / صور, Ads / إعلانات.
+Categories: Product UI / واجهات المنتج, Characters / شخصيات, Photos / صور.
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
 - [playbooks/photos.md](../../playbooks/photos.md)
-- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
 * Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
-* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

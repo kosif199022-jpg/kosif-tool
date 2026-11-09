@@ -5,9 +5,9 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "shapes",
+    "charts",
     "kinetic-type",
-    "particles"
+    "shapes"
   ],
   "creator": "@Shinskinakamoto",
   "creator_url": "https://x.com/Shinskinakamoto/status/2103580532852589043",
@@ -19,7 +19,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 241,
+  "rank": 103,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +28,9 @@
   "listed": true,
   "skill": "styles/pm-shinskinakamoto-20190b/SKILL.md",
   "playbooks": [
-    "playbooks/shapes.md",
+    "playbooks/charts.md",
     "playbooks/kinetic-type.md",
-    "playbooks/particles.md"
+    "playbooks/shapes.md"
   ],
   "summary_ar": "شوريل مدته 15 ثانية بألوان صريحة: نقطة مرجانية على الأسود تتسع حلقات، ثم تحية بخط ثلاثي الأبعاد بظل منزاح، وكلمات ضخمة سوداء على الليموني بنسخ محيطية متكررة، وشريط وردي متعرج، وشبكة نقاط على البنفسجي تتحول دوائر ومربعات ومثلثات حول شكل مرجاني كبير، ثم جسيمات ملونة تتجمع في كلمة، وكرة وطارة ومكعب سلكي، وبطاقات واجهة ببيانات، وخطوط موجية بأسلوب الجبال، وأشرطة ألوان، وشعار.",
   "summary_en": "A 15-second showreel in loud flat colour: a coral dot opening into rings, an extruded greeting, huge black words on lime with outline echoes, a violet dot grid morphing through circles, squares and triangles, coloured particles swarming into a word, dotted 3D wireframes, light UI data cards, ridge-line waves and a logo end card.",

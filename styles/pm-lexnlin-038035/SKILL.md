@@ -14,7 +14,7 @@ description: A ~14.5-second vertical ad on pure white where a single coral starb
 - Reference aspect: 9:16 (1080×1920)
 - Technologies named by the source: SVG
 - Creator's public prompt length: about 168 words (not reproduced here)
-- Popularity rank on source library: #137
+- Popularity rank on source library: #275
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -26,17 +26,15 @@ A ~14.5-second vertical ad on pure white where a single coral starburst travels 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Three.js), suggested duration (15 s), aspect 9:16, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك, Photos / صور, Shapes / أشكال, Hand-drawn / رسم يدوي.
+Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Photos / صور.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/photos.md](../../playbooks/photos.md)
 - [playbooks/shapes.md](../../playbooks/shapes.md)
-- [playbooks/hand-drawn.md](../../playbooks/hand-drawn.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
 
 Category tactics:
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
 * Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
-* Order stroke draw-on like a human hand would; keep imperfection deliberate; pace reveals to narration.
+* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

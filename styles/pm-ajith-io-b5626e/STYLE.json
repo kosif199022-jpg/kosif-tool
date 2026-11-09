@@ -5,10 +5,9 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "shapes",
-    "particles",
+    "charts",
     "kinetic-type",
-    "3d"
+    "shapes"
   ],
   "creator": "@ajith_io",
   "creator_url": "https://x.com/ajith_io/status/2103449416325890146",
@@ -29,10 +28,9 @@
   "listed": true,
   "skill": "styles/pm-ajith-io-b5626e/SKILL.md",
   "playbooks": [
-    "playbooks/shapes.md",
-    "playbooks/particles.md",
+    "playbooks/charts.md",
     "playbooks/kinetic-type.md",
-    "playbooks/3d.md"
+    "playbooks/shapes.md"
   ],
   "summary_ar": "شوريل تجريدي مدته 15 ثانية بإطار واجهة يعرض الإيقاع: نقطة حمراء على الأسود تنقسم إلى حلقة نقاط، عنوان أسود ثقيل على أحمر يتراكم كلمة كلمة مع أقواس تحديد، دائرة حمراء داخل صندوق تحويل بمقابض تتحول إلى مربع أزرق ثم زهرة، شبكة نقاط كريمية تنبعج كعدسة، جسيمات بيضاء على الأزرق تتحول من رأس إلى طوق إلى مكعب سلكي، حبل مخطط يعقد عقدة على الأصفر، شرائط كلمات تلتف إلى حلقات دوارة، وختام باسم بخط مزخرف.",
   "summary_en": "A 15-second abstract reel with a bar-counter HUD: a red dot splitting into a ring, a black headline stacking on red inside selection brackets, a shape morphing in a rotating transform box, a lens-warped dot grid, particles on blue turning into a wireframe cube, a striped rope tying a knot on yellow, spinning text rings, and a serif wordmark end card.",

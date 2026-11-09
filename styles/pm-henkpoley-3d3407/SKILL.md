@@ -1,6 +1,6 @@
 ---
 name: pm-henkpoley-3d3407
-description: A 69-second parody of an early-web portfolio page with a hire-me marquee and a trial-watermarked player showing a deliberately awful reel: colour bars, film countdown, rainbow 'SHOWREEL 2026', a spinning client logo, typos, an unfinished 3D section, 'Media Offline', a star wipe, a stick figure, and a closing rejection-email toast. Use to make a new video in this look (Kinetic type); address it by ID pm-henkpoley-3d3407.
+description: A 69-second parody of an early-web portfolio page with a hire-me marquee and a trial-watermarked player showing a deliberately awful reel: colour bars, film countdown, rainbow 'SHOWREEL 2026', a spinning client logo, typos, an unfinished 3D section, 'Media Offline', a star wipe, a stick figure, and a closing rejection-email toast. Use to make a new video in this look (Charts); address it by ID pm-henkpoley-3d3407.
 ---
 
 # KOSIF TOOL — Deliberately terrible motion showreel / شوريل موشن سيئ عمداً داخل موقع شخصي قديم
@@ -14,7 +14,7 @@ description: A 69-second parody of an early-web portfolio page with a hire-me ma
 - Reference aspect: other (1152×720)
 - Technologies named by the source: HTML
 - Creator's public prompt length: about 37 words (not reproduced here)
-- Popularity rank on source library: #152
+- Popularity rank on source library: #14
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -26,11 +26,13 @@ A 69-second parody of an early-web portfolio page with a hire-me marquee and a t
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, CSS, React), suggested duration (69 s), aspect 16:10, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك, Code / كود.
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Code / كود.
+- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 - [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 

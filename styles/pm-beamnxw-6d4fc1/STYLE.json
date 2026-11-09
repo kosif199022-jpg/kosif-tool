@@ -5,9 +5,9 @@
   "origin": "PromptsMotion",
   "type": "Skill",
   "category": [
-    "3d",
+    "shapes",
     "characters",
-    "product-ui"
+    "photos"
   ],
   "creator": "unknown",
   "creator_url": "https://x.com/beamnxw/status/2113275303808160226",
@@ -19,7 +19,7 @@
     "h": 1728
   },
   "aspect_label": "4:5",
-  "rank": 145,
+  "rank": 7,
   "published": "2026-10-22",
   "model": null,
   "effort": null,
@@ -30,9 +30,9 @@
   "listed": true,
   "skill": "styles/pm-beamnxw-6d4fc1/SKILL.md",
   "playbooks": [
-    "playbooks/3d.md",
+    "playbooks/shapes.md",
     "playbooks/characters.md",
-    "playbooks/product-ui.md"
+    "playbooks/photos.md"
   ],
   "summary_ar": "مقطع رأسي 4:5 مدته 15.6 ثانية يشبه لوحة تحكم استوديو: في الأعلى عنوان أحمر، وفي الوسط نافذة معاينة تعرض لقطة سينمائية ثلاثية الأبعاد بعمق ميدان ضحل لشخصية حمراء من مكعبات صغيرة تمشي على لوحة مفاتيح كريمية بجانب برطمان زجاجي وروبوت أخضر صغير، وتحتها صف بطاقات الأدوات تضيء بالترتيب، وتميمة بكسلية تقول سطراً قصيراً، وطرفية سوداء تكتب أوامر كل مرحلة.",
   "summary_en": "A 15.6-second 4:5 piece styled as a studio dashboard: a red headline on top, a preview window playing a shallow-depth-of-field 3D shot of a red voxel character walking across a cream keyboard beside a glass jar and a tiny green robot, a row of tool cards lighting up in order beneath it, a pixel mascot speaking short captions, and a black terminal typing each stage's commands.",

@@ -1,6 +1,6 @@
 ---
 name: pm-motiondsgnr-9dcfa6
-description: A 15-second motion showreel in nine numbered chapters, each a technique: wobbling type on orange, a slogan on royal blue, a particle sphere becoming a name, morphing shapes, a liquid blob on yellow, a spinning tunnel of text rings, data cards, waveform ridgelines, then a mosaic of every shot and a multicolour logo with geometric confetti. Use to make a new video in this look (Kinetic type); address it by ID pm-motiondsgnr-9dcfa6.
+description: A 15-second motion showreel in nine numbered chapters, each a technique: wobbling type on orange, a slogan on royal blue, a particle sphere becoming a name, morphing shapes, a liquid blob on yellow, a spinning tunnel of text rings, data cards, waveform ridgelines, then a mosaic of every shot and a multicolour logo with geometric confetti. Use to make a new video in this look (Charts); address it by ID pm-motiondsgnr-9dcfa6.
 ---
 
 # KOSIF TOOL — Bold typographic motion showreel / شوريل موشن جريء: تسع تقنيات في خمس عشرة ثانية
@@ -13,7 +13,7 @@ description: A 15-second motion showreel in nine numbered chapters, each a techn
 - Published on source: 2026-09-26 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 26 words (not reproduced here)
-- Popularity rank on source library: #244
+- Popularity rank on source library: #106
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,17 +25,13 @@ A 15-second motion showreel in nine numbered chapters, each a technique: wobblin
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas, WebGL), suggested duration (15 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك, Particles / جسيمات, Shapes / أشكال, Charts / رسوم بيانية.
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/particles.md](../../playbooks/particles.md)
-- [playbooks/shapes.md](../../playbooks/shapes.md)
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
 - [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

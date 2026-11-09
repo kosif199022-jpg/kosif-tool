@@ -5,8 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "3d",
-    "diagrams"
+    "charts",
+    "characters"
   ],
   "creator": "@mdaman010",
   "creator_url": "https://x.com/mdaman010/status/2103845689713111079",
@@ -18,7 +18,7 @@
     "h": 982
   },
   "aspect_label": "other",
-  "rank": 229,
+  "rank": 91,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "High",
@@ -27,8 +27,8 @@
   "listed": true,
   "skill": "styles/pm-mdaman010-e7226a/SKILL.md",
   "playbooks": [
-    "playbooks/3d.md",
-    "playbooks/diagrams.md"
+    "playbooks/charts.md",
+    "playbooks/characters.md"
   ],
   "summary_ar": "تسجيل مدته نحو 98 ثانية لشرح تفاعلي ثلاثي الأبعاد داخل مركز بيانات للذكاء الاصطناعي في عالم رمادي فاتح ضبابي: الكاميرا تنساب من المبنى إلى خطوط الكهرباء، قاعة الخوادم، رف واحد، صينية حوسبة، شريحة مفككة طبقات، شبكة الربط بين الرفوف، ثم مسار الحرارة إلى المبردات على السطح، مع تدفقات ملونة للطاقة والبيانات والحرارة والتبريد، وعناوين فصول مرقمة وشريط مشغل أسفل الشاشة.",
   "summary_en": "A ~98-second capture of an interactive 3D explainer of an AI data centre in a pale foggy grey world: the camera glides from building to power lines, data hall, one rack, a compute tray, an exploded chip, the rack network and rooftop coolers, with colour-coded power, data, heat and coolant flows, numbered chapter titles and a player bar.",

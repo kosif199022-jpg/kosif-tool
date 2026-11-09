@@ -5,10 +5,9 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "particles",
+    "charts",
     "kinetic-type",
-    "3d",
-    "ads"
+    "music"
   ],
   "creator": "@ajith_io",
   "creator_url": "https://x.com/ajith_io/status/2103800569584562538",
@@ -20,7 +19,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 8,
+  "rank": 146,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,10 +28,9 @@
   "listed": true,
   "skill": "styles/pm-ajith-io-4c248f/SKILL.md",
   "playbooks": [
-    "playbooks/particles.md",
+    "playbooks/charts.md",
     "playbooks/kinetic-type.md",
-    "playbooks/3d.md",
-    "playbooks/ads.md"
+    "playbooks/music.md"
   ],
   "summary_ar": "إعلان منتج سينمائي مدته 40 ثانية على خلفية سوداء: صفحة كتاب علمي مضاءة تنفجر حروفها شرراً ذهبياً يتجمع في كرة ثم شمس متوهجة، تليها حلقة بوابة وسحابة من مئات البطاقات المصغرة المتوهجة مع عناوين بيضاء عريضة متباعدة الحروف، ثم كرة نصية بيضاء بحلقات مدارية وعد تنازلي، ونار فوق صف من بطاقات الرسوم، ولقطة سبورة مرسومة، وتنتهي بشعار ملوّن وسطر تعريفي.",
   "summary_en": "A 40 s cinematic product promo on black where a lit textbook page bursts into golden letter-sparks that gather into a glowing sun, then a portal ring, a field of hundreds of glowing thumbnail cards under wide-tracked white headlines, a white text-orbit globe with a countdown, a fireball over rows of illustration cards, a whiteboard frame, and a colourful logo end card.",

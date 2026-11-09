@@ -1,6 +1,6 @@
 ---
 name: pm-e1genqq-0af11c
-description: A two-minute dark browser screen recording demoing a motion-film plugin, from a typed chat request and a streamed shot plan to the repo's style gallery, install and render docs, then a calm cream product film with a bold two-line headline and three task cards that tick one by one until the last turns deep green. Use to make a new video in this look (Product UI); address it by ID pm-e1genqq-0af11c.
+description: A two-minute dark browser screen recording demoing a motion-film plugin, from a typed chat request and a streamed shot plan to the repo's style gallery, install and render docs, then a calm cream product film with a bold two-line headline and three task cards that tick one by one until the last turns deep green. Use to make a new video in this look (Kinetic type); address it by ID pm-e1genqq-0af11c.
 ---
 
 # KOSIF TOOL — Lemo Opuscar motion film plugin / عرض شاشة لإضافة أفلام موشن: من الطلب إلى فيلم منتج هادئ بلون أخضر
@@ -13,7 +13,7 @@ description: A two-minute dark browser screen recording demoing a motion-film pl
 - Published on source: 2026-10-24
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 103 words (not reproduced here)
-- Popularity rank on source library: #225
+- Popularity rank on source library: #87
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,15 +25,17 @@ A two-minute dark browser screen recording demoing a motion-film plugin, from a 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (119 s), aspect 16:9, difficulty 2/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Code / كود, Ads / إعلانات.
-- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Characters / شخصيات, Code / كود.
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
 - [playbooks/code.md](../../playbooks/code.md)
-- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
-* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
 * Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
-* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

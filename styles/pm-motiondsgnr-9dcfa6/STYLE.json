@@ -5,10 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "particles",
-    "shapes",
-    "charts"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@motiondsgnr",
   "creator_url": "https://x.com/motiondsgnr/status/2103692944771313960",
@@ -20,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 244,
+  "rank": 106,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,10 +27,8 @@
   "listed": true,
   "skill": "styles/pm-motiondsgnr-9dcfa6/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/particles.md",
-    "playbooks/shapes.md",
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "شوريل موشن مدته 15 ثانية مقسم إلى نحو تسعة فصول مرقمة، كل فصل يستعرض تقنية: تايبوغرافي يتمايل، عنوان من ثلاث كلمات على أزرق ملكي، كرة جسيمات تتفكك إلى اسم، أشكال تتحول، سائل لزج على الأصفر، نفق من حلقات نصية تدور، بطاقات بيانات، خطوط موجية متراصة، ثم شبكة تجمع كل اللقطات وشعار متعدد الألوان مع قصاصات هندسية.",
   "summary_en": "A 15-second motion showreel in nine numbered chapters, each a technique: wobbling type on orange, a slogan on royal blue, a particle sphere becoming a name, morphing shapes, a liquid blob on yellow, a spinning tunnel of text rings, data cards, waveform ridgelines, then a mosaic of every shot and a multicolour logo with geometric confetti.",

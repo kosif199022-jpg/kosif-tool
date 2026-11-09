@@ -1,6 +1,6 @@
 ---
 name: pm-souravbhar871-61f424
-description: Ten seconds of kinetic type over three alternating fields (cream, terracotta, charcoal): 'Hi.' morphs from a hand-drawn stroke to a heavy face, 'I read every word' sits over scrolling walls of tiny text, 'I think it through' rides tangled threads, scattered letters snap into 'straight', 'I build with you' gets a stacked extrusion, ending on 'I'm Claude' with an orange spark. Use to make a new video in this look (Kinetic type); address it by ID pm-souravbhar871-61f424.
+description: Ten seconds of kinetic type over three alternating fields (cream, terracotta, charcoal): 'Hi.' morphs from a hand-drawn stroke to a heavy face, 'I read every word' sits over scrolling walls of tiny text, 'I think it through' rides tangled threads, scattered letters snap into 'straight', 'I build with you' gets a stacked extrusion, ending on 'I'm Claude' with an orange spark. Use to make a new video in this look (Charts); address it by ID pm-souravbhar871-61f424.
 ---
 
 # KOSIF TOOL — Kinetic type self-portrait / بورتريه ذاتي بالتايبوغرافي المتحرك في عشر ثوانٍ
@@ -13,7 +13,7 @@ description: Ten seconds of kinetic type over three alternating fields (cream, t
 - Published on source: 2026-09-26 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 37 words (not reproduced here)
-- Popularity rank on source library: #98
+- Popularity rank on source library: #236
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,10 +25,12 @@ Ten seconds of kinetic type over three alternating fields (cream, terracotta, ch
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (10 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك.
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)

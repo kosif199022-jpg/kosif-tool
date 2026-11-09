@@ -5,10 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "code",
-    "diagrams",
-    "product-ui"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@MisbahSy",
   "creator_url": "https://x.com/MisbahSy/status/2103831201114882277",
@@ -20,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 166,
+  "rank": 28,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,10 +27,8 @@
   "listed": true,
   "skill": "styles/pm-misbahsy-80eaec/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/code.md",
-    "playbooks/diagrams.md",
-    "playbooks/product-ui.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "إعلان تقني مدته 15 ثانية بالبنفسجي الداكن: أسماء دوال من حِزم برمجية مختلفة تطفو كشارات حول رقم «+100» ثم تتجمع في «واجهة واحدة» مع شارة طلب، فمخطط يربط البشر والوكلاء والآلات ببوابة مركزية ثم بقائمة نماذج، ثم محرر كود فاتح يُكتب فيه سطر واحد ويتبدل اسم النموذج مع شريط مزودين، ثم مسار يفشل فيه مزود ويتحول تلقائياً لآخر، فأرقام ضخمة، وختام بالشعار وأمر التثبيت.",
   "summary_en": "A 15-second developer promo in deep violet: floating SDK chips collapse into 'one API', a node diagram routes users through a gateway card to models, a light code editor swaps the model string along a provider ticker, one provider fails with a 429 and traffic falls back to another, three huge stats count up, and the logo lands with an install command.",

@@ -14,7 +14,7 @@ description: A 20 s 4:5 dark developer-UI piece: a fixed white-and-violet headli
 - Reference aspect: 4:5 (1080×1334)
 - Technologies named by the source: Remotion
 - Creator's public prompt length: about 100 words (not reproduced here)
-- Popularity rank on source library: #226
+- Popularity rank on source library: #88
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 

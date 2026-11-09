@@ -1,6 +1,6 @@
 ---
 name: pm-buildfastwithai-53234e
-description: An 87-second history film told as bold flat poster plates in navy, cream, saffron, pink and brick red: each pairs a Devanagari word with a giant Latin transliteration and a diagram (gridded city, hymn waveform, branching scripts, planet and pi, zero and a number triangle, fractal temple, kolam loop, borrowed English words, moon landing), ending on an icon timeline. Use to make a new video in this look (Diagrams); address it by ID pm-buildfastwithai-53234e.
+description: An 87-second history film told as bold flat poster plates in navy, cream, saffron, pink and brick red: each pairs a Devanagari word with a giant Latin transliteration and a diagram (gridded city, hymn waveform, branching scripts, planet and pi, zero and a number triangle, fractal temple, kolam loop, borrowed English words, moon landing), ending on an icon timeline. Use to make a new video in this look (Characters); address it by ID pm-buildfastwithai-53234e.
 ---
 
 # KOSIF TOOL — Indian civilisation history film / تاريخ حضارة الهند في لوحات ملصقات بالخط الديفاناغري
@@ -13,7 +13,7 @@ description: An 87-second history film told as bold flat poster plates in navy, 
 - Published on source: 2026-09-28 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 79 words (not reproduced here)
-- Popularity rank on source library: #55
+- Popularity rank on source library: #193
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,16 +25,12 @@ An 87-second history film told as bold flat poster plates in navy, cream, saffro
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Web Audio), suggested duration (87 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Music / موسيقى.
-- [playbooks/diagrams.md](../../playbooks/diagrams.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/shapes.md](../../playbooks/shapes.md)
+Categories: Characters / شخصيات, Music / موسيقى.
+- [playbooks/characters.md](../../playbooks/characters.md)
 - [playbooks/music.md](../../playbooks/music.md)
 
 Category tactics:
-* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
 * Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
 
 ## Original creative direction (التوجيه الإبداعي)

@@ -5,6 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
+    "charts",
     "kinetic-type"
   ],
   "creator": "@1littlecoder",
@@ -17,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 112,
+  "rank": 250,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -26,6 +27,7 @@
   "listed": true,
   "skill": "styles/pm-1littlecoder-9fef89/SKILL.md",
   "playbooks": [
+    "playbooks/charts.md",
     "playbooks/kinetic-type.md"
   ],
   "summary_ar": "مقطع تعريفي مدته 10 ثوانٍ على أزرق نيلي ولافندر فاتح: نقطة برتقالية تجر خطاً أبيض يرسم خربشة متشابكة، ثم صفات تتوالى بأساليب مختلفة: «curious» على خطوط أفقية، «rigorous» على شبكة تصميم، «candid» بسيريف أسود مع «(no filter)»، قائمة تمرير عمودية «code. essays. proofs. your 3 a.m. questions.»، ثم دائرة تمسح الشاشة إلى بطاقة الاسم والرقم مع سطر شعار صغير.",

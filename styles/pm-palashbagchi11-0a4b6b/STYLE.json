@@ -6,8 +6,7 @@
   "type": "Prompt",
   "category": [
     "charts",
-    "kinetic-type",
-    "ads"
+    "music"
   ],
   "creator": "@PalashBagchi11",
   "creator_url": "https://x.com/PalashBagchi11/status/2102924409124389221",
@@ -19,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 276,
+  "rank": 138,
   "published": "2026-09-24",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,8 +28,7 @@
   "skill": "styles/pm-palashbagchi11-0a4b6b/SKILL.md",
   "playbooks": [
     "playbooks/charts.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/ads.md"
+    "playbooks/music.md"
   ],
   "summary_ar": "إعلان بيانات مدته 30 ثانية بأسلوب تحريري بسيط: سؤال كبير «دفعت مقابل 173 رابطاً، فماذا حصلت؟» على الأسود ثم الأبيض، نسبة حمراء تقفز من 0% إلى 81% بجانب مصفوفة نقاط تتلون، رقم 36 مع مدرج نقاط متناقص، «0% روابط متابعة، 4 ميتة» مع جدول، قيمة حقيقية تعدّ من 0 إلى 1,980 دولاراً، عبارة يُشطب نصفها بالأحمر، وختام بشعار وزر.",
   "summary_en": "A 30-second editorial data ad: a big question (you paid for 173 backlinks, what did you actually get?) on black then white, a red percentage climbing 0% to 81% beside a dot matrix turning red, '36' beside a decaying dot histogram, '0% dofollow, 4 already dead' with a table, a real-value counter rolling to $1,980, a line struck through in red, and a logo end card with a CTA button.",

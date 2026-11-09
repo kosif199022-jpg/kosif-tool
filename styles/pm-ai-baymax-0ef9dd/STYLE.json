@@ -6,7 +6,7 @@
   "type": "Prompt",
   "category": [
     "product-ui",
-    "ads"
+    "code"
   ],
   "creator": "@Ai_Baymax",
   "creator_url": "https://x.com/Ai_Baymax/status/2103411004902416787",
@@ -18,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 123,
+  "rank": 261,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,7 +28,7 @@
   "skill": "styles/pm-ai-baymax-0ef9dd/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/ads.md"
+    "playbooks/code.md"
   ],
   "summary_ar": "إعلان منتج مدته 55 ثانية لأداة تولّد رسوماً علمية، على تدرج باستيل كريمي-أزرق: سؤال افتتاحي يتلاشى خلف الشعار، ثم ستة فصول مرقمة يكون فيها النص يساراً ونافذة متصفح يميناً تعرض الأداة فعلياً (كتابة وصف، رسم تخطيطي يتحول، أسلوب مرجعي، تعديل نص بنقرة، تصدير، ورقة تتحول إلى ملصق)، ثم جدار أمثلة وشعارات جامعات وبطاقة ختام بزر كحلي.",
   "summary_en": "A 55-second promo for an AI scientific-figure tool on a cream-to-blue pastel gradient: an opening question dissolves into the logo, then six numbered chapters with copy left and a browser window right demoing the product (prompt, sketch, style reference, click-to-edit, export, poster), a gallery with university logos and a navy CTA end card.",

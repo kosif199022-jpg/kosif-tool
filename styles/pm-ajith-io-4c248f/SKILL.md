@@ -1,6 +1,6 @@
 ---
 name: pm-ajith-io-4c248f
-description: A 40 s cinematic product promo on black where a lit textbook page bursts into golden letter-sparks that gather into a glowing sun, then a portal ring, a field of hundreds of glowing thumbnail cards under wide-tracked white headlines, a white text-orbit globe with a countdown, a fireball over rows of illustration cards, a whiteboard frame, and a colourful logo end card. Use to make a new video in this look (Particles); address it by ID pm-ajith-io-4c248f.
+description: A 40 s cinematic product promo on black where a lit textbook page bursts into golden letter-sparks that gather into a glowing sun, then a portal ring, a field of hundreds of glowing thumbnail cards under wide-tracked white headlines, a white text-orbit globe with a countdown, a fireball over rows of illustration cards, a whiteboard frame, and a colourful logo end card. Use to make a new video in this look (Charts); address it by ID pm-ajith-io-4c248f.
 ---
 
 # KOSIF TOOL — Distilbook promo showreel / عرض ترويجي سينمائي ذهبي: صفحة كتاب تتحول إلى نجم وبطاقات رسوم
@@ -13,7 +13,7 @@ description: A 40 s cinematic product promo on black where a lit textbook page b
 - Published on source: 2026-09-26 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 37 words (not reproduced here)
-- Popularity rank on source library: #8
+- Popularity rank on source library: #146
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,17 +25,15 @@ A 40 s cinematic product promo on black where a lit textbook page bursts into go
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, Remotion, Web Audio), suggested duration (40 s), aspect 16:9, difficulty 5/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Particles / جسيمات, Kinetic type / تايبوغرافي متحرك, 3D / ثلاثي الأبعاد, Ads / إعلانات.
-- [playbooks/particles.md](../../playbooks/particles.md)
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Music / موسيقى.
+- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/3d.md](../../playbooks/3d.md)
-- [playbooks/ads.md](../../playbooks/ads.md)
+- [playbooks/music.md](../../playbooks/music.md)
 
 Category tactics:
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
-* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
+* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -5,8 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "photos",
-    "kinetic-type"
+    "charts",
+    "music"
   ],
   "creator": "@sab8a",
   "creator_url": "https://x.com/sab8a/status/2103144778481475686",
@@ -18,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 14,
+  "rank": 152,
   "published": "2026-09-24",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -27,8 +27,8 @@
   "listed": true,
   "skill": "styles/pm-sab8a-364a5a/SKILL.md",
   "playbooks": [
-    "playbooks/photos.md",
-    "playbooks/kinetic-type.md"
+    "playbooks/charts.md",
+    "playbooks/music.md"
   ],
   "summary_ar": "مقطع 16:9 مدته نحو 37 ثانية لمتحدثة أمام ستارة كهرمانية دافئة، تُقصّ صورتها كل بضع ثوانٍ وتُوضع داخل عالم مصغّرة مختلف (كرتوني مشمس بثلاثي أبعاد، رسوم قديمة بالأبيض والبني، كاواي وردي، مانغا بالأبيض والأسود، بطاقة هولوغرامية نادرة، انفجار ناري، بوب آرت منقّط) مع كلمات ترجمة عريضة تظهر كلمة بكلمة وعدّاد قلوب، وتنتهي بشبكة للتسعة أفكار مرقّمة تطلب التصويت.",
   "summary_en": "A 37 s 16:9 talking-head edit before a warm amber curtain where the speaker is cut out every few seconds and dropped into a new thumbnail world (sunny 3D cartoon, sepia rubber-hose, pink kawaii, manga, holographic card, explosion, pop art), with bold word-by-word captions and a heart counter, ending on a numbered grid of all nine ideas for a vote.",

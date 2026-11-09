@@ -6,7 +6,7 @@
   "type": "Prompt",
   "category": [
     "diagrams",
-    "code"
+    "music"
   ],
   "creator": "@Yunn260414",
   "creator_url": "https://x.com/Yunn260414/status/2104044910769016888",
@@ -18,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 269,
+  "rank": 131,
   "published": "2026-09-27",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,7 +28,7 @@
   "skill": "styles/pm-yunn260414-60d996/SKILL.md",
   "playbooks": [
     "playbooks/diagrams.md",
-    "playbooks/code.md"
+    "playbooks/music.md"
   ],
   "summary_ar": "فيديو شرح طويل (نحو 6 دقائق و48 ثانية) يعرّف المبتدئين بـ Git بالصينية على خلفية كحلية متدرجة: مجلد يمتلئ بنسخ ملف مكررة، تعارض بين شخصين، تشبيه حفظ الألعاب، بطاقة تعريف بـ Git، شبكة حواسيب موزعة، Git مقابل GitHub كالكاميرا والألبوم، المناطق الثلاث كصورة جماعية بإطارات ملونة، طرفية تكتب الأوامر بجوار بطاقة شرح لكل أمر، خطوط فروع تتشعب وتندمج، مزامنة حاسوب مع مستودع بعيد، ثم جدول أوامر سريع وبطاقة ختام، وترجمة أسفل كل مشهد.",
   "summary_en": "A 6 min 48 s beginner Git explainer in Chinese on a navy gradient: duplicate file copies, a game-save analogy, Git facts, a distributed network, the three areas as coloured frames, a terminal typing each command beside an explainer card, branch lines splitting and merging, remote sync, and a cheat-sheet ending, with a caption under every scene.",

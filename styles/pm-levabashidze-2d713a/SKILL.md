@@ -1,6 +1,6 @@
 ---
 name: pm-levabashidze-2d713a
-description: A 15-second Swiss-technical motion showreel in a corner-marked frame with tiny monospace labels: an orange ball bouncing on a ruler timeline, 'ease in / ease out / never linear' on orange with curve editors, a circle-to-star-to-hexagon morph, a rippling isometric cube grid, a curve-tile pattern, a scrolling word wall, a blue render counter and a name card. Use to make a new video in this look (Kinetic type); address it by ID pm-levabashidze-2d713a.
+description: A 15-second Swiss-technical motion showreel in a corner-marked frame with tiny monospace labels: an orange ball bouncing on a ruler timeline, 'ease in / ease out / never linear' on orange with curve editors, a circle-to-star-to-hexagon morph, a rippling isometric cube grid, a curve-tile pattern, a scrolling word wall, a blue render counter and a name card. Use to make a new video in this look (Charts); address it by ID pm-levabashidze-2d713a.
 ---
 
 # KOSIF TOOL — Swiss-style motion showreel / شوريل موشن بالأسلوب السويسري: من التوقيت إلى التصيير
@@ -13,7 +13,7 @@ description: A 15-second Swiss-technical motion showreel in a corner-marked fram
 - Published on source: 2026-09-26 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1280×720)
 - Creator's public prompt length: about 30 words (not reproduced here)
-- Popularity rank on source library: #83
+- Popularity rank on source library: #221
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,15 +25,13 @@ A 15-second Swiss-technical motion showreel in a corner-marked frame with tiny m
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Three.js), suggested duration (15 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, 3D / ثلاثي الأبعاد.
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/shapes.md](../../playbooks/shapes.md)
-- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

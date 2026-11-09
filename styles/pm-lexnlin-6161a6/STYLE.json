@@ -6,7 +6,7 @@
   "type": "Skill",
   "category": [
     "product-ui",
-    "kinetic-type",
+    "characters",
     "code"
   ],
   "creator": "@LexnLin",
@@ -19,7 +19,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 153,
+  "rank": 15,
   "published": "2026-10-04",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,7 +29,7 @@
   "skill": "styles/pm-lexnlin-6161a6/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/kinetic-type.md",
+    "playbooks/characters.md",
     "playbooks/code.md"
   ],
   "summary_ar": "فيلم إطلاق مدته 30 ثانية على أبيض رمادي فاتح لأداة تصنع أفلام موشن: جملة تُكتب بمؤشر أزرق وتحتها تتساقط شارات أسماء مؤثرات بخط الكود، ثم عنوان ضخم بظل أزرق مزاح، بطاقات تنقسم، قائمة تقنيات تدور كالبكرة، شريط زمني بموجة، ثم شريط عرض أفقي لأمثلة (شاشة بناء حمراء بعداد، تطبيق فواتير، شعار، تطبيق هاتف) وطرفية تثبّت الأداة وبطاقة ختام بالشعار والأمر.",

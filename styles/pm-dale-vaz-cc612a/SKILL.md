@@ -1,6 +1,6 @@
 ---
 name: pm-dale-vaz-cc612a
-description: A 47-second 'powers of ten' reveal for a trading platform on near-black: a point of light opens into a dark candlestick terminal, the camera dives into the last candle down to RGB subpixels, pulls back through an option chain and payoff chart, out to a starfield with two labelled stars for the desktop and mobile apps, then into a phone placing a buy order before the logo card. Use to make a new video in this look (Product UI); address it by ID pm-dale-vaz-cc612a.
+description: A 47-second 'powers of ten' reveal for a trading platform on near-black: a point of light opens into a dark candlestick terminal, the camera dives into the last candle down to RGB subpixels, pulls back through an option chain and payoff chart, out to a starfield with two labelled stars for the desktop and mobile apps, then into a phone placing a buy order before the logo card. Use to make a new video in this look (Phone); address it by ID pm-dale-vaz-cc612a.
 ---
 
 # KOSIF TOOL — Sahi trading terminal reveal / كشف منصة تداول بزوم من البكسل إلى المجرة
@@ -13,7 +13,7 @@ description: A 47-second 'powers of ten' reveal for a trading platform on near-b
 - Published on source: 2026-09-25 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 113 words (not reproduced here)
-- Popularity rank on source library: #68
+- Popularity rank on source library: #206
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,15 +25,17 @@ A 47-second 'powers of ten' reveal for a trading platform on near-black: a point
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, WebGL), suggested duration (47 s), aspect 16:9, difficulty 5/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Phone / هاتف, Charts / رسوم بيانية.
-- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+Categories: Phone / هاتف, Charts / رسوم بيانية, Photos / صور, Code / كود.
 - [playbooks/phone.md](../../playbooks/phone.md)
 - [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
+- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
-* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
+* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,6 +1,6 @@
 ---
 name: pm-beamnxw-6d4fc1
-description: A 15.6-second 4:5 piece styled as a studio dashboard: a red headline on top, a preview window playing a shallow-depth-of-field 3D shot of a red voxel character walking across a cream keyboard beside a glass jar and a tiny green robot, a row of tool cards lighting up in order beneath it, a pixel mascot speaking short captions, and a black terminal typing each stage's commands. Use to make a new video in this look (3D); address it by ID pm-beamnxw-6d4fc1.
+description: A 15.6-second 4:5 piece styled as a studio dashboard: a red headline on top, a preview window playing a shallow-depth-of-field 3D shot of a red voxel character walking across a cream keyboard beside a glass jar and a tiny green robot, a row of tool cards lighting up in order beneath it, a pixel mascot speaking short captions, and a black terminal typing each stage's commands. Use to make a new video in this look (Shapes); address it by ID pm-beamnxw-6d4fc1.
 ---
 
 # KOSIF TOOL — Small-world character film with Blender MCP / عالم صغير فوق لوحة مفاتيح: شخصية مكعبات داخل واجهة استوديو
@@ -14,7 +14,7 @@ description: A 15.6-second 4:5 piece styled as a studio dashboard: a red headlin
 - Reference aspect: 4:5 (1440×1728)
 - Technologies named by the source: Remotion
 - Creator's public prompt length: about 114 words (not reproduced here)
-- Popularity rank on source library: #145
+- Popularity rank on source library: #7
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -26,15 +26,15 @@ A 15.6-second 4:5 piece styled as a studio dashboard: a red headline on top, a p
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, Three.js, Web Audio), suggested duration (15.6 s), aspect 4:5, difficulty 5/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: 3D / ثلاثي الأبعاد, Characters / شخصيات, Product UI / واجهات المنتج.
-- [playbooks/3d.md](../../playbooks/3d.md)
+Categories: Shapes / أشكال, Characters / شخصيات, Photos / صور.
+- [playbooks/shapes.md](../../playbooks/shapes.md)
 - [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
 
 Category tactics:
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
 * Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

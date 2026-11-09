@@ -6,7 +6,11 @@
   "type": "Prompt",
   "category": [
     "product-ui",
-    "photos"
+    "charts",
+    "kinetic-type",
+    "photos",
+    "music",
+    "code"
   ],
   "creator": "unknown",
   "creator_url": "https://x.com/ann_nnng/status/2104159923886244176",
@@ -28,7 +32,11 @@
   "skill": "styles/pm-ann-nnng-d69f71/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/photos.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/photos.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
   ],
   "summary_ar": "مقطع عمودي قصير (نحو 13 ثانية) مقسوم أفقياً إلى لوحتين بيضاوين فوق بعض، كل منهما باسم نموذج ذكاء اصطناعي: ملصقات بحواف بيضاء وجليتر هولوغرافي (عبارة ملونة بنجوم، علبة مشروب، شعار كروم، كوكب ديسكو) تميل وتلمع مع حركة يد المؤشر، ثم تُسحب زاويتها فتُقشَّر وتكشف ورقة خلفية رمادية، مع شريط مصغرات بالأسفل.",
   "summary_en": "A short 13-second portrait clip split into two stacked white panels, each labelled with an AI model name: die-cut stickers with white borders and holographic glitter (a rainbow star slogan, a drink can, a chrome logo, a disco planet) tilt and shimmer as a hand cursor moves over them, then get peeled by a corner to reveal grey backing paper, with a thumbnail tray below.",

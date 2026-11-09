@@ -5,10 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "shapes",
-    "particles",
-    "3d"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@3xtihor",
   "creator_url": "https://x.com/3xtihor/status/2103551886272159839",
@@ -20,7 +18,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 104,
+  "rank": 242,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,10 +27,8 @@
   "listed": true,
   "skill": "styles/pm-3xtihor-0f6911/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/particles.md",
-    "playbooks/3d.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "شوريل مدته 15 ثانية بإطار عدسة ورقم وقت وعلامة إيقاع: كرة حمراء تسقط بآثار متكررة على خط بمقياس، ثم كلمتان ضخمتان على حقل برتقالي (الثانية تتمدد ضبابياً)، مربع كريمي يتحول إلى مثلث وزهرة على أزرق بمقابض بيزيه، شبكة مربعات ثم نقاط تتنفس، حلقة أسطوانية دوارة من نصوص الموشن بالليموني والأحمر والوردي، لوحة شبكية من خمس بطاقات مهارات، دوامة جسيمات تتجمع في اسم، وختام بالاسم ونقطة حمراء.",
   "summary_en": "A 15-second showreel with viewfinder corners and timecode: a red ball drops with onion-skin ghosts, giant words smear across an orange field, a cream square morphs on blue with bezier handles, grids breathe, a 3D cylinder of motion terms spins, a five-tile bento board shows skills, and a particle vortex condenses into the name with a red-dot end card.",

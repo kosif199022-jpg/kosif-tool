@@ -5,9 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "3d",
-    "kinetic-type",
-    "product-ui"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@sahildesigner23",
   "creator_url": "https://x.com/sahildesigner23/status/2103536115563307120",
@@ -19,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 236,
+  "rank": 98,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +27,8 @@
   "listed": true,
   "skill": "styles/pm-sahildesigner23-ee3155/SKILL.md",
   "playbooks": [
-    "playbooks/3d.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/product-ui.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "شوريل 15 ثانية بالأسود والبرتقالي والكريمي: كلمة MOTION تُكشف بين خطين وتتلون حروفها، ثم يكررها نمط مفرّغ في الخلفية، فتتحول إلى نص ثلاثي الأبعاد ببروز برتقالي يدور، ثم كرات كروم سائلة تندمج على خلفية برتقالية، هاتف يعرض نسبة تصيير، حقل مكعبات تبرز منه أشكال برتقالية، واجهة محرر بطبقات وموجة صوت، وبطاقة اسم بنقطة برتقالية.",
   "summary_en": "A 15 s showreel in black, orange and cream: a word revealed between two rules, outline repeats scrolling behind it, the word turning into extruded 3D type, merging chrome blobs on orange, a phone render screen, a cube field where orange shapes rise, an editor UI with layers and waveform, and a name card with an orange dot.",

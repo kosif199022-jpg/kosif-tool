@@ -13,7 +13,7 @@ description: A cinematic 45-second landscape short on deep space black: a grainy
 - Published on source: 2026-09-26 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 90 words (not reproduced here)
-- Popularity rank on source library: #110
+- Popularity rank on source library: #248
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,15 +25,11 @@ A cinematic 45-second landscape short on deep space black: a grainy glowing whit
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, Remotion, React), suggested duration (45 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Charts / رسوم بيانية, 3D / ثلاثي الأبعاد, Kinetic type / تايبوغرافي متحرك.
+Categories: Charts / رسوم بيانية.
 - [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/3d.md](../../playbooks/3d.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

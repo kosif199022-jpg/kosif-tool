@@ -5,10 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "shapes",
-    "particles",
-    "characters"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@rendesr",
   "creator_url": "https://x.com/rendesr/status/2103395846578676116",
@@ -20,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 107,
+  "rank": 245,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,10 +27,8 @@
   "listed": true,
   "skill": "styles/pm-rendesr-86be44/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/particles.md",
-    "playbooks/characters.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "شوريل مدته 15 ثانية بإطار واجهة دقيق وعداد فصول: كرة حمراء ترتد على مسطرة توقيت على الأسود، عنوان أسود عريض على أحمر يُكتب ويتفكك بسحب حركي، شكل أزرق يتحول من مربع إلى مثلث تشغيل أحمر ثم نجمة وسط شبكة نقاط متجاوبة، حقل شرطات يتدفق ويشكل كلمة بالليموني، جسيمات ثلاثية الأبعاد تتحول إلى طوق، كرة ليمونية تصبح وجهاً يغمز على الأزرق، ثم انفجار قطعات سريعة بين أساليب، وختام بالاسم ونقطة حمراء.",
   "summary_en": "A 15-second showreel in a chapter HUD: a red ball bouncing on a timing ruler, a heavy black headline on red shredding with smear, a blue shape morphing amid a reactive dot grid, a dash flow field spelling a lime word, 3D particles forming a torus, a lime blob becoming a winking face on blue, a burst of rapid style cuts, and a wordmark end card.",

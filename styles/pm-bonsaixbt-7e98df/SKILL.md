@@ -14,7 +14,7 @@ description: A 20-second 4:5 vertical piece in deep violet: a fixed two-tone hea
 - Reference aspect: 4:5 (1080×1334)
 - Technologies named by the source: Remotion
 - Creator's public prompt length: about 114 words (not reproduced here)
-- Popularity rank on source library: #228
+- Popularity rank on source library: #90
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -26,15 +26,13 @@ A 20-second 4:5 vertical piece in deep violet: a fixed two-tone headline, a huge
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG), suggested duration (20 s), aspect 4:5, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك, Code / كود, Product UI / واجهات المنتج.
+Categories: Kinetic type / تايبوغرافي متحرك, Code / كود.
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 - [playbooks/code.md](../../playbooks/code.md)
-- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 
 Category tactics:
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
-* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

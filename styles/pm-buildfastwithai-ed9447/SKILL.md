@@ -14,7 +14,7 @@ description: A 39-second showcase of a code-built Cold War propeller attack plan
 - Reference aspect: 16:9 (1920×1080)
 - Technologies named by the source: Three.js
 - Creator's public prompt length: about 7 words (not reproduced here)
-- Popularity rank on source library: #17
+- Popularity rank on source library: #155
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 

@@ -6,7 +6,8 @@
   "type": "Prompt",
   "category": [
     "product-ui",
-    "ads"
+    "charts",
+    "diagrams"
   ],
   "creator": "@sudo_kiran",
   "creator_url": "https://x.com/sudo_kiran/status/2103486573476254201",
@@ -18,7 +19,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 255,
+  "rank": 117,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,7 +29,8 @@
   "skill": "styles/pm-sudo-kiran-4f8b59/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/ads.md"
+    "playbooks/charts.md",
+    "playbooks/diagrams.md"
   ],
   "summary_ar": "فيديو شرح منتج مدته 30 ثانية: يبدأ في فضاء داكن بشبكة أرضية تطفو فيه أوراق مستندات وعبارة تُشطب بالوردي ثم تتحول إلى فيديوهات، ثم الشعار على خلفية فاتحة بتدرجات باستيل، ثلاث خطوات مرقمة بأرقام متدرجة بجانب نوافذ التطبيق، مونتاج سريع لأنماط رسم مختلفة، بطاقات ميزات، عبارة «دقائق لا أسابيع» مع أرقام، وختام بزر تجربة.",
   "summary_en": "A 30-second product explainer that opens in dark space over a perspective grid with floating document pages and a struck-through line swapped for videos, then moves to a light pastel canvas for the logo, three numbered steps with gradient numerals beside app windows, a fast illustration-style montage, a feature-card bento, a 'minutes not weeks' stat line and a try-it CTA.",

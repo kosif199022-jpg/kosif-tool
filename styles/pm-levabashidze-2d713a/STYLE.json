@@ -5,9 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "shapes",
-    "3d"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@levabashidze",
   "creator_url": "https://x.com/levabashidze/status/2103786742520184909",
@@ -19,7 +18,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 83,
+  "rank": 221,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +27,8 @@
   "listed": true,
   "skill": "styles/pm-levabashidze-2d713a/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/3d.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "شوريل موشن مدته 15 ثانية بطابع سويسري تقني داخل إطار بعلامات زوايا ونصوص صغيرة أحادية العرض: كرة برتقالية ترتد فوق مسطرة زمنية على الأسود، «EASE IN / EASE OUT / never LINEAR» على البرتقالي مع منحنيات توقيت، أشكال تتحول من دائرة إلى نجمة إلى سداسي على الكريمي، شبكة مكعبات متساوية القياس تتموج، نمط منحنيات أسود متشابك، جدار كلمات «تصميم يتحرك»، شاشة تصيير زرقاء بنسبة مئوية، ثم بطاقة الاسم.",
   "summary_en": "A 15-second Swiss-technical motion showreel in a corner-marked frame with tiny monospace labels: an orange ball bouncing on a ruler timeline, 'ease in / ease out / never linear' on orange with curve editors, a circle-to-star-to-hexagon morph, a rippling isometric cube grid, a curve-tile pattern, a scrolling word wall, a blue render counter and a name card.",

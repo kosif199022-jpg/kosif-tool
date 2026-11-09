@@ -5,8 +5,9 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "3d",
-    "kinetic-type"
+    "kinetic-type",
+    "characters",
+    "photos"
   ],
   "creator": "@NFT_Chen",
   "creator_url": "https://x.com/NFT_Chen/status/2103882415299350878",
@@ -18,7 +19,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 23,
+  "rank": 161,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -27,8 +28,9 @@
   "listed": true,
   "skill": "styles/pm-nft-chen-5f8bb0/SKILL.md",
   "playbooks": [
-    "playbooks/3d.md",
-    "playbooks/kinetic-type.md"
+    "playbooks/kinetic-type.md",
+    "playbooks/characters.md",
+    "playbooks/photos.md"
   ],
   "summary_ar": "مشهد ثلاثي الأبعاد مدته 14 ثانية بأسلوب رسوم أنمي دافئ: كاميرا تلاحق طائرة مروحية كريمية بدوائر خضراء وحمراء وذيل ثلاثي الألوان فوق بحر برتقالي وغيوم بنفسجية منتفخة، تتكدس فوقها كلمات بخط سيريف «NATURE / BRINGS / YOU / PEACE» ثم تحل محلها عبارة صغيرة «just breathe.»، مع شرائط خفيفة بأسماء المناورات أسفل الشاشة وأشعة بيضاء ورصاص خطّاط، وتنتهي بدوران حلزوني يميل فيه الأفق.",
   "summary_en": "A 14-second stylised 3D chase shot behind a cream propeller plane with green-white-red roundels over an orange sunset sea and puffy violet clouds, as serif words stack 'NATURE / BRINGS / YOU / PEACE' then shrink to a small 'just breathe.', tracked manoeuvre captions sit at the bottom, beams and tracers cross frame, and it ends in a rolling spiral dive.",

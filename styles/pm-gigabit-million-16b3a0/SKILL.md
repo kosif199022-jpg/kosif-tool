@@ -1,6 +1,6 @@
 ---
 name: pm-gigabit-million-16b3a0
-description: A one-minute news recap of six new game releases, in Japanese on dark navy: a title card with six numbered chips, then about 7 s per game in one fixed layout (title, tagline and bullets left, an animated illustration in a corner-bracket frame right, a fact strip below) with its own accent colour, then a summary table. Use to make a new video in this look (Product UI); address it by ID pm-gigabit-million-16b3a0.
+description: A one-minute news recap of six new game releases, in Japanese on dark navy: a title card with six numbered chips, then about 7 s per game in one fixed layout (title, tagline and bullets left, an animated illustration in a corner-bracket frame right, a fact strip below) with its own accent colour, then a summary table. Use to make a new video in this look (Charts); address it by ID pm-gigabit-million-16b3a0.
 ---
 
 # KOSIF TOOL — Steam new releases news recap / ملخص إخباري لإصدارات ألعاب جديدة ببطاقات داكنة
@@ -13,7 +13,7 @@ description: A one-minute news recap of six new game releases, in Japanese on da
 - Published on source: 2026-09-27 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 34 words (not reproduced here)
-- Popularity rank on source library: #179
+- Popularity rank on source library: #41
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,15 +25,11 @@ A one-minute news recap of six new game releases, in Japanese on dark navy: a ti
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (60 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+Categories: Charts / رسوم بيانية.
 - [playbooks/charts.md](../../playbooks/charts.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
-* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

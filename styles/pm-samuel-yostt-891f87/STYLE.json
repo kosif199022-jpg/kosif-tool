@@ -6,8 +6,7 @@
   "type": "Prompt",
   "category": [
     "product-ui",
-    "phone",
-    "ads",
+    "charts",
     "kinetic-type"
   ],
   "creator": "@samuel_yostt",
@@ -20,7 +19,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 250,
+  "rank": 112,
   "published": "2026-10-01",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -30,8 +29,7 @@
   "skill": "styles/pm-samuel-yostt-891f87/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/phone.md",
-    "playbooks/ads.md",
+    "playbooks/charts.md",
     "playbooks/kinetic-type.md"
   ],
   "summary_ar": "إعلان منتج سريع مدته 15 ثانية على أبيض بتوهج خوخي ناعم: نقطة برتقالية تتفتح إلى صف صور شخصية دائرية تندمج في عنوان تتبدل كلمته الأخيرة بضبابية، ثم بطاقة صانع محتوى تتقلب عمودياً، هاتف وسط مروحة بطاقات فيديو، ثلاثة هواتف مع أيقونات المنصات، بطاقة إحصاء بمنحنى صاعد واختيار الفائز، شبكة مائلة من الصور، وبطاقة ختام بالشعار وزر برتقالي.",

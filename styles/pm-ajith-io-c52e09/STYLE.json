@@ -6,7 +6,7 @@
   "type": "Prompt",
   "category": [
     "product-ui",
-    "hand-drawn",
+    "charts",
     "kinetic-type"
   ],
   "creator": "@ajith_io",
@@ -19,7 +19,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 76,
+  "rank": 145,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,7 +29,7 @@
   "skill": "styles/pm-ajith-io-c52e09/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/hand-drawn.md",
+    "playbooks/charts.md",
     "playbooks/kinetic-type.md"
   ],
   "summary_ar": "فيديو منتج مدته 40 ثانية على خلفية بيضاء دافئة: سطر افتتاحي بخط يدوي، شعار بأشرطة كتب ملونة، ثم ثلاث خطوات بشريط تقدم ثلاثي الألوان أعلى الشاشة (رفع ملف بسحبه إلى منطقة الإسقاط، مراجعة نص التعليق وتعديل كلمة، ومشاهدة رسم يدوي ملون لنبتة يُبنى مع ترجمة تُبرز الكلمات)، ثم شطب نصي، وجدار مصغرات يتراجع بالكاميرا، وإطار هاتف عمودي، وعدد ضخم للغات، وختام بالشعار وزر رابط.",

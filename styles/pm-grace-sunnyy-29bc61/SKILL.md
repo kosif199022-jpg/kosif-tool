@@ -1,6 +1,6 @@
 ---
 name: pm-grace-sunnyy-29bc61
-description: A 15-second motion reel in a dark editor interface with a red keyframe timeline and code comments: a diamond keyframe riding an easing curve, a giant word on red, a title with stacked echo shadows, a red octahedron that shatters and reassembles, particles flowing into a word, a spec board of cards, named transitions and a name end card. Use to make a new video in this look (Kinetic type); address it by ID pm-grace-sunnyy-29bc61.
+description: A 15-second motion reel in a dark editor interface with a red keyframe timeline and code comments: a diamond keyframe riding an easing curve, a giant word on red, a title with stacked echo shadows, a red octahedron that shatters and reassembles, particles flowing into a word, a spec board of cards, named transitions and a name end card. Use to make a new video in this look (Charts); address it by ID pm-grace-sunnyy-29bc61.
 ---
 
 # KOSIF TOOL — Keyframe motion design reel / ريل موشن بإطار كيفريمات وخط زمني بالأحمر والأسود
@@ -13,7 +13,7 @@ description: A 15-second motion reel in a dark editor interface with a red keyfr
 - Published on source: 2026-10-03 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1280×720)
 - Creator's public prompt length: about 59 words (not reproduced here)
-- Popularity rank on source library: #147
+- Popularity rank on source library: #9
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,16 +25,10 @@ A 15-second motion reel in a dark editor interface with a red keyframe timeline 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, HTML Canvas, Three.js), suggested duration (15 s), aspect 16:9, difficulty 5/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك, Particles / جسيمات, 3D / ثلاثي الأبعاد, Charts / رسوم بيانية.
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/particles.md](../../playbooks/particles.md)
-- [playbooks/3d.md](../../playbooks/3d.md)
+Categories: Charts / رسوم بيانية.
 - [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)

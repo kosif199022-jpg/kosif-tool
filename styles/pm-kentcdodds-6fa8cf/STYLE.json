@@ -5,9 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "product-ui",
-    "characters"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@kentcdodds",
   "creator_url": "https://x.com/kentcdodds/status/2103638102333858193",
@@ -19,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 234,
+  "rank": 96,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": null,
@@ -28,9 +27,8 @@
   "listed": true,
   "skill": "styles/pm-kentcdodds-6fa8cf/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/product-ui.md",
-    "playbooks/characters.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "مقطع داكن قصير (المتاح منه 10 ثوانٍ) لإعلان أداة ذكاء اصطناعي: كلمات ضخمة تبدأ ببادئة «إعادة» تتبدل كل ثلث ثانية بلون مختلف (مرجاني، بنفسجي، أزرق، أبيض) بجانب نوافذ دردشة مائلة لمساعدين مختلفين، ثم جملة من ثلاثة أسطر يتبدل آخرها بين أسماء المساعدين وينتهي بالأخضر، ثم دمية كوالا ثلاثية الأبعاد بأشعة ذهبية بجانب عنوان التعريف.",
   "summary_en": "A short dark AI-tool promo (10 s clip available): huge 're-' words swap colour every beat beside tilted chat windows from different assistants, a three-line sentence cycles assistant names and lands on green 'every agent', then a 3D koala mascot appears on golden light rays beside an intro headline.",

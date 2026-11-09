@@ -5,9 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "particles",
-    "charts"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@codeSTACKr",
   "creator_url": "https://x.com/codeSTACKr/status/2103656229717328129",
@@ -19,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 57,
+  "rank": 195,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +27,8 @@
   "listed": true,
   "skill": "styles/pm-codestackr-c071bf/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/particles.md",
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "ريل موشن مدته 15 ثانية بأسلوب استوديو: نقطة برتقالية تنبض على الأسود، ثم كلمات ضخمة ثقيلة تملأ الشاشة على خلفيات تتبدل بين الكريمي والبرتقالي والأزرق الكهربائي، عدّاد إطارات، شبكة نقاط تتموج، كرة جسيمات زرقاء تتحول إلى لولب مع حروف تدور حولها، منحنيات تسارع مع أشرطة تتحرك، وختام بالاسم وشارة «متاح للعمل».",
   "summary_en": "A 15-second studio-style motion reel: a pulsing orange dot on black, then huge heavy words filling the frame on backgrounds flipping between cream, orange and electric blue, a frame counter, a rippling dot grid, a blue particle sphere that morphs into a helix with orbiting letters, easing-curve plots driving bars, and a name end card with an available-for-hire pill.",

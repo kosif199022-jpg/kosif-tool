@@ -1,6 +1,6 @@
 ---
 name: pm-moguzbulbul-6311b6
-description: A calm 42-second explainer of a CRM record-page redesign on off-white: the grey original dissolves into a cyan blueprint wireframe with measurement callouts, then returns improved, across five numbered principles (one primary action, hide absence, open work first, one timeline, act in context), each with a short caption, until the page ends with a side reply panel. Use to make a new video in this look (Product UI); address it by ID pm-moguzbulbul-6311b6.
+description: A calm 42-second explainer of a CRM record-page redesign on off-white: the grey original dissolves into a cyan blueprint wireframe with measurement callouts, then returns improved, across five numbered principles (one primary action, hide absence, open work first, one timeline, act in context), each with a short caption, until the page ends with a side reply panel. Use to make a new video in this look (Diagrams); address it by ID pm-moguzbulbul-6311b6.
 ---
 
 # KOSIF TOOL — UX decision explainer animation / شرح قرارات تصميم واجهة بمخطط هندسي شفاف
@@ -13,7 +13,7 @@ description: A calm 42-second explainer of a CRM record-page redesign on off-whi
 - Published on source: 2026-09-27 · credited model: Opus 5.5
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 24 words (not reproduced here)
-- Popularity rank on source library: #256
+- Popularity rank on source library: #118
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,12 +25,10 @@ A calm 42-second explainer of a CRM record-page redesign on off-white: the grey 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG), suggested duration (42 s), aspect 4:3, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Diagrams / مخططات.
-- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+Categories: Diagrams / مخططات.
 - [playbooks/diagrams.md](../../playbooks/diagrams.md)
 
 Category tactics:
-* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
 
 ## Original creative direction (التوجيه الإبداعي)

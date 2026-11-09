@@ -1,6 +1,6 @@
 ---
 name: pm-umangratani-57f86a
-description: A 15 s showreel inside an editor HUD (corners, frame counter, 128 BPM): a red dot multiplies into a ring, a heavy headline builds on a red slate, shapes morph in a transform box, a cream dot grid ripples, particles form a sphere, torus and wire cube on blue, a striped ribbon ties a knot on yellow, words spiral, then a serif signature. Use to make a new video in this look (Shapes); address it by ID pm-umangratani-57f86a.
+description: A 15 s showreel inside an editor HUD (corners, frame counter, 128 BPM): a red dot multiplies into a ring, a heavy headline builds on a red slate, shapes morph in a transform box, a cream dot grid ripples, particles form a sphere, torus and wire cube on blue, a striped ribbon ties a knot on yellow, words spiral, then a serif signature. Use to make a new video in this look (Charts); address it by ID pm-umangratani-57f86a.
 ---
 
 # KOSIF TOOL — Shape and dot motion showreel / شوريل أشكال ونقاط بإيقاع 128 نبضة
@@ -13,7 +13,7 @@ description: A 15 s showreel inside an editor HUD (corners, frame counter, 128 B
 - Published on source: 2026-09-25 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1280×720)
 - Creator's public prompt length: about 26 words (not reproduced here)
-- Popularity rank on source library: #66
+- Popularity rank on source library: #204
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,15 +25,15 @@ A 15 s showreel inside an editor HUD (corners, frame counter, 128 BPM): a red do
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, Three.js), suggested duration (15 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Shapes / أشكال, Kinetic type / تايبوغرافي متحرك, Particles / جسيمات.
-- [playbooks/shapes.md](../../playbooks/shapes.md)
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال.
+- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
 
 Category tactics:
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

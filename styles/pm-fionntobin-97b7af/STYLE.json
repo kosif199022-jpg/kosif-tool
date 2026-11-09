@@ -5,9 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
     "charts",
-    "shapes"
+    "kinetic-type"
   ],
   "creator": "@fionntobin",
   "creator_url": "https://x.com/fionntobin/status/2103510776690479597",
@@ -19,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 146,
+  "rank": 8,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +27,8 @@
   "listed": true,
   "skill": "styles/pm-fionntobin-97b7af/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
     "playbooks/charts.md",
-    "playbooks/shapes.md"
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "شوريل موشن تحريري مدته 15 ثانية بلونين فقط، أزرق كوبالت على كريمي، على شبكة تصميم رفيعة: مربعات تتضاعف من 2 إلى 8 إلى 64 مع رقم سيريف كبير، كلمة «EVERY» مكثفة تملأ الشاشة الزرقاء ثم «frame» مائلة و«written» عريضة، مخطط درجات يرسم إيقاع الموسيقى بالأرقام، رجل عصا أزرق يقفز حواجز، بلاطات متساوية القياس ترتفع، شبكة نقاط تتحول إلى تموجات طباعة نصفية، مصفوفة رموز، ثم توقيع ضخم بالسيريف.",
   "summary_en": "A 15-second editorial motion reel in cobalt on cream over a thin design grid: squares doubling to 64 beside a serif numeral, a condensed 'EVERY' on blue then italic 'frame' and wide 'written', a beat step chart, a stick runner clearing hurdles, rising isometric tiles, halftone dot ripples, a glyph matrix and a huge serif signature.",

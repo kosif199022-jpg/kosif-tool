@@ -5,8 +5,6 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "characters",
-    "particles",
     "code"
   ],
   "creator": "@chrisjdimarco",
@@ -19,7 +17,7 @@
     "h": 1292
   },
   "aspect_label": "other",
-  "rank": 262,
+  "rank": 124,
   "published": "2026-09-24",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,8 +26,6 @@
   "listed": true,
   "skill": "styles/pm-chrisjdimarco-f068db/SKILL.md",
   "playbooks": [
-    "playbooks/characters.md",
-    "playbooks/particles.md",
     "playbooks/code.md"
   ],
   "summary_ar": "مشهد 18 ثانية لساموراي بدرع أحمر بأسلوب رسم خطي متوهج، يقف أمام شمس حمراء عملاقة بخطوط أفقية بين مشعلي نار، ويؤدي سلسلة ضربات سيف متتالية تترك أقواساً وحلقات من النار والشرر، ومع كل حركة يظهر اسمها بحروف يابانية رأسية وترجمة إنجليزية صغيرة أعلى اليمين، وتنتهي بانفجار لهب وحرف ياباني ضخم شفاف فوق الشمس ثم عودة للسكون.",

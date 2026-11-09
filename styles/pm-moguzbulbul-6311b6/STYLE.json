@@ -5,7 +5,6 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "product-ui",
     "diagrams"
   ],
   "creator": "@moguzbulbul",
@@ -18,7 +17,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 256,
+  "rank": 118,
   "published": "2026-09-27",
   "model": "Opus 5.5",
   "effort": null,
@@ -27,7 +26,6 @@
   "listed": true,
   "skill": "styles/pm-moguzbulbul-6311b6/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md",
     "playbooks/diagrams.md"
   ],
   "summary_ar": "شرح هادئ مدته 42 ثانية لإعادة تصميم صفحة سجل عميل في نظام إدارة علاقات: الصفحة الأصلية الرمادية تتحول إلى مخطط هندسي بخطوط سماوية وتعليقات قياس، ثم تعود معدّلة؛ خمسة مبادئ مرقمة (إجراء أساسي واحد، إخفاء الفراغ، العمل المفتوح أولاً، خط زمني واحد، الفعل في سياقه) بتعليق سفلي قصير لكل خطوة، حتى تكتمل الصفحة بلوحة رد جانبية.",

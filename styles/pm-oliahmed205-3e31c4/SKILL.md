@@ -13,7 +13,7 @@ description: A 15-second photo-editing app promo on a glowing navy-violet field:
 - Published on source: 2026-09-28 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1280×720)
 - Creator's public prompt length: about 21 words (not reproduced here)
-- Popularity rank on source library: #237
+- Popularity rank on source library: #99
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,15 +25,13 @@ A 15-second photo-editing app promo on a glowing navy-violet field: a bold headl
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, HTML Canvas), suggested duration (15 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Photos / صور, Phone / هاتف.
+Categories: Product UI / واجهات المنتج, Photos / صور.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/photos.md](../../playbooks/photos.md)
-- [playbooks/phone.md](../../playbooks/phone.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
-* Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

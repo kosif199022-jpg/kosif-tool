@@ -6,8 +6,8 @@
   "type": "Prompt",
   "category": [
     "product-ui",
-    "phone",
-    "kinetic-type"
+    "diagrams",
+    "characters"
   ],
   "creator": "@1stnoel_",
   "creator_url": "https://x.com/1stnoel_/status/2103247530259603851",
@@ -19,7 +19,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 270,
+  "rank": 132,
   "published": "2026-09-24",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,8 +29,8 @@
   "skill": "styles/pm-1stnoel-c20a89/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/phone.md",
-    "playbooks/kinetic-type.md"
+    "playbooks/diagrams.md",
+    "playbooks/characters.md"
   ],
   "summary_ar": "شرح تطبيق مدته 60 ثانية لتطبيق قراءة متدرجة لتعلّم اللغات بأسلوب ورقي هادئ على خلفية كريمية: سؤال بخط مذيّل أنيق بجانب صفحة كلمات تُظلّل تدريجياً، رقم «80 من 100»، فقرة فرنسية أصلية تُبرز كلماتها الصعبة بتظليل خوخي ثم نسخة مبسطة لمستواك، ثم هاتف يعرض الخطوات (اختيار اللغة والمستوى، اضغط أي كلمة، استمع، تحدّث مع معلم)، قائمة مزايا، وختام بالشعار والرابط.",
   "summary_en": "A 60-second explainer for a graded-reader language app in a calm paper look on cream: a serif question beside a page of word-bars filling in, an '80 / 100' figure, a French passage with peach-highlighted hard words and a simplified version, then a phone tour of the steps (language, level, tap a word, listen, talk to a tutor) and a logo end card.",

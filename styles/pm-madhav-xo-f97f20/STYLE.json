@@ -5,9 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "particles",
-    "kinetic-type",
-    "code"
+    "characters"
   ],
   "creator": "@Madhav_XO",
   "creator_url": "https://x.com/Madhav_XO/status/2103605007396524440",
@@ -19,7 +17,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 204,
+  "rank": 66,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +26,7 @@
   "listed": true,
   "skill": "styles/pm-madhav-xo-f97f20/SKILL.md",
   "playbooks": [
-    "playbooks/particles.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/code.md"
+    "playbooks/characters.md"
   ],
   "summary_ar": "مقدمة شخصية مدتها 10 ثوانٍ على أزرق ليلي شبه أسود: سطر أوامر طرفية يترجم ملفاً ويشغّله، ثم سلسلة إنجازات سريعة كل نحو نصف ثانية، كل منها شكل من جسيمات متوهجة (شبكة عصبية، طبقات متراصة، سحابة، قفل، أعمدة بيانات، قرص، شجرة بطولة، ورقة تتحول إلى خوادم) فوق عنوان أبيض مكثف، ثم خط ضوئي يتحول إلى اسم ضخم بتدرج معدني وسطر وصف وشعار مائل.",
   "summary_en": "A 10-second personal intro on near-black blue: a terminal compiles and runs a file, then achievements flash every half second as glowing particle forms (neural net, planes, padlock, data, tournament bracket, servers) above condensed white captions, before a light streak becomes a huge chrome name with a role line and italic tagline.",

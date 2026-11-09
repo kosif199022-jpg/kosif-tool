@@ -5,9 +5,9 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "product-ui",
-    "particles",
-    "ads"
+    "charts",
+    "diagrams",
+    "kinetic-type"
   ],
   "creator": "@manuelogomigo",
   "creator_url": "https://x.com/manuelogomigo/status/2103614667038052364",
@@ -19,7 +19,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 135,
+  "rank": 273,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +28,9 @@
   "listed": true,
   "skill": "styles/pm-manuelogomigo-f33ca9/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md",
-    "playbooks/particles.md",
-    "playbooks/ads.md"
+    "playbooks/charts.md",
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "عرض منتج مدته 15 ثانية لخدمة استضافة فيديو وملفات، يتناوب بين خلفية كريمية فاتحة وأخرى سوداء وثالثة برتقالية: أيقونة ملف مصنوعة من نقاط برتقالية تُسحب إلى صندوق رفع، شريط تقدم منقّط يمتلئ إلى 100%، طبقات فيديو مائلة متكدسة لعرض جودات البث، كرة أرضية منقطة متوهجة بنقاط مواقع، شريط عنوان بنطاق خاص وقفل أخضر، حلقة لانهاية من خطوط برتقالية، معاينة موقع على متصفح، وختام بأيقونة العلامة واسمها.",
   "summary_en": "A 15-second hosting-product showreel flipping between cream, black and orange grounds, built from orange dots: a dotted file dragged into an upload bar filling to 100%, tilted streaming layers, a glowing dotted globe, a custom-domain URL bar with a green lock, an infinity loop of strokes, a site preview, and a logo lock-up, all titled in a light serif.",

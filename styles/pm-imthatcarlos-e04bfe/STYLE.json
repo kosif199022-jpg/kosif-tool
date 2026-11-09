@@ -6,9 +6,7 @@
   "type": "Prompt",
   "category": [
     "product-ui",
-    "diagrams",
-    "kinetic-type",
-    "ads"
+    "diagrams"
   ],
   "creator": "@imthatcarlos",
   "creator_url": "https://x.com/imthatcarlos/status/2102849219388133592",
@@ -20,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 88,
+  "rank": 226,
   "published": "2026-09-23",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -30,9 +28,7 @@
   "skill": "styles/pm-imthatcarlos-e04bfe/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/diagrams.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/ads.md"
+    "playbooks/diagrams.md"
   ],
   "summary_ar": "فيديو شارح مدته نحو 59 ثانية لمنصة صناديق يديرها وكلاء ذكاء اصطناعي: يبدأ بعناوين بيضاء وكلمات خضراء نعناعية على أسود بتوهج أخضر، ثم شبكة وكلاء متفرقين تتجمع إلى الشعار، ثم انتقال ماسح إلى خلفية فاتحة بأربع خطوات مرقمة مع بطاقات واجهة صغيرة وشريط تقدم أعلاه، وينتهي بلوحات زيتية رقمية ليد آلية ويد بشرية تحت العنوان الأخير والرابط.",
   "summary_en": "A roughly 59-second explainer for a platform where AI agents run funds: white headlines with mint keywords on black with a green glow, a scattered field of agent nodes that converges into the logo, a wipe to a light canvas with four numbered steps each beside a small UI card and a top progress rail, then painterly digital-oil images of a robot hand and a human hand under the closing line and URL.",

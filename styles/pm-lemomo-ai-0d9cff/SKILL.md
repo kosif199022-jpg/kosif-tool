@@ -1,6 +1,6 @@
 ---
 name: pm-lemomo-ai-0d9cff
-description: A ~71-second whiteboard tutorial on one large canvas: a visible marker hand-writes the title and draws boxes, arrows and a timeline while the camera pans and zooms across pasted screenshots of a style gallery site, a terminal and an AI chat, with a small orange pixel mascot, red-circled step numbers and bilingual subtitles, ending on a zoom-out that reveals the whole board as a map. Use to make a new video in this look (Hand-drawn); address it by ID pm-lemomo-ai-0d9cff.
+description: A ~71-second whiteboard tutorial on one large canvas: a visible marker hand-writes the title and draws boxes, arrows and a timeline while the camera pans and zooms across pasted screenshots of a style gallery site, a terminal and an AI chat, with a small orange pixel mascot, red-circled step numbers and bilingual subtitles, ending on a zoom-out that reveals the whole board as a map. Use to make a new video in this look (Diagrams); address it by ID pm-lemomo-ai-0d9cff.
 ---
 
 # KOSIF TOOL — Whiteboard skill tutorial / شرح سبورة بيضاء لطريقة استخدام أداة صنع الأفلام مع لقطات شاشة
@@ -13,7 +13,7 @@ description: A ~71-second whiteboard tutorial on one large canvas: a visible mar
 - Published on source: 2026-09-27 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 27 words (not reproduced here)
-- Popularity rank on source library: #21
+- Popularity rank on source library: #159
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,15 +25,13 @@ A ~71-second whiteboard tutorial on one large canvas: a visible marker hand-writ
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (71 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Hand-drawn / رسم يدوي, Diagrams / مخططات, Product UI / واجهات المنتج.
-- [playbooks/hand-drawn.md](../../playbooks/hand-drawn.md)
+Categories: Diagrams / مخططات, Characters / شخصيات.
 - [playbooks/diagrams.md](../../playbooks/diagrams.md)
-- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
 
 Category tactics:
-* Order stroke draw-on like a human hand would; keep imperfection deliberate; pace reveals to narration.
 * Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
-* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

@@ -1,6 +1,6 @@
 ---
 name: pm-e1genqq-bedd90
-description: A 15-second 4:5 piece on cream under a huge condensed headline: in a 3D viewport an orange cube character tries to press an oversized lavender render key, fails, backs up and jumps on it so keys and stickers burst out, with deadpan captions on dark tags; below, three tool cards light up in turn and a dark-green code panel highlights the line driving each beat. Use to make a new video in this look (Characters); address it by ID pm-e1genqq-bedd90.
+description: A 15-second 4:5 piece on cream under a huge condensed headline: in a 3D viewport an orange cube character tries to press an oversized lavender render key, fails, backs up and jumps on it so keys and stickers burst out, with deadpan captions on dark tags; below, three tool cards light up in turn and a dark-green code panel highlights the line driving each beat. Use to make a new video in this look (Shapes); address it by ID pm-e1genqq-bedd90.
 ---
 
 # KOSIF TOOL — Character scene with Remotion, GSAP and Three.js / شخصية مكعب برتقالية تضغط زر التصيير في لوحة عرض تقنية
@@ -14,7 +14,7 @@ description: A 15-second 4:5 piece on cream under a huge condensed headline: in 
 - Reference aspect: 4:5 (1080×1350)
 - Technologies named by the source: GSAP, Remotion, Three.js
 - Creator's public prompt length: about 108 words (not reproduced here)
-- Popularity rank on source library: #227
+- Popularity rank on source library: #89
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -26,15 +26,15 @@ A 15-second 4:5 piece on cream under a huge condensed headline: in a 3D viewport
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, GSAP), suggested duration (15 s), aspect 4:5, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Characters / شخصيات, 3D / ثلاثي الأبعاد, Code / كود.
+Categories: Shapes / أشكال, Characters / شخصيات, Music / موسيقى.
+- [playbooks/shapes.md](../../playbooks/shapes.md)
 - [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/3d.md](../../playbooks/3d.md)
-- [playbooks/code.md](../../playbooks/code.md)
+- [playbooks/music.md](../../playbooks/music.md)
 
 Category tactics:
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
 * Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

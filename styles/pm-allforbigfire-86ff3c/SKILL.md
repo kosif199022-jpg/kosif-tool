@@ -13,7 +13,7 @@ description: A 25-second vertical super-robot anime homage in chunky low-poly bl
 - Published on source: 2026-09-27 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 9:16 (720×1280)
 - Creator's public prompt length: about 24 words (not reproduced here)
-- Popularity rank on source library: #46
+- Popularity rank on source library: #184
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,13 +25,11 @@ A 25-second vertical super-robot anime homage in chunky low-poly blocks: a red j
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, React, Remotion), suggested duration (25 s), aspect 9:16, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Characters / شخصيات, 3D / ثلاثي الأبعاد.
+Categories: Characters / شخصيات.
 - [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/3d.md](../../playbooks/3d.md)
 
 Category tactics:
 * Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

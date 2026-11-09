@@ -1,6 +1,6 @@
 ---
 name: pm-heyiammallik-e72d17
-description: A 34-second software-engineer portfolio reel: huge single words hard-cut on black and orange-red, dark 3D point-cloud and voxel scenes lit in orange, giant performance multipliers, a scrolling project list on off-white with a circular preview, UI and terminal shots, and a name end card over an orange particle wave. Use to make a new video in this look (Kinetic type); address it by ID pm-heyiammallik-e72d17.
+description: A 34-second software-engineer portfolio reel: huge single words hard-cut on black and orange-red, dark 3D point-cloud and voxel scenes lit in orange, giant performance multipliers, a scrolling project list on off-white with a circular preview, UI and terminal shots, and a name end card over an orange particle wave. Use to make a new video in this look (Music); address it by ID pm-heyiammallik-e72d17.
 ---
 
 # KOSIF TOOL — Portfolio motion reel / ريل أعمال مهندس برمجيات بالأسود والبرتقالي
@@ -13,7 +13,7 @@ description: A 34-second software-engineer portfolio reel: huge single words har
 - Published on source: 2026-09-26 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 60 words (not reproduced here)
-- Popularity rank on source library: #13
+- Popularity rank on source library: #151
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,17 +25,11 @@ A 34-second software-engineer portfolio reel: huge single words hard-cut on blac
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, WebGL), suggested duration (34 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك, 3D / ثلاثي الأبعاد, Product UI / واجهات المنتج, Code / كود.
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/3d.md](../../playbooks/3d.md)
-- [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/code.md](../../playbooks/code.md)
+Categories: Music / موسيقى.
+- [playbooks/music.md](../../playbooks/music.md)
 
 Category tactics:
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
-* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
+* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

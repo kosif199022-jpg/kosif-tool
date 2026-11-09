@@ -13,7 +13,7 @@ description: A 30-second launch film on light grey-white for a motion tool: a li
 - Published on source: 2026-10-04 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 93 words (not reproduced here)
-- Popularity rank on source library: #153
+- Popularity rank on source library: #15
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,14 +25,14 @@ A 30-second launch film on light grey-white for a motion tool: a line types with
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (30 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Kinetic type / تايبوغرافي متحرك, Code / كود.
+Categories: Product UI / واجهات المنتج, Characters / شخصيات, Code / كود.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
 - [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
 * Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)

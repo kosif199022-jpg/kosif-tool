@@ -5,9 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "shapes",
-    "kinetic-type",
-    "particles"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@RaphaelAubryy",
   "creator_url": "https://x.com/RaphaelAubryy/status/2103416909857190360",
@@ -19,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 240,
+  "rank": 102,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +27,8 @@
   "listed": true,
   "skill": "styles/pm-raphaelaubryy-4b137e/SKILL.md",
   "playbooks": [
-    "playbooks/shapes.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/particles.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "بكرة مدتها 15 ثانية بلوحة كريمي وأسود وتيراكوتا: خط يرسم ويكشف «SHOW REEL» بغروتسك أسود، دائرة تيراكوتا تتحول إلى مربع ومثلث داخل حلقات رفيعة، شبكة خلايا كريمية تمتلئ لتشكّل «5.5» بالبكسل، سحابة جسيمات تتجمع في «OPUS»، فقاعات سائلة كريمية على تيراكوتا تلتحم وتنفصل، جدار كلمات متحرك يقطعه شريط عنوان، مكعب ثلاثي الأبعاد يدور بأسماء المهارات، ثم بطاقة ختام.",
   "summary_en": "A 15-second showreel in cream, black and terracotta: 'SHOW REEL' revealed off a ruled line, a circle morphing to square and triangle, a cell grid spelling a pixel '5.5', particles forming 'OPUS', cream metaballs on terracotta, a scrolling word wall cut by a title band, a tumbling 3D cube of skill names, and an end card.",

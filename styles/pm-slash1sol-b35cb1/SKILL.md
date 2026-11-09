@@ -1,6 +1,6 @@
 ---
 name: pm-slash1sol-b35cb1
-description: A 24-second 3D short: a giant dark glass slab shaped like an animation app with a pastel timeline, a cute orange cube character walking along the tracks beside a glowing playhead, a low-poly green planet sprouting trees and houses as toast notes log each step, then a glowing orange neon title and a top-down pull-back. Use to make a new video in this look (3D); address it by ID pm-slash1sol-b35cb1.
+description: A 24-second 3D short: a giant dark glass slab shaped like an animation app with a pastel timeline, a cute orange cube character walking along the tracks beside a glowing playhead, a low-poly green planet sprouting trees and houses as toast notes log each step, then a glowing orange neon title and a top-down pull-back. Use to make a new video in this look (Shapes); address it by ID pm-slash1sol-b35cb1.
 ---
 
 # KOSIF TOOL — One-evening animated short with Blender and Remotion / فيلم قصير ثلاثي الأبعاد: شخصية مكعبة تمشي فوق واجهة برنامج مونتاج عملاقة
@@ -14,7 +14,7 @@ description: A 24-second 3D short: a giant dark glass slab shaped like an animat
 - Reference aspect: 16:9 (1920×1080)
 - Technologies named by the source: Remotion
 - Creator's public prompt length: about 117 words (not reproduced here)
-- Popularity rank on source library: #220
+- Popularity rank on source library: #82
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -26,13 +26,15 @@ A 24-second 3D short: a giant dark glass slab shaped like an animation app with 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, Remotion, React), suggested duration (24 s), aspect 16:9, difficulty 5/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: 3D / ثلاثي الأبعاد, Characters / شخصيات.
-- [playbooks/3d.md](../../playbooks/3d.md)
+Categories: Shapes / أشكال, Characters / شخصيات, Photos / صور.
+- [playbooks/shapes.md](../../playbooks/shapes.md)
 - [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
 
 Category tactics:
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
 * Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

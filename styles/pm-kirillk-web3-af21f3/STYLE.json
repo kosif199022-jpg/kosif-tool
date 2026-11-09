@@ -6,7 +6,9 @@
   "type": "Skill",
   "category": [
     "product-ui",
+    "charts",
     "diagrams",
+    "characters",
     "code"
   ],
   "creator": "unknown",
@@ -19,7 +21,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 221,
+  "rank": 83,
   "published": "2026-10-25",
   "model": null,
   "effort": null,
@@ -32,7 +34,9 @@
   "skill": "styles/pm-kirillk-web3-af21f3/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
+    "playbooks/charts.md",
     "playbooks/diagrams.md",
+    "playbooks/characters.md",
     "playbooks/code.md"
   ],
   "summary_ar": "تسجيل شاشة مكبّر مدته 26 ثانية لصفحة مستودع على منصة كود بخلفية بيضاء: الكاميرا تقترب من اسم المستودع وتظلله، تنزلق إلى عدد النجوم، تبتعد لتعرض الصفحة كاملة، ثم تنزل إلى ملف التعريف بغلاف تحريري ومعرض لأنواع المخططات وجدول مقارنة وأوامر تثبيت، مع ضبابية حركة في التمرير وشارة اسم الناشر أسفل اليمين طوال الوقت.",

@@ -1,6 +1,6 @@
 ---
 name: pm-blueoctopusai-dd17bd
-description: A 2 min 48 s low-poly 3D explainer of the broadcast yellow first-down line: a stadium cutaway with cables, a tripod camera with labelled sensors, the crowned field under a teal mesh, lens calibration, grass colour samples, a projection formula, the line keyed under players and the paint removed, each chapter headed by a white condensed title top-left. Use to make a new video in this look (3D); address it by ID pm-blueoctopusai-dd17bd.
+description: A 2 min 48 s low-poly 3D explainer of the broadcast yellow first-down line: a stadium cutaway with cables, a tripod camera with labelled sensors, the crowned field under a teal mesh, lens calibration, grass colour samples, a projection formula, the line keyed under players and the paint removed, each chapter headed by a white condensed title top-left. Use to make a new video in this look (Charts); address it by ID pm-blueoctopusai-dd17bd.
 ---
 
 # KOSIF TOOL — First & 10 yellow line explainer / شرح ثلاثي الأبعاد لخط الياردات الأصفر في بث كرة القدم الأمريكية
@@ -13,7 +13,7 @@ description: A 2 min 48 s low-poly 3D explainer of the broadcast yellow first-do
 - Published on source: 2026-09-30 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 15 words (not reproduced here)
-- Popularity rank on source library: #113
+- Popularity rank on source library: #251
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,12 +25,12 @@ A 2 min 48 s low-poly 3D explainer of the broadcast yellow first-down line: a st
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, React, Remotion, Web Audio), suggested duration (168 s), aspect 16:9, difficulty 5/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: 3D / ثلاثي الأبعاد, Diagrams / مخططات.
-- [playbooks/3d.md](../../playbooks/3d.md)
+Categories: Charts / رسوم بيانية, Diagrams / مخططات.
+- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/diagrams.md](../../playbooks/diagrams.md)
 
 Category tactics:
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
 
 ## Original creative direction (التوجيه الإبداعي)

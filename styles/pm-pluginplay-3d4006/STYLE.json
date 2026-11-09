@@ -5,7 +5,6 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "characters",
     "code"
   ],
   "creator": "@PluginPlay__",
@@ -18,7 +17,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 95,
+  "rank": 233,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,7 +28,6 @@
   "listed": true,
   "skill": "styles/pm-pluginplay-3d4006/SKILL.md",
   "playbooks": [
-    "playbooks/characters.md",
     "playbooks/code.md"
   ],
   "summary_ar": "رسوم بكسل مدتها 26 ثانية: رجل على جرف فوق بحر عند غروب ريترو بنفسجي يرمي بومرانغ كل عام، وفوقه صندوق حوار أصفر بخط بكسل يكتب حدث العام (من ورقة الانتباه حتى الوكلاء). البومرانغ يعود كل مرة أكبر وأكثر توهجاً، ثم دورة تحسين ذاتي يتسارع فيها عداد الإصدار إلى اللانهاية، انفجار ضوئي، لقطة قريبة لوجه الرجل الراضي، ثم يرتد البومرانغ ويحرقه بانفجار كرتوني.",

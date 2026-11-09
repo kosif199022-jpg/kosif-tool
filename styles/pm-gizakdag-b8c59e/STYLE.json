@@ -5,9 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "photos",
-    "3d"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@gizakdag",
   "creator_url": "https://x.com/gizakdag/status/2103566030916239768",
@@ -19,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 205,
+  "rank": 67,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": null,
@@ -28,9 +27,8 @@
   "listed": true,
   "skill": "styles/pm-gizakdag-b8c59e/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/photos.md",
-    "playbooks/3d.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "ريل رأسي 9:16 مدته 10 ثوانٍ بلا صوت عن الإفراط في التفكير: نقطة صفراء وكلمتان بخط آلة كاتبة على كحلي داكن، ثم انفجار نجمة، ثم حلقات متحدة المركز وشبكة برتقالية ثلاثية الأبعاد تدور وحولها كلمات التردد بخط مائل بزوائد، ثم كولاج سريالي لتمثال بعيون زرقاء وزهور وردية وأعمدة ضوء خضراء تحت عنوان ضخم من كلمتين، ثم مشاهد حدائق وقاعة سينما وطرق بكسلية بألوان مشبعة مع تعليقات تُكتب على شرائط برتقالية.",
   "summary_en": "A silent 10-second vertical reel about overthinking: a yellow dot and typewriter caption on navy, a star-burst flash, rings and a spinning orange 3D lattice ringed by doubt words, then a surreal collage of a blue-eyed bust, pink flowers and green beams under a huge two-word headline, and saturated dreamscapes with typed captions on orange tags.",

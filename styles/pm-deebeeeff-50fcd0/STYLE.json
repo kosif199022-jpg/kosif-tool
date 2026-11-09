@@ -5,10 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "ads",
-    "kinetic-type",
-    "shapes",
-    "particles"
+    "charts"
   ],
   "creator": "@deebeeeff",
   "creator_url": "https://x.com/deebeeeff/status/2104952364365234301",
@@ -20,7 +17,7 @@
     "h": 1080
   },
   "aspect_label": "1:1",
-  "rank": 41,
+  "rank": 179,
   "published": "2026-09-29",
   "model": "Opus 5.5",
   "effort": "Medium",
@@ -29,10 +26,7 @@
   "listed": true,
   "skill": "styles/pm-deebeeeff-50fcd0/SKILL.md",
   "playbooks": [
-    "playbooks/ads.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/particles.md"
+    "playbooks/charts.md"
   ],
   "summary_ar": "فيديو مربع مدته 10 ثوانٍ لذكرى مرور عشرين عاماً على علامة وصفات: رقم «20» برتقالي بحد بني ينتفخ على خلفية أشعة شمسية كريمية مع قصاصات ملونة وعدّاد سنوات يجري حتى 2026، ثم قطع إلى أشعة بنية داكنة يدخل فيها شعار العلامة كبطاقة مائلة وتُختم عليها شارة ذهبية، وينتهي بتهنئة بخط يدوي ذهبي وكبسولة سنوات برتقالية.",
   "summary_en": "A 10-second square anniversary clip for a recipe brand: an orange, brown-outlined '20' swells on a cream sunburst with confetti while a year counter runs up to 2026, then a cut to a dark brown sunburst where the logo card swings in tilted, a gold '20 years' seal stamps on, and a gold script greeting and orange year pill close it.",

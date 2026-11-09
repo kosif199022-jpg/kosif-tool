@@ -1,6 +1,6 @@
 ---
 name: pm-jayscambler-3f8889
-description: An 18.5-second product overview: a mint particle ring on black collapses into a pixel heart, the name decodes from random symbols, then light and dark scenes alternate: landing page click, a backing panel, '$25 to 2,474 credits' through a glowing chip, code wired to a model list, a dashboard, a screenshot wall and a cream end card. Use to make a new video in this look (Product UI); address it by ID pm-jayscambler-3f8889.
+description: An 18.5-second product overview: a mint particle ring on black collapses into a pixel heart, the name decodes from random symbols, then light and dark scenes alternate: landing page click, a backing panel, '$25 to 2,474 credits' through a glowing chip, code wired to a model list, a dashboard, a screenshot wall and a cream end card. Use to make a new video in this look (Charts); address it by ID pm-jayscambler-3f8889.
 ---
 
 # KOSIF TOOL — FundMyCompute platform overview / نظرة سريعة على منصة تمويل الحوسبة بلون أخضر نعناعي
@@ -13,7 +13,7 @@ description: An 18.5-second product overview: a mint particle ring on black coll
 - Published on source: 2026-09-28 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 25 words (not reproduced here)
-- Popularity rank on source library: #118
+- Popularity rank on source library: #256
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,14 +25,10 @@ An 18.5-second product overview: a mint particle ring on black collapses into a 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, HTML Canvas), suggested duration (18.5 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Code / كود, Charts / رسوم بيانية.
-- [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/code.md](../../playbooks/code.md)
+Categories: Charts / رسوم بيانية.
 - [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
-* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)

@@ -5,9 +5,10 @@
   "origin": "PromptsMotion",
   "type": "Skill",
   "category": [
-    "product-ui",
-    "code",
-    "ads"
+    "kinetic-type",
+    "shapes",
+    "characters",
+    "code"
   ],
   "creator": "unknown",
   "creator_url": "https://x.com/e1genqq/status/2114030972505059431",
@@ -19,7 +20,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 225,
+  "rank": 87,
   "published": "2026-10-24",
   "model": null,
   "effort": null,
@@ -28,9 +29,10 @@
   "listed": true,
   "skill": "styles/pm-e1genqq-0af11c/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md",
-    "playbooks/code.md",
-    "playbooks/ads.md"
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/characters.md",
+    "playbooks/code.md"
   ],
   "summary_ar": "تسجيل شاشة مدته نحو دقيقتين لمتصفح بوضع داكن يعرض أداة إضافة لصنع أفلام الموشن: طلب يُكتب في محادثة ثم خطة مكتوبة طويلة بلقطات وتوقيتات، ثم صفحة المستودع بمعرض أساليب مصغرة وتعليمات التثبيت وجدول أوامر التصيير، ثم ثلاثة إطارات مفتاحية وأخيراً فيلم منتج بسيط على خلفية كريمية: عنوان عريض من سطرين يساراً وثلاث بطاقات مهام يميناً تُعلَّم واحدة تلو الأخرى حتى يتحول الزر الأخير إلى أخضر غامق ويظهر زر دعوة للفعل.",
   "summary_en": "A two-minute dark browser screen recording demoing a motion-film plugin, from a typed chat request and a streamed shot plan to the repo's style gallery, install and render docs, then a calm cream product film with a bold two-line headline and three task cards that tick one by one until the last turns deep green.",

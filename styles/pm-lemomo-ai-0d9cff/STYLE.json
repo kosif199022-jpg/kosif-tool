@@ -5,9 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "hand-drawn",
     "diagrams",
-    "product-ui"
+    "characters"
   ],
   "creator": "@lemomo_ai",
   "creator_url": "https://x.com/lemomo_ai/status/2104070024575242622",
@@ -19,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 21,
+  "rank": 159,
   "published": "2026-09-27",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +27,8 @@
   "listed": true,
   "skill": "styles/pm-lemomo-ai-0d9cff/SKILL.md",
   "playbooks": [
-    "playbooks/hand-drawn.md",
     "playbooks/diagrams.md",
-    "playbooks/product-ui.md"
+    "playbooks/characters.md"
   ],
   "summary_ar": "فيديو تعليمي مدته نحو 71 ثانية بأسلوب سبورة بيضاء ممتدة: قلم ظاهر يكتب العنوان بخط يد ويرسم مربعات وأسهماً وخط زمن، بينما تجول الكاميرا فوق لوحة واحدة كبيرة ملصق عليها لقطات شاشة لموقع معرض الأساليب ونافذة الطرفية ومحادثة الذكاء الاصطناعي، مع تميمة بكسلية برتقالية صغيرة، وخطوات مرقمة داخل دوائر حمراء، وترجمة ثنائية اللغة أسفل الشاشة، وتنتهي بابتعاد يكشف اللوحة كلها كخريطة.",
   "summary_en": "A ~71-second whiteboard tutorial on one large canvas: a visible marker hand-writes the title and draws boxes, arrows and a timeline while the camera pans and zooms across pasted screenshots of a style gallery site, a terminal and an AI chat, with a small orange pixel mascot, red-circled step numbers and bilingual subtitles, ending on a zoom-out that reveals the whole board as a map.",

@@ -5,9 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "product-ui",
-    "ads",
-    "phone"
+    "product-ui"
   ],
   "creator": "@marklaunches",
   "creator_url": "https://x.com/marklaunches/status/2103811146411041046",
@@ -19,7 +17,7 @@
     "h": 1350
   },
   "aspect_label": "4:5",
-  "rank": 196,
+  "rank": 58,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +26,7 @@
   "listed": true,
   "skill": "styles/pm-marklaunches-3b9492/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md",
-    "playbooks/ads.md",
-    "playbooks/phone.md"
+    "playbooks/product-ui.md"
   ],
   "summary_ar": "إعلان عمودي 4:5 مدته نحو 44 ثانية على أسود عميق بنيون ليموني متوهج: نقطة تنبض ووقت الفجر، عدّاد خطوات ضخم بخط عريض ممدود يتصاعد مع آثار أقدام، ثم سباق بخمسة مسارات وعدّاد تنازلي وأيقونات متسابقين تتقدم نحو خط النهاية المربّع حتى الفوز، ثم مشهد جبل مسطح عند الغروب يصعده الفريق بخط ليموني حتى القمة، وينتهي بشعار رجل يمشي وزر تحميل.",
   "summary_en": "A 44 s 4:5 vertical app ad on deep black with glowing neon lime: a pulsing dot and dawn clock, a huge wide step counter climbing as footprints walk up, a five-lane race with countdown and racer icons nearing a checkered finish until the win, then a flat dusk mountain the team climbs along a lime path, ending on a walking-figure logo and download button.",

@@ -1,6 +1,6 @@
 ---
 name: pm-rebutonepress-810f78
-description: A 5-minute letterboxed science film: a small black hole among stars slowly grows until its cream-gold lensed accretion disk fills the frame, with Chinese subtitles below; tiny corner data panels track a mothership and a probe whose glowing dot dims and reddens toward the horizon, the viewpoint switches to the probe, and it ends on a centred title. Use to make a new video in this look (3D); address it by ID pm-rebutonepress-810f78.
+description: A 5-minute letterboxed science film: a small black hole among stars slowly grows until its cream-gold lensed accretion disk fills the frame, with Chinese subtitles below; tiny corner data panels track a mothership and a probe whose glowing dot dims and reddens toward the horizon, the viewpoint switches to the probe, and it ends on a centred title. Use to make a new video in this look (Music); address it by ID pm-rebutonepress-810f78.
 ---
 
 # KOSIF TOOL — Black hole time story / قصة الزمن عند ثقب أسود: مسبار يسقط والساعات تفترق
@@ -13,7 +13,7 @@ description: A 5-minute letterboxed science film: a small black hole among stars
 - Published on source: 2026-09-25 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 60 words (not reproduced here)
-- Popularity rank on source library: #165
+- Popularity rank on source library: #27
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,14 +25,10 @@ A 5-minute letterboxed science film: a small black hole among stars slowly grows
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (WebGL, Three.js, Remotion, Web Audio), suggested duration (300 s), aspect 16:9, difficulty 5/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: 3D / ثلاثي الأبعاد, Particles / جسيمات, Music / موسيقى.
-- [playbooks/3d.md](../../playbooks/3d.md)
-- [playbooks/particles.md](../../playbooks/particles.md)
+Categories: Music / موسيقى.
 - [playbooks/music.md](../../playbooks/music.md)
 
 Category tactics:
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 * Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
 
 ## Original creative direction (التوجيه الإبداعي)

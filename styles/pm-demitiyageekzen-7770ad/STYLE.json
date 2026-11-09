@@ -5,8 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "code",
-    "kinetic-type"
+    "code"
   ],
   "creator": "@DemitiyaGeekzen",
   "creator_url": "https://x.com/DemitiyaGeekzen/status/2103517910274818523",
@@ -18,7 +17,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 15,
+  "rank": 153,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,8 +28,7 @@
   "listed": true,
   "skill": "styles/pm-demitiyageekzen-7770ad/SKILL.md",
   "playbooks": [
-    "playbooks/code.md",
-    "playbooks/kinetic-type.md"
+    "playbooks/code.md"
   ],
   "summary_ar": "مشهد بانورامي هادئ مدته 30 ثانية لنهر واسع من زاوية ثابتة على مستوى الماء: يبدأ بغروب وردي برتقالي خلف أفق مدينة حديثة مع طيور منفردة، ثم تتحول السماء إلى بنفسجي وتنسحب الأبراج ليظهر جناح صيني تقليدي من اليمين ويتوسط الكادر تحت بدر، تضيء طوابقه بالذهبي وتطفو فوانيس على الماء، بينما تُكتب أبيات شعر كلاسيكية عمودياً حرفاً حرفاً على الأطراف.",
   "summary_en": "A calm 30-second river panorama from a locked water-level view: a pink-orange sunset behind a modern skyline, then a violet sky as the towers give way to a traditional Chinese pavilion that settles centre under a full moon, its tiers lighting gold and lanterns drifting on the water, while classical verse writes on vertically character by character.",

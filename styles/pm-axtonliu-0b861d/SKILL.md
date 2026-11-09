@@ -1,6 +1,6 @@
 ---
 name: pm-axtonliu-0b861d
-description: A 38-second photoreal 3D short of a white pelican pedalling a black bicycle with a wicker basket along a wooden pier over the sea at sunset: a wide side tracking shot, a close-up on pedals and chain, a beak close-up, a low angle under a purple sky as it flaps its wings, then it rides away down the pier as a thin serif title fades in over the water. Use to make a new video in this look (3D); address it by ID pm-axtonliu-0b861d.
+description: A 38-second photoreal 3D short of a white pelican pedalling a black bicycle with a wicker basket along a wooden pier over the sea at sunset: a wide side tracking shot, a close-up on pedals and chain, a beak close-up, a low angle under a purple sky as it flaps its wings, then it rides away down the pier as a thin serif title fades in over the water. Use to make a new video in this look (Code); address it by ID pm-axtonliu-0b861d.
 ---
 
 # KOSIF TOOL — Pelican riding a bicycle / بجعة تقود دراجة على رصيف بحري عند الغروب
@@ -14,7 +14,7 @@ description: A 38-second photoreal 3D short of a white pelican pedalling a black
 - Reference aspect: 16:9 (1920×1080)
 - Technologies named by the source: HTML, SVG
 - Creator's public prompt length: about 70 words (not reproduced here)
-- Popularity rank on source library: #35
+- Popularity rank on source library: #173
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -26,14 +26,10 @@ A 38-second photoreal 3D short of a white pelican pedalling a black bicycle with
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, WebGL, React), suggested duration (38 s), aspect 16:9, difficulty 5/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: 3D / ثلاثي الأبعاد, Characters / شخصيات, Code / كود.
-- [playbooks/3d.md](../../playbooks/3d.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
+Categories: Code / كود.
 - [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
 * Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)

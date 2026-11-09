@@ -5,9 +5,9 @@
   "origin": "PromptsMotion",
   "type": "Skill",
   "category": [
+    "shapes",
     "characters",
-    "3d",
-    "code"
+    "music"
   ],
   "creator": "unknown",
   "creator_url": "https://x.com/e1genqq/status/2113372924627325243",
@@ -19,7 +19,7 @@
     "h": 1350
   },
   "aspect_label": "4:5",
-  "rank": 227,
+  "rank": 89,
   "published": "2026-10-22",
   "model": null,
   "effort": null,
@@ -32,9 +32,9 @@
   "listed": true,
   "skill": "styles/pm-e1genqq-bedd90/SKILL.md",
   "playbooks": [
+    "playbooks/shapes.md",
     "playbooks/characters.md",
-    "playbooks/3d.md",
-    "playbooks/code.md"
+    "playbooks/music.md"
   ],
   "summary_ar": "مقطع 4:5 مدته 15 ثانية على خلفية كريمية بعنوان ضخم مكثف: نافذة مشهد ثلاثي الأبعاد فيها شخصية مكعب برتقالية تحاول ضغط مفتاح كيبورد بنفسجي ضخم مكتوب عليه التصيير، تفشل ثم تتراجع وتقفز عليه فتتطاير المفاتيح والملصقات، مع تعليقات ساخرة في ملصقات داكنة، وتحتها ثلاث بطاقات أدوات تضيء بالتناوب ولوحة كود خضراء داكنة يتقدم فيها السطر النشط مع الحركة.",
   "summary_en": "A 15-second 4:5 piece on cream under a huge condensed headline: in a 3D viewport an orange cube character tries to press an oversized lavender render key, fails, backs up and jumps on it so keys and stickers burst out, with deadpan captions on dark tags; below, three tool cards light up in turn and a dark-green code panel highlights the line driving each beat.",

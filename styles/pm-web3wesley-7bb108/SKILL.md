@@ -1,6 +1,6 @@
 ---
 name: pm-web3wesley-7bb108
-description: A 15-second Swiss-style showreel: a cream résumé card on black, then four quick chapters: a giant black 'TYPE' on orange turning into an extruded italic, 'FORM' breaking into a Bauhaus shape grid, 'SPACE' as 3D blocks with a bouncing red ball, and 'TIME' as swirling particle strokes, ending back on the card. Use to make a new video in this look (Kinetic type); address it by ID pm-web3wesley-7bb108.
+description: A 15-second Swiss-style showreel: a cream résumé card on black, then four quick chapters: a giant black 'TYPE' on orange turning into an extruded italic, 'FORM' breaking into a Bauhaus shape grid, 'SPACE' as 3D blocks with a bouncing red ball, and 'TIME' as swirling particle strokes, ending back on the card. Use to make a new video in this look (Charts); address it by ID pm-web3wesley-7bb108.
 ---
 
 # KOSIF TOOL — Type, form, space showreel / شوريل مصمم موشن: نوع، شكل، فضاء، زمن
@@ -13,7 +13,7 @@ description: A 15-second Swiss-style showreel: a cream résumé card on black, t
 - Published on source: 2026-09-26 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 26 words (not reproduced here)
-- Popularity rank on source library: #59
+- Popularity rank on source library: #197
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,17 +25,13 @@ A 15-second Swiss-style showreel: a cream résumé card on black, then four quic
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, HTML Canvas, GSAP), suggested duration (15 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, 3D / ثلاثي الأبعاد, Particles / جسيمات.
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك.
+- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/shapes.md](../../playbooks/shapes.md)
-- [playbooks/3d.md](../../playbooks/3d.md)
-- [playbooks/particles.md](../../playbooks/particles.md)
 
 Category tactics:
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

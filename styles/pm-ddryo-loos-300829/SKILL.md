@@ -1,6 +1,6 @@
 ---
 name: pm-ddryo-loos-300829
-description: A ~56-second CSS framework release video on clean white with numbered chapters: violet Fibonacci squares growing along a curve, a type-scale ladder, cyan spacing guides, an orange title card, orange layout grids, highlighted code props, blue boxes reflowing across breakpoints, stacked blue cascade layers, UI components, page templates, an AI agent writing code, then the logo. Use to make a new video in this look (Code); address it by ID pm-ddryo-loos-300829.
+description: A ~56-second CSS framework release video on clean white with numbered chapters: violet Fibonacci squares growing along a curve, a type-scale ladder, cyan spacing guides, an orange title card, orange layout grids, highlighted code props, blue boxes reflowing across breakpoints, stacked blue cascade layers, UI components, page templates, an AI agent writing code, then the logo. Use to make a new video in this look (Charts); address it by ID pm-ddryo-loos-300829.
 ---
 
 # KOSIF TOOL — Lism CSS 1.0 release video / فيديو إصدار مكتبة CSS بفصول مرقمة على خلفية بيضاء
@@ -14,7 +14,7 @@ description: A ~56-second CSS framework release video on clean white with number
 - Reference aspect: 16:9 (1920×1080)
 - Technologies named by the source: CSS
 - Creator's public prompt length: about 34 words (not reproduced here)
-- Popularity rank on source library: #67
+- Popularity rank on source library: #205
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -26,15 +26,11 @@ A ~56-second CSS framework release video on clean white with numbered chapters: 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, SVG), suggested duration (56 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Code / كود, Product UI / واجهات المنتج, Diagrams / مخططات.
-- [playbooks/code.md](../../playbooks/code.md)
-- [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/diagrams.md](../../playbooks/diagrams.md)
+Categories: Charts / رسوم بيانية.
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
-* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

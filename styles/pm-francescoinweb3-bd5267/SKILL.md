@@ -1,6 +1,6 @@
 ---
 name: pm-francescoinweb3-bd5267
-description: A 15-second 4:5 engineering-drawing explainer: a big central gear labelled with the final video file, ringed by five smaller spirograph-lined gears (reference, data, story, motion, direct) that turn orange in turn and add an arc to the main dial, above a six-panel live dashboard (log, gauges, code, file track, easing curve, a match score rising 0.78 to 0.91), ending on an 'approved' state. Use to make a new video in this look (Diagrams); address it by ID pm-francescoinweb3-bd5267.
+description: A 15-second 4:5 engineering-drawing explainer: a big central gear labelled with the final video file, ringed by five smaller spirograph-lined gears (reference, data, story, motion, direct) that turn orange in turn and add an arc to the main dial, above a six-panel live dashboard (log, gauges, code, file track, easing curve, a match score rising 0.78 to 0.91), ending on an 'approved' state. Use to make a new video in this look (Product UI); address it by ID pm-francescoinweb3-bd5267.
 ---
 
 # KOSIF TOOL — Step-by-step video pipeline with Lottie / تروس هندسية تشرح خطوات صناعة فيديو مع لوحة تحكم حية
@@ -14,7 +14,7 @@ description: A 15-second 4:5 engineering-drawing explainer: a big central gear l
 - Reference aspect: 4:5 (1080×1350)
 - Technologies named by the source: Remotion
 - Creator's public prompt length: about 111 words (not reproduced here)
-- Popularity rank on source library: #222
+- Popularity rank on source library: #84
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -26,15 +26,15 @@ A 15-second 4:5 engineering-drawing explainer: a big central gear labelled with 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG), suggested duration (15 s), aspect 4:5, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Diagrams / مخططات, Shapes / أشكال, Charts / رسوم بيانية.
-- [playbooks/diagrams.md](../../playbooks/diagrams.md)
-- [playbooks/shapes.md](../../playbooks/shapes.md)
+Categories: Product UI / واجهات المنتج, Charts / رسوم بيانية, Shapes / أشكال.
+- [playbooks/product-ui.md](../../playbooks/product-ui.md)
 - [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
 
 Category tactics:
-* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

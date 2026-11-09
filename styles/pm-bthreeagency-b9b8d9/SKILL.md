@@ -1,6 +1,6 @@
 ---
 name: pm-bthreeagency-b9b8d9
-description: A short (about 11 s) near-4:3 mobile UI clip: a phone centred on a light grey canvas shows a 'Badges' screen with a navy sky, a gold hexagon badge whose sunrise-and-river art draws in, then a gold ring burst, falling sparkles and the badge name fading up; the camera pushes in as a yellow hand cursor taps the badge so it pulses and gleams, with a row of other badges, one locked, below. Use to make a new video in this look (Phone); address it by ID pm-bthreeagency-b9b8d9.
+description: A short (about 11 s) near-4:3 mobile UI clip: a phone centred on a light grey canvas shows a 'Badges' screen with a navy sky, a gold hexagon badge whose sunrise-and-river art draws in, then a gold ring burst, falling sparkles and the badge name fading up; the camera pushes in as a yellow hand cursor taps the badge so it pulses and gleams, with a row of other badges, one locked, below. Use to make a new video in this look (Kinetic type); address it by ID pm-bthreeagency-b9b8d9.
 ---
 
 # KOSIF TOOL — Badge unlock screen animation / شاشة فتح شارة إنجاز ذهبية في تطبيق جوال مع بريق متساقط ومؤشر تفاعلي
@@ -13,7 +13,7 @@ description: A short (about 11 s) near-4:3 mobile UI clip: a phone centred on a 
 - Published on source: 2026-09-26 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 4:3 (1408×1080)
 - Creator's public prompt length: about 73 words (not reproduced here)
-- Popularity rank on source library: #265
+- Popularity rank on source library: #127
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,14 +25,12 @@ A short (about 11 s) near-4:3 mobile UI clip: a phone centred on a light grey ca
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (React, CSS, HTML Canvas, Remotion), suggested duration (11 s), aspect 1408:1080, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Phone / هاتف, Product UI / واجهات المنتج, Particles / جسيمات.
-- [playbooks/phone.md](../../playbooks/phone.md)
-- [playbooks/product-ui.md](../../playbooks/product-ui.md)
+Categories: Kinetic type / تايبوغرافي متحرك, Particles / جسيمات.
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 - [playbooks/particles.md](../../playbooks/particles.md)
 
 Category tactics:
-* Use 3D or 2.5D phone layers with believable screen perspective, shadow, touch interaction, device rotation and safe crops.
-* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 
 ## Original creative direction (التوجيه الإبداعي)

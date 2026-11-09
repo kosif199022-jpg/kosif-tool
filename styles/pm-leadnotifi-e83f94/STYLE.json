@@ -6,9 +6,8 @@
   "type": "Prompt",
   "category": [
     "product-ui",
-    "kinetic-type",
-    "shapes",
-    "ads"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@leadnotifi",
   "creator_url": "https://x.com/leadnotifi/status/2103628028391960983",
@@ -20,7 +19,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 111,
+  "rank": 249,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -30,9 +29,8 @@
   "skill": "styles/pm-leadnotifi-e83f94/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/ads.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "إعلان منتج مدته 45 ثانية بثلاثة ألوان فقط (أسود فحمي، أبيض مائل للرمادي، ليموني فاقع): نبضة رادار ودائرة نقاط، عناوين عريضة واسعة بأحرف كبيرة، قطرات حبر سوداء تتمدد كالسائل، مربع أيقونة أبيض يدور داخل إطار تحويل، عدّاد داخل حقل نقاط، كرة جسيمات تتحول مكعباً تحيط به كلمات تحية بلغات مختلفة، مخطط سير عمل كحبل سائل، مقياس دائري يمتلئ بسائل ليموني، شريط ميزات متحرك ودوامة كلمات، ثم بطاقة الشعار.",
   "summary_en": "A 45-second three-colour product ad (charcoal, off-white, acid lime): a radar pulse, wide bold caps headlines, black liquid blobs, a rotating app icon in a transform box, a dot-field counter, a particle sphere turning into a cube ringed by greetings, a gooey workflow line, a lime-filled score gauge, a feature ticker and a logo card.",

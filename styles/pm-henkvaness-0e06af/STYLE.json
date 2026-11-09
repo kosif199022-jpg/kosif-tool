@@ -5,9 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "product-ui",
-    "charts"
+    "characters"
   ],
   "creator": "@henkvaness",
   "creator_url": "https://x.com/henkvaness/status/2103801351993975279",
@@ -19,7 +17,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 50,
+  "rank": 188,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +26,7 @@
   "listed": true,
   "skill": "styles/pm-henkvaness-0e06af/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/product-ui.md",
-    "playbooks/charts.md"
+    "playbooks/characters.md"
   ],
   "summary_ar": "شرح طويل (نحو 5 دقائق ونصف) على ورق بيج دافئ بأسلوب مجلة: أرقام وعناوين بخط سيريف رفيع، رسوم خطية بسيطة (طابعة تُخرج أوراقاً، صناديق دردشة)، ثم ثمانية فصول مرقمة 01-08 لكل منها رقم ضخم مفرّغ وأيقونة حمراء وعنوان، تتبعها مقارنة بين ما يكتبه الناس بطاقات داكنة بكلمات مظللة بالأحمر وما يجب كتابته، وتنتهي بقائمة قواعد وشريط نسبة أخضر.",
   "summary_en": "A 5.5 min editorial-magazine explainer on warm beige paper: thin serif numbers and headlines, simple line drawings, then eight chapters each opening on a huge outlined numeral with a red icon, followed by dark prompt cards with red-highlighted words set against better prompts, ending on a rules list and a green percentage bar.",

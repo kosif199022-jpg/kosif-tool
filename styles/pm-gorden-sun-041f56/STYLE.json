@@ -5,9 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "music",
-    "3d",
-    "characters"
+    "music"
   ],
   "creator": "@Gorden_Sun",
   "creator_url": "https://x.com/Gorden_Sun/status/2105302007896797351",
@@ -19,7 +17,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 89,
+  "rank": 227,
   "published": "2026-09-30",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -30,9 +28,7 @@
   "listed": true,
   "skill": "styles/pm-gorden-sun-041f56/SKILL.md",
   "playbooks": [
-    "playbooks/music.md",
-    "playbooks/3d.md",
-    "playbooks/characters.md"
+    "playbooks/music.md"
   ],
   "summary_ar": "مقطع موسيقي مدته دقيقة تقريباً بأسلوب ثلاثي الأبعاد منخفض المضلعات: كرة برتقالية بوجه وخوذة بمصباح تقفز من قبعة فطر مضيئة إلى أخرى على طول مسار في كهف أحمر داكن فوق بحيرة حمم، وكل هبوط يطلق حلقة ضوء ملونة وشرارات، مع فقاعات كلام قصيرة وبطاقة عنوان للمقطوعة، والإيقاع يتسارع حتى الختام.",
   "summary_en": "A roughly one-minute low-poly 3D music piece: an orange ball character with a face and a headlamp hard hat hops from one glowing mushroom cap to the next along a winding path in a dark red cave over cracked lava, every landing firing a coloured light ring and sparks, with short speech bubbles and a piece-title lower third, accelerating toward the end.",

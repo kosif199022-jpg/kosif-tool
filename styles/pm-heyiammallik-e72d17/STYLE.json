@@ -5,10 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "3d",
-    "product-ui",
-    "code"
+    "music"
   ],
   "creator": "@heyiammallik",
   "creator_url": "https://x.com/heyiammallik/status/2103837803587293397",
@@ -20,7 +17,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 13,
+  "rank": 151,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,10 +26,7 @@
   "listed": true,
   "skill": "styles/pm-heyiammallik-e72d17/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/3d.md",
-    "playbooks/product-ui.md",
-    "playbooks/code.md"
+    "playbooks/music.md"
   ],
   "summary_ar": "ريل أعمال مدته 34 ثانية لمهندس برمجيات: كلمات ضخمة تُقطع بسرعة على الأسود والبرتقالي المحمر، ثم مشاهد ثلاثية الأبعاد داكنة من سحب نقاط ووكسلات بإضاءة برتقالية، وأرقام أداء عملاقة، وقائمة مشاريع تتمرر على خلفية فاتحة مع معاينة دائرية، ولقطات واجهات وطرفية، وتنتهي ببطاقة الاسم فوق موجة جسيمات برتقالية.",
   "summary_en": "A 34-second software-engineer portfolio reel: huge single words hard-cut on black and orange-red, dark 3D point-cloud and voxel scenes lit in orange, giant performance multipliers, a scrolling project list on off-white with a circular preview, UI and terminal shots, and a name end card over an orange particle wave.",

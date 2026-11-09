@@ -5,9 +5,9 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "shapes",
+    "charts",
     "kinetic-type",
-    "3d"
+    "shapes"
   ],
   "creator": "@LeonKohli",
   "creator_url": "https://x.com/LeonKohli/status/2103517696038191220",
@@ -19,7 +19,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 53,
+  "rank": 191,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +28,9 @@
   "listed": true,
   "skill": "styles/pm-leonkohli-6dc01b/SKILL.md",
   "playbooks": [
-    "playbooks/shapes.md",
+    "playbooks/charts.md",
     "playbooks/kinetic-type.md",
-    "playbooks/3d.md"
+    "playbooks/shapes.md"
   ],
   "summary_ar": "شوريل سريع مدته 15 ثانية لمصمم موشن: كرة برتقالية تقفز فوق خط زمن على الأسود، ثم كلمتا motion وdesign بخطوط متغيرة على الأزرق والأبيض، وشبكة بلاطات باوهاوس بالأزرق والليموني والأسود، وأرضية مكعبات ثلاثية الأبعاد تتدحرج عليها الكرة، ورذاذ سائل برتقالي، ودوامة خطوط ضوئية، وعدّاد سنة داخل حلقة ألوان، ونفق حلقات، وتنتهي ببطاقة الاسم على الكحلي الداكن.",
   "summary_en": "A fast 15-second motion-designer showreel: an orange ball bounces over a timeline on black, then the words motion and design in shifting type on blue and white, a Bauhaus tile grid in blue, lime and black, a 3D cube floor the ball rolls across, an orange liquid splash, a light-streak vortex, a year counter in a coloured ring, a ring tunnel, and a name card on dark navy.",

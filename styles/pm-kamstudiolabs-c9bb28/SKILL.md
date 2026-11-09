@@ -13,7 +13,7 @@ description: A 90-second animated short in a navy night room: the camera pushes 
 - Published on source: 2026-09-23 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 15 words (not reproduced here)
-- Popularity rank on source library: #272
+- Popularity rank on source library: #134
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,13 +25,11 @@ A 90-second animated short in a navy night room: the camera pushes from a silhou
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas), suggested duration (90 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Characters / شخصيات, Code / كود.
+Categories: Characters / شخصيات.
 - [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
 * Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

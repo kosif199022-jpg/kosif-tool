@@ -7,8 +7,14 @@
   "category": [
     "product-ui",
     "phone",
+    "charts",
     "kinetic-type",
-    "ads"
+    "shapes",
+    "particles",
+    "characters",
+    "photos",
+    "music",
+    "code"
   ],
   "creator": "@ultimaxbt",
   "creator_url": "https://x.com/ultimaxbt/status/2108210884799549714",
@@ -20,7 +26,7 @@
     "h": 1078
   },
   "aspect_label": "16:9",
-  "rank": 69,
+  "rank": 207,
   "published": "2026-10-08",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -35,8 +41,14 @@
   "playbooks": [
     "playbooks/product-ui.md",
     "playbooks/phone.md",
+    "playbooks/charts.md",
     "playbooks/kinetic-type.md",
-    "playbooks/ads.md"
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/characters.md",
+    "playbooks/photos.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
   ],
   "summary_ar": "إعلان إطلاق مدته 16 ثانية لتطبيق طلب طعام بالذكاء الاصطناعي على خلفية بيضاء: شريط بحث مائل بتوهج قزحي يُكتب فيه طلب جائع، كلمات ضخمة تعبر الكادر بضبابية حركة، شاشة هاتف مقربة تعرض مؤشر تحميل على شكل وعاء برتقالي تسقط فيه مكونات، مسح ليموني تمر فيه بطاقات أطباق داكنة، محادثة بزر طلب ينقره مؤشر يد، ثم جمل ختام بسيطة واسم العلامة.",
   "summary_en": "A 16-second launch ad for an AI food-ordering app on white: a tilted search bar with an iridescent glow types a hungry request, huge words sweep past with motion blur, a close-up phone screen shows a loader where ingredients drop into an orange bowl, a lime wipe carries a carousel of dark dish cards, a chat with an order button gets tapped, then plain closing lines and the wordmark.",

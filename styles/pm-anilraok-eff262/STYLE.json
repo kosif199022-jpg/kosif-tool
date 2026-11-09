@@ -5,9 +5,9 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
+    "product-ui",
     "characters",
-    "3d",
-    "ads"
+    "code"
   ],
   "creator": "@Anilraok",
   "creator_url": "https://x.com/Anilraok/status/2103087766662009118",
@@ -19,7 +19,7 @@
     "h": 1920
   },
   "aspect_label": "9:16",
-  "rank": 143,
+  "rank": 213,
   "published": "2026-09-24",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -30,9 +30,9 @@
   "listed": true,
   "skill": "styles/pm-anilraok-eff262/SKILL.md",
   "playbooks": [
+    "playbooks/product-ui.md",
     "playbooks/characters.md",
-    "playbooks/3d.md",
-    "playbooks/ads.md"
+    "playbooks/code.md"
   ],
   "summary_ar": "قصة قصيرة طولية مدتها نحو 42 ثانية بأسلوب ثلاثي الأبعاد واقعي: بلاطات حروف خشبية بعيون لامعة وحواجب تقفز وتصطف على شبكة كلمات متقاطعة ورقية فوق طاولة داكنة، بينما يبقى الحرف Q وحيداً ومحتاراً بلقطات قريبة وأضواء بوكيه، حتى يجد مكانه في الزاوية فتنفجر قصاصات احتفالية، وتنتهي بلقطة علوية للشبكة المكتملة وعنوان بخط مذيّل وبطاقة اسم التطبيق.",
   "summary_en": "A ~42-second vertical 3D story: wooden letter tiles with glossy eyes and eyebrows hop into place on a paper mini-crossword on a dark table while the Q tile is left alone and worried in bokeh-lit close-ups, until it finds its corner slot, confetti bursts, and it ends on a top-down view of the solved grid with a serif headline and an app name card.",

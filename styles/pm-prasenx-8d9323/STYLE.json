@@ -5,11 +5,10 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
+    "charts",
     "kinetic-type",
     "music",
-    "code",
-    "shapes",
-    "3d"
+    "code"
   ],
   "creator": "@prasenx",
   "creator_url": "https://x.com/prasenx/status/2103538744695693512",
@@ -21,7 +20,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 268,
+  "rank": 130,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": null,
@@ -30,11 +29,10 @@
   "listed": true,
   "skill": "styles/pm-prasenx-8d9323/SKILL.md",
   "playbooks": [
+    "playbooks/charts.md",
     "playbooks/kinetic-type.md",
     "playbooks/music.md",
-    "playbooks/code.md",
-    "playbooks/shapes.md",
-    "playbooks/3d.md"
+    "playbooks/code.md"
   ],
   "summary_ar": "شوريل مدته 15 ثانية: منحنى تسارع يُرسم على مخطط زمني داكن، ثم مربع أحمر يندفع، واسم ضخم مقطوع أفقياً على الأحمر، وطارة نيون ثلاثية الأبعاد، وفسيفساء أشكال هندسية حمراء وزرقاء وسوداء، وكلمة من ألياف، ونفق نيون، وكلمة بخامة سائلة، وشبكة مكعبات متساوية القياس، وجدار كلمات مائل، ثم قطعات كل 0.4 ثانية تكتب جملة من أربع كلمات على خلفيات متبدلة، وتنتهي بشعار نجمة حمراء.",
   "summary_en": "A 15-second showreel: an easing curve drawing on a dark timeline, a sliced giant name on red, a neon torus, a flipping geometric tile mosaic, fibre and liquid shader words, a neon tunnel, an isometric cube field, then 0.4-second beat cuts spelling a four-word line on changing colours, ending on a red starburst logo.",

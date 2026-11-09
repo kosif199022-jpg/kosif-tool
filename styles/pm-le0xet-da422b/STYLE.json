@@ -5,9 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Skill",
   "category": [
-    "3d",
-    "characters",
-    "code"
+    "characters"
   ],
   "creator": "unknown",
   "creator_url": "https://x.com/le0xet/status/2113998990081409165",
@@ -19,7 +17,7 @@
     "h": 1728
   },
   "aspect_label": "4:5",
-  "rank": 219,
+  "rank": 81,
   "published": "2026-10-24",
   "model": null,
   "effort": null,
@@ -30,9 +28,7 @@
   "listed": true,
   "skill": "styles/pm-le0xet-da422b/SKILL.md",
   "playbooks": [
-    "playbooks/3d.md",
-    "playbooks/characters.md",
-    "playbooks/code.md"
+    "playbooks/characters.md"
   ],
   "summary_ar": "مقطع عمودي 4:5 مدته نحو 16 ثانية بتصميم لوحة معلومات كريمية: عنوان أعلى الشاشة، ونافذة عرض كبيرة فيها فيلم قصير ثلاثي الأبعاد لشخصية فوكسل حمراء مربعة وحشرة روبوت خضراء صغيرة يتنقلان فوق لوحة مفاتيح بجانب كوب زجاجي، وتحتها صف بطاقات أدوات يضيء بالتسلسل، وتميمة بكسلية تقول جملاً قصيرة، وطرفية داكنة تكتب أوامر كل مرحلة من التخطيط حتى التصدير.",
   "summary_en": "A 4:5 vertical clip of about 16 s laid out as a cream dashboard: a headline at top, a large viewport playing a short 3D film of a red voxel block character and a tiny green robot bug wandering over a keyboard beside a glass jar, a row of tool cards below that light up in sequence, a pixel mascot speaking short lines, and a dark terminal typing the commands for each stage from planning to export.",

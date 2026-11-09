@@ -5,9 +5,9 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "characters",
+    "charts",
     "kinetic-type",
-    "music"
+    "photos"
   ],
   "creator": "@_topi_003",
   "creator_url": "https://x.com/_topi_003/status/2104088986969055288",
@@ -19,7 +19,7 @@
     "h": 720
   },
   "aspect_label": "16:9",
-  "rank": 182,
+  "rank": 44,
   "published": "2026-09-27",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +28,9 @@
   "listed": true,
   "skill": "styles/pm-topi-003-b0e12c/SKILL.md",
   "playbooks": [
-    "playbooks/characters.md",
+    "playbooks/charts.md",
     "playbooks/kinetic-type.md",
-    "playbooks/music.md"
+    "playbooks/photos.md"
   ],
   "summary_ar": "شوريل مدته 15 ثانية لشخصية أنمي ثنائية الأبعاد بزي خادمة: عدّ تنازلي بأرقام ضخمة على ألوان تتبدل ثم «LET'S DANCE!»، الشخصية ترقص على أشعة صفراء بين شريطين من نص ياباني وإنجليزي متحرك، نسخ ملونة متكررة في أعمدة ثم شبكة 3×3 بتظليل ثنائي اللون، لقطة قريبة للوجه بخطوط سرعة، قدمان على أرضية شطرنجية، دوران بآثار حركة، ثم بطاقة عنوان بقصاصات ملونة.",
   "summary_en": "A 15-second pop-art dance reel for a 2D anime maid character: a big-number count-in, dancing on yellow sunburst rays between scrolling marquee bands, duotone clones in stripes and a 3x3 grid, face and footwork close-ups, a spin with onion-skin trails, and a confetti title card.",

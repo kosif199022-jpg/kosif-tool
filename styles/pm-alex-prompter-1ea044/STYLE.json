@@ -5,9 +5,9 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "ads",
+    "diagrams",
     "kinetic-type",
-    "product-ui"
+    "code"
   ],
   "creator": "@alex_prompter",
   "creator_url": "https://x.com/alex_prompter/status/2103499977632997524",
@@ -19,7 +19,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 177,
+  "rank": 39,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -30,9 +30,9 @@
   "listed": true,
   "skill": "styles/pm-alex-prompter-1ea044/SKILL.md",
   "playbooks": [
-    "playbooks/ads.md",
+    "playbooks/diagrams.md",
     "playbooks/kinetic-type.md",
-    "playbooks/product-ui.md"
+    "playbooks/code.md"
   ],
   "summary_ar": "شرح أعمال مدته 34.5 ثانية بلا صوت على خلفية زرقاء فاتحة جداً: يبدأ بمربع محادثة يُكتب فيه الطلب، ثم عنوان المشكلة وحوله شارات «جديد» تطفو، ثم أيقونة برق زرقاء واسم المنتج، ثم ثلاث بطاقات بيضاء مرقمة بأيقونات (بريد، برق، علامة صح بأصفر)، ثم عداد مشتركين يصعد إلى 2000+ مع سطر إثبات، وبطاقة ختام بالاسم.",
   "summary_en": "A silent 34.5-second business explainer on a very pale blue background: it opens on a chat box typing out the request, then a problem headline surrounded by floating 'new' pills, a blue lightning-bolt icon and the product name, three white numbered step cards with icons (mail, bolt, yellow check), a subscriber counter rolling up to 2,000+ with a proof line, and a name end card.",

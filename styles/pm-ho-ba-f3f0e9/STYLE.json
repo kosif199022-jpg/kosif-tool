@@ -6,7 +6,9 @@
   "type": "Prompt",
   "category": [
     "product-ui",
-    "kinetic-type"
+    "charts",
+    "kinetic-type",
+    "music"
   ],
   "creator": "@HO_BA",
   "creator_url": "https://x.com/HO_BA/status/2103845264649761062",
@@ -18,7 +20,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 29,
+  "rank": 167,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "High",
@@ -28,7 +30,9 @@
   "skill": "styles/pm-ho-ba-f3f0e9/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/kinetic-type.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/music.md"
   ],
   "summary_ar": "فيديو تعريفي مدته 30 ثانية لمحرر ماركداون على خلفية كريمية دافئة: «# Wri» تُكتب بخط أحادي ثم تتحول إلى عنوان سيريف كبير مع كلمة مائلة بلون الطين، شارات صغيرة تطفو حوله، انفجار رموز إلى الشعار، ثم نافذة المحرر تُكتب وتُعاين جنباً إلى جنب، وأربع بطاقات ميزات بعناوين مرقمة، ونصف الفيديو الأخير يغطس في وضع داكن وشبكة أيقونات بكلمتي «Fast.» و«Free.» قبل بطاقة ختام.",
   "summary_en": "A 30-second markdown-editor intro on warm cream: '# Wri' types in mono and morphs into a big serif headline with a terracotta italic word, floating chips, a symbol burst into the logo, an editor typing beside its live preview, numbered feature cards, then a dark-mode wipe to an icon grid with 'Fast.' and 'Free.' and a logo end card.",

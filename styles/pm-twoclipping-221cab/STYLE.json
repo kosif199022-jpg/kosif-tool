@@ -7,8 +7,15 @@
   "category": [
     "product-ui",
     "phone",
+    "charts",
+    "diagrams",
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "characters",
     "photos",
-    "ads"
+    "music",
+    "code"
   ],
   "creator": "@twoclipping",
   "creator_url": "https://x.com/twoclipping/status/2103835273813496100",
@@ -20,7 +27,7 @@
     "h": 1440
   },
   "aspect_label": "1:1",
-  "rank": 144,
+  "rank": 214,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -36,8 +43,15 @@
   "playbooks": [
     "playbooks/product-ui.md",
     "playbooks/phone.md",
+    "playbooks/charts.md",
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/characters.md",
     "playbooks/photos.md",
-    "playbooks/ads.md"
+    "playbooks/music.md",
+    "playbooks/code.md"
   ],
   "summary_ar": "فيلم إطلاق مربع مدته 29 ثانية لتطبيق يحوّل الصور إلى مطبوعات مؤطرة: كلمة «develop.» سوداء على أبيض مكسور تتحول إلى زر ثم دائرة صورة، شبكة صور سينمائية تتسع إحداها لملء الشاشة، كلمة «relight.» زجاجية، شريط أدوات زجاجي ومنزلق «Golden hour» يحوّل المشهد إلى الغروب، شاشة قفل هاتف، هاتف ومتصفح يطفوان على موجات زرقاء، صفحة منتج لاختيار الإطار والمقاس والسعر، شريط «On its way»، ثم يدان تعلقان الإطار على جدار بظلال نخيل.",
   "summary_en": "A 29-second square launch film for a photo print app, driven by a cursor: a 'develop.' wordmark morphs into a button, a grid of cinematic images opens one full-screen, a glass toolbar and golden-hour slider relight it, a phone and browser float over blue waves, a product page picks frame and size, and hands hang the framed print on a wall.",

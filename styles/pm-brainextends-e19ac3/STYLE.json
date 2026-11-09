@@ -6,6 +6,13 @@
   "type": "Prompt",
   "category": [
     "product-ui",
+    "charts",
+    "diagrams",
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "characters",
+    "photos",
     "music"
   ],
   "creator": "@brainextends",
@@ -18,7 +25,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 263,
+  "rank": 125,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -31,6 +38,13 @@
   "skill": "styles/pm-brainextends-e19ac3/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/characters.md",
+    "playbooks/photos.md",
     "playbooks/music.md"
   ],
   "summary_ar": "فيلم منتج مدته 18 ثانية لتطبيق بث موسيقي، كله داخل لوح داكن مستدير الحواف فوق تدرج أخضر إلى أسود: شعار دائري أخضر، سطر بكلمة خضراء، شاشة رئيسية تقترب إلى غلافات ملونة، قائمة أغانٍ، شريط غلافات المزاج يمر أفقياً، بحث يملأ نتيجة، غلاف لامع قزحي يكبر حتى يملأ اللوح، ومضة خضراء كاملة، بطاقات تنتشر وتتراكم في الفضاء، وختام بالشعار وسطرين؛ ومشغل صغير ثابت في الأسفل.",

@@ -5,8 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "diagrams",
-    "3d"
+    "diagrams"
   ],
   "creator": "@konstantinsaifo",
   "creator_url": "https://x.com/konstantinsaifo/status/2104094723887501736",
@@ -27,8 +26,7 @@
   "listed": true,
   "skill": "styles/pm-konstantinsaifo-96fc89/SKILL.md",
   "playbooks": [
-    "playbooks/diagrams.md",
-    "playbooks/3d.md"
+    "playbooks/diagrams.md"
   ],
   "summary_ar": "تسجيل شاشة مدته 10 ثوانٍ لصفحة ويب تفاعلية ثلاثية الأبعاد: محرك صاروخ على منصة اختبار في حظيرة ليلية يطلق لهباً بنفسجياً طويلاً بعقد صدمة، مع لوحة عنوان وأرقام أداء يساراً ولوحة أزرار أعلى اليمين؛ نقرة على «مقطع عرضي» تشق المحرك فتظهر المضخات والأنابيب الملونة بملصقات، ثم تقترب الكاميرا ببطء بينما يتتبع مسار الأكسجين.",
   "summary_en": "A 10-second screen capture of an interactive 3D web page: a rocket engine on a night test stand fires a long violet plume with shock diamonds, framed by a title card and stat readouts on the left and a control panel top-right; a click on 'cutaway' slices the engine open to reveal labelled colour-coded pumps and pipes, then the camera slowly pushes in while the oxygen path is highlighted.",

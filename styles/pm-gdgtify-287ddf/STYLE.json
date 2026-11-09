@@ -5,7 +5,15 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type"
+    "phone",
+    "charts",
+    "diagrams",
+    "kinetic-type",
+    "particles",
+    "characters",
+    "photos",
+    "music",
+    "code"
   ],
   "creator": "@Gdgtify",
   "creator_url": "https://x.com/Gdgtify/status/2103458245213929495",
@@ -17,7 +25,7 @@
     "h": 1080
   },
   "aspect_label": "1:1",
-  "rank": 37,
+  "rank": 175,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -31,7 +39,15 @@
   "listed": true,
   "skill": "styles/pm-gdgtify-287ddf/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md"
+    "playbooks/phone.md",
+    "playbooks/charts.md",
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/particles.md",
+    "playbooks/characters.md",
+    "playbooks/photos.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
   ],
   "summary_ar": "فيديو تايبوغرافي مربع مدته 20 ثانية على خلفية خضراء غابية داكنة: كلمات ضخمة بخط عريض كريمي تتأرجح وتسقط وتتعلق بحبل ذهبي رفيع كجسر معلق، وكلمات أخرى تقف عمودية كأعمدة، بينما تُكتب جمل قصيرة بخط سيريف رفيع مائل الإيقاع بينها، حتى تتكون بنية تشبه البوابة، ثم يعود المشهد للكلمة الأولى مقرّبة جداً.",
   "summary_en": "A 20 s square kinetic-type piece on deep forest green where huge cream heavy-sans words swing, drop and hang from a thin gold cable like a suspension bridge, other words stand vertically as pillars, and short lines in a light serif write in between until the words form a gateway-like structure, before looping back to an extreme close-up of the first word.",

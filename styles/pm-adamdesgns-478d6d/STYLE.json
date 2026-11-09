@@ -6,9 +6,8 @@
   "type": "Prompt",
   "category": [
     "product-ui",
-    "kinetic-type",
-    "diagrams",
-    "particles"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@Adamdesgns",
   "creator_url": "https://x.com/Adamdesgns/status/2103542756555768014",
@@ -20,7 +19,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 207,
+  "rank": 69,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -30,9 +29,8 @@
   "skill": "styles/pm-adamdesgns-478d6d/SKILL.md",
   "playbooks": [
     "playbooks/product-ui.md",
-    "playbooks/kinetic-type.md",
-    "playbooks/diagrams.md",
-    "playbooks/particles.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "ترويج تطبيق مدته 15 ثانية على أسود بشبكة نقاط خافتة: شرارة لحام ترسم أنبوباً معدنياً متوهجاً مع أبعاد هندسية تحت شعار «قس مرتين، اقطع مرة»، رسم إصبع متعرج يتحول إلى خطوط زرقاء نظيفة، صندوق ثلاثي الأبعاد يحسب الإزاحة برقم ذهبي يعدّ، عداد سجلات ضخم فوق حقل نقاط، هاتف يعرض نتيجة، كلمات ميزات تملأ الشاشة، وختام بأيقونة الحلقة والاسم وشارات.",
   "summary_en": "A 15-second app promo on black with a faint dot grid: a welding spark draws a glowing pipe with dimension lines under a 'measure twice, cut once' slogan, a shaky sketch snaps into clean blue lines, a 3D box solves an offset with a gold counter, a huge records counter, a phone result, full-frame feature words, and a ring-icon end card.",

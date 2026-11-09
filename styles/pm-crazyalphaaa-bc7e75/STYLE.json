@@ -5,10 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "shapes",
-    "particles",
-    "3d"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@CrazyAlphaaa",
   "creator_url": "https://x.com/CrazyAlphaaa/status/2103568486249480622",
@@ -20,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 73,
+  "rank": 72,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,10 +27,8 @@
   "listed": true,
   "skill": "styles/pm-crazyalphaaa-bc7e75/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/particles.md",
-    "playbooks/3d.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "شوريل مدته 15 ثانية لـ«مصمم موشن» على شاشة داكنة محببة بإطار عدسة وأرقام وقت: كرة برتقالية تسقط وتنضغط على خط، ثم عناوين ضخمة على ألوان مسطحة متبدلة (برتقالي، أزرق، ليموني) لكلمات المبادئ، شبكة مربعات تتموج كموجة، منحنى تخفيف بثلاث كرات تتسابق، نفق مضلعات ملونة يتحول إلى سحابة جسيمات، كتل سائلة وردية تنفصل، ثم تتحول الكرة إلى شعار بجانب الاسم.",
   "summary_en": "A 15-second motion-designer showreel on grainy dark viewfinder frames: an orange ball drops and squashes, giant principle words slam over flat orange, blue and lime fields, a square grid ripples, an easing curve races three balls, a polygon tunnel dissolves into particles, pink liquid blobs split, and the ball becomes the logo dot beside the name.",

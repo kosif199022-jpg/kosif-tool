@@ -1,6 +1,6 @@
 ---
 name: pm-kloss-xyz-15182a
-description: A 2.5-minute vertical first-person AI monologue on black under a fixed HUD with a filling context bar, timecode and live dot, mixing huge condensed cream and coral headlines, italic serif asides, counters, token chips, stamped poll bars, card grids and RGB glitches, then shifting to coral, paper and grey before fading out. Use to make a new video in this look (Kinetic type); address it by ID pm-kloss-xyz-15182a.
+description: A 2.5-minute vertical first-person AI monologue on black under a fixed HUD with a filling context bar, timecode and live dot, mixing huge condensed cream and coral headlines, italic serif asides, counters, token chips, stamped poll bars, card grids and RGB glitches, then shifting to coral, paper and grey before fading out. Use to make a new video in this look (Product UI); address it by ID pm-kloss-xyz-15182a.
 ---
 
 # KOSIF TOOL — Chaotic Claude POV video / مونولوج نموذج ذكاء اصطناعي بضمير المتكلم: تايبوغرافي عمودي بواجهة دردشة
@@ -13,7 +13,7 @@ description: A 2.5-minute vertical first-person AI monologue on black under a fi
 - Published on source: 2026-09-26 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 9:16 (1080×1920)
 - Creator's public prompt length: about 61 words (not reproduced here)
-- Popularity rank on source library: #65
+- Popularity rank on source library: #203
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,15 +25,17 @@ A 2.5-minute vertical first-person AI monologue on black under a fixed HUD with 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS, Web Audio), suggested duration (153 s), aspect 9:16, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Kinetic type / تايبوغرافي متحرك, Product UI / واجهات المنتج, Charts / رسوم بيانية.
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+Categories: Product UI / واجهات المنتج, Characters / شخصيات, Music / موسيقى, Code / كود.
 - [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 * Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
+* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

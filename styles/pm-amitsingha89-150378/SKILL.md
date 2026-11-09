@@ -1,6 +1,6 @@
 ---
 name: pm-amitsingha89-150378
-description: A 54-second brand explainer for a handwoven textiles label in a warm editorial web style: it opens on dark brown over a blurred loom with a serif headline whose second half is terracotta italic, then cream and brown slides pair text with real photo grids (weavers, fabrics, workshops), a big number, three values, numbered ordering steps and a close with an orange button and URL. Use to make a new video in this look (Photos); address it by ID pm-amitsingha89-150378.
+description: A 54-second brand explainer for a handwoven textiles label in a warm editorial web style: it opens on dark brown over a blurred loom with a serif headline whose second half is terracotta italic, then cream and brown slides pair text with real photo grids (weavers, fabrics, workshops), a big number, three values, numbered ordering steps and a close with an orange button and URL. Use to make a new video in this look (Diagrams); address it by ID pm-amitsingha89-150378.
 ---
 
 # KOSIF TOOL — Handwoven textiles brand explainer / تعريف تحريري دافئ بعلامة منسوجات يدوية بالصور
@@ -13,7 +13,7 @@ description: A 54-second brand explainer for a handwoven textiles label in a war
 - Published on source: 2026-09-26 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1280×720)
 - Creator's public prompt length: about 11 words (not reproduced here)
-- Popularity rank on source library: #167
+- Popularity rank on source library: #29
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,15 +25,13 @@ A 54-second brand explainer for a handwoven textiles label in a warm editorial w
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, CSS), suggested duration (54 s), aspect 16:9, difficulty 2/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Photos / صور, Kinetic type / تايبوغرافي متحرك, Ads / إعلانات.
-- [playbooks/photos.md](../../playbooks/photos.md)
+Categories: Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك.
+- [playbooks/diagrams.md](../../playbooks/diagrams.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/ads.md](../../playbooks/ads.md)
 
 Category tactics:
-* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
+* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Hook in the first second; one feature per beat; clear price or call-to-action card; brand-consistent logo reveal.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

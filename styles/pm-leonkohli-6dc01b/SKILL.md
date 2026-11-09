@@ -1,6 +1,6 @@
 ---
 name: pm-leonkohli-6dc01b
-description: A fast 15-second motion-designer showreel: an orange ball bounces over a timeline on black, then the words motion and design in shifting type on blue and white, a Bauhaus tile grid in blue, lime and black, a 3D cube floor the ball rolls across, an orange liquid splash, a light-streak vortex, a year counter in a coloured ring, a ring tunnel, and a name card on dark navy. Use to make a new video in this look (Shapes); address it by ID pm-leonkohli-6dc01b.
+description: A fast 15-second motion-designer showreel: an orange ball bounces over a timeline on black, then the words motion and design in shifting type on blue and white, a Bauhaus tile grid in blue, lime and black, a 3D cube floor the ball rolls across, an orange liquid splash, a light-streak vortex, a year counter in a coloured ring, a ring tunnel, and a name card on dark navy. Use to make a new video in this look (Charts); address it by ID pm-leonkohli-6dc01b.
 ---
 
 # KOSIF TOOL — Geometric motion designer showreel / شوريل مصمم موشن هندسي بكرة برتقالية تقفز بين المشاهد
@@ -13,7 +13,7 @@ description: A fast 15-second motion-designer showreel: an orange ball bounces o
 - Published on source: 2026-09-25 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1280×720)
 - Creator's public prompt length: about 26 words (not reproduced here)
-- Popularity rank on source library: #53
+- Popularity rank on source library: #191
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,15 +25,15 @@ A fast 15-second motion-designer showreel: an orange ball bounces over a timelin
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, Three.js, SVG, WebGL), suggested duration (15 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Shapes / أشكال, Kinetic type / تايبوغرافي متحرك, 3D / ثلاثي الأبعاد.
-- [playbooks/shapes.md](../../playbooks/shapes.md)
+Categories: Charts / رسوم بيانية, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال.
+- [playbooks/charts.md](../../playbooks/charts.md)
 - [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/3d.md](../../playbooks/3d.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
 
 Category tactics:
-* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 * Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

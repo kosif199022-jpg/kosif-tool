@@ -5,8 +5,7 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "particles",
-    "kinetic-type"
+    "photos"
   ],
   "creator": "@apoorvjain25",
   "creator_url": "https://x.com/apoorvjain25/status/2104818940467945542",
@@ -18,7 +17,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 62,
+  "rank": 200,
   "published": "2026-09-29",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -27,8 +26,7 @@
   "listed": true,
   "skill": "styles/pm-apoorvjain25-d24184/SKILL.md",
   "playbooks": [
-    "playbooks/particles.md",
-    "playbooks/kinetic-type.md"
+    "playbooks/photos.md"
   ],
   "summary_ar": "قصة علمية سريعة مدتها 20 ثانية: داخل الشمس بضباب برتقالي من الجسيمات يرتد فوتون في مسار متعرج مع كلمات «مرة أخرى» تملأ الشاشة وعدادات عمق وحرارة حية، ثم تخرج الشمس كقرص مع «170 ألف سنة»، فرحلة في الفضاء بخطوط نجوم وكلمات عملاقة شفافة وعداد زمن ومسافة، اختراق السحب فوق الأرض، ثم عين بشرية تُستهدف حدقتها، وتنتهي على الأسود بـ«رمشت».",
   "summary_en": "A 20-second science micro-story: inside the Sun a photon zigzags through a bokeh-orange particle haze while 'again' words pile up and live depth/temperature counters run, the Sun appears with '170,000 years', then a warp-speed space run with huge translucent words and a time/distance HUD, a dive through clouds over Earth, a targeted human eye, and a black end card: you blinked.",

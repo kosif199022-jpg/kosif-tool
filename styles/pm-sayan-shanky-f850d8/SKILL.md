@@ -1,6 +1,6 @@
 ---
 name: pm-sayan-shanky-f850d8
-description: A ~98-second capture of an interactive 3D explainer in pale greys: the camera flies from a data-centre building to power lines, the server hall, one rack, a compute tray and an exploded chip, the network between racks and the cooling pipes, with colour-coded animated flows (yellow power, blue data, red/teal heat) and chapter captions bottom-left. Use to make a new video in this look (3D); address it by ID pm-sayan-shanky-f850d8.
+description: A ~98-second capture of an interactive 3D explainer in pale greys: the camera flies from a data-centre building to power lines, the server hall, one rack, a compute tray and an exploded chip, the network between racks and the cooling pipes, with colour-coded animated flows (yellow power, blue data, red/teal heat) and chapter captions bottom-left. Use to make a new video in this look (Charts); address it by ID pm-sayan-shanky-f850d8.
 ---
 
 # KOSIF TOOL — AI data centre 3D tour / جولة ثلاثية الأبعاد داخل مركز بيانات للذكاء الاصطناعي
@@ -13,7 +13,7 @@ description: A ~98-second capture of an interactive 3D explainer in pale greys: 
 - Published on source: 2026-09-26 · credited model: Opus 5.5 · effort: High
 - Reference aspect: other (1920×982)
 - Creator's public prompt length: about 10 words (not reproduced here)
-- Popularity rank on source library: #239
+- Popularity rank on source library: #101
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,14 +25,10 @@ A ~98-second capture of an interactive 3D explainer in pale greys: the camera fl
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Three.js, React, WebGL), suggested duration (98 s), aspect 1920x982, difficulty 5/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: 3D / ثلاثي الأبعاد, Diagrams / مخططات, Charts / رسوم بيانية.
-- [playbooks/3d.md](../../playbooks/3d.md)
-- [playbooks/diagrams.md](../../playbooks/diagrams.md)
+Categories: Charts / رسوم بيانية.
 - [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
-* Choose real 3D only when the camera needs it; otherwise layer 2.5D; keep lighting and materials consistent across scenes.
-* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)

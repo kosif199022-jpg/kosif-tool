@@ -14,7 +14,7 @@ description: A calm 30-second river panorama from a locked water-level view: a p
 - Reference aspect: 16:9 (1920×1080)
 - Technologies named by the source: HTML
 - Creator's public prompt length: about 43 words (not reproduced here)
-- Popularity rank on source library: #15
+- Popularity rank on source library: #153
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -26,13 +26,11 @@ A calm 30-second river panorama from a locked water-level view: a pink-orange su
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, WebGL, Remotion, Web Audio), suggested duration (30 s), aspect 16:9, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Code / كود, Kinetic type / تايبوغرافي متحرك.
+Categories: Code / كود.
 - [playbooks/code.md](../../playbooks/code.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
 
 Category tactics:
 * Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

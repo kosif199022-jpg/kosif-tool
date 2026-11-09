@@ -5,9 +5,10 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "product-ui",
     "phone",
-    "charts"
+    "charts",
+    "photos",
+    "code"
   ],
   "creator": "@dale_vaz",
   "creator_url": "https://x.com/dale_vaz/status/2103290592679879074",
@@ -19,7 +20,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 68,
+  "rank": 206,
   "published": "2026-09-25",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +29,10 @@
   "listed": true,
   "skill": "styles/pm-dale-vaz-cc612a/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md",
     "playbooks/phone.md",
-    "playbooks/charts.md"
+    "playbooks/charts.md",
+    "playbooks/photos.md",
+    "playbooks/code.md"
   ],
   "summary_ar": "فيلم 47 ثانية بأسلوب «قوى العشرة» لمنصة تداول: نقطة ضوء في الظلام تتمدد إلى خط ثم إطار يفتح على شاشة تداول داكنة بالشموع، زوم عميق حتى الشمعة الأخيرة ثم حتى بكسلات الشاشة الملونة، ارتداد عبر جدول الخيارات ومخطط الربح، ثم خروج إلى سماء نجوم تحمل نجمتين باسمَي المنصة والتطبيق، وغوص في هاتف أفقي يُنفّذ أمر شراء ويُختم بالشعار.",
   "summary_en": "A 47-second 'powers of ten' reveal for a trading platform on near-black: a point of light opens into a dark candlestick terminal, the camera dives into the last candle down to RGB subpixels, pulls back through an option chain and payoff chart, out to a starfield with two labelled stars for the desktop and mobile apps, then into a phone placing a buy order before the logo card.",

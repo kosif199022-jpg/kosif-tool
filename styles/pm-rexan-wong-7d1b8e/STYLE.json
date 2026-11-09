@@ -5,7 +5,12 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "product-ui"
+    "product-ui",
+    "diagrams",
+    "kinetic-type",
+    "photos",
+    "music",
+    "code"
   ],
   "creator": "unknown",
   "creator_url": "https://x.com/rexan_wong/status/2103707054108299437",
@@ -28,7 +33,12 @@
   "listed": true,
   "skill": "styles/pm-rexan-wong-7d1b8e/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md"
+    "playbooks/product-ui.md",
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/photos.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
   ],
   "summary_ar": "تسجيل شاشة سلس مدته 11 ثانية بنسبة 4:3 على واجهات ويب بيضاء: يبدأ بتصغير من رأس معرض فيديوهات إطلاق إلى شبكة بطاقات تمر لأعلى بتمرير متواصل، ثم قطع إلى عرض منقسم بقائمة يساراً ولوحة تفاصيل يميناً، ثم قطع إلى مكتبة مكونات واجهة بشريط جانبي تُمرَّر بطاقاتها حتى النهاية، بلا نصوص مضافة ولا صوت.",
   "summary_en": "An 11-second 4:3 screen-capture tour of white web interfaces: it pulls back from a launch-video gallery header into a card grid that scrolls upward continuously, hard-cuts to a split view with a list on the left and a detail drawer on the right, then hard-cuts to a UI component library with a sidebar whose cards scroll past to the end, with no added captions and no audio.",

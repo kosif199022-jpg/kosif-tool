@@ -1,6 +1,6 @@
 ---
 name: pm-donaldjewkes-063f3c
-description: A 2 min 21 s pop music video in a risograph print look on cream paper (orange, pink, navy, mustard, teal): a petal-haired heroine with a headset mic sings and dances with flower-headed characters through sunbursts, giant lyric words, charts and counters, with a small lyric strip bottom-left and a date stamp advancing from 2019 to 2026. Use to make a new video in this look (Music); address it by ID pm-donaldjewkes-063f3c.
+description: A 2 min 21 s pop music video in a risograph print look on cream paper (orange, pink, navy, mustard, teal): a petal-haired heroine with a headset mic sings and dances with flower-headed characters through sunbursts, giant lyric words, charts and counters, with a small lyric strip bottom-left and a date stamp advancing from 2019 to 2026. Use to make a new video in this look (Charts); address it by ID pm-donaldjewkes-063f3c.
 ---
 
 # KOSIF TOOL — Claude Pop: a mixed-workflow music video / فيديو كليب بوب بطباعة ريزوغراف لشخصية ذكاء اصطناعي
@@ -25,19 +25,27 @@ A 2 min 21 s pop music video in a risograph print look on cream paper (orange, p
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, HTML Canvas, Web Audio), suggested duration (142 s), aspect 16:9, difficulty 5/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Music / موسيقى, Characters / شخصيات, Kinetic type / تايبوغرافي متحرك, Hand-drawn / رسم يدوي, Charts / رسوم بيانية.
-- [playbooks/music.md](../../playbooks/music.md)
-- [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
-- [playbooks/hand-drawn.md](../../playbooks/hand-drawn.md)
+Categories: Charts / رسوم بيانية, Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك, Shapes / أشكال, Particles / جسيمات, Characters / شخصيات, Photos / صور, Music / موسيقى, Code / كود.
 - [playbooks/charts.md](../../playbooks/charts.md)
+- [playbooks/diagrams.md](../../playbooks/diagrams.md)
+- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+- [playbooks/shapes.md](../../playbooks/shapes.md)
+- [playbooks/particles.md](../../playbooks/particles.md)
+- [playbooks/characters.md](../../playbooks/characters.md)
+- [playbooks/photos.md](../../playbooks/photos.md)
+- [playbooks/music.md](../../playbooks/music.md)
+- [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
-* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
-* Order stroke draw-on like a human hand would; keep imperfection deliberate; pace reveals to narration.
 * Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
+* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
+* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Build a geometric system; morph only compatible paths; animate scale, squash and stretch, rotation and easing with controlled geometry.
+* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
+* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
+* Use original or licensed photos in layered camera rigs with planar parallax, dynamic masks and depth-aware transitions.
+* Cut and accent on measured beats; keep narration intelligible; duck music under voice; deliver at -14 LUFS.
+* Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

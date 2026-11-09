@@ -1,6 +1,6 @@
 ---
 name: pm-prasad-pilla-2c0cba
-description: A 15-second product promo on soft off-white: a black word-by-word headline with a lime-highlighted word over a dashed line jamming at an hourglass, a logo, four linked step cards lighting up in turn, a full lime wipe, a memory hub beside agent task bars, a verification loop beside a before/after strip, and a logo end card with underlined tagline. Use to make a new video in this look (Product UI); address it by ID pm-prasad-pilla-2c0cba.
+description: A 15-second product promo on soft off-white: a black word-by-word headline with a lime-highlighted word over a dashed line jamming at an hourglass, a logo, four linked step cards lighting up in turn, a full lime wipe, a memory hub beside agent task bars, a verification loop beside a before/after strip, and a logo end card with underlined tagline. Use to make a new video in this look (Charts); address it by ID pm-prasad-pilla-2c0cba.
 ---
 
 # KOSIF TOOL — Alan agent platform promo / إعلان منصة وكلاء برمجة بواجهة بيضاء هادئة ولمسات ليمونية
@@ -13,7 +13,7 @@ description: A 15-second product promo on soft off-white: a black word-by-word h
 - Published on source: 2026-09-26 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 22 words (not reproduced here)
-- Popularity rank on source library: #19
+- Popularity rank on source library: #157
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,15 +25,11 @@ A 15-second product promo on soft off-white: a black word-by-word headline with 
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (Remotion, React, SVG, CSS), suggested duration (15 s), aspect 16:9, difficulty 3/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Product UI / واجهات المنتج, Diagrams / مخططات, Kinetic type / تايبوغرافي متحرك.
-- [playbooks/product-ui.md](../../playbooks/product-ui.md)
-- [playbooks/diagrams.md](../../playbooks/diagrams.md)
-- [playbooks/kinetic-type.md](../../playbooks/kinetic-type.md)
+Categories: Charts / رسوم بيانية.
+- [playbooks/charts.md](../../playbooks/charts.md)
 
 Category tactics:
-* Recreate interface states as independent layers; animate meaningful cursor, tap, modal, scroll and focus interactions with consistent depth and realistic timings.
-* Reveal nodes in causal order; draw SVG edges with dash offsets; move the camera between relationships deliberately.
-* Animate readable words in timed beats; sync emphasis to spoken words; preserve Arabic shaping and RTL; never split joined letters.
+* Use truthful data; animate counters, bars, lines and chart morphs whose labels stay accurate; keep axes and legends readable; reveal one insight at a time.
 
 ## Original creative direction (التوجيه الإبداعي)
 Produce a NEW video from the user's own concept, voice or footage, inspired by this reference.

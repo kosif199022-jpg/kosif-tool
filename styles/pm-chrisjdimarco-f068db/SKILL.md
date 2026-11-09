@@ -1,6 +1,6 @@
 ---
 name: pm-chrisjdimarco-f068db
-description: An 18 s scene of a red-armoured samurai in glowing line art before a huge striped red sun between two fire braziers, chaining sword techniques that leave arcs and rings of fire and sparks, each move named in vertical Japanese characters top-right, ending in a flame burst with a giant translucent kanji. Use to make a new video in this look (Characters); address it by ID pm-chrisjdimarco-f068db.
+description: An 18 s scene of a red-armoured samurai in glowing line art before a huge striped red sun between two fire braziers, chaining sword techniques that leave arcs and rings of fire and sparks, each move named in vertical Japanese characters top-right, ending in a flame burst with a giant translucent kanji. Use to make a new video in this look (Code); address it by ID pm-chrisjdimarco-f068db.
 ---
 
 # KOSIF TOOL — Fiery samurai kata / ساموراي يؤدي كاتا بالسيف أمام شمس حمراء وسط النار والشرر
@@ -13,7 +13,7 @@ description: An 18 s scene of a red-armoured samurai in glowing line art before 
 - Published on source: 2026-09-24 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: other (1920×1292)
 - Creator's public prompt length: about 32 words (not reproduced here)
-- Popularity rank on source library: #262
+- Popularity rank on source library: #124
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
@@ -25,14 +25,10 @@ An 18 s scene of a red-armoured samurai in glowing line art before a huge stripe
 Read the full original brief in [BRIEF.md](BRIEF.md): proposed scenes, motion rules (ar/en), stack (HTML Canvas, SVG, React, Remotion), suggested duration (18.6 s), aspect 1920x1292, difficulty 4/5.
 
 ## Categories and playbooks (التصنيفات والدلائل)
-Categories: Characters / شخصيات, Particles / جسيمات, Code / كود.
-- [playbooks/characters.md](../../playbooks/characters.md)
-- [playbooks/particles.md](../../playbooks/particles.md)
+Categories: Code / كود.
 - [playbooks/code.md](../../playbooks/code.md)
 
 Category tactics:
-* Use consistent model sheets and rigs, key poses, anticipation and follow-through, readable expressions and walk cycles.
-* Use deterministic seeded particles with explicit emitters, fields, attraction and decay that carry story meaning, not decoration.
 * Write genuine time-varying vector, Canvas, React or WebGL motion; seed all randomness; never a slideshow of stills.
 
 ## Original creative direction (التوجيه الإبداعي)

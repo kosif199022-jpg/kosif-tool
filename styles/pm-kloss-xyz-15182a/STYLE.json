@@ -5,9 +5,10 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
     "product-ui",
-    "charts"
+    "characters",
+    "music",
+    "code"
   ],
   "creator": "@kloss_xyz",
   "creator_url": "https://x.com/kloss_xyz/status/2103664956482941143",
@@ -19,7 +20,7 @@
     "h": 1920
   },
   "aspect_label": "9:16",
-  "rank": 65,
+  "rank": 203,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -28,9 +29,10 @@
   "listed": true,
   "skill": "styles/pm-kloss-xyz-15182a/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
     "playbooks/product-ui.md",
-    "playbooks/charts.md"
+    "playbooks/characters.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
   ],
   "summary_ar": "فيديو عمودي طويل (نحو دقيقتين ونصف) يحكي فيه نموذج ذكاء اصطناعي بضمير المتكلم عمر محادثة واحدة، على خلفية سوداء تحت شريط علوي ثابت يعرض نسبة السياق المتزايدة وعداد الوقت ومؤشر بث أحمر: عناوين ضخمة مضغوطة بالكريمي والبرتقالي المحمر، أسطر سيريف مائلة، أعداد كبيرة، رموز نصية ملونة، أعمدة نسب مع أختام حمراء، شبكات بطاقات طلبات، تقويم، وومضات تشويش RGB، ثم تتحول الخلفية إلى برتقالي ثم ورق فاتح ثم رمادي حتى تنطفئ وتظهر شارة المنشئ.",
   "summary_en": "A 2.5-minute vertical first-person AI monologue on black under a fixed HUD with a filling context bar, timecode and live dot, mixing huge condensed cream and coral headlines, italic serif asides, counters, token chips, stamped poll bars, card grids and RGB glitches, then shifting to coral, paper and grey before fading out.",

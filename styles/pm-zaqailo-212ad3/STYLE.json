@@ -5,10 +5,8 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "kinetic-type",
-    "shapes",
-    "particles",
-    "3d"
+    "charts",
+    "kinetic-type"
   ],
   "creator": "@zaqailo",
   "creator_url": "https://x.com/zaqailo/status/2103768009017835623",
@@ -20,7 +18,7 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 238,
+  "rank": 100,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
@@ -29,10 +27,8 @@
   "listed": true,
   "skill": "styles/pm-zaqailo-212ad3/SKILL.md",
   "playbooks": [
-    "playbooks/kinetic-type.md",
-    "playbooks/shapes.md",
-    "playbooks/particles.md",
-    "playbooks/3d.md"
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md"
   ],
   "summary_ar": "ريل أفقي سريع (15 ثانية) لمصمم موشن داخل إطار واجهة بتوقيت ونبض إيقاع: نقطة حمراء تمتد خطاً على شبكة، كلمة عريضة على خلفية كريمية تتحول بإضافة حرف أحمر وتتكرر صفوفاً مفرغة، فسيفساء باوهاوس بالأحمر والأزرق والأصفر، جسيمات ذهبية تصير حلقة وشريطاً وكرة، كرة منخفضة المضلعات تتشظى، كتل سائلة بتدرج برتقالي أزرق، كلمات فصول على خلفيات ملونة، ثم الاسم مع نقطة حمراء.",
   "summary_en": "A fast 15-second landscape motion-designer reel in a HUD with timecode and BPM: a red dot stretches into a line, a bold word on cream gains a red letter and repeats in outlined rows, a red-blue-yellow Bauhaus mosaic, golden particles forming a ring and sphere, a shattering low-poly sphere, orange-to-blue metaballs, then the name with a red full stop.",
