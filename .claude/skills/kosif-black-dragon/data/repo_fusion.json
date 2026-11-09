@@ -1,0 +1,1332 @@
+{
+ "schema": "kosif.black_dragon.repo_fusion.v1",
+ "generated": "2026-11-10",
+ "method": "Each repository was shallow-cloned into an isolated folder and dissected with REA 6.8.0 (MCP analyze_javascript_application / inspect_artifact where they apply) plus manual reading of plain source; the most valuable new capabilities were re-implemented natively under scripts/fusion/ with self-tests. Upstream code is not executed or vendored.",
+ "status_levels": [
+  "source-linked",
+  "native-implemented"
+ ],
+ "repos": [
+  {
+   "owner_repo": "lemomo-ai/lemo-opuscar",
+   "url": "https://github.com/lemomo-ai/lemo-opuscar",
+   "license": "MIT",
+   "license_note": "permissive",
+   "verified_from": "https://github.com/lemomo-ai/lemo-opuscar@143f387ad774525dc9abc0ff05fb5f4bfbaa5f02",
+   "summary_ar": "مكتبة أساليب أفلام لوكلاء البرمجة: كل أسلوب معاه ملف تعليمات وفيلم تجريبي معمول بالكود بالكامل فوق عدة أدوات مشتركة (صفحة بترسم الفريم كدالة في الزمن وبتتصوّر فريم فريم في كروم مخفي، صوت راوي بفحص تفريغ، موسيقى من عينات وتركيب، مؤثرات صوتية مولّدة، وماستر صوت -14 LUFS على مرحلتين)، ومعاها منهج إخراج مكتوب وسكربتات فحص جودة (وقت القراءة، تطابق القطعات مع الموسيقى، تقرير الإيقاع، نعومة الكاميرا).",
+   "summary_en": "A library of film styles for coding agents: each style ships a STYLE.md prompt and a demo film made entirely in code on a shared toolkit (deterministic render(t) pages captured frame by frame in headless Chrome, Kokoro/edge-tts voice with a Whisper check, sampled and synthesized score, procedural foley, two-pass -14 LUFS mastering), plus a DIRECTOR.md method and per-demo QA scripts (reading time, cue check, rhythm report, camera smoothness).",
+   "module": "native_opuscar.py",
+   "report": "references/repo-fusion/lemo-opuscar.md",
+   "keywords": [
+    "rhythm",
+    "reading",
+    "subtitles",
+    "director",
+    "treatment",
+    "إيقاع",
+    "قراءة",
+    "ترجمة",
+    "إخراج"
+   ],
+   "capabilities": [
+    {
+     "id": "lemo-opuscar-rhythm-report",
+     "title_en": "Rhythm report of a finished film",
+     "title_ar": "تقرير إيقاع الفيلم النهائي",
+     "what": "Motion energy per frame, hard-cut spikes over a local median, flat 1-s windows, spectral-flux onsets, RMS per 0.5 s, near-silences, offset of every visual hit to the nearest audio onset",
+     "source_ref": "styles/briefing-board/demo/tools/rhythm_report.py:26",
+     "dragon_stage": "qa-color",
+     "status": "native-implemented",
+     "notes": "native_opuscar.py rhythm; scipy replaced by numpy median and peak code; adds pace-variation and silence flags"
+    },
+    {
+     "id": "lemo-opuscar-readcheck",
+     "title_en": "Script-aware reading-time check",
+     "title_ar": "فحص وقت قراءة النصوص",
+     "what": "Each on-screen text must stay fully in frame for CJK/4.5 + other/15 + 1.5 s (min 1.5); pass:true texts not timed; never-fully-visible text fails",
+     "source_ref": "core/render/readcheck.mjs:46",
+     "dragon_stage": "qa-color",
+     "status": "native-implemented",
+     "notes": "native port adds an Arabic rate (12 cps, harakat ignored), SRT input and the 4 s title rule"
+    },
+    {
+     "id": "lemo-opuscar-subtitle-hold-rule",
+     "title_en": "Subtitle hold rule",
+     "title_ar": "قاعدة مدة الترجمة",
+     "what": "Every cue >= 1.8 s and >= spoken part + 0.6 s",
+     "source_ref": "styles/briefing-board/demo/tools/subcheck.mjs:21",
+     "dragon_stage": "qa-color",
+     "status": "native-implemented",
+     "notes": "readcheck kind=subtitle and lint"
+    },
+    {
+     "id": "lemo-opuscar-director-lint",
+     "title_en": "Director treatment lint",
+     "title_ar": "فاحص المعالجة الإخراجية",
+     "what": "Hook <= 3 s, >= 4 camera moves, a signature shot, a why per shot, >= 2 silences, >= 2 J/L sound transitions, varied pace with a breath, title >= 4 s, a native move, not-the-demo-again >= 4/6 axes differ",
+     "source_ref": "DIRECTOR.md:35",
+     "dragon_stage": "concept",
+     "status": "native-implemented",
+     "notes": "rules from DIRECTOR.md sections 3, 4, 6, 7, 8, 11"
+    },
+    {
+     "id": "lemo-opuscar-two-pass-master",
+     "title_en": "Two-pass -14 LUFS master with true-peak loop",
+     "title_ar": "ماستر صوت على مرحلتين مع حماية الذروة",
+     "what": "Two-pass loudnorm with measured_* values, 192 kHz oversampled alimiter with latency compensation, audio-only re-encode until true peak <= -1 dBTP, damaged/truncated WAV detection, atomic output",
+     "source_ref": "core/render/mux.sh:46",
+     "dragon_stage": "deliver",
+     "status": "source-linked",
+     "notes": "Dragon already verifies loudness (verify_video.py); this adds the fix loop"
+    },
+    {
+     "id": "lemo-opuscar-render-t-contract",
+     "title_en": "Deterministic render(t) page contract and parallel capture",
+     "title_ar": "عقد الصفحة render(t) والتصوير المتوازي",
+     "what": "window.DUR/render(t)/READY/EV/TEXTS; N workers each with its own browser, JPEG screenshots piped to ffmpeg, segments joined losslessly, per-output lock",
+     "source_ref": "core/render/video.mjs:50",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": "Dragon has render-html/starter-html-canvas; the TEXTS(t) and EV exports are the new part"
+    },
+    {
+     "id": "lemo-opuscar-cue-check",
+     "title_en": "Score vs picture cue check",
+     "title_ar": "تطابق القطعات مع الموسيقى",
+     "what": "One timeline JSON (sections, bpm, beats, hits) read by score and picture; prints delta ms per cue, aim 0",
+     "source_ref": "styles/art-deco/demo/tools/cuecheck.py:16",
+     "dragon_stage": "shots",
+     "status": "source-linked",
+     "notes": "partly covered by the native rhythm alignment"
+    },
+    {
+     "id": "lemo-opuscar-camcheck",
+     "title_en": "Camera smoothness and reveal guard",
+     "title_ar": "فحص نعومة الكاميرا",
+     "what": "Samples window.CAM at 4x fps: screen speed, acceleration, jerk; fails on velocity jumps outside declared shakes, subjects leaving frame or entering the subtitle strip, or the whole set seen before the reveal",
+     "source_ref": "styles/briefing-board/demo/tools/camcheck.mjs:1",
+     "dragon_stage": "qa-color",
+     "status": "source-linked",
+     "notes": ""
+    },
+    {
+     "id": "lemo-opuscar-procedural-foley",
+     "title_en": "Procedural foley kit",
+     "title_ar": "مؤثرات صوتية مولّدة",
+     "what": "numpy/scipy click, clack, whoosh, thump, ding, pop, rumble, heartbeat, radio, plus compress, look-ahead limit and equal-power add(buf, x, at, gain, pan)",
+     "source_ref": "core/audio/sfx.py:23",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": ""
+    },
+    {
+     "id": "lemo-opuscar-sampler",
+     "title_en": "Sampled-instrument score renderer",
+     "title_ar": "مشغّل الآلات من العينات",
+     "what": "Events (time, instrument, pitch, dur, vel, pan) to audio from VSCO2CE/VCSL/FreePats/Salamander with round-robin, seamless note extension, room reverb, credits()",
+     "source_ref": "core/audio/sampler.py:570",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": "needs sample packs via tools/fetch.sh"
+    },
+    {
+     "id": "lemo-opuscar-asr-voice-check",
+     "title_en": "TTS line ASR check with number normalisation",
+     "title_ar": "فحص صوت الراوي بالتفريغ",
+     "what": "faster-whisper per line; English word match with numbers spelled; CJK by character similarity with numbers compared by value; writes word timings",
+     "source_ref": "core/tts/asr_check.py:149",
+     "dragon_stage": "qa-color",
+     "status": "source-linked",
+     "notes": "the number-by-value idea is reusable for Arabic numerals"
+    },
+    {
+     "id": "lemo-opuscar-motion-lib",
+     "title_en": "Deterministic easing and monotone keyframes",
+     "title_ar": "مكتبة الحركة الحتمية",
+     "what": "mulberry seeded RNG, hash, vnoise, ss/eio/eo/ei/back/spring easing, Fritsch-Carlson monotone cubic, multi-dim track(), env envelope",
+     "source_ref": "core/lib.js:18",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": "Dragon motion-toolkit covers most; monotone track() is the useful part"
+    },
+    {
+     "id": "lemo-opuscar-pacing-rules",
+     "title_en": "Director pacing rules",
+     "title_ar": "قواعد الإيقاع الإخراجية",
+     "what": "Hold text letters/15 + 1.5 s, title 4 s, subtitle 1.8 s; two silences before the peak; J/L cut twice; one breath and one acceleration",
+     "source_ref": "DIRECTOR.md:75",
+     "dragon_stage": "brief",
+     "status": "native-implemented",
+     "notes": "folded into lint and readcheck"
+    }
+   ]
+  },
+  {
+   "owner_repo": "Vincentwei1021/video-shotcraft",
+   "url": "https://github.com/Vincentwei1021/video-shotcraft",
+   "license": "Apache-2.0",
+   "license_note": "permissive",
+   "verified_from": "https://github.com/Vincentwei1021/video-shotcraft@3ac67b75dd0b3bc2fd807c17f6b7ce35373eef3d",
+   "summary_ar": "مهارة لـ Claude Code وCodex بتعمل فيديوهات دعاية سينمائية لمنتجات الويب بـ Remotion: فيها 124 كارت وصفة لقطات معاها كود TSX متظبط، وقالب جاهز اسمه Ink Press، وطريقة لضبط القطعات على إيقاع الموسيقى، وجلب مؤثرات صوتية من Freesound، وهيكل منحنى طاقة للستوري بورد، وقائمة مراجعة نهائية مستقلة، وورشة تعديل شبه جيانيينج، وتصدير الفيلم النهائي لمشروع جيانيينج (CapCut الصيني) قابل للتعديل.",
+   "summary_en": "Claude Code / Codex skill for cinematic web-product promos in Remotion: 124 shot recipe cards with tuned TSX demos, a finished Ink Press template, a beat-grid sync method, Freesound SFX sourcing, an energy-arc storyboard skeleton, an independent final-review checklist, a JianYing-style Motion Workbench and an export of the finished film into an editable JianYing (CapCut CN) draft.",
+   "module": "native_shotcraft.py",
+   "report": "references/repo-fusion/video-shotcraft.md",
+   "keywords": [
+    "beat",
+    "grid",
+    "capcut",
+    "jianying",
+    "promo",
+    "sfx",
+    "arc",
+    "كاب كات",
+    "جيانيينج",
+    "إيقاع",
+    "مؤثرات"
+   ],
+   "capabilities": [
+    {
+     "id": "shotcraft-jianying-plan",
+     "title_en": "JianYing draft timeline planner",
+     "title_ar": "مخطط تايملاين مشروع جيانيينج",
+     "what": "Frame timeline to microsecond plate cuts (start and end rounded separately so adjacent segments never gap or overlap), merged cross-shot captions, one text track per language, greedy SFX lanes, CSS px to JianYing size / transform_y / float colour.",
+     "source_ref": "jianying-export/aifl_promo.py:37,108-116,141-153; references/jianying-export.md:77-79,136-146",
+     "dragon_stage": "deliver",
+     "status": "native-implemented",
+     "notes": "native_shotcraft.py jy-plan"
+    },
+    {
+     "id": "shotcraft-jianying-builder",
+     "title_en": "pyJianYingDraft builder generator",
+     "title_ar": "مولّد سكربت بناء مشروع جيانيينج",
+     "what": "Emits a runnable pyJianYingDraft 0.3.x script from the plan (tracks: plate, BGM, captions per language, SFX lanes).",
+     "source_ref": "references/jianying-export.md:81-134",
+     "dragon_stage": "deliver",
+     "status": "native-implemented",
+     "notes": "native_shotcraft.py jy-script; pyJianYingDraft needed in a venv, not vendored"
+    },
+    {
+     "id": "shotcraft-jianying-install-win",
+     "title_en": "Safe Windows JianYing draft installer",
+     "title_ar": "مثبّت آمن لمشروع جيانيينج على ويندوز",
+     "what": "Refuses traversal names and runs only when JianyingPro.exe is closed; bundles media into Resources/ with NFC+casefold unique names; moves an old draft into a nested trash dir; rolls back on failure; verifies media live inside the draft.",
+     "source_ref": "jianying-export/windows_draft.py:47-61,86-126,129-167",
+     "dragon_stage": "deliver",
+     "status": "native-implemented",
+     "notes": "native_shotcraft.py jy-install; upstream unverified on real Windows JianYing"
+    },
+    {
+     "id": "shotcraft-beat-grid",
+     "title_en": "Beat-grid fit with acceptance gates",
+     "title_ar": "تظبيط شبكة الإيقاع مع بوابات قبول",
+     "what": "Least-squares t_i = t0 + i*T over beat_track times; candidates 0.5x/1x/2x and half-beat phase scored by transient match, mean abs error, drift, first-beat validity and kick-on-beat x kick-fill; kick/snare/hihat hit table.",
+     "source_ref": "references/music-beat-sync.md:36-56,74-90,112-136",
+     "dragon_stage": "shots",
+     "status": "native-implemented",
+     "notes": "native_shotcraft.py beatgrid; phase candidates and kick_fill are our additions"
+    },
+    {
+     "id": "shotcraft-av-offset",
+     "title_en": "Rendered-audio lag measurement",
+     "title_ar": "قياس تأخير صوت الرندر",
+     "what": "Cross-correlates source vs rendered audio to measure encoder-priming lag; the value belongs in an output-offset constant, never in the source t0.",
+     "source_ref": "references/sound-design.md:101-135",
+     "dragon_stage": "qa-color",
+     "status": "native-implemented",
+     "notes": "native_shotcraft.py av-offset"
+    },
+    {
+     "id": "shotcraft-sfx-peak",
+     "title_en": "SFX internal-peak alignment",
+     "title_ar": "ضبط المؤثر على ذروته",
+     "what": "Finds an SFX internal peak so the peak, not the file head, lands on the target beat frame.",
+     "source_ref": "references/sound-design.md:101-110; references/music-beat-sync.md:166-168",
+     "dragon_stage": "produce",
+     "status": "native-implemented",
+     "notes": "native_shotcraft.py sfx-peak"
+    },
+    {
+     "id": "shotcraft-energy-arc",
+     "title_en": "Promo energy-arc frame budget",
+     "title_ar": "ميزانية فريمات منحنى الطاقة",
+     "what": "Brand open (low), single hero arc, alternating feature climb with breath title cards, peak finale; hold frames reserved before animation.",
+     "source_ref": "references/sequences/promo-energy-arc.md:1-60",
+     "dragon_stage": "shots",
+     "status": "native-implemented",
+     "notes": "native_shotcraft.py arc; shares are a single-example default"
+    },
+    {
+     "id": "shotcraft-shot-cards",
+     "title_en": "124 shot recipe cards",
+     "title_ar": "124 كارت وصفة لقطات",
+     "what": "Frontmatter (one-liner, use, duration, energy, tag) plus intent, motion core, pitfalls, tuned parameters and a pointer to an exact TSX demo; index at gallery/api/library.json.",
+     "source_ref": "references/shots/**/*.md; gallery/api/library.json; demos/**",
+     "dragon_stage": "concept",
+     "status": "source-linked",
+     "notes": "Recipe vocabulary for Remotion/HyperFrames; Chinese text"
+    },
+    {
+     "id": "shotcraft-aesthetic-rules",
+     "title_en": "Aesthetic rules R/Q/S/C/P",
+     "title_ar": "قواعد الجماليات",
+     "what": "Hold >= 1 s after key info, slow by default, full-frame beat impacts <= 3 per film and >= 16 beats apart, one technique leads once.",
+     "source_ref": "references/aesthetic-rules.md:21-44",
+     "dragon_stage": "qa-color",
+     "status": "source-linked",
+     "notes": "Good fit for Dragon judgment checks"
+    },
+    {
+     "id": "shotcraft-final-review",
+     "title_en": "Independent final-review checklist",
+     "title_ar": "قائمة المراجعة النهائية المستقلة",
+     "what": "Clean-context subagent checks product goal, features, visual direction, shot-card fidelity, storyboard, data safety, audio/rhythm and technical quality with frame-numbered evidence.",
+     "source_ref": "references/final-review.md:7-121",
+     "dragon_stage": "qa-color",
+     "status": "source-linked",
+     "notes": ""
+    },
+    {
+     "id": "shotcraft-sfx-freesound",
+     "title_en": "Freesound SFX sourcing with license policy",
+     "title_ar": "جلب مؤثرات Freesound مع سياسة الرخص",
+     "what": "Search and download Freesound previews, CC0 by default and CC BY optional, host-pinned URLs, credits file, hashes and loudness measurement.",
+     "source_ref": "assets/scripts/sfx-source.py:173-415",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": "Dragon already has a CC0 sound sprite (APP-26); this adds the Freesound policy"
+    },
+    {
+     "id": "shotcraft-motion-helpers",
+     "title_en": "Deterministic motion helpers",
+     "title_ar": "دوال حركة حتمية",
+     "what": "mulberry32 PRNG, handheld layered-sine drift, velocityAt central difference, lagged follow-through, dampedSettle recoil.",
+     "source_ref": "assets/lib/helpers/motion.ts:1-40; assets/lib/helpers/rand.ts:1-11; assets/lib/helpers/shake.ts:1-10",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": "Tiny TS, easy to copy into Remotion projects"
+    },
+    {
+     "id": "shotcraft-plate-render",
+     "title_en": "Plate render gating",
+     "title_ar": "رندر البليت النظيف",
+     "what": "inputProp plate=true hides captions, SFX and BGM so the baked plate can be cut per shot in an NLE.",
+     "source_ref": "references/jianying-export.md:29-52",
+     "dragon_stage": "deliver",
+     "status": "source-linked",
+     "notes": "Remotion-side pattern"
+    },
+    {
+     "id": "shotcraft-workbench",
+     "title_en": "Motion Workbench (multi-track post editor)",
+     "title_ar": "ورشة الحركة",
+     "what": "Vite + React + Remotion app: imports a finished project, splits shot/transition/caption/SFX tracks, edits props, exports.",
+     "source_ref": "workbench/README.md; workbench/src/",
+     "dragon_stage": "deliver",
+     "status": "source-linked",
+     "notes": "Heavy npm app; link only"
+    }
+   ]
+  },
+  {
+   "owner_repo": "patch-gg/pixelfx",
+   "url": "https://github.com/patch-gg/pixelfx",
+   "license": "MIT",
+   "license_note": "permissive",
+   "verified_from": "https://github.com/patch-gg/pixelfx@044e12a45dc9cc312cec50ee606dfc98afe5adc2",
+   "summary_ar": "مكتبة JavaScript من غير أي اعتماديات فيها حوالي 244 مؤثر بكسل آرت مرسوم بالكود (نار، انفجارات، تلج، برق، انتقالات، طقس، واجهات). كل مؤثر بيترسم في طبقتين: طبقة لون بكسلاتها متدرّجة بدِثر Bayer، وطبقة ضوء بتتجمع فوقها. وفيها محاكاة جسيمات بتشتغل على 120 هرتز، وباليتات ألوان بدرجات مايلة في اللون، وتجميد لحظة الضربة مع الاهتزاز، وتصدير sprite sheet، ومهارة لـ Claude Code ماشية بدورة: مسودة ثم رندر ثم بص ثم حسّن.",
+   "summary_en": "Dependency-free JS library of ~244 procedural pixel-art VFX (fire, explosions, ice, lightning, transitions, weather, UI) drawn into a colour buffer (Bayer-dithered pixels) plus an additive light buffer, with a 120 Hz particle sim, hue-shifted palette ramps, hit-stop acting, sprite-sheet export and a Claude Code draft-render-look-refine skill.",
+   "module": "native_pixelfx.py",
+   "report": "references/repo-fusion/pixelfx.md",
+   "keywords": [
+    "pixel",
+    "vfx",
+    "explosion",
+    "fire",
+    "hitstop",
+    "impact",
+    "retro",
+    "بكسل",
+    "انفجار",
+    "نار",
+    "ضربة",
+    "ريترو"
+   ],
+   "capabilities": [
+    {
+     "id": "pixelfx-color-light-composite",
+     "title_en": "Colour + additive light two-buffer composite",
+     "title_ar": "دمج طبقة لون وطبقة ضوء بتتجمع فوقها",
+     "what": "Effects draw opaque/dithered pixels into a colour buffer and glow into a light buffer; composite adds light over footage, or over transparency turns light into premultiplied colour with alpha = brightest channel.",
+     "source_ref": "src/core/fx.js:187",
+     "dragon_stage": "produce",
+     "status": "native-implemented",
+     "notes": "native_pixelfx.py composite(); self-test checks alpha from light."
+    },
+    {
+     "id": "pixelfx-bayer-alpha",
+     "title_en": "Ordered-dither alpha for pixel fades",
+     "title_ar": "شفافية بالدِثر المرتب بدل المزج",
+     "what": "Pixels at alpha < 1 are drawn only where alpha exceeds the 4x4 Bayer threshold, keeping hard pixel-art edges.",
+     "source_ref": "src/core/painter.js:10",
+     "dragon_stage": "produce",
+     "status": "native-implemented",
+     "notes": "Frame.dot(); Dragon already has Bayer fades in fam_pixel_retro_stylized.py, this is the per-pixel draw variant."
+    },
+    {
+     "id": "pixelfx-particle-kinds",
+     "title_en": "Pixel-art particle physics (spark, fire, smoke, ember)",
+     "title_ar": "فيزياء جسيمات بكسل آرت (شرار، نار، دخان، جمر)",
+     "what": "Sparks streak and bounce off the floor, fire puffs cool down a ramp and leave smoke, smoke is three soft discs, embers drift and flicker.",
+     "source_ref": "src/core/sim.js:31",
+     "dragon_stage": "produce",
+     "status": "native-implemented",
+     "notes": "Particles class + presets explosion/sparks/campfire/embers in native_pixelfx.py fx."
+    },
+    {
+     "id": "pixelfx-fixed-substep",
+     "title_en": "120 Hz fixed simulation substeps",
+     "title_ar": "خطوات محاكاة ثابتة 120 هرتز",
+     "what": "Simulations step at 120 Hz or finer whatever the output fps, so renders match across frame rates.",
+     "source_ref": "src/core/fx.js:153",
+     "dragon_stage": "produce",
+     "status": "native-implemented",
+     "notes": "Particles.update()."
+    },
+    {
+     "id": "pixelfx-palette-ramps",
+     "title_en": "Hue-shifted palette ramps and no-blend ramp mapping",
+     "title_ar": "باليتات متدرجة بإزاحة لونية وتلوين على درجات من غير مزج",
+     "what": "28 dark-to-bright ramps whose shadows lean cool and highlights warm; fit() resamples a ramp keeping its ends; at() picks a step without blending.",
+     "source_ref": "src/core/color.js:37",
+     "dragon_stage": "color-design",
+     "status": "native-implemented",
+     "notes": "PAL subset + ramp-map subcommand (luma -> ramp with Bayer dither); --palette recolours fire."
+    },
+    {
+     "id": "pixelfx-hitstop",
+     "title_en": "Hit-stop freeze with decaying shake and 12 fps holds",
+     "title_ar": "تجميد لحظة الضربة مع اهتزاز بيهدى ولقطات ثابتة على 12 فريم",
+     "what": "At a hit, time stands still for a few frames while the picture shakes with sin/cos jitter on 60 Hz steps that decays to zero; poses hold on 12 fps beats.",
+     "source_ref": "src/core/act.js:239",
+     "dragon_stage": "produce",
+     "status": "native-implemented",
+     "notes": "hitstop subcommand on real footage, --step 12 for animated-on-twos."
+    },
+    {
+     "id": "pixelfx-impact-frame",
+     "title_en": "Anime impact frame",
+     "title_ar": "فريم صدمة أنمي",
+     "what": "Two frames of ink-on-paper burst, two inverted, then burst lines pulling out past the edges.",
+     "source_ref": "src/fx/impacts/impact-frame.js:16",
+     "dragon_stage": "produce",
+     "status": "native-implemented",
+     "notes": "hitstop --impact applies 2 two-tone + 2 inverted frames to footage (burst lines not ported)."
+    },
+    {
+     "id": "pixelfx-sprite-sheet",
+     "title_en": "Aseprite-style sprite sheet export",
+     "title_ar": "تصدير sprite sheet بصيغة Aseprite",
+     "what": "Transparent frames in a grid plus JSON with frame rects, frameTags, fps and pivot, readable by Phaser, Godot and Unity importers.",
+     "source_ref": "tools/lib/fxlib.mjs:221",
+     "dragon_stage": "deliver",
+     "status": "native-implemented",
+     "notes": "fx --sheet."
+    },
+    {
+     "id": "pixelfx-field-wipe",
+     "title_en": "Level-set field wipes",
+     "title_ar": "انتقالات بحدود مجال قياسي",
+     "what": "Any scalar field over the screen plus inverse-gradient distance and a sorted pixel order gives shaped wipes with an even-width glowing edge.",
+     "source_ref": "src/fx/transitions/_lib.js:121",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": "Good next port: generic shaped transition between two clips."
+    },
+    {
+     "id": "pixelfx-pixel-dissolve",
+     "title_en": "Clumped pixel dissolve",
+     "title_ar": "تحلّل بكسلات متجمّع",
+     "what": "Mixed-size blocks (20/10/5 px) wink in and out at times ranked from fbm noise, so they gather in growing patches, with glints.",
+     "source_ref": "src/fx/transitions/pixel-dissolve.js:222",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": ""
+    },
+    {
+     "id": "pixelfx-crt-off",
+     "title_en": "CRT off/on transition",
+     "title_ar": "انتقال قفل وفتح شاشة CRT",
+     "what": "Picture squeezes into a white-hot humming line, then a dot afterglow; switching on reverses it with a warm-up refresh band.",
+     "source_ref": "src/fx/transitions/crt-off.js:17",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": "Dragon has a CRT look (ffmpeg); this is the timed on/off transition."
+    },
+    {
+     "id": "pixelfx-loop-noise",
+     "title_en": "Tileable and looping noise for seamless loops",
+     "title_ar": "ضوضاء بتتكرر من غير فواصل علشان اللوبات",
+     "what": "tileNoise/tileFbm repeat every N cells so a scrolled field loops without a seam; loopNoise samples a circle so phase 0 equals phase 1.",
+     "source_ref": "src/core/math.js:129",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": ""
+    },
+    {
+     "id": "pixelfx-effect-lint",
+     "title_en": "VFX lint: seams, off-canvas, unseeded randomness",
+     "title_ar": "فاحص مؤثرات: الفواصل والرسم برا الكانفاس والعشوائية من غير seed",
+     "what": "Checks effects for missing meta, pixels outside the canvas, one-shots that don't end empty, loops with a seam, Math.random use and slow frames.",
+     "source_ref": "tools/check.mjs:1",
+     "dragon_stage": "qa-color",
+     "status": "source-linked",
+     "notes": "Idea transferable to Dragon motion QA."
+    },
+    {
+     "id": "pixelfx-claude-skill-loop",
+     "title_en": "Draft-render-look-refine VFX skill",
+     "title_ar": "مهارة مؤثرات بدورة مسودة ثم رندر ثم بص ثم تحسين",
+     "what": "Claude Code skill: find an existing effect first, re-option it (palette, seed, flip), else draft a new one, render a contact sheet, look at it, refine.",
+     "source_ref": "skills/pixelfx/SKILL.md:1",
+     "dragon_stage": "concept",
+     "status": "source-linked",
+     "notes": "Method credit Hugo Duprez (Sprite Fusion)."
+    }
+   ]
+  },
+  {
+   "owner_repo": "JohnHeibel/ClaudeAnimationBase",
+   "url": "https://github.com/JohnHeibel/ClaudeAnimationBase",
+   "license": "MIT",
+   "license_note": "permissive",
+   "verified_from": "https://github.com/JohnHeibel/ClaudeAnimationBase@0ac8bf2b31942376cb6b8c4074715595d512acd2",
+   "summary_ar": "عدّة ودليل مكتوب للوكيل يعمل كرتون قصير مرسوم باليد بفرشاة p5.brush: كل فريم دالة نقية في الزمن، والخطوط بتترعش (boil) 12 رسمة في الثانية من بذرة ثابتة لكل عنصر، ومساعدات تمثيل جاهزة (مشاعر بتمهيد ورد فعل، نطّ، سوست، أقواس، لفّ بمناظر مرسومة)، وريندر بكروم مخفي بيطلّع شيت لقطات، وشريط لكل فريم، وقصّ بيتبع نقطة في المشهد، وفريمات بالتوازي تكمل من مكان ما وقفت.",
+   "summary_en": "A kit and written guide for agents to make short hand-painted 2D cartoons in p5.brush: every frame is a pure function of time, linework 'boils' at 12 drawings a second from per-element seeds, acting helpers (emotions with anticipation and takes, jumps, springs, arcs, turns through drawn key views) are closed-form, and a puppeteer-core renderer produces contact sheets, every-frame strips, camera-following crops and parallel, resumable, atomic JPEG frames encoded by ffmpeg.",
+   "module": "native_cab.py",
+   "report": "references/repo-fusion/ClaudeAnimationBase.md",
+   "keywords": [
+    "reads",
+    "storyboard",
+    "boil",
+    "cartoon",
+    "determinism",
+    "frames",
+    "كرتون",
+    "ستوري",
+    "رسوم"
+   ],
+   "capabilities": [
+    {
+     "id": "cab-reads-timing-lint",
+     "title_en": "Viewer 'reads' timing sheet and lint",
+     "title_ar": "جدول «القراءات» وفحص التوقيت من عين المشاهد",
+     "what": "Storyboard format where each shot lists timed reads (what the viewer must understand); checks one read at a time, enough time per read (longer for small/far/fast/subtle), no dead stretch, final read held, transition at every seam, no text.",
+     "source_ref": "ANIMATION_GUIDE.md:49-59, 115-141, 447-461",
+     "dragon_stage": "shots",
+     "status": "native-implemented",
+     "notes": "native_cab.py reads-lint; duration thresholds are our heuristic, the guide gives rules not numbers."
+    },
+    {
+     "id": "cab-boil-seed",
+     "title_en": "Per-element boil seeding (stable hand-drawn wobble)",
+     "title_ar": "بذرة رعشة لكل عنصر (رعشة يدوية ثابتة)",
+     "what": "Linework re-randomised 12x/s; each element reseeds from FNV-1a(key|boilIndex) so a moving element cannot shift the random stream of still ones.",
+     "source_ref": "src/core.js:19-26, 288",
+     "dragon_stage": "produce",
+     "status": "native-implemented",
+     "notes": "native_cab.py seed reproduces the JS hash bit-exactly (verified with node)."
+    },
+    {
+     "id": "cab-boil-audit",
+     "title_en": "Boil jitter and freeze audit on rendered frames",
+     "title_ar": "فحص رعشة الخطوط والتجميد في الفريمات",
+     "what": "QA check derived from the guide's strip review: within a boil drawing, still regions must not change; compares same-boil vs cross-boil pixel change and finds frozen stretches.",
+     "source_ref": "ANIMATION_GUIDE.md:194, 231-234, 435",
+     "dragon_stage": "qa-color",
+     "status": "native-implemented",
+     "notes": "Upstream only describes a visual check; the measurement is ours."
+    },
+    {
+     "id": "cab-pure-frame-contract",
+     "title_en": "Frames as pure functions of time + determinism check",
+     "title_ar": "الفريم دالة نقية في الزمن + فحص الثبات",
+     "what": "Shot fn(t, lt, dur) paints the whole frame with no carried state, so frames render in parallel and out of order; shots() picks the active shot by start time.",
+     "source_ref": "src/timeline.js:1-50; ANIMATION_GUIDE.md:227-237",
+     "dragon_stage": "produce",
+     "status": "native-implemented",
+     "notes": "native_cab.py same compares two renders frame by frame (proves the contract was kept)."
+    },
+    {
+     "id": "cab-resumable-parallel-frames",
+     "title_en": "Parallel, resumable, atomic frame rendering",
+     "title_ar": "ريندر فريمات بالتوازي، يكمّل بعد الانقطاع، وكتابة آمنة",
+     "what": "N headless pages pull the next missing frame; frames <1000 bytes count as missing; each written to .tmp then renamed; ETA log; separate ffmpeg encode with optional audio.",
+     "source_ref": "render.mjs:116-136, 45-53",
+     "dragon_stage": "deliver",
+     "status": "native-implemented",
+     "notes": "native_cab.py todo ports the missing-frame logic; worker pool itself stays upstream (puppeteer)."
+    },
+    {
+     "id": "cab-review-sheets",
+     "title_en": "Contact sheet, every-frame strip and world-point-following crop",
+     "title_ar": "شيت لقطات، شريط كل فريم، وقصّ بيتبع نقطة في العالم",
+     "what": "renderSheet renders chosen times or every frame in a span into a labelled grid; crop = fixed region at full res; crop-at maps a world point through each frame's camera (toScreen with LAST_CAM) to follow a foot or prop.",
+     "source_ref": "src/core.js:302-317; render.mjs:88-96",
+     "dragon_stage": "qa-color",
+     "status": "source-linked",
+     "notes": "Crop-at needs the scene camera, so it belongs inside the renderer, not a post tool. video-eyes covers plain strips."
+    },
+    {
+     "id": "cab-gpu-angle-select",
+     "title_en": "Headless Chrome GPU backend selection and probe",
+     "title_ar": "اختيار كارت الشاشة لكروم المخفي وفحصه",
+     "what": "Per-OS ANGLE flags (d3d11/metal/angle), --soft-gl SwiftShader, --gpu-angle vulkan|gl-egl for headless NVIDIA Linux; gpu_probe prints the unmasked WebGL renderer per flag set.",
+     "source_ref": "render.mjs:55-68; gpu_probe.mjs:1-30",
+     "dragon_stage": "deliver",
+     "status": "source-linked",
+     "notes": "Our cartoon kit hard-codes SwiftShader (3-10 s/frame); d3d11 on this Windows box should be much faster."
+    },
+    {
+     "id": "cab-acted-emotions",
+     "title_en": "Acted emotion changes (anticipation, squint, take, overshoot)",
+     "title_ar": "تغيير المشاعر بالتمثيل (تمهيد، تغميض، رد فعل، تجاوز)",
+     "what": "emotions(t, keys) wraps each mood change in anticipation squash, face swap under a squint, a take scaled per emotion, overshoot settle and colour cross-fade; 31 emotions each with beat-locked idle body motion.",
+     "source_ref": "src/clawd.js:542 (EMO), :578 (feel), :589 (emotions); ANIMATION_GUIDE.md:355-377",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": "Pattern is portable to any rig: never swap faces between two frames."
+    },
+    {
+     "id": "cab-closed-form-acting",
+     "title_en": "Closed-form acting primitives",
+     "title_ar": "حركات تمثيل جاهزة بمعادلات مغلقة",
+     "what": "jump (crouch, stretch, arc, squash-land), take, stroll, spring/ring damped follow-through, arcPt, onTwos, pulse/beatN beat lock, kf keyframes.",
+     "source_ref": "src/core.js:28-84",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": "motion-toolkit already has easing/keyframes/jitter; jump/take/spring/ring/onTwos are the new pieces."
+    },
+    {
+     "id": "cab-brush-wipe-iris",
+     "title_en": "Painted brush-wipe and shaped iris transitions",
+     "title_ar": "انتقال مسحة فرشاة وقزحية بشكل",
+     "what": "brushWipe(p): 5 staggered ragged strokes cover (0-.5) then drag off (.5-1), cut under full cover; irisShape paints outside any polygon (star, keyhole).",
+     "source_ref": "src/timeline.js:357-380; src/core.js:117-127",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": "Needs p5.brush for the painted look."
+    },
+    {
+     "id": "cab-paper-grain-glow",
+     "title_en": "Paper texture, multiplied grain and additive glow over pigment",
+     "title_ar": "خامة ورق، حبيبات بالضرب، وتوهّج مضاف فوق الألوان",
+     "what": "Seeded LCG paper (stains + fibres) under the frame, grain+vignette multiplied on top, glow() as the one additive mark because pigment mixing turns yellow-on-blue green.",
+     "source_ref": "src/core.js:99-116, 246-265, 293-300",
+     "dragon_stage": "color-design",
+     "status": "source-linked",
+     "notes": "Cheap look recipe portable to any canvas renderer."
+    },
+    {
+     "id": "cab-guide-rules",
+     "title_en": "Agent animation rulebook and common-failures checklist",
+     "title_ar": "كتاب قواعد التحريك للوكيل وقائمة الأخطاء الشائعة",
+     "what": "Three goals (handmade, alive, one piece), 7 rules, 11 animation principles incl. avoid twinning, review budget, 15 common failures of generated animation.",
+     "source_ref": "ANIMATION_GUIDE.md:15-110, 169-200, 423-441",
+     "dragon_stage": "brief",
+     "status": "source-linked",
+     "notes": "Text rules; the no-text rule must yield to Arabic kinetic-type briefs."
+    }
+   ]
+  },
+  {
+   "owner_repo": "ahujasid/mcp-for-blender",
+   "url": "https://github.com/ahujasid/mcp-for-blender",
+   "license": "MIT",
+   "license_note": "permissive (separate TERMS_AND_CONDITIONS.md is a telemetry/privacy policy, opt-in; do not install its addon)",
+   "verified_from": "https://github.com/ahujasid/mcp-for-blender@2e4b0bc294694b1570d76ed01be657c22e6d02a0",
+   "summary_ar": "خادم MCP مع إضافة بلندر بتسمح للذكاء الاصطناعي يفحص المشهد وينفذ أكواد bpy ويلقط صور للـ viewport وينزّل أصول من Poly Haven وSketchfab وPoly Pizza ومولدات 3D بالذكاء الاصطناعي.",
+   "summary_en": "MCP server plus Blender GUI addon that lets an AI inspect scenes, run bpy code, take viewport looks and pull assets from Poly Haven, Sketchfab, Poly Pizza and AI generators (Tripo, Hunyuan3D, Hyper3D, Meshy).",
+   "module": "native_blender_audit.py",
+   "report": "references/repo-fusion/mcp-for-blender.md",
+   "keywords": [
+    "blender",
+    "3d",
+    "scene",
+    "mesh",
+    "hdri",
+    "polyhaven",
+    "بلندر",
+    "مشهد",
+    "ثلاثي"
+   ],
+   "capabilities": [
+    {
+     "id": "mcpblender-scene-audit",
+     "title_en": "Scene audit: size and ground contact",
+     "title_ar": "فحص المشهد: المقاس وملامسة الأرض",
+     "what": "Per-object real size and on-ground/floating/below judgement",
+     "source_ref": "src/blender_mcp/blender_scripts.py:61",
+     "dragon_stage": "qa-color",
+     "status": "native-implemented",
+     "notes": "native_blender_audit.py audit"
+    },
+    {
+     "id": "mcpblender-mesh-topology",
+     "title_en": "Mesh topology health",
+     "title_ar": "سلامة الشبكة",
+     "what": "quads/tris/ngons, non-manifold, loose verts, poles",
+     "source_ref": "src/blender_mcp/blender_scripts.py:123",
+     "dragon_stage": "qa-color",
+     "status": "native-implemented",
+     "notes": ""
+    },
+    {
+     "id": "mcpblender-weight-check",
+     "title_en": "Armature weight check",
+     "title_ar": "فحص أوزان الهيكل",
+     "what": "unweighted verts and deform bones without groups",
+     "source_ref": "src/blender_mcp/blender_scripts.py:140",
+     "dragon_stage": "qa-color",
+     "status": "native-implemented",
+     "notes": ""
+    },
+    {
+     "id": "mcpblender-polyhaven-search",
+     "title_en": "Poly Haven search with real sizes",
+     "title_ar": "بحث Poly Haven بالمقاسات الحقيقية",
+     "what": "rank by downloads, dimensions, resolve files by res/format",
+     "source_ref": "src/blender_mcp/server.py:889",
+     "dragon_stage": "shots",
+     "status": "native-implemented",
+     "notes": "CC0"
+    },
+    {
+     "id": "mcpblender-import-normalise",
+     "title_en": "Post-import normalisation recipe",
+     "title_ar": "ضبط الموديل بعد الاستيراد",
+     "what": "scale from bbox, drop to ground, face -Y",
+     "source_ref": "src/blender_mcp/guides/scene.md:30",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": ""
+    },
+    {
+     "id": "mcpblender-asset-source-guide",
+     "title_en": "Asset source decision guide",
+     "title_ar": "دليل اختيار مصدر الأصل",
+     "what": "generate vs PolyHaven vs Sketchfab vs Poly Pizza",
+     "source_ref": "src/blender_mcp/guides/scene.md:20",
+     "dragon_stage": "concept",
+     "status": "source-linked",
+     "notes": ""
+    },
+    {
+     "id": "mcpblender-sketchfab-polypizza",
+     "title_en": "Sketchfab and Poly Pizza import",
+     "title_ar": "استيراد من Sketchfab وPoly Pizza",
+     "what": "search/download with licence and face count",
+     "source_ref": "src/blender_mcp/server.py:1095",
+     "dragon_stage": "shots",
+     "status": "source-linked",
+     "notes": "API keys, licences vary"
+    },
+    {
+     "id": "mcpblender-ai-3d-generation",
+     "title_en": "AI 3D generation (Tripo/Hunyuan/Rodin/Meshy)",
+     "title_ar": "توليد 3D بالذكاء الاصطناعي",
+     "what": "one generate/poll/import flow",
+     "source_ref": "src/blender_mcp/generation.py:32",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": "paid keys"
+    },
+    {
+     "id": "mcpblender-look-contact-sheet",
+     "title_en": "Multi-angle viewport look sheets",
+     "title_ar": "صور زوايا متعددة للمشهد",
+     "what": "offscreen GPU viewport tiles",
+     "source_ref": "src/blender_mcp/blender_scripts.py:190",
+     "dragon_stage": "qa-color",
+     "status": "source-linked",
+     "notes": "needs GUI GPU"
+    },
+    {
+     "id": "mcpblender-craft-guides",
+     "title_en": "Blender craft guides",
+     "title_ar": "أدلة حرفية لبلندر",
+     "what": "materials, rigging, retopology, animation, level design",
+     "source_ref": "src/blender_mcp/guides/",
+     "dragon_stage": "concept",
+     "status": "source-linked",
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "owner_repo": "mrdoob/three.js",
+   "url": "https://github.com/mrdoob/three.js",
+   "license": "MIT",
+   "license_note": "permissive",
+   "verified_from": "https://github.com/mrdoob/three.js@3f7edc3d75e054bc755dad56c1c95c62f63a3561",
+   "summary_ar": "محرك 3D القياسي في المتصفح (إصدار 0.187): مشهد وكاميرات وPBR وglTF ومحركا عرض WebGL2 وWebGPU، ولغة TSL لبناء الشيدر كرسم عقد، ومكتبة ما بعد معالجة كبيرة (بلوم، عمق ميدان، SSR، SSGI، موشن بلر، LUT، فيلم، انتقالات، أشعة). فيه llms.txt وllms-full.txt للوكلاء.",
+   "summary_en": "The standard browser 3D engine (r0.187): scene graph, cameras, PBR, glTF, WebGL2 and WebGPU renderers, and TSL (Three Shading Language) node graphs with a large post-processing library (bloom, DoF, SSR, SSGI, GTAO, motion blur, TAA, LUT, film, CRT, transitions, god rays). Ships llms.txt and docs/llms-full.txt for agents.",
+   "module": "native_three.py",
+   "report": "references/repo-fusion/three.js.md",
+   "keywords": [
+    "three",
+    "webgpu",
+    "tsl",
+    "webgl",
+    "3d",
+    "postprocessing",
+    "bloom",
+    "ثري",
+    "ويب"
+   ],
+   "capabilities": [
+    {
+     "id": "three-virtual-clock",
+     "title_en": "Deterministic virtual clock for TSL time",
+     "title_ar": "ساعة افتراضية لزمن TSL",
+     "what": "Override performance.now/Date/rAF so TSL time, deltaTime and oscillators are pure functions of the frame index",
+     "source_ref": "src/nodes/core/NodeFrame.js:310",
+     "dragon_stage": "produce",
+     "status": "native-implemented",
+     "notes": "native_three.py clock-shim"
+    },
+    {
+     "id": "three-harness",
+     "title_en": "Headless frame-stepping harness",
+     "title_ar": "هارنس رندر بالإطار",
+     "what": "index.html + Playwright driver with swiftshader flags and renderFrame(n)",
+     "source_ref": "src/renderers/common/Renderer.js:899",
+     "dragon_stage": "produce",
+     "status": "native-implemented",
+     "notes": "native_three.py harness (not run in a real browser)"
+    },
+    {
+     "id": "three-tsl-catalog",
+     "title_en": "TSL node catalog scanner",
+     "title_ar": "فهرس عقد TSL",
+     "what": "Lists export names of examples/jsm/tsl and src/nodes for agent lookup",
+     "source_ref": "examples/jsm/tsl/display",
+     "dragon_stage": "shots",
+     "status": "native-implemented",
+     "notes": "native_three.py catalog"
+    },
+    {
+     "id": "three-tsl-timer",
+     "title_en": "TSL time/deltaTime/frameId uniforms",
+     "title_ar": "زمن TSL",
+     "what": "Per-render uniforms fed by NodeFrame",
+     "source_ref": "src/nodes/utils/Timer.js:10",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": ""
+    },
+    {
+     "id": "three-tsl-oscillators",
+     "title_en": "Oscillators (oscSine/oscSquare...)",
+     "title_ar": "مذبذبات",
+     "what": "Time-based wave nodes for looped motion",
+     "source_ref": "src/nodes/utils/Oscillators.js:11",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": ""
+    },
+    {
+     "id": "three-tsl-transition",
+     "title_en": "TransitionNode",
+     "title_ar": "انتقال بين مشهدين",
+     "what": "Texture A/B mix with optional mask texture and threshold",
+     "source_ref": "examples/jsm/tsl/display/TransitionNode.js:10",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": ""
+    },
+    {
+     "id": "three-tsl-bloom-dof",
+     "title_en": "Bloom, DepthOfField, MotionBlur",
+     "title_ar": "بلوم وعمق ميدان وموشن بلر",
+     "what": "Cinematic post nodes",
+     "source_ref": "examples/jsm/tsl/display/BloomNode.js",
+     "dragon_stage": "color-design",
+     "status": "source-linked",
+     "notes": ""
+    },
+    {
+     "id": "three-tsl-lut-film",
+     "title_en": "Lut3D, Film, Sepia, BleachBypass, CRT, RGBShift, lensDirt",
+     "title_ar": "LUT وحبيبات وتدرج",
+     "what": "Grade and film looks in-engine",
+     "source_ref": "examples/jsm/tsl/display/Lut3DNode.js",
+     "dragon_stage": "qa-color",
+     "status": "source-linked",
+     "notes": ""
+    },
+    {
+     "id": "three-tsl-gi",
+     "title_en": "SSR, SSGI, GTAO, SSS, Godrays",
+     "title_ar": "إضاءة شاشة",
+     "what": "Screen-space realism; temporal ones need sequential frames",
+     "source_ref": "examples/jsm/tsl/display/SSGINode.js",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": ""
+    },
+    {
+     "id": "three-tsl-math",
+     "title_en": "curlNoise, voronoiNoise, Bayer, Raymarching",
+     "title_ar": "ضجيج ورايمارش",
+     "what": "Procedural GPU helpers",
+     "source_ref": "examples/jsm/tsl/math/curlNoise.js",
+     "dragon_stage": "concept",
+     "status": "source-linked",
+     "notes": ""
+    },
+    {
+     "id": "three-llms-full",
+     "title_en": "docs/llms-full.txt",
+     "title_ar": "وثائق للوكلاء",
+     "what": "Offline agent-readable API docs incl. TSL (8596 lines); root llms.txt only links to threejs.org",
+     "source_ref": "docs/llms-full.txt",
+     "dragon_stage": "brief",
+     "status": "source-linked",
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "owner_repo": "pmndrs/react-three-rapier",
+   "url": "https://github.com/pmndrs/react-three-rapier",
+   "license": "MIT",
+   "license_note": "permissive",
+   "verified_from": "https://github.com/pmndrs/react-three-rapier@ae5c3fede5ca489fd7eaa8271e9d9c5eabc88e98",
+   "summary_ar": "محرك فيزياء Rapier لـ React Three Fiber: خطوة زمنية ثابتة، استيفاء بين الحالة السابقة والحالية، نوم الأجسام، أحداث التصادم، وتوليد colliders من المجسمات.",
+   "summary_en": "Rapier physics for React Three Fiber: fixed-timestep accumulator, previous/current state interpolation, sleeping, collision events, collider generation from meshes.",
+   "module": "native_rapier_bake.py",
+   "report": "references/repo-fusion/react-three-rapier.md",
+   "keywords": [
+    "physics",
+    "bounce",
+    "collision",
+    "rigid",
+    "فيزياء",
+    "ارتداد",
+    "تصادم"
+   ],
+   "capabilities": [
+    {
+     "id": "r3rapier-fixed-step-accumulator",
+     "title_en": "Fixed timestep accumulator",
+     "title_ar": "خطوة زمنية ثابتة",
+     "what": "accumulate dt, step world in fixed slices, clamp dt to 0.5s",
+     "source_ref": "packages/react-three-rapier/src/components/Physics.tsx:587-641",
+     "dragon_stage": "produce",
+     "status": "native-implemented",
+     "notes": "Native version drives it from frame/fps, not wall clock"
+    },
+    {
+     "id": "r3rapier-state-interpolation",
+     "title_en": "Prev/current state interpolation",
+     "title_ar": "استيفاء الحالة",
+     "what": "lerp position/slerp rotation by accumulator/timeStep",
+     "source_ref": "packages/react-three-rapier/src/components/Physics.tsx:643-705",
+     "dragon_stage": "produce",
+     "status": "native-implemented",
+     "notes": ""
+    },
+    {
+     "id": "r3rapier-sleeping",
+     "title_en": "Sleep/wake events",
+     "title_ar": "نوم واستيقاظ الأجسام",
+     "what": "skip sleeping bodies, onSleep/onWake",
+     "source_ref": "packages/react-three-rapier/src/components/Physics.tsx:670-700",
+     "dragon_stage": "produce",
+     "status": "native-implemented",
+     "notes": ""
+    },
+    {
+     "id": "r3rapier-collision-events",
+     "title_en": "Collision started/ended events",
+     "title_ar": "أحداث التصادم",
+     "what": "drain event queue with payloads",
+     "source_ref": "packages/react-three-rapier/src/components/Physics.tsx:708-",
+     "dragon_stage": "shots",
+     "status": "native-implemented",
+     "notes": "Native emits frame number per impact"
+    },
+    {
+     "id": "r3rapier-solver-params",
+     "title_en": "Solver params (iterations, linear error, CCD substeps)",
+     "title_ar": "إعدادات الحل",
+     "what": "numSolverIterations 4, allowedLinearError 0.001, predictionDistance, maxCcdSubsteps",
+     "source_ref": "packages/react-three-rapier/src/components/Physics.tsx:436-449",
+     "dragon_stage": "produce",
+     "status": "native-implemented",
+     "notes": "slop and iterations mirrored"
+    },
+    {
+     "id": "r3rapier-collider-from-geometry",
+     "title_en": "Auto colliders from mesh geometry",
+     "title_ar": "colliders من المجسم",
+     "what": "hull/trimesh/cuboid args from three geometry",
+     "source_ref": "packages/react-three-rapier/src/utils/utils-collider.ts:327",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": ""
+    },
+    {
+     "id": "r3rapier-instanced-bodies",
+     "title_en": "Instanced rigid bodies",
+     "title_ar": "أجسام instanced",
+     "what": "many bodies as one InstancedMesh",
+     "source_ref": "packages/react-three-rapier/src/components/InstancedRigidBodies.tsx",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": ""
+    },
+    {
+     "id": "r3rapier-interaction-groups",
+     "title_en": "Collision groups bitmask",
+     "title_ar": "مجموعات التصادم",
+     "what": "membership/filter packed into 32 bits",
+     "source_ref": "packages/react-three-rapier/src/utils/interaction-groups.ts",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": ""
+    },
+    {
+     "id": "r3rapier-joints",
+     "title_en": "Joint hooks",
+     "title_ar": "المفاصل",
+     "what": "fixed/spherical/revolute/prismatic/rope/spring",
+     "source_ref": "packages/react-three-rapier/src/hooks/joints.ts",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": ""
+    },
+    {
+     "id": "r3rapier-pair-hooks",
+     "title_en": "Contact pair filters",
+     "title_ar": "فلاتر أزواج التصادم",
+     "what": "filterContactPair hooks",
+     "source_ref": "packages/react-three-rapier/src/components/Physics.tsx:603",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "owner_repo": "librosa/librosa",
+   "url": "https://github.com/librosa/librosa",
+   "license": "ISC",
+   "license_note": "permissive",
+   "verified_from": "https://github.com/librosa/librosa@9fd51bee82537f099c040d1625c70f168702efda",
+   "summary_ar": "مكتبة Python ناضجة لتحليل الموسيقى: تتبع الإيقاع والنبض (PLP)، كشف النبضات وتقدير السرعة، التيمبوجرام، فصل الإيقاعي عن الهارموني، الكروما والتونالية، تقسيم بنية الأغنية لأقسام، وقياس شدة RMS وطبقة الصوت.",
+   "summary_en": "Mature Python toolkit for music and audio analysis: beat/PLP tracking, onset and tempo estimation, tempograms, harmonic-percussive separation, chroma/key features, recurrence-based structural segmentation (agglomerative boundaries), RMS loudness, pitch (YIN/pYIN) on NumPy arrays.",
+   "module": "native_musicmap.py",
+   "report": "references/repo-fusion/librosa.md",
+   "keywords": [
+    "music",
+    "beat",
+    "drop",
+    "sections",
+    "key",
+    "song",
+    "montage",
+    "موسيقى",
+    "أغنية",
+    "دروب",
+    "إيقاع",
+    "مونتاج"
+   ],
+   "capabilities": [
+    {
+     "id": "librosa-agglomerative-sections",
+     "title_en": "Structural segmentation into sections",
+     "title_ar": "تقسيم الأغنية لأقسام",
+     "what": "Beat-synced chroma+MFCC clustered with temporal constraint (segment.agglomerative) -> section boundaries",
+     "source_ref": "librosa/segment.py:1057",
+     "dragon_stage": "shots",
+     "status": "native-implemented",
+     "notes": "Used in native_musicmap.py"
+    },
+    {
+     "id": "librosa-recurrence-matrix",
+     "title_en": "Self-similarity/recurrence matrix for repeats (verse/chorus)",
+     "title_ar": "مصفوفة التكرار لاكتشاف المقاطع المتكررة",
+     "what": "recurrence_matrix + path_enhance reveal repeated parts",
+     "source_ref": "librosa/segment.py:345",
+     "dragon_stage": "concept",
+     "status": "source-linked",
+     "notes": "Not yet used; path_enhance at :1151"
+    },
+    {
+     "id": "librosa-hpss",
+     "title_en": "Harmonic/percussive separation",
+     "title_ar": "فصل الإيقاعي عن الهارموني",
+     "what": "Beats from percussive part, chroma from harmonic part",
+     "source_ref": "librosa/decompose.py:208",
+     "dragon_stage": "shots",
+     "status": "native-implemented",
+     "notes": "Used in native_musicmap.py"
+    },
+    {
+     "id": "librosa-plp",
+     "title_en": "Predominant local pulse",
+     "title_ar": "النبض المحلي السائد",
+     "what": "Pulse curve that follows tempo changes; fallback for weak beat tracks",
+     "source_ref": "librosa/beat.py:312",
+     "dragon_stage": "shots",
+     "status": "native-implemented",
+     "notes": "Used as fallback"
+    },
+    {
+     "id": "librosa-tempogram",
+     "title_en": "Tempogram / tempo drift view",
+     "title_ar": "التيمبوجرام",
+     "what": "Time-varying tempo evidence for rubato or tempo-change tracks",
+     "source_ref": "librosa/feature/rhythm.py:38",
+     "dragon_stage": "qa-color",
+     "status": "source-linked",
+     "notes": "Not yet used"
+    },
+    {
+     "id": "librosa-chroma-key",
+     "title_en": "Chroma-based key estimate",
+     "title_ar": "تقدير المفتاح الموسيقي",
+     "what": "chroma_cqt on harmonic part + Krumhansl profiles -> key for color/mood mapping",
+     "source_ref": "librosa/feature/spectral.py:1333",
+     "dragon_stage": "color-design",
+     "status": "native-implemented",
+     "notes": "Profiles are our own port of the published values"
+    },
+    {
+     "id": "librosa-downbeat-heuristic",
+     "title_en": "Downbeat-ish bar phase from onset + low-band energy",
+     "title_ar": "المازورة التقريبية",
+     "what": "Pick the beat phase mod 4 with most onset+bass weight",
+     "source_ref": "(own code, uses stft/onset)",
+     "dragon_stage": "shots",
+     "status": "native-implemented",
+     "notes": "Heuristic, no meter model"
+    },
+    {
+     "id": "librosa-drop-climax",
+     "title_en": "Drop and climax detection from RMS contrast",
+     "title_ar": "كشف الدروب والذروة",
+     "what": "Energy rise (next 4s vs previous 4s) snapped to downbeat; argmax of smoothed RMS",
+     "source_ref": "(own code, uses feature.rms)",
+     "dragon_stage": "shots",
+     "status": "native-implemented",
+     "notes": "Heuristic"
+    },
+    {
+     "id": "librosa-strong-cuts",
+     "title_en": "Strong cut-point list",
+     "title_ar": "نقاط القص القوية",
+     "what": "Downbeats, top-quartile beats, section edges and drops merged into one cut list",
+     "source_ref": "(own code)",
+     "dragon_stage": "produce",
+     "status": "native-implemented",
+     "notes": "JSON for dm_edl"
+    },
+    {
+     "id": "librosa-energy-curve",
+     "title_en": "Normalized energy curve at 2 Hz",
+     "title_ar": "منحنى الطاقة",
+     "what": "RMS curve for speed ramps, glow or zoom intensity",
+     "source_ref": "librosa/feature/spectral.py:836",
+     "dragon_stage": "produce",
+     "status": "native-implemented",
+     "notes": "Dragon already used rms; here it is a curve"
+    }
+   ]
+  },
+  {
+   "owner_repo": "yihui-dev/awesome-opus5-5-videos",
+   "url": "https://github.com/yihui-dev/awesome-opus5-5-videos",
+   "license": "MIT",
+   "license_note": "permissive",
+   "verified_from": "https://github.com/yihui-dev/awesome-opus5-5-videos@92aee2f586ac0715cb3cbcb6384834f98a33383d",
+   "summary_ar": "مكتبة فيها 703 برومنت لفيديوهات بيكتبها Claude Opus 5.5 ككود (Canvas وSVG وThree.js وشيدر)، وكل حالة ليها تصنيف ووسوم تقنية ولينك البوست الأصلي.",
+   "summary_en": "Library of 703 prompts (data/videos.json + prompts/*.md) used to make Claude Opus 5.5 write videos as code (Canvas, SVG, Three.js, shaders, GSAP). Each entry has category, tech tags, author, post link.",
+   "module": "native_promptlib.py",
+   "report": "references/repo-fusion/awesome-opus5-5-videos.md",
+   "keywords": [
+    "prompt",
+    "video",
+    "case",
+    "lint",
+    "برومنت",
+    "فيديو"
+   ],
+   "capabilities": [
+    {
+     "id": "opus5-prompt-search",
+     "title_en": "Prompt case search",
+     "title_ar": "بحث حالات البرومنت",
+     "what": "Search 703 cases by category/tag/keyword/author",
+     "source_ref": "data/videos.json:1",
+     "dragon_stage": "concept",
+     "status": "native-implemented",
+     "notes": "Schema: slug,author,category,tech_tags,prompt,prompt_partial,has_remake,poster_url,added"
+    },
+    {
+     "id": "opus5-prompt-lint",
+     "title_en": "Prompt linter (12 weighted rules)",
+     "title_ar": "فاحص برومنت الفيديو",
+     "what": "Scores duration, format, scenes, ban-list, palette, motion, time-driven frames, stack, audio, ending, self-check, inputs",
+     "source_ref": "out/awesome-opus5-5-videos/native_promptlib.py",
+     "dragon_stage": "shots",
+     "status": "native-implemented",
+     "notes": "Run before produce"
+    },
+    {
+     "id": "opus5-tagged-template",
+     "title_en": "Sectioned prompt template (inputs/direction/structure/build/gotchas)",
+     "title_ar": "قالب برومنت بأقسام",
+     "what": "Prompt split into labelled sections; ask-for-inputs first",
+     "source_ref": "data/videos.json slug twoclipping-402193",
+     "dragon_stage": "brief",
+     "status": "source-linked",
+     "notes": "27 prompts use a direction block"
+    },
+    {
+     "id": "opus5-ban-list",
+     "title_en": "Banned-effects list",
+     "title_ar": "قايمة الممنوعات",
+     "what": "Explicit avoid-list removes template look",
+     "source_ref": "data/videos.json (73 full prompts)",
+     "dragon_stage": "color-design",
+     "status": "source-linked",
+     "notes": "source-linked"
+    },
+    {
+     "id": "opus5-time-pure-frames",
+     "title_en": "Every frame is a function of t",
+     "title_ar": "كل فريم دالة في الزمن",
+     "what": "seek(t)/?t= deterministic render for parallel capture",
+     "source_ref": "data/videos.json slug yankis0x-174321",
+     "dragon_stage": "produce",
+     "status": "source-linked",
+     "notes": "52 full prompts"
+    },
+    {
+     "id": "opus5-beat-grid",
+     "title_en": "Beat grid: one event per beat",
+     "title_ar": "شبكة إيقاع",
+     "what": "BPM-driven bars with an event on every beat",
+     "source_ref": "data/videos.json slug twoclipping-402193",
+     "dragon_stage": "shots",
+     "status": "source-linked",
+     "notes": "BPM in about 38 prompts"
+    }
+   ]
+  },
+  {
+   "owner_repo": "joeseesun/opus-video-prompts",
+   "url": "https://github.com/joeseesun/opus-video-prompts",
+   "license": "none",
+   "license_note": "none — links only",
+   "verified_from": "https://github.com/joeseesun/opus-video-prompts@7977c807781d4ba7c235247b8899a72575a30d00",
+   "summary_ar": "تجميعة صينية: 18 برومنت كامل و54 حالة (cases.json) مع خلاصة نصايح كتابة لفيديوهات Opus 5.5 المكتوبة بالكود.",
+   "summary_en": "Chinese-language curation: 18 full prompt files, 54 public cases (cases.json: category/title/author/how/cost/url) and a short section of authoring lessons for Opus 5.5 code-made videos.",
+   "module": null,
+   "report": "references/repo-fusion/opus-video-prompts.md",
+   "keywords": [
+    "prompt",
+    "video",
+    "برومنت"
+   ],
+   "capabilities": [
+    {
+     "id": "optv-lessons",
+     "title_en": "Authoring lessons (reworded)",
+     "title_ar": "دروس كتابة",
+     "what": "storyboard first, ban-list, deterministic frames, self-review, skill reuse",
+     "source_ref": "README.md:486-494",
+     "dragon_stage": "concept",
+     "status": "source-linked",
+     "notes": "Links only, no license; encoded natively in promptlib"
+    }
+   ]
+  }
+ ],
+ "modules": [
+  {
+   "name": "opuscar",
+   "file": "native_opuscar.py",
+   "repo": "lemomo-ai/lemo-opuscar",
+   "purpose": "Rhythm report (cuts, pace, silences, hit→onset ms), script-aware reading-time check (Arabic 12 cps), director-rule treatment lint.",
+   "example": "native_opuscar.py rhythm film.mp4 --events ev.json --json",
+   "timeout_s": 120
+  },
+  {
+   "name": "shotcraft",
+   "file": "native_shotcraft.py",
+   "repo": "Vincentwei1021/video-shotcraft",
+   "purpose": "Promo energy arc, gated beat grid (LSQ, half/double), render audio-lag, SFX peak placement, JianYing/CapCut draft planner + safe Windows installer.",
+   "example": "native_shotcraft.py beatgrid --audio song.wav --json",
+   "timeout_s": 300
+  },
+  {
+   "name": "pixelfx",
+   "file": "native_pixelfx.py",
+   "repo": "patch-gg/pixelfx",
+   "purpose": "Pixel-art VFX over real footage (explosion, sparks, campfire, embers) with additive light, hit-stop + shake + anime impact frame, hue-shifted palette ramp mapping, sprite sheets.",
+   "example": "native_pixelfx.py hitstop clip.mp4 hit.mp4 --hits 2.35 --impact",
+   "timeout_s": 120
+  },
+  {
+   "name": "cab",
+   "file": "native_cab.py",
+   "repo": "JohnHeibel/ClaudeAnimationBase",
+   "purpose": "Viewer \"reads\" storyboard lint, line-boil jitter audit, FNV-1a boil seed (bit-exact with JS), missing-frame todo, render determinism check.",
+   "example": "native_cab.py reads-lint board.json --json",
+   "timeout_s": 120
+  },
+  {
+   "name": "blender_audit",
+   "file": "native_blender_audit.py",
+   "repo": "ahujasid/mcp-for-blender",
+   "purpose": "Headless Blender scene audit (real size, grounded/floating, mesh health, rig weights, missing textures, unapplied scale) + Poly Haven CC0 search/resolve.",
+   "example": "native_blender_audit.py audit scene.blend --json",
+   "timeout_s": 300
+  },
+  {
+   "name": "three",
+   "file": "native_three.py",
+   "repo": "mrdoob/three.js",
+   "purpose": "Deterministic three.js/TSL frame rendering: virtual clock shim, WebGPU/WebGL frame harness + Playwright driver, node catalog.",
+   "example": "native_three.py harness out/harness --fps 30",
+   "timeout_s": 120
+  },
+  {
+   "name": "rapier_bake",
+   "file": "native_rapier_bake.py",
+   "repo": "pmndrs/react-three-rapier",
+   "purpose": "Deterministic 2D rigid-body bake (fixed 120 Hz steps, frame clock, collisions with frame numbers for SFX, sleep, friction, spin) → per-frame transforms JSON.",
+   "example": "native_rapier_bake.py self-test",
+   "timeout_s": 120
+  },
+  {
+   "name": "musicmap",
+   "file": "native_musicmap.py",
+   "repo": "librosa/librosa",
+   "purpose": "Music map for montage: tempo, beats, downbeats, sections, drops, climax, energy curve, strong cut points, key (HPSS + chroma/MFCC segmentation + PLP).",
+   "example": "native_musicmap.py map song.mp3 --out map.json",
+   "timeout_s": 900
+  },
+  {
+   "name": "promptlib",
+   "file": "native_promptlib.py",
+   "repo": "yihui-dev/awesome-opus5-5-videos",
+   "purpose": "Searchable index of 703 code-as-video prompt cases (links + metadata) and a 12-rule video-prompt linter.",
+   "example": "native_promptlib.py lint --text \"...\"",
+   "timeout_s": 60
+  }
+ ]
+}
