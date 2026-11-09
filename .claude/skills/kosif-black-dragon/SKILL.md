@@ -46,6 +46,20 @@ Run from repository root:
 
 Follow the plan, run only the commands you actually need (they are listed, not executed), and report real outputs. On Windows `python3` must be a real Python (not the Microsoft Store alias). To include *only optional pointers* to catalog entries, add `--legacy-links` to compose. No external process, paid model, or original adapter is invoked by these commands.
 
+## Repo fusion (REA, 2026-11-10) and the media hunter
+
+Ten public repositories were dissected with REA. Their best new capabilities were re-implemented natively as nine self-tested modules in `scripts/fusion/`; the remaining capabilities stay source-linked with exact `path:line`. The ten repositories are lemo-opuscar, video-shotcraft, pixelfx, ClaudeAnimationBase, mcp-for-blender, three.js, react-three-rapier, librosa, awesome-opus5-5-videos and opus-video-prompts.
+
+The modules cover the music map, rhythm and reading checks, the beat grid and CapCut/JianYing draft planning, pixel VFX and hit-stop, reads and boil lint, the Blender scene audit, deterministic three.js frames, the physics bake and a video-prompt lint.
+
+Routing and evidence: `scripts/repo_fusion.py` (`list`, `find "<task>" [--stage]`, `show`, `modules`, `self-test`). Overview: [references/REPO_FUSION.md](references/REPO_FUSION.md). The capability count is 101 (47 native, 54 source-linked); report those numbers, not "all repos integrated".
+
+Footage and photo search: `tools/media_hunter/mh.py` searches 615 sites and 19 live API sources, 15 of them keyless, and returns real file URLs with licences. Guide: [references/MEDIA_HUNTER.md](references/MEDIA_HUNTER.md).
+
+    python3 .claude/skills/kosif-black-dragon/scripts/repo_fusion.py find "قص على الدروب"
+    python3 .claude/skills/kosif-black-dragon/scripts/fusion/native_musicmap.py map song.mp3 --out map.json
+    python3 -I .claude/skills/kosif-black-dragon/tools/media_hunter/mh.py hunt "camel desert sunset" --type video
+
 ## Native reasoning absorbed from Dragon Mind
 
 The new `scripts/native_mind.py` **contains its own** 26-faculty taxonomy and six-stage cognitive
