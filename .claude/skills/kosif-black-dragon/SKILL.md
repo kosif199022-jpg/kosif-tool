@@ -321,3 +321,14 @@ python3 .claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py creative
 ~~~
 
 These are still planning and scoring steps: no agent, model, media or paid tool runs.
+
+## Instagram Reel video 12-tool bridge (2026-11-12)
+
+The 12 tools explicitly named in the caption of https://www.instagram.com/reel/Dfmun_Fjap1/ are installable and routed through the **isolated** workspace
+`.claude/skills/kosif-black-dragon/integrations/instagram-video-12/` (README, registry, package.json, requirements.txt, toolchain.py, offline tests).
+
+- `python3 .claude/skills/kosif-black-dragon/integrations/instagram-video-12/toolchain.py plan "ريل عربي 3D مع كلام"` — task-based selection; zero installs/execution.
+- `python3 .claude/skills/kosif-black-dragon/integrations/instagram-video-12/toolchain.py doctor --json` — local module/binary presence only; not evidence of a real render.
+- `python3 .claude/skills/kosif-black-dragon/integrations/instagram-video-12/toolchain.py install --all --yes` — **only when user authorizes install on the active worker**, downloads JS/Python libraries and bundled ffmpeg/ffprobe; never run silently.
+- `python3 .claude/skills/kosif-black-dragon/integrations/instagram-video-12/toolchain.py run ffmpeg -- -version` — real local CLI execution; Remotion, HyperFrames, Manim, WhisperX and Auto-Editor have similar allowlisted CLI routing. Other JS libraries are imported by an actual scene project.
+- Follow the existing mandatory seven stages and CORE receipts in `video_protocol.py`; a new dependency/plan/dry-run/doctor is **not** a completed stage or finished video. Never mark all 12 as installed/executed without local install and real test evidence. Review Remotion's commercial licensing terms and safety of installing external packages.
