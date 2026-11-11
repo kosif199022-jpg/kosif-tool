@@ -1,0 +1,26 @@
+{
+  "name": "@kosif/black-dragon-video-12",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Isolated Black Dragon video toolchain dependencies; installed on the worker only",
+  "type": "module",
+  "scripts": {
+    "doctor": "python toolchain.py doctor",
+    "plan": "python toolchain.py plan",
+    "test": "python -m unittest discover -s tests"
+  },
+  "dependencies": {
+    "remotion": "*",
+    "@remotion/cli": "*",
+    "hyperframes": "*",
+    "@motion-canvas/core": "*",
+    "@motion-canvas/2d": "*",
+    "three": "*",
+    "roughjs": "*",
+    "gsap": "*",
+    "animejs": "*",
+    "@mojs/core": "*",
+    "@ffmpeg-installer/ffmpeg": "*",
+    "@ffprobe-installer/ffprobe": "*"
+  }
+}
