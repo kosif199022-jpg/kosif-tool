@@ -1,0 +1,131 @@
+{
+  "schema": "kosif.black-dragon.video-reel-12.v1",
+  "source": "https://www.instagram.com/reel/Dfmun_Fjap1/",
+  "source_type": "instagram caption (not verified via played audio)",
+  "source_published": "2026-11-11",
+  "tools": [
+    {
+      "id": "remotion",
+      "phase": "render",
+      "manager": "npm",
+      "packages": [
+        "remotion",
+        "@remotion/cli"
+      ],
+      "url": "https://www.remotion.dev/",
+      "license": "source-available; eligibility/usage-dependent license"
+    },
+    {
+      "id": "hyperframes",
+      "phase": "render",
+      "manager": "npm",
+      "packages": [
+        "hyperframes"
+      ],
+      "url": "https://github.com/heygen-com/hyperframes",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "motion-canvas",
+      "phase": "render",
+      "manager": "npm",
+      "packages": [
+        "@motion-canvas/core",
+        "@motion-canvas/2d"
+      ],
+      "url": "https://motioncanvas.io/",
+      "license": "check upstream package licenses"
+    },
+    {
+      "id": "threejs",
+      "phase": "visual",
+      "manager": "npm",
+      "packages": [
+        "three"
+      ],
+      "url": "https://threejs.org/",
+      "license": "MIT"
+    },
+    {
+      "id": "manim",
+      "phase": "visual",
+      "manager": "pip",
+      "packages": [
+        "manim"
+      ],
+      "url": "https://www.manim.community/",
+      "license": "MIT; native build prerequisites"
+    },
+    {
+      "id": "roughjs",
+      "phase": "visual",
+      "manager": "npm",
+      "packages": [
+        "roughjs"
+      ],
+      "url": "https://roughjs.com/",
+      "license": "MIT"
+    },
+    {
+      "id": "gsap",
+      "phase": "motion",
+      "manager": "npm",
+      "packages": [
+        "gsap"
+      ],
+      "url": "https://gsap.com/",
+      "license": "free under GSAP license; review terms"
+    },
+    {
+      "id": "animejs",
+      "phase": "motion",
+      "manager": "npm",
+      "packages": [
+        "animejs"
+      ],
+      "url": "https://animejs.com/",
+      "license": "MIT; check installed version"
+    },
+    {
+      "id": "mojs",
+      "phase": "motion",
+      "manager": "npm",
+      "packages": [
+        "@mojs/core"
+      ],
+      "url": "https://github.com/mojs/mojs",
+      "license": "MIT"
+    },
+    {
+      "id": "whisperx",
+      "phase": "audio",
+      "manager": "pip",
+      "packages": [
+        "whisperx"
+      ],
+      "url": "https://github.com/m-bain/whisperX",
+      "license": "check model and pyannote licenses separately"
+    },
+    {
+      "id": "auto-editor",
+      "phase": "audio",
+      "manager": "pip",
+      "packages": [
+        "auto-editor"
+      ],
+      "url": "https://auto-editor.com/",
+      "license": "MIT; silence cut needs margins"
+    },
+    {
+      "id": "ffmpeg",
+      "phase": "delivery",
+      "manager": "system-or-npm",
+      "packages": [
+        "@ffmpeg-installer/ffmpeg",
+        "@ffprobe-installer/ffprobe"
+      ],
+      "url": "https://ffmpeg.org/",
+      "license": "LGPL/GPL build dependent; bundled binaries separate"
+    }
+  ]
+}
