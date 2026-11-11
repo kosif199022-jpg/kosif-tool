@@ -97,3 +97,11 @@ python3 $T check --job $J      # exit 0 = يتسلم، exit 5 = مينفعش ي�
 - أدوات محتاجة حاجات مش متسطبة على الجهاز (Blender، opencv، Remotion) بتفضل اختيارية جوه مجموعة "أو". الجهاز ده فيه ١٩٣ من ٢١٠ أداة جاهزة (`hub.py doctor`).
 - مفيش صرف كريدت، ولا نشر، ولا رفع، ولا تسطيب من غير موافقة صريحة. أداة مدفوعة في الإنتاج لازم `spend_approved: true`.
 - الختم فحص محلي إن محدش عدّل حاجة بعد تسجيلها، مش توقيع خارجي.
+
+## إضافة محركات ريل ١٢ أداة (2026-11-12)
+
+أصبح للتنين الأسود مساحة مستقلة لتجهيز Remotion وHyperFrames وMotion Canvas وThree.js وManim وRough.js وGSAP وAnime.js وMo.js وWhisperX وAuto-Editor وFFmpeg:
+
+`.claude/skills/kosif-black-dragon/integrations/instagram-video-12/README.md`
+
+الأداة `toolchain.py` توفر `plan` لاختيار البرامج، `doctor` للتحقق من وجود التبعيات فعليًا، `install --all --yes` لتنزيلها على جهاز التشغيل بموافقة، و`run` لتنفيذ CLI متاح. لا يتغير ترتيب المراحل السبعة ولا شروط `core` و`check` القديمة. وجود تبعية في registry أو نجاح `doctor` لا يعتبر إيصال رندر ولا يثبت جودة الفيديو. يُراعى هامش سكتات الكلام في `auto-editor` وترخيص Remotion.
