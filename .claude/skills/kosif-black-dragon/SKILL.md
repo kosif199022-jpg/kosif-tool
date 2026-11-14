@@ -135,10 +135,20 @@ Run the quick tests with:
 python3 -m unittest discover -s tests -p test_black_dragon_creative_council.py
 ```
 
-## The Arena — after the council, when the answer is rejected
+## The Arena — a required step, sized to the task
 
-The council decides a plan before the work. When the owner rejects a finished answer («الإجابة وحشة»، «خليهم يتنافسوا»، «الحلبة»), use the vendored [arena skill](../arena/SKILL.md) (MIT, Jake Schincariol): the same task, byte for byte, goes to N sub-agents (16 with `--quick`, 100 only when the owner asks), each with a different card (15 reasoning modes × 12 workflows × 12 strategies). They attack each other's solutions, defend and revise, and a judge scores every match on [the rubric](../arena/rubric.md) until one survives; a blind final check compares it with the rejected answer. `bracket.py` keeps the whole bracket in one JSON file, so a compacted context resumes with `bracket.py next`. The orchestrator never judges. The Black Dragon adapter `skill:arena` proves the bracket with stand-in agents and known answers; it does not call a model.
+**The arena is now a required step of Black Dragon work, not only a fallback after a rejected answer** (owner's rule, 2026-11-14). Every task with taste or an open decision (design, writing, montage concept, plan, code with more than one defensible solution) goes through the vendored [arena skill](../arena/SKILL.md) (MIT, Jake Schincariol) on the written solution, after the council picks the direction and before the expensive execution. The same task, byte for byte, goes to N sub-agents, each with a different card (15 reasoning modes × 12 workflows × 12 strategies); they attack each other's solutions, defend and revise, and a judge scores every match on [the rubric](../arena/rubric.md) until one survives. When an earlier answer was rejected, a blind final compares the champion with it.
 
+`python3 .claude/skills/arena/arena_gate.py` adds what makes it affordable as a default:
+
+| step | command |
+|---|---|
+| size it | `arena_gate.py size "<task>"` → no arena (chat, a fact, a routine step, a dictated edit; the reason is recorded with `skip --reason`), **4** agents (19 calls) for a small task, **8** (43) for a medium one, **16** (91) for a big one or a rejected answer. **100** (595 calls) only when the owner names it, after an explicit yes. |
+| run it | `arena_gate.py start "<task>" --task-file .arena/task.md [--baseline-file .arena/baseline.md]`, then `next` and `jobs <phase>` one wave at a time |
+| models | spawn and round-1 attack/defend on the Haiku agent `.claude/agents/arena-fighter.md`; later rounds on Sonnet; every judge and the final on the main model, never Haiku |
+| gate | `arena_gate.py gate` exits 0 only with a champion (and the blind final, when there is a baseline) or a recorded skip. Do not deliver before it passes. |
+
+The orchestrator never judges and never reads solutions before `winner`. `bracket.py` keeps the bracket in one JSON file, so a compacted context resumes with `arena_gate.py next`. The Black Dragon adapter `skill:arena` proves the bracket with stand-in agents and known answers; it does not call a model. Tests: `python3 -m unittest tests/test_arena_gate.py`.
 
 ## Book-informed judgment guard (Thinking, Fast and Slow)
 
