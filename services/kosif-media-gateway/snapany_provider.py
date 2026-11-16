@@ -6,6 +6,7 @@ KOSIF_SNAPANY_ENABLED=1 + KOSIF_SNAPANY_API_KEY + per-request confirm_credits.
 No CAPTCHA/DRM bypass, no cookies, no bulk extraction, and no auto-pay.
 """
 from __future__ import annotations
+import ipaddress
 import json
 import os
 import re
@@ -84,7 +85,23 @@ def _safe_media_url(raw) -> str | None:
     host = u.hostname.lower().rstrip(".")
     if host in {"localhost", "0.0.0.0"} or host.endswith((".localhost", ".local", ".internal")):
         return None
+    try:
+        ip = ipaddress.ip_address(host.strip("[]"))
+    except ValueError:
+        ip = None
+    if ip is not None and not ip.is_global:      # loopback, private, link-local (169.254.169.254), reserved
+        return None
     return raw
+
+
+class _NoRedirect(urllib.request.HTTPRedirectHandler):
+    """The API key must never follow a redirect to another host: a 3xx is treated as an error."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        return None
+
+
+_OPENER = urllib.request.build_opener(_NoRedirect)
 
 
 def resolve(video: str, rights: str, quality: int, confirm_credits: bool) -> dict:
@@ -121,7 +138,7 @@ def resolve(video: str, rights: str, quality: int, confirm_credits: bool) -> dic
             },
         )
         try:
-            with urllib.request.urlopen(request, timeout=55) as resp:
+            with _OPENER.open(request, timeout=55) as resp:
                 raw = resp.read(1024 * 1024 + 1)
                 if len(raw) > 1024 * 1024:
                     return {"ok": False, "error": "PROVIDER_RESPONSE_TOO_LARGE"}
@@ -137,10 +154,14 @@ def resolve(video: str, rights: str, quality: int, confirm_credits: bool) -> dic
         if not isinstance(data, dict):
             return {"ok": False, "error": "PROVIDER_BAD_RESPONSE"}
         options = []
-        for media in data.get("medias", [])[:15]:
+        medias = data.get("medias")
+        if not isinstance(medias, list):
+            medias = []
+        for media in medias[:15]:
             if not isinstance(media, dict) or media.get("media_type") != "video":
                 continue
-            for variant in (media.get("variants") or [])[:25]:
+            variants = media.get("variants")
+            for variant in (variants if isinstance(variants, list) else [])[:25]:
                 if not isinstance(variant, dict):
                     continue
                 try:

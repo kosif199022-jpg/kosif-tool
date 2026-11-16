@@ -54,7 +54,7 @@ class SnapAnyProviderTest(unittest.TestCase):
         mod._TIMES.clear()
 
     def test_disabled_by_default_and_never_calls_vendor(self):
-        with mock.patch.object(mod.urllib.request, "urlopen", side_effect=AssertionError("should not call")):
+        with mock.patch.object(mod._OPENER, "open", side_effect=AssertionError("should not call")):
             out = mod.resolve(_VIDEO, "cc-licensed", 720, True)
         self.assertFalse(out["ok"])
         self.assertEqual(out["error"], "SNAPANY_NOT_CONFIGURED")
@@ -62,7 +62,7 @@ class SnapAnyProviderTest(unittest.TestCase):
     def test_explicit_consent_required(self):
         os.environ["KOSIF_SNAPANY_ENABLED"] = "1"
         os.environ["KOSIF_SNAPANY_API_KEY"] = "mock-secret"
-        with mock.patch.object(mod.urllib.request, "urlopen", side_effect=AssertionError("should not call")):
+        with mock.patch.object(mod._OPENER, "open", side_effect=AssertionError("should not call")):
             out = mod.resolve(_VIDEO, "owned", 720, False)
         self.assertEqual(out["error"], "CREDIT_SPEND_CONFIRMATION_REQUIRED")
 
@@ -80,7 +80,7 @@ class SnapAnyProviderTest(unittest.TestCase):
             self.assertEqual(req.full_url, "https://api.snapany.com/openapi/v1/youtube/proxy-download")
             self.assertEqual(json.loads(req.data)["url"], _VIDEO)
             return _Response(_FIXTURE)
-        with mock.patch.object(mod.urllib.request, "urlopen", fake_open):
+        with mock.patch.object(mod._OPENER, "open", fake_open):
             out = mod.resolve(_VIDEO, "public-domain", 1080, True)
         self.assertTrue(out["ok"])
         self.assertFalse(out["downloaded"])
@@ -92,7 +92,7 @@ class SnapAnyProviderTest(unittest.TestCase):
     def test_daily_cap(self):
         os.environ["KOSIF_SNAPANY_ENABLED"] = "1"
         os.environ["KOSIF_SNAPANY_API_KEY"] = "mock-secret"
-        with mock.patch.object(mod.urllib.request, "urlopen", side_effect=lambda *args, **kwargs: _Response(_FIXTURE)) as called:
+        with mock.patch.object(mod._OPENER, "open", side_effect=lambda *args, **kwargs: _Response(_FIXTURE)) as called:
             for _ in range(2):
                 self.assertTrue(mod.resolve(_VIDEO, "owned", 720, True)["ok"])
             third = mod.resolve(_VIDEO, "owned", 720, True)
@@ -105,6 +105,22 @@ class SnapAnyProviderTest(unittest.TestCase):
         status = json.dumps(mod.status())
         self.assertNotIn("never-expose-this-secret", status)
         self.assertTrue(mod.status()["configured"])
+
+    def test_private_and_metadata_hosts_rejected(self):
+        for raw in ("https://169.254.169.254/x.mp4", "https://127.0.0.1/a.mp4", "https://10.0.0.5/a.mp4", "https://[::1]/a.mp4"):
+            self.assertIsNone(mod._safe_media_url(raw), raw)
+        self.assertIsNotNone(mod._safe_media_url("https://cdn.example.com/a.mp4"))
+
+    def test_redirects_are_not_followed(self):
+        self.assertIsNone(mod._NoRedirect().redirect_request(None, None, 302, "Found", {}, "https://evil.example/"))
+
+    def test_non_list_medias_does_not_crash(self):
+        os.environ["KOSIF_SNAPANY_ENABLED"] = "1"
+        os.environ["KOSIF_SNAPANY_API_KEY"] = "mock-secret"
+        bad = dict(_FIXTURE, medias={"oops": 1})
+        with mock.patch.object(mod._OPENER, "open", lambda req, timeout: _Response(bad)):
+            out = mod.resolve(_VIDEO, "public-domain", 1080, True)
+        self.assertIsInstance(out, dict)
 
 
 if __name__ == "__main__":

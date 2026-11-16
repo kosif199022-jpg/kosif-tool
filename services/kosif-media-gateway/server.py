@@ -816,7 +816,8 @@ class Gateway(BaseHTTPRequestHandler):
             self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Content-Length", str(len(content)))
         self.send_header("Cache-Control", "no-store")
-        if self.headers.get("Origin") == "https://kosif199022-jpg.github.io":
+        if (self.headers.get("Origin") == "https://kosif199022-jpg.github.io"
+                and urllib.parse.urlsplit(self.path).path.startswith("/v1/providers/snapany")):
             self.send_header("Access-Control-Allow-Origin", "https://kosif199022-jpg.github.io")
             self.send_header("Vary", "Origin")
         if self.close_connection:
