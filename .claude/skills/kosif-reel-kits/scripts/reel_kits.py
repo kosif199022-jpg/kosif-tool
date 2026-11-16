@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import io
 import json
 import stat
 import sys
@@ -53,8 +54,9 @@ def _kit_of(zf: zipfile.ZipFile) -> str | None:
 
 def install(zip_path: Path, dest: Path, allow_unpinned: bool = False, pins: dict | None = None) -> dict:
     pins = pins if pins is not None else {k: v["sha256"] for k, v in KITS.items()}
-    digest = _sha(zip_path)
-    with zipfile.ZipFile(zip_path) as zf:
+    data = zip_path.read_bytes()          # one read: the bytes that are hashed are the bytes that are extracted
+    digest = hashlib.sha256(data).hexdigest()
+    with zipfile.ZipFile(io.BytesIO(data)) as zf:
         kit = _kit_of(zf)
         if kit is None:
             raise SystemExit("not one of the known kits: " + ", ".join(KITS))
@@ -77,13 +79,18 @@ def install(zip_path: Path, dest: Path, allow_unpinned: bool = False, pins: dict
         if refused:
             return {"kit": kit, "installed": False, "refused": refused}
         root = (dest / kit).resolve()
-        for info in files:
+        plan = []
+        for info in files:                   # resolve every target first, so a bad entry stops before anything is written
             rel = PurePosixPath(info.filename)
             if len(rel.parts) == 1:          # a top-level readme beside the kit folder goes inside it
                 rel = PurePosixPath(kit) / rel
             target = (dest / rel).resolve()
-            if root not in target.parents and target != root:
-                raise SystemExit(f"escape: {info.filename}")
+            if root not in target.parents:
+                refused.append([info.filename, "outside the kit folder"])
+            plan.append((info, target))
+        if refused:
+            return {"kit": kit, "installed": False, "refused": refused}
+        for info, target in plan:
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(zf.read(info))
     marker = {"kit": kit, "zip_sha256": digest, "pinned": pins.get(kit) == digest, "files": len(files)}
