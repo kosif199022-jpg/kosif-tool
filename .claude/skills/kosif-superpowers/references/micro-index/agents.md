@@ -265,7 +265,7 @@ chapter: [agent-orchestration](../powers/agent-orchestration.md) · card: `usip-
 
 ## self-discovery (mind)
 
-chapter: [self-discovery](../powers/self-discovery.md) · card: `usip-library/cards/agents/self-discovery.md` · tools: `ai-tool-discovery` · `atlas-5000` · `atlas-ledger` · `black-dragon` · `boot` · `build-chapters` · `capability-atlas` · `capability-graph` …
+chapter: [self-discovery](../powers/self-discovery.md) · card: `usip-library/cards/agents/self-discovery.md` · tools: `ai-tool-discovery` · `animation-principles` · `atlas-5000` · `atlas-ledger` · `black-dragon` · `boot` · `build-chapters` · `capability-atlas` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

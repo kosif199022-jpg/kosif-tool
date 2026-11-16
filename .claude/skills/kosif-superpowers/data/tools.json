@@ -17561,6 +17561,94 @@
       "evidence_note": "On 2026-10-26 in this checkout: verify 682/682 files match; selftest passed all six test folders of the four skills that ship tests (215 tests: pixel-studio-painter 43, kosif-montage-motion 8+112+31, kosif-one 10, kosif-social 11) after the recorded KOSIF patches (the six key-click WAVs are stored as lossless FLAC; montage tests pass apart from the opencv-version-dependent face detector test); 115 of 129 vendored Python scripts answer --help (the rest need an input file, playwright, matplotlib, or are scene modules); evals/test_superskills.py passed."
     },
     {
+      "id": "animation-principles",
+      "path": "scripts/animation_principles.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "discover",
+      "title_en": "Animation Principles: Dylan Tarre's 144 skills applying Disney's 12 principles, vendored and routable",
+      "title_ar": "مبادئ الأنيميشن: 144 مهارة لديلان تار بتطبق مبادئ ديزني الاثنا عشر، داخل سوبر باور",
+      "summary_en": "Holds github.com/dylantarre/animation-principles (MIT, (c) 2024 Dylan Tarre) inside Superpowers: 144 skills in 12 categories (domain, thinking style, role, skill level, animation type, emotional outcome, UI element, industry, tool or framework, time scale, one principle in depth, problem type) plus their docs, copied unchanged into vendor/animation-principles with a SHA-256 manifest. It finds the right skill for a request in Arabic or English, prints its method, and verifies every file. hub.py find lists the matching ones too.",
+      "summary_ar": "يحط مستودع dylantarre/animation-principles (رخصة MIT) جوه سوبر باور: 144 مهارة في 12 تصنيف (المجال، طريقة التفكير، الدور، المستوى، نوع الحركة، الإحساس، عنصر الواجهة، الصناعة، الأداة، المدة، مبدأ واحد بعمق، المشكلة) ومعاها الشروحات، منسوخة من غير تعديل في vendor/animation-principles ببصمة SHA-256 لكل ملف. بيختار المهارة المناسبة للطلب بالعربي أو الإنجليزي ويعرض منهجها ويتحقق من الملفات، و hub.py find بيعرضها كمان.",
+      "use_when": [
+        "عايز حركة زرار أو هوفر احترافية",
+        "الأنيميشن بيدوّخ الناس أعمل إيه",
+        "طبّق مبادئ ديزني على الموشن ده",
+        "Which animation principle fits this loading spinner?",
+        "Animate this modal with Framer Motion the right way"
+      ],
+      "keywords": [
+        "animation principles",
+        "disney 12 principles",
+        "12 principles",
+        "ui animation",
+        "micro-interactions",
+        "easing",
+        "timing",
+        "مبادئ الأنيميشن",
+        "مبادئ ديزني",
+        "حركة الواجهات",
+        "هوفر",
+        "أنيميشن"
+      ],
+      "commands": [
+        {
+          "name": "find",
+          "example": "python3 scripts/animation_principles.py find \"حركة زرار لما الماوس يقف عليه\"",
+          "does": "Ranks the 144 skills for the request (Arabic-aware) and prints the best five with category and path; --json for machines."
+        },
+        {
+          "name": "list",
+          "example": "python3 scripts/animation_principles.py list --category 07-by-ui-element",
+          "does": "Lists every skill grouped by its 12 categories."
+        },
+        {
+          "name": "show",
+          "example": "python3 scripts/animation_principles.py show hover-interactions --full",
+          "does": "Prints a skill's record; --full adds the whole SKILL.md to follow."
+        },
+        {
+          "name": "verify",
+          "example": "python3 scripts/animation_principles.py verify",
+          "does": "Checks every vendored file against the SHA-256 in vendor/animation-principles/KOSIF_INTEGRATION.json and reports unlisted files."
+        },
+        {
+          "name": "sync",
+          "example": "python3 scripts/animation_principles.py sync --src ../animation-principles --commit <sha>",
+          "does": "Maintainer action: re-copies skills and docs from an upstream checkout, rewrites the manifest and data/animation_principles.json."
+        }
+      ],
+      "safe_commands": [
+        "find",
+        "list",
+        "show",
+        "verify"
+      ],
+      "inputs": "A request in the user's words, a skill slug, or (for sync) a local checkout of dylantarre/animation-principles.",
+      "outputs": "Ranked skills and skill text on stdout (JSON with --json); sync rewrites vendor/animation-principles and data/animation_principles.json.",
+      "requires": {
+        "python": [],
+        "binaries": [],
+        "node": [],
+        "optional": [],
+        "network": false
+      },
+      "safety": "read-only",
+      "consent": "find, list, show and verify only read. sync rewrites the vendored folder from a local checkout. Nothing is downloaded or published.",
+      "limits": "Keyword ranking over names, descriptions and Arabic category words, not semantic search. The skills are methods (text); nothing in them is executed.",
+      "tests": [
+        ".claude/skills/kosif-superpowers/evals/test_animation_principles.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/vendor/animation-principles/KOSIF_README.md"
+      ],
+      "families": [
+        "self-discovery"
+      ],
+      "evidence": "tested-here",
+      "evidence_note": "On 2026-11-16 in this checkout: verify 293/293 files match upstream commit 8359713; evals/test_animation_principles.py passed."
+    },
+    {
       "id": "adobe-mcp-bridges",
       "path": "scripts/adobe_mcp.py",
       "root": "skill",

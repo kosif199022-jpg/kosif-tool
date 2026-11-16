@@ -3,7 +3,7 @@
 
 check_skill.py validates the kosif-superpowers skill. This tool covers all the
 other skill folders too: the top-level skills under .claude/skills/, the vendored
-sets (kosif-atlas, 100-superskills, obra-superpowers-v7) and the video styles
+sets (kosif-atlas, 100-superskills, obra-superpowers-v7, animation-principles) and the video styles
 under styles/. It is stdlib only, reads files, and never changes anything.
 
 Checks per SKILL.md
@@ -47,7 +47,8 @@ def group_of(rel: str) -> str:
     if rel.startswith("styles/"):
         return "styles"
     for key, name in (("/vendor/kosif-atlas/", "atlas"), ("/vendor/100-superskills/", "superskills"),
-                      ("/vendor/obra-superpowers-v7/", "obra")):
+                      ("/vendor/obra-superpowers-v7/", "obra"),
+                      ("/vendor/animation-principles/", "animation")):
         if key in rel:
             return name
     return "top-level"
@@ -153,7 +154,7 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description="Lint every SKILL.md in the repository")
     ap.add_argument("--json", action="store_true", help="print the full report as JSON")
     ap.add_argument("--list", choices=("errors", "warnings", "all"), help="print one line per finding")
-    ap.add_argument("--group", action="append", choices=("top-level", "atlas", "superskills", "obra", "styles"))
+    ap.add_argument("--group", action="append", choices=("top-level", "atlas", "superskills", "obra", "animation", "styles"))
     a = ap.parse_args(argv)
     rep = lint(set(a.group) if a.group else None)
     if a.json:
