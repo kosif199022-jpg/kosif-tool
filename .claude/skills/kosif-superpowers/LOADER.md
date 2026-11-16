@@ -10,7 +10,7 @@
 
 **التحميل الخفيف:** اقرأ هذا الملف وحده أولًا. لا تقرأ ملفات المهارات الكبيرة كاملة؛ افتح الملف أو نطاق الأسطر الذي يطابق الطلب فقط (`sed -n START,ENDp <path>`)، أو اسأل السكربت: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py need "<الطلب>"`. كل مهارة وكل ملحق ممثَّل هنا بسطر، فلا توجد مهارة خارج الوصول. في الوضع الكامل: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py full`.
 
-## المهارات (24) / skills
+## المهارات (25) / skills
 
 | المهارة | الملف | الحجم | متى |
 |---|---|---|---|
@@ -32,6 +32,7 @@
 | `kosif-stickman-director` | `.claude/skills/kosif-stickman-director/SKILL.md` | 4 KB · 44 سطر | Plan a stick-figure video as a director - turn a topic, article or script into an approved storyboard and ready video-generation prompts (Director mode, styles A1-A7),… |
 | `kosif-stickman-studio` | `.claude/skills/kosif-stickman-studio/SKILL.md` | 7 KB · 57 سطر | Turn a voiceover into a cinematic stick-figure explainer video drawn entirely by code (GrowKaz Stickman studio) - rim-lit black stick figures in moody 2.5D sets, giant… |
 | `kosif-superpowers` | `.claude/skills/kosif-superpowers/SKILL.md` | 83 KB · 448 سطر | Capability self-awareness and thinking upgrade for Claude. One front door (scripts/hub.py find) maps a task in the user's words to the runnable tools, catalog powers… |
+| `kosif-toon-studio` | `.claude/skills/kosif-toon-studio/SKILL.md` | 12 KB · 201 سطر | Mahmoud Elkosif's cartoon studio for the series «أبو كاب وأبو نضارة» (Cap and Specs). Makes 20-second vertical reels of the two characters in two tested ways (A, drawn… |
 | `kosif-upload-link` | `.claude/skills/kosif-upload-link/SKILL.md` | 4 KB · 46 سطر | Send the user's big-file upload link and pull what they uploaded. Use when the user asks for the upload link, says a file is too big to attach (over 30-40 MB), wants to… |
 | `kosif-voice-studio` | `.claude/skills/kosif-voice-studio/SKILL.md` | 6 KB · 108 سطر | Voice-over, voice cloning, voice design and transcription in Egyptian Arabic, MSA, English and 600+ languages - text to speech with word timings (words.json) for… |
 | `kosif-web-film` | `.claude/skills/kosif-web-film/SKILL.md` | 8 KB · 114 سطر | Direct and render a motion-design video built as a webpage (codename «التنين الأسود» / Black Dragon). Use when the user asks for a video, promo, intro, explainer or… |
@@ -338,6 +339,20 @@
 - 423–430: 8. مراجع أخرى / other references
 - 431–438: 100 Super Skills / الـ114 مهارة المدمجة
 - 439–447: Real Black Dragon media runtime — تشغيل فعلي للأصول
+
+### `.claude/skills/kosif-toon-studio/SKILL.md`
+
+- 6–9: KOSIF Toon Studio: «أبو كاب وأبو نضارة»
+- 10–17: 0. The owner and how to reply
+- 18–40: 1. Rules agreed with the owner (never break them)
+- 41–51: 2. The characters (the identity of the series)
+- 52–75: 3. Idea and hook formula (what the owner liked)
+- 76–113: 4. Way A: drawn in code (free, the main engine)
+- 114–146: 5. Way B: painted with an image generator (higher quality, about 2.5 credits per 20 s)
+- 147–154: 6. Way C: 3D world (experimental)
+- 155–174: 7. Delivery (fixed format)
+- 175–184: 8. Lessons learned (mistakes we will not repeat)
+- 185–200: 9. Files in this skill
 
 ### `.claude/skills/kosif-upload-link/SKILL.md`
 
