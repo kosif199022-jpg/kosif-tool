@@ -152,6 +152,30 @@ The owner sent the `cartoon-audio-short` skill. It puts flat cards inside a thre
 - Without a voiceover, use music, effects and captions.
 - First test: `out/20261116-s83`. Read that test's result before relying on it.
 
+## 6b. طريقة د: الورق الحي (Living Paper, free, code-drawn)
+
+Way D keeps A's rigs and acting and adds B's painted light and C's depth. It is still pure Python (numpy, cv2, PIL) and costs no credits. Proof film: `examples/f43_umbrella_paper.py` (the f42 story, same shots, captions, credit and sound, plus chalk scratches).
+
+- **The look:**
+  - Every layer is a paper cutout with fibre texture, a gouache wash (edge pooling, granulation, mottling) and a torn edge with a white fibre rim.
+  - Characters are white-bordered stickers with a soft drop shadow and a paper-thickness bevel. They are animated on twos (12 poses/s) with a 3-drawing line boil, while the camera moves smoothly at 30 fps.
+  - 2.5D parallax between 5–7 depth layers. Depth of field blurs only the far and near layers; the character plane is never blurred.
+  - Per-mood grade (`rain`, `desert`, `dawn`, `sunset`), light wrap, bloom on the sun, a warm key light, vignette and grain.
+  - «طباشير» chalk doodles (arrows, circles, a clock, a thermometer, drops, hearts) draw themselves on when Specs proves something.
+- **How to use** (`engine/paperkit.py`; its docstring has the full API):
+  1. Static plates, built once in `prepare()`: `pk.paper(draw_fn, "torn", seed, gouache=1.0)`. Use `pk.cutout(*pk.matte(fn), edge=None)` for the opaque sky.
+  2. Per pose: `tp, idx = pk.twos(t)`, then `pk.cutout(*pk.matte(draw_chars), edge="sticker", boil=idx, gouache=0.45)`. Cache by `(shot, idx)`. Use `pk.fx(fn)` for rain and heat lines, and `pk.Chalk()` → `.arrow/.circle/.path/...` → `.render(idx)`.
+  3. Per frame: `pk.compose([pk.L(img, p, shadow=..., wrap=...), ...], cam, mood, dof, light, n)`. Here `p` is 0 for the sky, 1 for the characters and >1 for near foreground.
+  4. `pk.run(out, D, frame, audio, overlay=captions_fn, prepare=prepare)` renders with several processes. Use `--stills a,b,c` for a style sheet. It writes exactly `-frames:v N` and never uses `-shortest`.
+  - Any toonkit drawing function works unchanged: `matte()` draws it on black and on white and solves for exact colour and alpha. Additive `glow` is the exception, so leave glows to the bloom.
+- **Cost:** about 1.3–1.6 s per frame on one core. The 600-frame film takes about 6–8 min wall time on 4 cores. Plates take about 20 s once.
+- **Known weaknesses:**
+  - The characters are still A's stick-limb rigs. The paper and paint make them richer, but they are not painted faces like B.
+  - The chalk on bright skies needs its dark halo.
+  - The heat haze (screen-space remap) also wobbles the paper texture.
+  - DOF needs real depth gaps: a wide shot with zoom 1.0 has little parallax, so `ZMIN = 1.04` keeps a margin.
+  - A bloom threshold set too low washes out desert skies. Tune `MOODS` per film.
+
 ## 7. Delivery (fixed format)
 
 1. The full path on the first line.
@@ -189,6 +213,7 @@ The owner sent the `cartoon-audio-short` skill. It puts flat cards inside a thre
   - `f01_cage.py`: simple.
   - `f42_umbrella.py`: studio directing.
   - `painted_build.py`: way B.
+  - `f43_umbrella_paper.py`: way D «الورق الحي» (paperkit).
 - `briefs/`:
   - `BRIEF.md`: series rules for anyone making a film.
   - `BRIEF_EINSTEIN.md`: changes for the Einstein season.
