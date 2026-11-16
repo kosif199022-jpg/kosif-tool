@@ -9,7 +9,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "3D-15: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -1906,7 +1906,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "DATA-96: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -2104,7 +2104,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "ENG-105: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -2117,7 +2117,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "ENG-106: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -2130,7 +2130,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "ENG-107: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -2156,7 +2156,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "ENG-109: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -2182,7 +2182,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "ENG-310: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -2235,7 +2235,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "ENG-41: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -2248,7 +2248,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "ENG-42: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -2261,7 +2261,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "ENG-425: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -2288,7 +2288,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "ENG-43: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -2301,7 +2301,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "ENG-44: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -2314,7 +2314,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "ENG-45: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -2327,7 +2327,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "ENG-47: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -2340,7 +2340,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "ENG-48: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -2501,7 +2501,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "FMT-38: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -2594,7 +2594,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "GLOW-04: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -2974,7 +2974,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "QA-63: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -2987,7 +2987,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "QA-64: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -3040,7 +3040,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "QA-X08: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -3053,7 +3053,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "RETRO-01: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -3107,7 +3107,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "STORY-38: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -3120,7 +3120,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "SYNC-01: its cited proof code ran green here (tool-runner; 41 tests)"
@@ -5496,7 +5496,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        ".claude/skills/kosif-superpowers/resources/motion-runtime/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87",
+        ".claude/skills/kosif-superpowers/resources/motion-runtime/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458",
         "tests/test_render_html.mjs": "69763f0b3e565fe95cc72fc6797ae6dbe142d68862c3ebf2a608b2b188c2c78f",
         "tests/test_render_html_audio.mjs": "ecb8237a78f1558c130915bfb606489644f3bae39815ac71785093b1127e1298",
         "tests/test_render_html_stills.mjs": "3336efb77bf18566577c7eb31cad3dc82ad958ee3d9f9bb98affb26f605cd94b"
@@ -5545,7 +5545,7 @@
         "tests/test_render_html_audio.mjs": "ecb8237a78f1558c130915bfb606489644f3bae39815ac71785093b1127e1298",
         "tests/test_render_html_disk.mjs": "2b7385fc8a40bf411d5bb67b1497b1d181734912e50c0be896168bcaded9de8c",
         "tests/test_render_html_stills.mjs": "3336efb77bf18566577c7eb31cad3dc82ad958ee3d9f9bb98affb26f605cd94b",
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "TOOL-81: its cited proof code ran green here (test-file, tool-runner; 82 tests)"
@@ -5783,7 +5783,7 @@
       ],
       "power_proof": true,
       "proof_sha256": {
-        "tools/render_html.cjs": "e4811c1da04e69a7889f815fdeb358c21422018e9aa53afe6798fcb2837d0a87"
+        "tools/render_html.cjs": "46be78508e87884923b09378a1550f37cfb93ac2f50691a492259ee083f6b458"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "UI-12: its cited proof code ran green here (tool-runner; 41 tests)"
