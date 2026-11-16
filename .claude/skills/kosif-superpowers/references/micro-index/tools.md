@@ -50,6 +50,7 @@
 | tool | ID | الأداة / tool | أمر أول / first command | tests |
 |---|---|---|---|---|
 | `ai-tool-discovery` | TOOL-01 | باحث القدرات ثنائي اللغة بلا اتصال · Offline bilingual capability finder | `python3 scripts/ai_tool_discovery.py "تحريك شخصيات فيديو" --top 8` | 1 |
+| `animation-principles` | — | مبادئ الأنيميشن: 144 مهارة لديلان تار بتطبق مبادئ ديزني الاثنا عشر، داخل سوبر باور · Animation Principles: Dylan Tarre's 144 skills applying Disney's 12 principles, vendored and routable | `python3 scripts/animation_principles.py find "حركة زرار لما الماوس يق…` | 1 |
 | `atlas-5000` | TOOL-106 | خريطة تغطية أطلس الـ5000 مهارة · Atlas-5000 coverage map | `python3 scripts/atlas_5000.py stats --json` | 1 |
 | `atlas-capability-miner` | TOOL-105 | منقّب قدرات الأطلس من البيانات الوصفية · Atlas metadata capability miner | `python3 scripts/atlas_capability_miner.py --help` | 1 |
 | `atlas-ledger` | TOOL-107 | سجل الأطلس: حالة واحدة لكل مهارة · Atlas ledger: one status for every Atlas skill | `python3 scripts/atlas_ledger.py stats --json` | 1 |
