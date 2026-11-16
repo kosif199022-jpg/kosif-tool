@@ -1994,6 +1994,16 @@
    "label": "scripts/_secrets.py"
   },
   {
+   "id": "script:scripts/animation_principles.py",
+   "kind": "script",
+   "label": "scripts/animation_principles.py"
+  },
+  {
+   "id": "script:scripts/superskills.py",
+   "kind": "script",
+   "label": "scripts/superskills.py"
+  },
+  {
    "id": "script:scripts/atlas_bulk_source_audit.py",
    "kind": "script",
    "label": "scripts/atlas_bulk_source_audit.py"
@@ -2232,11 +2242,6 @@
    "id": "script:scripts/see_superpower_unifier.py",
    "kind": "script",
    "label": "scripts/see_superpower_unifier.py"
-  },
-  {
-   "id": "script:scripts/superskills.py",
-   "kind": "script",
-   "label": "scripts/superskills.py"
   },
   {
    "id": "script:scripts/instagram_finder.py",
@@ -7362,6 +7367,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/animation_principles.py",
+   "to": "script:scripts/superskills.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/app_studio.py",
    "to": "script:scripts/app_studio_paint.py",
    "rel": "imports",
@@ -7700,6 +7711,12 @@
   {
    "from": "script:scripts/fusionforge_shared.py",
    "to": "script:scripts/fusionforge.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/hub.py",
+   "to": "script:scripts/animation_principles.py",
    "rel": "imports",
    "w": 1
   },
