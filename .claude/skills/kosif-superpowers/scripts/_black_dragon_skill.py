@@ -58,6 +58,7 @@ SCRIPT = {
     "saas-animation": SKILLS / "saas-animation" / "scripts",
     "stickman-studio": SKILLS / "kosif-stickman-studio" / "scripts",
     "stickman-director": SKILLS / "kosif-stickman-director" / "scripts",
+    "reel-kits": SKILLS / "kosif-reel-kits" / "scripts",
     "creative-council": SKILLS / "kosif-black-dragon" / "scripts",
     "cartoon-short": SKILLS / "cartoon-audio-short" / "kit" / "tools",
     "talking-head-reels": SKILLS / "talking-head-reels" / "scripts",
@@ -907,6 +908,20 @@ def stickman_director(r, d, task, clip, selftest):
                                "is not downloaded or run by the Dragon"})
 
 
+def reel_kits(r, d, task, clip, selftest):
+    """The three reel kits are not in the repo (no licence); this runs KOSIF's installer on synthetic zips."""
+    out = r.work / "selftest"
+    r.call("reel_kits.py: known-answer install self-test", [*PY, str(d / "reel_kits.py"), "self-test", "--out", str(out)])
+    res = _json(out / "selftest.json")
+    r.output(out / "selftest.json")
+    names = {c["name"]: c["passed"] for c in res["checks"]}
+    r.check("all 4 self-test checks pass", res["passed"] and len(names) == 4, names)
+    r.check("an unpinned zip is refused", names.get("an unpinned hash is refused"), None)
+    r.check("a path escape is refused", names.get("a path escape is refused and nothing installed"), None)
+    r.findings.append({"note": "installer only; the kits need the owner's zips, Node (HyperFrames), ffmpeg and edge-tts "
+                               "and are not run by the Dragon"})
+
+
 def cartoon_short(r, d, task, clip, selftest):
     import re
     import wave
@@ -1330,7 +1345,7 @@ RUNNERS = {"dragon-montage": dragon_montage, "prompt-master": prompt_master, "pr
            "kling-director": kling_director, "dragon-mind": dragon_mind, "saas-animation": saas_animation,
            "creative-council": creative_council, "cartoon-short": cartoon_short, "talking-head-reels": talking_head_reels,
            "arena": arena, "stickman-studio": stickman_studio,
-           "stickman-director": stickman_director}
+           "stickman-director": stickman_director, "reel-kits": reel_kits}
 
 
 def main(argv: list[str]) -> int:

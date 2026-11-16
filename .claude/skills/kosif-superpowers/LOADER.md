@@ -10,7 +10,7 @@
 
 **التحميل الخفيف:** اقرأ هذا الملف وحده أولًا. لا تقرأ ملفات المهارات الكبيرة كاملة؛ افتح الملف أو نطاق الأسطر الذي يطابق الطلب فقط (`sed -n START,ENDp <path>`)، أو اسأل السكربت: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py need "<الطلب>"`. كل مهارة وكل ملحق ممثَّل هنا بسطر، فلا توجد مهارة خارج الوصول. في الوضع الكامل: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py full`.
 
-## المهارات (23) / skills
+## المهارات (24) / skills
 
 | المهارة | الملف | الحجم | متى |
 |---|---|---|---|
@@ -26,6 +26,7 @@
 | `kosif-instagram-video-research` | `.claude/skills/kosif-instagram-video-research/SKILL.md` | 6 KB · 85 سطر | Search public Instagram Reel references by content/topic and known creator, expand Arabic-to-English queries, optionally ingest public search index via Brave Search… |
 | `kosif-kling-director` | `.claude/skills/kosif-kling-director/SKILL.md` | 4 KB · 39 سطر | Kling 4.0 short-film director's prompt pack from one story line: split the film into generation blocks of 30 s or less (20 s for Flash), write a master prompt per block… |
 | `kosif-reel-hooks` | `.claude/skills/kosif-reel-hooks/SKILL.md` | 6 KB · 120 سطر | Write an Instagram Reel or short video script from one raw idea, in Egyptian Arabic, MSA or English - three hooks off the Arabic hook library, scored by a local tool,… |
+| `kosif-reel-kits` | `.claude/skills/kosif-reel-kits/SKILL.md` | 4 KB · 49 سطر | Install and run the three free Claude reel kits from the «خبير أونلاين» page - make-reel (one line to a finished Egyptian reel with a free voice), reel-maker (a reel… |
 | `kosif-shadow-theatre` | `.claude/skills/kosif-shadow-theatre/SKILL.md` | 7 KB · 80 سطر | Make shadow-theatre / silhouette motion-graphics films (مسرح الظل، مشاهد بالظلال) from code — bodies that join into trees, boats and buildings, figures that grow as… |
 | `kosif-site-snapshot` | `.claude/skills/kosif-site-snapshot/SKILL.md` | 4 KB · 47 سطر | Copy a website the user owns (or may copy) offline with its CSS, JS, images and fonts, goclone-style, and measure its design system into design.md (colours, fonts, type… |
 | `kosif-stickman-director` | `.claude/skills/kosif-stickman-director/SKILL.md` | 4 KB · 44 سطر | Plan a stick-figure video as a director - turn a topic, article or script into an approved storyboard and ready video-generation prompts (Director mode, styles A1-A7),… |
@@ -245,6 +246,14 @@
 - 95–103: Rules
 - 104–111: What the score is and is not
 - 112–119: Credit
+
+### `.claude/skills/kosif-reel-kits/SKILL.md`
+
+- 6–9: KOSIF Reel Kits — ريلز «خبير أونلاين»
+- 10–22: Which skill — ما نكررش
+- 23–38: Install from the owner's copy
+- 39–45: KOSIF rules on top
+- 46–48: Credit
 
 ### `.claude/skills/kosif-shadow-theatre/SKILL.md`
 
