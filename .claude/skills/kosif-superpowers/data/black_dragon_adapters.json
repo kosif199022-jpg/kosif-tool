@@ -399,6 +399,16 @@
       ],
       "why": "find superskills (find only, no install)"
     },
+    "tool:animation-principles": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/animation_principles.py",
+        "find",
+        "{task}"
+      ],
+      "why": "find animation-principles skills (index read only)"
+    },
     "tool:source-scout": {
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
       "args": [

@@ -3352,7 +3352,7 @@
       "power_proof": true,
       "proof_sha256": {
         ".claude/skills/kosif-superpowers/evals/test_hub.py": "b4d3a73f5dc2f5374ca538b6de656ab683cc4a4dbfcdb9d3bca3fdfd6d4021c0",
-        ".claude/skills/kosif-superpowers/scripts/hub.py": "b84b22d6e7a81c2222b4714b8960fefefd1b3b1137e177885d70b62f02226797"
+        ".claude/skills/kosif-superpowers/scripts/hub.py": "ff7c55d51f4aa02436d3833130ff091d5b37776cf32e4510cd8f3f61e69365b0"
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "TOOL-05: its cited proof code ran green here (test-file, tool-runner; 54 tests)"
