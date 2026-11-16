@@ -52,4 +52,5 @@ The kit's own guides (`references/style-bible.md`, `story-breakdown.md`, `engine
 ## How it fits the rest of KOSIF
 
 - **Black Dragon:** listed as `skill:kosif-stickman-studio`; its reviewed adapter runs `stickman_kit.py self-test` (known-answer, no plugin, no network). It does not render a film by itself.
+- **Director, not a second studio:** for a storyboard and video-model prompts from a topic or script (no voiceover yet), or one of its ready styles, use `kosif-stickman-director` (Stickman Video Director, MIT). It can write the story and narration that this studio then renders.
 - **Neighbours:** `kosif-shadow-theatre` (silhouette theatre, pure Python), `kosif-web-film` (motion-design promos), `saas-animation` (8–20 s product ads), `kosif-voice-studio` (make the voiceover first), Montage Pro (cut real footage). Pick stickman when the owner wants a narrated explainer with recurring characters.
