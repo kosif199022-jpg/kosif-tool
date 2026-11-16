@@ -17,7 +17,7 @@
 | `arena` | `.claude/skills/arena/SKILL.md` | 21 KB · 403 سطر | Make 100 versions of Claude fight to the death over one task. Spins up N sub-agents (default 100, --quick for 16), gives every one the exact same task plus a different… |
 | `cartoon-audio-short` | `.claude/skills/cartoon-audio-short/SKILL.md` | 23 KB · 200 سطر | Make a vertical animated cartoon short in Arabic or English. Offers 10 ideas, writes the script, then turns the user's voiceover into a finished MP4 with quiet music… |
 | `editorial-film-edit` | `.claude/skills/editorial-film-edit/SKILL.md` | 6 KB · 48 سطر | Edit footage in an archival editorial style with bundled video and photo references, kinetic text, film grain, bloom, masks and presenter splits. Use for new edits and… |
-| `find-skills` | `.claude/skills/find-skills/SKILL.md` | 8 KB · 171 سطر | Helps users discover and install agent skills when they ask questions like "how do I do X", "find a skill for X", "is there a skill that can...", or express interest in… |
+| `find-skills` | `.claude/skills/find-skills/SKILL.md` | 8 KB · 173 سطر | Helps users discover and install agent skills when they ask questions like "how do I do X", "find a skill for X", "is there a skill that can...", or express interest in… |
 | `kosif-black-dragon` | `.claude/skills/kosif-black-dragon/SKILL.md` | 25 KB · 345 سطر | التنين الأسود: new independent skill that studies the KOSIF catalog, links each original source to one traceable entry, and synthesizes new task-specific working… |
 | `kosif-dragon-mind` | `.claude/skills/kosif-dragon-mind/SKILL.md` | 12 KB · 153 سطر | The thinking brain of the Black Dragon («عقل التنين الأسود»). Use when a task should be thought through before the Black Dragon runs, when the owner asks to decompose,… |
 | `kosif-dragon-montage` | `.claude/skills/kosif-dragon-montage/SKILL.md` | 8 KB · 98 سطر | Black Dragon montage protocol («التنين الأسود، مونتاج»). Use when the owner gives one or more videos (and optionally music or a reference video) and asks the Black… |
@@ -155,7 +155,7 @@
 - 105–118: Common Skill Categories
 - 119–124: Tips for Effective Searches
 - 125–142: When No Skills Are Found
-- 143–170: Inside KOSIF
+- 143–172: Inside KOSIF
 
 ### `.claude/skills/kosif-black-dragon/SKILL.md`
 

@@ -150,12 +150,14 @@ and the last two sentences of the description.
 so before going to skills.sh run these from the repository root, in this order, and stop at the first good fit:
 
 ```bash
-python3 .claude/skills/kosif-superpowers/scripts/hub.py find "<the need in the user's words>"   # tools, powers, super skills, animation principles
-python3 .claude/skills/kosif-superpowers/scripts/superskills.py find "<need>"                   # the owner's 114 super skills
-python3 .claude/skills/kosif-superpowers/scripts/animation_principles.py find "<need>"          # 144 Disney-principle animation skills
-python3 .claude/skills/kosif-superpowers/scripts/micro_index.py find "<words>"                   # one-line address of any power or tool
+python3 .claude/skills/kosif-superpowers/scripts/hub.py find '<what the user needs>'        # tools, powers, super skills, animation principles
+python3 .claude/skills/kosif-superpowers/scripts/superskills.py find '<need>'                   # the owner's 114 super skills
+python3 .claude/skills/kosif-superpowers/scripts/animation_principles.py find '<need>'          # 144 Disney-principle animation skills
+python3 .claude/skills/kosif-superpowers/scripts/micro_index.py find '<words>'                   # one-line address of any power or tool
 python3 .claude/skills/kosif-superpowers/scripts/skills_lint.py --json                           # every SKILL.md in the repo, with name and description
 ```
+
+Put the user's words inside single quotes, never double quotes, and write any `'` in them as `'\''`, so `$(...)`, backticks or `$VAR` in a request stay plain text and are never run by the shell.
 
 Say which one you found and where its `SKILL.md` is. Go to the open ecosystem (`npx skills find`, the skills.sh
 leaderboard) only when nothing here fits, or when the owner asks for outside skills by name.
