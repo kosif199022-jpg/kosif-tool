@@ -18,7 +18,7 @@
 | `cartoon-audio-short` | `.claude/skills/cartoon-audio-short/SKILL.md` | 23 KB · 200 سطر | Make a vertical animated cartoon short in Arabic or English. Offers 10 ideas, writes the script, then turns the user's voiceover into a finished MP4 with quiet music… |
 | `editorial-film-edit` | `.claude/skills/editorial-film-edit/SKILL.md` | 6 KB · 48 سطر | Edit footage in an archival editorial style with bundled video and photo references, kinetic text, film grain, bloom, masks and presenter splits. Use for new edits and… |
 | `find-skills` | `.claude/skills/find-skills/SKILL.md` | 8 KB · 173 سطر | Helps users discover and install agent skills when they ask questions like "how do I do X", "find a skill for X", "is there a skill that can...", or express interest in… |
-| `kosif-black-dragon` | `.claude/skills/kosif-black-dragon/SKILL.md` | 25 KB · 345 سطر | التنين الأسود: new independent skill that studies the KOSIF catalog, links each original source to one traceable entry, and synthesizes new task-specific working… |
+| `kosif-black-dragon` | `.claude/skills/kosif-black-dragon/SKILL.md` | 31 KB · 405 سطر | التنين الأسود (Black Dragon): one door to every KOSIF skill, tool and power. v1.0 is the clean rebuild (python -m dragon find / doctor / verify / cut / beats / words /… |
 | `kosif-dragon-mind` | `.claude/skills/kosif-dragon-mind/SKILL.md` | 12 KB · 153 سطر | The thinking brain of the Black Dragon («عقل التنين الأسود»). Use when a task should be thought through before the Black Dragon runs, when the owner asks to decompose,… |
 | `kosif-dragon-montage` | `.claude/skills/kosif-dragon-montage/SKILL.md` | 8 KB · 98 سطر | Black Dragon montage protocol («التنين الأسود، مونتاج»). Use when the owner gives one or more videos (and optionally music or a reference video) and asks the Black… |
 | `kosif-infinite-matrices` | `.claude/skills/kosif-infinite-matrices/SKILL.md` | 9 KB · 88 سطر | Invent new visual and motion systems from causal bricks (state, operation, law, time, memory, feedback) mined from the 86 reference styles; build a recipe, run an A/B/C… |
@@ -161,24 +161,26 @@
 
 ### `.claude/skills/kosif-black-dragon/SKILL.md`
 
-- 6–9: التنين الأسود — Black Dragon (Native Fusion)
-- 10–18: Working contract
-- 19–34: Mandatory video-product protocol (إلزامي)
-- 35–48: Commands
-- 49–62: Repo fusion (REA, 2026-11-10) and the media hunter
-- 63–79: Native reasoning absorbed from Dragon Mind
-- 80–100: Catalog-wide native fusion atlas
-- 101–107: Verified composition and Arabic matching
-- 108–113: Evidence and limits
-- 114–137: Creative Council — no artistic gatekeepers
-- 138–152: The Arena — a required step, sized to the task
-- 153–178: Book-informed judgment guard (Thinking, Fast and Slow)
-- 179–208: Source-linked external Atlas candidate bridge (2026-11-06)
-- 209–231: Combined book-to-council thinking integration (PR #238 + PR #233)
-- 232–271: 3D Build Studio — Blender / Unreal (2026-11-07)
-- 272–306: Code-Motion Style Studio (2026-11-07)
-- 307–334: Wired into the Black Dragon engine (2026-11-07)
-- 335–344: Instagram Reel video 12-tool bridge (2026-11-12)
+- 6–7: التنين الأسود — Black Dragon (Native Fusion)
+- 8–63: v1.0 — the clean rebuild (start here)
+- 64–69: In this repo (kosif-tool): native fusion, protocol and council
+- 70–78: Working contract
+- 79–94: Mandatory video-product protocol (إلزامي)
+- 95–108: Commands
+- 109–122: Repo fusion (REA, 2026-11-10) and the media hunter
+- 123–139: Native reasoning absorbed from Dragon Mind
+- 140–160: Catalog-wide native fusion atlas
+- 161–167: Verified composition and Arabic matching
+- 168–173: Evidence and limits
+- 174–197: Creative Council — no artistic gatekeepers
+- 198–212: The Arena — a required step, sized to the task
+- 213–238: Book-informed judgment guard (Thinking, Fast and Slow)
+- 239–268: Source-linked external Atlas candidate bridge (2026-11-06)
+- 269–291: Combined book-to-council thinking integration (PR #238 + PR #233)
+- 292–331: 3D Build Studio — Blender / Unreal (2026-11-07)
+- 332–366: Code-Motion Style Studio (2026-11-07)
+- 367–394: Wired into the Black Dragon engine (2026-11-07)
+- 395–404: Instagram Reel video 12-tool bridge (2026-11-12)
 
 ### `.claude/skills/kosif-dragon-mind/SKILL.md`
 

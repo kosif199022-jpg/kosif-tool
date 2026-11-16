@@ -1,9 +1,69 @@
 ---
 name: kosif-black-dragon
-description: "التنين الأسود: new independent skill that studies the KOSIF catalog, links each original source to one traceable entry, and synthesizes new task-specific working methods without invoking legacy tools by default."
+description: "التنين الأسود (Black Dragon): one door to every KOSIF skill, tool and power. v1.0 is the clean rebuild (python -m dragon find / doctor / verify / cut / beats / words / mix / film / engines / run, 11 engines with parity tests); this repo copy also keeps the native-fusion catalog, the mandatory video protocol, the creative council, 3D build studio and motion styles. Use first when the user says «التنين الأسود»، «قدراتك»، «فيه أداة/مهارة لـ…», or before any video, montage or creative task to pick the right skill, engine or tool."
 ---
 
 # التنين الأسود — Black Dragon (Native Fusion)
+
+## v1.0 — the clean rebuild (start here)
+
+The rebuild of kosif-tool into one clean repo, **black-dragon**, is done (phases 1–6, all gates measured, 150 tests passing). It is the single door for day-to-day work. Plan, phase gates and evidence: [`references/REBUILD_PLAN.md`](references/REBUILD_PLAN.md).
+
+Repo on the owner's PC: `C:\Users\cinde\OneDrive\Desktop\التنين الأسود` (dev copy `C:\Users\cinde\kosif-own\black-dragon`). The original repos, including this one, stay untouched by it.
+
+```
+cd "C:\Users\cinde\OneDrive\Desktop\التنين الأسود"
+python -m dragon find "الطلب بكلام المستخدم"      # best tools (with a runnable command), skills (with SKILL.md path), superpowers, powers
+python -m dragon show <id|name>                    # one item in full
+python -m dragon doctor                            # programs + Python modules this machine really has
+python -m dragon stats                             # what the catalog holds
+python -m dragon build                             # re-index after adding repos/skills (sources in data/sources.json)
+python -m dragon verify out.mp4 --expect 1080x1920 --out evidence.json   # duration, size, fps, LUFS, true peak, audio/video length mismatch
+python -m dragon cut in.mp4 12.4 31.0 out.mp4      # frame-accurate smart cut (exact frame count)
+python -m dragon beats song.wav --out beats.json   # tempo + beat grid for cuts
+python -m dragon words song.wav --lang ar --out words.json   # sung/spoken lines with word timings
+python -m dragon mix mix.json out.wav              # song section + voices, song ducks under voice, exact length, -14 LUFS
+python -m dragon film spec.json --stills 1.5,7.5,12  # footage cinema: review stills first
+python -m dragon film spec.json [--reuse] [--remux]  # full film -> MP4 -> verify (templates: engines/cinema/templates/*.json)
+python -m dragon engines                           # every engine with its purpose
+python -m dragon run <engine> <subcommand> ...     # run any engine (same as python -m engines.<engine> ...)
+python -m pytest -q tests                          # full suite incl. old-vs-new parity tests
+```
+
+### Engines (each rewritten from the old kosif module, each with old-vs-new parity tests)
+| Engine | Use it for | Main subcommands |
+|---|---|---|
+| `dragon_montage` | footage + task in the owner's words -> reasoned, reviewed edit (analyze, brief, taste, EDL, render, review) | `edit`, `plan`, `go`, `doctor`, `station <name>`, `tool <module>` |
+| `talking_head` | one talking-to-camera recording -> vertical editorial reel (pause cuts, mastered voice, animated text) | `check prepare transcribe words cut master validate stills render sheet` |
+| `cinema` (via `dragon film`) | real footage + song -> cinematic 9:16 tribute/celebration films | `dragon film spec.json` |
+| `web_film` | motion films built as seek-driven web pages | `plan scaffold check render`, `world example\|beats\|check\|build\|review\|render` |
+| `editorial` | archival editorial look: grain, bloom, kinetic captions | `doctor example check build render` |
+| `shadow_theatre` | silhouette / shadow-theatre films from a scene JSON | `doctor library analyze check stills render` |
+| `voice_studio` | speech with word timings, voice clone/design, transcription to SRT/VTT | `doctor voices speak transcribe clone design verify` |
+| `reel_hooks` | score a reel's first line, beat sheet for a script, Arabic humanizer | `hook beats clean` |
+| `kling_director` | Kling short-film prompt pack + 3x3 storyboard + lint (never calls Kling) | `plan build check` |
+| `matrices` | invent new visual systems from causal bricks, A/B/C tests, ledger | `experiment generate ideate laws bricks ledger …` |
+| `cards` | one interpreter for the method cards (old generated runners turned into data) | `list`, `run <id>`, `run --family X`, `stats` |
+
+Shared core: `engines/media.py`, `engines/audio.py`, `engines/montage.py`, `engines/render/render.cjs` (frames piped straight to ffmpeg, full BT.709 tags). `engines/cinema`: spec → graded shots → canvas page → MP4. Gate proof: Mayar film 1 rebuilt = VMAF 99.46.
+
+### What the v1.0 catalog holds (built from data, no data inside code)
+- 22,319 entries: 15k+ skills from kosif-atlas, 114 from 100-superskills, kosif-tool's skills, fastify-motion-bro, installed skills, downloaded repos.
+- 212 runnable tools with commands, 5,917 powers with status (proven / ready / install / key / documented / idea), 485 superpowers.
+- Arabic-aware search: diacritics, alef/ya/ta-marbuta forms, Arabic digits and the article «ال» are normalised; BM25 ranking with names weighted 4x.
+- Not ported: Apple Vision tools (Mac only) and the FCPXML exporter (optional); 1,901 method cards are marked «مش متنقل» with a reason each (`data/cards/_parity.json`).
+
+### How to work with it
+1. `dragon find` the request, then open the chosen SKILL.md or run the tool's command. Report what was really executed separately from what was only consulted.
+2. Status `proven`/`ready` beats `documented`/`idea`; check `requires` with `dragon doctor` before promising.
+3. Measure every media output with `dragon verify` before calling it done.
+4. Footage → cinematic films: `black-dragon-cinema` skill (Mayar films pipeline). Montage folder rules: `C:\Users\cinde\OneDrive\Desktop\المونتاج\CLAUDE.md` (quality first, best tool per job, cinematic not educational).
+5. Third-party skills (kosif-atlas mirror, dragon-repos) are reference: read scripts before running, respect each licence.
+6. No spending, publishing or pushing to GitHub without the owner's explicit yes.
+
+## In this repo (kosif-tool): native fusion, protocol and council
+
+Everything below still works from the kosif-tool repository root and is kept as is. Use it when you are inside this repo, or for the video protocol, the creative council, the 3D build studio and the motion styles.
 
 **Product:** one new skill with its own analysis and synthesis logic. It is not a wrapper around thousands of old scripts.
 
