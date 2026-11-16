@@ -1,0 +1,39 @@
+{
+  "id": "pm-aichrislee-a6cb42",
+  "name": "Fifteen-second motion designer showreel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
+  "category": [
+    "charts",
+    "kinetic-type",
+    "photos",
+    "code"
+  ],
+  "creator": "unknown",
+  "creator_url": "https://x.com/aichrislee/status/2103878567540961335",
+  "page": "https://www.promptsmotion.com/aichrislee-a6cb42",
+  "video": "https://www.promptsmotion.com/__l5e/assets-v1/4fc07977-c973-476d-8888-d5570e32b186/aichrislee-a6cb42-video.mp4",
+  "poster": "https://www.promptsmotion.com/__l5e/assets-v1/927e349f-5ace-4d44-99e1-23f6d21fd903/aichrislee-a6cb42-poster.webp",
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 3,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "HTML"
+  ],
+  "source_prompt_words": 93,
+  "listed": true,
+  "skill": "styles/pm-aichrislee-a6cb42/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/photos.md",
+    "playbooks/code.md"
+  ]
+}

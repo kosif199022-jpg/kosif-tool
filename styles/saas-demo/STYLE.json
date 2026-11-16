@@ -5,8 +5,7 @@
   "origin": "KOSIF original style",
   "type": "Style",
   "category": [
-    "product-ui",
-    "ads"
+    "product-ui"
   ],
   "creator": "KOSIF + attributed sources",
   "creator_url": null,
@@ -24,8 +23,7 @@
   "listed": true,
   "skill": "styles/saas-demo/SKILL.md",
   "playbooks": [
-    "playbooks/product-ui.md",
-    "playbooks/ads.md"
+    "playbooks/product-ui.md"
   ],
   "summary_ar": "ريل عمودي 9:16 يعرض منتجاً برمجياً: نافذة تطبيق ويب نظيفة بزوايا مستديرة وظل ناعم تطفو على خلفية متدرجة فاتحة، ومؤشر فأرة يتحرك وينقر بحلقة ضغط، والكاميرا تقترب من كل ميزة بينما تظهر عناوين عربية قصيرة فوقها، وتمتلئ البيانات والرسوم داخل الواجهة كأنها حية، وتنتهي بالشعار وزر الاشتراك.",
   "summary_en": "A 9:16 reel showcasing a software product: a clean, rounded web-app window with a soft shadow floating on a light gradient, a cursor that glides and clicks with a press ring, camera zooms into each feature while short Arabic headlines appear above, data and charts fill inside the UI as if live, ending on the logo and a sign-up button.",

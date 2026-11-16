@@ -5,11 +5,15 @@
   "origin": "PromptsMotion",
   "type": "Prompt",
   "category": [
-    "music",
-    "characters",
+    "charts",
+    "diagrams",
     "kinetic-type",
-    "hand-drawn",
-    "charts"
+    "shapes",
+    "particles",
+    "characters",
+    "photos",
+    "music",
+    "code"
   ],
   "creator": "unknown",
   "creator_url": "https://x.com/donaldjewkes/status/2102801274173587569",
@@ -30,11 +34,15 @@
   "listed": true,
   "skill": "styles/pm-donaldjewkes-063f3c/SKILL.md",
   "playbooks": [
-    "playbooks/music.md",
-    "playbooks/characters.md",
+    "playbooks/charts.md",
+    "playbooks/diagrams.md",
     "playbooks/kinetic-type.md",
-    "playbooks/hand-drawn.md",
-    "playbooks/charts.md"
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/characters.md",
+    "playbooks/photos.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
   ],
   "summary_ar": "فيديو كليب بوب مدته نحو دقيقتين و21 ثانية بأسلوب طباعة ريزوغراف على ورق كريمي (برتقالي ووردي وكحلي وأصفر خردلي وفيروزي): بطلة بشعر برتقالي على شكل بتلات وسماعة رأس تغني وترقص مع فرقة شخصيات زهرية، بين أشعة شمس ملونة وكلمات عملاقة ومخططات ولوحات أرقام ومشاهد رمزية، مع شريط كلمات أغنية صغير أسفل اليسار وختم تاريخ يتقدم من 2019 إلى 2026 أعلى اليمين.",
   "summary_en": "A 2 min 21 s pop music video in a risograph print look on cream paper (orange, pink, navy, mustard, teal): a petal-haired heroine with a headset mic sings and dances with flower-headed characters through sunbursts, giant lyric words, charts and counters, with a small lyric strip bottom-left and a date stamp advancing from 2019 to 2026.",
