@@ -488,6 +488,7 @@ def find(brief: str, limit_tools: int = 5, limit_powers: int = 10, reg: dict = N
     out["motion"] = sug["motion"]
     out["hints"] = [P.HINTS[h] for h in sug["hints"] if h in P.HINTS]
     out["superskills"] = superskills_for(brief)
+    out["animation_principles"] = animation_principles_for(brief)
     # SEE stays a method layer inside the one existing hub, not another registry.
     try:
         from see_superpower_unifier import fuse as _see_fuse
@@ -516,6 +517,19 @@ def superskills_for(brief: str, limit: int = 3, min_score: float = 2.0) -> list:
         return [{"slug": r["slug"], "title_ar": r["title_ar"], "title_en": r["title_en"], "score": sc,
                  "path": r["path"] + "/SKILL.md", "show": f"python3 scripts/superskills.py show {r['slug']}"}
                 for sc, r in SS.find(brief, limit) if sc >= min_score]
+    except Exception:   # never let the optional layer break the front door
+        return []
+
+
+def animation_principles_for(brief: str, limit: int = 3, min_score: float = 3.0) -> list:
+    """Dylan Tarre's 144 animation-principles skills (vendor/animation-principles) that fit; [] when absent."""
+    try:
+        import animation_principles as AP  # noqa: E402  (stdlib; reads data/animation_principles.json)
+        if not AP.DATA.is_file():
+            return []
+        return [{"slug": r["slug"], "category_ar": r["category_ar"], "category_en": r["category_en"], "score": sc,
+                 "path": r["path"] + "/SKILL.md", "show": f"python3 scripts/animation_principles.py show {r['slug']} --full"}
+                for sc, r in AP.find(brief, limit) if sc >= min_score]
     except Exception:   # never let the optional layer break the front door
         return []
 
@@ -569,6 +583,11 @@ def cmd_find(a) -> int:
         print("\n★ مهارات خارقة كاملة / super skills (100-superskills, read the SKILL.md and follow it)")
         for k in res["superskills"]:
             print(f"  {k['slug']:<34} {k['title_ar']} — {k['title_en']}")
+            print(f"     $ {shown(k['show'], {'root': 'skill'})}")
+    if res.get("animation_principles"):
+        print("\n🎞 مبادئ الأنيميشن / animation principles (Dylan Tarre, MIT; read the SKILL.md and follow it)")
+        for k in res["animation_principles"]:
+            print(f"  {k['slug']:<34} {k['category_ar']} — {k['category_en']}")
             print(f"     $ {shown(k['show'], {'root': 'skill'})}")
     fusion = res.get("see_fusion") or {}
     if fusion.get("status") == "PLAN_ONLY":
