@@ -467,6 +467,13 @@
       "what": "Third separate artifact 'بضاعة جديدة 2' from the LEMFOERDER proforma PRF-17688: 73 items, full multi-line descriptions, SMACC exact 36, via alternative 20, none 17, alternatives on all 73.",
       "checks": "73 items, one group, title and heading correct, 0 page errors",
       "status": "published"
+    },
+    {
+      "n": 51,
+      "at": "2026-11-09T11:30:00+03:00",
+      "what": "v70 (artifact version 88): new goods 1 (BMW invoice, 261 lines) and new goods 2 (LEMFOERDER proforma, 73 lines) merged into the warehouse site as groups 901/902 with a source filter (all / warehouse / new 1 / new 2) and a coloured source tag on every row; SMACC left empty for new goods; names and numbers checked line by line against the Excel and the PDF (10 proforma OE numbers that the separate site had wrong were corrected). With the owner's explicit approval the two sites' work was copied into the warehouse database in one atomic batch: 308 locations, 39 counts, 8 marks, 1 saved search, 353 log events; warehouse entries unchanged (1103 counts, 1102 attrs before and after).",
+      "checks": "2,867 items; source filter 2,533 / 261 / 73; searches by OE, LEMF and BMW numbers find their lines; 0 page errors; database read-back",
+      "status": "published"
     }
   ],
   "outputs": [

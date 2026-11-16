@@ -36,6 +36,7 @@
 | `adobe-mcp-bridges` | ربط Claude ببرامج أدوبي (أفتر إفكتس وبريمير وفوتوشوب) | `python3 scripts/adobe_mcp.py list` | tested-here |
 | `agent-guard` | حارس الوكيل: فحص الأوامر قبل تشغيلها وكشف الأسرار وخطة فروع متوازية | `python3 scripts/agent_guard.py rules` | tested-here |
 | `ai-tool-discovery` | باحث القدرات ثنائي اللغة بلا اتصال | `python3 scripts/ai_tool_discovery.py "تحريك شخصيات فيديو" --top 8` | tested-here |
+| `animation-principles` | مبادئ الأنيميشن: 144 مهارة لديلان تار بتطبق مبادئ ديزني الاثنا عشر، داخل سوبر باور | `python3 scripts/animation_principles.py find "حركة زرار لما الماوس يقف عليه"` | tested-here |
 | `atlas-5000` | خريطة تغطية أطلس الـ5000 مهارة | `python3 scripts/atlas_5000.py stats --json` | tested-here |
 | `atlas-ledger` | سجل الأطلس: حالة واحدة لكل مهارة | `python3 scripts/atlas_ledger.py stats --json` | tested-here |
 | `black-dragon` | التنين الأسود — العقل المنسق لكل القدرات | `python3 scripts/black_dragon.py inventory` | untested |

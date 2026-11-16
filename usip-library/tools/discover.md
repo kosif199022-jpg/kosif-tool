@@ -1,4 +1,4 @@
-# أدوات المجال `discover` (31 أداة)
+# أدوات المجال `discover` (32 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -45,6 +45,55 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:ai-tool-discovery --evidence <ملف>`.
+
+### `animation-principles` — مبادئ الأنيميشن: 144 مهارة لديلان تار بتطبق مبادئ ديزني الاثنا عشر، داخل سوبر باور / Animation Principles: Dylan Tarre's 144 skills applying Disney's 12 principles, vendored and routable
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/animation_principles.py` (جذر: skill) |
+| المجال | `discover` |
+| الدليل | `tested-here` |
+| العائلات | `self-discovery` |
+
+**ما تفعله:** يحط مستودع dylantarre/animation-principles (رخصة MIT) جوه سوبر باور: 144 مهارة في 12 تصنيف (المجال، طريقة التفكير، الدور، المستوى، نوع الحركة، الإحساس، عنصر الواجهة، الصناعة، الأداة، المدة، مبدأ واحد بعمق، المشكلة) ومعاها الشروحات، منسوخة من غير تعديل في vendor/animation-principles ببصمة SHA-256 لكل ملف. بيختار المهارة المناسبة للطلب بالعربي أو الإنجليزي ويعرض منهجها ويتحقق من الملفات، و hub.py find بيعرضها كمان.
+
+**What it does:** Holds github.com/dylantarre/animation-principles (MIT, (c) 2024 Dylan Tarre) inside Superpowers: 144 skills in 12 categories (domain, thinking style, role, skill level, animation type, emotional outcome, UI element, industry, tool or framework, time scale, one principle in depth, problem type) plus their docs, copied unchanged into vendor/animation-principles with a SHA-256 manifest. It finds the right skill for a request in Arabic or English, prints its method, and verifies every file. hub.py find lists the matching ones too.
+
+#### متى تُستدعى
+
+- «عايز حركة زرار أو هوفر احترافية»
+- «الأنيميشن بيدوّخ الناس أعمل إيه»
+- «طبّق مبادئ ديزني على الموشن ده»
+- «Which animation principle fits this loading spinner?»
+- «Animate this modal with Framer Motion the right way»
+
+#### الأوامر
+
+- **find**: Ranks the 144 skills for the request (Arabic-aware) and prints the best five with category and path; --json for machines.
+  - `python3 scripts/animation_principles.py find "حركة زرار لما الماوس يقف عليه"`
+- **list**: Lists every skill grouped by its 12 categories.
+  - `python3 scripts/animation_principles.py list --category 07-by-ui-element`
+- **show**: Prints a skill's record; --full adds the whole SKILL.md to follow.
+  - `python3 scripts/animation_principles.py show hover-interactions --full`
+- **verify**: Checks every vendored file against the SHA-256 in vendor/animation-principles/KOSIF_INTEGRATION.json and reports unlisted files.
+  - `python3 scripts/animation_principles.py verify`
+- **sync**: Maintainer action: re-copies skills and docs from an upstream checkout, rewrites the manifest and data/animation_principles.json.
+  - `python3 scripts/animation_principles.py sync --src ../animation-principles --commit <sha>`
+
+#### المتطلبات والأمان
+
+- الأمان: read-only
+- الموافقة: find, list, show and verify only read. sync rewrites the vendored folder from a local checkout. Nothing is downloaded or published.
+- الحدود: Keyword ranking over names, descriptions and Arabic category words, not semantic search. The skills are methods (text); nothing in them is executed.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_animation_principles.py`
+- مرجع: `.claude/skills/kosif-superpowers/vendor/animation-principles/KOSIF_README.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:animation-principles --evidence <ملف>`.
 
 ### `atlas-5000` — خريطة تغطية أطلس الـ5000 مهارة / Atlas-5000 coverage map
 

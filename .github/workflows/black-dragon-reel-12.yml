@@ -1,0 +1,26 @@
+name: Black Dragon — Reel 12 toolchain offline checks
+on:
+  push:
+    branches:
+      - feat/black-dragon-instagram-video-12-20261112
+    paths:
+      - '.claude/skills/kosif-black-dragon/integrations/instagram-video-12/**'
+      - '.github/workflows/black-dragon-reel-12.yml'
+  pull_request:
+    paths:
+      - '.claude/skills/kosif-black-dragon/integrations/instagram-video-12/**'
+      - '.github/workflows/black-dragon-reel-12.yml'
+permissions:
+  contents: read
+jobs:
+  offline-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python syntax check
+        run: python3 -m py_compile .claude/skills/kosif-black-dragon/integrations/instagram-video-12/toolchain.py
+      - name: Registry and routing regression tests
+        run: python3 -m unittest discover -s .claude/skills/kosif-black-dragon/integrations/instagram-video-12/tests -v
+      - name: Registry doctor / no installation
+        run: python3 .claude/skills/kosif-black-dragon/integrations/instagram-video-12/toolchain.py doctor --json

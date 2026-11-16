@@ -17,7 +17,7 @@ class SkillsLint(unittest.TestCase):
         cls.rep = skills_lint.lint()
 
     def test_covers_every_group(self):
-        self.assertEqual(set(self.rep["summary"]), {"top-level", "atlas", "superskills", "obra", "styles"})
+        self.assertEqual(set(self.rep["summary"]), {"top-level", "atlas", "superskills", "obra", "animation", "styles"})
         self.assertGreater(sum(s["skills"] for s in self.rep["summary"].values()), 700)
 
     def test_no_new_errors(self):

@@ -1,0 +1,4 @@
+# Optional Python tools; install in local .venv via toolchain.py install --python --yes
+manim
+whisperx
+auto-editor

@@ -106,6 +106,20 @@ Run from repository root:
 
 Follow the plan, run only the commands you actually need (they are listed, not executed), and report real outputs. On Windows `python3` must be a real Python (not the Microsoft Store alias). To include *only optional pointers* to catalog entries, add `--legacy-links` to compose. No external process, paid model, or original adapter is invoked by these commands.
 
+## Repo fusion (REA, 2026-11-10) and the media hunter
+
+Ten public repositories were dissected with REA. Their best new capabilities were re-implemented natively as nine self-tested modules in `scripts/fusion/`; the remaining capabilities stay source-linked with exact `path:line`. The ten repositories are lemo-opuscar, video-shotcraft, pixelfx, ClaudeAnimationBase, mcp-for-blender, three.js, react-three-rapier, librosa, awesome-opus5-5-videos and opus-video-prompts.
+
+The modules cover the music map, rhythm and reading checks, the beat grid and CapCut/JianYing draft planning, pixel VFX and hit-stop, reads and boil lint, the Blender scene audit, deterministic three.js frames, the physics bake and a video-prompt lint.
+
+Routing and evidence: `scripts/repo_fusion.py` (`list`, `find "<task>" [--stage]`, `show`, `modules`, `self-test`). Overview: [references/REPO_FUSION.md](references/REPO_FUSION.md). The capability count is 101 (47 native, 54 source-linked); report those numbers, not "all repos integrated".
+
+Footage and photo search: `tools/media_hunter/mh.py` searches 615 sites and 19 live API sources, 15 of them keyless, and returns real file URLs with licences. Guide: [references/MEDIA_HUNTER.md](references/MEDIA_HUNTER.md).
+
+    python3 .claude/skills/kosif-black-dragon/scripts/repo_fusion.py find "قص على الدروب"
+    python3 .claude/skills/kosif-black-dragon/scripts/fusion/native_musicmap.py map song.mp3 --out map.json
+    python3 -I .claude/skills/kosif-black-dragon/tools/media_hunter/mh.py hunt "camel desert sunset" --type video
+
 ## Native reasoning absorbed from Dragon Mind
 
 The new `scripts/native_mind.py` **contains its own** 26-faculty taxonomy and six-stage cognitive
@@ -181,10 +195,20 @@ Run the quick tests with:
 python3 -m unittest discover -s tests -p test_black_dragon_creative_council.py
 ```
 
-## The Arena — after the council, when the answer is rejected
+## The Arena — a required step, sized to the task
 
-The council decides a plan before the work. When the owner rejects a finished answer («الإجابة وحشة»، «خليهم يتنافسوا»، «الحلبة»), use the vendored [arena skill](../arena/SKILL.md) (MIT, Jake Schincariol): the same task, byte for byte, goes to N sub-agents (16 with `--quick`, 100 only when the owner asks), each with a different card (15 reasoning modes × 12 workflows × 12 strategies). They attack each other's solutions, defend and revise, and a judge scores every match on [the rubric](../arena/rubric.md) until one survives; a blind final check compares it with the rejected answer. `bracket.py` keeps the whole bracket in one JSON file, so a compacted context resumes with `bracket.py next`. The orchestrator never judges. The Black Dragon adapter `skill:arena` proves the bracket with stand-in agents and known answers; it does not call a model.
+**The arena is now a required step of Black Dragon work, not only a fallback after a rejected answer** (owner's rule, 2026-11-14). Every task with taste or an open decision (design, writing, montage concept, plan, code with more than one defensible solution) goes through the vendored [arena skill](../arena/SKILL.md) (MIT, Jake Schincariol) on the written solution, after the council picks the direction and before the expensive execution. The same task, byte for byte, goes to N sub-agents, each with a different card (15 reasoning modes × 12 workflows × 12 strategies); they attack each other's solutions, defend and revise, and a judge scores every match on [the rubric](../arena/rubric.md) until one survives. When an earlier answer was rejected, a blind final compares the champion with it.
 
+`python3 .claude/skills/arena/arena_gate.py` adds what makes it affordable as a default:
+
+| step | command |
+|---|---|
+| size it | `arena_gate.py size "<task>"` → no arena (chat, a fact, a routine step, a dictated edit; the reason is recorded with `skip --reason`), **4** agents (19 calls) for a small task, **8** (43) for a medium one, **16** (91) for a big one or a rejected answer. **100** (595 calls) only when the owner names it, after an explicit yes. |
+| run it | `arena_gate.py start "<task>" --task-file .arena/task.md [--baseline-file .arena/baseline.md]`, then `next` and `jobs <phase>` one wave at a time |
+| models | spawn and round-1 attack/defend on the Haiku agent `.claude/agents/arena-fighter.md`; later rounds on Sonnet; every judge and the final on the main model, never Haiku |
+| gate | `arena_gate.py gate` exits 0 only with a champion (and the blind final, when there is a baseline) or a recorded skip. Do not deliver before it passes. |
+
+The orchestrator never judges and never reads solutions before `winner`. `bracket.py` keeps the bracket in one JSON file, so a compacted context resumes with `arena_gate.py next`. The Black Dragon adapter `skill:arena` proves the bracket with stand-in agents and known answers; it does not call a model. Tests: `python3 -m unittest tests/test_arena_gate.py`.
 
 ## Book-informed judgment guard (Thinking, Fast and Slow)
 
@@ -367,3 +391,14 @@ python3 .claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py creative
 ~~~
 
 These are still planning and scoring steps: no agent, model, media or paid tool runs.
+
+## Instagram Reel video 12-tool bridge (2026-11-12)
+
+The 12 tools explicitly named in the caption of https://www.instagram.com/reel/Dfmun_Fjap1/ are installable and routed through the **isolated** workspace
+`.claude/skills/kosif-black-dragon/integrations/instagram-video-12/` (README, registry, package.json, requirements.txt, toolchain.py, offline tests).
+
+- `python3 .claude/skills/kosif-black-dragon/integrations/instagram-video-12/toolchain.py plan "ريل عربي 3D مع كلام"` — task-based selection; zero installs/execution.
+- `python3 .claude/skills/kosif-black-dragon/integrations/instagram-video-12/toolchain.py doctor --json` — local module/binary presence only; not evidence of a real render.
+- `python3 .claude/skills/kosif-black-dragon/integrations/instagram-video-12/toolchain.py install --all --yes` — **only when user authorizes install on the active worker**, downloads JS/Python libraries and bundled ffmpeg/ffprobe; never run silently.
+- `python3 .claude/skills/kosif-black-dragon/integrations/instagram-video-12/toolchain.py run ffmpeg -- -version` — real local CLI execution; Remotion, HyperFrames, Manim, WhisperX and Auto-Editor have similar allowlisted CLI routing. Other JS libraries are imported by an actual scene project.
+- Follow the existing mandatory seven stages and CORE receipts in `video_protocol.py`; a new dependency/plan/dry-run/doctor is **not** a completed stage or finished video. Never mark all 12 as installed/executed without local install and real test evidence. Review Remotion's commercial licensing terms and safety of installing external packages.
