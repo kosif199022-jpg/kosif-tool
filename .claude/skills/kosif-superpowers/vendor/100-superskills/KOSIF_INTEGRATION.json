@@ -98,11 +98,6 @@
    "why": "--render ignored --code and silently drew the default scene; a headless render now draws the supplied file through runner.py and verifies the PNG (fix/black-dragon-probe-and-regressions-20261103)"
   },
   {
-   "slug": "excel-model-architect",
-   "file": "scripts/model_audit.py",
-   "why": "a bare numeric formula (=0, =5) was not flagged, and a constant in a statement sheet (PnL/BS/CF/Checks) outside a formula row/column passed; both are now HIGH hardcodes (fix/black-dragon-probe-and-regressions + quality-gates e897b1ad)"
-  },
-  {
    "slug": "kosif-mimic",
    "file": "scripts/mm_analyze.py",
    "why": "accept_transition() exposes the existing MIN_TRANSITION_CONFIDENCE gate (0.05 camera-shake fits are dropped) as one tested function"

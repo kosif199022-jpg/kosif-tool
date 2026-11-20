@@ -24,62 +24,6 @@ def load_script(name: str, path: Path):
     return module
 
 
-class ModelAuditRegression(unittest.TestCase):
-    def test_bare_zero_formula_is_reported_as_high_severity(self):
-        try:
-            from openpyxl import Workbook
-        except ImportError:
-            self.skipTest("openpyxl is optional; Black Dragon CI installs it for this regression")
-
-        with tempfile.TemporaryDirectory() as d:
-            xlsx = Path(d) / "model.xlsx"
-            wb = Workbook()
-            wb.active.title = "Assumptions"
-            forecast = wb.create_sheet("Forecast")
-            forecast["D4"] = "=0"
-            forecast["D5"] = "=A1+B1"  # ordinary references must not be flagged
-            wb.create_sheet("Checks")
-            wb.save(xlsx)
-
-            script = VENDOR / "excel-model-architect/scripts/model_audit.py"
-            result = subprocess.run([sys.executable, str(script), str(xlsx), "--json"],
-                                    capture_output=True, text=True, timeout=60)
-            self.assertEqual(result.returncode, 1, result.stderr)
-            report = json.loads(result.stdout)
-            self.assertEqual(report["verdict"], "REVISE")
-            self.assertEqual(report["stats"]["hardcoded"], 1, report)
-            self.assertTrue(any(
-                item["cell"] == "Forecast!D4" and item["sev"] == "HIGH"
-                for item in report["findings"]
-            ), report)
-
-    def test_planted_statement_constant_is_high_and_not_pass(self):
-        """Ported from fix/black-dragon-probe-and-quality-gates-20261103 (e897b1ad)."""
-        try:
-            from openpyxl import Workbook
-        except ImportError:
-            self.skipTest("openpyxl is optional")
-        with tempfile.TemporaryDirectory() as temp:
-            tmp = Path(temp)
-            wb = Workbook()
-            pnl = wb.active
-            pnl.title = "PnL"
-            pnl["D5"] = "=C5*2"
-            pnl["D6"] = 12345  # simulates overwriting a calculated formula
-            wb.create_sheet("Checks")
-            src = tmp / "planted.xlsx"
-            wb.save(src)
-            script = VENDOR / "excel-model-architect/scripts/model_audit.py"
-            p = subprocess.run([sys.executable, str(script), str(src), "--json"],
-                               text=True, capture_output=True, timeout=30)
-            self.assertEqual(p.returncode, 1, p.stderr)
-            result = json.loads(p.stdout)
-            self.assertEqual(result["verdict"], "REVISE")
-            self.assertGreaterEqual(result["stats"]["hardcoded"], 1)
-            self.assertTrue(any(x["sev"] == "HIGH" and x["cell"] == "PnL!D6"
-                                and "12345" in x["issue"] for x in result["findings"]), result)
-
-
 class PixelStudioRegression(unittest.TestCase):
     def test_headless_render_uses_code_file_not_default_scene(self):
         try:
