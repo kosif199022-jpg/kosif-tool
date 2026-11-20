@@ -83,7 +83,7 @@ class DepsTest(unittest.TestCase):
         self.assertEqual(fetch_video.ytdlp_age_days("2026.11.02", dt.date(2026, 11, 16)), 14)
         self.assertIsNone(fetch_video.ytdlp_age_days("nightly"))
         a = mock.Mock(out=str(ROOT / "out" / "_test_dl"), quality="1080", cookies=None, connections=1, proxy=None,
-                      safe=False, cookies_from_browser=None, no_auto_update=False)
+                      safe=False, cookies_from_browser=None, no_auto_update=False, auto_update=True)
         versions = iter(["2026.11.10", "2026.11.10", "2026.11.15"])   # fresh -> before update -> after update
         tries = []
         def fake_attempt(*args, **kw):
@@ -110,6 +110,21 @@ class DepsTest(unittest.TestCase):
              mock.patch.object(fetch_video, "attempt", side_effect=fake_attempt):
             fetch_video.download("https://www.instagram.com/p/abc/", a, ["yt-dlp"])
             up.assert_not_called()
+
+    def test_on_a_pc_an_old_ytdlp_is_never_upgraded_without_a_yes(self):
+        """Outside a cloud session and without --auto-update: one hint, no pip."""
+        a = mock.Mock(out=str(ROOT / "out" / "_test_dl"), quality="1080", cookies=None, connections=1, proxy=None,
+                      safe=False, cookies_from_browser=None, no_auto_update=False, auto_update=False)
+        fetch_video._refresh.clear(); fetch_video._refresh["done"] = False
+        env = {k: v for k, v in os.environ.items() if k not in ("CLAUDE_CODE_REMOTE", "KOSIF_AUTOINSTALL", "KOSIF_NO_AUTOINSTALL")}
+        with mock.patch.dict(os.environ, env, clear=True), \
+             mock.patch.object(fetch_video, "_upgrade_ytdlp") as up, \
+             mock.patch.object(fetch_video, "ytdlp_version", return_value="2020.01.01"), \
+             mock.patch.object(fetch_video, "impersonation", return_value=None), \
+             mock.patch.object(fetch_video, "attempt", return_value=(None, "ERROR: x")):
+            fetch_video.download("https://www.instagram.com/p/abc/", a, ["yt-dlp"])
+            up.assert_not_called()
+        self.assertTrue(fetch_video._refresh.get("hinted"))
 
     def test_boot_reports_download_tools_and_exits_zero(self):
         env = {**os.environ, "KOSIF_NO_AUTOINSTALL": "1"}

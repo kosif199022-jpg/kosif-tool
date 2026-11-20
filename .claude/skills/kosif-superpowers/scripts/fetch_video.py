@@ -366,7 +366,9 @@ def stock_download(url, a) -> dict | None:
 # because yt-dlp was old). An installed yt-dlp older than STALE_DAYS is refreshed before the first download, and
 # after a failed download it is refreshed once and the link tried again if the version really changed.
 # Only an already installed yt-dlp is upgraded (missing packages still need --install-deps).
-# Off with --no-auto-update or KOSIF_NO_AUTOINSTALL=1.
+# Same rule as every other install here (_deps.autoinstall_allowed): automatic only in a Claude Code cloud
+# session (a throwaway machine); on the owner's computer only with --auto-update, otherwise a one-line hint.
+# --no-auto-update or KOSIF_NO_AUTOINSTALL=1 always win.
 STALE_DAYS = 30
 _refresh = {"done": False}
 
@@ -404,9 +406,27 @@ def _upgrade_ytdlp(ytdlp) -> None:
             pass
 
 
+def refresh_allowed(a) -> bool:
+    if getattr(a, "no_auto_update", False) or os.environ.get("KOSIF_NO_AUTOINSTALL"):
+        return False
+    if getattr(a, "auto_update", False) is True:
+        return True
+    try:
+        from _deps import autoinstall_allowed  # noqa: PLC0415
+        return autoinstall_allowed()
+    except Exception:  # noqa: BLE001 - unknown machine: do not install
+        return False
+
+
 def refresh_ytdlp(ytdlp, a, reason: str) -> bool:
     """Upgrade yt-dlp at most once per run; True only when the version changed."""
-    if _refresh["done"] or getattr(a, "no_auto_update", False) or os.environ.get("KOSIF_NO_AUTOINSTALL") or not ytdlp:
+    if _refresh["done"] or not ytdlp:
+        return False
+    if not refresh_allowed(a):
+        if not _refresh.get("hinted"):
+            _refresh["hinted"] = True
+            print(f"yt-dlp: {reason}; an update may fix it. With the owner's yes: fetch_video.py --update "
+                  "(or rerun with --auto-update)", file=sys.stderr)
         return False
     _refresh["done"] = True
     old = ytdlp_version(ytdlp)
@@ -519,8 +539,10 @@ def main(argv=None) -> int:
                     help="explicitly allow pip installation of missing yt-dlp dependencies (never automatic)")
     ap.add_argument("--doctor", action="store_true")
     ap.add_argument("--update", action="store_true")
-    ap.add_argument("--no-auto-update", action="store_true",
-                    help="never refresh an installed yt-dlp on its own (default: when older than 30 days or after a failure)")
+    ap.add_argument("--auto-update", action="store_true",
+                    help="refresh an installed yt-dlp when older than 30 days or once after a failure "
+                         "(automatic only in a cloud session; on a PC only with this flag)")
+    ap.add_argument("--no-auto-update", action="store_true", help="never refresh yt-dlp on its own (wins over --auto-update)")
     a = ap.parse_args(argv)
     if a.cobalt_api and not a.rights:
         ap.error("--cobalt-api requires --rights")
