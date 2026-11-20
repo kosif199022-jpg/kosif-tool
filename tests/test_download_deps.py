@@ -78,6 +78,39 @@ class DepsTest(unittest.TestCase):
         self.assertIn("DRM", rec["hint"])
         self.assertEqual(len(calls), 1)   # no second format or impersonation try on a DRM lock
 
+    def test_old_ytdlp_is_refreshed_once_and_the_link_retried(self):
+        import datetime as dt
+        self.assertEqual(fetch_video.ytdlp_age_days("2026.11.02", dt.date(2026, 11, 16)), 14)
+        self.assertIsNone(fetch_video.ytdlp_age_days("nightly"))
+        a = mock.Mock(out=str(ROOT / "out" / "_test_dl"), quality="1080", cookies=None, connections=1, proxy=None,
+                      safe=False, cookies_from_browser=None, no_auto_update=False)
+        versions = iter(["2026.11.10", "2026.11.10", "2026.11.15"])   # fresh -> before update -> after update
+        tries = []
+        def fake_attempt(*args, **kw):
+            tries.append(1)
+            return None, "ERROR: [Instagram] abc: Unable to extract shared data"
+        fetch_video._refresh["done"] = False
+        with mock.patch.dict(os.environ, {}, clear=False), \
+             mock.patch.object(fetch_video, "ytdlp_version", side_effect=lambda y: next(versions, "2026.11.15")), \
+             mock.patch.object(fetch_video, "_upgrade_ytdlp") as up, \
+             mock.patch.object(fetch_video, "impersonation", return_value=None), \
+             mock.patch.object(fetch_video, "attempt", side_effect=fake_attempt):
+            os.environ.pop("KOSIF_NO_AUTOINSTALL", None)
+            rec = fetch_video.download("https://www.instagram.com/p/abc/", a, ["yt-dlp"])
+            up.assert_called_once()
+            self.assertTrue(rec.get("after_update"))
+            self.assertEqual(len(tries), 4)          # 2 format tries, then the same 2 after the update
+            fetch_video.download("https://www.instagram.com/p/abc/", a, ["yt-dlp"])
+            up.assert_called_once()                  # never more than once per run
+        fetch_video._refresh["done"] = False
+        a.no_auto_update = True
+        with mock.patch.object(fetch_video, "_upgrade_ytdlp") as up, \
+             mock.patch.object(fetch_video, "ytdlp_version", return_value="2020.01.01"), \
+             mock.patch.object(fetch_video, "impersonation", return_value=None), \
+             mock.patch.object(fetch_video, "attempt", side_effect=fake_attempt):
+            fetch_video.download("https://www.instagram.com/p/abc/", a, ["yt-dlp"])
+            up.assert_not_called()
+
     def test_boot_reports_download_tools_and_exits_zero(self):
         env = {**os.environ, "KOSIF_NO_AUTOINSTALL": "1"}
         p = subprocess.run([sys.executable, str(SCRIPTS / "boot.py"), "--json"], capture_output=True, text=True, timeout=120, env=env)
