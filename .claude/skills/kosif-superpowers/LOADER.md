@@ -32,7 +32,7 @@
 | `kosif-stickman-director` | `.claude/skills/kosif-stickman-director/SKILL.md` | 4 KB · 44 سطر | Plan a stick-figure video as a director - turn a topic, article or script into an approved storyboard and ready video-generation prompts (Director mode, styles A1-A7),… |
 | `kosif-stickman-studio` | `.claude/skills/kosif-stickman-studio/SKILL.md` | 7 KB · 57 سطر | Turn a voiceover into a cinematic stick-figure explainer video drawn entirely by code (GrowKaz Stickman studio) - rim-lit black stick figures in moody 2.5D sets, giant… |
 | `kosif-superpowers` | `.claude/skills/kosif-superpowers/SKILL.md` | 83 KB · 448 سطر | Capability self-awareness and thinking upgrade for Claude. One front door (scripts/hub.py find) maps a task in the user's words to the runnable tools, catalog powers… |
-| `kosif-toon-studio` | `.claude/skills/kosif-toon-studio/SKILL.md` | 12 KB · 201 سطر | Mahmoud Elkosif's cartoon studio for the series «أبو كاب وأبو نضارة» (Cap and Specs). Makes 20-second vertical reels of the two characters in two tested ways (A, drawn… |
+| `kosif-toon-studio` | `.claude/skills/kosif-toon-studio/SKILL.md` | 15 KB · 226 سطر | Mahmoud Elkosif's cartoon studio for the series «أبو كاب وأبو نضارة» (Cap and Specs). Makes 20-second vertical reels of the two characters in two tested ways (A, drawn… |
 | `kosif-upload-link` | `.claude/skills/kosif-upload-link/SKILL.md` | 4 KB · 46 سطر | Send the user's big-file upload link and pull what they uploaded. Use when the user asks for the upload link, says a file is too big to attach (over 30-40 MB), wants to… |
 | `kosif-voice-studio` | `.claude/skills/kosif-voice-studio/SKILL.md` | 6 KB · 108 سطر | Voice-over, voice cloning, voice design and transcription in Egyptian Arabic, MSA, English and 600+ languages - text to speech with word timings (words.json) for… |
 | `kosif-web-film` | `.claude/skills/kosif-web-film/SKILL.md` | 8 KB · 114 سطر | Direct and render a motion-design video built as a webpage (codename «التنين الأسود» / Black Dragon). Use when the user asks for a video, promo, intro, explainer or… |
@@ -352,9 +352,10 @@
 - 76–113: 4. Way A: drawn in code (free, the main engine)
 - 114–146: 5. Way B: painted with an image generator (higher quality, about 2.5 credits per 20 s)
 - 147–154: 6. Way C: 3D world (experimental)
-- 155–174: 7. Delivery (fixed format)
-- 175–184: 8. Lessons learned (mistakes we will not repeat)
-- 185–200: 9. Files in this skill
+- 155–178: 6b. طريقة د: الورق الحي (Living Paper, free, code-drawn)
+- 179–198: 7. Delivery (fixed format)
+- 199–208: 8. Lessons learned (mistakes we will not repeat)
+- 209–225: 9. Files in this skill
 
 ### `.claude/skills/kosif-upload-link/SKILL.md`
 
