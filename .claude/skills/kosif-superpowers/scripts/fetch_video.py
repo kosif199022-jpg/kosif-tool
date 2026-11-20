@@ -31,6 +31,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+import re
 import shutil
 import subprocess
 import urllib.parse
@@ -360,7 +362,96 @@ def stock_download(url, a) -> dict | None:
     return rec
 
 
+# An old yt-dlp is the most common reason a link stops downloading (2026-11-16: an Instagram link failed only
+# because yt-dlp was old). An installed yt-dlp older than STALE_DAYS is refreshed before the first download, and
+# after a failed download it is refreshed once and the link tried again if the version really changed.
+# Only an already installed yt-dlp is upgraded (missing packages still need --install-deps).
+# Same rule as every other install here (_deps.autoinstall_allowed): automatic only in a Claude Code cloud
+# session (a throwaway machine); on the owner's computer only with --auto-update, otherwise a one-line hint.
+# --no-auto-update or KOSIF_NO_AUTOINSTALL=1 always win.
+STALE_DAYS = 30
+_refresh = {"done": False}
+
+
+def ytdlp_version(ytdlp) -> str:
+    try:
+        return sh(ytdlp + ["--version"], timeout=60).stdout.strip()
+    except (OSError, subprocess.TimeoutExpired):
+        return ""
+
+
+def ytdlp_age_days(version: str, today=None) -> int | None:
+    import datetime as dt  # noqa: PLC0415
+    m = re.match(r"(\d{4})\.(\d{1,2})\.(\d{1,2})", version or "")
+    if not m:
+        return None
+    try:
+        built = dt.date(int(m[1]), int(m[2]), int(m[3]))
+    except ValueError:
+        return None
+    return ((today or dt.date.today()) - built).days
+
+
+def _upgrade_ytdlp(ytdlp) -> None:
+    pkgs = ["yt-dlp", "yt-dlp-ejs", "curl_cffi"]
+    try:
+        from _deps import pip_install  # noqa: PLC0415
+        pip_install(pkgs)
+    except Exception:  # noqa: BLE001 - best effort, the version check after it decides
+        sh([sys.executable, "-m", "pip", "install", "-U", "--quiet", *pkgs])
+    if ytdlp and ytdlp[0] != sys.executable:  # a standalone yt-dlp program (yt-dlp.exe, winget) updates itself
+        try:
+            sh(ytdlp + ["-U"], timeout=300)
+        except (OSError, subprocess.TimeoutExpired):
+            pass
+
+
+def refresh_allowed(a) -> bool:
+    if getattr(a, "no_auto_update", False) or os.environ.get("KOSIF_NO_AUTOINSTALL"):
+        return False
+    if getattr(a, "auto_update", False) is True:
+        return True
+    try:
+        from _deps import autoinstall_allowed  # noqa: PLC0415
+        return autoinstall_allowed()
+    except Exception:  # noqa: BLE001 - unknown machine: do not install
+        return False
+
+
+def refresh_ytdlp(ytdlp, a, reason: str) -> bool:
+    """Upgrade yt-dlp at most once per run; True only when the version changed."""
+    if _refresh["done"] or not ytdlp:
+        return False
+    if not refresh_allowed(a):
+        if not _refresh.get("hinted"):
+            _refresh["hinted"] = True
+            print(f"yt-dlp: {reason}; an update may fix it. With the owner's yes: fetch_video.py --update "
+                  "(or rerun with --auto-update)", file=sys.stderr)
+        return False
+    _refresh["done"] = True
+    old = ytdlp_version(ytdlp)
+    print(f"yt-dlp {old or '?'}: {reason}, updating ...", file=sys.stderr)
+    _upgrade_ytdlp(ytdlp)
+    new = ytdlp_version(ytdlp)
+    print(f"yt-dlp {old or '?'} -> {new or '?'}", file=sys.stderr)
+    return bool(new) and new != old
+
+
 def download(url, a, ytdlp, once: bool = False) -> dict:
+    """yt-dlp, refreshed first when old and once more after a failure (see STALE_DAYS)."""
+    if not _refresh["done"]:
+        age = ytdlp_age_days(ytdlp_version(ytdlp))
+        if age is not None and age > STALE_DAYS:
+            refresh_ytdlp(ytdlp, a, f"{age} days old")
+    rec = _download(url, a, ytdlp, once)
+    ytdlp_failed = not rec.get("file") and "attempt" not in rec  # "attempt" = yt-dlp worked, a later step refused
+    if ytdlp_failed and not rec.get("drm") and refresh_ytdlp(ytdlp, a, "download failed"):
+        rec = _download(url, a, ytdlp, once)
+        rec["after_update"] = True
+    return rec
+
+
+def _download(url, a, ytdlp, once: bool = False) -> dict:
     """yt-dlp with the format fallback chain and one impersonation retry; `once` makes it a single attempt."""
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -448,6 +539,10 @@ def main(argv=None) -> int:
                     help="explicitly allow pip installation of missing yt-dlp dependencies (never automatic)")
     ap.add_argument("--doctor", action="store_true")
     ap.add_argument("--update", action="store_true")
+    ap.add_argument("--auto-update", action="store_true",
+                    help="refresh an installed yt-dlp when older than 30 days or once after a failure "
+                         "(automatic only in a cloud session; on a PC only with this flag)")
+    ap.add_argument("--no-auto-update", action="store_true", help="never refresh yt-dlp on its own (wins over --auto-update)")
     a = ap.parse_args(argv)
     if a.cobalt_api and not a.rights:
         ap.error("--cobalt-api requires --rights")

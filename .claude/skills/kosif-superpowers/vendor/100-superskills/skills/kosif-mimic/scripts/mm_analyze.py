@@ -23,6 +23,15 @@ SMALL_SHORT = 96      # shot/transition analysis resolution (short side)
 MID_SHORT = 360       # sharpness / motion resolution
 
 
+def accept_transition(transition: dict) -> bool:
+    """Fail closed on weak fits (0.05 during camera shake), rather than reporting camera motion as an edit.
+    One threshold for the whole file: MIN_TRANSITION_CONFIDENCE above."""
+    try:
+        return float(transition.get("confidence", 0)) >= MIN_TRANSITION_CONFIDENCE
+    except (TypeError, ValueError):
+        return False
+
+
 # ----------------------------------------------------------------------------- pass A
 
 def pass_a(ref, fps: Fraction, W: int, H: int) -> dict:
@@ -599,7 +608,7 @@ def analyze(ref: str, work: str, text_color: str | None = None, sensitivity: flo
         for bd in bnds:
             tr = classify(feats, bd, tmask, deep=deep, fitter=fitter)
             tr["evidence"] = {"src": bd["src"], "strength": rnd(bd["strength"], 2), "dAB": rnd(bd["dAB"], 2)}
-            if tr["confidence"] < MIN_TRANSITION_CONFIDENCE:
+            if not accept_transition(tr):
                 log(f"dropped low-confidence {tr['type']} at frame {tr['ts']} (confidence {tr['confidence']})")
                 continue
             if trans and tr["ts"] < trans[-1]["te"]:  # keep transitions disjoint
